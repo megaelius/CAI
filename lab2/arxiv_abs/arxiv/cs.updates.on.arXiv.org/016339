@@ -1,0 +1,17 @@
+As computers reach exascale and beyond, the incidence of faults will increase. Solutions to this
+problem are an active research topic. We focus on strategies to make the preconditioned conjugate
+gradient (PCG) solver resilient against node failures, specifically, the exact state reconstruction
+(ESR) method, which exploits redundancies in PCG. Reducing the frequency at which redundant information
+is stored lessens the runtime overhead. However, after the node failure, the solver must restart
+from the last iteration for which redundant information was stored, which increases recovery overhead.
+This formulation highlights the method's similarities to checkpoint-restart (CR). Thus, this
+method, which we call ESR with periodic storage (ESRP), can be considered a form of algorithm-based
+checkpoint-restart. The state is stored implicitly, by exploiting redundancy inherent to the
+algorithm, rather than explicitly as in CR. We also minimize the amount of data to be stored and retrieved
+compared to CR, but additional computation is required to reconstruct the solver's state. In this
+paper, we describe the necessary modifications to ESR to convert it into ESRP, and perform an experimental
+evaluation. We compare ESRP experimentally with previously-existing ESR and application-level
+in-memory CR. Our results confirm that the overhead for ESR is reduced significantly, both in the
+failure-free case, and if node failures are introduced. In the former case, the overhead of ESRP
+is usually lower than that of CR. However, CR is faster if node failures happen. We claim that these
+differences can be alleviated by the implementation of more appropriate preconditioners. 

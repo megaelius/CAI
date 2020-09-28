@@ -1,0 +1,19 @@
+The process of aligning a pair of shapes is a fundamental operation in computer graphics. Traditional
+approaches rely heavily on matching corresponding points or features to guide the alignment, a
+paradigm that falters when significant shape portions are missing. These techniques generally
+do not incorporate prior knowledge about expected shape characteristics, which can help compensate
+for any misleading cues left by inaccuracies exhibited in the input shapes. We present an approach
+based on a deep neural network, leveraging shape datasets to learn a shape-aware prior for source-to-target
+alignment that is robust to shape incompleteness. In the absence of ground truth alignments for
+supervision, we train a network on the task of shape alignment using incomplete shapes generated
+from full shapes for self-supervision. Our network, called ALIGNet, is trained to warp complete
+source shapes to incomplete targets, as if the target shapes were complete, thus essentially rendering
+the alignment partial-shape agnostic. We aim for the network to develop specialized expertise
+over the common characteristics of the shapes in each dataset, thereby achieving a higher-level
+understanding of the expected shape space to which a local approach would be oblivious. We constrain
+ALIGNet through an anisotropic total variation identity regularization to promote piecewise
+smooth deformation fields, facilitating both partial-shape agnosticism and post-deformation
+applications. We demonstrate that ALIGNet learns to align geometrically distinct shapes, and
+is able to infer plausible mappings even when the target shape is significantly incomplete. We show
+that our network learns the common expected characteristics of shape collections, without over-fitting
+or memorization, enabling it to produce plausible deformations on unseen data during test time.

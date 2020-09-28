@@ -1,0 +1,20 @@
+Massive MIMO systems are seen by many researchers as a paramount technology toward next generation
+networks. This technology consists of hundreds of antennas that are capable of sending and receiving
+simultaneously a huge amount of data. One of the main challenges when using this technology is the
+necessity of an efficient decoding framework. The latter must guarantee both a low complexity and
+a good signal detection accuracy. The Sphere Decoder (SD) algorithm represents one of the promising
+decoding algorithms in terms of detection accuracy. However, it is inefficient for dealing with
+large MIMO systems due to its prohibitive complexity. To overcome this drawback, we propose to revisit
+the sequential SD algorithm and implement several variants that aim at finding appropriate trade-offs
+between complexity and performance. Then, we propose an efficient high-level parallel SD scheme
+based on the master/worker paradigm, which permits multiple SD instances to simultaneously explore
+the search space, while mitigating the overheads from load imbalance. The results of our parallel
+SD implementation outperform the state-of-the-art by more than 5x using similar MIMO configuration
+systems, and show a super-linear speedup on multicore platforms. Moreover, this paper presents
+a new hybrid implementation that combines the strengths of SD and K-best algorithms, i.e., maintaining
+the detection accuracy of SD, while reducing the complexity using the K-best way of pruning search
+space. The hybrid approach extends our parallel SD implementation: the master contains the SD search
+tree, and the workers use the K-best algorithm to accelerate its exploration. The resulting hybrid
+approach enhances the diversification gain, and therefore, lowers the overall complexity. Our
+synergistic hybrid approach permits to deal with large MIMO configurations up to 100x100, without
+sacrificing the accuracy and complexity. 

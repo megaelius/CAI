@@ -1,0 +1,19 @@
+Verification of microkernels, device drivers, and crypto routines requires analyses at the binary
+level. In order to automate these analyses, in the last years several binary analysis platforms
+have been introduced. These platforms share a common design: the adoption of hardware-independent
+intermediate representations, a mechanism to translate architecture dependent code to this representation,
+and a set of architecture independent analyses that process the intermediate representation.
+The usage of these platforms to verify software introduces the need for trusting both the correctness
+of the translation from binary code to intermediate language (called transpilation) and the correctness
+of the analyses. Achieving a high degree of trust is challenging since the transpilation must handle
+(i) all the side effects of the instructions, (ii) multiple instruction encodings (e.g. ARM Thumb),
+and (iii) variable instruction length (e.g. Intel). Similarly, analyses can use complex transformations
+(e.g. loop unrolling) and simplifications (e.g. partial evaluation) of the artifacts, whose bugs
+can jeopardize correctness of the results. We overcome these problems by developing a binary analysis
+platform on top of the interactive theorem prover HOL4. First, we formally model a binary intermediate
+language and we prove correctness of several supporting tools (i.e. a type checker). Then, we implement
+two proof-producing transpilers, which respectively translate ARMv8 and CortexM0 programs to
+the intermediate language and generate a certificate. This certificate is a HOL4 proof demonstrating
+correctness of the translation. As demonstrating analysis, we implement a proof-producing weakest
+precondition generator, which can be used to verify that a given loop-free program fragment satisfies
+a contract. Finally, we use an AES encryption implementation to benchmark our platform. 

@@ -1,0 +1,17 @@
+Asynchronous Many-task (AMT) runtime systems have gained increasing acceptance in the HPC community
+due to the performance improvements offered by fine-grained tasking runtime systems. At the same
+time, C++ standardization efforts are focused on creating higher-level interfaces able to replace
+OpenMP or OpenACC in modern C++ codes. These higher level functions have been adopted in standards
+conforming runtime systems such as HPX, giving users the ability to simply utilize fork-join parallelism
+in their own codes. Despite innovations in runtime systems and standardization efforts users face
+enormous challenges porting legacy applications. Not only must users port their own codes, but
+often users rely on highly optimized libraries such as BLAS and LAPACK which use OpenMP for parallization.
+Current efforts to create smooth migration paths have struggled with these challenges, especially
+as the threading systems of AMT libraries often compete with the treading system of OpenMP. To overcome
+these issues, our team has developed \textit{hpxMP}, an implementation of the OpenMP standard,
+which utilizes the underlying AMT system to schedule and manage tasks. This approach leverages
+the C++ interfaces exposed by HPX and allows users to execute their applications on an AMT system
+without changing their code. In this work, we compare hpxMP with Clang's OpenMP library with four
+linear algebra benchmarks of the Blaze C++ library. While hpxMP is often not able to reach the same
+performance, we demonstrate viability for providing a smooth migration for applications but have
+to be extended to benefit from a more general task based programming model. 

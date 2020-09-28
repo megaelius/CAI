@@ -1,0 +1,18 @@
+We address the problem of adversarial examples in machine learning where an adversary tries to misguide
+a classifier by making functionality-preserving modifications to original samples. We assume
+a black-box scenario where the adversary has access to only the feature set, and the final hard-decision
+output of the classifier. We propose a method to generate adversarial examples using the minimum
+description length (MDL) principle. Our final aim is to improve the robustness of the classifier
+by considering generated examples in rebuilding the classifier. We evaluate our method for the
+application of static malware detection in portable executable (PE) files. We consider API calls
+of PE files as their distinguishing features where the feature vector is a binary vector representing
+the presence-absence of API calls. In our method, we first create a dataset of benign samples by querying
+the target classifier. We next construct a code table of frequent patterns for the compression of
+this dataset using the MDL principle. We finally generate an adversarial example corresponding
+to a malware sample by selecting and adding a pattern from the benign code table to the malware sample.
+The selected pattern is the one that minimizes the length of the compressed adversarial example
+given the code table. This modification preserves the functionalities of the original malware
+sample as all original API calls are kept, and only some new API calls are added. Considering a neural
+network, we show that the evasion rate is 78.24 percent for adversarial examples compared to 8.16
+percent for original malware samples. This shows the effectiveness of our method in generating
+examples that need to be considered in rebuilding the classifier. 

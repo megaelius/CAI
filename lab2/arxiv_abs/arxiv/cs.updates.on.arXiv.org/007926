@@ -1,0 +1,18 @@
+There is an urgent demand for privacy-preserving techniques capable of supporting compute and
+data intensive (CDI) computing in the era of big data. However, none of existing TEEs can truly support
+CDI computing tasks, as CDI requires high throughput accelerators like GPU and TPU but TEEs do not
+offer security protection of such accelerators. This paper present HETEE (Heterogeneous TEE),
+the first design of TEE capable of strongly protecting heterogeneous computing with unsecure accelerators.
+HETEE is uniquely constructed to work with today's servers, and does not require any changes for
+existing commercial CPUs or accelerators. The key idea of our design runs security controller as
+a stand-alone computing system to dynamically adjust the boundary of between secure and insecure
+worlds through the PCIe switches, rendering the control of an accelerator to the host OS when it is
+not needed for secure computing, and shifting it back when it is. The controller is the only trust
+unit in the system and it runs the custom OS and accelerator runtimes, together with the encryption,
+authentication and remote attestation components. The host server and other computing systems
+communicate with controller through an in memory task queue that accommodates the computing tasks
+offloaded to HETEE, in the form of encrypted and signed code and data. Also, HETEE offers a generic
+and efficient programming model to the host CPU. We have implemented the HETEE design on a hardware
+prototype system, and evaluated it with large-scale Neural Networks inference and training tasks.
+Our evaluations show that HETEE can easily support such secure computing tasks and only incurs a
+12.34% throughput overhead for inference and 9.87% overhead for training on average. 

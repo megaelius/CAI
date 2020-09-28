@@ -1,0 +1,20 @@
+Finding the most likely path to a set of failure states is important to the analysis of safety-critical
+systems that operate over a sequence of time steps, such as aircraft collision avoidance systems
+and autonomous cars. In many applications such as autonomous driving, failures cannot be completely
+eliminated due to the complex stochastic environment in which the system operates. As a result,
+safety validation is not only concerned about whether a failure can occur, but also discovering
+which failures are most likely to occur. This article presents adaptive stress testing (AST), a
+framework for finding the most likely path to a failure event in simulation. We consider a general
+black box setting for partially observable and continuous-valued systems operating in an environment
+with stochastic disturbances. We formulate the problem as a Markov decision process and use reinforcement
+learning to optimize it. The approach is simulation-based and does not require internal knowledge
+of the system, making it suitable for black-box testing of large systems. We present formulations
+for fully observable and partially observable systems. In the latter case, we present a modified
+Monte Carlo tree search algorithm that only requires access to the pseudorandom number generator
+of the simulator to overcome partial observability. We also present an extension of the framework,
+called differential adaptive stress testing (DAST), that can find failures that occur in one system
+but not in another. This type of differential analysis is useful in applications such as regression
+testing, where we are concerned with finding areas of relative weakness compared to a baseline.
+We demonstrate the effectiveness of the approach on an aircraft collision avoidance application,
+where a prototype aircraft collision avoidance system is stress tested to find the most likely scenarios
+of near mid-air collision. 

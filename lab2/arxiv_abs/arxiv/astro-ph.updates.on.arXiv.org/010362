@@ -1,0 +1,19 @@
+Modeling the dynamics of most astrophysical structures requires an adequate description of the
+radiation-matter interaction. Several numerical (magneto)hydrodynamics codes were upgraded
+with a radiation module to fulfill this request. However, those among them that use either the flux-limited
+diffusion (FLD) or the M1 radiation moment approaches are restricted to the local thermodynamic
+equilibrium (LTE). This assumption may be not valid in some astrophysical cases. We present an upgraded
+version of the LTE radiation-hydrodynamics module implemented in the PLUTO code, originally developed
+by Kolb et al. (2013), which we have extended to handle non-LTE regimes. Starting from the general
+frequency-integrated comoving-frame equations of radiation hydrodynamics (RHD), we have justified
+all the assumptions made to obtain the non-LTE equations actually implemented in the module, under
+the FLD approximation. An operator-split method is employed, with two substeps: the hydrodynamic
+part is solved with an explicit method by the solvers already available in PLUTO, the non-LTE radiation
+diffusion and energy exchange part is solved with an implicit method. The module is implemented
+in the PLUTO environment. It uses databases of radiative quantities that can be provided independently
+by the user: the radiative power loss, the Planck and Rosseland mean opacities. Our implementation
+has been validated through different tests, in particular radiative shock tests. The agreement
+with the semi-analytical solutions (when available) is good, with a maximum error of 7%. Moreover,
+we have proved that non-LTE approach is of paramount importance to properly model accretion shock
+structures. Our radiation FLD module represents a step toward the general non-LTE RHD modeling.
+The module is available, under request, for the community. 

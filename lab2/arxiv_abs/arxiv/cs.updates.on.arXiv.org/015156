@@ -1,0 +1,20 @@
+MPI+threads is gaining prominence as an alternative to the traditional MPI everywhere model in
+order to better handle the disproportionate increase in the number of cores compared with other
+on-node resources. However, the communication performance of MPI+threads can be 100x slower than
+that of MPI everywhere. Both MPI users and developers are to blame for this slowdown. Typically,
+MPI users do not expose logical communication parallelism. Consequently, MPI libraries use conservative
+approaches, such as a global critical section, to maintain MPI's ordering constraints for MPI+threads,
+thus serializing access to parallel network resources and hurting performance. To enhance MP+threads'
+communication performance, researchers have proposed MPI Endpoints as a user-visible extension
+to MPI-3.1. MPI Endpoints allows a single process to create multiple MPI ranks within a communicator.
+This could allow each thread to have a dedicated communication path to the network and improve performance.
+The onus of mapping threads to endpoints, however, would then be on domain scientists. We play the
+role of devil's advocate and question the need for user-visible endpoints. We certainly agree that
+dedicated communication channels are critical. To what extent, however, can we hide these channels
+inside the MPI library without modifying the MPI standard and thus unburden the user? More important,
+what functionality would we lose through such abstraction? This paper answers these questions
+through a new MPI-3.1 implementation that uses virtual communication interfaces (VCIs). VCIs
+abstract underlying network contexts. When users expose parallelism through existing MPI mechanisms,
+the MPI library maps that parallelism to the VCIs, relieving domain scientists from endpoints.
+We identify cases where VCIs perform as well as user-visible endpoints, as well as cases where such
+abstraction hurts performance. 

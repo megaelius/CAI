@@ -1,0 +1,18 @@
+The 2-Wasserstein distance (or RMS distance) is a useful measure of similarity between probability
+distributions that has exciting applications in machine learning. For discrete distributions,
+the problem of computing this distance can be expressed in terms of finding a minimum-cost perfect
+matching on a complete bipartite graph given by two multisets of points $A,B \subset \mathbb{R}^2$,
+with $|A|=|B|=n$, where the ground distance between any two points is the squared Euclidean distance
+between them. Although there is a near-linear time relative $\varepsilon$-approximation algorithm
+for the case where the ground distance is Euclidean (Sharathkumar and Agarwal, JACM 2020), all existing
+relative $\varepsilon$-approximation algorithms for the RMS distance take $\Omega(n^{3/2})$
+time. This is primarily because, unlike Euclidean distance, squared Euclidean distance is not
+a metric. In this paper, for the RMS distance, we present a new $\varepsilon$-approximation algorithm
+that runs in $O(n^{5/4}\mathrm{poly}\{\log n,1/\varepsilon\})$ time. Our algorithm is inspired
+by a recent approach for finding a minimum-cost perfect matching in bipartite planar graphs (Asathulla
+et al., TALG 2020). Their algorithm depends heavily on the existence of sub-linear sized vertex
+separators as well as shortest path data structures that require planarity. Surprisingly, we are
+able to design a similar algorithm for a complete geometric graph that is far from planar and does
+not have any vertex separators. Central components of our algorithm include a quadtree-based distance
+that approximates the squared Euclidean distance and a data structure that supports both Hungarian
+search and augmentation in sub-linear time. 

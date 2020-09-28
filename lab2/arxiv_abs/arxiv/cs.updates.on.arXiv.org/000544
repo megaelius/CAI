@@ -1,0 +1,17 @@
+We propose efficient parallel algorithms and implementations on shared memory architectures
+of LU factorization over a finite field. Compared to the corresponding numerical routines, we have
+identified three main difficulties specific to linear algebra over finite fields. First, the arithmetic
+complexity could be dominated by modular reductions. Therefore, it is mandatory to delay as much
+as possible these reductions while mixing fine-grain parallelizations of tiled iterative and
+recursive algorithms. Second, fast linear algebra variants, e.g., using Strassen-Winograd algorithm,
+never suffer from instability and can thus be widely used in cascade with the classical algorithms.
+There, trade-offs are to be made between size of blocks well suited to those fast variants or to load
+and communication balancing. Third, many applications over finite fields require the rank profile
+of the matrix (quite often rank deficient) rather than the solution to a linear system. It is thus
+important to design parallel algorithms that preserve and compute this rank profile. Moreover,
+as the rank profile is only discovered during the algorithm, block size has then to be dynamic. We
+propose and compare several block decomposition: tile iterative with left-looking, right-looking
+and Crout variants, slab and tile recursive. Experiments demonstrate that the tile recursive variant
+performs better and matches the performance of reference numerical software when no rank deficiency
+occur. Furthermore, even in the most heterogeneous case, namely when all pivot blocks are rank deficient,
+we show that it is possbile to maintain a high efficiency. 

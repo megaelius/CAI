@@ -1,0 +1,19 @@
+This paper introduces the concept of travel behavior embeddings, a method for re-representing
+discrete variables that are typically used in travel demand modeling, such as mode, trip purpose,
+education level, family type or occupation. This re-representation process essentially maps
+those variables into a latent space called the \emph{embedding space}. The benefit of this is that
+such spaces allow for richer nuances than the typical transformations used in categorical variables
+(e.g. dummy encoding, contrasted encoding, principal components analysis). While the usage of
+latent variable representations is not new per se in travel demand modeling, the idea presented
+here brings several innovations: it is an entirely data driven algorithm; it is informative and
+consistent, since the latent space can be visualized and interpreted based on distances between
+different categories; it preserves interpretability of coefficients, despite being based on
+Neural Network principles; and it is transferrable, in that embeddings learned from one dataset
+can be reused for other ones, as long as travel behavior keeps consistent between the datasets. The
+idea is strongly inspired on natural language processing techniques, namely the word2vec algorithm.
+Such algorithm is behind recent developments such as in automatic translation or next word prediction.
+Our method is demonstrated using a model choice model, and shows improvements of up to 60\% with respect
+to initial likelihood, and up to 20% with respect to likelihood of the corresponding traditional
+model (i.e. using dummy variables) in out-of-sample evaluation. We provide a new Python package,
+called PyTre (PYthon TRavel Embeddings), that others can straightforwardly use to replicate our
+results or improve their own models. Our experiments are themselves based on an open dataset (swissmetro).

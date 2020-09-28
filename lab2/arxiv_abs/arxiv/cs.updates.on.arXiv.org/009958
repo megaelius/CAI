@@ -1,0 +1,19 @@
+Single-stage detectors are efficient. However, we find that the loss functions adopted by single-stage
+detectors are sub-optimal for accurate localization. The standard cross entropy loss for classification
+is independent of localization task and drives all the positive examples to learn as high classification
+score as possible regardless of localization accuracy during training. As a result, there will
+be detections that have high classification score but low IoU or low classification score but high
+IoU. And the detections with low classification score but high IOU will be suppressed by the ones
+with high classification score but low IOU during NMS, hurting the localization accuracy. For the
+standard smooth L1 loss, the gradient is dominated by the outliers that have poorly localization
+accuracy and this is harmful for accurate localization. In this work, we propose IoU-balanced loss
+functions that consist of IoU-balanced classification loss and IoU-balanced localization loss
+to solve the above problems. The IoU-balanced classification loss focuses more attention on positive
+examples with high IOU and can enhance the correlation between classification and localization
+task. The IoU-balanced localization loss decreases the gradient of the examples with low IoU and
+increases the gradient of examples with high IoU, which can improve the localization accuracy of
+models. Sufficient studies on MS COCO demonstrate that both IoU-balanced classification loss
+and IoU-balanced localization loss can bring substantial improvement for the single-stage detectors.
+Without whistles and bells, the proposed methods can improve AP by 1.1% for single-stage detectors
+and the improvement for AP at higher IoU threshold is especially large, such as 2.3% for AP90. The
+source code will be made available. 

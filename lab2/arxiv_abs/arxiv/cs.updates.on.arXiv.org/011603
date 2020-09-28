@@ -1,0 +1,17 @@
+Segmentation tasks in medical imaging are inherently ambiguous: the boundary of a target structure
+is oftentimes unclear due to image quality and biological factors. As such, predicted segmentations
+from deep learning algorithms are inherently ambiguous. Additionally, "ground truth" segmentations
+performed by human annotators are in fact weak labels that further increase the uncertainty of outputs
+of supervised models developed on these manual labels. To date, most deep learning segmentation
+studies utilize predicted segmentations without uncertainty quantification. In contrast, we
+explore the use of Monte Carlo dropout U-Nets for the segmentation with additional quantification
+of segmentation uncertainty. We assess the utility of three measures of uncertainty (Coefficient
+of Variation, Mean Pairwise Dice, and Mean Voxelwise Uncertainty) for the segmentation of a less
+ambiguous target structure (liver) and a more ambiguous one (liver tumors). Furthermore, we assess
+how the utility of these measures changes with different patch sizes and cost functions. Our results
+suggest that models trained using larger patches and the weighted categorical cross-entropy as
+cost function allow the extraction of more meaningful uncertainty measures compared to smaller
+patches and soft dice loss. Among the three uncertainty measures Mean Pairwise Dice shows the strongest
+correlation with segmentation quality. Our study serves as a proof-of-concept of how uncertainty
+measures can be used to assess the quality of a predicted segmentation, potentially serving to flag
+low quality segmentations from a given model for further human review. 

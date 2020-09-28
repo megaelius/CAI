@@ -1,0 +1,18 @@
+We study a well-known communication abstraction called Uniform Reliable Broadcast (URB). URB
+is central in the design and implementation of fault-tolerant distributed systems, as many non-trivial
+fault-tolerant distributed applications require communication with provable guarantees on
+message deliveries. Our study focuses on fault-tolerant implementations for time-free message-passing
+systems that are prone to node-failures. Moreover, we aim at the design of an even more robust communication
+abstraction. We do so through the lenses of self-stabilization---a very strong notion of fault-tolerance.
+In addition to node and communication failures, self-stabilizing algorithms can recover after
+the occurrence of arbitrary transient faults; these faults represent any violation of the assumptions
+according to which the system was designed to operate (as long as the algorithm code stays intact).
+This work proposes the first self-stabilizing URB solution for time-free message-passing systems
+that are prone to node-failures. The proposed algorithm has an O(bufferUnitSize) stabilization
+time (in terms of asynchronous cycles) from arbitrary transient faults, where bufferUnitSize
+is a predefined constant that can be set according to the available memory. Moreover, the communication
+costs of our algorithm are similar to the ones of the non-self-stabilizing state-of-the-art. The
+main differences are that our proposal considers repeated gossiping of O(1) bits messages and deals
+with bounded space (which is a prerequisite for self-stabilization). Specifically, each node
+needs to store up to bufferUnitSize n records and each record is of size O(v + n log n) bits, where n is
+the number of nodes in the system and v is the number of bits needed to encode a single URB instance.

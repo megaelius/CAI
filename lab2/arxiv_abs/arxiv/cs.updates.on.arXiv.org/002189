@@ -1,0 +1,19 @@
+Computational sensing strategies often suffer from calibration errors in the physical implementation
+of their ideal sensing models. Such uncertainties are typically addressed by using multiple, accurately
+chosen training signals to recover the missing information on the sensing model, an approach that
+can be resource-consuming and cumbersome. Conversely, blind calibration does not employ any training
+signal, but corresponds to a bilinear inverse problem whose algorithmic solution is an open issue.
+We here address blind calibration as a non-convex problem for linear random sensing models, in which
+we aim to recover an unknown signal from its projections on sub-Gaussian random vectors, each subject
+to an unknown positive multiplicative factor (or gain). To solve this optimisation problem we resort
+to projected gradient descent starting from a suitable, carefully chosen initialisation point.
+An analysis of this algorithm allows us to show that it converges to the exact solution provided a
+sample complexity requirement is met, i.e., relating convergence to the amount of information
+collected during the sensing process. Interestingly, we show that this requirement grows linearly
+(up to log factors) in the number of unknowns of the problem. This sample complexity is found both
+in absence of prior information, as well as when subspace priors are available for both the signal
+and gains, allowing a further reduction of the number of observations required for our recovery
+guarantees to hold. Moreover, in the presence of noise we show how our descent algorithm yields a
+solution whose accuracy degrades gracefully with the amount of noise affecting the measurements.
+Finally, we present some numerical experiments in an imaging context, where our algorithm allows
+for a simple solution to blind calibration of the gains in a sensor array. 

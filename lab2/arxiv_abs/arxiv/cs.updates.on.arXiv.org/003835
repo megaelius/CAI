@@ -1,0 +1,19 @@
+We study the 2-ary constraint satisfaction problems (2-CSPs), which can be stated as follows: given
+a constraint graph $G=(V,E)$, an alphabet set $\Sigma$ and, for each $\{u, v\}\in E$, a constraint
+$C_{uv} \subseteq \Sigma\times\Sigma$, the goal is to find an assignment $\sigma: V \to \Sigma$
+that satisfies as many constraints as possible, where a constraint $C_{uv}$ is satisfied if $(\sigma(u),\sigma(v))\in
+C_{uv}$. While the approximability of 2-CSPs is quite well understood when $|\Sigma|$ is constant,
+many problems are still open when $|\Sigma|$ becomes super constant. One such problem is whether
+it is hard to approximate 2-CSPs to within a polynomial factor of $|\Sigma| |V|$. Bellare et al. (1993)
+suggested that the answer to this question might be positive. Alas, despite efforts to resolve this
+conjecture, it remains open to this day. In this work, we separate $|V|$ and $|\Sigma|$ and ask a related
+but weaker question: is it hard to approximate 2-CSPs to within a polynomial factor of $|V|$ (while
+$|\Sigma|$ may be super-polynomial in $|V|$)? Assuming the exponential time hypothesis (ETH),
+we answer this question positively by showing that no polynomial time algorithm can approximate
+2-CSPs to within a factor of $|V|^{1 - o(1)}$. Note that our ratio is almost linear, which is almost
+optimal as a trivial algorithm gives a $|V|$-approximation for 2-CSPs. Thanks to a known reduction,
+our result implies an ETH-hardness of approximating Directed Steiner Network with ratio $k^{1/4
+- o(1)}$ where $k$ is the number of demand pairs. The ratio is roughly the square root of the best known
+ratio achieved by polynomial time algorithms (Chekuri et al., 2011; Feldman et al., 2012). Additionally,
+under Gap-ETH, our reduction for 2-CSPs not only rules out polynomial time algorithms, but also
+FPT algorithms parameterized by $|V|$. Similar statement applies for DSN parameterized by $k$.

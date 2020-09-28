@@ -1,0 +1,18 @@
+In this article, we present a novel approach for block-structured adaptive mesh refinement (AMR)
+that is suitable for extreme-scale parallelism. All data structures are designed such that the
+size of the meta data in each distributed processor memory remains bounded independent of the processor
+number. In all stages of the AMR process, we use only distributed algorithms. No central resources
+such as a master process or replicated data are employed, so that an unlimited scalability can be
+achieved. For the dynamic load balancing in particular, we propose to exploit the hierarchical
+nature of the block-structured domain partitioning by creating a lightweight, temporary copy
+of the core data structure. This copy acts as a local and fully distributed proxy data structure.
+It does not contain simulation data, but only provides topological information about the domain
+partitioning into blocks. Ultimately, this approach enables an inexpensive, local, diffusion-based
+dynamic load balancing scheme. We demonstrate the excellent performance and the full scalability
+of our new AMR implementation for two architecturally different petascale supercomputers. Benchmarks
+on an IBM Blue Gene/Q system with a mesh containing 3.7 trillion unknowns distributed to 458,752
+processes confirm the applicability for future extreme-scale parallel machines. The algorithms
+proposed in this article operate on blocks that result from the domain partitioning. This concept
+and its realization support the storage of arbitrary data. In consequence, the software framework
+can be used for different simulation methods, including mesh based and meshless methods. In this
+article, we demonstrate fluid simulations based on the lattice Boltzmann method. 

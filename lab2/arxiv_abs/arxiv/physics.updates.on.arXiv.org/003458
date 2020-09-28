@@ -1,0 +1,20 @@
+Modern photon science performed at high repetition rate free-electron laser (FEL) facilities
+and beyond relies on 2D pixel detectors operating at increasing frequencies (towards 100 kHz at
+LCLS-II) and producing rapidly increasing amounts of data (towards TB/s). This data must be rapidly
+stored for offline analysis and summarized in real time. While at LCLS all raw data has been stored,
+at LCLS-II this would lead to a prohibitive cost; instead, enabling real time processing of pixel
+detector raw data allows reducing the size and cost of online processing, offline processing and
+storage by orders of magnitude while preserving full photon information, by taking advantage of
+the compressibility of sparse data typical for LCLS-II applications. We investigated if recent
+developments in machine learning are useful in data processing for high speed pixel detectors and
+found that typical deep learning models and autoencoder architectures failed to yield useful noise
+reduction while preserving full photon information, presumably because of the very different
+statistics and feature sets between computer vision and radiation imaging. However, we redesigned
+in Tensorflow mathematically equivalent versions of the state-of-the-art, "classical" algorithms
+used at LCLS. The novel Tensorflow models resulted in elegant, compact and hardware agnostic code,
+gaining 1 to 2 orders of magnitude faster processing on an inexpensive consumer GPU, reducing by
+3 orders of magnitude the projected cost of online analysis at LCLS-II. Computer vision a decade
+ago was dominated by hand-crafted filters; their structure inspired the deep learning revolution
+resulting in modern deep convolutional networks; similarly, our novel Tensorflow filters provide
+inspiration for designing future deep learning architectures for ultrafast and efficient processing
+and classification of pixel detector images at FEL facilities. 

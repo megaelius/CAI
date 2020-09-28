@@ -1,0 +1,18 @@
+We study the space complexity of solving the bias-regularized SVM problem in the streaming model.
+This is a classic supervised learning problem that has drawn lots of attention, including for developing
+fast algorithms for solving the problem approximately. One of the most widely used algorithms for
+approximately optimizing the SVM objective is Stochastic Gradient Descent (SGD), which requires
+only $O(\frac{1}{\lambda\epsilon})$ random samples, and which immediately yields a streaming
+algorithm that uses $O(\frac{d}{\lambda\epsilon})$ space. For related problems, better streaming
+algorithms are only known for smooth functions, unlike the SVM objective that we focus on in this
+work. We initiate an investigation of the space complexity for both finding an approximate optimum
+of this objective, and for the related ``point estimation'' problem of sketching the data set to
+evaluate the function value $F_\lambda$ on any query $(\theta, b)$. We show that, for both problems,
+for dimensions $d=1,2$, one can obtain streaming algorithms with space polynomially smaller than
+$\frac{1}{\lambda\epsilon}$, which is the complexity of SGD for strongly convex functions like
+the bias-regularized SVM, and which is known to be tight in general, even for $d=1$. We also prove
+polynomial lower bounds for both point estimation and optimization. In particular, for point estimation
+we obtain a tight bound of $\Theta(1/\sqrt{\epsilon})$ for $d=1$ and a nearly tight lower bound
+of $\widetilde{\Omega}(d/{\epsilon}^2)$ for $d = \Omega( \log(1/\epsilon))$. Finally, for
+optimization, we prove a $\Omega(1/\sqrt{\epsilon})$ lower bound for $d = \Omega( \log(1/\epsilon))$,
+and show similar bounds when $d$ is constant. 

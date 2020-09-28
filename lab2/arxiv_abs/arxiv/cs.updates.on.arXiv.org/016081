@@ -1,0 +1,19 @@
+Vanilla CNNs, as uncalibrated classifiers, suffer from classifying out-of-distribution (OOD)
+samples nearly as confidently as in-distribution samples. To tackle this challenge, some recent
+works have demonstrated the gains of leveraging available OOD sets for training end-to-end calibrated
+CNNs. However, a critical question remains unanswered in these works: how to differentiate OOD
+sets for selecting the most effective one(s) that induce training such CNNs with high detection
+rates on unseen OOD sets? To address this pivotal question, we provide a criterion based on generalization
+errors of Augmented-CNN, a vanilla CNN with an added extra class employed for rejection, on in-distribution
+and unseen OOD sets. However, selecting the most effective OOD set by directly optimizing this criterion
+incurs a huge computational cost. Instead, we propose three novel computationally-efficient
+metrics for differentiating between OOD sets according to their "protection" level of in-distribution
+sub-manifolds. We empirically verify that the most protective OOD sets -- selected according to
+our metrics -- lead to A-CNNs with significantly lower generalization errors than the A-CNNs trained
+on the least protective ones. We also empirically show the effectiveness of a protective OOD set
+for training well-generalized confidence-calibrated vanilla CNNs. These results confirm that
+1) all OOD sets are not equally effective for training well-performing end-to-end models (i.e.,
+A-CNNs and calibrated CNNs) for OOD detection tasks and 2) the protection level of OOD sets is a viable
+factor for recognizing the most effective one. Finally, across the image classification tasks,
+we exhibit A-CNN trained on the most protective OOD set can also detect black-box FGS adversarial
+examples as their distance (measured by our metrics) is becoming larger from the protected sub-manifolds.

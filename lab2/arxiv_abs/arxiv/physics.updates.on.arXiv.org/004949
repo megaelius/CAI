@@ -1,0 +1,19 @@
+Even when starting with a very poor initial guess, the iterative configuration interaction (iCI)
+approach can converge from above to full CI very quickly by constructing and diagonalizing a small
+Hamiltonian matrix at each macro/micro-iteration. However, iCI scales exponentially with respect
+to the numbers of electrons and orbitals. The problem can be mitigated by observing that a vast number
+of configurations have little weights in the wave function and do not contribute to the correlation
+energy. The real questions are then (a) how to identify important configurations in the early stage
+of the calculation and (b) how to account for the residual contributions of those unimportant configurations.
+It is generally true that if a high-quality yet compact variational space can be determined for describing
+the static correlation, a low-order treatment of the residual dynamic correlation would be sufficient.
+While this is common to all selected CI schemes, the `iCI with selection' scheme presented here has
+the following distinctive features: (1) Full spin symmetry is maintained. (2) Although the selection
+is performed on individual CSFs, it is orbital configurations (oCFG) that are used as the organizing
+units. (3) Given a coefficient pruning-threshold, the selection of important oCFGs/CSFs is performed
+iteratively until convergence. (4) At each iteration for the growth of wave function, the first-order
+interacting space is decomposed into disjoint subspaces to reduce memory requirement and facilitate
+parallelization. (5) Upper bounds for the interactions between oCFG pairs are used to screen each
+first-order interacting subspace before the first-order coefficients of individual CSFs are
+evaluated. (6) Upon termination of the selection, dynamic correlation is estimated by using the
+ENPT2 theory. The efficacy of the iCIPT2 scheme is demonstrated numerically by taking several examples.

@@ -1,0 +1,19 @@
+Implicit Monte Carlo (IMC) and Discrete Diffusion Monte Carlo (DDMC) are methods used to stochastically
+solve the radiative transport and diffusion equations, respectively. These methods combine into
+a hybrid transport-diffusion method we refer to as IMC-DDMC. We explore a multigroup IMC-DDMC scheme
+that, in DDMC, combines frequency groups with sufficient optical thickness. We term this procedure
+"opacity regrouping". Opacity regrouping has previously been applied to IMC-DDMC calculations
+for problems in which the dependence of the opacity on frequency is monotonic. We generalize opacity
+regrouping to non-contiguous groups and implement this in \supernu, a code designed to do radiation
+transport in high-velocity outflows with non-monotonic opacities. We find that regrouping of
+non-contiguous opacity groups generally improves the speed of IMC-DDMC radiation transport.
+We present an asymptotic analysis that informs the nature of the Doppler shift in DDMC groups and
+summarize the derivation of the Gentile-Fleck factor for modified IMC-DDMC. We test \supernu\
+using numerical experiments including a quasi-manufactured analytic solution, a simple ten-group
+problem, and the W7 problem for Type Ia supernovae. We find that the opacity regrouping is necessary
+to make our IMC-DDMC implementation feasible for the W7 problem and possibly Type Ia supernova simulations
+in general. We compare the bolometric light curves and spectra produced by the \supernu\ and \phoenix\
+radiation transport codes for the W7 problem. The overall shape of the bolometric light curves are
+in good agreement, as are the spectra and their evolution with time. However, for the numerical specifications
+we considered, we find that the peak luminosity of the light curve calculated using \supernu\ is
+$\sim$10\% less than that calculated using \phoenix. 

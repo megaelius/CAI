@@ -1,0 +1,17 @@
+Automatic parsing of anatomical objects in X-ray images is critical to many clinical applications
+in particular towards image-guided invention and workflow automation. Existing deep network
+models require a large amount of labeled data. However, obtaining accurate pixel-wise labeling
+in X-ray images relies heavily on skilled clinicians due to the large overlaps of anatomy and the
+complex texture patterns. On the other hand, organs in 3D CT scans preserve clearer structures as
+well as sharper boundaries and thus can be easily delineated. In this paper, we propose a novel model
+framework for learning automatic X-ray image parsing from labeled CT scans. Specifically, a Dense
+Image-to-Image network (DI2I) for multi-organ segmentation is first trained on X-ray like Digitally
+Reconstructed Radiographs (DRRs) rendered from 3D CT volumes. Then we introduce a Task Driven Generative
+Adversarial Network (TD-GAN) architecture to achieve simultaneous style transfer and parsing
+for unseen real X-ray images. TD-GAN consists of a modified cycle-GAN substructure for pixel-to-pixel
+translation between DRRs and X-ray images and an added module leveraging the pre-trained DI2I to
+enforce segmentation consistency. The TD-GAN framework is general and can be easily adapted to
+other learning tasks. In the numerical experiments, we validate the proposed model on 815 DRRs and
+153 topograms. While the vanilla DI2I without any adaptation fails completely on segmenting the
+topograms, the proposed model does not require any topogram labels and is able to provide a promising
+average dice of 85% which achieves the same level accuracy of supervised training (88%). 

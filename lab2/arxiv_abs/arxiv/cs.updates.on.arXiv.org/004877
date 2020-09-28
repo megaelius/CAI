@@ -1,0 +1,18 @@
+One of the major open challenges in self-driving cars is the ability to detect cars and pedestrians
+to safely navigate in the world. Deep learning-based object detector approaches have enabled great
+advances in using camera imagery to detect and classify objects. But for a safety critical application,
+such as autonomous driving, the error rates of the current state of the art are still too high to enable
+safe operation. Moreover, the characterization of object detector performance is primarily limited
+to testing on prerecorded datasets. Errors that occur on novel data go undetected without additional
+human labels. In this letter, we propose an automated method to identify mistakes made by object
+detectors without ground truth labels. We show that inconsistencies in the object detector output
+between a pair of similar images can be used as hypotheses for false negatives (e.g., missed detections)
+and using a novel set of features for each hypothesis, an off-the-shelf binary classifier can be
+used to find valid errors. In particular, we study two distinct cues - temporal and stereo inconsistencies
+- using data that are readily available on most autonomous vehicles. Our method can be used with any
+camera-based object detector and we illustrate the technique on several sets of real world data.
+We show that a state-of-the-art detector, tracker, and our classifier trained only on synthetic
+data can identify valid errors on KITTI tracking dataset with an average precision of 0.94. We also
+release a new tracking dataset with 104 sequences totaling 80,655 labeled pairs of stereo images
+along with ground truth disparity from a game engine to facilitate further research. The dataset
+and code are available at https://fcav.engin.umich.edu/research/failing-to-learn 

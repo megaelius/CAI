@@ -1,0 +1,20 @@
+Resistive crossbars have attracted significant interest in the design of Deep Neural Network (DNN)
+accelerators due to their ability to natively execute massively parallel vector-matrix multiplications
+within dense memory arrays. However, crossbar-based computations face a major challenge due to
+a variety of device and circuit-level non-idealities, which manifest as errors in the vector-matrix
+multiplications and eventually degrade DNN accuracy. To address this challenge, there is a need
+for tools that can model the functional impact of non-idealities on DNN training and inference.
+Existing efforts towards this goal are either limited to inference, or are too slow to be used for
+large-scale DNN training. We propose TxSim, a fast and customizable modeling framework to functionally
+evaluate DNN training on crossbar-based hardware considering the impact of non-idealities. The
+key features of TxSim that differentiate it from prior efforts are: (i) It comprehensively models
+non-idealities during all training operations (forward propagation, backward propagation,
+and weight update) and (ii) it achieves computational efficiency by mapping crossbar evaluations
+to well-optimized BLAS routines and incorporates speedup techniques to further reduce simulation
+time with minimal impact on accuracy. TxSim achieves orders-of-magnitude improvement in simulation
+speed over prior works, and thereby makes it feasible to evaluate training of large-scale DNNs on
+crossbars. Our experiments using TxSim reveal that the accuracy degradation in DNN training due
+to non-idealities can be substantial (3%-10%) for large-scale DNNs, underscoring the need for
+further research in mitigation techniques. We also analyze the impact of various device and circuit-level
+parameters and the associated non-idealities to provide key insights that can guide the design
+of crossbar-based DNN training accelerators. 

@@ -1,0 +1,18 @@
+Multichannel Analysis of Surface Waves (MASW) is a technique frequently used in geotechnical engineering
+and engineering geophysics to infer layered models of seismic shear wave velocities in the top tens
+to hundreds of meters of the subsurface. We aim to accelerate MASW calculations by capitalizing
+on modern computer hardware available in the workstations of most engineers: multiple cores and
+graphics processing units (GPUs). We propose new parallel and GPU accelerated algorithms for evaluating
+MASW data, and provide software implementations in C using Message Passing Interface (MPI) and
+CUDA. These algorithms take advantage of sparsity that arises in the problem, and the work balance
+between processes considers typical data trends. We compare our methods to an existing open source
+Matlab MASW tool. Our serial C implementation achieves a 2x speedup over the Matlab software, and
+we continue to see improvements by parallelizing the problem with MPI. We see nearly perfect strong
+and weak scaling for uniform data, and improve strong scaling for realistic data by repartitioning
+the problem to process mapping. By utilizing GPUs available on most modern workstations, we observe
+an additional 1.3x speedup over the serial C implementation on the first use of the method. We typically
+repeatedly evaluate theoretical dispersion curves as part of an optimization procedure, and on
+the GPU the kernel can be cached for faster reuse on later runs. We observe a 3.2x speedup on the cached
+GPU runs compared to the serial C runs. This work is the first open-source parallel or GPU-accelerated
+software tool for MASW imaging, and should enable geotechnical engineers to fully utilize all computer
+hardware at their disposal. 

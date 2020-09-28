@@ -1,0 +1,20 @@
+Motivated by applications of distributed storage systems to cloud-based key-value stores, the
+multi-version coding problem has been recently formulated to store frequently updated data in
+asynchronous distributed storage systems. Inspired by consistency requirements in distributed
+computing, the main goal in multi-version coding is to ensure that the latest possible version of
+the data is decodable, even if all the data updates have not reached all the servers in the system.
+In this paper, we study the storage cost of ensuring consistency for the case where the various versions
+of the data are correlated, in contrast to previous work where versions were treated as being independent.
+We provide multi-version code constructions that show that the storage cost can be significantly
+smaller than the previous constructions depending on the degree of correlation between the different
+versions of the data. Our constructions are based on update-efficient codes, Reed-Solomon code,
+random binning coding and BCH codes. Specifically, we consider the multi-version coding setting
+with $n$ servers and $\nu$ versions, with a failure tolerance of $n-c$, where the $\nu$ message versions
+form a Markov chain. The message version is distributed uniformly over all binary vectors of length
+$K$, and given a version, the subsequent version is uniformly distributed in a Hamming ball of radius
+$\delta_K K$ centered around that given version. Previously derived achievable schemes have a
+per-server storage cost of at least $ \frac{1}{2}\frac{\nu K}{c}-o(K)$ when $\nu \leq c$, whereas
+we propose a scheme that has a storage cost of $\frac{K}{c} + \frac{\nu-1}{c}\log Vol(\delta_KK,
+K)$, where $Vol(r, K)$ is the volume of a ball of radius $r$ in the $K$ dimensional Hamming cube. Through
+a converse result, we show that our multi-version code constructions are nearly-optimal in certain
+correlation regimes. 

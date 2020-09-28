@@ -1,0 +1,17 @@
+Collision avoidance algorithms are essential for safe and efficient robot operation among pedestrians.
+This work proposes using deep reinforcement (RL) learning as a framework to model the complex interactions
+and cooperation with nearby, decision-making agents (e.g., pedestrians, other robots). Existing
+RL-based works assume homogeneity of agent policies, use specific motion models over short timescales,
+or lack a mechanism to consider measurements taken with a large number (possibly varying) of nearby
+agents. Therefore, this work develops an algorithm that learns collision avoidance among a variety
+of types of non-communicating, dynamic agents without assuming they follow any particular behavior
+rules. It extends our previous work by introducing a strategy using Long Short-Term Memory (LSTM)
+that enables the algorithm to use observations of an arbitrary number of other agents, instead of
+a small, fixed number of neighbors. The proposed algorithm is shown to outperform a classical collision
+avoidance algorithm, another deep RL-based algorithm, and scales with the number of agents better
+(fewer collisions, shorter time to goal) than our previously published learning-based approach.
+Analysis of the LSTM provides insights into how observations of nearby agents affect the hidden
+state and quantifies the performance impact of various agent ordering heuristics. The learned
+policy generalizes to several applications beyond the training scenarios: formation control
+(arrangement into letters), an implementation on a fleet of four multirotors, and an implementation
+on a fully autonomous robotic vehicle capable of traveling at human walking speed among pedestrians.

@@ -1,0 +1,17 @@
+This paper presents a framework for automatically learning shape and appearance models for medical
+(and certain other) images. It is based on the idea that having a more accurate shape and appearance
+model leads to more accurate image registration, which in turn leads to a more accurate shape and
+appearance model. This leads naturally to an iterative scheme, which is based on a probabilistic
+generative model that is fit using Gauss-Newton updates within an EM-like framework. It was developed
+with the aim of enabling distributed privacy-preserving analysis of brain image data, such that
+shared information (shape and appearance basis functions) may be passed across sites, whereas
+latent variables that encode individual images remain secure within each site. These latent variables
+are proposed as features for privacy-preserving data mining applications. The approach is demonstrated
+qualitatively on the KDEF dataset of 2D face images, showing that it can align images that traditionally
+require shape and appearance models trained using manually annotated data (manually defined landmarks
+etc.). It is applied to MNIST dataset of handwritten digits to show its potential for machine learning
+applications, particularly when training data is limited. The model is able to handle ``missing
+data'', which allows it to be cross-validated according to how well it can predict left-out voxels.
+The suitability of the derived features for classifying individuals into patient groups was assessed
+by applying it to a dataset of over 1,900 segmented T1-weighted MR images, which included images
+from the COBRE and ABIDE datasets. 

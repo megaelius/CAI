@@ -1,0 +1,19 @@
+This work presents a feature-rich open-source library for wall-modelled large-eddy simulation
+(WMLES), which is a turbulence modelling approach that reduces the computational cost of traditional
+(wall-resolved) LES by introducing special treatment of the inner region of turbulent boundary
+layers (TBLs). The library is based on OpenFOAM and enhances the general-purpose LES solvers provided
+by this software with state-of-the-art wall modelling capability. In particular, the included
+wall models belong to the class of wall-stress models that account for the under-resolved turbulent
+structures by predicting and enforcing the correct local value of the wall shear stress. A review
+of this approach is given, followed by a detailed description of the library, discussing its functionality
+and extensible design. The included wall-stress models are presented, based on both algebraic
+and ordinary differential equations. To demonstrate the capabilities of the library, it was used
+for WMLES of turbulent channel flow and the flow over a backward-facing step (BFS). For each flow,
+a systematic simulation campaign was performed, in order to find a combination of numerical schemes,
+grid resolution and wall model type that would yield a good predictive accuracy for both the mean
+velocity field in the outer layer of the TBLs and the mean wall shear stress. The best result was achieved
+using a mildly dissipative second-order accurate scheme for the convective fluxes applied on an
+isotropic grid with 27000 cells per $\delta^3$-cube, where $\delta$ is the thickness of the TBL
+or the half-height of the channel. An algebraic model based on Spalding's law of the wall was found
+to perform well for both flows. On the other hand, the tested more complicated models, which incorporate
+the pressure gradient in the wall shear stress prediction, led to less accurate results. 

@@ -1,0 +1,19 @@
+One of the challenges in display advertising is that the distribution of features and click through
+rate (CTR) can exhibit large shifts over time due to seasonality, changes to ad campaigns and other
+factors. The predominant strategy to keep up with these shifts is to train predictive models continuously,
+on fresh data, in order to prevent them from becoming stale. However, in many ad systems positive
+labels are only observed after a possibly long and random delay. These delayed labels pose a challenge
+to data freshness in continuous training: fresh data may not have complete label information at
+the time they are ingested by the training algorithm. Naive strategies which consider any data point
+a negative example until a positive label becomes available tend to underestimate CTR, resulting
+in inferior user experience and suboptimal performance for advertisers. The focus of this paper
+is to identify the best combination of loss functions and models that enable large-scale learning
+from a continuous stream of data in the presence of delayed labels. In this work, we compare 5 different
+loss functions, 3 of them applied to this problem for the first time. We benchmark their performance
+in offline settings on both public and proprietary datasets in conjunction with shallow and deep
+model architectures. We also discuss the engineering cost associated with implementing each loss
+function in a production environment. Finally, we carried out online experiments with the top performing
+methods, in order to validate their performance in a continuous training scheme. While training
+on 668 million in-house data points offline, our proposed methods outperform previous state-of-the-art
+by 3% relative cross entropy (RCE). During online experiments, we observed 55% gain in revenue per
+thousand requests (RPMq) against naive log loss. 

@@ -1,0 +1,19 @@
+We introduce new estimators for robust machine learning based on median-of-means (MOM) estimators
+of the mean of real valued random variables. These estimators achieve optimal rates of convergence
+under minimal assumptions on the dataset. The dataset may also have been corrupted by outliers on
+which no assumption is granted. We also analyze these new estimators with standard tools from robust
+statistics. In particular, we revisit the concept of breakdown point. We modify the original definition
+by studying the number of outliers that a dataset can contain without deteriorating the estimation
+properties of a given estimator. This new notion of breakdown number, that takes into account the
+statistical performances of the estimators, is non-asymptotic in nature and adapted for machine
+learning purposes. We proved that the breakdown number of our estimator is of the order of (number
+of observations)*(rate of convergence). For instance, the breakdown number of our estimators
+for the problem of estimation of a d-dimensional vector with a noise variance sigma^2 is sigma^2d
+and it becomes sigma^2 s log(d/s) when this vector has only s non-zero component. Beyond this breakdown
+point, we proved that the rate of convergence achieved by our estimator is (number of outliers) divided
+by (number of observation). Besides these theoretical guarantees, the major improvement brought
+by these new estimators is that they are easily computable in practice. In fact, basically any algorithm
+used to approximate the standard Empirical Risk Minimizer (or its regularized versions) has a robust
+version approximating our estimators. As a proof of concept, we study many algorithms for the classical
+LASSO estimator. A byproduct of the MOM algorithms is a measure of depth of data that can be used to
+detect outliers. 

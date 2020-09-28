@@ -1,0 +1,20 @@
+Parareal and multigrid reduction in time (MGRiT) are two of the most popular parallel-in-time methods.
+The idea is to treat time integration in a parallel context by using a multigrid method in time. If
+$\Phi$ is a (fine-grid) time-stepping scheme, let $\Psi$ denote a "coarse-grid" time-stepping
+scheme chosen to approximate $k$ steps of $\Phi$, $k\geq 1$. In particular, $\Psi$ defines the coarse-grid
+correction, and evaluating $\Psi$ should be (significantly) cheaper than evaluating $\Phi^k$.
+A number of papers have studied the convergence of Parareal and MGRiT. However, there have yet to
+be general conditions developed on the convergence of Parareal or MGRiT that answer simple questions
+such as, (i) for a given $\Phi$ and $k$, what is the best $\Psi$, or (ii) can Parareal/MGRiT converge
+for my problem? This work derives necessary and sufficient conditions for the convergence of Parareal
+and MGRiT applied to linear problems, along with tight two-level convergence bounds. Results rest
+on the introduction of a "temporal approximation property" (TAP) that indicates how $\Phi^k$ must
+approximate the action of $\Psi$ on different vectors. Loosely, for unitarily diagonalizable
+operators, the TAP indicates that fine-grid and coarse-grid time integration schemes must integrate
+geometrically smooth spatial components similarly, and less so for geometrically high frequency.
+In the (non-unitarily) diagonalizable setting, the conditioning of each eigenvector, $\mathbf{v}_i$,
+must also be reflected in how well $\Psi\mathbf{v}_i \sim\Phi^k\mathbf{v}_i$. In general, worst-case
+convergence bounds are exactly given by $\min \varphi < 1$ such that an inequality along the lines
+of $\|(\Psi-\Phi^k)\mathbf{v}\| \leq\varphi \|(I - \Psi)\mathbf{v}\|$ holds for all $\mathbf{v}$.
+Such inequalities are formalized as different realizations of the TAP, and form the basis for convergence
+of MGRiT and Parareal. 

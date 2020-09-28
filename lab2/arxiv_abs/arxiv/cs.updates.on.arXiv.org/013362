@@ -1,0 +1,20 @@
+In many applications, one works with deep neural network (DNN) models trained by someone else. For
+such pretrained models, one typically does not have access to training/test data. Moreover, one
+does not know many details about the model, such as the specifics of the training data, the loss function,
+the hyperparameter values, etc. Given one or many pretrained models, can one say anything about
+the expected performance or quality of the models? Here, we present and evaluate empirical quality
+metrics for pretrained DNN models at scale. Using the open-source WeightWatcher tool, we analyze
+hundreds of publicly-available pretrained models, including older and current state-of-the-art
+models in CV and NLP. We examine norm-based capacity control metrics as well as newer Power Law (PL)
+based metrics (including fitted PL exponents and a Weighted Alpha metric), from the recently-developed
+Theory of Heavy-Tailed Self Regularization. Norm-based metrics correlate well with reported
+test accuracies for well-trained models across nearly all CV architecture series. On the other
+hand, norm-based metrics can not distinguish "good-versus-bad" models---which, arguably is
+the point of needing quality metrics. Indeed, they may give spurious results. PL-based metrics
+do much better---quantitatively better at discriminating series of "good-better-best" models,
+and qualitatively better at discriminating "good-versus-bad" models. PL-based metrics can also
+be used to characterize fine-scale properties of models, and we introduce the layer-wise Correlation
+Flow as new quality assessment. We show how poorly-trained (and/or poorly fine-tuned) models may
+exhibit both Scale Collapse and unusually large PL exponents, in particular for recent NLP models.
+Our techniques can be used to identify when a pretrained DNN has problems that can not be detected
+simply by examining training/test accuracies. 

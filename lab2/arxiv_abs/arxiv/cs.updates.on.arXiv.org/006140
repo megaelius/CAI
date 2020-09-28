@@ -1,0 +1,18 @@
+Online monitoring user cardinalities (or degrees) in graph streams is fundamental for many applications.
+For example in a bipartite graph representing user-website visiting activities, user cardinalities
+(the number of distinct visited websites) are monitored to report network anomalies. These real-world
+graph streams may contain user-item duplicates and have a huge number of distinct user-item pairs,
+therefore, it is infeasible to exactly compute user cardinalities when memory and computation
+resources are limited.Existing methods are designed to approximately estimate user cardinalities,
+whose accuracy highly depends on parameters that are not easy to set. Moreover, these methods cannot
+provide anytime-available estimation, as the user cardinalities are computed at the end of the
+data stream. Real-time applications such as anomaly detection require that user cardinalities
+are estimated on the fly. To address these problems, we develop novel bit and register sharing algorithms,
+which use a bit array and a register array to build a compact sketch of all users' connected items respectively.
+Compared with previous bit and register sharing methods, our algorithms exploit the dynamic properties
+of the bit and register arrays (e.g., the fraction of zero bits in the bit array at each time) to significantly
+improve the estimation accuracy, and have low time complexity (O(1)) to update the estimations
+each time they observe a new user-item pair. In addition, our algorithms are simple and easy to use,
+without requirements to tune any parameter. We evaluate the performance of our methods on real-world
+datasets. The experimental results demonstrate that our methods are several times more accurate
+and faster than state-of-the-art methods using the same amount of memory. 

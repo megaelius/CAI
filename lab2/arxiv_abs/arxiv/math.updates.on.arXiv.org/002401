@@ -1,0 +1,18 @@
+Preconditioned Krylov subspace (KSP) methods are widely used for solving large-scale sparse linear
+systems arising from numerical solutions of partial differential equations (PDEs). These linear
+systems are often nonsymmetric due to the nature of the PDEs, boundary or jump conditions, or discretization
+methods. While implementations of preconditioned KSP methods are usually readily available,
+it is unclear to users which methods are the best for different classes of problems. In this work,
+we present a comparison of some KSP methods, including GMRES, TFQMR, BiCGSTAB, and QMRCGSTAB, coupled
+with three classes of preconditioners, namely Gauss-Seidel, incomplete LU factorization (including
+ILUT, ILUTP, and multilevel ILU), and algebraic multigrid (including BoomerAMG and ML). Theoretically,
+we compare the mathematical formulations and operation counts of these methods. Empirically,
+we compare the convergence and serial performance for a range of benchmark problems from numerical
+PDEs in 2D and 3D with up to millions of unknowns and also assess the asymptotic complexity of the methods
+as the number of unknowns increases. Our results show that GMRES tends to deliver better performance
+when coupled with an effective multigrid preconditioner, but it is less competitive with an ineffective
+preconditioner due to restarts. BoomerAMG with proper choice of coarsening and interpolation
+techniques typically converges faster than ML, but both may fail for ill-conditioned or saddle-point
+problems while multilevel ILU tends to succeed. We also show that right preconditioning is more
+desirable. This study helps establish some practical guidelines for choosing preconditioned
+KSP methods and motivates the development of more effective preconditioners. 

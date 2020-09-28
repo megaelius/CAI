@@ -1,0 +1,19 @@
+Let ${R} = \{R_1, R_2, ..., R_n\}$ be a set of regions and let $ X = \{x_1, x_2, ..., x_n\}$ be an (unknown)
+point set with $x_i \in R_i$. Region $R_i$ represents the uncertainty region of $x_i$. We consider
+the following question: how fast can we establish order if we are allowed to preprocess the regions
+in $R$? The preprocessing model of uncertainty uses two consecutive phases: a preprocessing phase
+which has access only to ${R}$ followed by a reconstruction phase during which a desired structure
+on $X$ is computed. Recent results in this model parametrize the reconstruction time by the ply of
+${R}$, which is the maximum overlap between the regions in ${R}$. We introduce the ambiguity $A({R})$
+as a more fine-grained measure of the degree of overlap in ${R}$. We show how to preprocess a set of
+$d$-dimensional disks in $O(n \log n)$ time such that we can sort $X$ (if $d=1$) and reconstruct a
+quadtree on $X$ (if $d\geq 1$ but constant) in $O(A({R}))$ time. If $A({R})$ is sub-linear, then
+reporting the result dominates the running time of the reconstruction phase. However, we can still
+return a suitable data structure representing the result in $O(A({R}))$ time. In one dimension,
+${R}$ is a set of intervals and the ambiguity is linked to interval entropy, which in turn relates
+to the well-studied problem of sorting under partial information. The number of comparisons necessary
+to find the linear order underlying a poset $P$ is lower-bounded by the graph entropy of $P$. We show
+that if $P$ is an interval order, then the ambiguity provides a constant-factor approximation of
+the graph entropy. This gives a lower bound of $\Omega(A({R}))$ in all dimensions for the reconstruction
+phase (sorting or any proximity structure), independent of any preprocessing; hence our result
+is tight. 

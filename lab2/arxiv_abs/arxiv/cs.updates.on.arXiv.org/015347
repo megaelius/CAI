@@ -1,0 +1,18 @@
+We develop fast and memory efficient numerical methods for learning functions of many variables
+that admit sparse representations in terms of general bounded orthonormal tensor product bases.
+Such functions appear in many applications including, e.g., various Uncertainty Quantification(UQ)
+problems involving the solution of parametric PDE that are approximately sparse in Chebyshev or
+Legendre product bases. We expect that our results provide a starting point for a new line of research
+on sublinear-time solution techniques for UQ applications of the type above which will eventually
+be able to scale to significantly higher-dimensional problems than what are currently computationally
+feasible. More concretely, let $B$ be a finite Bounded Orthonormal Product Basis (BOPB) of cardinality
+$|B|=N$. We will develop methods that approximate any function $f$ that is sparse in the BOPB, that
+is, $f:\mathcal{D}\subset R^D\rightarrow C$ of the form $f(\mathbf{x})=\sum_{b\in S}c_b\cdot
+b(\mathbf{x})$ with $S\subset B$ of cardinality $|S| =s\ll N$. Our method has a runtime of just $(s\log
+N)^{O(1)}$, uses only $(s\log N)^{O(1)}$ function evaluations on a fixed and nonadaptive grid,
+and not more than $(s\log N)^{O(1)}$ bits of memory. For $s\ll N$, the runtime $(s\log N)^{O(1)}$
+will be less than what is required to simply enumerate the elements of the basis $B$; thus our method
+is the first approach applicable in a general BOPB framework that falls into the class referred to
+as "sublinear-time". This and the similarly reduced sample and memory requirements set our algorithm
+apart from previous works based on standard compressive sensing algorithms such as basis pursuit
+which typically store and utilize full intermediate basis representations of size $\Omega(N)$.

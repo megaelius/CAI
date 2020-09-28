@@ -1,0 +1,20 @@
+Lung cancer radiotherapy entails high quality planning computed tomography (pCT) imaging of the
+patient with radiation oncologist contouring of the tumor and the organs at risk (OARs) at the start
+of the treatment. This is followed by weekly low-quality cone beam CT (CBCT) imaging for treatment
+setup and qualitative visual assessment of tumor and critical OARs. In this work, we aim to make the
+weekly CBCT assessment quantitative by automatically segmenting the most critical OAR, esophagus,
+using deep learning and in silico (image-driven simulation) artifact induction to convert pCTs
+to pseudo-CBCTs (pCTs$+$artifacts). Specifically, for the in silico data augmentation, we make
+use of the critical insight that CT and CBCT have the same underlying physics and that it is easier
+to deteriorate the pCT to look more like CBCT (and use the accompanying high quality manual contours
+for segmentation) than to synthesize CT from CBCT where the critical anatomical information may
+have already been lost (which leads to anatomical hallucination with the prevalent generative
+adversarial networks for example). Given these pseudo-CBCTs and the high quality manual contours,
+we introduce a modified 3D-Unet architecture and a multi-objective loss function specifically
+designed for segmenting soft-tissue organs such as esophagus on real weekly CBCTs. The model achieved
+0.74 dice overlap (against manual contours of an experienced radiation oncologist) on weekly CBCTs
+and was robust and generalizable enough to also produce state-of-the-art results on pCTs, achieving
+0.77 dice overlap against the previous best of 0.72. This shows that our in silico data augmentation
+spans the realistic noise/artifact spectrum across patient CBCT/pCT data and can generalize well
+across modalities (without requiring retraining or domain adaptation), eventually improving
+the accuracy of treatment setup and response analysis. 

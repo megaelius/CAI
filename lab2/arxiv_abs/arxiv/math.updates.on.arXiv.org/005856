@@ -1,0 +1,18 @@
+The goal of lossy data compression is to reduce the storage cost of a data set $X$ while retaining as
+much information as possible about something ($Y$) that you care about. For example, what aspects
+of an image $X$ contain the most information about whether it depicts a cat? Mathematically, this
+corresponds to finding a mapping $X\to Z\equiv f(X)$ that maximizes the mutual information $I(Z,Y)$
+while the entropy $H(Z)$ is kept below some fixed threshold. We present a method for mapping out the
+Pareto frontier for classification tasks, reflecting the tradeoff between retained entropy and
+class information. We first show how a random variable $X$ (an image, say) drawn from a class $Y\in\{1,...,n\}$
+can be distilled into a vector $W=f(X)\in \mathbb{R}^{n-1}$ losslessly, so that $I(W,Y)=I(X,Y)$;
+for example, for a binary classification task of cats and dogs, each image $X$ is mapped into a single
+real number $W$ retaining all information that helps distinguish cats from dogs. For the $n=2$ case
+of binary classification, we then show how $W$ can be further compressed into a discrete variable
+$Z=g_\beta(W)\in\{1,...,m_\beta\}$ by binning $W$ into $m_\beta$ bins, in such a way that varying
+the parameter $\beta$ sweeps out the full Pareto frontier, solving a generalization of the Discrete
+Information Bottleneck (DIB) problem. We argue that the most interesting points on this frontier
+are "corners" maximizing $I(Z,Y)$ for a fixed number of bins $m=2,3...$ which can be conveniently
+be found without multiobjective optimization. We apply this method to the CIFAR-10, MNIST and Fashion-MNIST
+datasets, illustrating how it can be interpreted as an information-theoretically optimal image
+clustering algorithm. 

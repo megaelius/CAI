@@ -1,0 +1,19 @@
+Pattern matching is a fundamental tool for answering complex graph queries. Unfortunately, existing
+solutions have limited capabilities: they do not scale to process large graphs and/or support only
+a restricted set of search templates or usage scenarios. We present an algorithmic pipeline that
+bases pattern matching on constraint checking. The key intuition is that each vertex or edge participating
+in a match has to meet a set of constrains implicitly specified by the search template. The pipeline
+we propose iterates over these constraints to eliminate all the vertices and edges that do not participate
+in any match and reduces the background graph to a subgraph which is the union of all matches. Additional
+analysis can be performed on this annotated, reduced graph, such as full match enumeration. Furthermore,
+a vertex-centric formulation for constraint checking algorithms exists, and this makes it possible
+to harness existing high-performance, vertex-centric graph processing frameworks. The key contribution
+of this work is a design following the constraint checking approach for exact matching and its experimental
+evaluation. We show that the proposed technique: (i) enables highly scalable pattern matching
+in labeled graphs, (ii) supports arbitrary patterns with 100\% precision, (iii) always selects
+all vertices and edges that participate in matches, thus offering 100\% recall, and (iv) supports
+a set of popular data analytics scenarios. We implement our approach on top of HavoqGT, an open-source
+asynchronous graph processing framework, and demonstrate its advantages through strong and weak
+scaling experiments on massive-scale real-world (up to 257 billion edges) and synthetic (up to
+4.4 trillion edges) labeled graphs respectively, and at scales (1,024 nodes / 36,864 cores) orders
+of magnitude larger than used in the past for similar problems. 

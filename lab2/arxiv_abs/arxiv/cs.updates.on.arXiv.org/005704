@@ -1,0 +1,20 @@
+XML query can be modeled by twig pattern query (TPQ) specifying predicates on XML nodes and XPath
+relationships satisfied between them. A lot of TPQ types have been proposed; this paper takes into
+account a TPQ model extended by a specification of output and non-output query nodes since it complies
+with the XQuery semantics and, in many cases, it leads to a more efficient query processing. In general,
+there are two approaches to process the TPQ: holistic joins and binary joins. Whereas the binary
+join approach builds a query plan as a tree of interconnected binary operators, the holistic join
+approach evaluates a whole query using one operator (i.e., using one complex algorithm). Surprisingly,
+a thorough analytical and experimental comparison is still missing despite an enormous research
+effort in this area. In this paper, we try to fill this gap; we analytically and experimentally show
+that the binary joins used in a fully-pipelined plan (i.e., the plan where each join operation does
+not wait for the complete result of the previous operation and no explicit sorting is used) can often
+outperform the holistic joins, especially for TPQs with a higher ratio of non-output query nodes.
+The main contributions of this paper can be summarized as follows: (i) we introduce several improvements
+of existing binary join approaches allowing to build a fully-pipelined plan for a TPQ considering
+non-output query nodes, (ii) we prove that for a certain class of TPQs such a plan has the linear time
+complexity with respect to the size of the input and output as well as the linear space complexity
+with respect to the XML document depth (i.e., the same complexity as the holistic join approaches),
+(iii) we show that our improved binary join approach outperforms the holistic join approaches in
+many situations, and (iv) we propose a simple combined approach that uses advantages of both types
+of approaches. 

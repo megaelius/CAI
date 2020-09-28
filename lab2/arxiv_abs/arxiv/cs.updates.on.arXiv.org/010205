@@ -1,0 +1,18 @@
+Linearizability is the gold standard of correctness conditions for shared memory algorithms,
+and historically has been considered the practical equivalent of atomicity. However, it has been
+shown [1] that replacing atomic objects with linearizable implementations can affect the probability
+distribution of execution outcomes in randomized algorithms. Thus, linearizable objects are
+not always suitable replacements for atomic objects. A stricter correctness condition called
+strong linearizability has been developed and shown to be appropriate for randomized algorithms
+in a strong adaptive adversary model [1]. We devise several new lock-free strongly linearizable
+implementations from atomic registers. In particular, we give the first strongly linearizable
+lock-free snapshot implementation that uses bounded space. This improves on the unbounded space
+solution of Denysyuk and Woelfel [2]. As a building block, our algorithm uses a lock-free strongly
+linearizable ABA-detecting register. We obtain this object by modifying the wait-free linearizable
+ABA-detecting register of Aghazadeh and Woelfel [3], which, as we show, is not strongly linearizable.
+Aspnes and Herlihy [4] identified a wide class types that have wait-free linearizable implementations
+from atomic registers. These types require that any pair of operations either commute, or one overwrites
+the other. Aspnes and Herlihy gave a general wait-free linearizable implementation of such types,
+employing a wait-free linearizable snapshot object. Replacing that snapshot object with our lock-free
+strongly linearizable one, we prove that all types in this class have a lock-free strongly linearizable
+implementation from atomic registers. 

@@ -1,0 +1,19 @@
+This paper presents a meta-compilation framework, the MCompiler. The main idea is that different
+segments of a program can be compiled with different compilers/optimizers and combined into a single
+executable. The MCompiler can be used in a number of ways. It can generate an executable with higher
+performance than any individual compiler, because each compiler uses a specific, ordered set of
+optimization techniques and different profitability models and can, therefore, generate code
+significantly different from other compilers. Alternatively, the MCompiler can be used by researchers
+and compiler developers to evaluate their compiler implementation and compare it to results from
+other available compilers/optimizers. A code segment in this work is a loop nest, but other choices
+are possible. This work also investigates the use of Machine Learning to learn inherent characteristics
+of loop nests and then predict during compilation the most suited code optimizer for each loop nest
+in an application. This reduces the need for profiling applications as well as the compilation time.
+The results show that our framework improves the overall performance for applications over state-of-the-art
+compilers by a geometric mean of 1.96x for auto-vectorized code and 2.62x for auto-parallelized
+code. Parallel applications with OpenMP directives are also improved by the MCompiler, with a geometric
+mean performance improvement of 1.04x (up to 1.74x). The use of Machine Learning prediction achieves
+performance very close to the profiling-based search for choosing the most suited code optimizer:
+within 4% for auto-vectorized code and within 8% for auto-parallelized code. Finally, the MCompiler
+can be expanded to collect metrics other than performance to be used in optimization process. The
+example presented is collecting energy data. 

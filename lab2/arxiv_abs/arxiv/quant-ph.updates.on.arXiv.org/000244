@@ -1,0 +1,18 @@
+Clustering is a powerful machine learning technique that groups "similar" data points based on
+their characteristics. Many clustering algorithms work by approximating the minimization of
+an objective function, namely the sum of within-the-cluster distances between points. The straightforward
+approach involves examining all the possible assignments of points to each of the clusters. This
+approach guarantees the solution will be a global minimum, however the number of possible assignments
+scales quickly with the number of data points and becomes computationally intractable even for
+very small datasets. In order to circumvent this issue, cost function minima are found using popular
+local-search based heuristic approaches such as k-means and hierarchical clustering. Due to their
+greedy nature, such techniques do not guarantee that a global minimum will be found and can lead to
+sub-optimal clustering assignments. Other classes of global-search based techniques, such as
+simulated annealing, tabu search, and genetic algorithms may offer better quality results but
+can be too time consuming to implement. In this work, we describe how quantum annealing can be used
+to carry out clustering. We map the clustering objective to a quadratic binary optimization (QUBO)
+problem and discuss two clustering algorithms which are then implemented on commercially-available
+quantum annealing hardware, as well as on a purely classical solver "qbsolv." The first algorithm
+assigns N data points to K clusters, and the second one can be used to perform binary clustering in
+a hierarchical manner. We present our results in the form of benchmarks against well-known k-means
+clustering and discuss the advantages and disadvantages of the proposed techniques. 

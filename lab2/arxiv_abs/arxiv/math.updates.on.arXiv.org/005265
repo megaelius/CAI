@@ -1,0 +1,19 @@
+Deep learning methods operate in regimes that defy the traditional statistical mindset. The neural
+network architectures often contain more parameters than training samples, and are so rich that
+they can interpolate the observed labels, even if the latter are replaced by pure noise. Despite
+their huge complexity, the same architectures achieve small generalization error on real data.
+This phenomenon has been rationalized in terms of a so-called `double descent' curve. As the model
+complexity increases, the generalization error follows the usual U-shaped curve at the beginning,
+first decreasing and then peaking around the interpolation threshold (when the model achieves
+vanishing training error). However, it descends again as model complexity exceeds this threshold.
+The global minimum of the generalization error is found in this overparametrized regime, often
+when the number of parameters is much larger than the number of samples. Far from being a peculiar
+property of deep neural networks, elements of this behavior have been demonstrated in much simpler
+settings, including linear regression with random covariates. In this paper we consider the problem
+of learning an unknown function over the $d$-dimensional sphere $\mathbb S^{d-1}$, from $n$ i.i.d.
+samples $(\boldsymbol x_i, y_i) \in \mathbb S^{d-1} \times \mathbb R$, $i \le n$. We perform ridge
+regression on $N$ random features of the form $\sigma(\boldsymbol w_a^{\mathsf T}\boldsymbol
+x)$, $a \le N$. This can be equivalently described as a two-layers neural network with random first-layer
+weights. We compute the precise asymptotics of the generalization error, in the limit $N, n, d \to
+\infty$ with $N/d$ and $n/d$ fixed. This provides the first analytically tractable model that captures
+all the features of the double descent phenomenon without assuming ad hoc misspecification structures.

@@ -1,0 +1,19 @@
+Training acoustic models with sequentially incoming data -- while both leveraging new data and
+avoiding the forgetting effect-- is an essential obstacle to achieving human intelligence level
+in speech recognition. An obvious approach to leverage data from a new domain (e.g., new accented
+speech) is to first generate a comprehensive dataset of all domains, by combining all available
+data, and then use this dataset to retrain the acoustic models. However, as the amount of training
+data grows, storing and retraining on such a large-scale dataset becomes practically impossible.
+To deal with this problem, in this study, we study several domain expansion techniques which exploit
+only the data of the new domain to build a stronger model for all domains. These techniques are aimed
+at learning the new domain with a minimal forgetting effect (i.e., they maintain original model
+performance). These techniques modify the adaptation procedure by imposing new constraints including
+(1) weight constraint adaptation (WCA): keeping the model parameters close to the original model
+parameters; (2) elastic weight consolidation (EWC): slowing down training for parameters that
+are important for previously established domains; (3) soft KL-divergence (SKLD): restricting
+the KL-divergence between the original and the adapted model output distributions; and (4) hybrid
+SKLD-EWC: incorporating both SKLD and EWC constraints. We evaluate these techniques in an accent
+adaptation task in which we adapt a deep neural network (DNN) acoustic model trained with native
+English to three different English accents: Australian, Hispanic, and Indian. The experimental
+results show that SKLD significantly outperforms EWC, and EWC works better than WCA. The hybrid
+SKLD-EWC technique results in the best overall performance. 

@@ -1,0 +1,20 @@
+Identifying an appropriate underlying graph kernel that reflects pairwise similarities is critical
+in many recent graph spectral signal restoration schemes, including image denoising, dequantization,
+and contrast enhancement. Existing graph learning algorithms compute the most likely entries
+of a properly defined graph Laplacian matrix $\mathbf{L}$, but require a large number of signal
+observations $\mathbf{z}$'s for a stable estimate. In this work, we assume instead the availability
+of a relevant feature vector $\mathbf{f}_i$ per node $i$, from which we compute an optimal feature
+graph via optimization of a feature metric. Specifically, we alternately optimize the diagonal
+and off-diagonal entries of a Mahalanobis distance matrix $\mathbf{M}$ by minimizing the graph
+Laplacian regularizer (GLR) $\mathbf{z}^{\top} \mathbf{L} \mathbf{z}$, where edge weight is
+$w_{i,j} = \exp\{-(\mathbf{f}_i - \mathbf{f}_j)^{\top} \mathbf{M} (\mathbf{f}_i - \mathbf{f}_j)
+\}$, given a single observation $\mathbf{z}$. We optimize diagonal entries via proximal gradient
+(PG), where we constrain $\mathbf{M}$ to be positive definite (PD) via linear inequalities derived
+from the Gershgorin circle theorem. To optimize off-diagonal entries, we design a block descent
+algorithm that iteratively optimizes one row and column of $\mathbf{M}$. To keep $\mathbf{M}$
+PD, we constrain the Schur complement of sub-matrix $\mathbf{M}_{2,2}$ of $\mathbf{M}$ to be PD
+when optimizing via PG. Our algorithm mitigates full eigen-decomposition of $\mathbf{M}$, thus
+ensuring fast computation speed even when feature vector $\mathbf{f}_i$ has high dimension. To
+validate its usefulness, we apply our feature graph learning algorithm to the problem of 3D point
+cloud denoising, resulting in state-of-the-art performance compared to competing schemes in
+extensive experiments. 

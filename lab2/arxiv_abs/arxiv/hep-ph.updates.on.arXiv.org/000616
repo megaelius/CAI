@@ -1,0 +1,19 @@
+In applications of machine learning to particle physics, a persistent challenge is how to go beyond
+discrimination to learn about the underlying physics. To this end, a powerful tool would be a framework
+for unsupervised learning, where the machine learns the intricate high-dimensional contours
+of the data upon which it is trained, without reference to pre-established labels. In order to approach
+such a complex task, an unsupervised network must be structured intelligently, based on a qualitative
+understanding of the data. In this paper, we scaffold the neural network's architecture around
+a leading-order model of the physics underlying the data. In addition to making unsupervised learning
+tractable, this design actually alleviates existing tensions between performance and interpretability.
+We call the framework JUNIPR: "Jets from UNsupervised Interpretable PRobabilistic models". In
+this approach, the set of particle momenta composing a jet are clustered into a binary tree that the
+neural network examines sequentially. Training is unsupervised and unrestricted: the network
+could decide that the data bears little correspondence to the chosen tree structure. However, when
+there is a correspondence, the network's output along the tree has a direct physical interpretation.
+JUNIPR models can perform discrimination tasks, through the statistically optimal likelihood-ratio
+test, and they permit visualizations of discrimination power at each branching in a jet's tree.
+Additionally, JUNIPR models provide a probability distribution from which events can be drawn,
+providing a data-driven Monte Carlo generator. As a third application, JUNIPR models can reweight
+events from one (e.g. simulated) data set to agree with distributions from another (e.g. experimental)
+data set. 

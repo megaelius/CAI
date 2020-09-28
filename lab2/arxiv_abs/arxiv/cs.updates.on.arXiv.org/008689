@@ -1,0 +1,20 @@
+We propose controller synthesis for state regulation problems in which a human operator shares
+control with an autonomy system, running in parallel. The autonomy system continuously improves
+over human action, with minimal intervention, and can take over full-control if necessary. It additively
+combines user input with an adaptive optimal corrective signal to drive the plant. It is adaptive
+in the sense that it neither estimates nor requires a model of the human's action policy, or the internal
+dynamics of the plant, and can adjust to changes in both. Our contribution is twofold; first, a new
+controller synthesis for shared control which we formulate as an adaptive optimal control problem
+for continuous-time linear systems and solve it online as a human-in-the-loop reinforcement learning.
+The result is an architecture that we call shared linear quadratic regulator (sLQR). Second, we
+provide new analysis of reinforcement learning for continuous-time linear systems in two parts.
+In the first analysis part, we avoid learning along a single state-space trajectory which we show
+leads to data collinearity under certain conditions. In doing so, we make a clear separation between
+exploitation of learned policies and exploration of the state-space, and propose an exploration
+scheme that requires switching to new state-space trajectories rather than injecting noise continuously
+while learning. This avoidance of continuous noise injection minimizes interference with human
+action, and avoids bias in the convergence to the stabilizing solution of the underlying algebraic
+Riccati equation. We show that exploring a minimum number of pairwise distinct state-space trajectories
+is necessary to avoid collinearity in the learning data. In the second part, we show conditions under
+which existence and uniqueness can be established for off-policy reinforcement learning in continuous-time
+linear systems. 

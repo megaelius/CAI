@@ -1,0 +1,18 @@
+Large scale Natural Language Understanding (NLU) systems are typically trained on large quantities
+of data, requiring a fast and scalable training strategy. A typical design for NLU systems consists
+of domain-level NLU modules (domain classifier, intent classifier and named entity recognizer).
+Hypotheses (NLU interpretations consisting of various intent+slot combinations) from these
+domain specific modules are typically aggregated with another downstream component. The re-ranker
+integrates outputs from domain-level recognizers, returning a scored list of cross domain hypotheses.
+An ideal re-ranker will exhibit the following two properties: (a) it should prefer the most relevant
+hypothesis for the given input as the top hypothesis and, (b) the interpretation scores corresponding
+to each hypothesis produced by the re-ranker should be calibrated. Calibration allows the final
+NLU interpretation score to be comparable across domains. We propose a novel re-ranker strategy
+that addresses these aspects, while also maintaining domain specific modularity. We design optimization
+loss functions for such a modularized re-ranker and present results on decreasing the top hypothesis
+error rate as well as maintaining the model calibration. We also experiment with an extension involving
+training the domain specific re-rankers on datasets curated independently by each domain to allow
+further asynchronization. %The proposed re-ranker design showcases the following: (i) improved
+NLU performance over an unweighted aggregation strategy, (ii) cross-domain calibrated performance
+and, (iii) support for use cases involving training each re-ranker on datasets curated by each domain
+independently. 

@@ -1,0 +1,19 @@
+Multi-agent path finding (MAPF) algorithms are offline methods intended to find conflict-free
+paths for more than one agent. However, for many real-life applications, this problem description
+is inadequate for representing the needs of the domain. To address this issue we worked on a lifelong
+variation in which agents can have more than one ordered destination. New destinations can be inserted
+into the system anytime after the initial job-assignment has been made, and these new destinations
+must also be assigned to agents, and the time of visiting the new destination must also be determined.
+We called this Lifelong Multi-Agent Path Finding with Multiple Delivery Locations (MAPF-MD).
+To solve this problem we introduced the Multiple Delivery Conflict-Based Search algorithm (MD-DCBS).
+We used D*-lite in the low-level search of CBS to benefit from the D*-lite's incremental nature in
+achieving a performance increase in the CBS search. To handle multiple delivery locations we define
+multiple D*-lite instances for each agent. The aggregations of all of the paths produced by the D*-lite
+instances constitute the path of that agent. After that we run CBS on aggregated paths. In this problem
+we introduced the Multiple Delivery Conflict-Based Search algorithm (MD-DCBS). We used D*-lite
+in the low-level search of CBS to benefit from the D*-lite's incremental nature in achieving a performance
+increase in the CBS search. To handle multiple delivery locations we define multiple D*-lite instances
+for each agent. The aggregations of all of the paths produced by the D*-lite instances constitute
+the path of that agent. After that we run CBS on aggregated paths. We have shown that this version solves
+MAPF-MD instances correctly. We also proposed multiple job-assignment heuristics to generate
+low-total-cost solutions and determined the best performing method amongst them. 

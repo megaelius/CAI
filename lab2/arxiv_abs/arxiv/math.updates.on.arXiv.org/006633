@@ -1,0 +1,18 @@
+In this paper, a learning-based optimal transportation algorithm for autonomous taxis and ridesharing
+vehicles is presented. The goal is to design a mechanism to solve the routing problem for multiple
+autonomous vehicles and multiple customers in order to maximize the transportation company's
+profit. As a result, each vehicle selects the customer whose request maximizes the company's profit
+in the long run. To solve this problem, the system is modeled as a Markov Decision Process (MDP) using
+past customers data. By solving the defined MDP, a centralized high-level planning recommendation
+is obtained, where this offline solution is used as an initial value for the real-time learning.
+Then, a distributed SARSA reinforcement learning algorithm is proposed to capture the model errors
+and the environment changes, such as variations in customer distributions in each area, traffic,
+and fares, thereby providing optimal routing policies in real-time. Vehicles, or agents, use only
+their local information and interaction, such as current passenger requests and estimates of neighbors'
+tasks and their optimal actions, to obtain the optimal policies in a distributed fashion. An optimal
+adaptive rate is introduced to make the distributed SARSA algorithm capable of adapting to changes
+in the environment and tracking the time-varying optimal policies. Furthermore, a game-theory-based
+task assignment algorithm is proposed, where each agent uses the optimal policies and their values
+from distributed SARSA to select its customer from the set of local available requests in a distributed
+manner. Finally, the customers data provided by the city of Chicago is used to validate the proposed
+algorithms. 

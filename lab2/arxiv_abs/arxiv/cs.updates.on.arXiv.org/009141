@@ -1,0 +1,17 @@
+Experience shows that most researchers and developers tend to treat plain-domains (those that
+are not prefixed with "www" sub-domains, e.g. "example.com") as synonyms for their equivalent
+www-domains (those that are prefixed with "www" sub-domains, e.g. "www.example.com"). In this
+paper, we analyse datasets of nearly two million plain-domains against their equivalent www-domains
+to answer the following question: Do plain-domains and their equivalent www-domains differ in
+TLS security configurations and certificates? If so, to what extent? Our results provide evidence
+of an interesting phenomenon: plain-domains and their equivalent www-domains differ in TLS security
+configurations and certificates in a non-trivial number of cases. Furthermore, www-domains tend
+to have stronger security configurations than their equivalent plain-domains. Interestingly,
+this phenomenon is more prevalent in the most-visited domains than in randomly-chosen domains.
+Further analysis of the top domains dataset shows that 53.35% of the plain-domains that show one
+or more weakness indicators (e.g. expired certificate) that are not shown in their equivalent www-domains
+perform HTTPS redirection from HTTPS plain-domains to their equivalent HTTPS www-domains. Additionally,
+24.71% of these redirections contains plain-text HTTP intermediate URLs. In these cases, users
+see the final www-domains with strong TLS configurations and certificates, but in fact, the HTTPS
+request has passed through plain-domains that have less secure TLS configurations and certificates.
+Clearly, such a set-up introduces a weak link in the security of the overall interaction. 

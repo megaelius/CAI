@@ -1,0 +1,20 @@
+We provide faster algorithms for approximately solving $\ell_{\infty}$ regression, a fundamental
+problem prevalent in both combinatorial and continuous optimization. In particular, we provide
+accelerated coordinate descent methods capable of provably exploiting dynamic measures of coordinate
+smoothness, and apply them to $\ell_\infty$ regression over a box to give algorithms which converge
+in $k$ iterations at a $O(1/k)$ rate. Our algorithms can be viewed as an alternative approach to the
+recent breakthrough result of Sherman [She17] which achieves a similar runtime improvement over
+classic algorithmic approaches, i.e. smoothing and gradient descent, which either converge at
+a $O(1/\sqrt{k})$ rate or have running times with a worse dependence on problem parameters. Our
+runtimes match those of [She17] across a broad range of parameters and achieve improvement in certain
+structured cases. We demonstrate the efficacy of our result by providing faster algorithms for
+the well-studied maximum flow problem. Directly leveraging our accelerated $\ell_\infty$ regression
+algorithms imply a $\tilde{O}\left(m + \sqrt{mn}/\epsilon\right)$ runtime to compute an $\epsilon$-approximate
+maximum flow for an undirected graph with $m$ edges and $n$ vertices, generically improving upon
+the previous best known runtime of $\tilde{O}\left(m/\epsilon\right)$ in [She17] whenever the
+graph is slightly dense. We further design an algorithm adapted to the structure of the regression
+problem induced by maximum flow obtaining a runtime of $\tilde{O}\left(m + \max(n, \sqrt{ns})/\epsilon\right)$,
+where $s$ is the squared $\ell_2$ norm of the congestion of any optimal flow. Moreover, we show how
+to leverage this result to achieve improved exact algorithms for maximum flow on a variety of unit
+capacity graphs. We hope that our work serves as an important step towards achieving even faster
+maximum flow algorithms. 

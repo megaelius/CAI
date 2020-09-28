@@ -1,0 +1,17 @@
+In order for neural networks to learn complex languages or grammars, they must have sufficient computational
+power or resources to recognize or generate such languages. Though many approaches have been discussed,
+one ob- vious approach to enhancing the processing power of a recurrent neural network is to couple
+it with an external stack memory - in effect creating a neural network pushdown automata (NNPDA).
+This paper discusses in detail this NNPDA - its construction, how it can be trained and how useful
+symbolic information can be extracted from the trained network. In order to couple the external
+stack to the neural network, an optimization method is developed which uses an error function that
+connects the learning of the state automaton of the neural network to the learning of the operation
+of the external stack. To minimize the error function using gradient descent learning, an analog
+stack is designed such that the action and storage of information in the stack are continuous. One
+interpretation of a continuous stack is the probabilistic storage of and action on data. After training
+on sample strings of an unknown source grammar, a quantization procedure extracts from the analog
+stack and neural network a discrete pushdown automata (PDA). Simulations show that in learning
+deterministic context-free grammars - the balanced parenthesis language, 1*n0*n, and the deterministic
+Palindrome - the extracted PDA is correct in the sense that it can correctly recognize unseen strings
+of arbitrary length. In addition, the extracted PDAs can be shown to be identical or equivalent to
+the PDAs of the source grammars which were used to generate the training strings. 

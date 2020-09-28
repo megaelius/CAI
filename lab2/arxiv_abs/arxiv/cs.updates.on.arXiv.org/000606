@@ -1,0 +1,19 @@
+Digital repositories, either digital preservation systems or archival systems, periodically
+check the integrity of stored objects to assure users of their correctness. To do so, prior solutions
+calculate integrity metadata and require the repository to store it alongside the actual data objects.
+This integrity metadata is essential for regularly verifying the correctness of the stored data
+objects. To safeguard and detect damage to this metadata, prior solutions rely on widely visible
+media, that is unaffiliated third parties, to store and provide back digests of the metadata to verify
+it is intact. However, they do not address recovery of the integrity metadata in case of damage or
+attack by an adversary. In essence, they do not \emph{preserve} this metadata. We introduce IntegrityCatalog,
+a system that collects all integrity related metadata in a single component, and treats them as first
+class objects, managing both their integrity and their preservation. We extend a persistent, authenticated
+search tree to become an authenticated dictionary for arbitrary length key/value pairs, which
+we use to store all integrity metadata, accessible simply by object name. Additionally, IntegrityCatalog
+is a distributed system that includes a network protocol that manages both corruption detection
+and preservation of this metadata, using administrator-selected network peers with two possible
+roles. \emph{Verifiers} store and offer attestation on digests and have minimal storage requirements,
+while \emph{preservers} efficiently synchronize a complete copy of the catalog to assist in recovery
+in case of detected catalog compromise on the local system. We describe our prototype implementation
+of IntegrityCatalog, measure its performance empirically, and demonstrate its effectiveness
+in real-world situations. 

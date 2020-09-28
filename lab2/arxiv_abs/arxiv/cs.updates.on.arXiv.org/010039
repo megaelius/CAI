@@ -1,0 +1,18 @@
+Given an undirected graph $\mathcal{G}(V, E, \tau)$ modeling a \textit{social network}, where
+each node $v$ is associated with a threshold value $\tau(v)$, a set of vertices $\mathcal{S} \subseteq
+V(\mathcal{G})$ (called \textit{seed nodes}) is chosen initially. Now a \textit{social contagion
+process} is defined on $\mathcal{G}$ as follows. At time $t=0$ the nodes in $\mathcal{S}$ have some
+information, and it is diffused in discrete time steps. An \emph{un\mbox{-}influenced} node $v$
+will change its state to \emph{influenced} at time step $t$ if it has at least $\tau(v)$ number of
+neighbors, which are influenced at time step $t-1$. The process continues until no more node activation
+is possible. Based on this diffusion process, a well\mbox{-}studied problem in the literature
+is the \textit{Target Set Selection Problem (TSS Problem)}, where the goal is to influence all the
+nodes of the network by initially choosing the minimum number of seed nodes. Chen et al. [On the Approximability
+of Influence in Social Networks. SIAM Journal on Discrete Mathematics, 23(3):1400-1415, 2009]
+showed that the decision version of this optimization problem is NP\mbox{-}Hard on bounded degree
+bipartite graphs. In this paper, we show that this problem on bipartite graph does not admit an approximation
+algorithm with a performance guarantee asymptotically better than $\mathcal{O}(\log n_{min})$,
+where $n_{min}$ is the cardinality of the smaller bipartition, unless $P=NP$. Further, by a self
+reduction from the TSS Problem on general graphs to TSS Problem on bipartite graphs, we improve the
+inapproximability bound to $\Omega(2^{\log^{1 - \epsilon} \sqrt{n}})$, unless $\mathcal{NP}
+\subseteq DTIME(n^{polylog \ (n)})$, where $n$ is the number of nodes present in the bipartite graph.

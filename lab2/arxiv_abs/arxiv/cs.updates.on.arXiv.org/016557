@@ -1,0 +1,18 @@
+We study distributed plurality consensus among $n$ nodes, each of which initially holds one of $k$
+opinions. The goal is to eventually agree on the initially dominant opinion. We consider an asynchronous
+communication model in which each node is equipped with a random clock. Whenever the clock of a node
+ticks, it may open communication channels to a constant number of other nodes, chosen uniformly
+at random or from a list of constantly many addresses acquired in previous steps. The tick rates and
+the delays for establishing communication channels (channel delays) follow some probability
+distribution. Once a channel is established, communication between nodes can be performed instantaneously.
+We consider distributions for the waiting times between ticks and channel delays that have constant
+mean and the so-called positive aging property. In this setting, asynchronous plurality consensus
+is fast: if the initial bias between the largest and second largest opinion is at least $\sqrt{n}\log
+n$, then after $O(\log\log_\alpha k\cdot\log k+\log\log n)$ time all but a $1/ \text{polylog }
+n$ fraction of nodes have the initial plurality opinion. Here $\alpha$ denotes the initial ratio
+between the largest and second largest opinion. After additional $O(\log n)$ steps all nodes have
+the same opinion w.h.p., and this result is tight. If additionally the distributions satisfy a certain
+density property, which is common in many well-known distributions, we show that consensus is reached
+in $O(\log \log_\alpha k + \log \log n)$ time for all but $n/\text{polylog } n$ nodes, w.h.p. This
+implies that for a large range of initial configurations partial consensus can be reached significantly
+faster in this asynchronous communication model than in the synchronous setting. 

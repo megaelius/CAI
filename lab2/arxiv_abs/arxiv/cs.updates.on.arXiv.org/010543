@@ -1,0 +1,17 @@
+Recent work in unsupervised language modeling demonstrates that training large neural language
+models advances the state of the art in Natural Language Processing applications. However, for
+very large models, memory constraints limit the size of models that can be practically trained.
+Model parallelism allows us to train larger models, because the parameters can be split across multiple
+processors. In this work, we implement a simple, efficient intra-layer model parallel approach
+that enables training state of the art transformer language models with billions of parameters.
+Our approach does not require a new compiler or library changes, is orthogonal and complimentary
+to pipeline model parallelism, and can be fully implemented with the insertion of a few communication
+operations in native PyTorch. We illustrate this approach by converging an 8.3 billion parameter
+transformer language model using 512 GPUs, making it the largest transformer model ever trained
+at 24x times the size of BERT and 5.6x times the size of GPT-2. We sustain up to 15.1 PetaFLOPs per second
+across the entire application with 76% scaling efficiency, compared to a strong single processor
+baseline that sustains 39 TeraFLOPs per second, which is 30% of peak FLOPs. The model is trained on
+174GB of text, requiring 12 ZettaFLOPs over 9.2 days to converge. Transferring this language model
+achieves state of the art (SOTA) results on the WikiText103 (10.8 compared to SOTA perplexity of
+16.4) and LAMBADA (66.5% compared to SOTA accuracy of 63.2%) datasets. We release training and evaluation
+code, as well as the weights of our smaller portable model, for reproducibility. 

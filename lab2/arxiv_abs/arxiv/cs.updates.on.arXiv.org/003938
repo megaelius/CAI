@@ -1,0 +1,18 @@
+Layout-Aware Data Scheduler (LADS) data transfer tool, identifies and addresses the issues that
+lead to congestion on the path of an end-to-end data transfer in the terabit network environments.
+It exploits the underlying storage layout at each endpoint to maximize throughput without negatively
+impacting the performance of shared storage resources for other users. LADS can avoid congested
+storage elements within the shared storage resource, improving input/output bandwidth, and hence
+the data transfer rates across the high speed networks. However, absence of FT (fault tolerance)
+support in LADS results in data re-transmission overhead along with the possible integrity issues
+upon errors. In this paper, we propose object based logging methods to avoid transmitting the objects
+which are successfully written to Parallel File System (PFS) at the sink end. Depending on the number
+of logger files created, for the whole dataset, we classified our fault tolerance mechanisms into
+three different categories: File logger, Transaction logger and Universal logger. Also, to address
+space overhead of these object based logging mechanisms, we have proposed different methods of
+populating logger files with the information of the completed objects. We have evaluated the data
+transfer performance and recovery time overhead of the proposed object based logging fault tolerant
+mechanisms on LADS data transfer tool. Our experimental results show that, LADS in conjunction
+with proposed object based fault tolerance mechanisms exhibit an overhead of less than 1% with respect
+to data transfer time and total recovery time overhead is around 10% of total data transfer time at
+any fault point. 

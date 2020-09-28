@@ -1,0 +1,17 @@
+Federated Learning (FL) has become a popular paradigm for learning from distributed data. To effectively
+utilize data at different devices without moving them to the cloud, algorithms such as the Federated
+Averaging (FedAvg) have adopted a "computation then aggregation" (CTA) model, in which multiple
+local updates are performed using local data, before sending the local models to the cloud for aggregation.
+However, these schemes typically require strong assumptions, such as the local data are identically
+independent distributed (i.i.d), or the size of the local gradients are bounded. In this paper,
+we first explicitly characterize the behavior of the FedAvg algorithm, and show that without strong
+and unrealistic assumptions on the problem structure, the algorithm can behave erratically for
+non-convex problems (e.g., diverge to infinity). Aiming at designing FL algorithms that are provably
+fast and require as few assumptions as possible, we propose a new algorithm design strategy from
+the primal-dual optimization perspective. Our strategy yields a family of algorithms that take
+the same CTA model as existing algorithms, but they can deal with the non-convex objective, achieve
+the best possible optimization and communication complexity while being able to deal with both
+the full batch and mini-batch local computation models. Most importantly, the proposed algorithms
+are {\it communication efficient}, in the sense that the communication pattern can be adaptive
+to the level of heterogeneity among the local data. To the best of our knowledge, this is the first
+algorithmic framework for FL that achieves all the above properties. 

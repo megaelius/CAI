@@ -1,0 +1,18 @@
+Group signature is a fundamental cryptographic primitive, aiming to protect anonymity and ensure
+accountability of users. It allows group members to anonymously sign messages on behalf of the whole
+group, while incorporating a tracing mechanism to identify the signer of any suspected signature.
+Most of the existing group signature schemes, however, do not guarantee security once users' secret
+keys are exposed. To reduce potential damages caused by key exposure attacks, Song (CCS 2001) put
+forward the concept of forward-secure group signatures (FSGS). For the time being, all known secure
+FSGS schemes are based on number-theoretic assumptions, and are vulnerable against quantum computers.
+In this work, we construct the first lattice-based FSGS scheme. In Nakanishi et al.'s model, our
+scheme achieves forward-secure traceability under the Short Integer Solution (SIS) assumption,
+and offers full anonymity under the Learning With Errors (LWE) assumption. At the heart of our construction
+is a scalable lattice-based key-evolving mechanism, allowing users to periodically update their
+secret keys and to efficiently prove in zero-knowledge that the key-evolution process is done correctly.
+To realize this essential building block, we first employ the Bonsai-tree structure by Cash et al.
+(EUROCRYPT 2010) to handle the key evolution process, and then develop Langlois et al.'s construction
+(PKC 2014) to design its supporting zero-knowledge protocol. In comparison to all known lattice-based
+group signatures (that are \emph{not} forward-secure), our scheme only incurs a very reasonable
+overhead: the bit-sizes of keys and signatures are at most O(log N), where N is the number of group
+users; and at most O(log^3 T), where T is the number of time periods. 

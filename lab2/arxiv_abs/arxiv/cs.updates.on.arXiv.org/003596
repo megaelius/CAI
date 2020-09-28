@@ -1,0 +1,20 @@
+Accurate and robust segmentation of abdominal organs on CT is essential for many clinical applications
+such as computer-aided diagnosis and computer-aided surgery. But this task is challenging due
+to the weak boundaries of organs, the complexity of the background, and the variable sizes of different
+organs. To address these challenges, we introduce a novel framework for multi-organ segmentation
+by using organ-attention networks with reverse connections (OAN-RCs) which are applied to 2D views,
+of the 3D CT volume, and output estimates which are combined by statistical fusion exploiting structural
+similarity. OAN is a two-stage deep convolutional network, where deep network features from the
+first stage are combined with the original image, in a second stage, to reduce the complex background
+and enhance the discriminative information for the target organs. RCs are added to the first stage
+to give the lower layers semantic information thereby enabling them to adapt to the sizes of different
+organs. Our networks are trained on 2D views enabling us to use holistic information and allowing
+efficient computation. To compensate for the limited cross-sectional information of the original
+3D volumetric CT, multi-sectional images are reconstructed from the three different 2D view directions.
+Then we combine the segmentation results from the different views using statistical fusion, with
+a novel term relating the structural similarity of the 2D views to the original 3D structure. To train
+the network and evaluate results, 13 structures were manually annotated by four human raters and
+confirmed by a senior expert on 236 normal cases. We tested our algorithm and computed Dice-Sorensen
+similarity coefficients and surface distances for evaluating our estimates of the 13 structures.
+Our experiments show that the proposed approach outperforms 2D- and 3D-patch based state-of-the-art
+methods. 

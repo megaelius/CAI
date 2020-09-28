@@ -1,0 +1,18 @@
+Massively parallel accelerators such as GPGPUs, manycores and FPGAs represent a powerful and affordable
+tool for scientists who look to speed up simulations of complex systems. However, porting code to
+such devices requires a detailed understanding of heterogeneous programming tools and effective
+strategies for parallelization. In this paper we present a source to source compilation approach
+with whole-program analysis to automatically transform single-threaded FORTRAN 77 legacy code
+into OpenCL-accelerated programs with parallelized kernels. The main contributions of our work
+are: (1) whole-source refactoring to allow any subroutine in the code to be offloaded to an accelerator.
+(2) Minimization of the data transfer between the host and the accelerator by eliminating redundant
+transfers. (3) Pragmatic auto-parallelization of the code to be offloaded to the accelerator by
+identification of parallelizable maps and reductions. We have validated the code transformation
+performance of the compiler on the NIST FORTRAN 78 test suite and several real-world codes: the Large
+Eddy Simulator for Urban Flows, a high-resolution turbulent flow model; the shallow water component
+of the ocean model Gmodel; the Linear Baroclinic Model, an atmospheric climate model and Flexpart-WRF,
+a particle dispersion simulator. The automatic parallelization component has been tested on as
+2-D Shallow Water model (2DSW) and on the Large Eddy Simulator for Urban Flows (UFLES) and produces
+a complete OpenCL-enabled code base. The fully OpenCL-accelerated versions of the 2DSW and the
+UFLES are resp. 9x and 20x faster on GPU than the original code on CPU, in both cases this is the same
+performance as manually ported code. 

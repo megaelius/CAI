@@ -1,0 +1,19 @@
+We present a distributed asynchronous algorithm for approximating a single component of the solution
+to a system of linear equations $Ax = b$, where $A$ is a positive definite real matrix, and $b \in \mathbb{R}^n$.
+This is equivalent to solving for $x_i$ in $x = Gx + z$ for some $G$ and $z$ such that the spectral radius
+of $G$ is less than 1. Our algorithm relies on the Neumann series characterization of the component
+$x_i$, and is based on residual updates. We analyze our algorithm within the context of a cloud computation
+model, in which the computation is split into small update tasks performed by small processors with
+shared access to a distributed file system. We prove a robust asymptotic convergence result when
+the spectral radius $\rho(|G|) < 1$, regardless of the precise order and frequency in which the update
+tasks are performed. We provide convergence rate bounds which depend on the order of update tasks
+performed, analyzing both deterministic update rules via counting weighted random walks, as well
+as probabilistic update rules via concentration bounds. The probabilistic analysis requires
+analyzing the product of random matrices which are drawn from distributions that are time and path
+dependent. We specifically consider the setting where $n$ is large, yet $G$ is sparse, e.g., each
+row has at most $d$ nonzero entries. This is motivated by applications in which $G$ is derived from
+the edge structure of an underlying graph. Our results prove that if the local neighborhood of the
+graph does not grow too quickly as a function of $n$, our algorithm can provide significant reduction
+in computation cost as opposed to any algorithm which computes the global solution vector $x$. Our
+algorithm obtains an $\epsilon \|x\|_2$ additive approximation for $x_i$ in constant time with
+respect to the size of the matrix when the maximum row sparsity $d = O(1)$ and $1/(1-\|G\|_2) = O(1)$.

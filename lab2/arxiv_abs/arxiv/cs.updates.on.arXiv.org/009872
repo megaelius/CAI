@@ -1,0 +1,19 @@
+Stochastic convex optimization problems with expectation constraints (SOECs) are encountered
+in statistics and machine learning, business, and engineering. In data-rich environments, the
+SOEC objective and constraints contain expectations defined with respect to large datasets. Therefore,
+efficient algorithms for solving such SOECs need to limit the fraction of data points that they use,
+which we refer to as algorithmic data complexity. Recent stochastic first order methods exhibit
+low data complexity when handling SOECs but guarantee near-feasibility and near-optimality only
+at convergence. These methods may thus return highly infeasible solutions when heuristically
+terminated, as is often the case, due to theoretical convergence criteria being highly conservative.
+This issue limits the use of first order methods in several applications where the SOEC constraints
+encode implementation requirements. We design a stochastic feasible level set method (SFLS) for
+SOECs that has low data complexity and emphasizes feasibility before convergence. Specifically,
+our level-set method solves a root-finding problem by calling a novel first order oracle that computes
+a stochastic upper bound on the level-set function by extending mirror descent and online validation
+techniques. We establish that SFLS maintains a high-probability feasible solution at each root-finding
+iteration and exhibits favorable iteration complexity compared to state-of-the-art deterministic
+feasible level set and stochastic subgradient methods. Numerical experiments on three diverse
+applications validate the low data complexity of SFLS relative to the former approach and highlight
+how SFLS finds feasible solutions with small optimality gaps significantly faster than the latter
+method. 

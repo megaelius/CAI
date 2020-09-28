@@ -1,0 +1,17 @@
+In many Multimedia content analytics frameworks feature likelihood maps represented as histograms
+play a critical role in the overall algorithm. Integral histograms provide an efficient computational
+framework for extracting multi-scale histogram-based regional descriptors in constant time
+which are considered as the principle building blocks of many video content analytics frameworks.
+We evaluate four different mappings of the integral histogram computation onto Graphics Processing
+Units (GPUs) using different kernel optimization strategies. Our kernels perform cumulative
+sums on row and column histograms in a cross-weave or wavefront scan order, use different data organization
+and scheduling methods that is shown to critically affect utilization of GPU resources (cores and
+shared memory). Tiling the 3-D array into smaller regular data blocks significantly speeds up the
+efficiency of the computation compared to a strip-based organization. The tiled integral histogram
+using a diagonal wavefront scan has the best performance of about 300.4 frames/sec for 640 x 480 images
+and 32 bins with a speedup factor of about 120 using GTX Titan X graphics card compared to a single threaded
+sequential CPU implementation. Double-buffering has been exploited to overlap computation and
+communication across sequence of images. Mapping integral histogram bins computations onto multiple
+GPUs enables us to process 32 giga bytes integral histogram data (of 64MB Image and 128 bins) with
+a frame rate of 0.73 Hz and speedup factor of 153X over single-threaded CPU implementation and the
+speedup of 45X over 16-threaded CPU implementation. 

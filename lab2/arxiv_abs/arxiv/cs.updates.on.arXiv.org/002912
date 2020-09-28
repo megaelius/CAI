@@ -1,0 +1,18 @@
+Modern cars are incorporating an increasing number of driver assist features, among which automatic
+lane keeping. The latter allows the car to properly position itself within the road lanes, which
+is also crucial for any subsequent lane departure or trajectory planning decision in fully autonomous
+cars. Traditional lane detection methods rely on a combination of highly-specialized, hand-crafted
+features and heuristics, usually followed by post-processing techniques, that are computationally
+expensive and prone to scalability due to road scene variations. More recent approaches leverage
+deep learning models, trained for pixel-wise lane segmentation, even when no markings are present
+in the image due to their big receptive field. Despite their advantages, these methods are limited
+to detecting a pre-defined, fixed number of lanes, e.g. ego-lanes, and can not cope with lane changes.
+In this paper, we go beyond the aforementioned limitations and propose to cast the lane detection
+problem as an instance segmentation problem - in which each lane forms its own instance - that can
+be trained end-to-end. To parametrize the segmented lane instances before fitting the lane, we
+further propose to apply a learned perspective transformation, conditioned on the image, in contrast
+to a fixed "bird's-eye view" transformation. By doing so, we ensure a lane fitting which is robust
+against road plane changes, unlike existing approaches that rely on a fixed, pre-defined transformation.
+In summary, we propose a fast lane detection algorithm, running at 50 fps, which can handle a variable
+number of lanes and cope with lane changes. We verify our method on the tuSimple dataset and achieve
+competitive results. 

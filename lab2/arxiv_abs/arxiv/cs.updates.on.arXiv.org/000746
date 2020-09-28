@@ -1,0 +1,17 @@
+While the GPGPU paradigm is widely recognized as an effective approach to high performance computing,
+its adoption in low-latency, real-time systems is still in its early stages. Although GPUs typically
+show deterministic behaviour in terms of latency in executing computational kernels as soon as
+data is available in their internal memories, assessment of real-time features of a standard GPGPU
+system needs careful characterization of all subsystems along data stream path. The networking
+subsystem results in being the most critical one in terms of absolute value and fluctuations of its
+response latency. Our envisioned solution to this issue is NaNet, a FPGA-based PCIe Network Interface
+Card (NIC) design featuring a configurable and extensible set of network channels with direct access
+through GPUDirect to NVIDIA Fermi/Kepler GPU memories. NaNet design currently supports both standard
+- GbE (1000BASE-T) and 10GbE (10Base-R) - and custom - 34~Gbps APElink and 2.5~Gbps deterministic
+latency KM3link - channels, but its modularity allows for a straightforward inclusion of other
+link technologies. To avoid host OS intervention on data stream and remove a possible source of jitter,
+the design includes a network/transport layer offload module with cycle-accurate, upper-bound
+latency, supporting UDP, KM3link Time Division Multiplexing and APElink protocols. After NaNet
+architecture description and its latency/bandwidth characterization for all supported links,
+two real world use cases will be presented: the GPU-based low level trigger for the RICH detector
+in the NA62 experiment at CERN and the on-/off-shore data link for KM3 underwater neutrino telescope.

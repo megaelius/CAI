@@ -1,0 +1,19 @@
+The magneto-rotational instability (MRI) is one of the most important processes in sufficiently
+ionized astrophysical disks. Grid-based simulations, especially those using the local shearing
+box approximation, provide a powerful tool to study the ensuing nonlinear turbulence. On the other
+hand, while meshless methods have been widely used in both cosmology, galactic dynamics, and planet
+formation they have not been fully deployed on the MRI problem. We present local unstratified and
+vertically stratified MRI simulations with two meshless MHD schemes: a recent implementation
+of SPH MHD (Price2012), and a MFM MHD scheme with a constrained gradient divergence cleaning scheme,
+as implemented in the GIZMO code \citep{Hopkins2017}. Concerning variants of the SPH hydro force
+formulation we consider both the "vanilla" SPH and the PSPH variant included in GIZMO. We find, as
+expected, that the numerical noise inherent in these schemes affects turbulence significantly.
+A high order kernel, free of the pairing instability, is necessary. Both schemes can adequately
+simulate MRI turbulence in unstratified shearing boxes with net vertical flux. The turbulence,
+however, dies out in zero-net-flux unstratified boxes, probably due to excessive and numerical
+dissipation. In zero-net-flux vertically stratified simulations, MFM can reproduce the MRI dynamo
+and its characteristic butterfly diagram for several tens of orbits before ultimately decaying.
+In contrast, extremely strong toroidal fields, as opposed to sustained turbulence, develop in
+equivalent simulations using SPH MHD. This unphysical state in SPH MHD is likely caused by a combination
+of excessive artificial viscosity, numerical resistivity, and the relatively large residual
+errors in the divergence of the magnetic field remaining even after cleaning procedures are applied.

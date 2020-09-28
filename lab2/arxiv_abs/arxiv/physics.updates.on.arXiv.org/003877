@@ -1,0 +1,19 @@
+High-order gas-kinetic scheme (HGKS) has been well-developed in the past years. Abundant numerical
+tests including hypersonic flow, turbulence, and aeroacoustic problems, have been used to validate
+its accuracy, efficiency, and robustness. However, there are still rooms for its further improvement.
+Firstly, the reconstruction in the previous scheme mainly achieves a third-order accuracy for
+the initial non-equilibrium states. At the same time, the equilibrium state in space and time in
+HGKS has to be reconstructed separately. Secondly, it is complicated to get reconstructed data
+at Gaussian points from the WENO-type method in high dimensions. For HGKS, besides the point-wise
+values at the Gaussian points it also requires the slopes in both normal and tangential directions
+of a cell interface. Thirdly, there exists visible spurious overshoot/undershoot at weak discontinuities
+from the previous HGKS with the standard WENO reconstruction. In order to overcome these difficulties,
+in this paper we use an improved reconstruction for HGKS. The WENO with adaptive order (WENO-AO)
+method is implemented for reconstruction.A whole polynomial inside each cell is provided in WENO-AO
+reconstruction. The HGKS becomes simpler than the previous one with the direct implementation
+of cell interface values and their slopes from WENO-AO. The additional reconstruction of equilibrium
+state at the beginning of each time step can be avoided as well by dynamically merging the reconstructed
+non-equilibrium slopes. The new HGKS essentially releases or totally removes the above existing
+problems in previous HGKS. The accuracy of the scheme from 1D to 3D from the new HGKS can recover the
+theoretical order of accuracy of the WENO reconstruction.In the two- and three-dimensional simulations,
+the new HGKS shows better robustness and efficiency than the previous scheme in all test cases. 

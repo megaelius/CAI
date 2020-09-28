@@ -1,0 +1,19 @@
+Dynamic time warping (DTW) is a method that inputs two time-domain signals and outputs a function
+that warps time in order to approximately align the two signals together. Despite its popularity,
+DTW has a problem that has eluded researchers for decades: so-called "singularities," which are
+sharp irregularities in the time warp function that cause many time points of one signal to be erroneously
+mapped onto a single point in the other signal. We solve this long-standing problem by reformulating
+DTW entirely. Here we pose DTW as an optimization problem with several penalty terms in the objective.
+The first term concerns the time-warped signals, penalizing misalignments, while two additional
+terms concern the time warping function itself. A penalty on the cumulative amount of warping limits
+over-fitting, which is similar to "ridge" or "lasso" regularization, and a penalty on the instantaneous
+slope limits roughness in the time warp function. Different choices of the three objective terms
+yield different time warping functions that trade off signal fit or alignment and properties of
+the warping function. The optimization problem we formulate is a classical optimal control problem,
+with initial and terminal constraints, and a state dimension of one. We describe an effective general
+method that minimizes the objective by discretizing the values of the original and warped time,
+and using standard dynamic programming to compute the (globally) optimal warping function with
+the discretized values. Iterated refinement of this scheme yields a high accuracy warping function
+in just a few iterations. We include a single, efficient algorithm with linear time complexity and
+an average runtime that's 50x faster than the state-of-the-art methods on typical problem sizes.
+Our method and example data are available in an open-source Python package called GDTW. 

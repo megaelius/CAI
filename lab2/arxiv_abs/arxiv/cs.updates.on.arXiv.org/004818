@@ -1,0 +1,18 @@
+The success of massively parallel computation (MPC) paradigms such as MapReduce has led to a significant
+interest in better understanding their true computational power. The fundamental question in
+this regard is how the advantages of this model (e.g. free local computation) can be leveraged to
+improve the round-complexity of algorithms inherited from traditional parallel and distributed
+models such as PRAM or LOCAL. Maximal independent set (MIS) and maximal matching are among the most
+intensively studied problems in the field and they admit $O(\log n)$ round algorithms that have
+been known from 1980s. However, prior to our work, no improved MPC algorithm was known for these problems
+using a truly sublinear space per machine. Our main result is an algorithm that takes $O(\log \alpha
++ \log^2\log n)$ rounds to compute MIS or maximal matching with a truly sublinear space of $n^{1-\Omega(1)}$
+per machine and an optimal total space of $\tilde{O}(m)$ where $m=|E|$, $n=|V|$, and $\alpha$ denotes
+the arboricity of the input graph. We believe parametrization by arboricity is particularly interesting
+for this regime of MPC since most families of sparse graphs have a small arboricity. Our algorithms
+do not assume arboricity is constant and do not require to be given $\alpha$. This is the first substantial
+improvement over the known PRAM/LOCAL algorithms for these problems on such a wide class of graphs.
+Since trees have arboricity one, our algorithm improves and generalizes the recent algorithm of
+Brandt et al. [arXiv:1802.06748] that finds MIS on trees in $O(\log^3\log n)$ rounds. Moreover,
+the $n$-dependency of our algorithm exponentially improves over the corresponding $O(\log \alpha
++ \sqrt{\log n})$ PRAM/LOCAL bounds by Barenboim et al. [FOCS'12] and Ghaffari [SODA'16]. 

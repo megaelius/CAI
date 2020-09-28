@@ -1,0 +1,18 @@
+We propose a strong physical unclonable function (PUF) that is provably secure against machine
+learning (ML) attacks with both classical and quantum computers. The security is derived from cryptographic
+hardness of learning decryption functions of semantically secure public-key cryptosystems within
+the probably approximately correct framework. The proposed lattice PUF compactly realizes the
+decryption function of the learning-with-errors (LWE) public-key cryptosystem as the core block.
+The lattice PUF is lightweight and fully digital. It is constructed using a weak PUF, as a physically
+obfuscated key (POK), an LWE decryption function block, a pseudo-random number generator in the
+form of a linear-feedback shift register, a self-incrementing counter, and a control block. The
+POK provides the secret key of the LWE decryption function. A fuzzy extractor is utilized to ensure
+stability of the POK. The proposed lattice PUF significantly improves upon a direct implementation
+of LWE decryption function in terms of challenge transfer cost by exploiting distributional relaxations
+allowed by recent work in space-efficient LWEs. To prevent an active attack in which arbitrary challenges
+can be submitted, the value of a self-incrementing counter is embedded into the challenge seed.
+We construct a lattice PUF that realizes a challenge-response pair space of size 2^136, requires
+1160 POK bits, and guarantees 128-bit ML resistance. Assuming a bit error rate of 5% for SRAM-based
+POK, 6.5K SRAM cells are needed. The PUF shows excellent uniformity, uniqueness, and reliability.
+We implement the PUF on a Spartan 6 FPGA. It requires only 4545 slices for the lattice PUF proper, and
+233 slices for the fuzzy extractor. 

@@ -1,0 +1,20 @@
+The present work develops hybrid multigrid methods for high-order discontinuous Galerkin discretizations
+of elliptic problems. Fast matrix-free operator evaluation on tensor product elements is used
+to devise a computationally efficient PDE solver. The multigrid hierarchy exploits all possibilities
+of geometric, polynomial, and algebraic coarsening, targeting engineering applications on complex
+geometries. Additionally, a transfer from discontinuous to continuous function spaces is performed
+within the multigrid hierarchy. This does not only further reduce the problem size of the coarse-grid
+problem, but also leads to a discretization most suitable for state-of-the-art algebraic multigrid
+methods applied as coarse-grid solver. The relevant design choices regarding the selection of
+optimal multigrid coarsening strategies among the various possibilities are discussed with the
+metric of computational costs as the driving force for algorithmic selections. We find that a transfer
+to a continuous function space at highest polynomial degree (or on the finest mesh), followed by
+polynomial and geometric coarsening, shows the best overall performance. The success of this particular
+multigrid strategy is due to a significant reduction in iteration counts as compared to a transfer
+from discontinuous to continuous function spaces at lowest polynomial degree (or on the coarsest
+mesh). The coarsening strategy with transfer to a continuous function space on the finest level
+leads to a multigrid algorithm that is robust with respect to the penalty parameter of the SIPG method.
+Detailed numerical investigations are conducted for a series of examples ranging from academic
+test cases to more complex, practically relevant geometries. Performance comparisons to state-of-the-art
+methods from the literature demonstrate the versatility and computational efficiency of the proposed
+multigrid algorithms. 

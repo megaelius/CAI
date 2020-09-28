@@ -1,0 +1,17 @@
+We present an algorithm to count the number of occurrences of a pattern graph $H$ as an induced subgraph
+in a host graph $G$. If $G$ belongs to a bounded expansion class, the algorithm runs in linear time.
+Our design choices are motivated by the need for an approach that can be engineered into a practical
+implementation for sparse host graphs. Specifically, we introduce a decomposition of the pattern
+$H$ called a counting dag $\vec C(H)$ which encodes an order-aware, inclusion-exclusion counting
+method for $H$. Given such a counting dag and a suitable linear ordering $\mathbb G$ of $G$ as input,
+our algorithm can count the number of times $H$ appears as an induced subgraph in $G$ in time $O(\|\vec
+C\| \cdot h \text{wcol}_{h}(\mathbb G)^{h-1} |G|)$, where $\text{wcol}_h(\mathbb G)$ denotes
+the maximum size of the weakly $h$-reachable sets in $\mathbb G$. This implies, combined with previous
+results, an algorithm with running time $O(4^{h^2}h (\text{wcol}_h(G)+1)^{h^3} |G|)$ which
+only takes $H$ and $G$ as input. We note that with a small modification, our algorithm can instead
+use strongly $h$-reachable sets with running time $O(\|\vec C\| \cdot h \text{col}_{h}(\mathbb
+G)^{h-1} |G|)$, resulting in an overall complexity of $O(4^{h^2}h \text{col}_h(G)^{h^2} |G|)$
+when only given $H$ and $G$. Because orderings with small weakly/strongly reachable sets can be
+computed relatively efficiently in practice [11], our algorithm provides a promising alternative
+to algorithms using the traditional $p$-treedepth colouring framework [13]. We describe preliminary
+experimental results from an initial open source implementation which highlight its potential.

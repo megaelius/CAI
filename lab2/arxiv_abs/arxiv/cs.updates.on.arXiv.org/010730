@@ -1,0 +1,20 @@
+The goal of coded distributed matrix multiplication (CDMM) is to efficiently multiply matrices
+${\bf A}$ and ${\bf B}$ by distributing the computation task across $S$ servers (through a coding
+scheme), such that the response from any $R$ servers ($R$ is called the recovery threshold) is sufficient
+for the user to compute ${\bf AB}$. CDMM algorithms seek to optimize the tradeoff between six quantities
+of interest: recovery threshold, upload cost, download cost, encoding complexity, decoding complexity,
+and server computation complexity. Existing CDMM codes such as Polynomial codes, MatDot codes,
+PolyDot codes, Generalized PolyDot codes and Entangled Polynomial codes, all focus on multiplying
+one ${\bf A}$ matrix with one ${\bf B}$ matrix. Batch matrix multiplication of ${\bf A_1,\cdots,A_L}$
+with ${\bf B_1,\cdots,B_L}$ to compute ${\bf A_1B_1,\dots,A_LB_L}$ can be naturally accomplished
+with CDMM codes by separately computing the ${\bf A}_l{\bf B}_l$ products for each $l\in[L]$. But
+is it possible to do significantly better? Somewhat surprisingly, this work shows that joint coding
+of the batch of matrices offers significant advantages over separate coding. To this end, Cross
+Subspace Alignment (CSA) codes are introduced, that code across the matrices in a batch instead
+of partitioning each of the individual matrices as done in existing CDMM codes. Given a recovery
+threshold $R$, CSA codes have the same server computation complexity per matrix multiplication
+as existing CDMM codes, but CSA codes show a significant improvement over all existing CDMM codes
+in the tradeoff between upload-download costs. A corresponding improvement in the tradeoff between
+encoding and decoding complexity is also observed. The gain from batch processing is reminiscent
+of gains from multi-letterization in information theory, vector codes in network coding, and symbol
+extensions in interference alignment schemes. 

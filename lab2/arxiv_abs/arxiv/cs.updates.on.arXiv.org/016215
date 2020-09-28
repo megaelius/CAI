@@ -1,0 +1,19 @@
+The \emph{receptive fields} of deep learning classification models determine the regions of the
+input data that have the most significance for providing correct decisions. The primary way to learn
+such receptive fields is to train the models upon masked data, which helps the networks to ignore
+any unwanted regions, but has two major drawbacks: 1) it often yields edge-sensitive decision processes;
+and 2) augments the computational cost of the inference phase considerably. This paper describes
+a solution for implicitly driving the inference of the networks' receptive fields, by creating
+synthetic learning data composed of interchanged segments that should be \emph{apriori} important/irrelevant
+for the network decision. In practice, we use a segmentation module to distinguish between the foreground
+(important)/background (irrelevant) parts of each learning instance, and randomly swap segments
+between image pairs, while keeping the class label exclusively consistent with the label of the
+deemed important segments. This strategy typically drives the networks to early convergence and
+appropriate solutions, where the identity and clutter descriptions are not correlated. Moreover,
+this data augmentation solution has various interesting properties: 1) it is parameter-free;
+2) it fully preserves the label information; and, 3) it is compatible with the typical data augmentation
+techniques. In the empirical validation, we considered the person re-identification problem
+and evaluated the effectiveness of the proposed solution in the well-known \emph{Richly Annotated
+Pedestrian} (RAP) dataset for two different settings (\emph{upper-body} and \emph{full-body}),
+observing highly competitive results over the state-of-the-art. Under a reproducible research
+paradigm, both the code and the empirical evaluation protocol are available at \url{https://github.com/Ehsan-Yaghoubi/reid-strong-baseline}.

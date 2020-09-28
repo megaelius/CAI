@@ -1,0 +1,20 @@
+Policy optimization (PO) is a key ingredient for reinforcement learning (RL). For control design,
+certain constraints are usually enforced on the policies to optimize, accounting for either the
+stability, robustness, or safety concerns on the system. Hence, PO is by nature a constrained (nonconvex)
+optimization in most cases, whose global convergence is challenging to analyze in general. More
+importantly, some constraints that are safety-critical, e.g., the $\mathcal{H}_\infty$-norm
+constraint that guarantees the system robustness, are difficult to enforce as the PO methods proceed.
+Recently, policy gradient methods have been shown to converge to the global optimum of linear quadratic
+regulator (LQR), a classical optimal control problem, without regularizing/projecting the control
+iterates onto the stabilizing set (Fazel et al., 2018), its (implicit) feasible set. This striking
+result is built upon the coercive property of the cost, ensuring that the iterates remain feasible
+as the cost decreases. In this paper, we study the convergence theory of PO for $\mathcal{H}_2$ linear
+control with $\mathcal{H}_\infty$-norm robustness guarantee. One significant new feature of
+this problem is the lack of coercivity, i.e., the cost may have finite value around the feasible set
+boundary, breaking the existing analyses for LQR. Interestingly, we show that two PO methods enjoy
+the implicit regularization property, i.e., the iterates preserve the $\mathcal{H}_\infty$
+robustness constraint as if they are regularized by the algorithms. Furthermore, convergence
+to the globally optimal policies with globally sublinear and locally (super-)linear rates are
+provided under certain conditions, despite the nonconvexity of the problem. To the best of our knowledge,
+our work offers the first results on the implicit regularization property and global convergence
+of PO methods for robust/risk-sensitive control. 

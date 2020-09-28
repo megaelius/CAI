@@ -1,0 +1,19 @@
+The Massively Parallel Computation (MPC) model serves as a common abstraction of many modern large-scale
+parallel computation frameworks and has recently gained a lot of importance, especially in the
+context of classic graph problems. Unsatisfactorily, all current $\text{poly} (\log \log n)$-round
+MPC algorithms seem to get fundamentally stuck at the linear-memory barrier: their efficiency
+crucially relies on each machine having space at least linear in the number $n$ of nodes. As this might
+not only be prohibitively large, but also allows for easy if not trivial solutions for sparse graphs,
+we are interested in the low-memory MPC model, where the space per machine is restricted to be strongly
+sublinear, that is, $n^{\delta}$ for any $0<\delta<1$. We devise a degree reduction technique
+that reduces maximal matching and maximal independent set in graphs with arboricity $\lambda$
+to the corresponding problems in graphs with maximum degree $\text{poly}(\lambda)$ in $O(\log^2
+\log n)$ rounds. This gives rise to $O\left(\log^2\log n + T(\text{poly} \lambda)\right)$-round
+algorithms, where $T(\Delta)$ is the $\Delta$-dependency in the round complexity of maximal matching
+and maximal independent set in graphs with maximum degree $\Delta$. A concurrent work by Ghaffari
+and Uitto shows that $T(\Delta)=O(\sqrt{\log \Delta})$. For graphs with arboricity $\lambda=\text{poly}(\log
+n)$, this almost exponentially improves over Luby's $O(\log n)$-round PRAM algorithm [STOC'85,
+JALG'86], and constitutes the first $\text{poly} (\log \log n)$-round maximal matching algorithm
+in the low-memory MPC model, thus breaking the linear-memory barrier. Previously, the only known
+subpolylogarithmic algorithm, due to Lattanzi et al. [SPAA'11], required strongly superlinear,
+that is, $n^{1+\Omega(1)}$, memory per machine. 

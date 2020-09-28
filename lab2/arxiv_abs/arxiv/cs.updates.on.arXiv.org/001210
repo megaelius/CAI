@@ -1,0 +1,18 @@
+This paper introduces a packet-based dual-rate control strategy to face time-varying network-induced
+delays, packet dropouts and packet disorder in a Networked Control System. Slow-rate sensing enables
+to achieve energy saving by reducing network load. In addition, choosing a slower sensing period
+than the longest round-trip time delay can avoid packet disorder. On the other hand, a slow-rate
+sensing usually degrades control performance in a conventional control framework. Therefore,
+including dual-rate control techniques can be useful to maintain the desired performance, since
+the controller is able to generate a fast-rate control signal from a slow-rate sensing signal. A
+dual-rate PID controller is used, which can be split into two parts: a slow-rate PI controller is
+located at the remote side (with no permanent communication to the plant) and a fast-rate PD controller,
+at the local side (close to the plant, sensor, and inside the actuator, which can offer a low computation
+power). In addition, at the remote side, where a powerful computation device is located, a prediction
+stage is included in order to generate the packet of future, estimated slow-rate control actions
+to be sent to the local side. At this side, these actions are converted to fast-rate ones and used when
+a packet does not arrive due to the network-induced delay or due to occurring dropouts. The control
+proposal is able to reach the nominal (no-dropout, no-delay) performance despite the existence
+of time-varying delays and packet dropouts. Via real-time control for a Cartesian robot, results
+clearly reveal the superiority of the control approach compared to a previous authors\' proposal,
+where the time-varying delays are faced by means of a gain scheduling control strategy. 

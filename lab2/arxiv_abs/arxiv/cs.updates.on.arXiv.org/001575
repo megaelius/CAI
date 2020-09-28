@@ -1,0 +1,19 @@
+The index selection problem (ISP) is an important problem for accelerating the execution of relational
+queries, and it has received a lot of attention as a combinatorial knapsack problem in the past. Various
+solutions to this very hard problem have been provided. In contrast to existing literature, we change
+the underlying assumptions of the problem definition: we adapt the problem for systems that store
+relations in memory, and use complex specification languages, e.g., Datalog. In our framework,
+we decompose complex queries into primitive searches that select tuples in a relation for which
+an equality predicate holds. A primitive search can be accelerated by an index exhibiting a worst-case
+run-time complexity of log-linear time in the size of the output result of the primitive search.
+However, the overheads associated with maintaining indexes are very costly in terms of memory and
+computing time. In this work, we present an optimal polynomial-time algorithm that finds the minimal
+set of indexes of a relation for a given set of primitive searches. An index may cover more than one
+primitive search due to the algebraic properties of the search predicate, which is a conjunction
+of equalities over the attributes of a relation. The index search space exhibits a exponential complexity
+in the number of attributes in a relation, and, hence brute-force algorithms searching for solutions
+in the index domain are infeasible. As a scaffolding for designing a polynomial-time algorithm,
+we build a partial order on search operations and use a constructive version of Dilworth's theorem.
+We show a strong relationship between chains of primitive searches (forming a partial order) and
+indexes. We demonstrate the effectiveness and efficiency of our algorithm for an in-memory Datalog
+compiler that is able to process relations with billions of entries in memory. 

@@ -1,0 +1,19 @@
+This paper investigates bandwidth-efficient DRAM caching for hybrid DRAM + 3D-XPoint memories.
+3D-XPoint is becoming a viable alternative to DRAM as it enables high-capacity and non-volatile
+main memory systems; however, 3D-XPoint has 4-8x slower read, and worse writes. As such, effective
+DRAM caching in front of 3D-XPoint is important to enable a high-capacity, low-latency, and high-write-bandwidth
+memory. There are two major approaches for DRAM cache design: (1) a Tag-Inside-Cacheline (TIC)
+organization that optimizes for hits, by storing tag next to each line such that one access gets both
+tag and data, and (2) a Tag-Outside-Cacheline (TOC) organization that optimizes for misses, by
+storing tags from multiple data-lines together such that one tag-access gets info for several data-lines.
+Ideally, we desire the low hit-latency of TIC, and the low miss-bandwidth of TOC. To this end, we propose
+TicToc, an organization that provisions both TIC and TOC to get hit and miss benefits of both. However,
+we find that naively combining both actually performs worse than TIC, because one needs to pay bandwidth
+to maintain both metadata. The main contribution of this work is developing architectural techniques
+to reduce the bandwidth of maintaining both TIC and TOC metadata. We find the majority of the bandwidth
+cost is due to maintaining TOC dirty bits. We propose DRAM Cache Dirtiness Bit, which carries DRAM
+cache dirty info to last-level caches, to prune repeated dirty-bit checks for known dirty lines.
+We then propose Preemptive Dirty Marking, which predicts which lines will be written and proactively
+marks dirty bit at install time, to amortize the initial dirty-bit update. Our evaluations on a 4GB
+DRAM cache with 3D-XPoint memory show that TicToc enables 10% speedup over baseline TIC, nearing
+14% speedup possible with an idealized DRAM cache w/ 64MB of SRAM tags, while needing only 34KB SRAM.

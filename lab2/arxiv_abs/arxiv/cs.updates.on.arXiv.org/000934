@@ -1,0 +1,18 @@
+Interactive consistency is the problem in which n nodes, where up to t may be byzantine, each with
+its own private value, run an algorithm that allows all non-faulty nodes to infer the values of each
+other node. This problem is relevant to critical applications that rely on the combination of the
+opinions of multiple peers to provide a service. Examples include monitoring a content source to
+prevent equivocation or to track variability in the content provided, and reliable time-stamping
+of events in state machine replication. Previous algorithms assume a synchronous system, where
+one can make assumptions regarding message delivery delays and/or detection of absent messages.
+Practical, real world systems are mainly asynchronous in nature, thus requiring a different approach.
+In this paper, we present the first study on practical asynchronous interactive consistency. We
+leverage the vast prior work on broadcast and byzantine consensus algorithms to design, implement
+and evaluate a suite of algorithms, each with its own unique trade-off regarding processing overhead
+and message complexity, that can be used to achieve interactive consistency in real distributed
+systems. We provide a complete, open-source implementation of each proposed interactive consistency
+algorithm by building a multi-layered stack of protocols that include several broadcast protocols,
+as well as a binary and a multi-valued consensus protocol. Most of these protocols have been proposed,
+but never been implemented and evaluated in a real system before. We analyze the performance of our
+suite of algorithms empirically by engaging in both single instance and multiple parallel instances
+of each alternative. 

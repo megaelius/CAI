@@ -1,0 +1,18 @@
+Arithmetic encoding is an essential class of coding techniques which have been widely used in various
+data compression systems and exhibited promising performance. One key issue of arithmetic encoding
+method is to predict the probability of the current symbol to be encoded from its context, i.e., the
+preceding encoded symbols, which usually can be executed by building a look-up table (LUT). However,
+the complexity of LUT increases exponentially with the length of context. Thus, such solutions
+are limited in modeling large context, which inevitably restricts the compression performance.
+Several recent convolutional neural network (CNN) and recurrent neural network (RNN)-based solutions
+have been developed to account for large context, but are still costly in computation. The inefficiency
+of the existing methods are mainly attributed to that probability prediction is performed independently
+for the neighboring symbols, which actually can be efficiently conducted by shared computation.
+To this end, we propose a trimmed convolutional network for arithmetic encoding (TCAE) to model
+large context while maintaining computational efficiency. As for trimmed convolution, the convolutional
+kernels are specially trimmed to respect the compression order and context dependency of the input
+symbols. Benefited from trimmed convolution, the probability prediction of all symbols can be
+efficiently performed in one single forward pass via a fully convolutional network. Experiments
+show that our TCAE attains better compression ratio in lossless gray image compression, and can
+be adopted in CNN-based lossy image compression to achieve state-of-the-art rate-distortion
+performance with real-time encoding speed. 

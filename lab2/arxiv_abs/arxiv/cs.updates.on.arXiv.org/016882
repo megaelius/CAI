@@ -1,0 +1,17 @@
+Convolutional Neural Networks (CNNs) work very well for supervised learning problems when the
+training dataset is representative of the variations expected to be encountered at test time. In
+medical image segmentation, this premise is violated when there is a mismatch between training
+and test images in terms of their acquisition details, such as the scanner model or the protocol.
+Remarkable performance degradation of CNNs in this scenario is well documented in the literature.
+To address this problem, we design the segmentation CNN as a concatenation of two sub-networks:
+a relatively shallow image normalization CNN, followed by a deep CNN that segments the normalized
+image. We train both these sub-networks using a training dataset, consisting of annotated images
+from a particular scanner and protocol setting. Now, at test time, we adapt the image normalization
+sub-network for \emph{each test image}, guided by an implicit prior on the predicted segmentation
+labels. We employ an independently trained denoising autoencoder (DAE) in order to model such an
+implicit prior on plausible anatomical segmentation labels. We validate the proposed idea on multi-center
+Magnetic Resonance imaging datasets of three anatomies: brain, heart and prostate. The proposed
+test-time adaptation consistently provides performance improvement, demonstrating the promise
+and generality of the approach. Being agnostic to the architecture of the deep CNN, the second sub-network,
+the proposed design can be utilized with any segmentation network to increase robustness to variations
+in imaging scanners and protocols. Our code is available at: \url{https://github.com/neerakara/test-time-adaptable-neural-networks-for-domain-generalization.

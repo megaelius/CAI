@@ -1,0 +1,18 @@
+Least-squares (LS) forms of the transport equation can circumvent the void problems of other second
+order forms, but are almost always non-conservative. Additionally, the standard LS form is not
+compatible with discrete ordinates method (Sn) iterative solution techniques such as source iteration.
+A new form of the least-squares transport equation has recently been developed that is compatible
+with voids and standard Sn iterative solution techniques. Performing Nonlinear Diffusion Acceleration
+(NDA) using an independently-differenced low-order equation enforces conservation for the whole
+system, and makes this equation suitable for reactor physics calculations. In this context independent
+means that both the transport and low-order solutions converge to the same scalar flux and current
+as the spatial mesh is refined, but for a given mesh, the solutions are not necessarily equal. In this
+paper we show that introducing a weight function to this least-squares equation improves issues
+with causality and can render our equation equal to the Self-Adjoint Angular Flux (SAAF) equation.
+Causality is a principle of the transport equation which states that information only travels downstream
+along characteristics. This principle can be violated numerically. We show how to limit the weight
+function in voids and demonstrate the effect of this limit on the accuracy. Using the C5G7 benchmark,
+we compare our method to the self-adjoint angular flux formulation with a void treatment (\SAAFt),
+which is not self-adjoint and has a non-symmetric coefficient matrix. We show that the weighted
+least-squares equation with NDA gives acceptable accuracy relative to the SAAFt equation while
+maintaining a symmetric positive-definite system matrix. 

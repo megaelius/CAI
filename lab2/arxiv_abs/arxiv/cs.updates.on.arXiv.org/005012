@@ -1,0 +1,19 @@
+Despite being popularly used in many application domains such as image recognition and classification,
+neural network models have been found to be vulnerable to adversarial examples: given a model and
+an example correctly classified by the model, an adversarial example is a new example formed by applying
+small perturbation (imperceptible to human) on the given example so that the model misclassifies
+the new example. Adversarial examples can pose potential risks on safety or security in real-world
+applications. In recent years, given a vulnerable model, defense approaches, such as adversarial
+training and defensive distillation, improve the model to make it more robust against adversarial
+examples. However, based on the improved model, attackers can still generate adversarial examples
+to successfully attack the model. To address such limitation, we propose a new defense approach,
+named MULDEF, based on the design principle of diversity. Given a target model (as a seed model) and
+an attack approach to be defended against, MULDEF constructs additional models (from the seed model)
+together with the seed model to form a family of models, such that the models are complementary to
+each other to accomplish robustness diversity (i.e., one model's adversarial examples typically
+do not become other models' adversarial examples), while maintaining about the same accuracy for
+normal examples. At runtime, given an input example, MULDEF randomly selects a model from the family
+to be applied on the given example. The robustness diversity of the model family and the random selection
+of a model from the family together lower the success rate of attacks. Our evaluation results show
+that MULDEF substantially improves the target model's accuracy on adversarial examples by 35-50%
+and 2-10% in the white-box and black-box attack scenarios, respectively. 

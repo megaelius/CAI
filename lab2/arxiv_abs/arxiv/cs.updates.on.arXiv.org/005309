@@ -1,0 +1,18 @@
+Composite convex optimization problems which include both a nonsmooth term and a low-rank promoting
+term have important applications in machine learning and signal processing, such as when one wishes
+to recover an unknown matrix that is simultaneously low-rank and sparse. However, such problems
+are highly challenging to solve in large-scale: the low-rank promoting term prohibits efficient
+implementations of proximal methods for composite optimization and even simple subgradient methods.
+On the other hand, methods which are tailored for low-rank optimization, such as conditional gradient-type
+methods, which are often applied to a smooth approximation of the nonsmooth objective, are slow
+since their runtime scales with both the large Lipshitz parameter of the smoothed gradient vector
+and with $1/\epsilon$. In this paper we develop efficient algorithms for \textit{stochastic}
+optimization of a strongly-convex objective which includes both a nonsmooth term and a low-rank
+promoting term. In particular, to the best of our knowledge, we present the first algorithm that
+enjoys all following critical properties for large-scale problems: i) (nearly) optimal sample
+complexity, ii) each iteration requires only a single \textit{low-rank} SVD computation, and
+iii) overall number of thin-SVD computations scales only with $\log{1/\epsilon}$ (as opposed
+to $\textrm{poly}(1/\epsilon)$ in previous methods). We also give an algorithm for the closely-related
+finite-sum setting. At the heart of our results lie a novel combination of a variance-reduction
+technique and the use of a \textit{weak-proximal oracle} which is key to obtaining all above three
+properties simultaneously. 

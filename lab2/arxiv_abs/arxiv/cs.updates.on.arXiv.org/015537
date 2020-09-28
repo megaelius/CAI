@@ -1,0 +1,18 @@
+Visual Question Generation (VQG) is the task of generating natural questions based on an image.
+Popular methods in the past have explored image-to-sequence architectures trained with maximum
+likelihood which often lead to generic questions. While generative models try to exploit more concepts
+in an image, they still require ground-truth questions, answers (and categories in some cases).
+In this paper, we try to exploit the different visual cues and concepts in an image to generate questions
+using a variational autoencoder without the need for ground-truth answers. In this work, we, therefore,
+address two shortcomings of the current VQG approaches by minimizing the level of supervision and
+replacing generic questions by category-relevant generations. We, therefore, eliminate the
+need for expensive answer annotations thus weakening the required supervision in this task and
+use question categories instead. Using different categories enables us to exploit different concepts
+as the inference requires only the image and category. We maximize the mutual information between
+the image, question, and question category in the latent space of our VAE. We also propose a novel
+\textit{category consistent cyclic loss} that motivates the model to generate consistent predictions
+with respect to the question category, reducing its redundancies and irregularities. Additionally,
+we also impose supplementary constraints on the latent space of our generative model to provide
+structure based on categories and enhance generalization by encapsulating decorrelated features
+within each dimension. Finally, we compare our qualitative as well as quantitative results to the
+state-of-the-art in VQG. 

@@ -1,0 +1,18 @@
+GPUs exploit a high degree of thread-level parallelism to hide long-latency stalls. Due to the heterogeneous
+compute requirements of different applications, there is a growing need to share the GPU across
+multiple applications in large-scale computing environments. However, while CPUs offer relatively
+seamless multi-application concurrency, and are an excellent fit for multitasking and for virtualized
+environments, GPUs currently offer only primitive support for multi-application concurrency.
+Much of the problem in a contemporary GPU lies within the memory system, where multi-application
+execution requires virtual memory support to manage the address spaces of each application and
+to provide memory protection. In this work, we perform a detailed analysis of the major problems
+in state-of-the-art GPU virtual memory management that hinders multi-application execution.
+Existing GPUs are designed to share memory between the CPU and GPU, but do not handle multi-application
+support within the GPU well. We find that when multiple applications spatially share the GPU, there
+is a significant amount of inter-core thrashing on the shared TLB within the GPU. The TLB contention
+is high enough to prevent the GPU from successfully hiding stall latencies, thus becoming a first-order
+performance concern. We introduce MASK, a memory hierarchy design that provides low-overhead
+virtual memory support for the concurrent execution of multiple applications. MASK extends the
+GPU memory hierarchy to efficiently support address translation through the use of multi-level
+TLBs, and uses translation-aware memory and cache management to maximize throughput in the presence
+of inter-application contention. 

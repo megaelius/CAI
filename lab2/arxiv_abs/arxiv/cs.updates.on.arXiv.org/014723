@@ -1,0 +1,19 @@
+Model inference aims to extract accurate models from the execution logs of software systems. However,
+in reality, logs may contain some "noise" that could deteriorate the performance of model inference.
+One form of noise can commonly be found in system logs that contain not only transactional messages---logging
+the functional behavior of the system---but also operational messages---recording the operational
+state of the system (e.g., a periodic heartbeat to keep track of the memory usage). In low-quality
+logs, transactional and operational messages are randomly interleaved, leading to the erroneous
+inclusion of operational behaviors into a system model, that ideally should only reflect the functional
+behavior of the system. It is therefore important to remove operational messages in the logs before
+inferring models. In this paper, we propose LogCleaner, a novel technique for removing operational
+logs messages. LogCleaner first performs a periodicity analysis to filter out periodic messages,
+and then it performs a dependency analysis to calculate the degree of dependency for all log messages
+and to remove operational messages based on their dependencies. The experimental results on two
+proprietary and 11 publicly available log datasets show that LogCleaner, on average, can accurately
+remove 98% of the operational messages and preserve 81% of the transactional messages. Furthermore,
+using logs pre-processed with LogCleaner decreases the execution time of model inference (with
+a speed-up ranging from 1.5 to 946.7 depending on the characteristics of the system) and significantly
+improves the accuracy of the inferred models, by increasing their ability to accept correct system
+behaviors (+43.8 pp on average, with pp=percentage points) and to reject incorrect system behaviors
+(+15.0 pp on average). 

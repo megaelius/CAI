@@ -1,0 +1,18 @@
+We analyse numerical errors (dissipation and dispersion) introduced by the discretisation of
+inviscid and viscous terms in energy stable discontinuous Galerkin methods. First, we analyse
+these methods using a linear von Neumann analysis (for a linear advection-diffusion equation)
+to characterise their properties in wave-number space. Second, we validate these observations
+using the 3D Taylor-Green Vortex Navier-Stokes problem to assess transitional/turbulent flows.
+We show that the dissipation introduced by upwind Riemann solvers affects primarily high wave-numbers.
+This dissipation may be increased, through a penalty parameter, until a critical value. However,
+further augmentation of this parameter leads to a decrease of dissipation, reaching zero for very
+large values. Regarding the dissipation introduced by second order derivatives, we show that this
+dissipa- tion acts at low and medium wave-numbers (lower wave-numbers compared to upwind Riemann
+solvers). In addition, we analyse the Spectral Vanishing Viscosity (SVV) technique, previously
+used in continuous discretisations (e.g. Fourier), to find that with an appropriate kernel (which
+damps selected modes) it is possible to control the amount of dissipation introduced in the low and
+medium wave-number range. Combining these ideas, we finally propose a DG-SVV approach that uses
+a Smagorinsky model to compute the numerical viscosity. This DG-SVV approach is tested in an isotropic
+laminar/turbulent under-resolved scenario. Combining the SVV technique with a low dissipation
+Riemann solver, we obtain a scheme capable of maintaining low dissipation levels for laminar flows,
+whilst providing the correct dissipation for all wave-number ranges in turbulent regimes. 

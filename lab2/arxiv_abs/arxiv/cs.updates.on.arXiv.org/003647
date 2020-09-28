@@ -1,0 +1,18 @@
+Frequency estimation data structures such as the count-min sketch (CMS) have found numerous applications
+in databases, networking, computational biology and other domains. Many applications that use
+the count-min sketch process massive and rapidly evolving datasets. For data-intensive applications
+that aim to keep the overestimate error low, the count-min sketch may become too large to store in
+available RAM and may have to migrate to external storage (e.g., SSD.) Due to the random-read/write
+nature of hash operations of the count-min sketch, simply placing it on SSD stifles the performance
+of time-critical applications, requiring about 4-6 random reads/writes to SSD per estimate (lookup)
+and update (insert) operation. In this paper, we expand on the preliminary idea of the Buffered Count-Min
+Sketch (BCMS) [15], an SSD variant of the count-min sketch, that used hash localization to scale
+efficiently out of RAM while keeping the total error bounded. We describe the design and implementation
+of the buffered count-min sketch, and empirically show that our implementation achieves 3.7x-4.7x
+the speedup on update (insert) and 4.3x speedup on estimate (lookup) operations. Our design also
+offers an asymptotic improvement in the external-memory model [1] over the original data structure:
+r random I/Os are reduced to 1 I/O for the estimate operation. For a data structure that uses k blocks
+on SSD, was the word/counter size, r as the number of rows, M as the number of bits in the main memory,
+our data structure uses kwr/M amortized I/Os for updates, or, if kwr/M >1, 1 I/O in the worst case.
+In typical scenarios, kwr/M is much smaller than 1. This is in contrast to O(r) I/Os incurred for each
+update in the original data structure. 

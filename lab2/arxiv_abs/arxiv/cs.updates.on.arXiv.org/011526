@@ -1,0 +1,19 @@
+In this work we investigate the practicality of stochastic gradient descent and recently introduced
+variants with variance-reduction techniques in imaging inverse problems. Such algorithms have
+been shown in the machine learning literature to have optimal complexities in theory, and provide
+great improvement empirically over the deterministic gradient methods. Surprisingly, in some
+tasks such as image deblurring, many of such methods fail to converge faster than the accelerated
+deterministic gradient methods, even in terms of epoch counts. We investigate this phenomenon
+and propose a theory-inspired mechanism for the practitioners to efficiently characterize whether
+it is beneficial for an inverse problem to be solved by stochastic optimization techniques or not.
+Using standard tools in numerical linear algebra, we derive conditions on the spectral structure
+of the inverse problem for being a suitable application of stochastic gradient methods. Particularly,
+we show that, for an imaging inverse problem, if and only if its Hessain matrix has a fast-decaying
+eigenspectrum, then the stochastic gradient methods can be more advantageous than deterministic
+methods for solving such a problem. Our results also provide guidance on choosing appropriately
+the partition minibatch schemes, showing that a good minibatch scheme typically has relatively
+low correlation within each of the minibatches. Finally, we propose an accelerated primal-dual
+SGD algorithm in order to tackle another key bottleneck of stochastic optimization which is the
+heavy computation of proximal operators. The proposed method has fast convergence rate in practice,
+and is able to efficiently handle non-smooth regularization terms which are coupled with linear
+operators. 

@@ -1,0 +1,19 @@
+To accelerate the existing Broad Learning System (BLS) for new added nodes in [7], we extend the inverse
+Cholesky factorization in [10] to deduce an efficient inverse Cholesky factorization for a Hermitian
+matrix partitioned into 2 * 2 blocks, which is utilized to develop the proposed BLS algorithm 1. The
+proposed BLS algorithm 1 compute the ridge solution (i.e, the output weights) from the inverse Cholesky
+factor of the Hermitian matrix in the ridge inverse, and update the inverse Cholesky factor efficiently.
+From the proposed BLS algorithm 1, we deduce the proposed ridge inverse, which can be obtained from
+the generalized inverse in [7] by just change one matrix in the equation to compute the newly added
+sub-matrix. We also modify the proposed algorithm 1 into the proposed algorithm 2, which is equivalent
+to the existing BLS algorithm [7] in terms of numerical computations. The proposed algorithms 1
+and 2 can reduce the computational complexity, since usually the Hermitian matrix in the ridge inverse
+is smaller than the ridge inverse. With respect to the existing BLS algorithm, the proposed algorithms
+1 and 2 usually require about 13 and 2 3 of complexities, respectively, while in numerical experiments
+they achieve the speedups (in each additional training time) of 2.40 - 2.91 and 1.36 - 1.60, respectively.
+Numerical experiments also show that the proposed algorithm 1 and the standard ridge solution always
+bear the same testing accuracy, and usually so do the proposed algorithm 2 and the existing BLS algorithm.
+The existing BLS assumes the ridge parameter lamda->0, since it is based on the generalized inverse
+with the ridge regression approximation. When the assumption of lamda-> 0 is not satisfied, the
+standard ridge solution obviously achieves a better testing accuracy than the existing BLS algorithm
+in numerical experiments. 

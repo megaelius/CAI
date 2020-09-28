@@ -1,0 +1,19 @@
+Answering exact shortest path distance queries is a fundamental task in graph theory. Despite a
+tremendous amount of research on the subject, there is still no satisfactory solution that can scale
+to billion-scale complex networks. Labelling-based methods are well-known for rendering fast
+response time to distance queries; however, existing works can only construct labelling on moderately
+large networks (million-scale) and cannot scale to large networks (billion-scale) due to their
+prohibitively large space requirements and very long preprocessing time. In this work, we present
+novel techniques to efficiently construct distance labelling and process exact shortest path
+distance queries for complex networks with billions of vertices and billions of edges. Our method
+is based on two ingredients: (i) a scalable labelling algorithm for constructing minimal distance
+labelling, and (ii) a querying framework that supports fast distance-bounded search on a sparsified
+graph. Thus, we first develop a novel labelling algorithm that can scale to graphs at the billion-scale.
+Then, we formalize a querying framework for exact distance queries, which combines our proposed
+highway cover distance labelling with distance-bounded searches to enable fast distance computation.
+To speed up the labelling construction process, we further propose a parallel labelling method
+that can construct labelling simultaneously for multiple landmarks. We evaluated the performance
+of the proposed methods on 12 real-world networks. The experiments show that the proposed methods
+can not only handle networks with billions of vertices, but also be up to 70 times faster in constructing
+labelling and save up to 90\% of labelling space. In particular, our method can answer distance queries
+on a billion-scale network of around 8B edges in less than 1ms, on average. 

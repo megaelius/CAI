@@ -1,0 +1,19 @@
+Large-scale online password guessing attacks are wide-spread and continuously qualified as one
+of the top cyber-security risks. The common method for mitigating the risk of online cracking is
+to lock out the user after a fixed number ($K$) of consecutive incorrect login attempts. Selecting
+the value of $K$ induces a classic security-usability trade-off. When $K$ is too large a hacker can
+(quickly) break into a significant fraction of user accounts, but when $K$ is too low we will start
+to annoy honest users by locking them out after a few mistakes. Motivated by the observation that
+honest user mistakes typically look quite different than the password guesses of an online attacker,
+we introduce DALock a {\em distribution aware} password lockout mechanism to reduce user annoyance
+while minimizing user risk. As the name suggests, DALock is designed to be aware of the frequency
+and popularity of the password used for login attacks while standard throttling mechanisms (e.g.,
+$K$-strikes) are oblivious to the password distribution. In particular, DALock maintains an extra
+"hit count" in addition to "strike count" for each user which is based on (estimates of) the cumulative
+probability of {\em all} login attempts for that particular account. We empirically evaluate DALock
+with an extensive battery of simulations using real world password datasets. In comparison with
+the traditional $K$-strikes mechanism we find that DALock offers a superior security/usability
+trade-off. For example, in one of our simulations we are able to reduce the success rate of an attacker
+to $0.05\%$ (compared to $1\%$ for the $10$-strikes mechanism) whilst simultaneously reducing
+the unwanted lockout rate for accounts that are not under attack to just $0.08\%$ (compared to $4\%$
+for the $3$-strikes mechanism). 

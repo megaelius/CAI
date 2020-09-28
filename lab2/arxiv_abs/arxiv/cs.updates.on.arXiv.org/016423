@@ -1,0 +1,16 @@
+We show an $\tilde{O}(n^{p/(p+2)})$-round algorithm in the \congest model for \emph{listing}
+of $K_p$ (a clique with $p$ nodes), for all $p =4, p\geq 6$. For $p = 5$, we show an $\tilde{O}(n^{3/4})$-round
+algorithm. For $p=4$ and $p=5$, our results improve upon the previous state-of-the-art of $O(n^{5/6+o(1)})$
+and $O(n^{21/22+o(1)})$, respectively, by Eden et al. [DISC 2019]. For all $p\geq 6$, ours is the
+first sub-linear round algorithm for $K_p$ listing. We leverage the recent expander decomposition
+algorithm of Chang et al. [SODA 2019] to create clusters with a good mixing time. Three key novelties
+in our algorithm are: (1) we carefully iterate our listing process with coupled values of min-degree
+within the clusters and arboricity outside the clusters, (2) all the listing is done within the cluster,
+which necessitates new techniques for bringing into the cluster the information about \emph{all}
+edges that can potentially form $K_p$ instances with the cluster edges, and (3) within each cluster
+we use a sparsity-aware listing algorithm, which is faster than a general listing algorithm and
+which we can allow the cluster to use since we make sure to sparsify the graph as the iterations proceed.
+As a byproduct of our algorithm, we show an \emph{optimal} sparsity-aware algorithm for $K_p$ listing,
+which runs in $\tilde{\Theta}(1 + m/n^{1 + 2/p})$ rounds in the \clique model. Previously, Pandurangan
+et al. [SPAA 2018], Chang et al. [SODA 2019], and Censor-Hillel et al. [TCS 2020] showed sparsity-aware
+algorithms for the case of $p = 3$, yet ours is the first such sparsity aware algorithm for $p \geq 4$.

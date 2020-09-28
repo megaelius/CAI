@@ -1,0 +1,19 @@
+Conversational question answering (QA) requires the ability to correctly interpret a question
+in the context of previous conversation turns. We address the conversational QA task by decomposing
+it into question rewriting and question answering subtasks, and conduct a systematic evaluation
+of this approach on two publicly available datasets (QuAC and TREC CAsT). Question rewriting is
+designed to reformulate ambiguous questions, which depend on the conversational context, into
+unambiguous questions that can be correctly interpreted outside of the context of a conversation.
+Thereby, standard QA components can answer such explicit questions without the need to modify their
+architecture, which allows to leverage the pre-trained models and datasets available for the standard
+QA task. Another practical benefit of our approach is that the rewritten questions allow to use 3rd-party
+QA services without the need to share the conversation history with them. To the best of our knowledge,
+we are the first to evaluate question rewriting on the conversational question answering task and
+show its improvement over the end-to-end baselines that have direct access to the conversational
+context. Furthermore, a large part of our study is devoted to examining an intricate relation between
+question formulation and question answering performance. We demonstrate the use of an evaluation
+framework that takes advantage of the intermediate output produced by the question rewriting and
+allows us to automatically distinguish errors in question formulation from errors in question
+answering. The results of our analysis reveal sensitivity of all our QA models to the variance in
+question formulation, as well as the flaws in the QA evaluation setup that does not correct for the
+dataset bias, which allows models to guess correct answers even when given incorrect questions.

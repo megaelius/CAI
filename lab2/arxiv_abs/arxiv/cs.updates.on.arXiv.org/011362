@@ -1,0 +1,18 @@
+Visual object tracking is an important function in many real-time video surveillance applications,
+such as localization and spatio-temporal recognition of persons. In real-world applications,
+an object detector and tracker must interact on a periodic basis to discover new objects, and thereby
+to initiate tracks. Periodic interactions with the detector can also allow the tracker to validate
+and/or update its object template with new bounding boxes. However, bounding boxes provided by
+a state-of-the-art detector are noisy, due to changes in appearance, background and occlusion,
+which can cause the tracker to drift. Moreover, CNN-based detectors can provide a high level of accuracy
+at the expense of computational complexity, so interactions should be minimized for real-time
+applications. In this paper, a new approach is proposed to manage detector-tracker interactions
+for trackers from the Siamese-FC family. By integrating a change detection mechanism into a deep
+Siamese-FC tracker, its template can be adapted in response to changes in a target's appearance
+that lead to drifts during tracking. An abrupt change detection triggers an update of tracker template
+using the bounding box produced by the detector, while in the case of a gradual change, the detector
+is used to update an evolving set of templates for robust matching. Experiments were performed using
+state-of-the-art Siamese-FC trackers and the YOLOv3 detector on a subset of videos from the OTB-100
+dataset that mimic video surveillance scenarios. Results highlight the importance for reliable
+VOT of using accurate detectors. They also indicate that our adaptive Siamese trackers are robust
+to noisy object detections, and can significantly improve the performance of Siamese-FC tracking.

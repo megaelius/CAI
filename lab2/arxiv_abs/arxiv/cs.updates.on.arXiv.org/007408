@@ -1,0 +1,19 @@
+In this work, we study the $k$-median and $k$-means clustering problems when the data is distributed
+across many servers and can contain outliers. While there has been a lot of work on these problems
+for worst-case instances, we focus on gaining a finer understanding through the lens of beyond worst-case
+analysis. Our main motivation is the following: for many applications such as clustering proteins
+by function or clustering communities in a social network, there is some unknown target clustering,
+and the hope is that running a $k$-median or $k$-means algorithm will produce clusterings which
+are close to matching the target clustering. Worst-case results can guarantee constant factor
+approximations to the optimal $k$-median or $k$-means objective value, but not closeness to the
+target clustering. Our first result is a distributed algorithm which returns a near-optimal clustering
+assuming a natural notion of stability, namely, approximation stability [Balcan et. al 2013],
+even when a constant fraction of the data are outliers. The communication complexity is $\tilde
+O(sk+z)$ where $s$ is the number of machines, $k$ is the number of clusters, and $z$ is the number of
+outliers. Next, we show this amount of communication cannot be improved even in the setting when
+the input satisfies various non-worst-case assumptions. We give a matching $\Omega(sk+z)$ lower
+bound on the communication required both for approximating the optimal $k$-means or $k$-median
+cost up to any constant, and for returning a clustering that is close to the target clustering in Hamming
+distance. These lower bounds hold even when the data satisfies approximation stability or other
+common notions of stability, and the cluster sizes are balanced. Therefore, $\Omega(sk+z)$ is
+a communication bottleneck, even for real-world instances. 

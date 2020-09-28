@@ -1,0 +1,19 @@
+We present a new, simple, algorithm for the local vertex connectivity problem (LocalVC) introduced
+by Nanongkai~et~al. [STOC'19]. Roughly, given an undirected unweighted graph $G$, a seed vertex
+$x$, a target volume $\nu$, and a target separator size $k$, the goal of LocalVC is to remove $k$ vertices
+`near' $x$ (in terms of $\nu$) to disconnect the graph in `local time', which depends only on parameters
+$\nu$ and $k$. In this paper, we present a simple randomized algorithm with running time $O(\nu k^2)$
+and correctness probability $2/3$. Plugging our new localVC algorithm in the generic framework
+of Nanongkai~et~al. immediately lead to a randomized $\tilde O(m+nk^3)$-time algorithm for the
+classic $k$-vertex connectivity problem on undirected graphs. ($\tilde O(T)$ hides $\text{polylog}(T)$.)
+This is the {\em first} near-linear time algorithm for any $4\leq k \leq \text{polylog} n$. Previous
+fastest algorithm for small $k$ takes $\tilde O(m+n^{4/3}k^{7/3})$ time [Nanongkai~et~al.,
+STOC'19]. This work is inspired by the algorithm of Chechik~et~al. [SODA'17] for computing the
+maximal $k$-edge connected subgraphs. Forster and Yang [arXiv'19] has independently developed
+local algorithms similar to ours, and showed that they lead to an $\tilde O(k^3/\epsilon)$ bound
+for testing $k$-edge and -vertex connectivity, resolving two long-standing open problems in property
+testing since the work of Goldreich and Ron [STOC'97] and Orenstein and Ron [Theor. Comput. Sci.'11].
+Inspired by this, we use local approximation algorithms to obtain bounds that are near-linear in
+$k$, namely $\tilde O(k/\epsilon)$ and $\tilde O(k/\epsilon^2)$ for the bounded and unbounded
+degree cases, respectively. For testing $k$-edge connectivity for simple graphs, the bound can
+be improved to $\tilde O(\min(k/\epsilon, 1/\epsilon^2))$. 

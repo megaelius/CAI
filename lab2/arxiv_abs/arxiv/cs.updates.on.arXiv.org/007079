@@ -1,0 +1,20 @@
+Hierarchical matrices are space and time efficient representations of dense matrices that exploit
+the low rank structure of matrix blocks at different levels of granularity. The hierarchically
+low rank block partitioning produces representations that can be stored and operated on in near-linear
+complexity instead of the usual polynomial complexity of dense matrices. In this paper, we present
+high performance implementations of matrix vector multiplication and compression operations
+for the $\mathcal{H}^2$ variant of hierarchical matrices on GPUs. This variant exploits, in addition
+to the hierarchical block partitioning, hierarchical bases for the block representations and
+results in a scheme that requires only $O(n)$ storage and $O(n)$ complexity for the mat-vec and compression
+kernels. These two operations are at the core of algebraic operations for hierarchical matrices,
+the mat-vec being a ubiquitous operation in numerical algorithms while compression/recompression
+represents a key building block for other algebraic operations, which require periodic recompression
+during execution. The difficulties in developing efficient GPU algorithms come primarily from
+the irregular tree data structures that underlie the hierarchical representations, and the key
+to performance is to recast the computations on flattened trees in ways that allow batched linear
+algebra operations to be performed. This requires marshaling the irregularly laid out data in a
+way that allows them to be used by the batched routines. Marshaling operations only involve pointer
+arithmetic with no data movement and as a result have minimal overhead. Our numerical results on
+covariance matrices from 2D and 3D problems from spatial statistics show the high efficiency our
+routines achieve---over 550GB/s for the bandwidth-limited mat-vec and over 850GFLOPS/s in sustained
+performance for the compression on the P100 Pascal GPU. 

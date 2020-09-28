@@ -1,0 +1,19 @@
+Given a finite set of points $P \subseteq \mathbb{R}^d$, we would like to find a small subset $S \subseteq
+P$ such that the convex hull of $S$ approximately contains $P$. More formally, every point in $P$
+is within distance $\epsilon$ from the convex hull of $S$. Such a subset $S$ is called an $\epsilon$-hull.
+Computing an $\epsilon$-hull is an important problem in computational geometry, machine learning,
+and approximation algorithms. In many real world applications, the set $P$ is too large to fit in
+memory. We consider the streaming model where the algorithm receives the points of $P$ sequentially
+and strives to use a minimal amount of memory. Existing streaming algorithms for computing an $\epsilon$-hull
+require $O(\epsilon^{-(d-1)/2})$ space, which is optimal for a worst-case input. However, this
+ignores the structure of the data. The minimal size of an $\epsilon$-hull of $P$, which we denote
+by $\text{OPT}$, can be much smaller. A natural question is whether a streaming algorithm can compute
+an $\epsilon$-hull using only $O(\text{OPT})$ space. We begin with lower bounds that show that
+it is not possible to have a single-pass streaming algorithm that computes an $\epsilon$-hull with
+$O(\text{OPT})$ space. We instead propose three relaxations of the problem for which we can compute
+$\epsilon$-hulls using space near-linear to the optimal size. Our first algorithm for points in
+$\mathbb{R}^2$ that arrive in random-order uses $O(\log n\cdot \text{OPT})$ space. Our second
+algorithm for points in $\mathbb{R}^2$ makes $O(\log(\frac{1}{\epsilon}))$ passes before outputting
+the $\epsilon$-hull and requires $O(\text{OPT})$ space. Our third algorithm for points in $\mathbb{R}^d$
+for any fixed dimension $d$ outputs an $\epsilon$-hull for all but $\delta$-fraction of directions
+and requires $O(\text{OPT} \cdot \log \text{OPT})$ space. 

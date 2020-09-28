@@ -1,0 +1,17 @@
+We consider the incremental computation of the betweenness centrality of all vertices in a large
+complex network modeled as a graph G = (V, E), directed or undirected, with positive real edge-weights.
+The current widely used algorithm to compute the betweenness centrality of all vertices in G is the
+Brandes algorithm that runs in O(mn + n^2 log n) time, where n = |V| and m = |E|. We present an incremental
+algorithm that updates the betweenness centrality score of all vertices in G when a new edge is added
+to G, or the weight of an existing edge is reduced. Our incremental algorithm runs in O(m' n + n^2) time,
+where m' is the size of a certain subset of E*, the set of edges in G that lie on a shortest path. We achieve
+the same bound for the more general incremental update of a vertex v, where the edge update can be performed
+on any subset of edges incident to v. Our incremental algorithm is the first algorithm that is asymptotically
+faster on sparse graphs than recomputing with the Brandes algorithm. Our algorithm is also likely
+to be much faster than the Brandes algorithm on dense graphs since m*, the size of E*, is often close
+to linear in n. Our incremental algorithm is very simple and the only data structures it uses are arrays,
+lists, and stack. We give an efficient cache-oblivious implementation that incurs O(scan(n^2)
++ n sort(m')) cache misses, where scan and sort are well-known measures for efficient caching. We
+also give a static algorithm for computing betweenness centrality of all vertices that runs in time
+O(m* n + n^2 log n), which is faster than the Brandes algorithm on any graph with n log n = o(m) and m* =
+o(m). 

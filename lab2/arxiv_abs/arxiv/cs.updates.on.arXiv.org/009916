@@ -1,0 +1,18 @@
+Motivation: In a predictive modeling setting, if sufficient details of the system behavior are
+known, one can build and use a simulation for making predictions. When sufficient system details
+are not known, one typically turns to machine learning, which builds a black-box model of the system
+using a large dataset of input sample features and outputs. We consider a setting which is between
+these two extremes: some details of the system mechanics are known but not enough for creating simulations
+that can be used to make high quality predictions. In this context we propose using approximate simulations
+to build a kernel for use in kernelized machine learning methods, such as support vector machines.
+The results of multiple simulations (under various uncertainty scenarios) are used to compute
+similarity measures between every pair of samples: sample pairs are given a high similarity score
+if they behave similarly under a wide range of simulation parameters. These similarity values,
+rather than the original high dimensional feature data, are used to build the kernel. Results: We
+demonstrate and explore the simulation based kernel (SimKern) concept using four synthetic complex
+systems--three biologically inspired models and one network flow optimization model. We show
+that, when the number of training samples is small compared to the number of features, the SimKern
+approach dominates over no-prior-knowledge methods. This approach should be applicable in all
+disciplines where predictive models are sought and informative yet approximate simulations are
+available. Availability: The Python SimKern software, the demonstration models (in MATLAB, R),
+and the datasets are available at https://github.com/davidcraft/SimKern. 

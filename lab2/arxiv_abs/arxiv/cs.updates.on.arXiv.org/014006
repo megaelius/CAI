@@ -1,0 +1,19 @@
+Adversarial examples have been shown to be the severe threat to deep neural networks (DNNs). One
+of the most effective adversarial defense methods is adversarial training (AT) through minimizing
+the adversarial risk $R_{adv}$, which encourages both the benign example $x$ and its adversarially
+perturbed neighborhoods within the $\ell_{p}$-ball to be predicted as the ground-truth label.
+In this work, we propose a novel defense method, the robust training (RT), by jointly minimizing
+two separated risks ($R_{stand}$ and $R_{rob}$), which is with respect to the benign example and
+its neighborhoods respectively. The motivation is to explicitly and jointly enhance the accuracy
+and the adversarial robustness. We prove that $R_{adv}$ is upper-bounded by $R_{stand} + R_{rob}$,
+which implies that RT has similar effect as AT. Intuitively, minimizing the standard risk enforces
+the benign example to be correctly predicted, and the robust risk minimization encourages the predictions
+of the neighbor examples to be consistent with the prediction of the benign example. Besides, since
+$R_{rob}$ is independent of the ground-truth label, RT is naturally extended to the semi-supervised
+mode ($i.e.$, SRT), to further enhance the adversarial robustness. Moreover, we extend the $\ell_{p}$-bounded
+neighborhood to a general case, which covers different types of perturbations, such as the pixel-wise
+($i.e.$, $x + \delta$) or the spatial perturbation ($i.e.$, $ AX + b$). Extensive experiments on
+benchmark datasets not only verify the superiority of the proposed SRT method to state-of-the-art
+methods for defensing pixel-wise or spatial perturbations separately, but also demonstrate its
+robustness to both perturbations simultaneously. The code for reproducing main results is available
+at \url{https://github.com/THUYimingLi/Semi-supervised_Robust_Training}. 

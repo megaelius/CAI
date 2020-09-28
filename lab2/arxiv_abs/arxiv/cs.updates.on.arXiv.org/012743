@@ -1,0 +1,19 @@
+We study the cost of distributed MST construction in the setting where each edge has a latency and
+a capacity, along with the weight. Edge latencies capture the delay on the links of the communication
+network, while capacity captures their throughput (in this case, the rate at which messages can
+be sent). Depending on how the edge latencies relate to the edge weights, we provide several tight
+bounds on the time and messages required to construct an MST. When edge weights exactly correspond
+with the latencies, we show that, perhaps interestingly, the bottleneck parameter in determining
+the running time of an algorithm is the total weight $W$ of the MST (rather than the total number of
+nodes $n$, as in the standard CONGEST model). That is, we show a tight bound of $\tilde{\Theta}(D
++ \sqrt{W/c})$ rounds, where $D$ refers to the latency diameter of the graph, $W$ refers to the total
+weight of the constructed MST and edges have capacity $c$. The proposed algorithm sends $\tilde{O}(m+W)$
+messages, where $m$, the total number of edges in the network graph under consideration, is a known
+lower bound on message complexity for MST construction. We also show that $\Omega(W)$ is a lower
+bound for fast MST constructions. When the edge latencies and the corresponding edge weights are
+unrelated, and either can take arbitrary values, we show that (unlike the sub-linear time algorithms
+in the standard CONGEST model, on small diameter graphs), the best time complexity that can be achieved
+is $\tilde{\Theta}(D+n/c)$. However, if we restrict all edges to have equal latency $\ell$ and
+capacity $c$ while having possibly different weights (weights could deviate arbitrarily from
+$\ell$), we give an algorithm that constructs an MST in $\tilde{O}(D + \sqrt{n\ell/c})$ time. In
+each case, we provide nearly matching upper and lower bounds. 

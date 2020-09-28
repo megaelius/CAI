@@ -1,0 +1,19 @@
+Random sampling is a fundamental primitive in modern algorithms, statistics, and machine learning,
+used as a generic method to obtain a small yet "representative" subset of the data. In this work, we
+investigate the robustness of sampling against adaptive adversarial attacks in a streaming setting:
+An adversary sends a stream of elements from a universe $U$ to a sampling algorithm (e.g., Bernoulli
+sampling or reservoir sampling), with the goal of making the sample "very unrepresentative" of
+the underlying data stream. The adversary is fully adaptive in the sense that it knows the exact content
+of the sample at any given point along the stream, and can choose which element to send next accordingly,
+in an online manner. Well-known results in the static setting indicate that if the full stream is
+chosen in advance (non-adaptively), then a random sample of size $\Omega(d / \varepsilon^2)$ is
+an $\varepsilon$-approximation of the full data with good probability, where $d$ is the VC-dimension
+of the underlying set system $(U,R)$. Does this sample size suffice for robustness against an adaptive
+adversary? The simplistic answer is \emph{negative}: We demonstrate a set system where a constant
+sample size (corresponding to VC-dimension $1$) suffices in the static setting, yet an adaptive
+adversary can make the sample very unrepresentative, as long as the sample size is (strongly) sublinear
+in the stream length, using a simple and easy-to-implement attack. However, this attack is "theoretical
+only", requiring the set system size to (essentially) be exponential in the stream length. This
+is not a coincidence: We show that to make Bernoulli or reservoir sampling robust against adaptive
+adversaries, the modification required is solely to replace the VC-dimension term $d$ in the sample
+size with the cardinality term $\log |R|$. This nearly matches the bound imposed by the attack. 

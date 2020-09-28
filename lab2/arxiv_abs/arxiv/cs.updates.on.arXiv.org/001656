@@ -1,0 +1,18 @@
+We present a method for efficient learning of control policies for multiple related robotic motor
+skills. Our approach consists of two stages, joint training and specialization training. During
+the joint training stage, a neural network policy is trained with minimal information to disambiguate
+the motor skills. This forces the policy to learn a common representation of the different tasks.
+Then, during the specialization training stage we selectively split the weights of the policy based
+on a per-weight metric that measures the disagreement among the multiple tasks. By splitting part
+of the control policy, it can be further trained to specialize to each task. To update the control
+policy during learning, we use Trust Region Policy Optimization with Generalized Advantage Function
+(TRPOGAE). We propose a modification to the gradient update stage of TRPO to better accommodate
+multi-task learning scenarios. We evaluate our approach on three continuous motor skill learning
+problems in simulation: 1) a locomotion task where three single legged robots with considerable
+difference in shape and size are trained to hop forward, 2) a manipulation task where three robot
+manipulators with different sizes and joint types are trained to reach different locations in 3D
+space, and 3) locomotion of a two-legged robot, whose range of motion of one leg is constrained in
+different ways. We compare our training method to three baselines. The first baseline uses only
+joint training for the policy, the second trains independent policies for each task, and the last
+randomly selects weights to split. We show that our approach learns more efficiently than each of
+the baseline methods. 

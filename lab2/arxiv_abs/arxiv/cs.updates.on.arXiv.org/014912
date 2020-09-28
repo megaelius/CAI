@@ -1,0 +1,18 @@
+This paper introduces a framework for learning a minimum-norm stabilizing controller for a system
+with unknown dynamics using model-free policy optimization methods. The approach begins by first
+designing a Control Lyapunov Function (CLF) for a (possibly inaccurate) dynamics model for the
+system, along with a function which specifies a minimum acceptable rate of energy dissipation for
+the CLF at different points in the state-space. Treating the energy dissipation condition as a constraint
+on the desired closed-loop behavior of the real-world system, we formulate an optimization problem
+over the parameters of a learned controller for the system. The optimization problem can be solved
+using model-free policy optimization algorithms and data collected from the real-world system.
+One term in the optimization encourages choices of parameters which minimize control effort, while
+another term penalizes violations of the safety constraint. If there exists at least one choice
+of learned parameters which satisfy the CLF constraint then all globally optimal solutions for
+the optimization also satisfy the constraint if the penalty term is scaled to be large enough. Furthermore,
+we derive conditions on the structure of the learned controller which ensure that the optimization
+is strongly convex, meaning the globally optimal solution can be found reliably. We validate the
+approach in simulation, first for a double pendulum, and then generalize to learn stable walking
+controllers for underactuated bipedal robots using the Hybrid Zero Dynamics framework. By encoding
+a large amount of structure into the learning problem, we are able to learn stabilizing controllers
+for both systems with only minutes or even seconds of training data. 

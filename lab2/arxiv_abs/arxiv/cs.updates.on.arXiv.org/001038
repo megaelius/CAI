@@ -1,0 +1,18 @@
+With the recent proliferation of sensor data, there is an increasing need for the efficient evaluation
+of analytical queries over multiple sensor datasets. The magnitude of such datasets makes exact
+query answering infeasible, leading researchers into the development of approximate query answering
+approaches. However, existing approximate query answering algorithms are not suited for the efficient
+processing of queries over sensor data, as they exhibit at least one of the following shortcomings:
+(a) They do not provide deterministic error guarantees, resorting to weaker probabilistic error
+guarantees that are in many cases not acceptable, (b) they allow queries only over a single dataset,
+thus not supporting the multitude of queries over multiple datasets that appear in practice, such
+as correlation or cross-correlation and (c) they support relational data in general and thus miss
+speedup opportunities created by the special nature of sensor data, which are not random but follow
+a typically smooth underlying phenomenon. To address these problems, we propose PlatoDB; a system
+that exploits the nature of sensor data to compress them and provide efficient processing of queries
+over multiple sensor datasets, while providing deterministic error guarantees. PlatoDB achieves
+the above through a novel architecture that (a) at data import time pre-processes each dataset,
+creating for it an intermediate hierarchical data structure that provides a hierarchy of summarizations
+of the dataset together with appropriate error measures and (b) at query processing time leverages
+the pre-computed data structures to compute an approximate answer and deterministic error guarantees
+for ad hoc queries even when these combine multiple datasets. 

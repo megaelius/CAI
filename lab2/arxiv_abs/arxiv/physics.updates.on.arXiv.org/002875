@@ -1,0 +1,18 @@
+In LHC Run 3, ALICE will increase the data taking rate significantly to continuous readout of 50 kHz
+minimum bias Pb-Pb collisions. The reconstruction strategy of the online offline computing upgrade
+foresees a first synchronous online reconstruction stage during data taking enabling detector
+calibration, and a posterior calibrated asynchronous reconstruction stage. We present a tracking
+algorithm for the Time Projection Chamber (TPC), the main tracking detector of ALICE. The reconstruction
+must yield results comparable to current offline reconstruction and meet the time constraints
+like in the current High Level Trigger (HLT), processing 50 times as many collisions per second as
+today. It is derived from the current online tracking in the HLT, which is based on a Cellular automaton
+and the Kalman filter, and we integrate missing features from offline tracking for improved resolution.
+The continuous TPC readout and overlapping collisions pose new challenges: conversion to spatial
+coordinates and the application of time- and location dependent calibration must happen in between
+of track seeding and track fitting while the TPC occupancy increases five-fold. The huge data volume
+requires a data reduction factor of 20, which imposes additional requirements: the momentum range
+must be extended to identify low-pt looping tracks and a special refit in uncalibrated coordinates
+improves the track model entropy encoding. Our TPC track finding leverages the potential of hardware
+accelerators via the OpenCL and CUDA APIs in a shared source code for CPUs, GPUs, and both reconstruction
+stages. Porting more reconstruction steps like the remainder of the TPC reconstruction and tracking
+for other detectors will shift the computing balance from traditional processors to GPUs. 

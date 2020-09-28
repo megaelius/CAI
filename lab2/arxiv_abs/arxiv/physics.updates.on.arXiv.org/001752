@@ -1,0 +1,17 @@
+3D Particle Imaging Velocimetry (3D-PIV) aim to recover the flow field in a volume of fluid, which
+has been seeded with tracer particles and observed from multiple camera viewpoints. The first step
+of 3D-PIV is to reconstruct the 3D locations of the tracer particles from synchronous views of the
+volume. We propose a new method for iterative particle reconstruction (IPR), in which the locations
+and intensities of all particles are inferred in one joint energy minimization. The energy function
+is designed to penalize deviations between the reconstructed 3D particles and the image evidence,
+while at the same time aiming for a sparse set of particles. We find that the new method, without any
+post-processing, achieves significantly cleaner particle volumes than a conventional, tomographic
+MART reconstruction, and can handle a wide range of particle densities. The second step of 3D-PIV
+is to then recover the dense motion field from two consecutive particle reconstructions. We propose
+a variational model, which makes it possible to directly include physical properties, such as incompressibility
+and viscosity, in the estimation of the motion field. To further exploit the sparse nature of the
+input data, we propose a novel, compact descriptor of the local particle layout. Hence, we avoid
+the memory-intensive storage of high-resolution intensity volumes. Our framework is generic
+and allows for a variety of different data costs (correlation measures) and regularizers. We quantitatively
+evaluate it with both the sum of squared differences (SSD) and the normalized cross-correlation
+(NCC), respectively with both a hard and a soft version of the incompressibility constraint. 

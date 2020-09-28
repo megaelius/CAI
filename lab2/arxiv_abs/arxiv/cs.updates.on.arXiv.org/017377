@@ -1,0 +1,19 @@
+This paper focuses on the challenging task of learning 3D object surface reconstructions from RGB
+images. Existingmethods achieve varying degrees of success by using different surface representations.
+However, they all have their own drawbacks,and cannot properly reconstruct the surface shapes
+of complex topologies, arguably due to a lack of constraints on the topologicalstructures in their
+learning frameworks. To this end, we propose to learn and use the topology-preserved, skeletal
+shape representationto assist the downstream task of object surface reconstruction from RGB images.
+Technically, we propose the novelSkeletonNetdesign that learns a volumetric representation
+of a skeleton via a bridged learning of a skeletal point set, where we use paralleldecoders each responsible
+for the learning of points on 1D skeletal curves and 2D skeletal sheets, as well as an efficient module
+ofglobally guided subvolume synthesis for a refined, high-resolution skeletal volume; we present
+a differentiablePoint2Voxellayer tomake SkeletonNet end-to-end and trainable. With the learned
+skeletal volumes, we propose two models, the Skeleton-Based GraphConvolutional Neural Network
+(SkeGCNN) and the Skeleton-Regularized Deep Implicit Surface Network (SkeDISN), which respectivelybuild
+upon and improve over the existing frameworks of explicit mesh deformation and implicit field learning
+for the downstream surfacereconstruction task. We conduct thorough experiments that verify the
+efficacy of our proposed SkeletonNet. SkeGCNN and SkeDISNoutperform existing methods as well,
+and they have their own merits when measured by different metrics. Additional results ingeneralized
+task settings further demonstrate the usefulness of our proposed methods. We have made both our
+implementation codeand the ShapeNet-Skeleton dataset publicly available at ble at https://github.com/tangjiapeng/SkeletonNet.

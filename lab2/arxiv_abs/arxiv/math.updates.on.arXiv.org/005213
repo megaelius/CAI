@@ -1,0 +1,20 @@
+Several recent works have used coding-theoretic ideas for mitigating the effect of stragglers
+in distributed matrix computations (matrix-vector and matrix-matrix multiplication) over the
+reals. In particular, a polynomial code based approach distributes matrix-matrix multiplication
+among $n$ worker nodes by means of polynomial evaluations. This allows for an ``optimal'' recovery
+threshold whereby the intended result can be decoded as long as at least $(n-s)$ worker nodes complete
+their tasks; $s$ is the number of stragglers that the scheme can handle. However, a major issue with
+these approaches is the high condition number of the corresponding Vandermonde-structured recovery
+matrices. This presents serious numerical precision issues when decoding the desired result.
+It is well known that the condition number of real Vandermonde matrices grows exponentially in $n$.
+In contrast, the condition numbers of Vandermonde matrices with parameters on the unit circle are
+much better behaved. In this work we leverage the properties of circulant permutation matrices
+and rotation matrices to obtain coded computation schemes with significantly lower worst case
+condition numbers; these matrices have eigenvalues that lie on the unit circle. Our scheme is such
+that the associated recovery matrices have a condition number corresponding to Vandermonde matrices
+with parameters given by the eigenvalues of the corresponding circulant permutation and rotation
+matrices. We demonstrate an upper bound on the worst case condition number of these matrices which
+grows as $\approx O(n^{s+6})$. In essence, we leverage the well-behaved conditioning of complex
+Vandermonde matrices with parameters on the unit circle, while still working with computation
+over the reals. Experimental results demonstrate that our proposed method has condition numbers
+that are several orders of magnitude better than prior work. 

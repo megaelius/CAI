@@ -1,0 +1,18 @@
+Fourier ptychography is a recently developed imaging approach for large field-of-view and high-resolution
+microscopy. Here we model the Fourier ptychographic forward imaging process using a convolution
+neural network (CNN) and recover the complex object information in the network training process.
+In this approach, the input of the network is the point spread function in the spatial domain or the
+coherent transfer function in the Fourier domain. The object is treated as 2D learnable weights
+of a convolution or a multiplication layer. The output of the network is modeled as the loss function
+we aim to minimize. The batch size of the network corresponds to the number of captured low-resolution
+images in one forward / backward pass. We use a popular open-source machine learning library, TensorFlow,
+for setting up the network and conducting the optimization process. We analyze the performance
+of different learning rates, different solvers, and different batch sizes. It is shown that a large
+batch size with the Adam optimizer achieves the best performance in general. To accelerate the phase
+retrieval process, we also discuss a strategy to implement Fourier-magnitude projection using
+a multiplication neural network model. Since convolution and multiplication are the two most-common
+operations in imaging modeling, the reported approach may provide a new perspective to examine
+many coherent and incoherent systems. As a demonstration, we discuss the extensions of the reported
+networks for modeling single-pixel imaging and structured illumination microscopy (SIM). 4-frame
+resolution doubling is demonstrated using a neural network for SIM. We have made our implementation
+code open-source for the broad research community. 

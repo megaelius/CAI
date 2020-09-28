@@ -1,0 +1,18 @@
+Geo-replicated data platforms are at the backbone of several large-scale online services. Transactional
+Causal Consistency (TCC) is an attractive consistency level for building such platforms. TCC avoids
+many anomalies of eventual consistency, eschews the synchronization costs of strong consistency,
+and supports interactive read-write transactions. Partial replication is another attractive
+design choice for building geo-replicated platforms, as it increases the storage capacity and
+reduces update propagation costs. This paper presents PaRiS, the first TCC system that supports
+partial replication and implements non-blocking parallel read operations, whose latency is paramount
+for the performance of read-intensive applications. PaRiS relies on a novel protocol to track dependencies,
+called Universal Stable Time (UST). By means of a lightweight background gossip process, UST identifies
+a snapshot of the data that has been installed by every DC in the system. Hence, transactions can consistently
+read from such a snapshot on any server in any replication site without having to block. Moreover,
+PaRiS requires only one timestamp to track dependencies and define transactional snapshots, thereby
+achieving resource efficiency and scalability. We evaluate PaRiS on a large-scale AWS deployment
+composed of up to 10 replication sites. We show that PaRiS scales well with the number of DCs and partitions,
+while being able to handle larger data-sets than existing solutions that assume full replication.
+We also demonstrate a performance gain of non-blocking reads vs. a blocking alternative (up to 1.47x
+higher throughput with 5.91x lower latency for read-dominated workloads and up to 1.46x higher
+throughput with 20.56x lower latency for write-heavy workloads). 

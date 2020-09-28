@@ -1,0 +1,19 @@
+We present an example of an interpolation code of the SAHA-S equation of state that has been adapted
+for use in the stellar evolution code CESAM2k. The aim is to provide the necessary data and numerical
+procedures for its implementation in a stellar code. A technical problem is the discrepancy between
+the sets of thermodynamic quantities provided by the SAHA-S equation of state and those necessary
+in the CESAM2k computations. Moreover, the independent variables in a practical equation of state
+(like SAHA-S) are temperature and density, whereas for modelling calculations the variables temperature
+and pressure are preferable. Specifically for the CESAM2k code, some additional quantities and
+their derivatives must be provided. To provide the bridge between the equation of state and stellar
+modelling, we prepare auxiliary tables of the quantities that are demanded in CESAM2k. Then we use
+cubic spline interpolation to provide both smoothness and a good approximation of the necessary
+derivatives. Using the B-form of spline representation provides us with an efficient algorithm
+for three-dimensional interpolation. The table of B-spline coefficients provided can be directly
+used during stellar model calculations together with the module of cubic spline interpolation.
+This implementation of the SAHA-S equation of state in the CESAM2k stellar structure and evolution
+code has been tested on a solar model evolved to the present. A comparison with other equations of
+state is briefly discussed. The choice of a regular net of mesh points for specific primary quantities
+in the SAHA-S equation of state, together with accurate and consistently smooth tabulated values,
+provides an effective algorithm of interpolation in modelling calculations. The proposed module
+of interpolation procedures can be easily adopted in other evolution codes. 

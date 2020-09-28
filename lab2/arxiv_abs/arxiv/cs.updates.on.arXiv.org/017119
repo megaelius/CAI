@@ -1,0 +1,20 @@
+Serverless computing is an approach to cloud computing that allows programmers to run serverless
+functions in response to external events. Serverless functions are priced at sub-second granularity,
+support transparent elasticity, and relieve programmers from managing the operating system.
+Thus serverless functions allow programmers to focus on writing application code, and the cloud
+provider to manage computing resources globally. Unfortunately, today's serverless platforms
+exhibit high latency, because it is difficult to maximize resource utilization while minimizing
+operating costs. This paper presents serverless function acceleration, which is an approach that
+transparently lowers the latency and resource utilization of a large class of serverless functions.
+We accomplish this using language-based sandboxing, whereas existing serverless platforms employ
+more expensive operating system sandboxing technologies, such as containers and virtual machines.
+OS-based sandboxing is compatible with more programs than language-based techniques. However,
+instead of ruling out any programs, we use language-based sandboxing when possible, and OS-based
+sandboxing if necessary. Moreover, we seamlessly transition between language-based and OS-based
+sandboxing by leveraging the fact that serverless functions must tolerate re-execution for fault
+tolerance. Therefore, when a serverless function attempts to perform an unsupported operation
+in the language-based sandbox, we can safely re-execute it in a container. We use a new approach to
+trace compilation to build source-level, interprocedural, execution trace trees for serverless
+functions written in JavaScript. We compile trace trees to a safe subset of Rust, validate the compiler
+output, and link it to a runtime system. We evaluate these techniques in our implementation, which
+we call Containerless. 

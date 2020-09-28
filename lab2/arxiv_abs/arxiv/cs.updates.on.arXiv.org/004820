@@ -1,0 +1,17 @@
+Subgraph discovery in a single data graph---finding subsets of vertices and edges satisfying a
+user-specified criteria---is an essential and general graph analytics operation with a wide spectrum
+of applications. Depending on the criteria, subgraphs of interest may correspond to cliques of
+friends in social networks, interconnected entities in RDF data, or frequent patterns in protein
+interaction networks to name a few. Existing systems usually examine a large number of subgraphs
+while employing many computers and often produce an enormous result set of subgraphs. How can we
+enable fast discovery of only the most relevant subgraphs while minimizing the computational requirements?
+We present Nuri, a general subgraph discovery system that allows users to succinctly specify subgraphs
+of interest and criteria for ranking them. Given such specifications, Nuri efficiently finds the
+k most relevant subgraphs using only a single computer. It prioritizes (i.e., expands earlier than
+others) subgraphs that are more likely to expand into the desired subgraphs (prioritized subgraph
+expansion) and proactively discards irrelevant subgraphs from which the desired subgraphs cannot
+be constructed (pruning). Nuri can also efficiently store and retrieve a large number of subgraphs
+on disk without being limited by the size of main memory. We demonstrate using both real and synthetic
+datasets that Nuri on a single core outperforms the closest alternative distributed system consuming
+40 times more computational resources by more than 2 orders of magnitude for clique discovery and
+1 order of magnitude for subgraph isomorphism and pattern mining. 

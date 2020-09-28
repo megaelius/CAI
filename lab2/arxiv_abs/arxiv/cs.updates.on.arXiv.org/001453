@@ -1,0 +1,19 @@
+We consider the $\ell_1$ minimization problem $\min_{x}\|Ax-b\|_1$ in the overconstrained case,
+commonly known as the Least Absolute Deviations problem, where there are far more constraints than
+variables. More specifically, we have $A \in \mathbb{R}^{n \times d}$ for $n \gg d$. Many important
+combinatorial problems, such as minimum cut and shortest path, can be formulated as $\ell_1$ regression
+problems [Chin et al., ITCS'13]. We follow the general paradigm of preconditioning the matrix and
+solving the resulting problem with gradient descent techniques, and our primary insight will be
+that these methods are actually interdependent in the context of this problem. The key idea will
+be that preconditioning from [Cohen and Peng, STOC'15] allows us to obtain an isotropic matrix with
+fewer rows and strong upper bounds on all row norms. We leverage these conditions to find a careful
+initialization, which we use along with smoothing reductions in [Allen Zhu and Hazan, NIPS'16]
+and the accelerated stochastic gradient descent algorithms in [Allen Zhu, STOC'17] to achieve
+$\epsilon$ relative error in about $nnz(A) + nd^{\omega - 1} + \sqrt{n}d^{2}\epsilon^{-1}$ time
+with high probability. Moreover, we can also assume $n\le O(d\epsilon^{-2}\log n)$ from preconditioning.
+This improves over the previous best result using gradient descent for $\ell_1$ regression [Yang
+et al., SODA'16], and is comparable to the best known running times for interior point methods [Lee
+and Sidford, FOCS'15]. Finally, we also show that if our original matrix $A$ is approximately isotropic
+and the row norms are approximately equal, we can avoid using fast matrix multiplication and prove
+a running time of about $nnz(A) + s d^{1.5}\epsilon^{-2} + d^2\epsilon^{-2}$, where $s$ is the maximum
+number of non-zeros in a row of $A$. 

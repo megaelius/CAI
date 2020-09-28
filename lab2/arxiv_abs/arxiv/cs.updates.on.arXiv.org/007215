@@ -1,0 +1,18 @@
+The All-Pairs Min-Cut problem (aka All-Pairs Max-Flow) asks to compute a minimum $s$-$t$ cut (or
+just its value) for all pairs of vertices $s,t$. We study this problem in directed graphs with unit
+edge/vertex capacities (corresponding to edge/vertex connectivity). Our focus is on the $k$-bounded
+case, where the algorithm has to find all pairs with min-cut value less than $k$, and report only those.
+The most basic case $k=1$ is the Transitive Closure (TC) problem, which can be solved in graphs with
+$n$ vertices and $m$ edges in time $O(mn)$ combinatorially, and in time $O(n^{\omega})$ where $\omega<2.38$
+is the matrix-multiplication exponent. These time bounds are conjectured to be optimal. We present
+new algorithms and conditional lower bounds that advance the frontier for larger $k$, as follows:
+(i) A randomized algorithm for vertex capacities that runs in time $O((nk)^{\omega})$. (ii) Two
+deterministic algorithms for edge capacities (which is more general) that work in DAGs and further
+reports a minimum cut for each pair. The first algorithm is combinatorial (does not involve matrix
+multiplication) and runs in time $O(2^{O(k^2)}\cdot mn)$. The second algorithm can be faster on
+dense DAGs and runs in time $O((k\log n)^{4^k+o(k)} n^{\omega})$. (iii) The first super-cubic
+lower bound of $n^{\omega-1-o(1)} k^2$ time under the $4$-Clique conjecture, which holds even
+in the simplest case of DAGs with unit vertex capacities. It improves on the previous (SETH-based)
+lower bounds even in the unbounded setting $k=n$. For combinatorial algorithms, our reduction
+implies an $n^{2-o(1)} k^2$ conditional lower bound. Thus, we identify new settings where the complexity
+of the problem is (conditionally) higher than that of TC. 

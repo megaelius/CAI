@@ -1,0 +1,17 @@
+Traditional nearest points methods use all the samples in an image set to construct a single convex
+or affine hull model for classification. However, strong artificial features and noisy data may
+be generated from combinations of training samples when significant intra-class variations and/or
+noise occur in the image set. Existing multi-model approaches extract local models by clustering
+each image set individually only once, with fixed clusters used for matching with various image
+sets. This may not be optimal for discrimination, as undesirable environmental conditions (eg.
+illumination and pose variations) may result in the two closest clusters representing different
+characteristics of an object (eg. frontal face being compared to non-frontal face). To address
+the above problem, we propose a novel approach to enhance nearest points based methods by integrating
+affine/convex hull classification with an adapted multi-model approach. We first extract multiple
+local convex hulls from a query image set via maximum margin clustering to diminish the artificial
+variations and constrain the noise in local convex hulls. We then propose adaptive reference clustering
+(ARC) to constrain the clustering of each gallery image set by forcing the clusters to have resemblance
+to the clusters in the query image set. By applying ARC, noisy clusters in the query set can be discarded.
+Experiments on Honda, MoBo and ETH-80 datasets show that the proposed method outperforms single
+model approaches and other recent techniques, such as Sparse Approximated Nearest Points, Mutual
+Subspace Method and Manifold Discriminant Analysis. 

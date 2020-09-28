@@ -1,0 +1,20 @@
+Given a model of the expected behavior of a business process and an event log recording its observed
+behavior, the problem of business process conformance checking is that of identifying and describing
+the differences between the model and the log. A desirable feature of a conformance checking technique
+is to identify a minimal yet complete set of differences. Existing conformance checking techniques
+that fulfil this property exhibit limited scalability when confronted to large and complex models
+and logs. This paper presents two complementary techniques to address these shortcomings. The
+first technique transforms the model and log into two automata. These automata are compared using
+an error-correcting synchronized product, computed via an A* that guarantees the resulting automaton
+captures all differences with a minimal amount of error corrections. The synchronized product
+is used to extract minimal-length alignments between each trace of the log and the closest corresponding
+trace of the model. A limitation of the first technique is that as the level of concurrency in the model
+increases, the size of the automaton of the model grows exponentially, thus hampering scalability.
+To address this limitation, the paper proposes a second technique wherein the process model is first
+decomposed into a set of automata, known as S-components, such that the product of these automata
+is equal to the automaton of the whole process model. An error-correcting product is computed for
+each S-component separately and the resulting automata are recomposed into a single product automaton
+capturing all differences without minimality guarantees. An empirical evaluation shows that
+the proposed techniques outperform state-of-the-art baselines in terms of computational efficiency.
+Moreover, the decomposition-based technique is optimal for the vast majority of datasets and quasi-optimal
+for the remaining ones. 

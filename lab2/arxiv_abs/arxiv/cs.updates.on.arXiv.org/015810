@@ -1,0 +1,18 @@
+We introduce the tensor numerical method for solution of the $d$-dimensional optimal control problems
+with fractional Laplacian type operators in constraints discretized on large $n^{\otimes d}$
+tensor-product Cartesian grids. The approach is based on the rank-structured approximation of
+the matrix valued functions of the corresponding fractional finite difference Laplacian. We solve
+the equation for the control function, where the system matrix includes the sum of the fractional
+$d$-dimensional Laplacian and its inverse. The matrix valued functions of discrete Laplace operator
+on a tensor grid are diagonalized by using the fast Fourier transform (FFT). Then the low rank approximation
+of the $d$-dimensional tensors obtained by folding of the corresponding large diagonal matrices
+of eigenvalues are computed, which allows to solve the governing equation for the control function
+in a tensor-structured format. The existence of low rank canonical approximation to the class of
+matrix valued functions involved is justified by using the sinc quadrature approximation method
+applied to the Laplace transform of the generating function. The linear system of equations for
+the control function is solved by the PCG iterative method with the rank truncation at each iteration
+step, where the low Kronecker rank preconditioner is precomputed. The right-hand side, the solution
+vector, and the governing system matrix are maintained in the rank-structured tensor format which
+beneficially reduces the numerical cost to $O(n\log n)$, outperforming the standard FFT based
+methods of complexity $O(n^3\log n)$ for 3D case. Numerical tests for the 2D and 3D control problems
+confirm the linear complexity scaling of the method in the univariate grid size $n$. 

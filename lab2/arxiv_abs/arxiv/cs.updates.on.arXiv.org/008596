@@ -1,0 +1,18 @@
+Concolic execution is a powerful program analysis technique for exploring execution paths in a
+systematic manner. Compare to random-mutation-based fuzzing, concolic execution is especially
+good at exploring paths that are guarded by complex and tight branch predicates (e.g., (a*b) == 0xdeadbeef).
+The drawback, however, is that concolic execution engines are much slower than native execution.
+One major source of the slowness is that concolic execution engines have to the interpret instructions
+to maintain the symbolic expression of program variables. In this work, we propose SynFuzz, a novel
+approach to perform scalable concolic execution. SynFuzz achieves this goal by replacing interpretation
+with dynamic taint analysis and program synthesis. In particular, to flip a conditional branch,
+SynFuzz first uses operation-aware taint analysis to record a partial expression (i.e., a sketch)
+of its branch predicate. Then it uses oracle-guided program synthesis to reconstruct the symbolic
+expression based on input-output pairs. The last step is the same as traditional concolic execution
+- SynFuzz consults a SMT solver to generate an input that can flip the target branch. By doing so, SynFuzz
+can achieve an execution speed that is close to fuzzing while retain concolic execution's capability
+of flipping complex branch predicates. We have implemented a prototype of SynFuzz and evaluated
+it with three sets of programs: real-world applications, the LAVA-M benchmark, and the Google Fuzzer
+Test Suite (FTS). The evaluation results showed that SynFuzz was much more scalable than traditional
+concolic execution engines, was able to find more bugs in LAVA-M than most state-of-the-art concolic
+execution engine (QSYM), and achieved better code coverage on real-world applications and FTS.

@@ -1,0 +1,17 @@
+We target at a challenging problem of training Deep Neural Networks (DNNs) on abnormal training
+data, where a considerable proportion of observations and their labels are semantically unmatched,
+e.g., corrupted labels, or out-of-distribution training examples etc. In this work, we analyse
+and address this challenge from the perspective of example weighting built in empirical loss functions,
+i.e., gradient magnitude with respect to logits, an angle that is not thoroughly studied so far.
+Concretely, we make two main contributions: 1) We present new observations and insightful analysis
+about mean absolute error (MAE), which is theoretically proved to be noise-robust. First, we reveal
+its underfitting problem in practice when severe noise exists. Second, we conclude its noise-robustness
+is from emphasising on uncertain examples instead of treating training samples equally, as claimed
+in prior work. Third, its underfitting issue is interpreted from the differentiation degree viewpoint.
+2) We propose an effective and simple solution to enhance MAE's fitting ability while preserving
+its noise-robustness. Without changing the overall weighting scheme, i.e., what examples get
+higher weights, we simple adjust MAE's weighting variance, i.e., how much difference over examples'
+weights. For simplicity, we name our solution, Improved MAE (IMAE). We prove the effectiveness
+of IMAE with extensive experiments: image classification under symmetric label noise and real
+world unknown noise, and video retrieval which contains different types of noise. Source code:
+\url{https://github.com/XinshaoAmosWang/Improving-Mean-Absolute-Error-against-CCE}.

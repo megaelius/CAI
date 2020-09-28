@@ -1,0 +1,18 @@
+Automated brain lesion segmentation provides valuable information for the analysis and intervention
+of patients. In particular, methods based on convolutional neural networks (CNNs) have achieved
+state-of-the-art segmentation performance. However, CNNs usually require a decent amount of
+annotated data, which may be costly and time-consuming to obtain. Since unannotated data is generally
+abundant, it is desirable to use unannotated data to improve the segmentation performance for CNNs
+when limited annotated data is available. In this work, we propose a semi-supervised learning (SSL)
+approach to brain lesion segmentation, where unannotated data is incorporated into the training
+of CNNs. We adapt the mean teacher model, which is originally developed for SSL-based image classification,
+for brain lesion segmentation. Assuming that the network should produce consistent outputs for
+similar inputs, a loss of segmentation consistency is designed and integrated into a self-ensembling
+framework. Specifically, we build a student model and a teacher model, which share the same CNN architecture
+for segmentation. The student and teacher models are updated alternately. At each step, the student
+model learns from the teacher model by minimizing the weighted sum of the segmentation loss computed
+from annotated data and the segmentation consistency loss between the teacher and student models
+computed from unannotated data. Then, the teacher model is updated by combining the updated student
+model with the historical information of teacher models using an exponential moving average strategy.
+For demonstration, the proposed approach was evaluated on ischemic stroke lesion segmentation,
+where it improves stroke lesion segmentation with the incorporation of unannotated data. 

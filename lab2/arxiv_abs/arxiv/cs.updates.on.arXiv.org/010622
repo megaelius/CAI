@@ -1,0 +1,20 @@
+Prognostic tumor growth modeling via volumetric medical imaging observations can potentially
+lead to better outcomes of tumor treatment and surgical planning. Recent advances of convolutional
+networks have demonstrated higher accuracy than traditional mathematical models in predicting
+future tumor volumes. This indicates that deep learning-based techniques may have great potentials
+on addressing such problem. However, current 2D patch-based modeling approaches cannot make full
+use of the spatio-temporal imaging context of the tumor's longitudinal 4D (3D + time) data. Moreover,
+they are incapable to predict clinically-relevant tumor properties, other than volumes. In this
+paper, we exploit to formulate the tumor growth process through convolutional Long Short-Term
+Memory (ConvLSTM) that extract tumor's static imaging appearances and capture its temporal dynamic
+changes within a single network. We extend ConvLSTM into the spatio-temporal domain (ST-ConvLSTM)
+by jointly learning the inter-slice 3D contexts and the longitudinal or temporal dynamics from
+multiple patient studies. Our approach can incorporate other non-imaging patient information
+in an end-to-end trainable manner. Experiments are conducted on the largest 4D longitudinal tumor
+dataset of 33 patients to date. Results validate that the ST-ConvLSTM produces a Dice score of 83.2%+-5.1%
+and a RVD of 11.2%+-10.8%, both significantly outperforming (p<0.05) other compared methods of
+linear model, ConvLSTM, and generative adversarial network (GAN) under the metric of predicting
+future tumor volumes. Additionally, our new method enables the prediction of both cell density
+and CT intensity numbers. Last, we demonstrate the generalizability of ST-ConvLSTM by employing
+it in 4D medical image segmentation task, which achieves an averaged Dice score of 86.3+-1.2% for
+left-ventricle segmentation in 4D ultrasound with 3 seconds per patient. 

@@ -1,0 +1,17 @@
+Randomized exponential backoff is a widely deployed technique for coordinating access to a shared
+resource. A good backoff protocol should, arguably, satisfy three natural properties: (i) it should
+provide constant throughput, wasting as little time as possible; (ii) it should require few failed
+access attempts, minimizing the amount of wasted effort; and (iii) it should be robust, continuing
+to work efficiently even if some of the access attempts fail for spurious reasons. Unfortunately,
+exponential backoff has some well-known limitations in two of these areas: it provides poor (sub-constant)
+throughput (in the worst case), and is not robust (to resource acquisition failures). The goal of
+this paper is to fix exponential backoff, particularly focusing on the case where processes arrive
+in an on-line, worst-case fashion. We present a relatively simple backoff protocol Re-Backoff
+that has, at its heart, a version of exponential backoff. It guarantees expected constant throughput
+with dynamic process arrivals and requires only an expected polylogarithmic number of access attempts
+per process. Re-Backoff is also robust to periods where the shared resource is unavailable for a
+period of time. If it is unavailable for $D$ time slots, Re-Backoff provides the following guarantees.
+When the number of packets is a finite $n$, the average expected number of access attempts for successfully
+sending a packet is $O(\log^2( n + D))$. In the infinite case, the average expected number of access
+attempts for successfully sending a packet is $O( \log^2(\eta) + \log^2(D) )$ where $\eta$ is the
+maximum number of processes that are ever in the system concurrently. 

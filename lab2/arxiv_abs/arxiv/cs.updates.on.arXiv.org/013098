@@ -1,0 +1,19 @@
+We examine the issue of password length leakage via encrypted traffic i.e., bicycle attacks. We
+aim to quantify both the prevalence of password length leakage bugs as well as the potential harm
+to users. In an observational study, we find that {\em most} of the Alexa top 100 rates sites are vulnerable
+to bicycle attacks meaning that an eavesdropping attacker can infer the exact length of a password
+based on the length the encrypted packet containing the password. We discuss several ways in which
+an eavesdropping attacker could link this password length with a particular user account e.g.,
+a targeted campaign against a smaller group of users or via DNS hijacking for larger scale campaigns.
+We next use a decision-theoretic model to quantify the extent to which password length leakage might
+help an attacker to crack user passwords. In our analysis, we consider three different levels of
+password attackers: hacker, criminal and nation-state. In all cases, we find that such an attacker
+who knows the length of each user password gains a significant advantage over one without knowing
+the password length. As part of this analysis, we also release a new differentially private password
+frequency dataset from the 2016 LinkedIn breach using a differentially private algorithm of Blocki
+et al. (NDSS 2016) to protect user accounts. The LinkedIn frequency corpus is based on over 170 million
+passwords making it the largest frequency corpus publicly available to password researchers.
+While the defense against bicycle attacks is straightforward (i.e., ensure that passwords are
+always padded before encryption), we discuss several practical challenges organizations may
+face when attempting to patch this vulnerability. We advocate for a new W3C standard on how password
+fields are handled which would effectively eliminate most instances of password length leakage.

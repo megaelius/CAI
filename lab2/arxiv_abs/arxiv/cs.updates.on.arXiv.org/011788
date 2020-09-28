@@ -1,0 +1,19 @@
+We propose a deep autoencoder with graph topology inference and filtering to achieve compact representations
+of unorganized 3D point clouds in an unsupervised manner. Many previous works discretize 3D points
+to voxels and then use lattice-based methods to process and learn 3D spatial information; however,
+this leads to inevitable discretization errors. In this work, we handle raw 3D points without such
+compromise. The proposed networks follow the autoencoder framework with a focus on designing the
+decoder. The encoder adopts similar architectures as in PointNet. The decoder involves three novel
+modules. The folding module folds a canonical 2D lattice to the underlying surface of a 3D point cloud,
+achieving coarse reconstruction; the graph-topology-inference module learns a graph topology
+to represent pairwise relationships between 3D points, pushing the latent code to preserve both
+coordinates and pairwise relationships of points in 3D point clouds; and the graph-filtering module
+couples the above two modules, refining the coarse reconstruction through a learnt graph topology
+to obtain the final reconstruction. The proposed decoder leverages a learnable graph topology
+to push the codeword to preserve representative features and further improve the unsupervised-learning
+performance. We further provide theoretical analyses of the proposed architecture. In the experiments,
+we validate the proposed networks in three tasks, including 3D point cloud reconstruction, visualization,
+and transfer classification. The experimental results show that (1) the proposed networks outperform
+the state-of-the-art methods in various tasks; (2) a graph topology can be inferred as auxiliary
+information without specific supervision on graph topology inference; and (3) graph filtering
+refines the reconstruction, leading to better performances. 

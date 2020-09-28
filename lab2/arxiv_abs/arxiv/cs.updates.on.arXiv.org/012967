@@ -1,0 +1,20 @@
+Graph analytics power a range of applications in areas as diverse as finance, networking and business
+logistics. A common property of graphs used in the domain of graph analytics is a power-law distribution
+of vertex connectivity, wherein a small number of vertices are responsible for a high fraction of
+all connections in the graph. These richly-connected (hot) vertices inherently exhibit high reuse.
+However, their sparse distribution in memory leads to a severe underutilization of on-chip cache
+capacity. Prior works have proposed lightweight skew-aware vertex reordering that places hot
+vertices adjacent to each other in memory, reducing the cache footprint of hot vertices. However,
+in doing so, they may inadvertently destroy the inherent community structure within the graph,
+which may negate the performance gains achieved from the reduced footprint of hot vertices. In this
+work, we study existing reordering techniques and demonstrate the inherent tension between reducing
+the cache footprint of hot vertices and preserving original graph structure. We quantify the potential
+performance loss due to disruption in graph structure for different graph datasets. We further
+show that reordering techniques that employ fine-grain reordering significantly increase misses
+in the higher level caches, even when they reduce misses in the last-level cache. To overcome the
+limitations of existing reordering techniques, we propose Degree-Based Grouping (DBG), a novel
+lightweight reordering technique that employs a coarse-grain reordering to largely preserve
+graph structure while reducing the cache footprint of hot vertices. Our evaluation on 40 combinations
+of various graph applications and datasets shows that, compared to a baseline with no reordering,
+DBG yields an average application speed-up of 16.8% vs 11.6% for the best-performing existing lightweight
+technique. 

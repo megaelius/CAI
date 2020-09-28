@@ -1,0 +1,19 @@
+The stochastic multi-armed bandit model captures the tradeoff between exploration and exploitation.
+We study the effects of competition and cooperation on this tradeoff. Suppose there are $k$ arms
+and two players, Alice and Bob. In every round, each player pulls an arm, receives the resulting reward,
+and observes the choice of the other player but not their reward. Alice's utility is $\Gamma_A + \lambda
+\Gamma_B$ (and similarly for Bob), where $\Gamma_A$ is Alice's total reward and $\lambda \in [-1,
+1]$ is a cooperation parameter. At $\lambda = -1$ the players are competing in a zero-sum game, at
+$\lambda = 1$, they are fully cooperating, and at $\lambda = 0$, they are neutral: each player's utility
+is their own reward. The model is related to the economics literature on strategic experimentation,
+where usually players observe each other's rewards. With discount factor $\beta$, the Gittins
+index reduces the one-player problem to the comparison between a risky arm, with a prior $\mu$, and
+a predictable arm, with success probability $p$. The value of $p$ where the player is indifferent
+between the arms is the Gittins index $g = g(\mu,\beta) > m$, where $m$ is the mean of the risky arm.
+We show that competing players explore less than a single player: there is $p^* \in (m, g)$ so that
+for all $p > p^*$, the players stay at the predictable arm. However, the players are not myopic: they
+still explore for some $p > m$. On the other hand, cooperating players explore more than a single player.
+We also show that neutral players learn from each other, receiving strictly higher total rewards
+than they would playing alone, for all $ p\in (p^*, g)$, where $p^*$ is the threshold from the competing
+case. Finally, we show that competing and neutral players eventually settle on the same arm in every
+Nash equilibrium, while this can fail for cooperating players. 

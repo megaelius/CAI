@@ -1,0 +1,17 @@
+Input transformation based defense strategies fall short in defending against strong adversarial
+attacks. Some successful defenses adopt approaches that either increase the randomness within
+the applied transformations, or make the defense computationally intensive, making it substantially
+more challenging for the attacker. However, it limits the applicability of such defenses as a pre-processing
+step, similar to computationally heavy approaches that use retraining and network modifications
+to achieve robustness to perturbations. In this work, we propose a defense strategy that applies
+random image corruptions to the input image alone, constructs a self-correlation based subspace
+followed by a projection operation to suppress the adversarial perturbation. Due to its simplicity,
+the proposed defense is computationally efficient as compared to the state-of-the-art, and yet
+can withstand huge perturbations. Further, we develop proximity relationships between the projection
+operator of a clean image and of its adversarially perturbed version, via bounds relating geodesic
+distance on the Grassmannian to matrix Frobenius norms. We empirically show that our strategy is
+complementary to other weak defenses like JPEG compression and can be seamlessly integrated with
+them to create a stronger defense. We present extensive experiments on the ImageNet dataset across
+four different models namely InceptionV3, ResNet50, VGG16 and MobileNet models with perturbation
+magnitude set to {\epsilon} = 16. Unlike state-of-the-art approaches, even without any retraining,
+the proposed strategy achieves an absolute improvement of ~ 4.5% in defense accuracy on ImageNet.

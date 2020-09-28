@@ -1,0 +1,17 @@
+Unsupervised feature learning has made great strides with invariant mapping and instance-level
+discrimination, as benchmarked by classification on common datasets. However, these datasets
+are curated to be distinctive and class-balanced, whereas naturally collected data could be highly
+correlated within the class (with repeats at the extreme) and long-tail distributed across classes.
+The natural grouping of instances conflicts with the fundamental assumption of instance-level
+discrimination. Contrastive feature learning is thus unstable without grouping, whereas grouping
+without contrastive feature learning is easily trapped into degeneracy. We propose to integrate
+grouping into instance-level discrimination, not by imposing group-level discrimination, but
+by imposing cross-level discrimination between instances and groups. Our key insight is that attraction
+and repulsion between instances work at different ranges. In order to discover the most discriminative
+feature that also respects natural grouping, we ask each instance to repel groups of instances that
+are far from it. By pushing against common groups, this cross-level repulsion actively binds similar
+instances together. To further avoid the clash between grouping and discrimination objectives,
+we also impose them on separate features derived from the common feature. Our extensive experimentation
+demonstrates not only significant gain on datasets with high correlation and long-tail distributions,
+but also leading performance on multiple self-supervision benchmarks including CIFAR-10, CIFAR-100
+and ImageNet, bringing unsupervised feature learning closer to real data applications. 

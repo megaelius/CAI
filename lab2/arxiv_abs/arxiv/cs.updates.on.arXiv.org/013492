@@ -1,0 +1,19 @@
+Tverberg's theorem is a classic result in discrete geometry. It states that for any integer $k \ge
+2$ and any finite $d$-dimensional point set $P \subseteq \mathbb{R}^d$ of at least $(d + 1)(k - 1)
++ 1$ points, we can partition $P$ into $k$ subsets whose convex hulls have a non-empty intersection.
+The computational problem of finding such a partition lies in the complexity class $\mathrm{PPAD}
+\cap \mathrm{PLS}$, but no hardness results are known. Tverberg's theorem also has a colorful variant:
+the points in $P$ have colors, and under certain conditions, $P$ can be partitioned into colorful
+sets, i.e., sets in which each color appears exactly once such that the convex hulls of the sets intersect.
+Recently, Adiprasito, Barany, and Mustafa [SODA 2019] proved a no-dimensional version of Tverberg's
+theorem, in which the convex hulls of the sets in the partition may intersect in an approximate fashion,
+relaxing the requirement on the cardinality of $P$. The argument is constructive, but it does not
+result in a polynomial-time algorithm. We present an alternative proof for a no-dimensional Tverberg
+theorem that leads to an efficient algorithm to find the partition. More specifically, we show an
+deterministic algorithm that finds for any set $P \subseteq \mathbb{R}^d$ of $n$ points and any
+$k \in \{2, \dots, n\}$ in $O(nd \log k )$ time a partition of $P$ into $k$ subsets such that there is
+a ball of radius $O\left(\frac{k}{\sqrt{n}}\textrm{diam}(P)\right)$ intersecting the convex
+hull of each subset. A similar result holds also for the colorful version. To obtain our result, we
+generalize Sarkaria's tensor product constructions [Israel Journal Math., 1992] that reduces
+the Tverberg problem to the Colorful Caratheodory problem. By carefully choosing the vectors used
+in the tensor products, we implement the reduction in an efficient manner. 

@@ -1,0 +1,20 @@
+We present a numerical scheme for solving an inverse problem for parameter estimation in tumor growth
+models for glioblastomas, a form of aggressive primary brain tumor. The growth model is a reaction-diffusion
+partial differential equation (PDE) for the tumor concentration. We use a PDE-constrained optimization
+formulation for the inverse problem. The unknown parameters are the reaction coefficient (proliferation),
+the diffusion coefficient (infiltration), and the initial condition field for the tumor PDE. Segmentation
+of Magnetic Resonance Imaging (MRI) scans from a single time snapshot drive the inverse problem
+where segmented tumor regions serve as partial observations of the tumor concentration. The precise
+time relative to tumor initiation is unknown, which poses an additional difficulty for inversion.
+We perform a frozen-coefficient spectral analysis and show that the inverse problem is severely
+ill-posed. We introduce a biophysically motivated regularization on the tumor initial condition.
+In particular, we assume that the tumor starts at a few locations (enforced with a sparsity constraint)
+and that the initial condition magnitude in the maximum norm equals one. We solve the resulting optimization
+problem using an inexact quasi-Newton method combined with a compressive sampling algorithm for
+the sparsity constraint. Our implementation uses PETSc and AccFFT libraries. We conduct numerical
+experiments on synthetic and clinical images to highlight the improved performance of our solver
+over an existing solver that uses a two-norm regularization for the calibration parameters. The
+existing solver is unable to localize the initial condition. Our new solver can localize the initial
+condition and recover infiltration and proliferation. In clinical datasets (for which the ground
+truth is unknown), our solver results in qualitatively different solutions compared to the existing
+solver. 

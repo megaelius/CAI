@@ -1,0 +1,19 @@
+It is known that attackers can exfiltrate data from air-gapped computers through their speakers
+via sonic and ultrasonic waves. To eliminate the threat of such acoustic covert channels in sensitive
+systems, audio hardware can be disabled and the use of loudspeakers can be strictly forbidden. Such
+audio-less systems are considered to be \textit{audio-gapped}, and hence immune to acoustic covert
+channels. In this paper, we introduce a technique that enable attackers leak data acoustically
+from air-gapped and audio-gapped systems. Our developed malware can exploit the computer power
+supply unit (PSU) to play sounds and use it as an out-of-band, secondary speaker with limited capabilities.
+The malicious code manipulates the internal \textit{switching frequency} of the power supply
+and hence controls the sound waveforms generated from its capacitors and transformers. Our technique
+enables producing audio tones in a frequency band of 0-24khz and playing audio streams (e.g., WAV)
+from a computer power supply without the need for audio hardware or speakers. Binary data (files,
+keylogging, encryption keys, etc.) can be modulated over the acoustic signals and sent to a nearby
+receiver (e.g., smartphone). We show that our technique works with various types of systems: PC
+workstations and servers, as well as embedded systems and IoT devices that have no audio hardware
+at all. We provide technical background and discuss implementation details such as signal generation
+and data modulation. We show that the POWER-SUPPLaY code can operate from an ordinary user-mode
+process and doesn't need any hardware access or special privileges. Our evaluation shows that using
+POWER-SUPPLaY, sensitive data can be exfiltrated from air-gapped and audio-gapped systems from
+a distance of five meters away at a maximal bit rates of 50 bit/sec. 

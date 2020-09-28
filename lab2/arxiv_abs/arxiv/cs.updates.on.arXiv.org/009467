@@ -1,0 +1,18 @@
+Model compression provides a means to efficiently deploy deep neural networks (DNNs) on devices
+that limited computation resources and tight power budgets, such as mobile and IoT (Internet of
+Things) devices. Consequently, model compression is one of the most critical topics in modern deep
+learning. Typically, the state-of-the-art model compression methods suffer from a big limitation:
+they are only based on heuristics rather than theoretical foundation and thus offer no worst-case
+guarantees. To bridge this gap, Baykal et. al. [2018a] suggested using a coreset, a small weighted
+subset of the data that provably approximates the original data set, to sparsify the parameters
+of a trained fully-connected neural network by sampling a number of neural network parameters based
+on the importance of the data. However, the sampling procedure is data-dependent and can only be
+only be performed after an expensive training phase. We propose the use of data-independent coresets
+to perform provable model compression without the need for training. We first prove that there exists
+a coreset whose size is independent of the input size of the data for any neuron whose activation function
+is from a family of functions that includes variants of ReLU, sigmoid and others. We then provide
+a compression-based algorithm that constructs these coresets and explicitly applies neuron pruning
+for the underlying model. We demonstrate the effectiveness of our methods with experimental evaluations
+for both synthetic and real-world benchmark network compression. In particular, our framework
+provides up to 90% compression on the LeNet-300-100 architecture on MNIST and actually improves
+the accuracy. 

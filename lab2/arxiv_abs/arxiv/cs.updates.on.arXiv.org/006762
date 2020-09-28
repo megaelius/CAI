@@ -1,0 +1,20 @@
+We consider the problem of searching for an unknown target vertex $t$ in a (possibly edge-weighted)
+graph. Each \emph{vertex-query} points to a vertex $v$ and the response either admits $v$ is the
+target or provides any neighbor $s\not=v$ that lies on a shortest path from $v$ to $t$. This model
+has been introduced for trees by Onak and Parys [FOCS 2006] and for general graphs by Emamjomeh-Zadeh
+et al. [STOC 2016]. In the latter, the authors provide algorithms for the error-less case and for
+the independent noise model (where each query independently receives an erroneous answer with
+known probability $p<1/2$ and a correct one with probability $1-p$). We study this problem in both
+adversarial errors and independent noise models. First, we show an algorithm that needs $\frac{\log_2
+n}{1 - H(r)}$ queries against \emph{adversarial} errors, where adversary is bounded with its rate
+of errors by a known constant $r<1/2$. Our algorithm is in fact a simplification of previous work,
+and our refinement lies in invoking amortization argument. We then show that our algorithm coupled
+with Chernoff bound argument leads to an algorithm for independent noise that is simpler and with
+a query complexity that is both simpler and asymptotically better to one of Emamjomeh-Zadeh et al.
+[STOC 2016]. Our approach has a wide range of applications. First, it improves and simplifies Robust
+Interactive Learning framework proposed by Emamjomeh-Zadeh et al. [NIPS 2017]. Secondly, performing
+analogous analysis for \emph{edge-queries} (where query to edge $e$ returns its endpoint that
+is closer to target) we actually recover (as a special case) noisy binary search algorithm that is
+asymptotically optimal, matching the complexity of Feige et al. [SIAM J. Comput. 1994]. Thirdly,
+we improve and simplify upon existing algorithm for searching of \emph{unbounded} domains due
+to Aslam and Dhagat [STOC 1991]. 

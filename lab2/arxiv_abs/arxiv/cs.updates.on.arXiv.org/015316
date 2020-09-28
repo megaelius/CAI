@@ -1,0 +1,18 @@
+Dense kernel matrices $\Theta \in \mathbb{R}^{N \times N}$ obtained from point evaluations of
+a covariance function $G$ at locations $\{ x_{i} \}_{1 \leq i \leq N} \subset \mathbb{R}^{d}$ arise
+in statistics, machine learning, and numerical analysis. For covariance functions that are Green's
+functions of elliptic boundary value problems and homogeneously-distributed sampling points,
+we show how to identify a subset $S \subset \{ 1 , \dots , N \}^2$, with $\# S = O ( N \log (N) \log^{d} ( N
+/\epsilon ) )$, such that the zero fill-in incomplete Cholesky factorisation of the sparse matrix
+$\Theta_{ij} 1_{( i, j ) \in S}$ is an $\epsilon$-approximation of $\Theta$. This factorisation
+can provably be obtained in complexity $O ( N \log( N ) \log^{d}( N /\epsilon) )$ in space and $O ( N \log^{2}(
+N ) \log^{2d}( N /\epsilon) )$ in time, improving upon the state of the art for general elliptic operators;
+we further present numerical evidence that $d$ can be taken to be the intrinsic dimension of the data
+set rather than that of the ambient space. The algorithm only needs to know the spatial configuration
+of the $x_{i}$ and does not require an analytic representation of $G$. Furthermore, this factorization
+straightforwardly provides an approximate sparse PCA with optimal rate of convergence in the operator
+norm. Hence, by using only subsampling and the incomplete Cholesky factorization, we obtain, at
+nearly linear complexity, the compression, inversion and approximate PCA of a large class of covariance
+matrices. By inverting the order of the Cholesky factorization we also obtain a solver for elliptic
+PDE with complexity $O ( N \log^{d}( N /\epsilon) )$ in space and $O ( N \log^{2d}( N /\epsilon) )$ in
+time, improving upon the state of the art for general elliptic operators. 

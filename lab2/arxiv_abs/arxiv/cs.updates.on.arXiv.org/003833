@@ -1,0 +1,20 @@
+Atomicity or strong consistency is one of the fundamental, most intuitive, and hardest to provide
+primitives in distributed shared memory emulations. To ensure survivability, scalability, and
+availability of a storage service in the presence of failures, traditional approaches for atomic
+memory emulation, in message passing environments, replicate the objects across multiple servers.
+Compared to replication based algorithms, erasure code-based atomic memory algorithms has much
+lower storage and communication costs, but usually, they are harder to design. The difficulty of
+designing atomic memory algorithms further grows, when the set of servers may be changed to ensure
+survivability of the service over software and hardware upgrades, while avoiding service interruptions.
+Atomic memory algorithms for performing server reconfiguration, in the replicated systems, are
+very few, complex, and are still part of an active area of research; reconfigurations of erasure-code
+based algorithms are non-existent. In this work, we present ARES, an algorithmic framework that
+allows reconfiguration of the underlying servers, and is particularly suitable for erasure-code
+based algorithms emulating atomic objects. ARES introduces new configurations while keeping
+the service available. To use with ARES we also propose a new, and to our knowledge, the first two-round
+erasure code based algorithm TREAS, for emulating multi-writer, multi-reader (MWMR) atomic objects
+in asynchronous, message-passing environments, with near-optimal communication and storage
+costs. Our algorithms can tolerate crash failures of any client and some fraction of servers, and
+yet, guarantee safety and liveness property. Moreover, by bringing together the advantages of
+ARES and TREAS, we propose an optimized algorithm where new configurations can be installed without
+the objects values passing through the reconfiguration clients. 

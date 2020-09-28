@@ -1,0 +1,17 @@
+In this paper, we propose the Asynchronous Accelerated Nonuniform Randomized Block Coordinate
+Descent algorithm ($\texttt{A2BCD}$), the first asynchronous Nesterov-accelerated algorithm
+that achieves optimal complexity. This parallel algorithm solves the unconstrained convex minimization
+problem, using $p$ computing nodes which compute updates to shared solution vectors, in an asynchronous
+fashion with no central coordination. Nodes in asynchronous algorithms do not wait for updates
+from other nodes before starting a new iteration, but simply compute updates using the most recent
+solution information available. This allows them to complete iterations much faster than traditional
+ones, especially at scale, by eliminating the costly synchronization penalty of traditional algorithms.
+We first prove that $\texttt{A2BCD}$ converges linearly to a solution with a fast accelerated rate
+that matches the recently proposed $\texttt{NU_ACDM}$, so long as the maximum delay is not too large.
+Somewhat surprisingly, $\texttt{A2BCD}$ pays no complexity penalty for using outdated information.
+We then prove lower complexity bounds for randomized coordinate descent methods, which show that
+$\texttt{A2BCD}$ (and hence $\texttt{NU_ACDM}$) has optimal complexity to within a constant
+factor. We confirm with numerical experiments that $\texttt{A2BCD}$ outperforms $\texttt{NU_ACDM}$,
+which is the current fastest coordinate descent algorithm, even at small scale. We also derive and
+analyze a second-order ordinary differential equation, which is the continuous-time limit of
+our algorithm, and prove it converges linearly to a solution with a similar accelerated rate. 

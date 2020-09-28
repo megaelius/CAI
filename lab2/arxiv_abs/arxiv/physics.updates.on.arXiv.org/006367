@@ -1,0 +1,19 @@
+A new parallel algorithm utilizing partitioned global address space (PGAS) programming model
+to achieve high scalability is reported for particle tracking in direct numerical simulations
+of turbulent flow. The work is motivated by the desire to obtain Lagrangian information necessary
+for the study of turbulent dispersion at the largest problem sizes feasible on current and next-generation
+multi-petaflop supercomputers. A large population of fluid particles is distributed among parallel
+processes dynamically, based on instantaneous particle positions such that all of the interpolation
+information needed for each particle is available either locally on its host process or neighboring
+processes holding adjacent sub-domains of the velocity field. With cubic splines as the preferred
+interpolation method, the new algorithm is designed to minimize the need for communication, by
+transferring between adjacent processes only those spline coefficients determined to be necessary
+for specific particles. This transfer is implemented very efficiently as a one-sided communication,
+using Co-Array Fortran (CAF) features which facilitate small data movements between different
+local partitions of a large global array. Detailed benchmarks are obtained on the Cray petascale
+supercomputer Blue Waters at the University of Illinois, Urbana-Champaign. For operations on
+the particles in a $8192^3$ simulation ($0.55$ trillion grid points) on $262,144$ Cray XE6 cores,
+the new algorithm is found to be orders of magnitude faster relative to a prior algorithm in which
+each particle is tracked by the same parallel process at all times. Improving support of PGAS models
+on major compilers suggests that this algorithm will be of wider applicability on most upcoming
+supercomputers. 

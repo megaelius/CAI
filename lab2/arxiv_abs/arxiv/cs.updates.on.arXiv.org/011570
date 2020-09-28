@@ -1,0 +1,17 @@
+Multiple instance learning (MIL) is a supervised learning methodology that aims to allow models
+to learn instance class labels from bag class labels, where a bag is defined to contain multiple instances.
+MIL is gaining traction for learning from weak labels but has not been widely applied to 3D medical
+imaging. MIL is well-suited to clinical CT acquisitions since (1) the highly anisotropic voxels
+hinder application of traditional 3D networks and (2) patch-based networks have limited ability
+to learn whole volume labels. In this work, we apply MIL with a deep convolutional neural network
+to identify whether clinical CT head image volumes possess one or more large hemorrhages (> 20cm$^3$),
+resulting in a learned 2D model without the need for 2D slice annotations. Individual image volumes
+are considered separate bags, and the slices in each volume are instances. Such a framework sets
+the stage for incorporating information obtained in clinical reports to help train a 2D segmentation
+approach. Within this context, we evaluate the data requirements to enable generalization of MIL
+by varying the amount of training data. Our results show that a training size of at least 400 patient
+image volumes was needed to achieve accurate per-slice hemorrhage detection. Over a five-fold
+cross-validation, the leading model, which made use of the maximum number of training volumes,
+had an average true positive rate of 98.10%, an average true negative rate of 99.36%, and an average
+precision of 0.9698. The models have been made available along with source code to enabled continued
+exploration and adaption of MIL in CT neuroimaging. 

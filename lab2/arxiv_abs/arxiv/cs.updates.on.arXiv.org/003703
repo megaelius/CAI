@@ -1,0 +1,20 @@
+Brain extraction from images is a common pre-processing step. Many approaches exist, but they are
+frequently only designed to perform brain extraction from images without strong pathologies.
+Extracting the brain from images with strong pathologies, for example, the presence of a tumor or
+of a traumatic brain injury, is challenging. In such cases, tissue appearance may deviate from normal
+tissue and violates algorithmic assumptions for these approaches; hence, the brain may not be correctly
+extracted. This paper proposes a brain extraction approach which can explicitly account for pathologies
+by jointly modeling normal tissue and pathologies. Specifically, our model uses a three-part image
+decomposition: (1) normal tissue appearance is captured by principal component analysis, (2)
+pathologies are captured via a total variation term, and (3) non-brain tissue is captured by a sparse
+term. Decomposition and image registration steps are alternated to allow statistical modeling
+in a fixed atlas space. As a beneficial side effect, the model allows for the identification of potential
+pathologies and the reconstruction of a quasi-normal image in atlas space. We demonstrate the effectiveness
+of our method on four datasets: the IBSR and LPBA40 datasets which show normal images, the BRATS dataset
+containing images with brain tumors and a dataset containing clinical TBI images. We compare the
+performance with other popular models: ROBEX, BEaST, MASS, BET, BSE and a recently proposed deep
+learning approach. Our model performs better than these competing methods on all four datasets.
+Specifically, our model achieves the best median (97.11) and mean (96.88) Dice scores over all datasets.
+The two best performing competitors, ROBEX and MASS, achieve scores of 96.23/95.62 and 96.67/94.25
+respectively. Hence, our approach is an effective method for high quality brain extraction on a
+wide variety of images. 

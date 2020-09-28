@@ -1,0 +1,17 @@
+Most neurological diseases are characterized by gradual deterioration of brain structure and
+function. To identify the impact of such diseases, studies have been acquiring large longitudinal
+MRI datasets and applied deep-learning to predict diagnosis label(s). These learning models apply
+Convolutional Neural Networks (CNN) to extract informative features from each time point of the
+longitudinal MRI and Recurrent Neural Networks (RNN) to classify each time point based on those
+features. However, they neglect the progressive nature of the disease, which may result in clinically
+implausible predictions across visits. In this paper, we propose a framework that injects the extracted
+features from CNNs at each time point to the RNN cells considering the dependencies across different
+time points in the longitudinal data. On the feature level, we propose a novel longitudinal pooling
+layer to couple features of a visit with those of proceeding ones. On the prediction level, we add
+a consistency regularization to the classification objective in line with the nature of the disease
+progression across visits. We evaluate the proposed method on the longitudinal structural MRIs
+from three neuroimaging datasets: Alzheimer's Disease Neuroimaging Initiative (ADNI, N=404),
+a dataset composed of 274 healthy controls and 329 patients with Alcohol Use Disorder (AUD), and
+255 youths from the National Consortium on Alcohol and NeuroDevelopment in Adolescence (NCANDA).
+All three experiments show that our method is superior to the widely used methods. The code is available
+at https://github.com/ouyangjiahong/longitudinal-pooling. 

@@ -1,0 +1,20 @@
+Existing e-commerce search engines typically support search only over objective attributes,
+such as price and locations, leaving the more desirable subjective attributes, such as romantic
+vibe and worklife balance unsearchable. We found that this is also the case for Recruit Group, which
+operates a wide range of online booking and search services, including jobs, travel, housing, bridal,
+dining, beauty, and where each service is among the biggest in Japan, if not internationally. We
+present our progress towards productionizing a recent subjective search prototype (OpineDB)
+developed by Megagon Labs for Recruit Group. Several components within OpineDB are enhanced to
+satisfy production demands, including adding a BERT language model pre-trained on massive hospitality
+domain review corpora. We also found that the challenges of productionizing the system are beyond
+enhancing the components. In particular, an important requirement in production-quality systems
+is to instrument a proper way of measuring the search quality, which is extremely tricky when the
+search results are subjective. This led to the creation of a high-quality benchmark dataset from
+scratch, involving over 600 queries by user interviews and a collection of more than 120,000 query-entity
+relevancy labels. Also, we found that the existing search algorithms do not meet the search quality
+standard required by production systems. Consequently, we enhanced the ranking model by fine-tuning
+several search algorithms and combining them under a learning-to-rank framework. The model achieves
+5%-10% overall precision improvement and 90+% precision on more than half of the benchmark testing
+queries making these queries ready for AB-testing. While some enhancements can be immediately
+applied to other verticals, our experience reveals that benchmarking and fine-tuning ranking
+algorithms are specific to each domain and cannot be avoided. 

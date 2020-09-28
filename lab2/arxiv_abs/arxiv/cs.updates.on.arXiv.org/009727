@@ -1,0 +1,19 @@
+Data hosted in a cloud environment can be subject to attacks from a higher privileged adversary,
+such as a malicious or compromised cloud provider. To provide confidentiality and integrity even
+in the presence of such an adversary, a number of Trusted Execution Environments (TEEs) have been
+developed. A TEE aims to protect data and code within its environment against high privileged adversaries,
+such as a malicious operating system or hypervisor. While mechanisms exist to attest a TEE's integrity
+at load time, there are no mechanisms to attest its integrity at runtime. Additionally, work also
+exists that discusses mechanisms to verify the runtime integrity of programs and system components.
+However, those verification mechanisms are themselves not protected against attacks from a high
+privileged adversary. It is therefore desirable to combine the protection mechanisms of TEEs with
+the ability of application runtime integrity verification. In this paper, we present Scanclave,
+a lightweight design which achieves three design goals: Trustworthiness of the verifier, a minimal
+trusted software stack and the possibility to access an application's memory from a TEE. Having
+achieved our goals, we are able to verify the runtime integrity of applications even in the presence
+of a high privileged adversary. We refrain from discussing which properties define the runtime
+integrity of an application, as different applications will require different verification methods.
+Instead, we show how Scanclave enables a remote verifier to determine the runtime integrity of an
+application. Afterwards, we perform a security analysis for the different steps of our design.
+Additionally, we discuss different enclave implementations that might be used for the implementation
+of Scanclave. 

@@ -1,0 +1,19 @@
+We tackle the problem of learning equilibria in simulation-based games. In such games, the players'
+utility functions cannot be described analytically, as they are given through a black-box simulator
+that can be queried to obtain noisy estimates of the utilities. This is the case in many real-world
+games in which a complete description of the elements involved is not available upfront, such as
+complex military settings and online auctions. In these situations, one usually needs to run costly
+simulation processes to get an accurate estimate of the game outcome. As a result, solving these
+games begets the challenge of designing learning algorithms that can find (approximate) equilibria
+with high confidence, using as few simulator queries as possible. Moreover, since running the simulator
+during the game is unfeasible, the algorithms must first perform a pure exploration learning phase
+and, then, use the (approximate) equilibrium learned this way to play the game. In this work, we focus
+on two-player zero-sum games with infinite strategy spaces. Drawing from the best arm identification
+literature, we design two algorithms with theoretical guarantees to learn maximin strategies
+in these games. The first one works in the fixed-confidence setting, guaranteeing the desired confidence
+level while minimizing the number of queries. Instead, the second algorithm fits the fixed-budget
+setting, maximizing the confidence without exceeding the given maximum number of queries. First,
+we formally prove {\delta}-PAC theoretical guarantees for our algorithms under some regularity
+assumptions, which are encoded by letting the utility functions be drawn from a Gaussian process.
+Then, we experimentally evaluate our techniques on a testbed made of randomly generated games and
+instances representing simple real-world security settings. 

@@ -1,0 +1,19 @@
+\textit{SummerTime} seeks to summarize globally time series signals and provides a fixed-length,
+robust summarization of the variable-length time series. Many classical machine learning methods
+for classification and regression depend on data instances with a fixed number of features. As a
+result, those methods cannot be directly applied to variable-length time series data. One common
+approach is to perform classification over a sliding window on the data and aggregate the decisions
+made at local sections of the time series in some way, through majority voting for classification
+or averaging for regression. The downside to this approach is that minority local information is
+lost in the voting process and averaging assumes that each time series measurement is equal in significance.
+Also, since time series can be of varying length, the quality of votes and averages could vary greatly
+in cases where there is a close voting tie or bimodal distribution of regression domain. Summarization
+conducted by the \textit{SummerTime} method will be a fixed-length feature vector which can be
+used in-place of the time series dataset for use with classical machine learning methods. We use
+Gaussian Mixture models (GMM) over small same-length disjoint windows in the time series to group
+local data into clusters. The time series' rate of membership for each cluster will be a feature in
+the summarization. The model is naturally capable of converging to an appropriate cluster count.
+We compare our results to state-of-the-art studies in physical activity classification and show
+high-quality improvement by classifying with only the summarization. Finally, we show that regression
+using the summarization can augment energy expenditure estimation, producing more robust and
+precise results. 

@@ -1,0 +1,18 @@
+Support Vector Machines (SVMs) can solve structured multi-output learning problems such as multi-label
+classification, multiclass classification and vector regression. SVM training is expensive
+especially for large and high dimensional datasets. The bottleneck of the SVM training often lies
+in the kernel value computation. In many real-world problems, the same kernel values are used in
+many iterations during the training, which makes the caching of kernel values potentially useful.
+The majority of the existing studies simply adopt the LRU (least recently used) replacement strategy
+for caching kernel values. However, as we analyze in this paper, the LRU strategy generally achieves
+high hit ratio near the final stage of the training, but does not work well in the whole training process.
+Therefore, we propose a new caching strategy called EFU (less frequently used) which replaces the
+less frequently used kernel values that enhances LFU (least frequently used). Our experimental
+results show that EFU often has 20\% higher hit ratio than LRU in the training with the Gaussian kernel.
+To further optimize the strategy, we propose a caching strategy called HCST (hybrid caching for
+the SVM training), which has a novel mechanism to automatically adapt the better caching strategy
+in the different stages of the training. We have integrated the caching strategy into ThunderSVM,
+a recent SVM library on many-core processors. Our experiments show that HCST adaptively achieves
+high hit ratios with little runtime overhead among different problems including multi-label classification,
+multiclass classification and regression problems. Compared with other existing caching strategies,
+HCST achieves 20\% more reduction in training time on average. 

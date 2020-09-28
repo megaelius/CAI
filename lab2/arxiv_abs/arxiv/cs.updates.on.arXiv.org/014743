@@ -1,0 +1,19 @@
+Achieving desirable receiver sampling in ocean bottom acquisition is often not possible because
+of cost considerations. Assuming adequate source sampling is available, which is achievable by
+virtue of reciprocity and the use of modern randomized (simultaneous-source) marine acquisition
+technology, we are in a position to train convolutional neural networks (CNNs) to bring the receiver
+sampling to the same spatial grid as the dense source sampling. To accomplish this task, we form training
+pairs consisting of densely sampled data and artificially subsampled data using a reciprocity
+argument and the assumption that the source-site sampling is dense. While this approach has successfully
+been used on the recovery monochromatic frequency slices, its application in practice calls for
+wavefield reconstruction of time-domain data. Despite having the option to parallelize, the overall
+costs of this approach can become prohibitive if we decide to carry out the training and recovery
+independently for each frequency. Because different frequency slices share information, we propose
+the use the method of transfer training to make our approach computationally more efficient by warm
+starting the training with CNN weights obtained from a neighboring frequency slices. If the two
+neighboring frequency slices share information, we would expect the training to improve and converge
+faster. Our aim is to prove this principle by carrying a series of carefully selected experiments
+on a relatively large-scale five-dimensional data synthetic data volume associated with wide-azimuth
+3D ocean bottom node acquisition. From these experiments, we observe that by transfer training
+we are able t significantly speedup in the training, specially at relatively higher frequencies
+where consecutive frequency slices are more correlated. 

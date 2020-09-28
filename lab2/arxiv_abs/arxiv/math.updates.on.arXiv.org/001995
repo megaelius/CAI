@@ -1,0 +1,17 @@
+Three algorithms are developed for uncertainty quantification in modeling coupled Stokes and
+Darcy flows. The porous media may consist of multiple regions with different properties. The permeability
+is modeled as a non-stationary stochastic variable, with its log represented as a sum of local Karhunen-Lo\`eve
+(KL) expansions. The problem is approximated by stochastic collocation on either tensor-product
+or sparse grids, coupled with a multiscale mortar mixed finite element method for the spatial discretization.
+A non-overlapping domain decomposition algorithm reduces the global problem to a coarse scale
+mortar interface problem, which is solved by an iterative solver, for each stochastic realization.
+In the traditional implementation, each subdomain solves a local Dirichlet or Neumann problem
+in every interface iteration. To reduce this cost, two additional algorithms based on deterministic
+or stochastic multiscale flux basis are introduced. The basis consists of the local flux (or velocity
+trace) responses from each mortar degree of freedom. It is computed by each subdomain independently
+before the interface iteration begins. The use of the multiscale flux basis avoids the need for subdomain
+solves on each iteration. The deterministic basis is computed at each stochastic collocation and
+used only at this realization. The stochastic basis is formed by further looping over all local realizations
+of a subdomain's KL region before the stochastic collocation begins. It is reused over multiple
+realizations. Numerical tests are presented to illustrate the performance of the three algorithms,
+with the stochastic multiscale flux basis showing significant savings in computational cost.

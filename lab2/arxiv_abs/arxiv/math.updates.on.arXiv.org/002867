@@ -1,0 +1,19 @@
+In this paper we provide faster algorithms for approximately solving $\ell_{\infty}$ regression,
+a fundamental problem prevalent in both combinatorial and continuous optimization. In particular
+we provide an accelerated coordinate descent method which converges in $k$ iterations at a $O\left(\frac{1}{k}\right)$
+rate independent of the dimension of the problem, and whose iterations can be implemented cheaply
+for many structured matrices. Our algorithm can be viewed as an alternative approach to the recent
+breakthrough result of Sherman which achieves a similar running time improvement over classic
+algorithmic approaches, i.e. smoothing and gradient descent, which either converge at a $O\left(\frac{1}{\sqrt{k}}\right)$
+rate or have running times with a worse dependence on problem parameters. We show how to use our algorithm
+to achieve a runtime of $\tilde{O}\left(m + \frac{\sqrt{ns}}{\epsilon}\right)$ to compute an
+$\epsilon$-approximate maximum flow, for an undirected graph with $m$ edges, $n$ vertices, and
+where $s$ is the squared $\ell_2$ norm of the congestion of any optimal flow. As $s = O(m)$ this yields
+a running time of $\tilde{O}\left(m + \frac{\sqrt{nm}}{\epsilon}\right)$, generically improving
+upon the previous best known runtime of $\tilde{O}\left(\frac{m}{\epsilon}\right)$ by Sherman
+whenever the graph is slightly dense. Moreover, we show how to achieve improved exact algorithms
+for maximum flow on a variety of unit capacity graphs. We achieve these results by providing an accelerated
+coordinate descent method exploiting dynamic measures of coordinate smoothness for smoothed
+$\ell_{\infty}$ regression. Our analysis leverages the structure of the Hessian of the smoothed
+problem via a bound on its trace, as well as techniques for exploiting sparsity of the constraint
+matrix for faster sampling and smoothness estimates. 

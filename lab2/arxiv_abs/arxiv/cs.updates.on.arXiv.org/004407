@@ -1,0 +1,20 @@
+We present a practical methodology for securing the password-based authentication scheme. We
+propose a solution based on the well-known (k,n) threshold scheme of Shamir for sharing a secret,
+where in our case the secret is the password itself and (k,n) threshold scheme means that n password-derived
+secrets (shares) are created and k less than n shares are necessary and sufficient for reconstructing
+the password, while k-1 are not sufficient. The scheme is information-theoretic secure. Since
+each of the n shares is stored on a different host (shareholder), an attacker will need to compromise
+k different shareholders for obtaining an amount of data sufficient for reconstructing the secret.
+Furthermore, in order to be resistant to the compromising of the server (dealer) coordinating the
+shareholders we define a variant of the classic Shamir, where the Shamir's abscissae are unknown
+to dealer and shareholders, making the reconstruction impossible even in the case of dealer and
+shareholders compromised. In addition we use the Pedersen technique for allowing the verification
+of shares. For the described scenario we have designed two protocols: the registration (user's
+sign-up, to be carried out once), and authentication (user's login). We analyse several scenarios
+where dealer and/or shareholders are partially/totally compromised and confirm that none of them
+is enabling the attacker to break the authentication. Furthermore we focus on cases where one or
+more byzantine servers are presented, analysing the impact on the framework and show the adopted
+mechanisms to be safe against these kinds of attacks. We have developed a prototype demonstrating
+that our framework works correctly, effectively and efficiently. It provides a first feasibility
+study that will provide a base for structured and engineered cloud-based implementations aiming
+at providing an authentication-as-a-service. 

@@ -1,0 +1,20 @@
+Person re-identification (ReID) remains a challenging task in many real-word video analytics
+and surveillance applications, even though state-of-the-art accuracy has improved considerably
+with the advent of deep learning (DL) models trained on large image datasets. Given the shift in distributions
+that typically occurs between video data captured from the source and target domains, and absence
+of labeled data from the target domain, it is difficult to adapt a DL model for accurate recognition
+of target data. We argue that for pair-wise matchers that rely on metric learning, e.g., Siamese
+networks for person ReID, the unsupervised domain adaptation (UDA) objective should consist in
+aligning pair-wise dissimilarity between domains, rather than aligning feature representations.
+Moreover, dissimilarity representations are more suitable for designing open-set ReID systems,
+where identities differ in the source and target domains. In this paper, we propose a novel Dissimilarity-based
+Maximum Mean Discrepancy (D-MMD) loss for aligning pair-wise distances that can be optimized via
+gradient descent. From a person ReID perspective, the evaluation of D-MMD loss is straightforward
+since the tracklet information allows to label a distance vector as being either within-class or
+between-class. This allows approximating the underlying distribution of target pair-wise distances
+for D-MMD loss optimization, and accordingly align source and target distance distributions.
+Empirical results with three challenging benchmark datasets show that the proposed D-MMD loss
+decreases as source and domain distributions become more similar. Extensive experimental evaluation
+also indicates that UDA methods that rely on the D-MMD loss can significantly outperform baseline
+and state-of-the-art UDA methods for person ReID without the common requirement for data augmentation
+and/or complex networks. 

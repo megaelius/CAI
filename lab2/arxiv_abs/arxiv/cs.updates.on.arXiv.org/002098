@@ -1,0 +1,19 @@
+Zero-Shot Learning (ZSL) aims to classify a test instance from an unseen category based on the training
+instances from seen categories, in which the gap between seen categories and unseen categories
+is generally bridged via visual-semantic mapping between the low-level visual feature space and
+the intermediate semantic space. However, the visual-semantic mapping learnt based on seen categories
+may not generalize well to unseen categories because the data distributions between seen categories
+and unseen categories are considerably different, which is known as the projection domain shift
+problem in ZSL. To address this domain shift issue, we propose a method named Adaptive Embedding
+ZSL (AEZSL) to learn an adaptive visual-semantic mapping for each unseen category based on the similarities
+between each unseen category and all the seen categories. Then, we further make two extensions based
+on our AEZSL method. Firstly, in order to utilize the unlabeled test instances from unseen categories,
+we extend our AEZSL to a semi-supervised approach named AEZSL with Label Refinement (AEZSL_LR),
+in which a progressive approach is developed to update the visual classifiers and refine the predicted
+test labels alternatively based on the similarities among test instances and among unseen categories.
+Secondly, to avoid learning visual-semantic mapping for each unseen category in the large-scale
+classification task, we extend our AEZSL to a deep adaptive embedding model named Deep AEZSL (DAEZSL)
+sharing the similar idea (i.e., visual-semantic mapping should be category-specific and related
+to the semantic space) with AEZSL, which only needs to be trained once, but can be applied to arbitrary
+number of unseen categories. Extensive experiments demonstrate that our proposed methods achieve
+the state-of-the-art results for image classification on four benchmark datasets. 

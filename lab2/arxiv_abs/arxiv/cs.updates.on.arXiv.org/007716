@@ -1,0 +1,18 @@
+Anonymous shared memory is a memory in which processes use different names for the same shared read/write
+register. As an example, a shared register named $A$ by a process $p$ and a shared register named $B$
+by another process $q$ can correspond to the very same register $X$, and similarly for the names $B$
+at $p$ and $A$ at $q$ which can correspond to the same register $Y\neq X$. Hence, there is a permanent
+disagreement on the register names among the processes. This new notion of anonymity was recently
+introduced by G. Taubenfeld (PODC 2017), who presented several memory-anonymous algorithms and
+impossibility results. This paper introduces a new problem (new to our knowledge), that consists
+in "desanonymizing" an anonymous shared memory. To this end, it presents an algorithm that, starting
+with a shared memory made up of $m$ anonymous read/write atomic registers (i.e., there is no a priori
+agreement on their names), allows each process to compute a local addressing mapping, such that
+all the processes agree on the names of each register. The proposed construction is based on an underlying
+deadlock-free mutex algorithm for $n\geq 2$ processes (recently proposed in a paper co-authored
+by some of the authors of this paper), and consequently inherits its necessary and sufficient condition
+on the size $m$ of the anonymous memory, namely $m$ must belongs to the set $M(n)=\{m:~$ such that
+$\forall~ \ell: 1<\ell \leq n:~ \gcd(\ell,m)=1\}\setminus \{1\}$. This algorithm, which is also
+symmetric in the sense process identities can only be compared by equality, requires the participation
+of all the processes; hence it can be part of the system initialization. Last but not least, the proposed
+algorithm has a first-class noteworthy property, namely, its simplicity. 

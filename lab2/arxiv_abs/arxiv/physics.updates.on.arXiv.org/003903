@@ -1,0 +1,20 @@
+Global probabilistic inversion within the latent space learned by a Generative Adversarial Network
+(GAN) has been recently demonstrated. Compared to inversion on the original model space, using
+the latent space of a trained GAN can offer the following benefits: (1) the generated model proposals
+are geostatistically consistent with the prescribed prior training image (TI), and (2) the parameter
+space is reduced by orders of magnitude compared to the original model space. Nevertheless, exploring
+the learned latent space by state-of-the-art Markov chain Monte Carlo (MCMC) methods may still
+require a large computational effort. As an alternative, parameters in this latent space could
+possibly be optimized with much less computationally expensive gradient-based methods. We show
+that due to the typically highly nonlinear relationship between the latent space and the associated
+output space of a GAN, gradient-based deterministic inversion may fail even when considering a
+linear forward physical model. We tested two deterministic inversion approaches: a quasi-Newton
+gradient descent using the Adam algorithm and a Gauss-Newton (GN) method that makes use of the Jacobian
+matrix calculated by finite-differencing. For a channelized binary TI and a synthetic linear crosshole
+ground penetrating radar (GPR) tomography problem involving 576 measurements with low noise,
+we observe that when allowing for a total of 10,000 iterations only 13% of the gradient descent trials
+locate a solution that has the required data misfit. The tested GN inversion was unable to recover
+a solution with the appropriate data misfit. Our results suggest that deterministic inversion
+performance strongly depends on the inversion approach, starting model, true reference model,
+number of iterations and noise realization. In contrast, computationally-expensive probabilistic
+global optimization always finds an appropriate solution. 

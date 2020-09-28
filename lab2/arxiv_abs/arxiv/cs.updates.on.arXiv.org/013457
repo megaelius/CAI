@@ -1,0 +1,17 @@
+As companies continue to invest heavily in larger, more accurate and more robust deep learning models,
+they are exploring approaches to monetize their models while protecting their intellectual property.
+Model licensing is promising, but requires a robust tool for owners to claim ownership of models,
+i.e. a watermark. Unfortunately, current designs have not been able to address piracy attacks,
+where third parties falsely claim model ownership by embedding their own "pirate watermarks" into
+an already-watermarked model. We observe that resistance to piracy attacks is fundamentally at
+odds with the current use of incremental training to embed watermarks into models. In this work,
+we propose null embedding, a new way to build piracy-resistant watermarks into DNNs that can only
+take place at a model's initial training. A null embedding takes a bit string (watermark value) as
+input, and builds strong dependencies between the model's normal classification accuracy and
+the watermark. As a result, attackers cannot remove an embedded watermark via tuning or incremental
+training, and cannot add new pirate watermarks to already watermarked models. We empirically show
+that our proposed watermarks achieve piracy resistance and other watermark properties, over a
+wide range of tasks and models. Finally, we explore a number of adaptive counter-measures, and show
+our watermark remains robust against a variety of model modifications, including model fine-tuning,
+compression, and existing methods to detect/remove backdoors. Our watermarked models are also
+amenable to transfer learning without losing their watermark properties. 

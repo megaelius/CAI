@@ -1,0 +1,18 @@
+This paper summarizes the idea of Adaptive-Latency DRAM (AL-DRAM), which was published in HPCA
+2015, and examines the work's significance and future potential. AL-DRAM is a mechanism that optimizes
+DRAM latency based on the DRAM module and the operating temperature, by exploiting the extra margin
+that is built into the DRAM timing parameters. DRAM manufacturers provide a large margin for the
+timing parameters as a provision against two worst-case scenarios. First, due to process variation,
+some outlier DRAM chips are much slower than others. Second, chips become slower at higher temperatures.
+The timing parameter margin ensures that the slow outlier chips operate reliably at the worst-case
+temperature, and hence leads to a high access latency. Using an FPGA-based DRAM testing platform,
+our work first characterizes the extra margin for 115 DRAM modules from three major manufacturers.
+The experimental results demonstrate that it is possible to reduce four of the most critical timing
+parameters by a minimum/maximum of 17.3%/54.8% at 55C while maintaining reliable operation. AL-DRAM
+uses these observations to adaptively select reliable DRAM timing parameters for each DRAM module
+based on the module's current operating conditions. AL-DRAM does not require any changes to the
+DRAM chip or its interface; it only requires multiple different timing parameters to be specified
+and supported by the memory controller. Our real system evaluations show that AL-DRAM improves
+the performance of memory-intensive workloads by an average of 14% without introducing any errors.
+Our characterization and proposed techniques have inspired several other works on analyzing and/or
+exploiting different sources of latency and performance variation within DRAM chips. 

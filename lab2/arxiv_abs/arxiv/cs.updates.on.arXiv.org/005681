@@ -1,0 +1,19 @@
+Emerging Non-Volatile Memories (NVMs) are promising contenders for building future memory systems.
+On the other side, unlike DRAM systems, NVMs can retain data even after power loss and thus enlarge
+the attack surface. While data encryption and integrity verification have been proposed earlier
+for DRAM systems, protecting and recovering secure memories becomes more challenging with persistent
+memory. Specifically, security metadata, e.g., encryption counters and Merkle Tree data, should
+be securely persisted and recovered across system reboots and during recovery from crashes. Not
+persisting updates to security metadata can lead to data inconsistency, in addition to serious
+security vulnerabilities. In this paper, we pioneer a new direction that explores persistency
+of both Merkle Tree and encryption counters to enable secure recovery of data-verifiable and encrypted
+memory systems. To this end, we coin a new concept that we call Persistent-Security. We discuss the
+requirements for such persistently secure systems, propose novel optimizations, and evaluate
+the impact of the proposed relaxation schemes and optimizations on performance, resilience and
+recovery time. To the best of our knowledge, our paper is the first to discuss the persistence of security
+metadata in integrity-protected NVM systems and provide corresponding optimizations. We define
+a set of relaxation schemes that bring trade-offs between performance and recovery time for large
+capacity NVM systems. Our results show that our proposed design, Triad-NVM, can improve the throughput
+by an average of ~2x (relative to strict persistence). Moreover, Triad-NVM maintains a recovery
+time of less than 4 seconds for an 8TB NVM system (30.6 seconds for 64TB), which is ~3648x faster than
+a system without security metadata persistence. 

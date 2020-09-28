@@ -1,0 +1,18 @@
+FASTEST-3D is an MPI-parallel finite-volume flow solver based on block-structured meshes that
+has been developed at the University of Erlangen-Nuremberg since the early 1990s. It can be used
+to solve the laminar or turbulent incompressible Navier-Stokes equations. Up to now its scalability
+was strongly limited by a rather rigid communication infrastructure, which led to a dominance of
+MPI time already at small process counts. This paper describes several optimizations to increase
+the performance, scalability, and flexibility of FASTEST-3D. First, a node-level performance
+analysis is carried out in order to pinpoint the main bottlenecks and identify sweet spots for energy-efficient
+execution. In addition, a single-precision version of the solver for the linear equation system
+arising from the discretization of the governing equations is devised, which significantly increases
+the single-core performance. Then the communication mechanisms in FASTEST-3D are analyzed and
+a new communication strategy based on non-blocking calls is implemented. Performance results
+with the revised version show significantly increased single-node performance and considerably
+improved communication patterns along with much better parallel scalability. In this context
+we discuss the concept of "acceptable parallel efficiency" and how it influences the real gain of
+the optimizations. Scaling measurements are carried out on a modern petascale system. The obtained
+improvements are of major importance for the use of FASTEST-3D on current high-performance computer
+clusters and will help to perform simulations with much higher spatial and temporal resolution
+to tackle turbulent flow in technical applications. 

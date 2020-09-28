@@ -1,0 +1,18 @@
+The task of image captioning implicitly involves gender identification. However, due to the gender
+bias in data, gender identification by an image captioning model suffers. Also, the gender-activity
+bias, owing to the word-by-word prediction, influences other words in the caption prediction,
+resulting in the well-known problem of label bias. In this work, we investigate gender bias in the
+COCO captioning dataset and show that it engenders not only from the statistical distribution of
+genders with contexts but also from the flawed annotation by the human annotators. We look at the
+issues created by this bias in the trained models. We propose a technique to get rid of the bias by splitting
+the task into 2 subtasks: gender-neutral image captioning and gender classification. By this decoupling,
+the gender-context influence can be eradicated. We train the gender-neutral image captioning
+model, which gives comparable results to a gendered model even when evaluating against a dataset
+that possesses a similar bias as the training data. Interestingly, the predictions by this model
+on images with no humans, are also visibly different from the one trained on gendered captions. We
+train gender classifiers using the available bounding box and mask-based annotations for the person
+in the image. This allows us to get rid of the context and focus on the person to predict the gender.
+By substituting the genders into the gender-neutral captions, we get the final gendered predictions.
+Our predictions achieve similar performance to a model trained with gender, and at the same time
+are devoid of gender bias. Finally, our main result is that on an anti-stereotypical dataset, our
+model outperforms a popular image captioning model which is trained with gender. 

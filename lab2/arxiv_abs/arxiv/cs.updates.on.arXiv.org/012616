@@ -1,0 +1,17 @@
+Finite element simulations of frictional multi-body contact problems via conformal meshes can
+be challenging and computationally demanding. To render geometrical features, unstructured
+meshes must be used and this unavoidably increases the degrees of freedom and therefore makes the
+construction of slave/master pairs more demanding. In this work, we introduce an implicit material
+point method designed to bypass the meshing of bodies by employing level set functions to represent
+boundaries at structured grids. This implicit function representation provides an elegant mean
+to link an unbiased intermediate reference surface with the true boundaries by closest point projection
+as shown in leichner et al. (2019). We then enforce the contact constraints by a penalty method where
+the Coulomb friction law is implemented as an elastoplastic constitutive model such that a return
+mapping algorithm can be used to provide constitutive updates for both the stick and slip states.
+To evolve the geometry of the contacts properly, the Hamilton-Jacobi equation is solved incrementally
+such that the level set and material points are both updated accord to the deformation field. To improve
+the accuracy and regularity of the numerical integration of the material point method, a moving
+least square method is used to project numerical values of the material points back to the standard
+locations for Gaussian-Legendre quadrature. Several benchmarks are used to verify the proposed
+model. Comparisons with discrete element simulations are made to analyze the importance of stress
+fields on predicting the macroscopic responses of granular assemblies. 

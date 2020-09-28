@@ -1,0 +1,19 @@
+Closeness is a widely-used centrality measure in social network analysis. For a node it indicates
+the reciprocal of the average shortest-path distance to the other nodes of the network. While the
+identification of the k nodes with highest closeness received significant attention, many applications
+are actually interested in finding a group of nodes that is central as a whole. For this problem, only
+recently a greedy algorithm has been proposed [Chen et al., ADC 2016]. The approximation factor
+of (1 - 1/e) proposed by Chen et al. for this algorithm does not hold, though, as we show in this version
+of our paper. Since their implementation of the greedy algorithm was still too slow for large networks,
+Chen et al. also proposed a heuristic without approximation guarantee. In the present paper we develop
+new techniques to speed up the greedy algorithm. Compared to the previous implementation, our approach
+is orders of magnitude faster and, compared to the heuristic proposed by Chen et al., we always find
+a solution with better quality in a comparable running time in our experiments. Our method Greedy++
+allows us to estimate the group with maximum closeness on networks with up to hundreds of millions
+of edges in minutes or at most a few hours. The greedy approach by [Chen et al., ADC 2016] would take
+several days already on networks with hundreds of thousands of edges. Our experiments show that
+the solution found by Greedy++ is actually very close to the optimum (...) Note: This paper version
+fixes the issue of relying on the presumed (but incorrect) submodularity of group closeness. While
+this has implications on the theoretical assessment of the greedy algorithm, our algorithm variant
+and its implementation remain unaffected. The reason is that Greedy++ relies (among others) on
+the supermodularity of farness, which does hold. 

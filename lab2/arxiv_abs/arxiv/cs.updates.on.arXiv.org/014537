@@ -1,0 +1,18 @@
+Quantification of myocardial perfusion has the potential to improve detection of regional and
+global flow reduction. Significant effort has been made to automate the workflow, where one essential
+step is the arterial input function (AIF) extraction. Since failure here invalidates quantification,
+high accuracy is required. For this purpose, this study presents a robust AIF detection method using
+the convolutional neural net (CNN) model. CNN models were trained by assembling 25,027 scans (N=12,984
+patients) from three hospitals, seven scanners. A test set of 5,721 scans (N=2,805 patients) evaluated
+model performance. The 2D+T AIF time series was inputted into CNN. Two variations were investigated:
+a) Two Classes (2CS) for background and foreground (LV mask); b) Three Classes (3CS) for background,
+foreground LV and RV. Final model was deployed on MR scanners via the Gadgetron InlineAI. Model loading
+time on MR scanner was ~340ms and applying it took ~180ms. The 3CS model successfully detect LV for
+99.98% of all test cases (1 failed out of 5,721 cases). The mean Dice ratio for 3CS was 0.87+/-0.08
+with 92.0% of all test cases having Dice ratio >0.75, while the 2CS model gave lower Dice of 0.82+/-0.22
+(P<1e-5). Extracted AIF signals using CNN were further compared to manual ground-truth for foot-time,
+peak-time, first-pass duration, peak value and area-under-curve. No significant differences
+were found for all features (P>0.2). This study proposed, validated, and deployed a robust CNN solution
+to detect the LV for the extraction of the AIF signal used in fully automated perfusion flow mapping.
+A very large data cohort was assembled and resulting models were deployed to MR scanners for fully
+inline AI in clinical hospitals. 

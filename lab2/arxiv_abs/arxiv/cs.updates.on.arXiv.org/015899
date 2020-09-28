@@ -1,0 +1,17 @@
+Multiplication of a sparse matrix to a dense matrix (SpDM) is widely used in many areas like scientific
+computing and machine learning. However, existing works under-look the performance optimization
+of SpDM on modern many-core architectures like GPUs. The storage data structures help sparse matrices
+store in a memory-saving format, but they bring difficulties in optimizing the performance of SpDM
+on modern GPUs due to irregular data access of the sparse structure, which results in lower resource
+utilization and poorer performance. In this paper, we refer to the roofline performance model of
+GPUs to design an efficient SpDM algorithm called GCOOSpDM, in which we exploit coalescent global
+memory access, fast shared memory reuse and more operations per byte of global memory traffic. Experiments
+are evaluated on three Nvidia GPUs (i.e., GTX 980, GTX Titan X Pascal and Tesla P100) with CUDA-8.0
+using a large number of matrices including a public dataset and randomly generated matrices. Experimental
+results show that GCOOSpDM achieves 1.5-8$\times$ speedup over Nvidia's library cuSPARSE in many
+matrices. We also analyze instruction-level operations on a particular GPU to understand the performance
+gap between GCOOSpDM and cuSPARSE. The profiled instructions confirm that cuSPARSE spends a lot
+of time on slow memory access (including DRAM access and L2 cache access), while GCOOSpDM transfers
+such slow memory access to faster shared memory, which mainly contributes to the performance gain.
+Results also show that GCOOSpDM would outperform the dense algorithm (cuBLAS) with lower sparsity
+than cuSPARSE on GPUs. 

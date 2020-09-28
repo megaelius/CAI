@@ -1,0 +1,20 @@
+Query Auto-Completion (QAC) is a widely used feature in many domains, including web and eCommerce
+search, suggesting full queries based on a prefix typed by the user. QAC has been extensively studied
+in the literature in the recent years, and it has been consistently shown that adding personalization
+features can significantly improve the performance of QAC. In this work we propose a novel method
+for personalized QAC that uses lightweight embeddings learnt through fastText. We construct an
+embedding for the user context queries, which are the last few queries issued by the user. We also
+use the same model to get the embedding for the candidate queries to be ranked. We introduce ranking
+features that compute the distance between the candidate queries and the context queries in the
+embedding space. These features are then combined with other commonly used QAC ranking features
+to learn a ranking model. We apply our method to a large eCommerce search engine (eBay) and show that
+the ranker with our proposed feature significantly outperforms the baselines on all of the offline
+metrics measured, which includes Mean Reciprocal Rank (MRR), Success Rate (SR), Mean Average Precision
+(MAP), and Normalized Discounted Cumulative Gain (NDCG). Our baselines include the Most Popular
+Completion (MPC) model as well as a ranking model without our proposed features. The ranking model
+with the proposed features results in a $20-30\%$ improvement over the MPC model on all metrics.
+We obtain up to a $5\%$ improvement over the baseline ranking model for all the sessions, which goes
+up to about $10\%$ when we restrict to sessions that contain the user context. Moreover, our proposed
+features also significantly outperform text based personalization features studied in the literature
+before, and adding text based features on top of our proposed embedding based features results only
+in minor improvements. 

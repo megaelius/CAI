@@ -1,0 +1,19 @@
+Buildings sector is one of the major consumers of energy in the United States. The buildings HVAC
+(Heating, Ventilation, and Air Conditioning) systems, whose functionality is to maintain thermal
+comfort and indoor air quality (IAQ), account for almost half of the energy consumed by the buildings.
+Thus, intelligent scheduling of the building HVAC system has the potential for tremendous energy
+and cost savings while ensuring that the control objectives (thermal comfort, air quality) are
+satisfied. Recently, several works have focused on model-free deep reinforcement learning based
+techniques such as Deep Q-Network (DQN). Such methods require extensive interactions with the
+environment. Thus, they are impractical to implement in real systems due to low sample efficiency.
+Safety-aware exploration is another challenge in real systems since certain actions at particular
+states may result in catastrophic outcomes. To address these issues and challenges, we propose
+a model-based reinforcement learning approach that learns the system dynamics using a neural network.
+Then, we adopt Model Predictive Control (MPC) using the learned system dynamics to perform control
+with random-sampling shooting method. To ensure safe exploration, we limit the actions within
+safe range and the maximum absolute change of actions according to prior knowledge. We evaluate
+our ideas through simulation using widely adopted EnergyPlus tool on a case study consisting of
+a two zone data-center. Experiments show that the average deviation of the trajectories sampled
+from the learned dynamics and the ground truth is below $20\%$. Compared with baseline approaches,
+we reduce the total energy consumption by $17.1\% \sim 21.8\%$. Compared with model-free reinforcement
+learning approach, we reduce the required number of training steps to converge by 10x. 

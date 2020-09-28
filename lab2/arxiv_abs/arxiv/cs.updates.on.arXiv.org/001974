@@ -1,0 +1,20 @@
+Finding approximate occurrences of a pattern in a text using a full-text index is a central problem
+in bioinformatics. Bidirectional indices have opened new possibilities for solving the problem
+as they allow the search to be started from anywhere within the pattern and extended in both directions.
+In particular, use of search schemes (partitioning the pattern into several pieces and searching
+the pieces in certain orders with bounds on the number of errors in each piece) has shown significant
+potential in speeding up approximate matching. However, finding the optimal search scheme to maximize
+the search speed is a difficult combinatorial optimization problem. In this paper, we propose,
+for the first time, a method to solve the optimal search scheme problem for Hamming distance with
+given number of pieces. Our method is based on formulating the problem as a mixed integer program
+(MIP). We show that the optimal solutions found by our MIP significantly improve upon previously
+published ad-hoc solutions. Our MIP can solve problems of considerable size to optimality in reasonable
+time and has the attractive property of finding near-optimal solutions for much larger problems
+in a very short amount of time. In addition, we present FAMOUS (Fast Approximate string Matching
+using OptimUm search Schemes), a bidirectional search (for Hamming and edit distance) implemented
+in SeqAn that performs the search based on the optimal search schemes from our MIP. We show that FAMOUS
+is up to 35 times faster than standard backtracking and anticipate that it will improve many tools
+as a new core component for approximate matching and NGS data analysis. We exemplify this by searching
+Illumina reads completely in our index at a speed comparable to or faster than current read mapping
+tools. Finally, we pose several open problems regarding our MIP formulation and use of its solutions
+in bidirectional search. 

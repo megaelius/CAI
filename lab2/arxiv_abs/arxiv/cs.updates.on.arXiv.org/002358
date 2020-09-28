@@ -1,0 +1,19 @@
+Protected-module architectures (PMAs) have been proposed to provide strong isolation guarantees,
+even on top of a compromised system. Unfortunately, Intel SGX -- the only publicly available high-end
+PMA -- has been shown to only provide limited isolation. An attacker controlling the untrusted page
+tables, can learn enclave secrets by observing its page access patterns. Fortifying existing protected-module
+architectures in a real-world setting against side-channel attacks is an extremely difficult
+task as system software (hypervisor, operating system, ...) needs to remain in full control over
+the underlying hardware. Most state-of-the-art solutions propose a reactive defense that monitors
+for signs of an attack. Such approaches unfortunately cannot detect the most novel attacks, suffer
+from false-positives, and place an extraordinary heavy burden on enclave-developers when an attack
+is detected. We present Heisenberg, a proactive defense that provides complete protection against
+page table based side channels. We guarantee that any attack will either be prevented or detected
+automatically before {\em any} sensitive information leaks. Consequently, Heisenberg can always
+securely resume enclave execution -- even when the attacker is still present in the system. We present
+two implementations. Heisenberg-HW relies on very limited hardware features to defend against
+page-table-based attacks. We use the x86/SGX platform as an example, but the same approach can be
+applied when protected-module architectures are ported to different platforms as well. Heisenberg-SW
+avoids these hardware modifications and can readily be applied. Unfortunately, it's reliance
+on Intel Transactional Synchronization Extensions (TSX) may lead to significant performance
+overhead under real-life conditions. 

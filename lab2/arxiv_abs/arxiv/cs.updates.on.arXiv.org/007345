@@ -1,0 +1,17 @@
+As Android has become increasingly popular, so has malware targeting it, thus pushing the research
+community to propose different detection techniques. However, the constant evolution of the Android
+ecosystem, and of malware itself, makes it hard to design robust tools that can operate for long periods
+of time without the need for modifications or costly re-training. Aiming to address this issue,
+we set to detect malware from a behavioral point of view, modeled as the sequence of abstracted API
+calls. We introduce MaMaDroid, a static-analysis based system that abstracts the API calls performed
+by an app to their class, package, or family, and builds a model from their sequences obtained from
+the call graph of an app as Markov chains. This ensures that the model is more resilient to API changes
+and the features set is of manageable size. We evaluate MaMaDroid using a dataset of 8.5K benign and
+35.5K malicious apps collected over a period of six years, showing that it effectively detects malware
+(with up to 0.99 F-measure) and keeps its detection capabilities for long periods of time (up to 0.87
+F-measure two years after training). We also show that MaMaDroid remarkably outperforms DroidAPIMiner,
+a state-of-the-art detection system that relies on the frequency of (raw) API calls. Aiming to assess
+whether MaMaDroid's effectiveness mainly stems from the API abstraction or from the sequencing
+modeling, we also evaluate a variant of it that uses frequency (instead of sequences), of abstracted
+API calls. We find that it is not as accurate, failing to capture maliciousness when trained on malware
+samples that include API calls that are equally or more frequently used by benign apps. 

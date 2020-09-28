@@ -1,0 +1,18 @@
+We study the problem of answering \emph{$k$-way marginal} queries on a database $D \in (\{0,1\}^d)^n$,
+while preserving differential privacy. The answer to a $k$-way marginal query is the fraction of
+the database's records $x \in \{0,1\}^d$ with a given value in each of a given set of up to $k$ columns.
+Marginal queries enable a rich class of statistical analyses on a dataset, and designing efficient
+algorithms for privately answering marginal queries has been identified as an important open problem
+in private data analysis. For any $k$, we give a differentially private online algorithm that runs
+in time $$ \min{\exp(d^{1-\Omega(1/\sqrt{k})}), \exp(d / \log^{.99} d)\} $$ per query and answers
+any (possibly superpolynomially long and adaptively chosen) sequence of $k$-way marginal queries
+up to error at most $\pm .01$ on every query, provided $n \gtrsim d^{.51} $. To the best of our knowledge,
+this is the first algorithm capable of privately answering marginal queries with a non-trivial
+worst-case accuracy guarantee on a database of size $\poly(d, k)$ in time $\exp(o(d))$. Our algorithms
+are a variant of the private multiplicative weights algorithm (Hardt and Rothblum, FOCS '10), but
+using a different low-weight representation of the database. We derive our low-weight representation
+using approximations to the OR function by low-degree polynomials with coefficients of bounded
+$L_1$-norm. We also prove a strong limitation on our approach that is of independent approximation-theoretic
+interest. Specifically, we show that for any $k = o(\log d)$, any polynomial with coefficients of
+$L_1$-norm $poly(d)$ that pointwise approximates the $d$-variate OR function on all inputs of
+Hamming weight at most $k$ must have degree $d^{1-O(1/\sqrt{k})}$. 

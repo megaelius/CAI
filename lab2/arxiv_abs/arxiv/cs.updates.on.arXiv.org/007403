@@ -1,0 +1,20 @@
+Interest in derivative-free optimization (DFO) and "evolutionary strategies" (ES) has recently
+surged in the Reinforcement Learning (RL) community, with growing evidence that they match state
+of the art methods for policy optimization tasks. However, blackbox DFO methods suffer from high
+sampling complexity since they require a substantial number of policy rollouts for reliable updates.
+They can also be very sensitive to noise in the rewards, actuators or the dynamics of the environment.
+In this paper we propose to replace the standard ES derivative-free paradigm for RL based on simple
+reward-weighted averaged random perturbations for policy updates, that has recently become a
+subject of voluminous research, by an algorithm where gradients of blackbox RL functions are estimated
+via regularized regression methods. In particular, we propose to use L1/L2 regularized regression-based
+gradient estimation to exploit sparsity and smoothness, as well as LP decoding techniques for handling
+adversarial stochastic and deterministic noise. Our methods can be naturally aligned with sliding
+trust region techniques for efficient samples reuse to further reduce sampling complexity. This
+is not the case for standard ES methods requiring independent sampling in each epoch. We show that
+our algorithms can be applied in locomotion tasks, where training is conducted in the presence of
+substantial noise, e.g. for learning in sim transferable stable walking behaviors for quadruped
+robots or training quadrupeds how to follow a path. We further demonstrate our methods on several
+$\mathrm{OpenAI}$ $\mathrm{Gym}$ $\mathrm{Mujoco}$ RL tasks. We manage to train effective policies
+even if up to $25\%$ of all measurements are arbitrarily corrupted, where standard ES methods produce
+sub-optimal policies or do not manage to learn at all. Our empirical results are backed by theoretical
+guarantees. 

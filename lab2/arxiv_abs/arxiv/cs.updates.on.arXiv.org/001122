@@ -1,0 +1,20 @@
+A program can be viewed as a syntactic structure P (syntactic skeleton) parameterized by a collection
+of the identifiers V (variable names). This paper introduces the skeletal program enumeration
+(SPE) problem: Given a fixed syntactic skeleton P and a set of variables V , enumerate a set of programs
+P exhibiting all possible variable usage patterns within P. It proposes an effective realization
+of SPE for systematic, rigorous compiler testing by leveraging three important observations:
+(1) Programs with different variable usage patterns exhibit diverse control- and data-dependence
+information, and help exploit different compiler optimizations and stress-test compilers; (2)
+most real compiler bugs were revealed by small tests (i.e., small-sized P) --- this "small-scope"
+observation opens up SPE for practical compiler validation; and (3) SPE is exhaustive w.r.t. a given
+syntactic skeleton and variable set, and thus can offer a level of guarantee that is absent from all
+existing compiler testing techniques. The key challenge of SPE is how to eliminate the enormous
+amount of equivalent programs w.r.t. $\alpha$-conversion. Our main technical contribution is
+a novel algorithm for computing the canonical (and smallest) set of all non-$\alpha$-equivalent
+programs. We have realized our SPE technique and evaluated it using syntactic skeletons derived
+from GCC's testsuite. Our evaluation results on testing GCC and Clang are extremely promising.
+In less than six months, our approach has led to 217 confirmed bug reports, 104 of which have already
+been fixed, and the majority are long latent bugs despite the extensive prior efforts of automatically
+testing both compilers (e.g., Csmith and EMI). The results also show that our algorithm for enumerating
+non-$\alpha$-equivalent programs provides six orders of magnitude reduction, enabling processing
+the GCC test-suite in under a month. 

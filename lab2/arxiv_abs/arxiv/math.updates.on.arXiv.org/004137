@@ -1,0 +1,19 @@
+We propose a localized divide and conquer algorithm for inverse factorization $S^{-1} = ZZ^*$ of
+Hermitian positive definite matrices $S$ with localized structure, e.g. exponential decay with
+respect to some given distance function on the index set of $S$. The algorithm is a reformulation
+of recursive inverse factorization [J. Chem. Phys., 128 (2008), 104105] but makes use of localized
+operations only. At each level of recursion, the problem is cut into two subproblems and their solutions
+are combined using iterative refinement [Phys. Rev. B, 70 (2004), 193102] to give a solution to the
+original problem. The two subproblems can be solved in parallel without any communication and,
+using the localized formulation, the cost of combining their results is proportional to the cut
+size, defined by the binary partition of the index set. This means that for cut sizes increasing as
+$o(n)$ with system size $n$ the cost of combining the two subproblems is negligible compared to the
+overall cost for sufficiently large systems. We also present an alternative derivation of iterative
+refinement based on a sign matrix formulation, analyze the stability, and propose a parameterless
+stopping criterion. We present bounds for the initial factorization error and the number of iterations
+in terms of the condition number of $S$ when the starting guess is given by the solution of the two subproblems
+in the binary recursion. These bounds are used in theoretical results for the decay properties of
+the involved matrices. The localization properties of our algorithms are demonstrated for matrices
+corresponding to nearest neighbor overlap on one-, two-, and three-dimensional lattices as well
+as basis set overlap matrices generated using the Hartree-Fock and Kohn-Sham density functional
+theory electronic structure program Ergo [SoftwareX, 7 (2018), 107]. 

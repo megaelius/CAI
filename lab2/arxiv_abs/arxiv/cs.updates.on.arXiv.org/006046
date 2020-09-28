@@ -1,0 +1,17 @@
+In warehouse-scale cloud datacenters, co-locating online services and offline batch jobs is an
+efficient approach to improving datacenter utilization. To better facilitate the understanding
+of interactions among the co-located workloads and their real-world operational demands, Alibaba
+recently released a cluster usage and co-located workload dataset, which is the first publicly
+dataset with precise information about the category of each job. In this paper, we perform a deep
+analysis on the released Alibaba workload dataset, from the perspective of anomaly analysis and
+diagnosis. Through data preprocessing, node similarity analysis based on Dynamic Time Warping
+(DTW), co-located workloads characteristics analysis and anomaly analysis based on iForest,
+we reveals several insights including: (1) The performance discrepancy of machines in Alibaba's
+production cluster is relatively large, for the distribution and resource utilization of co-located
+workloads is not balanced. For instance, the resource utilization (especially memory utilization)
+of batch jobs is fluctuating and not as stable as that of online containers, and the reason is that
+online containers are long-running jobs with more memory-demanding and most batch jobs are short
+jobs, (2) Based on the distribution of co-located workload instance numbers, the machines can be
+classified into 8 workload distribution categories1. And most patterns of machine resource utilization
+curves are similar in the same workload distribution category. (3) In addition to the system failures,
+unreasonable scheduling and workload imbalance are the main causes of anomalies in Alibaba's cluster.

@@ -1,0 +1,18 @@
+Glioma is one of the most common and aggressive types of primary brain tumors. The accurate segmentation
+of subcortical brain structures is crucial to the study of gliomas in that it helps the monitoring
+of the progression of gliomas and aids the evaluation of treatment outcomes. However, the large
+amount of required human labor makes it difficult to obtain the manually segmented Magnetic Resonance
+Imaging (MRI) data, limiting the use of precise quantitative measurements in the clinical practice.
+In this work, we try to address this problem by developing a 3D Convolutional Neural Network~(3D
+CNN) based model to automatically segment gliomas. The major difficulty of our segmentation model
+comes with the fact that the location, structure, and shape of gliomas vary significantly among
+different patients. In order to accurately classify each voxel, our model captures multi-scale
+contextual information by extracting features from two scales of receptive fields. To fully exploit
+the tumor structure, we propose a novel architecture that hierarchically segments different lesion
+regions of the necrotic and non-enhancing tumor~(NCR/NET), peritumoral edema~(ED) and GD-enhancing
+tumor~(ET). Additionally, we utilize densely connected convolutional blocks to further boost
+the performance. We train our model with a patch-wise training schema to mitigate the class imbalance
+problem. The proposed method is validated on the BraTS 2017 dataset~\cite{DBLP:journals/tmi/MenzeJBKFKBPSWL15}
+and it achieves Dice scores of 0.72, 0.83 and 0.81 for the complete tumor, tumor core and enhancing
+tumor, respectively. These results are comparable to the reported state-of-the-art results,
+and our method is better than existing 3D-based methods in terms of compactness, time and space efficiency.

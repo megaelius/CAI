@@ -1,0 +1,18 @@
+We propose Top-N-Rank, a novel family of list-wise Learning-to-Rank models for reliably recommending
+the N top-ranked items. The proposed models optimize a variant of the widely used cumulative discounted
+gain (DCG) objective function which differs from DCG in two important aspects: (i) It limits the
+evaluation of DCG only on the top N items in the ranked lists, thereby eliminating the impact of low-ranked
+items on the learned ranking function; and (ii) it incorporates weights that allow the model to leverage
+multiple types of implicit feedback with differing levels of reliability or trustworthiness.
+Because the resulting objective function is non-smooth and hence challenging to optimize, we consider
+two smooth approximations of the objective function, using the traditional sigmoid function and
+the rectified linear unit (ReLU). We propose a family of learning-to-rank algorithms (Top-N-Rank)
+that work with any smooth objective function. Then, a more efficient variant, Top-N-Rank.ReLU,
+is introduced, which effectively exploits the properties of ReLU function to reduce the computational
+complexity of Top-N-Rank from quadratic to linear in the average number of items rated by users.
+The results of our experiments using two widely used benchmarks, namely, the MovieLens data set
+and the Amazon Video Games data set demonstrate that: (i) The `top-N truncation' of the objective
+function substantially improves the ranking quality of the top N recommendations; (ii) using the
+ReLU for smoothing the objective function yields significant improvement in both ranking quality
+as well as runtime as compared to using the sigmoid; and (iii) Top-N-Rank.ReLU substantially outperforms
+the well-performing list-wise ranking methods in terms of ranking quality. 

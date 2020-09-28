@@ -1,0 +1,18 @@
+A recent trend to recognize facial expressions in the real-world scenario is to deploy attention
+based convolutional neural networks (CNNs) locally to signify the importance of facial regions
+and, combine it with global facial features and/or other complementary context information for
+performance gain. However, in the presence of occlusions and pose variations, different channels
+respond differently, and further that the response intensity of a channel differ across spatial
+locations. Also, modern facial expression recognition(FER) architectures rely on external sources
+like landmark detectors for defining attention. Failure of landmark detector will have a cascading
+effect on FER. Additionally, there is no emphasis laid on the relevance of features that are input
+to compute complementary context information. Leveraging on the aforementioned observations,
+an end-to-end architecture for FER is proposed in this work that obtains both local and global attention
+per channel per spatial location through a novel spatio-channel attention net (SCAN), without
+seeking any information from the landmark detectors. SCAN is complemented by a complementary context
+information (CCI) branch. Further, using efficient channel attention (ECA), the relevance of
+features input to CCI is also attended to. The representation learnt by the proposed architecture
+is robust to occlusions and pose variations. Robustness and superior performance of the proposed
+model is demonstrated on both in-lab and in-the-wild datasets (AffectNet, FERPlus, RAF-DB, FED-RO,
+SFEW, CK+, Oulu-CASIA and JAFFE) along with a couple of constructed face mask datasets resembling
+masked faces in COVID-19 scenario. Codes are publicly available at https://github.com/1980x/SCAN-CCI-FER

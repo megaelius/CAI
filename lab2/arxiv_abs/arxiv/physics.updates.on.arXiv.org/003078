@@ -1,0 +1,20 @@
+We describe a semi-structured method for the generation of high-order hybrid meshes suited for
+the simulation of high Reynolds number flows. This is achieved through the use of highly stretched
+elements in the viscous boundary layers near the wall surfaces. CADfix is used to first repair any
+possible defects in the CAD geometry and then generate a medial object based decomposition of the
+domain that wraps the wall boundaries with partitions suitable for the generation of either prismatic
+or hexahedral elements. The latter is a novel distinctive feature of the method that permits to obtain
+well-shaped hexahedral meshes at corners or junctions in the boundary layer. The medial object
+approach allows greater control on the "thickness" of the boundary-layer mesh than is generally
+achievable with advancing layer techniques. CADfix subsequently generates a hybrid straight
+sided mesh of prismatic and hexahedral elements in the near-field region modelling the boundary
+layer, and tetrahedral elements in the far-field region covering the rest of the domain. The mesh
+in the near-field region provides a framework that facilitates the generation, via an isoparametric
+technique, of layers of highly stretched elements with a distribution of points in the direction
+normal to the wall tailored to efficiently and accurately capture the flow in the boundary layer.
+The final step is the generation of a high-order mesh using NekMesh, a high-order mesh generator
+within the Nektar++ framework. NekMesh uses the CADfix API as a geometry engine that handles all
+the geometrical queries to the CAD geometry required during the high-order mesh generation process.
+We will describe in some detail the methodology using a simple geometry, a NACA wing tip, for illustrative
+purposes. Finally, we will present two examples of application to reasonably complex geometries
+proposed by NASA as CFD validation cases. 

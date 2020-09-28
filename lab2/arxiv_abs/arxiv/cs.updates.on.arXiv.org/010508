@@ -1,0 +1,18 @@
+We generalise the results of Bhattacharya et al. (Journal of Computing Systems, 62(1):93-115,
+2018) for the list-$k$-means problem defined as -- for a (unknown) partition $X_1, ..., X_k$ of the
+dataset $X \subseteq \mathbb{R}^d$, find a list of $k$-center sets (each element in the list is a
+set of $k$ centers) such that at least one of $k$-center sets $\{c_1, ..., c_k\}$ in the list gives
+an $(1+\varepsilon)$-approximation with respect to the cost function $\min_{\textrm{permutation
+} \pi} \left[ \sum_{i=1}^{k} \sum_{x \in X_i} ||x - c_{\pi(i)}||^2 \right]$. The list-$k$-means
+problem is important for the constrained $k$-means problem since algorithms for the former can
+be converted to PTAS for various versions of the latter. Following are the consequences of our generalisations:
+- Streaming algorithm: Our $D^2$-sampling based algorithm running in a single iteration allows
+us to design a 2-pass, logspace streaming algorithm for the list-$k$-means problem. This can be
+converted to a 4-pass, logspace streaming PTAS for various constrained versions of the $k$-means
+problem. To the best of our knowledge, these are the first constant pass, logspace streaming PTASs
+for constrained versions of the $k$-means problem. - Faster PTAS under stability: Our generalisation
+is also useful in $k$-means clustering scenarios where finding good centers becomes easy once good
+centers for a few "bad" clusters have been chosen. One such scenario is clustering under stability
+where the number of such bad clusters is a constant. Using the above idea, we significantly improve
+the running time of the known algorithm from $O(dn^3) (k \log{n})^{poly(\frac{1}{\beta}, \frac{1}{\varepsilon})}$
+to $O \left(dn^3 k^{\tilde{O}_{\beta \varepsilon}(\frac{1}{\beta \varepsilon})} \right)$.

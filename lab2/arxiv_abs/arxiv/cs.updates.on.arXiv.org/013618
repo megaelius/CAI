@@ -1,0 +1,18 @@
+We present the design and optimization of a linear solver on General Purpose GPUs for the efficient
+and high-throughput evaluation of the marginalized graph kernel between pairs of labeled graphs.
+The solver implements a preconditioned conjugate gradient (PCG) method to compute the solution
+to a generalized Laplacian equation associated with the tensor product of two graphs. To cope with
+the gap between the instruction throughput and the memory bandwidth of current generation GPUs,
+our solver forms the tensor product linear system on-the-fly without storing it in memory when performing
+matrix-vector dot product operations in PCG. Such on-the-fly computation is accomplished by using
+threads in a warp to cooperatively stream the adjacency and edge label matrices of individual graphs
+by small square matrix blocks called tiles, which are then staged in registers and the shared memory
+for later reuse. Warps across a thread block can further share tiles via the shared memory to increase
+data reuse. We exploit the sparsity of the graphs hierarchically by storing only non-empty tiles
+using a coordinate format and nonzero elements within each tile using bitmaps. Besides, we propose
+a new partition-based reordering algorithm for aggregating nonzero elements of the graphs into
+fewer but denser tiles to improve the efficiency of the sparse format. We carry out extensive theoretical
+analyses on the graph tensor product primitives for tiles of various density and evaluate their
+performance on synthetic and real-world datasets. Our solver delivers three to four orders of magnitude
+speedup over existing CPU-based solvers such as GraKeL and GraphKernels. The capability of the
+solver enables kernel-based learning tasks at unprecedented scales. 

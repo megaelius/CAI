@@ -1,0 +1,10 @@
+Hi,
+is there any script/program/thelike already existing which could transform
+the output of x11perfcomp (a huge table) into a nice 3d'ish diagram or
+graph by producing postscript output from x11perfcomp input ?
+Maybe someone has already written such beast ...
++-o-+--------------------------------------------------------------+-o-+
+| o |                \\\-  Brain Inside -///                       | o |
+| o |                    ^^^^^^^^^^^^^^^                           | o |
+| o | Andre' Beck (ABPSoft) mehl: Andre_Beck@IRS.Inf.TU-Dresden.de | o |
++-o-+--------------------------------------------------------------+-o-+

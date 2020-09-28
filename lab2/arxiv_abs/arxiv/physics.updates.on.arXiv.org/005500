@@ -1,0 +1,20 @@
+TurboRVB is a computational package for {\it ab initio} Quantum Monte Carlo (QMC) simulations of
+both molecular and bulk electronic systems. The code implements two types of well established QMC
+algorithms: Variational Monte Carlo (VMC), and Diffusion Monte Carlo in its robust and efficient
+lattice regularized variant. A key feature of the code is the possibility of using strongly correlated
+many-body wave functions. The electronic wave function (WF) is obtained by applying a Jastrow factor,
+which takes into account dynamical correlations, to the most general mean-field ground state,
+written either as an antisymmetrized geminal product with spin-singlet pairing, or as a Pfaffian,
+including both singlet and triplet correlations. This wave function can be viewed as an efficient
+implementation of the so-called resonating valence bond (RVB) ansatz, first proposed by L. Pauling
+and P. W. Anderson in quantum chemistry and condensed matter physics, respectively. The RVB ansatz
+implemented in TurboRVB has a large variational freedom, including the Jastrow correlated Slater
+determinant as its simplest, but nontrivial case. Moreover, it has the remarkable advantage of
+remaining with an affordable computational cost, proportional to the one spent for the evaluation
+of a single Slater determinant. The code implements the adjoint algorithmic differentiation that
+enables a very efficient evaluation of energy derivatives, comprising the ionic forces. Thus,
+one can perform structural optimizations and molecular dynamics in the canonical NVT ensemble
+at the VMC level. For the electronic part, a full WF optimization is made possible thanks to state-of-the-art
+stochastic algorithms for energy minimization. The code has been efficiently parallelized by
+using a hybrid MPI-OpenMP protocol, that is also an ideal environment for exploiting the computational
+power of modern GPU accelerators. 

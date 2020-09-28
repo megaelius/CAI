@@ -1,0 +1,19 @@
+Converting time domain waveforms to frequency domain spectrograms is typically considered to
+be a prepossessing step done before model training. This approach, however, has several drawbacks.
+First, it takes a lot of hard disk space to store different frequency domain representations. This
+is especially true during the model development and tuning process, when exploring various types
+of spectrograms for optimal performance. Second, if another dataset is used, one must process all
+the audio clips again before the network can be retrained. In this paper, we integrate the time domain
+to frequency domain conversion as part of the model structure, and propose a neural network based
+toolbox, nnAudio, which leverages 1D convolutional neural networks to perform time domain to frequency
+domain conversion during feed-forward. It allows on-the-fly spectrogram generation without
+the need to store any spectrograms on the disk. This approach also allows back-propagation on the
+waveforms-to-spectrograms transformation layer, which implies that this transformation process
+can be made trainable, and hence further optimized by gradient descent. nnAudio reduces the waveforms-to-spectrograms
+conversion time for 1,770 waveforms (from the MAPS dataset) from $10.64$ seconds with librosa to
+only $0.001$ seconds for Short-Time Fourier Transform (STFT), 18.3 seconds to 0.015 seconds for
+Mel spectrogram, $103.4$ seconds to 0.258 for constant-Q transform (CQT), when using GPU on our
+DGX work station with CPU: Intel(R) Xeon(R) CPU E5-2698 v4 @ 2.20GHz Tesla v100 32Gb GPUs. (Only 1
+GPU is being used for all the experiments.) We also further optimize the existing CQT algorithm,
+so that the CQT spectrogram can be obtained without aliasing in a much faster computation time (from
+$0.258$ seconds to only 0.001 seconds). 

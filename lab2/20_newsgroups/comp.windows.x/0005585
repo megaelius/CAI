@@ -1,0 +1,4 @@
+For image display, about 10 frames per second seems to be the lower limit
+for interactive operations. For just bringing up an image for viewing less
+than 1 second seems to be a good number. Of course the measure of response
+time should be based on the applications you are planning to run.

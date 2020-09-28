@@ -1,0 +1,17 @@
+As with general graph processing systems, partitioning data over a cluster of machines improves
+the scalability of graph database management systems. However, these systems will incur additional
+network cost during the execution of a query workload, due to inter-partition traversals. Workload-agnostic
+partitioning algorithms typically minimise the likelihood of any edge crossing partition boundaries.
+However, these partitioners are sub-optimal with respect to many workloads, especially queries,
+which may require more frequent traversal of specific subsets of inter-partition edges. Furthermore,
+they largely unsuited to operating incrementally on dynamic, growing graphs. We present a new graph
+partitioning algorithm, Loom, that operates on a stream of graph updates and continuously allocates
+the new vertices and edges to partitions, taking into account a query workload of graph pattern expressions
+along with their relative frequencies. First we capture the most common patterns of edge traversals
+which occur when executing queries. We then compare sub-graphs, which present themselves incrementally
+in the graph update stream, against these common patterns. Finally we attempt to allocate each match
+to single partitions, reducing the number of inter-partition edges within frequently traversed
+sub-graphs and improving average query performance. Loom is extensively evaluated over several
+large test graphs with realistic query workloads and various orderings of the graph updates. We
+demonstrate that, given a workload, our prototype produces partitionings of significantly better
+quality than existing streaming graph partitioning algorithms Fennel and LDG. 

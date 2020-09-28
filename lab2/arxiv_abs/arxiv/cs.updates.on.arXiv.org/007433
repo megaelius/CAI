@@ -1,0 +1,18 @@
+The multigroup neutron transport equations have been widely used to study the motion of neutrons
+and their interactions with the background materials. Numerical simulation of the multigroup
+neutron transport equations is computationally challenging because the equations is defined
+on a high dimensional phase space (1D in energy, 2D in angle, and 3D in spatial space), and furthermore,
+for realistic applications, the computational spatial domain is complex and the materials are
+heterogeneous. The multilevel domain decomposition methods is one of the most popular algorithms
+for solving the multigroup neutron transport equations, but the construction of coarse spaces
+is expensive and often not strongly scalable when the number of processor cores is large. In this
+paper, we study a highly parallel multilevel Newton-Krylov-Schwarz method equipped with several
+novel components, such as subspace-based coarsening, partition-based balancing and hierarchical
+mesh partitioning, that enable the overall simulation strongly scalable in terms of the compute
+time. Compared with the traditional coarsening method, the subspace-based coarsening algorithm
+significantly reduces the cost of the preconditioner setup that is often unscalable. In addition,
+the partition-based balancing strategy enhances the parallel efficiency of the overall solver
+by assigning a nearly-equal amount of work to each processor core. The hierarchical mesh partitioning
+is able to generate a large number of subdomains and meanwhile minimizes the off-node communication.
+We numerically show that the proposed algorithm is scalable with more than 10,000 processor cores
+for a realistic application with a few billions unknowns on 3D unstructured meshes. 

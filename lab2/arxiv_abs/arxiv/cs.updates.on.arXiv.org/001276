@@ -1,0 +1,20 @@
+Deep neural networks have become ubiquitous for applications related to visual recognition and
+language understanding tasks. However, it is often prohibitive to use typical neural networks
+on devices like mobile phones or smart watches since the model sizes are huge and cannot fit in the
+limited memory available on such devices. While these devices could make use of machine learning
+models running on high-performance data centers with CPUs or GPUs, this is not feasible for many
+applications because data can be privacy sensitive and inference needs to be performed directly
+"on" device. We introduce a new architecture for training compact neural networks using a joint
+optimization framework. At its core lies a novel objective that jointly trains using two different
+types of networks--a full trainer neural network (using existing architectures like Feed-forward
+NNs or LSTM RNNs) combined with a simpler "projection" network that leverages random projections
+to transform inputs or intermediate representations into bits. The simpler network encodes lightweight
+and efficient-to-compute operations in bit space with a low memory footprint. The two networks
+are trained jointly using backpropagation, where the projection network learns from the full network
+similar to apprenticeship learning. Once trained, the smaller network can be used directly for
+inference at low memory and computation cost. We demonstrate the effectiveness of the new approach
+at significantly shrinking the memory requirements of different types of neural networks while
+preserving good accuracy on visual recognition and text classification tasks. We also study the
+question "how many neural bits are required to solve a given task?" using the new framework and show
+empirical results contrasting model predictive capacity (in bits) versus accuracy on several
+datasets. 

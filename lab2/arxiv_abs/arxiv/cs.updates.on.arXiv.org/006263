@@ -1,0 +1,17 @@
+Training robots with physical bodies requires developing new methods and action representations
+that allow the learning agents to explore the space of policies efficiently. This work studies sample-efficient
+learning of complex policies in the context of robot table tennis. It incorporates learning into
+a hierarchical control framework using a model-free strategy layer (which requires complex reasoning
+about opponents that is difficult to do in a model-based way), model-based prediction of external
+objects (which are difficult to control directly with analytic control methods, but governed by
+learnable and relatively simple laws of physics), and analytic controllers for the robot itself.
+Human demonstrations are used to train dynamics models, which together with the analytic controller
+allow any robot that is physically capable to play table tennis without training episodes. Self-play
+is used to train cooperative and adversarial strategies on top of model-based striking skills trained
+from human demonstrations. After only about 24000 strikes in self-play the agent learns to best
+exploit the human dynamics models for longer cooperative games. Further experiments demonstrate
+that model-free variants of the policy can discover new strikes not demonstrated by humans and achieve
+higher performance at the expense of lower sample-efficiency. Experiments are carried out in a
+virtual reality environment using sensory observations that are obtainable in the real world.
+The high sample-efficiency demonstrated in the evaluations show that the proposed method is suitable
+for learning directly on physical robots without transfer of models or policies from simulation.

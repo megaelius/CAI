@@ -1,0 +1,18 @@
+Many graph processing algorithms require determination of shortest-path distances between arbitrary
+numbers of node pairs. Since computation of exact distances between all node-pairs of a large graph,
+e.g., 10M nodes and up, is prohibitively expensive both in computational time and storage space,
+distance approximation is often used in place of exact computation. In this paper, we present a novel
+and scalable distance oracle that leverages the hyperbolic core of real-world large graphs for
+fast and scalable distance approximation. We show empirically that the proposed oracle significantly
+outperforms prior oracles on a random set of test cases drawn from public domain graph libraries.
+There are two sets of prior work against which we benchmark our approach. The first set, which often
+outperforms other oracles, employs embedding of the graph into low dimensional Euclidean spaces
+with carefully constructed hyperbolic distances, but provides no guarantees on the distance estimation
+error. The second set leverages Gromov-type tree contraction of the graph with the additive error
+guaranteed not to exceed $2\delta\log{n}$, where $\delta$ is the hyperbolic constant of the graph.
+We show that our proposed oracle 1) is significantly faster than those oracles that use hyperbolic
+embedding (first set) with similar approximation error and, perhaps surprisingly, 2) exhibits
+substantially lower average estimation error compared to Gromov-like tree contractions (second
+set). We substantiate our claims through numerical computations on a collection of a dozen real
+world networks and synthetic test cases from multiple domains, ranging in size from 10s of thousand
+to 10s of millions of nodes. 

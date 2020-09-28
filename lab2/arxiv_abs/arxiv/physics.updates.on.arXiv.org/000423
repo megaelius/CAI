@@ -1,0 +1,20 @@
+The Convected Scheme (CS) is a `forward-trajectory' semi-Lagrangian method for solution of transport
+equations, which has been most often applied to the kinetic description of plasmas and rarefied
+neutral gases. In its simplest form, the CS propagates the solution by advecting the `moving cells'
+along their characteristic trajectories, and by remapping them on the mesh at the end of the time
+step. The CS is conservative, positivity preserving, simple to implement, and not subject to time
+step restriction to maintain stability. Recently [Y. G\"u\c{c}l\"u and W.N.G. Hitchon, 2012]
+a new methodology was introduced for reducing numerical diffusion, based on a modified equation
+analysis: the remapping error was compensated by applying small corrections to the final position
+of the moving cells prior to remapping. While the spatial accuracy was increased from 2nd to 4th order,
+the new scheme retained the important properties of the original method, and was shown to be simple
+and efficient for constant advection problems. Here the CS is applied to the solution of the Vlasov-Poisson
+system: the Vlasov equation is split into two constant advection equations, one in configuration
+space and one in velocity space, and high order time accuracy is achieved by proper composition of
+the operators. The splitting procedure enables us to use the constant advection solver, which we
+extend to arbitrarily high order of accuracy: a new improved procedure is given, which makes the
+calculation of the corrections straightforward. Focusing on periodic domains, we describe a spectrally
+accurate scheme based on the fast Fourier transform; the proposed implementation is strictly conservative
+and positivity preserving. The ability to correctly reproduce the system dynamics, as well as resolving
+small-scale features in the solution, is shown in classical 1D-1V test cases, both in the linear
+and the non-linear regimes. 

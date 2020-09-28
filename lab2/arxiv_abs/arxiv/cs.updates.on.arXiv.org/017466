@@ -1,0 +1,17 @@
+This paper proposes Entropy-Regularized Imitation Learning (ERIL), which is a combination of
+forward and inverse reinforcement learning under the framework of the entropy-regularized Markov
+decision process. ERIL minimizes the reverse Kullback-Leibler (KL) divergence between two probability
+distributions induced by a learner and an expert. Inverse reinforcement learning (RL) in ERIL evaluates
+the log-ratio between two distributions using the density ratio trick, which is widely used in generative
+adversarial networks. More specifically, the log-ratio is estimated by building two binary discriminators.
+The first discriminator is a state-only function, and it tries to distinguish the state generated
+by the forward RL step from the expert's state. The second discriminator is a function of current
+state, action, and transitioned state, and it distinguishes the generated experiences from the
+ones provided by the expert. Since the second discriminator has the same hyperparameters of the
+forward RL step, it can be used to control the discriminator's ability. The forward RL minimizes
+the reverse KL estimated by the inverse RL. We show that minimizing the reverse KL divergence is equivalent
+to finding an optimal policy under entropy regularization. Consequently, a new policy is derived
+from an algorithm that resembles Dynamic Policy Programming and Soft Actor-Critic. Our experimental
+results on MuJoCo-simulated environments show that ERIL is more sample-efficient than such previous
+methods. We further apply the method to human behaviors in performing a pole-balancing task and
+show that the estimated reward functions show how every subject achieves the goal. 

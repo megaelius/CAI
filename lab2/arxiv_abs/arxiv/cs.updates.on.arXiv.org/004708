@@ -1,0 +1,20 @@
+In recent years, large amount of high spatial-resolution remote sensing (HRRS) images are available
+for land-use mapping. However, due to the complex information brought by the increased spatial
+resolution and the data disturbances caused by different conditions of image acquisition, it is
+often difficult to find an efficient method for achieving accurate land-use classification with
+heterogeneous and high-resolution remote sensing images. In this paper, we propose a scheme to
+learn transferable deep models for land-use classification with HRRS images. The main idea is to
+rely on deep neural networks for presenting the semantic information contained in different types
+of land-uses and propose a pseudo-labeling and sample selection scheme for improving the transferability
+of deep models. More precisely, a deep Convolutional Neural Networks (CNNs) is first pre-trained
+with a well-annotated land-use dataset, referred to as the source data. Then, given a target image
+with no labels, the pre-trained CNN model is utilized to classify the image in a patch-wise manner.
+The patches with high classification probability are assigned with pseudo-labels and employed
+as the queries to retrieve related samples from the source data. The pseudo-labels confirmed with
+the retrieved results are regarded as supervised information for fine-tuning the pre-trained
+deep model. In order to obtain a pixel-wise land-use classification with the target image, we rely
+on the fine-tuned CNN and develop a hybrid classification by combining patch-wise classification
+and hierarchical segmentation. In addition, we create a large-scale land-use dataset containing
+$150$ Gaofen-2 satellite images for CNN pre-training. Experiments on multi-source HRRS images,
+including Gaofen-2, Gaofen-1, Jilin-1, Ziyuan-3, and Google Earth images, show encouraging results
+and demonstrate the efficiency of the proposed scheme. 

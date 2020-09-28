@@ -1,0 +1,18 @@
+Widely-used Android static program analysis tools, e.g., Amandroid and FlowDroid, perform the
+whole-app inter-procedural analysis that is comprehensive but fundamentally difficult to handle
+modern (large) apps. The average app size has increased three to four times over five years. In this
+paper, we explore a new paradigm of targeted inter-procedural analysis that can skip irrelevant
+code and focus only on the flows of security-sensitive sink APIs. To this end, we propose a technique
+called on-the-fly bytecode search, which searches the disassembled app bytecode text just in time
+when a caller needs to be located. In this way, it guides targeted (and backward) inter-procedural
+analysis step by step until reaching entry points, without relying on a whole-app graph. Such search-based
+inter-procedural analysis, however, is challenging due to Java polymorphism, callbacks, asynchronous
+flows, static initializers, and inter-component communication in Android apps. We overcome these
+unique obstacles in our context by proposing a set of bytecode search mechanisms that utilize flexible
+searches and forward object taint analysis. Atop of this new inter-procedural analysis, we further
+adjust the traditional backward slicing and forward constant propagation to provide the complete
+dataflow tracking of sink API calls. We have implemented a prototype called BackDroid and compared
+it with Amandroid in analyzing 3,178 modern popular apps for crypto and SSL misconfigurations.
+The evaluation shows that for such sink-based problems, BackDroid is 37 times faster (2.13 v.s.
+78.15 minutes) and has no timed-out failure (v.s. 35% in Amandroid), while maintaining close or
+even better detection effectiveness. 

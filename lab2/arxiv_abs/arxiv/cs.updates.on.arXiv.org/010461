@@ -1,0 +1,18 @@
+We present a method for solving the transshipment problem - also known as uncapacitated minimum
+cost flow - up to a multiplicative error of $1 + \varepsilon$ in undirected graphs with non-negative
+edge weights using a tailored gradient descent algorithm. Using $\tilde{O}(\cdot)$ to hide polylogarithmic
+factors in $n$ (the number of nodes in the graph), our gradient descent algorithm takes $\tilde O(\varepsilon^{-2})$
+iterations, and in each iteration it solves an instance of the transshipment problem up to a multiplicative
+error of $\operatorname{polylog} n$. In particular, this allows us to perform a single iteration
+by computing a solution on a sparse spanner of logarithmic stretch. Using a randomized rounding
+scheme, we can further extend the method to finding approximate solutions for the single-source
+shortest paths (SSSP) problem. As a consequence, we improve upon prior work by obtaining the following
+results: (1) Broadcast CONGEST model: $(1 + \varepsilon)$-approximate SSSP using $\tilde{O}((\sqrt{n}
++ D)\varepsilon^{-3})$ rounds, where $ D $ is the (hop) diameter of the network. (2) Broadcast congested
+clique model: $(1 + \varepsilon)$-approximate transshipment and SSSP using $\tilde{O}(\varepsilon^{-2})$
+rounds. (3) Multipass streaming model: $(1 + \varepsilon)$-approximate transshipment and SSSP
+using $\tilde{O}(n)$ space and $\tilde{O}(\varepsilon^{-2})$ passes. The previously fastest
+SSSP algorithms for these models leverage sparse hop sets. We bypass the hop set construction; computing
+a spanner is sufficient with our method. The above bounds assume non-negative edge weights that
+are polynomially bounded in $n$; for general non-negative weights, running times scale with the
+logarithm of the maximum ratio between non-zero weights. 

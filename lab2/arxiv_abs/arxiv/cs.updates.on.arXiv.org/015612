@@ -1,0 +1,18 @@
+Building models are conventionally reconstructed by building roof points planar segmentation
+and then using a topology graph to group the planes together. Roof edges and vertices are then mathematically
+represented by intersecting segmented planes. Technically, such solution is based on sequential
+local fitting, i.e., the entire data of one building are not simultaneously participating in determining
+the building model. As a consequence, the solution is lack of topological integrity and geometric
+rigor. Fundamentally different from this traditional approach, we propose a holistic parametric
+reconstruction method which means taking into consideration the entire point clouds of one building
+simultaneously. In our work, building models are reconstructed from predefined parametric (roof)
+primitives. We first use a well-designed deep neural network to segment and identify primitives
+in the given building point clouds. A holistic optimization strategy is then introduced to simultaneously
+determine the parameters of a segmented primitive. In the last step, the optimal parameters are
+used to generate a watertight building model in CityGML format. The airborne LiDAR dataset RoofN3D
+with predefined roof types is used for our test. It is shown that PointNet++ applied to the entire
+dataset can achieve an accuracy of 83% for primitive classification. For a subset of 910 buildings
+in RoofN3D, the holistic approach is then used to determine the parameters of primitives and reconstruct
+the buildings. The achieved overall quality of reconstruction is 0.08 meters for point-surface-distance
+or 0.7 times RMSE of the input LiDAR points. The study demonstrates the efficiency and capability
+of the proposed approach and its potential to handle large scale urban point clouds. 

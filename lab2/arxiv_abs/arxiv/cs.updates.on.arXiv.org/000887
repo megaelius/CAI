@@ -1,0 +1,20 @@
+An interesting challenge for the cryptography community is to design authentication protocols
+that are so simple that a human can execute them without relying on a fully trusted computer. We propose
+several candidate authentication protocols for a setting in which the human user can only receive
+assistance from a semi-trusted computer --- a computer that stores information and performs computations
+correctly but does not provide confidentiality. Our schemes use a semi-trusted computer to store
+and display public challenges $C_i\in[n]^k$. The human user memorizes a random secret mapping
+$\sigma:[n]\rightarrow\mathbb{Z}_d$ and authenticates by computing responses $f(\sigma(C_i))$
+to a sequence of public challenges where $f:\mathbb{Z}_d^k\rightarrow\mathbb{Z}_d$ is a function
+that is easy for the human to evaluate. We prove that any statistical adversary needs to sample $m=\tilde{\Omega}(n^{s(f)})$
+challenge-response pairs to recover $\sigma$, for a security parameter $s(f)$ that depends on
+two key properties of $f$. To obtain our results, we apply the general hypercontractivity theorem
+to lower bound the statistical dimension of the distribution over challenge-response pairs induced
+by $f$ and $\sigma$. Our lower bounds apply to arbitrary functions $f $ (not just to functions that
+are easy for a human to evaluate), and generalize recent results of Feldman et al. As an application,
+we propose a family of human computable password functions $f_{k_1,k_2}$ in which the user needs
+to perform $2k_1+2k_2+1$ primitive operations (e.g., adding two digits or remembering $\sigma(i)$),
+and we show that $s(f) = \min\{k_1+1, (k_2+1)/2\}$. For these schemes, we prove that forging passwords
+is equivalent to recovering the secret mapping. Thus, our human computable password schemes can
+maintain strong security guarantees even after an adversary has observed the user login to many
+different accounts. 

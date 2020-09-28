@@ -1,0 +1,17 @@
+Motivation: Working with a large number of genomes simultaneously is of great interest in genetic
+population and comparative genomics research. Bubbles discovery in multi-genomes coloured de
+bruijn graph for de novo genome assembly is a problem that can be translated to cycles enumeration
+in graph theory. Cycle enumerations algorithms in big and complex de Bruijn graphs are time consuming.
+Specialised fast algorithms for efficient bubble search are needed for coloured de bruijn graph
+variant calling applications. In coloured de Bruijn graphs, bubble paths coverages are used in
+downstream variants calling analysis. Results: In this paper, we introduce a fast parallel graph
+search for different K-mer cycle sizes. Coloured path coverages are used for SNP prediction. The
+graph search method uses a combined multi-node and multi-core design to speeds up cycles enumeration.
+The search algorithm uses an index extracted from the raw assembly of a coloured de Bruijn graph stored
+in a hash table. The index is distributed across different CPU-cores, in a shared memory HPC compute
+node, to build undirected subgraphs then search independently and simultaneously specific cycle
+sizes. This same index can also be split between several HPC compute nodes to take advantage of as
+many CPU-cores available to the user. The local neighbourhood parallel search approach reduces
+the graph's complexity and facilitate cycles search of a multi-colour de Bruijn graph. The search
+algorithm is incorporated into $\Pi$-cyc application and tested on a number of Schizosaccharomyces
+Pombe genomes. Availability: $\Pi$-cyc is an open-source software available at www.github.com/2kplus2P

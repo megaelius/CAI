@@ -1,0 +1,18 @@
+Split-Merge MCMC (Monte Carlo Markov Chain) is one of the essential and popular variants of MCMC
+for problems when an MCMC state consists of an unknown number of components or clusters. It is well
+known that state-of-the-art methods for split-merge MCMC do not scale well. Strategies for rapid
+mixing requires smart and informative proposals to reduce the rejection rate. However, all known
+smart proposals involve cost at least linear in the size of the data $ \ge O(N)$, to suggest informative
+transitions. Thus, the cost of each iteration is prohibitive for massive scale datasets. It is further
+known that uninformative but computationally efficient proposals, such as random split-merge,
+leads to extremely slow convergence. This tradeoff between mixing time and per update cost seems
+hard to get around. In this paper, we get around this tradeoff by utilizing simple similarity information,
+such as cosine similarity, between the entity vectors to design a proposal distribution. Such information
+is readily available in almost all applications. We show that the recent use of locality sensitive
+hashing for efficient adaptive sampling can be leveraged to obtain a computationally efficient
+pseudo-marginal MCMC. The new split-merge MCMC has constant time update, just like random split-merge,
+and at the same time the proposal is informative and needs significantly fewer iterations than random
+split-merge. Overall, we obtain a sweet tradeoff between convergence and per update cost. As a direct
+consequence, our proposal, named LSHSM, is around 10x faster than the state-of-the-art sampling
+methods on both synthetic datasets and two large real datasets KDDCUP and PubMed with several millions
+of entities and thousands of cluster centers. 

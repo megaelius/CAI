@@ -1,0 +1,20 @@
+We consider an online vector balancing question where $T$ vectors, chosen from an arbitrary distribution
+over $[-1,1]^n$, arrive one-by-one and must be immediately given a $\pm$ sign. The goal is to keep
+the discrepancy small as possible. A concrete example is the online interval discrepancy problem
+where $T$ points are sampled uniformly in $[0,1]$, and the goal is to immediately color them $\pm$
+such that every sub-interval remains nearly balanced. As random coloring incurs $\Omega(T^{1/2})$
+discrepancy, while the offline bounds are $\Theta((n\log T)^{1/2})$ for vector balancing and
+1 for interval balancing, a natural question is whether one can (nearly) match the offline bounds
+in the online setting for these problems. One must utilize the stochasticity as in the worst-case
+scenario it is known that discrepancy is $\Omega(T^{1/2})$ for any online algorithm. Bansal and
+Spencer recently show an $O(\sqrt{n}\log T)$ bound when each coordinate is independent. When there
+are dependencies among the coordinates, the problem becomes much more challenging, as evidenced
+by a recent work of Jiang, Kulkarni, and Singla that gives a non-trivial $O(T^{1/\log\log T})$ bound
+for online interval discrepancy. Although this beats random coloring, it is still far from the offline
+bound. In this work, we introduce a new framework for online vector balancing when the input distribution
+has dependencies across coordinates. This lets us obtain a poly$(n, \log T)$ bound for online vector
+balancing under arbitrary input distributions, and a poly$(\log T)$ bound for online interval
+discrepancy. Our framework is powerful enough to capture other well-studied geometric discrepancy
+problems; e.g., a poly$(\log^d (T))$ bound for the online $d$-dimensional Tus\'nady's problem.
+A key new technical ingredient is an {\em anti-concentration} inequality for sums of pairwise uncorrelated
+random variables. 

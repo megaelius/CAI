@@ -1,0 +1,19 @@
+In addition to their lower emissions and fast ramping capabilities, gas-fired electric power generation
+is increasing due to newly discovered supplies and declining prices. The vast infrastructure development,
+gas flow dynamics, and complex interdependence of gas with electric power networks call for advanced
+computational tools. Solving the equations relating gas injections to pressures and pipeline
+flows lies at the heart of natural gas network (NGN) operation, yet existing solvers require careful
+initialization and uniqueness has been an open question. In this context, this work considers the
+nonlinear steady-state version of the gas flow (GF) problem. It first establishes that the solution
+to the GF problem is unique under arbitrary gas network topologies, compressor types, and sets of
+specifications. For GF setups where pressure is specified on a single (reference) node and compressors
+do no appear in cycles, the GF task is posed as an convex minimization. To handle more general setups,
+a GF solver relying on a mixed-integer quadratically-constrained quadratic program (MI-QCQP)
+is also devised. This solver can be used for any GF setup and any network. It introduces binary variables
+to capture flow directions; relaxes the pressure drop equations to quadratic inequality constraints;
+and uses a carefully selected objective to promote the exactness of this relaxation. The relaxation
+is provably exact in networks with non-overlapping cycles and a single fixed-pressure node. The
+solver handles efficiently the involved bilinear terms through McCormick linearization. Numerical
+tests validate our claims, demonstrate that the MI-QCQP solver scales well, and that the relaxation
+is exact even when the sufficient conditions are violated, such as in networks with overlapping
+cycles and multiple fixed-pressure nodes. 

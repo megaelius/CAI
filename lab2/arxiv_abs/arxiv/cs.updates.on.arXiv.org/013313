@@ -1,0 +1,18 @@
+In this paper we study the classical problem of throughput maximization. In this problem we have
+a collection $J$ of $n$ jobs, each having a release time $r_j$, deadline $d_j$, and processing time
+$p_j$. They have to be scheduled non-preemptively on $m$ identical parallel machines. The goal
+is to find a schedule which maximizes the number of jobs scheduled entirely in their $[r_j,d_j]$
+window. This problem has been studied extensively (even for the case of $m=1$). Several special
+cases of the problem remain open. Bar-Noy et al. [STOC1999] presented an algorithm with ratio $1-1/(1+1/m)^m$
+for $m$ machines, which approaches $1-1/e$ as $m$ increases. For $m=1$, Chuzhoy-Ostrovsky-Rabani
+[FOCS2001] presented an algorithm with approximation with ratio $1-\frac{1}{e}-\varepsilon$
+(for any $\varepsilon>0$). Recently Im-Li-Moseley [IPCO2017] presented an algorithm with ratio
+$1-1/e-\varepsilon_0$ for some absolute constant $\varepsilon_0>0$ for any fixed $m$. They also
+presented an algorithm with ratio $1-O(\sqrt{\log m/m})-\varepsilon$ for general $m$ which approaches
+1 as $m$ grows. The approximability of the problem for $m=O(1)$ remains a major open question. Even
+for the case of $m=1$ and $c=O(1)$ distinct processing times the problem is open (Sgall [ESA2012]).
+In this paper we study the case of $m=O(1)$ and show that if there are $c$ distinct processing times,
+i.e. $p_j$'s come from a set of size $c$, then there is a $(1-\varepsilon)$-approximation that runs
+in time $O(n^{mc^7\varepsilon^{-6}}\log T)$, where $T$ is the largest deadline. Therefore, for
+constant $m$ and constant $c$ this yields a PTAS. Our algorithm is based on proving structural properties
+for a near optimum solution that allows one to use a dynamic programming with pruning. 

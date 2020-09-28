@@ -1,0 +1,18 @@
+Rogue base stations are an effective attack vector. Cellular basebands represent a critical part
+of the smartphone's security: they parse large amounts of data even before authentication. They
+can, therefore, grant an attacker a very stealthy way to gather information about calls placed and
+even to escalate to the main operating system, over-the-air. In this paper, we discuss a novel cellular
+fuzzing framework that aims to help security researchers find critical bugs in cellular basebands
+and similar embedded systems. BaseSAFE allows partial rehosting of cellular basebands for fast
+instrumented fuzzing off-device, even for closed-source firmware blobs. BaseSAFE's sanitizing
+drop-in allocator, enables spotting heap-based buffer-overflows quickly. Using our proof-of-concept
+harness, we fuzzed various parsers of the Nucleus RTOS-based MediaTek cellular baseband that are
+accessible from rogue base stations. The emulator instrumentation is highly optimized, reaching
+hundreds of executions per second on each core for our complex test case, around 15k test-cases per
+second in total. Furthermore, we discuss attack vectors for baseband modems. To the best of our knowledge,
+this is the first use of emulation-based fuzzing for security testing of commercial cellular basebands.
+Most of the tooling and approaches of BaseSAFE are also applicable for other low-level kernels and
+firmware. Using BaseSAFE, we were able to find memory corruptions including heap out-of-bounds
+writes using our proof-of-concept fuzzing harness in the MediaTek cellular baseband. BaseSAFE,
+the harness, and a large collection of LTE signaling message test cases will be released open-source
+upon publication of this paper. 

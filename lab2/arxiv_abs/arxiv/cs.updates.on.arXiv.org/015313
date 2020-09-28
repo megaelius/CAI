@@ -1,0 +1,19 @@
+To implement a blockchain, we need a blockchain protocol for all the nodes to follow. To design a blockchain
+protocol, we need a block publisher selection mechanism and a chain selection rule. In Proof-of-Stake
+(PoS) based blockchain protocols, block publisher selection mechanism selects the node to publish
+the next block based on the relative stake held by the node. However, PoS protocols may face vulnerability
+to fully adaptive corruptions. In literature, researchers address this issue at the cost of performance.
+In this paper, we propose a novel PoS-based blockchain protocol, QuickSync, to achieve security
+against fully adaptive corruptions without compromising on performance. We propose a metric called
+block power, a value defined for each block, derived from the output of the verifiable random function
+based on the digital signature of the block publisher. With this metric, we compute chain power,
+the sum of block powers of all the blocks comprising the chain, for all the valid chains. These metrics
+are a function of the block publisher's stake to enable the PoS aspect of the protocol. The chain selection
+rule selects the chain with the highest chain power as the one to extend. This chain selection rule
+hence determines the selected block publisher of the previous block. When we use metrics to define
+the chain selection rule, it may lead to vulnerabilities against Sybil attacks. QuickSync uses
+a Sybil attack resistant function implemented using histogram matching. We prove that QuickSync
+satisfies common prefix, chain growth, and chain quality properties and hence it is secure. We also
+show that it is resilient to different types of adversarial attack strategies. Our analysis demonstrates
+that QuickSync performs better than Bitcoin by an order of magnitude on both transactions per second
+and time to finality, and better than Ouroboros v1 by a factor of three on time to finality. 

@@ -1,0 +1,19 @@
+In this work, we are interested in the large graph similarity computation problem, which is one of
+the most important graph-based problems. Traditional techniques to compute the exact or approximate
+values of Graph Edit Distance (GED) and Maximum Common Subgraph (MCS) require at least polynomial
+time complexity over node numbers thus are not able to handle this problem when the numbers of nodes
+are large. Recently the develop of deep learning techniques provide a promising solution for this
+problem by training a network which is able to encode graphs to feature vectors and then compute similarity
+based on feature vectors. However, when we look into these techniques and classify them to embedding
+models and matching models, problems arise. Embedding models can be quite fast but perform poorly
+due to the lack of interaction across graphs while matching models involve this for much better performance
+but satisfy far more on time consumption. Similar to the process of large biological molecular identification,
+where we first maps the whole molecular to molecular groups and then identify them based on the "abstracted
+smaller molecular", the feature aggregation across two whole graphs is always redundant, especially
+when the number of nodes is large. Thus we here present a novel framework for large graph similarity
+computation problem. We first embed and coarsen the large graphs to "abstracted smaller graphs"
+with denser local topology, similar to molecular groups in biological concept. Then we aggregate
+both the internal features in "abstracted smaller graphs" and external features across "abstracted
+smaller graph pair", leading to feature vectors for each graph, with which we calculate the final
+similarity score. Experiments demonstrate that our proposed framework outperforms state-of-the-art
+methods in graph similarity computation tasks and has significant improvement in time efficiency.

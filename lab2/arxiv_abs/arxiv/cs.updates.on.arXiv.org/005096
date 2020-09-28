@@ -1,0 +1,17 @@
+Monte Carlo Tree Search (MCTS) is particularly adapted to domains where the potential actions can
+be represented as a tree of sequential decisions. For an effective action selection, MCTS performs
+many simulations to build a reliable tree representation of the decision space. As such, a bottleneck
+to MCTS appears when enough simulations cannot be performed between action selections. This is
+particularly highlighted in continuously running tasks, for which the time available to perform
+simulations between actions tends to be limited due to the environment's state constantly changing.
+In this paper, we present an approach that takes advantage of the anytime characteristic of MCTS
+to increase the simulation time when allowed. Our approach is to effectively balance the prospect
+of selecting an action with the time that can be spared to perform MCTS simulations before the next
+action selection. For that, we considered the simulation time as a decision variable to be selected
+alongside an action. We extended the Hierarchical Optimistic Optimization applied to Tree (HOOT)
+method to adapt our approach to environments with a continuous decision space. We evaluated our
+approach for environments with a continuous decision space through OpenAI gym's Pendulum and Continuous
+Mountain Car environments and for environments with discrete action space through the arcade learning
+environment (ALE) platform. The evaluation results show that, with variable simulation times,
+the proposed approach outperforms the conventional MCTS in the evaluated continuous decision
+space tasks and improves the performance of MCTS in most of the ALE tasks. 

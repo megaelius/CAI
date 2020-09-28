@@ -1,0 +1,18 @@
+Purpose: Design of a preconditioner for fast and efficient parallel imaging and compressed sensing
+reconstructions. Theory: Parallel imaging and compressed sensing reconstructions become time
+consuming when the problem size or the number of coils is large, due to the large linear system of equations
+that has to be solved in l_1 and l_2-norm based reconstruction algorithms. Such linear systems can
+be solved efficiently using effective preconditioning techniques. Methods: In this paper we construct
+such a preconditioner by approximating the system matrix of the linear system, which comprises
+the data fidelity and includes total variation and wavelet regularization, by a matrix with the
+assumption that is a block circulant matrix with circulant blocks. Due to its circulant structure,
+the preconditioner can be constructed quickly and its inverse can be evaluated fast using only two
+fast Fourier transformations. We test the performance of the preconditioner for the conjugate
+gradient method as the linear solver, integrated into the Split Bregman algorithm. Results: The
+designed circulant preconditioner reduces the number of iterations required in the conjugate
+gradient method by almost a factor of~5. The speed up results in a total acceleration factor of approximately
+2.5 for the entire reconstruction algorithm when implemented in MATLAB, while the initialization
+time of the preconditioner is negligible. Conclusion: The proposed preconditioner reduces the
+reconstruction time for parallel imaging and compressed sensing in a Split Bregman implementation
+and can easily handle large systems since it is Fourier-based, allowing for efficient computations.
+Key words: preconditioning; compressed sensing; Split Bregman; parallel imaging 

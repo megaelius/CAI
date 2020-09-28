@@ -1,0 +1,19 @@
+This paper considers the problems of modeling and predicting a long-term and "blurry" relapse that
+occurs after a medical act, such as a surgery. We do not consider a short-term complication related
+to the act itself, but a long-term relapse that clinicians cannot explain easily, since it depends
+on unknown sets or sequences of past events that occurred before the act. The relapse is observed
+only indirectly, in a "blurry" fashion, through longitudinal prescriptions of drugs over a long
+period of time after the medical act. We introduce a new model, called ZiMM (Zero-inflated Mixture
+of Multinomial distributions) in order to capture long-term and blurry relapses. On top of it, we
+build an end-to-end deep-learning architecture called ZiMM Encoder-Decoder (ZiMM ED) that can
+learn from the complex, irregular, highly heterogeneous and sparse patterns of health events that
+are observed through a claims-only database. ZiMM ED is applied on a "non-clinical" claims database,
+that contains only timestamped reimbursement codes for drug purchases, medical procedures and
+hospital diagnoses, the only available clinical feature being the age of the patient. This setting
+is more challenging than a setting where bedside clinical signals are available. Indeed, we consider
+a dataset containing the claims of almost all French citizens who had surgery for prostatic problems,
+with a history between 1.5 and 5 years. We consider a long-term (18 months) relapse (urination problems
+still occur despite surgery), which is blurry since it is observed only through the reimbursement
+of a specific set of drugs for urination problems. Our experiments show that ZiMM ED improves several
+baselines, including non-deep learning and deep-learning approaches, and that it allows working
+on such a dataset with minimal preprocessing work. 

@@ -1,0 +1,17 @@
+Electronic Health Records (EHRs) provide vital contextual information to radiologists and other
+physicians when making a diagnosis. Unfortunately, because a given patient's record may contain
+hundreds of notes and reports, identifying relevant information within these in the short time
+typically allotted to a case is very difficult. We propose and evaluate models that extract relevant
+text snippets from patient records to provide a rough case summary intended to aid physicians considering
+one or more diagnoses. This is hard because direct supervision (i.e., physician annotations of
+snippets relevant to specific diagnoses in medical records) is prohibitively expensive to collect
+at scale. We propose a distantly supervised strategy in which we use groups of International Classification
+of Diseases (ICD) codes observed in 'future' records as noisy proxies for 'downstream' diagnoses.
+Using this we train a transformer-based neural model to perform extractive summarization conditioned
+on potential diagnoses. This model defines an attention mechanism that is conditioned on potential
+diagnoses (queries) provided by the diagnosing physician. We train (via distant supervision)
+and evaluate variants of this model on EHR data from Brigham and Women's Hospital in Boston and MIMIC-III
+(the latter to facilitate reproducibility). Evaluations performed by radiologists demonstrate
+that these distantly supervised models yield better extractive summaries than do unsupervised
+approaches. Such models may aid diagnosis by identifying sentences in past patient reports that
+are clinically relevant to a potential diagnosis. 

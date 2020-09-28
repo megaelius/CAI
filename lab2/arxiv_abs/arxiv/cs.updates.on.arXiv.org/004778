@@ -1,0 +1,19 @@
+We describe randomized and deterministic approximation algorithms in Linial's classic LOCAL
+model of distributed computing to find maximum-weight matchings in hypergraphs. For a rank-$r$
+hypergraph, our algorithm generates a matching within an $O(r)$ factor of the maximum weight matching.
+The runtime is $\tilde O(\log r \log \Delta)$ for the randomized algorithm and $\tilde O(r \log \Delta
++ \log^3 \Delta)$ for the deterministic algorithm. The randomized algorithm is a straightforward,
+though somewhat delicate, combination of an LP solver algorithm of Kuhn, Moscibroda \& Wattenhofer
+(2006) and randomized rounding. For the deterministic part, we extend a method of Ghaffari, Harris
+& Kuhn (2017) to derandomize the first-moment method; this allows us to deterministically simulate
+an alteration-based probabilistic construction. This hypergraph matching algorithm has two
+main algorithmic consequences. First, we get nearly-optimal deterministic and randomized algorithms
+for the long-studied problem of maximum-weight graph matching. Specifically, we obtain a $1+\epsilon$
+approximation algorithm running in $\tilde O(\log \Delta)$ randomized time and $\tilde O(\log^3
+\Delta + \log^* n)$ deterministic time. These are significantly faster than prior $1+\epsilon$-approximation
+algorithms; furthermore, there are no constraints on the size of the edge weights. Second, we get
+an algorithm for hypergraph maximal matching, which is significantly faster than the algorithm
+of Ghaffari, Harris & Kuhn (2017). One main consequence (along with some additional optimizations)
+is an algorithm which takes an arboricity-$a$ graph and generates an edge-orientation with out-degree
+$\lceil (1+\epsilon) a \rceil$; this runs in $\tilde O(\log^7 n \log^3 a)$ rounds deterministically
+or $\tilde O(\log^3 n )$ rounds randomly. 

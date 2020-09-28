@@ -1,0 +1,19 @@
+Most adaptive optics (AO) systems using pyramid wavefront sensors (PyWFS) to estimate the phase
+of the pupil field use mechanical modulation of the beam in order to increase the dynamic range in
+low-order modes so the PyWFS can usefully operate at low Strehl ratio. The tradeoff for this approach
+is reduced sensitivity, which, in turn, makes it difficult to attain a high Strehl ratio once the
+loop has been closed. We propose an algorithm that increases the dynamic range of the PyWFS without
+modulation. The proposed algorithm achieves this in two ways: 1) it allows the PyWFS to be treated
+with any desired optical modeling algorithms, and 2) it employs Newton's method for nonlinear optimization
+to create an estimator that is more accurate than the corresponding linear estimator. Numerical
+simulations show that nonlinear optimization can make more accurate estimates of the phase of the
+wavefront than the corresponding linear estimator for Strehl ratios of the input beam that are greater
+than about 0.2. As the input Strehl ratio increases, so does the advantage of the nonlinear estimator
+over the linear one. For example, when the input beam had a Strehl ratio of 0.4 (corresponding to a
+standard deviation of the phase of about 0.96 radians), the linear estimator error had a standard
+deviation of about 0.65 radians, while the nonlinear estimator error had a standard deviation of
+about 0.27 radians (this depends only weakly on the noise level, assuming there is enough signal
+for the PyWFS to work in the linear regime). The new algorithm can be implemented in massively parallel
+modes, since the required calculations have almost no inter-dependencies. It is suggested that
+the required computations can be performed quickly enough for the purposes of AO on modern computer
+systems. 

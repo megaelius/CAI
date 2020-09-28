@@ -1,0 +1,18 @@
+High-performance DSL developers work hard to take advantage of modern hardware. The DSL compilers
+have to build their own complex middle-ends before they can target a common back-end such as LLVM,
+which only handles single instruction streams with SIMD instructions. We introduce Tiramisu,
+a common middle-end that can generate efficient code for modern processors and accelerators such
+as multicores, GPUs, FPGAs and distributed clusters. Tiramisu introduces a novel three-level
+IR that separates the algorithm, how that algorithm is executed, and where intermediate data are
+stored. This separation simplifies optimization and makes targeting multiple hardware architectures
+from the same algorithm easier. As a result, DSL compilers can be made considerably less complex
+with no loss of performance while immediately targeting multiple hardware or hardware combinations
+such as distributed nodes with both CPUs and GPUs. We evaluated Tiramisu by creating a new middle-end
+for the Halide and Julia compilers. We show that Tiramisu extends Halide and Julia with many new capabilities
+including the ability to: express new algorithms (such as recurrent filters and non-rectangular
+iteration spaces), perform new complex loop nest transformations (such as wavefront parallelization,
+loop shifting and loop fusion) and generate efficient code for more architectures (such as combinations
+of distributed clusters, multicores, GPUs and FPGAs). Finally, we demonstrate that Tiramisu can
+generate very efficient code that matches the highly optimized Intel MKL gemm (generalized matrix
+multiplication) implementation, we also show speedups reaching 4X in Halide and 16X in Julia due
+to optimizations enabled by Tiramisu. 

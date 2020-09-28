@@ -1,0 +1,18 @@
+Coming high-cadence wide-field optical telescopes will image hundreds of thousands of sources
+per minute. Besides inspecting the near real-time data streams for transient and variability events,
+the accumulated data archive is a wealthy laboratory for making complementary scientific discoveries.
+The goal of this work is to optimise column-oriented database techniques to enable the construction
+of a full-source and light-curve database for large-scale surveys, that is accessible by the astronomical
+community. We adopted LOFAR's Transients Pipeline as the baseline and modified it to enable the
+processing of optical images that have much higher source densities. The pipeline adds new source
+lists to the archive database, while cross-matching them with the known cataloged sources in order
+to build a full light-curve archive. We investigated several techniques of indexing and partitioning
+the largest tables, allowing for faster positional source look-ups in the cross matching algorithms.
+We monitored all query run times in long-term pipeline runs where we processed a subset of IPHAS data
+that have image source density peaks over $170,000$ per field of view ($500,000$ deg$^{-2}$). Our
+analysis demonstrates that horizontal table partitions of declination widths of one-degree control
+the query run times. Usage of an index strategy where the partitions are densily sorted according
+to source declination yields another improvement. Most queries run in sublinear time and a few (<20%)
+run in linear time, because of dependencies on input source-list and result-set size. We observed
+that for this logical database partitioning schema the limiting cadence the pipeline achieved
+with processing IPHAS data is 25 seconds. 

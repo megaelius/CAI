@@ -1,0 +1,18 @@
+Quantum computations are typically compiled into a circuit of basic quantum gates. Just like for
+classical circuits, a quantum compiler should optimize the quantum circuit, e.g. by minimizing
+the number of required gates. Optimizing quantum circuits is not only relevant for improving the
+runtime of quantum algorithms in the long term, but is also particularly important for near-term
+quantum devices that can only implement a small number of quantum gates before noise renders the
+computation useless. An important building block for many quantum circuit optimization techniques
+is pattern matching, where given a large and a small quantum circuit, we are interested in finding
+all maximal matches of the small circuit, called pattern, in the large circuit, considering pairwise
+commutation of quantum gates. In this work, we present a classical algorithm for pattern matching
+that provably finds all maximal matches in time polynomial in the circuit size (for a fixed pattern
+size). Our algorithm works for both quantum and reversible classical circuits. We demonstrate
+numerically that our algorithm, implemented in the open-source library Qiskit, scales considerably
+better than suggested by the theoretical worst-case complexity and is practical to use for circuit
+sizes typical for near-term quantum devices. Using our pattern matching algorithm as the basis
+for known circuit optimization techniques such as template matching and peephole optimization,
+we demonstrate a significant (~30%) reduction in gate count for random quantum circuits, and are
+able to further improve practically relevant quantum circuits that were already optimized with
+state-of-the-art techniques. 

@@ -1,0 +1,19 @@
+Assigning boundary conditions, such as acoustic impedance, to the frequency domain thermoviscous
+wave equations (TWE), derived from the linearized Navier-Stokes equations (LNSE) poses a Helmholtz
+problem, solution to which yields a discrete set of complex eigenfunctions and eigenvalue pairs.
+The proposed method -- the inverse Helmholtz solver (iHS) -- reverses such procedure by returning
+the value of acoustic impedance at one or more unknown impedance boundaries (IBs) of a given domain,
+via spatial integration of the TWE for a given real-valued frequency with assigned conditions on
+other boundaries. The iHS procedure is applied to a second-order spatial discretization of the
+TWEs on an unstructured staggered grid arrangement. Only the momentum equation is extended to the
+center of each IB face where pressure and velocity components are co-located and treated as unknowns.
+The iHS is finally closed via assignment of the surface gradient of pressure phase over the IBs, corresponding
+to assigning the shape of the acoustic waveform at the IB. The iHS procedure can be carried out independently
+for different frequencies, making it embarrassingly parallel, and able to return the complete
+broadband complex impedance distribution at the IBs in any desired frequency range to arbitrary
+numerical precision. The iHS approach is first validated against Rott's theory for viscous rectangular
+and circular ducts. The impedance of a toy porous cavity with a complex geometry is then reconstructed
+and validated with companion fully compressible unstructured Navier-Stokes simulations resolving
+the cavity geometry. Verification against one-dimensional impedance test tube calculations
+based on time-domain impedance boundary conditions (TDIBC) is also carried out. Finally, results
+from a preliminary analysis of a thermoacoustically unstable cavity are presented. 

@@ -1,0 +1,18 @@
+This paper presents a physics-based data-driven method to learn predictive reduced-order models
+(ROMs) from high-fidelity simulations, and illustrates it in the challenging context of a single-injector
+combustion process. The method combines the perspectives of model reduction and machine learning.
+Model reduction brings in the physics of the problem, constraining the ROM predictions to lie on
+a subspace defined by the governing equations. This is achieved by defining the ROM in proper orthogonal
+decomposition (POD) coordinates, which embed the rich physics information contained in solution
+snapshots of a high-fidelity computational fluid dynamics (CFD) model. The machine learning perspective
+brings the flexibility to use transformed physical variables to define the POD basis. This is in
+contrast to traditional model reduction approaches that are constrained to use the physical variables
+of the high-fidelity code. Combining the two perspectives, the approach identifies a set of transformed
+physical variables that expose quadratic structure in the combustion governing equations and
+learns a quadratic ROM from transformed snapshot data. This learning does not require access to
+the high-fidelity model implementation. Numerical experiments show that the ROM accurately predicts
+temperature, pressure, velocity, species concentrations, and the limit-cycle amplitude, with
+speedups of more than five orders of magnitude over high-fidelity models. Our ROM simulation is
+shown to be predictive 200% past the training interval. Moreover, ROM-predicted pressure traces
+accurately match the phase of the pressure signal and yield good approximations of the limit-cycle
+amplitude. 

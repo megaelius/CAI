@@ -1,0 +1,17 @@
+Multi-camera surveillance has been an active research topic for understanding and modeling scenes.
+Compared to a single camera, multi-cameras provide larger field-of-view and more object cues,
+and the related applications are multi-view counting, multi-view tracking, 3D pose estimation
+or 3D reconstruction, etc. It is usually assumed that the cameras are all temporally synchronized
+when designing models for these multi-camera based tasks. However, this assumption is not always
+valid,especially for multi-camera systems with network transmission delay and low frame-rates
+due to limited network bandwidth, resulting in desynchronization of the captured frames across
+cameras. To handle the issue of unsynchronized multi-cameras, in this paper, we propose a synchronization
+model that works in conjunction with existing DNN-based multi-view models, thus avoiding the redesign
+of the whole model. Under the low-fps regime, we assume that only a single relevant frame is available
+from each view, and synchronization is achieved by matching together image contents guided by epipolar
+geometry. We consider two variants of the model, based on where in the pipeline the synchronization
+occurs, scene-level synchronization and camera-level synchronization. The view synchronization
+step and the task-specific view fusion and prediction step are unified in the same framework and
+trained in an end-to-end fashion. Our view synchronization models are applied to different DNNs-based
+multi-camera vision tasks under the unsynchronized setting, including multi-view counting and
+3D pose estimation, and achieve good performance compared to baselines. 

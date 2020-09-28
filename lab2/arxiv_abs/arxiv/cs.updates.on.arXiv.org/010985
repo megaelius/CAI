@@ -1,0 +1,20 @@
+In the context of HCI, building an automatic system to recognize affect of human facial expression
+in real-world condition is very crucial to make machine interact naturallisticaly with a man. However,
+existing facial emotion databases usually contain expression in the limited scenario under well-controlled
+condition. Aff-Wild is currently the largest database consisting of spontaneous facial expression
+in the wild annotated with valence and arousal. The first contribution of this project is the completion
+of extending Aff-Wild database which is fulfilled by collecting videos from YouTube on which the
+videos have spontaneous facial expressions in the wild, annotating videos with valence and arousal
+ranging in [-1,1], detecting faces in frames using FFLD2 detector and partitioning the whole data
+set into train, validate and test set, with 527056, 94223 and 135145 frames. The diversity is guaranteed
+regarding age, ethnicity and values of valence and arousal. The ratio of male to female is close to
+1. Regarding the techniques used to build the automatic system, deep learning is outstanding since
+almost all winning methods in emotion challenges adopt DNN techniques. The second contribution
+of this project is that an end-to-end DNN is constructed to have joint CNN and RNN block and gives the
+estimation on valence and arousal for each frame in sequential data. VGGFace, ResNet, DenseNet
+with the corresponding pre-trained model for CNN block and LSTM, GRU, IndRNN, Attention mechanism
+for RNN block are experimented aiming to find the best combination. Fine tuning and transfer learning
+techniques are also tried out. By comparing the CCC evaluation value on test data, the best model
+is found to be pre-trained VGGFace connected with 2 layers GRU with attention mechanism. The models
+test performance is 0.555 CCC for valence with sequence length 80 and 0.499 CCC for arousal with sequence
+length 70. 

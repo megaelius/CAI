@@ -1,0 +1,17 @@
+Open source cloud technologies provide a wide range of support for creating customized compute
+node clusters to schedule tasks and managing resources. In cloud infrastructures such as Jetstream
+and Chameleon, which are used for scientific research, users receive complete control of the Virtual
+Machines (VM) that are allocated to them. Importantly, users get root access to the VMs. This provides
+an opportunity for HPC users to experiment with new resource management technologies such as Apache
+Mesos that have proven scalability, flexibility, and fault tolerance. To ease the development
+and deployment of HPC tools on the cloud, the containerization technology has matured and is gaining
+interest in the scientific community. In particular, several well known scientific code bases
+now have publicly available Docker containers. While Mesos provides support for Docker containers
+to execute individually, it does not provide support for container inter-communication or orchestration
+of the containers for a parallel or distributed application. In this paper, we present the design,
+implementation, and performance analysis of a Mesos framework, Scylla, which integrates Mesos
+with Docker Swarm to enable orchestration of MPI jobs on a cluster of VMs acquired from the Chameleon
+cloud [1]. Scylla uses Docker Swarm for communication between containerized tasks (MPI processes)
+and Apache Mesos for resource pooling and allocation. Scylla allows a policy-driven approach to
+determine how the containers should be distributed across the nodes depending on the CPU, memory,
+and network throughput requirement for each application. 

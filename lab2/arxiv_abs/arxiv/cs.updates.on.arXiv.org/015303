@@ -1,0 +1,20 @@
+XSS is a security vulnerability that permits injecting malicious code into the client side of a web
+application. In the simplest situations, XSS vulnerabilities arise when a web application includes
+the user input in the web output without due sanitization. Such simple XSS vulnerabilities can be
+detected fairly reliably with blackbox scanners, which inject malicious payload into sensitive
+parts of HTTP requests and look for the reflected values in the web output. Contemporary blackbox
+scanners are not effective against stored XSS vulnerabilities, where the malicious payload in
+an HTTP response originates from the database storage of the web application, rather than from the
+associated HTTP request. Similarly, many blackbox scanners do not systematically handle context-sensitive
+XSS vulnerabilities, where the user input is included in the web output after a transformation that
+prevents the scanner from recognizing the original value, but does not sanitize the value sufficiently.
+Among the combination of two basic data sources (stored vs reflected) and two basic vulnerability
+patterns (context sensitive vs not so), only one is therefore tested systematically by state-of-the-art
+blackbox scanners. Our work focuses on systematic coverage of the three remaining combinations.
+We present a graybox mechanism that extends a general purpose database to cooperate with our XSS
+scanner, reporting and injecting the test inputs at the boundary between the database and the web
+application. Furthermore, we design a mechanism for identifying the injected inputs in the web
+output even after encoding by the web application, and check whether the encoding sanitizes the
+injected inputs correctly in the respective browser context. We evaluate our approach on eight
+mature and technologically diverse web applications, discovering previously unknown and exploitable
+XSS flaws in each of those applications. 

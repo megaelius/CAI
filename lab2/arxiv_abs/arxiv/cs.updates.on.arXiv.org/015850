@@ -1,0 +1,18 @@
+We study parallel \emph{Load Balancing} protocols for a client-server distributed model defined
+as follows. There is a set $\sC$ of $n$ clients and a set $\sS$ of $n$ servers where each client has (at
+most) a constant number $d \geq 1$ of requests that must be assigned to some server. The client set
+and the server one are connected to each other via a fixed bipartite graph: the requests of client
+$v$ can only be sent to the servers in its neighborhood $N(v)$. The goal is to assign every client request
+so as to minimize the maximum load of the servers. In this setting, efficient parallel protocols
+are available only for dense topolgies. In particular, a simple symmetric, non-adaptive protocol
+achieving constant maximum load has been recently introduced by Becchetti et al \cite{BCNPT18}
+for regular dense bipartite graphs. The parallel completion time is $\bigO(\log n)$ and the overall
+work is $\bigO(n)$, w.h.p. Motivated by proximity constraints arising in some client-server systems,
+we devise a simple variant of Becchetti et al's protocol \cite{BCNPT18} and we analyse it over almost-regular
+bipartite graphs where nodes may have neighborhoods of small size. In detail, we prove that, w.h.p.,
+this new version has a cost equivalent to that of Becchetti et al's protocol (in terms of maximum load,
+completion time, and work complexity, respectively) on every almost-regular bipartite graph
+with degree $\Omega(\log^2n)$. Our analysis significantly departs from that in \cite{BCNPT18}
+for the original protocol and requires to cope with non-trivial stochastic-dependence issues
+on the random choices of the algorithmic process which are due to the worst-case, sparse topology
+of the underlying graph. 

@@ -1,0 +1,19 @@
+We present the syntax, semantics, and typing rules of Bull, a prototype theorem prover based on the
+Delta-Framework, i.e. a fully-typed lambda-calculus decorated with union and intersection types,
+as described in previous papers by the authors. Bull also implements a subtyping algorithm for the
+Type Theory Xi of Barbanera-Dezani-de'Liguoro. Bull has a command-line interface where the user
+can declare axioms, terms, and perform computations and some basic terminal-style features like
+error pretty-printing, subexpressions highlighting, and file loading. Moreover, it can typecheck
+a proof or normalize it. These terms can be incomplete, therefore the typechecking algorithm uses
+unification to try to construct the missing subterms. Bull uses the syntax of Berardi's Pure Type
+Systems to improve the compactness and the modularity of the kernel. Abstract and concrete syntax
+are mostly aligned and similar to the concrete syntax of Coq. Bull uses a higher-order unification
+algorithm for terms, while typechecking and partial type inference are done by a bidirectional
+refinement algorithm, similar to the one found in Matita and Beluga. The refinement can be split
+into two parts: the essence refinement and the typing refinement. Binders are implemented using
+commonly-used de Bruijn indices. We have defined a concrete language syntax that will allow the
+user to write Delta-terms. We have defined the reduction rules and an evaluator. We have implemented
+from scratch a refiner which does partial typechecking and type reconstruction. We have experimented
+Bull with classical examples of the intersection and union literature, such as the ones formalized
+by Pfenning with his Refinement Types in LF. We hope that this research vein could be useful to experiment,
+in a proof theoretical setting, forms of polymorphism alternatives to Girard's parametric one.

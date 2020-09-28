@@ -1,0 +1,20 @@
+Background and Objective. B-spline interpolation (BSI) is a popular technique in the context of
+medical imaging due to its adaptability and robustness in 3D object modeling. A field that utilizes
+BSI is Image Guided Surgery (IGS). IGS provides navigation using medical images, which can be segmented
+and reconstructed into 3D models, often through BSI. Image registration tasks also use BSI to align
+pre-operative data to intra-operative data. However, such IGS tasks are computationally demanding,
+especially when applied to 3D medical images, due to the complexity and amount of data involved.
+Therefore, optimization of IGS algorithms is greatly desirable, for example, to perform image
+registration tasks intra-operatively and to enable real-time applications. A traditional CPU
+does not have sufficient computing power to achieve these goals. In this paper, we introduce a novel
+GPU implementation of BSI to accelerate the calculation of the deformation field in non-rigid image
+registration algorithms. Methods. Our BSI implementation on GPUs minimizes the data that needs
+to be moved between memory and processing cores during loading of the input grid, and leverages the
+large on-chip GPU register file for reuse of input values. Moreover, we re-formulate our method
+as trilinear interpolations to reduce computational complexity and increase accuracy. To provide
+pre-clinical validation of our method and demonstrate its benefits in medical applications, we
+integrate our improved BSI into a registration workflow for compensation of liver deformation
+(caused by pneumoperitoneum, i.e., inflation of the abdomen) and evaluate its performance. Results.
+Our approach improves the performance of BSI by an average of 6.5x and interpolation accuracy by
+2x compared to three state-of-the-art GPU implementations. We observe up to 34% acceleration of
+non-rigid image registration. 

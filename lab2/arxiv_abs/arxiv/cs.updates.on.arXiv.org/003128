@@ -1,0 +1,18 @@
+Many applications of Bayesian data analysis involve sensitive information, motivating methods
+which ensure that privacy is protected. We introduce a general privacy-preserving framework for
+Variational Bayes (VB), a widely used optimization-based Bayesian inference method. Our framework
+respects differential privacy, the gold-standard privacy criterion, and encompasses a large
+class of probabilistic models, called the Conjugate Exponential (CE) family. We observe that we
+can straightforwardly privatise VB's approximate posterior distributions for models in the CE
+family, by perturbing the expected sufficient statistics of the complete-data likelihood. For
+a broadly-used class of non-CE models, those with binomial likelihoods, we show how to bring such
+models into the CE family, such that inferences in the modified model resemble the private variational
+Bayes algorithm as closely as possible, using the Polya-Gamma data augmentation scheme. The iterative
+nature of variational Bayes presents a further challenge since iterations increase the amount
+of noise needed. We overcome this by combining: (1) an improved composition method for differential
+privacy, called the moments accountant, which provides a tight bound on the privacy cost of multiple
+VB iterations and thus significantly decreases the amount of additive noise; and (2) the privacy
+amplification effect of subsampling mini-batches from large-scale data in stochastic learning.
+We empirically demonstrate the effectiveness of our method in CE and non-CE models including latent
+Dirichlet allocation, Bayesian logistic regression, and sigmoid belief networks, evaluated
+on real-world datasets. 

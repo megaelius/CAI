@@ -1,0 +1,19 @@
+As the robot explores the environment, the map grows over time in the simultaneous localization
+and mapping (SLAM) system, especially for the large scale environment. The ever-growing map prevents
+long-term mapping. In this paper, we developed a compact cognitive mapping approach inspired by
+neurobiological experiments. Inspired from neighborhood cells, neighborhood fields determined
+by movement information, i.e. translation and rotation, are proposed to describe one of distinct
+segments of the explored environment. The vertices and edges with movement information below the
+threshold of the neighborhood fields are avoided adding to the cognitive map. The optimization
+of the cognitive map is formulated as a robust non-linear least squares problem, which can be efficiently
+solved by the fast open linear solvers as a general problem. According to the cognitive decision-making
+of familiar environments, loop closure edges are clustered depending on time intervals, and then
+parallel computing is applied to perform batch global optimization of the cognitive map for ensuring
+the efficiency of computation and real-time performance. After the loop closure process, scene
+integration is performed, in which revisited vertices are removed subsequently to further reduce
+the size of the cognitive map. A monocular visual SLAM system is developed to test our approach in
+a rat-like maze environment. Our results suggest that the method largely restricts the growth of
+the size of the cognitive map over time, and meanwhile, the compact cognitive map correctly represents
+the overall layer of the environment as the standard one. Experiments demonstrate that our method
+is very suited for compact cognitive mapping to support long-term robot mapping. Our approach is
+simple, but pragmatic and efficient for achieving the compact cognitive map. 

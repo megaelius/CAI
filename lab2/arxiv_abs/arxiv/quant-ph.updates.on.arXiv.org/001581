@@ -1,0 +1,18 @@
+Estimating the expectation value of an operator corresponding to an observable is a fundamental
+task in quantum computation. It is often impossible to obtain such estimates directly, as the computer
+is restricted to measuring in a fixed computational basis. One common solution splits the operator
+into a weighted sum of Pauli operators and measures each separately, at the cost of many measurements.
+An improved version collects mutually commuting Pauli operators together before measuring all
+operators within a collection simultaneously. The effectiveness of doing this depends on two factors.
+Firstly, we must understand the improvement offered by a given arrangement of Paulis in collections.
+In our work, we propose two natural metrics for quantifying this, operating under the assumption
+that measurements are distributed optimally among collections so as to minimise the overall finite
+sampling error. Motivated by the mathematical form of these metrics, we introduce SORTED INSERTION,
+a collecting strategy that exploits the weighting of each Pauli operator in the overall sum. Secondly,
+to measure all Pauli operators with a collection simultaneously, a circuit is required to rotate
+them to the computational basis. In our work, we present two efficient circuit constructions that
+suitably rotate any collection of $k$ commuting $n$-qubit Pauli operators using at most $kn-k(k+1)/2$
+and $O(kn/\log k)$ two-qubit gates respectively. Our methods are numerically illustrated in the
+context of the Variational Quantum Eigensolver, where the operators in question are molecular
+Hamiltonians. As measured by our metrics, SORTED INSERTION outperforms four conventional greedy
+colouring algorithms that seek the minimum number of collections. 

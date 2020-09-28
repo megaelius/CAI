@@ -1,0 +1,19 @@
+We investigate the sensitivity of reduced order models (ROMs) to training data resolution as well
+as sampling rate. In particular, we consider proper orthogonal decomposition (POD), coupled with
+Galerkin projection (POD-GP), as an intrusive reduced order modeling technique. For non-intrusive
+ROMs, we consider two frameworks. The first is using dynamic mode decomposition (DMD), and the second
+is based on artificial neural networks (ANNs). For ANN, we utilized a residual deep neural network,
+and for DMD we have studied two versions of DMD approaches; one with hard thresholding and the other
+with sorted bases selection. Also, we highlight the differences between mean-subtracting the
+data (i.e., centering) and using the data without mean-subtraction. We tested these ROMs using
+a system of 2D shallow water equations for four different numerical experiments, adopting combinations
+of sampling rates and resolutions. For these cases, we found that the DMD basis obtained with hard
+threshodling is sensitive to sampling rate, performing worse at very high rates. The sorted DMD
+algorithm helps to mitigate this problem and yields more stabilized and converging solution. Furthermore,
+we demonstrate that both DMD approaches with mean subtraction provide significantly more accurate
+results than DMD with mean-subtracting the data. On the other hand, POD is relatively insensitive
+to sampling rate and yields better representation of the flow field. Meanwhile, resolution has
+little effect on both POD and DMD performances. Therefore, we preferred to train the neural network
+in POD space, since it is more stable and better represents our dataset. Numerical results reveal
+that an artificial neural network on POD subspace (POD-ANN) performs remarkably better than POD-GP
+and DMD in capturing system dynamics, even with a small number of modes. 

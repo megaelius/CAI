@@ -1,0 +1,19 @@
+In the last decades, large datasets of fundus photographs have been collected in diabetic retinopathy
+(DR) screening networks. Through deep learning, these datasets were used to train automatic detectors
+for DR and a few other frequent pathologies, with the goal to automate screening. One challenge limits
+the adoption of such systems so far: automatic detectors ignore rare conditions that ophthalmologists
+currently detect, such as papilledema or anterior ischemic optic neuropathy. The reason is that
+standard deep learning requires too many examples of these conditions. However, this limitation
+can be addressed with few-shot learning, a machine learning paradigm where a classifier has to generalize
+to a new category not seen in training, given only a few examples of this category. This paper presents
+a new few-shot learning framework that extends convolutional neural networks (CNNs), trained
+for frequent conditions, with an unsupervised probabilistic model for rare condition detection.
+It is based on the observation that CNNs often perceive photographs containing the same anomalies
+as similar, even though these CNNs were trained to detect unrelated conditions. This observation
+was based on the t-SNE visualization tool, which we decided to incorporate in our probabilistic
+model. Experiments on a dataset of 164,660 screening examinations from the OPHDIAT screening network
+show that 37 conditions, out of 41, can be detected with an area under the ROC curve (AUC) greater than
+0.8 (average AUC: 0.938). In particular, this framework significantly outperforms other frameworks
+for detecting rare conditions, including multitask learning, transfer learning and Siamese networks,
+another few-shot learning solution. We expect these richer predictions to trigger the adoption
+of automated eye pathology screening, which will revolutionize clinical practice in ophthalmology.

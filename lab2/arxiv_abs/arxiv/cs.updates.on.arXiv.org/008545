@@ -1,0 +1,19 @@
+Multilevel/multigrid methods is one of the most popular approaches for solving a large sparse linear
+system of equations, typically, arising from the discretization of partial differential equations.
+One critical step in the multilevel/multigrid methods is to form coarse matrices through a sequence
+of sparse matrix triple products. A commonly used approach for the triple products explicitly involves
+two steps, and during each step a sparse matrix-matrix multiplication is employed. This approach
+works well for many applications with a good computational efficiency, but it has a high memory overhead
+since some auxiliary matrices need to be temporarily stored for accomplishing the calculations.
+In this work, we propose two new algorithms that construct a coarse matrix with taking one pass through
+the input matrices without involving any auxiliary matrices for saving memory. The new approaches
+are referred to as "all-at-once" and "merged all-at-once", and the traditional method is denoted
+as "two-step". The all-at-once and the merged all-at-once algorithms are implemented based on
+hash tables in PETSc as part of this work with a careful consideration on the performance in terms
+of the compute time and the memory usage. We numerically show that the proposed algorithms and their
+implementations are perfectly scalable in both the compute time and the memory usage with up to 32,768
+processor cores for a model problem with 27 billions of unknowns. The scalability is also demonstrated
+for a realistic neutron transport problem with over 2 billion unknowns on a supercomputer with 10,000
+processor cores. Compared with the traditional two-step method, the all-at-once and the merged
+all-at-once algorithms consume much less memory for both the model problem and the realistic neutron
+transport problem meanwhile they are able to maintain the computational efficiency. 

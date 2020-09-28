@@ -1,0 +1,17 @@
+Learning synaptic weights of spiking neural network (SNN) models that can reproduce target spike
+trains from provided neural firing data is a central problem in computational neuroscience and
+spike-based computing. The discovery of the optimal weight values can be posed as a supervised learning
+task wherein the weights of the model network are chosen to maximize the similarity between the target
+spike trains and the model outputs. It is still largely unknown whether optimizing spike train similarity
+of highly recurrent SNNs produces weight matrices similar to those of the ground truth model. To
+this end, we propose flexible heuristic supervised learning rules, termed Pre-Synaptic Pool Modification
+(PSPM), that rely on stochastic weight updates in order to produce spikes within a short window of
+the desired times and eliminate spikes outside of this window. PSPM improves spike train similarity
+for all-to-all SNNs and makes no assumption about the post-synaptic potential of the neurons or
+the structure of the network since no gradients are required. We test whether optimizing for spike
+train similarity entails the discovery of accurate weights and explore the relative contributions
+of local and homeostatic weight updates. Although PSPM improves similarity between spike trains,
+the learned weights often differ from the weights of the ground truth model, implying that connectome
+inference from spike data may require additional constraints on connectivity statistics. We also
+find that spike train similarity is sensitive to local updates, but other measures of network activity
+such as avalanche distributions, can be learned through synaptic homeostasis. 

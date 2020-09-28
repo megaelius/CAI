@@ -1,0 +1,19 @@
+Outsourcing software middlebox (aka. virtual network function) to third-party service provider,
+like public cloud, has been a recent trend for many well-known benefits. However, redirecting a
+large influx of raw traffic from enterprises to the service providers, who are often outside the
+traditional trust domain, raises severe security concerns. Over the past few years, steady progress
+has been made towards enabling the middlebox functionalities without revealing sensitive traffic.
+Following the direction, in this paper, we present LightBox, the first system that can drive full-stack
+protected stateful middleboxes at native speed. Similar to existing hardware-assisted designs,
+LightBox is built on top of SGX enclave. But, different from all prior systems, LightBox is designed
+to further address two new challenges that, surprisingly, are largely overlooked in the literature.
+First, LightBox enables enterprises to safely forward the packets intended for processing to the
+enclaved middlebox with all metadata, including low-level packet headers, packet size, count
+and timestamps, fully protected. Studies have shown that such metadata can be information-rich
+and potentially exploited by many traffic analysis attacks. Second, LightBox achieves very efficient
+in- enclave stateful middlebox processing within the highly constraint enclave space, without
+incurring unreasonably high overhead. The confidentiality, integrity, and freshness of the flow
+states are always ensured throughout our efficient state management procedures. Evaluations
+show that LightBox, with all the extra security benefits, can still perform packet I/O at 10Gbps
+line rate. Even when tracking 600K flows, LightBox can obtain 3.5X to 30X performance speedup than
+direct adoption of SGX, while incurring negligible packet delay (<1{\mu}s) for most test cases.

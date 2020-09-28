@@ -1,0 +1,20 @@
+With millions of apps that can be downloaded from official or third-party market, Android has become
+one of the most popular mobile platforms today. These apps help people in all kinds of ways and thus
+have access to lots of user's data that in general fall into three categories: sensitive data, data
+to be shared with other apps, and non-sensitive data not to be shared with others. For the first and
+second type of data, Android has provided very good storage models: an app's private sensitive data
+are saved to its private folder that can only be access by the app itself, and the data to be shared are
+saved to public storage (either the external SD card or the emulated SD card area on internal FLASH
+memory). But for the last type, i.e., an app's non-sensitive and non-shared data, there is a big problem
+in Android's current storage model which essentially encourages an app to save its non-sensitive
+data to shared public storage that can be accessed by other apps. At first glance, it seems no problem
+to do so, as those data are non-sensitive after all, but it implicitly assumes that app developers
+could correctly identify all sensitive data and prevent all possible information leakage from
+private-but-non-sensitive data. In this paper, we will demonstrate that this is an invalid assumption
+with a thorough survey on information leaks of those apps that had followed Android's recommended
+storage model for non-sensitive data. Our studies showed that highly sensitive information from
+billions of users can be easily hacked by exploiting the mentioned problematic storage model. Although
+our empirical studies are based on a limited set of apps, the identified problems are never isolated
+or accidental bugs of those apps being investigated. On the contrary, the problem is rooted from
+the vulnerable storage model recommended by Android. To mitigate the threat, we also propose a defense
+framework. 

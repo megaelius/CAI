@@ -1,0 +1,19 @@
+In modern low-power embedded platforms, floating-point (FP) operations emerge as a major contributor
+to the energy consumption of compute-intensive applications with large dynamic range. Experimental
+evidence shows that 50% of the energy consumed by a core and its data memory is related to FP computations.
+The adoption of FP formats requiring a lower number of bits is an interesting opportunity to reduce
+energy consumption, since it allows to simplify the arithmetic circuitry and to reduce the memory
+bandwidth between memory and registers by enabling vectorization. From a theoretical point of
+view, the adoption of multiple FP types perfectly fits with the principle of transprecision computing,
+allowing fine-grained control of approximation while meeting specified constraints on the precision
+of final results. In this paper we propose an extended FP type system with complete hardware support
+to enable transprecision computing on low-power embedded processors, including two standard
+formats (binary32 and binary16) and two new formats (binary8 and binary16alt). First, we introduce
+a software library that enables exploration of FP types by tuning both precision and dynamic range
+of program variables. Then, we present a methodology to integrate our library with an external tool
+for precision tuning, and experimental results that highlight the clear benefits of introducing
+the new formats. Finally, we present the design of a transprecision FP unit capable of handling 8-bit
+and 16-bit operations in addition to standard 32-bit operations. Experimental results on FP-intensive
+benchmarks show that up to 90% of FP operations can be safely scaled down to 8-bit or 16-bit formats.
+Thanks to precision tuning and vectorization, execution time is decreased by 12% and memory accesses
+are reduced by 27% on average, leading to a reduction of energy consumption up to 30%. 

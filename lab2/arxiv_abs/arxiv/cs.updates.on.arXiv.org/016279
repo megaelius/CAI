@@ -1,0 +1,17 @@
+Domain shift is a major problem for deploying deep networks in clinical practice. Network performance
+drops significantly with (target) images obtained differently than its (source) training data.
+Due to a lack of target label data, most work has focused on unsupervised domain adaptation (UDA).
+Current UDA methods need both source and target data to train models which perform image translation
+(harmonization) or learn domain-invariant features. However, training a model for each target
+domain is time consuming and computationally expensive, even infeasible when target domain data
+are scarce or source data are unavailable due to data privacy. In this paper, we propose a novel self
+domain adapted network (SDA-Net) that can rapidly adapt itself to a single test subject at the testing
+stage, without using extra data or training a UDA model. The SDA-Net consists of three parts: adaptors,
+task model, and auto-encoders. The latter two are pre-trained offline on labeled source images.
+The task model performs tasks like synthesis, segmentation, or classification, which may suffer
+from the domain shift problem. At the testing stage, the adaptors are trained to transform the input
+test image and features to reduce the domain shift as measured by the auto-encoders, and thus perform
+domain adaptation. We validated our method on retinal layer segmentation from different OCT scanners
+and T1 to T2 synthesis with T1 from different MRI scanners and with different imaging parameters.
+Results show that our SDA-Net, with a single test subject and a short amount of time for self adaptation
+at the testing stage, can achieve significant improvements. 

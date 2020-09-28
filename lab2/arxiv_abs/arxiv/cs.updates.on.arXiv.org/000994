@@ -1,0 +1,18 @@
+The design and implementation of static analyzers have becoming increasingly systematic. In fact,
+for large classes of analyzers, design and implementation have remained seemingly (and now stubbornly)
+on the verge of full mechanization for several years. A stumbling block in full mechanization has
+been the ad hoc nature of soundness proofs accompanying each analyzer. While design and implementation
+is largely systematic, soundness proofs can change significantly with seemingly minor changes
+to the semantics or analyzers. An achievement of this work is to systematize, parameterize and modularize
+the proofs of soundness, so as to make them composable across analytic properties. We solve the problem
+of systematically constructing static analyzers by introducing Galois transformers: monad transformers
+that transports Galois connection properties. In concert with a monadic interpreter, we define
+a library of monad transformers that implement building blocks for classic analysis parameters
+like context-, path-, and heap- (in-)sensitivity. Moreover, these can be composed together independent
+of the language being analyzed. Significantly, a Galois transformer can be proved sound once and
+for all, making it a reusable analysis component. As new analysis features and abstractions are
+developed and mixed in, soundness proofs need not be reconstructed, as the composition of a monad
+transformer stack is sound by virtue of its constituents. Galois transformers provide a viable
+foundation for reusable and composable metatheory for program analysis. Finally, these Galois
+transformers shift the level of abstraction in analysis design and implementation to a level where
+non-specialists have the ability to synthesize sound analyzers over a number of parameters. 

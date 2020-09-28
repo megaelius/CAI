@@ -1,0 +1,19 @@
+Content Delivery Networks (CDNs) deliver a majority of the user-requested content on the Internet,
+including web pages, videos, and software downloads. A CDN server caches and serves the content
+requested by users. Designing caching algorithms that automatically adapt to the heterogeneity,
+burstiness, and non-stationary nature of real-world content requests is a major challenge and
+is the focus of our work. While there is much work on caching algorithms for stationary request traffic,
+the work on non-stationary request traffic is very limited. Consequently, most prior models are
+inaccurate for production CDN traffic that is non-stationary. We propose two TTL-based caching
+algorithms and provide provable guarantees for content request traffic that is bursty and non-stationary.
+The first algorithm called d-TTL dynamically adapts a TTL parameter using a stochastic approximation
+approach. Given a feasible target hit rate, we show that the hit rate of d-TTL converges to its target
+value for a general class of bursty traffic that allows Markov dependence over time and non-stationary
+arrivals. The second algorithm called f-TTL uses two caches, each with its own TTL. The first-level
+cache adaptively filters out non-stationary traffic, while the second-level cache stores frequently-accessed
+stationary traffic. Given feasible targets for both the hit rate and the expected cache size, f-TTL
+asymptotically achieves both targets. We implement d-TTL and f-TTL and evaluate both algorithms
+using an extensive nine-day trace consisting of 500 million requests from a production CDN server.
+We show that both d-TTL and f-TTL converge to their hit rate targets with an error of about 1.3%. But,
+f-TTL requires a significantly smaller cache size than d-TTL to achieve the same hit rate, since
+it effectively filters out the non-stationary traffic for rarely-accessed objects. 

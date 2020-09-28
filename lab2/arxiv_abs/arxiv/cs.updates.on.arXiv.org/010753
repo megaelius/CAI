@@ -1,0 +1,18 @@
+Many algorithms feature an iterative loop that converges to the result of interest. The numerical
+operations in such algorithms are generally implemented using finite-precision arithmetic,
+either fixed- or floating-point, most of which operate least-significant digit first. This results
+in a fundamental problem: if, after some time, the result has not converged, is this because we have
+not run the algorithm for enough iterations or because the arithmetic in some iterations was insufficiently
+precise? There is no easy way to answer this question, so users will often over-budget precision
+in the hope that the answer will always be to run for a few more iterations. We propose a fundamentally
+new approach: with the appropriate arithmetic able to generate results from most-significant
+digit first, we show that fixed compute-area hardware can be used to calculate an arbitrary number
+of algorithmic iterations to arbitrary precision, with both precision and approximant index increasing
+in lockstep. Consequently, datapaths constructed following our principles demonstrate efficiency
+over their traditional arithmetic equivalents where the latter's precisions are either under-
+or over-budgeted for the computation of a result to a particular accuracy. Use of most-significant
+digit-first arithmetic additionally allows us to declare certain digits to be stable at runtime,
+avoiding their recalculation in subsequent iterations and thereby increasing performance and
+decreasing memory footprints. Versus arbitrary-precision iterative solvers without the optimisations
+we detail herein, we achieve up-to 16$\times$ performance speedups and 1.9x memory savings for
+the evaluated benchmarks. 

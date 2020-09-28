@@ -1,0 +1,20 @@
+Surgical tool presence detection and surgical phase recognition are two fundamental yet challenging
+tasks in surgical video analysis and also very essential components in various applications in
+modern operating rooms. While these two analysis tasks are highly correlated in clinical practice
+as the surgical process is well-defined, most previous methods tackled them separately, without
+making full use of their relatedness. In this paper, we present a novel method by developing a multi-task
+recurrent convolutional network with correlation loss (MTRCNet-CL) to exploit their relatedness
+to simultaneously boost the performance of both tasks. Specifically, our proposed MTRCNet-CL
+model has an end-to-end architecture with two branches, which share earlier feature encoders to
+extract general visual features while holding respective higher layers targeting for specific
+tasks. Given that temporal information is crucial for phase recognition, long-short term memory
+(LSTM) is explored to model the sequential dependencies in the phase recognition branch. More importantly,
+a novel and effective correlation loss is designed to model the relatedness between tool presence
+and phase identification of each video frame, by minimizing the divergence of predictions from
+the two branches. Mutually leveraging both low-level feature sharing and high-level prediction
+correlating, our MTRCNet-CL method can encourage the interactions between the two tasks to a large
+extent, and hence can bring about benefits to each other. Extensive experiments on a large surgical
+video dataset (Cholec80) demonstrate outstanding performance of our proposed method, consistently
+exceeding the state-of-the-art methods by a large margin (e.g., 89.1% v.s. 81.0% for the mAP in tool
+presence detection and 87.4% v.s. 84.5% for F1 score in phase recognition). The code can be found
+on our project website. 

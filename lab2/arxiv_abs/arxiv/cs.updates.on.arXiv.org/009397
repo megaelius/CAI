@@ -1,0 +1,19 @@
+We consider the minimization of edge-crossings in geometric drawings of graphs $G=(V, E)$, i.e.,
+in drawings where each edge is depicted as a line segment. The respective decision problem is NP-hard
+[Bienstock, '91]. In contrast to theory and the topological setting, the geometric setting did
+not receive a lot of attention in practice. Prior work [Radermacher et al., ALENEX'18] is limited
+to the crossing-minimization in geometric graphs with less than $200$ edges. The described heuristics
+base on the primitive operation of moving a single vertex $v$ to its crossing-minimal position,
+i.e., the position in $\mathbb{R}^2$ that minimizes the number of crossings on edges incident to
+$v$. In this paper, we introduce a technique to speed-up the computation by a factor of $20$. This
+is necessary but not sufficient to cope with graphs with a few thousand edges. In order to handle larger
+graphs, we drop the condition that each vertex $v$ has to be moved to its crossing-minimal position
+and compute a position that is only optimal with respect to a small random subset of the edges. In our
+theoretical contribution, we consider drawings that contain for each edge $uv \in E$ and each position
+$p \in \mathbb{R}^2$ for $v$ $o(|E|)$ crossings. In this case, we prove that with a random subset
+of the edges of size $\Theta(k \log k)$ the co-crossing number of a degree-$k$ vertex $v$, i.e., the
+number of edge pairs $uv \in E, e \in E$ that do not cross, can be approximated by an arbitrary but fixed
+factor $\delta$ with high probability. In our experimental evaluation, we show that the randomized
+approach reduces the number of crossings in graphs with up to $13\,000$ edges considerably. The
+evaluation suggests that depending on the degree-distribution different strategies result in
+the fewest number of crossings. 

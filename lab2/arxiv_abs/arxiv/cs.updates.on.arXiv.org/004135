@@ -1,0 +1,18 @@
+Off-policy reinforcement learning enables near-optimal policy from suboptimal experience,
+thereby provisions opportunity for artificial intelligence applications in healthcare. Previous
+works have mainly framed patient-clinician interactions as Markov decision processes, while
+true physiological states are not necessarily fully observable from clinical data. We capture
+this situation with partially observable Markov decision process, in which an agent optimises
+its actions in a belief represented as a distribution of patient states inferred from individual
+history trajectories. A Gaussian mixture model is fitted for the observed data. Moreover, we take
+into account the fact that nuance in pharmaceutical dosage could presumably result in significantly
+different effect by modelling a continuous policy through a Gaussian approximator directly in
+the policy space, i.e. the actor. To address the challenge of infinite number of possible belief
+states which renders exact value iteration intractable, we evaluate and plan for only every encountered
+belief, through heuristic search tree by tightly maintaining lower and upper bounds of the true
+value of belief. We further resort to function approximations to update value bounds estimation,
+i.e. the critic, so that the tree search can be improved through more compact bounds at the fringe
+nodes that will be back-propagated to the root. Both actor and critic parameters are learned via
+gradient-based approaches. Our proposed policy trained from real intensive care unit data is capable
+of dictating dosing on vasopressors and intravenous fluids for sepsis patients that lead to the
+best patient outcomes. 

@@ -1,0 +1,21 @@
+A Boolean logic driven Markov process (BDMP) is a dependability analysis model that defines a continuous-time
+Markov chain (CTMC). This formalism has high expressive power, yet it remains readable because
+its graphical representation stays close to standard fault trees. The size of a BDMP is roughly speaking
+proportional to the size of the system it models, whereas the size of the CTMC specified by this BDMP
+suffers from exponential growth. Thus quantifying large BDMPs can be a challenging task. The most
+general method to quantify them is Monte Carlo simulation, but this may be intractable for highly
+reliable systems. On the other hand, some subcategories of BDMPs can be processed with much more
+efficient methods. For example, BDMPs without repairs can be translated into dynamic fault trees,
+a formalism accepted as an input of the STORM model checker, that performs numerical calculations
+on sparse matrices, or they can be processed with the tool FIGSEQ that explores paths going to a failure
+state and calculates their probabilities. BDMPs with repairs can be quantified by FIGSEQ (BDMPs
+capturing quickly and completely repairable behaviors are solved by a different algorithm), and
+by the I&AB (Initiator and All Barriers) method, recently published and implemented in a prototype
+version of RISKSPECTRUM PSA. This tool, based exclusively on Boolean representations looks for
+and quantifies minimal cut sets of the system, i.e., minimal combinations of component failures
+that induce the loss of the system. This allows a quick quantification of large models with repairable
+components, standby redundancies and some other types of dependencies between omponents. All
+these quantification methods have been tried on a benchmark whose definition was published at the
+MARS 2017 workshop: the model of emergency power supplies of a nuclear power plant. In this paper,
+after a recall of the theoretical principles of the various quantification methods, we compare
+their performances on that benchmark. 

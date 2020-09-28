@@ -1,0 +1,18 @@
+With the growth of computer vision based applications and services, an explosive amount of images
+have been uploaded to cloud servers which host such computer vision algorithms, usually in the form
+of deep learning models. JPEG has been used as the {\em de facto} compression and encapsulation method
+before one uploads the images, due to its wide adaptation. However, standard JPEG configuration
+does not always perform well for compressing images that are to be processed by a deep learning model,
+e.g., the standard quality level of JPEG leads to 50\% of size overhead (compared with the best quality
+level selection) on ImageNet under the same inference accuracy in popular computer vision models
+including InceptionNet, ResNet, etc. Knowing this, designing a better JPEG configuration for
+online computer vision services is still extremely challenging: 1) Cloud-based computer vision
+models are usually a black box to end-users; thus it is difficult to design JPEG configuration without
+knowing their model structures. 2) JPEG configuration has to change when different users use it.
+In this paper, we propose a reinforcement learning based JPEG configuration framework. In particular,
+we design an agent that adaptively chooses the compression level according to the input image's
+features and backend deep learning models. Then we train the agent in a reinforcement learning way
+to adapt it for different deep learning cloud services that act as the {\em interactive training
+environment} and feeding a reward with comprehensive consideration of accuracy and data size.
+In our real-world evaluation on Amazon Rekognition, Face++ and Baidu Vision, our approach can reduce
+the size of images by 1/2 -- 1/3 while the overall classification accuracy only decreases slightly.

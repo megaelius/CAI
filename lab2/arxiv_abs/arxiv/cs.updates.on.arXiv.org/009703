@@ -1,0 +1,20 @@
+Deterministic finite automata are one of the simplest and most practical models of computation
+studied in automata theory. Their conceptual extension is the non-deterministic finite automata
+which also have plenty of applications. In this article, we study these models through the lens of
+succinct data structures where our ultimate goal is to encode these mathematical objects using
+information-theoretically optimal number of bits along with supporting queries on them efficiently.
+Towards this goal, we first design a succinct data structure for representing any deterministic
+finite automaton $\mathcal{D}$ having $n$ states over a $\sigma$-letter alphabet $\Sigma$ using
+$(\sigma-1) n\log n + O(n \log \sigma)$ bits of space, which can determine, given an input string
+$x$ over $\Sigma$, whether $\mathcal{D}$ accepts $x$ in $O(|x| \log \sigma)$ time, using constant
+words of working space. When the input deterministic finite automaton is acyclic, not only we can
+improve the above space-bound significantly to $(\sigma -1) (n-1)\log n+ 3n + O(\log^2 \sigma)
++ o(n)$ bits, we also obtain optimal query time for string acceptance checking. More specifically,
+using our succinct representation, we can check if a given input string $x$ can be accepted by the
+acyclic deterministic finite automaton using time proportional to the length of $x$, hence, the
+optimal query time. We also exhibit a succinct data structure for representing a non-deterministic
+finite automaton $\mathcal{N}$ having $n$ states over a $\sigma$-letter alphabet $\Sigma$ using
+$\sigma n^2+n$ bits of space, such that given an input string $x$, we can decide whether $\mathcal{N}$
+accepts $x$ efficiently in $O(n^2|x|)$ time. Finally, we also provide time and space-efficient
+algorithms for performing several standard operations such as union, intersection, and complement
+on the languages accepted by deterministic finite automata. 

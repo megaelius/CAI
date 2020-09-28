@@ -1,0 +1,20 @@
+This work characterizes the benefits of averaging schemes widely used in conjunction with stochastic
+gradient descent (SGD). In particular, this work provides a sharp analysis of: (1) mini-batching,
+a method of averaging many samples of a stochastic gradient to both reduce the variance of the stochastic
+gradient estimate and for parallelizing SGD and (2) tail-averaging, a method involving averaging
+the final few iterates of SGD to decrease the variance in SGD's final iterate. This work presents
+non-asymptotic excess risk bounds for these schemes for the stochastic approximation problem
+of least squares regression. Furthermore, this work establishes a precise problem-dependent
+extent to which mini-batch SGD yields provable near-linear parallelization speedups over SGD
+with batch size one. This allows for understanding learning rate versus batch size tradeoffs for
+the final iterate of an SGD method. These results are then utilized in providing a highly parallelizable
+SGD method that obtains the minimax risk with nearly the same number of serial updates as batch gradient
+descent, improving significantly over existing SGD methods. A non-asymptotic analysis of communication
+efficient parallelization schemes such as model-averaging/parameter mixing methods is then
+provided. Finally, this work sheds light on some fundamental differences in SGD's behavior when
+dealing with agnostic noise in the (non-realizable) least squares regression problem. In particular,
+the work shows that the stepsizes that ensure minimax risk for the agnostic case must be a function
+of the noise properties. This paper builds on the operator view of analyzing SGD methods, introduced
+by Defossez and Bach (2015), followed by developing a novel analysis in bounding these operators
+to characterize the excess risk. These techniques are of broader interest in analyzing computational
+aspects of stochastic approximation. 

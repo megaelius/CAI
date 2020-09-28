@@ -1,0 +1,19 @@
+Many mature Open-Source Software (OSS), as well as commercial, organizations have adopted peer
+code review as an integral part of the development process to ensure the quality of the product. Of
+particular interest are code changes that end up "abandoned," either because they are rejected,
+or (more commonly) because they are never accepted at all (at least not through the review tool).
+Several factors such as resource allocation, job environment, and efficiency mismatch between
+the author and the reviewer may cause a code change to be abandoned even after months of efforts from
+the developers and the reviewers. Predicting the review outcome of such code changes can ease the
+prioritization of tasks and the utilization of limited resources by saving time spent on low-quality
+code changes. In this paper, we conducted a comprehensive study to predict whether a code change
+is merged or abandoned and applied various well-known supervised machine learning algorithms.
+We propose PredCR, a Random Forest based model that predicts the review outcome of a code change with
+0.91 f-measure at the beginning of the code change on the test set. Also, it improves predictions
+of abandoned changes by 27\%-103\% and merged changes by 5\%-11\%. Our model accurately classifies
+93\% of the top 25\% code changes (with average 196 days duration) that go longest without being merged.
+PredCR can also adapt to the changes in feature values at different stages of the review process although
+it achieves very high performance at the very early stage (within 10\% of the review process). This
+way, prediction quality for a particular code change can improve as the code review progresses.
+We also conducted a study to find out the properties of an ideal training set for our tool. We found
+that training with the instances from the same projects ensures 9\%-25\% performance increase.

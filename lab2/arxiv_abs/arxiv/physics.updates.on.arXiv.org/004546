@@ -1,0 +1,18 @@
+The lack of low frequency information and a good initial model can seriously affect the success of
+full waveform inversion (FWI), due to the inherent cycle skipping problem. Computational low frequency
+extrapolation is in principle the most direct way to address this issue. By considering bandwidth
+extension as a regression problem in machine learning, we propose an architecture of convolutional
+neural network (CNN) to automatically extrapolate the missing low frequencies without preprocessing
+and post-processing steps. The bandlimited recordings are the inputs of the CNN and, in our numerical
+experiments, a neural network trained from enough samples can predict a reasonable approximation
+to the seismograms in the unobserved low frequency band, both in phase and in amplitude. The numerical
+experiments considered are set up on simulated P-wave data. In extrapolated FWI (EFWI), the low-wavenumber
+components of the model are determined from the extrapolated low frequencies, before proceeding
+with a frequency sweep of the bandlimited data. The proposed deep-learning method of low-frequency
+extrapolation shows adequate generalizability for the initialization step of EFWI. Numerical
+examples show that the neural network trained on several submodels of the Marmousi model is able
+to predict the low frequencies for the BP 2004 benchmark model. Additionally, the neural network
+can robustly process seismic data with uncertainties due to the existence of noise, poorly-known
+source wavelet, and different finite-difference scheme in the forward modeling operator. Finally,
+this approach is not subject to the structural limitations of other methods for bandwidth extension,
+and seems to offer a tantalizing solution to the problem of properly initializing FWI. 

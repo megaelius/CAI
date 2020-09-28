@@ -1,0 +1,17 @@
+Whole brain segmentation on a structural magnetic resonance imaging (MRI) is essential in non-invasive
+investigation for neuroanatomy. Historically, multi-atlas segmentation (MAS) has been regarded
+as the de facto standard method for whole brain segmentation. Recently, deep neural network approaches
+have been applied to whole brain segmentation by learning random patches or 2D slices. Yet, few previous
+efforts have been made on detailed whole brain segmentation using 3D networks due to the following
+challenges: (1) fitting entire whole brain volume into 3D networks is restricted by the current
+GPU memory, and (2) the large number of targeting labels (e.g., > 100 labels) with limited number
+of training 3D volumes (e.g., < 50 scans). In this paper, we propose the spatially localized atlas
+network tiles (SLANT) method to distribute multiple independent 3D fully convolutional networks
+to cover overlapped sub-spaces in a standard atlas space. This strategy simplifies the whole brain
+learning task to localized sub-tasks, which was enabled by combing canonical registration and
+label fusion techniques with deep learning. To address the second challenge, auxiliary labels
+on 5111 initially unlabeled scans were created by MAS for pre-training. From empirical validation,
+the state-of-the-art MAS method achieved mean Dice value of 0.76, 0.71, and 0.68, while the proposed
+method achieved 0.78, 0.73, and 0.71 on three validation cohorts. Moreover, the computational
+time reduced from > 30 hours using MAS to ~15 minutes using the proposed method. The source code is
+available online https://github.com/MASILab/SLANT_train_seg 

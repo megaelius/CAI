@@ -1,0 +1,19 @@
+Deep neural networks have proved very successful on archetypal tasks for which large training sets
+are available, but when the training data are scarce, their performance suffers from overfitting.
+Many existing methods of reducing overfitting are data-independent, and their efficacy is often
+limited when the training set is very small. Data-dependent regularizations are mostly motivated
+by the observation that data of interest lie close to a manifold, which is typically hard to parametrize
+explicitly and often requires human input of tangent vectors. These methods typically only focus
+on the geometry of the input data, and do not necessarily encourage the networks to produce geometrically
+meaningful features. To resolve this, we propose a new framework, the Low-Dimensional-Manifold-regularized
+neural Network (LDMNet), which incorporates a feature regularization method that focuses on the
+geometry of both the input data and the output features. In LDMNet, we regularize the network by encouraging
+the combination of the input data and the output features to sample a collection of low dimensional
+manifolds, which are searched efficiently without explicit parametrization. To achieve this,
+we directly use the manifold dimension as a regularization term in a variational functional. The
+resulting Euler-Lagrange equation is a Laplace-Beltrami equation over a point cloud, which is
+solved by the point integral method without increasing the computational complexity. We demonstrate
+two benefits of LDMNet in the experiments. First, we show that LDMNet significantly outperforms
+widely-used network regularizers such as weight decay and DropOut. Second, we show that LDMNet
+can be designed to extract common features of an object imaged via different modalities, which proves
+to be very useful in real-world applications such as cross-spectral face recognition. 

@@ -1,0 +1,18 @@
+To efficiently run DNNs on the edge/cloud, many new DNN inference accelerators are being designed
+and deployed frequently. To enhance the resource efficiency of DNNs, model quantization is a widely-used
+approach. However, different accelerator/HW has different resources leading to the need for specialized
+quantization strategy of each HW. Moreover, using the same quantization for every layer may be sub-optimal,
+increasing the designspace of possible quantization choices. This makes manual-tuning infeasible.
+Recent work in automatically determining quantization for each layer is driven by optimization
+methods such as reinforcement learning. However, these approaches need re-training the RL for
+every new HW platform. We propose a new way for autonomous quantization and HW-aware tuning. We propose
+a generative model, AQGAN, which takes a target accuracy as the condition and generates a suite of
+quantization configurations. With the conditional generative model, the user can autonomously
+generate different configurations with different targets in inference time. Moreover, we propose
+a simplified HW-tuning flow, which uses the generative model to generate proposals and execute
+simple selection based on the HW resource budget, whose process is fast and interactive. We evaluate
+our model on five of the widely-used efficient models on the ImageNet dataset. We compare with existing
+uniform quantization and state-of-the-art autonomous quantization methods. Our generative
+model shows competitive achieved accuracy, however, with around two degrees less search cost for
+each design point. Our generative model shows the generated quantization configuration can lead
+to less than 3.5% error across all experiments. 

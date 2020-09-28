@@ -1,0 +1,17 @@
+A "genome structure" is a labeled directed graph with vertices of degree 1 or 2. A set of operations
+over such graphs is fixed, and each of the operations has a certain cost, a strictly positive number.
+The transformation problem consists in the following: for given structures a and b and given costs,
+find a minimum total cost sequence of operations transforming a into b ("the shortest transformation
+of a into b"). Each operation corresponds to an "event", the latter being a change in the graph caused
+by executing one of the operations over it. The possibility of assigning different costs is important
+in applications, since it allows to distinguish between frequent and rare events. Apparently,
+arbitrary costs make the problem NP-hard, which results in nontriviality of passing from one restriction
+on costs to another, if the problem is solved by a linear or at least polynomial algorithm (assuming
+that P is not equal NP). We propose a novel linear time and space algorithm which constructs a sequence
+of operations transforming a to b with total cost close or equal to the absolute minimum. Namely,
+if all the so-called DCJ operations have the same cost w and if deletions and insertions have costs
+either both larger or both less than w, then the algorithm outputs a transformation of a into b with
+the total cost differing from the absolute minimum by at most 2w (in the former case) or equal to it
+(in the latter case). In some cases, the algorithm outputs an exact solution, e.g., in the case of
+circular genome structures. The condition on the costs of deletions and insertions can be omitted
+(although the proof described below does not include this general case). 

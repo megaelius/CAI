@@ -1,0 +1,18 @@
+A Kinetic Inviscid Flux (KIF) is proposed for simulating incompressible and compressible flows.
+It is constructed based on the direct modeling of multi-scale flow behaviors, which is used in the
+Gas-Kinetic Scheme (GKS), the Unified Gas-Kinetic Scheme (UGKS), the Discrete Unified Gas-Kinetic
+Scheme (DUGKS), etc.. In KIF, the discontinuities (such as the shock wave) that can not be well resolved
+by mesh cells are mainly solved by the Kinetic Flux Vector Splitting (KFVS) method representing
+the free transport mechanism (or micro-scale mechanism), while in other flow regions that are smooth,
+the flow behavior is solved mainly by the central-scheme-like Totally Thermalized Transport (TTT).
+The weights of KFVS and TTT in KIF is automatically determined by those in the theory of direct modeling.
+Two ways of choosing the weights in KIF are proposed, which are actually the weights adopted in the
+UGKS and the DUGKS, respectively. By using the test cases of Sod shock tube, rarefaction wave, the
+boundary layer of flat plate, the cavity flow and hypersonic flow over circular cylinder, the validity
+and accuracy of the present method are examined. The KIF does not suffer from the carbuncle phenomenon,
+and does not introduce extra numerical viscosity in smooth regions. Especially, in the case of hypersonic
+cylinder, it gives a quite sharp and clear density and temperature contours. The KIF can be viewed
+as an inviscid-viscous splitting version of the GKS. By the doing this splitting, it is easy to be
+used in the traditional CFD frameworks. It can also be classified as a new type in the numerical schemes
+based on the kinetic theory that are represented by the works in Ref. \cite{SunA} and Ref. \cite{ohwada2018a},
+except the weights are determined by the weights of direct modeling. 

@@ -1,0 +1,19 @@
+Random forests have become an important tool for improving accuracy in regression problems since
+their popularization by [Breiman, 2001] and others. In this paper, we revisit a random forest model
+originally proposed by [Breiman, 2004] and later studied by [Biau, 2012], where a feature is selected
+at random and the split occurs at the midpoint of the box containing the chosen feature. If the Lipschitz
+regression function is sparse and only depends on a small, unknown subset of $S$ out of $d$ features,
+we show that given $n$ observations, this random forest model outputs a predictor that has a mean-squared
+prediction error $O((n(\sqrt{\log n})^{S-1})^{-\frac{1}{S\log2+1}})$. When $S \leq \lfloor
+0.72 d \rfloor$, this rate is significantly better than the minimax optimal rate $\Theta(n^{-\frac{2}{d+2}})$
+for Lipschitz function classes in $ d $ dimensions. The second part of this article shows that the
+prediction error for this random forest model cannot generally be improved. As a striking consequence
+of our analysis, we show that if $\ell_{avg}$ (resp. $\ell_{max}$) is the average (resp. maximum)
+number of observations per leaf node, then the variance of this forest is $\Theta(\ell^{-1}_{avg}(\sqrt{\log
+n})^{-(S-1)})$. When $S = d$, this variance is similar in form to the best-case variance lower bound
+$\Omega(\ell^{-1}_{max}(\log n)^{-(d-1)})$ of [Lin and Jeon, 2006] for any random forest model
+with a nonadaptive splitting scheme (i.e., where the split protocol is independent of the data).
+We also show that the bias is tight for any linear model with nonzero parameter vector. Finally, a
+side consequence of our analysis is that if the regression function is square-integrable (e.g.,
+it need not be continuous or bounded), then the random forest predictor is pointwise consistent
+almost everywhere. 

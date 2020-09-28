@@ -1,0 +1,20 @@
+Convergence with respect to imaginary-time discretization is an essential part of any path-integral-based
+calculation. However, an unfortunate property of existing non-preconditioned numerical integration
+schemes for path-integral molecular dynamics (PIMD) - including ring-polymer molecular dynamics
+(RPMD) and thermostatted RPMD (T-RPMD) - is that for a given MD timestep, the overlap between the
+exact ring-polymer Boltzmann-Gibbs distribution and that sampled using MD becomes zero in the
+infinite-bead limit. This has clear implications for hybrid Metropolis Monte-Carlo/MD sampling
+schemes. We show that these problems can be avoided through the introduction of "dimension-free"
+numerical integration schemes for which the sampled ring-polymer position distribution has non-zero
+overlap with the exact distribution in the infinite-bead limit for the case of a harmonic potential.
+We show that dimension freedom can be achieved via mollification of the forces from the physical
+potential and with the BCOCB integration scheme. The dimension-free numerical integration schemes
+yield finite error bounds for a given MD timestep as the number of beads is taken to infinity; these
+conclusions are proven for harmonic potential and borne out numerically for anharmonic systems,
+including water. The numerical results for BCOCB are particularly striking, allowing for three-fold
+increases in the stable timestep for liquid water with respect to the Bussi-Parrinello (OBABO)
+and Leimkuhler (BAOAB) integrators while introducing negligible errors in the statistical properties
+and absorption spectrum. Importantly, the dimension-free, non-preconditioned integration
+schemes introduced here preserve ergodicity and global second-order accuracy, and they remain
+simple, black-box methods that avoid additional computational costs, tunable parameters, or
+system-specific implementations. 

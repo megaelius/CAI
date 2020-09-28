@@ -1,0 +1,18 @@
+Spatio-temporal contexts are crucial in understanding human actions in videos. Recent state-of-the-art
+Convolutional Neural Network (ConvNet) based action recognition systems frequently involve
+3D spatio-temporal ConvNet filters, chunking videos into fixed length clips and Long Short Term
+Memory (LSTM) networks. Such architectures are designed to take advantage of both short term and
+long term temporal contexts, but also requires the accumulation of a predefined number of video
+frames (e.g., to construct video clips for 3D ConvNet filters, to generate enough inputs for LSTMs).
+For applications that require low-latency online predictions of fast-changing action scenes,
+a new action recognition system is proposed in this paper. Termed "Weighted Multi-Region Convolutional
+Neural Network" (WMR ConvNet), the proposed system is LSTM-free, and is based on 2D ConvNet that
+does not require the accumulation of video frames for 3D ConvNet filtering. Unlike early 2D ConvNets
+that are based purely on RGB frames and optical flow frames, the WMR ConvNet is designed to simultaneously
+capture multiple spatial and short term temporal cues (e.g., human poses, occurrences of objects
+in the background) with both the primary region (foreground) and secondary regions (mostly background).
+On both the UCF101 and HMDB51 datasets, the proposed WMR ConvNet achieves the state-of-the-art
+performance among competing low-latency algorithms. Furthermore, WMR ConvNet even outperforms
+the 3D ConvNet based C3D algorithm that requires video frame accumulation. In an ablation study
+with the optical flow ConvNet stream removed, the ablated WMR ConvNet nevertheless outperforms
+competing algorithms. 

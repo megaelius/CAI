@@ -1,0 +1,18 @@
+State-of-the-art algorithms for industrial instances of MaxSAT problem rely on iterative calls
+to a SAT solver. Preprocessing is crucial for the acceleration of SAT solving, and the key preprocessing
+techniques rely on the application of resolution and subsumption elimination. Additionally,
+satisfiability-preserving clause elimination procedures are often used. Since MaxSAT computation
+typically involves a large number of SAT calls, we are interested in whether an input instance to
+a MaxSAT problem can be preprocessed up-front, i.e. prior to running the MaxSAT solver, rather than
+(or, in addition to) during each iterative SAT solver call. The key requirement in this setting is
+that the preprocessing has to be sound, i.e. so that the solution can be reconstructed correctly
+and efficiently after the execution of a MaxSAT algorithm on the preprocessed instance. While,
+as we demonstrate in this paper, certain clause elimination procedures are sound for MaxSAT, it
+is well-known that this is not the case for resolution and subsumption elimination. In this paper
+we show how to adapt these preprocessing techniques to MaxSAT. To achieve this we recast the MaxSAT
+problem in a recently introduced labelled-CNF framework, and show that within the framework the
+preprocessing techniques can be applied soundly. Furthermore, we show that MaxSAT algorithms
+restated in the framework have a natural implementation on top of an incremental SAT solver. We evaluate
+the prototype implementation of a MaxSAT algorithm WMSU1 in this setting, demonstrate the effectiveness
+of preprocessing, and show overall improvement with respect to non-incremental versions of the
+algorithm on some classes of problems. 

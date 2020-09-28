@@ -1,0 +1,18 @@
+To accelerate software development, developers frequently search and reuse existing code snippets
+from a large-scale codebase, e.g., GitHub. Over the years, researchers proposed many information
+retrieval (IR) based models for code search, which match keywords in query with code text. But they
+fail to connect the semantic gap between query and code. To conquer this challenge, Gu et al. proposed
+a deep-learning-based model named DeepCS. It jointly embeds method code and natural language description
+into a shared vector space, where methods related to a natural language query are retrieved according
+to their vector similarities. However, DeepCS' working process is complicated and time-consuming.
+To overcome this issue, we proposed a simplified model CodeMatcher that leverages the IR technique
+but maintains many features in DeepCS. Generally, CodeMatcher combines query keywords with the
+original order, performs a fuzzy search on name and body strings of methods, and returned the best-matched
+methods with the longer sequence of used keywords. We verified its effectiveness on a large-scale
+codebase with about 41k repositories. Experimental results showed the simplified model CodeMatcher
+outperforms DeepCS by 97% in terms of MRR (a widely used accuracy measure for code search), and it
+is over 66 times faster than DeepCS. Besides, comparing with the state-of-the-art IR-based model
+CodeHow, CodeMatcher also improves the MRR by 73%. We also observed that: fusing the advantages
+of IR-based and deep-learning-based models is promising because they compensate with each other
+by nature; improving the quality of method naming helps code search, since method name plays an important
+role in connecting query and code. 

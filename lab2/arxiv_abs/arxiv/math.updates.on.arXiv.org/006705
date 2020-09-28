@@ -1,0 +1,18 @@
+We introduce a procedure for predictive conditional density estimation under logarithmic loss,
+which we call SMP (Sample Minmax Predictor). This estimator minimizes a new general excess risk
+bound for supervised statistical learning. On standard examples, this bound scales as $d/n$ with
+$d$ the model dimension and $n$ the sample size, and critically remains valid under model misspecification.
+Being an improper (out-of-model) procedure, SMP improves over within-model estimators such as
+the maximum likelihood estimator, whose excess risk degrades under misspecification. Compared
+to approaches reducing to the sequential problem, our bounds remove suboptimal $\log n$ factors,
+addressing an open problem from Gr\"unwald and Kotlowski for the considered models, and can handle
+unbounded classes. For the Gaussian linear model, the predictions and risk bound of SMP are governed
+by leverage scores of covariates, nearly matching the optimal risk in the well-specified case without
+conditions on the noise variance or approximation error of the linear model. For logistic regression,
+SMP provides a non-Bayesian approach to calibration of probabilistic predictions relying on virtual
+samples, and can be computed by solving two logistic regressions. It achieves a non-asymptotic
+excess risk of $O ( (d + B^2R^2)/n )$, where $R$ bounds the norm of features and $B$ that of the comparison
+parameter; by contrast, no within-model estimator can achieve better rate than $\min( {B R}/{\sqrt{n}},
+{d e^{BR}}/{n} )$ in general. This provides a computationally more efficient alternative to Bayesian
+approaches, which require approximate posterior sampling, thereby partly answering a question
+by Foster et al. (2018). 

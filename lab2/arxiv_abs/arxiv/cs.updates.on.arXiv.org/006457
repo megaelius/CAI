@@ -1,0 +1,19 @@
+Recently, an unconditional exponential separation between the hazard-free complexity and (standard)
+circuit complexity of explicit functions has been shown~\cite{ikenmeyer18complexity}. This
+raises the question: which classes of functions permit efficient hazard-free circuits? Our main
+result is as follows. A \emph{transducer} is a finite state machine that transcribes, symbol by
+symbol, an input string of length $n$ into an output string of length $n$. We prove that any function
+arising from a transducer with $s$ states receiving input symbols encoded by $\ell$ bits has a hazard-free
+circuit of size $2^{O(s+\ell)}\cdot n$ and depth $O(\ell+ s\cdot \log n)$; in particular, if $s,
+\ell\in O(1)$, size and depth are asymptotically optimal. We utilize our main result to derive efficient
+circuits for \emph{$k$-recoverable addition}. Informally speaking, a code is \emph{$k$-recoverable}
+if it does not increase uncertainty regarding the encoded value, so long as it is guaranteed that
+it is from $\{x,x+1,\ldots,x+k\}$ for some $x\in \mathbb{N}_0$. We provide an asymptotically
+optimal $k$-recoverable code. We also realize a transducer with $O(k)$ states that adds two codewords
+from this $k$-recoverable code. Combined with our main result, we obtain a hazard-free adder circuit
+of size $2^{O(k)}n$ and depth $O(k\log n)$ with respect to this code, i.e., a $k$-recoverable adder
+circuit that adds two codewords of $n$ bits each. In other words, $k$-recoverable addition is fixed-parameter
+tractable with respect to $k$. We then reduce the maximum size of the state machines involved to $O(1)$,
+resulting in a circuit for $k$-recoverable addition of size $O(n+k\log k)$ and depth $O(\log n)$.
+Thus, if the uncertainties of each of the addends span intervals of length $O(n/\log n)$, there is
+an \emph{asymptotically optimal} adder that attains the best possible output uncertainty. 

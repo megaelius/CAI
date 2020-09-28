@@ -1,0 +1,17 @@
+We consider the setup of stochastic multi-armed bandits in the case when reward distributions are
+piecewise i.i.d. and bounded with unknown changepoints. We focus on the case when changes happen
+simultaneously on all arms, and in stark contrast with the existing literature, we target gap-dependent
+(as opposed to only gap-independent) regret bounds involving the magnitude of changes $(\Delta^{chg}_{i,g})$
+and optimality-gaps ($\Delta^{opt}_{i,g}$). Diverging from previous works, we assume the more
+realistic scenario that there can be undetectable changepoint gaps and under a different set of
+assumptions, we show that as long as the compounded delayed detection for each changepoint is bounded
+there is no need for forced exploration to actively detect changepoints. We introduce two adaptations
+of UCB-strategies that employ scan-statistics in order to actively detect the changepoints, without
+knowing in advance the changepoints and also the mean before and after any change. Our first method
+\UCBLCPD does not know the number of changepoints $G$ or time horizon $T$ and achieves the first time-uniform
+concentration bound for this setting using the Laplace method of integration. The second strategy
+\ImpCPD makes use of the knowledge of $T$ to achieve the order optimal regret bound of $\min\big\lbrace
+O(\sum\limits_{i=1}^{K} \sum\limits_{g=1}^{G}\frac{\log(T/H_{1,g})}{\Delta^{opt}_{i,g}}),
+O(\sqrt{GT})\big\rbrace$, (where $H_{1,g}$ is the problem complexity) thereby closing an important
+gap with respect to the lower bound in a specific challenging setting. Our theoretical findings
+are supported by numerical experiments on synthetic and real-life datasets. 

@@ -1,0 +1,19 @@
+The 01 loss gives different and more accurate boundaries than convex loss models in the presence
+of outliers. Could the difference of boundaries translate to adversarial examples that are non-transferable
+between 01 loss and convex models? We explore this empirically in this paper by studying transferability
+of adversarial examples between linear 01 loss and convex (hinge) loss models, and between dual
+layer neural networks with sign activation and 01 loss vs sigmoid activation and logistic loss.
+We first show that white box adversarial examples do not transfer effectively between convex and
+01 loss and between 01 loss models compared to between convex models. As a result of this non-transferability
+we see that convex substitute model black box attacks are less effective on 01 loss than convex models.
+Interestingly we also see that 01 loss substitute model attacks are ineffective on both convex and
+01 loss models mostly likely due to the non-uniqueness of 01 loss models. We show intuitively by example
+how the presence of outliers can cause different decision boundaries between 01 and convex loss
+models which in turn produces adversaries that are non-transferable. Indeed we see on MNIST that
+adversaries transfer between 01 loss and convex models more easily than on CIFAR10 and ImageNet
+which are likely to contain outliers. We show intuitively by example how the non-continuity of 01
+loss makes adversaries non-transferable in a dual layer neural network. We discretize CIFAR10
+features to be more like MNIST and find that it does not improve transferability, thus suggesting
+that different boundaries due to outliers are more likely the cause of non-transferability. As
+a result of this non-transferability we show that our dual layer sign activation network with 01
+loss can attain robustness on par with simple convolutional networks. 

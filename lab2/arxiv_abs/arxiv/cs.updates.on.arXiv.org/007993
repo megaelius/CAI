@@ -1,0 +1,18 @@
+QUIC is a secure transport protocol and aims to improve the performance of HTTPS traffic. It is a design
+goal of QUIC to reduce the delay overhead of its connection establishment. However, an initial handshake
+enforcing strict validation of the client's source address still requires two round-trips. QUIC
+provides address validation tokens which allow saving a round-trip during the address validation
+upon repeat connections. In this work, we extend the existing address validation mechanism by out-of-band
+validation tokens. The proposed tokens allow sharing address validation between the QUIC server
+and trusted entities issuing these tokens. This practice allows saving a round-trip time for the
+address validation also during initial connection establishments. Furthermore, we introduce
+distribution mechanisms for these tokens using DNS resolvers and QUIC connections to other hostnames.
+We evaluate our proposal based on the duration of QUIC's connection establishment and find that
+it can save up to 50% of the delay overhead of an initial handshake. Moreover, we analyze the benefit
+of out-of-band validation tokens for popular websites. For this analysis, we assume a usual transatlantic
+connection with a round-trip time of 90ms. We find that 100% of the connections required to retrieve
+the investigated websites can save a round-trip time during their initial handshakes by deploying
+our proposal. Furthermore, our results indicate that 363.6ms in total can be saved of all connections
+that are required to retrieve an average website. Overall, we report huge performance improvements
+for QUIC's connection establishment without compromising the user's privacy or communication
+security. 

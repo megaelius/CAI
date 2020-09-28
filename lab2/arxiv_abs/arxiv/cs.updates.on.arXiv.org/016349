@@ -1,0 +1,18 @@
+Inverse problems for accelerated MRI typically incorporate domain-specific knowledge about
+the forward encoding operator in a regularized reconstruction framework. Recently physics-driven
+deep learning (DL) methods have been proposed to use neural networks for data-driven regularization.
+These methods unroll iterative optimization algorithms to solve the inverse problem objective
+function, by alternating between domain-specific data consistency and data-driven regularization
+via neural networks. The whole unrolled network is then trained end-to-end to learn the parameters
+of the network. Due to simplicity of data consistency updates with gradient descent steps, proximal
+gradient descent (PGD) is a common approach to unroll physics-driven DL reconstruction methods.
+However, PGD methods have slow convergence rates, necessitating a higher number of unrolled iterations,
+leading to memory issues in training and slower reconstruction times in testing. Inspired by efficient
+variants of PGD methods that use a history of the previous iterates, we propose a history-cognizant
+unrolling of the optimization algorithm with dense connections across iterations for improved
+performance. In our approach, the gradient descent steps are calculated at a trainable combination
+of the outputs of all the previous regularization units. We also apply this idea to unrolling variable
+splitting methods with quadratic relaxation. Our results in reconstruction of the fastMRI knee
+dataset show that the proposed history-cognizant approach reduces residual aliasing artifacts
+compared to its conventional unrolled counterpart without requiring extra computational power
+or increasing reconstruction time. 

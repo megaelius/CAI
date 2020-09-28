@@ -1,0 +1,18 @@
+We describe an extension of the Enzo code to enable fully-coupled radiation hydrodynamical simulation
+of inhomogeneous reionization in large $\sim (100 Mpc)^3$ cosmological volumes with thousands
+to millions of point sources. We solve all dynamical, radiative transfer, thermal, and ionization
+processes self-consistently on the same mesh, as opposed to a postprocessing approach which coarse-grains
+the radiative transfer. We do, however, employ a simple subgrid model for star formation which we
+calibrate to observations. Radiation transport is done in the grey flux-limited diffusion (FLD)
+approximation, which is solved by implicit time integration split off from the gas energy and ionization
+equations, which are solved separately. This results in a faster and more robust scheme for cosmological
+applications compared to the earlier method. The FLD equation is solved using the hypre optimally
+scalable geometric multigrid solver from LLNL. By treating the ionizing radiation as a grid field
+as opposed to rays, our method is scalable with respect to the number of ionizing sources, limited
+only by the parallel scaling properties of the radiation solver. We test the speed and accuracy of
+our approach on a number of standard verification and validation tests. We show by direct comparison
+with Enzo's adaptive ray tracing method Moray that the well-known inability of FLD to cast a shadow
+behind opaque clouds has a minor effect on the evolution of ionized volume and mass fractions in a
+reionization simulation validation test. We illustrate an application of our method to the problem
+of inhomogeneous reionization in a 80 Mpc comoving box resolved with $3200^3$ Eulerian grid cells
+and dark matter particles. 

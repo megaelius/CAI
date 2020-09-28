@@ -1,0 +1,20 @@
+Work-stealing systems are typically oblivious to the nature of the tasks they are scheduling. For
+instance, they do not know or take into account how long a task will take to execute or how many subtasks
+it will spawn. Moreover, the actual task execution order is typically determined by the underlying
+task storage data structure, and cannot be changed. There are thus possibilities for optimizing
+task parallel executions by providing information on specific tasks and their preferred execution
+order to the scheduling system. We introduce scheduling strategies to enable applications to dynamically
+provide hints to the task-scheduling system on the nature of specific tasks. Scheduling strategies
+can be used to independently control both local task execution order as well as steal order. In contrast
+to conventional scheduling policies that are normally global in scope, strategies allow the scheduler
+to apply optimizations on individual tasks. This flexibility greatly improves composability
+as it allows the scheduler to apply different, specific scheduling choices for different parts
+of applications simultaneously. We present a number of benchmarks that highlight diverse, beneficial
+effects that can be achieved with scheduling strategies. Some benchmarks (branch-and-bound,
+single-source shortest path) show that prioritization of tasks can reduce the total amount of work
+compared to standard work-stealing execution order. For other benchmarks (triangle strip generation)
+qualitatively better results can be achieved in shorter time. Other optimizations, such as dynamic
+merging of tasks or stealing of half the work, instead of half the tasks, are also shown to improve
+performance. Composability is demonstrated by examples that combine different strategies, both
+within the same kernel (prefix sum) as well as when scheduling multiple kernels (prefix sum and unbalanced
+tree search). 

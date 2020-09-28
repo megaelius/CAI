@@ -1,0 +1,20 @@
+Researchers have developed various techniques for static analysis of JavaScript to improve analysis
+precision. To develop such techniques, they first identify causes of the precision losses for unproven
+properties. While most of the existing work has diagnosed main causes of imprecision in static analysis
+by manual investigation, manually tracing the imprecision causes is challenging because it requires
+detailed knowledge of analyzer internals. Recently, several studies proposed to localize the
+analysis imprecision causes automatically, but these localization techniques work for only specific
+analysis techniques. In this paper, we present an automatic technique that can trace analysis imprecision
+causes of JavaScript applications starting from user-selected variables. Given a set of program
+variables, our technique stops an analysis when any of the variables gets imprecise analysis values.
+It then traces the imprecise analysis values using intermediate analysis results back to program
+points where the imprecision first started. Our technique shows the trace information with a new
+representation called tracing graphs, whose nodes and edges together represent traces from imprecise
+points to precise points. In order to detect major causes of analysis imprecision automatically,
+we present four node/edge patterns in tracing graphs for common imprecision causes. We formalized
+the technique of generating tracing graphs and identifying patterns, and implemented them on SAFE,
+a state-of-the-art JavaScript static analyzer with various analysis configurations, such as
+context-sensitivity, loop-sensitivity, and heap cloning. Our evaluation demonstrates that
+the technique can easily find 96 % of the major causes of the imprecision problems in 17 applications
+by only automatic detection in tracing graphs using the patterns, and selectively adopting various
+advanced techniques can eliminate the found causes of imprecision. 

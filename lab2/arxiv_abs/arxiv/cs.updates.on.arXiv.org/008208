@@ -1,0 +1,17 @@
+Many modern parallel systems, such as MapReduce, Hadoop and Spark, can be modeled well by the MPC
+model. The MPC model captures well coarse-grained computation on large data --- data is distributed
+to processors, each of which has a sublinear (in the input data) amount of memory and we alternate
+between rounds of computation and rounds of communication, where each machine can communicate
+an amount of data as large as the size of its memory. This model is stronger than the classical PRAM
+model, and it is an intriguing question to design algorithms whose running time is smaller than in
+the PRAM model. In this paper, we study two fundamental problems, $2$-edge connectivity and $2$-vertex
+connectivity (biconnectivity). PRAM algorithms which run in $O(\log n)$ time have been known for
+many years. We give algorithms using roughly log diameter rounds in the MPC model. Our main results
+are, for an $n$-vertex, $m$-edge graph of diameter $D$ and bi-diameter $D'$, 1) a $O(\log D\log\log_{m/n}
+n)$ parallel time $2$-edge connectivity algorithm, 2) a $O(\log D\log^2\log_{m/n}n+\log D'\log\log_{m/n}n)$
+parallel time biconnectivity algorithm, where the bi-diameter $D'$ is the largest cycle length
+over all the vertex pairs in the same biconnected component. Our results are fully scalable, meaning
+that the memory per processor can be $O(n^{\delta})$ for arbitrary constant $\delta>0$, and the
+total memory used is linear in the problem size. Our $2$-edge connectivity algorithm achieves the
+same parallel time as the connectivity algorithm of Andoni et al. (FOCS 2018). We also show an $\Omega(\log
+D')$ conditional lower bound for the biconnectivity problem. 

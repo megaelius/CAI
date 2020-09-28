@@ -1,0 +1,18 @@
+Class imbalance has emerged as one of the major challenges for medical image segmentation. The model
+cascade (MC) strategy significantly alleviates the class imbalance issue via running a set of individual
+deep models for coarse-to-fine segmentation. Despite its outstanding performance, however,
+this method leads to undesired system complexity and also ignores the correlation among the models.
+To handle these flaws, we propose a light-weight deep model, i.e., the One-pass Multi-task Network
+(OM-Net) to solve class imbalance better than MC does, while requiring only one-pass computation.
+First, OM-Net integrates the separate segmentation tasks into one deep model, which consists of
+shared parameters to learn joint features, as well as task-specific parameters to learn discriminative
+features. Second, to more effectively optimize OM-Net, we take advantage of the correlation among
+tasks to design both an online training data transfer strategy and a curriculum learning-based
+training strategy. Third, we further propose sharing prediction results between tasks and design
+a cross-task guided attention (CGA) module which can adaptively recalibrate channel-wise feature
+responses based on the category-specific statistics. Finally, a simple yet effective post-processing
+method is introduced to refine the segmentation results. Extensive experiments are conducted
+to demonstrate the effectiveness of the proposed techniques. Most impressively, we achieve state-of-the-art
+performance on the BraTS 2015 testing set and BraTS 2017 online validation set. Using these proposed
+approaches, we also won joint third place in the BraTS 2018 challenge among 64 participating teams.
+The code is publicly available at https://github.com/chenhong-zhou/OM-Net. 

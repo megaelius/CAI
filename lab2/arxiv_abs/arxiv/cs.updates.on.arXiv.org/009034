@@ -1,0 +1,17 @@
+Graphs are an increasingly popular way to model real-world entities and relationships between
+them, ranging from social networks to data lineage graphs and biological datasets. Queries over
+these large graphs often involve expensive subgraph traversals and complex analytical computations.
+These real-world graphs are often substantially more structured than a generic vertex-and-edge
+model would suggest, but this insight has remained mostly unexplored by existing graph engines
+for graph query optimization purposes. Therefore, in this work, we focus on leveraging structural
+properties of graphs and queries to automatically derive materialized graph views that can dramatically
+speed up query evaluation. We present KASKADE, the first graph query optimization framework to
+exploit materialized graph views for query optimization purposes. KASKADE employs a novel constraint-based
+view enumeration technique that mines constraints from query workloads and graph schemas, and
+injects them during view enumeration to significantly reduce the search space of views to be considered.
+Moreover, it introduces a graph view size estimator to pick the most beneficial views to materialize
+given a query set and to select the best query evaluation plan given a set of materialized views. We
+evaluate its performance over real-world graphs, including the provenance graph that we maintain
+at Microsoft to enable auditing, service analytics, and advanced system optimizations. Our results
+show that KASKADE substantially reduces the effective graph size and yields significant performance
+speedups (up to 50X), in some cases making otherwise intractable queries possible. 

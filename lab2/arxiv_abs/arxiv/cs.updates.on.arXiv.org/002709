@@ -1,0 +1,17 @@
+To maintain the accuracy of supervised learning models in the presence of evolving data streams,
+we provide temporally-biased sampling schemes that weight recent data most heavily, with inclusion
+probabilities for a given data item decaying exponentially over time. We then periodically retrain
+the models on the current sample. This approach speeds up the training process relative to training
+on all of the data. Moreover, time-biasing lets the models adapt to recent changes in the data while
+-- unlike in a sliding-window approach -- still keeping some old data to ensure robustness in the
+face of temporary fluctuations and periodicities in the data values. In addition, the sampling-based
+approach allows existing analytic algorithms for static data to be applied to dynamic streaming
+data essentially without change. We provide and analyze both a simple sampling scheme (T-TBS) that
+probabilistically maintains a target sample size and a novel reservoir-based scheme (R-TBS) that
+is the first to provide both complete control over the decay rate and a guaranteed upper bound on the
+sample size, while maximizing both expected sample size and sample-size stability. The latter
+scheme rests on the notion of a "fractional sample" and, unlike T-TBS, allows for data arrival rates
+that are unknown and time varying. R-TBS and T-TBS are of independent interest, extending the known
+set of unequal-probability sampling schemes. We discuss distributed implementation strategies;
+experiments in Spark illuminate the performance and scalability of the algorithms, and show that
+our approach can increase machine learning robustness in the face of evolving data. 

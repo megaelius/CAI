@@ -1,0 +1,17 @@
+With ever-increasing volumes of scientific data produced by HPC applications, significantly
+reducing data size is critical because of limited capacity of storage space and potential bottlenecks
+on I/O or networks in writing/reading or transferring data. SZ and ZFP are the two leading lossy compressors
+available to compress scientific data sets. However, their performance is not consistent across
+different data sets and across different fields of some data sets: for some fields SZ provides better
+compression performance, while other fields are better compressed with ZFP. This situation raises
+the need for an automatic online (during compression) selection between SZ and ZFP, with a minimal
+overhead. In this paper, the automatic selection optimizes the rate-distortion, an important
+statistical quality metric based on the signal-to-noise ratio. To optimize for rate-distortion,
+we investigate the principles of SZ and ZFP. We then propose an efficient online, low-overhead selection
+algorithm that predicts the compression quality accurately for two compressors in early processing
+stages and selects the best-fit compressor for each data field. We implement the selection algorithm
+into an open-source library, and we evaluate the effectiveness of our proposed solution against
+plain SZ and ZFP in a parallel environment with 1,024 cores. Evaluation results on three data sets
+representing about 100 fields show that our selection algorithm improves the compression ratio
+up to 70% with the same level of data distortion because of very accurate selection (around 99%) of
+the best-fit compressor, with little overhead (less than 7% in the experiments). 

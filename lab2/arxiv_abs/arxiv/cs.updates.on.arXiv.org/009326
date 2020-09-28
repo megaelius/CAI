@@ -1,0 +1,18 @@
+Distributed storage systems and databases are widely used by various types of applications. Transactional
+access to these storage systems is an important abstraction allowing application programmers
+to consider blocks of actions (i.e., transactions) as executing atomically. For performance reasons,
+the consistency models implemented by modern databases are weaker than the standard serializability
+model, which corresponds to the atomicity abstraction of transactions executing over a sequentially
+consistent memory. Causal consistency for instance is one such model that is widely used in practice.
+In this paper, we investigate application-specific relationships between several variations
+of causal consistency and we address the issue of verifying automatically if a given transactional
+program is robust against causal consistency, i.e., all its behaviors when executed over an arbitrary
+causally consistent database are serializable. We show that programs without write-write races
+have the same set of behaviors under all these variations, and we show that checking robustness is
+polynomial time reducible to a state reachability problem in transactional programs over a sequentially
+consistent shared memory. A surprising corollary of the latter result is that causal consistency
+variations which admit incomparable sets of behaviors admit comparable sets of robust programs.
+This reduction also opens the door to leveraging existing methods and tools for the verification
+of concurrent programs (assuming sequential consistency) for reasoning about programs running
+over causally consistent databases. Furthermore, it allows to establish that the problem of checking
+robustness is decidable when the programs executed at different sites are finite-state. 

@@ -1,0 +1,18 @@
+Storing and processing massive small files is one of the major challenges for the Hadoop Distributed
+File System (HDFS). In order to provide fast data access, the NameNode (NN) in HDFS maintains the
+metadata of all files in its main-memory. Hadoop performs well with a small number of large files
+that require relatively little metadata in the NN s memory. But for a large number of small files,
+Hadoop has problems such as NN memory overload caused by the huge metadata size of these small files.
+We present a new type of archive file, Hadoop Perfect File (HPF), to solve HDFS s small files problem
+by merging small files into a large file on HDFS. Existing archive files offer limited functionality
+and have poor performance when accessing a file in the merged file due to the fact that during metadata
+lookup it is necessary to read and process the entire index file(s). In contrast, HPF file can directly
+access the metadata of a particular file from its index file without having to process it entirely.
+The HPF index system uses two hash functions: file s metadata are distributed through index files
+by using a dynamic hash function and, for each index file, we build an order preserving perfect hash
+function that preserves the position of each file s metadata in the index file. The HPF design will
+only read the part of the index file that contains the metadata of the searched file during its access.
+HPF file also supports the file appending functionality after its creation. Our experiments show
+that HPF can be more than 40% faster file s access from the original HDFS. If we don t consider the caching
+effect, HPF s file access is around 179% faster than MapFile and 11294% faster than HAR file. If we
+consider caching effect, HPF is around 35% faster than MapFile and 105% faster than HAR file. 

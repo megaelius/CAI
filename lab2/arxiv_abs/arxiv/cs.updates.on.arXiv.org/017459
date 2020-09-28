@@ -1,0 +1,19 @@
+Network bound applications, like a database server executing OLTP queries or a caching server storing
+objects for a dynamic web applications, are essential services that consumers and businesses use
+daily. These services run on a large datacenters and are required to meet predefined Service Level
+Objectives (SLO), or latency targets, with high probability. Thus, efficient datacenter applications
+should optimize their execution in terms of power and performance. However, to support large scale
+data storage, these workloads make heavy use of pointer connected data structures (e.g., hash table,
+large fan-out tree, trie) and exhibit poor instruction and memory level parallelism. Our experiments
+show that due to long memory access latency, these workloads occupy processor resources (e.g.,
+ROB entries, RS buffers, LS queue entries etc.) for a prolonged period of time that delay the processing
+of subsequent requests. Delayed execution not only increases request processing latency, but
+also severely effects an application throughput and power-efficiency. To overcome this limitation,
+we present CARGO, a novel mechanism to overlap queuing latency and request processing by executing
+select instructions on an application critical path at the network interface card (NIC) while requests
+wait for processor resources to become available. Our mechanism dynamically identifies the critical
+instructions and includes the register state needed to compute the long latency memory accesses.
+This context-augmented critical region is often executed at the NIC well before execution begins
+at the core, effectively prefetching the data ahead of time. Across a variety of interactive datacenter
+applications, our proposal improves latency, throughput, and power efficiency by 2.7X, 2.7X,
+and 1.5X, respectively, while incurring a modest amount storage overhead. 

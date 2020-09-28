@@ -1,0 +1,20 @@
+Deep learning (DL) accelerators are increasingly deployed on edge devices to support fast local
+inferences. However, they suffer from a new security problem, i.e., being vulnerable to physical
+access based attacks. An adversary can easily obtain the entire neural network (NN) model by physically
+snooping the GDDR memory bus that connects the accelerator chip with DRAM memory. Therefore, memory
+encryption becomes important for DL accelerators on edge devices to improve the security of NN models.
+Nevertheless, we observe that traditional memory encryption solutions that have been efficiently
+used in CPU systems cause significant performance degradation when directly used in DL accelerators.
+The main reason comes from the big bandwidth gap between the GDDR memory bus and the encryption engine.
+To address this problem, our paper proposes SEAL, a Secure and Efficient Accelerator scheme for
+deep Learning. SEAL enhances the performance of the encrypted DL accelerator from two aspects,
+i.e., improving the data access bandwidth and the efficiency of memory encryption. Specifically,
+to improve the data access bandwidth, SEAL leverages a criticality-aware smart encryption scheme
+which identifies partial data that have no impact on the security of NN models and allows them to bypass
+the encryption engine, thus reducing the amount of data to be encrypted. To improve the efficiency
+of memory encryption, SEAL leverages a colocation mode encryption scheme to eliminate memory accesses
+from counters used for encryption by co-locating data and their counters. Our experimental results
+demonstrate that, compared with traditional memory encryption solutions, SEAL achieves 1.4 ~
+1.6 times IPC improvement and reduces the inference latency by 39% ~ 60%. Compared with a baseline
+accelerator without memory encryption, SEAL compromises only 5% ~ 7% IPC for significant security
+improvement. 

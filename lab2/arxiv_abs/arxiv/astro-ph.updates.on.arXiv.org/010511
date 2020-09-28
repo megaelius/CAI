@@ -1,0 +1,18 @@
+We present a conservative numerical method for radiation magnetohydrodynamics with frequency-dependent
+full transport in stationary spacetimes. This method is stable and accurate for both large and small
+optical depths and radiation pressures. The radiation stress-energy tensor is evolved in flux-conservative
+form, and closed with a swarm of samples that each transport a multigroup representation of the invariant
+specific intensity along a null geodesic. In each zone, the enclosed samples are used to efficiently
+construct a Delaunay triangulation of the unit sphere in the comoving frame, which in turn is used
+to calculate the Eddington tensor, average source terms, and adaptively refine the sample swarm.
+Radiation four-fources are evaluated in the moment sector in a semi-implicit fashion. The radiative
+transfer equation is solved in invariant form deterministically for each sample. Since each sample
+carries a discrete representation of the full spectrum, the cost of evaluating the transport operator
+is independent of the number of frequency groups, representing a significant reduction of algorithmic
+complexity for transport in frequency dependent problems. The major approximation we make in this
+work is performing scattering in an angle-averaged way, with Compton scattering further approximated
+by the Kompaneets equation. Local adaptivity in samples also makes this scheme more amenable to
+nonuniform meshes than a traditional Monte Carlo method. We describe the method and present results
+on a suite of test problems. We find that MOCMC converges at least as $\sim N^{-1}$, rather than the
+canonical Monte Carlo $N^{-1/2}$, where $N$ is the number of samples per zone. On several problems
+we demonstrate substantial improvement over Eddington and M1 closures and gray opacities. 

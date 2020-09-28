@@ -1,0 +1,18 @@
+The most straightforward method to accelerate Stochastic Gradient Descent (SGD) computation
+is to distribute the randomly selected batch of inputs over multiple processors. To keep the distributed
+processors fully utilized requires commensurately growing the batch size. However, large batch
+training often leads to poorer generalization. A recently proposed solution for this problem is
+to use adaptive batch sizes in SGD. In this case, one starts with a small number of processes and scales
+the processes as training progresses. Two major challenges with this approach are (i) that dynamically
+resizing the cluster can add non-trivial overhead, in part since it is currently not supported,
+and (ii) that the overall speed up is limited by the initial phase with smaller batches. In this work,
+we address both challenges by developing a new adaptive batch size framework, with autoscaling
+based on the Ray framework. This allows very efficient elastic scaling with negligible resizing
+overhead (0.32\% of time for ResNet18 ImageNet training). Furthermore, we propose a new adaptive
+batch size training scheme using second order methods and adversarial training. These enable increasing
+batch sizes earlier during training, which leads to better training time. We extensively evaluate
+our method on Cifar-10/100, SVHN, TinyImageNet, and ImageNet datasets, using multiple neural
+networks, including ResNets and smaller networks such as SqueezeNext. Our method exceeds the performance
+of existing solutions in terms of both accuracy and the number of SGD iterations (up to 1\% and $5\times$,
+respectively). Importantly, this is achieved without any additional hyper-parameter tuning
+to tailor our method in any of these experiments. 

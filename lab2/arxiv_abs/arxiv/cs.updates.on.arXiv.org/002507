@@ -1,0 +1,17 @@
+In this article, we design fast algorithms for the computation of approximant bases in shifted Popov
+normal form. We first recall the algorithm known as PM-Basis, which will be our second fundamental
+engine after polynomial matrix multiplication: most other fast approximant basis algorithms
+basically aim at efficiently reducing the input instance to instances for which PM-Basis is fast.
+Such reductions usually involve partial linearization techniques due to Storjohann, which have
+the effect of balancing the degrees and dimensions in the manipulated matrices. Following these
+ideas, Zhou and Labahn gave two algorithms which are faster than PM-Basis for important cases including
+Hermite-Pade approximation, yet only for shifts whose values are concentrated around the minimum
+or the maximum value. The three mentioned algorithms were designed for balanced orders and compute
+approximant bases that are generally not normalized. Here, we show how they can be modified to return
+the shifted Popov basis without impact on their cost bound; besides, we extend Zhou and Labahn's
+algorithms to arbitrary orders. Furthermore, we give an algorithm which handles arbitrary shifts
+with one extra logarithmic factor in the cost bound compared to the above algorithms. To the best
+of our knowledge, this improves upon previously known algorithms for arbitrary shifts, including
+for particular cases such as Hermite-Pade approximation. This algorithm is based on a recent divide
+and conquer approach which reduces the general case to the case where information on the output degree
+is available. As outlined above, we solve the latter case via partial linearizations and PM-Basis.

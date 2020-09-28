@@ -1,0 +1,17 @@
+Local gyrokinetic simulations solve the gyrokinetic equations with homogeneous background gradients,
+typically using a doubly periodic domain in the (x,y) plane (i.e. perpendicular to the field line).
+Spatial Fourier representations are almost universal in local gyrokinetic codes, and the wavevector-remap
+method was introduced in [Hammett et. al., Bull Am Phys Soc VP1 136, (2006)] as a simple method for
+expressing the local gyrokinetic equations with a background shear flow in a Fourier representation.
+Although extensively applied, the wavevector-remap method has not been formally shown to converge,
+and suffers from known unphysicality when the solutions are plotted in real space [Fox et. al. PPCF
+59, 044008]. In this work, we use an analytic solution in slab geometry to demonstrate that wavevector-remap
+leads to incorrect smeared non-linear coupling between modes. We derive a correct, relatively
+simple method for solving local gyrokinetics in Fourier space with a background shear flow, and
+compare this to the wavevector-remap method. This allows us to show that the error in wavevector-remap
+can be seen as an incorrect rounding in wavenumber space in the nonlinear term. By making minor modifications
+to the nonlinear term, we implement the corrected wavevector-remap scheme in the GENE[25] code
+and compare results of the original and corrected wavevector-remap for standard nonlinear benchmark
+cases. Certain physical phenomena are impacted by the errors in the original remap scheme, and these
+numerical artefacts do not reduce as system size increases: that is, original wavevector-remap
+scheme does not converge to the correct result. 

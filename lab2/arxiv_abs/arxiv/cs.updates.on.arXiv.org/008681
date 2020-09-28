@@ -1,0 +1,17 @@
+When solving massive optimization problems in areas such as machine learning, it is a common practice
+to seek speedup via massive parallelism. However, especially in an asynchronous environment,
+there are limits on the possible parallelism. Accordingly, we seek tight bounds on the viable parallelism
+in asynchronous implementations of coordinate descent. We focus on asynchronous coordinate descent
+(ACD) algorithms on convex functions $F:\mathbb{R}^n \rightarrow \mathbb{R}$ of the form $$F(x)
+= f(x) ~+~ \sum_{k=1}^n \Psi_k(x_k),$$ where $f:\mathbb{R}^n \rightarrow \mathbb{R}$ is a smooth
+convex function, and each $\Psi_k:\mathbb{R} \rightarrow \mathbb{R}$ is a univariate and possibly
+non-smooth convex function. Our approach is to quantify the shortfall in progress compared to the
+standard sequential stochastic gradient descent. This leads to a truly simple yet optimal analysis
+of the standard stochastic ACD in a partially asynchronous environment, which already generalizes
+and improves on the bounds in prior work. We also give a considerably more involved analysis for general
+asynchronous environments in which the only constraint is that each update can overlap with at most
+$q$ others, where $q$ is at most the number of processors times the ratio in the lengths of the longest
+and shortest updates. The main technical challenge is to demonstrate linear speedup in the latter
+environment. This stems from the subtle interplay of asynchrony and randomization. This improves
+Liu and Wright's (SIOPT'15) lower bound on the maximum degree of parallelism almost quadratically;
+the new bound is essentially optimal. 

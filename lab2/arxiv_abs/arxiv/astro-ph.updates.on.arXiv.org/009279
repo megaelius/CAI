@@ -1,0 +1,17 @@
+Bayesian inference is the workhorse of gravitational-wave astronomy, for example, determining
+the mass and spins of merging black holes, revealing the neutron star equation of state, and unveiling
+the population properties of compact binaries. The science enabled by these inferences comes with
+a computational cost that can limit the questions we are able to answer. This cost is expected to grow.
+As detectors improve, the detection rate will go up, allowing less time to analyze each event. Improvement
+in low-frequency sensitivity will yield longer signals, increasing the number of computations
+per event. The growing number of entries in the transient catalog will drive up the cost of population
+studies. While Bayesian inference calculations are not entirely parallelizable, key components
+are embarrassingly parallel: calculating the gravitational waveform and evaluating the likelihood
+function. Graphical processor units (GPUs) are adept at such parallel calculations. We report
+on progress porting gravitational-wave inference calculations to GPUs. Using a single code - which
+takes advantage of GPU architecture if it is available - we compare computation times using modern
+GPUs (NVIDIA P100) and CPUs (Intel Gold 6140). We demonstrate speed-ups of $\sim 50 \times$ for compact
+binary coalescence gravitational waveform generation and likelihood evaluation and more than
+$100\times$ for population inference within the lifetime of current detectors. Further improvement
+is likely with continued development. Our python-based code is publicly available and can be used
+without familiarity with the parallel computing platform, CUDA. 

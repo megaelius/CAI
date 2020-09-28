@@ -1,0 +1,20 @@
+Trusted executions environments (TEEs) such as Intel(R) SGX provide hardware-isolated execution
+areas in memory, called enclaves. By running only the most trusted application components in the
+enclave, TEEs enable developers to minimize the TCB of their applications thereby helping to protect
+sensitive application data. However, porting existing applications to TEEs often requires considerable
+refactoring efforts, as TEEs provide a restricted interface to standard OS features. To ease development
+efforts, TEE application developers often choose to run their unmodified application in a library
+OS container that provides a full in-enclave OS interface. Yet, this large-TCB development approach
+now leaves sensitive in-enclave data exposed to potential bugs or vulnerabilities in third-party
+code imported into the application. Importantly, because the TEE libOS and the application run
+in the same enclave address space, even the libOS management data structures (e.g. file descriptor
+table) may be vulnerable to attack, where in traditional OSes these data structures may be protected
+via privilege isolation. We present EnclaveDom, a privilege separation system for large-TCB TEE
+applications that partitions an enclave into tagged memory regions, and enforces per-region access
+rules at the granularity of individual in-enclave functions. EnclaveDom is implemented on Intel
+SGX using Memory Protection Keys (MPK) for memory tagging. To evaluate the security and performance
+impact of EnclaveDom, we integrated EnclaveDom with the Graphene-SGX library OS. While no product
+or component can be absolutely secure, our prototype helps protect internal libOS management data
+structures against tampering by application-level code. At every libOS system call, EnclaveDom
+then only grants access to those internal data structures which the syscall needs to perform its
+task. 

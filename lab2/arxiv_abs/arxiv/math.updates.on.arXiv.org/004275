@@ -1,0 +1,19 @@
+Many convex problems in machine learning and computer science share the same form: \begin{align*}
+\min_{x} \sum_{i} f_i( A_i x + b_i), \end{align*} where $f_i$ are convex functions on $\mathbb{R}^{n_i}$
+with constant $n_i$, $A_i \in \mathbb{R}^{n_i \times d}$, $b_i \in \mathbb{R}^{n_i}$ and $\sum_i
+n_i = n$. This problem generalizes linear programming and includes many problems in empirical risk
+minimization. In this paper, we give an algorithm that runs in time \begin{align*} O^* ( ( n^{\omega}
++ n^{2.5 - \alpha/2} + n^{2+ 1/6} ) \log (n / \delta) ) \end{align*} where $\omega$ is the exponent
+of matrix multiplication, $\alpha$ is the dual exponent of matrix multiplication, and $\delta$
+is the relative accuracy. Note that the runtime has only a log dependence on the condition numbers
+or other data dependent parameters and these are captured in $\delta$. For the current bound $\omega
+\sim 2.38$ [Vassilevska Williams'12, Le Gall'14] and $\alpha \sim 0.31$ [Le Gall, Urrutia'18],
+our runtime $O^* ( n^{\omega} \log (n / \delta))$ matches the current best for solving a dense least
+squares regression problem, a special case of the problem we consider. Very recently, [Alman'18]
+proved that all the current known techniques can not give a better $\omega$ below $2.168$ which is
+larger than our $2+1/6$. Our result generalizes the very recent result of solving linear programs
+in the current matrix multiplication time [Cohen, Lee, Song'19] to a more broad class of problems.
+Our algorithm proposes two concepts which are different from [Cohen, Lee, Song'19] : $\bullet$
+We give a robust deterministic central path method, whereas the previous one is a stochastic central
+path which updates weights by a random sparse vector. $\bullet$ We propose an efficient data-structure
+to maintain the central path of interior point methods even when the weights update vector is dense.

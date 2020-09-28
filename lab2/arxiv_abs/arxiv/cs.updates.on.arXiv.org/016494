@@ -1,0 +1,18 @@
+Knowledge distillation, which involves extracting the "dark knowledge" from a teacher network
+to guide the learning of a student network, has emerged as an important technique for model compression
+and transfer learning. Unlike previous works that exploit architecture-specific cues such as
+activation and attention for distillation, here we wish to explore a more general and model-agnostic
+approach for extracting "richer dark knowledge" from the pre-trained teacher model. We show that
+the seemingly different self-supervision task can serve as a simple yet powerful solution. For
+example, when performing contrastive learning between transformed entities, the noisy predictions
+of the teacher network reflect its intrinsic composition of semantic and pose information. By exploiting
+the similarity between those self-supervision signals as an auxiliary task, one can effectively
+transfer the hidden information from the teacher to the student. In this paper, we discuss practical
+ways to exploit those noisy self-supervision signals with selective transfer for distillation.
+We further show that self-supervision signals improve conventional distillation with substantial
+gains under few-shot and noisy-label scenarios. Given the richer knowledge mined from self-supervision,
+our knowledge distillation approach achieves state-of-the-art performance on standard benchmarks,
+i.e., CIFAR100 and ImageNet, under both similar-architecture and cross-architecture settings.
+The advantage is even more pronounced under the cross-architecture setting, where our method outperforms
+the state of the art CRD by an average of 2.3% in accuracy rate on CIFAR100 across six different teacher-student
+pairs. 

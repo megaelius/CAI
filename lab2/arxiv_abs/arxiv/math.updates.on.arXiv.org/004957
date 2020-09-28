@@ -1,0 +1,20 @@
+Deep learning algorithms often require solving a highly non-linear and nonconvex unconstrained
+optimization problem. Methods for solving optimization problems in large-scale machine learning,
+such as deep learning and deep reinforcement learning (RL), are generally restricted to the class
+of first-order algorithms, like stochastic gradient descent (SGD). While SGD iterates are inexpensive
+to compute, they have slow theoretical convergence rates. Furthermore, they require exhaustive
+trial-and-error to fine-tune many learning parameters. Using second-order curvature information
+to find search directions can help with more robust convergence for non-convex optimization problems.
+However, computing Hessian matrices for large-scale problems is not computationally practical.
+Alternatively, quasi-Newton methods construct an approximate of the Hessian matrix to build a
+quadratic model of the objective function. Quasi-Newton methods, like SGD, require only first-order
+gradient information, but they can result in superlinear convergence, which makes them attractive
+alternatives to SGD. The limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) approach
+is one of the most popular quasi-Newton methods that construct positive definite Hessian approximations.
+In this chapter, we propose efficient optimization methods based on L-BFGS quasi-Newton methods
+using line search and trust-region strategies. Our methods bridge the disparity between first-
+and second-order methods by using gradient information to calculate low-rank updates to Hessian
+approximations. We provide formal convergence analysis of these methods as well as empirical results
+on deep learning applications, such as image classification tasks and deep reinforcement learning
+on a set of ATARI 2600 video games. Our results show a robust convergence with preferred generalization
+characteristics as well as fast training time. 

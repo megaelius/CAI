@@ -1,0 +1,17 @@
+This paper proposes a knowledge distillation method for foreground object search (FoS). Given
+a background and a rectangle specifying the foreground location and scale, FoS retrieves compatible
+foregrounds in a certain category for later image composition. Foregrounds within the same category
+can be grouped into a small number of patterns. Instances within each pattern are compatible with
+any query input interchangeably. These instances are referred to as interchangeable foregrounds.
+We first present a pipeline to build pattern-level FoS dataset containing labels of interchangeable
+foregrounds. We then establish a benchmark dataset for further training and testing following
+the pipeline. As for the proposed method, we first train a foreground encoder to learn representations
+of interchangeable foregrounds. We then train a query encoder to learn query-foreground compatibility
+following a knowledge distillation framework. It aims to transfer knowledge from interchangeable
+foregrounds to supervise representation learning of compatibility. The query feature representation
+is projected to the same latent space as interchangeable foregrounds, enabling very efficient
+and interpretable instance-level search. Furthermore, pattern-level search is feasible to retrieve
+more controllable, reasonable and diverse foregrounds. The proposed method outperforms the previous
+state-of-the-art by 10.42% in absolute difference and 24.06% in relative improvement evaluated
+by mean average precision (mAP). Extensive experimental results also demonstrate its efficacy
+from various aspects. The benchmark dataset and code will be release shortly. 

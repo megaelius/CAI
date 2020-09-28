@@ -1,0 +1,20 @@
+Recurrent neural networks (RNNs) are known to be difficult to train due to the gradient vanishing
+and exploding problems and thus difficult to learn long-term patterns. Long short-term memory
+(LSTM) was developed to address these problems, but the use of hyperbolic tangent and the sigmoid
+activation functions results in gradient decay over layers. Consequently, construction of an
+efficiently trainable deep RNN is challenging. Moreover, training of LSTM is very compute-intensive
+as the recurrent connection using matrix product is conducted at every time step. To address these
+problems, this paper proposes a new type of RNNs with the recurrent connection formulated as Hadamard
+product, referred to as independently recurrent neural network (IndRNN), where neurons in the
+same layer are independent of each other and connected across layers. The gradient vanishing and
+exploding problems are solved in IndRNN by simply regulating the recurrent weights, and thus long-term
+dependencies can be learned. Moreover, an IndRNN can work with non-saturated activation functions
+such as ReLU and be still trained robustly. Different deeper IndRNN architectures, including the
+basic stacked IndRNN, residual IndRNN and densely connected IndRNN, have been investigated, all
+of which can be much deeper than the existing RNNs. Furthermore, IndRNN reduces the computation
+at each time step and can be over 10 times faster than the LSTM. The code is made publicly available
+at https://github.com/Sunnydreamrain/IndRNN_pytorch. Experimental results have shown that
+the proposed IndRNN is able to process very long sequences (over 5000 time steps), can be used to construct
+very deep networks (the 21 layers residual IndRNN and deep densely connected IndRNN used in the experiment
+for example). Better performances have been achieved on various tasks with IndRNNs compared with
+the traditional RNN and LSTM. 

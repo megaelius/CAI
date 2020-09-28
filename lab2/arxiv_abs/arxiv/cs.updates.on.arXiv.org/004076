@@ -1,0 +1,18 @@
+Smart contracts are applications that execute on blockchains. Today they manage billions of dollars
+in value and motivate visionary plans for pervasive blockchain deployment. While smart contracts
+inherit the availability and other security assurances of blockchains, however, they are impeded
+by blockchains' lack of confidentiality and poor performance. We present Ekiden, a system that
+addresses these critical gaps by combining blockchains with Trusted Execution Environments (TEEs),
+such as Intel SGX. Capable of operating on any desired blockchain, Ekiden permits concurrent, off-chain
+execution of smart contracts within TEE-backed compute nodes, yielding high performance, low
+cost, and confidentiality for sensitive data. Ekiden enforces a strong set of security and availability
+properties. By maintaining on-chain state, it achieves consistency, meaning a single authoritative
+sequence of state transitions, and availability, meaning contracts can survive the failure of
+compute nodes. Ekiden is anchored in a formal security model expressed as an ideal functionality.
+We prove the security of the corresponding implemented protocol in the UC framework. Our implementation
+of Ekiden supports contract development in Rust and the Ethereum Virtual Machine (EVM). We present
+experiments for applications including machine learning models, poker, and cryptocurrency tokens.
+Ekiden is designed to support multiple underlying blockchains. When building on top of Tendermint
+for consensus, we obtain example performance of 600x more throughput and 400x less latency at 1000x
+less cost than on the Ethereum mainnet. When used with Ethereum as the backing blockchain, Ekiden
+still costs less than on-chain execution and supports contract confidentiality. 

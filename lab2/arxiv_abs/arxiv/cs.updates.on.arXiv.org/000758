@@ -1,0 +1,18 @@
+Increasing sharing in programs is desirable to compactify the code, and to avoid duplication of
+reduction work at run-time, thereby speeding up execution. We show how a maximal degree of sharing
+can be obtained for programs expressed as terms in the lambda calculus with letrec. We introduce
+a notion of `maximal compactness' for lambda-letrec-terms among all terms with the same infinite
+unfolding. Instead of defined purely syntactically, this notion is based on a graph semantics.
+lambda-letrec-terms are interpreted as first-order term graphs so that unfolding equivalence
+between terms is preserved and reflected through bisimilarity of the term graph interpretations.
+Compactness of the term graphs can then be compared via functional bisimulation. We describe practical
+and efficient methods for the following two problems: transforming a lambda-letrec-term into
+a maximally compact form; and deciding whether two lambda-letrec-terms are unfolding-equivalent.
+The transformation of a lambda-letrec-term $L$ into maximally compact form $L_0$ proceeds in three
+steps: (i) translate L into its term graph $G = [[ L ]]$; (ii) compute the maximally shared form of $G$
+as its bisimulation collapse $G_0$; (iii) read back a lambda-letrec-term $L_0$ from the term graph
+$G_0$ with the property $[[ L_0 ]] = G_0$. This guarantees that $L_0$ and $L$ have the same unfolding,
+and that $L_0$ exhibits maximal sharing. The procedure for deciding whether two given lambda-letrec-terms
+$L_1$ and $L_2$ are unfolding-equivalent computes their term graph interpretations $[[ L_1 ]]$
+and $[[ L_2 ]]$, and checks whether these term graphs are bisimilar. For illustration, we also provide
+a readily usable implementation. 

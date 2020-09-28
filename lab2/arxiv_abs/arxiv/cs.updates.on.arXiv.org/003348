@@ -1,0 +1,19 @@
+This work focuses on the problem of multi-label learning with missing labels (MLML), which aims
+to label each test instance with multiple class labels given training instances that have an incomplete/partial
+set of these labels. The key point to handle missing labels is propagating the label information
+from provided labels to missing labels, through a dependency graph that each label of each instance
+is treated as a node. We build this graph by utilizing different types of label dependencies. Specifically,
+the instance-level similarity is served as undirected edges to connect the label nodes across different
+instances and the semantic label hierarchy is used as directed edges to connect different classes.
+This base graph is referred to as the mixed dependency graph, as it includes both undirected and directed
+edges. Furthermore, we present another two types of label dependencies to connect the label nodes
+across different classes. One is the class co-occurrence, which is also encoded as undirected edges.
+Combining with the base graph, we obtain a new mixed graph, called MG-CO (mixed graph with co-occurrence).
+The other is the sparse and low rank decomposition of the whole label matrix, to embed high-order
+dependencies over all labels. Combining with the base graph, the new mixed graph is called as MG-SL
+(mixed graph with sparse and low rank decomposition). Based on MG-CO and MG-SL, we propose two convex
+transductive formulations of the MLML problem, denoted as MLMG-CO and MLMG-SL, respectively.
+Two important applications, including image annotation and tag based image retrieval, can be jointly
+handled using our proposed methods. Experiments on benchmark datasets show that our methods give
+significant improvements in performance and robustness to missing labels over the state-of-the-art
+methods. 

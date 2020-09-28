@@ -1,0 +1,17 @@
+Restricted Boltzmann Machines (RBMs) and Deep Belief Networks have been demonstrated to perform
+efficiently in a variety of applications, such as dimensionality eduction, feature learning,
+and classification. Their implementation on neuromorphic hardware platforms emulating large-scale
+networks of spiking neurons can have ignificant advantages from the perspectives of scalability,
+power dissipation and real-time interfacing with the environment. However the traditional RBM
+architecture and the commonly used training algorithm known as Contrastive Divergence (CD) are
+based on discrete updates and exact arithmetics which do not directly map onto a dynamical neural
+sub strate. Here, we present an event-driven variation of CD to train a RBM constructed with Integrate
+& Fire (I&F) neurons, that is constrained by the limitations of existing and near future
+neuromorphic hardware platforms. Our strategy is based on neural sampling, which allows us to synthesize
+a spiking neural network that samples from a target Boltzmann distribution. The recurrent activity
+of the network replaces the discrete steps of the CD algorithm, while Spike Time Dependent Plasticity
+(STDP) carries out the weight updates in an online, asynchronous fashion. We demonstrate our approach
+by training an RBM composed of leaky I&F neurons with STDP synapses to learn a generative model
+of the MNIST hand-written digit dataset, and by testing it in recognition, generation and cue integration
+tasks. Our results contribute to a machine learning-driven approach for synthesizing networks
+of spiking neurons capable of carrying out practical, high-level functionality. 

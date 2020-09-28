@@ -1,0 +1,19 @@
+Making a strong assumption called \emph{separability}, \cite{AGM} gave the first provable algorithm
+for inference. For the widely used LDA model, \cite{anandkumar-2} give a provable algorithm using
+clever tensor-methods. But \cite{AGM} and \cite{anandkumar-2} do not learn topic vectors with
+bounded $l_1$ error (which is the natural measure for probability vectors) and they need assumptions
+on numerical parameters like the condition number. Our aim here is to develop a model which makes
+intuitively relevant and empirically supported assumptions and to design an algorithm with natural,
+simple components (one of them being SVD), which provably solves the inference problem for the model
+with bounded $l_1$ error. A topic in LDA and other models is essentially characterized by a group
+of co-occurring words. Motivated by this, we introduce topic specific \emph{Catchwords}, a group
+of words which occur with strictly greater frequency in a topic than any other topic individually
+and are required to have high frequency together rather than individually. A major contribution
+of the paper is to show that under this more realistic assumption (as we show empirically for real
+corpora), a Singular value decomposition (SVD) based algorithm with a crucial pre-processing
+step of thresholding, can provably recover the topics from a collection of documents drawn from
+\emph{Dominant admixtures}. Dominant admixtures are convex combination of distributions in
+which one distribution has a significantly high contribution than the other distributions. Empirical
+evidence shows that on several real world corpora, both \emph{Catchwords} and \emph{Dominant
+admixture} assumptions hold and the proposed algorithm substantially outperforms the state of
+the art \citep{arora}. \end{abstract} 

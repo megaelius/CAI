@@ -1,0 +1,17 @@
+Hessian operators arising in inverse problems governed by partial differential equations (PDEs)
+play a critical role in delivering efficient, dimension-independent convergence for both Newton
+solution of deterministic inverse problems, as well as Markov chain Monte Carlo sampling of posteriors
+in the Bayesian setting. These methods require the ability to repeatedly perform such operations
+on the Hessian as multiplication with arbitrary vectors, solving linear systems, inversion, and
+(inverse) square root. Unfortunately, the Hessian is a (formally) dense, implicitly-defined
+operator that is intractable to form explicitly for practical inverse problems, requiring as many
+PDE solves as inversion parameters. Low rank approximations are effective when the data contain
+limited information about the parameters, but become prohibitive as the data become more informative.
+However, the Hessians for many inverse problems arising in practical applications can be well approximated
+by matrices that have hierarchically low rank structure. Hierarchical matrix representations
+promise to overcome the high complexity of dense representations and provide effective data structures
+and matrix operations that have only log-linear complexity. In this work, we describe algorithms
+for constructing and updating hierarchical matrix approximations of Hessians, and illustrate
+them on a number of representative inverse problems involving time-dependent diffusion, advection-dominated
+transport, frequency domain acoustic wave propagation, and low frequency Maxwell equations,
+demonstrating up to an order of magnitude speedup compared to globally low rank approximations.

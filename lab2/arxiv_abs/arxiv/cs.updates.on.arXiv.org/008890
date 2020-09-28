@@ -1,0 +1,19 @@
+This paper puts a new light on secure data storage inside distributed systems. Specifically, it
+revisits computational secret sharing in a situation where the encryption key is exposed to an attacker.
+It comes with several contributions: First, it defines a security model for encryption schemes,
+where we ask for additional resilience against exposure of the encryption key. Precisely we ask
+for (1) indistinguishability of plaintexts under full ciphertext knowledge, (2) indistinguishability
+for an adversary who learns: the encryption key, plus all but one share of the ciphertext. (2) relaxes
+the "all-or-nothing" property to a more realistic setting, where the ciphertext is transformed
+into a number of shares, such that the adversary can't access one of them. (1) asks that, unless the
+user's key is disclosed, noone else than the user can retrieve information about the plaintext.
+Second, it introduces a new computationally secure encryption-then-sharing scheme, that protects
+the data in the previously defined attacker model. It consists in data encryption followed by a linear
+transformation of the ciphertext, then its fragmentation into shares, along with secret sharing
+of the randomness used for encryption. The computational overhead in addition to data encryption
+is reduced by half with respect to state of the art. Third, it provides for the first time cryptographic
+proofs in this context of key exposure. It emphasizes that the security of our scheme relies only
+on a simple cryptanalysis resilience assumption for blockciphers in public key mode: indistinguishability
+from random, of the sequence of diferentials of a random value. Fourth, it provides an alternative
+scheme relying on the more theoretical random permutation model. It consists in encrypting with
+sponge functions in duplex mode then, as before, secret-sharing the randomness. 

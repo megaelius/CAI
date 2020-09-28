@@ -1,0 +1,20 @@
+Composability is one of seven reasons for the long-standing and continuing success of MPI. Extending
+MPI by composing its operations with user-level operations provides useful integration with the
+progress engine and completion notification methods of MPI. However, the existing extensibility
+mechanism in MPI (generalized requests) is not widely utilized and has significant drawbacks.
+MPI can be generalized via scheduled communication primitives, for example, by utilizing implementation
+techniques from existing MPI-3 nonblocking collectives and from forthcoming MPI-4 persistent
+and partitioned APIs. Non-trivial schedules are used internally in some MPI libraries; but, they
+are not accessible to end-users. Message-based communication patterns can be built as libraries
+on top of MPI. Such libraries can have comparable implementation maturity and potentially higher
+performance than MPI library code, but do not require intimate knowledge of the MPI implementation.
+Libraries can provide performance-portable interfaces that cross MPI implementation boundaries.
+The ability to compose additional user-defined operations using the same progress engine benefits
+all kinds of general purpose HPC libraries. We propose a definition for MPI schedules: a user-level
+programming model suitable for creating persistent collective communication composed with new
+application-specific sequences of user-defined operations managed by MPI and fully integrated
+with MPI progress and completion notification. The API proposed offers a path to standardization
+for extensible communication schedules involving user-defined operations. Our approach has
+the potential to introduce event-driven programming into MPI (beyond the tools interface), although
+connecting schedules with events comprises future work. Early performance results described
+here are promising and indicate strong overlap potential. 

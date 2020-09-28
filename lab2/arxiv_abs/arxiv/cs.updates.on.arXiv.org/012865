@@ -1,0 +1,19 @@
+Label shift refers to the phenomenon where the prior class probability p(y) changes between the
+training and test distributions, while the conditional probability p(x|y) stays fixed. Label
+shift arises in settings like medical diagnosis, where a classifier trained to predict disease
+given symptoms must be adapted to scenarios where the baseline prevalence of the disease is different.
+Given estimates of p(y|x) from a predictive model, Saerens et al. (2002) proposed an efficient EM
+algorithm to correct for label shift that does not require model retraining. A limiting assumption
+of this algorithm is that p(y|x) is calibrated, which is not true of modern neural networks. Recently,
+Black Box Shift Learning (BBSL) (Lipton et al., 2018) and Regularized Learning under Label Shifts
+(RLLS) (Azizzadenesheli et al., 2019) have emerged as state-of-the-art techniques to cope with
+label shift when a classifier does not output calibrated probabilities. However, both BBSL and
+RLLS require model retraining with importance weights, which poses challenges in practice (Byrd
+and Lipton, 2019), and neither has been benchmarked against EM. Here we show that by combining EM
+with a type of calibration we call bias-corrected calibration, we outperform both BBSL and RLLS
+across diverse datasets and distribution shifts. We further show that the EM objective is concave
+and bounded, and introduce a theoretically principled strategy for estimating source-domain
+priors that improves robustness to poor calibration. This work demonstrates that EM with appropriate
+calibration is a formidable and efficient baseline that future work in label shift adaptation should
+be compared against. Colab notebooks reproducing experiments are available at (anonymized link):
+https://github.com/blindauth/labelshiftexperiments 

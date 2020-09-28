@@ -1,0 +1,20 @@
+Consider an algorithm performing a computation on a huge random object. Is it necessary to generate
+the entire object up front, or is it possible to provide query access to the object and sample it incrementally
+"on-the-fly"? Such an implementation should emulate the object by answering queries in a manner
+consistent with a random instance sampled from the true distribution. Our first set of results focus
+on undirected graphs with independent edge probabilities, under certain assumptions. Then, we
+use this to obtain the first efficient implementations for the Erdos-Renyi model and the Stochastic
+Block model. As in previous local-access implementations for random graphs, we support Vertex-Pair
+and Next-Neighbor queries. We also introduce a new Random-Neighbor query. Next, we show how to implement
+random Catalan objects, specifically focusing on Dyck paths (always positive random walks on the
+integer line). Here, we support Height queries to find the position of the walk, and First-Return
+queries to find the time when the walk returns to a specified height. This in turn can be used to implement
+Next-Neighbor queries on random rooted/binary trees, and Matching-Bracket queries on random
+well bracketed expressions. Finally, we define a new model that: (1) allows multiple independent
+simultaneous instantiations of the same implementation to be consistent with each other without
+communication (2) allows us to generate a richer class of random objects that do not have a succinct
+description. Specifically, we study uniformly random valid $q$-colorings of an input graph $G$
+with max degree $\Delta$. The distribution over valid colorings is specified via a "huge" underlying
+graph $G$, that is far too large to be read in sub-linear time. Instead, we access $G$ through local
+neighborhood probes. We are able to answer queries to the color of any vertex in sub-linear time for
+$q > 9\Delta$. 

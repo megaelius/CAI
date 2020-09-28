@@ -1,0 +1,18 @@
+The deep layers of modern neural networks extract a rather rich set of features as an input propagates
+through the network. This paper sets out to harvest these rich intermediate representations for
+quantization with minimal accuracy loss while significantly reducing the memory footprint and
+compute intensity of the DNN. This paper utilizes knowledge distillation through teacher-student
+paradigm [7] in a novel setting that exploits the feature extraction capability of DNNs for higher-accuracy
+quantization. As such, our algorithm logically divides a pretrained full-precision DNN to multiple
+sections, each of which exposes intermediate features to train a team of students independently
+in the quantized domain. This divide and conquer strategy, in fact, makes the training of each student
+section possible in isolation while all these independently trained sections are later stitched
+together to form the equivalent fully quantized network. Our algorithm is a sectional approach
+towards knowledge distillation and is not treating the intermediate representation as a hint for
+pretraining before one knowledge distillation pass over the entire network [20]. Experiments
+on various DNNs (AlexNet, LeNet, ResNet-18, ResNet-20, SVHN and VGG-11) show that, on average,
+this approach -- called DCQ (Divide and Conquer Quantization -- on average closes the accuracy gap
+between a state-of-the-art quantized training technique, DoReFa-Net [24] and the full-precision
+runs by 85% and 92% for binary and ternary quantization of the weights, respectively. Additionally,
+we show that our approach, DCQ, can improve performance of existing state-of-the art knowledge
+distillation based approaches [16] by 1.75% on average. 

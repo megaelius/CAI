@@ -1,0 +1,20 @@
+We model "fair" dimensionality reduction as an optimization problem. A central example is the fair
+PCA problem: the input data is divided into $k$ groups, and the goal is to find a single $d$-dimensional
+representation for all groups for which the maximum variance (or minimum reconstruction error)
+is optimized for all groups in a fair (or balanced) manner, e.g., by maximizing the minimum variance
+over the $k$ groups of the projection to a $d$-dimensional subspace. This problem was introduced
+by Samadi et al. (2018) who gave a polynomial-time algorithm which, for $k=2$ groups, returns a $(d+1)$-dimensional
+solution of value at least the best $d$-dimensional solution. We give an exact polynomial-time
+algorithm for $k=2$ groups. The result relies on extending results of Pataki (1998) regarding rank
+of extreme point solutions to semi-definite programs. This approach applies more generally to
+any monotone concave function of the individual group objectives. For $k>2$ groups, our results
+generalize to give a $(d+\sqrt{2k+0.25}-1.5)$-dimensional solution with objective value as
+good as the optimal $d$-dimensional solution for arbitrary $k,d$ in polynomial time. Using our
+extreme point characterization result for SDPs, we give an iterative rounding framework for general
+SDPs which generalizes the well-known iterative rounding approach for LPs. It returns low-rank
+solutions with bounded violation of constraints. We obtain a $d$-dimensional projection where
+the violation in the objective can be bounded additively in terms of the top $O(\sqrt{k})$-singular
+values of the data matrices. We also give an exact polynomial-time algorithm for any fixed number
+of groups and target dimension via the algorithm of Grigoriev and Pasechnik (2005). In contrast,
+when the number of groups is part of the input, even for target dimension $d=1$, we show this problem
+is NP-hard. 

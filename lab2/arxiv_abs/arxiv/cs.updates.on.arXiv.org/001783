@@ -1,0 +1,18 @@
+This research started with an algebra for reasoning about rely/guarantee concurrency for a shared
+memory model. The approach taken led to a more abstract algebra of atomic steps, in which atomic steps
+synchronise (rather than interleave) when composed in parallel. The algebra of rely/guarantee
+concurrency then becomes an instantiation of the more abstract algebra. Many of the core properties
+needed for rely/guarantee reasoning can be shown to hold in the abstract algebra where their proofs
+are simpler and hence allow a higher degree of automation. The algebra has been encoded in Isabelle/HOL
+to provide a basis for tool support for program verification. In rely/guarantee concurrency, programs
+are specified to guarantee certain behaviours until assumptions about the behaviour of their environment
+are violated. When assumptions are violated, program behaviour is unconstrained (aborting),
+and guarantees need no longer hold. To support these guarantees a second synchronous operator,
+weak conjunction, was introduced: both processes in a weak conjunction must agree to take each atomic
+step, unless one aborts in which case the whole aborts. In developing the laws for parallel and weak
+conjunction we found many properties were shared by the operators and that the proofs of many laws
+were essentially the same. This insight led to the idea of generalising synchronisation to an abstract
+operator with only the axioms that are shared by the parallel and weak conjunction operator, so that
+those two operators can be viewed as instantiations of the abstract synchronisation operator.
+The main differences between parallel and weak conjunction are how they combine individual atomic
+steps; that is left open in the axioms for the abstract operator. 

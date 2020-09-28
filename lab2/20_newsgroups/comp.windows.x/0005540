@@ -1,0 +1,8 @@
+I've been offerred an old 4-bits/pixel greyscale Xterminal.  Aside from the
+"real people have already upgraded to RISC architecture R5 servers", do I want
+this Xterminal? 
+I'm concerned about the 4-planes...I've only ever heard of 1 (mono) and 8
+(colour) planes -- will I have any concerns with this 4-plane unit? 
+[Specifically related to 4-planes vs 1 or 8]
+Thanks!
+PS: all R5 apps run on R4/R3 servers,right?

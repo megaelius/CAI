@@ -1,0 +1,18 @@
+Convolutional neural networks typically consist of many convolutional layers followed by one
+or more fully connected layers. While convolutional layers map between high-order activation
+tensors, the fully connected layers operate on flattened activation vectors. Despite empirical
+success, this approach has notable drawbacks. Flattening followed by fully connected layers discards
+multilinear structure in the activations and requires many parameters. We address these problems
+by incorporating tensor algebraic operations that preserve multilinear structure at every layer.
+First, we introduce Tensor Contraction Layers (TCLs) that reduce the dimensionality of their input
+while preserving their multilinear structure using tensor contraction. Next, we introduce Tensor
+Regression Layers (TRLs), which express outputs through a low-rank multilinear mapping from a
+high-order activation tensor to an output tensor of arbitrary order. We learn the contraction and
+regression factors end-to-end, and produce accurate nets with fewer parameters. Additionally,
+our layers regularize networks by imposing low-rank constraints on the activations (TCL) and regression
+weights (TRL). Experiments on ImageNet show that, applied to VGG and ResNet architectures, TCLs
+and TRLs reduce the number of parameters compared to fully connected layers by more than 65% while
+maintaining or increasing accuracy. In addition to the space savings, our approach's ability to
+leverage topological structure can be crucial for structured data such as MRI. In particular, we
+demonstrate significant performance improvements over comparable architectures on three tasks
+associated with the UK Biobank dataset. 

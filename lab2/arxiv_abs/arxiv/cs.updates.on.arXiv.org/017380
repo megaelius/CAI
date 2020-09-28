@@ -1,0 +1,18 @@
+The self-attention module is a key component of Transformer-based models, wherein each token pays
+attention to every other token. Recent studies have shown that these heads exhibit syntactic, semantic,
+or local behaviour. Some studies have also identified promise in restricting this attention to
+be local, i.e., a token attending to other tokens only in a small neighbourhood around it. However,
+no conclusive evidence exists that such local attention alone is sufficient to achieve high accuracy
+on multiple NLP tasks. In this work, we systematically analyse the role of locality information
+in learnt models and contrast it with the role of syntactic information. More specifically, we first
+do a sensitivity analysis and show that, at every layer, the representation of a token is much more
+sensitive to tokens in a small neighborhood around it than to tokens which are syntactically related
+to it. We then define an attention bias metric to determine whether a head pays more attention to local
+tokens or to syntactically related tokens. We show that a larger fraction of heads have a locality
+bias as compared to a syntactic bias. Having established the importance of local attention heads,
+we train and evaluate models where varying fractions of the attention heads are constrained to be
+local. Such models would be more efficient as they would have fewer computations in the attention
+layer. We evaluate these models on 4 GLUE datasets (QQP, SST-2, MRPC, QNLI) and 2 MT datasets (En-De,
+En-Ru) and clearly demonstrate that such constrained models have comparable performance to the
+unconstrained models. Through this systematic evaluation we establish that attention in Transformer-based
+models can be constrained to be local without affecting performance. 

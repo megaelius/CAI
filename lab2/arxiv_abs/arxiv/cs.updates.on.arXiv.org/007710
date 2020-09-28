@@ -1,0 +1,18 @@
+Dijkstra's algorithm for the Single-Source Shortest Path (SSSP) problem is notoriously hard to
+parallelize in $o(n)$ depth, $n$ being the number of vertices in the input graph, without increasing
+the required parallel work unreasonably. Crauser et al.\ (1998) presented observations that allow
+to identify more than a single vertex at a time as correct and correspondingly more edges to be relaxed
+simultaneously. Their algorithm runs in parallel phases, and for certain random graphs they showed
+that the number of phases is $O(n^{1/3})$ with high probability. A work-efficient CRCW PRAM with
+this depth was given, but no implementation on a real, parallel system. In this paper we strengthen
+the criteria of Crauser et al., and discuss tradeoffs between work and number of phases in their implementation.
+We present simulation results with a range of common input graphs for the depth that an ideal parallel
+algorithm that can apply the criteria at no cost and parallelize relaxations without conflicts
+can achieve. These results show that the number of phases is indeed a small root of $n$, but still off
+from the shortest path length lower bound that can also be computed. We give a shared-memory parallel
+implementation of the most work-efficient version of a Dijkstra's algorithm running in parallel
+phases, which we compare to an own implementation of the well-known $\Delta$-stepping algorithm.
+We can show that the work-efficient SSSP algorithm applying the criteria of Crauser et al. is competitive
+to and often better than $\Delta$-stepping on our chosen input graphs. Despite not providing an
+$o(n)$ guarantee on the number of required phases, criteria allowing concurrent relaxation of
+many correct vertices may be a viable approach to practically fast, parallel SSSP implementations.

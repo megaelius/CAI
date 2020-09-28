@@ -1,0 +1,18 @@
+Garbage Collection in concurrent data structures, especially lock-free ones, pose multiple design
+and consistency challenges. In this instance, we consider the case of concurrent sets. A set is a
+collection of elements, where the elements are ordered and distinct. These two invariants are always
+maintained at every point in time. Currently, multiple implementations of concurrent sets already
+exist. LazyList, Hand-over-hand List and Harris List are some of the well-known implementations.
+However none of these implementations employ, or are concerned with garbage collection of deleted
+nodes. Instead each implementation ignores deleted nodes or depends on the garbage collector of
+the language to handle them. Additionally, Garbage collection in concurrent lists, that use optimistic
+traversals or that are lock-free, is not trivial. For example, in LazyList and Harris List, they
+allow a thread to traverse a node or a sequence of nodes after these nodes have already been removed
+from the list, and hence possibly deleted. If deleted nodes are to be reused, this will potentially
+lead to the ABA problem. Moreover, some languages like C++ do not have an inbuilt garbage collector.
+Some constructs like Shared Pointers provide a limited garbage collection facility, but it degrades
+performance by a large scale. Integrating Shared Pointers into a concurrent code is also not a trivial
+task. In this paper, we propose a new representation of a concurrent set, GCList, which employs inbuilt
+garbage collection. We propose a novel garbage collection scheme that implements in-built memory
+reclamation whereby it reuses deleted nodes from the list. We propose both lock-based and lock-free
+implementations of GCList. The garbage collection scheme works in parallel with the Set operations.

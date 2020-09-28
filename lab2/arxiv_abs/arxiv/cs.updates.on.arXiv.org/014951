@@ -1,0 +1,19 @@
+Deep Neural Networks (DNNs) have been shown to be vulnerable to adversarial attacks, wherein, a
+model gets fooled by applying slight perturbations on the input. With the advent of Internet-of-Things
+and the necessity to enable intelligence in embedded devices, low-power and secure hardware implementation
+of DNNs is vital. In this paper, we investigate the use of quantization to potentially resist adversarial
+attacks. Several recent studies have reported remarkable results in reducing the energy requirement
+of a DNN through quantization. However, no prior work has considered the relationship between adversarial
+sensitivity of a DNN and its effect on quantization. We propose QUANOS- a framework that performs
+layer-specific hybrid quantization based on Adversarial Noise Sensitivity (ANS). We identify
+a novel noise stability metric (ANS) for DNNs, i.e., the sensitivity of each layer's computation
+to adversarial noise. ANS allows for a principled way of determining optimal bit-width per layer
+that incurs adversarial robustness as well as energy-efficiency with minimal loss in accuracy.
+Essentially, QUANOS assigns layer significance based on its contribution to adversarial perturbation
+and accordingly scales the precision of the layers. A key advantage of QUANOS is that it does not rely
+on a pre-trained model and can be applied in the initial stages of training. We evaluate the benefits
+of QUANOS on precision scalable Multiply and Accumulate (MAC) hardware architectures with data
+gating and subword parallelism capabilities. Our experiments on CIFAR10, CIFAR100 datasets show
+that QUANOS outperforms homogenously quantized 8-bit precision baseline in terms of adversarial
+robustness (3%-4% higher) while yielding improved compression (>5x) and energy savings (>2x)
+at iso-accuracy. 

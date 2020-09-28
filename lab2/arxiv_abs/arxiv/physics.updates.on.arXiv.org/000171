@@ -1,0 +1,18 @@
+Bayesian inference involves two main computational challenges. First, in estimating the parameters
+of some model for the data, the posterior distribution may well be highly multi-modal: a regime in
+which the convergence to stationarity of traditional Markov Chain Monte Carlo (MCMC) techniques
+becomes incredibly slow. Second, in selecting between a set of competing models the necessary estimation
+of the Bayesian evidence for each is, by definition, a (possibly high-dimensional) integration
+over the entire parameter space; again this can be a daunting computational task, although new Monte
+Carlo (MC) integration algorithms offer solutions of ever increasing efficiency. Nested sampling
+(NS) is one such contemporary MC strategy targeted at calculation of the Bayesian evidence, but
+which also enables posterior inference as a by-product, thereby allowing simultaneous parameter
+estimation and model selection. The widely-used MultiNest algorithm presents a particularly
+efficient implementation of the NS technique for multi-modal posteriors. In this paper we discuss
+importance nested sampling (INS), an alternative summation of the MultiNest draws, which can calculate
+the Bayesian evidence at up to an order of magnitude higher accuracy than `vanilla' NS with no change
+in the way MultiNest explores the parameter space. This is accomplished by treating as a (pseudo-)importance
+sample the totality of points collected by MultiNest, including those previously discarded under
+the constrained likelihood sampling of the NS algorithm. We apply this technique to several challenging
+test problems and compare the accuracy of Bayesian evidences obtained with INS against those from
+vanilla NS. 

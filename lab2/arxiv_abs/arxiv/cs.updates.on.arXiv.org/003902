@@ -1,0 +1,19 @@
+Most research in concurrency focuses on providing safety and liveness guarantees under the worst
+possible conditions. However, workloads of many important concurrent applications are much less
+adversarial, leaving room for optimizations for the common case. In this paper, we focus on single
+writer multiple reader concurrency, where any number of transactions can atomically access shared
+data structures, but only one thread can atomically commit new versions. The single-writer setup
+is particularly applicable to search indices, online graph analysis, and hybrid transactional/analytical
+processing (HTAP) databases, in which there can be a continuous stream of updates handled by one
+thread, but the bulk of the work is done by transactions that analyze the data. Our approach is based
+on a variant of multiversion concurrency control. We define the \emph{version maintenance problem},
+which gives a framework that allows for very low overhead in maintaining and collecting multiple
+versions of a database. We then present provably efficient, low-contention lock-free and wait-free
+algorithms that solve it, and show how these solutions can be used to develop a transactional memory.
+We believe that the version maintenance problem could be of independent interest. Focusing on single
+writer workloads allows us to achieve strong properties, some of which are not achievable with multiple
+writers. In particular, we develop a transactional memory that in addition to guaranteeing strict
+serializability and safe and precise garbage collection, guarantees wait-free write transactions,
+and delay-free read transactions---i.e., the number of steps taken is independent of the number
+of threads, number of versions, and actions of other threads. Delay-freedom is significantly stronger
+than wait-freedom. 

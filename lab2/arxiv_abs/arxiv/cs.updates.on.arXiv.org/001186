@@ -1,0 +1,17 @@
+We envision a decentralized Public Key Infrastructure (PKI) design, that we call ClaimChain, where
+each user or device maintains repositories of claims regarding their own key material, and their
+beliefs about public keys and, generally, state of other users of the system. High integrity of the
+repositories is maintained by virtue of storing claims on authenticated data structures, namely
+hash chains and Merkle trees, and their authenticity and non-repudiation by the use of digital signatures.
+We introduce the concept of cross-referencing of hash chains as a way of efficient and verifiable
+vouching about states of other users. ClaimChain allows to detect chain compromises, manifested
+as forks of hash chains, and to implement various social policies for deriving decisions about the
+latest state of users in the system. The claims about keys of other people introduces a privacy problem
+that does not exist in the centralized PKI design. Such information can reveal the social graph,
+and sometimes even communication patterns. To solve this, we use cryptographic verifiable random
+functions to derive private identifiers that are re-randomized on each chain update. This allows
+to openly and verifiably publish claims that can only be read by the authorized users, ensuring privacy
+of the social graph. Moreover, the specific construction of Merkle trees in ClaimChain, along with
+the usage of verifiable random functions, ensures users can not equivocate about the state of other
+people. ClaimChain is flexible with respect to deployment options, supporting fully decentralized
+deployments, as well as centralized, federated, and hybrid modes of operation. 

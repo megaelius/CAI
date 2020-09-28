@@ -1,0 +1,20 @@
+To realize the promise of ubiquitous embedded deep network inference, it is essential to seek limits
+of energy and area efficiency. To this end, low-precision networks offer tremendous promise because
+both energy and area scale down quadratically with the reduction in precision. Here we demonstrate
+ResNet-18, -34, -50, -152, Inception-v3, Densenet-161, and VGG-16bn networks on the ImageNet
+classification benchmark that, at 8-bit precision exceed the accuracy of the full-precision baseline
+networks after one epoch of finetuning, thereby leveraging the availability of pretrained models.
+We also demonstrate ResNet-18, -34, -50, -152, Densenet-161, and VGG-16bn 4-bit models that match
+the accuracy of the full-precision baseline networks -- the highest scores to date. Surprisingly,
+the weights of the low-precision networks are very close (in cosine similarity) to the weights of
+the corresponding baseline networks, making training from scratch unnecessary. We find that gradient
+noise due to quantization during training increases with reduced precision, and seek ways to overcome
+this noise. The number of iterations required by SGD to achieve a given training error is related
+to the square of (a) the distance of the initial solution from the final plus (b) the maximum variance
+of the gradient estimates. Therefore, we (a) reduce solution distance by starting with pretrained
+fp32 precision baseline networks and fine-tuning, and (b) combat gradient noise introduced by
+quantization by training longer and reducing learning rates. Sensitivity analysis indicates
+that these simple techniques, coupled with proper activation function range calibration to take
+full advantage of the limited precision, are sufficient to discover low-precision networks, if
+they exist, close to fp32 precision baseline networks. The results herein provide evidence that
+4-bits suffice for classification. 

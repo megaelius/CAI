@@ -1,0 +1,18 @@
+As the advances in quantum hardware bring us into the noisy intermediate-scale quantum (NISQ) era,
+one possible task we can perform without quantum error correction using NISQ machines is the variational
+quantum eigensolver (VQE) due to its shallow depth. A specific problem that we can tackle is the strongly
+interacting Fermi-Hubbard model, which is classically intractable and has practical implications
+in areas like superconductivity. In this Article, we will perform resource estimation on Hubbard
+VQE using silicon spin qubits as our example platform, though many of our arguments can be extended
+to other hardware platforms like superconducting qubits, trapped-ion qubits, etc. We outline
+the details about the gate sequence, the measurement scheme and the relevant error mitigation techniques
+for the implementation of the Hubbard VQE on a NISQ platform. For a 50-qubit simulation of the Fermi-Hubbard
+model, which cannot be solved exactly via classical means, we need $\sim 40000$ gates, which means
+that we need a gate infidelity of $10^{-4}$ to obtain meaningful results with the aid of error mitigations.
+When searching for the ground state presuming a $\mu s$ gate time, the time required for one time step
+in gradient descent is $\sim 6 \text{ days}$, which can be reduced to less than $10$ minutes if we distribute
+our task among 1000 quantum processors. Hence, implementing a 50-qubit Hubbard model VQE on a NISQ
+machine can be on the brink of being feasible in near term, but further optimisation of our simulation
+scheme, improvements in the gate fidelity, improvements in the optimisation scheme and advances
+in the error mitigation techniques are needed to overcome the remaining obstacles. The scalability
+of the hardware platform is also essential to overcome the runtime issue via parallelisation. 

@@ -1,0 +1,18 @@
+The Reduced Basis Method (RBM) is a rigorous model reduction approach for solving parametrized
+partial differential equations. It identifies a low-dimensional subspace for approximation
+of the parametric solution manifold that is embedded in high-dimensional space. A reduced order
+model is subsequently constructed in this subspace. RBM relies on residual-based error indicators
+or {\em a posteriori} error bounds to guide construction of the reduced solution subspace, to serve
+as a stopping criteria, and to certify the resulting surrogate solutions. Unfortunately, it is
+well-known that the standard algorithm for residual norm computation suffers from premature stagnation
+at the level of the square root of machine precision. In this paper, we develop two alternatives to
+the standard offline phase of reduced basis algorithms. First, we design a robust strategy for computation
+of residual error indicators that allows RBM algorithms to enrich the solution subspace with accuracy
+beyond root machine precision. Secondly, we propose a new error indicator based on the Lebesgue
+function in interpolation theory. This error indicator does not require computation of residual
+norms, and instead only requires the ability to compute the RBM solution. This residual-free indicator
+is rigorous in that it bounds the error committed by the RBM approximation, but up to an uncomputable
+multiplicative constant. Because of this, the residual-free indicator is effective in choosing
+snapshots during the offline RBM phase, but cannot currently be used to certify error that the approximation
+commits. However, it circumvents the need for \textit{a posteriori} analysis of numerical methods,
+and therefore can be effective on problems where such a rigorous estimate is hard to derive. 

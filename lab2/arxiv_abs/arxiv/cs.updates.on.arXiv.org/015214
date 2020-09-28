@@ -1,0 +1,17 @@
+This paper introduces Neural Subdivision, a novel framework for data-driven coarse-to-fine geometry
+modeling. During inference, our method takes a coarse triangle mesh as input and recursively subdivides
+it to a finer geometry by applying the fixed topological updates of Loop Subdivision, but predicting
+vertex positions using a neural network conditioned on the local geometry of a patch. This approach
+enables us to learn complex non-linear subdivision schemes, beyond simple linear averaging used
+in classical techniques. One of our key contributions is a novel self-supervised training setup
+that only requires a set of high-resolution meshes for learning network weights. For any training
+shape, we stochastically generate diverse low-resolution discretizations of coarse counterparts,
+while maintaining a bijective mapping that prescribes the exact target position of every new vertex
+during the subdivision process. This leads to a very efficient and accurate loss function for conditional
+mesh generation, and enables us to train a method that generalizes across discretizations and favors
+preserving the manifold structure of the output. During training we optimize for the same set of
+network weights across all local mesh patches, thus providing an architecture that is not constrained
+to a specific input mesh, fixed genus, or category. Our network encodes patch geometry in a local
+frame in a rotation- and translation-invariant manner. Jointly, these design choices enable our
+method to generalize well, and we demonstrate that even when trained on a single high-resolution
+mesh our method generates reasonable subdivisions for novel shapes. 

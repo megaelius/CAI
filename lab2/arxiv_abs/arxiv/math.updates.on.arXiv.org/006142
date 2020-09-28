@@ -1,0 +1,18 @@
+In this paper, we present numerical methods suitable for solving convex quadratic Fractional Differential
+Equation (FDE) constrained optimization problems, with box constraints on the state and/or control
+variables. We develop an Alternating Direction Method of Multipliers (ADMM) framework, which
+uses preconditioned Krylov subspace solvers for the resulting sub-problems. The latter allows
+us to tackle a range of Partial Differential Equation (PDE) optimization problems with box constraints,
+posed on space-time domains, that were previously out of the reach of state-of-the-art preconditioners.
+In particular, by making use of the powerful Generalized Locally Toeplitz (GLT) sequences theory,
+we show that any existing GLT structure present in the problem matrices is preserved by ADMM, and
+we propose some preconditioning methodologies that could be used within the solver, to demonstrate
+the generality of the approach. Focusing on convex quadratic programs with time-dependent 2-dimensional
+FDE constraints, we derive multilevel circulant preconditioners, which may be embedded within
+Krylov subspace methods, for solving the ADMM sub-problems. Discretized versions of FDEs involve
+large dense linear systems. In order to overcome this difficulty, we design a recursive linear algebra,
+which is based on the Fast Fourier Transform (FFT). We manage to keep the storage requirements linear,
+with respect to the grid size $N$, while ensuring an order $N \log N$ computational complexity per
+iteration of the Krylov solver. We implement the proposed method, and demonstrate its scalability,
+generality, and efficiency, through a series of experiments over different setups of the FDE optimization
+problem. 

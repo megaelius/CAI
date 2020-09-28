@@ -1,0 +1,8 @@
+Does anyone have any information/advice on large color monitors
+(17"-21") to use with a 486 system running X server software?
+I maining looking for quality information and price, but all
+information is welcomed.  
+Thanks,
+David
+"It's all ball bearings!"
+  -- Fletch

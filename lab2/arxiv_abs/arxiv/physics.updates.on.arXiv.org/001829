@@ -1,0 +1,18 @@
+The Sequential Fully Implicit (SFI) method was proposed to simulate coupled immiscible multiphase
+fluid flow in porous media. Later, it was extended to the black-oil model, whereby the gas component
+is allowed to dissolve in the oil phase. Most recently, the SFI approach was extended to fully compositional
+isothermal displacements. SFI schemes solve the fully coupled system in two steps: (1) Construct
+and solve the pressure equation (flow problem). (2) Solve the coupled species transport equations
+for the phase saturations and phase compositions. Experience indicates that complex interphase
+mass transfer behaviors often lead to large numbers of SFI outer iterations compared with the Fully
+Implicit (FI) method. Here, we demonstrate that the convergence difficulties are directly related
+to the treatment of the coupling between the flow and transport problems, and we propose a new SFI
+variant based on a nonlinear overall-volume balance equation. The first step consists of forming
+and solving a nonlinear pressure equation, which is a weighted sum of all the component mass conservation
+equations. The second step of the new SFI scheme entails introducing the overall-mass density as
+a degree-of-freedom, and solving the full set of component conservation equations cast in the natural-variables
+form. During the second step, the pressure and the total-velocity fields are fixed. We analyze the
+`splitting errors' associated with the compositional SFI scheme, and we show how to control these
+errors in order to converge to the same solution as the Fully Implicit (FI) method. This robust sequential-implicit
+solution scheme allows for designing numerical methods and linear solvers that are optimized for
+the sub-problems of flow and transport. 

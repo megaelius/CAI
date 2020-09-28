@@ -1,0 +1,18 @@
+Recent focus on robustness to adversarial attacks for deep neural networks produced a large variety
+of algorithms for training robust models. Most of the effective algorithms involve solving the
+min-max optimization problem for training robust models (min step) under worst-case attacks (max
+step). However, they often suffer from high computational cost from running several inner maximization
+iterations (to find an optimal attack) inside every outer minimization iteration. Therefore,
+it becomes difficult to readily apply such algorithms for moderate to large size real world data
+sets. To alleviate this, we explore the effectiveness of iterative descent-ascent algorithms
+where the maximization and minimization steps are executed in an alternate fashion to simultaneously
+obtain the worst-case attack and the corresponding robust model. Specifically, we propose a novel
+discrete-time dynamical system-based algorithm that aims to find the saddle point of a min-max
+optimization problem in the presence of uncertainties. Under the assumptions that the cost function
+is convex and uncertainties enter concavely in the robust learning problem, we analytically show
+that our algorithm converges asymptotically to the robust optimal solution under a general adversarial
+budget constraints as induced by $\ell_p$ norm, for $1\leq p\leq \infty$. Based on our proposed
+analysis, we devise a fast robust training algorithm for deep neural networks. Although such training
+involves highly non-convex robust optimization problems, empirical results show that the algorithm
+can achieve significant robustness compared to other state-of-the-art robust models on benchmark
+data sets. 

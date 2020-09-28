@@ -1,0 +1,18 @@
+Software development is inherently incremental. Nowadays, many software companies adopt an agile
+process and a shorter release cycle, where software needs to be delivered faster with quality assurances.
+On the other hand, the majority of existing program analysis tools still target single versions
+of programs and are slow and inflexible to handle changes. In the popular version control systems
+such as git, the program changes are still presented using source code diffs. It is hard to understand
+what program conditions are changed and which source code lines cause them. In this paper, we propose
+to compute "invariant diffs" to specify changes. Similar to source diffs that report common code
+and code churns, we define version invariants to represent program conditions that are common across
+versions, and invariant churns to show the changes of program conditions between versions. We designed
+a static demand-driven, path-sensitive analysis to compute and compare invariants for multiple
+versions of programs using multiversion control flow graphs. We report invariant diffs at the matched
+program points where comparing invariants are meaningful. Importantly, our analysis correlates
+source diffs with invariant diffs to explain what source code changes lead to the property changes.
+We implemented our algorithms in a tool called $H_2$ and performed experiments on 104 versions of
+programs. Our results show that we are able to compute invariant diffs correctly within reasonable
+amount of time. The version invariants can capture the common properties of program versions even
+constructed by different persons, and the invariant churns can specify the semantics of changes
+such as how a patch changed a buggy condition to a correct condition. 

@@ -1,0 +1,19 @@
+In brittle fracture applications, failure paths, regions where the failure occurs and damage statistics,
+are some of the key quantities of interest (QoI). High-fidelity models for brittle failure that
+accurately predict these QoI exist but are highly computationally intensive, making them infeasible
+to incorporate in upscaling and uncertainty quantification frameworks. The goal of this paper
+is to provide a fast heuristic to reasonably estimate quantities such as failure path and damage
+in the process of brittle failure. Towards this goal, we first present a method to predict failure
+paths under tensile loading conditions and low-strain rates. The method uses a $k$-nearest neighbors
+algorithm built on fracture process zone theory, and identifies the set of all possible pre-existing
+cracks that are likely to join early to form a large crack. The method then identifies zone of failure
+and failure paths using weighted graphs algorithms. We compare these failure paths to those computed
+with a high-fidelity model called the Hybrid Optimization Software Simulation Suite (HOSS). A
+probabilistic evolution model for average damage in a system is also developed that is trained using
+150 HOSS simulations and tested on 40 simulations. A non-parametric approach based on confidence
+intervals is used to determine the damage evolution over time along the dominant failure path. For
+upscaling, damage is the key QoI needed as an input by the continuum models. This needs to be informed
+accurately by the surrogate models for calculating effective modulii at continuum-scale. We show
+that for the proposed average damage evolution model, the prediction accuracy on the test data is
+more than 90\%. In terms of the computational time, the proposed models are $\approx \mathcal{O}(10^6)$
+times faster compared to high-fidelity HOSS. 

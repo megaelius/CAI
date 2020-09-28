@@ -1,0 +1,19 @@
+Reinforcement Learning agents often need to solve not a single task, but several tasks pertaining
+to a same domain; in particular, each task corresponds to an MDP drawn from a family of related MDPs
+(a domain). An agent learning in this setting should be able exploit policies it has learned in the
+past, for a given set of sample tasks, in order to more rapidly acquire policies for novel tasks. Consider,
+for instance, a navigation problem where an agent may have to learn to navigate different (but related)
+mazes. Even though these correspond to distinct tasks (since the goal and starting locations of
+the agent may change, as well as the maze configuration itself), their solutions do share common
+properties---e.g. in order to reach distant areas of the maze, an agent should not move in circles.
+After an agent has learned to solve a few sample tasks, it may be possible to leverage the acquired
+experience to facilitate solving novel tasks from the same domain. Our work is motivated by the observation
+that trajectory samples from optimal policies for tasks belonging to a common domain, often reveal
+underlying useful patterns for solving novel tasks. We propose an optimization objective that
+characterizes the problem of learning reusable temporally extended actions (macros). We introduce
+a computationally tractable surrogate objective that is equivalent to finding macros that allow
+for maximal compression of a given set of sampled trajectories. We develop a compression-based
+approach for obtaining such macros and propose an exploration strategy that takes advantage of
+them. We show that meaningful behavioral patterns can be identified from sample policies over discrete
+and continuous action spaces, and present evidence that the proposed exploration strategy improves
+learning time on novel tasks. 

@@ -1,0 +1,19 @@
+The policy gradient theorem is defined based on an objective with respect to the initial distribution
+over states. In the discounted case, this results in policies that are optimal for one distribution
+over initial states, but may not be uniformly optimal for others, no matter where the agent starts
+from. Furthermore, to obtain unbiased gradient estimates, the starting point of the policy gradient
+estimator requires sampling states from a normalized discounted weighting of states. However,
+the difficulty of estimating the normalized discounted weighting of states, or the stationary
+state distribution, is quite well-known. Additionally, the large sample complexity of policy
+gradient methods is often attributed to insufficient exploration, and to remedy this, it is often
+assumed that the restart distribution provides sufficient exploration in these algorithms. In
+this work, we propose exploration in policy gradient methods based on maximizing entropy of the
+discounted future state distribution. The key contribution of our work includes providing a practically
+feasible algorithm to estimate the normalized discounted weighting of states, i.e, the \textit{discounted
+future state distribution}. We propose that exploration can be achieved by entropy regularization
+with the discounted state distribution in policy gradients, where a metric for maximal coverage
+of the state space can be based on the entropy of the induced state distribution. The proposed approach
+can be considered as a three time-scale algorithm and under some mild technical conditions, we prove
+its convergence to a locally optimal policy. Experimentally, we demonstrate usefulness of regularization
+with the discounted future state distribution in terms of increased state space coverage and faster
+learning on a range of complex tasks. 

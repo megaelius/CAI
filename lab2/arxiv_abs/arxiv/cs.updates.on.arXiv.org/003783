@@ -1,0 +1,18 @@
+As machine learning (ML) applications become increasingly prevalent, protecting the confidentiality
+of ML models becomes paramount for two reasons: (a) models may constitute a business advantage to
+its owner, and (b) an adversary may use a stolen model to find transferable adversarial examples
+that can be used to evade classification by the original model. One way to protect model confidentiality
+is to limit access to the model only via well-defined prediction APIs. This is common not only in machine-learning-as-a-service
+(MLaaS) settings where the model is remote, but also in scenarios like autonomous driving where
+the model is local but direct access to it is protected, for example, by hardware security mechanisms.
+Nevertheless, prediction APIs still leak information so that it is possible to mount model extraction
+attacks by an adversary who repeatedly queries the model via the prediction API. In this paper, we
+describe a new model extraction attack by combining a novel approach for generating synthetic queries
+together with recent advances in training deep neural networks. This attack outperforms state-of-the-art
+model extraction techniques in terms of transferability of targeted adversarial examples generated
+using the extracted model (+15-30 percentage points, pp), and in prediction accuracy (+15-20 pp)
+on two datasets. We then propose the first generic approach to effectively detect model extraction
+attacks: PRADA. It analyzes how the distribution of consecutive queries to the model evolves over
+time and raises an alarm when there are abrupt deviations. We show that PRADA can detect all known
+model extraction attacks with a 100% success rate and no false positives. PRADA is particularly
+suited for detecting extraction attacks against local models. 

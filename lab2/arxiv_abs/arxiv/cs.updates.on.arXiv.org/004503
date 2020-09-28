@@ -1,0 +1,19 @@
+We study the design of storage-efficient algorithms for emulating atomic shared memory over an
+asynchronous, distributed message-passing system. Our first algorithm is an atomic single-writer
+multi-reader algorithm based on a novel erasure-coding technique, termed \emph{multi-version
+code}. Next, we propose an extension of our single-writer algorithm to a multi-writer multi-reader
+environment. Our second algorithm combines replication and multi-version code, and is suitable
+in situations where we expect a large number of concurrent writes. Moreover, when the number of concurrent
+writes is bounded, we propose a simplified variant of the second algorithm that has a simple structure
+similar to the single-writer algorithm. Let $N$ be the number of servers, and the shared memory variable
+be of size 1 unit. Our algorithms have the following properties: (i) The write operation terminates
+if the number of server failures is bounded by a parameter $f$. The algorithms also guarantee the
+termination of the read as long as the number of writes concurrent with the read is smaller than a design
+parameter $\nu$, and the number of server failures is bounded by $f$. (ii) The overall storage size
+for the first algorithm, and the steady-state storage size for the second algorithm, are all $N/\lceil
+\frac{N-2f}{\nu} \rceil$ units. Moreover, our simplified variant of the second algorithm achieves
+the worst-case storage cost of $N/\lceil \frac{N-2f}{\nu} \rceil$, asymptotically matching
+a lower bound by Cadambe et al. for $N \gg f, \nu \le f+1$. (iii) The write and read operations only consist
+of a small number (2 to 3) of communication rounds. (iv) For all algorithms, the server maintains
+a simple data structure. A server only needs to store the information associated with the latest
+value it observes, similar to replication-based algorithms. 

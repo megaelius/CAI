@@ -1,0 +1,19 @@
+Deep Neural Networks (DNNs) have become key components of many safety-critical applications such
+as autonomous driving and medical diagnosis. However, DNNs have been shown suffering from poor
+robustness because of their susceptibility to adversarial examples such that small perturbations
+to an input result in misprediction. Addressing to this concern, various approaches have been proposed
+to formally verify the robustness of DNNs. Most of these approaches reduce the verification problem
+to optimization problems of searching an adversarial example for a given input so that it is not correctly
+classified to the original label. However, they are limited in accuracy and scalability. In this
+paper, we propose a novel approach that can accelerate the robustness verification techniques
+by guiding the verification with target labels. The key insight of our approach is that the robustness
+verification problem of DNNs can be solved by verifying sub-problems of DNNs, one per target label.
+Fixing the target label during verification can drastically reduce the search space and thus improve
+the efficiency. We also propose an approach by leveraging symbolic interval propagation and linear
+relaxation techniques to sort the target labels in terms of chances that adversarial examples exist.
+This often allows us to quickly falsify the robustness of DNNs and the verification for remaining
+target labels could be avoided. Our approach is orthogonal to, and can be integrated with, many existing
+verification techniques. For evaluation purposes, we integrate it with three recent promising
+DNN verification tools, i.e., MipVerify, DeepZ, and Neurify. Experimental results show that our
+approach can significantly improve these tools by 36X speedup when the perturbation distance is
+set in a reasonable range. 

@@ -1,0 +1,18 @@
+Spontaneous spoken dialogue is often disfluent, containing pauses, hesitations, self-corrections
+and false starts. Processing such phenomena is essential in understanding a speaker's intended
+meaning and controlling the flow of the conversation. Furthermore, this processing needs to be
+word-by-word incremental to allow further downstream processing to begin as early as possible
+in order to handle real spontaneous human conversational behaviour. In addition, from a developer's
+point of view, it is highly desirable to be able to develop systems which can be trained from `clean'
+examples while also able to generalise to the very diverse disfluent variations on the same data
+-- thereby enhancing both data-efficiency and robustness. In this paper, we present a multi-task
+LSTM-based model for incremental detection of disfluency structure, which can be hooked up to any
+component for incremental interpretation (e.g. an incremental semantic parser), or else simply
+used to `clean up' the current utterance as it is being produced. We train the system on the Switchboard
+Dialogue Acts (SWDA) corpus and present its accuracy on this dataset. Our model outperforms prior
+neural network-based incremental approaches by about 10 percentage points on SWDA while employing
+a simpler architecture. To test the model's generalisation potential, we evaluate the same model
+on the bAbI+ dataset, without any additional training. bAbI+ is a dataset of synthesised goal-oriented
+dialogues where we control the distribution of disfluencies and their types. This shows that our
+approach has good generalisation potential, and sheds more light on which types of disfluency might
+be amenable to domain-general processing. 

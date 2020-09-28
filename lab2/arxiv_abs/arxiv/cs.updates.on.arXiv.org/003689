@@ -1,0 +1,18 @@
+Securing cyber-physical systems (CPS) against malicious attacks is of paramount importance because
+these attacks may cause irreparable damages to physical systems. Recent studies have revealed
+that control programs running on CPS devices suffer from both control-oriented attacks (e.g.,
+code-injection or code-reuse attacks) and data-oriented attacks (e.g., non-control data attacks).
+Unfortunately, existing detection mechanisms are insufficient to detect runtime data-oriented
+exploits, due to the lack of runtime execution semantics checking. In this work, we propose Orpheus,
+a new security methodology for defending against data-oriented attacks by enforcing cyber-physical
+execution semantics. We first present a general method for reasoning cyber-physical execution
+semantics of a control program (i.e., causal dependencies between the physical context and program
+control flows), including the event identification and dependence analysis. As an instantiation
+of Orpheus, we then present a new program behavior model, i.e., the event-aware finite-state automaton
+(eFSA). eFSA takes advantage of the event-driven nature of CPS control programs and incorporates
+event checking in anomaly detection. It detects data-oriented exploits if a specific physical
+event is missing along with the corresponding event dependent state transition. We evaluate our
+prototype's performance by conducting case studies under data-oriented attacks. Results show
+that eFSA can successfully detect different runtime attacks. Our prototype on Raspberry Pi incurs
+a low overhead, taking 0.0001s for each state transition integrity checking, and 0.063s~0.211s
+for the cyber-physical contextual consistency checking. 

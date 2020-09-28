@@ -1,0 +1,20 @@
+A new parallelized unsplit geometrical Volume of Fluid (VoF) algorithm with support for arbitrary
+unstructured meshes and dynamic local Adaptive Mesh Refinement (AMR), as well as for two and three
+dimensional computation is developed. The geometrical VoF algorithm supports arbitrary unstructured
+meshes in order to enable computations involving flow domains of arbitrary geometrical complexity.
+The implementation of the method is done within the framework of the OpenFOAM library for Computational
+Continuum Mechanics (CCM) using the C++ programming language with modern policy based design for
+high program code modularity. The development of the geometrical VoF algorithm significantly
+extends the method base of the OpenFOAM library by geometrical volumetric flux computation for
+two-phase flow simulations. For the volume fraction advection, a novel unsplit geometrical algorithm
+is developed, which inherently sustains volume conservation utilizing unique Lagrangian discrete
+trajectories located in the mesh points. This practice completely eliminates the possibility
+of an overlap between the flux polyhedra and hence significantly increases volume conservation.
+A new efficient (quadratic convergent) and accurate iterative flux correction algorithm is developed,
+which avoids topological changes of the flux polyhedra. Our geometrical VoF algorithm is dimension
+agnostic, providing automatic support for both 2D and 3D computations, following the established
+practice in OpenFOAM. The geometrical algorithm used for the volume fraction transport has been
+extended to support dynamic local AMR available in OpenFOAM. Furthermore, the existing dynamic
+mesh capability of OpenFOAM has been modified to support the geometrical mapping algorithm executed
+as a part of the dynamic local AMR cycle. The method implementation is fully parallelized using the
+domain decomposition approach. 

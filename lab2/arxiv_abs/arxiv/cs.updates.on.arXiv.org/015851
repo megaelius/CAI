@@ -1,0 +1,18 @@
+The crux of molecular property prediction is to conduct meaningful and informative representations
+of molecules. One promising way of doing this is exploiting the molecular graph structure, which
+leads to several graph-based deep learning models, such as Graph Neural Networks (GNN), Message
+Passing Networks (MPN), etc. However, current deep graph learning models generally focus on either
+node embedding or edge embedding. Since both atoms and chemical bonds play important roles in chemical
+reactions and reflect the property of molecules, existing methods fail to exploit both node (atom)
+and edge (bond) features simultaneously to make property prediction. In this paper, we propose
+Dual Message Passing Neural Network (DualMPNN), a multi-view message passing architecture with
+a two-tier constraint, to make more accurate molecular property prediction. DualMPNN consists
+of two sub-models: one model as NodeMPN for atom-oriented modeling and the other as EdgeMPN for bond-oriented
+modeling. We design a shared self-attentive readout and disagreement loss to stabilize the training
+process and enhance the interactions between two sub-models. On the other hand, the designed self-attentive
+readout also provides the interpretability for molecular property prediction, which is crucial
+for real applications like molecular design and drug discovery. Our extensive experimental evaluations
+demonstrate that DualMPNN achieves remarkably superior improvement over the state-of-the-art
+approaches on a variety of challenging benchmarks. Meanwhile, the visualization of the self-attention
+demonstrates how different atoms affect the prediction performance, which brings in the interpretability
+of deep learning models out of the black-box. 

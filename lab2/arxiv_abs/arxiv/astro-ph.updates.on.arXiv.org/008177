@@ -1,0 +1,18 @@
+Quasi-Separatrix Layers (QSLs) are a useful proxy for the locations where current sheets can develop
+in the solar corona, and give valuable information about the connectivity in complicated magnetic
+field configurations. However, calculating QSL maps even for 2-dimensional slices through 3-dimensional
+models of coronal magnetic fields is a non-trivial task as it usually involves tracing out millions
+of magnetic field lines with immense precision. Thus, extending QSL calculations to three dimensions
+has rarely been done until now. In order to address this challenge, we present QSL Squasher -- a public,
+open-source code, which is optimized for calculating QSL maps in both two and three dimensions on
+GPUs. The code achieves large processing speeds for three reasons, each of which results in an order-of-magnitude
+speed-up. 1) The code is parallelized using OpenCL. 2) The precision requirements for the QSL calculation
+are drastically reduced by using perturbation theory. 3) A new boundary detection criterion between
+quasi-connectivity domains is used, which quickly identifies possible QSL locations which need
+to be finely sampled by the code. That boundary detection criterion relies on finding the locations
+of abrupt field-line length changes, which we do by introducing a new Field-line Length Edge (FLEDGE)
+map. We find FLEDGE maps useful on their own as a quick-and-dirty substitute for QSL maps. QSL Squasher
+allows constructing high-resolution 3D FLEDGE maps in a matter of minutes, which is two orders of
+magnitude faster than calculating the corresponding 3D QSL maps. We include a sample of calculations
+done using QSL Squasher to demonstrate its capabilities as a QSL calculator, as well as to compare
+QSL and FLEDGE maps. 

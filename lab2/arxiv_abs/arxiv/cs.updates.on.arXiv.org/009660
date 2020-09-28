@@ -1,0 +1,20 @@
+Given a set of integers $\{a_1, \ldots, a_N\}$, the 3SUM problem requires finding $a_i, a_j, a_k
+\in A$ such that $a_i + a_j = a_k$. A preprocessing version of 3SUM, called 3SUM-Indexing, considers
+an initial offline phase where a computationally unbounded algorithm receives $a_1,\ldots,a_N$
+and produces a data structure with $S$ words of $w$ bits each, followed by an online phase where one
+is given the target $b$ and needs to find a pair $(i, j)$ such that $a_i + a_j = b$ by probing only $T$ memory
+cells of the data structure. In this paper, we study the 3SUM-Indexing problem and show the following.
+[New algorithms:] Goldstein et al. conjectured that there is no data structure for 3SUM-Indexing
+with $S=N^{2-\varepsilon}$ and $T=N^{1-\varepsilon}$ for any constant $\varepsilon>0$. Our
+first contribution is to disprove this conjecture by showing a suite of algorithms with $S^3 \cdot
+T = \tilde{O}(N^6)$; for example, this achieves $S=\tilde{O}(N^{1.9})$ and $T=\tilde{O}(N^{0.3})$.
+[New lower bounds:] Demaine and Vadhan in 2001 showed that every 1-query algorithm for 3SUM-Indexing
+requires space $\tilde{\Omega}(N^2)$. Our second result generalizes their bound to show that
+for every space-$S$ algorithm that makes $T$ non-adaptive queries, $S = \tilde{\Omega}(N^{1+1/T})$.
+Any asymptotic improvement to our result will result in a major breakthrough in static data structure
+lower bounds. [New cryptographic applications:] A natural question in cryptography is whether
+we can use a "backdoored" random oracle to build secure cryptography. We provide a novel formulation
+of this problem, modeling a random oracle whose truth table can be arbitrarily preprocessed by an
+unbounded adversary into an exponentially large lookup table to which the online adversary has
+oracle access. We construct one-way functions in this model assuming the hardness of a natural average-case
+variant of 3SUM-Indexing. 

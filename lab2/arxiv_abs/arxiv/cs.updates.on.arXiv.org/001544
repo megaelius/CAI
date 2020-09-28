@@ -1,0 +1,18 @@
+In this paper, we describe how a patient-specific, ultrasound-probe-induced prostate motion
+model can be directly generated from a single preoperative MR image. Our motion model allows for
+sampling from the conditional distribution of dense displacement fields, is encoded by a generative
+neural network conditioned on a medical image, and accepts random noise as additional input. The
+generative network is trained by a minimax optimisation with a second discriminative neural network,
+tasked to distinguish generated samples from training motion data. In this work, we propose that
+1) jointly optimising a third conditioning neural network that pre-processes the input image,
+can effectively extract patient-specific features for conditioning; and 2) combining multiple
+generative models trained separately with heuristically pre-disjointed training data sets can
+adequately mitigate the problem of mode collapse. Trained with diagnostic T2-weighted MR images
+from 143 real patients and 73,216 3D dense displacement fields from finite element simulations
+of intraoperative prostate motion due to transrectal ultrasound probe pressure, the proposed
+models produced physically-plausible patient-specific motion of prostate glands. The ability
+to capture biomechanically simulated motion was evaluated using two errors representing generalisability
+and specificity of the model. The median values, calculated from a 10-fold cross-validation, were
+2.8+/-0.3 mm and 1.7+/-0.1 mm, respectively. We conclude that the introduced approach demonstrates
+the feasibility of applying state-of-the-art machine learning algorithms to generate organ motion
+models from patient images, and shows significant promise for future research. 

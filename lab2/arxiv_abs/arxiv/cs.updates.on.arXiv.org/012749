@@ -1,0 +1,19 @@
+The objective of this paper is to develop a global non-intrusive Parametric Model Order Reduction
+(PMOR) methodology for the problem of changing well locations in an oil field, that can eventually
+be used for well placement optimization to gain significant computational savings. In this work,
+we propose a proper orthogonal decomposition (POD) based PMOR strategy that is non-intrusive to
+the simulator source code and hence extends its applicability to any commercial simulator. The
+non-intrusiveness of the proposed technique stems from formulating a novel Machine Learning (ML)
+based framework used with POD. The features of ML model are designed such that they take into consideration
+the temporal evolution of the state solutions and thereby avoiding simulator access for time dependency
+of the solutions. We represent well location changes as a parameter by introducing geometry-based
+features and flow diagnostics inspired physics-based features. An error correction model based
+on reduced model solutions is formulated later to correct for discrepancies in the state solutions
+at well gridblocks. It was observed that the global PMOR could predict the overall trend in pressure
+and saturation solutions at the well blocks but some bias was observed that resulted in discrepancies
+in prediction of quantities of interest (QoI). Thus, the error correction model that considers
+the physics based reduced model solutions as features, proved to reduce the error in QoI significantly.
+This workflow is applied to a heterogeneous channelized reservoir that showed good solution accuracies
+and speed-ups of 50x-100x were observed for different cases considered. The method is formulated
+such that all the simulation time steps are independent and hence can make use of parallel resources
+very efficiently and also avoid stability issues that can result from error accumulation over timesteps.

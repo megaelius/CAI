@@ -1,0 +1,17 @@
+During cancer progression, malignant cells accumulate somatic mutations that can lead to genetic
+aberrations. In particular, evolutionary events akin to segmental duplications or deletions
+can alter the copy-number profile (CNP) of a set of genes in a genome. Our aim is to compute the evolutionary
+distance between two cells for which only CNPs are known. This asks for the minimum number of segmental
+amplifications and deletions to turn one CNP into another. This was recently formalized into a model
+where each event is assumed to alter a copy-number by $1$ or $-1$, even though these events can affect
+large portions of a chromosome. We propose a general cost framework where an event can modify the
+copy-number of a gene by larger amounts. We show that any cost scheme that allows segmental deletions
+of arbitrary length makes computing the distance strongly NP-hard. We then devise a factor $2$ approximation
+algorithm for the problem when copy-numbers are non-zero and provide an implementation called
+\textsf{cnp2cnp}. We evaluate our approach experimentally by reconstructing simulated cancer
+phylogenies from the pairwise distances inferred by \textsf{cnp2cnp} and compare it against two
+other alternatives, namely the \textsf{MEDICC} distance and the Euclidean distance. The experimental
+results show that our distance yields more accurate phylogenies on average than these alternatives
+if the given CNPs are error-free, but that the \textsf{MEDICC} distance is slightly more robust
+against error in the data. In all cases, our experiments show that either our approach or the \textsf{MEDICC}
+approach should preferred over the Euclidean distance. 

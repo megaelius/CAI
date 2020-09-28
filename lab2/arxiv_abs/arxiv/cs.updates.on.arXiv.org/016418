@@ -1,0 +1,17 @@
+A target set selection model is a graph $G$ with a threshold function $\tau:V\to \mathbb{N}$ upper-bounded
+by the vertex degree. For a given model, a set $S_0\subseteq V(G)$ is a target set if $V(G)$ can be partitioned
+into non-empty subsets $S_0,S_1,\dotsc,S_t$ such that, for $i \in \{1, \ldots, t\}$, $S_i$ contains
+exactly every vertex $v$ having at least $\tau(v)$ neighbors in $S_0\cup\dots\cup S_{i-1}$. We
+say that $t$ is the activation time $t_{\tau}(S_0)$ of the target set $S_0$. The problem of, given
+such a model, finding a target set of minimum size has been extensively studied in the literature.
+In this article, we investigate its variant, which we call TSS-time, in which the goal is to find a
+target set $S_0$ that maximizes $t_{\tau}(S_0)$. That is, given a graph $G$, a threshold function
+$\tau$ in $G$, and an integer $k$, the objective of the TSS-time problem is to decide whether $G$ contains
+a target set $S_0$ such that $t_{\tau}(S_0)\geq k$. Let $\tau^* = \max_{v \in V(G)} \tau(v)$. Our
+main result is the following dichotomy about the complexity of TSS-time when $G$ belongs to a minor-closed
+graph class ${\cal C}$: if ${\cal C}$ has bounded local treewidth, the problem is FPT parameterized
+by $k$ and $\tau^{\star}$; otherwise, it is NP-complete even for fixed $k=4$ and $\tau^{\star}=2$.
+We also prove that, with $\tau^*=2$, the problem is NP-hard in bipartite graphs for fixed $k=5$,
+and from previous results we observe that TSS-time is NP-hard in planar graphs and W[1]-hard parameterized
+by treewidth. Finally, we present a linear-time algorithm to find a target set $S_0$ in a given tree
+maximizing $t_{\tau}(S_0)$. 

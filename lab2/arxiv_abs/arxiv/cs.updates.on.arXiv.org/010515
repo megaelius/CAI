@@ -1,0 +1,17 @@
+Tremendous variation in the scale of people/head size is a critical problem for crowd counting.
+To improve the scale invariance of feature representation, recent works extensively employ Convolutional
+Neural Networks with multi-column structures to handle different scales and resolutions. However,
+due to the substantial redundant parameters in columns, existing multi-column networks invariably
+exhibit almost the same scale features in different columns, which severely affects counting accuracy
+and leads to overfitting. In this paper, we attack this problem by proposing a novel Multi-column
+Mutual Learning (McML) strategy. It has two main innovations: 1) A statistical network is incorporated
+into the multi-column framework to estimate the mutual information between columns, which can
+approximately indicate the scale correlation between features from different columns. By minimizing
+the mutual information, each column is guided to learn features with different image scales. 2)
+We devise a mutual learning scheme that can alternately optimize each column while keeping the other
+columns fixed on each mini-batch training data. With such asynchronous parameter update process,
+each column is inclined to learn different feature representation from others, which can efficiently
+reduce the parameter redundancy and improve generalization ability. More remarkably, McML can
+be applied to all existing multi-column networks and is end-to-end trainable. Extensive experiments
+on four challenging benchmarks show that McML can significantly improve the original multi-column
+networks and outperform the other state-of-the-art approaches. 

@@ -1,0 +1,17 @@
+Phase interfaces in melting and solidification processes are strongly affected by the presence
+of convection in the liquid. One way of modeling their transient evolution is to couple an incompressible
+flow model to an energy balance in enthalpy formulation. Two strong nonlinearities arise, which
+account for the viscosity variation between phases and the latent heat of fusion at the phase interface.
+The resulting coupled system of PDE's can be solved by a single-domain semi-phase-field, variable
+viscosity, finite element method with monolithic system coupling and global Newton linearization.
+A robust computational model for realistic phase-change regimes furthermore requires a flexible
+implementation based on sophisticated mesh adaptivity. In this article, we present first steps
+towards implementing such a computational model into a simulation tool which we call Phaseflow.
+Phaseflow utilizes the finite element software FEniCS, which includes a dual-weighted residual
+method for goal-oriented adaptive mesh refinement. Phaseflow is an open-source, dimension-independent
+implementation that, upon an appropriate parameter choice, reduces to classical benchmark situations
+including the lid-driven cavity and the Stefan problem. We present and discuss numerical results
+for these, an octadecane PCM convection-coupled melting benchmark, and a preliminary 3D convection-coupled
+melting example, demonstrating the flexible implementation. Though being preliminary, the latter
+is, to our knowledge, the first published 3D result for this method. In our work, we especially emphasize
+reproducibility and provide an easy-to-use portable software container using Docker. 

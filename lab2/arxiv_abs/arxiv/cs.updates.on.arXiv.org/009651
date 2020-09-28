@@ -1,0 +1,18 @@
+In the sensitive distance oracle problem, there are three phases. We first preprocess a given directed
+graph $G$ with $n$ nodes and integer weights from $[-W,W]$. Second, given a single batch of $f$ edge
+insertions and deletions, we update the data structure. Third, given a query pair of nodes $(u,v)$,
+return the distance from $u$ to $v$. In the easier problem called sensitive reachability oracle
+problem, we only ask if there exists a directed path from $u$ to $v$. Our first result is a sensitive
+distance oracle with $\tilde{O}(Wn^{\omega+(3-\omega)\mu})$ preprocessing time, $\tilde{O}(Wn^{2-\mu}f^{2}+Wnf^{\omega})$
+update time, and $\tilde{O}(Wn^{2-\mu}f+Wnf^{2})$ query time where the parameter $\mu\in[0,1]$
+can be chosen. The data-structure requires $O(Wn^{2+\mu} \log n)$ bits of memory. This is the first
+algorithm that can handle $f\ge\log n$ updates. Previous results (e.g. [Demetrescu et al. SICOMP'08;
+Bernstein and Karger SODA'08 and FOCS'09; Duan and Pettie SODA'09; Grandoni and Williams FOCS'12])
+can handle at most 2 updates. When $3\le f\le\log n$, the only non-trivial algorithm was by [Weimann
+and Yuster FOCS'10]. When $W=\tilde{O}(1)$, our algorithm simultaneously improves their preprocessing
+time, update time, and query time. In particular, when $f=\omega(1)$, their update and query time
+is $\Omega(n^{2-o(1)})$, while our update and query time are truly subquadratic in $n$, i.e., ours
+is faster by a polynomial factor of $n$. To highlight the technique, ours is the first graph algorithm
+that exploits the kernel basis decomposition of polynomial matrices by [Jeannerod and Villard
+J.Comp'05; Zhou, Labahn and Storjohann J.Comp'15] developed in the symbolic computation community.
+[...] 

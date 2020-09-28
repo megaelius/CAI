@@ -1,0 +1,19 @@
+Autonomous agents must be able to safely interact with other vehicles to integrate into urban environments.
+The safety of these agents is dependent on their ability to predict collisions with other vehicles'
+future trajectories for replanning and collision avoidance. The information needed to predict
+collisions can be learned from previously observed vehicle trajectories in a specific environment,
+generating a traffic model. The learned traffic model can then be incorporated as prior knowledge
+into any trajectory estimation method being used in this environment. This work presents a Gaussian
+process based probabilistic traffic model that is used to quantify vehicle behaviors in an intersection.
+The Gaussian process model provides estimates for the average vehicle trajectory, while also capturing
+the variance between the different paths a vehicle may take in the intersection. The method is demonstrated
+on a set of time-series position trajectories. These trajectories are reconstructed by removing
+object recognition errors and missed frames that may occur due to data source processing. To create
+the intersection traffic model, the reconstructed trajectories are clustered based on their source
+and destination lanes. For each cluster, a Gaussian process model is created to capture the average
+behavior and the variance of the cluster. To show the applicability of the Gaussian model, the test
+trajectories are classified with only partial observations. Performance is quantified by the
+number of observations required to correctly classify the vehicle trajectory. Both the intersection
+traffic modeling computations and the classification procedure are timed. These times are presented
+as results and demonstrate that the model can be constructed in a reasonable amount of time and the
+classification procedure can be used for online applications. 

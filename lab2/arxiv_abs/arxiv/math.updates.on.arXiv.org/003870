@@ -1,0 +1,19 @@
+Motivated by applications arising from large scale optimization and machine learning, we consider
+stochastic quasi-Newton (SQN) methods for solving unconstrained convex optimization problems.
+The convergence analysis of the SQN methods, both full and limited-memory variants, require the
+objective function to be strongly convex. However, this assumption is fairly restrictive and does
+not hold for applications such as minimizing the logistic regression loss function. To the best
+of our knowledge, no rate statements currently exist for SQN methods in the absence of such an assumption.
+Also, among the existing first-order methods for addressing stochastic optimization problems
+with merely convex objectives, those equipped with provable convergence rates employ averaging.
+However, this averaging technique has a detrimental impact on inducing sparsity. Motivated by
+these gaps, the main contributions of the paper are as follows: (i) Addressing large scale stochastic
+optimization problems, we develop an iteratively regularized stochastic limited-memory BFGS
+(IRS-LBFGS) algorithm, where the stepsize, regularization parameter, and the Hessian inverse
+approximation matrix are updated iteratively. We establish the convergence to an optimal solution
+of the original problem both in an almost-sure and mean senses. We derive the convergence rate in
+terms of the objective function's values and show that it is of the order $\mathcal{O}\left(k^{-\left(\frac{1}{3}-\epsilon\right)}\right)$,
+where $\epsilon$ is an arbitrary small positive scalar; (ii) In deterministic regime, we show that
+the regularized limited-memory BFGS algorithm displays a rate of the order $\mathcal{O}\left(\frac{1}{k^{1
+-\epsilon'}}\right)$, where $\epsilon'$ is an arbitrary small positive scalar. We present our
+numerical experiments performed on a large scale text classification problem. 

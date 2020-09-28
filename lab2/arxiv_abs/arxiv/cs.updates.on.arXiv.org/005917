@@ -1,0 +1,19 @@
+We developed a new class of physics-informed generative adversarial networks (PI-GANs) to solve
+in a unified manner forward, inverse and mixed stochastic problems based on a limited number of scattered
+measurements. Unlike standard GANs relying only on data for training, here we encoded into the architecture
+of GANs the governing physical laws in the form of stochastic differential equations (SDEs) using
+automatic differentiation. In particular, we applied Wasserstein GANs with gradient penalty
+(WGAN-GP) for its enhanced stability compared to vanilla GANs. We first tested WGAN-GP in approximating
+Gaussian processes of different correlation lengths based on data realizations collected from
+simultaneous reads at sparsely placed sensors. We obtained good approximation of the generated
+stochastic processes to the target ones even for a mismatch between the input noise dimensionality
+and the effective dimensionality of the target stochastic processes. We also studied the overfitting
+issue for both the discriminator and generator, and we found that overfitting occurs also in the
+generator in addition to the discriminator as previously reported. Subsequently, we considered
+the solution of elliptic SDEs requiring approximations of three stochastic processes, namely
+the solution, the forcing, and the diffusion coefficient. We used three generators for the PI-GANs,
+two of them were feed forward deep neural networks (DNNs) while the other one was the neural network
+induced by the SDE. Depending on the data, we employed one or multiple feed forward DNNs as the discriminators
+in PI-GANs. Here, we have demonstrated the accuracy and effectiveness of PI-GANs in solving SDEs
+for up to 30 dimensions, but in principle, PI-GANs could tackle very high dimensional problems given
+more sensor data with low-polynomial growth in computational cost. 

@@ -1,0 +1,19 @@
+The notion of an anonymous shared memory (recently introduced in PODC 2017) considers that processes
+use different names for the same memory location. Hence, there is permanent disagreement on the
+location names among processes. In this context, the PODC paper presented -among other results-
+a symmetric deadlock-free mutual exclusion (mutex) algorithm for two processes and a necessary
+condition on the size $m$ of the anonymous memory for the existence of a symmetric deadlock-free
+mutex algorithm in an $n$-process system. This condition states that $m$ must be greater than $1$
+and belong to the set $M(n)=\{m:\forall~\ell:1<\ell\leq n:~\gcd(\ell,m)=1\}$ (symmetric means
+that, while each process has its own identity, process identities can only be compared with equality).
+The present paper answers several open problems related to symmetric deadlock-free mutual exclusion
+in an $n$-process system ($n\geq 2$) where the processes communicate through $m$ registers. It
+first presents two algorithms. The first considers that the registers are anonymous read/write
+atomic registers and works for any $m$ greater than $1$ and belonging to the set $M(n)$. It thus shows
+that this condition on $m$ is both necessary and sufficient. The second algorithm considers anonymous
+read/modify/write atomic registers. It assumes that $m\in M(n)$. These algorithms differ in their
+design principles and their costs (measured as the number of registers which must contain the identity
+of a process to allow it to enter the critical section). The paper also shows that the condition $m\in
+M(n)$ is necessary for deadlock-free mutex on top of anonymous read/modify/write atomic registers.
+It follows that, when $m>1$, $m\in M(n)$ is a tight characterization of the size of the anonymous
+shared memory needed to solve deadlock-free mutex, be the anonymous registers read/write or read/modify/write.

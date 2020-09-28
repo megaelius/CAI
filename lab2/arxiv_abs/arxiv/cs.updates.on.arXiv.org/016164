@@ -1,0 +1,18 @@
+Chromosome enumeration is an essential but tedious procedure in karyotyping analysis. To automate
+the enumeration process, we develop a chromosome enumeration framework, DeepACEv2, based on the
+region based object detection scheme. The framework is developed following three steps. Firstly,
+we take the classical ResNet-101 as the backbone and attach the Feature Pyramid Network (FPN) to
+the backbone. The FPN takes full advantage of the multiple level features, and we only output the
+level of feature map that most of the chromosomes are assigned to. Secondly, we enhance the region
+proposal network's ability by adding a newly proposed Hard Negative Anchors Sampling to extract
+unapparent but essential information about highly confusing partial chromosomes. Next, to alleviate
+serious occlusion problems, besides the traditional detection branch, we novelly introduce an
+isolated Template Module branch to extract unique embeddings of each proposal by utilizing the
+chromosome's geometric information. The embeddings are further incorporated into the No Maximum
+Suppression (NMS) procedure to improve the detection of overlapping chromosomes. Finally, we
+design a Truncated Normalized Repulsion Loss and add it to the loss function to avoid inaccurate
+localization caused by occlusion. In the newly collected 1375 metaphase images that came from a
+clinical laboratory, a series of ablation studies validate the effectiveness of each proposed
+module. Combining them, the proposed DeepACEv2 outperforms all the previous methods, yielding
+the Whole Correct Ratio(WCR)(%) with respect to images as 71.39, and the Average Error Ratio(AER)(%)
+with respect to chromosomes as about 1.17. 

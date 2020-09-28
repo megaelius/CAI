@@ -1,0 +1,19 @@
+Smartphones, wearables, and Internet of Things (IoT) devices produce a wealth of data that cannot
+be accumulated in a centralized repository for learning supervised models due to privacy, bandwidth
+limitations, and the prohibitive cost of annotations. Federated learning provides a compelling
+framework for learning models from decentralized data, but conventionally, it assumes the availability
+of labeled samples, whereas on-device data are generally either unlabeled or cannot be annotated
+readily through user interaction. To address these issues, we propose a self-supervised approach
+termed \textit{scalogram-signal correspondence learning} based on wavelet transform to learn
+useful representations from unlabeled sensor inputs, such as electroencephalography, blood
+volume pulse, accelerometer, and WiFi channel state information. Our auxiliary task requires
+a deep temporal neural network to determine if a given pair of a signal and its complementary viewpoint
+(i.e., a scalogram generated with a wavelet transform) align with each other or not through optimizing
+a contrastive objective. We extensively assess the quality of learned features with our multi-view
+strategy on diverse public datasets, achieving strong performance in all domains. We demonstrate
+the effectiveness of representations learned from an unlabeled input collection on downstream
+tasks with training a linear classifier over pretrained network, usefulness in low-data regime,
+transfer learning, and cross-validation. Our methodology achieves competitive performance
+with fully-supervised networks, and it outperforms pre-training with autoencoders in both central
+and federated contexts. Notably, it improves the generalization in a semi-supervised setting
+as it reduces the volume of labeled data required through leveraging self-supervised learning.

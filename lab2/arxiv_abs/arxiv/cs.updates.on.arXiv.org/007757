@@ -1,0 +1,18 @@
+Purpose: In surgical navigation, pre-operative organ models are presented to surgeons during
+the intervention to help them in efficiently finding their target. In the case of soft tissue, these
+models need to be deformed and adapted to the current situation by using intra-operative sensor
+data. A promising method to realize this are real-time capable biomechanical models. Methods:
+We train a fully convolutional neural network to estimate a displacement field of all points inside
+an organ when given only the displacement of a part of the organ's surface. The network trains on entirely
+synthetic data of random organ-like meshes, which allows us to generate much more data than is otherwise
+available. The input and output data is discretized into a regular grid, allowing us to fully utilize
+the capabilities of convolutional operators and to train and infer in a highly parallelized manner.
+Results: The system is evaluated on in-silico liver models, phantom liver data and human in-vivo
+breathing data. We test the performance with varying material parameters, organ shapes and amount
+of visible surface. Even though the network is only trained on synthetic data, it adapts well to the
+various cases and gives a good estimation of the internal organ displacement. The inference runs
+at over 50 frames per second. Conclusions: We present a novel method for training a data-driven,
+real-time capable deformation model. The accuracy is comparable to other registration methods,
+it adapts very well to previously unseen organs and does not need to be re-trained for every patient.
+The high inferring speed makes this method useful for many applications such as surgical navigation
+and real-time simulation. 

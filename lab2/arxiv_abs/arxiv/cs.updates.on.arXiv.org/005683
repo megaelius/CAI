@@ -1,0 +1,18 @@
+Major chip manufacturers have all introduced multicore microprocessors. Multi-socket systems
+built from these processors are used for running various server applications. However to the best
+of our knowledge current commercial operating systems are not optimized for multi-threaded workloads
+running on such servers. Cache-to-cache transfers and remote memory accesses impact the performance
+of such workloads. This paper presents a unified approach to optimizing OS scheduling algorithms
+for both cache-to-cache transfers and remote DRAM accesses that also takes cache affinity into
+account. By observing the patterns of local and remote cache-to-cache transfers as well as local
+and remote DRAM accesses for every thread in each scheduling quantum and applying different algorithms,
+we come up with a new schedule of threads for the next quantum taking cache affinity into account.
+This new schedule cuts down both remote cache-to-cache transfers and remote DRAM accesses for the
+next scheduling quantum and improves overall performance. We present two algorithms of varying
+complexity for optimizing cache-to-cache transfers. One of these is a new algorithm which is relatively
+simpler and performs better when combined with algorithms that optimize remote DRAM accesses.
+For optimizing remote DRAM accesses we present two algorithms. Though both algorithms differ in
+algorithmic complexity we find that for our workloads they perform equally well. We used three different
+synthetic workloads to evaluate these algorithms. We also performed sensitivity analysis with
+respect to varying remote cache-to-cache transfer latency and remote DRAM latency. We show that
+these algorithms can cut down overall latency by up to 16.79% depending on the algorithm used. 

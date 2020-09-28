@@ -1,0 +1,17 @@
+Graph processing is typically considered to be a memory-bound rather than compute-bound problem.
+One common line of thought is that more available memory bandwidth corresponds to better graph processing
+performance. However, in this work we demonstrate that the key factor in the utilization of the memory
+system for graph algorithms is not necessarily the raw bandwidth or even the latency of memory requests.
+Instead, we show that performance is proportional to the number of memory channels available to
+handle small data transfers with limited spatial locality. Using several widely used graph frameworks,
+including Gunrock (on the GPU) and GAPBS \& Ligra (for CPUs), we evaluate key graph analytics kernels
+using two unique memory hierarchies, DDR-based and HBM/MCDRAM. Our results show that the differences
+in the peak bandwidths of several Pascal-generation GPU memory subsystems aren't reflected in
+the performance of various analytics. Furthermore, our experiments on CPU and Xeon Phi systems
+demonstrate that the number of memory channels utilized can be a decisive factor in performance
+across several different applications. For CPU systems with smaller thread counts, the memory
+channels can be underutilized while systems with high thread counts can oversaturate the memory
+subsystem, which leads to limited performance. Finally, we model the potential performance improvements
+of adding more memory channels with narrower access widths than are found in current platforms,
+and we analyze performance trade-offs for the two most prominent types of memory accesses found
+in graph algorithms, streaming and random accesses. 

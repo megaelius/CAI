@@ -1,0 +1,18 @@
+Dynamic Ensemble Selection (DES) techniques aim to select locally competent classifiers for the
+classification of each new test sample. Most DES techniques estimate the competence of classifiers
+using a given criterion over the region of competence of the test sample (its the nearest neighbors
+in the validation set). The K-Nearest Oracles Eliminate (KNORA-E) DES selects all classifiers
+that correctly classify all samples in the region of competence of the test sample, if such classifier
+exists, otherwise, it removes from the region of competence the sample that is furthest from the
+test sample, and the process repeats. When the region of competence has samples of different classes,
+KNORA-E can reduce the region of competence in such a way that only samples of a single class remain
+in the region of competence, leading to the selection of locally incompetent classifiers that classify
+all samples in the region of competence as being from the same class. In this paper, we propose two
+DES techniques: K-Nearest Oracles Borderline (KNORA-B) and K-Nearest Oracles Borderline Imbalanced
+(KNORA-BI). KNORA-B is a DES technique based on KNORA-E that reduces the region of competence but
+maintains at least one sample from each class that is in the original region of competence. KNORA-BI
+is a variation of KNORA-B for imbalance datasets that reduces the region of competence but maintains
+at least one minority class sample if there is any in the original region of competence. Experiments
+are conducted comparing the proposed techniques with 19 DES techniques from the literature using
+40 datasets. The results show that the proposed techniques achieved interesting results, with
+KNORA-BI outperforming state-of-art techniques. 

@@ -1,0 +1,18 @@
+To implement convolutional neural networks (CNN) in hardware, the state-of-the-art CNN accelerators
+pipeline computation and data transfer stages using an off-chip memory and simultaneously execute
+them on the same timeline. However, since a large amount of feature maps generated during the operation
+should be transmitted to the off-chip memory, the pipeline stage length is determined by the off-chip
+data transfer stage. Fusion architectures that can fuse multiple layers have been proposed to solve
+this problem, but applications such as super-resolution (SR) require a large amount of an on-chip
+memory because of the high resolution of the feature maps. In this paper, we propose a novel on-chip
+CNN accelerator for SR to optimize the CNN dataflow in the on-chip memory. First, the convolution
+loop optimization technique is proposed to prevent using a frame buffer. Second, we develop a combined
+convolutional layer processor to reduce the buffer size used to store the feature maps. Third, we
+explore how to perform low-cost multiply-and-accumulate operations in the deconvolutional layer
+used in SR. Finally, we propose a two-stage quantization algorithm to select the optimized hardware
+size for the limited number of DSPs to implement the on-chip CNN accelerator. We evaluate our proposed
+accelerator with FSRCNN, which is most popular as the CNN-based SR algorithm. Experimental results
+show that the proposed accelerator requires 9.21ms to achieve an output image with the 2560x1440
+pixel resolution, which is 36 times faster than the conventional method. In addition, we reduce
+the on-chip memory usage and DSP usage by 4 times and 1.44 times, respectively, compared to the conventional
+methods. 

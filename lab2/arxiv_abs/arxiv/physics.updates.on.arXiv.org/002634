@@ -1,0 +1,19 @@
+Configuration-interaction-type calculations on electronic and vibrational structure are often
+the method of choice for the reliable approximation of many-particle wave functions and energies.
+The exponential scaling, however, limits their application range. An efficient approximation
+to the full configuration interaction solution can be obtained with the density matrix renormalization
+group (DMRG) algorithm without a restriction to a predefined excitation level. In a standard DMRG
+implementation, however, excited states are calculated with a ground-state optimization in the
+space orthogonal to all lower lying wave function solutions. A trivial parallelization is therefore
+not possible and the calculation of highly excited states becomes prohibitively expensive, especially
+in regions with a high density of states. Here, we introduce two variants of the density matrix renormalization
+group algorithm that allow us to target directly specific energy regions and therefore highly excited
+states. The first one, based on shift-and-invert techniques, is particularly efficient for low-lying
+states, but is not stable in regions with a high density of states. The second one, based on the folded
+auxiliary operator, is less efficient, but more accurate in targeting high-energy states. We apply
+the algorithm to the solution of the nuclear Schroedinger equation, but emphasize that it can be
+applied to the diagonalization of general Hamiltonians as well, such as the electronic Coulomb
+Hamiltonian to address X-ray spectra. In combination with several root-homing algorithms and
+a stochastic sampling of the determinant space, excited states of interest can be adequately tracked
+and analyzed during the optimization. We demonstrate that we can accurately calculate prominent
+spectral features of large molecules such as the sarcosyn-glycine dipeptide. 

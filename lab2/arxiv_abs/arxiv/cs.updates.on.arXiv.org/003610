@@ -1,0 +1,18 @@
+Imbalanced data widely exists in many high-impact applications. An example is in air traffic control,
+where we aim to identify the leading indicators for each type of accident cause from historical records.
+Among all three types of accident causes, historical records with 'personnel issues' are much more
+than the other two types ('aircraft issues' and 'environmental issues') combined. Thus, the resulting
+dataset is highly imbalanced, and can be naturally modeled as a network. Up until now, most existing
+work on imbalanced data analysis focused on the classification setting, and very little is devoted
+to learning the node representation from imbalanced networks. To address this problem, in this
+paper, we propose Vertex-Diminished Random Walk (VDRW) for imbalanced network analysis. The key
+idea is to encourage the random particle to walk within the same class by adjusting the transition
+probabilities each step. It resembles the existing Vertex Reinforced Random Walk in terms of the
+dynamic nature of the transition probabilities, as well as some convergence properties. However,
+it is more suitable for analyzing imbalanced networks as it leads to more separable node representations
+in the embedding space. Then, based on VDRW, we propose a semi-supervised network representation
+learning framework named ImVerde for imbalanced networks, in which context sampling uses VDRW
+and the label information to create node-context pairs, and balanced-batch sampling adopts a simple
+under-sampling method to balance these pairs in different classes. Experimental results demonstrate
+that ImVerde based on VDRW outperforms state-of-the-art algorithms for learning network representation
+from imbalanced data. 

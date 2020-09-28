@@ -1,0 +1,19 @@
+The trade-off between pull-based and push-based graph processing engines is well-understood.
+On one hand, pull-based engines can achieve higher throughput because their workloads are read-dominant,
+rather than write-dominant, and can proceed without synchronization between threads. On the other
+hand, push-based engines are much better able to take advantage of the frontier optimization, which
+leverages the fact that often only a small subset of the graph needs to be accessed to complete an iteration
+of a graph processing application. Hybrid engines attempt to overcome this trade-off by dynamically
+switching between push and pull, but there are two key disadvantages with this approach. First,
+applications must be implemented twice (once for push and once for pull), and second, processing
+throughput is reduced for iterations that run with push. We propose a radically different solution:
+rebuild the frontier optimization entirely such that it is well-suited for a pull-based engine.
+In doing so, we remove the only advantage that a push-based engine had over a pull-based engine, making
+it possible to eliminate the push-based engine entirely. We introduce Wedge, a pull-only graph
+processing framework that transforms the traditional source-oriented vertex-based frontier
+into a pull-friendly format called the Wedge Frontier. The transformation itself is expensive
+even when parallelized, so we introduce two key optimizations to make it practical. First, we perform
+the transformation only when the resulting Wedge Frontier is sufficiently sparse. Second, we coarsen
+the granularity of the representation of elements in the Wedge Frontier. These optimizations respectively
+improve Wedge's performance by up to 5x and 2x, enabling it to outperform Grazelle, Ligra, and GraphMat
+respectively by up to 2.8x, 4.9x, and 185.5x. 

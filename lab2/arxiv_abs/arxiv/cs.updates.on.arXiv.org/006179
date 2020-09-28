@@ -1,0 +1,19 @@
+The vanilla sequence-to-sequence learning (seq2seq) reads and encodes a source sequence into
+a fixed-length vector only once, suffering from its insufficiency in modeling structural correspondence
+between the source and target sequence. Instead of handling this insufficiency with a linearly
+weighted attention mechanism, in this paper, we propose to use a recurrent neural network (RNN)
+as an alternative (Cseq2seq-I). During decoding, Cseq2seq-I cyclically feeds the previous decoding
+state back to the encoder as the initial state of the RNN, and reencodes source representations to
+produce context vectors. We surprisingly find that the introduced RNN succeeds in dynamically
+detecting translationrelated source tokens according to the partial target sequence. Based on
+this finding, we further hypothesize that the partial target sequence can act as a feedback to improve
+the understanding of the source sequence. To test this hypothesis, we propose cyclic sequence-to-sequence
+learning (Cseq2seq-II) which differs from the seq2seq only in the reintroduction of previous decoding
+state into the same encoder. We further perform parameter sharing on Cseq2seq-II to reduce parameter
+redundancy and enhance regularization. In particular, we share the weights of the encoder and decoder,
+and two targetside word embeddings, making Cseq2seq-II equivalent to a single conditional RNN
+model, with 31% parameters pruned but even better performance. Cseq2seq-II not only preserves
+the simplicity of seq2seq but also yields comparable and promising results on machine translation
+tasks. Experiments on Chinese- English and English-German translation show that Cseq2seq achieves
+significant and consistent improvements over seq2seq and is as competitive as the attention-based
+seq2seq model. 

@@ -1,0 +1,19 @@
+Given a sequence of convex functions $f_0, f_1, \ldots, f_T$, we study the problem of sampling from
+the Gibbs distribution $\pi_t \propto e^{-\sum_{k=0}^t f_k}$ for each epoch $t$ in an online manner.
+This problem occurs in applications to machine learning, Bayesian statistics, and optimization
+where one constantly acquires new data, and must continuously update the distribution. Our main
+result is an algorithm that generates independent samples from a distribution that is a fixed $\varepsilon$
+TV-distance from $\pi_t$ for every $t$ and, under mild assumptions on the functions, makes poly$\log(T)$
+gradient evaluations per epoch. All previous results for this problem imply a bound on the number
+of gradient or function evaluations which is at least linear in $T$. While we assume the functions
+have bounded second moment, we do not assume strong convexity. In particular, we show that our assumptions
+hold for online Bayesian logistic regression, when the data satisfy natural regularity properties.
+In simulations, our algorithm achieves accuracy comparable to that of a Markov chain specialized
+to logistic regression. Our main result also implies the first algorithm to sample from a $d$-dimensional
+log-concave distribution $\pi_T \propto e^{-\sum_{k=0}^T f_k}$ where the $f_k$'s are not assumed
+to be strongly convex and the total number of gradient evaluations is roughly $T\log(T)+\mathrm{poly}(d),$
+as opposed to $T\cdot \mathrm{poly}(d)$ implied by prior works. Key to our algorithm is a novel stochastic
+gradient Langevin dynamics Markov chain that has a carefully designed variance reduction step
+built-in with fixed constant batch size. Technically, lack of strong convexity is a significant
+barrier to the analysis, and, here, our main contribution is a martingale exit time argument showing
+the chain is constrained to a ball of radius roughly poly$\log(T)$ for the duration of the algorithm.

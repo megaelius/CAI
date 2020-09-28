@@ -1,0 +1,18 @@
+This paper extends the formulation of Sinkhorn divergences to the unbalanced setting of arbitrary
+positive measures, providing both theoretical and algorithmic advances. Sinkhorn divergences
+leverage the entropic regularization of Optimal Transport (OT) to define geometric loss functions.
+They are differentiable, cheap to compute and do not suffer from the curse of dimensionality, while
+maintaining the geometric properties of OT, in particular they metrize the weak$^*$ convergence.
+Extending these divergences to the unbalanced setting is of utmost importance since most applications
+in data sciences require to handle both transportation and creation/destruction of mass. This
+includes for instance problems as diverse as shape registration in medical imaging, density fitting
+in statistics, generative modeling in machine learning, and particles flows involving birth/death
+dynamics. Our first set of contributions is the definition and the theoretical analysis of the unbalanced
+Sinkhorn divergences. They enjoy the same properties as the balanced divergences (classical OT),
+which are obtained as a special case. Indeed, we show that they are convex, differentiable and metrize
+the weak$^*$ convergence. Our second set of contributions studies generalized Sinkkhorn iterations,
+which enable a fast, stable and massively parallelizable algorithm to compute these divergences.
+We show, under mild assumptions, a linear rate of convergence, independent of the number of samples,
+i.e. which can cope with arbitrary input measures. We also highlight the versatility of this method,
+which takes benefit from the latest advances in term of GPU computing, for instance through the KeOps
+library for fast and scalable kernel operations. 

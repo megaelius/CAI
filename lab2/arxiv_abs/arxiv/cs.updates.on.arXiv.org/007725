@@ -1,0 +1,19 @@
+This study investigates the effects Markov Chain Monte Carlo (MCMC) sampling in unsupervised Maximum
+Likelihood (ML) learning. Our attention is restricted to the family unnormalized probability
+densities for which the negative log density (or energy function) is a ConvNet. In general, we find
+that the majority of techniques used to stabilize training in previous studies can the opposite
+effect. Stable ML learning with a ConvNet potential can be achieved with only a few hyper-parameters
+and no regularization. With this minimal framework, we identify a variety of ML learning outcomes
+depending on the implementation of MCMC sampling. On one hand, we show that it is easy to train an energy-based
+model which can sample realistic images with short-run Langevin. ML can be effective and stable
+even when MCMC samples have much higher energy than true steady-state samples throughout training.
+Based on this insight, we introduce an ML method with noise initialization for MCMC, high-quality
+short-run synthesis, and the same budget as ML with informative MCMC initialization such as CD or
+PCD. Unlike previous models, this model can obtain realistic high-diversity samples from a noise
+signal after training with no auxiliary models. On the other hand, models learned with highly non-convergent
+MCMC do not have a valid steady-state and cannot be considered approximate unnormalized densities
+of the training data because long-run MCMC samples differ greatly from the data. We show that it is
+much harder to train an energy-based model where long-run and steady-state MCMC samples have realistic
+appearance. To our knowledge, long-run MCMC samples of all previous models result in unrealistic
+images. With correct tuning of Langevin noise, we train the first models for which long-run and steady-state
+MCMC samples are realistic images. 

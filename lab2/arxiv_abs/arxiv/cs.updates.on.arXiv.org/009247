@@ -1,0 +1,17 @@
+Algorithmic stability is a classical approach to understanding and analysis of the generalization
+error of learning algorithms. A notable weakness of most stability-based generalization bounds
+is that they hold only in expectation. Generalization with high probability has been established
+in a landmark paper of Bousquet and Elisseeff (2002) albeit at the expense of an additional $\sqrt{n}$
+factor in the bound. Specifically, their bound on the estimation error of any $\gamma$-uniformly
+stable learning algorithm on $n$ samples and range in $[0,1]$ is $O(\gamma \sqrt{n \log(1/\delta)}
++ \sqrt{\log(1/\delta)/n})$ with probability $\geq 1-\delta$. The $\sqrt{n}$ overhead makes
+the bound vacuous in the common settings where $\gamma \geq 1/\sqrt{n}$. A stronger bound was recently
+proved by the authors (Feldman and Vondrak, 2018) that reduces the overhead to at most $O(n^{1/4})$.
+Still, both of these results give optimal generalization bounds only when $\gamma = O(1/n)$. We
+prove a nearly tight bound of $O(\gamma \log(n)\log(n/\delta) + \sqrt{\log(1/\delta)/n})$ on
+the estimation error of any $\gamma$-uniformly stable algorithm. It implies that for algorithms
+that are uniformly stable with $\gamma = O(1/\sqrt{n})$, estimation error is essentially the same
+as the sampling error. Our result leads to the first high-probability generalization bounds for
+multi-pass stochastic gradient descent and regularized ERM for stochastic convex problems with
+nearly optimal rate --- resolving open problems in prior work. Our proof technique is new and we introduce
+several analysis tools that might find additional applications. 

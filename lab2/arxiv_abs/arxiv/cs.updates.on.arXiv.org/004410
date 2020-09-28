@@ -1,0 +1,17 @@
+The property graph data model of modern graph database systems is increasingly adapted for storing
+and processing heterogeneous datasets like networks. Many challenging applications with near
+real-time requirements -- e.g. financial fraud detection, recommendation systems, and on-the-fly
+validation -- can be captured with graph queries, which are evaluated repeatedly. To ensure quick
+response time for a changing data set, these applications would benefit from applying incremental
+view maintenance (IVM) techniques, which can perform continuous evaluation of queries and calculate
+the changes in the result set upon updates. However, currently, no graph databases provide support
+for incremental views. While IVM problems have been studied extensively over relational databases,
+views on property graph queries require operators outside the scope of standard relational algebra.
+Hence, tackling this problem requires the integration of numerous existing IVM techniques and
+possibly further extensions. In this paper, we present an approach to perform IVM on property graphs,
+using a nested relational algebraic representation for property graphs and graph operations.
+Then we define a chain of transformations to reduce most property graph queries to flat relational
+algebra and use techniques from discrimination networks (used in rule-based expert systems) to
+evaluate them. We demonstrate the approach using our prototype tool, ingraph, which uses openCypher,
+an open graph query language specified as part of an industry initiative. However, several aspects
+of our approach can be generalised to other graph query languages such as G-CORE and PGQL. 

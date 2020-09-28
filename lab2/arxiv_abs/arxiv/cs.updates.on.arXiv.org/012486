@@ -1,0 +1,18 @@
+Accurate identification and localization of the vertebrae in CT scans is a critical and standard
+preprocessing step for clinical spinal diagnosis and treatment. Existing methods are mainly based
+on the integration of multiple neural networks, and most of them use the Gaussian heat map to locate
+the vertebrae's centroid. However, the process of obtaining the vertebrae's centroid coordinates
+using heat maps is non-differentiable, so it is impossible to train the network to label the vertebrae
+directly. Therefore, for end-to-end differential training of vertebra coordinates on CT scans,
+a robust and accurate automatic vertebral labeling algorithm is proposed in this study. Firstly,
+a novel residual-based multi-label classification and localization network is developed, which
+can capture multi-scale features, but also utilize the residual module and skip connection to fuse
+the multi-level features. Secondly, to solve the problem that the process of finding coordinates
+is non-differentiable and the spatial structure is not destructible, integral regression module
+is used in the localization network. It combines the advantages of heat map representation and direct
+regression coordinates to achieve end-to-end training, and can be compatible with any key point
+detection methods of medical image based on heat map. Finally, multi-label classification of vertebrae
+is carried out, which use bidirectional long short term memory (Bi-LSTM) to enhance the learning
+of long contextual information to improve the classification performance. The proposed method
+is evaluated on a challenging dataset and the results are significantly better than the state-of-the-art
+methods (mean localization error <3mm). 

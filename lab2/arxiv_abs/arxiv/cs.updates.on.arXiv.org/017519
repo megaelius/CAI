@@ -1,0 +1,19 @@
+Deep learning (DL) is a powerful tool in computational imaging for many applications. A common strategy
+is to reconstruct a preliminary image as the input of a neural network to achieve an optimized image.
+Usually, the preliminary image is acquired with the prior knowledge of the imaging model. One outstanding
+challenge, however, is the degree to which the actual imaging model deviates from the assumed model.
+Model mismatches degrade the quality of the preliminary image and therefore affect the DL predictions.
+Another main challenge is that since most imaging inverse problems are ill-posed and the networks
+are over-parameterized, DL networks have flexibility to extract features from the data that are
+not directly related to the imaging model. To solve these challenges, a two-step-training DL (TST-DL)
+framework is proposed for real-time computational imaging without physics priors. First, a single
+fully-connected layer (FCL) is trained to directly learn the model. Then, this FCL is fixed and concatenated
+with an un-trained U-Net architecture for a second-step training to improve the output image fidelity,
+resulting in four main advantages. First, it does not rely on an accurate representation of the imaging
+model since the model is directly learned. Second, real-time imaging can be achieved. Third, the
+TST-DL network is trained in the desired direction and the predictions are improved since the first
+step is constrained to learn the model and the second step improves the result by learning the optimal
+regularizer. Fourth, the approach accommodates any size and dimensionality of data. We demonstrate
+this framework using a linear single-pixel camera imaging model. The results are quantitatively
+compared with those from other DL frameworks and model-based iterative optimization approaches.
+We further extend this concept to nonlinear models in the application of image de-autocorrelation.

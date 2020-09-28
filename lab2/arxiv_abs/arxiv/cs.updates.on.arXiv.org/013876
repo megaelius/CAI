@@ -1,0 +1,19 @@
+Ensembles of deep neural networks significantly improve generalization accuracy. However, training
+neural network ensembles requires a large amount of computational resources and time. State-of-the-art
+approaches either train all networks from scratch leading to prohibitive training cost that allows
+only very small ensemble sizes in practice, or generate ensembles by training a monolithic architecture,
+which results in lower model diversity and decreased prediction accuracy. We propose MotherNets
+to enable higher accuracy and practical training cost for large and diverse neural network ensembles:
+A MotherNet captures the structural similarity across some or all members of a deep neural network
+ensemble which allows us to share data movement and computation costs across these networks. We
+first train a single or a small set of MotherNets and, subsequently, we generate the target ensemble
+networks by transferring the function from the trained MotherNet(s). Then, we continue to train
+these ensemble networks, which now converge drastically faster compared to training from scratch.
+MotherNets handle ensembles with diverse architectures by clustering ensemble networks of similar
+architecture and training a separate MotherNet for every cluster. MotherNets also use clustering
+to control the accuracy vs. training cost tradeoff. We show that compared to state-of-the-art approaches
+such as Snapshot Ensembles, Knowledge Distillation, and TreeNets, MotherNets provide a new Pareto
+frontier for the accuracy-training cost tradeoff. Crucially, training cost and accuracy improvements
+continue to scale as we increase the ensemble size (2 to 3 percent reduced absolute test error rate
+and up to 35 percent faster training compared to Snapshot Ensembles). We verify these benefits over
+numerous neural network architectures and large data sets. 

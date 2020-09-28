@@ -1,0 +1,19 @@
+Consider the lifelong learning paradigm whose objective is to learn a sequence of tasks depending
+on previous experiences, e.g., knowledge library or deep network weights. However, the knowledge
+libraries or deep networks for most recent lifelong learning models are with prescribed size, and
+can degenerate the performance for both learned tasks and coming ones when facing with a new task
+environment (cluster). To address this challenge, we propose a novel incremental clustered lifelong
+learning framework with two knowledge libraries: feature learning library and model knowledge
+library, called Flexible Clustered Lifelong Learning (FCL3). Specifically, the feature learning
+library modeled by an autoencoder architecture maintains a set of representation common across
+all the observed tasks, and the model knowledge library can be self-selected by identifying and
+adding new representative models (clusters). When a new task arrives, our proposed FCL3 model firstly
+transfers knowledge from these libraries to encode the new task, i.e., effectively and selectively
+soft-assigning this new task to multiple representative models over feature learning library.
+Then, 1) the new task with a higher outlier probability will then be judged as a new representative,
+and used to redefine both feature learning library and representative models over time; or 2) the
+new task with lower outlier probability will only refine the feature learning library. For model
+optimization, we cast this lifelong learning problem as an alternating direction minimization
+problem as a new task comes. Finally, we evaluate the proposed framework by analyzing several multi-task
+datasets, and the experimental results demonstrate that our FCL3 model can achieve better performance
+than most lifelong learning frameworks, even batch clustered multi-task learning models. 

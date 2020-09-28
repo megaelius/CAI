@@ -1,0 +1,17 @@
+Atomic-scale materials synthesis via layer deposition techniques present a unique opportunity
+to control material structures and yield systems that display unique functional properties that
+cannot be stabilized using traditional bulk synthetic routes. However, the deposition process
+itself presents a large, multidimensional space that is traditionally optimized via intuition
+and trial and error, slowing down progress. Here, we present an application of deep reinforcement
+learning to a simulated materials synthesis problem, utilizing the Stein variational policy gradient
+(SVPG) approach to train multiple agents to optimize a stochastic policy to yield desired functional
+properties. Our contributions are (1) A fully open source simulation environment for layered materials
+synthesis problems, utilizing a kinetic Monte-Carlo engine and implemented in the OpenAI Gym framework,
+(2) Extension of the Stein variational policy gradient approach to deal with both image and tabular
+input, and (3) Developing a parallel (synchronous) implementation of SVPG using Horovod, distributing
+multiple agents across GPUs and individual simulation environments on CPUs. We demonstrate the
+utility of this approach in optimizing for a material surface characteristic, surface roughness,
+and explore the strategies used by the agents as compared with a traditional actor-critic (A2C)
+baseline. Further, we find that SVPG stabilizes the training process over traditional A2C. Such
+trained agents can be useful to a variety of atomic-scale deposition techniques, including pulsed
+laser deposition and molecular beam epitaxy, if the implementation challenges are addressed.

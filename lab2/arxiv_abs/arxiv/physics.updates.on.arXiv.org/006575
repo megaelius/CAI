@@ -1,0 +1,20 @@
+A Fourier-based Library of Unbounded Poisson Solvers (FLUPS) for 2-D and 3-D homogeneous distributed
+grids is presented. It is designed to handle every possible combination of periodic, symmetric,
+semi-unbounded and fully unbounded boundary conditions for the Poisson equation on rectangular
+domains with uniform resolution. FLUPS leverages a dedicated implementation of 3-D Fourier transforms
+to solve the Poisson equation using Green's functions, in a fast and memory-efficient way. Several
+Green's functions are available, optionally with explicit regularization, spectral truncation,
+or using Lattice Green's Functions, and provide verified convergence orders from 2 to spectral-like.
+The algorithm depends on the FFTW library to perform 1-D transforms, while MPI communications enable
+the required remapping of data in memory. For the latter operation, a first available implementation
+resorts to the standard all-to-all routines. A second implementation, featuring non-blocking
+and persistent point-to-point communications, is however shown to be more efficient in a majority
+of cases and especially while taking advantage of the shared memory parallelism with OpenMP. The
+scalability of the algorithm, aimed at massively parallel architectures, is demonstrated up to
+73 720 cores. The results obtained with three different supercomputers show that the weak efficiency
+remains above 40% and the strong efficiency above 30% when the number of cores is multiplied by 16,
+for typical problems. These figures are slightly better than those expected from a third party 3-D
+FFT tool, with which a 20% longer execution time was also measured on average. From the outside, the
+solving procedure is fully automated so that the user benefits from the optimal performances while
+not having to handle the complexity associated with memory management, data mapping and Fourier
+transform computation. 

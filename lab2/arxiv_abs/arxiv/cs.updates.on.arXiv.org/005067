@@ -1,0 +1,20 @@
+Message-passing models of distributed computing vary along numerous dimensions: degree of synchrony,
+kind of faults, number of faults... Unfortunately, the sheer number of models and their subtle distinctions
+hinder our ability to design a general theory of message-passing models. One way out of this conundrum
+restricts communication to proceed by round. A great variety of message-passing models can then
+be captured in the Heard-Of model, with predicates on the messages sent in a round that were received
+during or before this round. Characterizing a model by such a predicate then depends on how to implement
+rounds in the model. This is straightforward in synchronous models, thanks to the upper bound on
+communication delay. On the other hand, asynchrony allows unbounded message delays, which makes
+the implementation of rounds dependent on the specific model. We formalize the characterization
+of asynchronous models by Heard-Of predicates by introducing Delivered collections: the collections
+of all messages delivered at each round, whether late or not. Predicates on Delivered collections
+capture message-passing models. The question is then: which Heard-Of predicates can be generated
+by a given Delivered predicate? We answer it by considering all possible scheduling of deliveries
+and change of rounds. Strategies of processes then constrain those scheduling by specifying when
+processes can change rounds; those ensuring no process is ever blocked forever generate a Heard-Of
+collection per run, that is a Heard-Of predicate. Those strategies are then studied through a dominance
+relation: a dominant strategy for a Delivered predicate generates the most constrained Heard-Of
+predicate possible. The results of this study are the dominant Heard-Of predicates for classical
+asynchronous models and the existence, for every Delivered predicate, of a strategy dominating
+large classes of strategies. 

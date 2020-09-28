@@ -1,0 +1,18 @@
+Clock synchronization procedures are mandatory in most physical experiments where event fragments
+are readout by spatially dislocated sensors and must be glued together to reconstruct key parameters
+(e.g. energy, interaction vertex etc.) of the process under investigation. These distributed
+data readout topologies rely on an accurate time information available at the frontend, where raw
+data are acquired and tagged with a precise timestamp prior to data buffering and central data collecting.
+This makes the network complexity and latency, between frontend and backend electronics, negligible
+within upper bounds imposed by the frontend data buffer capability. The proposed research work
+describes an FPGA implementation of IEEE 1588 Precision Time Protocol (PTP) that exploits the CERN
+Timing, Trigger and Control (TTC) system as a multicast messaging physical and data link layer.
+The hardware implementation extends the clock synchronization to the nanoseconds range, overcoming
+the typical accuracy limitations inferred by computers Ethernet based Local Area Network (LAN).
+Establishing a reliable communication between master and timing receiver nodes is essential in
+a message-based synchronization system. In the backend electronics, the serial data streams synchronization
+with the global clock domain is guaranteed by an hardware-based finite state machine that scans
+the bit period using a variable delay chain and finds the optimal sampling point. The validity of
+the proposed timing system has been proved in point-to-point data links as well as in star topology
+configurations over standard CAT-5e cables. The results achieved together with weaknesses and
+possible improvements are hereby detailed. 

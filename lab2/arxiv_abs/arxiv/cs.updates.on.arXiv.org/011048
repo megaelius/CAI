@@ -1,0 +1,18 @@
+Security operation centers (SOCs) typically use a variety of tools to collect large volumes of host
+logs for detection and forensic of intrusions. Our experience, supported by recent user studies
+on SOC operators, indicates that operators spend ample time (e.g., hundreds of man-hours) on investigations
+into logs seeking adversarial actions. Similarly, reconfiguration of tools to adapt detectors
+for future similar attacks is commonplace upon gaining novel insights (e.g., through internal
+investigation or shared indicators). This paper presents an automated malware pattern-extraction
+and early detection tool, testing three machine learning approaches: TF-IDF (term frequency-inverse
+document frequency), Fisher's LDA (linear discriminant analysis) and ET (extra trees/extremely
+randomized trees) that can (1) analyze freshly discovered malware samples in sandboxes and generate
+dynamic analysis reports (host logs); (2) automatically extract the sequence of events induced
+by malware given a large volume of ambient (un-attacked) host logs, and the relatively few logs from
+hosts that are infected with potentially polymorphic malware; (3) rank the most discriminating
+features (unique patterns) of malware and from the learned behavior detect malicious activity;
+and (4) allows operators to visualize the discriminating features and their correlations to facilitate
+malware forensic efforts. To validate the accuracy and efficiency of our tool, we design three experiments
+and test seven ransomware attacks (i.e., WannaCry, DBGer, Cerber, Defray, GandCrab, Locky, and
+nRansom). The experimental results show that TF-IDF is the best of the three methods to identify
+discriminating features, and ET is the most time-efficient and robust approach. 

@@ -1,0 +1,18 @@
+In this paper, we consider a popular model for collaborative filtering in recommender systems where
+some users of a website rate some items, such as movies, and the goal is to recover the ratings of some
+or all of the unrated items of each user. In particular, we consider both the clustering model, where
+only users (or items) are clustered, and the co-clustering model, where both users and items are
+clustered, and further, we assume that some users rate many items (information-rich users) and
+some users rate only a few items (information-sparse users). When users (or items) are clustered,
+our algorithm can recover the rating matrix with $\omega(MK \log M)$ noisy entries while $MK$ entries
+are necessary, where $K$ is the number of clusters and $M$ is the number of items. In the case of co-clustering,
+we prove that $K^2$ entries are necessary for recovering the rating matrix, and our algorithm achieves
+this lower bound within a logarithmic factor when $K$ is sufficiently large. We compare our algorithms
+with a well-known algorithms called alternating minimization (AM), and a similarity score-based
+algorithm known as the popularity-among-friends (PAF) algorithm by applying all three to the MovieLens
+and Netflix data sets. Our co-clustering algorithm and AM have similar overall error rates when
+recovering the rating matrix, both of which are lower than the error rate under PAF. But more importantly,
+the error rate of our co-clustering algorithm is significantly lower than AM and PAF in the scenarios
+of interest in recommender systems: when recommending a few items to each user or when recommending
+items to users who only rated a few items (these users are the majority of the total user population).
+The performance difference increases even more when noise is added to the datasets. 

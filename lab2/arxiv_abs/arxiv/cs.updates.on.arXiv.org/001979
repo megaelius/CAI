@@ -1,0 +1,19 @@
+We consider a search problem on trees using unreliable guiding instructions. Specifically, an
+agent starts a search at the root of a tree aiming to find a treasure hidden at one of the nodes by an adversary.
+Each visited node holds information, called advice, regarding the most promising neighbor to continue
+the search. However, the memory holding this information may be unreliable. Modeling this scenario,
+we focus on a probabilistic setting. That is, the advice at a node is a pointer to one of its neighbors.
+With probability $q$ each node is faulty, independently of other nodes, in which case its advice
+points at an arbitrary neighbor, chosen u.a.r. Otherwise, the node is sound and points at the correct
+neighbor. Crucially, the advice is permanent, in the sense that querying a node several times would
+yield the same answer. Let $\Delta$ denote the maximal degree. Roughly speaking, the main message
+of this paper is that in order to obtain efficient search, $1/\sqrt{\Delta}$ is a threshold for the
+noise parameter $q$. Essentially, we prove that above the threshold, every search algorithm has
+query complexity (and move complexity) which is both exponential in the depth $d$ of the treasure
+and polynomial in the number of nodes $n$. Conversely, below the threshold, there exists an algorithm
+with move complexity $O(d\sqrt{\Delta})$, and an algorithm with query complexity $O(\sqrt{\Delta}\log
+\Delta \log^2 n)$. Moreover, for the case of regular trees, we obtain an algorithm with query complexity
+$O(\sqrt{\Delta}\log n\log\log n)$. The move complexity bound is tight below the threshold and
+the query complexity bounds are not far from the lower bound of $\Omega(\sqrt{\Delta}\log_\Delta
+n)$. We also consider an adversarial variant which can find applications in making search trees
+robust to memory faults 

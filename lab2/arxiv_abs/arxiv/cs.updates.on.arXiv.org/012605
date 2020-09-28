@@ -1,0 +1,20 @@
+The computation of genomic distances has been a very active field of computational comparative
+genomics over the last 25 years. Substantial results include the polynomial-time computability
+of the inversion distance by Hannenhalli and Pevzner in 1995 and the introduction of the double-cut
+and join (DCJ) distance by Yancopoulos et al. in 2005. Both results, however, rely on the assumption
+that the genomes under comparison contain the same set of unique markers (syntenic genomic regions,
+sometimes also referred to as genes). In 2015, Shao, Lin and Moret relax this condition by allowing
+for duplicate markers in the analysis. This generalized version of the genomic distance problem
+is NP-hard, and they give an ILP solution that is efficient enough to be applied to real-world datasets.
+A restriction of their approach is that it can be applied only to balanced genomes, that have equal
+numbers of duplicates of any marker. Therefore it still needs a delicate preprocessing of the input
+data in which excessive copies of unbalanced markers have to be removed. In this paper we present
+an algorithm solving the genomic distance problem for natural genomes, in which any marker may occur
+an arbitrary number of times. Our method is based on a new graph data structure, the multi-relational
+diagram, that allows an elegant extension of the ILP by Shao, Lin and Moret to count runs of markers
+that are under- or over-represented in one genome with respect to the other and need to be inserted
+or deleted, respectively. With this extension, previous restrictions on the genome configurations
+are lifted, for the first time enabling an uncompromising rearrangement analysis. Any marker sequence
+can directly be used for the distance calculation. The evaluation of our approach shows that it can
+be used to analyze genomes with up to a few ten thousand markers, which we demonstrate on simulated
+and real data. 

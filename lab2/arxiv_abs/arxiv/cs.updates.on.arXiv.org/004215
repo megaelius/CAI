@@ -1,0 +1,20 @@
+In the modern era of multicore processors, utilizing cores is a tedious job. Synchronization and
+communication among processors involve high cost. Software transaction memory systems (STMs)
+addresses this issues and provide better concurrency in which programmer need not have to worry
+about consistency issues. Another advantage of STMs is that they facilitate compositionality
+of concurrent programs with great ease. Different concurrent operations that need to be composed
+to form a single atomic unit is achieved by encapsulating them in a single transaction. In this paper,
+we introduce a new STM system as multi-version object based STM (MVOSTM) which is the combination
+of both of these ideas for harnessing greater concurrency in STMs. As the name suggests MVOSTM, works
+on a higher level and maintains multiple versions corresponding to each key. We have developed MVOSTM
+with the unlimited number of versions corresponding to each key. In addition to that, we have developed
+garbage collection for MVOSTM (MVOSTM-GC) to delete unwanted versions corresponding to the keys
+to reduce traversal overhead. MVOSTM provides greater concurrency while reducing the number of
+aborts and it ensures compositionality by making the transactions atomic. Here, we have used MVOSTM
+for the list and hash-table data structure as list-MVOSTM and HT- MVOSTM. Experimental results
+of list-MVOSTM outperform almost two to twenty fold speedup than existing state-of-the-art list
+based STMs (Trans-list, Boosting-list, NOrec-list, list-MVTO, and list-OSTM). HT-MVOSTM shows
+a significant performance gain of almost two to nineteen times better than existing state-of-the-art
+hash-table based STMs (ESTM, RWSTMs, HT-MVTO, and HT-OSTM). MVOSTM with list and hash-table shows
+the least number of aborts among all the existing STM algorithms. MVOSTM satisfies correctness-criteria
+as opacity. 

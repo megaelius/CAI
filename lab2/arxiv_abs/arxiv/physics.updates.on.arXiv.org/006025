@@ -1,0 +1,17 @@
+A well-known drawback of state-of-the-art machine-learning interatomic potentials is their
+poor ability to extrapolate beyond the training domain. For small-scale problems with tens to hundreds
+of atoms this can be solved by using active learning which is able to select atomic configurations
+on which a potential attempts extrapolation and add them to the ab initio-computed training set.
+In this sense an active learning algorithm can be viewed as an on-the-fly interpolation of an ab initio
+model. For large-scale problems, possibly involving tens of thousands of atoms, this is not feasible
+because one cannot afford even a single density functional theory computation with such a large
+number of atoms. This work marks a new milestone toward fully automatic ab initio-accurate large-scale
+atomistic simulations. We develop an active learning algorithm that identifies local subregions
+of the simulation region where the potential extrapolates. Then the algorithm constructs periodic
+configurations out of these local, non-periodic subregions, sufficiently small to be computable
+with plane-wave density functional theory codes, in order to obtain accurate ab initio energies.
+We benchmark our algorithm on the problem of the screw dislocation motion in bcc tungsten and show
+that our algorithm reaches ab initio accuracy, down to typical magnitudes of numerical noise in
+DFT codes. We show that our algorithm reproduces material properties such as core structure, Peierls
+barrier, and Peierls stress. This unleashes new capabilities for computational materials science
+toward applications which have currently been out of scope if approached solely by ab initio methods.

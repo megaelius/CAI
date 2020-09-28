@@ -1,0 +1,20 @@
+Next-generation high-power lasers that can be focused to intensities exceeding 10^23 W/cm^2 are
+enabling new physics and applications. The physics of how these lasers interact with matter is highly
+nonlinear, relativistic, and can involve lowest-order quantum effects. The current tool of choice
+for modeling these interactions is the particle-in-cell (PIC) method. In strong fields, the motion
+of charged particles and their spin is affected by radiation reaction. Standard PIC codes usually
+use Boris or its variants to advance the particles, which requires very small time steps in the strong-field
+regime to obtain accurate results. In addition, some problems require tracking the spin of particles,
+which creates a 9D particle phase space (x, u, s). Therefore, numerical algorithms that enable high-fidelity
+modeling of the 9D phase space in the strong-field regime are desired. We present a new 9D phase space
+particle pusher based on analytical solutions to the position, momentum and spin advance from the
+Lorentz force, together with the semi-classical form of RR in the Landau-Lifshitz equation and
+spin evolution given by the Bargmann-Michel-Telegdi equation. These analytical solutions are
+obtained by assuming a locally uniform and constant electromagnetic field during a time step. The
+solutions provide the 9D phase space advance in terms of a particle's proper time, and a mapping is
+used to determine the proper time step for each particle from the simulation time step. Due to the
+analytical integration, the constraint on the time step needed to resolve trajectories in ultra-high
+fields can be greatly reduced. We present single-particle simulations and full PIC simulations
+to show that the proposed particle pusher can greatly improve the accuracy of particle trajectories
+in 9D phase space for given laser fields. A discussion on the numerical efficiency of the proposed
+pusher is also provided. 

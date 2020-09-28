@@ -1,0 +1,3 @@
+Does anyone know of an X-based terminal emulator which can
+emulate a color tektronics graphics terminal such as 
+TEK 4105 or TEK 4107, etc?

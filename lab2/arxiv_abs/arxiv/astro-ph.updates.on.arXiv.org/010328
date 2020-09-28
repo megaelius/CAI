@@ -1,0 +1,19 @@
+In this paper, we describe the algorithms we implemented in FDPS to make efficient use of accelerator
+hardware such as GPGPUs. We have developed FDPS to make it possible for many researchers to develop
+their own high-performance parallel particle-based simulation programs without spending large
+amount of time for parallelization and performance tuning. The basic idea of FDPS is to provide a
+high-performance implementation of parallel algorithms for particle-based simulations in a
+"generic" form, so that researchers can define their own particle data structure and interparticle
+interaction functions and supply them to FDPS. FDPS compiled with user-supplied data type and interaction
+function provides all necessary functions for parallelization, and using those functions researchers
+can write their programs as though they are writing simple non-parallel program. It has been possible
+to use accelerators with FDPS, by writing the interaction function that uses the accelerator. However,
+the efficiency was limited by the latency and bandwidth of communication between the CPU and the
+accelerator and also by the mismatch between the available degree of parallelism of the interaction
+function and that of the hardware parallelism. We have modified the interface of user-provided
+interaction function so that accelerators are more efficiently used. We also implemented new techniques
+which reduce the amount of work on the side of CPU and amount of communication between CPU and accelerators.
+We have measured the performance of N-body simulations on a systems with NVIDIA Volta GPGPU using
+FDPS and the achieved performance is around 27 \% of the theoretical peak limit. We have constructed
+a detailed performance model, and found that the current implementation can achieve good performance
+on systems with much smaller memory and communication bandwidth. 

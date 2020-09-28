@@ -1,0 +1,18 @@
+Liquid State Machine (LSM) is a brain-inspired architecture used for solving problems like speech
+recognition and time series prediction. LSM comprises of a randomly connected recurrent network
+of spiking neurons. This network propagates the non-linear neuronal and synaptic dynamics. Maass
+et al. have argued that the non-linear dynamics of LSMs is essential for its performance as a universal
+computer. Lyapunov exponent (mu), used to characterize the "non-linearity" of the network, correlates
+well with LSM performance. We propose a complementary approach of approximating the LSM dynamics
+with a linear state space representation. The spike rates from this model are well correlated to
+the spike rates from LSM. Such equivalence allows the extraction of a "memory" metric (tau_M) from
+the state transition matrix. tau_M displays high correlation with performance. Further, high
+tau_M system require lesser epochs to achieve a given accuracy. Being computationally cheap (1800x
+time efficient compared to LSM), the tau_M metric enables exploration of the vast parameter design
+space. We observe that the performance correlation of the tau_M surpasses the Lyapunov exponent
+(mu), (2-4x improvement) in the high-performance regime over multiple datasets. In fact, while
+mu increases monotonically with network activity, the performance reaches a maxima at a specific
+activity described in literature as the "edge of chaos". On the other hand, tau_M remains correlated
+with LSM performance even as mu increases monotonically. Hence, tau_M captures the useful memory
+of network activity that enables LSM performance. It also enables rapid design space exploration
+and fine-tuning of LSM parameters for high performance. 

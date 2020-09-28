@@ -1,0 +1,19 @@
+Atomistic molecular dynamics simulation is an important tool for predicting materials properties.
+Accuracy depends crucially on the model for the interatomic potential. The gold standard would
+be quantum mechanics (QM) based force calculations, but such a first-principles approach becomes
+prohibitively expensive at large system sizes. Efficient machine learning models (ML) have become
+increasingly popular as surrogates for QM. Neural networks with many thousands of parameters excel
+in capturing structure within a large dataset, but may struggle to extrapolate beyond the scope
+of the available data. Here we present a highly automated active learning approach to iteratively
+collect new QM data that best resolves weaknesses in the existing ML model. We exemplify our approach
+by developing a general potential for elemental aluminum. At each active learning iteration, the
+method (1) trains an ANI-style neural network potential from the available data, (2) uses this potential
+to drive molecular dynamics simulations, and (3) collects new QM data whenever the neural network
+identifies an atomic configuration for which it cannot make a good prediction. All molecular dynamics
+simulations are initialized to a disordered configuration, and then driven according to randomized,
+time-varying temperatures. This nonequilibrium molecular dynamics forms a variety of crystalline
+and defected configurations. By training on all such automatically collected data, we produce
+ANI-Al, our new interatomic potential for aluminum. We demonstrate the remarkable transferability
+of ANI-Al by benchmarking against experimental data, e.g., the radial distribution function in
+melt, various properties of the stable face-centered cubic (FCC) crystal, and the coexistence
+curve between melt and FCC. 

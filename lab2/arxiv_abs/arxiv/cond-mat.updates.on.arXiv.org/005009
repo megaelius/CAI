@@ -1,0 +1,18 @@
+We couple a free solute diffusion model to a model of crystal surface growth represented by, but not
+limited to, a (2 + 1)-dimensional solid-on-solid (SOS) model confined by a flat surface. We use kinetic
+Monte Carlo (KMC) with dissolution rates based on nearest-neighbor interactions to solve the Master
+equation for the surface dynamics, and we use an offlattice random walk to model the Fickian diffusion
+of the solute particles. The two solvers are coupled directly through deposition rates of the free
+particles calculated using the mean first passage time (MFPT) of deposition that is found to scale
+as $r^{-4}$. Two variants are studied: ignoring (radial) and not ignoring the line of sight (pathfinding).
+Reference models such as uniform concentration (random deposition) and lattice diffusion (crystal
+lattice extended into the liquid) are used for comparison. We find that the macroscopic limit of
+the surface dynamics is reproduced by all models. The free diffusion models produce a lower equilibrium
+roughness and a smaller height autocorrelation length than the reference models, and are found
+to behave very well in tight confinements. It is also demonstrated that lattice diffusion does not
+work well in tight confinements. The two MFPT models behave very similarly close to equilibrium
+and for dissolution, but becomes increasingly different with increasing surface growth speed.
+The model is put to use by simulating a cavity with a flux boundary condition at one side. The conclusion
+is that the new model excels in confinement, and line of sight can in practice be ignored since the
+dominant deposition sites likely are in line of sight, which minimizes the CPU-time needed in the
+coupling. 

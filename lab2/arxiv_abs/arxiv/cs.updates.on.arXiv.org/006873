@@ -1,0 +1,18 @@
+Virtualization is frequently used to isolate untrusted processes and control their access to sensitive
+resources. However, isolation usually carries a price in terms of less resource sharing and reduced
+inter-process communication. In an open architecture such as Android, this price and its impact
+on performance, usability, and transparency must be carefully considered. Although previous
+efforts in developing general-purpose isolation solutions have shown that some of these negative
+side effects can be mitigated, doing so involves overcoming significant design challenges by incorporating
+numerous additional platform complexities not directly related to improved security. Thus, the
+general purpose solutions become inefficient and burdensome if the end-user has only specific
+security goals. In this paper, we present PINPOINT, a resource isolation strategy that forgoes
+general-purpose solutions in favor of a "building block" approach that addresses specific end-user
+security goals. PINPOINT embodies the concept of Linux Namespace lightweight isolation, but does
+so in the Android Framework by guiding the security designer towards isolation points that are contextually
+close to the resource(s) that need to be isolated. This strategy allows the rest of the Framework
+to function fully as intended, transparently. We demonstrate our strategy with a case study on Android
+System Services, and show four applications of PINPOINTed system services functioning with unmodified
+market apps. Our evaluation results show that practical security and privacy advantages can be
+gained using our approach, without inducing the problematic side-effects that other general-purpose
+designs must address. 

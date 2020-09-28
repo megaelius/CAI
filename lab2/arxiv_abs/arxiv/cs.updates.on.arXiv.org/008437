@@ -1,0 +1,19 @@
+With the rapid proliferation and increased sophistication of malicious software (malware), detection
+methods no longer rely only on manually generated signatures but have also incorporated more general
+approaches like Machine Learning (ML) detection. Although powerful for conviction of malicious
+artifacts, these methods do not produce any further information about the type of malware that has
+been detected. In this work, we address the information gap between ML and signature-based detection
+methods by introducing an ML-based tagging model that generates human interpretable semantic
+descriptions of malicious software (e.g. file-infector, coin-miner), and argue that for less
+prevalent malware campaigns these provide potentially more useful and flexible information than
+malware family names. For this, we first introduce a method for deriving high-level descriptions
+of malware files from an ensemble of vendor family names. Then we formalize the problem of malware
+description as a tagging problem and propose a joint embedding deep neural network architecture
+that can learn to characterize portable executable (PE) files based on static analysis, thus not
+requiring a dynamic trace to identify behaviors at deployment time. We empirically demonstrate
+that when evaluated against tags extracted from an ensemble of anti-virus detection names, the
+proposed tagging model correctly identifies more than 93.7% of eleven possible tag descriptions
+for a given sample, at a deployable false positive rate (FPR) of 1% per tag. Furthermore, we show that
+when evaluating this model against ground truth tags derived from the results of dynamic analysis,
+it correctly predicts 93.5% of the labels for a given sample. These results suggest that an ML tagging
+model can be effectively deployed alongside a detection model for malware description. 

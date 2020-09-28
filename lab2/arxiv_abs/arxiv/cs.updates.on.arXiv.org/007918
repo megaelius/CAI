@@ -1,0 +1,18 @@
+We present the first sublinear-time algorithm for a distributed message-passing network sto compute
+its edge connectivity $\lambda$ exactly in the CONGEST model, as long as there are no parallel edges.
+Our algorithm takes $\tilde O(n^{1-1/353}D^{1/353}+n^{1-1/706})$ time to compute $\lambda$
+and a cut of cardinality $\lambda$ with high probability, where $n$ and $D$ are the number of nodes
+and the diameter of the network, respectively, and $\tilde O$ hides polylogarithmic factors. This
+running time is sublinear in $n$ (i.e. $\tilde O(n^{1-\epsilon})$) whenever $D$ is. Previous sublinear-time
+distributed algorithms can solve this problem either (i) exactly only when $\lambda=O(n^{1/8-\epsilon})$
+[Thurimella PODC'95; Pritchard, Thurimella, ACM Trans. Algorithms'11; Nanongkai, Su, DISC'14]
+or (ii) approximately [Ghaffari, Kuhn, DISC'13; Nanongkai, Su, DISC'14]. To achieve this we develop
+and combine several new techniques. First, we design the first distributed algorithm that can compute
+a $k$-edge connectivity certificate for any $k=O(n^{1-\epsilon})$ in time $\tilde O(\sqrt{nk}+D)$.
+Second, we show that by combining the recent distributed expander decomposition technique of [Chang,
+Pettie, Zhang, SODA'19] with techniques from the sequential deterministic edge connectivity
+algorithm of [Kawarabayashi, Thorup, STOC'15], we can decompose the network into a sublinear number
+of clusters with small average diameter and without any mincut separating a cluster (except the
+`trivial' ones). Finally, by extending the tree packing technique from [Karger STOC'96], we can
+find the minimum cut in time proportional to the number of components. As a byproduct of this technique,
+we obtain an $\tilde O(n)$-time algorithm for computing exact minimum cut for weighted graphs.

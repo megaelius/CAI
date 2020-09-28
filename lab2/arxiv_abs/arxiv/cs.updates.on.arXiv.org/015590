@@ -1,0 +1,19 @@
+The dynamic trees problem is to maintain a forest subject to edge insertions and deletions while
+facilitating queries such as connectivity, path weights, and subtree weights. Dynamic trees are
+a fundamental building block of a large number of graph algorithms. Although traditionally studied
+in the single-update setting, dynamic algorithms capable of supporting batches of updates are
+increasingly relevant today due to the emergence of rapidly evolving dynamic datasets. Since processing
+updates on a single processor is often unrealistic for large batches of updates, designing parallel
+batch-dynamic algorithms that achieve provably low span is important for many applications. In
+this work, we design the first work-efficient parallel batch-dynamic algorithm for dynamic trees
+that is capable of supporting both path queries and subtree queries, as well as a variety of non-local
+queries. To achieve this, we propose a framework for algorithmically dynamizing static round-synchronous
+algorithms that allows us to obtain parallel batch-dynamic algorithms with good bounds on their
+work and span. In our framework, the algorithm designer can apply the technique to any suitably defined
+static algorithm. We then obtain theoretical guarantees for algorithms in our framework by defining
+the notion of a computation distance between two executions of the underlying algorithm. Our dynamic
+trees algorithm is obtained by applying our dynamization framework to the parallel tree contraction
+algorithm of Miller and Reif, and then performing a novel analysis of the computation distance of
+this algorithm under batch updates. We show that $k$ updates can be performed in $O(k \log(1+n/k))$
+work in expectation, which matches an existing algorithm of Tseng et al. while providing support
+for a substantially larger number of queries and applications. 

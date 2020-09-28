@@ -1,0 +1,19 @@
+We present an algorithm to generate application-specific, global reduced order quadratures (ROQ)
+for multiple fast evaluations of weighted inner products between parameterized functions. If
+a reduced basis (RB) or any other projection-based model reduction technique is applied, the dimensionality
+of integrands is reduced dramatically; however, the cost of approximating the integrands by projection
+still scales as the size of the original problem. In contrast, using discrete empirical interpolation
+(DEIM) points as ROQ nodes leads to a computational cost which depends linearly on the dimension
+of the reduced space. Generation of a reduced basis via a greedy procedure requires a training set,
+which for products of functions can be very large. Since this direct approach can be impractical
+in many applications, we propose instead a two-step greedy targeted towards approximation of such
+products. We present numerical experiments demonstrating the accuracy and the efficiency of the
+two-step approach. The presented ROQ are expected to display very fast convergence whenever there
+is regularity with respect to parameter variation. We find that for the particular application
+here considered, one driven by gravitational wave physics, the two-step approach speeds up the
+offline computations to build the ROQ by more than two orders of magnitude. Furthermore, the resulting
+ROQ rule is found to converge exponentially with the number of nodes, and a factor of ~50 savings,
+without loss of accuracy, is observed in evaluations of inner products when ROQ are used as a downsampling
+strategy for equidistant samples using the trapezoidal rule. While the primary focus of this paper
+is on quadrature rules for inner products of parameterized functions, our method can be easily adapted
+to integrations of single parameterized functions, and some examples of this type are considered.

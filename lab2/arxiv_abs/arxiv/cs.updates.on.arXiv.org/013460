@@ -1,0 +1,20 @@
+To reduce training time of large-scale DNNs, scientists have started to explore parallelization
+strategies like data-parallelism, model-parallelism, and hybrid-parallelism. While data-parallelism
+has been extensively studied and developed, several problems exist in realizing model-parallelism
+and hybrid-parallelism efficiently. Four major problems we focus on are: 1) defining a notion of
+a distributed model across processes, 2) implementing forward/back-propagation across process
+boundaries that requires explicit communication, 3) obtaining parallel speedup on an inherently
+sequential task, and 4) achieving scalability without losing out on a model's accuracy. To address
+these problems, we create HyPar-Flow --- a model-size/-type agnostic, scalable, practical, and
+user-transparent system for hybrid-parallel training by exploiting MPI, Keras, and TensorFlow.
+HyPar-Flow provides a single API that can be used to perform data, model, and hybrid parallel training
+of any Keras model at scale. We create an internal distributed representation of the user-provided
+Keras model, utilize TF's Eager execution features for distributed forward/back-propagation
+across processes, exploit pipelining to improve performance and leverage efficient MPI primitives
+for scalable communication. Between model partitions, we use send and recv to exchange layer-data/partial-errors
+while allreduce is used to accumulate/average gradients across model replicas. Beyond the design
+and implementation of HyPar-Flow, we also provide comprehensive correctness and performance
+results on three state-of-the-art HPC systems including TACC Frontera (#5 on Top500.org). For
+ResNet-1001, an ultra-deep model, HyPar-Flow provides: 1) Up to 1.6x speedup over Horovod-based
+data-parallel training, 2) 110x speedup over single-node on 128 Stampede2 nodes, and 3) 481x speedup
+over single-node on 512 Frontera nodes. 

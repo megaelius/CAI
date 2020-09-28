@@ -1,0 +1,19 @@
+Nonlinear estimation in robotics and vision is typically plagued with outliers due to wrong data
+association, or to incorrect detections from signal processing and machine learning methods.
+This paper introduces two unifying formulations for outlier-robust estimation, Generalized
+Maximum Consensus (G- MC) and Generalized Truncated Least Squares (G-TLS), and investigates fundamental
+limits, practical algorithms, and applications. Our first contribution is a proof that outlier-robust
+estimation is inapproximable: in the worst case, it is impossible to (even approximately) find
+the set of outliers, even with slower-than-polynomial-time algorithms (particularly, algorithms
+running in quasi-polynomial time). As a second contribution, we review and extend two general-purpose
+algorithms. The first, Adaptive Trimming (ADAPT), is combinatorial, and is suitable for G-MC;
+the second, Graduated Non-Convexity (GNC), is based on homotopy methods, and is suitable for G-TLS.
+We extend ADAPT and GNC to the case where the user does not have prior knowledge of the inlier-noise
+statistics (or the statistics may vary over time) and is unable to guess a reasonable threshold to
+separate inliers from outliers (as the one commonly used in RANSAC). We propose the first minimally-tuned
+algorithms for outlier rejection, that dynamically decide how to separate inliers from outliers.
+Our third contribution is an evaluation of the proposed algorithms on robot perception problems:
+mesh registration, image-based object detection (shape alignment), and pose graph optimization.
+ADAPT and GNC execute in real-time, are deterministic, outperform RANSAC, and are robust to 70-90%
+outliers. Their minimally-tuned versions also compare favorably with the state of the art, even
+though they do not rely on a noise bound for the inliers. 

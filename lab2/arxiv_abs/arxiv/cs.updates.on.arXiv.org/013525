@@ -1,0 +1,20 @@
+Although spatial information of images usually enhance the robustness of the Fuzzy C-Means (FCM)
+algorithm, it greatly increases the computational costs for image segmentation. To achieve a sound
+trade-off between the segmentation performance and the speed of clustering, we come up with a Kullback-Leibler
+(KL) divergence-based FCM algorithm by incorporating a tight wavelet frame transform and a morphological
+reconstruction operation. To enhance FCM's robustness, an observed image is first filtered by
+using the morphological reconstruction. A tight wavelet frame system is employed to decompose
+the observed and filtered images so as to form their feature sets. Considering these feature sets
+as data of clustering, an modified FCM algorithm is proposed, which introduces a KL divergence term
+in the partition matrix into its objective function. The KL divergence term aims to make membership
+degrees of each image pixel closer to those of its neighbors, which brings that the membership partition
+becomes more suitable and the parameter setting of FCM becomes simplified. On the basis of the obtained
+partition matrix and prototypes, the segmented feature set is reconstructed by minimizing the
+inverse process of the modified objective function. To modify abnormal features produced in the
+reconstruction process, each reconstructed feature is reassigned to the closest prototype. As
+a result, the segmentation accuracy of KL divergence-based FCM is further improved. What's more,
+the segmented image is reconstructed by using a tight wavelet frame reconstruction operation.
+Finally, supporting experiments coping with synthetic, medical and color images are reported.
+Experimental results exhibit that the proposed algorithm works well and comes with better segmentation
+performance than other comparative algorithms. Moreover, the proposed algorithm requires less
+time than most of the FCM-related algorithms. 

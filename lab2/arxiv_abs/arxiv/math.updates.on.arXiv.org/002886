@@ -1,0 +1,20 @@
+This work introduces a general framework for constructing high-order, linearly stable, partitioned
+solvers for multiphysics problems from a monolithic implicit-explicit Runge-Kutta (IMEX-RK)
+discretization of the semi-discrete equations. The generic multiphysics problem is modeled as
+a system of n systems of partial differential equations where the ith subsystem is coupled to the
+other subsystems through a coupling term that can depend on the state of all the other subsystems.
+This coupled system of partial differential equations reduces to a coupled system of ordinary differential
+equations via the method of lines where an appropriate spatial discretization is applied to each
+subsystem. The coupled system of ordinary differential equations is taken as a monolithic system
+and discretized using an IMEX-RK discretization with a specific implicit-explicit decomposition
+that introduces the concept of a predictor for the coupling term. We propose four coupling predictors
+that enable the monolithic system to be solved in a partitioned manner and preserve the IMEX-RK structure
+and therefore the design order of accuracy of the monolithic scheme. The four partitioned solvers
+that result from these predictors are high-order accurate, allow for maximum re-use of existing
+single-physics software, and two of the four solvers allow the subsystems to be solved in parallel
+at a given stage and time step. We also analyze the stability of a coupled, linear model problem and
+show that one of the partitioned solvers achieves unconditional linear stability, while the others
+are unconditionally stable only for certain values of the coupling strength. We demonstrate the
+performance of the proposed partitioned solvers on several classes of multiphysics problems including
+a simple linear system of ODEs, advection-diffusion-reaction systems, FSI problems, and particle-laden
+flows. 

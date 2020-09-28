@@ -1,0 +1,20 @@
+We study graph computations in an enhanced data streaming setting, where a space-bounded client
+reading the edge stream of a massive graph may delegate some of its work to a cloud service. We seek
+algorithms that allow the client to verify a purported proof sent by the cloud service that the work
+done in the cloud is correct. A line of work starting with Chakrabarti et al. (ICALP 2009) has provided
+such algorithms, which we call schemes, for several statistical and graph-theoretic problems,
+many of which exhibit a tradeoff between the length of the proof and the space used by the streaming
+verifier. This work designs new schemes for a number of basic graph problems---including triangle
+counting, maximum matching, topological sorting, and single-source shortest paths---where
+past work had either failed to obtain smooth tradeoffs between these two key complexity measures
+or only obtained suboptimal tradeoffs. Our key innovation is having the verifier compute certain
+nonlinear sketches of the input stream, leading to either new or improved tradeoffs. In many cases,
+our schemes in fact provide optimal tradeoffs up to logarithmic factors. Specifically, for most
+graph problems that we study, it is known that the product of the verifier's space cost $v$ and the
+proof length $h$ must be at least $\Omega(n^2)$ for $n$-vertex graphs. However, matching upper
+bounds are only known for a handful of settings of $h$ and $v$ on the curve $h \cdot v=\tilde{\Theta}(n^2)$.
+For example, for counting triangles and maximum matching, schemes with costs lying on this curve
+are only known for $(h=\tilde{O}(n^2), v=\tilde{O}(1))$, $(h=\tilde{O}(n), v=\tilde{O}(n))$,
+and the trivial $(h=\tilde{O}(1), v=\tilde{O}(n^2))$. A major message of this work is that by exploiting
+nonlinear sketches, a significant ``portion'' of costs on the tradeoff curve $h \cdot v = n^2$ can
+be achieved. 

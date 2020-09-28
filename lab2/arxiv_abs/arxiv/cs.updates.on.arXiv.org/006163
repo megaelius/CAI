@@ -1,0 +1,18 @@
+Accurate and fast foreground object extraction is very important for object tracking and recognition
+in video surveillance. Although many background subtraction (BGS) methods have been proposed
+in the recent past, it is still regarded as a tough problem due to the variety of challenging situations
+that occur in real-world scenarios. In this paper, we explore this problem from a new perspective
+and propose a novel background subtraction framework with real-time semantic segmentation (RTSS).
+Our proposed framework consists of two components, a traditional BGS segmenter $\mathcal{B}$
+and a real-time semantic segmenter $\mathcal{S}$. The BGS segmenter $\mathcal{B}$ aims to construct
+background models and segments foreground objects. The real-time semantic segmenter $\mathcal{S}$
+is used to refine the foreground segmentation outputs as feedbacks for improving the model updating
+accuracy. $\mathcal{B}$ and $\mathcal{S}$ work in parallel on two threads. For each input frame
+$I_t$, the BGS segmenter $\mathcal{B}$ computes a preliminary foreground/background (FG/BG)
+mask $B_t$. At the same time, the real-time semantic segmenter $\mathcal{S}$ extracts the object-level
+semantics ${S}_t$. Then, some specific rules are applied on ${B}_t$ and ${S}_t$ to generate the
+final detection ${D}_t$. Finally, the refined FG/BG mask ${D}_t$ is fed back to update the background
+model. Comprehensive experiments evaluated on the CDnet 2014 dataset demonstrate that our proposed
+method achieves state-of-the-art performance among all unsupervised background subtraction
+methods while operating at real-time, and even performs better than some deep learning based supervised
+algorithms. In addition, our proposed framework is very flexible and has the potential for generalization.

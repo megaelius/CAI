@@ -1,0 +1,18 @@
+We present an algorithm that takes as input an $n$-vertex planar graph $G$ and a $k$-vertex pattern
+graph $P$, and computes the number of (induced) copies of $P$ in $G$ in $2^{O(k/\log k)}n^{O(1)}$
+time. If $P$ is a matching, independent set, or connected bounded maximum degree graph, the runtime
+reduces to $2^{\tilde{O}(\sqrt{k})}n^{O(1)}$. While our algorithm counts all copies of $P$,
+it also improves the fastest algorithms that only detect copies of $P$. Before our work, no $2^{O(k/\log
+k)}n^{O(1)}$ time algorithms for detecting unrestricted patterns $P$ were known, and by a result
+of Bodlaender et al. [ICALP 2016] a $2^{o(k/\log k)}n^{O(1)}$ time algorithm would violate the
+Exponential Time Hypothesis (ETH). Furthermore, it was only known how to detect copies of a fixed
+connected bounded maximum degree pattern $P$ in $2^{\tilde{O}(\sqrt{k})}n^{O(1)}$ time probabilistically.
+For counting problems, it was a repeatedly asked open question whether $2^{o(k)}n^{O(1)}$ time
+algorithms exist that count even special patterns such as independent sets, matchings and paths
+in planar graphs. The above results resolve this question in a strong sense by giving algorithms
+for counting versions of problems with running times equal to the ETH lower bounds for their decision
+versions. Generally speaking, our algorithm counts copies of $P$ in time proportional to its number
+of non-isomorphic separations of order $\tilde{O}(\sqrt{k})$. The algorithm introduces a new
+recursive approach to construct families of balanced cycle separators in planar graphs that have
+limited overlap inspired by methods from Fomin et al. [FOCS 2016], a new `efficient' inclusion-exclusion
+based argument and uses methods from Bodlaender et al. [ICALP 2016]. 

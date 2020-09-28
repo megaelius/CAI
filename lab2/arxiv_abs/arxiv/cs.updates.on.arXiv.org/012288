@@ -1,0 +1,18 @@
+We present a hybrid numerical-asymptotic (HNA) boundary element method (BEM) for high frequency
+scattering by two-dimensional screens and apertures, whose computational cost to achieve any
+prescribed accuracy remains bounded with increasing frequency. Our method is a collocation implementation
+of the high order hp HNA approximation space of Hewett et al. IMA J. Numer. Anal. 35 (2015), pp.1698-
+1728, where a Galerkin implementation was studied. An advantage of the current collocation scheme
+is that the one-dimensional highly oscillatory singular integrals appearing in the BEM matrix
+entries are significantly easier to evaluate than the two-dimensional integrals appearing in
+the Galerkin case, which leads to much faster computation times. Here we compute the required integrals
+at frequency-independent cost using the numerical method of steepest descent, which involves
+complex contour deformation. The change from Galerkin to collocation is nontrivial because naive
+collocation implementations based on square linear systems suffer from severe numerical instabilities
+associated with the numerical redundancy of the HNA basis, which produces highly ill-conditioned
+BEM matrices. In this paper we show how these instabilities can be removed by oversampling, and solving
+the resulting overdetermined collocation system in a weighted least-squares sense using a truncated
+singular value decomposition. On the basis of our numerical experiments, the amount of oversampling
+required to stabilise the method is modest (around 25% typically suffices) and independent of frequency.
+As an application of our method we present numerical results for high frequency scattering by prefractal
+approximations to the middle-third Cantor set. 

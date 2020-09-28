@@ -1,0 +1,17 @@
+We develop and analyze a method to reduce the size of a very large set of data points in a high dimensional
+Euclidean space R d to a small set of weighted points such that the result of a predetermined data analysis
+task on the reduced set is approximately the same as that for the original point set. For example,
+computing the first k principal components of the reduced set will return approximately the first
+k principal components of the original set or computing the centers of a k-means clustering on the
+reduced set will return an approximation for the original set. Such a reduced set is also known as
+a coreset. The main new feature of our construction is that the cardinality of the reduced set is independent
+of the dimension d of the input space and that the sets are mergable. The latter property means that
+the union of two reduced sets is a reduced set for the union of the two original sets (this property
+has recently also been called composability, see Indyk et. al., PODS 2014). It allows us to turn our
+methods into streaming or distributed algorithms using standard approaches. For problems such
+as k-means and subspace approximation the coreset sizes are also independent of the number of input
+points. Our method is based on projecting the points on a low dimensional subspace and reducing the
+cardinality of the points inside this subspace using known methods. The proposed approach works
+for a wide range of data analysis techniques including k-means clustering, principal component
+analysis and subspace clustering. The main conceptual contribution is a new coreset definition
+that allows to charge costs that appear for every solution to an additive constant. 

@@ -1,0 +1,17 @@
+Following the recent success of deep neural networks (DNN) on video computer vision tasks, performing
+DNN inferences on videos that originate from mobile devices has gained practical significance.
+As such, previous approaches developed methods to offload DNN inference computations for images
+to cloud servers to manage the resource constraints of mobile devices. However, when it comes to
+video data, communicating information of every frame consumes excessive network bandwidth and
+renders the entire system susceptible to adverse network conditions such as congestion. Thus,
+in this work, we seek to exploit the temporal coherence between nearby frames of a video stream to
+mitigate network pressure. That is, we propose ShadowTutor, a distributed video DNN inference
+framework that reduces the number of network transmissions through intermittent knowledge distillation
+to a student model. Moreover, we update only a subset of the student's parameters, which we call partial
+distillation, to reduce the data size of each network transmission. Specifically, the server runs
+a large and general teacher model, and the mobile device only runs an extremely small but specialized
+student model. On sparsely selected key frames, the server partially trains the student model by
+targeting the teacher's response and sends the updated part to the mobile device. We investigate
+the effectiveness of ShadowTutor with HD video semantic segmentation. Evaluations show that network
+data transfer is reduced by 95% on average. Moreover, the throughput of the system is improved by
+over three times and shows robustness to changes in network bandwidth. 

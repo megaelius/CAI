@@ -1,0 +1,18 @@
+Accuracy of molecular dynamics simulations depends crucially on the interatomic potential used
+to generate forces. The gold standard would be first-principles quantum mechanics (QM) calculations,
+but these become prohibitively expensive at large simulation scales. Machine learning (ML) based
+potentials aim for faithful emulation of QM at drastically reduced computational cost. The accuracy
+and robustness of an ML potential is primarily limited by the quality and diversity of the training
+dataset. Using the principles of active learning (AL), we present a highly automated approach to
+dataset construction. The strategy is to use the ML potential under development to sample new atomic
+configurations and, whenever a configuration is reached for which the ML uncertainty is sufficiently
+large, collect new QM data. Here, we seek to push the limits of automation, removing as much expert
+knowledge from the AL process as possible. All sampling is performed using MD simulations starting
+from an initially disordered configuration, and undergoing non-equilibrium dynamics as driven
+by time-varying applied temperatures. We demonstrate this approach by building an ML potential
+for aluminum (ANI-Al). After many AL iterations, ANI-Al teaches itself to predict properties like
+the radial distribution function in melt, liquid-solid coexistence curve, and crystal properties
+such as defect energies and barriers. To demonstrate transferability, we perform a 1.3M atom shock
+simulation, and show that ANI-Al predictions agree very well with DFT calculations on local atomic
+environments sampled from the nonequilibrium dynamics. Interestingly, the configurations appearing
+in shock appear to have been well sampled in the AL training dataset, in a way that we illustrate visually.

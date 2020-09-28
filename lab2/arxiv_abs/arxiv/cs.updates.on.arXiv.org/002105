@@ -1,0 +1,17 @@
+Workflows provide an expressive programming model for fine-grained control of large-scale applications
+in distributed computing environments. Accurate estimates of complex workflow execution metrics
+on large-scale machines have several key advantages. The performance of scheduling algorithms
+that rely on estimates of execution metrics degrades when the accuracy of predicted execution metrics
+decreases. This in-progress paper presents a technique being developed to improve the accuracy
+of predicted performance metrics of large-scale workflows on distributed platforms. The central
+idea of this work is to train resource-centric machine learning agents to capture complex relationships
+between a set of program instructions and their performance metrics when executed on a specific
+resource. This resource-centric view of a workflow exploits the fact that predicting execution
+times of sub-modules of a workflow requires monitoring and modeling of a few dynamic and static features.
+We transform the input workflow that is essentially a directed acyclic graph of actions into a Physical
+Resource Execution Plan (PREP). This transformation enables us to model an arbitrarily complex
+workflow as a set of simpler programs running on physical nodes. We delegate a machine learning model
+to capture performance metrics for each resource type when it executes different program instructions
+under varying degrees of resource contention. Our algorithm takes the prediction metrics from
+each resource agent and composes the overall workflow performance metrics by utilizing the structure
+of the corresponding Physical Resource Execution Plan. 

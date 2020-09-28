@@ -1,0 +1,18 @@
+Learning to estimate 3D geometry in a single image by watching unlabeled videos via deep convolutional
+network has made significant process recently. Current state-of-the-art (SOTA) methods, are
+based on the learning framework of rigid structure-from-motion, where only 3D camera ego motion
+is modeled for geometry estimation.However, moving objects also exist in many videos, e.g. moving
+cars in a street scene. In this paper, we tackle such motion by additionally incorporating per-pixel
+3D object motion into the learning framework, which provides holistic 3D scene flow understanding
+and helps single image geometry estimation. Specifically, given two consecutive frames from a
+video, we adopt a motion network to predict their relative 3D camera pose and a segmentation mask
+distinguishing moving objects and rigid background. An optical flow network is used to estimate
+dense 2D per-pixel correspondence. A single image depth network predicts depth maps for both images.
+The four types of information, i.e. 2D flow, camera pose, segment mask and depth maps, are integrated
+into a differentiable holistic 3D motion parser (HMP), where per-pixel 3D motion for rigid background
+and moving objects are recovered. We design various losses w.r.t. the two types of 3D motions for
+training the depth and motion networks, yielding further error reduction for estimated geometry.
+Finally, in order to solve the 3D motion confusion from monocular videos, we combine stereo images
+into joint training. Experiments on KITTI 2015 dataset show that our estimated geometry, 3D motion
+and moving object masks, not only are constrained to be consistent, but also significantly outperforms
+other SOTA algorithms, demonstrating the benefits of our approach. 

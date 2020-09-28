@@ -1,0 +1,18 @@
+Logs are extensively used during the development and maintenance of software systems. They collect
+runtime events and allow tracking of code execution, which enables a variety of critical tasks such
+as troubleshooting and fault detection. However, large-scale software systems generate massive
+volumes of semi-structured log records, posing a major challenge for automated analysis. Parsing
+semi-structured records with free-form text log messages into structured templates is the first
+and crucial step that enables further analysis. Existing approaches rely on log-specific heuristics
+or manual rule extraction. These are often specialized in parsing certain log types, and thus, limit
+performance scores and generalization. We propose a novel parsing technique called NuLog that
+utilizes a self-supervised learning model and formulates the parsing task as masked language modeling
+(MLM). In the process of parsing, the model extracts summarizations from the logs in the form of a
+vector embedding. This allows the coupling of the MLM as pre-training with a downstream anomaly
+detection task. We evaluate the parsing performance of NuLog on 10 real-world log datasets and compare
+the results with 12 parsing techniques. The results show that NuLog outperforms existing methods
+in parsing accuracy with an average of 99% and achieves the lowest edit distance to the ground truth
+templates. Additionally, two case studies are conducted to demonstrate the ability of the approach
+for log-based anomaly detection in both supervised and unsupervised scenario. The results show
+that NuLog can be successfully used to support troubleshooting tasks. The implementation is available
+at https://github.com/nulog/nulog. 

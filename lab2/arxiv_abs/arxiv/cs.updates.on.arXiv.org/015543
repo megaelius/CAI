@@ -1,0 +1,19 @@
+Root separation bounds play an important role as a complexity measure in understanding the behaviour
+of various algorithms in computational algebra, e.g., root isolation algorithms. A classic result
+in the univariate setting is the Davenport-Mahler-Mignotte (DMM) bound. One way to state the bound
+is to consider a directed acyclic graph $(V,E)$ on a subset of roots of a degree $d$ polynomial $f(z)
+\in \mathbb{C}[z]$, where the edges point from a root of smaller absolute value to one of larger absolute,
+and the in-degrees of all vertices is at most one. Then the DMM bound is an amortized lower bound on
+the following product: $\prod_{(\alpha,\beta) \in E}|\alpha-\beta|$. However, the lower bound
+involves the discriminant of the polynomial $f$, and becomes trivial if the polynomial is not square-free.
+This was resolved by Eigenwillig, (2008), by using a suitable subdiscriminant instead of the discriminant.
+Escorcielo-Perrucci, 2016, further dropped the in-degree constraint on the graph by using the
+theory of finite differences. Emiris et al., 2019, have generalized their result to handle the case
+where the exponent of the term $|\alpha-\beta|$ in the product is at most the multiplicity of either
+of the roots. In this paper, we generalize these results by allowing arbitrary positive integer
+weights on the edges of the graph, i.e., for a weight function $w: E \rightarrow \mathbb{Z}_{>0}$,
+we derive an amortized lower bound on $\prod_{(\alpha,\beta) \in E}|\alpha-\beta|^{w(\alpha,\beta)}$.
+Such a product occurs in the complexity estimates of some recent algorithms for root clustering
+(e.g., Becker et al., 2016), where the weights are usually some function of the multiplicity of the
+roots. Because of its amortized nature, our bound is arguably better than the bounds obtained by
+manipulating existing results to accommodate the weights. 

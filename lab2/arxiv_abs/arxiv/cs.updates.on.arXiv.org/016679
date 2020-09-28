@@ -1,0 +1,19 @@
+We give the first differentially private algorithms that estimate a variety of geometric features
+of points in the Euclidean space, such as diameter, width, volume of convex hull, min-bounding box,
+min-enclosing ball etc. Our work relies heavily on the notion of \emph{Tukey-depth}. Instead of
+(non-privately) approximating the convex-hull of the given set of points $P$, our algorithms approximate
+the geometric features of the $\kappa$-Tukey region induced by $P$ (all points of Tukey-depth $\kappa$
+or greater). Moreover, our approximations are all bi-criteria: for any geometric feature $\mu$
+our $(\alpha,\Delta)$-approximation is a value "sandwiched" between $(1-\alpha)\mu(D_P(\kappa))$
+and $(1+\alpha)\mu(D_P(\kappa-\Delta))$. Our work is aimed at producing a \emph{$(\alpha,\Delta)$-kernel
+of $D_P(\kappa)$}, namely a set $\mathcal{S}$ such that (after a shift) it holds that $(1-\alpha)D_P(\kappa)\subset
+\mathsf{CH}(\mathcal{S}) \subset (1+\alpha)D_P(\kappa-\Delta)$. We show that an analogous
+notion of a bi-critera approximation of a directional kernel, as originally proposed by Agarwal
+et al~[2004], \emph{fails} to give a kernel, and so we result to subtler notions of approximations
+of projections that do yield a kernel. First, we give differentially private algorithms that find
+$(\alpha,\Delta)$-kernels for a "fat" Tukey-region. Then, based on a private approximation of
+the min-bounding box, we find a transformation that does turn $D_P(\kappa)$ into a "fat" region
+\emph{but only if} its volume is proportional to the volume of $D_P(\kappa-\Delta)$. Lastly, we
+give a novel private algorithm that finds a depth parameter $\kappa$ for which the volume of $D_P(\kappa)$
+is comparable to $D_P(\kappa-\Delta)$. We hope this work leads to the further study of the intersection
+of differential privacy and computational geometry. 

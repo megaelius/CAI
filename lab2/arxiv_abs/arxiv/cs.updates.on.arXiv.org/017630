@@ -1,0 +1,19 @@
+This paper considers deep visual recognition on long-tailed data, with the majority categories
+only occupying relatively few samples. The tail categories are prone to lack of within-class diversity,
+which compromises the representative ability of the learned visual concepts. A radical solution
+is to augment the tail categories with higher diversity. To this end, we introduce a simple and reliable
+method named Memory-based Jitter (MBJ) to gain extra diversity for the tail data. We observe that
+the deep model keeps on jittering from one historical edition to another, even when it already approaches
+convergence. The ``jitter'' means the small variations between historical models. We argue that
+such jitter largely originates from the within-class diversity of the overall data and thus encodes
+the within-class distribution pattern. To utilize such jitter for tail data augmentation, we store
+the jitter among historical models into a memory bank and get the so-called Memory-based Jitter.
+With slight modifications, MBJ is applicable for two fundamental visual recognition tasks, \emph{i.e.},
+image classification and deep metric learning (on long-tailed data). On image classification,
+MBJ collects the historical embeddings to learn an accurate classifier. In contrast, on deep metric
+learning, it collects the historical prototypes of each class to learn a robust deep embedding.
+Under both scenarios, MBJ enforces higher concentration on tail classes, so as to compensate for
+their lack of diversity. Extensive experiments on three long-tailed classification benchmarks
+and two deep metric learning benchmarks (person re-identification, in particular) demonstrate
+the significant improvement. Moreover, the achieved performance are on par with the state-of-the-art
+on both tasks. 

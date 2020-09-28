@@ -1,0 +1,19 @@
+Graph burning is a simple model for the spread of social influence in networks. The objective is to
+measure how quickly a fire (e.g., a piece of fake news) can be spread in a network. The burning process
+takes place in discrete rounds. In each round, a new fire breaks out at a selected vertex and burns
+it. Meanwhile, the old fires extend to their neighbours and burn them. A burning schedule selects
+where the new fire breaks out in each round, and the burning problem asks for a schedule that burns
+all vertices in a minimum number of rounds, termed the burning number of the graph. The burning problem
+is known to be NP-hard even when the graph is a tree or a disjoint set of paths. For connected graphs,
+it has been conjectured that burning takes at most $\lceil \sqrt{n} \rceil$ rounds. We approach
+the algorithmic study of graph burning from two directions. First, we consider graphs with minimum
+degree $\delta$. We present an algorithm that burns any graph of size $n$ in at most $\sqrt{\frac{24n}{\delta+1}}$
+rounds. In particular, for dense graphs with $\delta \in \Theta(n)$, all vertices are burned in
+a constant number of rounds. More interestingly, even when $\delta$ is a constant that is independent
+of the graph size, our algorithm answers the graph-burning conjecture in the affirmative by burning
+the graph in at most $\lceil \sqrt{n} \rceil$ rounds. Next, we consider burning graphs with bounded
+path-length or tree-length. These include many graph families including connected interval graphs
+and connected chordal graphs. We show that any graph with path-length $pl$ and diameter $d$ can be
+burned in $\lceil \sqrt{d-1} \rceil + pl$ rounds. Our algorithm ensures an approximation ratio
+of $1+o(1)$ for graphs of bounded path-length. We introduce another algorithm that achieves an
+approximation ratio of $2+o(1)$ for burning graphs of bounded tree-length. 

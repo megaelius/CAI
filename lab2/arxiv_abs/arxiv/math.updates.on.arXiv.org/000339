@@ -1,0 +1,18 @@
+In this paper we use the genuinely multidimensional HLL Riemann solvers recently developed by Balsara
+et al. to construct a new class of computationally efficient high order Lagrangian ADER-WENO one-step
+ALE finite volume schemes on unstructured triangular meshes. A nonlinear WENO reconstruction
+operator allows the algorithm to achieve high order of accuracy in space, while high order of accuracy
+in time is obtained by the use of an ADER time-stepping technique based on a local space-time Galerkin
+predictor. The multidimensional HLL and HLLC Riemann solvers operate at each vertex of the grid,
+considering the entire Voronoi neighborhood of each node and allows for larger time steps than conventional
+one-dimensional Riemann solvers. The results produced by the multidimensional Riemann solver
+are then used twice in our one-step ALE algorithm: first, as a node solver that assigns a unique velocity
+vector to each vertex, in order to preserve the continuity of the computational mesh; second, as
+a building block for genuinely multidimensional numerical flux evaluation that allows the scheme
+to run with larger time steps compared to conventional finite volume schemes that use classical
+one-dimensional Riemann solvers in normal direction. A rezoning step may be necessary in order
+to overcome element overlapping or crossing-over. We apply the method presented in this article
+to two systems of hyperbolic conservation laws, namely the Euler equations of compressible gas
+dynamics and the equations of ideal classical magneto-hydrodynamics (MHD). Convergence studies
+up to fourth order of accuracy in space and time have been carried out. Several numerical test problems
+have been solved to validate the new approach. 

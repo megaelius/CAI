@@ -1,0 +1,19 @@
+Many automated tasks in software maintenance rely on information retrieval techniques to identify
+specific information within unstructured data. Bug localization is such a typical task, where
+text in a bug report is analyzed to identify file locations in the source code that can be associated
+to the reported bug. Despite the promising results, the performance offered by IR-based bug localization
+tools is still not significant for large adoption. We argue that one reason could be the attempt to
+build a one-size-fits-all approach. In this paper, we extensively study the performance of state-of-the-art
+bug localization tools, focusing on query formulation and its importance with respect to the localization
+performance. Building on insights from this study, we propose a new learning approach where multiple
+classifier models are trained on clear-cut sets of bug-location pairs. Concretely, we apply a gradient
+boosting supervised learning approach to various sets of bug reports whose localizations appear
+to be successful with specific types of features. The training scenario builds on our findings that
+the various state-of-the-art localization tools can be highly performant for specific sets of
+bug reports. We implement D&C, which computes appropriate weights that should be assigned to the
+similarity measurements between pairs of information token types. Experimental results on large
+and up-to-date datasets reveal that D&C outperforms state-of-the-art tools. On average, the experiments
+yield an MAP score of 0.52, and an MRR score of 0.63 with a curated dataset, which provides a substantial
+performance improvement over all tools: MAP is improved by between 4 and up to 10 percentage points,
+while MRR is improved by between 1 and up to 12. Finally, we note that D&C is stable in its localization
+performance: around 50% of bugs can be located at Top1, 77% at Top5 and 85% at Top10. 

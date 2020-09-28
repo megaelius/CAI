@@ -1,0 +1,20 @@
+With the widespread use of shared-nothing clusters of servers, there has been a proliferation of
+distributed object stores that offer high availability, reliability and enhanced performance
+for MapReduce-style workloads. However, relational workloads cannot always be evaluated efficiently
+using MapReduce without extensive data migrations, which cause network congestion and reduced
+query throughput. We study the problem of computing data placement strategies that minimize the
+data communication costs incurred by typical relational query workloads in a distributed setting.
+Our main contribution is a reduction of the data placement problem to the well-studied problem of
+{\sc Graph Partitioning}, which is NP-Hard but for which efficient approximation algorithms exist.
+The novelty and significance of this result lie in representing the communication cost exactly
+and using standard graphs instead of hypergraphs, which were used in prior work on data placement
+that optimized for different objectives (not communication cost). We study several practical
+extensions of the problem: with load balancing, with replication, with materialized views, and
+with complex query plans consisting of sequences of intermediate operations that may be computed
+on different servers. We provide integer linear programs (IPs) that may be used with any IP solver
+to find an optimal data placement. For the no-replication case, we use publicly available graph
+partitioning libraries (e.g., METIS) to efficiently compute nearly-optimal solutions. For the
+versions with replication, we introduce two heuristics that utilize the {\sc Graph Partitioning}
+solution of the no-replication case. Using the TPC-DS workload, it may take an IP solver weeks to
+compute an optimal data placement, whereas our reduction produces nearly-optimal solutions in
+seconds. 

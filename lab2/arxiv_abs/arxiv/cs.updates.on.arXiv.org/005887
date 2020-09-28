@@ -1,0 +1,19 @@
+There are a number of approximation algorithms for NP-hard versions of low rank approximation,
+such as finding a rank-$k$ matrix $B$ minimizing the sum of absolute values of differences to a given
+matrix $A$, $\min_{\textrm{rank-}k~B}\|A-B\|_1$, or more generally finding a rank-$k$ matrix
+$B$ which minimizes the sum of $p$-th powers of absolute values of differences, $\min_{\textrm{rank-}k~B}\|A-B\|_p^p$.
+Many of these algorithms are linear time columns subset selection algorithms, returning a subset
+of ${\rm{poly}}(k\log n)$ columns whose cost is no more than a ${\rm{poly}}(k)$ factor larger than
+the cost of the best rank-$k$ matrix. The above error measures are special cases of the following
+general entrywise low rank approximation problem: given an arbitrary function $g:\mathbb{R}\rightarrow\mathbb{R}_{\geq0}$,
+find a rank-$k$ matrix $B$ which minimizes $\|A-B\|_g=\sum_{i,j}g(A_{i,j}-B_{i,j})$. A natural
+question is which functions $g$ admit efficient approximation algorithms? Indeed, this is a central
+question of recent work studying generalized low rank models. We give approximation algorithms
+for every function $g$ which is approximately monotone and satisfies an approximate triangle inequality,
+and we show both of these conditions are necessary. Further, our algorithm is efficient if the function
+$g$ admits an efficient approximate regression algorithm. Our algorithm handles functions which
+are not even scale-invariant, such as the Huber loss function. Our algorithms have ${\rm{poly}}(k)$-approximation
+ratio in general. We further improve the approximation ratio to (1+$\epsilon$) for $\ell_1$ loss
+when the entries of the error matrix are i.i.d. random variables drawn from a distribution $\mu$
+of which (1+$\gamma$) moment exists, for an arbitrary small constant $\gamma>0$. We also show our
+moment assumption is necessary. 

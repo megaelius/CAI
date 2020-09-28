@@ -1,0 +1,19 @@
+This paper proposes a new method which approximates a classification function separating a $d$
+dimensional compact set into two parts. The approach starts by estimating the intersection between
+the classification boundary and the edges of a regular grid covering the compact set. Then it builds
+a classification surface made of recursive simplex stars (resistars) defined in the grid cubes
+containing such boundary points. A first variant, the simple resistar (s-resistar) defines a single
+star of simplices which share the barycentre of the cube boundary points and include stars of simplices
+defined similarly in cube facets, and so on recursively until a face boundary points define a single
+simplex. This definition is simple and easy to apply when the dimensionality increases. However,
+s-resistars sometimes "glue" together surfaces that should be separated and this deteriorates
+the local classification performance. The second variant, the multi-boundary resistar (or m-resistar)
+addresses this problem by defining several simplex stars in a cube or in its faces when necessary,
+which is shown to increase the local classification performance. With both s-resistars and m-resistars,
+classifying a point requires only a small number of simple tests without explicitly computing the
+simplices. It is thus possible to use resistar classification in spaces of relatively high dimensionality
+(up to 9 in our tests) and for resistar surfaces including a large number of simplices (up to several
+trillions in our tests). The paper provides a theoretical argument and empirical evidence suggesting
+that, when the surface to approximate is smooth enough, the error of resistar classification decreases
+as $\mathcal{O}(n_G^{-2})$ for a grid of size $n_G^d$ in $d$ dimensions, whereas this error decreases
+as $\mathcal{O}(n_G^{-1})$ when classifying with the sign of the nearest vertex of the grid. 

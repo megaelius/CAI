@@ -1,0 +1,18 @@
+Named entity recognition (NER) is frequently addressed as a sequence classification task where
+each input consists of one sentence of text. It is nevertheless clear that useful information for
+the task can often be found outside of the scope of a single-sentence context. Recently proposed
+self-attention models such as BERT can both efficiently capture long-distance relationships
+in input as well as represent inputs consisting of several sentences, creating new opportunitites
+for approaches that incorporate cross-sentence information in natural language processing tasks.
+In this paper, we present a systematic study exploring the use of cross-sentence information for
+NER using BERT models in five languages. We find that adding context in the form of additional sentences
+to BERT input systematically increases NER performance on all of the tested languages and models.
+Including multiple sentences in each input also allows us to study the predictions of the same sentences
+in different contexts. We propose a straightforward method, Contextual Majority Voting (CMV),
+to combine different predictions for sentences and demonstrate this to further increase NER performance
+with BERT. Our approach does not require any changes to the underlying BERT architecture, rather
+relying on restructuring examples for training and prediction. Evaluation on established datasets,
+including the CoNLL'02 and CoNLL'03 NER benchmarks, demonstrates that our proposed approach can
+improve on the state-of-the-art NER results on English, Dutch, and Finnish, achieves the best reported
+BERT-based results on German, and is on par with performance reported with other BERT-based approaches
+in Spanish. We release all methods implemented in this work under open licenses. 

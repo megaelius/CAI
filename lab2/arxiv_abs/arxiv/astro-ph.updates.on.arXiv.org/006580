@@ -1,0 +1,17 @@
+Sigma clipping is commonly used in astronomy for outlier rejection, but the number of standard deviations
+beyond which one should clip data from a sample ultimately depends on the size of the sample. Chauvenet
+rejection is one of the oldest, and simplest, ways to account for this, but, like sigma clipping,
+depends on the sample's mean and standard deviation, neither of which are robust quantities: Both
+are easily contaminated by the very outliers they are being used to reject. Many, more robust measures
+of central tendency, and of sample deviation, exist, but each has a tradeoff with precision. Here,
+we demonstrate that outlier rejection can be both very robust and very precise if decreasingly robust
+but increasingly precise techniques are applied in sequence. To this end, we present a variation
+on Chauvenet rejection that we call "robust" Chauvenet rejection (RCR), which uses three decreasingly
+robust/increasingly precise measures of central tendency, and four decreasingly robust/increasingly
+precise measures of sample deviation. We show this sequential approach to be very effective for
+a wide variety of contaminant types, even when a significant -- even dominant -- fraction of the sample
+is contaminated, and especially when the contaminants are strong. Furthermore, we have developed
+a bulk-rejection variant, to significantly decrease computing times, and RCR can be applied both
+to weighted data, and when fitting parameterized models to data. We present aperture photometry
+in a contaminated, crowded field as an example. RCR may be used by anyone at https://skynet.unc.edu/rcr,
+and source code is available there as well. 

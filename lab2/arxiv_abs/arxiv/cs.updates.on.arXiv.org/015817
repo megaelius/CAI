@@ -1,0 +1,19 @@
+Regression-based text detection methods have already achieved promising performances with simple
+network structure and high efficiency. However, they are behind in accuracy comparing with recent
+segmentation-based text detectors. In this work, we discover that one important reason to this
+case is that regression-based methods usually utilize a fixed feature selection way, i.e. selecting
+features in a single location or in neighbor regions, to predict components of the bounding box,
+such as the distances to the boundaries or the rotation angle. The features selected through this
+way sometimes are not the best choices for predicting every component of a text bounding box and thus
+degrade the accuracy performance. To address this issue, we propose a novel Location-Aware feature
+Selection text detection Network (LASNet). LASNet selects suitable features from different locations
+to separately predict the five components of a bounding box and gets the final bounding box through
+the combination of these components. Specifically, instead of using the classification score
+map to select one feature for predicting the whole bounding box as most of the existing methods did,
+the proposed LASNet first learn five new confidence score maps to indicate the prediction accuracy
+of the bounding box components, respectively. Then, a Location-Aware Feature Selection mechanism
+(LAFS) is designed to weightily fuse the top-$K$ prediction results for each component according
+to their confidence score, and to combine the all five fused components into a final bounding box.
+As a result, LASNet predicts the more accurate bounding boxes by using a learnable feature selection
+way. The experimental results demonstrate that our LASNet achieves state-of-the-art performance
+with single-model and single-scale testing, outperforming all existing regression-based detectors.

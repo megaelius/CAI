@@ -1,0 +1,19 @@
+We use machine learning to classify galaxies according to their HI content, based on both their optical
+photometry and environmental properties. The data used for our analyses are the outputs in the range
+$z = 0-1$ from MUFASA cosmological hydrodynamic simulation. In our previous paper, where we predicted
+the galaxy HI content using the same input features, HI rich galaxies were only selected for the training.
+In order for the predictions on real observation data to be more accurate, the classifiers built
+in this study will first establish if a galaxy is HI rich ($\rm{log(M_{HI}/M_{*})} > -2 $) before
+estimating its neutral hydrogen content using the regressors developed in the first paper. We resort
+to various machine learning algorithms and assess their performance with various metrics such
+as accuracy for instance. The performance of the classifiers gets better with increasing redshift
+and reaches their peak performance around $z = 1$. Random Forest method, the most robust among the
+classifiers when considering only the mock data for both training and test in this study, reaches
+an accuracy above $98.6 \%$ at $z = 0$ and above $99.0 \%$ at $z = 1$. We test our algorithms, trained
+with simulation data, on classification of the galaxies in RESOLVE, ALFALFA and GASS surveys. Interestingly,
+SVM algorithm, the best classifier for the tests, achieves a precision, the relevant metric for
+the tests, above $87.60\%$ and a specificity above $71.4\%$ with all the tests, indicating that
+the classifier is capable of learning from the simulated data to classify HI rich/HI poor galaxies
+from the real observation data. With the advent of large HI 21 cm surveys such as the SKA, this set of
+classifiers, together with the regressors developed in the first paper, will be part of a pipeline,
+a very useful tool, which is aimed at predicting HI content of galaxies. 

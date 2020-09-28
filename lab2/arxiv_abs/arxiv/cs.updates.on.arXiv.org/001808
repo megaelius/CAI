@@ -1,0 +1,19 @@
+Poor timing predictability of multicore processors has been a long-standing challenge in the real-time
+systems community. In this paper, we make a case that a fundamental problem that prevents efficient
+and predictable real-time com- puting on multicore is the lack of a proper memory abstraction to
+express memory criticality, which cuts across various layers of the system: the application, OS,
+and hardware. We therefore propose a new holistic resource management approach driven by a new memory
+abstraction, which we call Deterministic Memory. The key characteristic of deterministic memory
+is that the platform - the OS and hardware - guarantees small and tightly bounded worst-case memory
+access timing. In contrast, we call the conventional memory abstraction as best-effort memory
+in which only highly pessimistic worst-case bounds can be achieved. We present how the two memory
+abstractions can be realized with small extensions to existing OS and hardware architecture. In
+particular, we show the potential benefits of our approach in the context of shared cache management,
+by presenting a deterministic memory-aware cache architecture and its manage- ment scheme. We
+evaluate the effectiveness of the deterministic memory-aware cache management approach compared
+with a conventional way-based cache partitioning approach, using a set of synthetic and real benchmarks.
+The results show that our approach achieves (i) the same degree of temporal determinism of traditional
+way-based cache partitioning for deterministic memory, (ii) while freeing up to 49% of additional
+cache space, on average, for best-effort memory, and consequently improving the cache hit rate
+by 39%, on average, for non-real-time workloads. We also discuss how the deterministic memory abstraction
+can be leveraged in other parts of the memory hierarchy, particularly in the memory controller.

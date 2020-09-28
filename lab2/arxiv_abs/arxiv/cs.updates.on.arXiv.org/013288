@@ -1,0 +1,19 @@
+Self-stabilizing protocols enable distributed systems to recover correct behavior starting
+from any arbitrary configuration. In particular, when processors communicate by message passing,
+fake messages may be placed in communication links by an adversary. When the number of such fake messages
+is unknown, self-stabilization may require huge resources: (a) generic solutions (a.k.a. data
+link protocols) require unbounded resources, which makes them unrealistic to deploy and (b) specific
+solutions (e.g., census or tree construction) require $O(n\log n)$ or $O(\Delta\log n)$ bits of
+memory per node, where $n$ denotes the network size and $\Delta$ its maximum degree, which may prevent
+scalability. We investigate the possibility of resource efficient self-stabilizing protocols
+in this context. Specifically, we present a self-stabilizing protocol for $(\Delta+1)$-coloring
+in any n-node graph, under the asynchronous message-passing model. It is deterministic, it converges
+in $O(k\Delta n^2\log n)$ message exchanges, where $k$ is the bound of the link capacity in terms
+of number of messages, and it uses messages on $O(\log\log n+\log\Delta)$ bits with a memory of $O(\Delta\log\Delta+\log\log
+n)$ bits at each node. The resource consumption of our protocol is thus almost oblivious to the number
+of nodes, enabling scalability. Moreover, a striking property of our protocol is that the nodes
+do not need to know the number, or any bound on the number of messages initially present in each communication
+link of the initial (potentially corrupted) network configuration. This permits our protocol
+to handle any future network with unknown message capacity communication links. A key building
+block of our coloring scheme is a spanning directed acyclic graph construction, that is of independent
+interest, and can serve as a useful tool for solving other tasks in this challenging setting. 

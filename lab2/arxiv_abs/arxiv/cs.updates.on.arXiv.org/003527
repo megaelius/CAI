@@ -1,0 +1,19 @@
+Sparse subspace clustering (SSC) is a popular method in machine learning and computer vision for
+clustering $n$ data points that lie near a union of low-dimensional linear or affine subspaces.
+The standard models introduced by Elhamifar and Vidal express each data point as a sparse linear
+or affine combination of the other data points, using either $\ell_1$ or $\ell_0$ regularization
+to enforce sparsity. The $\ell_1$ model, which is convex and has theoretical guarantees but requires
+$O(n^2)$ storage, is typically solved by the alternating direction method of multipliers (ADMM)
+which takes $O(n^3)$ flops. The $\ell_0$ model, which is preferred for large $n$ since it only needs
+memory linear in $n$, is typically solved via orthogonal matching pursuit (OMP) and cannot handle
+the case of affine subspaces. Our first contribution is to show how ADMM can be modified using the
+matrix-inversion lemma to take $O(n^2)$ flops instead of $O(n^3)$. Then, our main contribution
+is to show that a proximal gradient framework can solve SSC, covering both $\ell_1$ and $\ell_0$
+models, and both linear and affine constraints. For both $\ell_1$ and $\ell_0$, the proximity operator
+with affine constraints is non-trivial, so we derive efficient proximity operators. In the $\ell_1$
+case, our method takes just $O(n^2)$ flops, while in the $\ell_0$ case, the memory is linear in $n$.
+This is the first algorithm to solve the $\ell_0$ problem in conjunction with affine constraints.
+Numerical experiments on synthetic and real data demonstrate that the proximal gradient based
+solvers are state-of-the-art, but more importantly, we argue that they are more convenient to use
+than ADMM-based solvers because ADMM solvers are highly sensitive to a solver parameter that may
+be data set dependent. 

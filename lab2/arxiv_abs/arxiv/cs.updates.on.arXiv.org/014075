@@ -1,0 +1,20 @@
+In the field of software engineering, applying language models to the token sequence of source code
+is the state-of-art approach to build a code recommendation system. The syntax tree of source code
+has hierarchical structures. Ignoring the characteristics of tree structures decreases the model
+performance. Current LSTM model handles sequential data. The performance of LSTM model will decrease
+sharply if the noise unseen data is distributed everywhere in the test suite. As code has free naming
+conventions, it is common for a model trained on one project to encounter many unknown words on another
+project. If we set many unseen words as UNK just like the solution in natural language processing,
+the number of UNK will be much greater than the sum of the most frequently appeared words. In an extreme
+case, just predicting UNK at everywhere may achieve very high prediction accuracy. Thus, such solution
+cannot reflect the true performance of a model when encountering noise unseen data. In this paper,
+we only mark a small number of rare words as UNK and show the prediction performance of models under
+in-project and cross-project evaluation. We propose a novel Hierarchical Language Model (HLM)
+to improve the robustness of LSTM model to gain the capacity about dealing with the inconsistency
+of data distribution between training and testing. The newly proposed HLM takes the hierarchical
+structure of code tree into consideration to predict code. HLM uses BiLSTM to generate embedding
+for sub-trees according to hierarchies and collects the embedding of sub-trees in context to predict
+next code. The experiments on inner-project and cross-project data sets indicate that the newly
+proposed Hierarchical Language Model (HLM) performs better than the state-of-art LSTM model in
+dealing with the data inconsistency between training and testing and achieves averagely 11.2\%
+improvement in prediction accuracy. 

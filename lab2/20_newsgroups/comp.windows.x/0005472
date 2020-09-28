@@ -1,0 +1,5 @@
+I'm look for current patches for color xterm for X11R5 pl19 ro higher.  Could
+someone please tell me where to get them for e-mail them to me.
+Thanks.
+Egan F. Ford
+egan%phony25.cc.utah.edu@hellgate.utah.edu

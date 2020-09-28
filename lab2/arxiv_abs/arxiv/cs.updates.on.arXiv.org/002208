@@ -1,0 +1,20 @@
+MR image reconstruction from undersampled data exploits priors to compensate for missing k-space
+data. This has previously been achieved by using regularization methods, such as TV and wavelets,
+or data adaptive methods, such as dictionary learning. We propose to explicitly learn the probability
+distribution of MR image patches and to constrain patches to have a high probability according to
+this distribution in reconstruction, effectively employing it as the prior. We use variational
+autoencoders (VAE) to learn the distribution of MR image patches. This high dimensional distribution
+is modelled by a latent parameter model of lower dimensions in a non-linear fashion. We develop a
+reconstruction algorithm that uses the learned prior in a Maximum-A-Posteriori estimation formulation.
+We evaluate the proposed method with T1 weighted images and compare it to existing alternatives.
+We also apply our method on images with white matter lesions. Visual evaluation of the samples drawn
+from the learned model showed that the VAE algorithm was able to approximate the distribution of
+MR image patches. Furthermore, the reconstruction algorithm using the approximate distribution
+produced qualitatively better results. The proposed technique achieved RMSE, CNR and CN values
+of 2.77%, 0.43, 0.11 and 4.29%, 0.43, 0.11 for undersampling ratios of 2 and 3, respectively. It outperformed
+other evaluated methods in terms of used metrics. In the experiments on images with white matter
+lesions, the method faithfully reconstructed the lesions. We introduced a novel method for MR reconstruction,
+which takes a new perspective on regularization by learning priors. Results suggest the method
+compares favorably against TV and dictionary based methods as well as the neural-network based
+ADMM-Net in terms of the RMSE, CNR and CN and perceptual image quality and can reconstruct lesions
+as well. 

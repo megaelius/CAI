@@ -1,0 +1,18 @@
+Most of object detection algorithms can be categorized into two classes: two-stage detectors and
+one-stage detectors. For two-stage detectors, a region proposal phase can filter massive background
+candidates in the first stage and it masks the classification task more balanced in the second stage.
+Recently, one-stage detectors have attracted much attention due to its simple yet effective architecture.
+Different from two-stage detectors, one-stage detectors have to identify foreground objects
+from all candidates in a single stage. This architecture is efficient but can suffer from the imbalance
+issue with respect to two aspects: the imbalance between classes and that in the distribution of
+background, where only a few candidates are hard to be identified. In this work, we propose to address
+the challenge by developing the distributional ranking (DR) loss. First, we convert the classification
+problem to a ranking problem to alleviate the class-imbalance problem. Then, we propose to rank
+the distribution of foreground candidates above that of background ones in the constrained worst-case
+scenario. This strategy not only handles the imbalance in background candidates but also improves
+the efficiency for the ranking algorithm. Besides the classification task, we also improve the
+regression loss by gradually approaching the $L_1$ loss as suggested in interior-point methods.
+To evaluate the proposed losses, we replace the corresponding losses in RetinaNet that reports
+the state-of-the-art performance as a one-stage detector. With the ResNet-101 as the backbone,
+our method can improve mAP on COCO data set from $39.1\%$ to $41.1\%$ by only changing the loss functions
+and it verifies the effectiveness of the proposed losses. 

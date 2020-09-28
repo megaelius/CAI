@@ -1,0 +1,19 @@
+Motivated by many practical applications in logistics and mobility-as-a-service, we study the
+top-k optimal sequenced routes (KOSR) querying on large, general graphs where the edge weights
+may not satisfy the triangle inequality, e.g., road network graphs with travel times as edge weights.
+The KOSR querying strives to find the top-k optimal routes (i.e., with the top-k minimal total costs)
+from a given source to a given destination, which must visit a number of vertices with specific vertex
+categories (e.g., gas stations, restaurants, and shopping malls) in a particular order (e.g.,
+visiting gas stations before restaurants and then shopping malls). To efficiently find the top-k
+optimal sequenced routes, we propose two algorithms PruningKOSR and StarKOSR. In PruningKOSR,
+we define a dominance relationship between two partially-explored routes. The partially-explored
+routes that can be dominated by other partially-explored routes are postponed being extended,
+which leads to a smaller searching space and thus improves efficiency. In StarKOSR, we further improve
+the efficiency by extending routes in an A* manner. With the help of a judiciously designed heuristic
+estimation that works for general graphs, the cost of partially explored routes to the destination
+can be estimated such that the qualified complete routes can be found early. In addition, we demonstrate
+the high extensibility of the proposed algorithms by incorporating Hop Labeling, an effective
+label indexing technique for shortest path queries, to further improve efficiency. Extensive
+experiments on multiple real-world graphs demonstrate that the proposed methods significantly
+outperform the baseline method. Furthermore, when k=1, StarKOSR also outperforms the state-of-the-art
+method for the optimal sequenced route queries. 

@@ -1,0 +1,18 @@
+I present a generalization of Chew's first algorithm for Delaunay mesh refinement. In his algorithm,
+Chew splits the line segments of the input planar straight line graph (PSLG) into shorter subsegments
+whose lengths are nearly identical. The constrained Delaunay triangulation of the subsegments
+is refined based on the length of the radii of the circumcircles of the triangles. This algorithm
+produces a uniform mesh, whose minimum angle can be at most $\pi/6$. My algorithm generates both
+truly Delaunay and constrained Delaunay size-optimal meshes. In my algorithm, I split the line
+segments of the input PSLG such that their lengths are asymptotically proportional to the local
+feature size (LFS) by solving ordinary differential equations (ODEs) that map points from a closed
+1D interval to points on the input line segments in the PSLG. I then refine the Delaunay triangulation
+(truly or constrained) of the PSLG by inserting off-center Steiner vertices of "skinny" triangles
+while prioritizing such triangles with shortest edges first. As in Chew's algorithm, I show that
+the Steiner vertices do not encroach upon any subsegment of the PSLG. The off-center insertion algorithm
+places Steiner vertices in an advancing front manner such that we obtain a size-optimal Delaunay
+mesh (truly or constrained) if the desired minimum angle is less than $\pi/6$. In addition, even
+in the presence of a small angle $\phi < \pi/2$ in the PSLG, the bound on the minimum angle "across"
+the small angle tends to $\arctan{((\sin{\phi})/(2-\cos(\phi))}$ as the PSLG is progressively
+refined. Also, the bound on the maximum angle across any small input angle tends to $\pi/2 + \phi/2$
+as the PSLG is progressively refined. 

@@ -1,0 +1,20 @@
+It is well known that Convolutional Neural Networks (CNNs) have significant redundancy in their
+filter weights. Various methods have been proposed in the literature to compress trained CNNs.
+These include techniques like pruning weights, filter quantization and representing filters
+in terms of a basis functions. Our approach falls in this latter class of strategies, but is distinct
+in that that we show both compressed learning and representation can be achieved without significant
+modifications of popular CNN architectures. Specifically, any convolution layer of the CNN is
+easily replaced by two successive convolution layers: the first is a set of fixed filters (that represent
+the knowledge space of the entire layer and do not change), which is followed by a layer of one-dimensional
+filters (that represent the learned knowledge in this space). For the pre-trained networks, the
+fixed layer is just the truncated eigen-decompositions of the original filters. The 1D filters
+are initialized as the weights of linear combination, but are fine-tuned to recover any performance
+loss due to the truncation. For training networks from scratch, we use a set of random orthogonal
+fixed filters (that never change), and learn the 1D weight vector directly from the labeled data.
+Our method substantially reduces i) the number of learnable parameters during training, and ii)
+the number of multiplication operations and filter storage requirements during implementation.
+It does so without requiring any special operators in the convolution layer, and extends to all known
+popular CNN architectures. We apply our method to four well known network architectures trained
+with three different data sets. Results show a consistent reduction in i) the number of operations
+by up to a factor of 5, and ii) number of learnable parameters by up to a factor of 18, with less than 3%
+drop in performance on the CIFAR100 dataset. 

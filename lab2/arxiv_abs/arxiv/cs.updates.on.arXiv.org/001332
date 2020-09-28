@@ -1,0 +1,18 @@
+A key part of implementing high-level languages is providing built-in and default data structures.
+Yet selecting good defaults is hard. A mutable data structure's workload is not known in advance,
+and it may shift over its lifetime - e.g., between read-heavy and write-heavy, or from heavy contention
+by multiple threads to single-threaded or low-frequency use. One idea is to switch implementations
+adaptively, but it is nontrivial to switch the implementation of a concurrent data structure at
+runtime. Performing the transition requires a concurrent snapshot of data structure contents,
+which normally demands special engineering in the data structure's design. However, in this paper
+we identify and formalize an relevant property of lock-free algorithms. Namely, lock-freedom
+is sufficient to guarantee that freezing memory locations in an arbitrary order will result in a
+valid snapshot. Several functional languages have data structures that freeze and thaw, transitioning
+between mutable and immutable, such as Haskell vectors and Clojure transients, but these enable
+only single-threaded writers. We generalize this approach to augment an arbitrary lock-free data
+structure with the ability to gradually freeze and optionally transition to a new representation.
+This augmentation doesn't require changing the algorithm or code for the data structure, only replacing
+its datatype for mutable references with a freezable variant. In this paper, we present an algorithm
+for lifting plain to adaptive data and prove that the resulting hybrid data structure is itself lock-free,
+linearizable, and simulates the original. We also perform an empirical case study in the context
+of heating up and cooling down concurrent maps. 

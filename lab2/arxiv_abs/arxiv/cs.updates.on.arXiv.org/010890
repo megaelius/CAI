@@ -1,0 +1,18 @@
+The out-of-gas error occurs when smart contract programs are provided with inputs that cause excessive
+gas consumption, and would be easily exploited to make the DoS attack. Multiple approaches have
+been proposed to estimate the gas limit of a function in smart contracts to avoid such error. However,
+under estimation often happens when the contract is complicated. In this work, we propose GasFuzz,
+which could automatically generate inputs that maximizes the gas cost and reduce the under estimation
+cases. GasFuzz is designed based on feedback-directed mutational fuzz testing. First, GasFuzz
+builds the gas weighted control flow graph (CFG) of functions in smart contracts. Then, GasFuzz
+develops gas consumption guided selection and mutation strategies to generate the input that maximize
+the gas consumption. For evaluation, we implement GasFuzz based on js-evm, a widely used ethereum
+virtual machine written in javascript, and conduct experiments on 736 real-world transactions
+recorded on Ethereum. 44.02\% of the transactions would have out-of-gas errors under the estimation
+results given by solc, means that the recorded real gas consumption for those recorded transactions
+is larger than the gas limit value estimated by solc. While GasFuzz could reduce the under estimation
+ratio to 13.86\%. Compared with other well-known feedback-directed fuzzing engines such as PerFuzz
+and SlowFuzz, GasFuzz can generate a same or higher gas estimation value on 97.8\% of the recorded
+transactions with less time, usually within 5 minutes. Furthermore, GasFuzz has exposed 25 previously
+unknown out-of-gas vulnerabilities in those widely-used smart contracts, 5 of which have been
+assigned unique CVE identifiers in the US National Vulnerability Database. 

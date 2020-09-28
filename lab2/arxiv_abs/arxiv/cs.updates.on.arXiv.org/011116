@@ -1,0 +1,19 @@
+We focus on finite element method computations. We show that systems of linear equations resulting
+from Galerkin discretizations with C1 test functions are algebraically equivalent to systems
+of linear equations resulting from discretizations with piece-wise constant test functions.
+We show that test functions that fulfill the partition of unity can be eliminated from the system
+of linear equations. The rows of the system matrix can be combined, and the test functions can be sum
+up to 1 using the partition of unity property at the quadrature points. The test functions in higher
+continuity IGA can be set to piece-wise constants without losing any accuracy. It is equivalent
+to testing with piece-wise constant basis functions, with supports span over some parts of the domain.
+This observation has the following consequences. The numerical integration cost can be reduced
+because we do not need to evaluate the test functions since they are equal to 1. This reduction of test
+functions can be performed for an arbitrary linear differential operator resulting from the Galerkin
+method applied to a PDE where we use C^1 continuity basis functions. This observation is valid for
+any basis functions preserving the partition of unity property. It is independent of the problem
+dimension and geometry of the computational domain. It also can be used in time-dependent problems,
+e.g., in the explicit dynamics computations, where we can reduce the cost of generation of the right-hand
+side. In particular, this observation works for any computational problem that can be solved using
+the Galerkin method with isogeometric analysis with higher continuity test functions. The Galerkin
+approximation with C1 continuity is equivalent to linear combinations of the collocations at points
+and with weights resulting from applied quadrature, over the spans defined by supports of test functions.

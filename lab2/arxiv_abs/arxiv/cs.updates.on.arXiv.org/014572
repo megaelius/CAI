@@ -1,0 +1,18 @@
+Existing physical cloth simulators suffer from expensive computation and difficulties in tuning
+mechanical parameters to get desired wrinkling behaviors. Data-driven methods provide an alternative
+solution. It typically synthesizes cloth animation at a much lower computational cost, and also
+creates wrinkling effects that highly resemble the much controllable training data. In this paper
+we propose a deep learning based method for synthesizing cloth animation with high resolution meshes.
+To do this we first create a dataset for training: a pair of low and high resolution meshes are simulated
+and their motions are synchronized. As a result the two meshes exhibit similar large-scale deformation
+but different small wrinkles. Each simulated mesh pair are then converted into a pair of low and high
+resolution "images" (a 2D array of samples), with each sample can be interpreted as any of three features:
+the displacement, the normal and the velocity. With these image pairs, we design a multi-feature
+super-resolution (MFSR) network that jointly train an upsampling synthesizer for the three features.
+The MFSR architecture consists of two key components: a sharing module that takes multiple features
+as input to learn low-level representations from corresponding super-resolution tasks simultaneously;
+and task-specific modules focusing on various high-level semantics. Frame-to-frame consistency
+is well maintained thanks to the proposed kinematics-based loss function. Our method achieves
+realistic results at high frame rates: 12-14 times faster than traditional physical simulation.
+We demonstrate the performance of our method with various experimental scenes, including a dressed
+character with sophisticated collisions. 

@@ -1,0 +1,18 @@
+This paper focuses on the explanation of the architecture of profilers particularly gprof and how
+to profile a program according to the user defined input of execution time . Gprof is a profiler available
+open source in the package of binutils. Gprof records the flow of the program including the callee
+and caller information and their respective execution time. This information is represented in
+the form of a call graph. Profilers at the time of execution creates a call graph file which indicates
+the full flow of the program including the individual execution time as well. This paper aims at providing
+a better understanding of the data structure used to store the information and how is a profiler(gprof)
+actually using this data structure to give user a readable format. The next section of this paper
+solves one of the limitation of gprof i.e. edit the time of block of code without understanding the
+call graph. Any changes in the execution time of a particular block of code would affect the total
+execution time. So if we edit the gprof in such a way that its consistent and platform independent,
+then it can yield various results like testing execution time after parallelism, before even designing
+it by replacing the values with theoretical/emulated ones and see if the total execution time is
+getting reduced by a desired number or not? Gprof edit can help us figure out that what section of code
+can be parallelized or which part of code is taking the most time and which call or part can be changed
+to reduce the execution time. The last section of the paper walks through the application of gprof
+in minisat and how gprof helps in the hardware acceleration in minisat by suggesting which part to
+be parallelised and how does it affect the total percentage. 

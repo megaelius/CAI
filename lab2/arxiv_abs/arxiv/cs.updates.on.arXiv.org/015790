@@ -1,0 +1,19 @@
+Information Flow Control (IFC) is a collection of techniques for ensuring a no-write-down no-read-up
+style security policy known as noninterference. Traditional methods for both static and dynamic
+IFC suffer from untenable numbers of false alarms on real-world programs. Secure Multi-Execution
+(SME) promises to provide secure IFC without modifying the behaviour of already secure programs,
+a property known as transparency. Implementations of SME exist for the web and as plug-ins to several
+programming languages. Furthermore, SME can in theory work in a black-box manner, meaning that
+it can be programming language agnostic, making it perfect for securing legacy or third-party systems.
+As such SME, and its variants like Multiple Facets (MF) and Faceted Secure Multi-Execution (FSME),
+appear to be a family of panaceas for the security engineer. The question is, how come, given all these
+advantages, that these techniques are not ubiquitous in practice? The answer lies, partially,
+in the issue of runtime and memory overhead. SME and its variants are prohibitively expensive to
+deploy in many non-trivial situations. Why is this the case? On the surface, the reason is simple.
+The techniques in the SME family all rely on the idea of multi-execution, running all or parts of a
+program multiple times to achieve noninterference. Naturally, this causes overhead. However,
+the goal in the IFC community has been to overcome these overheads. In this paper we argue that there
+are fundamental reasons to expect this not to be possible and prove two key theorems: 1. All transparent
+enforcement is polynomial time equivalent to multi-execution. 2. All black-box enforcement takes
+time exponential in the number of principals in the security lattice. We also answer, in the affirmative,
+an open question about the possibility of transparently enforcing the TINI security condition.

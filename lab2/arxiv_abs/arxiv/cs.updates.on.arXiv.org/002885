@@ -1,0 +1,18 @@
+A recent trend in object oriented (OO) programming languages is the use of Access Permissions (APs)
+as an abstraction for controlling concurrent executions of programs. The use of AP source code annotations
+defines a protocol specifying how object references can access the mutable state of objects. Although
+the use of APs simplifies the task of writing concurrent code, an unsystematic use of them can lead
+to subtle problems. This paper presents a declarative interpretation of APs as Linear Concurrent
+Constraint Programs (lcc). We represent APs as constraints (i.e., formulas in logic) in an underlying
+constraint system whose entailment relation models the transformation rules of APs. Moreover,
+we use processes in lcc to model the dependencies imposed by APs, thus allowing the faithful representation
+of their flow in the program. We verify relevant properties about AP programs by taking advantage
+of the interpretation of lcc processes as formulas in Girard's intuitionistic linear logic (ILL).
+Properties include deadlock detection, program correctness (whether programs adhere to their
+AP specifications or not), and the ability of methods to run concurrently. By relying on a focusing
+discipline for ILL, we provide a complexity measure for proofs of the above mentioned properties.
+The effectiveness of our verification techniques is demonstrated by implementing the Alcove tool
+that includes an animator and a verifier. The former executes the lcc model, observing the flow of
+APs and quickly finding inconsistencies of the APs vis-a-vis the implementation. The latter is
+an automatic theorem prover based on ILL. This paper is under consideration for publication in Theory
+and Practice of Logic Programming (TPLP). 

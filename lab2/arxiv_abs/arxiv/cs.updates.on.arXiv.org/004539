@@ -1,0 +1,19 @@
+Recently Ermon et al. (2013) pioneered an ingenuous way to practically compute approximations
+to large scale counting or discrete integration problems by using random hashes. The hashes are
+used to reduce the counting problems into many separate discrete optimization problems. The optimization
+problems can be solved by an NP-oracle, and if they allow some amenable structure then commercial
+SAT solvers or linear programming (LP) solvers can be used in lieu of the NP-oracle. In particular,
+Ermon et al. has shown that if the domain of integration is $\{0,1\}^n$ then it is possible to obtain
+a $16$-approximation by this technique. In many crucial counting tasks, such as computation of
+partition function of ferromagnetic Potts model, the domain of integration is naturally $\{0,1,\dots,
+q-1\}^n, q>2$. A straightforward extension of Ermon et al.'s work would allow a $q^2$-approximation
+for this problem, assuming the existence of an optimization oracle. In this paper, we show that it
+is possible to obtain a $(2+\frac2{q-1})^2$-approximation to the discrete integration problem,
+when $q$ is a power of an odd prime (a similar expression follows for even $q$). We are able to achieve
+this by using an idea of optimization over multiple bins of the hash functions, that can be easily
+implemented by inequality constraints, or even in unconstrained way. Also the burden on the NP-oracle
+is not increased by our method (an LP solver can still be used). Furthermore, we provide a close-to-4-approximation
+for the permanent of a matrix by extending our technique. Note that, the domain of integration here
+is the symmetric group. Finally, we provide memory optimal hash functions that uses minimal number
+of random bits for the above purpose. We are able to obtain these structured hashes without sacrificing
+the amenability of the NP-oracle. We provide experimental simulation results to support our algorithms.

@@ -1,0 +1,19 @@
+Users typically interact with a database by asking queries and examining results provided by the
+database system. We refer to the user examining the results of a query and asking follow-up questions
+as query result exploration. Our work builds on two decades of database community research on provenance.
+One of the contributions of this paper is that we identify constraints in the context of query result
+exploration that have previously been unexplored in provenance research. These constraints are
+useful in optimizing performance and thus improving the user experience during query result exploration.
+Further, three approaches for computing provenance have been described in the literature: (a)
+in the lazy approach, no additional data is materialized and provenance is computed from the base
+tables as needed; (b) in the eager approach, additional data is materialized and provenance is computed
+from this additional materialized data; (c) in the hybrid approach, some additional data is materialized,
+and provenance is computed using this additional materialized data as well as the base tables. In
+this paper, we investigate lazy and eager approaches that utilize constraints in the context of
+query result exploration, as well as novel hybrid approaches, where the keys for some of the base
+tables are materialized as selected by a cost model. For the TPC-H benchmark, we find that the constraints
+that we identify are applicable to 19 out of the 22 queries, and result in a better performance of the
+lazy approach for 7 out of these 19 queries. With materialization, our hybrid approach resulted
+in a better performance for all but one single table TPC-H query with no joins (where existing approach
+performed as good as our approach). Further, the performance benefit from our approaches are significant,
+sometimes several orders of magnitude, compared to previous research. 

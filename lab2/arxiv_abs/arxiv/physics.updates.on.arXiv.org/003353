@@ -1,0 +1,19 @@
+We propose a new composite neural network (NN) that can be trained based on multi-fidelity data.
+It is comprised of three NNs, with the first NN trained using the low-fidelity data and coupled to
+two high-fidelity NNs, one with activation functions and another one without, in order to discover
+and exploit nonlinear and linear correlations, respectively, between the low-fidelity and the
+high-fidelity data. We first demonstrate the accuracy of the new multi-fidelity NN for approximating
+some standard benchmark functions but also a 20-dimensional function. Subsequently, we extend
+the recently developed physics-informed neural networks (PINNs) to be trained with multi-fidelity
+data sets (MPINNs). MPINNs contain four fully-connected neural networks, where the first one approximates
+the low-fidelity data, while the second and third construct the correlation between the low- and
+high-fidelity data and produce the multi-fidelity approximation, which is then used in the last
+NN that encodes the partial differential equations (PDEs). Specifically, in the two high-fidelity
+NNs a relaxation parameter is introduced, which can be optimized to combine the linear and nonlinear
+sub-networks. By optimizing this parameter, the present model is capable of learning both the linear
+and complex nonlinear correlations between the low- and high-fidelity data adaptively. By training
+the MPINNs, we can:(1) obtain the correlation between the low- and high-fidelity data, (2) infer
+the quantities of interest based on a few scattered data, and (3) identify the unknown parameters
+in the PDEs. In particular, we employ the MPINNs to learn the hydraulic conductivity field for unsaturated
+flows as well as the reactive models for reactive transport. The results demonstrate that MPINNs
+can achieve relatively high accuracy based on a very small set of high-fidelity data. 

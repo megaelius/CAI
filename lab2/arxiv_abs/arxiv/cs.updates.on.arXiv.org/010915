@@ -1,0 +1,19 @@
+This paper proposes a charge-conserving, variational, spatio-temporal discretization for the
+drift-kinetic Vlasov-Maxwell system, utilizing finite-elements for the electromagnetic fields
+and the particle-in-cell approach for the Vlasov distribution. The proposed scheme is fully electromagnetic,
+dealing with fields instead of potentials, and includes the effects of polarization and magnetization
+in the Gauss and Amp\`ere-Maxwell laws, a consequence of reducing the full particle dynamics to
+drift-center dynamics. There is, however, no need to invert the Gauss law: it is satisfied automatically
+at every time-step as a result of a discrete Noether symmetry, and the electric field is updated directly
+from the Amp\`ere-Maxwell equation. The method provides an update for the magnetic field that is
+fully explicit, involving only local operations. The update for particles is implicit for each
+particle individually, also leading to local operations only. The update for the electric field
+is linearly implicit due to the presence of a finite-element mass matrix and polarization and magnetization
+effects in the Amp\`ere-Maxwell equation, hence involving a sparse matrix inversion once at every
+time step. Because the scheme deals with the electromagnetic fields and not the potentials, it also
+provides the first serious attempt at constructing a structure-preserving numerical scheme for
+the mixed kinetic-ion--drift-kinetic-electron Vlasov-Maxwell model. Consequently, the proposed
+method could be used to simulate electromagnetic turbulence in fusion experiments or space plasmas
+that exhibit a strong background magnetic field while retaining all of the ion physics, most of the
+necessary electron physics, yet eliminating perhaps the biggest obstacle in reaching macroscopic
+transport time scales in kinetic simulations, namely the electron cyclotron time scale. 

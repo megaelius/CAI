@@ -1,0 +1,18 @@
+GANs for time series data often use sliding windows or self-attention to capture underlying time
+dependencies. While these techniques have no clear theoretical justification, they are successful
+in significantly reducing the discriminator size, speeding up the training process, and improving
+the generation quality. In this paper, we provide both theoretical foundations and a practical
+framework of GANs for high-dimensional distributions with conditional independence structure
+captured by a Bayesian network, such as time series data. We prove that several probability divergences
+satisfy subadditivity properties with respect to the neighborhoods of the Bayes-net graph, providing
+an upper bound on the distance between two Bayes-nets by the sum of (local) distances between their
+marginals on every neighborhood of the graph. This leads to our proposed Subadditive GAN framework
+that uses a set of simple discriminators on the neighborhoods of the Bayes-net, rather than a giant
+discriminator on the entire network, providing significant statistical and computational benefits.
+We show that several probability distances including Jensen-Shannon, Total Variation, and Wasserstein,
+have subadditivity or generalized subadditivity. Moreover, we prove that Integral Probability
+Metrics (IPMs), which encompass commonly-used loss functions in GANs, also enjoy a notion of subadditivity
+under some mild conditions. Furthermore, we prove that nearly all f-divergences satisfy local
+subadditivity in which subadditivity holds when the distributions are relatively close. Our experiments
+on synthetic as well as real-world datasets verify the proposed theory and the benefits of subadditive
+GANs. 

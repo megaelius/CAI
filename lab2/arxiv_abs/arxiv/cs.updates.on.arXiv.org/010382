@@ -1,0 +1,18 @@
+This paper investigates trajectory tracking problem for a class of underactuated autonomous underwater
+vehicles (AUVs) with unknown dynamics and constrained inputs. Different from existing policy
+gradient methods which employ single actor-critic but cannot realize satisfactory tracking control
+accuracy and stable learning, our proposed algorithm can achieve high-level tracking control
+accuracy of AUVs and stable learning by applying a hybrid actors-critics architecture, where multiple
+actors and critics are trained to learn a deterministic policy and action-value function, respectively.
+Specifically, for the critics, the expected absolute Bellman error based updating rule is used
+to choose the worst critic to be updated in each time step. Subsequently, to calculate the loss function
+with more accurate target value for the chosen critic, Pseudo Q-learning, which uses sub-greedy
+policy to replace the greedy policy in Q-learning, is developed for continuous action spaces, and
+Multi Pseudo Q-learning (MPQ) is proposed to reduce the overestimation of action-value function
+and to stabilize the learning. As for the actors, deterministic policy gradient is applied to update
+the weights, and the final learned policy is defined as the average of all actors to avoid large but
+bad updates. Moreover, the stability analysis of the learning is given qualitatively. The effectiveness
+and generality of the proposed MPQ-based Deterministic Policy Gradient (MPQ-DPG) algorithm are
+verified by the application on AUV with two different reference trajectories. And the results demonstrate
+high-level tracking control accuracy and stable learning of MPQ-DPG. Besides, the results also
+validate that increasing the number of the actors and critics will further improve the performance.

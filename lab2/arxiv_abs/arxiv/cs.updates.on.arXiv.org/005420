@@ -1,0 +1,18 @@
+We consider a model of robust learning in an adversarial environment. The learner gets uncorrupted
+training data with access to possible corruptions that may be used by the adversary during testing.
+Their aim is to build a robust classifier that would be tested on future adversarially corrupted
+data. We use a zero-sum game between the learner and the adversary as our game theoretic framework.
+The adversary is limited to $k$ possible corruptions for each input. Our model is closely related
+to the adversarial examples model of one of Schmidt et al. (2018) and Madry et al. (2017). We refer
+to binary and multi-class classification settings, and regression setting. Our main results are
+generalization bounds for all settings. For the binary classification setting, we improve a generalization
+bound previously found in Feige et al. (2015). We generalize to the case of weighted average of hypotheses
+from $H$ that is not limited to be finite. The sample complexity has been improved from $\O(\frac{1}{\epsilon^4}\log(\frac{|H|}{\delta}))$
+to $\O(\frac{1}{\epsilon^2}(k\log(k)VC(H)+\log\frac{1}{\delta}))$. The core of all is proofs
+based on bounds of the empirical Rademacher complexity. For the binary classification, we use a
+known regret minimization algorithm of Feige et al. that uses an ERM oracle as a blackbox and we expand
+on the multi-class and regression settings. The algorithm provides us near optimal policies for
+the players on a given training sample. The learner starts with a fixed hypothesis class $H$ and chooses
+a convex combination of hypotheses from $H$. The learner's loss is measured on adversarial corrupted
+inputs. Along the way, we obtain results on fat-shattering dimension and Rademacher complexity
+of $k$-fold maxima over function classes; these may be of independent interest. 

@@ -1,0 +1,17 @@
+Complex textual information extraction tasks are often posed as sequence labeling or \emph{shallow
+parsing}, where fields are extracted using local labels made consistent through probabilistic
+inference in a graphical model with constrained transitions. Recently, it has become common to
+locally parametrize these models using rich features extracted by recurrent neural networks (such
+as LSTM), while enforcing consistent outputs through a simple linear-chain model, representing
+Markovian dependencies between successive labels. However, the simple graphical model structure
+belies the often complex non-local constraints between output labels. For example, many fields,
+such as a first name, can only occur a fixed number of times, or in the presence of other fields. While
+RNNs have provided increasingly powerful context-aware local features for sequence tagging,
+they have yet to be integrated with a global graphical model of similar expressivity in the output
+distribution. Our model goes beyond the linear chain CRF to incorporate multiple hidden states
+per output label, but parametrizes their transitions parsimoniously with low-rank log-potential
+scoring matrices, effectively learning an embedding space for hidden states. This augmented latent
+space of inference variables complements the rich feature representation of the RNN, and allows
+exact global inference obeying complex, learned non-local output constraints. We experiment
+with several datasets and show that the model outperforms baseline CRF+RNN models when global output
+constraints are necessary at inference-time, and explore the interpretable latent structure.

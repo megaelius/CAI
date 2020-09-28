@@ -1,0 +1,19 @@
+In real applications, there are situations where we need to model some problems based on uncertain
+data. This leads us to define an uncertain model for some classical geometric optimization problems
+and propose algorithms to solve them. In this paper, we study the $k$-center problem, for uncertain
+input. In our setting, each uncertain point $P_i$ is located independently from other points in
+one of several possible locations $\{P_{i,1},\dots, P_{i,z_i}\}$ in a metric space with metric
+$d$, with specified probabilities and the goal is to compute $k$-centers $\{c_1,\dots, c_k\}$
+that minimize the following expected cost $$Ecost(c_1,\dots, c_k)=\sum_{R\in \Omega} prob(R)\max_{i=1,\dots,
+n}\min_{j=1,\dots k} d(\hat{P}_i,c_j)$$ here $\Omega$ is the probability space of all realizations
+$$R=\{\hat{P}_1,\dots, \hat{P}_n\}$$ of given uncertain points and $$prob(R)=\prod_{i=1}^n
+prob(\hat{P}_i).$$ In restricted assigned version of this problem, an assignment $A:\{P_1,\dots,
+P_n\}\rightarrow \{c_1,\dots, c_k\}$ is given for any choice of centers and the goal is to minimize
+$$Ecost_A(c_1,\dots, c_k)=\sum_{R\in \Omega} prob(R)\max_{i=1,\dots, n} d(\hat{P}_i,A(P_i)).$$
+In unrestricted version, the assignment is not specified and the goal is to compute $k$ centers $\{c_1,\dots,
+c_k\}$ and an assignment $A$ that minimize the above expected cost. We give several improved constant
+approximation factor algorithms for the assigned versions of this problem in a Euclidean space
+and in a general metric space. Our results significantly improve the results of \cite{guh} and generalize
+the results of \cite{wang} to any dimension. Our approach is to replace a certain center point for
+each uncertain point and study the properties of these certain points. The proposed algorithms
+are efficient and simple to implement. 

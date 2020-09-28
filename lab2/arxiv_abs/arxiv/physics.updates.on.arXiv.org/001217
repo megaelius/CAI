@@ -1,0 +1,20 @@
+We present a systematic study of the nested sampling algorithm based on the example of the Potts model.
+This model, which exhibits a first order phase transition for $q>4$, exemplifies a generic numerical
+challenge in statistical physics: The evaluation of the partition function and thermodynamic
+observables, which involve high dimensional sums of sharply structured multi-modal density functions.
+It poses a major challenge to most standard numerical techniques, such as Markov Chain Monte Carlo.
+In this paper we will demonstrate that nested sampling is particularly suited for such problems
+and it has a couple of advantages. For calculating the partition function of the Potts model with
+$N$ sites: a) one run stops after $O(N)$ moves, so it takes $O(N^{2})$ operations for the run, b) only
+a single run is required to compute the partition function along with the assignment of confidence
+intervals, c) the confidence intervals of the logarithmic partition function decrease with $1/\sqrt{N}$
+and d) a single run allows to compute quantities for all temperatures while the autocorrelation
+time is very small, irrespective of temperature. Thermodynamic expectation values of observables,
+which are completely determined by the bond configuration in the representation of Fortuin and
+Kasteleyn, like the Helmholtz free energy, the internal energy as well as the entropy and heat capacity,
+can be calculated in the same single run needed for the partition function along with their confidence
+intervals. In contrast, thermodynamic expectation values of magnetic properties like the magnetization
+and the magnetic susceptibility require sampling the additional spin degree of freedom. Results
+and performance are studied in detail and compared with those obtained with multi-canonical sampling.
+Eventually the implications of the findings on a parallel implementation of nested sampling are
+outlined. 

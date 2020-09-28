@@ -1,0 +1,18 @@
+Distributed protocols such as Paxos play an important role in many computer systems. Therefore,
+a bug in a distributed protocol may have tremendous effects. Accordingly, a lot of effort has been
+invested in verifying such protocols. However, checking invariants of such protocols is undecidable
+and hard in practice, as it requires reasoning about an unbounded number of nodes and messages. Moreover,
+protocol actions and invariants involve both quantifier alternations and higher-order concepts
+such as set cardinalities and arithmetic. This paper makes a step towards automatic verification
+of such protocols. We aim at a technique that can verify correct protocols and identify bugs in incorrect
+protocols. To this end, we develop a methodology for deductive verification based on effectively
+propositional logic (EPR)---a decidable fragment of first-order logic (also known as the Bernays-Sch\"onfinkel-Ramsey
+class). In addition to decidability, EPR also enjoys the finite model property, allowing to display
+violations as finite structures which are intuitive for users. Our methodology involves modeling
+protocols using general (uninterpreted) first-order logic, and then systematically transforming
+the model to obtain a model and an inductive invariant that are decidable to check. The steps of the
+transformations are also mechanically checked, ensuring the soundness of the method. We have used
+our methodology to verify the safety of Paxos, and several of its variants, including Multi-Paxos,
+Vertical Paxos, Fast Paxos, Flexible Paxos and Stoppable Paxos. To the best of our knowledge, this
+work is the first to verify these protocols using a decidable logic, and the first formal verification
+of Vertical Paxos, Fast Paxos and Stoppable Paxos. 

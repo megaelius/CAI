@@ -1,0 +1,18 @@
+In scalar turbulence it is sometimes the case that the scalar diffusivity is smaller than the viscous
+diffusivity. The thermally-driven turbulent convection in water is a typical example. In such
+a case the smallest scale in the problem is the Batchelor scale $l_b$, rather than the Kolmogorov
+scale $l_k$, as $l_b = l_k/Sc^{1/2}$, where Sc is the Schmidt number (or Prandtl number in the case
+of temperature). In the numerical studies of such scalar turbulence, the conventional approach
+is to use a single grid for both the velocity and scalar fields. Such single-resolution scheme often
+over-resolves the velocity field because the resolution requirement for scalar is higher than
+that for the velocity field, since $l_b<l_k$ for $Sc>1$. In this paper we put forward an algorithm
+that implements the so-called multiple-resolution method with a finite-volume code. In this scheme,
+the velocity and pressure fields are solved in a coarse grid, while the scalar field is solved in a
+dense grid. The central idea is to implement the interpolation scheme on the framework of finite-volume
+to reconstruct the divergence-free velocity from the coarse to the dense grid. We demonstrate our
+method using a canonical model system of fluid turbulence, the Rayleigh-B\'enard convection.
+We show that, with the tailored mesh design, considerable speed-up for simulating scalar turbulence
+can be achieved, especially for large Schmidt (Prandtl) numbers. In the same time, sufficient accuracy
+of the scalar and velocity fields can be achived by this multiple-resolution scheme. Although our
+algorithm is demonstrated with a case of an active scalar, it can be readily applied to passive scalar
+turbulent flows. 

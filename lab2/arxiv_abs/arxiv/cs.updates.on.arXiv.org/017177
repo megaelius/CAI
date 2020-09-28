@@ -1,0 +1,20 @@
+Lipreading is an impressive technique and there has been a definite improvement of accuracy in recent
+years. However, existing methods for lipreading mainly build on autoregressive (AR) model, which
+generate target tokens one by one and suffer from high inference latency. To breakthrough this constraint,
+we propose FastLR, a non-autoregressive (NAR) lipreading model which generates all target tokens
+simultaneously. NAR lipreading is a challenging task that has many difficulties: 1) the discrepancy
+of sequence lengths between source and target makes it difficult to estimate the length of the output
+sequence; 2) the conditionally independent behavior of NAR generation lacks the correlation across
+time which leads to a poor approximation of target distribution; 3) the feature representation
+ability of encoder can be weak due to lack of effective alignment mechanism; and 4) the removal of
+AR language model exacerbates the inherent ambiguity problem of lipreading. Thus, in this paper,
+we introduce three methods to reduce the gap between FastLR and AR model: 1) to address challenges
+1 and 2, we leverage integrate-and-fire (I\&F) module to model the correspondence between source
+video frames and output text sequence. 2) To tackle challenge 3, we add an auxiliary connectionist
+temporal classification (CTC) decoder to the top of the encoder and optimize it with extra CTC loss.
+We also add an auxiliary autoregressive decoder to help the feature extraction of encoder. 3) To
+overcome challenge 4, we propose a novel Noisy Parallel Decoding (NPD) for I\&F and bring Byte-Pair
+Encoding (BPE) into lipreading. Our experiments exhibit that FastLR achieves the speedup up to
+10.97$\times$ comparing with state-of-the-art lipreading model with slight WER absolute increase
+of 1.5\% and 5.5\% on GRID and LRS2 lipreading datasets respectively, which demonstrates the effectiveness
+of our proposed method. 

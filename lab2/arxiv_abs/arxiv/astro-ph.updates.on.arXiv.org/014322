@@ -1,0 +1,19 @@
+Interpreting spectropolarimetric observations of the solar atmosphere takes much longer than
+the acquiring the data. The most important reason for this is that the model fitting, or "inversion",
+used to infer physical quantities from the observations is extremely slow, because the underlying
+models are numerically demanding. We aim to improve the speed of the inference by using a neural network
+that relates input polarized spectra to the output physical parameters. We first select a subset
+of the data to be interpreted and infer physical quantities from corresponding spectra using a standard
+minimization-based inversion code. Taking these results as reliable and representative of the
+whole data set, we train a convolutional neural network to connect the input polarized spectra to
+the output physical parameters (nodes, in context of spectropolarimetric inversion). We then
+apply the neural network to the various other data, previously unseen to the network. As a check,
+we apply the referent inversion code to the unseen data and compare the fit quality and the maps of
+the inferred parameters between the two inversions. The physical parameters inferred by the neural
+network show excellent agreement with the results from the inversion, and are obtained in a factor
+of $10^5$ less time. Additionally, substituting the results of the neural network back in the forward
+model, shows excellent agreement between inferred and original spectra. The method we present
+here is very simple for implementation and extremely fast. It only requires a training data set,
+which can be obtained by inverting a representative subset of the observed data. Applying these
+(and similar) machine learning techniques will yield orders of magnitude acceleration in the routine
+interpretation of spectropolarimetric data. 

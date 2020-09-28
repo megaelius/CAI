@@ -1,0 +1,17 @@
+We introduce the {Destructive Object Handling} (DOH) problem, which models aspects of many real-world
+allocation problems, such as shipping explosive munitions, scheduling processes in a cluster
+with fragile nodes, re-using passwords across multiple websites, and quarantining patients during
+a disease outbreak. In these problems, objects must be assigned to handlers, but each object has
+a probability of destroying itself and all the other objects allocated to the same handler. The goal
+is to maximize the expected value of the objects handled successfully. We show that finding the optimal
+allocation is $\mathsf{NP}$-$\mathsf{complete}$, even if all the handlers are identical. We
+present an FPTAS when the number of handlers is constant. We note in passing that the same technique
+also yields a first FPTAS for the weapons-target allocation problem \cite{manne_wta} with a constant
+number of targets. We study the structure of DOH problems and find that they have a sort of phase transition
+-- in some instances it is better to spread risk evenly among the handlers, in others, one handler
+should be used as a ``sacrificial lamb''. We show that the problem is solvable in polynomial time
+if the destruction probabilities depend only on the handler to which an object is assigned; if all
+the handlers are identical and the objects all have the same value; or if each handler can be assigned
+at most one object. Finally, we empirically evaluate several heuristics based on a combination
+of greedy and genetic algorithms. The proposed heuristics return fairly high quality solutions
+to very large problem instances (upto 250 objects and 100 handlers) in tens of seconds. 

@@ -1,0 +1,17 @@
+In this paper, we propose a new deep architecture for fusing camera and LiDAR sensors for 3D object
+detection. Because the camera and LiDAR sensor signals have different characteristics and distributions,
+fusing these two modalities is expected to improve both the accuracy and robustness of 3D object
+detection. One of the challenges presented by the fusion of cameras and LiDAR is that the spatial
+feature maps obtained from each modality are represented by significantly different views in the
+camera and world coordinates; hence, it is not an easy task to combine two heterogeneous feature
+maps without loss of information. To address this problem, we propose a method called 3D-CVF that
+combines the camera and LiDAR features using the cross-view spatial feature fusion strategy. First,
+the method employs auto-calibrated projection, to transform the 2D camera features to a smooth
+spatial feature map with the highest correspondence to the LiDAR features in the bird's eye view
+(BEV) domain. Then, a gated feature fusion network is applied to use the spatial attention maps to
+mix the camera and LiDAR features appropriately according to the region. Next, camera-LiDAR feature
+fusion is also achieved in the subsequent proposal refinement stage. The camera feature is used
+from the 2D camera-view domain via 3D RoI grid pooling and fused with the BEV feature for proposal
+refinement. Our evaluations, conducted on the KITTI and nuScenes 3D object detection datasets
+demonstrate that the camera-LiDAR fusion offers significant performance gain over single modality
+and that the proposed 3D-CVF achieves state-of-the-art performance in the KITTI benchmark. 

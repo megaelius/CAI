@@ -1,0 +1,17 @@
+In free-surface flows, such as breaking ocean waves, the momentum field will have a discontinuity
+at the interface between the two immiscible fluids, air and water, but still be smooth in most of the
+domain. Using a higher-order numerical method is more efficient than increasing the number of low-order
+computational cells in areas where the solution is smooth, but higher-order approximations cause
+convective instabilities at discontinuities. In Ocellaris we use slope limiting of discontinuous
+Galerkin solutions to stabilise finite element simulations of flows with large density jumps,
+which would otherwise blow up due to Gibbs oscillations resulting from approximating a factor 1000
+sharp jump (air to water) by higher-order shape functions. We have previously shown a slope-limiting
+procedure for velocity fields that is able to stabilise 2D free-surface simulations running on
+a single CPU. In this paper our solver is extended to 3D and coupled to an algebraic pressure-correction
+scheme that retains the exact incompressibility of the direct solution used in the 2D simulations.
+We have tested the method on a common 3D dam-breaking test case and compared the free-surface evolution
+and impact pressures to experimental results. We also show how a forcing-zone approach can be used
+to simulate a surface-piercing vertical cylinder in an infinite wave field. In both cases the free-surface
+elevation and the forces and pressures compare well with published experiments. The Ocellaris
+solver is available as an open-source and well-documented program along with the input files needed
+to replicate the included results (www.ocellaris.org). 

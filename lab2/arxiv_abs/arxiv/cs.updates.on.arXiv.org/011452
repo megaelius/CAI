@@ -1,0 +1,19 @@
+Classical algorithm design is geared towards worst case instances and fails to exploit structure
+that may be present in typical instances. Is it possible to learn this structure from examples and
+exploit it algorithmically? We study this question in the simplest algorithmic context -- search
+for a cheap solution within an unstructured space. This setting captures, for example, search for
+a short path to drive to work when only some routes may ever be relevant to consider, or shopping online
+when there may only be a handful of stores that offer the best prices. We propose a framework for learning
+optimal search algorithms from data that captures the tradeoff between the cost of the solution
+and the time to find it. We consider a setting with $n$ alternatives each having an unknown cost that
+can be revealed one at a time. Given sample access to the distribution of the costs, our goal is to learn
+an algorithm that minimizes the expected sum of the cost of the chosen alternative and the total time
+to find it. Algorithms for this problem fall into three different classes, non-adaptive which always
+query a fixed set of alternatives, partially-adaptive that query alternatives in a fixed order
+until they decide to stop and fully-adaptive that choose the next query based on the costs they've
+seen. While approximately optimal fully-adaptive strategies cannot be learned efficiently,
+our main result is that it is possible to learn a partially-adaptive strategy that approximates
+the best non-adaptive and partially-adaptive strategies efficiently both in terms of samples
+and computation. We extend our results to settings where multiple alternatives must be chosen and
+study the case where any $k$ alternatives are feasible and the case where the alternatives must form
+a matroid base e.g. picking a minimum cost spanning tree. 

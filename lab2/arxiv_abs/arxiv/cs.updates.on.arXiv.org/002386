@@ -1,0 +1,18 @@
+We explore scaling of the standard distributed Tensorflow with GRPC primitives on up to 512 Intel
+Xeon Phi (KNL) nodes of Cori supercomputer with synchronous stochastic gradient descent (SGD),
+and identify causes of scaling inefficiency at higher node counts. To our knowledge, this is the
+first exploration of distributed GRPC Tensorflow scalability on a HPC supercomputer at such large
+scale with synchronous SGD. We studied scaling of two convolution neural networks - ResNet-50,
+a state-of-the-art deep network for classification with roughly 25.5 million parameters, and
+HEP-CNN, a shallow topology with less than 1 million parameters for common scientific usages. For
+ResNet-50, we achieve >80% scaling efficiency on up to 128 workers, using 32 parameter servers (PS
+tasks) with a steep decline down to 23% for 512 workers using 64 PS tasks. Our analysis of the efficiency
+drop points to low network bandwidth utilization due to combined effect of three factors. (a) Heterogeneous
+distributed parallelization algorithm which uses PS tasks as centralized servers for gradient
+averaging is suboptimal for utilizing interconnect bandwidth. (b) Load imbalance among PS tasks
+hinders their efficient scaling. (c) Underlying communication primitive GRPC is currently inefficient
+on Cori high-speed interconnect. The HEP-CNN demands less interconnect bandwidth, and shows >80%
+weak scaling efficiency for up to 256 nodes with only 1 PS task. Our findings are applicable to other
+deep learning networks. Big networks with millions of parameters stumble upon the issues discussed
+here. Shallower networks like HEP-CNN with relatively lower number of parameters can efficiently
+enjoy weak scaling even with a single parameter server. 

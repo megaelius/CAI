@@ -1,0 +1,18 @@
+Random forests have become an important tool for improving accuracy in regression problems since
+their popularization by (Breiman, 2001) and others. In this paper, we revisit a random forest model
+originally proposed by (Breiman, 2004) and later studied by (Biau, 2012), where a feature is selected
+at random and the split occurs at the midpoint of the block containing the chosen feature. If the regression
+function is sparse and depends only on a small, unknown subset of $ S $ out of $ d $ features, we show that
+given $ n $ observations, this random forest model outputs a predictor that has a mean-squared prediction
+error of order $ \left(n\sqrt{\log^{S-1} n}\right)^{-\frac{1}{S\log2+1}} $. When $ S \leq \lfloor
+0.72 d \rfloor $, this rate is better than the minimax optimal rate $ n^{-\frac{2}{d+2}} $ for $ d $-dimensional,
+Lipschitz function classes. As a consequence of our analysis, we show that the variance of the forest
+decays with the depth of the tree at a rate that is independent of the ambient dimension, even when
+the trees are fully grown. In particular, if $ \ell_{avg} $ (resp. $ \ell_{max} $) is the average (resp.
+maximum) number of observations per leaf node, we show that the variance of this forest is $ \Theta\left(\ell^{-1}_{avg}(\sqrt{\log
+n})^{-(S-1)}\right) $, which for the case of $ S = d $, is similar in form to the lower bound $ \Omega\left(\ell^{-1}_{max}(\log
+n)^{-(d-1)}\right) $ of (Lin and Jeon, 2006) for any random forest model with a nonadaptive splitting
+scheme. We also show that the bias is tight for any linear model with nonzero parameter vector. Thus,
+we completely characterize the fundamental limits of this random forest model. Our new analysis
+also implies that better theoretical performance can be achieved if the trees are grown less aggressively
+(i.e., grown to a shallower depth) than previous work would otherwise recommend. 

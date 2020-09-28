@@ -1,0 +1,19 @@
+Cell detection and cell type classification from biomedical images play an important role for high-throughput
+imaging and various clinical application. While classification of single cell sample can be performed
+with standard computer vision and machine learning methods, analysis of multi-label samples (region
+containing congregating cells) is more challenging, as separation of individual cells can be difficult
+(e.g. touching cells) or even impossible (e.g. overlapping cells). As multi-instance images are
+common in analyzing Red Blood Cell (RBC) for Sickle Cell Disease (SCD) diagnosis, we develop and
+implement a multi-instance cell detection and classification framework to address this challenge.
+The framework firstly trains a region proposal model based on Region-based Convolutional Network
+(RCNN) to obtain bounding-boxes of regions potentially containing single or multiple cells from
+input microscopic images, which are extracted as image patches. High-level image features are
+then calculated from image patches through a pre-trained Convolutional Neural Network (CNN) with
+ResNet-50 structure. Using these image features inputs, six networks are then trained to make multi-label
+prediction of whether a given patch contains cells belonging to a specific cell type. As the six networks
+are trained with image patches consisting of both individual cells and touching/overlapping cells,
+they can effectively recognize cell types that are presented in multi-instance image samples.
+Finally, for the purpose of SCD testing, we train another machine learning classifier to predict
+whether the given image patch contains abnormal cell type based on outputs from the six networks.
+Testing result of the proposed framework shows that it can achieve good performance in automatic
+cell detection and classification. 

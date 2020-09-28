@@ -1,0 +1,17 @@
+Given a graph $G$, a source node $s$ and a target node $t$, the personalized PageRank (PPR) of $t$ with
+respect to $s$ is the probability that a random walk starting from $s$ terminates at $t$. An important
+variant of the PPR query is single-source PPR (SSPPR), which enumerates all nodes in $G$, and returns
+the top-$k$ nodes with the highest PPR values with respect to a given source $s$. PPR in general and
+SSPPR in particular have important applications in web search and social networks, e.g., in Twitter's
+Who-To-Follow recommendation service. However, PPR computation is known to be expensive on large
+graphs, and resistant to indexing. Consequently, previous solutions either use heuristics, which
+do not guarantee result quality, or rely on the strong computing power of modern data centers, which
+is costly. Motivated by this, we propose effective index-free and index-based algorithms for approximate
+PPR processing, with rigorous guarantees on result quality. We first present FORA, an approximate
+SSPPR solution that combines two existing methods Forward Push (which is fast but does not guarantee
+quality) and Monte Carlo Random Walk (accurate but slow) in a simple and yet non-trivial way, leading
+to both high accuracy and efficiency. Further, FORA includes a simple and effective indexing scheme,
+as well as a module for top-$k$ selection with high pruning power. Extensive experiments demonstrate
+that the proposed solutions are orders of magnitude more efficient than their respective competitors.
+Notably, on a billion-edge Twitter dataset, FORA answers a top-500 approximate SSPPR query within
+1 second, using a single commodity server. 

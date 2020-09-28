@@ -1,0 +1,20 @@
+This paper shows that $\mathbf{P} = \mathbf{NP}$ by means of one-in-three SAT, also known as exactly-1
+3SAT, or X3SAT. $\phi = \bigwedge C_k$ denotes an X3SAT formula, $C_k = (r_i \odot r_j \odot r_u)$
+is a clause, and $\phi(r_j) := r_j \wedge \phi$ denotes the truth assignment $r_j = \mathbf{T}$,
+$r_j \in \{x_j, \overline{x}_j\}$. The assignment initiates reductions via $\odot$ of $C_k = (r_j
+\odot \overline{x}_i \odot x_u)$ into $\psi_k = r_j \wedge x_i \wedge \overline{x}_u$ for all $C_k
+\ni r_j$, and $C_k = (\overline{r}_j \odot r_u \odot r_v)$ into $C_{k'} = (r_u \odot r_v)$ for all
+$C_k \ni \overline{r}_j$. These reductions transform $r_j \wedge \phi$ into $\psi(r_j) \wedge
+\phi'(r_j)$, unless $\psi(r_j)$ involves a contradiction $x_i \wedge \overline{x}_i$. Then,
+$\phi'(r_j) = \bigwedge (C_k \wedge C_{k'})$, and $\psi(r_j) = \bigwedge (\psi_k \wedge C_{k'})$
+such that $C_{k'} = r_i$, thus $\psi(r_j)$ and $\phi'(r_j)$ are disjoint. Also, $\psi(r_j)$ involves
+$x_i \wedge \overline{x}_i$ iff $\not\models \psi(r_j)$, which is trivial to verify. Furthermore,
+it is redundant to check if $\not\models \phi'(r_j)$, sketched out as follows. Any $\psi(r_i)$
+is true, $\psi(r_i) \models \psi(r_i | r_j)$, hence $\psi(r_i | r_j)$ is true for all $r_i$ in $\phi'(r_j)$,
+which becomes satisfiable when any $r_j$ such that $\not\models \psi(r_j)$ is removed from $\phi$,
+hence any $\overline{r}_j$ is in $\psi$. Thus, $\phi$ transforms into $\psi \wedge \phi'$, where
+$\psi = \bigwedge r_i$. If $\psi \supseteq \{x_j, \overline{x}_j\}$, then $\not\models \phi$,
+or else $\phi(r_i) = \psi(r_i) \wedge \phi'(r_i)$ reduces to $\psi(r_i)$ and $\psi \wedge \psi(r_{i_0})
+\wedge \psi(r_{i_1} | r_{i_0}) \wedge \cdots \wedge \psi(r_{i_n} | r_{i_m})$ satisfies $\phi$,
+and any $\psi(r_j | r_i)$ and $\psi(r_k | r_j)$ are disjoint. The time complexity is $O(mn^3)$, therefore
+$\mathbf{P} = \mathbf{NP}$. 

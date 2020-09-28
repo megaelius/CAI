@@ -1,0 +1,18 @@
+We develop a combined field formulation for the fluid structure (FS) interaction problem. The unknowns
+are (u;p;v), being the fluid velocity, fluid pressure and solid velocity. This combined field formulation
+uses Arbitrary Lagrangian Eulerian (ALE) description for the fluid and Lagrangian description
+for the solid. It automatically enforces the simultaneous continuities of both velocity and traction
+along the FS interface. We present a first order in time fully discrete scheme when the flow is incompressible
+Navier-Stokes and when the solid is elastic. The interface position is determined by first order
+extrapolation so that the generation of the fluid mesh and the computation of (u;p;v) are decoupled.
+This explicit interface advancing enables us to save half of the unknowns comparing with traditional
+monolithic schemes. When the solid has convex strain energy (e.g. linear elastic), we prove that
+the total energy of the fluid and the solid at time t^{n} is bounded by the total energy at time t^{n-1}.
+Like in the continuous case, the fluid mesh velocity which is used in ALE description does not enter
+into the stability bound. Surprisingly, the nonlinear convection term in the Navier-Stokes equations
+plays a crucial role to stabilize the scheme and the stability result does not apply to Stokes flow.
+As the nonlinear convection term is treated semi-implicitly, in each time step, we only need to solve
+a linear system (and only once) which involves merely (u;p;v) if the solid is linear elastic. Two
+numerical tests including the benchmark test of Navier-Stokes flow past a Saint Venant-Kirchhoff
+elastic bar are performed. In addition to the stability, we also confirm the first order temporal
+accuracy of our explicit interface advancing scheme. 

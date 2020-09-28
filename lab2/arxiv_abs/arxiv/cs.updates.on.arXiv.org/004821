@@ -1,0 +1,20 @@
+Gaussian Process (GP) regression has seen widespread use in robotics due to its generality, simplicity
+of use, and the utility of Bayesian predictions. In particular, the predominant implementation
+of GP regression is kernel-based, as it enables fitting of arbitrary nonlinear functions by leveraging
+kernel functions as infinite-dimensional features. While incorporating prior information has
+the potential to drastically improve data efficiency of kernel-based GP regression, expressing
+complex priors through the choice of kernel function and associated hyperparameters is often challenging
+and unintuitive. Furthermore, the computational complexity of kernel-based GP regression scales
+poorly with the number of samples, limiting its application in regimes where a large amount of data
+is available. In this work, we propose ALPaCA, an algorithm for efficient Bayesian regression which
+addresses these issues. ALPaCA uses a dataset of sample functions to learn a domain-specific, finite-dimensional
+feature encoding, as well as a prior over the associated weights, such that Bayesian linear regression
+in this feature space yields accurate online predictions of the posterior density. These features
+are neural networks, which are trained via a meta-learning approach. ALPaCA extracts all prior
+information from the dataset, rather than relying on the choice of arbitrary, restrictive kernel
+hyperparameters. Furthermore, it substantially reduces sample complexity, and allows scaling
+to large systems. We investigate the performance of ALPaCA on two simple regression problems, two
+simulated robotic systems, and on a lane-change driving task performed by humans. We find our approach
+outperforms kernel-based GP regression, as well as state of the art meta-learning approaches,
+thereby providing a promising plug-in tool for many regression tasks in robotics where scalability
+and data-efficiency are important. 

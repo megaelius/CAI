@@ -1,0 +1,19 @@
+Static recommendation methods like collaborative filtering suffer from the inherent limitation
+of performing real-time personalization for cold-start users. Online recommendation, e.g.,
+multi-armed bandit approach, addresses this limitation by interactively exploring user preference
+online and pursuing the exploration-exploitation (EE) trade-off. However, existing bandit-based
+methods model recommendation actions homogeneously. Specifically, they only consider the items
+as the arms, being incapable of handling the item attributes, which naturally provide interpretable
+information of user's current demands and can effectively filter out undesired items. In this work,
+we consider the conversational recommendation for cold-start users, where a system can both ask
+the attributes from and recommend items to a user interactively. This important scenario was studied
+in a recent work. However, it employs a hand-crafted function to decide when to ask attributes or
+make recommendations. Such separate modeling of attributes and items makes the effectiveness
+of the system highly rely on the choice of the hand-crafted function, thus introducing fragility
+to the system. To address this limitation, we seamlessly unify attributes and items in the same arm
+space and achieve their EE trade-offs automatically using the framework of Thompson Sampling.
+Our Conversational Thompson Sampling (ConTS) model holistically solves all questions in conversational
+recommendation by choosing the arm with the maximal reward to play. Extensive experiments on three
+benchmark datasets show that ConTS outperforms the state-of-the-art methods Conversational
+UCB (ConUCB) and Estimation-Action-Reflection model in both metrics of success rate and average
+number of conversation turns. 

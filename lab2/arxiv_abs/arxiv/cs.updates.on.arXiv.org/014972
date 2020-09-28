@@ -1,0 +1,18 @@
+Data stream poses additional challenges to statistical classification tasks because distributions
+of the training and target samples may differ as time passes. Such distribution change in streaming
+data is called concept drift. Numerous histogram-based distribution change detection methods
+have been proposed to detect drift. Most histograms are developed on grid-based or tree-based space
+partitioning algorithms which makes the space partitions arbitrary, unexplainable, and may cause
+drift blind-spots. There is a need to improve the drift detection accuracy for histogram-based
+methods with the unsupervised setting. To address this problem, we propose a cluster-based histogram,
+called equal intensity k-means space partitioning (EI-kMeans). In addition, a heuristic method
+to improve the sensitivity of drift detection is introduced. The fundamental idea of improving
+the sensitivity is to minimize the risk of creating partitions in distribution offset regions.
+Pearson's chi-square test is used as the statistical hypothesis test so that the test statistics
+remain independent of the sample distribution. The number of bins and their shapes, which strongly
+influence the ability to detect drift, are determined dynamically from the sample based on an asymptotic
+constraint in the chi-square test. Accordingly, three algorithms are developed to implement concept
+drift detection, including a greedy centroids initialization algorithm, a cluster amplify-shrink
+algorithm, and a drift detection algorithm. For drift adaptation, we recommend retraining the
+learner if a drift is detected. The results of experiments on synthetic and real-world datasets
+demonstrate the advantages of EI-kMeans and show its efficacy in detecting concept drift. 

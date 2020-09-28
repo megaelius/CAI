@@ -1,0 +1,20 @@
+In shared autonomy, user input is combined with semi-autonomous control to achieve a common goal.
+The goal is often unknown ex-ante, so prior work enables agents to infer the goal from user input and
+assist with the task. Such methods tend to assume some combination of knowledge of the dynamics of
+the environment, the user's policy given their goal, and the set of possible goals the user might
+target, which limits their application to real-world scenarios. We propose a deep reinforcement
+learning framework for model-free shared autonomy that lifts these assumptions. We use human-in-the-loop
+reinforcement learning with neural network function approximation to learn an end-to-end mapping
+from environmental observation and user input to agent action values, with task reward as the only
+form of supervision. This approach poses the challenge of following user commands closely enough
+to provide the user with real-time action feedback and thereby ensure high-quality user input,
+but also deviating from the user's actions when they are suboptimal. We balance these two needs by
+discarding actions whose values fall below some threshold, then selecting the remaining action
+closest to the user's input. Controlled studies with users (n = 12) and synthetic pilots playing
+a video game, and a pilot study with users (n = 4) flying a real quadrotor, demonstrate the ability
+of our algorithm to assist users with real-time control tasks in which the agent cannot directly
+access the user's private information through observations, but receives a reward signal and user
+input that both depend on the user's intent. The agent learns to assist the user without access to
+this private information, implicitly inferring it from the user's input. This paper is a proof of
+concept that illustrates the potential for deep reinforcement learning to enable flexible and
+practical assistive systems. 

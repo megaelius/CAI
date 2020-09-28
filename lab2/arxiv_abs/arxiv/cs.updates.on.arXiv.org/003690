@@ -1,0 +1,20 @@
+This paper develops a dynamic semantics for incomplete functional programs, based in part on the
+static semantics for incomplete functional programs developed in our recent work. We model incomplete
+functional programs as expressions with holes, with empty holes standing for missing expressions
+or types, and non-empty holes operating as "membranes" around static and dynamic type inconsistencies.
+Rather than aborting with an exception when evaluation encounters any of these holes (as in several
+existing systems), evaluation proceeds "around" the holes, performing as much of the remaining
+computation as is possible and tracking the closure around each hole instance as it flows through
+the program. Various editor services can report information from these hole closures to help the
+programmer decide how to fill a hole. They also enable a "fill-and-resume" feature that avoids the
+need to restart evaluation after edits that amount to hole filling. Formally, the semantics draws
+from both gradual type theory (to handle type holes) and contextual modal type theory (which provides
+a logical foundation for hole closures), and develops additional technical machinery necessary
+to continue evaluation past the various hole forms and to prove important metatheoretic properties.
+We have mechanized the core formal development using the Agda proof assistant. We also describe
+a simple implementation, called HazelnutLive, that inserts holes as necessary during the editing
+process to guarantee that every edit state has some (possibly incomplete) type, based in part on
+the Hazelnut edit action calculus in our recent work. Taken together with the type safety property
+that this paper establishes, the result is a proof-of-concept live typed functional programming
+environment where dynamic feedback is truly continuous, i.e. it is available for every possible
+edit state. 

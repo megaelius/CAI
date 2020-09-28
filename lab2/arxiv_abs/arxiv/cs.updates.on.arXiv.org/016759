@@ -1,0 +1,19 @@
+Graph Convolutional Network (GCN) has been widely used in graph learning tasks. However, GCN-based
+models (GCNs) is an inherently coupled training framework repetitively conducting the complex
+neighboring aggregation, which leads to the limitation of flexibility in processing large-scale
+graph. With the depth of layers increases, the computational and memory cost of GCNs grow explosively
+due to the recursive neighborhood expansion. To tackle these issues, we present Node2Grids, a flexible
+uncoupled training framework that leverages the independent mapped data for obtaining the embedding.
+Instead of directly processing the coupled nodes as GCNs, Node2Grids supports a more efficacious
+method in practice, mapping the coupled graph data into the independent grid-like data which can
+be fed into the efficient Convolutional Neural Network (CNN). This simple but valid strategy significantly
+saves memory and computational resource while achieving comparable results with the leading GCN-based
+models. Specifically, by ranking each node's influence through degree, Node2Grids selects the
+most influential first-order as well as second-order neighbors with central node fusion information
+to construct the grid-like data. For further improving the efficiency of downstream tasks, a simple
+CNN-based neural network is employed to capture the significant information from the mapped grid-like
+data. Moreover, the grid-level attention mechanism is implemented, which enables implicitly
+specifying the different weights for neighboring nodes with different influences. In addition
+to the typical transductive and inductive learning tasks, we also verify our framework on million-scale
+graphs to demonstrate the superiority of the proposed Node2Grids model against the state-of-the-art
+GCN-based approaches. 

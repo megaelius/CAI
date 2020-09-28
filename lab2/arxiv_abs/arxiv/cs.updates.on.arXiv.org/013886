@@ -1,0 +1,19 @@
+Unlike in statistical compression, where Shannon's entropy is a definitive lower bound, no such
+clear measure exists for the compressibility of repetitive sequences. Since statistical entropy
+does not capture repetitiveness, ad-hoc measures like the size $z$ of the Lempel--Ziv parse are
+frequently used to estimate repetitiveness. Recently, a more principled measure, the size $\gamma$
+of the smallest string \emph{attractor}, was introduced. The measure $\gamma$ lower bounds all
+the previous relevant ones, yet length-$n$ strings can be represented and efficiently indexed
+within space $O(\gamma\log\frac{n}{\gamma})$, which also upper bounds most measures. While
+$\gamma$ is certainly a better measure of repetitiveness than $z$, it is NP-complete to compute,
+and no $o(\gamma\log n)$-space representation of strings is known. In this paper, we study a smaller
+measure, $\delta \le \gamma$, which can be computed in linear time. We show that $\delta$ better
+captures the compressibility of repetitive strings. For every length $n$ and every value $\delta
+\ge 2$, we construct a string such that $\gamma = \Omega(\delta \log \frac{n}{\delta})$. Still,
+we show a representation of any string $S$ in $O(\delta\log\frac{n}{\delta})$ space that supports
+direct access to any character $S[i]$ in time $O(\log\frac{n}{\delta})$ and finds the $occ$ occurrences
+of any pattern $P[1..m]$ in time $O(m\log n + occ\log^\epsilon n)$. Further, we prove that no $o(\delta\log
+n)$-space representation exists: for every $n$ and every $2\le \delta\le n^{1-\epsilon}$, we
+exhibit a string family whose elements can only be encoded in $\Omega(\delta\log \frac{n}{\delta})$
+space. We complete our characterization of $\delta$ by showing that the smallest context-free
+grammar can be of size $\Omega(\delta \log^2 n / \log\log n)$. No such separation is known for $\gamma$.

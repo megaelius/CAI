@@ -1,0 +1,17 @@
+Decision-tree-based ensemble classification methods (DTEMs) are a prevalent tool for supervised
+anomaly detection. However, due to the continued growth of datasets, DTEMs result in increasing
+drawbacks such as growing memory footprints, longer training times, and slower classification
+latencies at lower throughput. In this paper, we present, design, and evaluate RADE - a DTEM-based
+anomaly detection framework that augments standard DTEM classifiers and alleviates these drawbacks
+by relying on two observations: (1) we find that a small (coarse-grained) DTEM model is sufficient
+to classify the majority of the classification queries correctly, such that a classification is
+valid only if its corresponding confidence level is greater than or equal to a predetermined classification
+confidence threshold; (2) we find that in these fewer harder cases where our coarse-grained DTEM
+model results in insufficient confidence in its classification, we can improve it by forwarding
+the classification query to one of expert DTEM (fine-grained) models, which is explicitly trained
+for that particular case. We implement RADE in Python based on scikit-learn and evaluate it over
+different DTEM methods: RF, XGBoost, AdaBoost, GBDT and LightGBM, and over three publicly available
+datasets. Our evaluation over both a strong AWS EC2 instance and a Raspberry Pi 3 device indicates
+that RADE offers competitive and often superior anomaly detection capabilities as compared to
+standard DTEM methods, while significantly improving memory footprint (by up to 5.46x), training-time
+(by up to 17.2x), and classification latency (by up to 31.2x). 

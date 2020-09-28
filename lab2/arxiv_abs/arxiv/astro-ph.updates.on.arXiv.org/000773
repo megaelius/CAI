@@ -1,0 +1,18 @@
+We describe a module for the Athena code that solves the gray equations of radiation hydrodynamics
+(RHD), based on the first two moments of the radiative transfer equation. We use a combination of
+explicit Godunov methods to advance the gas and radiation variables including the non-stiff source
+terms, and a local implicit method to integrate the stiff source terms. We adopt the M1 closure relation
+and include all leading source terms. We employ the reduced speed of light approximation (RSLA)
+with subcycling of the radiation variables in order to reduce computational costs. Our code is dimensionally
+unsplit in one, two, and three space dimensions and is parallelized using MPI. The streaming and
+diffusion limits are well-described by the M1 closure model, and our implementation shows excellent
+behavior for a problem with a concentrated radiation source containing both regimes simultaneously.
+Our operator-split method is ideally suited for problems with a slowly varying radiation field
+and dynamical gas flows, in which the effect of the RSLA is minimal. We present an analysis of the dispersion
+relation of RHD linear waves highlighting the conditions of applicability for the RSLA. To demonstrate
+the accuracy of our method, we utilize a suite of radiation and RHD tests covering a broad range of
+regimes, including RHD waves, shocks, and equilibria, which show second-order convergence in
+most cases. As an application, we investigate radiation-driven ejection of a dusty, optically
+thick shell in the interstellar medium (ISM). Finally, we compare the timing of our method with other
+well-known iterative schemes for the RHD equations. Our code implementation, Hyperion, is suitable
+for a wide variety of astrophysical applications and will be made freely available on the Web. 

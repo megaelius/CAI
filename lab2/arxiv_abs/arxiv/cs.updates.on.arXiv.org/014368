@@ -1,0 +1,18 @@
+To develop and train defect prediction models, researchers rely on datasets in which a defect is
+attributed to an artifact, e.g., a class of a given release. However, the creation of such datasets
+is far from being perfect. It can happen that a defect is discovered several releases after its introduction:
+this phenomenon has been called "dormant defects". This means that, if we observe today the status
+of a class in its current version, it can be considered as defect-free while this is not the case. We
+call "snoring" the noise consisting of such classes, affected by dormant defects only. We conjecture
+that the presence of snoring negatively impacts the classifiers' accuracy and their evaluation.
+Moreover, earlier releases likely contain more snoring classes than older releases, thus, removing
+the most recent releases from a dataset could reduce the snoring effect and improve the accuracy
+of classifiers. In this paper we investigate the impact of the snoring noise on classifiers' accuracy
+and their evaluation, and the effectiveness of a possible countermeasure consisting in removing
+the last releases of data. We analyze the accuracy of 15 machine learning defect prediction classifiers
+on data from more than 4,000 bugs and 600 releases of 19 open source projects from the Apache ecosystem.
+Our results show that, on average across projects: (i) the presence of snoring decreases the recall
+of defect prediction classifiers; (ii) evaluations affected by snoring are likely unable to identify
+the best classifiers, and (iii) removing data from recent releases helps to significantly improve
+the accuracy of the classifiers. On summary, this paper provides insights on how to create a software
+defect dataset by mitigating the effect of snoring. 

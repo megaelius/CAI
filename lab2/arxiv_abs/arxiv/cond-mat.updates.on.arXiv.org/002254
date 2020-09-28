@@ -1,0 +1,19 @@
+Small-scale plasticity problems are often characterised by different patterning behaviours
+ranging from macroscopic down to the atomistic scale. In successful models of such complex behaviour,
+its origin lies within non-convexity of the governing free energy functional. A common approach
+to solve such non-convex problems numerically is by regularisation through a viscous formulation.
+This, however, may require the system to be overdamped and hence potentially has a strong impact
+on the obtained results. To avoid this side-effect, this paper addresses the treatment of the full
+non-convexity by an appropriate numerical solution algorithm -- the truncated Newton method.
+The presented method is a double iterative approach which successively generates quadratic approximations
+of the energy landscape and minimises these by an inner iterative scheme, based on the conjugate
+gradient method. The inner iterations are terminated when either a sufficient energy decrease
+is achieved or, to incorporate the treatment of non-convexity, a direction of negative curvature
+is encountered. If the latter never happens, the method reduces to Newton--Raphson iterations,
+solved by the conjugate gradient method, with a subsequent line search. However, in the case of a
+non-convex energy it avoids convergence to a saddle point and adds robustness. The stability of
+the truncated Newton method is demonstrated for the, highly non-convex, Peierls-Nabarro model,
+solved within a Finite Element framework. A potential drop in efficiency due to an occasional near
+singular Hessian is remedied by a trust region like extension, which is physically based on the Peierls-Nabarro
+disregistry profile. The result is an efficient numerical scheme with a high stability that is independent
+of any regularisation. 

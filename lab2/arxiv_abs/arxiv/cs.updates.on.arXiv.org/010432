@@ -1,0 +1,17 @@
+This paper proposes interpretable image synthesis by learning hierarchical AND-OR networks of
+sparsely connected semantically meaningful nodes. The proposed method is based on the compositionality
+and interpretability of scene-objects-parts-subparts-primitives hierarchy in image representation.
+A scene has different types (i.e., OR) each of which consists of a number of objects (i.e., AND). This
+can be recursively formulated across the scene-objects-parts-subparts hierarchy and is terminated
+at the primitive level (e.g., Gabor wavelets-like basis). To realize this interpretable AND-OR
+hierarchy in image synthesis, the proposed method consists of two components: (i) Each layer of
+the hierarchy is represented by an over-completed set of basis functions. The basis functions are
+instantiated using convolution to be translation covariant. Off-the-shelf convolutional neural
+architectures are then exploited to implement the hierarchy. (ii) Sparsity-inducing constraints
+are introduced in end-to-end training, which facilitate a sparsely connected AND-OR network to
+emerge from initially densely connected convolutional neural networks. A straightforward sparsity-inducing
+constraint is utilized, that is to only allow the top-$k$ basis functions to be active at each layer
+(where $k$ is a hyperparameter). The learned basis functions are also capable of image reconstruction
+to explain away input images. In experiments, the proposed method is tested on five benchmark datasets.
+The results show that meaningful and interpretable hierarchical representations are learned
+with better qualities of image synthesis and reconstruction obtained than state-of-the-art baselines.

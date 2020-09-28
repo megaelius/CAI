@@ -1,0 +1,17 @@
+Goal-oriented learning has become a core concept in reinforcement learning (RL), extending the
+reward signal as a sole way to define tasks. However, as parameterizing value functions with goals
+increases the learning complexity, efficiently reusing past experience to update estimates towards
+several goals at once becomes desirable but usually requires independent updates per goal. Considering
+that a significant number of RL environments can support spatial coordinates as goals, such as on-screen
+location of the character in ATARI or SNES games, we propose a novel goal-oriented agent called Q-map
+that utilizes an autoencoder-like neural network to predict the minimum number of steps towards
+each coordinate in a single forward pass. This architecture is similar to Horde with parameter sharing
+and allows the agent to discover correlations between visual patterns and navigation. For example
+learning how to use a ladder in a game could be transferred to other ladders later. We show how this
+network can be efficiently trained with a 3D variant of Q-learning to update the estimates towards
+all goals at once. While the Q-map agent could be used for a wide range of applications, we propose
+a novel exploration mechanism in place of epsilon-greedy that relies on goal selection at a desired
+distance followed by several steps taken towards it, allowing long and coherent exploratory steps
+in the environment. We demonstrate the accuracy and generalization qualities of the Q-map agent
+on a grid-world environment and then demonstrate the efficiency of the proposed exploration mechanism
+on the notoriously difficult Montezuma's Revenge and Super Mario All-Stars games. 

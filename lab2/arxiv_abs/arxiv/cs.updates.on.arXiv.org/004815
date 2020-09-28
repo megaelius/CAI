@@ -1,0 +1,18 @@
+Personalized PageRank (PPR) is a measure of the importance of a node from the perspective of another
+(we call these nodes the $\textit{target}$ and the $\textit{source}$, respectively). PPR has
+been used in many applications, such as offering a Twitter user (the source) recommendations of
+who to follow (targets deemed important by PPR); additionally, PPR has been used in graph-theoretic
+problems such as community detection. However, computing PPR is infeasible for large networks
+like Twitter, so efficient estimation algorithms are necessary. In this work, we analyze the relationship
+between PPR estimation complexity and clustering. First, we devise algorithms to estimate PPR
+for many source/target pairs. In particular, we propose an enhanced version of the existing single
+pair estimator $\texttt{Bidirectional-PPR}$ that is more useful as a primitive for many pair estimation.
+We then show that the common underlying graph can be leveraged to efficiently and jointly estimate
+PPR for many pairs, rather than treating each pair separately using the primitive algorithm. Next,
+we show the complexity of our joint estimation scheme relates closely to the degree of clustering
+among the sources and targets at hand, indicating that estimating PPR for many pairs is easier when
+clustering occurs. Finally, we consider estimating PPR when several machines are available for
+parallel computation, devising a method that leverages our clustering findings, specifically
+the quantities computed $\textit{in situ}$, to assign tasks to machines in a manner that reduces
+computation time. This demonstrates that the relationship between complexity and clustering
+has important consequences in a practical distributed setting. 

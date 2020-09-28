@@ -1,0 +1,20 @@
+CNNs outperform traditional machine learning algorithms across a wide range of applications.
+However, their computational complexity makes it necessary to design efficient hardware accelerators.
+Most CNN accelerators focus on exploring dataflow styles that exploit computational parallelism.
+However, potential performance speedup from sparsity has not been adequately addressed. The computation
+and memory footprint of CNNs can be significantly reduced if sparsity is exploited in network evaluations.
+To take advantage of sparsity, some accelerator designs explore sparsity encoding and evaluation
+on CNN accelerators. However, sparsity encoding is just performed on activation or weight and only
+in inference. It has been shown that activation and weight also have high sparsity levels during
+training. Hence, sparsity-aware computation should also be considered in training. To further
+improve performance and energy efficiency, some accelerators evaluate CNNs with limited precision.
+However, this is limited to the inference since reduced precision sacrifices network accuracy
+if used in training. In addition, CNN evaluation is usually memory-intensive, especially in training.
+In this paper, we propose SPRING, a SParsity-aware Reduced-precision Monolithic 3D CNN accelerator
+for trainING and inference. SPRING supports both CNN training and inference. It uses a binary mask
+scheme to encode sparsities in activation and weight. It uses the stochastic rounding algorithm
+to train CNNs with reduced precision without accuracy loss. To alleviate the memory bottleneck
+in CNN evaluation, especially in training, SPRING uses an efficient monolithic 3D NVM interface
+to increase memory bandwidth. Compared to GTX 1080 Ti, SPRING achieves 15.6X, 4.2X and 66.0X improvements
+in performance, power reduction, and energy efficiency, respectively, for CNN training, and 15.5X,
+4.5X and 69.1X improvements for inference. 

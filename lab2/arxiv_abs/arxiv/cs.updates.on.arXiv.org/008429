@@ -1,0 +1,18 @@
+With the increasing demands on interactive video applications, how to adapt video bit rate to avoid
+network congestion has become critical, since congestion results in self-inflicted delay and
+packet loss which deteriorate the quality of real-time video service. The existing congestion
+control is hard to simultaneously achieve low latency, high throughput, good adaptability and
+fair bandwidth allocation, mainly because of the hardwired control strategy and egocentric convergence
+objective. To address these issues, we propose an end-to-end statistical learning based congestion
+control, named Iris. By exploring the underlying principles of self-inflicted delay, we reveal
+that congestion delay is determined by sending rate, receiving rate and network status, which inspires
+us to control video bit rate using a statistical-learning congestion control model. The key idea
+of Iris is to force all flows to converge to the same queue load, and adjust the bit rate by the model.
+All flows keep a small and fixed number of packets queuing in the network, thus the fair bandwidth
+allocation and low latency are both achieved. Besides, the adjustment step size of sending rate
+is updated by online learning, to better adapt to dynamically changing networks. We carried out
+extensive experiments to evaluate the performance of Iris, with the implementations of transport
+layer (UDP) and application layer (QUIC) respectively. The testing environment includes emulated
+network, real-world Internet and commercial LTE networks. Compared against TCP flavors and state-of-the-art
+protocols, Iris is able to achieve high bandwidth utilization, low latency and good fairness concurrently.
+Especially over QUIC, Iris is able to increase the video bitrate up to 25%, and PSNR up to 1dB. 

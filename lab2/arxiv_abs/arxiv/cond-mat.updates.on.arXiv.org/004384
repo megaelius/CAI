@@ -1,0 +1,18 @@
+Monte Carlo simulations are a powerful tool to investigate the thermodynamic properties of atomic
+systems. In practice however, sampling of the complete configuration space is often hindered by
+high energy barriers between different regions of configuration space which can make ergodic sampling
+completely infeasible within accessible simulation times. Although several extensions to the
+conventional Monte Carlo scheme have been developed, that enable the treatment of such systems,
+these extensions often entail substantial computational cost or rely on the harmonic approximation.
+In this work we propose an exact method called Funnel Hopping Monte Carlo (FHMC) that is inspired
+by the the ideas of smart darting but is more efficient. Gaussian mixtures are used to approximate
+the Boltzmann distribution around local energy minima which are then used to propose high quality
+Monte Carlo moves that enable the Monte Carlo simulation to directly jump between different funnels.
+To fit the Gaussian mixtures we developed an extended version of the expectation-maximization
+algorithm that is able to take advantage of the high symmetry present in many low energy configurations.
+We demonstrate the methods performance on the example of the 38 as well as the 75 atom Lennard-Jones
+clusters which are well known for their double funnel energy landscapes that prevent ergodic sampling
+with conventional Monte Carlo simulations. By integrating FHMC into the parallel tempering scheme
+we were able to reduce the number of steps required until convergence of the simulation significantly.
+This gain in efficieny of about two orders of magnitude will make it finally possible to perform high
+accuracy Monte Carlo simulations at the level of density functional theory. 

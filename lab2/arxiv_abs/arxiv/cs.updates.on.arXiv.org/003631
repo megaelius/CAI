@@ -1,0 +1,18 @@
+Virtual synchrony is an important abstraction that is proven to be extremely useful when implemented
+over asynchronous, typically large, message-passing distributed systems. Fault tolerant design
+is a key criterion for the success of such implementations. This is because large distributed systems
+can be highly available as long as they do not depend on the full operational status of every system
+participant. Namely, they employ redundancy in numbers to overcome non-optimal behavior of participants
+and to gain global robustness and high availability. Self-stabilizing systems can tolerate transient
+faults that drive the system to an arbitrary unpredicted configuration. Such systems automatically
+regain consistency from any such arbitrary configuration, and then produce the desired system
+behavior. Practically self-stabilizing systems ensure the desired system behavior for practically
+infinite number of successive steps e.g., $2^{64}$ steps. We present the first practically self-stabilizing
+virtual synchrony algorithm. The algorithm is a combination of several new techniques that may
+be of independent interest. In particular, we present a new counter algorithm that establishes
+an efficient practically unbounded counter, that in turn can be directly used to implement a self-stabilizing
+Multiple-Writer Multiple-Reader (MWMR) register emulation. Other components include self-stabilizing
+group membership, self-stabilizing multicast, and self-stabilizing emulation of replicated
+state machine. As we base the replicated state machine implementation on virtual synchrony, rather
+than consensus, the system progresses in more extreme asynchronous executions in relation to consensus-based
+replicated state machine. 

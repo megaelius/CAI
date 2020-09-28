@@ -1,0 +1,19 @@
+Byzantine Fault Tolerant (BFT) consensus exhibits higher throughput in comparison to Proof of
+Work (PoW) in blockchains. But BFT-based protocols suffer from scalability problems with respect
+to the number of replicas in the network. The main reason for this limitation is the quadratic message
+complexity of BFT protocols. Previously, proposed solutions improve BFT performance for normal
+operation, but will fall back to quadratic message complexity once the protocol observes a certain
+number of failures. This makes the protocol performance unpredictable as it is not guaranteed that
+the network will face a a certain number of failures. As a result, such protocols are only scalable
+when conditions are favorable (i.e., the number of failures are less than a given threshold). To
+address this issue we propose Proteus, a new BFT-based consensus protocol which elects a subset
+of nodes $c$ as a root committee. Proteus guarantees stable performance, regardless of the number
+of failures in the network and it improves on the quadratic message complexity of typical BFT-based
+protocols to $O(cn)$, where $c<<n$, for large $n$. Thus, message complexity remains small and less
+than quadratic when $c$ is asymptotically smaller than $n$, and this helps the protocol to provide
+stable performance even during the view change process (change of root committee). Our view change
+process is different than typical BFT protocols as it replaces the whole root committee compared
+to replacing a single primary in other protocols. We deployed and tested our protocol on $200$ Amazon
+$EC2$ instances, with two different baseline BFT protocols (PBFT and Bchain) for comparison. In
+these tests, our protocol outperformed the baselines by more than $2\times$ in terms of throughput
+as well as latency. 

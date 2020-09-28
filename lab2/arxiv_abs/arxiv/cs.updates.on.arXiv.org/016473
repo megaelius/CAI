@@ -1,0 +1,19 @@
+Stochastic Gradient Descent (SGD) is the key learning algorithm for many machine learning tasks.
+Because of its computational costs, there is a growing interest in accelerating SGD on HPC resources
+like GPU clusters. However, the performance of parallel SGD is still bottlenecked by the high communication
+costs even with a fast connection among the machines. A simple approach to alleviating this problem,
+used in many existing efforts, is to perform communication every few iterations, using a constant
+averaging period. In this paper, we show that the optimal averaging period in terms of convergence
+and communication cost is not a constant, but instead varies over the course of the execution. Specifically,
+we observe that reducing the variance of model parameters among the computing nodes is critical
+to the convergence of periodic parameter averaging SGD. Given a fixed communication budget, we
+show that it is more beneficial to synchronize more frequently in early iterations to reduce the
+initial large variance and synchronize less frequently in the later phase of the training process.
+We propose a practical algorithm, named ADaptive Periodic parameter averaging SGD (ADPSGD), to
+achieve a smaller overall variance of model parameters, and thus better convergence compared with
+the Constant Periodic parameter averaging SGD (CPSGD). We evaluate our method with several image
+classification benchmarks and show that our ADPSGD indeed achieves smaller training losses and
+higher test accuracies with smaller communication compared with CPSGD. Compared with gradient-quantization
+SGD, we show that our algorithm achieves faster convergence with only half of the communication.
+Compared with full-communication SGD, our ADPSGD achieves 1:14x to 1:27x speedups with a 100Gbps
+connection among computing nodes, and the speedups increase to 1:46x ~ 1:95x with a 10Gbps connection.

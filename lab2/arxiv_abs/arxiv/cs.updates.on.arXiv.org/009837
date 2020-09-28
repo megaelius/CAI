@@ -1,0 +1,18 @@
+Although large annotated sleep databases are publicly available, and might be used to train automated
+scoring algorithms, it might still be a challenge to develop an optimal algorithm for your personal
+sleep study, which might have few subjects or rely on a different recording setup. Both directly
+applying a learned algorithm or retraining the algorithm on your rather small database is suboptimal.
+And definitely state-of-the-art sleep staging algorithms based on deep neural networks demand
+a large amount of data to be trained. This work presents a deep transfer learning approach to overcome
+the channel mismatch problem and enable transferring knowledge from a large dataset to a small cohort
+for automatic sleep staging. We start from a generic end-to-end deep learning framework for sequence-to-sequence
+sleep staging and derive two networks adhering to this framework as a device for transfer learning.
+The networks are first trained in the source domain (i.e. the large database). The pretrained networks
+are then finetuned in the target domain, i.e. the small cohort, to complete knowledge transfer.
+We employ the Montreal Archive of Sleep Studies (MASS) database consisting of 200 subjects as the
+source domain and study deep transfer learning on four different target domains: the Sleep Cassette
+subset and the Sleep Telemetry subset of the Sleep-EDF Expanded database, the Surrey-cEEGGrid
+database, and the Surrey-PSG database. The target domains are purposely adopted to cover different
+degrees of channel mismatch to the source domain. Our experimental results show significant performance
+improvement on automatic sleep staging on the target domains achieved with the proposed deep transfer
+learning approach and we discuss the impact of various fine tuning approaches. 

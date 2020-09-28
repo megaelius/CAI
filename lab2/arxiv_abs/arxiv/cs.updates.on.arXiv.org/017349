@@ -1,0 +1,19 @@
+Clustering non-Euclidean data is difficult, and one of the most used algorithms besides hierarchical
+clustering is the popular algorithm Partitioning Around Medoids (PAM), also simply referred to
+as k-medoids clustering. In Euclidean geometry the mean-as used in k-means-is a good estimator
+for the cluster center, but this does not exist for arbitrary dissimilarities. PAM uses the medoid
+instead, the object with the smallest dissimilarity to all others in the cluster. This notion of
+centrality can be used with any (dis-)similarity, and thus is of high relevance to many domains and
+applications. A key issue with PAM is its high run time cost. We propose modifications to the PAM algorithm
+that achieve an O(k)-fold speedup in the second ("SWAP") phase of the algorithm, but will still find
+the same results as the original PAM algorithm. If we relax the choice of swaps performed (while retaining
+comparable quality), we can further accelerate the algorithm by eagerly performing additional
+swaps in each iteration. With the substantially faster SWAP, we can now explore faster initialization
+strategies, because (i) the classic ("BUILD") initialization now becomes the bottleneck, and
+(ii) our swap is fast enough to compensate for worse starting conditions. We also show how the CLARA
+and CLARANS algorithms benefit from the proposed modifications. While we do not study the parallelization
+of our approach in this work, it can easily be combined with earlier approaches to use PAM and CLARA
+on big data (some of which use PAM as a subroutine, hence can immediately benefit from these improvements),
+where the performance with high k becomes increasingly important. In experiments on real data with
+k=100,200, we observed a 458x respectively 1191x speedup compared to the original PAM SWAP algorithm,
+making PAM applicable to larger data sets, and in particular to higher k. 

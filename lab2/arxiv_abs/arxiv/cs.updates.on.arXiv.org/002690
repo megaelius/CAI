@@ -1,0 +1,19 @@
+Deep convolutional neural networks (DCNN) are currently ubiquitous in medical imaging. While
+their versatility and high quality results for common image analysis tasks including segmentation,
+localisation and prediction is astonishing, the large representational power comes at the cost
+of highly demanding computational effort. This limits their practical applications for image
+guided interventions and diagnostic (point-of-care) support using mobile devices without graphics
+processing units (GPU). We propose a new scheme that approximates both trainable weights and neural
+activations in deep networks by ternary values and tackles the open question of backpropagation
+when dealing with non-differentiable functions. Our solution enables the removal of the expensive
+floating-point matrix multiplications throughout any convolutional neural network and replaces
+them by energy and time preserving binary operators and population counts. Our approach, which
+is demonstrated using a fully-convolutional network (FCN) for CT pancreas segmentation leads
+to more than 10-fold reduced memory requirements and we provide a concept for sub-second inference
+without GPUs. Our ternary approximation obtains high accuracies (without any post-processing)
+with a Dice overlap of 71.0% that are statistically equivalent to using networks with high-precision
+weights and activations. We further demonstrate the significant improvements reached in comparison
+to binary quantisation and without our proposed ternary hyperbolic tangent continuation. We present
+a key enabling technique for highly efficient DCNN inference without GPUs that will help to bring
+the advances of deep learning to practical clinical applications. It has also great promise for
+improving accuracies in large-scale medical data retrieval. 

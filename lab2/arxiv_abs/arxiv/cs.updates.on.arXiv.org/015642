@@ -1,0 +1,19 @@
+We study the scheduling of flows on a switch with the goal of optimizing metrics related to the response
+time of the flows. The input to the problem is a sequence of flow requests on a switch, where the switch
+is represented by a bipartite graph with a capacity on each vertex (or port), and a flow request is
+an edge with associated demand. In each round, a subset of edges can be scheduled subject to the constraint
+that the total demand of the scheduled edges incident on any vertex is at most the capacity of the vertex.
+Previous work has essentially settled the complexity of metrics based on {\em completion time}.
+The objective of average or maximum {\em response time}, however, is much more challenging. To the
+best of our knowledge, there are no prior approximation algorithms results for these metrics in
+the context of flow scheduling. We present the first approximation algorithms for flow scheduling
+over a switch to optimize response time based metrics. For the average response time metric, whose
+NP-hardness follows directly from past work, we present an offline $O(1 + O(\log(n))/c)$ approximation
+algorithm for unit flows, assuming that the port capacities of the switch can be increased by a factor
+of $1 + c$, for any given positive integer $c$. For the maximum response time metric, we first establish
+that it is NP-hard to achieve an approximation factor of better than 4/3 without augmenting capacity.
+We then present an offline algorithm that achieves {\em optimal maximum response time}, assuming
+the capacity of each port is increased by at most $2 d_{max} - 1$, where $d_{max}$ is the maximum demand
+of any flow. Both algorithms are based on linear programming relaxations. We also study the online
+version of flow scheduling using the lens of competitive analysis, and present preliminary results
+along with experiments that evaluate the performance of fast online heuristics. 

@@ -1,0 +1,18 @@
+Motivated by modern parallel computing applications, we consider the problem of scheduling parallel-task
+jobs with heterogeneous resource requirements in a cluster of machines. Each job consists of a set
+of tasks that can be processed in parallel, however, the job is considered completed only when all
+its tasks finish their processing, which we refer to as "synchronization" constraint. Further,
+assignment of tasks to machines is subject to "placement" constraints, i.e., each task can be processed
+only on a subset of machines, and processing times can also be machine dependent. Once a task is scheduled
+on a machine, it requires a certain amount of resource from that machine for the duration of its processing.
+A machine can process ("pack") multiple tasks at the same time, however the cumulative resource
+requirement of the tasks should not exceed the machine's capacity. Our objective is to minimize
+the weighted average of the jobs' completion times. The problem, subject to synchronization, packing
+and placement constraints, is NP-hard, and prior theoretical results only concern much simpler
+models. For the case that migration of tasks among the placement-feasible machines is allowed,
+we propose a preemptive algorithm with an approximation ratio of $(6+\epsilon)$. In the special
+case that only one machine can process each task, we design an algorithm with improved approximation
+ratio of $4$. Finally, in the case that migrations (and preemptions) are not allowed, we design an
+algorithm with an approximation ratio of $24$. Our algorithms use a combination of linear program
+relaxation and greedy packing techniques. We present extensive simulation results, using a real
+traffic trace, that demonstrate that our algorithms yield significant gains over the prior approaches.

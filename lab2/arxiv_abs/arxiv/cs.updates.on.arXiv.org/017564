@@ -1,0 +1,19 @@
+Marker-less 3D human motion capture from a single colour camera has seen significant progress.
+However, it is a very challenging and severely ill-posed problem. In consequence, even the most
+accurate state-of-the-art approaches have significant limitations. Purely kinematic formulations
+on the basis of individual joints or skeletons, and the frequent frame-wise reconstruction in state-of-the-art
+methods greatly limit 3D accuracy and temporal stability compared to multi-view or marker-based
+motion capture. Further, captured 3D poses are often physically incorrect and biomechanically
+implausible, or exhibit implausible environment interactions (floor penetration, foot skating,
+unnatural body leaning and strong shifting in depth), which is problematic for any use case in computer
+graphics. We, therefore, present PhysCap, the first algorithm for physically plausible, real-time
+and marker-less human 3D motion capture with a single colour camera at 25 fps. Our algorithm first
+captures 3D human poses purely kinematically. To this end, a CNN infers 2D and 3D joint positions,
+and subsequently, an inverse kinematics step finds space-time coherent joint angles and global
+3D pose. Next, these kinematic reconstructions are used as constraints in a real-time physics-based
+pose optimiser that accounts for environment constraints (e.g., collision handling and floor
+placement), gravity, and biophysical plausibility of human postures. Our approach employs a combination
+of ground reaction force and residual force for plausible root control, and uses a trained neural
+network to detect foot contact events in images. Our method captures physically plausible and temporally
+stable global 3D human motion, without physically implausible postures, floor penetrations or
+foot skating, from video in real time and in general scenes. The video is available at this http URL

@@ -1,0 +1,20 @@
+In this work we study the overheads of virtual-to-physical address translation in processor architectures,
+like x86-64, that implement paged virtual memory using a radix tree which are walked in hardware.
+Translation Lookaside Buffers are critical to system performance, particularly as applications
+demand larger memory footprints and with the adoption of virtualization; however the cost of a TLB
+miss potentially results in multiple memory accesses to retrieve the translation. Architectural
+support for superpages has been introduced to increase TLB hits but are limited by the operating
+systems ability to find contiguous memory. Numerous prior studies have proposed TLB designs to
+lower miss rates and reduce page walk overhead; however, these studies have modeled the behavior
+analytically. Further, to eschew the paging overhead for big-memory workloads and virtualization,
+Direct Segment maps part of a process linear virtual address space with segment registers albeit
+requiring a few application and operating system modifications. The recently evolved die-stacked
+DRAM technology promises a high bandwidth and large last-level cache, in the order of Gigabytes,
+closer to the processors. With such large caches the amount of data that can be accessed without causing
+a TLB fault - the reach of a TLB, is inadequate. TLBs are on the critical path for data accesses and incurring
+an expensive page walk can hinder system performance, especially when the data being accessed is
+a cache hit in the LLC. Hence, we are interested in exploring novel address translation mechanisms,
+commensurate to the size and latency of stacked DRAM. By accurately simulating the multitude of
+multi-level address translation structures using the QEMU based MARSSx86 full system simulator,
+we perform detailed study of TLBs in conjunction with the large LLCs using multi-programmed and
+multi-threaded workloads. 

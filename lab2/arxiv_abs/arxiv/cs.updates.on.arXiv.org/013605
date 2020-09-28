@@ -1,0 +1,18 @@
+Machine learning algorithms are vulnerable to data poisoning attacks. Prior taxonomies that focus
+on specific scenarios, e.g., indiscriminate or targeted, have enabled defenses for the corresponding
+subset of known attacks. Yet, this introduces an inevitable arms race between adversaries and defenders.
+In this work, we study the feasibility of an attack-agnostic defense relying on artifacts that are
+common to all poisoning attacks. Specifically, we focus on a common element between all attacks:
+they modify gradients computed to train the model. We identify two main artifacts of gradients computed
+in the presence of poison: (1) their $\ell_2$ norms have significantly higher magnitudes than those
+of clean gradients, and (2) their orientation differs from clean gradients. Based on these observations,
+we propose the prerequisite for a generic poisoning defense: it must bound gradient magnitudes
+and minimize differences in orientation. We call this gradient shaping. As an exemplar tool to evaluate
+the feasibility of gradient shaping, we use differentially private stochastic gradient descent
+(DP-SGD), which clips and perturbs individual gradients during training to obtain privacy guarantees.
+We find that DP-SGD, even in configurations that do not result in meaningful privacy guarantees,
+increases the model's robustness to indiscriminate attacks. It also mitigates worst-case targeted
+attacks and increases the adversary's cost in multi-poison scenarios. The only attack we find DP-SGD
+to be ineffective against is a strong, yet unrealistic, indiscriminate attack. Our results suggest
+that, while we currently lack a generic poisoning defense, gradient shaping is a promising direction
+for future research. 

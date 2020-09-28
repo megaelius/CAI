@@ -1,0 +1,19 @@
+For those of us who generally live in the world of syntax, semantic proof techniques such as reducibility,
+realizability or logical relations seem somewhat magical despite -- or perhaps due to -- their seemingly
+unreasonable effectiveness. Why do they work? At which point in the proof is "the real work" done?
+Hoping to build a programming intuition of these proofs, we implement a normalization argument
+for the simply-typed lambda-calculus with sums: instead of a proof, it is described as a program
+in a dependently-typed meta-language. The semantic technique we set out to study is Krivine's classical
+realizability, which amounts to a proof-relevant presentation of reducibility arguments -- unary
+logical relations. Reducibility assigns a predicate to each type, realizability assigns a set
+of realizers, which are abstract machines that extend lambda-terms with a first-class notion of
+contexts. Normalization is a direct consequence of an adequacy theorem or "fundamental lemma",
+which states that any well-typed term translates to a realizer of its type. We show that the adequacy
+theorem, when written as a dependent program, corresponds to an evaluation procedure. In particular,
+a weak normalization proof precisely computes a series of reduction from the input term to a normal
+form. Interestingly, the choices that we make when we define the reducibility predicates -- truth
+and falsity witnesses for each connective -- determine the evaluation order of the proof, with each
+datatype constructor behaving in a lazy or strict fashion. While most of the ideas in this presentation
+are folklore among specialists, our dependently-typed functional program provides an accessible
+presentation to a wider audience. In particular, our work provides a gentle introduction to abstract
+machine calculi which have recently been used as an effective research vehicle. 

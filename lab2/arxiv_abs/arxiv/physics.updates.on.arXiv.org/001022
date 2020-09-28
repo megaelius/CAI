@@ -1,0 +1,18 @@
+The numerical study of physical problems often require integrating the dynamics of a large number
+of particles evolving according to a given set of equations. Particles are characterized by the
+information they are carrying such as an identity, a position other. There are generally speaking
+two different possibilities for handling particles in high performance computing (HPC) codes.
+The concept of an Array of Structures (AoS) is in the spirit of the object-oriented programming (OOP)
+paradigm in that the particle information is implemented as a structure. Here, an object (realization
+of the structure) represents one particle and a set of many particles is stored in an array. In contrast,
+using the concept of a Structure of Arrays (SoA), a single structure holds several arrays each representing
+one property (such as the identity) of the whole set of particles. The AoS approach is often implemented
+in HPC codes due to its handiness and flexibility. For a class of problems, however, it is know that
+the performance of SoA is much better than that of AoS. We confirm this observation for our particle
+problem. Using a benchmark we show that on modern Intel Xeon processors the SoA implementation is
+typically several times faster than the AoS one. On Intel's MIC co-processors the performance gap
+even attains a factor of ten. The same is true for GPU computing, using both computational and multi-purpose
+GPUs. Combining performance and handiness, we present the library SoAx that has optimal performance
+(on CPUs, MICs, and GPUs) while providing the same handiness as AoS. For this, SoAx uses modern C++
+design techniques such template meta programming that allows to automatically generate code for
+user defined heterogeneous data structures. 

@@ -1,0 +1,18 @@
+Current approaches to tackle the single point of failure in SDN entail a distributed operation of
+SDN controller instances. Their state synchronization process is reliant on the assumption of
+a correct decision-making in the controllers. Successful introduction of SDN in the critical infrastructure
+networks also requires catering to the issue of unavailable, unreliable (e.g. buggy), and malicious
+controller failures. We propose MORPH, a framework tolerant to unavailability and Byzantine failures,
+which distinguishes and localizes faulty controller instances and appropriately reconfigures
+the control plane. Our controller-switch connection assignment leverages the awareness of the
+source of failure to optimize the number of active controllers and minimize the controller and switch
+reconfiguration delays. The proposed re-assignment executes dynamically after each successful
+failure identification. We require 2FM + FA +1 controllers to tolerate FM malicious and FA availability-induced
+failures. After a successful detection of FM malicious controllers, MORPH reconfigures the control
+plane to require a single controller message to forward the system state. Moreover, we outline and
+present a solution to the practical correctness issues related to the statefulness of the distributed
+SDN controller applications, previously ignored in the literature. We base our performance analysis
+on a resource-aware routing application, deployed in an emulated testbed comprising up to 16 controllers
+and up to 34 switches, so to tolerate up to 5 unique Byzantine and additional 5 availability-induced
+controller failures (a total of 10 unique controller failures). We quantify and highlight the dynamic
+decrease in the packet and CPU load and the response time after each successful failure detection.

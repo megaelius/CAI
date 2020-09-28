@@ -1,0 +1,19 @@
+We present a resource-management model for ML-style programming languages, designed to be compatible
+with the OCaml philosophy and runtime model. This is a proposal to extend the OCaml language with
+destructors, move semantics, and resource polymorphism, to improve its safety, efficiency, interoperability,
+and expressiveness. It builds on the ownership-and-borrowing models of systems programming languages
+(Cyclone, C++11, Rust) and on linear types in functional programming (Linear Lisp, Clean, Alms).
+It continues a synthesis of resources from systems programming and resources in linear logic initiated
+by Baker. It is a combination of many known and some new ideas. On the novel side, it highlights the
+good mathematical structure of Stroustrup's "Resource acquisition is initialisation" (RAII)
+idiom for resource management based on destructors, a notion sometimes confused with finalizers,
+and builds on it a notion of resource polymorphism, inspired by polarisation in proof theory, that
+mixes C++'s RAII and a tracing garbage collector (GC). The proposal targets a new spot in the design
+space, with an automatic and predictable resource-management model, at the same time based on lightweight
+and expressive language abstractions. It is backwards-compatible: current code is expected to
+run with the same performance, the new abstractions fully combine with the current ones, and it supports
+a resource-polymorphic extension of libraries. It does so with only a few additions to the runtime,
+and it integrates with the current GC implementation. It is also compatible with the upcoming multicore
+extension, and suggests that the Rust model for eliminating data-races applies. Interesting questions
+arise for a safe and practical type system, many of which have already been thoroughly investigated
+in the languages and prototypes Cyclone, Rust, and Alms. 

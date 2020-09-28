@@ -1,0 +1,17 @@
+Burrows-Wheeler Transform (BWT) is an invertible text transformation that permutes symbols of
+a text according to the lexicographical order of its suffixes. BWT is the main component of some of
+the most popular lossless compression methods as well as of compressed indexes, central in modern
+bioinformatics. The compression ratio of BWT-based compressors, such as bzip2, is quantified
+by the number $r$ of maximal equal-letter runs in the BWT. This is also (up to ${\rm polylog}\,n$ factors,
+where $n$ is the length of the text) the space used by the state-of-the-art BWT-based indexes, such
+as the recent $r$-index [Gagie et al., SODA 2018]. The output size of virtually every known compression
+method is known to be either within a ${\rm polylog}\,n$ factor from $z$, the size of Lempel-Ziv (LZ77)
+parsing of the text, or significantly larger (by a $n^{\epsilon}$ factor for $\epsilon > 0$). The
+value of $r$ has resisted, however, all attempts and until now, no non-trivial upper bounds on $r$
+were known. In this paper, we show that every text satisfies $r=\mathcal{O}(z\log^2 n)$. This result
+has a number of immediate implications: (1) it proves that a large body of work related to BWT automatically
+applies to the so-far disjoint field of Lempel--Ziv indexing and compression, e.g., it is possible
+to obtain full functionality of the suffix tree and the suffix array in $\mathcal{O}(z\,{\rm polylog}\,n)$
+space; (2) it lets us relate the number of runs in the BWT of the text and its reverse; (3) it shows that
+many fundamental text processing tasks can be solved in the optimal time assuming that the text is
+compressible by a sufficiently large ${\rm polylog}\,n$ factor using LZ77. 

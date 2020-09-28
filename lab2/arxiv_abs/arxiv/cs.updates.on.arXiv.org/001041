@@ -1,0 +1,17 @@
+In this work, we introduce a convolutional neural network model, ConvE, for the task of link prediction
+where we apply 2D convolution directly on embeddings, thus inducing spatial structure in embedding
+space. To scale to large knowledge graphs and prevent overfitting due to over-parametrization,
+previous work seeks to reduce parameters by performing simple transformations in embedding space.
+We take inspiration from computer vision, where convolution is able to learn multiple layers of
+non-linear features while reducing the number of parameters through weight sharing. Applied naively,
+convolutional models for link prediction are computationally costly. However, by predicting
+all links simultaneously we improve test time performance by more than 300x on FB15k. We report state-of-the-art
+results for numerous previously introduced link prediction benchmarks, but concerns have been
+raised regarding the quality of the well-established FB15k and WN18 datasets. Previous work noted
+that these datasets contain many reversible triples, but the severity of this issue was not quantified.
+To investigate this, we design a simple model that uses a single rule which reverses relations and
+achieves state-of-the-art results. We introduce WN18RR, a subset of WN18 which was constructed
+the same way as the previously proposed FB15k-237, to alleviate this problem and report results
+for our own and previously proposed models for all datasets. Analysis of our convolutional model
+suggests that it is particularly good at modelling nodes with high indegree and nodes with high PageRank
+and that 2D convolution applied on embeddings seems to induce contrasting pixel-level structures.

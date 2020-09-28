@@ -1,0 +1,19 @@
+Many modern, high-performance systems increase the cumulated node-bandwidth by offering more
+than a single communication network and/or by having multiple connections to the network. Efficient
+algorithms and implementations for collective operations as found in, e.g., MPI must be explicitly
+designed for such multi-lane capabilities. We discuss a model for the design of multi-lane algorithms,
+and in particular give a recipe for converting any standard, one-ported, (pipelined) communication
+tree algorithm into a multi-lane algorithm that can effectively use $k$ lanes simultaneously.
+We first examine the problem from the perspective of \emph{self-consistent performance guidelines},
+and give simple, \emph{full-lane, mock-up implementations} of the MPI broadcast, reduction,
+scan, gather, scatter, allgather, and alltoall operations using only similar operations of the
+given MPI library itself in such a way that multi-lane capabilities can be exploited. These implementations
+which rely on a decomposition of the communication domain into communicators for nodes and lanes
+are full-fledged and readily usable implementations of the MPI collectives. The mock-up implementations,
+contrary to expectation, in many cases show surprising performance improvements with different
+MPI libraries on a small 36-node dual-socket, dual-lane Intel OmniPath cluster, indicating severe
+problems with the native MPI library implementations. Our full-lane implementations are in many
+cases considerably more than a factor of two faster than the corresponding MPI collectives. We see
+similar results on the larger Vienna Scientific Cluster, VSC-3. These experiments indicate considerable
+room for improvement of the MPI collectives in current libraries including more efficient use of
+multi-lane communication. 

@@ -1,0 +1,19 @@
+To enable high-performance and scalable blockchains, we need to step away from traditional consensus-based
+fully-replicated designs. One direction is to explore the usage of sharding in which we partition
+the managed dataset over many shards that independently operate as blockchains. Sharding requires
+an efficient fault-tolerant primitive for the ordering and execution of multi-shard transactions,
+however. In this work, we seek to design such a primitive suitable for distributed ledger networks
+with high transaction throughput. To do so, we propose Cerberus, a set of minimalistic primitives
+for processing single-shard and multi-shard UTXO-like transactions. Cerberus aims at maximizing
+parallel processing at shards while minimizing coordination within and between shards. First,
+we propose Core-Cerberus, that uses strict environmental requirements to enable simple yet powerful
+multi-shard transaction processing. In our intended UTXO-environment, Core-Cerberus will operate
+perfectly with respect to all transactions proposed and approved by well-behaved clients, but
+does not provide any guarantees for other transactions. To also support more general-purpose environments,
+we propose two generalizations of Core-Cerberus: we propose Optimistic-Cerberus, a protocol
+that does not require any additional coordination phases in the well-behaved optimistic case,
+while requiring intricate coordination when recovering from attacks; and we propose Pessimistic-Cerberus,
+a protocol that adds sufficient coordination to the well-behaved case of Core-Cerberus, allowing
+it to operate in a general-purpose fault-tolerant environments without significant costs to recover
+from attacks. Finally, we compare the three protocols, showing their potential scalability and
+high transaction throughput in practical environments. 

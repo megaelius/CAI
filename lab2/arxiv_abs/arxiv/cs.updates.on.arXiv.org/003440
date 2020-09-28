@@ -1,0 +1,19 @@
+In the classical Steiner tree problem, one is given an undirected, connected graph $G=(V,E)$ with
+non-negative edge costs and a set $T \subseteq V$, the \emph{terminals}. The objective is to find
+a minimum-cost edge set $E' \subseteq E$ that spans the terminals. The problem is APX-hard [Bern
+\& Plassman, IPL 1989]; the best known approximation algorithm has a ratio of $\rho = \ln(4)+\varepsilon
+< 1.39$ [Byrka et al., J. ACM 2013]. In this paper, we study a natural generalization, the \emph{multi-level
+Steiner tree} (MLST) problem: given a nested sequence of terminals $T_1 \subset \dots \subset T_k
+\subseteq V$, compute nested edge sets $E_1 \subseteq \dots \subseteq E_k \subseteq E$ that span
+the corresponding terminal sets with minimum total cost. (Note that, for $\ell=1,\dots,k$, edges
+in $E_\ell$ contribute ($k-\ell+1$)-fold to this cost). The MLST problem and variants thereof
+have been studied under names such as Quality-of-Service Multicast tree, Grade-of-Service Steiner
+tree, Multi-Tier tree, etc. Several approximation results are known. We first present two natural
+heuristics with approximation factor~$O(k)$. Based on these, we introduce a composite algorithm
+that requires $2^k$ Steiner tree computations. We determine its approximation ratio by solving
+a linear program. We then present a method that guarantees the same approximation ratio and needs
+at most $2k$ Steiner tree computations. We compare five algorithms experimentally on several classes
+of graphs using Erd\H{o}s--R\'enyi, random geometric, Watts--Strogatz, and Barab\'asi--Albert
+network generation models for varying $|V|$, $k$, and terminal selection methods. We also implemented
+an integer linear program for MLST to provide ground truth. Our combined algorithm outperforms
+the others both in theory and in practice when the number of levels is up to $k \le 22$. 

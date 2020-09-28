@@ -1,0 +1,19 @@
+Considering visual localization accuracy at the planning time gives preference to robot motion
+that can be better localized and thus has the potential of improving vision-based navigation, especially
+in visually degraded environments. To integrate the knowledge about localization accuracy in
+motion planning algorithms, a central task is to quantify the amount of information that an image
+taken at a 6 degree-of-freedom pose brings for localization, which is often represented by the Fisher
+information. However, computing the Fisher information from a set of sparse landmarks (i.e., a
+point cloud), which is the most common map for visual localization, is inefficient. This approach
+scales linearly with the number of landmarks in the environment and does not allow the reuse of the
+computed Fisher information. To overcome these drawbacks, we propose the first dedicated map representation
+for evaluating the Fisher information of 6 degree-of-freedom visual localization for perception-aware
+motion planning. By formulating the Fisher information and sensor visibility carefully, we are
+able to separate the rotational invariant component from the Fisher information and store it in
+a voxel grid, namely the Fisher information field. This step only needs to be performed once for a
+known environment. The Fisher information for arbitrary poses can then be computed from the field
+in constant time, eliminating the need of costly iterating all the 3D landmarks at the planning time.
+Experimental results show that the proposed Fisher information field can be applied to different
+motion planning algorithms and is at least one order-of-magnitude faster than using the point cloud
+directly. Moreover,the proposed map representation is differentiable, resulting in better performance
+than the point cloud when used in trajectory optimization algorithms. 

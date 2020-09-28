@@ -1,0 +1,19 @@
+In this work, we consider a constrained convex problem with linear inequalities and provide an inexact
+penalty re-formulation of the problem. The novelty is in the choice of the penalty functions, which
+are smooth and can induce a non-zero penalty over some points in feasible region of the original constrained
+problem. The resulting unconstrained penalized problem is parametrized by two penalty parameters
+which control the slope and the curvature of the penalty function. With a suitable selection of these
+penalty parameters, we show that the solutions of the resulting penalized unconstrained problem
+are \emph{feasible} for the original constrained problem, under some assumptions. Also, we establish
+that, with suitable choices of penalty parameters, the solutions of the penalized unconstrained
+problem can achieve a suboptimal value which is arbitrarily close to the optimal value of the original
+constrained problem. For the problems with a large number of linear inequality constraints, a particular
+advantage of such a smooth penalty-based reformulation is that it renders a penalized problem suitable
+for the implementation of fast incremental gradient methods, which require only one sample from
+the inequality constraints at each iteration. We consider applying SAGA proposed in \cite{saga}
+to solve the resulting penalized unconstrained problem. Moreover, we propose an alternative approach
+to set up the penalized problem. This approach is based on the time-varying penalty parameters and,
+thus, does not require knowledge about some problem-specific properties, that might be difficult
+to estimate. We prove that the single-loop full gradient-based algorithm applied to the corresponding
+time-varying penalized problem converges to the solution of the original constrained problem
+in the case of the strongly convex objective function. 

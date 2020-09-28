@@ -1,0 +1,19 @@
+Rapidly growing performance and memory capacity of modern supercomputers open new perspectives
+for numerical studies of open quantum systems. These systems are in contact with their environments
+and their modeling is typically based on Markovian kinetic equations, describing the evolution
+of the system density operators. Additional to the exponential growth of the system dimension $N$
+with the number of the system's parts, the computational complexity scales quadratically with
+$N$, since we have to deal now with super-operators represented by $N^2 \times N^2$ matrices (instead
+of standard $N \times N$ matrices of operators). In this paper we consider the so-called Lindblad
+equation, a popular tool to model dynamics of open systems in quantum optics and superconducting
+quantum physics. Using the generalized Gell-Mann matrices as a basis, we transform the original
+Lindblad equation into a system of ordinary differential equations (ODEs) with real coefficients.
+Earlier, we proposed an implementation of this idea with the complexity of computations scaling
+as $O(N^5 log(N))$ for dense systems and $O(N^3 log(N))$ for sparse systems. However, infeasible
+memory costs remained an obstacle on the way to large models. Here we present a new parallel algorithm
+based on cluster manipulations with large amount of data needed to transform the original Lindblad
+equation into an ODE system. We demonstrate that the algorithm allows us to integrate sparse systems
+of dimension $N=2000$ and dense systems of dimension $N=200$ by using up to 25 nodes with 64 GB RAM
+per node. We also managed to perform large-scale supercomputer sampling to study the spectral properties
+of an ensemble of random Lindbladians for $N=200$, which is impossible without the distribution
+of memory costs among cluster nodes. 

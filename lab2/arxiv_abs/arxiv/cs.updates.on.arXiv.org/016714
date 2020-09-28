@@ -1,0 +1,19 @@
+Recent works on crowd counting mainly leverage Convolutional Neural Networks (CNNs) to count by
+regressing density maps, and have achieved great progress. In the density map, each person is represented
+by a Gaussian blob, and the final count is obtained from the integration of the whole map. However,
+it is difficult to accurately predict the density map on dense regions. A major issue is that the density
+map on dense regions usually accumulate density values from a number of nearby Gaussian blobs. This
+results in the open end and imbalance of density values, and presents a long-tailed density value
+distribution. In this paper, we aim to address this long-tailed distribution issue in the density
+map. Specifically, we propose a simple yet effective Learning to Scale (L2S) module, which automatically
+scales dense regions into reasonable density levels. It dynamically separates the overlapped
+blobs, decomposes the accumulated values in the ground-truth density map, and thus alleviates
+the long-tailed distribution of density values, which helps the model to better learn the density
+map. We also explore the effectiveness of L2S on the distance-like map, which is another trend to
+count by localization and has similar issues as density map regression. We introduce a customized
+dynamic cross-entropy loss, significantly improving the localization-based model optimization.
+Extensive experiments demonstrate that the proposed framework termed \textit{AutoScale} consistently
+improves upon some state-of-the-art methods in both regression and localization benchmarks on
+three dense datasets and achieves very competitive performance on two sparse datasets. Furthermore,
+AutoScale shows a noteworthy transferability under cross-dataset validation on different datasets.
+Code is available at https://github.com/dk-liang/AutoScale.git 

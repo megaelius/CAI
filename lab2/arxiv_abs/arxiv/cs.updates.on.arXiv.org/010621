@@ -1,0 +1,18 @@
+This work extends existing multi-armed bandit (MAB) algorithms beyond their original settings
+by leveraging advances in sequential Monte Carlo (SMC) methods from the approximate inference
+community. We leverage Monte Carlo estimation and, in particular, the flexibility of (sequential)
+importance sampling to allow for accurate estimation of the statistics of interest within the MAB
+problem. The MAB is a sequential allocation task where the goal is to learn a policy that maximizes
+long term payoff, where only the reward of the executed action is observed; i.e., sequential optimal
+decisions are made, while simultaneously learning how the world operates. In the stochastic setting,
+the reward for each action is generated from an unknown distribution. To decide the next optimal
+action to take, one must compute sufficient statistics of this unknown reward distribution, e.g.,
+upper-confidence bounds (UCB), or expectations in Thompson sampling. Closed-form expressions
+for these statistics of interest are analytically intractable except for simple cases. By combining
+SMC methods --- which estimate posterior densities and expectations in probabilistic models that
+are analytically intractable --- with Bayesian state-of-the-art MAB algorithms, we extend their
+applicability to complex models: those for which sampling may be performed even if analytic computation
+of summary statistics is infeasible --- nonlinear reward functions and dynamic bandits. We combine
+SMC both for Thompson sampling and upper confident bound-based (Bayes-UCB) policies, and study
+different bandit models: classic Bernoulli and Gaussian distributed cases, as well as dynamic
+and context dependent linear-Gaussian, logistic and categorical-softmax rewards. 

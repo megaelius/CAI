@@ -1,0 +1,18 @@
+Pulsar timing experiments typically generate a phase-connected timing solution from a sequence
+of times-of-arrival (TOAs) by absolute pulse numbering, i.e. by fitting an integer number of pulses
+between TOAs in order to minimize the residuals with respect to a parametrized phase model. In this
+observing mode, rotational glitches are discovered, when the residuals of the no-glitch phase
+model diverge after some epoch, and glitch parameters are refined by Bayesian follow-up. Here an
+alternative, complementary approach is presented which tracks the pulse frequency $f$ and its
+time derivative $df/dt$ with a hidden Markov model (HMM), whose dynamics include stochastic spin
+wandering (timing noise) and impulsive jumps in $f$ and $df/dt$ (glitches). The HMM tracks spin
+wandering explicitly, as a specific realization of a discrete-time Markov chain. It discovers
+glitches by comparing the Bayes factor for glitch and no-glitch models. It ingests standard TOAs
+for convenience and, being fully automated, allows performance bounds to be calculated quickly
+via Monte Carlo simulations. Practical, user-oriented plots are presented of the false alarm probability
+and detection threshold (e.g. minimum resolvable glitch size) versus observational scheduling
+parameters (e.g. TOA uncertainty, mean delay between TOAs) and glitch parameters (e.g. transient
+and permanent jump sizes, exponential recovery time-scale). The HMM is also applied to $\sim 1$
+yr of real data bracketing the 2016 December 12 glitch in PSR J0835-4510 as a proof of principle. It
+detects the known glitch and confirms that no other glitch exists in the same data with size $> 10^{-7}
+f$. 

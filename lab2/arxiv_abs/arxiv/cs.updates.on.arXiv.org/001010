@@ -1,0 +1,19 @@
+In computer vision, many problems such as image segmentation, pixel labelling, and scene parsing
+can be formulated as binary quadratic programs (BQPs). For submodular problems, cuts based methods
+can be employed to efficiently solve large-scale problems. However, general nonsubmodular problems
+are significantly more challenging to solve. Finding a solution when the problem is of large size
+to be of practical interest, however, typically requires relaxation. Two standard relaxation
+methods are widely used for solving general BQPs--spectral methods and semidefinite programming
+(SDP), each with their own advantages and disadvantages. Spectral relaxation is simple and easy
+to implement, but its bound is loose. Semidefinite relaxation has a tighter bound, but its computational
+complexity is high, especially for large scale problems. In this work, we present a new SDP formulation
+for BQPs, with two desirable properties. First, it has a similar relaxation bound to conventional
+SDP formulations. Second, compared with conventional SDP methods, the new SDP formulation leads
+to a significantly more efficient and scalable dual optimization approach, which has the same degree
+of complexity as spectral methods. We then propose two solvers, namely, quasi-Newton and smoothing
+Newton methods, for the dual problem. Both of them are significantly more efficiently than standard
+interior-point methods. In practice, the smoothing Newton solver is faster than the quasi-Newton
+solver for dense or medium-sized problems, while the quasi-Newton solver is preferable for large
+sparse/structured problems. Our experiments on a few computer vision applications including
+clustering, image segmentation, co-segmentation and registration show the potential of our SDP
+formulation for solving large-scale BQPs. 

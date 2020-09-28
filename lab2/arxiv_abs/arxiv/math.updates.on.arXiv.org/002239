@@ -1,0 +1,20 @@
+In this work we develop a scalable computational framework for the solution of PDE-constrained
+optimal control problems under high/infinite-dimensional uncertainty. Specifically, we consider
+a mean-variance risk adverse formulation of the stochastic optimization problem and employ a Taylor
+expansion with respect to the uncertain parameter either to directly approximate the control objective
+or as a control variate for Monte Carlo variance reduction. The evaluation of the mean and variance
+of the Taylor approximation requires to efficiently compute the trace of the (preconditioned)
+Hessian of the control objective. We propose to estimate such trace by solving a generalized eigenvalue
+problem using a randomized algorithm that only requires the action of the Hessian in a small number
+of random directions. Then, the computational work does not depend on the nominal dimension of the
+uncertain parameter but only on the effective dimension (i.e. the rank of the preconditioned Hessian),
+thus significantly alleviating or breaking the curse of dimensionality. Moreover, when the use
+of the possibly biased Taylor approximation results in large error of the optimal control function,
+we use such approximation as a control variate for variance reduction, which results in considerable
+computational savings (several orders of magnitude) compared to a simple Monte Carlo method. We
+demonstrate the accuracy, efficiency, and scalability of the proposed computational method for
+two problems with infinite-dimensional uncertain parameters: a subsurface flow in a porous medium
+modeled as an elliptic PDE, and a turbulent jet flow modeled as Reynolds-averaged Navier--Stokes
+equations coupled with a nonlinear advection-diffusion equation. In particular, for the latter
+(and more challenging) example we show scalability of our algorithm up to one million parameters
+after discretization. 

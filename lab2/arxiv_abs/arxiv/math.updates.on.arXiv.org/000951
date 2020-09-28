@@ -1,0 +1,20 @@
+Proximal distance algorithms combine the classical penalty method of constrained minimization
+with distance majorization. If $f(\boldsymbol{x})$ is the loss function, and $C$ is the constraint
+set in a constrained minimization problem, then the proximal distance principle mandates minimizing
+the penalized loss $f(\boldsymbol{x})+\frac{\rho}{2}\mathop{dist}(x,C)^2$ and following
+the solution $\boldsymbol{x}_{\rho}$ to its limit as $\rho$ tends to $\infty$. At each iteration
+the squared Euclidean distance $\mathop{dist}(\boldsymbol{x},C)^2$ is majorized by the spherical
+quadratic $\| \boldsymbol{x}-P_C(\boldsymbol{x}_k)\|^2$, where $P_C(\boldsymbol{x}_k)$
+denotes the projection of the current iterate $\boldsymbol{x}_k$ onto $C$. The minimum of the surrogate
+function $f(\boldsymbol{x})+\frac{\rho}{2}\|\boldsymbol{x}-P_C(\boldsymbol{x}_k)\|^2$
+is given by the proximal map $\mathop{prox}_{\rho^{-1}f}[P_C(\boldsymbol{x}_k)]$. The next
+iterate $\boldsymbol{x}_{k+1}$ automatically decreases the original penalized loss for fixed
+$\rho$. Since many explicit projections and proximal maps are known, it is straightforward to derive
+and implement novel optimization algorithms in this setting. These algorithms can take hundreds
+if not thousands of iterations to converge, but the stereotyped nature of each iteration makes proximal
+distance algorithms competitive with traditional algorithms. For convex problems, we prove global
+convergence. Our numerical examples include a) linear programming, b) nonnegative quadratic
+programming, c) projection to the closest kinship matrix, d) projection onto a second-order cone
+constraint, e) calculation of Horn's copositive matrix index, f) linear complementarity programming,
+and g) sparse principal components analysis. The proximal distance algorithm in each case is competitive
+or superior in speed to traditional methods. 

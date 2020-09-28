@@ -1,0 +1,20 @@
+The rotor-router model, also called the Propp machine, was introduced as a deterministic alternative
+to the random walk. In this model, a group of identical tokens are initially placed at nodes of the
+graph. Each node maintains a cyclic ordering of the outgoing arcs, and during consecutive turns
+the tokens are propagated along arcs chosen according to this ordering in round-robin fashion.
+The behavior of the model is fully deterministic. Yanovski et al. (2003) proved that a single rotor-router
+walk on any graph with $m$ edges and diameter $D$ stabilizes to a traversal of an Eulerian circuit
+on the set of all $2m$ directed arcs on the edge set of the graph, and that such periodic behaviour of
+the system is achieved after an initial transient phase of at most $2mD$ steps. The case of multiple
+parallel rotor-routers was studied experimentally, leading Yanovski et al. to the conjecture
+that a system of $k>1$ parallel walks also stabilizes with a period of length at most $2m$ steps.
+In this work we disprove this conjecture, showing that the period of parallel rotor-router walks
+can in fact, be exponential in the size of graph. On the positive side, we provide a characterization
+of the periodic behavior of parallel router walks, in terms of a structural property of stable states
+called a subcycle decomposition. This property provides us the tools to efficiently detect whether
+a given system configuration corresponds to the transient or to the limit behaviour of the system.
+Moreover, we provide a polynomial upper bound of $O(m^4D^2 + mD\log k)$ on the number of steps it takes
+for the system to stabilize. Thus, we are able to predict any future behavior of the system using an
+algorithm that takes polynomial time and space. In addition, we show that there exists a separation
+between the stabilization time of the single-walk and multiple-walk rotor-router systems, and
+that for some graphs the latter can be asymptotically larger even for the case of $k=2$ walks. 

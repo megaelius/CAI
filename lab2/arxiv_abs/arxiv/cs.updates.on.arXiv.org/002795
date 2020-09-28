@@ -1,0 +1,17 @@
+In this paper we propose and study the problem of trajectory-driven influential billboard placement:
+given a set of billboards $U$ (each associated with a location and a cost), a database of trajectories
+$\mathcal{T}$ and a budget $L$, the goal is to find a set of billboards within the budget so that the
+placed ad can influence the largest number of trajectories. One core challenge is that multiple
+billboards have influence overlap on trajectories and it is critical to identify and reduce the
+influence overlap. Two more constraints on top of this challenge, i.e., the budget constraint and
+non-uniform costs associated with each billboard, make this optimization problem more intricate.
+We show that this problem is NP-hard and propose an enumeration based algorithm with $(1-1/e)$ approximation
+ratio and $O(|\mathcal{T}|\cdot|U|^{5})$ time complexity, where $|\mathcal{T}|$ and $|U|$
+are the number of trajectories and billboards respectively. By exploiting the locality property
+of billboards influence, we propose a partition-based framework \psel. \psel partitions $U$ into
+a set of small clusters, computes the locally influential billboards for each cluster, and merges
+the local billboards to generate the globally influential billboards of $U$. As a result, the computation
+cost is reduced to $O(|\mathcal{T}|\cdot|C_m|^5)$, where $|C_m|$ is the cardinality of the largest
+partition in $U$. Furthermore, we propose a \bbsel method to further prune billboards with low marginal
+influence; \bbsel significantly reduces the practical cost of \psel while achieving the same approximation
+ratio as \psel. Experiments on real datasets show that our method achieves high influence and efficiency.

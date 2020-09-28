@@ -1,0 +1,20 @@
+Genome Wide Association Studies (GWAS) are used to identify statistically significant genetic
+variants in case-control studies. GWAS typically use a p-value threshold of 5 x 10-8 to identify
+highly ranked single nucleotide polymorphisms (SNPs). However, evidence has shown that many of
+these are, in fact, false positives. Using lower p-values it is possible to to investigate the joint
+epistatic interactions between SNPs and provide better insights into phenotype expression. However,
+computational complexity is increased exponentially as a function of higher-order combinations.
+In this paper, we propose a novel framework, based on nonlinear transformations of combinatorically
+large SNP data, using stacked autoencoders, to identify higher-order SNP interactions. We focus
+on the challenging problem of classifying preterm births. Evidence suggests that this complex
+condition has a strong genetic component with unexplained heritability reportedly between 20%-40%.
+This claim is substantiated using a GWAS data set, obtained from dbGap, which contains predominantly
+urban low-income African-American women who had normal deliveries (between 37 and 42 weeks of gestation)
+and preterm deliveries (less than 37 weeks of gestation). Latent representations from original
+SNP sequences are used to initialize a deep learning classifier before it is fine-tuned for classification
+tasks (term and preterm births). The complete network models the epistatic effects of major and
+minor SNP perturbations. All models are evaluated using standard binary classifier performance
+metrics. The findings show that important information pertaining to SNPs and epistasis can be extracted
+from 4666 raw SNPs generated using logistic regression (p-value=5 x 10-3) and used to fit a deep learning
+model and obtain results (Sen=0.9289, Spec=0.9591, Gini=0.9651, Logloss=0.3080, AUC=0.9825,
+MSE=0.0942) using 500 hidden nodes. 

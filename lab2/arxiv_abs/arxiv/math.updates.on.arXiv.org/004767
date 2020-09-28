@@ -1,0 +1,19 @@
+The multigroup neutron transport criticality calculations using modern supercomputers have
+been widely employed in a nuclear reactor analysis for studying whether or not a system is self-sustaining.
+However, the design and development of an efficient parallel algorithm for the transport criticality
+calculations is a challenging task especially when the number of processor cores is large and the
+unstructured mesh is adopted since both the compute time and the memory usage need to be taken into
+consideration. In this paper, we study a monolithic multilevel Schwarz preconditioner for the
+transport criticality calculations using the nonlinear diffusion acceleration (NDA). In NDA,
+the linear systems of equations arising from the discretizations of the nonlinear diffusion equations
+and the transport equations need to be efficiently solved. To achieve this goal, we propose a monolithically
+coupled approach equipped with several important ingredients; e.g., subspace-based coarsening,
+aggressive coarsening and strength matrix thresholding. The proposed monolithic multilevel
+method is capable of efficiently handling the linear systems of equations for both the transport
+system and the diffusion system. In the multilevel method, the construction of coarse spaces is
+nontrivial and expensive. We propose a subspace-based coarsening algorithm to resolve this issue
+by exploring the matrix structures of the transport equations and the nonlinear diffusion equations.
+We numerically demonstrate that the monolithic multilevel preconditioner with the subspace-based
+coarsening algorithm is twice as fast as that equipped with a full space based coarsening approach
+on thousands of processor cores for an unstructured mesh neutron transport problem with billions
+of unknowns. 

@@ -1,0 +1,18 @@
+The implementation of ACACIA (\textbf{a}nother \textbf{c}atchy \textbf{a}cronym for \textbf{c}lump-based
+mergertree \textbf{i}dentification in r\textbf{a}mses), an algorithm to generate dark matter
+halo merger trees on the fly, into the AMR code RAMSES is presented. The algorithm is fully parallel
+using MPI, works on the fly, and tracks dark matter substructures individually through particle
+IDs. Once a clump merges into another, it is still being tracked through the last identified most
+tightly bound particle of that clump, allowing to check at later snapshots whether the identified
+merging event truly was one, or whether a misidentification by the density field gradient based
+clump finding algorithm might have occurred, as well as to track orphan galaxies. The influence
+on the merger trees of various definitions of substructure and the maximal number of particles tracked
+per clump have been tested. Furthermore, with the known formation history of dark matter structure,
+galaxies can be introduced in a simulation containing only dark matter particles in a forward modelling
+approach through use of a parametrised stellar-mass-to-halo-mass (SMHM) relation. The obtained
+predicted stellar mass functions of central galaxies from $z\sim 0 - 8$ and correlation functions
+at $z\sim0$ are compared to observations. Considering that the mock galaxy catalogues were obtained
+using simulations without particularly high resolutions ($512^3$ particles), the results show
+satisfactory agreement with observational data. We have however demonstrated that our new merger
+tree algorithm and the generation of the corresponding mock galaxy catalogue can be performed on
+the fly, using the RAMSES built-in clump finder. 

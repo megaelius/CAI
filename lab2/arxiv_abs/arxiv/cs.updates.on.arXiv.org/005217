@@ -1,0 +1,19 @@
+Rotation forest is a tree based ensemble that performs transforms on subsets of attributes prior
+to constructing each tree. We present an empirical comparison of classifiers for problems with
+only real valued features. We evaluate classifiers from three families of algorithms: support
+vector machines; tree-based ensembles; and neural networks. We compare classifiers on unseen
+data based on the quality of the decision rule (using classification error) the ability to rank cases
+(area under the receiver operator curve) and the probability estimates (using negative log likelihood).
+We conclude that, in answer to the question posed in the title, yes, rotation forest, is significantly
+more accurate on average than competing techniques when compared on three distinct sets of datasets.
+The same pattern of results are observed when tuning classifiers on the train data using a grid search.
+We investigate why rotation forest does so well by testing whether the characteristics of the data
+can be used to differentiate classifier performance. We assess the impact of the design features
+of rotation forest through an ablative study that transforms random forest into rotation forest.
+We identify the major limitation of rotation forest as its scalability, particularly in number
+of attributes. To overcome this problem we develop a model to predict the train time of the algorithm
+and hence propose a contract version of rotation forest where a run time cap {\em a priori}. We demonstrate
+that on large problems rotation forest can be made an order of magnitude faster without significant
+loss of accuracy and that there is no real benefit (on average) from tuning the ensemble. We conclude
+that without any domain knowledge to indicate an algorithm preference, rotation forest should
+be the default algorithm of choice for problems with continuous attributes. 

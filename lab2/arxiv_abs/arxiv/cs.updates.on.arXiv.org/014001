@@ -1,0 +1,17 @@
+A new high order accurate staggered semi-implicit space-time discontinuous Galerkin (DG) method
+is presented for the simulation of viscous incompressible flows on unstructured triangular grids
+in two space dimensions. The staggered DG scheme defines the discrete pressure on the primal triangular
+mesh, while the discrete velocity is defined on a staggered edge-based dual quadrilateral mesh.
+In this paper, a new pair of equal-order-interpolation velocity-pressure finite elements is proposed.
+On the primary triangular mesh (the pressure elements) the basis functions are piecewise polynomials
+of degree $N$ and are allowed to jump on the boundaries of each triangle. On the dual mesh instead (the
+velocity elements), the basis functions consist in the union of piecewise polynomials of degree
+$N$ on the two subtriangles that compose each quadrilateral and are allowed to jump only on the dual
+element boundaries, while they are continuous inside. In other words, the basis functions on the
+dual mesh are built by continuous finite elements on the subtriangles. This choice allows the construction
+of an efficient, quadrature-free and memory saving algorithm. In our coupled space-time pressure
+correction formulation for the incompressible Navier-Stokes equations, arbitrary high order
+of accuracy in time is achieved through the use of time-dependent test and basis functions, in combination
+with simple and efficient Picard iterations. Several numerical tests on classical benchmarks
+confirm that the proposed method outperforms existing staggered semi-implicit space-time DG
+schemes, not only from a computer memory point of view, but also concerning the computational time.

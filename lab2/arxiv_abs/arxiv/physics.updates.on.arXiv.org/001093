@@ -1,0 +1,19 @@
+The recently developed interpolative separable density fitting (ISDF) decomposition is a powerful
+way for compressing the redundant information in the set of orbital pairs, and has been used to accelerate
+quantum chemistry calculations in a number of contexts. The key ingredient of the ISDF decomposition
+is to select a set of non-uniform grid points, so that the values of the orbital pairs evaluated at
+such grid points can be used to accurately interpolate those evaluated at all grid points. The set
+of non-uniform grid points, called the interpolation points, can be automatically selected by
+a QR factorization with column pivoting (QRCP) procedure. This is the computationally most expensive
+step in the construction of the ISDF decomposition. In this work, we propose a new approach to find
+the interpolation points based on the centroidal Voronoi tessellation (CVT) method, which offers
+a much less expensive alternative to the QRCP procedure when ISDF is used in the context of hybrid
+functional electronic structure calculations. The CVT method only uses information from the electron
+density, and can be efficiently implemented using a K-Means algorithm. We find that this new method
+achieves comparable accuracy to the ISDF-QRCP method, at a cost that is negligible in the overall
+hybrid functional calculations. For instance, for a system containing $1000$ silicon atoms simulated
+using the HSE06 hybrid functional on $2000$ computational cores, the cost of QRCP-based method
+for finding the interpolation points costs $434.2$ seconds, while the CVT procedure only takes
+$3.2$ seconds. We also find that the ISDF-CVT method also enhances the smoothness of the potential
+energy surface in the context of \emph{ab initio} molecular dynamics (AIMD) simulations with hybrid
+functionals. 

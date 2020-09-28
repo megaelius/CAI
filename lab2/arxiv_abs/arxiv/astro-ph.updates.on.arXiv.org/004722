@@ -1,0 +1,19 @@
+An estimation of the sky signal from streams of Time Ordered Data (TOD) acquired by Cosmic Microwave
+Background (\cmb) experiments is one of the most important steps in the context of \cmb data analysis
+referred to as the map-making problem. The continuously growing \cmb data sets render the \cmb map-making
+problem more challenging in terms of computational cost and memory in particular in the context
+of ground based experiments. In this context, we study a novel class of the Preconditioned Conjugate
+Gradient (PCG) solvers which invoke two-level preconditioners. We compare them against PCG solvers
+commonly used in the map-making context considering their precision and time-to-solution. We
+compare these new methods on realistic, simulated data sets reflecting the characteristics of
+current and forthcoming \cmb ground-based experiment. We develop an embarrassingly parallel
+implementation of the approach where each processor performs a sequential map-making for a subset
+of the TOD. We find that considering the map level residuals the new class of solvers permits achieving
+tolerance of up to 3 orders of magnitude better than the standard approach, where the residual level
+often saturates before convergence is reached. This corresponds to an important improvement in
+the precision of recovered power spectra in particular on the largest angular scales. The new method
+also typically requires fewer iterations to reach a required precision and thus shorter runtimes
+for a single map-making solution. However, the construction of an appropriate two-level preconditioner
+can be as costly as a single standard map-making run. Nevertheless, if the same problem needs to be
+solved multiple times, e.g., as in Monte Carlo simulations, this cost has to be incurred only once,
+and the method should be competitive not only as far as its precision but also its performance is concerned.

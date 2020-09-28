@@ -1,0 +1,18 @@
+The Fourier Transform is one of the most important linear transformations used in science and technology.
+Cooley and Tukey's Fast Fourier Transform (FFT) from 1964 is a method for computing this transformation
+in time $O(n\log n)$. In spite of its importance, no nontrivial (super-linear) lower bounds were
+known without making very strong assumptions about the computation. Morgenstern's result from
+1974 provides an $\Omega(n\log n)$ lower bound for the unnormalized Fourier Transform (of determinant
+$n^{n/2}$), assuming the linear computational model using numbers of at most constant modulus.
+Ailon shows in 2013 an $\Omega(n\log n)$ for computing the normalized Fourier Transform (of determinant
+$1$) assuming only unitary operations on two coordinates are allowed at each step, and no extra memory
+is allowed. In 2014 Ailon then improved the result to show that $\Omega((n\log n)/R)$ operations
+are required to compute any scaling of the Fourier transform in the well conditioned model, in which
+the linear transformation defined at any intermediate point has condition number at most $R$. The
+last result also essentially removed the memory restriction. In this work we improve the last result
+to obtain a lower bound of $\Omega((n\log n)/(1 + \log R))$ in the same setting as in [Ailon 2014].
+The main additional tool is bounding the quasi-entropy change upon rotation of $2$ rows of a matrix
+(and its inverse) by embedding in a $4$ dimensional space on which an SVD argument can be used. The
+implication is that, for example, a linear time Fourier transform algorithm in this model, if exists,
+would require computation polynomially ill conditioned, instead of just logarithmically as in
+[Ailon 2014]. Hence, yet more numerical instability would be introduced. 

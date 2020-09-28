@@ -1,0 +1,20 @@
+Datacenters are the main infrastructure on top of which cloud computing services are offered. Such
+infrastructure may be shared by a large number of tenants and applications generating a spectrum
+of datacenter traffic. Delay sensitive applications and applications with specific Service Level
+Agreements (SLAs), generate deadline constrained flows, while other applications initiate flows
+that are desired to be delivered as early as possible. As a result, datacenter traffic is a mix of two
+types of flows: deadline and regular. There are several scheduling policies for either traffic
+type with focus on minimizing completion times or deadline miss rate. In this report, we apply several
+scheduling policies to mix traffic scenario while varying the ratio of regular to deadline traffic.
+We consider FCFS (First Come First Serve), SRPT (Shortest Remaining Processing Time) and Fair Sharing
+as deadline agnostic approaches and a combination of Earliest Deadline First (EDF) with either
+FCFS or SRPT as deadline-aware schemes. In addition, for the latter, we consider both cases of prioritizing
+deadline traffic (Deadline First) and prioritizing regular traffic (Deadline Last). We study
+both light-tailed and heavy-tailed flow size distributions and measure mean, median and tail flow
+completion times (FCT) for regular flows along with Deadline Miss Rate (DMR) and average lateness
+for deadline flows. We also consider two operation regimes of lightly-loaded (low utilization)
+and heavily-loaded (high utilization). We find that performance of deadline-aware schemes is
+highly dependent on fraction of deadline traffic. With light-tailed flow sizes, we find that FCFS
+performs better in terms of tail times and average lateness while SRPT performs better in average
+times and deadline miss rate. For heavy-tailed flow sizes, except for tail times, SRPT performs
+better in all other metrics. 

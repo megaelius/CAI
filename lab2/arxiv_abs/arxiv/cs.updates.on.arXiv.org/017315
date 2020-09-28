@@ -1,0 +1,18 @@
+Rank-revealing matrix decompositions provide an essential tool in spectral analysis of matrices,
+including the Singular Value Decomposition (SVD) and related low-rank approximation techniques.
+QR with Column Pivoting (QRCP) is usually suitable for these purposes, but it can be much slower than
+the unpivoted QR algorithm. For large matrices, the difference in performance is due to increased
+communication between the processor and slow memory, which QRCP needs in order to choose pivots
+during decomposition. Our main algorithm, Randomized QR with Column Pivoting (RQRCP), uses randomized
+projection to make pivot decisions from a much smaller sample matrix, which we can construct to reside
+in a faster level of memory than the original matrix. This technique may be understood as trading
+vastly reduced communication for a controlled increase in uncertainty during the decision process.
+For rank-revealing purposes, the selection mechanism in RQRCP produces results that are the same
+quality as the standard algorithm, but with performance near that of unpivoted QR (often an order
+of magnitude faster for large matrices). We also propose two formulas that facilitate further performance
+improvements. The first efficiently updates sample matrices to avoid computing new randomized
+projections. The second avoids large trailing updates during the decomposition in truncated low-rank
+approximations. Our truncated version of RQRCP also provides a key initial step in our truncated
+SVD approximation, TUXV. These advances open up a new performance domain for large matrix factorizations
+that will support efficient problem-solving techniques for challenging applications in science,
+engineering, and data analysis. 

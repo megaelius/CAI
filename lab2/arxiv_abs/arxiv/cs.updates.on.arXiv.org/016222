@@ -1,0 +1,18 @@
+This paper studies the problem of learning semantic segmentation from image-level supervision
+only. Current popular solutions leverage object localization maps from classifiers as supervision
+signals, and struggle to make the localization maps capture more complete object content. Rather
+than previous efforts that primarily focus on intra-image information, we address the value of
+cross-image semantic relations for comprehensive object pattern mining. To achieve this, two
+neural co-attentions are incorporated into the classifier to complimentarily capture cross-image
+semantic similarities and differences. In particular, given a pair of training images, one co-attention
+enforces the classifier to recognize the common semantics from co-attentive objects, while the
+other one, called contrastive co-attention, drives the classifier to identify the unshared semantics
+from the rest, uncommon objects. This helps the classifier discover more object patterns and better
+ground semantics in image regions. In addition to boosting object pattern learning, the co-attention
+can leverage context from other related images to improve localization map inference, hence eventually
+benefiting semantic segmentation learning. More essentially, our algorithm provides a unified
+framework that handles well different WSSS settings, i.e., learning WSSS with (1) precise image-level
+supervision only, (2) extra simple single-label data, and (3) extra noisy web data. It sets new state-of-the-arts
+on all these settings, demonstrating well its efficacy and generalizability. Moreover, our approach
+ranked 1st place in the Weakly-Supervised Semantic Segmentation Track of CVPR2020 Learning from
+Imperfect Data Challenge. 

@@ -1,0 +1,19 @@
+Liquid Argon Time Projection Chambers (LArTPC) are particle imaging detectors recording 2D or
+3D images of trajectories of charged particles. Identifying points of interest in these images,
+namely the initial and terminal points of track-like particle trajectories such as muons and protons,
+and the initial points of electromagnetic shower-like particle trajectories such as electrons
+and gamma rays, is a crucial step of identifying and analyzing these particles and impacts the inference
+of physics signals such as neutrino interaction. The Point Proposal Network is designed to discover
+these specific points of interest. The algorithm predicts with a sub-voxel precision their spatial
+location, and also determines the category of the identified points of interest. Using as a benchmark
+the PILArNet public LArTPC data sample in which the voxel resolution is 3mm/voxel, our algorithm
+successfully predicted 96.8% and 97.8% of 3D points within a distance of 3 and 10~voxels from the
+provided true point locations respectively. For the predicted 3D points within 3 voxels of the closest
+true point locations, the median distance is found to be 0.25 voxels, achieving the sub-voxel level
+precision. In addition, we report our analysis of the mistakes where our algorithm prediction differs
+from the provided true point positions by more than 10~voxels. Among 50 mistakes visually scanned,
+25 were due to the definition of true position location, 15 were legitimate mistakes where a physicist
+cannot visually disagree with the algorithm's prediction, and 10 were genuine mistakes that we
+wish to improve in the future. Further, using these predicted points, we demonstrate a simple algorithm
+to cluster 3D voxels into individual track-like particle trajectories with a clustering efficiency,
+purity, and Adjusted Rand Index of 96%, 93%, and 91% respectively. 

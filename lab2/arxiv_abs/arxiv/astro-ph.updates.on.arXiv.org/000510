@@ -1,0 +1,20 @@
+We compare the results for a set of hydrodynamical tests performed with the AMR finite volume code,
+MG and the SPH code, SEREN. The test suite includes shock tube tests, with and without cooling, the
+non-linear thin-shell instability and the Kelvin-Helmholtz instability. The main conclusions
+are : (i) the two methods converge in the limit of high resolution and accuracy in most cases. All tests
+show good agreement when numerical effects (e.g. discontinuities in SPH) are properly treated.
+(ii) Both methods can capture adiabatic shocks and well-resolved cooling shocks perfectly well
+with standard prescriptions. However, they both have problems when dealing with under-resolved
+cooling shocks, or strictly isothermal shocks, at high Mach numbers. The finite volume code only
+works well at 1st order and even then requires some additional artificial viscosity. SPH requires
+either a larger value of the artificial viscosity parameter, alpha_AV, or a modified form of the
+standard artificial viscosity term using the harmonic mean of the density, rather than the arithmetic
+mean. (iii) Some SPH simulations require larger kernels to increase neighbour number and reduce
+particle noise in order to achieve agreement with finite volume simulations. However, this is partly
+due to the need to reduce noise that can corrupt the growth of small-scale perturbations. In contrast,
+instabilities seeded from large-scale perturbations do not require more neighbours and hence
+work well with standard SPH formulations and converge with the finite volume simulations. (iv)
+For purely hydrodynamical problems, SPH simulations take an order of magnitude longer to run than
+finite volume simulations when running at equivalent resolutions, i.e. when they both resolve
+the underlying physics to the same degree. This requires about 2-3 times as many particles as the
+number of cells. 

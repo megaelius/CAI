@@ -1,0 +1,19 @@
+The MAX-MIN Ant System (MMAS) is one of the best-known Ant Colony Optimization (ACO) algorithms
+proven to be efficient at finding satisfactory solutions to many difficult combinatorial optimization
+problems. The slow-down in Moore's law, and the availability of graphics processing units (GPUs)
+capable of conducting general-purpose computations at high speed, has sparked considerable research
+efforts into the development of GPU-based ACO implementations. In this paper, we discuss a range
+of novel ideas for improving the GPU-based parallel MMAS implementation, allowing it to better
+utilize the computing power offered by two subsequent Nvidia GPU architectures. Specifically,
+based on the weighted reservoir sampling algorithm we propose a novel parallel implementation
+of the node selection procedure, which is at the heart of the MMAS and other ACO algorithms. We also
+present a memory-efficient implementation of another key-component -- the tabu list structure
+-- which is used in the ACO's solution construction stage. The proposed implementations, combined
+with the existing approaches, lead to a total of six MMAS variants, which are evaluated on a set of
+Traveling Salesman Problem (TSP) instances ranging from 198 to 3,795 cities. The results show that
+our MMAS implementation is competitive with state-of-the-art GPU-based and multi-core CPU-based
+parallel ACO implementations: in fact, the times obtained for the Nvidia V100 Volta GPU were up to
+7.18x and 21.79x smaller, respectively. The fastest of the proposed MMAS variants is able to generate
+over 1 million candidate solutions per second when solving a 1,002-city instance. Moreover, we
+show that, combined with the 2-opt local search heuristic, the proposed parallel MMAS finds high-quality
+solutions for the TSP instances with up to 18,512 nodes. 

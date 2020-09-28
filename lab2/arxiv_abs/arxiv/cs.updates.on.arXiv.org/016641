@@ -1,0 +1,19 @@
+Error-bounded lossy compression is a state-of-the-art data reduction technique for HPC applications
+because it not only significantly reduces storage overhead but also can retain high fidelity for
+postanalysis. Because supercomputers and HPC applications are becoming heterogeneous using
+accelerator-based architectures, in particular GPUs, several development teams have recently
+released GPU versions of their lossy compressors. However, existing state-of-the-art GPU-based
+lossy compressors suffer from either low compression and decompression throughput or low compression
+quality. In this paper, we present an optimized GPU version, cuSZ, for one of the best error-bounded
+lossy compressors-SZ. To the best of our knowledge, cuSZ is the first error-bounded lossy compressor
+on GPUs for scientific data. Our contributions are fourfold. (1) We propose a dual-quantization
+scheme to entirely remove the data dependency in the prediction step of SZ such that this step can
+be performed very efficiently on GPUs. (2) We develop an efficient customized Huffman coding for
+the SZ compressor on GPUs. (3) We implement cuSZ using CUDA and optimize its performance by improving
+the utilization of GPU memory bandwidth. (4) We evaluate our cuSZ on five real-world HPC application
+datasets from the Scientific Data Reduction Benchmarks and compare it with other state-of-the-art
+methods on both CPUs and GPUs. Experiments show that our cuSZ improves SZ's compression throughput
+by up to 370.1x and 13.1x, respectively, over the production version running on single and multiple
+CPU cores, respectively, while getting the same quality of reconstructed data. It also improves
+the compression ratio by up to 3.48x on the tested data compared with another state-of-the-art GPU
+supported lossy compressor. 

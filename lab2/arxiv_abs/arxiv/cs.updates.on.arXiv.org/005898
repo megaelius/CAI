@@ -1,0 +1,19 @@
+Machine learning has been applied to a broad range of applications and some of them are available
+online as application programming interfaces (APIs) with either free (trial) or paid subscriptions.
+In this paper, we study adversarial machine learning in the form of back-box attacks on online classifier
+APIs. We start with a deep learning based exploratory (inference) attack, which aims to build a classifier
+that can provide similar classification results (labels) as the target classifier. To minimize
+the difference between the labels returned by the inferred classifier and the target classifier,
+we show that the deep learning based exploratory attack requires a large number of labeled training
+data samples. These labels can be collected by calling the online API, but usually there is some strict
+rate limitation on the number of allowed API calls. To mitigate the impact of limited training data,
+we develop an active learning approach that first builds a classifier based on a small number of API
+calls and uses this classifier to select samples to further collect their labels. Then, a new classifier
+is built using more training data samples. This updating process can be repeated multiple times.
+We show that this active learning approach can build an adversarial classifier with a small statistical
+difference from the target classifier using only a limited number of training data samples. We further
+consider evasion and causative (poisoning) attacks based on the inferred classifier that is built
+by the exploratory attack. Evasion attack determines samples that the target classifier is likely
+to misclassify, whereas causative attack provides erroneous training data samples to reduce the
+reliability of the re-trained classifier. The success of these attacks show that adversarial machine
+learning emerges as a feasible threat in the realistic case with limited training data. 

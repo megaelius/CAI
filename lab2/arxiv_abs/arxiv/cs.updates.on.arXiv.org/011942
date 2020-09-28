@@ -1,0 +1,18 @@
+This paper shows that the recent approach to quantitative typing systems for programming languages
+can be extended to pattern matching features. Indeed, we define two resource aware type systems,
+named U and E, for a lambda-calculus equipped with pairs for both patterns and terms. Our typing systems
+borrow some basic ideas from [BKRDR15], which characterises (head) normalisation in a qualitative
+way, in the sense that typability and normalisation coincide. But in contrast to [BKRDR15], our
+(static) systems also provides quantitative information about the dynamics of the calculus. Indeed,
+system U provides upper bounds for the length of normalisation sequences plus the size of their corresponding
+normal forms, while system E, which can be seen as a refinement of system U, produces exact bounds
+for each of them. This is achieved by means of a non-idempotent intersection type system equipped
+with different technical tools. First of all, we use product types to type pairs, instead of the disjoint
+unions in [BKRDR15], thus avoiding an overlap between "being a pair" and "being duplicable", resulting
+in an essential tool to reason about quantitativity. Secondly, typing sequents in system E are decorated
+with tuples of integers, which provide quantitative information about normalisation sequences,
+notably time (c.f. length) and space (c.f. size). Another key tool of system E is that the type system
+distinguishes between consuming (contributing to time) and persistent (contributing to space)
+constructors. Moreover, the time resource information is remarkably refined, because it discriminates
+between different kinds of reduction steps performed during evaluation, so that beta reduction,
+substitution and matching steps are counted separately. 

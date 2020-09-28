@@ -1,0 +1,20 @@
+Graph analytics are at the heart of a broad range of applications such as drug discovery, page ranking,
+and recommendation systems. When graph size exceeds memory size, out-of-core graph processing
+is needed. For the widely used external memory graph processing systems, accessing storage becomes
+the bottleneck. We make the observation that nearly all graph algorithms have a dynamically varying
+number of active vertices that must be processed in each iteration. However, existing graph processing
+frameworks, such as GraphChi, load the entire graph in each iteration even if a small fraction of
+the graph is active. This limitation is due to the structure of the data storage used by these systems.
+In this work, we propose to use a compressed sparse row (CSR) based graph storage that is more amenable
+for selectively loading only a few active vertices in each iteration. But CSR based systems suffers
+from random update propagation to many target vertices. To solve this challenge, we propose to use
+a multi-log update mechanism that logs updates separately, rather than directly update the active
+edges in a graph. Our proposed multi-log system maintains a separate log per each vertex interval.
+This separation enables us to efficiently process each vertex interval by just loading the corresponding
+log. Further, while accessing SSD pages with fewer active vertex data, we reduce the read amplification
+due to the page granular accesses in SSD by logging the active vertex data in the current iteration
+and efficiently reading the log in the next iteration. Over the current state of the art out-of-core
+graph processing framework, our PartitionedVC improves performance by up to $17.84\times$, $1.19\times$,
+$1.65\times$, $1.38\times$, $3.15\times$, and $6.00\times$ for the widely used bfs, pagerank,
+community detection, graph coloring, maximal independent set, and random-walk applications,
+respectively. 

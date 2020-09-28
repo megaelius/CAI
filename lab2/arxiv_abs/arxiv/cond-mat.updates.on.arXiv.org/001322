@@ -1,0 +1,19 @@
+Here we propose the Reweighted Autoencoded Variational Bayes for Enhanced Sampling (RAVE) method,
+a new iterative scheme that uses the deep learning framework of variational autoencoders to enhance
+sampling in molecular simulations. RAVE involves iterations between molecular simulations and
+deep learning in order to produce an increasingly accurate probability distribution along a low-dimensional
+latent space that captures the key features of the molecular simulation trajectory. Using the Kullback-Leibler
+divergence between this latent space distribution and the distribution of various trial reaction
+coordinates sampled from the molecular simulation, RAVE determines an optimum, yet nonetheless
+physically interpretable, reaction coordinate and optimum probability distribution. Both then
+directly serve as the biasing protocol for a new biased simulation, which is once again fed into the
+deep learning module with appropriate weights accounting for the bias, the procedure continuing
+until estimates of desirable thermodynamic observables are converged. Unlike recent methods
+using deep learning for enhanced sampling purposes, RAVE stands out in that (a) it naturally produces
+a physically interpretable reaction coordinate, (b) is independent of existing enhanced sampling
+protocols to enhance the fluctuations along the latent space identified via deep learning, and
+(c) it provides the ability to easily filter out spurious solutions learned by the deep learning
+procedure. The usefulness and reliability of RAVE is demonstrated by applying it to model potentials
+of increasing complexity, including computation of the binding free energy profile for a hydrophobic
+ligand-substrate system in explicit water with dissociation time of more than three minutes, in
+computer time at least twenty times less than that needed for umbrella sampling or metadynamics.

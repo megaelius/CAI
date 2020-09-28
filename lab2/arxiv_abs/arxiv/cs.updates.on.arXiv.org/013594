@@ -1,0 +1,19 @@
+We consider the minimum set cover problem in a dynamic setting. Here, we are given a universe of elements
+$\mathcal{U}$ and a collection of sets $\mathcal{S} \subseteq 2^{\mathcal{U}}$ as input, where
+each set $s \in \mathcal{S}$ has a cost $1/C < c_s < 1$ for some parameter $C > 1$. The input keeps changing
+via a sequence of updates. Each update inserts/deletes an element in the universe, and specifies
+the sets in $\S$ containing that element. The goal is to maintain a set cover of (approximately) minimum
+cost with as small update time as possible. Let $n$ denote the number of sets in $\mathcal{S}$, and
+let $m$ and $f$ respectively denote the maximum number of elements in the universe and the maximum
+frequency of an element across all the updates. This problem has received significant attention
+in recent years in the dynamic algorithms community. Gupta et al. [STOC `17] designed a deterministic
+$\Theta(\log m)$-approximation algorithm for this problem that has an update time of $O(f \log
+m)$. On the other hand, the line of work by Bhattacharya et al. [ICALP `15], Bhattacharya et al. [IPCO
+`17], Gupta et al. [STOC `17], Abboud et al. [STOC `19] and Bhattacharya et al. [FOCS `19] very recently
+led to a deterministic $(1+\epsilon)f$-approximation algorithm with $O(f \log (Cm)/\epsilon^2)$
+update time. In this paper, we obtain the first dynamic algorithm for this problem with near-optimal
+approximation ratio whose update time is independent of $m, n$. Specifically, our algorithm is
+deterministic and it achieves an approximation ratio of $(1+\epsilon)f$ and an update time of $O\left((f^2/\epsilon^3)+(f/\epsilon^2)
+\log C\right)$. Our algorithm is based on the dynamic primal-dual framework, and it carefully combines
+the ideas from the dynamic vertex cover algorithm of Bhattacharya and Kulkarni [SODA `19] and the
+dynamic set cover algorithm of Bhattacharya et al. [FOCS `19]. 

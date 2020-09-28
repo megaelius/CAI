@@ -1,0 +1,19 @@
+In recent years, Graph Convolutional Networks (GCNs) show competitive performance in different
+domains, such as social network analysis, recommendation, and smart city. However, training GCNs
+with insufficient supervision is very difficult. The performance of GCNs becomes unsatisfying
+with few labeled data. Although some pioneering work try to understand why GCNs work or fail, their
+analysis focus more on the entire model level. Profiling GCNs on different nodes is still underexplored.
+To address the limitations, we study GCNs with respect to the node degree distribution. We show that
+GCNs have a higher accuracy on nodes with larger degrees even if they are underrepresented in most
+graphs, with both empirical observation and theoretical proof. We then propose Self-Supervised-Learning
+Degree-Specific GCN (SL-DSGCN) which handles the degree-related biases of GCNs from model and
+data aspects. Firstly, we design a degree-specific GCN layer that models both discrepancies and
+similarities of nodes with different degrees, and reduces the inner model-aspect biases of GCNs
+caused by sharing the same parameters with all nodes. Secondly, we develop a self-supervised-learning
+algorithm that assigns pseudo labels with uncertainty scores on unlabeled nodes using a Bayesian
+neural network. Pseudo labels increase the chance of connecting to labeled neighbors for low-degree
+nodes, thus reducing the biases of GCNs from the data perspective. We further exploit uncertainty
+scores as dynamic weights on pseudo labels in the stochastic gradient descent for SL-DSGCN. We validate
+\ours on three benchmark datasets, and confirm SL-DSGCN not only outperforms state-of-the-art
+self-training/self-supervised-learning GCN methods, but also improves GCN accuracy dramatically
+for low-degree nodes. 

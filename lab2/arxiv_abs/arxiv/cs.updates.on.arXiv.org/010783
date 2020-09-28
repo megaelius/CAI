@@ -1,0 +1,17 @@
+As part of the revelations about the NSA activities, the notion of interdiction has become known
+to the public: the interception of deliveries to manipulate hardware in a way that backdoors are
+introduced. Manipulations can occur on the firmware or at hardware level. With respect to hardware,
+FPGAs are particular interesting targets as they can be altered by manipulating the corresponding
+bitstream which configures the device. In this paper, we demonstrate the first successful real-world
+FPGA hardware Trojan insertion into a commercial product. On the target device, a FIPS-140-2 level
+2 certified USB flash drive from Kingston, the user data are encrypted using AES-256 in XTS mode,
+and the encryption/decryption is processed by an off-the-shelf SRAM-based FPGA. Our investigation
+required two reverse-engineering steps, related to the proprietary FPGA bitstream and to the firmware
+of the underlying ARM CPU. In our Trojan insertion scenario, the targeted USB flash drive is intercepted
+before being delivered to the victim. The physical Trojan insertion requires the manipulation
+of the SPI flash memory content, which contains the FPGA bitstream as well as the ARM CPU code. The
+FPGA bitstream manipulation alters the exploited AES-256 algorithm in a way that it turns into a
+linear function which can be broken with 32 known plaintext-ciphertext pairs. After the manipulated
+USB flash drive has been used by the victim, the attacker is able to obtain all user data from the ciphertexts.
+Our work indeed highlights the security risks and especially the practical relevance of bitstream
+modification attacks that became realistic due to FPGA bitstream manipulations. 

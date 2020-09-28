@@ -1,0 +1,18 @@
+Evolutionary algorithms can outperform conventional simulated annealing placement on metrics
+such as runtime, wirelength, pipelining cost, and clock frequency when mapping FPGA hard block
+intensive designs such as systolic arrays on Xilinx UltraScale+ FPGAs. Such designs can take advantage
+of repeatable design organization of the arrays, the columnar arrangement of hard blocks such as
+DSPs and RAMs, coupled with cascade nearest-neighbor interconnect for systolic-friendly data
+movement. However, the commercial-grade Xilinx Vivado CAD tool is unable to provide a legal routing
+solution for such hard block intensive designs without tedious manual placement constraints.
+Instead, we formulate an automatic FPGA placement algorithm for these hard blocks as a multi-objective
+optimization problem that targets wirelength squared and maximum bounding box size metrics. We
+build an end-to-end placement and routing flow called RapidLayout using the Xilinx RapidWright
+framework. RapidLayout runs 5--6$\times$ faster than Vivado with manual constraints, and eliminates
+the weeks long effort to manually generate placement constraints for the hard blocks. We also perform
+automated post-placement pipelining of the long wires inside each convolution block to target
+650 MHz URAM-limited operation. SLR replication in RapidWright allows us to clone the placement
+and routing image for one SLR to the multi-SLR FPGA chip in a couple of minutes. When compared to a conventional
+simulated annealing placer, RapidLayout's evolutionary engine delivers up to 27% improvement
+in wirelength, 11% lower bounding box size, 4.2$\times$ reduction in runtime, and $\approx$7%
+reduction in pipeline registers for 650 MHz operation. 

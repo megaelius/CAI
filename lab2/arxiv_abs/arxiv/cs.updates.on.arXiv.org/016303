@@ -1,0 +1,19 @@
+This paper presents a verification framework based on a new class of predicate Constraint Satisfaction
+Problems called pCSP where constraints are represented as clauses modulo first-order theories
+over function variables and predicate variables that may represent well-founded predicates.
+The verification framework generalizes an existing one based on Constrained Horn Clauses (CHCs)
+to arbitrary clauses, function variables, and well-foundedness constraints. While it is known
+that the satisfiability of CHCs and the validity of queries for Constrained Logic Programs (CLP)
+are inter-reducible, we show that, thanks to the added expressiveness, pCSP is expressive enough
+to express muCLP queries. muCLP itself is a new extension of CLP that we propose in this paper. It extends
+CLP with arbitrarily nested inductive and co-inductive predicates and is equi-expressive as first-order
+fixpoint logic. We show that muCLP can naturally encode a wide variety of verification problems
+including but not limited to termination/non-termination verification and even full modal mu-calculus
+model checking of programs written in various languages. To establish our verification framework,
+we present (1) a sound and complete reduction algorithm from muCLP to pCSP and (2) a constraint solving
+method for pCSP based on stratified CounterExample-Guided Inductive Synthesis (CEGIS) of (co-)inductive
+invariants, ranking functions, and Skolem functions witnessing existential quantifiers. Stratified
+CEGIS combines CEGIS with stratified families of templates to achieve relative completeness and
+faster and stable convergence of CEGIS by avoiding the overfitting problem. We have implemented
+the proposed framework and obtained promising results on diverse verification problems that are
+beyond the scope of the previous verification frameworks based on CHCs. 

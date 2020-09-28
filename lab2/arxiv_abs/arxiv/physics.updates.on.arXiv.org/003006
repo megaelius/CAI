@@ -1,0 +1,20 @@
+We develop a knowledge-based automated planning (KBAP) pipeline that generates treatment plans
+using deep neural network architectures for predicting 3D doses. Our pipeline consisted of a generative
+adversarial network (GAN) to predict dose from a CT image followed by two optimization models to
+learn objective function weights and generate fluence-based plans, respectively. We investigated
+three different GAN models. The first two models predicted dose for each axial slice independently.
+One predicted dose as a RGB color map, while the other predicted a scalar value for dose directly.
+The third GAN model predicted scalar doses for the full 3D CT image at once, considering correlations
+between adjacent CT slices. For all models, we also investigated the impact of scaling the GAN predictions
+before optimization. Each GAN model was trained on 130 previously delivered oropharyngeal treatment
+plans. Performance was tested on 87 out-of-sample plans, by evaluating using clinical planning
+criteria and compared to their corresponding clinical plans. The best performing KBAP plans were
+generated with the 3D GAN, which predicted dose values followed by scaling. These plans satisfied
+close to 77% of all clinical criteria, compared to the clinical plans, which satisfied 64% of all
+criteria. Additionally, these KBAP plans satisfied the same criteria as the clinical plans 84%
+more frequently compared to the 2D GAN model using RGB dose prediction. The 3D GAN predictions were
+also more similar to the final plan compared to the other approaches, as it better captured the vertical
+dosimetric relationship between adjacent axial slices. The deliverable plans better captured
+implicit constraints associated with physical deliverability. Overall, our final plans had superior
+performance in satisfying clinical criteria and generated more realistic predictions compared
+to the previous state-of-the-art. 

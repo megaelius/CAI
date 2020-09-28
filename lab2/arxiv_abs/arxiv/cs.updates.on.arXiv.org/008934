@@ -1,0 +1,19 @@
+There has been a rise in the popularity of algebraic methods for graph algorithms given the development
+of the GraphBLAS library and other sparse matrix methods. These are useful in practice because many
+graph algorithms are amenable to sparse matrix multiplication. An exemplar for these approaches
+is Breadth-First Search (BFS). Despite many redundant operations over nonzeros that ultimately
+lead to suboptimal performance, the algebraic BFS is appealing for practical implementations
+because it is simple and embarrassingly parallel. Therefore an optimal algebraic BFS should be
+of keen interest especially if it is easily integrated with existing matrix methods. Current methods,
+notably in the GraphBLAS, use a Sparse Matrix Sparse Vector (SpMSpV) multiplication in which the
+input vector is kept in a sparse representation in each step of the BFS. But simply applying SpMSpV
+in BFS does not lead to optimal runtime. Each nonzero in the vector must be masked in subsequent steps.
+This has been an area of recent recent in GraphBLAS and other libraries. While in theory these masking
+methods are asymptotically optimal on sparse graphs, many add work that leads to suboptimal runtime.
+We give a new optimal, algebraic BFS for sparse graphs that is also a constant factor faster than theoretically
+optimal SpMSpV methods. Our method multiplies progressively smaller submatrices of the adjacency
+matrix at each step. The matrix remains unchanged, rather we are masking the rows and columns in the
+matrix. The input vector in each step is also effectively masked, thus our method ultiplies a sparse
+submatrix by a sparse vector in decreasing size each step. Our algebraic BFS algorithm takes $O(m)$
+algebraic operations on a sparse graph with $O(m)$ edges as opposed to $O(mn)$ operations of other
+sparse matrix approaches. 

@@ -1,0 +1,20 @@
+Four key processes in data integration are: data preparation (i.e., extracting, transforming,
+and cleaning data), schema integration (i.e., identifying attribute correspondences), entity
+resolution (i.e., finding clusters of records that represent the same entity) and entity consolidation
+(i.e., merging each cluster into a 'golden record', which contains the canonical value for each
+attribute). In real-world scenarios, Master Data Management (MDM) is often employed to perform
+the last two steps using a 'match-merge' module, which is driven by a collection of user-written
+match and merge rules. However, it is well understood that such solutions often fail to scale to the
+sizes and complexity of problems currently being addressed. Scalable solutions to entity resolution
+have been previously developed to generate a collection of clusters of records representing the
+same entity. In this paper, we propose a scalable entity consolidation algorithm to merge these
+clusters into 'golden records'. We first automatically generate matching rules from the clusters
+and then group these rules into sets with common characteristics to cut down on the number which must
+be verified by a human. Next, for the human-approved rule groups, we apply them to merge the duplicate
+attribute values in the clusters. Finally, we employ existing truth discovery methods, such as
+majority consensus (MC), to resolve remaining conflicts in the clusters. We applied our methods
+on three real-world datasets. In a dataset with 31,023 clusters and 80,451 duplicate records, 72,239
+matching rules were generated. By having a human con rm only 100 algorithm-generated rule groups,
+we achieved a recall of 75% and a precision of 98% for merging duplicate attribute values. When we
+invoked our algorithm prior to running MC, we improved the precision of golden record construction
+by 40%. 

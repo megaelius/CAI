@@ -1,0 +1,20 @@
+We introduce a new regularization method for Artificial Neural Networks (ANNs) based on Kernel
+Flows (KFs). KFs were introduced as a method for kernel selection in regression/kriging based on
+the minimization of the loss of accuracy incurred by halving the number of interpolation points
+in random batches of the dataset. Writing $f_\theta(x) = \big(f^{(n)}_{\theta_n}\circ f^{(n-1)}_{\theta_{n-1}}
+\circ \dots \circ f^{(1)}_{\theta_1}\big)(x)$ for the functional representation of compositional
+structure of the ANN, the inner layers outputs $h^{(i)}(x) = \big(f^{(i)}_{\theta_i}\circ f^{(i-1)}_{\theta_{i-1}}
+\circ \dots \circ f^{(1)}_{\theta_1}\big)(x)$ define a hierarchy of feature maps and kernels
+$k^{(i)}(x,x')=\exp(- \gamma_i \|h^{(i)}(x)-h^{(i)}(x')\|_2^2)$. When combined with a batch
+of the dataset these kernels produce KF losses $e_2^{(i)}$ (the $L^2$ regression error incurred
+by using a random half of the batch to predict the other half) depending on parameters of inner layers
+$\theta_1,\ldots,\theta_i$ (and $\gamma_i$). The proposed method simply consists in aggregating
+a subset of these KF losses with a classical output loss. We test the proposed method on CNNs and WRNs
+without alteration of structure nor output classifier and report reduced test errors, decreased
+generalization gaps, and increased robustness to distribution shift without significant increase
+in computational complexity. We suspect that these results might be explained by the fact that while
+conventional training only employs a linear functional (a generalized moment) of the empirical
+distribution defined by the dataset and can be prone to trapping in the Neural Tangent Kernel regime
+(under over-parameterizations), the proposed loss function (defined as a nonlinear functional
+of the empirical distribution) effectively trains the underlying kernel defined by the CNN beyond
+regressing the data with that kernel. 

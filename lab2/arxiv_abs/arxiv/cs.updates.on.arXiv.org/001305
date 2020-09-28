@@ -1,0 +1,22 @@
+Context. An extension method is a method declared in a package other than the package of its host class.
+Thanks to extension methods, developers can adapt to their needs classes they do not own: adding
+methods to core classes is a typical use case. This is particularly useful for adapting software
+and therefore to increase reusability. Inquiry. In most dynamically-typed languages, extension
+methods are globally visible. Because any developer can define extension methods for any class,
+naming conflicts occur: if two developers define an extension method with the same signature in
+the same class, only one extension method is visible and overwrites the other. Similarly, if two
+developers each define an extension method with the same name in a class hierarchy, one overrides
+the other. To avoid such "accidental overrides", some dynamically-typed languages limit the visibility
+of an extension method to a particular scope. However, their semantics have not been fully described
+and compared. In addition, these solutions typically rely on a dedicated and slow method lookup
+algorithm to resolve conflicts at runtime. Approach. In this article, we present a formalization
+of the underlying models of Ruby refinements, Groovy categories, Classboxes, and Method Shelters
+that are scoping extension method solutions in dynamically-typed languages. Knowledge. Our formal
+framework allows us to objectively compare and analyze the shortcomings of the studied solutions
+and other different approaches such as MultiJava. In addition, language designers can use our formal
+framework to determine which mechanism has less risk of "accidental overrides". Grounding. Our
+comparison and analysis of existing solutions is grounded because it is based on denotational semantics
+formalizations. Importance. Extension methods are widely used in programming languages that
+support them, especially dynamically-typed languages such as Pharo, Ruby or Python. However,
+without a carefully designed mechanism, this feature can cause insidious hidden bugs or can be voluntarily
+used to gain access to protected operations, violate encapsulation or break fundamental invariants.

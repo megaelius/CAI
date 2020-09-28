@@ -1,0 +1,20 @@
+We introduce an acceleration for covariance matrix adaptation evolution strategies (CMA-ES)
+by means of adaptive diagonal decoding (dd-CMA). This diagonal acceleration endows the default
+CMA-ES with the advantages of separable CMA-ES without inheriting its drawbacks. Technically,
+we introduce a diagonal matrix D that expresses coordinate-wise variances of the sampling distribution
+in DCD form. The diagonal matrix can learn a rescaling of the problem in the coordinates within linear
+number of function evaluations. Diagonal decoding can also exploit separability of the problem,
+but, crucially, does not compromise the performance on non-separable problems. The latter is accomplished
+by modulating the learning rate for the diagonal matrix based on the condition number of the underlying
+correlation matrix. dd-CMA-ES not only combines the advantages of default and separable CMA-ES,
+but may achieve overadditive speedup: it improves the performance, and even the scaling, of the
+better of default and separable CMA-ES on classes of non-separable test functions that reflect,
+arguably, a landscape feature commonly observed in practice. The paper makes two further secondary
+contributions: we introduce two different approaches to guarantee positive definiteness of the
+covariance matrix with active CMA, which is valuable in particular with large population size;
+we revise the default parameter setting in CMA-ES, proposing accelerated settings in particular
+for large dimension. All our contributions can be viewed as independent improvements of CMA-ES,
+yet they are also complementary and can be seamlessly combined. In numerical experiments with dd-CMA-ES
+up to dimension 5120, we observe remarkable improvements over the original covariance matrix adaptation
+on functions with coordinate-wise ill-conditioning. The improvement is observed also for large
+population sizes up to about dimension squared. 

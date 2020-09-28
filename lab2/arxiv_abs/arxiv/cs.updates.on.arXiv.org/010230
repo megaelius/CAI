@@ -1,0 +1,18 @@
+This paper presents a new deep regression model, which we call DeepDistance, for cell detection
+in images acquired with inverted microscopy. This model considers cell detection as a task of finding
+most probable locations that suggest cell centers in an image. It represents this main task with
+a regression task of learning an inner distance metric. However, different than the previously
+reported regression based methods, the DeepDistance model proposes to approach its learning as
+a multi-task regression problem where multiple tasks are learned by using shared feature representations.
+To this end, it defines a secondary metric, normalized outer distance, to represent a different
+aspect of the problem and proposes to define its learning as complementary to the main cell detection
+task. In order to learn these two complementary tasks more effectively, the DeepDistance model
+designs a fully convolutional network (FCN) with a shared encoder path and end-to-end trains this
+FCN to concurrently learn the tasks in parallel. DeepDistance uses the inner distances estimated
+by this FCN in a detection algorithm to locate individual cells in a given image. For further performance
+improvement on the main task, this paper also presents an extended version of the DeepDistance model.
+This extended model includes an auxiliary classification task and learns it in parallel to the two
+regression tasks by sharing feature representations with them. Our experiments on three different
+human cell lines reveal that the proposed multi-task learning models, the DeepDistance model and
+its extended version, successfully identify cell locations, even for the cell line that was not
+used in training, and improve the results of the previous deep learning methods. 

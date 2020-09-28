@@ -1,0 +1,18 @@
+The majority of galaxy group catalogues available in the literature use the popular friends-of-friends
+algorithm which links galaxies using a linking length. One potential drawback to this approach
+is that clusters of point can be link with thin bridges which may not be desirable. Furthermore, these
+algorithms are designed with large-scales galaxy surveys in mind rather than small-scale, local
+galaxy environments, where attention to detail is important. Here we present a new simple group
+finder algorithm, TD-ENCLOSER, that finds the group that encloses a target galaxy of interest.
+TD-ENCLOSER is based on the kernel density estimation method which treats each galaxy, represented
+by a zero-dimensional particle, as a two-dimensional circular Gaussian. The algorithm assigns
+galaxies to peaks in the density field in order of density in descending order ("Top Down") so that
+galaxy groups "grow" around the density peaks. Outliers in under-dense regions are prevented from
+joining groups by a specified hard threshold, while outliers at the group edges are clipped below
+a soft (blurred) interior density level. The group assignments are largely insensitive to all free
+parameters apart from the hard density threshold and the kernel standard deviation, although this
+is a known feature of density-based group finder algorithms, and operates with a computing speed
+that increases linearly with the size of the input sample. In preparation for a companion paper,
+we also present a simple algorithm to select unique representative groups when duplicates occur.
+TD-ENCLOSER produces results comparable to those from a widely used catalogue, as shown in a companion
+paper. A smoothing scale of 0.3 Mpc provides the most realistic group structure. 

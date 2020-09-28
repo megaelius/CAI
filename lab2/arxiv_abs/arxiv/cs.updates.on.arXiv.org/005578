@@ -1,0 +1,18 @@
+We observe a rapid increase in machine learning models for learning data representations that remove
+the semantics of protected characteristics, and are therefore able to mitigate unfair prediction
+outcomes. This is indeed a positive proliferation. All available models however learn latent embeddings,
+therefore the produced representations do not have the semantic meaning of the input. Our aim here
+is to learn fair representations that are directly interpretable in the original input domain.
+We cast this problem as a data-to-data translation; to learn a mapping from data in a source domain
+to a target domain such that data in the target domain enforces fairness definitions, such as statistical
+parity or equality of opportunity. Unavailability of fair data in the target domain is the crux of
+the problem. This paper provides the first approach to learn a highly unconstrained mapping from
+source to target by maximizing (conditional) dependence of residuals - the difference between
+data and its translated version - and protected characteristics. The usage of residual statistics
+ensures that our generated fair data should only be an adjustment of the input data, and this adjustment
+should reveal the main difference between protected characteristic groups. When applied to CelebA
+face image dataset with gender as protected characteristic, our model enforces equality of opportunity
+by adjusting eyes and lips regions. In Adult income dataset, also with gender as protected characteristic,
+our model achieves equality of opportunity by, among others, obfuscating wife and husband relationship.
+Visualizing those systematic changes will allow us to scrutinize the interplay of fairness criterion,
+chosen protected characteristics, and the prediction performance. 

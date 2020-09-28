@@ -1,0 +1,19 @@
+Machine learning techniques have been widely used in attempts to forecast several solar datasets.
+Most of these approaches employ supervised machine learning algorithms which are, in general,
+very data hungry. This hampers the attempts to forecast some of these data series, particularly
+the ones that depend on (relatively) recent space observations. Here we focus on an attempt to forecast
+the solar surface longitudinally averaged radial magnetic field distribution using a form of spatial-temporal
+neural networks. Given that the recording of these spatial-temporal datasets only started in 1975
+and are therefore quite short, the forecasts are predictably quite modest. However, given that
+there is a potential physical relationship between sunspots and the magnetic field, we employ another
+machine learning technique called transfer learning which has recently received considerable
+attention in the literature. Here, this approach consists in first training the source spatial-temporal
+neural network on the much longer time/latitude sunspot area dataset, which starts in 1874, then
+transferring the trained set of layers to a target network, and continue training the latter on the
+magnetic field dataset. The employment of transfer learning in the field of computer vision is known
+to obtain a generalized set of feature filters that can be reused for other datasets and tasks. Here
+we obtain a similar result, whereby we first train the network on the spatial-temporal sunspot area
+data, then the first few layers of the neural network are able to identify the two main features of
+the solar cycle, i.e. the amplitude variation and the migration to the equator, and therefore can
+be used to train on the magnetic field dataset and forecast better than a prediction based only on
+the historical magnetic field data. 

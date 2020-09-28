@@ -1,0 +1,18 @@
+The Near-infrared Sky Brightness Monitor (NIRBM) aims to measure the middle infrared sky background
+in Antarctica. The NIRBM mainly consists of an InGaAs detector, a chopper, a reflector, a cooler
+and a black body. The reflector can rotate to scan the sky with a field of view ranging from 0{\deg}
+to 180{\deg}. Electromechanical control and weak signal readout functions are accomplished by
+the same circuit, whose core chip is a STM32F407VG microcontroller. Considering the environment
+is harsh for humans in Antarctica, a multi-level remote control software system is designed and
+implemented. A set of EPICS IOCs are developed to control each hardware module independently via
+serial port communication with the STM32 microcontroller. The tornado web framework and PyEpics
+are introduced as a combination where PyEpics is used to monitor or change the EPICS Process Variables,
+functioning as a client for the EPICS framework. Tornado is responsible for the specific operation
+process of inter-device collaboration, and expose a set of interfaces to users to make calls. Considering
+the high delay and low bandwidth of the network environment, the tornado back-end is designed as
+a master-and-agent architecture to improve domestic user experience. The master node is deployed
+in Antarctic while multiple agent nodes can be deployed domestic. The master and agent nodes communicate
+with each other through the WebSocket protocol to exchange latest information so that bandwidth
+is saved. The GUI is implemented in the form of single-page application based on the Vue framework
+which communicates with tornado through WebSocket and AJAX requests. The web page integrates device
+control, data curve drawing, alarm display, auto observation and other functions together. 

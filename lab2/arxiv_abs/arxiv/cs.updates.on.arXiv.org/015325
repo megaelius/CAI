@@ -1,0 +1,17 @@
+Domain adaptation (DA) has drawn high interests for its capacity to adapt a model trained on labeled
+source data to perform well on unlabeled or weakly labeled target data from a different domain. Most
+common DA techniques require the concurrent access to the input images of both the source and target
+domains. However, in practice, it is common that the source images are not available in the adaptation
+phase. This is a very frequent DA scenario in medical imaging, for instance, when the source and target
+images come from different clinical sites. We propose a novel formulation for adapting segmentation
+networks, which relaxes such a constraint. Our formulation is based on minimizing a label-free
+entropy loss defined over target-domain data, which we further guide with a domain invariant prior
+on the segmentation regions. Many priors can be used, derived from anatomical information. Here,
+a class-ratio prior is learned via an auxiliary network and integrated in the form of a Kullback-Leibler
+(KL) divergence in our overall loss function. We show the effectiveness of our prior-aware entropy
+minimization in adapting spine segmentation across different MRI modalities. Our method yields
+comparable results to several state-of-the-art adaptation techniques, even though is has access
+to less information, the source images being absent in the adaptation phase. Our straight-forward
+adaptation strategy only uses one network, contrary to popular adversarial techniques, which
+cannot perform without the presence of the source images. Our framework can be readily used with
+various priors and segmentation problems. 

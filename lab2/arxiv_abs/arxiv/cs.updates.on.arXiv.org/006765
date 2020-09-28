@@ -1,0 +1,18 @@
+Compressed sensing algorithms recover a signal from its under-determined linear measurements
+by exploiting its structure. Starting from sparsity, recovery methods have steadily moved towards
+more complex structures. Recently, the emerging machine learning techniques, especially the
+generative models based on neural nets, potentially, can learn general complex structures. Inspired
+by the success of such models in various computer vision tasks, researchers in compressed sensing
+have recently started to employ them to design efficient recovery methods. Consider a generative
+model defined as function $g:{\cal U}^k\to{R}^n$, ${\cal U}\subset{R}$. Assume that the function
+$g$ is trained such that it can describe a class of desired signals ${\cal Q}\subset{R}^n$. The standard
+problem in noiseless compressed sensing is to recover ${\bf x}\in{\cal Q}$ from under-determined
+linear measurements ${\bf y}=A{\bf x}$, where ${\bf y}\in{R}^m$ and $m\ll n$. A recovery method
+based on $g$ finds $g({\bf u})$, $\in{\cal U}^k$, which has the minimum measurement error. In this
+paper, the performance of such a recovery method is studied and it is proven that, if the number of
+measurements ($m$) is larger than twice the dimension of the generative model ($k$), then ${\bf
+x}$ can be recovered from ${\bf y}$, with a distortion that is a function of the distortion induced
+by $g$ in describing $\bf x$, i.e. $\min_{{\bf u}\in{\cal U}^k}\|g({\bf u})-{\bf x}\|$. To derive
+an efficient method, an algorithm based on projected gradient descent is proposed. It is proven
+that, given enough measurements, the algorithm converges to the optimal solution and is robust
+to measurement noise. Numerical results showing the effectiveness of the proposed method are presented.

@@ -1,0 +1,19 @@
+On-demand ride-pooling (e.g., UberPool) has recently become popular because of its ability to
+lower costs for passengers while simultaneously increasing revenue for drivers and aggregation
+companies. Unlike in Taxi on Demand (ToD) services -- where a vehicle is only assigned one passenger
+at a time -- in on-demand ride-pooling, each (possibly partially filled) vehicle can be assigned
+a group of passenger requests with multiple different origin and destination pairs. To ensure near
+real-time response, existing solutions to the real-time ride-pooling problem are myopic in that
+they optimise the objective (e.g., maximise the number of passengers served) for the current time
+step without considering its effect on future assignments. This is because even a myopic assignment
+in ride-pooling involves considering what combinations of passenger requests that can be assigned
+to vehicles, which adds a layer of combinatorial complexity to the ToD problem. A popular approach
+that addresses the limitations of myopic assignments in ToD problems is Approximate Dynamic Programming
+(ADP). Existing ADP methods for ToD can only handle Linear Program (LP) based assignments, however,
+while the assignment problem in ride-pooling requires an Integer Linear Program (ILP) with bad
+LP relaxations. To this end, our key technical contribution is in providing a general ADP method
+that can learn from ILP-based assignments. Additionally, we handle the extra combinatorial complexity
+from combinations of passenger requests by using a Neural Network based approximate value function
+and show a connection to Deep Reinforcement Learning that allows us to learn this value-function
+with increased stability and sample-efficiency. We show that our approach outperforms past approaches
+on a real-world dataset by up to 16%, a significant improvement in city-scale transportation problems.

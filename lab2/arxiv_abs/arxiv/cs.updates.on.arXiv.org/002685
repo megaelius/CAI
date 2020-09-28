@@ -1,0 +1,17 @@
+Flow- and context-sensitive points-to analysis is difficult to scale; for top-down approaches,
+the problem centers on repeated analysis of the same procedure; for bottom-up approaches, the abstractions
+used to represent procedure summaries have not scaled while preserving precision. We propose a
+novel abstraction called the Generalized Points-to Graph (GPG) which views points-to relations
+as memory updates and generalizes them using the counts of indirection levels leaving the unknown
+pointees implicit. This allows us to construct GPGs as compact representations of bottom-up procedure
+summaries in terms of memory updates and control flow between them. Their compactness is ensured
+by the following optimizations: strength reduction reduces the indirection levels, redundancy
+elimination removes redundant memory updates and minimizes control flow (without over-approximating
+data dependence between memory updates), and call inlining enhances the opportunities of these
+optimizations. We devise novel operations and data flow analyses for these optimizations. Our
+quest for scalability of points-to analysis leads to the following insight: The real killer of scalability
+in program analysis is not the amount of data but the amount of control flow that it may be subjected
+to in search of precision. The effectiveness of GPGs lies in the fact that they discard as much control
+flow as possible without losing precision (i.e., by preserving data dependence without over-approximation).
+This is the reason why the GPGs are very small even for main procedures that contain the effect of the
+entire program. This allows our implementation to scale to 158kLoC for C programs. 

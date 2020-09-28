@@ -1,0 +1,19 @@
+Numerous methods for crafting adversarial examples were proposed recently with high success rate.
+Most existing works normalize images into a continuous, real vector, domain firstly, and then craft
+adversarial examples in this domain. However, "adversarial" examples may become benign after
+de-normalizing them back into the discrete integer domain, known as the discretization problem.
+The discretization problem was mentioned in some work, but was underestimated and has received
+relatively little attention. In this work, we conduct the first comprehensive study of the discretization
+problem. We theoretically analyze 34 representative methods and empirically study 20 representative
+open source tools for crafting adversarial images. Our study reveals that almost all existing works
+suffer from the discretization problem and it is far more serious than originally thought. For instance,
+most black-box methods downgrade to white-box ones and methods having higher success rates drop
+down to lower high success rates, e.g., from 100% to 10%. This suggests that the discretization problem
+should be taken into account when crafting adversarial examples. As a first step towards addressing
+this problem, we propose a black-box method which reduces the adversarial example searching problem
+to a derivative-free optimization problem. Our method is able to craft `real' adversarial images
+by derivative-free search on the discrete integer domain. Experimental results show that our method
+achieves significantly higher success rate in terms of adversarial examples in the discrete integer
+domain than most other methods, no matter white-box or black-box. Moreover, our method is able to
+handle models that is non-differentiable and we successfully break the winner of NIPS 17 competition
+on defense with 95% success rate. 

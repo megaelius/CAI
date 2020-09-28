@@ -1,0 +1,17 @@
+We study a generalization of the classic paging problem that allows the amount of available memory
+to vary over time - capturing a fundamental property of many modern computing realities, from cloud
+computing to multi-core and energy-optimized processors. It turns out that good performance in
+the "classic" case provides no performance guarantees when memory capacity fluctuates: roughly
+speaking, moving from static to dynamic capacity can mean the difference between optimality within
+a factor 2 in space and time, and suboptimality by an arbitrarily large factor. More precisely, adopting
+the competitive analysis framework, we show that some online paging algorithms, despite having
+an optimal (h,k)-competitive ratio when capacity remains constant, are not (3,k)-competitive
+for any arbitrarily large k in the presence of minimal capacity fluctuations. In this light it is
+surprising that several classic paging algorithms perform remarkably well even if memory capacity
+changes adversarially - even without taking those changes into explicit account! In particular,
+we prove that LFD still achieves the minimum number of faults, and that several classic online algorithms
+such as LRU have a "dynamic" (h,k)-competitive ratio that is the best one can achieve without knowledge
+of future page requests, even if one had perfect knowledge of future capacity fluctuations (an exact
+characterization of this ratio shows it is almost, albeit not quite, equal to the "classic" ratio
+k/(k-h+1)). In other words, with careful management, knowing/predicting future memory resources
+appears far less crucial to performance than knowing/predicting future data accesses. 

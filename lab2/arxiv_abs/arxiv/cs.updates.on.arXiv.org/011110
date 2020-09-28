@@ -1,0 +1,20 @@
+Influence maximization is the task of finding k seed nodes in a social network such that the expected
+number of activated nodes in the network (under certain influence propagation model), referred
+to as the influence spread, is maximized. Lattice influence maximization (LIM) generalizes influence
+maximization such that, instead of selecting k seed nodes, one selects a vector x = (x_1, ..., x_d)
+from a discrete space X called a lattice, where x_j corresponds to the j-th marketing strategy and
+x represents a marketing strategy mix. Each strategy mix x has probability h_u(x) to activate a node
+u as a seed.LIM is the task of finding a strategy mix under the constraint x_1+...+x_d <= k such that
+its influence spread is maximized. We adapt the reverse influence sampling (RIS) approach and design
+scalable algorithms for LIM. We first design the IMM-PRR algorithm based on partial reverse-reachable
+sets as a general solution for LIM, and improve IMM-PRR for a large family of models where each strategy
+independently activates seed nodes. We then propose an alternative algorithm IMM-VSN based on
+virtual strategy nodes, for the family of models with independent strategy activations. We prove
+that both IMM-PRR and IMM-VSN guarantees 1-e-\epsilon approximation for small \epsilon> 0. Empirically,
+through extensive tests we demonstrate that IMM-VSN runs faster than IMM-PRR and much faster than
+other baseline algorithms while providing the same level of influence spread. We conclude that
+IMM-VSN is the best one for models with independent strategy activations, while IMM-PRR works for
+general modes without this assumption. Finally, we extend LIM to the partitioned budget case where
+strategies are partitioned into groups, each of which has a separate budget, and show that a minor
+variation of our algorithms would achieve 1/2 -\epsilon approximation ratio with the same time
+complexity. 

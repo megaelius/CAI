@@ -1,0 +1,18 @@
+Ensuring the privacy of sensitive data used to train modern machine learning models is of paramount
+importance in many areas of practice. One approach to study these concerns is through the lens of
+differential privacy. In this framework, privacy guarantees are generally obtained by perturbing
+models in such a way that specifics of data used to train the model are made ambiguous. A particular
+instance of this approach is through a "teacher-student" framework, wherein the teacher, who owns
+the sensitive data, provides the student with useful, but noisy, information, hopefully allowing
+the student model to perform well on a given task without access to particular features of the sensitive
+data. Because stronger privacy guarantees generally involve more significant perturbation on
+the part of the teacher, deploying existing frameworks fundamentally involves a trade-off between
+student's performance and privacy guarantee. One of the most important techniques used in previous
+works involves an ensemble of teacher models, which return information to a student based on a noisy
+voting procedure. In this work, we propose a novel voting mechanism with smooth sensitivity, which
+we call Immutable Noisy ArgMax, that, under certain conditions, can bear very large random noising
+from the teacher without affecting the useful information transferred to the student. Compared
+with previous work, our approach improves over the state-of-the-art methods on all measures, and
+scale to larger tasks with both better performance and stronger privacy ($\epsilon \approx 0$).
+This new proposed framework can be applied with any machine learning models, and provides an appealing
+solution for tasks that requires training on a large amount of data. 

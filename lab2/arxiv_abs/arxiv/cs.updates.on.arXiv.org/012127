@@ -1,0 +1,19 @@
+Following the breakthrough work of Tardos in the bit-complexity model, Vavasis and Ye gave the first
+exact algorithm for linear programming in the real model of computation with running time depending
+only on the constraint matrix. For solving a linear program (LP) $\max\, c^\top x,\: Ax = b,\: x \geq
+0,\: A \in \mathbb{R}^{m \times n}$, Vavasis and Ye developed a primal-dual interior point method
+using a 'layered least squares' (LLS) step, and showed that $O(n^{3.5} \log (\bar{\chi}_A+n))$
+iterations suffice to solve (LP) exactly, where $\bar{\chi}_A$ is a condition measure controlling
+the size of solutions to linear systems related to $A$. Monteiro and Tsuchiya, noting that the central
+path is invariant under rescalings of the columns of $A$ and $c$, asked whether there exists an LP
+algorithm depending instead on the measure $\bar{\chi}^*_A$, defined as the minimum $\bar{\chi}_{AD}$
+value achievable by a column rescaling $AD$ of $A$, and gave strong evidence that this should be the
+case. We resolve this open question affirmatively. Our first main contribution is an $O(m^2 n^2
++ n^3)$ time algorithm which works on the linear matroid of $A$ to compute a nearly optimal diagonal
+rescaling $D$ satisfying $\bar{\chi}_{AD} \leq n(\bar{\chi}^*)^3$. This algorithm also allows
+us to approximate the value of $\bar{\chi}_A$ up to a factor $n (\bar{\chi}^*)^2$. As our second
+main contribution, we develop a scaling invariant LLS algorithm, together with a refined potential
+function based analysis for LLS algorithms in general. With this analysis, we derive an improved
+$O(n^{2.5} \log n\log (\bar{\chi}^*_A+n))$ iteration bound for optimally solving (LP) using
+our algorithm. The same argument also yields a factor $n/\log n$ improvement on the iteration complexity
+bound of the original Vavasis-Ye algorithm. 

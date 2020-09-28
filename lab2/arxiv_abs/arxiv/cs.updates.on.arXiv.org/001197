@@ -1,0 +1,19 @@
+Recommendation is the task of improving customer experience through personalized recommendation
+based on users' past feedback. In this paper, we investigate the most common scenario: the user-item
+(U-I) matrix of implicit feedback. Even though many recommendation approaches are designed based
+on implicit feedback, they attempt to project the U-I matrix into a low-rank latent space, which
+is a strict restriction that rarely holds in practice. In addition, although misclassification
+costs from imbalanced classes are significantly different, few methods take the cost of classification
+error into account. To address aforementioned issues, we propose a robust framework by decomposing
+the U-I matrix into two components: (1) a low-rank matrix that captures the common preference, and
+(2) a sparse matrix that detects the user-specific preference of individuals. A cost-sensitive
+learning model is embedded into the framework. Specifically, this model exploits different costs
+in the loss function for the observed and unobserved instances. We show that the resulting non-smooth
+convex objective can be optimized efficiently by an accelerated projected gradient method with
+closed-form solutions. Morever, the proposed algorithm can be scaled up to large-sized datasets
+after a relaxation. The theoretical result shows that even with a small fraction of 1's in the U-I
+matrix $M\in\mathbb{R}^{n\times m}$, the cost-sensitive error of the proposed model is upper
+bounded by $O(\frac{\alpha}{\sqrt{mn}})$, where $\alpha$ is a bias over imbalanced classes.
+Finally, empirical experiments are extensively carried out to evaluate the effectiveness of our
+proposed algorithm. Encouraging experimental results show that our algorithm outperforms several
+state-of-the-art algorithms on benchmark recommendation datasets. 

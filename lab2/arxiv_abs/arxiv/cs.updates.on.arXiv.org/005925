@@ -1,0 +1,18 @@
+In the classical bilateral filter, a fixed Gaussian range kernel is used along with a spatial kernel
+for edge-preserving smoothing. We consider a generalization of this filter, the so-called adaptive
+bilateral filter, where the center and width of the Gaussian range kernel is allowed to change from
+pixel to pixel. Though this variant was originally proposed for sharpening and noise removal, it
+can also be used for other applications such as artifact removal and texture filtering. Similar
+to the bilateral filter, the brute-force implementation of its adaptive counterpart requires
+intense computations. While several fast algorithms have been proposed in the literature for bilateral
+filtering, most of them work only with a fixed range kernel. In this paper, we propose a fast algorithm
+for adaptive bilateral filtering, whose complexity does not scale with the spatial filter width.
+This is based on the observation that the concerned filtering can be performed purely in range space
+using an appropriately defined local histogram. We show that by replacing the histogram with a polynomial
+and the finite range-space sum with an integral, we can approximate the filter using analytic functions.
+In particular, an efficient algorithm is derived using the following innovations: the polynomial
+is fitted by matching its moments to those of the target histogram (this is done using fast convolutions),
+and the analytic functions are recursively computed using integration-by-parts. Our algorithm
+can accelerate the brute-force implementation by at least $20 \times$, without perceptible distortions
+in the visual quality. We demonstrate the effectiveness of our algorithm for sharpening, JPEG deblocking,
+and texture filtering. 

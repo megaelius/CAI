@@ -1,0 +1,18 @@
+Deep neural networks (DNNs) have become the state-of-the-art technique for machine learning tasks
+in various applications. However, due to their size and the computational complexity, large DNNs
+are not readily deployable on edge devices in real-time. To manage complexity and accelerate computation,
+network compression techniques based on pruning and quantization have been proposed and shown
+to be effective in reducing network size. However, such network compression can result in irregular
+matrix structures that are mismatched with modern hardware-accelerated platforms, such as graphics
+processing units (GPUs) designed to perform the DNN matrix multiplications in a structured (block-based)
+way. We propose MPDCompress, a DNN compression algorithm based on matrix permutation decomposition
+via random mask generation. In-training application of the masks molds the synaptic weight connection
+matrix to a sub-graph separation format. Aided by the random permutations, a hardware-desirable
+block matrix is generated, allowing for a more efficient implementation and compression of the
+network. To show versatility, we empirically verify MPDCompress on several network models, compression
+rates, and image datasets. On the LeNet 300-100 model (MNIST dataset), Deep MNIST, and CIFAR10,
+we achieve 10 X network compression with less than 1% accuracy loss compared to non-compressed accuracy
+performance. On AlexNet for the full ImageNet ILSVRC-2012 dataset, we achieve 8 X network compression
+with less than 1% accuracy loss, with top-5 and top-1 accuracies of 79.6% and 56.4%, respectively.
+Finally, we observe that the algorithm can offer inference speedups across various hardware platforms,
+with 4 X faster operation achieved on several mobile GPUs. 

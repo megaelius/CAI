@@ -1,0 +1,19 @@
+As dataset sizes increase, data analysis tasks in high performance computing (HPC) are increasingly
+dependent on sophisticated dataflows and out-of-core methods for efficient system utilization.
+In addition, as HPC systems grow, memory access and data sharing are becoming performance bottlenecks.
+Cloud computing employs a data processing paradigm typically built on a loosely connected group
+of low-cost computing nodes without relying upon shared storage and/or memory. Apache Spark is
+a popular engine for large-scale data analysis in the cloud, which we have successfully deployed
+via job submission scripts on production clusters. In this paper, we describe common parallel analysis
+dataflows for both Message Passing Interface (MPI) and cloud based applications. We developed
+an effective benchmark to measure the performance characteristics of these tasks using both types
+of systems, specifically comparing MPI/C-based analyses with Spark. The benchmark is a data processing
+pipeline representative of a typical analytics framework implemented using map-reduce. In the
+case of Spark, we also consider whether language plays a role by writing tests using both Python and
+Scala, a language built on the Java Virtual Machine (JVM). We include performance results from two
+large systems at Argonne National Laboratory including Theta, a Cray XC40 supercomputer on which
+our experiments run with 65,536 cores (1024 nodes with 64 cores each). The results of our experiments
+are discussed in the context of their applicability to future HPC architectures. Beyond understanding
+performance, our work demonstrates that technologies such as Spark, while typically aimed at multi-tenant
+cloud-based environments, show promise for data analysis needs in a traditional clustering/supercomputing
+environment. 

@@ -1,0 +1,20 @@
+Deep neural networks have experimentally demonstrated superior performance over other machine
+learning approaches in decision-making predictions. However, one major concern is the closed
+set nature of the classification decision on the trained classes, which can have serious consequences
+in safety critical systems. When the deep neural network is in a streaming environment, fast interpretation
+of this classification is required to determine if the classification result is trusted. Un-trusted
+classifications can occur when the input data to the deep neural network changes over time. One type
+of change that can occur is concept evolution, where a new class is introduced that the deep neural
+network was not trained on. In the majority of deep neural network architectures, the only option
+is to assign this instance to one of the classes it was trained on, which would be incorrect. The aim
+of this research is to detect the arrival of a new class in the stream. Existing work on interpreting
+deep neural networks often focuses on neuron activations to provide visual interpretation and
+feature extraction. Our novel approach, coined DeepStreamCE, uses streaming approaches for real-time
+concept evolution detection in deep neural networks. DeepStreamCE applies neuron activation
+reduction using an autoencoder and MCOD stream-based clustering in the offline phase. Both outputs
+are used in the online phase to analyse the neuron activations in the evolving stream in order to detect
+concept evolution occurrence in real time. We evaluate DeepStreamCE by training VGG16 convolutional
+neural networks on combinations of data from the CIFAR-10 dataset, holding out some classes to be
+used as concept evolution. For comparison, we apply the data and VGG16 networks to an open-set deep
+network solution - OpenMax. DeepStreamCE outperforms OpenMax when identifying concept evolution
+for our datasets. 

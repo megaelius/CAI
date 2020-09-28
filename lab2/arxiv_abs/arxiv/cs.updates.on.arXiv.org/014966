@@ -1,0 +1,18 @@
+Activity detection in surveillance videos is a difficult problem due to multiple factors such as
+large field of view, presence of multiple activities, varying scales and viewpoints, and its untrimmed
+nature. The existing research in activity detection is mainly focused on datasets, such as UCF-101,
+JHMDB, THUMOS, and AVA, which partially address these issues. The requirement of processing the
+surveillance videos in real-time makes this even more challenging. In this work we propose Gabriella,
+a real-time online system to perform activity detection on untrimmed surveillance videos. The
+proposed method consists of three stages: tubelet extraction, activity classification, and online
+tubelet merging. For tubelet extraction, we propose a localization network which takes a video
+clip as input and spatio-temporally detects potential foreground regions at multiple scales to
+generate action tubelets. We propose a novel Patch-Dice loss to handle large variations in actor
+size. Our online processing of videos at a clip level drastically reduces the computation time in
+detecting activities. The detected tubelets are assigned activity class scores by the classification
+network and merged together using our proposed Tubelet-Merge Action-Split (TMAS) algorithm to
+form the final action detections. The TMAS algorithm efficiently connects the tubelets in an online
+fashion to generate action detections which are robust against varying length activities. We perform
+our experiments on the VIRAT and MEVA (Multiview Extended Video with Activities) datasets and demonstrate
+the effectiveness of the proposed approach in terms of speed (~100 fps) and performance with state-of-the-art
+results. The code and models will be made publicly available. 

@@ -1,0 +1,19 @@
+Android remains an attractive target for malware authors and as such, the mobile platform is still
+highly prone to infections caused by malicious applications. To tackle this problem, malware classifiers
+leveraging machine learning techniques have been proposed, with varying degrees of success. They
+often need to rely on a large, diverse set of features -- which are indicative of apps installed by
+users. This, in turn, raises privacy concerns as it has been shown that features used to train and
+test machine learning models can provide insights into user's preferences. As such, there is a need
+for a decentralized, privacy-respecting Android malware classifier which can protect users from
+both malware infections and the misuse of private, sensitive information stored on their mobile
+devices. To fill this gap, we propose LiM -- a malware classification framework which leverages
+the power of Federated Learning to detect and classify malicious apps in a privacy-respecting manner.
+Data about newly installed apps is kept locally on the users' devices while users benefit from the
+learning process from each other, and the service provider cannot infer which apps were installed
+by each user. To realize such classifier in a setting where users cannot provide ground truth (i.e.
+they cannot tell whether an app is malicious), we use a safe semi-supervised ensemble that maximizes
+the increase on classification accuracy with respect to a baseline classifier the service provider
+trains. We implement LiM and show that the cloud has F1 score of 95%, while clients have perfect recall
+with only 1 false positive in >100 apps, using a dataset of 25K clean apps and 25K malicious apps, 200
+users and 50 rounds of federation. Furthermore, we also conducted a security analysis to demonstrate
+that LiM remains robust against poisoning attacks. 

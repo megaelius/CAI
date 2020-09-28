@@ -1,0 +1,19 @@
+In this paper, we propose a Gaussian Process (GP) emulator for the calculation of a) tomographic
+weak lensing band-power spectra, and b) coefficients of summary data massively compressed with
+the MOPED algorithm. In the former case cosmological parameter inference is accelerated by a factor
+of $\sim 10$-$30$ compared to explicit calls to the Boltzmann solver CLASS when applied to KiDS-450
+weak lensing data. Much larger gains will come with future data, where with MOPED compression, the
+speed up can be up to a factor of $\sim 10^3$ when the common Limber approximation is used. Furthermore,
+the GP opens up the possibility of dropping the Limber approximation, without which the theoretical
+calculations may be unfeasibly slow. A potential advantage of GPs is that an error on the emulated
+function can be computed and this uncertainty incorporated into the likelihood. If speed is of the
+essence, then the mean of the Gaussian Process can be used and the uncertainty ignored. We compute
+the Kullback-Leibler divergence between the emulator likelihood and the CLASS likelihood, and
+on the basis of this and from analysing the uncertainties on the parameters, we find that in this case,
+the inclusion of the GP uncertainty does not justify the extra computational expense in the test
+application. For future weak lensing surveys such as Euclid and Legacy Survey of Space and Telescope
+(LSST), the number of summary statistics will be large, up to $\sim 10^{4}$. The speed of MOPED is
+determined by the number of parameters, not the number of summary data, so the gains are very large.
+In the non-Limber case, the speed-up can be a factor of $\sim 10^5$, provided that a fast way to compute
+the theoretical MOPED coefficients is available. The GP presented here provides such a fast mechanism
+and enables MOPED to be employed. 

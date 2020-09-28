@@ -1,0 +1,19 @@
+Model synchronization, i.e., the task of restoring consistency between two interrelated models
+after a model change, is a challenging task. Triple Graph Grammars (TGGs) specify model consistency
+by means of rules that describe how to create consistent pairs of models. These rules can be used to
+automatically derive further rules, which describe how to propagate changes from one model to the
+other or how to change one model in such a way that propagation is guaranteed to be possible. Restricting
+model synchronization to these derived rules, however, may lead to unnecessary deletion and recreation
+of model elements during change propagation. This is inefficient and may cause unnecessary information
+loss, i.e., when deleted elements contain information that is not represented in the second model,
+this information cannot be recovered easily. Short-cut rules have recently been developed to avoid
+unnecessary information loss by reusing existing model elements. In this paper, we show how to automatically
+derive (short-cut) repair rules from short-cut rules to propagate changes such that information
+loss is avoided and model synchronization is accelerated. The key ingredients of our rule-based
+model synchronization process are these repair rules and an incremental pattern matcher informing
+about suitable applications of them. We prove the termination and the correctness of this synchronization
+process and discuss its completeness. As a proof of concept, we have implemented this synchronization
+process in eMoflon, a state-of-the-art model transformation tool with inherent support of bidirectionality.
+Our evaluation shows that repair processes based on (short-cut) repair rules have considerably
+decreased information loss and improved performance compared to former model synchronization
+processes based on TGGs. 

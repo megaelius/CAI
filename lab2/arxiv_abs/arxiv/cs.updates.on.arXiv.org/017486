@@ -1,0 +1,19 @@
+Lightning Network (LN) is the most deployed Bitcoin-compatible Payment Channel Network (PCN),
+ensuring faster execution of transactions. However, this Layer-two solution has its fair share
+of problems. Topological analysis on Lightning Network reveals that Griefing Attack is a major
+problem whereby an adversary intentionally exhausts the channel capacity of the network. It can
+be used for mounting series of targeted attacks like Denial-of-Service Attack, Node Isolation
+Attack and Channel Exhaustion Attack on honest participants as well. Though the attack does not
+always result in a direct monetary gain of the attacker, blocking of channel capacity for several
+days prevents several nodes from processing any future transaction request, leading to substantial
+collateral damage. If the attacker is able to lock funds in multiple paths simultaneously, then
+a major portion of the network may get stalled, reducing the throughput. Mitigating Griefing Attack
+still remains an open problem. In this paper, we propose an efficient countermeasure for the attack,
+known as Griefing-Penalty. Mounting such an attack requires the attacker to pay a penalty proportional
+to the collateral cost of executing a payment. The penalty is used for compensating parties who incurred
+loss by locking funds. To realize it, we propose a new payment protocol HTLC-GP or Hashed Timelock
+Contract with Griefing-Penalty. It not only preserves privacy but also ensures that an attacker
+cannot ascribe blame on any honest party present in the path relaying the payment. We evaluate the
+effectiveness of griefing-penalty using two attacking strategies and test it on several snapshots
+of Lightning Network. Our evaluation results show that average revenue earned by the attacker after
+mounting the attack decreases substantially for HTLC-GP as compared to HTLC. 

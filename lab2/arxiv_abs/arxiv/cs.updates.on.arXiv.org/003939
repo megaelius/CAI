@@ -1,0 +1,17 @@
+Event based sensors encode pixel wise contrast changes as positive or negative events at the instant
+they occur. This paradigm shift away from conventional image sensors provides advantages like
+low bandwidth requirement, low operating power requirement and low latency. However, in the process
+of encoding these contrast changes most of the spatial intensity information is lost. Previously
+there have been attempts at recovering this lost intensity information directly from the event
+data. Although the results are promising they lack the texture and the consistency of natural videos.
+We propose to reconstruct photorealistic intensity images by using a low frame rate conventional
+camera along with the event sensor. The low frame rate conventional camera provides us with texture-rich
+information, while the event sensor provides us with dense temporal measurements. We combine the
+strength of both by warping the low-frame rate video to intermediate locations where we only have
+event sensor data, resulting in high frame rate video. For accomplishing this task, we need the knowledge
+of scene depth and dense ego-motion estimates. We propose to use an unsupervised, learning free
+method to estimate depth from low-frame rate images. Unlike previous works, instead of estimating
+ego-motion directly from events, we propose an autoencoder based model to map events to pseudo-intensity
+frames. Using pseudo-intensity frames as input, we propose an unsupervised, learning free method
+adapted from Deep Image Prior to estimate the sensor ego-motion. Finally, we demonstrate photo-realistic
+reconstructions on a real hybrid sensor (DAVIS) dataset. 

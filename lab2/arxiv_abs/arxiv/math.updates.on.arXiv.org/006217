@@ -1,0 +1,19 @@
+The construction of discontinuous Galerkin (DG) methods for the compressible Euler or Navier-Stokes
+equations (NSE) includes the approximation of non-linear flux terms in the volume integrals. The
+terms can lead to aliasing and stability issues in turbulence simulations with moderate Mach numbers
+(Ma < 0.3), e.g. due to under-resolution of vortical dominated structures typical in large eddy
+simulations (LES). The kinetic energy or entropy are elevated in smooth, but under-resolved parts
+of the solution which are affected by aliasing. It is known that the kinetic energy is not a conserved
+quantity for compressible flows, but for small Mach numbers minor deviations from a conserved evolution
+can be expected. While it is formally possible to construct kinetic energy preserving (KEP) and
+entropy conserving (EC) DG methods for the Euler equations, due to the viscous terms in case of the
+NSE, we aim to construct kinetic energy dissipative (KED) or entropy stable (ES) DG methods on moving
+curved hexahedral meshes. The Arbitrary Lagrangian-Eulerian (ALE) approach is used to include
+the effect of mesh motion in the split form DG methods. First, we use the three dimensional Taylor-Green
+vortex to investigate and analyze our theoretical findings and the behavior of the novel split form
+ALE DG schemes for a turbulent vortical dominated flow. Second, we apply the framework to a complex
+aerodynamics application. An implicit LES split form ALE DG approach is used to simulate the transitional
+flow around a plunging SD7003 airfoil at Reynolds number Re = 40, 000 and Mach number Ma = 0.1. We compare
+the standard nodal ALE DG scheme, the ALE DG variant with consistent overintegration of the non-linear
+terms and the novel KED and ES split form ALE DG methods in terms of robustness, accuracy and computational
+efficiency. 

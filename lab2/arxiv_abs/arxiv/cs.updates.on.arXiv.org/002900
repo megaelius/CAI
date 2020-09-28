@@ -1,0 +1,18 @@
+\emph{Oblivious RAM} (ORAM) is a cryptographic primitive that allows a client to securely execute
+RAM programs over data that is stored in an untrusted server. \emph{Distributed Oblivious RAM}
+is a variant of ORAM, where the data is stored in $m$ non-colluding servers. Extensive research over
+the last few decades have succeeded to reduce the bandwidth overhead of ORAM schemes, both in the
+single-server and the multi-server setting, from $O(\sqrt{N})$ to $O(1)$. However, all known
+protocols that achieve a sub-logarithmic overhead either require heavy server-side computation
+(e.g. homomorphic encryption), or a relatively large block size of at least $\Omega(\log^3 N)$.
+In this paper, we present a family of distributed ORAM constructions that follow the hierarchical
+approach of Goldreich and Ostrovsky\cite{GO}. We enhance known techniques, and develop new ones,
+to take better advantage of the existence of multiple servers. By plugging efficient known hashing
+schemes in our constructions, we get the following results: 1. For any number $m\geq 2$ of servers,
+we show an $m$-server ORAM scheme with $O(\log N/\log\log N)$ overhead, and block size $\Omega(\log^2
+N)$. This scheme is resilient even against an $(m-1)$-server adversary. 2. A three-server ORAM
+construction with $O(\omega(1)\cdot\log N/\log\log N)$ overhead and a block size almost logarithmic,
+i.e. $\Omega(\log^{1+\epsilon}N)$. We also investigate a model where the servers are allowed
+to perform a linear amount of light local computations, and show that constant overhead is achievable
+in this model, through a simple four-server ORAM protocol. This is the first ORAM scheme with constant
+overhead, and polylogarithmic block size, that does not use homomorphic encryption. 

@@ -1,0 +1,20 @@
+The best way to calculate statistics from medical data is to use the data of individual patients.
+In some settings, this data is difficult to obtain due to privacy restrictions. In Germany, for example,
+it is not possible to pool routine data from different hospitals for research purposes without the
+consent of the patients. The DataSHIELD software provides an infrastructure and a set of statistical
+methods for joint analyses of distributed data. The contained algorithms are reformulated to work
+with aggregated data from the participating sites instead of the individual data. If a desired algorithm
+is not implemented in DataSHIELD or cannot be reformulated in such a way, using artificial data is
+an alternative. We present a methodology together with a software implementation that builds on
+DataSHIELD to create artificial data that preserve complex patterns from distributed individual
+patient data. Such data sets of artificial patients, which are not linked to real patients, can then
+be used for joint analyses. We use deep Boltzmann machines (DBMs) as generative models for capturing
+the distribution of data. For the implementation, we employ the package "BoltzmannMachines" from
+the Julia programming language and wrap it for use with DataSHIELD, which is based on R. As an exemplary
+application, we conduct a distributed analysis with DBMs on a synthetic data set, which simulates
+genetic variant data. Patterns from the original data can be recovered in the artificial data using
+hierarchical clustering of the virtual patients, demonstrating the feasibility of the approach.
+Our implementation adds to DataSHIELD the ability to generate artificial data that can be used for
+various analyses, e. g. for pattern recognition with deep learning. This also demonstrates more
+generally how DataSHIELD can be flexibly extended with advanced algorithms from languages other
+than R. 

@@ -1,0 +1,17 @@
+The transactional conflict problem arises in transactional systems whenever two or more concurrent
+transactions clash on a data item. While the standard solution to such conflicts is to immediately
+abort one of the transactions, some practical systems consider the alternative of delaying conflict
+resolution for a short interval, which may allow one of the transactions to commit. The challenge
+in the transactional conflict problem is to choose the optimal length of this delay interval so as
+to minimize the overall running time penalty for the conflicting transactions. In this paper, we
+propose a family of optimal online algorithms for the transactional conflict problem. Specifically,
+we consider variants of this problem which arise in different implementations of transactional
+systems, namely "requestor wins" and "requestor aborts" implementations: in the former, the recipient
+of a coherence request is aborted, whereas in the latter, it is the requestor which has to abort. Both
+strategies are implemented by real systems. We show that the requestor aborts case can be reduced
+to a classic instance of the ski rental problem, while the requestor wins case leads to a new version
+of this classical problem, for which we derive optimal deterministic and randomized algorithms.
+Moreover, we prove that, under a simplified adversarial model, our algorithms are constant-competitive
+with the offline optimum in terms of throughput. We validate our algorithmic results empirically
+through a hardware simulation of hardware transactional memory (HTM), showing that our algorithms
+can lead to non-trivial performance improvements for classic concurrent data structures. 

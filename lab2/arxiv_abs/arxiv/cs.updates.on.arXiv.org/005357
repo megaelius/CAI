@@ -1,0 +1,18 @@
+Despite being very effective in several classification tasks, Dynamic Ensemble Selection (DES)
+techniques can select classifiers that classify all samples in the region of competence as being
+from the same class. The Frienemy Indecision REgion DES (FIRE-DES) tackles this problem by pre-selecting
+classifiers that correctly classify at least one pair of samples from different classes in the region
+of competence of the test sample. However, FIRE-DES applies the pre-selection for the classification
+of a test sample if and only if its region of competence is composed of samples from different classes
+(indecision region), even though this criterion is not reliable for determining if a test sample
+is located close to the borders of classes (true indecision region) when the region of competence
+is obtained using classical nearest neighbors approach. Because of that, FIRE-DES mistakes noisy
+regions for true indecision regions, leading to the pre-selection of incompetent classifiers,
+and mistakes true indecision regions for safe regions, leaving samples in such regions without
+any pre-selection. To tackle these issues, we propose the FIRE-DES++, an enhanced FIRE-DES that
+removes noise and reduces the overlap of classes in the validation set; and defines the region of
+competence using an equal number of samples of each class, avoiding selecting a region of competence
+with samples of a single class. Experiments are conducted using FIRE-DES++ with 8 different dynamic
+selection techniques on 64 classification datasets. Experimental results show that FIRE-DES++
+increases the classification performance of all DES techniques considered in this work, outperforming
+FIRE-DES with 7 out of the 8 DES techniques, and outperforming state-of-the-art DES frameworks.

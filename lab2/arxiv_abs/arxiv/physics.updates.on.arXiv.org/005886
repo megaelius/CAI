@@ -1,0 +1,19 @@
+Purpose: To demonstrate the feasibility and performance of a fully automated deep learning framework
+to estimate myocardial strain from short-axis cardiac magnetic resonance tagged images. Methods
+and Materials: In this retrospective cross-sectional study, 4508 cases from the UK Biobank were
+split randomly into 3244 training and 812 validation cases, and 452 test cases. Ground truth myocardial
+landmarks were defined and tracked by manual initialization and correction of deformable image
+registration using previously validated software with five readers. The fully automatic framework
+consisted of 1) a convolutional neural network (CNN) for localization, and 2) a combination of a
+recurrent neural network (RNN) and a CNN to detect and track the myocardial landmarks through the
+image sequence for each slice. Radial and circumferential strain were then calculated from the
+motion of the landmarks and averaged on a slice basis. Results: Within the test set, myocardial end-systolic
+circumferential Green strain errors were -0.001 +/- 0.025, -0.001 +/- 0.021, and 0.004 +/- 0.035
+in basal, mid, and apical slices respectively (mean +/- std. dev. of differences between predicted
+and manual strain). The framework reproduced significant reductions in circumferential strain
+in diabetics, hypertensives, and participants with previous heart attack. Typical processing
+time was ~260 frames (~13 slices) per second on an NVIDIA Tesla K40 with 12GB RAM, compared with 6-8
+minutes per slice for the manual analysis. Conclusions: The fully automated RNNCNN framework for
+analysis of myocardial strain enabled unbiased strain evaluation in a high-throughput workflow,
+with similar ability to distinguish impairment due to diabetes, hypertension, and previous heart
+attack. 

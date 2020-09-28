@@ -1,0 +1,19 @@
+This paper presents the SCvx algorithm, a successive convexification algorithm designed to solve
+non-convex optimal control problems with global convergence and superlinear convergence-rate
+guarantees. The proposed algorithm handles nonlinear dynamics and non-convex state and control
+constraints by linearizing them about the solution of the previous iterate, and solving the resulting
+convex subproblem to obtain a solution for the current iterate. Additionally, the algorithm incorporates
+several safe-guarding techniques into each convex subproblem, employing virtual controls and
+virtual buffer zones to avoid artificial infeasibility, and a trust region to avoid artificial
+unboundedness. The procedure is repeated in succession, thus turning a difficult non-convex optimal
+control problem into a sequence of numerically tractable convex subproblems. Using fast and reliable
+Interior Point Method (IPM) solvers, the convex subproblems can be computed quickly, making the
+SCvx algorithm well suited for real-time applications. Analysis is presented to show that the algorithm
+converges both globally and superlinearly, guaranteeing the local optimality of the original
+problem. The superlinear convergence is obtained by exploiting the structure of optimal control
+problems, showcasing the superior convergence rate that can be obtained by leveraging specific
+problem properties when compared to generic nonlinear programming methods. Numerical simulations
+are performed for an illustrative non-convex quad-rotor motion planning example problem, and
+corresponding results obtained using Sequential Quadratic Programming (SQP) solver are provided
+for comparison. Our results show that the convergence rate of the SCvx algorithm is indeed superlinear,
+and surpasses that of the SQP-based method by converging in less than half the number of iterations.

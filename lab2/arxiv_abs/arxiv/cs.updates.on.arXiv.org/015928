@@ -1,0 +1,19 @@
+This paper presents an efficient algorithm for the least-squares problem using the point-to-plane
+cost, which aims to jointly optimize depth sensor poses and plane parameters for 3D reconstruction.
+We call this least-squares problem \textbf{Planar Bundle Adjustment} (PBA), due to the similarity
+between this problem and the original Bundle Adjustment (BA) in visual reconstruction. As planes
+ubiquitously exist in the man-made environment, they are generally used as landmarks in SLAM algorithms
+for various depth sensors. PBA is important to reduce drift and improve the quality of the map. However,
+directly adopting the well-established BA framework in visual reconstruction will result in a
+very inefficient solution for PBA. This is because a 3D point only has one observation at a camera
+pose. In contrast, a depth sensor can record hundreds of points in a plane at a time, which results
+in a very large nonlinear least-squares problem even for a small-scale space. Fortunately, we find
+that there exist a special structure of the PBA problem. We introduce a reduced Jacobian matrix and
+a reduced residual vector, and prove that they can replace the original Jacobian matrix and residual
+vector in the generally adopted Levenberg-Marquardt (LM) algorithm. This significantly reduces
+the computational cost. Besides, when planes are combined with other features for 3D reconstruction,
+the reduced Jacobian matrix and residual vector can also replace the corresponding parts derived
+from planes. Our experimental results verify that our algorithm can significantly reduce the computational
+time compared to the solution using the traditional BA framework. Besides, our algorithm is faster,
+more accuracy, and more robust to initialization errors compared to the start-of-the-art solution
+using the plane-to-plane cost 

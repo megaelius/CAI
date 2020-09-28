@@ -1,0 +1,18 @@
+Merging other branches into the current working branch is common in collaborative software development.
+However, developers still heavily rely on the textual merge tools to handle the complicated merge
+tasks. The latent semantic merge conflicts may fail to be detected and degrade the software quality.
+Regression testing is able to prevent regression faults and has been widely used in real-world software
+development. However, the merged software may fail to be well examined by rerunning the existing
+whole test suite. Intuitively, if the test suite fails to cover the changes of different branches
+at the same time, the merge conflicts would fail to be detected. Recently, it has been proposed to
+conduct verification on 3-way merges, but this approach does not support even some common cases
+such as different changes made to different parts of the program. In this paper, we propose an approach
+of regression unit test generation specifically for checking program merges according to our proposed
+test oracles. And our general test oracles support us to examine not only 3-way merges, but also 2-way
+and octopus merges. Considering the conflicts may arise in other locations besides changed methods
+of the project, we design an algorithm to select UUTs based on the dependency analysis of the whole
+project. On this basis, we implement a tool called TOM to generate unit tests for Java program merges.
+We also design the benchmark MCon4J consisting of 389 conflict 3-way merges and 389 conflict octopus
+merges to facilitate further studies on this topic. The experimental results show that TOM finds
+45 conflict 3- way merges and 87 conflicts octopus merges, while the verification based tool fails
+to work on MCon4J. 

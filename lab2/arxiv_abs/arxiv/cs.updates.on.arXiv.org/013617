@@ -1,0 +1,18 @@
+Graph neural networks (GNNs) are widely used in many applications. However, their robustness against
+adversarial attacks is criticized. Prior studies show that using unnoticeable modifications
+on graph topology or nodal features can significantly reduce the performances of GNNs. It is very
+challenging to design robust graph neural networks against poisoning attack and several efforts
+have been taken. Existing work aims at reducing the negative impact from adversarial edges only
+with the poisoned graph, which is sub-optimal since they fail to discriminate adversarial edges
+from normal ones. On the other hand, clean graphs from similar domains as the target poisoned graph
+are usually available in the real world. By perturbing these clean graphs, we create supervised
+knowledge to train the ability to detect adversarial edges so that the robustness of GNNs is elevated.
+However, such potential for clean graphs is neglected by existing work. To this end, we investigate
+a novel problem of improving the robustness of GNNs against poisoning attacks by exploring clean
+graphs. Specifically, we propose PA-GNN, which relies on a penalized aggregation mechanism that
+directly restrict the negative impact of adversarial edges by assigning them lower attention coefficients.
+To optimize PA-GNN for a poisoned graph, we design a meta-optimization algorithm that trains PA-GNN
+to penalize perturbations using clean graphs and their adversarial counterparts, and transfers
+such ability to improve the robustness of PA-GNN on the poisoned graph. Experimental results on
+four real-world datasets demonstrate the robustness of PA-GNN against poisoning attacks on graphs.
+Code and data are available here: https://github.com/tangxianfeng/PA-GNN. 

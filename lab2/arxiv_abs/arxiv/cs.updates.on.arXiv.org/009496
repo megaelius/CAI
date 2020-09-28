@@ -1,0 +1,19 @@
+We study metric data structures for curves in doubling spaces, such as trajectories of moving objects
+in Euclidean $\mathbb{R}^d$, where the distance between two curves is measured using the discrete
+Fr\'echet distance. We design data structures in an \emph{asymmetric} setting where the input
+is a curve (or a set of $n$ curves) each of complexity $m$ and the queries are with curves of complexity
+$k\ll m$. We show that there exist approximate data structures that are independent of the input
+size $N = d \cdot n \cdot m$ and we study how to maintain them dynamically if the input is given in the
+stream. Concretely, we study two types of data structures: (i) distance oracles, where the task
+is to store a compressed version of the input curve, which can be used to answer queries for the distance
+of a query curve to the input curve, and (ii) nearest-neighbor data structures, where the task is
+to preprocess a set of input curves to answer queries for the input curve closest to the query curve.
+In both cases we are interested in approximation. For curves embedded in Euclidean $\mathbb{R}^d$
+with constant $d$, our distance oracle uses space in $\mathcal{O}((k \log(\epsilon^{-1}) \epsilon^{-d})^k)$
+($\epsilon$ is the precision parameter). The oracle performs $(1+\epsilon)$-approximate queries
+in time in $\mathcal{O}(k^2)$ and is deterministic. We show how to maintain this distance oracle
+in the stream using polylogarithmic additional memory. In the stream, we can dynamically answer
+distance queries to the portion of the stream seen so far in $\mathcal{O}(k^4 \log^2 m)$ time. We
+apply our techniques to the second problem, approximate near neighbor (ANN) data structures, and
+achieve an exponential improvement in the dependency on the complexity of the input curves compared
+to the state of the art. 

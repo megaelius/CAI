@@ -1,0 +1,20 @@
+Distributed computing systems often consist of hundreds of nodes, executing tasks with different
+resource requirements. Efficient resource provisioning and task scheduling in such systems are
+non-trivial and require close monitoring and accurate forecasting of the state of the system, specifically
+resource utilisation at its constituent machines. Two challenges present themselves towards
+these objectives. First, collecting monitoring data entails substantial communication overhead.
+This overhead can be prohibitively high, especially in networks where bandwidth is limited. Second,
+forecasting models to predict resource utilisation should be accurate and need to exhibit high
+inference speed. Mission critical scheduling and resource allocation algorithms use these predictions
+and rely on their immediate availability. To address the first challenge, we present a communication-efficient
+data collection mechanism. Resource utilisation data is collected at the individual machines
+in the system and transmitted to a central controller in batches. Each batch is processed by an adaptive
+data-reduction algorithm based on Fourier transforms and truncation in the frequency domain.
+We show that the proposed mechanism leads to a significant reduction in communication overhead
+while incurring only minimal error and adhering to accuracy guarantees. To address the second challenge,
+we propose a deep learning architecture using complex Gated Recurrent Units to forecast resource
+utilisation. This architecture is directly integrated with the above data collection mechanism
+to improve inference speed of our forecasting model. Using two real-world datasets, we demonstrate
+the effectiveness of our approach, both in terms of forecasting accuracy and inference speed. Our
+approach resolves challenges encountered in resource provisioning frameworks and can be applied
+to other forecasting problems. 

@@ -1,0 +1,17 @@
+Modern deep learning models have been exploited in various domains, including computer vision
+(CV), natural language processing (NLP), search and recommendation. In practical AI clusters,
+workloads training these models are run using software frameworks such as TensorFlow, Caffe, PyTorch
+and CNTK. One critical issue for efficiently operating practical AI clouds, is to characterize
+the computing and data transfer demands of these workloads, and more importantly, the training
+performance given the underlying software framework and hardware configurations. In this paper,
+we characterize deep learning training workloads from Platform of Artificial Intelligence (PAI)
+in Alibaba. We establish an analytical framework to investigate detailed execution time breakdown
+of various workloads using different training architectures, to identify performance bottleneck.
+Results show that weight/gradient communication during training takes almost 62% of the total
+execution time among all our workloads on average. The computation part, involving both GPU computing
+and memory access, are not the biggest bottleneck based on collective behavior of the workloads.
+We further evaluate attainable performance of the workloads on various potential software/hardware
+mappings, and explore implications on software architecture selection and hardware configurations.
+We identify that 60% of PS/Worker workloads can be potentially sped up when ported to the AllReduce
+architecture exploiting the high-speed NVLink for GPU interconnect, and on average 1.7X speedup
+can be achieved when Ethernet bandwidth is upgraded from 25 Gbps to 100 Gbps. 

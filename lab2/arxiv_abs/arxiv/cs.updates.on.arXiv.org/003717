@@ -1,0 +1,16 @@
+In reinforcement learning, temporal difference (TD) is the most direct algorithm to learn the value
+function of a policy. For large or infinite state spaces, exact representations of the value function
+are usually not available, and it must be approximated by a function in some parametric family. However,
+with \emph{nonlinear} parametric approximations (such as neural networks), TD is not guaranteed
+to converge to a good approximation of the true value function within the family, and is known to diverge
+even in relatively simple cases. TD lacks an interpretation as a stochastic gradient descent of
+an error between the true and approximate value functions, which would provide such guarantees.
+We prove that approximate TD is a gradient descent provided the current policy is \emph{reversible}.
+This holds even with nonlinear approximations. A policy with transition probabilities $P(s,s')$
+between states is reversible if there exists a function $\mu$ over states such that $\frac{P(s,s')}{P(s',s)}=\frac{\mu(s')}{\mu(s)}$.
+In particular, every move can be undone with some probability. This condition is restrictive; it
+is satisfied, for instance, for a navigation problem in any unoriented graph. In this case, approximate
+TD is exactly a gradient descent of the \emph{Dirichlet norm}, the norm of the difference of \emph{gradients}
+between the true and approximate value functions. The Dirichlet norm also controls the bias of approximate
+policy gradient. These results hold even with no decay factor ($\gamma=1$) and do not rely on contractivity
+of the Bellman operator, thus proving stability of TD even with $\gamma=1$ for reversible policies.

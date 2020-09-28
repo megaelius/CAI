@@ -1,0 +1,19 @@
+Recent advances in pruning of neural networks have made it possible to remove a large number of filters
+or weights without any perceptible drop in accuracy. The number of parameters and that of FLOPs are
+usually the reported metrics to measure the quality of the pruned models. However, the gain in speed
+for these pruned methods is often overlooked in the literature due to the complex nature of latency
+measurements. In this paper, we show the limitation of filter pruning methods in terms of latency
+reduction and propose LayerPrune framework. LayerPrune presents set of layer pruning methods
+based on different criteria that achieve higher latency reduction than filter pruning methods
+on similar accuracy. The advantage of layer pruning over filter pruning in terms of latency reduction
+is a result of the fact that the former is not constrained by the original model's depth and thus allows
+for a larger range of latency reduction. For each filter pruning method we examined, we use the same
+filter importance criterion to calculate a per-layer importance score in one-shot. We then prune
+the least important layers and fine-tune the shallower model which obtains comparable or better
+accuracy than its filter-based pruning counterpart. This one-shot process allows to remove layers
+from single path networks like VGG before fine-tuning, unlike in iterative filter pruning, a minimum
+number of filters per layer is required to allow for data flow which constraint the search space.
+To the best of our knowledge, we are the first to examine the effect of pruning methods on latency metric
+instead of FLOPs for multiple networks, datasets and hardware targets. LayerPrune also outperforms
+handcrafted architectures such as Shufflenet, MobileNet, MNASNet and ResNet18 by 7.3%, 4.6%,
+2.8% and 0.5% respectively on similar latency budget on ImageNet dataset. 

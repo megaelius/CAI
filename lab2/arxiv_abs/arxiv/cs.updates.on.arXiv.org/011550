@@ -1,0 +1,19 @@
+Human in-the-loop quality assurance (QA) is typically performed after medical image segmentation
+to ensure that the systems are performing as intended, as well as identifying and excluding outliers.
+By performing QA on large-scale, previously unlabeled testing data, categorical QA scores can
+be generatedIn this paper, we propose a semi-supervised multi-organ segmentation deep neural
+network consisting of a traditional segmentation model generator and a QA involved discriminator.
+A large-scale dataset of 2027 volumes are used to train the generator, whose 2-D montage images and
+segmentation mask with QA scores are used to train the discriminator. To generate the QA scores,
+the 2-D montage images were reviewed manually and coded 0 (success), 1 (errors consistent with published
+performance), and 2 (gross failure). Then, the ResNet-18 network was trained with 1623 montage
+images in equal distribution of all three code labels and achieved an accuracy 94% for classification
+predictions with 404 montage images withheld for the test cohort. To assess the performance of using
+the QA supervision, the discriminator was used as a loss function in a multi-organ segmentation
+pipeline. The inclusion of QA-loss function boosted performance on the unlabeled test dataset
+from 714 patients to 951 patients over the baseline model. Additionally, the number of failures
+decreased from 606 (29.90%) to 402 (19.83%). The contributions of the proposed method are threefold:
+We show that (1) the QA scores can be used as a loss function to perform semi-supervised learning for
+unlabeled data, (2) the well trained discriminator is learnt by QA score rather than traditional
+true/false, and (3) the performance of multi-organ segmentation on unlabeled datasets can be fine-tuned
+with more robust and higher accuracy than the original baseline method. 

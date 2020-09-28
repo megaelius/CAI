@@ -1,0 +1,18 @@
+Magnetic Resonance Imaging (MRI) is widely used for screening and staging prostate cancer. However,
+many prostate cancers have subtle features which are not easily identifiable on MRI, resulting
+in missed diagnoses and alarming variability in radiologist interpretation. Machine learning
+models have been developed in an effort to improve cancer identification, but current models localize
+cancer using MRI-derived features, while failing to consider the disease pathology characteristics
+observed on resected tissue. In this paper, we propose CorrSigNet, an automated two-step model
+that localizes prostate cancer on MRI by capturing the pathology features of cancer. First, the
+model learns MRI signatures of cancer that are correlated with corresponding histopathology features
+using Common Representation Learning. Second, the model uses the learned correlated MRI features
+to train a Convolutional Neural Network to localize prostate cancer. The histopathology images
+are used only in the first step to learn the correlated features. Once learned, these correlated
+features can be extracted from MRI of new patients (without histopathology or surgery) to localize
+cancer. We trained and validated our framework on a unique dataset of 75 patients with 806 slices
+who underwent MRI followed by prostatectomy surgery. We tested our method on an independent test
+set of 20 prostatectomy patients (139 slices, 24 cancerous lesions, 1.12M pixels) and achieved
+a per-pixel sensitivity of 0.81, specificity of 0.71, AUC of 0.86 and a per-lesion AUC of $0.96 \pm
+0.07$, outperforming the current state-of-the-art accuracy in predicting prostate cancer using
+MRI. 

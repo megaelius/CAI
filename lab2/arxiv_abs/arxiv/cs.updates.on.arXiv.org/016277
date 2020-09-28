@@ -1,0 +1,19 @@
+In this work, we consider alternative discretizations for PDEs which use expansions involving
+integral operators to approximate spatial derivatives. These constructions use explicit information
+within the integral terms, but treat boundary data implicitly, which contributes to the overall
+speed of the method. This approach is provably unconditionally stable for linear problems and stability
+has been demonstrated experimentally for nonlinear problems. Additionally, it is matrix-free
+in the sense that it is not necessary to invert linear systems and iteration is not required for nonlinear
+terms. Moreover, the scheme employs a fast summation algorithm that yields a method with a computational
+complexity of $\mathcal{O}(N)$, where $N$ is the number of mesh points along a direction. While
+much work has been done to explore the theory behind these methods, their practicality in large scale
+computing environments is a largely unexplored topic. In this work, we explore the performance
+of these methods by developing a domain decomposition algorithm suitable for distributed memory
+systems along with shared memory algorithms. As a first pass, we derive an artificial CFL condition
+that enforces a nearest-neighbor communication pattern and briefly discuss possible generalizations.
+We also analyze several approaches for implementing the parallel algorithms by optimizing predominant
+loop structures and maximizing data reuse. Using a hybrid design that employs MPI and Kokkos for
+the distributed and shared memory components of the algorithms, respectively, we show that our
+methods are efficient and can sustain an update rate $> 1\times10^8$ DOF/node/s. We provide results
+that demonstrate the scalability and versatility of our algorithms using several different PDE
+test problems, including a nonlinear example, which employs an adaptive time-stepping rule. 

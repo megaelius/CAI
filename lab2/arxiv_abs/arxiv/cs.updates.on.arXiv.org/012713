@@ -1,0 +1,19 @@
+Text analytics has become an important part of business intelligence as enterprises increasingly
+seek to extract insights for decision making from text data sets. Processing large text data sets
+can be computationally expensive, however, especially if it involves sophisticated algorithms.
+This challenge is exacerbated when it is desirable to run different types of queries against a data
+set, making it expensive to build multiple indices to speed up query processing. In this paper, we
+propose and evaluate a framework called EmApprox that uses approximation to speed up the processing
+of a wide range of queries over large text data sets. The key insight is that different types of queries
+can be approximated by processing subsets of data that are most similar to the queries. EmApprox
+builds a general index for a data set by learning a natural language processing model, producing
+a set of highly compressed vectors representing words and subcollections of documents. Then, at
+query processing time, EmApprox uses the index to guide sampling of the data set, with the probability
+of selecting each subcollection of documents being proportional to its {\em similarity} to the
+query as computed using the vector representations. We have implemented a prototype of EmApprox
+as an extension of the Apache Spark system, and used it to approximate three types of queries: aggregation,
+information retrieval, and recommendation. Experimental results show that EmApprox's similarity-guided
+sampling achieves much better accuracy than random sampling. Further, EmApprox can achieve significant
+speedups if users can tolerate small amounts of inaccuracies. For example, when sampling at 10\%,
+EmApprox speeds up a set of queries counting phrase occurrences by almost 10x while achieving estimated
+relative errors of less than 22\% for 90\% of the queries. 

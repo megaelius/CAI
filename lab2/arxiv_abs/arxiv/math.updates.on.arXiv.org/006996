@@ -1,0 +1,17 @@
+This paper studies decentralized convex optimization problems defined over networks, where the
+objective is to minimize a sum of local smooth convex functions while respecting a common constraint.
+Two new algorithms based on dual averaging and decentralized consensus-seeking are proposed.
+The first one accelerates the standard convergence rate $O(\frac{1}{\sqrt{t}})$ in existing
+decentralized dual averaging (DDA) algorithms to $O(\frac{1}{t})$, where $t$ is the time counter.
+This is made possible by a second-order consensus scheme that assists each agent to locally track
+the global dual variable more accurately and a new analysis of the descent property for the mean variable.
+We remark that, in contrast to its primal counterparts, this method decouples the synchronization
+step from nonlinear projection, leading to a rather concise analysis and a natural extension to
+stochastic networks. In the second one, two local sequences of primal variables are constructed
+in a decentralized manner to achieve acceleration, where only one of them is exchanged between agents.
+In addition to this, another consensus round is performed for local dual variables. The convergence
+rate is proved to be $O(1)(\frac{1}{t^2}+\frac{1}{t})$, where the magnitude of error bound is
+showed to be inversely proportional to the algebraic connectivity of the graph. However, the condition
+for stepsize does not rely on the weight matrix associated with the graph, making it easier to satisfy
+in practice than other accelerated methods. Finally, comparisons between the proposed methods
+and several recent algorithms are performed using a large-scale LASSO problem. 

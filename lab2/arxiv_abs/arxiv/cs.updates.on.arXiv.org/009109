@@ -1,0 +1,20 @@
+The number of applications relying on inference from machine learning models is already large and
+expected to keep growing. For instance, Facebook applications issue tens-of-trillions of inference
+queries per day with varying performance, accuracy, and cost constraints. Unfortunately, existing
+inference serving systems are neither easy to use nor cost effective. Developers must manually
+match the performance, accuracy, and cost constraints of their applications to a large design space
+that includes decisions such as selecting the right model and model optimizations, selecting the
+right hardware architecture, selecting the right scale-out factor, and avoiding cold-start effects.
+These interacting decisions are difficult to make, especially when the application load varies
+over time, applications evolve over time, and the available resources vary over time. We present
+INFaaS, an inference-as-a-service system that abstracts resource management and model selection.
+Users simply specify their inference task along with any performance and accuracy requirements
+for queries. Given the currently available resources, INFaaS automatically selects and serves
+inference queries using a specific model that satisfies these requirements. INFaaS autoscales
+resources as model load changes both within and across inference workers. It also shares workers
+across users and models to increase utilization. We evaluate INFaaS using 44 model architectures
+and their 270 model variants against serving systems that rely on users for model selection and pre-load
+models, fix the scale policy, or use dedicated hardware resources. Our evaluation on realistic
+workloads shows that INFaaS achieves 2$\times$ higher throughput and violates latency SLO goals
+3$\times$ less frequently, while maintaining high utilization and having overheads that are less
+than 12% of millisecond-scale queries. 

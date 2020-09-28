@@ -1,0 +1,19 @@
+A standard approach to solving the S$_N$ transport equations is to use source iteration with diffusion
+synthetic acceleration (DSA). Although this approach is widely used and effective on many problems,
+there remain some practical issues with DSA preconditioning, particularly on highly heterogeneous
+domains. For large-scale parallel simulation, it is critical that both (i) preconditioned source
+iteration converges rapidly, and (ii) the action of the DSA preconditioner can be applied using
+fast, scalable solvers, such as algebraic multigrid (AMG). For heterogeneous domains, these two
+interests can be at odds. In particular, there exist DSA diffusion discretizations that can be solved
+rapidly using AMG, but they do not always yield robust/fast convergence of the larger source iteration.
+Conversely, there exist robust DSA discretizations where source iteration converges rapidly
+on difficult heterogeneous problems, but fast parallel solvers like AMG tend to struggle applying
+the action of such operators. Moreover, very few current methods for the solution of deterministic
+transport are compatible with voids. This paper develops a new heterogeneous DSA preconditioner
+based on only preconditioning the optically thick subdomains. The resulting method proves robust
+on a variety of heterogeneous transport problems, including a linearized hohlraum mesh related
+to inertial confinement fusion. Moreover, the action of the preconditioner is easily computed
+using O(1) AMG iterations, convergence of the transport iteration typically requires 2-5x less
+iterations than current state-of-the-art "full DSA," and the proposed method is trivially compatible
+with voids. On the hohlraum problem, rapid convergence is obtained by preconditioning less than
+3% of the mesh elements with 5-10 AMG iterations. 

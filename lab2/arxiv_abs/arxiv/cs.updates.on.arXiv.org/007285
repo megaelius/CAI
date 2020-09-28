@@ -1,0 +1,20 @@
+We consider the problem of high-dimensional error-in-variable regression where we only observe
+a sparse, noisy version of the covariate data. We propose an algorithm that utilizes matrix estimation
+(ME) as a key subroutine to de-noise the corrupted data, and then performs ordinary least squares
+regression. When the ME subroutine is instantiated with hard singular value thresholding (HSVT),
+our results indicate that if the number of samples scales as $\omega( \rho^{-4} r \log^5 (p))$, then
+our in- and out-of-sample prediction error decays to $0$ as $p \rightarrow \infty$; $\rho$ represents
+the fraction of observed data, $r$ is the (approximate) rank of the true covariate matrix, and $p$
+is the number of covariates. As an important byproduct of our approach, we demonstrate that HSVT
+with regression acts as implicit $\ell_0$-regularization since HSVT aims to find a low-rank structure
+within the covariance matrix. Thus, we can view the sparsity of the estimated parameter as a consequence
+of the covariate structure rather than a model assumption as is often considered in the literature.
+Moreover, our non-asymptotic bounds match (up to $\log^4(p)$ factors) the best guaranteed sample
+complexity results in the literature for algorithms that require precise knowledge of the underlying
+model; we highlight that our approach is model agnostic. In our analysis, we obtain two technical
+results of independent interest: first, we provide a simple bound on the spectral norm of random
+matrices with independent sub-exponential rows with randomly missing entries; second, we bound
+the max column sum error -- a nonstandard error metric -- for HSVT. Our setting enables us to apply
+our results to applications such as synthetic control for causal inference, time series analysis,
+and regression with privacy. It is important to note that the existing inventory of methods is unable
+to analyze these applications. 

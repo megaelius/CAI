@@ -1,0 +1,20 @@
+The wide deployment of tokens for digital assets on top of Ethereum implies the need for powerful
+trading platforms. Vickrey auctions have been known to determine the real market price of items
+as bidders are motivated to submit their own monetary valuations without leaking their information
+to the competitors. Recent constructions have utilized various cryptographic protocols such
+as ZKP and MPC, however, these approaches either are partially privacy-preserving or require complex
+computations with several rounds. In this paper, we overcome these limits by presenting Trustee
+as a Vickrey auction on Ethereum which fully preserves bids' privacy at relatively much lower fees.
+Trustee consists of three components: a front-end smart contract deployed on Ethereum, an Intel
+SGX enclave, and a relay to redirect messages between them. Initially, the enclave generates an
+Ethereum account and ECDH key-pair. Subsequently, the relay publishes the account's address and
+ECDH public key on the smart contract. As a prerequisite, bidders are encouraged to verify the authenticity
+and security of Trustee by using the SGX remote attestation service. To participate in the auction,
+bidders utilize the ECDH public key to encrypt their bids and submit them to the smart contract. Once
+the bidding interval is closed, the relay retrieves the encrypted bids and feeds them to the enclave
+that autonomously generates a signed transaction indicating the auction winner. Finally, the
+relay submits the transaction to the smart contract which verifies the transaction's authenticity
+and the parameters' consistency before accepting the claimed auction winner. As part of our contributions,
+we have made a prototype for Trustee available on Github for the community to review and inspect it.
+Additionally, we analyze the security features of Trustee and report on the transactions' gas cost
+incurred on Trustee smart contract. 

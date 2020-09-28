@@ -1,0 +1,19 @@
+Accurate data on atoms is important for training and benchmarking density functionals (DF) and
+their implementations. Although many programs have been published for either Hartree--Fock (HF)
+or DF calculations on atoms, we are not aware of any that support hybrid DFs, which are popular within
+the quantum chemistry community due to their better accuracy for many applications, or that can
+be used to calculate electric properties. Here, we present an atomic finite element solver in the
+HelFEM program suite that overcomes these limitations. A basis set of the type $B_{n}(r) Y_{l}^{m}(r)$
+is used, where $B_{n}(r)$ are finite elements and $Y_{l}^{m}$ are spherical harmonics, which allows
+for an arbitrary level of accuracy. HelFEM supports nonrelativistic HF and DF including hybrid
+functionals, which are not available in other commonly available program packages. Hundreds of
+functionals at the local spin density approximation (LDA), generalized gradient approximation
+(GGA), as well as the meta-GGA levels of theory are included through an interface with the Libxc library.
+Electric response properties are achievable via finite field calculations. We introduce an alternative
+grid that yields faster convergence to the complete basis set than commonly used alternatives.
+We also show that high-order Lagrange interpolating polynomials yield the best convergence, and
+that excellent agreement with literature HF limit values for electric properties, such as static
+dipole polarizabilities, can be achieved with the present approach. Dipole moments and dipole
+polarizabilities at finite field are reported at the PBE, PBEh, TPSS, and TPSSh levels of theory.
+Finally, we show that a recently published Gaussian basis set is able to reproduce absolute energies
+of neutral atoms, cations, as well as anions within a few dozen microhartrees. 

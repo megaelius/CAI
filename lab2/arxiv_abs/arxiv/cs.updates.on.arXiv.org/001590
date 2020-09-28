@@ -1,0 +1,17 @@
+We aim at segmenting small organs (e.g., the pancreas) from abdominal CT scans. As the target often
+occupies a relatively small region in the input image, deep neural networks can be easily confused
+by the complex and variable background. To alleviate this, researchers proposed a coarse-to-fine
+approach (Zhou et al. 2016), which used prediction from the coarse stage to shrink the input region
+provided to the fine stage. Although this strategy achieves high accuracy, we note that the coarse-scaled
+and fine-scaled networks were trained and tested individually, which limited the use of multi-stage
+visual cues for segmentation. This paper presents a Saliency Transformation Network, which contains
+a trainable saliency transformation module. This module computes spatial weights from the coarse-scaled
+segmentation score map, and applies them to the fine-scaled input image. In training, the coarse-scaled
+and fine-scaled segmentation networks are optimized in a joint manner, so that both networks become
+more powerful when they are evaluated individually. In testing, this strategy makes full use of
+the segmentation results at the coarse stage, so that we can deliver complementary information
+to the fine stage rather than merely providing a bounding box. We perform experiments on the NIH pancreas
+segmentation dataset with 82 CT volumes. Following the same testing process which involves a coarse-to-fine
+iteration, our approach outperforms the state-of-the-art approach (trained in a stage-wise manner)
+by an average of over 2%. In addition, our approach enjoys better convergence properties, making
+it more reliable in practice. 

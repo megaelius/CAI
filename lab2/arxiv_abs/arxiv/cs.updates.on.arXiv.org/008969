@@ -1,0 +1,19 @@
+Although a video is effectively a sequence of images, visual perception systems typically model
+images and videos separately, thus failing to exploit the correlation and the synergy provided
+by these two media. While a few prior research efforts have explored the benefits of leveraging still-image
+datasets for video analysis, or vice-versa, most of these attempts have been limited to pretraining
+a model on one type of visual modality and then adapting it via finetuning on the other modality. In
+contrast, in this paper we introduce a framework that enables joint training of a unified model on
+mixed collections of image and video examples spanning different tasks. The key ingredient in our
+architecture design is a new network block, which we name UniDual. It consists of a shared 2D spatial
+convolution followed by two parallel point-wise convolutional layers, one devoted to images and
+the other one used for videos. For video input, the point-wise filtering implements a temporal convolution.
+For image input, it performs a pixel-wise nonlinear transformation. Repeated stacking of such
+blocks gives rise to a network where images and videos undergo partially distinct execution pathways,
+unified by spatial convolutions (capturing commonalities in visual appearance) but separated
+by point-wise operations (modeling patterns specific to each modality). Extensive experiments
+on Kinetics and ImageNet demonstrate that our UniDual model jointly trained on these datasets yields
+substantial accuracy gains for both tasks, compared to 1) training separate models, 2) traditional
+multi-task learning and 3) the conventional framework of pretraining-followed-by-finetuning.
+On Kinetics, the UniDual architecture applied to a state-of-the-art video backbone model (R(2+1)D-152)
+yields an additional video@1 accuracy gain of 1.5%. 

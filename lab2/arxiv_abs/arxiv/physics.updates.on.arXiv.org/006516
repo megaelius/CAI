@@ -1,0 +1,20 @@
+We derive a low-scaling $G_0W_0$ algorithm for molecules, using pair atomic density fitting (PADF)
+and a imaginary time representation of the Green's function and describe its implementation in
+the Slater type orbital (STO) based Amsterdam density functional (ADF) electronic structure code.
+We demonstrate the scalability of our algorithm on a series of water clusters with up to 432 atoms
+and 7776 basis functions and observe asymptotic quadratic scaling with realistic threshold qualities
+controlling distance effects and basis sets of triple-$\zeta$ (TZ) plus double polarization quality.
+Also owing to a very small prefactor, with these settings a $G_0W_0$ calculation for the largest
+of these clusters takes only 240 CPU hours. We assess the accuracy of our algorithm for HOMO and LUMO
+energies in the GW100 database. With errors of 0.26 eV for HOMO and 0.55 eV for LUMO energies on the
+QZ-level for GW100, our implementation is less accurate that canonical all-electron implementations
+using GTO-tpye basis sets. This is related to the well-known shortcomings of the GW space-time method
+using analytical continuation techniques as well as to numerical issues of the PADF-approach of
+accurately representing diffuse AO-products. We speculate, that this issue might be overcome
+by using optimized auxiliary fit sets with more diffuse functions of higher angular momenta. Despite
+these shortcomings, for medium and large molecules from the GW5000 database, the error of our approach
+using basis sets of TZ and augmented DZ quality is decreasing with system size. On the augmented DZ
+level we reproduce canonical, complete basis set limit extrapolated reference values with an accuracy
+of 80 meV on average for 20 large organic molecules. We anticipate our algorithm, in its current form,
+to be useful in the study of single-particle properties of large organic systems such as chromophores
+and acceptor molecules. 

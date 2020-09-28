@@ -1,0 +1,18 @@
+Modern processors, e.g., Intel SGX, allow applications to isolate secret code and data in encrypted
+memory regions called enclaves. While encryption effectively hides the contents of memory, the
+sequence of address references issued by the secret code leaks information. This is a serious problem
+because these leaks can easily break the confidentiality guarantees of enclaves. In this paper,
+we explore Oblivious RAM (ORAM) designs that prevent these information leaks under the constraints
+of modern SGX processors. Most ORAMs are a poor fit for these processors because they have high constant
+overhead factors or require large private memories, which are not available in these processors.
+We address these limitations with a new hierarchical ORAM construction, the Pyramid ORAM, that
+is optimized towards online bandwidth cost and small blocks. It uses a new hashing scheme that circumvents
+the complexity of previous hierarchical schemes. We present an efficient x64-optimized implementation
+of Pyramid ORAM that uses only the processor's registers as private memory. We compare Pyramid ORAM
+with Circuit ORAM, a state-of-the-art tree-based ORAM scheme that also uses constant private memory.
+Pyramid ORAM has better online asymptotical complexity than Circuit ORAM. Our implementation
+of Pyramid ORAM and Circuit ORAM validates this: as all hierarchical schemes, Pyramid ORAM has high
+variance of access latencies; although latency can be high for some accesses, for typical configurations
+Pyramid ORAM provides access latencies that are 8X better than Circuit ORAM for 99% of accesses.
+Although the best known hierarchical ORAM has better asymptotical complexity, Pyramid ORAM has
+significantly lower constant overhead factors, making it the preferred choice in practice. 

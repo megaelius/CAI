@@ -1,0 +1,20 @@
+Distributed synchronous stochastic gradient descent (S-SGD) with data parallelism requires
+very high communication bandwidth between computational workers (e.g., GPUs) to exchange gradients
+iteratively. Recently, Top-$k$ sparsification techniques have been proposed to reduce the volume
+of data to be exchanged among workers and thus alleviate the network pressure. Top-$k$ sparsification
+can zero-out a significant portion of gradients without impacting the model convergence. However,
+the sparse gradients should be transferred with their indices, and the irregular indices make the
+sparse gradients aggregation difficult. Current methods that use AllGather to accumulate the
+sparse gradients have a communication complexity of $O(kP)$, where $P$ is the number of workers,
+which is inefficient on low bandwidth networks with a large number of workers. We observe that not
+all Top-$k$ gradients from $P$ workers are needed for the model update, and therefore we propose
+a novel global Top-$k$ (gTop-$k$) sparsification mechanism to address the difficulty of aggregating
+sparse gradients. Specifically, we choose global Top-$k$ largest absolute values of gradients
+from $P$ workers, instead of accumulating all local Top-$k$ gradients to update the model in each
+iteration. The gradient aggregation method based on gTop-$k$ sparsification, namely gTopKAllReduce,
+reduces the communication complexity from $O(kP)$ to $O(klog_2P)$. Through extensive experiments
+on different DNNs, we verify that gTop-$k$ S-SGD has nearly consistent convergence performance
+with S-SGD. We evaluate the training efficiency of gTop-$k$ on a cluster with 32 GPU machines which
+are inter-connected with 1 Gbps Ethernet. The experimental results show that our method achieves
+up to $2.7-12\times$ higher scaling efficiency than S-SGD with dense gradients, and $1.1-1.7\times$
+improvement than the existing Top-$k$ S-SGD. 

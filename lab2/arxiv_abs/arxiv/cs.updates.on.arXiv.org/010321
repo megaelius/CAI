@@ -1,0 +1,18 @@
+Modern software projects include automated tests written to check the programs' functionality.
+The set of functions invoked by a test is called the trace of the test, and the action of obtaining a
+trace is called tracing. There are many tracing tools since traces are useful for a variety of software
+engineering tasks such as test generation, fault localization, and test execution planning. A
+major drawback in using test traces is that obtaining them, i.e., tracing, can be costly in terms
+of computational resources and runtime. Prior work attempted to address this in various ways, e.g.,
+by selectively tracing only some of the software components or compressing the trace on-the-fly.
+However, all these approaches still require building the project and executing the test in order
+to get its (partial, possibly compressed) trace. This is still very costly in many cases. In this
+work, we propose a method to predict the trace of each test without executing it, based only on static
+properties of the test and the tested program, as well as past experience on different tests. This
+prediction is done by applying supervised learning to learn the relation between various static
+features of test and function and the likelihood that one will include the other in its trace. Then,
+we show how to use the predicted traces in a recent automated troubleshooting paradigm called Learn
+Diagnose and plan (LDP), instead of the actual, costly-to-obtain, test traces. In a preliminary
+evaluation on real-world open-source projects, we observe that our prediction quality is reasonable.
+In addition, using our trace predictions in LDP yields almost the same results comparing to when
+using real traces, while requiring less overhead. 

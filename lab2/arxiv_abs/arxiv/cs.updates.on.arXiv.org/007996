@@ -1,0 +1,19 @@
+Consider a single-hop, multi-channel, synchronous radio network in which a source node needs to
+disseminate a message to all other $n-1$ nodes. An adversary called Eve, which captures environmental
+noise and potentially malicious interference, aims to disrupt this process via jamming. Assume
+sending, listening, or jamming on one channel for one time slot costs unit energy. The question is,
+if Eve spends $T$ units of energy on jamming, can we devise broadcast algorithms in which each node's
+cost is $o(T)$? Previous results show such resource competitive algorithms do exist in the single-channel
+setting: each node can receive the message within $\tilde{O}(T+n)$ time slots while spending only
+$\tilde{O}(\sqrt{T/n}+1)$ energy. In this paper, we show that when Eve is oblivious, the existence
+of multiple channels allows even faster message dissemination, while preserving resource competitiveness.
+Specifically, we have identified an efficient "epidemic broadcast" scheme in the multi-channel
+setting that is robust again jamming. Extending this scheme leads to a randomized algorithm called
+MultiCast which uses $n/2$ channels, and accomplishes broadcast in $\tilde{O}(T/n+1)$ time slots
+while costing each node only $\tilde{O}(\sqrt{T/n}+1)$ energy. When the value of $n$ is unknown,
+we further propose MultiCastAdv, in which each node's running time is $\tilde{O}(T/(n^{1-2\alpha})+n^{2\alpha})$,
+and each node's cost is $\tilde{O}(\sqrt{T/(n^{1-2\alpha})}+n^{2\alpha})$. Here, $0<\alpha<1/4$
+is a tunable parameter affecting the constant hiding behind the big-$O$ notation. To handle the
+issue of limited channel availability, we have also devised variants for both MultiCast and MultiCastAdv
+that can work in networks in which only $C$ channels are available, for any $C\geq 1$. These variants
+remain to be resource competitive, and have (near) optimal time complexity in many cases. 

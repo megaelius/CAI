@@ -1,0 +1,19 @@
+Simple tabulation dates back to Zobrist in 1970. Keys are viewed as c characters from some alphabet
+A. We initialize c tables h_0, ..., h_{c-1} mapping characters to random hash values. A key x=(x_0,
+..., x_{c-1}) is hashed to h_0[x_0] xor...xor h_{c-1}[x_{c-1}]. The scheme is extremely fast when
+the character hash tables h_i are in cache. Simple tabulation hashing is not 4-independent, but
+we show that if we apply it twice, then we get high independence. First we hash to intermediate keys
+that are 6 times longer than the original keys, and then we hash the intermediate keys to the final
+hash values. The intermediate keys have d=6c characters from A. We can view the hash function as a
+degree d bipartite graph with keys on one side, each with edges to d output characters. We show that
+this graph has nice expansion properties, and from that we get that with another level of simple tabulation
+on the intermediate keys, the composition is a highly independent hash function. The independence
+we get is |A|^{Omega(1/c)}. Our space is O(c|A|) and the hash function is evaluated in O(c) time.
+Siegel [FOCS'89, SICOMP'04] proved that with this space, if the hash function is evaluated in o(c)
+time, then the independence can only be o(c), so our evaluation time is best possible for Omega(c)
+independence---our independence is much higher if c=|A|^{o(1)}. Siegel used O(c)^c evaluation
+time to get the same independence with similar space. Siegel's main focus was c=O(1), but we are exponentially
+faster when c=omega(1). Applying our scheme recursively, we can increase our independence to |A|^{Omega(1)}
+with o(c^{log c}) evaluation time. Compared with Siegel's scheme this is both faster and higher
+independence. Our scheme is easy to implement, and it does provide realistic implementations of
+100-independent hashing for, say, 32 and 64-bit keys. 

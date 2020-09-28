@@ -1,0 +1,18 @@
+We introduce and study a novel tensor approach for fast and accurate assembled summation of a large
+number of lattice-allocated potentials represented on 3D $N\times N \times N$ grid with the computational
+requirements only \emph{weakly dependent} on the number of summed potentials. It is based on the
+assembled low-rank canonical tensor representations of the collected potentials using pointwise
+sums of shifted canonical vectors representing the single generating function, say the Newton
+kernel. For a sum of electrostatic potentials over $L\times L \times L$ lattice embedded in a box
+the required storage scales linearly in the 1D grid-size, $O(N )$, while the numerical cost is estimated
+by $O(N L)$. For periodic boundary conditions, the storage demand remains proportional to the 1D
+grid-size of a unit cell, $n=N/L$, while the numerical cost reduces to $O(N)$, that outperforms
+the FFT-based Ewald-type summation algorithms of complexity $O(N^3 \log N)$. The complexity in
+the grid parameter $N$ can be reduced even to the logarithmic scale $O(\log N)$ by using data-sparse
+representation of canonical $N$-vectors via the quantics tensor approximation. For justification,
+we prove an upper bound on the quantics ranks for the canonical vectors in the overall lattice sum.
+The presented approach is beneficial in applications which require further functional calculus
+with the lattice potential, say, scalar product with a function, integration or differentiation,
+which can be performed easily in tensor arithmetics on large 3D grids with 1D cost. Numerical tests
+illustrate the performance of the tensor summation method and confirm the estimated bounds on the
+tensor ranks. 

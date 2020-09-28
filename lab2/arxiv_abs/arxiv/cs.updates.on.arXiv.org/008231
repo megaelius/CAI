@@ -1,0 +1,17 @@
+In a recent paper Chan et al. [SODA '19] proposed a relaxation of the notion of (full) memory obliviousness,
+which was introduced by Goldreich and Ostrovsky [J. ACM '96] and extensively researched by cryptographers.
+The new notion, differential obliviousness, requires that any two neighboring inputs exhibit
+similar memory access patterns, where the similarity requirement is that of differential privacy.
+Chan et al. demonstrated that differential obliviousness allows achieving improved efficiency
+for several algorithmic tasks, including sorting, merging of sorted lists, and range query data
+structures. In this work, we continue the exploration and mapping of differential obliviousness,
+focusing on algorithms that do not necessarily examine all their input. This choice is motivated
+by the fact that the existence of logarithmic overhead ORAM protocols implies that differential
+obliviousness can yield at most a logarithmic improvement in efficiency for computations that
+need to examine all their input. In particular, we explore property testing, where we show that differential
+obliviousness yields an almost linear improvement in overhead in the dense graph model, and at most
+quadratic improvement in the bounded degree model. We also explore tasks where a non-oblivious
+algorithm would need to explore different portions of the input, where the latter would depend on
+the input itself, and where we show that such a behavior can be maintained under differential obliviousness,
+but not under full obliviousness. Our examples suggest that there would be benefits in further exploring
+which class of computational tasks are amenable to differential obliviousness. 

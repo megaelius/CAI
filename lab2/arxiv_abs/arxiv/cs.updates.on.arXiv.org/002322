@@ -1,0 +1,20 @@
+Betweenness Centrality (BC) is an important measure used widely in complex network analysis, such
+as social network, web page search, etc. Computing the exact BC values is highly time consuming.
+Currently the fastest exact BC determining algorithm is given by Brandes, taking $O(nm)$ time for
+unweighted graphs and $O(nm+n^2\log n)$ time for weighted graphs, where $n$ is the number of vertices
+and $m$ is the number of edges in the graph. Due to the extreme difficulty of reducing the time complexity
+of exact BC determining problem, many researchers have considered the possibility of any satisfactory
+BC approximation algorithms, especially those based on samplings. Bader et al. give the currently
+best BC approximation algorithm, with a high probability to successfully estimate the BC of one
+vertex within a factor of $1/\varepsilon$ using $\varepsilon t$ samples, where $t$ is the ratio
+between $n^2$ and the BC value of the vertex. However, some of the algorithmic parameters in Bader's
+work are not yet tightly bounded, leaving some space to improve their algorithm. In this project,
+we revisit Bader's algorithm, give more tight bounds on the estimations, and improve the performance
+of the approximation algorithm, i.e., fewer samples and lower factors. On the other hand, Riondato
+proposes a non-adaptive BC approximation method with samplings on shortest paths. We investigate
+the possibility to give an adaptive algorithm with samplings on vertices. With rigorous reasoning,
+we show that this algorithm can also give bounded approximation factors and number of samplings.
+To evaluate our results, we also conduct extensive experiments using real-world datasets, and
+find that both our algorithms can achieve acceptable performance. We verify that our work can improve
+the current BC approximation algorithm with better parameters, i.e., higher successful probabilities,
+lower factors and fewer samples. 

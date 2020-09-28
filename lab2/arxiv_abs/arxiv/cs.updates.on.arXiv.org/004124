@@ -1,0 +1,17 @@
+We examine the problem of almost-uniform sampling proper $q$-colorings of a graph whose maximum
+degree is $\Delta$. A famous result, discovered independently by Jerrum(1995) and Salas and Sokal(1997),
+is that, assuming $q > (2+\delta) \Delta$, the Glauber dynamics (a.k.a. single-site dynamics)
+for this problem has mixing time $O(n \log n)$, where $n$ is the number of vertices, and thus provides
+a nearly linear time sampling algorithm for this problem. A natural question is the extent to which
+this algorithm can be parallelized. Previous work Feng, Sun and Yin [PODC'17] has shown that a $O(\Delta
+\log n)$ time parallelized algorithm is possible, and that $\Omega(\log n)$ time is necessary.
+We give a distributed sampling algorithm, which we call the Lazy Local Metropolis Algorithm, that
+achieves an optimal parallelization of this classic algorithm. It improves its predecessor, the
+Local Metropolis algorithm of Feng, Sun and Yin [PODC'17], by introducing a step of distributed
+symmetry breaking that helps the mixing of the distributed sampling algorithm. For sampling almost-uniform
+proper $q$-colorings of graphs $G$ on $n$ vertices, we show that the Lazy Local Metropolis algorithm
+achieves an optimal $O(\log n)$ mixing time if either of the following conditions is true for an arbitrary
+constant $\delta>0$: $\bullet$ $q\ge(2+\delta)\Delta$, on general graphs with maximum degree
+$\Delta$; $\bullet$ $q \geq (\alpha^* + \delta)\Delta$, where $\alpha^* \approx 1.763$ satisfies
+$\alpha^* = \mathrm{e}^{1/\alpha^*}$, on graphs with sufficiently large maximum degree $\Delta\ge
+\Delta_0(\delta)$ and girth at least $9$. 

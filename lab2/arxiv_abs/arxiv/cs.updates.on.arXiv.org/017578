@@ -1,0 +1,17 @@
+To understand how people look, interact, or perform tasks, we need to quickly and accurately capture
+their 3D body, face, and hands together from an RGB image. Most existing methods focus only on parts
+of the body. A few recent approaches reconstruct full expressive 3D humans from images using 3D body
+models that include the face and hands. These methods are optimization-based and thus slow, prone
+to local optima, and require 2D keypoints as input. We address these limitations by introducing
+ExPose (EXpressive POse and Shape rEgression), which directly regresses the body, face, and hands,
+in SMPL-X format, from an RGB image. This is a hard problem due to the high dimensionality of the body
+and the lack of expressive training data. Additionally, hands and faces are much smaller than the
+body, occupying very few image pixels. This makes hand and face estimation hard when body images
+are downscaled for neural networks. We make three main contributions. First, we account for the
+lack of training data by curating a dataset of SMPL-X fits on in-the-wild images. Second, we observe
+that body estimation localizes the face and hands reasonably well. We introduce body-driven attention
+for face and hand regions in the original image to extract higher-resolution crops that are fed to
+dedicated refinement modules. Third, these modules exploit part-specific knowledge from existing
+face- and hand-only datasets. ExPose estimates expressive 3D humans more accurately than existing
+optimization methods at a small fraction of the computational cost. Our data, model and code are
+available for research at https://expose.is.tue.mpg.de . 

@@ -1,0 +1,19 @@
+Vision-based Simultaneous Localization And Mapping (VSLAM) is a mature problem in Robotics. Most
+VSLAM systems are feature based methods, which are robust and present high accuracy, but yield sparse
+maps with limited application for further navigation tasks. Most recently, direct methods which
+operate directly on image intensity have been introduced, capable of reconstructing richer maps
+at the cost of higher processing power. In this work, an edge-based monocular SLAM system (SE-SLAM)
+is proposed as a middle point: edges present good localization as point features, while enabling
+a structural semidense map reconstruction. However, edges are not easy to associate, track and
+optimize over time, as they lack descriptors and biunivocal correspondence, unlike point features.
+To tackle these issues, this paper presents a method to match edges between frames in a consistent
+manner; a feasible strategy to solve the optimization problem, since its size rapidly increases
+when working with edges; and the use of non-linear optimization techniques. The resulting system
+achieves comparable precision to state of the art feature-based and dense/semi-dense systems,
+while inherently building a structural semi-dense reconstruction of the environment, providing
+relevant structure data for further navigation algorithms. To achieve such accuracy, state of
+the art non-linear optimization is needed, over a continuous feed of 10000 edgepoints per frame,
+to optimize the full semi-dense output. Despite its heavy processing requirements, the system
+achieves near to real-time operation, thanks to a custom built solver and parallelization of its
+key stages. In order to encourage further development of edge-based SLAM systems, SE-SLAM source
+code will be released as open source. 

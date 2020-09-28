@@ -1,0 +1,19 @@
+Given $d$ strings over the alphabet $\{0,1,\ldots,\sigma{-}1\}$, the classical Aho--Corasick
+data structure allows us to find all $occ$ occurrences of the strings in any text $T$ in $O(|T| + occ)$
+time using $O(m\log m)$ bits of space, where $m$ is the number of edges in the trie containing the strings.
+Fix any constant $\varepsilon \in (0, 2)$. We describe a compressed solution for the problem that,
+provided $\sigma \le m^\delta$ for a constant $\delta < 1$, works in $O(|T| \frac{1}{\varepsilon}
+\log\frac{1}{\varepsilon} + occ)$ time, which is $O(|T| + occ)$ since $\varepsilon$ is constant,
+and occupies $mH_k + 1.443 m + \varepsilon m + O(d\log\frac{m}{d})$ bits of space, for all $0 \le k
+\le \max\{0,\alpha\log_\sigma m - 2\}$ simultaneously, where $\alpha \in (0,1)$ is an arbitrary
+constant and $H_k$ is the $k$th-order empirical entropy of the trie. Hence, we reduce the $3.443m$
+term in the space bounds of previously best succinct solutions to $(1.443 + \varepsilon)m$, thus
+solving an open problem posed by Belazzougui. Further, we notice that $L = \log\binom{\sigma (m+1)}{m}
+- O(\log(\sigma m))$ is a worst-case space lower bound for any solution of the problem and, for $d
+= o(m)$ and constant $\varepsilon$, our approach allows to achieve $L + \varepsilon m$ bits of space,
+which gives an evidence that, for $d = o(m)$, the space of our data structure is theoretically optimal
+up to the $\varepsilon m$ additive term and it is hardly possible to eliminate the term $1.443m$.
+In addition, we refine the space analysis of previous works by proposing a more appropriate definition
+for $H_k$. We also simplify the construction for practice adapting the fixed block compression
+boosting technique, then implement our data structure, and conduct a number of experiments showing
+that it is comparable to the state of the art in terms of time and is superior in space. 

@@ -1,0 +1,19 @@
+This paper is motivated by the task of detecting anomalies in networks of financial transactions,
+with accounts as nodes and a directed weighted edge between two nodes denoting a money transfer.
+The weight of the edge is the transaction amount. Examples of anomalies in networks include long
+paths of large transaction amounts, rings of large payments, and cliques of accounts. There are
+many methods available which detect such specific structures in networks. Here we introduce a method
+which is able to detect previously unspecified anomalies in networks. The method is based on a combination
+of features from network comparison and spectral analysis as well as local statistics, yielding
+140 main features. We then use a simple feature sum method, as well as a random forest method, in order
+to classify nodes as normal or anomalous. We test the method first on synthetic networks which we
+generated, and second on a set of synthetic networks which were generated without the methods team
+having access to the ground truth. The first set of synthetic networks was split in a training set
+of 70 percent of the networks, and a test set of 30 percent of the networks. The resulting classifier
+was then applied to the second set of synthetic networks. We compare our method with Oddball, a widely
+used method for anomaly detection in networks, as well as to random classification. While Oddball
+outperforms random classification, both our feature sum method and our random forest method outperform
+Oddball. On the test set, the random forest outperforms feature sum, whereas on the second synthetic
+data set, initially feature sum tends to pick up more anomalies than random forest, with this behaviour
+reversing for lower-scoring anomalies. In all cases, the top 2 percent of flagged anomalies contained
+on average over 90 percent of the planted anomalies. 

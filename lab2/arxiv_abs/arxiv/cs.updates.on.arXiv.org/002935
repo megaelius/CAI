@@ -1,0 +1,19 @@
+The Kinfold and KFOLD programs for RNA folding kinetics implement the Gillespie algorithm to generate
+stochastic folding trajectories from an initial structure s to a target structure t, in which each
+intermediate secondary structure is obtained from its predecessor by the addition, removal or
+shift of a single base pair. Define MS2 distance between secondary structures s and t to be the minimum
+path length to refold s to t, where a move from MS2 is applied in each step. We describe algorithms to
+compute the shortest MS2 folding trajectory between any two given RNA secondary structures. These
+algorithms include an optimal integer programming (IP) algorithm, an accurate and efficient near-optimal
+algorithm, a greedy algorithm, a branch-and-bound algorithm, and an optimal algorithm if one allows
+intermediate structures to contain pseudoknots. Our optimal IP [resp. near-optimal IP] algorithm
+maximizes [resp. approximately maximizes] the number of shifts and minimizes [resp. approximately
+minimizes] the number of base pair additions and removals by applying integer programming to (essentially)
+solve the minimum feedback vertex set (FVS) problem for the RNA conflict digraph, then applies topological
+sort to tether subtrajectories into the final optimal folding trajectory. We prove NP-hardness
+of the problem to determine the minimum barrier energy over all possible MS2 folding pathways, and
+conjecture that computing the MS2 distance between arbitrary secondary structures is NP-hard.
+Since our optimal IP algorithm relies on the FVS, known to be NP-complete for arbitrary digraphs,
+we compare the family of RNA conflict digraphs with the following classes of digraphs (planar, reducible
+flow graph, Eulerian, and tournament) for which FVS is known to be either polynomial time computable
+or NP-hard. Source code available at this http URL 

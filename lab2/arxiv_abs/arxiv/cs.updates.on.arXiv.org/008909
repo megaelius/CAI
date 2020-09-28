@@ -1,0 +1,17 @@
+Cost and cardinality estimation is vital to query optimizer, which can guide the plan selection.
+However traditional empirical cost and cardinality estimation techniques cannot provide high-quality
+estimation, because they cannot capture the correlation between multiple columns. Recently the
+database community shows that the learning-based cardinality estimation is better than the empirical
+methods. However, existing learning-based methods have several limitations. Firstly, they can
+only estimate the cardinality, but cannot estimate the cost. Secondly, convolutional neural network
+(CNN) with average pooling is hard to represent complicated structures, e.g., complex predicates,
+and the model is hard to be generalized. To address these challenges, we propose an effective end-to-end
+learning-based cost estimation framework based on a tree-structured model, which can estimate
+both cost and cardinality simultaneously. To the best of our knowledge, this is the first end-to-end
+cost estimator based on deep learning. We propose effective feature extraction and encoding techniques,
+which consider both queries and physical operations in feature extraction. We embed these features
+into our tree-structured model. We propose an effective method to encode string values, which can
+improve the generalization ability for predicate matching. As it is prohibitively expensive to
+enumerate all string values, we design a patten-based method, which selects patterns to cover string
+values and utilizes the patterns to embed string values. We conducted experiments on real-world
+datasets and experimental results showed that our method outperformed baselines. 

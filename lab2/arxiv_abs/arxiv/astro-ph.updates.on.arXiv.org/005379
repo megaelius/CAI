@@ -1,0 +1,18 @@
+We describe an implementation of a particle physics module available for the PLUTO code, appropriate
+for the dynamical evolution of a plasma consisting of a thermal fluid and a non-thermal component
+represented by relativistic charged particles, or cosmic rays (CR). While the fluid is approached
+using standard numerical schemes for magnetohydrodynamics, CR particles are treated kinetically
+using conventional Particle-In-Cell (PIC) techniques. The module can be used to describe either
+test particles motion in the fluid electromagnetic field or to solve the fully coupled MHD-PIC system
+of equations with particle backreaction on the fluid as originally introduced by \cite{Bai_etal.2015}.
+Particle backreaction on the fluid is included in the form of momentum-energy feedback and by introducing
+the CR-induced Hall term in Ohm's law. The hybrid MHD-PIC module can be employed to study CR kinetic
+effects on scales larger than the (ion) skin depth provided the Larmor gyration scale is properly
+resolved. When applicable, this formulation avoids to resolve microscopic scales offering a substantial
+computational saving with respect to PIC simulations. We present a fully-conservative formulation
+which is second-order accurate in time and space and extends to either Runge-Kutta (RK) or corner-transport-upwind
+(CTU) time-stepping schemes (for the fluid) while a standard Boris integrator is employed for the
+particles. For highly-energetic relativistic CRs and in order to overcome the time step restriction
+a novel sub-cycling strategy that retains second-order accuracy in time is presented. Numerical
+benchmarks and applications including Bell instability, diffusive shock acceleration and test
+particle acceleration in reconnecting layers are discussed. 

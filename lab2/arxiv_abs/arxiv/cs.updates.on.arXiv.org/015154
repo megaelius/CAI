@@ -1,0 +1,17 @@
+This paper studies the problem of programming a robotic panda gardener to keep a bamboo garden from
+obstructing the view of the lake by your house. The garden consists of $n$ bamboo stalks with known
+daily growth rates and the gardener can cut at most one bamboo per day. As a computer scientist, you
+found out that this problem has already been formalized in [G\k{a}sieniec et al., SOFSEM'17] as
+the Bamboo Garden Trimming (BGT) problem, where the goal is that of computing a perpetual schedule
+(i.e., the sequence of bamboos to cut) for the robotic gardener to follow in order to minimize the
+makespan, i.e., the maximum height ever reached by a bamboo. Two natural strategies are Reduce-Max
+and Reduce-Fastest(x). Reduce-Max trims the tallest bamboo of the day, while Reduce-Fastest(x)
+trims the fastest growing bamboo among the ones that are taller than $x$. It is known that Reduce-Max
+and Reduce-Fastest(x) achieve a makespan of $O(\log n)$ and $4$ for the best choice of $x=2$, respectively.
+We prove the first constant upper bound of $9$ for Reduce-Max and improve the one for Reduce-Fastest(x)
+to $\frac{3+\sqrt{5}}{2} < 2.62$ for $x=1+\frac{1}{\sqrt{5}}$. Another critical aspect stems
+from the fact that your robotic gardener has a limited amount of processing power and memory. It is
+then important for the algorithm to be able to quickly determine the next bamboo to cut while requiring
+at most linear space. We formalize this aspect as the problem of designing a Trimming Oracle data
+structure, and we provide three efficient Trimming Oracles implementing different perpetual
+schedules, including those produced by Reduce-Max and Reduce-Fastest(x). 

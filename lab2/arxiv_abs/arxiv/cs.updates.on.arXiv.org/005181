@@ -1,0 +1,17 @@
+We address item relocation problems in graphs in this paper. We assume items placed in vertices of
+an undirected graph with at most one item per vertex. Items can be moved across edges while various
+constraints depending on the type of relocation problem must be satisfied. We introduce a general
+problem formulation that encompasses known types of item relocation problems such as multi-agent
+path finding (MAPF) and token swapping (TSWAP). In this formulation we express two new types of relocation
+problems derived from token swapping that we call token rotation (TROT) and token permutation (TPERM).
+Our solving approach for item relocation combines satisfiability modulo theory (SMT) with conflict-based
+search (CBS). We interpret CBS in the SMT framework where we start with the basic model and refine
+the model with a collision resolution constraint whenever a collision between items occurs in the
+current solution. The key difference between the standard CBS and our SMT-based modification of
+CBS (SMT-CBS) is that the standard CBS branches the search to resolve the collision while in SMT-CBS
+we iteratively add a single disjunctive collision resolution constraint. Experimental evaluation
+on several benchmarks shows that the SMT-CBS algorithm significantly outperforms the standard
+CBS. We also compared SMT-CBS with a modification of the SAT-based MDD-SAT solver that uses an eager
+modeling of item relocation in which all potential collisions are eliminated by constrains in advance.
+Experiments show that lazy approach in SMT-CBS produce fewer constraint than MDD-SAT and also achieves
+faster solving run-times. 

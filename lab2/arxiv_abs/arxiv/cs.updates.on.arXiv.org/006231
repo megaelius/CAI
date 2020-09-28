@@ -1,0 +1,17 @@
+A privacy-preserving framework in which a computational resource provider receives encrypted
+data from a client and returns prediction results without decrypting the data, i.e., oblivious
+neural network or encrypted prediction, has been studied in machine learning that provides prediction
+services. In this work, we present MOBIUS (Model-Oblivious BInary neUral networkS), a new system
+that combines Binarized Neural Networks (BNNs) and secure computation based on secret sharing
+as tools for scalable and fast privacy-preserving machine learning. BNNs improve computational
+performance by binarizing values in training to $-1$ and $+1$, while secure computation based on
+secret sharing provides fast and various computations under encrypted forms via modulo operations
+with a short bit length. However, combining these tools is not trivial because their operations
+have different algebraic structures and the use of BNNs downgrades prediction accuracy in general.
+MOBIUS uses improved procedures of BNNs and secure computation that have compatible algebraic
+structures without downgrading prediction accuracy. We created an implementation of MOBIUS in
+C++ using the ABY library (NDSS 2015). We then conducted experiments using the MNIST dataset, and
+the results show that MOBIUS can return a prediction within 0.76 seconds, which is six times faster
+than SecureML (IEEE S\&P 2017). MOBIUS allows a client to request for encrypted prediction and allows
+a trainer to obliviously publish an encrypted model to a cloud provided by a computational resource
+provider, i.e., without revealing the original model itself to the provider. 

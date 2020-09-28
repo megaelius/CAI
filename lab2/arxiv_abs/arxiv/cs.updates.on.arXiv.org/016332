@@ -1,0 +1,18 @@
+Quantization is essential to simplify DNN inference in edge applications. Existing uniform and
+non-uniform quantization methods, however, exhibit an inherent conflict between the representing
+range and representing resolution, and thereby result in either underutilized bit-width or significant
+accuracy drop. Moreover, these methods encounter three drawbacks: i) the absence of a quantitative
+metric for in-depth analysis of the source of the quantization errors; ii) the limited focus on the
+image classification tasks based on CNNs; iii) the unawareness of the real hardware and energy consumption
+reduced by lowering the bit-width. In this paper, we first define two quantitative metrics, i.e.,
+the Clipping Error and rounding error, to analyze the quantization error distribution. We observe
+that the boundary- and rounding- errors vary significantly across layers, models and tasks. Consequently,
+we propose a novel quantization method to quantize the weight and activation. The key idea is to Approximate
+the Uniform quantization by Adaptively Superposing multiple Non-uniform quantized values, namely
+AUSN. AUSN is consist of a decoder-free coding scheme that efficiently exploits the bit-width to
+its extreme, a superposition quantization algorithm that can adapt the coding scheme to different
+DNN layers, models and tasks without extra hardware design effort, and a rounding scheme that can
+eliminate the well-known bit-width overflow and re-quantization issues. Theoretical analysis~(see
+Appendix A) and accuracy evaluation on various DNN models of different tasks show the effectiveness
+and generalization of AUSN. The synthesis~(see Appendix B) results on FPGA show $2\times$ reduction
+of the energy consumption, and $2\times$ to $4\times$ reduction of the hardware resource. 

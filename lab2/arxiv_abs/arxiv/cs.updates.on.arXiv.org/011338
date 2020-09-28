@@ -1,0 +1,20 @@
+Label shift refers to the phenomenon where the marginal probability p(y) of observing a particular
+class changes between the training and test distributions, while the conditional probability
+p(x|y) stays fixed. This is relevant in settings such as medical diagnosis, where a classifier trained
+to predict disease based on observed symptoms may need to be adapted to a different distribution
+where the baseline frequency of the disease is higher. Given estimates of p(y|x) from a predictive
+model, one can apply domain adaptation procedures including Expectation Maximization (EM) and
+Black-Box Shift Estimation (BBSE) to efficiently correct for the difference in class proportions
+between the training and test distributions. Unfortunately, modern neural networks typically
+fail to produce well-calibrated estimates of p(y|x). In recent years, Temperature Scaling has
+emerged as an efficient approach to combat miscalibration. However, the effectiveness of Temperature
+Scaling in the context of adaptation to label shift has not been explored. In this work, we study the
+impact of various calibration approaches on shift estimates produced by EM or BBSE. We identify
+a principled strategy for computing the source-domain priors in EM-based domain adaptation that
+is particularly important when the calibrated probabilities have systematic bias. We find that
+when the source priors are computed in this way, label shift estimates computed though EM can perform
+surprisingly well compared to BBSE, even when predictions are not calibrated. In experiments with
+image classification & diabetic retinopathy detection, we find calibration consistently tends
+to improve shift estimation, with EM benefiting particularly when the calibration approach contains
+class-specific bias parameters that reduce systematic bias. Colab notebooks reproducing the
+results are available at https://github.com/blindauth/labelshiftexperiments 

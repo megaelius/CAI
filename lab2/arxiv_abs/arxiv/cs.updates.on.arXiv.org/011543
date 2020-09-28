@@ -1,0 +1,18 @@
+Modern deep reinforcement learning methods have departed from the incremental learning required
+for eligibility traces, rendering the implementation of the $\lambda$-return difficult in this
+context. In particular, off-policy methods that utilize experience replay remain problematic
+because their random sampling of minibatches is not conducive to the efficient calculation of $\lambda$-returns.
+Yet replay-based methods are often the most sample efficient, and incorporating $\lambda$-returns
+into them is a viable way to achieve new state-of-the-art performance. Towards this, we propose
+the first method to enable practical use of $\lambda$-returns in arbitrary replay-based methods
+without relying on other forms of decorrelation such as asynchronous gradient updates. By promoting
+short sequences of past transitions into a small cache within the replay memory, adjacent $\lambda$-returns
+can be efficiently precomputed by sharing Q-values. Computation is not wasted on experiences that
+are never sampled, and stored $\lambda$-returns behave as stable temporal-difference (TD) targets
+that replace the target network. Additionally, our method grants the unique ability to observe
+TD errors prior to sampling; for the first time, transitions can be prioritized by their true significance
+rather than by a proxy to it. Furthermore, we propose the novel use of the TD error to dynamically select
+$\lambda$-values that facilitate faster learning. We show that these innovations can enhance
+the performance of DQN when playing Atari 2600 games, even under partial observability. While our
+work specifically focuses on $\lambda$-returns, these ideas are applicable to any multi-step
+return estimator. 

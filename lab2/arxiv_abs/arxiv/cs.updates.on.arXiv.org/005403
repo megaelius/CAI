@@ -1,0 +1,19 @@
+In Advanced Metering Infrastructure (AMI) networks, smart meters should send fine-grained power
+consumption readings to electric utilities to perform real-time monitoring and energy management.
+However, these readings can leak sensitive information about consumers' activities. Various
+privacy-preserving schemes for collecting fine-grained readings have been proposed for AMI networks.
+These schemes aggregate individual readings and send an aggregated reading to the utility, but
+they extensively use asymmetric-key cryptography which involves large computation/communication
+overhead. Furthermore, they do not address End-to-End (E2E) data integrity, authenticity, and
+computing electricity bills based on dynamic prices. In this paper, we propose EPIC, an efficient
+and privacy-preserving data collection scheme with E2E data integrity verification for AMI networks.
+Using efficient cryptographic operations, each meter should send a masked reading to the utility
+such that all the masks are canceled after aggregating all meters' masked readings, and thus the
+utility can only obtain an aggregated reading to preserve consumers' privacy. The utility can verify
+the aggregated reading integrity without accessing the individual readings to preserve privacy.
+It can also identify the attackers and compute electricity bills efficiently by using the fine-grained
+readings without violating privacy. Furthermore, EPIC can resist collusion attacks in which the
+utility colludes with a relay node to extract the meters' readings. A formal proof, probabilistic
+analysis are used to evaluate the security of EPIC, and ns-3 is used to implement EPIC and evaluate
+the network performance. In addition, we compare EPIC to existing data collection schemes in terms
+of overhead and security/privacy features. 

@@ -1,0 +1,18 @@
+Simulation-to-real transfer is an important strategy for making reinforcement learning practical
+with real robots. Successful sim-to-real transfer systems have difficulty producing policies
+which generalize across tasks, despite training for thousands of hours equivalent real robot time.
+To address this shortcoming, we present a novel approach to efficiently learning new robotic skills
+directly on a real robot, based on model-predictive control (MPC) and an algorithm for learning
+task representations. In short, we show how to reuse the simulation from the pre-training step of
+sim-to-real methods as a tool for foresight, allowing the sim-to-real policy adapt to unseen tasks.
+Rather than end-to-end learning policies for single tasks and attempting to transfer them, we first
+use simulation to simultaneously learn (1) a continuous parameterization (i.e. a skill embedding
+or latent) of task-appropriate primitive skills, and (2) a single policy for these skills which
+is conditioned on this representation. We then directly transfer our multi-skill policy to a real
+robot, and actuate the robot by choosing sequences of skill latents which actuate the policy, with
+each latent corresponding to a pre-learned primitive skill controller. We complete unseen tasks
+by choosing new sequences of skill latents to control the robot using MPC, where our MPC model is composed
+of the pre-trained skill policy executed in the simulation environment, run in parallel with the
+real robot. We discuss the background and principles of our method, detail its practical implementation,
+and evaluate its performance by using our method to train a real Sawyer Robot to achieve motion tasks
+such as drawing and block pushing. 

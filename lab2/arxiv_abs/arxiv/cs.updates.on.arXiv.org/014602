@@ -1,0 +1,17 @@
+Energy use is a key concern when deploying deep learning models on mobile and embedded platforms.
+Current studies develop energy predictive models based on application-level features to provide
+researchers a way to estimate the energy consumption of their deep learning models. This information
+is useful for building resource-aware models that can make efficient use of the hard-ware resources.
+However, previous works on predictive modelling provide little insight into the trade-offs involved
+in the choice of features on the final predictive model accuracy and model complexity. To address
+this issue, we provide a comprehensive analysis of building regression-based predictive models
+for deep learning on mobile devices, based on empirical measurements gathered from the SyNERGY
+framework.Our predictive modelling strategy is based on two types of predictive models used in
+the literature:individual layers and layer-type. Our analysis of predictive models show that
+simple layer-type features achieve a model complexity of 4 to 32 times less for convolutional layer
+predictions for a similar accuracy compared to predictive models using more complex features adopted
+by previous approaches. To obtain an overall energy estimate of the inference phase, we build layer-type
+predictive models for the fully-connected and pooling layers using 12 representative Convolutional
+NeuralNetworks (ConvNets) on the Jetson TX1 and the Snapdragon 820using software backends such
+as OpenBLAS, Eigen and CuDNN. We obtain an accuracy between 76% to 85% and a model complexity of 1 for
+the overall energy prediction of the test ConvNets across different hardware-software combinations.

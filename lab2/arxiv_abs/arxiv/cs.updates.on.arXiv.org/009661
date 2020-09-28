@@ -1,0 +1,18 @@
+In this paper we consider the following sparse recovery problem. We have query access to a vector
+$\vx \in \R^N$ such that $\vhx = \vF \vx$ is $k$-sparse (or nearly $k$-sparse) for some orthogonal
+transform $\vF$. The goal is to output an approximation (in an $\ell_2$ sense) to $\vhx$ in sublinear
+time. This problem has been well-studied in the special case that $\vF$ is the Discrete Fourier Transform
+(DFT), and a long line of work has resulted in sparse Fast Fourier Transforms that run in time $O(k
+\cdot \mathrm{polylog} N)$. However, for transforms $\vF$ other than the DFT (or closely related
+transforms like the Discrete Cosine Transform), the question is much less settled. In this paper
+we give sublinear-time algorithms---running in time $\poly(k \log(N))$---for solving the sparse
+recovery problem for orthogonal transforms $\vF$ that arise from orthogonal polynomials. More
+precisely, our algorithm works for any $\vF$ that is an orthogonal polynomial transform derived
+from Jacobi polynomials. The Jacobi polynomials are a large class of classical orthogonal polynomials
+(and include Chebyshev and Legendre polynomials as special cases), and show up extensively in applications
+like numerical analysis and signal processing. One caveat of our work is that we require an assumption
+on the sparsity structure of the sparse vector, although we note that vectors with random support
+have this property with high probability. Our approach is to give a very general reduction from the
+$k$-sparse sparse recovery problem to the $1$-sparse sparse recovery problem that holds for any
+flat orthogonal polynomial transform; then we solve this one-sparse recovery problem for transforms
+derived from Jacobi polynomials. 

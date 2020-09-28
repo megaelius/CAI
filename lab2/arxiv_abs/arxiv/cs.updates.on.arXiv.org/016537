@@ -1,0 +1,18 @@
+In this paper we study the intrinsic tradeoff between the space complexity of the sketch and its estimation
+error in the Random Oracle model. We define a new measure of efficiency for cardinality estimators
+called the Fisher-Shannon ($\mathsf{Fish}$) number $\mathcal{H}/\mathcal{I}$. It captures
+the tension between the limiting Shannon entropy ($\mathcal{H}$) of the sketch and its normalized
+Fisher information ($\mathcal{I}$), which characterizes (asymptotically) the variance of a
+statistically efficient estimator. We prove that many variants of the $\mathsf{PCSA}$ sketch
+of Flajolet and Martin have $\mathsf{Fish}$ number $H_0/I_0$, where $H_0,I_0$ are two precisely-defined
+constants, and that all base-$q$ generalizations of ($\textsf{Hyper}$)$\textsf{LogLog}$ are
+strictly worse than $H_0/I_0$, but tend to $H_0/I_0$ in the limit as $q\to\infty$. All other known
+sketches have even worse $\mathsf{Fish}$-numbers. We introduce a new sketch called $\mathsf{Fishmonger}$
+that is based on a smoothed, compressed version of $\mathsf{PCSA}$ with a different estimation
+function. $\mathsf{Fishmonger}$ has $\mathsf{Fish}$ number $H_0/I_0 \approx 1.98$. It stores
+$O(\log^2\log U) + (H_0/I_0)b \approx 1.98b$ bits, and estimates cardinalities of multisets of
+$[U]$ with a standard error of $(1+o(1))/\sqrt{b}$. $\mathsf{Fishmonger}$'s space-error tradeoff
+improves on state-of-the-art sketches like $\textsf{HyperLogLog}$, or even compressed representations
+of it. $\mathsf{Fishmonger}$ can be used in a distributed environment (where substreams are sketched
+separately and composed later). We conjecture that the $\mathsf{Fish}$-number $H_0/I_0$ is a
+universal lower bound for any such composable sketch. 

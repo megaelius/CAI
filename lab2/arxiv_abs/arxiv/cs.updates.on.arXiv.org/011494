@@ -1,0 +1,19 @@
+Recently, Graph Convolutional Networks (GCNs) and their variants have been receiving many research
+interests for learning graph-related tasks. While the GCNs have been successfully applied to this
+problem, some caveats inherited from classical deep learning still remain as open research topics
+in the context of the node classification problem. One such inherited caveat is that GCNs only consider
+the nodes that are a few propagations away from the labeled nodes to classify them. However, taking
+only a few propagation steps away nodes into account defeats the purpose of using the graph topological
+information in the GCNs. To remedy this problem, the-state-of-the-art methods leverage the network
+diffusion approaches, namely personalized page rank and its variants, to fully account for the
+graph topology, {\em after} they use the Neural Networks in the GCNs. However, these approaches
+overlook the fact that the network diffusion methods favour high degree nodes in the graph, resulting
+in the propagation of labels to unlabeled centralized, hub, nodes. To address this biasing hub nodes
+problem, in this paper, we propose to utilize a dimensionality reduction technique conjugate with
+personalized page rank so that we can both take advantage from graph topology and resolve the hub
+node favouring problem for GCNs. Here, our approach opens a new holistic road for message passing
+phase of GCNs by suggesting the usage of other proximity matrices instead of well-known Laplacian.
+Testing on two real-world networks that are commonly used in benchmarking GCNs' performance for
+the node classification context, we systematically evaluate the performance of the proposed methodology
+and show that our approach outperforms existing methods for wide ranges of parameter values with
+very limited deep learning training {\em epochs}. 

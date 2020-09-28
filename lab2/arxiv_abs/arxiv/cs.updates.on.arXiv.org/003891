@@ -1,0 +1,17 @@
+De novo DNA assembly is a fundamental task in Bioinformatics, and finding Eulerian paths on de Bruijn
+graphs is one of the dominant approaches to it. In most of the cases, there may be no one order for the
+de Bruijn graph that works well for assembling all of the reads. For this reason, some de Bruijn-based
+assemblers try assembling on several graphs of increasing order, in turn. Boucher et al. (2015)
+went further and gave a representation making it possible to navigate in the graph and change order
+on the fly, up to a maximum $K$, but they can use up to $\lg K$ extra bits per edge because they use an LCP
+array. In this paper, we replace the LCP array by a succinct representation of that array's Cartesian
+tree, which takes only 2 extra bits per edge and still lets us support interesting navigation operations
+efficiently. These operations are not enough to let us easily extract unitigs and only unitigs from
+the graph but they do let us extract a set of safe strings that contains all unitigs. Suppose we are
+navigating in a variable-order de Bruijn graph representation, following these rules: if there
+are no outgoing edges then we reduce the order, hoping one appears; if there is exactly one outgoing
+edge then we take it (increasing the current order, up to $K$); if there are two or more outgoing edges
+then we stop. Then we traverse a (variable-order) path such that we cross edges only when we have no
+choice or, equivalently, we generate a string appending characters only when we have no choice.
+It follows that the strings we extract are safe. Our experiments show we extract a set of strings more
+informative than the unitigs, while using a reasonable amount of memory. 

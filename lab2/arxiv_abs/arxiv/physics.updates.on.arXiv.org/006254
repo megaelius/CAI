@@ -1,0 +1,18 @@
+This paper introduces two subcycling algorithms for particle orbits in variational, geometric
+particle-in-cell methods addressing the Vlasov--Maxwell system in magnetized plasmas. The purpose
+of subcycling is to allow different time steps for different particle species and ideally time steps
+longer than the electron gyroperiod for the global field solves while sampling the local cyclotron
+orbits accurately. Both our algorithms retain the electromagnetic gauge invariance of the discrete
+action, guaranteeing a local charge conservation law, and the variational approach provides a
+bounded long-time energy behavior. In the first algorithm, the global field solves are explicit
+and the local particle push implicit for each particle individually. The requirement for gauge
+invariance, however, leads to a peculiarity in the particle push: the magnetic field is orbit-averaged
+but the effect of the electric field is evaluated only once during the subcycling period. Numerical
+tests then indicate a possibility of artificial oscillations if the relative electric field impulse
+on the particles grows large. The second algorithm is proposed to remedy the possible issues of the
+first algorithm. It is observed that both the magnetic and electric impulses on particle motion
+can be orbit-averaged if also the electrostatic part of the field-particle interaction term in
+the discrete action is line-integrated. In numerical experiments, the artificial oscillations
+are observed to vanish but, at the same time, the algorithm implicitly couples the electric field
+and the particle push. It remains to be seen whether properly orbit-averaged, yet explicit subcycling
+algorithms exist within the variational geometric particle-in-cell framework. 

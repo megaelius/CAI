@@ -1,0 +1,19 @@
+Ads recommendation systems are often trained with a tremendous amount of data, and distributed
+training is the workhorse to shorten the training time. Meanwhile, a commonly used technique to
+prevent overfitting in Ads recommendation is one pass training. In this scenario, the total amount
+of data is fixed. When we express data parallelism on $n$ workers, each worker only processes $1/n$
+data. The larger the number of workers, the less data each worker observes. While the training throughput
+can be increased by simply adding more workers, it is also increasingly challenging to preserve
+the model quality. To address this problem, we propose the ShadowSync framework, in which the model
+parameters are synchronized across workers, yet we isolate synchronization from training and
+run it in the background. In contrast to common strategies including synchronous SGD, asynchronous
+SGD, and model averaging on independently trained sub-models, where synchronization happens
+in the foreground, ShadowSync synchronization is neither part of the backward pass nor happens
+every $k$ iterations. ShadowSync is simple but effective. Our framework is generic to host various
+types of synchronization algorithms, and we propose 3 approaches under this theme. The superiority
+of ShadowSync is confirmed by experiments on training deep neural networks for click-through-rate
+prediction. Our methods all succeed in making the training throughput linearly scale with the number
+of trainers. Comparing to their foreground counterparts, our methods exhibit neutral to better
+model quality and better scalability when we keep the number of parameter servers the same. In our
+training system which expresses both replication and Hogwild parallelism, ShadowSync also accomplishes
+the highest example level parallelism number comparing to the prior arts. 

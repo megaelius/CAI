@@ -1,0 +1,18 @@
+Deep learning has transformed computer vision, natural language processing, and speech recognition.
+However, two critical questions remain obscure: (1) why do deep neural networks generalize better
+than shallow networks, and (2) does it always hold that a deeper network leads to better performance?
+Specifically, letting $L$ be the number of convolutional and pooling layers in a deep neural network,
+and $n$ be the size of the training sample, we derive an upper bound on the expected generalization
+error for this network, i.e., \begin{eqnarray*} \mathbb{E}[R(W)-R_S(W)] \leq \exp{\left(-\frac{L}{2}\log{\frac{1}{\eta}}\right)}\sqrt{\frac{2\sigma^2}{n}I(S,W)}
+\end{eqnarray*} where $\sigma >0$ is a constant depending on the loss function, $0<\eta<1$ is a
+constant depending on the information loss for each convolutional or pooling layer, and $I(S, W)$
+is the mutual information between the training sample $S$ and the output hypothesis $W$. This upper
+bound shows that as the number of convolutional and pooling layers $L$ increases in the network,
+the expected generalization error will decrease exponentially to zero. Layers with strict information
+loss, such as the convolutional layers, reduce the generalization error for the whole network,
+this answers the first question. However, algorithms with zero expected generalization error
+does not imply a small test error or $\mathbb{E}[R(W)]$. This is because $\mathbb{E}[R_S(W)]$
+is large when the information for fitting the data is lost as the number of layers increases. This
+suggests that the claim "the deeper the better" is conditioned on a small training error or $\mathbb{E}[R_S(W)]$.
+Finally, we show that deep learning satisfies a weak notion of stability and the sample complexity
+of deep neural networks will decrease as $L$ increases. 

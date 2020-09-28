@@ -1,0 +1,17 @@
+Deep neural networks ( DNNs ) are becoming a key enabling technology for many application domains.
+However, on-device inference on battery-powered, resource-constrained embedding systems is
+often infeasible due to prohibitively long inferencing time and resource requirements of many
+DNNs. Offloading computation into the cloud is often unacceptable due to privacy concerns, high
+latency, or the lack of connectivity. While compression algorithms often succeed in reducing inferencing
+times, they come at the cost of reduced accuracy. This paper presents a new, alternative approach
+to enable efficient execution of DNNs on embedded devices. Our approach dynamically determines
+which DNN to use for a given input, by considering the desired accuracy and inference time. It employs
+machine learning to develop a low-cost predictive model to quickly select a pre-trained DNN to use
+for a given input and the optimization constraint. We achieve this by first off-line training a predictive
+model, and then using the learned model to select a DNN model to use for new, unseen inputs. We apply
+our approach to two representative DNN domains: image classification and machine translation.
+We evaluate our approach on a Jetson TX2 embedded deep learning platform and consider a range of influential
+DNN models including convolutional and recurrent neural networks. For image classification,
+we achieve a 1.8x reduction in inference time with a 7.52% improvement in accuracy, over the most-capable
+single DNN model. For machine translation, we achieve a 1.34x reduction in inference time over the
+most-capable single model, with little impact on the quality of translation. 

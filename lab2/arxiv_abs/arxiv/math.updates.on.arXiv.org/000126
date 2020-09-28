@@ -1,0 +1,19 @@
+We study trend filtering, a recently proposed tool of Kim et al. (2009) for nonparametric regression.
+The trend filtering estimate is defined as the minimizer of a penalized least squares criterion,
+in which the penalty term sums the absolute kth order discrete derivatives over the input points.
+Perhaps not surprisingly, trend filtering estimates appear to have the structure of kth degree
+spline functions, with adaptively chosen knot points (we say "appear" here as trend filtering estimates
+are not really functions over continuous domains, and are only defined over the discrete set of inputs).
+This brings to mind comparisons to other nonparametric regression tools that also produce adaptive
+splines; in particular, we compare trend filtering to smoothing splines, which penalize the sum
+of squared derivatives across input points, and to locally adaptive regression splines (Mammen
+& van de Geer 1997), which penalize the total variation of the kth derivative. Empirically,
+we discover that trend filtering estimates adapt to the local level of smoothness much better than
+smoothing splines, and further, they exhibit a remarkable similarity to locally adaptive regression
+splines. We also provide theoretical support for these empirical findings; most notably, we prove
+that (with the right choice of tuning parameter) the trend filtering estimate converges to the true
+underlying function at the minimax rate for functions whose kth derivative is of bounded variation.
+This is done via an asymptotic pairing of trend filtering and locally adaptive regression splines,
+which have already been shown to converge at the minimax rated (Mammen & van de Geer 1997). At
+the core of this argument is a new result tying together the fitted values of two lasso problems that
+share the same outcome vector, but have different predictor matrices. 

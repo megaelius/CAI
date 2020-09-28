@@ -1,0 +1,20 @@
+We previously proposed an intelligent automatic treatment planning framework for radiotherapy,
+in which a virtual treatment planner network (VTPN) was built using deep reinforcement learning
+(DRL) to operate a treatment planning system (TPS). Despite the success, the training of VTPN via
+DRL was time consuming. Also the training time is expected to grow with the complexity of the treatment
+planning problem, preventing the development of VTPN for more complicated but clinically relevant
+scenarios. In this study we proposed a knowledge-guided DRL (KgDRL) that incorporated knowledge
+from human planners to guide the training process to improve the training efficiency. Using prostate
+cancer intensity modulated radiation therapy as a testbed, we first summarized a number of rules
+of operating our in-house TPS. In training, in addition to randomly navigating the state-action
+space, as in the DRL using the epsilon-greedy algorithm, we also sampled actions defined by the rules.
+The priority of sampling actions from rules decreased over the training process to encourage VTPN
+to explore new policy that was not covered by the rules. We trained a VTPN using KgDRL and compared
+its performance with another VTPN trained using DRL. Both VTPNs trained via KgDRL and DRL spontaneously
+learned to operate the TPS to generate high-quality plans, achieving plan quality scores of 8.82
+and 8.43, respectively. Both VTPNs outperformed treatment planning purely based on the rules,
+which had a plan score of 7.81. VTPN trained with 8 episodes using KgDRL was able to perform similarly
+to that trained using DRL with 100 episodes. The training time was reduced from more than a week to
+13 hours. The proposed KgDRL framework accelerated the training process by incorporating human
+knowledge, which will facilitate the development of VTPN for more complicated treatment planning
+scenarios. 

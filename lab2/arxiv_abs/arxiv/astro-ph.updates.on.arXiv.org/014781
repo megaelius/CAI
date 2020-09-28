@@ -1,0 +1,18 @@
+Quasi-N-body simulations, such as FastPM, provide a fast way to simulate cosmological structure
+formation, but have yet to adequately include the effects of massive neutrinos. We present a method
+to include neutrino particles in FastPM, enabling computation of the CDM and total matter power
+spectra to percent-level accuracy in the non-linear regime. The CDM-neutrino cross-power can
+also be computed at a sufficient accuracy to constrain cosmological observables. To avoid the shot
+noise that typically plagues neutrino particle simulations, we employ a quasi-random algorithm
+to sample the relevant Fermi-Dirac distribution when setting the initial neutrino thermal velocities.
+We additionally develop an effective distribution function to describe a set of non-degenerate
+neutrinos as a single particle to speed up non-degenerate simulations. The simulation is accurate
+for the full range of physical interest, $M_\nu \lesssim 0.6$eV, and applicable to redshifts $z\lesssim2$.
+Such accuracy can be achieved by initializing particles with the two-fluid approximation transfer
+functions (using the REPS package). Convergence can be reached in $\sim 25$ steps, with a starting
+redshift of $z=99$. Probing progressively smaller scales only requires an increase in the number
+of CDM particles being simulated, while the number of neutrino particles can remain fixed at a value
+less than or similar to the number of CDM particles. In turn, the percentage increase in runtime-per-step
+due to neutrino particles is between $\sim 5-20\%$ for runs with $1024^3$ CDM particles, and decreases
+as the number of CDM particles is increased. The code has been made publicly available, providing
+an invaluable resource to produce fast predictions for cosmological surveys. 

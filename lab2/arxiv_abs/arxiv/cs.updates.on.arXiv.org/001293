@@ -1,0 +1,18 @@
+While it is well-known and acknowledged that the performance of graph algorithms is heavily dependent
+on the input data, there has been surprisingly little research to quantify and predict the impact
+the graph structure has on performance. Parallel graph algorithms, running on many-core systems
+such as GPUs, are no exception: most research has focused on how to efficiently implement and tune
+different graph operations on a specific GPU. However, the performance impact of the input graph
+has only been taken into account indirectly as a result of the graphs used to benchmark the system.
+In this work, we present a case study investigating how to use the properties of the input graph to
+improve the performance of the breadth-first search (BFS) graph traversal. To do so, we first study
+the performance variation of 15 different BFS implementations across 248 graphs. Using this performance
+data, we show that significant speed-up can be achieved by combining the best implementation for
+each level of the traversal. To make use of this data-dependent optimization, we must correctly
+predict the relative performance of algorithms per graph level, and enable dynamic switching to
+the optimal algorithm for each level at runtime. We use the collected performance data to train a
+binary decision tree, to enable high-accuracy predictions and fast switching. We demonstrate
+empirically that our decision tree is both fast enough to allow dynamic switching between implementations,
+without noticeable overhead, and accurate enough in its prediction to enable significant BFS speedup.
+We conclude that our model-driven approach (1) enables BFS to outperform state of the art GPU algorithms,
+and (2) can be adapted for other BFS variants, other algorithms, or more specific datasets. 

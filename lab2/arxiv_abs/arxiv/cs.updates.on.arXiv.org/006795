@@ -1,0 +1,19 @@
+In this paper, we propose generating synthetic multiple sclerosis (MS) lesions on MRI images with
+the final aim to improve the performance of supervised machine learning algorithms, therefore
+avoiding the problem of the lack of available ground truth. We propose a two-input two-output fully
+convolutional neural network model for MS lesion synthesis in MRI images. The lesion information
+is encoded as discrete binary intensity level masks passed to the model and stacked with the input
+images. The model is trained end-to-end without the need for manually annotating the lesions in
+the training set. We then perform the generation of synthetic lesions on healthy images via registration
+of patient images, which are subsequently used for data augmentation to increase the performance
+for supervised MS lesion detection algorithms. Our pipeline is evaluated on MS patient data from
+an in-house clinical dataset and the public ISBI2015 challenge dataset. The evaluation is based
+on measuring the similarities between the real and the synthetic images as well as in terms of lesion
+detection performance by segmenting both the original and synthetic images individually using
+a state-of-the-art segmentation framework. We also demonstrate the usage of synthetic MS lesions
+generated on healthy images as data augmentation. We analyze a scenario of limited training data
+(one-image training) to demonstrate the effect of the data augmentation on both datasets. Our results
+significantly show the effectiveness of the usage of synthetic MS lesion images. For the ISBI2015
+challenge, our one-image model trained using only a single image plus the synthetic data augmentation
+strategy showed a performance similar to that of other CNN methods that were fully trained using
+the entire training set, yielding a comparable human expert rater performance 

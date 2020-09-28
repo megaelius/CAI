@@ -1,0 +1,19 @@
+In many contemporary optimization problems such as those arising in machine learning, it can be
+computationally challenging or even infeasible to evaluate an entire function or its derivatives.
+This motivates the use of stochastic algorithms that sample problem data, which can jeopardize
+the guarantees obtained through classical globalization techniques in optimization such as a
+trust region or a line search. Using subsampled function values is particularly challenging for
+the latter strategy, which relies upon multiple evaluations. On top of that all, there has been an
+increasing interest for nonconvex formulations of data-related problems, such as training deep
+learning models. For such instances, one aims at developing methods that converge to second-order
+stationary points quickly, i.e., escape saddle points efficiently. This is particularly delicate
+to ensure when one only accesses subsampled approximations of the objective and its derivatives.
+In this paper, we describe a stochastic algorithm based on negative curvature and Newton-type directions
+that are computed for a subsampling model of the objective. A line-search technique is used to enforce
+suitable decrease for this model, and for a sufficiently large sample, a similar amount of reduction
+holds for the true objective. By using probabilistic reasoning, we can then obtain worst-case complexity
+guarantees for our framework, leading us to discuss appropriate notions of stationarity in a subsampling
+context. Our analysis encompasses the deterministic regime, and allows us to identify sampling
+requirements for second-order line-search paradigms. As we illustrate through real data experiments,
+these worst-case estimates need not be satisfied for our method to be competitive with first-order
+strategies in practice. 

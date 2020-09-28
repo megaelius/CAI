@@ -1,0 +1,18 @@
+Model predictive control (MPC) is among the most successful approaches for process control and
+has become a de facto standard across the process industries. There remain, however, applications
+for which MPC becomes difficult or impractical due to the demand that an optimization problem is
+solved at each time step. In this work, we present a link between explicit MPC formulations and recent
+advances in data mining, and especially manifold learning, to enable facilitated prediction of
+the entire MPC control policy even when the function mapping from the system state to the control
+policy is complicated. We use a carefully designed similarity measure, informed by both control
+policies and system state variables, to "learn" an intrinsic parametrization of the MPC controller
+using a diffusion maps algorithm. We then use function approximation algorithms (i.e., regression
+or interpolation) to project points from state space to the intrinsic space, and then from the intrinsic
+space to policy space. With our similarity measure, the function from intrinsic space to the control
+policy may often be approximated using simple (and therefore fast) techniques, such as polynomial
+regression or modest-sized artificial neural networks. The manifold learning approach is amenable
+to alternative parametrizations for (observations of) the state space, and will discover nonlinear
+relationships among the state variables that can result in a lower dimensional representation.
+We demonstrate our approach by effectively stabilizing and controlling an open-loop unstable
+nonisothermal continuous stirred tank reactor subject to step changes in the reference trajectory
+and white noise disturbances. 

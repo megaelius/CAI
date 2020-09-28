@@ -1,0 +1,17 @@
+Local mutual exclusion guarantees that no two neighboring processes enter a critical section at
+the same time while satisfying both mutual exclusion and no starvation properties. On the other
+hand, processes may want to execute some operation simultaneously with the neighbors. Of course,
+we can use a globally synchronized clock to achieve the task but it is very expensive to realize it
+in a distributed system in general. In this paper, we define a new concept neighborhood mutual remainder.
+A distributed algorithm that satisfies the neighborhood mutual remainder requirement should
+satisfy global fairness, l-exclusion and repeated local rendezvous requirements. Global fairness
+is satisfied when each process (that requests to enter the critical section infinitely often) executes
+the critical section infinitely often, l-exclusion is satisfied when at most l neighboring processes
+enter the critical section at the same time, and repeated local rendezvous is satisfied when for
+each process infinitely often no process in the closed neighborhood is in the critical or trying
+section. We first formalize the concept of neighborhood mutual remainder, and give a simple self-stabilizing
+algorithm to demonstrate the design paradigm to achieve neighborhood mutual remainder. We also
+present two applications of neighborhood mutual remainder to a Look-Compute-Move robot system.
+One is for implementing a move-atomic property and the other is for implementing FSYNC scheduler,
+where robots possess an independent clock that is advanced in the same speed. These are the first
+self-stabilizing implementations of the LCM synchronization. 

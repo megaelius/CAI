@@ -1,0 +1,18 @@
+While a number of weak consistency mechanisms have been developed in recent years to improve performance
+and ensure availability in distributed, replicated systems, ensuring correctness of transactional
+applications running on top of such systems remains a difficult and important problem. Serializability
+is a well-understood correctness criterion for transactional programs; understanding whether
+applications are serializable when executed in a weakly-consistent environment, however remains
+a challenging exercise. In this work, we combine the dependency graph-based characterization
+of serializability and the framework of abstract executions to develop a fully automated approach
+for statically finding bounded serializability violations under \emph{any} weak consistency
+model. We reduce the problem of serializability to satisfiability of a formula in First-Order Logic,
+which allows us to harness the power of existing SMT solvers. We provide rules to automatically construct
+the FOL encoding from programs written in SQL (allowing loops and conditionals) and the consistency
+specification written as a formula in FOL. In addition to detecting bounded serializability violations,
+we also provide two orthogonal schemes to reason about unbounded executions by providing sufficient
+conditions (in the form of FOL formulae) whose satisfiability would imply the absence of anomalies
+in any arbitrary execution. We have applied the proposed technique on TPC-C, a real world database
+program with complex application logic, and were able to discover anomalies under Parallel Snapshot
+Isolation, and verify serializability for unbounded executions under Snapshot Isolation, two
+consistency mechanisms substantially weaker than serializability. 

@@ -1,0 +1,19 @@
+Neuroimaging datasets are rapidly growing in size as a result of advancements in image acquisition
+methods, open-science and data sharing. However, the adoption of Big Data processing strategies
+by neuroimaging processing engines remains limited. Here, we evaluate three Big Data processing
+strategies (in-memory computing, data locality and lazy evaluation) on typical neuroimaging
+use cases, represented by the BigBrain dataset. We contrast these various strategies using Apache
+Spark and Nipype as our representative Big Data and neuroimaging processing engines, on Dell EMC's
+Top-500 cluster. Big Data thresholds were modelled by comparing the data-write rate of the application
+to the filesystem bandwidth and number of concurrent processes. This model acknowledges the fact
+that page caching provided by the Linux kernel is critical to the performance of Big Data applications.
+Results show that in-memory computing alone speeds-up executions by a factor of up to 1.6, whereas
+when combined with data locality, this factor reaches 5.3. Lazy evaluation strategies were found
+to increase the likelihood of cache hits, further improving processing time. Such important speed-up
+values are likely to be observed on typical image processing operations performed on images of size
+larger than 75GB. A ballpark speculation from our model showed that in-memory computing alone will
+not speed-up current functional MRI analyses unless coupled with data locality and processing
+around 280 subjects concurrently. Furthermore, we observe that emulating in-memory computing
+using in-memory file systems (tmpfs) does not reach the performance of an in-memory engine, presumably
+due to swapping to disk and the lack of data cleanup. We conclude that Big Data processing strategies
+are worth developing for neuroimaging applications. 

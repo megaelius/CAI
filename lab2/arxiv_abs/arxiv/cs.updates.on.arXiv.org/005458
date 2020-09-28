@@ -1,0 +1,19 @@
+Coronary artery centerline extraction in cardiac CT angiography (CCTA) images is a prerequisite
+for evaluation of stenoses and atherosclerotic plaque. We propose an algorithm that extracts coronary
+artery centerlines in CCTA using a convolutional neural network (CNN). A 3D dilated CNN is trained
+to predict the most likely direction and radius of an artery at any given point in a CCTA image based
+on a local image patch. Starting from a single seed point placed manually or automatically anywhere
+in a coronary artery, a tracker follows the vessel centerline in two directions using the predictions
+of the CNN. Tracking is terminated when no direction can be identified with high certainty. The CNN
+was trained using 32 manually annotated centerlines in a training set consisting of 8 CCTA images
+provided in the MICCAI 2008 Coronary Artery Tracking Challenge (CAT08). Evaluation using 24 test
+images of the CAT08 challenge showed that extracted centerlines had an average overlap of 93.7%
+with 96 manually annotated reference centerlines. Extracted centerline points were highly accurate,
+with an average distance of 0.21 mm to reference centerline points. In a second test set consisting
+of 50 CCTA scans, 5,448 markers in the coronary arteries were used as seed points to extract single
+centerlines. This showed strong correspondence between extracted centerlines and manually placed
+markers. In a third test set containing 36 CCTA scans, fully automatic seeding and centerline extraction
+led to extraction of on average 92% of clinically relevant coronary artery segments. The proposed
+method is able to accurately and efficiently determine the direction and radius of coronary arteries.
+The method can be trained with limited training data, and once trained allows fast automatic or interactive
+extraction of coronary artery trees from CCTA images. 

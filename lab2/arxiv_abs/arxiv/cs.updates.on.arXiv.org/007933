@@ -1,0 +1,18 @@
+A method for detecting electronic data theft from computer networks is described, capable of recognizing
+patterns of remote exfiltration occurring over days to weeks. Normal traffic flow data, in the form
+of a host's ingress and egress bytes over time, is used to train an ensemble of one-class learners.
+The detection ensemble is modular, with individual classifiers trained on different traffic features
+thought to characterize malicious data transfers. We select features that model the egress to ingress
+byte balance over time, periodicity, short time-scale irregularity, and density of the traffic.
+The features are most efficiently modeled in the frequency domain, which has the added benefit that
+variable duration flows are transformed to a fixed-size feature vector, and by sampling the frequency
+space appropriately, long-duration flows can be tested. When trained on days- or weeks-worth of
+traffic from individual hosts, our ensemble achieves a low false positive rate (<2%) on a range of
+different system types. Simulated exfiltration samples with a variety of different timing and
+data characteristics were generated and used to test ensemble performance on different kinds of
+systems: when trained on a client workstation's external traffic, the ensemble was generally successful
+at detecting exfiltration that is not simultaneously ingress-heavy, connection-sparse, and
+of short duration---a combination that is not optimal for attackers seeking to transfer large amounts
+of data. Remote exfiltration is more difficult to detect from egress-heavy systems, like web servers,
+with normal traffic exhibiting timing characteristics similar to a wide range of exfiltration
+types. 

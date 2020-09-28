@@ -1,0 +1,19 @@
+We consider leader election in anonymous radio networks modeled as simple undirected connected
+graphs. Nodes communicate in synchronous rounds. Nodes are anonymous and execute the same deterministic
+algorithm, so symmetry can be broken only in one way: by different wake-up times of the nodes. In which
+situations is it possible to break symmetry and elect a leader using time as symmetry breaker? To
+answer this question, we consider configurations. A configuration is the underlying graph with
+nodes tagged by non-negative integers with the following meaning. A node can either wake up spontaneously
+in the round shown on its tag, according to some global clock, or can be woken up hearing a message sent
+by one of its already awoken neighbours. The local clock of a node starts at its wakeup and nodes do
+not have access to the global clock determining their tags. A configuration is feasible if there
+exists a distributed algorithm that elects a leader for this configuration. Our main result is a
+complete algorithmic characterization of feasible configurations: we design a centralized decision
+algorithm, working in polynomial time, whose input is a configuration and which decides if the configuration
+is feasible. We also provide a dedicated deterministic distributed leader election algorithm
+for each feasible configuration that elects a leader for this configuration in time $O(n^2\sigma)$,
+where $n$ is the number of nodes and $\sigma$ is the difference between the largest and smallest tag
+of the configuration. We then prove that there cannot exist a universal deterministic distributed
+algorithm electing a leader for all feasible configurations. In fact, we show that such a universal
+algorithm cannot exist even for the class of 4-node feasible configurations. We also prove that
+a distributed version of our decision algorithm cannot exist. 

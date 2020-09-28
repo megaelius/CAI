@@ -1,0 +1,18 @@
+Often, when solving forward, inverse or data assimilation problems, only a part of the solution
+is needed. As a model, we consider the stationary diffusion problem. We demonstrate an algorithm
+that can compute only a part or a functional of the solution, without calculating the full inversion
+operator and the complete solution. It is a well-known fact about partial differential equations
+that the solution at each discretisation point depends on the solutions at all other discretisation
+points. Therefore, it is impossible to compute the solution only at one point, without calculating
+the solution at all other points. The standard numerical methods like a conjugate gradient or Gauss
+elimination compute the whole solution and/or the complete inverse operator. We suggest a method
+which can compute the solution of the given partial differential equation 1) at a point; 2) at few
+points; 3) on an interface; or a functional of the solution, without computing the solution at all
+points. The required storage cost and computational resources will be lower as in the standard approach.
+With this new method, we can speed up, for instance, computation of the innovation in filtering or
+the likelihood distribution, which measures the data misfit (mismatch). Further, we can speed
+up the solution of the regression, Bayesian inversion, data assimilation, and Kalman filter update
+problems. Applying additionally the hierarchical matrix approximation, we reduce the cubic computational
+cost to almost linear $\mathcal{O}(k^2n \log^2 n)$, where $k\ll n$ and $n$ is the number of degrees
+of freedom. Up to the hierarchical matrix approximation error, the computed solution is exact.
+One of the disadvantages of this method is the need to modify the existing deterministic solver.

@@ -1,0 +1,20 @@
+The performance of speech emotion recognition is affected by the differences in data distributions
+between train (source domain) and test (target domain) sets used to build and evaluate the models.
+This is a common problem, as multiple studies have shown that the performance of emotional classifiers
+drop when they are exposed to data that does not match the distribution used to build the emotion classifiers.
+The difference in data distributions becomes very clear when the training and testing data come
+from different domains, causing a large performance gap between validation and testing performance.
+Due to the high cost of annotating new data and the abundance of unlabeled data, it is crucial to extract
+as much useful information as possible from the available unlabeled data. This study looks into
+the use of adversarial multitask training to extract a common representation between train and
+test domains. The primary task is to predict emotional attribute-based descriptors for arousal,
+valence, or dominance. The secondary task is to learn a common representation where the train and
+test domains cannot be distinguished. By using a gradient reversal layer, the gradients coming
+from the domain classifier are used to bring the source and target domain representations closer.
+We show that exploiting unlabeled data consistently leads to better emotion recognition performance
+across all emotional dimensions. We visualize the effect of adversarial training on the feature
+representation across the proposed deep learning architecture. The analysis shows that the data
+representations for the train and test domains converge as the data is passed to deeper layers of
+the network. We also evaluate the difference in performance when we use a shallow neural network
+versus a \emph{deep neural network} (DNN) and the effect of the number of shared layers used by the
+task and domain classifiers. 

@@ -1,0 +1,18 @@
+In the sparse linear regression setting, we consider testing the significance of the predictor
+variable that enters the current lasso model, in the sequence of models visited along the lasso solution
+path. We propose a simple test statistic based on lasso fitted values, called the {\it covariance
+test statistic}, and show that when the true model is linear, this statistic has an $\Exp(1)$ asymptotic
+distribution under the null hypothesis (the null being that all truly active variables are contained
+in the current lasso model). Our proof of this result assumes some (reasonable) regularity conditions
+on the predictor matrix $X$, and covers the important high-dimensional case $p>n$. Of course,
+for testing the significance of an additional variable between two nested linear models, one may
+use the usual chi-squared test, comparing the drop in residual sum of squares (RSS) to a $\chi^2_1$
+distribution. But when this additional variable is not fixed, but has been chosen adaptively or
+greedily, this test is no longer appropriate: adaptivity makes the drop in RSS stochastically much
+larger than $\chi^2_1$ under the null hypothesis. Our analysis explicitly accounts for adaptivity,
+as it must, since the lasso builds an adaptive sequence of linear models as the tuning parameter $\lambda$
+decreases. In this analysis, shrinkage plays a key role: though additional variables are chosen
+adaptively, the coefficients of lasso active variables are shrunken due to the $\ell_1$ penalty.
+Therefore the test statistic (which is based on lasso fitted values) is in a sense balanced by these
+two opposing properties---adaptivity and shrinkage---and its null distribution is tractable
+and asymptotically $\Exp(1)$. 

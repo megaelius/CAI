@@ -1,0 +1,20 @@
+In the subgraph counting problem, we are given a input graph $G(V, E)$ and a target graph $H$; the goal
+is to estimate the number of occurrences of $H$ in $G$. Our focus here is on designing sublinear-time
+algorithms for approximately counting occurrences of $H$ in $G$ in the setting where the algorithm
+is given query access to $G$. This problem has been studied in several recent papers which primarily
+focused on specific families of graphs $H$ such as triangles, cliques, and stars. However, not much
+is known about approximate counting of arbitrary graphs $H$. This is in sharp contrast to the closely
+related subgraph enumeration problem that has received significant attention in the database
+community as the database join problem. The AGM bound shows that the maximum number of occurrences
+of any arbitrary subgraph $H$ in a graph $G$ with $m$ edges is $O(m^{\rho(H)})$, where $\rho(H)$
+is the fractional edge-cover of $H$, and enumeration algorithms with matching runtime are known
+for any $H$. We bridge this gap between subgraph counting and subgraph enumeration by designing
+a sublinear-time algorithm that can estimate the number of any arbitrary subgraph $H$ in $G$, denoted
+by $\#H$, to within a $(1\pm \epsilon)$-approximation w.h.p. in $O(\frac{m^{\rho(H)}}{\#H})
+\cdot poly(\log{n},1/\epsilon)$ time. Our algorithm is allowed the standard set of queries for
+general graphs, namely degree queries, pair queries and neighbor queries, plus an additional edge-sample
+query that returns an edge chosen uniformly at random. The performance of our algorithm matches
+those of Eden et.al. [FOCS 2015, STOC 2018] for counting triangles and cliques and extend them to
+all choices of subgraph $H$ under the additional assumption of edge-sample queries. We further
+show that our algorithm works for the more general database join size estimation problem and prove
+a matching lower bound for this problem. 

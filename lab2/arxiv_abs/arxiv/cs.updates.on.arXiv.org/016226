@@ -1,0 +1,19 @@
+Automated QRS detection methods depend on the ECG data which is sampled at a certain frequency, irrespective
+of filter-based traditional methods or convolutional network (CNN) based deep learning methods.
+These methods require a selection of the sampling frequency at which they operate in the very first
+place. While working with data from two different datasets, which are sampled at different frequencies,
+often, data from both the datasets may need to resample at a common target frequency, which may be
+the frequency of either of the datasets or could be a different one. However, choosing data sampled
+at a certain frequency may have an impact on the model's generalisation capacity, and complexity.
+There exist some studies that investigate the effects of ECG sample frequencies on traditional
+filter-based methods, however, an extensive study of the effect of ECG sample frequency on deep
+learning-based models (convolutional networks), exploring their generalisability and complexity
+is yet to be explored. This experimental research investigates the impact of six different sample
+frequencies (50, 100, 250, 500, 1000, and 2000Hz) on four different convolutional network-based
+models' generalisability and complexity in order to form a basis to decide on an appropriate sample
+frequency for the QRS detection task for a particular performance requirement. Intra-database
+tests report an accuracy improvement no more than approximately 0.6\% from 100Hz to 250Hz and the
+shorter interquartile range for those two frequencies for all CNN-based models. The findings reveal
+that convolutional network-based deep learning models are capable of scoring higher levels of
+detection accuracies on ECG signals sampled at frequencies as low as 100Hz or 250Hz while maintaining
+lower model complexity (number of trainable parameters and training time). 

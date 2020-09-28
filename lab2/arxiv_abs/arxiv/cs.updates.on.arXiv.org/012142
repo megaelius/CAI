@@ -1,0 +1,20 @@
+Distributed optimization algorithms are frequently faced with solving sub-problems on disjoint
+connected parts of a network. Unfortunately, the diameter of these parts can be significantly larger
+than the diameter of the underlying network, leading to slow running times. Recent work by [Ghaffari
+and Hauepler; SODA'16] showed that this phenomenon can be seen as the broad underlying reason for
+the pervasive $\Omega(\sqrt{n} + D)$ lower bounds that apply to most optimization problems in the
+CONGEST model. On the positive side, this work also introduced low-congestion shortcuts as an elegant
+solution to circumvent this problem in certain topologies of interest. Particularly, they showed
+that there exist good shortcuts for any planar network and more generally any bounded genus network.
+This directly leads to fast $O(D \log^{O(1)} n)$ distributed algorithms for MST and Min-Cut approximation,
+given that one can efficiently construct these shortcuts in a distributed manner. Unfortunately,
+the shortcut construction of [Ghaffari and Hauepler; SODA'16] relies heavily on having access
+to a genus embedding of the network. Computing such an embedding distributedly, however, is a hard
+problem - even for planar networks. No distributed embedding algorithm for bounded genus graphs
+is in sight. In this work, we side-step this problem by defining a restricted and more structured
+form of shortcuts and giving a novel construction algorithm which efficiently finds a shortcut
+which is, up to a logarithmic factor, as good as the best shortcut that exists for a given network.
+This new construction algorithm directly leads to an $O(D \log^{O(1)} n)$-round algorithm for
+solving optimization problems like MST for any topology for which good restricted shortcuts exist
+- without the need to compute any embedding. This includes the first efficient algorithm for bounded
+genus graphs. 

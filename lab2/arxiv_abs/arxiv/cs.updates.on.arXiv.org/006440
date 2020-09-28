@@ -1,0 +1,18 @@
+Several organizations have built multiple datacenters connected via dedicated wide area networks
+over which large inter-datacenter transfers take place. This includes tremendous volumes of bulk
+multicast traffic generated as a result of data and content replication. Although one can perform
+these transfers using a single multicast forwarding tree, that can lead to poor performance as the
+slowest receiver on each tree dictates the completion time for all receivers. Using multiple trees
+per transfer each connected to a subset of receivers alleviates this concern. The choice of multicast
+trees also determines the total bandwidth usage. To further improve the performance, bandwidth
+over dedicated inter-datacenter networks can be carved for different multicast trees over specific
+time periods to avoid congestion and minimize the average receiver completion times. In this paper,
+we break this problem into the three sub-problems of partitioning, tree selection, and rate allocation.
+We present an algorithm called QuickCast which is computationally fast and allows us to significantly
+speed up multiple receivers per bulk multicast transfer with control over extra bandwidth consumption.
+We evaluate QuickCast against a variety of synthetic and real traffic patterns as well as real WAN
+topologies. Compared to performing bulk multicast transfers as separate unicast transfers, QuickCast
+achieves up to $3.64\times$ reduction in mean completion times while at the same time using $0.71\times$
+the bandwidth. Also, QuickCast allows the top $50\%$ of receivers to complete between $3\times$
+to $35\times$ faster on average compared with when a single forwarding multicast tree is used for
+data delivery. 

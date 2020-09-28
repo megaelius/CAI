@@ -1,0 +1,17 @@
+Most path planning problems among polygonal obstacles ask to find a path that avoids the obstacles
+and is optimal with respect to some measure or a combination of measures, for example an $u$-to-$v$
+shortest path of clearance at least $c$, where $u$ and $v$ are points in the free space and $c$ is a positive
+constant. In practical applications, such as emergency interventions/evacuations and medical
+treatment planning, a number of $u$-to-$v$ paths are suggested by experts and the question is whether
+such paths satisfy specific requirements, such as a given clearance from the obstacles. We address
+the following path query problem: Given a set $S$ of $m$ disjoint simple polygons in the plane, with
+a total of $n$ vertices, preprocess them so that for a query consisting of a positive constant $c$
+and a simple polygonal path $\pi$ with $k$ vertices, from a point $u$ to a point $v$ in free space, where
+$k$ is much smaller than $n$, one can quickly decide whether $\pi$ has clearance at least $c$ (that
+is, there is no polygonal obstacle within distance $c$ of $\pi$). To do so, we show how to solve the
+following related problem: Given a set $S$ of $m$ simple polygons in $\Re^{2}$, preprocess $S$ into
+a data structure so that the polygon in $S$ closest to a query line segment $s$ can be reported quickly.
+We present an $O(t \log n)$ time, $O(t)$ space preprocessing, $O((n / \sqrt{t}) \log ^{7/2} n)$ query
+time solution for this problem, for any $n ^{1 + \epsilon} \leq t \leq n^{2}$. For a path with $k$ segments,
+this results in $O((n k / \sqrt{t}) \log ^{7/2} n)$ query time, which is a significant improvement
+over algorithms that can be derived from existing computational geometry methods when $k$ is small.

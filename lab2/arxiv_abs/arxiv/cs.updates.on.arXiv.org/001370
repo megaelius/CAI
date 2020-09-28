@@ -1,0 +1,19 @@
+Due to the growth of video data on Internet, automatic video analysis has gained a lot of attention
+from academia as well as companies such as Facebook, Twitter and Google. In this paper, we examine
+the robustness of video analysis algorithms in adversarial settings. Specifically, we propose
+targeted attacks on two fundamental classes of video analysis algorithms, namely video classification
+and shot detection. We show that an adversary can subtly manipulate a video in such a way that a human
+observer would perceive the content of the original video, but the video analysis algorithm will
+return the adversary's desired outputs. We then apply the attacks on the recently released Google
+Cloud Video Intelligence API. The API takes a video file and returns the video labels (objects within
+the video), shot changes (scene changes within the video) and shot labels (description of video
+events over time). Through experiments, we show that the API generates video and shot labels by processing
+only the first frame of every second of the video. Hence, an adversary can deceive the API to output
+only her desired video and shot labels by periodically inserting an image into the video at the rate
+of one frame per second. We also show that the pattern of shot changes returned by the API can be mostly
+recovered by an algorithm that compares the histograms of consecutive frames. Based on our equivalent
+model, we develop a method for slightly modifying the video frames, in order to deceive the API into
+generating our desired pattern of shot changes. We perform extensive experiments with different
+videos and show that our attacks are consistently successful across videos with different characteristics.
+At the end, we propose introducing randomness to video analysis algorithms as a countermeasure
+to our attacks. 

@@ -1,0 +1,19 @@
+We describe an adversarial learning approach to constrain convolutional neural network training
+for image registration, replacing heuristic smoothness measures of displacement fields often
+used in these tasks. Using minimally-invasive prostate cancer intervention as an example application,
+we demonstrate the feasibility of utilizing biomechanical simulations to regularize a weakly-supervised
+anatomical-label-driven registration network for aligning pre-procedural magnetic resonance
+(MR) and 3D intra-procedural transrectal ultrasound (TRUS) images. A discriminator network is
+optimized to distinguish the registration-predicted displacement fields from the motion data
+simulated by finite element analysis. During training, the registration network simultaneously
+aims to maximize similarity between anatomical labels that drives image alignment and to minimize
+an adversarial generator loss that measures divergence between the predicted- and simulated deformation.
+The end-to-end trained network enables efficient and fully-automated registration that only
+requires an MR and TRUS image pair as input, without anatomical labels or simulated data during inference.
+108 pairs of labelled MR and TRUS images from 76 prostate cancer patients and 71,500 nonlinear finite-element
+simulations from 143 different patients were used for this study. We show that, with only gland segmentation
+as training labels, the proposed method can help predict physically plausible deformation without
+any other smoothness penalty. Based on cross-validation experiments using 834 pairs of independent
+validation landmarks, the proposed adversarial-regularized registration achieved a target
+registration error of 6.3 mm that is significantly lower than those from several other regularization
+methods. 

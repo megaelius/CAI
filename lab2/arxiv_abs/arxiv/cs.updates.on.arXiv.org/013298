@@ -1,0 +1,19 @@
+Sorting a set of items is a task that can be useful by itself or as a building block for more complex operations.
+That is why a lot of effort has been put into finding sorting algorithms that sort large sets as fast
+as possible. But the more sophisticated the algorithms become, the less efficient they are for small
+sets of items due to large constant factors. We aim to determine if there is a faster way than insertion
+sort to sort small sets of items to provide a more efficient base case sorter. We looked at sorting
+networks, at how they can improve the speed of sorting few elements, and how to implement them in an
+efficient manner by using conditional moves. Since sorting networks need to be implemented explicitly
+for each set size, providing networks for larger sizes becomes less efficient due to increased code
+sizes. To also enable the sorting of slightly larger base cases, we adapted sample sort to Register
+Sample Sort, to break down those larger sets into sizes that can in turn be sorted by sorting networks.
+From our experiments we found that when sorting only small sets, the sorting networks outperform
+insertion sort by a factor of at least 1.76 for any array size between six and sixteen, and by a factor
+of 2.72 on average across all machines and array sizes. When integrating sorting networks as a base
+case sorter into Quicksort, we achieved far less performance improvements, which is probably due
+to the networks having a larger code size and cluttering the L1 instruction cache. But for x86 machines
+with a larger L1 instruction cache of 64 KiB or more, we obtained speedups of 12.7% when using sorting
+networks as a base case sorter in std::sort. In conclusion, the desired improvement in speed could
+only be achieved under special circumstances, but the results clearly show the potential of using
+conditional moves in the field of sorting algorithms. 

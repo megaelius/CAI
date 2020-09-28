@@ -1,0 +1,17 @@
+The state-of-the-art techniques for processing cross-blockchain transactions take a simple
+centralized approach: when the assets on blockchain $X$, say $X$-coins, are exchanged with the
+assets on blockchain $Y$---the $Y$-coins, those $X$-coins need to be exchanged to a "middle" medium
+(such as Bitcoin) that is then exchanged to $Y$-coins. If there are more than two parties involved
+in a single global transaction, the global transaction is split into multiple local two-party transactions,
+each of which follows the above central-exchange protocol. Unfortunately, the atomicity of the
+global transaction is violated with the central-exchange approach: those local two-party transactions,
+once committed, cannot be rolled back if the global transaction decides to abort. In a more general
+sense, the graph-based model of (two-party) transactions can hardly be extended to an arbitrary
+number of parties in a cross-blockchain transaction. %from why to how In this paper, we introduce
+a higher-level abstraction of cross-blockchain transactions. We adopt the \textit{abstract
+simplicial complex}, an extensively-studied mathematical object in algebraic topology, to represent
+an arbitrary number of parties involved in the blockchain transactions. Essentially, each party
+in the global transaction is modeled as a vertex and the global transaction among $n+1$ ($n \in \mathbb{Z}$,
+$n > 0$) parties compose a $n$-dimensional simplex. While this higher-level abstraction seems
+plausibly trivial, we will show how this simple extension leads to a new line of modeling methods
+and protocols for better processing cross-blockchain transactions. 

@@ -1,0 +1,17 @@
+The study of model bias and variance with respect to decision boundaries is critically important
+in supervised classification. There is generally a tradeoff between the two, as fine-tuning of
+the decision boundary of a classification model to accommodate more boundary training samples
+(i.e., higher model complexity) may improve training accuracy (i.e., lower bias) but hurt generalization
+against unseen data (i.e., higher variance). By focusing on just classification boundary fine-tuning
+and model complexity, it is difficult to reduce both bias and variance. To overcome this dilemma,
+we take a different perspective and investigate a new approach to handle inaccuracy and uncertainty
+in the training data labels, which are inevitable in many applications where labels are conceptual
+and labeling is performed by human annotators. The process of classification can be undermined
+by uncertainty in the labels of the training data; extending a boundary to accommodate an inaccurately
+labeled point will increase both bias and variance. Our novel method can reduce both bias and variance
+by estimating the pointwise label uncertainty of the training set and accordingly adjusting the
+training sample weights such that those samples with high uncertainty are weighted down and those
+with low uncertainty are weighted up. In this way, uncertain samples have a smaller contribution
+to the objective function of the model's learning algorithm and exert less pull on the decision boundary.
+In a real-world physical activity recognition case study, the data presents many labeling challenges,
+and we show that this new approach improves model performance and reduces model variance. 

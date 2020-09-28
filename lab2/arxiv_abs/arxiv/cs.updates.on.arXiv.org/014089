@@ -1,0 +1,18 @@
+Matrix-free finite element implementations for large applications provide an attractive alternative
+to standard sparse matrix data formats due to the significantly reduced memory consumption. Here,
+we show that they are also competitive with respect to the run time in the low order case if combined
+with suitable stencil scaling techniques. We focus on variable coefficient vector-valued partial
+differential equations as they arise in many physical applications. The presented method is based
+on scaling constant reference stencils originating from a linear finite element discretization
+instead of evaluating the bilinear forms on-the-fly. This method assumes the usage of hierarchical
+hybrid grids, and it may be applied to vector-valued second-order elliptic partial differential
+equations directly or as a part of more complicated problems. We provide theoretical and experimental
+performance estimates showing the advantages of this new approach compared to the traditional
+on-the-fly integration and stored matrix approaches. In our numerical experiments, we consider
+two specific mathematical models. Namely, linear elastostatics and incompressible Stokes flow.
+The final example considers a non-linear shear-thinning generalized Newtonian fluid. For this
+type of non-linearity, we present an efficient approach to compute a regularized strain rate which
+is then used to define the node-wise viscosity. Depending on the compute architecture, we could
+observe maximum speedups of 64% and 122% compared to the on-the-fly integration. The largest considered
+example involved solving a Stokes problem with 12288 compute cores on the state of the art supercomputer
+SuperMUC-NG. 

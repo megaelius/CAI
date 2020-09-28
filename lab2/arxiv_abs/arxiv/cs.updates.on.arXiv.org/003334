@@ -1,0 +1,20 @@
+Cryo-electron microscopy (cryoEM) is fast becoming the preferred method for protein structure
+determination. Particle picking is a significant bottleneck in the solving of protein structures
+from single particle cryoEM. Hand labeling sufficient numbers of particles can take months of effort
+and current computationally based approaches are often ineffective. Here, we frame particle picking
+as a positive-unlabeled classification problem in which we seek to learn a convolutional neural
+network (CNN) to classify micrograph regions as particle or background from a small number of labeled
+positive examples and many unlabeled examples. However, model fitting with very few labeled data
+points is a challenging machine learning problem. To address this, we develop a novel objective
+function, GE-binomial, for learning model parameters in this context. This objective uses a newly-formulated
+generalized expectation criteria to learn effectively from unlabeled data when using minibatched
+stochastic gradient descent optimizers. On a high-quality publicly available cryoEM dataset
+and a difficult unpublished dataset supplied by the Shapiro lab, we show that CNNs trained with this
+objective classify particles accurately with very few positive training examples and outperform
+EMAN2's byRef method by a large margin even with fewer labeled training examples. Furthermore,
+we show that incorporating an autoencoder improves generalization when very few labeled data points
+are available. We also compare our GE-binomial method with other positive-unlabeled learning
+methods never before applied to particle picking. We expect our particle picking tool, Topaz, based
+on CNNs trained with GE-binomial, to be an essential component of single particle cryoEM analysis
+and our GE-binomial objective function to be widely applicable to positive-unlabeled classification
+problems. 

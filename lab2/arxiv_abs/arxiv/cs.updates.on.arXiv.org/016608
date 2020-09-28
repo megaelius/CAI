@@ -1,0 +1,17 @@
+Adaptive Momentum Estimation (Adam), which combines Adaptive Learning Rate and Momentum, is the
+most popular stochastic optimizer for accelerating training of deep neural networks. But Adam
+often generalizes significantly worse than Stochastic Gradient Descent (SGD). It is still mathematically
+unclear how Adaptive Learning Rate and Momentum affect saddle-point escaping and minima selection.
+Based on the diffusion theoretical framework, we separate the effects of Adaptive Learning Rate
+and Momentum on saddle-point escaping and minima selection. We find that SGD escapes saddle points
+very slowly along the directions of small-magnitude eigenvalues of the Hessian. We prove that Adaptive
+Learning Rate can make learning dynamics near saddle points approximately Hessian-independent,
+but cannot select flat minima as SGD does. In contrast, Momentum provides a momentum drift effect
+to help passing through saddle points, and almost does not affect flat minima selection. This mathematically
+explains why SGD (with Momentum) generalizes better, while Adam generalizes worse but converges
+faster. Motivated by the diffusion theoretical analysis, we design a novel adaptive optimizer
+named Adaptive Inertia Estimation (Adai), which uses parameter-wise adaptive inertia to accelerate
+training and provably favors flat minima as much as SGD. Our real-world experiments demonstrate
+that Adai can converge similarly fast to Adam, but generalize significantly better. Adai even generalizes
+better than SGD, when converging fast to Adam is not required. The source is available to the public:
+\url{https://github.com/zeke-xie/adaptive-inertia-adai}. 

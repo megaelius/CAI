@@ -1,0 +1,18 @@
+We enhance dependency-based data cleaning with approximate band conditional order dependencies
+(abcODs) as a novel type of integrity constraint (IC). Band ODs express the semantics over attributes
+that are monotonically related with small variations without there being an intrinsic violation
+of semantics. To make band ODs relevant to real-world applications, we make them less strict to hold
+approximately with some exceptions and conditionally on subsets of the data with a mix of ascending
+and descending directions. Formulating ICs manually requires domain expertise, is prone to human
+errors, and time consuming. Thus, we study the problem of automatic abcOD discovery. The naive solution
+is prohibitively expensive as it considers all possible segmentations of tuples resulting in exponential
+data complexity. To reduce the search space, we propose an algorithm that utilize the notion of a
+longest monotonic band (LMB) to identify longest subsequences of tuples that satisfy a band OD.
+We formulate the abcOD discovery problem as a constraint optimization problem, and devise a dynamic
+programming algorithm that determines the optimal solution in polynomial time (super-cubic complexity).
+To further optimize the performance over the large datasets, we adapt the algorithm to consider
+pieces (contiguous sequences of tuples) in a greedy fashion. This improves the performance by orders-of-magnitude
+without sacrificing the precision. When bidirectionally is removed to consider unidirectional
+abcODs, with all ascending or all descending ordering, we show that our pieces-based algorithm
+is guaranteed to find the optimal solution. We provide an experimental evaluation of our techniques
+over real-world datasets. 

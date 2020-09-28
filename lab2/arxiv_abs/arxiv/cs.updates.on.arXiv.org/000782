@@ -1,0 +1,17 @@
+We initiate the study of property testing in arbitrary planar graphs. We prove that bipartiteness
+can be tested in constant time: for every planar graph $G$ and $\varepsilon>0$, we can distinguish
+in constant time between the case that $G$ is bipartite and the case that $G$ is $\varepsilon$-far
+from bipartite. The previous bound for this class of graphs was $\tilde{O}(\sqrt{n})$, where $n$
+is the number of vertices, and the constant-time testability was only known for planar graphs with
+bounded degree. Our approach extends to arbitrary minor-free graphs. Our algorithm is based on
+random walks. The challenge here is to analyze random walks for graphs that have good separators,
+i.e., bad expansion. Standard techniques that use a fast convergence of random walks to a uniform
+distribution do not work in this case. Informally, our approach is to self-reduce the problem of
+finding an odd-length cycle in a multigraph $G$ induced by a collection of cycles to the same problem
+on another multigraph $G'$ induced by a set of shorter odd-length cycles, in such a way that when a
+random walk finds a cycle in $G'$ with probability $p > 0$, then it does so in $G$ with probability
+$\lambda(p)>0$. This reduction is applied until the cycles collapse to self-loops, in which
+case they can be easily detected. While the analysis presented in this paper applies only to testing
+bipartiteness, we believe that the techniques developed will find applications to testing other
+properties in arbitrary planar (or minor-free) graphs, in a similar way as in the past the advances
+in testing bipartiteness led to the development of testing algorithms for more complex graph properties.

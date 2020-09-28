@@ -1,0 +1,20 @@
+Missing values, irregularly collected samples, and multi-resolution signals commonly occur
+in multivariate time series data, making predictive tasks difficult. These challenges are especially
+prevalent in the healthcare domain, where patients' vital signs and electronic records are collected
+at different frequencies and have occasionally missing information due to the imperfections in
+equipment or patient circumstances. Researchers have handled each of these issues differently,
+often handling missing data through mean value imputation and then using sequence models over the
+multivariate signals while ignoring the different resolution of signals. We propose a unified
+model named Multi-resolution Flexible Irregular Time series Network (Multi-FIT). The building
+block for Multi-FIT is the FIT network. The FIT network creates an informative dense representation
+at each time step using signal information such as last observed value, time difference since the
+last observed time stamp and overall mean for the signal. Vertical FIT (FIT-V) is a variant of FIT
+which also models the relationship between different temporal signals while creating the informative
+dense representations for the signal. The multi-FIT model uses multiple FIT networks for sets of
+signals with different resolutions, further facilitating the construction of flexible representations.
+Our model has three main contributions: a.) it does not impute values but rather creates informative
+representations to provide flexibility to the model for creating task-specific representations
+b.) it models the relationship between different signals in the form of support signals c.) it models
+different resolutions in parallel before merging them for the final prediction task. The FIT, FIT-V
+and Multi-FIT networks improve upon the state-of-the-art models for three predictive tasks, including
+the forecasting of patient survival. 

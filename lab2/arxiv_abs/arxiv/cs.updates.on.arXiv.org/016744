@@ -1,0 +1,20 @@
+Generate-and-validate (G&V) automated program repair (APR) techniques have been extensively
+studied during the past decade. Meanwhile, such techniques can be extremely time-consuming due
+to manipulation of the program code to fabricate a large number of patches and also repeated executions
+of tests on patches to identify potential fixes. PraPR, a recent G&V APR technique, reduces these
+costs by modifying program code directly at the level of compiled bytecode, and further performing
+on-the-fly patching by allowing multiple patches to be tested within the same JVM session. However,
+PraPR is limited due to its pattern-based, bytecode-level nature and it is basically unsound/imprecise
+as it assumes that patch executions do not change global JVM state and affect later patch executions
+on the same JVM session. Inspired by the PraPR work, we propose a unified patch validation framework,
+named UniAPR, which aims to speed up the patch validation for both bytecode and source-code APR via
+on-the-fly patching; furthermore, UniAPR addresses the imprecise patch validation issue by resetting
+the JVM global state via runtime bytecode transformation. We have implemented UniAPR as a fully
+automated Maven Plugin. We have also performed the first study of on-the-fly patch validation for
+state-of-the-art source-code-level APR. Our experiments show the first empirical evidence that
+vanilla on-the-fly patch validation can be imprecise/unsound; in contrast, our UniAPR framework
+can speed up state-of-the-art APR by over an order of magnitude without incurring any imprecision
+in patch validation, enabling all existing APR techniques to explore a larger search space to fix
+more bugs in the near future. Furthermore, UniAPR directly enables hybrid source and bytecode APR
+to fix substantially more bugs than all state-of-the-art APR techniques (under the same time limit)
+in the near future. 

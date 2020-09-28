@@ -1,0 +1,19 @@
+Software connected to the Internet is an attractive target for attackers: as soon as a security flaw
+is known, services may be taken under attack. In contrast, software developers release updates
+to add further features and fix flaws in order to increase its security. Consequently, a user of the
+software wants to have the latest secure version running. However, if the software is provided as
+a service, e.g., as part of the cloud, the user relies on the service provider (SP) to perform such
+updates. But when asking for the software version, the user has to trust the output of SP or his software.
+Latter may be malformed, since updating software costs time and money, i.e., in comparison to changing
+a (false) version string. Now the question rises how a software service's client can provably determine
+the real software version of the running service at the SP, also known as Remote Software Identification
+(RSI). While existing tools provide an answer, they can be tricked by the service to output any forged
+string because they rely on the information handed directly by the SP. We solve the problem of RSI
+by introducing Reverse Fingerprinting (RFP), a novel challenge-response scheme which employs
+the evaluation of inherit functions of software versions depending on certain inputs. That is,
+RFP does not rely on version number APIs but employs a database consisting of function inputs and
+according outputs and combines them with a strategy and a randomness source to provably determine
+the version number. We also provide a theoretical framework for RSI and RFP, and describe how to create
+databases and strategies. Additionally, RFP can be securely outsourced to a third party, called
+the auditor, to take away the burden of the user while respecting liability. We also provide an implementation
+and API to perform RFP in practice, showing that most of the providers have installed the latest versions.

@@ -1,0 +1,20 @@
+We compare the discretize-optimize (Disc-Opt) and optimize-discretize (Opt-Disc) approaches
+for time-series regression and continuous normalizing flows using neural ODEs. Neural ODEs, first
+described in Chen et al. (2018), are ordinary differential equations (ODEs) with neural network
+components; these models have competitively solved a variety of machine learning applications.
+Training a neural ODE can be phrased as an optimal control problem where the neural network weights
+are the controls and the hidden features are the states. Every iteration of gradient-based training
+involves solving an ODE forward in time and another backward in time, which can require large amounts
+of computation, time, and memory. Gholami et al. (2019) compared the Opt-Disc and Disc-Opt approaches
+for neural ODEs arising as continuous limits of residual neural networks used in image classification
+tasks. Their findings suggest that Disc-Opt achieves preferable performance due to the guaranteed
+accuracy of gradients. In this paper, we extend this comparison to neural ODEs applied to time-series
+regression and continuous normalizing flows (CNFs). Time-series regression and CNFs differ from
+classification in that the actual ODE model is needed in the prediction and inference phase, respectively.
+Meaningful models must also satisfy additional requirements, e.g., the invertibility of the CNF.
+As the continuous model satisfies these requirements by design, Opt-Disc approaches may appear
+advantageous. Through our numerical experiments, we demonstrate that with careful numerical
+treatment, Disc-Opt methods can achieve similar performance as Opt-Disc at inference with drastically
+reduced training costs. Disc-Opt reduced costs in six out of seven separate problems with training
+time reduction ranging from 39% to 97%, and in one case, Disc-Opt reduced training from nine days
+to less than one day. 

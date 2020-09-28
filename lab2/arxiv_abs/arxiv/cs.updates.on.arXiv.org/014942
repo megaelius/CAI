@@ -1,0 +1,19 @@
+The different activities related to debugging such as program instrumentation, representation
+of execution trace and analysis of trace are not typically performed in an unified framework. We
+propose \textit{BOLD}, an Ontology-based Log Debugger to unify and standardize the activities
+in debugging. The syntactical information of programs can be represented in the from of Resource
+Description Framework (RDF) triples. Using the BOLD framework, the programs can be automatically
+instrumented by using declarative specifications over these triples. A salient feature of the
+framework is to store the execution trace of the program also as RDF triples called \textit{trace
+triples}. These triples can be queried to implement the common debug operations. The novelty of
+the framework is to abstract these triples as \textit{spans} for high-level reasoning. A span gives
+a way of examining the values of a particular variable over certain portion of the program execution.
+The properties of the spans are defined formally as a Web Ontology Language (OWL) ontology called
+\textit{Program Debug (PD) Ontology}. Using the span abstraction and PD ontology, end-users can
+debug a given buggy program in a standard manner. A notable feature of using ontology is that users
+can accurately debug in some cases of missing information, which can be practically useful. To demonstrate
+the feasibility of the proposed framework, we have debugged the programs in a standard bug benchmark
+suite Software-artifact Infrastructure Repository (SIR). Experiments show that the querying
+time is almost the same as in \texttt{gdb}. The reasoning time depends on the sub-language of OWL.
+We find that the expressibility offered by OWL-DL language is sufficient for the bugs in SIR programs;
+but to achieve scalability in reasoning, a restricted OWL-RL language is required. 

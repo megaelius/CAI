@@ -1,0 +1,18 @@
+We have recently proposed an efficient subdomain POD-TPWL (Xiao et al, 2018) for history matching
+without the need of model intrusion. From a computational point of view, a local parameterization
+where the parameters are separately defined in each subdomain is very attractive. In this study
+we present one such local parameterization through integrating principle component analysis
+with domain decomposition to independently represent the spatial parameter field within low-order
+parameter subspaces in each subdomain. This local parameterization allows us to perturb parameters
+in each subdomain simultaneously and the effects of all these perturbations can be computed with
+only a few full-order model simulations. To avoid non-smoothness at the boundaries of neighboring
+subdomains, the optimal local parameters are projected onto a global parameterization. The performance
+of subdomain POD-TPWL with local parameterization has been assessed through two cases tested on
+a modified version of SAIGUP model. This local parameterization has high scalability, since the
+number of training models depends primarily on the number of the local parameters in each subdomain
+and not on the dimension of the underlying full-order model. Activating more subdomains results
+in less local parameter patterns and enables us to run less model simulations. For a large-scale
+case-study in this work, to optimize 282 global parameters, LP-SD POD-TPWL only needs 90 fidelity
+simulations. In comparison to the finite-difference based history matching, and subdomain POD-TPWL
+with global parameterization where the parameters are defined over the entire domain, the CPU cost
+is reduced by a factor of several orders of the magnitude while reasonable accuracy remains. 

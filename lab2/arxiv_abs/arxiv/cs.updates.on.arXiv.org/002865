@@ -1,0 +1,19 @@
+The recent trend of using Graphics Processing Units (GPU's) for high performance computations
+is driven by the high ratio of price performance for these units, complemented by their cost effectiveness.
+At first glance, computational fluid dynamics (CFD) solvers match perfectly to GPU resources because
+these solvers make intensive calculations and use relatively little memory. Nevertheless, there
+are scarce results about the practical use of this serious advantage of GPU over CPU, especially
+for calculations of viscous, compressible, heat-conductive gas flows with double precision accuracy.
+In this paper, two GPU algorithms according to time approximation of convective terms were presented:
+explicit and implicit scheme. To decrease data transfers between device memories and increase
+the arithmetic intensity of a GPU code we minimize the number of kernels. The GPU algorithm was implemented
+in one kernel for the implicit scheme and two kernels for the explicit scheme. The numerical equations
+were put together using macros and optimization, data copy from global to private memory, and data
+reuse were left to the compiler. Thus keeps the code simpler with excellent maintenance. As a test
+case, we model the flow past squares in a microchannel at supersonic speed. The tests show that overall
+speedup of AMD Radeon R9 280X is up to 102x compared to Intel Core i5-4690 core and up to 184x compared
+to Intel Core i7-920 core, while speedup of NVIDIA Tesla M2090 is up to 11x compared to Intel Core i5-4690
+core and up to 20x compared to Intel Core i7-920 core. Memory requirements of GPU code are improved
+compared to CPU one. It requires 1[GB] global memory for 5.9 million finite volumes that are two times
+less compared to C++ CPU code. After all the code is simple, portable (written in OpenCL), memory
+efficient and easily modifiable moreover demonstrates excellent performance. 

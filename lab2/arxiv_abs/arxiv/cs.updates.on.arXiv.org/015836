@@ -1,0 +1,17 @@
+In this work we present a robust interface coupling algorithm called Compact Interface quasi-Newton
+(CIQN). It is designed for computationally intensive applications using an MPI multi-code partitioned
+scheme. The algorithm allows to reuse information from previous time steps, feature that has been
+previously proposed to accelerate convergence. Through algebraic manipulation, an efficient
+usage of the computational resources is achieved by: avoiding construction of dense matrices and
+reduce every multiplication to a matrix-vector product and reusing the computationally expensive
+loops. This leads to a compact version of the original quasi-Newton algorithm. Altogether with
+an efficient communication, in this paper we show an efficient scalability up to 4800 cores. Three
+examples with qualitatively different dynamics are shown to prove that the algorithm can efficiently
+deal with added mass instability and two-field coupled problems. We also show how reusing histories
+and filtering does not necessarily makes a more robust scheme and, finally, we prove the necessity
+of this HPC version of the algorithm. The novelty of this article lies in the HPC focused implementation
+of the algorithm, detailing how to fuse and combine the composing blocks to obtain an scalable MPI
+implementation. Such an implementation is mandatory in large scale cases, for which the contact
+surface cannot be stored in a single computational node, or the number of contact nodes is not negligible
+compared with the size of the domain. \c{opyright} <2020> Elsevier. This manuscript version is
+made available under the CC-BY-NC-ND 4.0 license this http URL 

@@ -1,0 +1,18 @@
+The Lov\'{a}sz Local Lemma (LLL) is a keystone principle in probability theory, guaranteeing the
+existence of configurations which avoid a collection $\mathcal B$ of "bad" events which are mostly
+independent and have low probability. In its simplest form, it asserts that whenever a bad-event
+has probability $p$ and affects at most $d$ other bad-events, and $e p (d+1) < 1$, then a configuration
+avoiding all $\mathcal B$ exists. A seminal algorithm of Moser & Tardos (2010) gives randomized
+algorithms for most constructions based on the LLL. However, deterministic algorithms have lagged
+behind. Notably, prior deterministic LLL algorithms have required stringent conditions on $\mathcal
+B$; for example, they have required that events in $\mathcal B$ have low decision-tree complexity
+or depend on a small number of variables. For this reason, they can only be applied to small fraction
+of the numerous LLL applications in practice. We describe an alternate deterministic parallel
+(NC) algorithm for the LLL, based on a general derandomization method of Sivakumar (2002) using
+log-space statistical tests. The only requirement here is that bad-events should be computable
+via a finite automaton with $\text{poly}(d)$ states. This covers most LLL applications to graph
+theory and combinatorics. No auxiliary information about the bad-events, including any conditional
+probability calculations, are required. Additionally, the proof is a straightforward combination
+of general derandomization results and high-level analysis of the Moser-Tardos algorithm. We
+illustrate with applications to defective vertex coloring, domatic partition, and independent
+transversals. 

@@ -1,0 +1,17 @@
+VT (Viterbi training), or hard EM, is an efficient way of parameter learning for probabilistic models
+with hidden variables. Given an observation $y$, it searches for a state of hidden variables $x$
+that maximizes $p(x,y \mid \theta)$ by coordinate ascent on parameters $\theta$ and $x$. In this
+paper we introduce VT to PRISM, a logic-based probabilistic modeling system for generative models.
+VT improves PRISM in three ways. First VT in PRISM converges faster than EM in PRISM due to the VT's
+termination condition. Second, parameters learned by VT often show good prediction performance
+compared to those learned by EM. We conducted two parsing experiments with probabilistic grammars
+while learning parameters by a variety of inference methods, i.e.\ VT, EM, MAP and VB. The result
+is that VT achieved the best parsing accuracy among them in both experiments. Also we conducted a
+similar experiment for classification tasks where a hidden variable is not a prediction target
+unlike probabilistic grammars. We found that in such a case VT does not necessarily yield superior
+performance. Third since VT always deals with a single probability of a single explanation, Viterbi
+explanation, the exclusiveness condition that is imposed on PRISM programs is no more required
+if we learn parameters by VT. Last but not least we can say that as VT in PRISM is general and applicable
+to any PRISM program, it largely reduces the need for the user to develop a specific VT algorithm for
+a specific model. Furthermore since VT in PRISM can be used just by setting a PRISM flag appropriately,
+it makes VT easily accessible to (probabilistic) logic programmers. 

@@ -1,0 +1,18 @@
+Let $G=(V,E)$ be a weighted undirected graph with $n$ vertices and $m$ edges, and fix a set of $s$ sources
+$S\subseteq V$. For any pair $u,v\in V$, let $W(u,v)$ denote the weight of the heaviest edge on the
+$u$ to $v$ shortest path. For any constant $0<\epsilon<1$, we compute $(1+\epsilon,\beta(\cdot,\cdot))$-approximate
+shortest paths from all sources in $S$ in near linear (in $m+ns$) time, where $\beta(u,v)=O(W(u,v))$.
+That is, the multiplicative stretch is $1+\epsilon$, and the additive stretch for any $u\in S$,
+$v\in V$ is $\beta(u,v)$. Previous results of this type were only able to compute distance estimates
+and not paths, and had far inferior additive terms. We also introduce distance oracles for parallel
+models of computation (PRAM). Specifically, for any parameter $\delta>0$, we preprocess a given
+weighted graph in poly-logarithmic time and near linear work, and store a data structure of size
+$O(n^{1+\delta})$. Given any query $u\in V$, we return a $(1+\epsilon,\beta(\cdot,\cdot))$-approximation
+to all distances $u\times V$ in $O_\delta(1)$ time, where $\beta(u,v)=O_\delta(W(u,v))$. Moreover,
+the dependence of both $\beta$ and the query time on $\delta$ can be made $\text{poly}(1/\delta)$,
+by increasing the multiplicative stretch (to some constant larger than 9). Our algorithms are based
+on new constructions of spanners, emulators and hopsets for weighted graphs. We devise a $(1+\epsilon,\beta(\cdot,\cdot))$-spanner
+for weighted graphs of size $O(n^{1+1/t}+\log t\cdot n)$ and $\beta(u,v)=W(u,v)\cdot \left(\frac{\log
+t}{\epsilon}\right)^{O(\log t)}$. We can have an improved $\beta=W(u,v)\cdot t^{O(1)}$ at the
+cost of increasing the multiplicative stretch to a constant larger than 3. In addition, we devise
+a $(c,t^{O(1)})$-hopset of size $O(n^{1+1/t}+\log t\cdot n)$ for any constant $c>3$. 

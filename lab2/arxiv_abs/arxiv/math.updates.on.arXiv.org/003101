@@ -1,0 +1,19 @@
+To construct a parallel approach for solving optimization problems with orthogonality constraints
+is usually regarded as an extremely difficult mission, due to the low scalability of the orthonormalization
+procedure. However, such demand is particularly huge in some application areas such as materials
+computation. In this paper, we propose a proximal linearized augmented Lagrangian algorithm (PLAM)
+for solving optimization problems with orthogonality constraints. Unlike the classical augmented
+Lagrangian methods, in our algorithm, the prime variables are updated by minimizing a proximal
+linearized approximation of the augmented Lagrangian function, meanwhile the dual variables
+are updated by a closed-form expression which holds at any first-order stationary point. The orthonormalization
+procedure is only invoked once at the last step of the above mentioned algorithm if high-precision
+feasibility is needed. Consequently, the main parts of the proposed algorithm can be parallelized
+naturally. We establish global subsequence convergence, worst-case complexity and local convergence
+rate for PLAM under some mild assumptions. To reduce the sensitivity of the penalty parameter, we
+put forward a modification of PLAM, which is called parallelizable column-wise block minimization
+of PLAM (PCAL). Numerical experiments in serial illustrate that the novel updating rule for the
+Lagrangian multipliers significantly accelerates the convergence of PLAM and makes it comparable
+with the existent feasible solvers for optimization problems with orthogonality constraints,
+and the performance of PCAL does not highly rely on the choice of the penalty parameter. Numerical
+experiments under parallel environment demonstrate that PCAL attains good performance and high
+scalability in solving discretized Kohn-Sham total energy minimization problems. 

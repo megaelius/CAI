@@ -1,0 +1,20 @@
+Large-scale distributed storage systems typically use erasure codes to provide durability of
+data in the face of failures. A set of $k$ blocks to be stored is encoded using an $[n, k]$ code to generate
+$n$ blocks that are then stored on different storage nodes. The redundancy configuration is chosen
+based on the failure rates of storage devices, and is typically kept constant. However, a recent
+work by Kadekodi et al. shows that the failure rate of storage devices vary significantly over time,
+and that adapting the redundancy configuration in response to such variations provides significant
+benefits. Converting the redundancy configuration of already encoded data by re-encoding requires
+significant overhead on resources such as accesses, device IO, network bandwidth, and compute
+cycles. In this work, we first present a framework to formalize the notion of code conversion: the
+process of converting data encoded with an $[n^I, k^I]$ code into data encoded with an $[n^F, k^F]$
+code while maintaining desired decodability properties, such as the maximum-distance-separable
+(MDS) property. We then introduce convertible codes, a new class of codes that allow for code conversions
+in a resource-efficient manner. For an important parameter regime (which we call the merge regime)
+along with the linearity and MDS decodability constraint, we prove tight bounds on the number of
+nodes accessed during code conversion. In particular, our achievability result is an explicit
+construction of MDS convertible codes that are optimal for all parameter values in the merge regime
+albeit with a high field size. We then present explicit low-field-size constructions of optimal
+MDS convertible codes for a broad range of parameters in the merge regime. Our results thus show that
+it is indeed possible to achieve code conversions with significantly lesser resources as compared
+to re-encoding. 

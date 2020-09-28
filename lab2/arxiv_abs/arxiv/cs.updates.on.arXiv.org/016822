@@ -1,0 +1,17 @@
+We propose an approach to reconstruct dense three-dimensional (3D) model of tissue surface from
+stereo optical videos in real-time, the basic idea of which is to first extract 3D information from
+video frames by using stereo matching, and then to mosaic the reconstructed 3D models. To handle
+the common low texture regions on tissue surfaces, we propose effective post-processing steps
+for the local stereo matching method to enlarge the radius of constraint, which include outliers
+removal, hole filling and smoothing. Since the tissue models obtained by stereo matching are limited
+to the field of view of the imaging modality, we propose a model mosaicking method by using a novel
+feature-based simultaneously localization and mapping (SLAM) method to align the models. Low
+texture regions and the varying illumination condition may lead to a large percentage of feature
+matching outliers. To solve this problem, we propose several algorithms to improve the robustness
+of SLAM, which mainly include (1) a histogram voting-based method to roughly select possible inliers
+from the feature matching results, (2) a novel 1-point RANSAC-based P$n$P algorithm called as DynamicR1PP$n$P
+to track the camera motion and (3) a GPU-based iterative closest points (ICP) and bundle adjustment
+(BA) method to refine the camera motion estimation results. Experimental results on ex- and in vivo
+data showed that the reconstructed 3D models have high resolution texture with an accuracy error
+of less than 2 mm. Most algorithms are highly parallelized for GPU computation, and the average runtime
+for processing one key frame is 76.3 ms on stereo images with 960x540 resolution. 

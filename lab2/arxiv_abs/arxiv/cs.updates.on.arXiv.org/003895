@@ -1,0 +1,18 @@
+We consider space-efficient algorithms for two-coloring $n$-uniform hypergraphs $H=(V,E)$
+in the streaming model, when the hyperedges arrive one at a time. It is known that any such hypergraph
+with at most $0.7 \sqrt{\frac{n}{\ln n}} 2^n$ hyperedges has a two-coloring [Radhakrishnan & Srinivasan,
+RSA, 2000], which can be found deterministically in polynomial time, if allowed full access to the
+input. 1. Let $s^D(v, q, n)$ be the minimum space used by a deterministic one-pass streaming algorithm
+that on receiving an $n$-uniform hypergraph $H$ on $v$ vertices and $q$ hyperedges produces a proper
+two-coloring of $H$. We show that $s^D(n^2, q, n) = \Omega(q/n)$ when $q \leq 0.7 \sqrt{\frac{n}{\ln
+n}} 2^n$, and $s^D(n^2, q, n) = \Omega(\sqrt{\frac{1}{n\ln n}} 2^n)$ otherwise. 2. Let $s^R(v,
+q,n)$ be the minimum space used by a randomized one-pass streaming algorithm that on receiving an
+$n$-uniform hypergraph $H$ on $v$ vertices and $q$ hyperedges with high probability produces a
+proper two-coloring of $H$ (or declares failure). We show that $s^R(v, \frac{1}{10}\sqrt{\frac{n}{\ln
+n}} 2^n, n) = O(v \log v)$ by giving an efficient randomized streaming algorithm. The above results
+are inspired by the study of the number $q(n)$, the minimum possible number of hyperedges in a $n$-uniform
+hypergraph that is not two-colorable. It is known that $q(n) = \Omega(\sqrt{\frac{n}{\ln n}})$
+[Radhakrishnan-Srinivasan] and $ q(n)= O(n^2 2^n)$ [Erdos, 1963]. Our first result shows that
+no space-efficient deterministic streaming algorithm can match the performance of the offline
+algorithm of Radhakrishnan and Srinivasan; the second result shows that there is, however, a space-efficient
+randomized streaming algorithm for the task. 

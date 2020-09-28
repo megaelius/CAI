@@ -1,0 +1,18 @@
+Collecting flow records is a common practice of network operators and researchers for monitoring,
+diagnosing and understanding a network. Traditional tools like NetFlow face great challenges
+when both the speed and the complexity of the network traffic increase. To keep pace up, we propose
+HashFlow, a tool for more efficient and accurate collection and analysis of flow records. The central
+idea of HashFlow is to maintain accurate records for elephant flows, but summarized records for
+mice flows, by applying a novel collision resolution and record promotion strategy to hash tables.
+The performance bound can be analyzed with a probabilistic model, and with this strategy, HashFlow
+achieves a better utilization of space, and also more accurate flow records, without bringing extra
+complexity. We have implemented HashFlow, as well as several latest flow measurement algorithms
+such as FlowRadar, HashPipe and ElasticSketch, in a P4 software switch. Then we use traces from different
+operational networks to evaluate them. In these experiments, for various types of traffic analysis
+applications, HashFlow consistently demonstrates a clearly better performance against its state-of-the-art
+competitors. For example, using a small memory of 1 MB, HashFlow can accurately record around 55K
+flows, which is often 12.5% higher than the others. For estimating the sizes of 50K flows, HashFlow
+achieves a relative error of around 11.6%, while the estimation error of the best competitor is 42.9%
+higher. It detects 96.1% of the heavy hitters out of 250K flows with a size estimation error of 5.6%,
+which is 11.3% and 73.7% better than the best competitor respectively. At last, we show these merits
+of HashFlow come with almost no degradation of throughput. 

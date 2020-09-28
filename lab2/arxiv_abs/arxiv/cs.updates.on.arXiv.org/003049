@@ -1,0 +1,17 @@
+Resistance to overfitting is observed for neural networks trained with extended backpropagation
+algorithm. In addition to target values, its cost function uses derivatives of those up to the $4^{\mathrm{th}}$
+order. For common applications of neural networks, high order derivatives are not readily available,
+so simpler cases are considered: training network to approximate analytical function inside 2D
+and 5D domains and solving Poisson equation inside a 2D circle. For function approximation, the
+cost is a sum of squared differences between output and target as well as their derivatives with respect
+to the input. Differential equations are usually solved by putting a multilayer perceptron in place
+of unknown function and training its weights, so that equation holds within some margin of error.
+Commonly used cost is the equation's residual squared. Added terms are squared derivatives of said
+residual with respect to the independent variables. To investigate overfitting, the cost is minimized
+for points of regular grids with various spacing, and its root mean is compared with its value on much
+denser test set. Fully connected perceptrons with six hidden layers and $2\cdot10^{4}$, $1\cdot10^{6}$
+and $5\cdot10^{6}$ weights in total are trained with Rprop until cost changes by less than 10% for
+last 1000 epochs, or when the $10000^{\mathrm{th}}$ epoch is reached. Training the network with
+$5\cdot10^{6}$ weights to represent simple 2D function using 10 points with 8 extra derivatives
+in each produces cost test to train ratio of $1.5$, whereas for classical backpropagation in comparable
+conditions this ratio is $2\cdot10^{4}$. 

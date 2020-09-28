@@ -1,0 +1,18 @@
+Single view depth estimation models can be trained from video footage using a self-supervised end-to-end
+approach with view synthesis as the supervisory signal. This is achieved with a framework that predicts
+depth and camera motion, with a loss based on reconstructing a target video frame from temporally
+adjacent frames. In this context, occlusion relates to parts of a scene that can be observed in the
+target frame but not in a frame used for image reconstruction. Since the image reconstruction is
+based on sampling from the adjacent frame, and occluded areas by definition cannot be sampled, reconstructed
+occluded areas corrupt to the supervisory signal. In previous work arXiv:1806.01260 occlusion
+is handled based on reconstruction error; at each pixel location, only the reconstruction with
+the lowest error is included in the loss. The current study aims to determine whether performance
+improvements of depth estimation models can be gained by during training only ignoring those regions
+that are affected by occlusion. In this work we introduce occlusion mask, a mask that during training
+can be used to specifically ignore regions that cannot be reconstructed due to occlusions. Occlusion
+mask is based entirely on predicted depth information. We introduce two novel loss formulations
+which incorporate the occlusion mask. The method and implementation of arXiv:1806.01260 serves
+as the foundation for our modifications as well as the baseline in our experiments. We demonstrate
+that (i) incorporating occlusion mask in the loss function improves the performance of single image
+depth prediction models on the KITTI benchmark. (ii) loss functions that select from reconstructions
+based on error are able to ignore some of the reprojection error caused by object motion. 

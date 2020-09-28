@@ -1,0 +1,19 @@
+Supervised deep learning techniques have achieved great success in various fields due to getting
+rid of the limitation of handcrafted representations. However, most previous image retargeting
+algorithms still employ fixed design principles such as using gradient map or handcrafted features
+to compute saliency map, which inevitably restricts its generality. Deep learning techniques
+may help to address this issue, but the challenging problem is that we need to build a large-scale
+image retargeting dataset for the training of deep retargeting models. However, building such
+a dataset requires huge human efforts. In this paper, we propose a novel deep cyclic image retargeting
+approach, called Cycle-IR, to firstly implement image retargeting with a single deep model, without
+relying on any explicit user annotations. Our idea is built on the reverse mapping from the retargeted
+images to the given input images. If the retargeted image has serious distortion or excessive loss
+of important visual information, the reverse mapping is unlikely to restore the input image well.
+We constrain this forward-reverse consistency by introducing a cyclic perception coherence loss.
+In addition, we propose a simple yet effective image retargeting network (IRNet) to implement the
+image retargeting process. Our IRNet contains a spatial and channel attention layer, which is able
+to discriminate visually important regions of input images effectively, especially in cluttered
+images. Given arbitrary sizes of input images and desired aspect ratios, our Cycle-IR can produce
+visually pleasing target images directly. Extensive experiments on the standard RetargetMe dataset
+show the superiority of our Cycle-IR. In addition, our Cycle-IR outperforms the Multiop method
+and obtains the best result in the user study. Code is available at https://github.com/mintanwei/Cycle-IR.

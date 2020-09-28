@@ -1,0 +1,19 @@
+An increasing amount of users' sensitive information is now being collected for analytics purposes.
+To protect users' privacy, differential privacy has been widely studied in the literature. Specifically,
+a differentially private algorithm adds noise to the true answer of a query to generate a noisy response.
+As a result, the information about the dataset leaked by the noisy output is bounded by the privacy
+parameter. Oftentimes, a dataset needs to be used for answering multiple queries (e.g., for multiple
+analytics tasks), so the level of privacy protection may degrade as more queries are answered. Thus,
+it is crucial to keep track of the privacy spending which should not exceed the given privacy budget.
+Moreover, if a query has been answered before and is asked again on the same dataset, we may reuse the
+previous noisy response for the current query to save the privacy cost. In view of the above, we design
+and implement a blockchain-based system for tracking and saving differential-privacy cost. Blockchain
+provides a distributed immutable ledger that records each query's type, the noisy response used
+to answer each query, the associated noise level added to the true query result, and the remaining
+privacy budget in our system. Furthermore, since the blockchain records the noisy response used
+to answer each query, we also design an algorithm to reuse previous noisy response if the same query
+is asked repeatedly. Specifically, considering that different requests of the same query may have
+different privacy requirements, our algorithm (via a rigorous proof) is able to set the optimal
+reuse fraction of the old noisy response and add new noise (if necessary) to minimize the accumulated
+privacy cost. Experimental results show that the proposed algorithm can reduce the privacy cost
+significantly without compromising data accuracy. 

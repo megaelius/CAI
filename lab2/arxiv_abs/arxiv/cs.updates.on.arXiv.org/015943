@@ -1,0 +1,18 @@
+Static code warning tools often generate warnings that programmers ignore. Such tools can be made
+more useful via data mining algorithms that select the "actionable" warnings; i.e. the warnings
+that are usually not ignored. But what is the best way to build those selection algorithms? To answer
+that question, we learn predictors for 5,675 actionable warnings seen in 31,058 static code warnings
+from FindBugs. Several data mining methods perform very well on this task. For example, linear Support
+Vector Machine achieved median recalls of 96%; median false alarms of 2%; and AUC(TNR, TPR) of over
+99%. Other learners (tree-based methods and deep learning) achieved very similar results (usually,
+within 4% or less). On investigation, we found the reason for all these learners performing very
+well: the data was intrinsically very simple. Specifically, while our data sets have up to 58 raw
+features, those features can be approximated by less than two underlying dimensions. For such intrinsically
+simple data, many different kinds of learners can generate useful models with similar performance.
+Based on the above, we conclude that it is both simple and effective to use data mining algorithms
+for selecting "actionable" warnings from static code analysis tools. Also, we recommend using
+linear SVMs to implement that selecting process (since, at least in our sample, that learner ran
+relatively quickly and achieved the best all-around performance). Further, for any analytics
+task, it important to match the complexity of the inference to the complexity of the data. For example,
+we would not recommend deep learning for finding actionable static code warnings since our data
+is intrinsically very simple. 

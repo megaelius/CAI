@@ -1,0 +1,17 @@
+Mobile manipulation planning commonly adopts a decoupled approach that performs planning separately
+for the base and manipulator, to make each planning space low dimensional. While this approach is
+fast, it can generate suboptimal paths or cannot find solutions. Another approach, i.e., a coupled
+approach, is to jointly adjust the base and manipulator in a high dimensional space. This coupled
+approach addresses sub-optimality and ncompleteness of the decoupled approach, but has not been
+widely used due to its excessive computational overhead. Given this trade-off space, we present
+a novel manipulation sampling method, harmonious sampling, to perform the coupled approach only
+in difficult regions, defined as manipulation regions, where we need to simultaneously maneuver
+the base and manipulator. For the rest regions, defined by base regions, we perform sampling mainly
+on the base, accelerating the planning process. Our method identifies such manipulation regions
+based on the reachability map generated from the target end-effector pose and narrow passage identified
+by generalized Voronoi diagram. We compare our method with the decoupled and coupled approaches
+in six different problems with different characteristics in the C-space. Our method shows meaningful
+improvements experimentally in terms of time to find an initial solution (up to 5 times faster) and
+final solution cost (up to 30% lower) over these techniques, especially in difficult scenes with
+narrow passage. This result is mainly attributed by our harmonious sampling, adaptively adjusting
+our sampling process between the coupled and decoupled spaces. 

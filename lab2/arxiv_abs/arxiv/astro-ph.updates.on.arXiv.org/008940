@@ -1,0 +1,19 @@
+One of the most important properties of a galaxy is the total stellar mass, or equivalently the stellar
+mass-to-light ratio (M/L). It is not directly observable, but can be estimated from stellar population
+synthesis. Currently, a galaxy's M/L is typically estimated from global fluxes. For example, a
+single global g - i colour correlates well with the stellar M/L. Spectral energy distribution (SED)
+fitting can make use of all available fluxes and their errors to make a Bayesian estimate of the M/L.
+We want to investigate the possibility of using morphology information to assist predictions of
+M/L. Our first goal is to develop and train a method that only requires a g-band image and redshift
+as input. This will allows us to study the correlation between M/L and morphology. Next, we can also
+include the i-band flux, and determine if morphology provides additional constraints compared
+to a method that only uses g- and i-band fluxes. We used a machine learning pipeline that can be split
+in two steps. First, we detected morphology features with a convolutional neural network. These
+are then combined with redshift, pixel size and g-band luminosity features in a gradient boosting
+machine. Our training target was the M/L acquired from the GALEX-SDSS-WISE Legacy Catalog, which
+uses global SED fitting and contains galaxies with z ~ 0.1. Morphology is a useful attribute when
+no colour information is available, but can not outperform colour methods on its own. When we combine
+the morphology features with global g- and i-band luminosities, we find an improved estimate compared
+to a model which does not make use of morphology. While our method was trained to reproduce global
+SED fitted M/L, galaxy morphology gives us an important additional constraint when using one or
+two bands. Our framework can be extended to other problems to make use of morphological information.

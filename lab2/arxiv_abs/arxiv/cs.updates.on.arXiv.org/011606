@@ -1,0 +1,18 @@
+Variational AutoEncoders (VAEs) provide a means to generate representational latent embeddings.
+Previous research has highlighted the benefits of achieving representations that are disentangled,
+particularly for downstream tasks. However, there is some debate about how to encourage disentanglement
+with VAEs and evidence indicates that existing implementations of VAEs do not achieve disentanglement
+consistently. The evaluation of how well a VAE's latent space has been disentangled is often evaluated
+against our subjective expectations of which attributes should be disentangled for a given problem.
+Therefore, by definition, we already have domain knowledge of what should be achieved and yet we
+use unsupervised approaches to achieve it. We propose a weakly-supervised approach that incorporates
+any available domain knowledge into the training process to form a Gated-VAE. The process involves
+partitioning the representational embedding and gating backpropagation. All partitions are
+utilised on the forward pass but gradients are backpropagated through different partitions according
+to selected image/target pairings. The approach can be used to modify existing VAE models such as
+beta-VAE, InfoVAE and DIP-VAE-II. Experiments demonstrate that using gated backpropagation,
+latent factors are represented in their intended partition. The approach is applied to images of
+faces for the purpose of disentangling head-pose from facial expression. Quantitative metrics
+show that using Gated-VAE improves average disentanglement, completeness and informativeness,
+as compared with un-gated implementations. Qualitative assessment of latent traversals demonstrate
+its disentanglement of head-pose from expression, even when only weak/noisy supervision is available.

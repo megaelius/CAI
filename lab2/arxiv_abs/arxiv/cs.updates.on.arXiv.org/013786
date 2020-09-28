@@ -1,0 +1,18 @@
+Currently, the dominating constraint in many high performance computing applications is data
+capacity and bandwidth, in both inter-node communications and even more-so in on-node data motion.
+A new approach to address this limitation is to make use of data compression in the form of a compressed
+data array. Storing data in a compressed data array and converting to standard IEEE-754 types as
+needed during a computation can reduce the pressure on bandwidth and storage. However, repeated
+conversions (lossy compression and decompression) introduce additional approximation errors,
+which need to be shown to not significantly affect the simulation results. We extend recent work
+[J. Diffenderfer, et al., Error Analysis of ZFP Compression for Floating-Point Data, SIAM Journal
+on Scientific Computing, 2019] that analyzed the error of a single use of compression and decompression
+of the ZFP compressed data array representation [P. Lindstrom, Fixed-rate compressed floating-point
+arrays, IEEE Transactions on Visualization and Computer Graphics, 2014] to the case of time-stepping
+and iterative schemes, where an advancement operator is repeatedly applied in addition to the conversions.
+We show that the accumulated error for iterative methods involving fixed-point and time evolving
+iterations is bounded under standard constraints. An upper bound is established on the number of
+additional iterations required for the convergence of stationary fixed-point iterations. An
+additional analysis of traditional forward and backward error of stationary iterative methods
+using ZFP compressed arrays is also presented. The results of several 1D, 2D, and 3D test problems
+are provided to demonstrate the correctness of the theoretical bounds. 

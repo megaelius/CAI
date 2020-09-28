@@ -1,0 +1,20 @@
+We consider the problem of distributed statistical machine learning in adversarial settings,
+where some unknown and time-varying subset of working machines may be compromised and behave arbitrarily
+to prevent an accurate model from being learned. This setting captures the potential adversarial
+attacks faced by Federated Learning -- a modern machine learning paradigm that is proposed by Google
+researchers and has been intensively studied for ensuring user privacy. Formally, we focus on a
+distributed system consisting of a parameter server and $m$ working machines. Each working machine
+keeps $N/m$ data samples, where $N$ is the total number of samples. The goal is to collectively learn
+the underlying true model parameter of dimension $d$. In classical batch gradient descent methods,
+the gradients reported to the server by the working machines are aggregated via simple averaging,
+which is vulnerable to a single Byzantine failure. In this paper, we propose a Byzantine gradient
+descent method based on the geometric median of means of the gradients. We show that our method can
+tolerate $q \le (m-1)/2$ Byzantine failures, and the parameter estimate converges in $O(\log N)$
+rounds with an estimation error of $\sqrt{d(2q+1)/N}$, hence approaching the optimal error rate
+$\sqrt{d/N}$ in the centralized and failure-free setting. The total computational complexity
+of our algorithm is of $O((Nd/m) \log N)$ at each working machine and $O(md + kd \log^3 N)$ at the central
+server, and the total communication cost is of $O(m d \log N)$. We further provide an application
+of our general results to the linear regression problem. A key challenge arises in the above problem
+is that Byzantine failures create arbitrary and unspecified dependency among the iterations and
+the aggregated gradients. We prove that the aggregated gradient converges uniformly to the true
+gradient function. 

@@ -1,0 +1,18 @@
+Modern heterogeneous computing architectures, which couple multi-core CPUs with discrete many-core
+GPUs (or other specialized hardware accelerators), enable unprecedented peak performance and
+energy efficiency levels. Unfortunately, though, developing applications that can take full
+advantage of the potential of heterogeneous systems is a notoriously hard task. This work takes
+a step towards reducing the complexity of programming heterogeneous systems by introducing the
+abstraction of Heterogeneous Transactional Memory (HeTM). HeTM provides programmers with the
+illusion of a single memory region, shared among the CPUs and the (discrete) GPU(s) of a heterogeneous
+system, with support for atomic transactions. Besides introducing the abstract semantics and
+programming model of HeTM, we present the design and evaluation of a concrete implementation of
+the proposed abstraction, which we named Speculative HeTM (SHeTM). SHeTM makes use of a novel design
+that leverages on speculative techniques and aims at hiding the inherently large communication
+latency between CPUs and discrete GPUs and at minimizing inter-device synchronization overhead.
+SHeTM is based on a modular and extensible design that allows for easily integrating alternative
+TM implementations on the CPU's and GPU's sides, which allows the flexibility to adopt, on either
+side, the TM implementation (e.g., in hardware or software) that best fits the applications' workload
+and the architectural characteristics of the processing unit. We demonstrate the efficiency of
+the SHeTM via an extensive quantitative study based both on synthetic benchmarks and on a porting
+of a popular object caching system. 

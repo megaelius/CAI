@@ -1,0 +1,18 @@
+The recent advance of monocular depth estimation is largely based on deeply nested convolutional
+networks, combined with supervised training. However, it still remains arduous to collect large-scale
+ground truth depth (or disparity) maps for supervising the networks. This paper presents a simple
+yet effective semi-supervised approach for monocular depth estimation. Inspired by the human
+visual system, we propose a student-teacher strategy in which a shallow student network is trained
+with the auxiliary information obtained from a deeper and accurate teacher network. Specifically,
+we first train the stereo teacher network fully utilizing the binocular perception of 3D geometry,
+and then use depth predictions of the teacher network for supervising the student network for monocular
+depth inference. This enables us to exploit all available depth data from massive unlabeled stereo
+pairs that are relatively easier-to-obtain. We further introduce a data ensemble strategy that
+merges multiple depth predictions of the teacher network to improve the training samples for the
+student network. Additionally, stereo confidence maps are provided to avoid inaccurate depth
+estimates being used when supervising the student network. Our new training data, consisting of
+1 million outdoor stereo images taken using hand-held stereo cameras, is hosted at the project webpage.
+Lastly, we demonstrate that the monocular depth estimation network provides feature representations
+that are suitable for some high-level vision tasks such as semantic segmentation and road detection.
+Extensive experiments demonstrate the effectiveness and flexibility of the proposed method in
+various outdoor scenarios. 

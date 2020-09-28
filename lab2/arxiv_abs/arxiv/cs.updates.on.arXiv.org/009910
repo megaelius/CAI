@@ -1,0 +1,19 @@
+Priors in Bayesian analyses often encode informative domain knowledge that can be useful in making
+the inference process more efficient. Occasionally, however, priors may be unrepresentative
+of the parameter values for a given dataset, which can result in inefficient parameter space exploration,
+or even incorrect inferences, particularly for nested sampling (NS) algorithms. Simply broadening
+the prior in such cases may be inappropriate or impossible in some applications. Hence a previous
+solution of this problem, known as posterior repartitioning (PR), redefines the prior and likelihood
+while keeping their product fixed, so that the posterior inferences and evidence estimates remain
+unchanged, but the efficiency of the NS process is significantly increased. In its most practical
+form, PR raises the prior to some power $\beta$, which is introduced as an auxiliary variable that
+must be determined on a case-by-case basis, usually by lowering $\beta$ from unity according to
+some pre-defined `annealing schedule' until the resulting inferences converge to a consistent
+solution. We present here an alternative Bayesian `automated PR' method, in which $\beta$ is instead
+treated as a hyperparameter that is inferred from the data alongside the original parameters of
+the problem, and then marginalised over to obtain the final inference. We show through numerical
+examples that this approach provides a robust and efficient `hands-off' solution to addressing
+the issue of unrepresentative priors in Bayesian inference using NS. Moreover, we show that for
+problems with representative priors the method has a negligible computational overhead relative
+to standard nesting sampling, which suggests that it should be used in as a matter of course in all
+NS analyses. 

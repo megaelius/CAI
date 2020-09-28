@@ -1,0 +1,19 @@
+Efficient and suitably preconditioned iterative solvers for elliptic partial differential equations
+(PDEs) of the convection-diffusion type are used in all fields of science and engineering. To achieve
+optimal performance, solvers have to exhibit high arithmetic intensity and need to exploit every
+form of parallelism available in modern manycore CPUs. The computationally most expensive components
+of the solver are the repeated applications of the linear operator and the preconditioner. For discretisations
+based on higher-order Discontinuous Galerkin methods, sum-factorisation results in a dramatic
+reduction of the computational complexity of the operator application while, at the same time,
+the matrix-free implementation can run at a significant fraction of the theoretical peak floating
+point performance. Multigrid methods for high order methods often rely on block-smoothers to reduce
+high-frequency error components within one grid cell. Traditionally, this requires the assembly
+and expensive dense matrix solve in each grid cell, which counteracts any improvements achieved
+in the fast matrix-free operator application. To overcome this issue, we present a new matrix-free
+implementation of block-smoothers. Inverting the block matrices iteratively avoids storage
+and factorisation of the matrix and makes it is possible to harness the full power of the CPU. We implemented
+a hybrid multigrid algorithm with matrix-free block-smoothers in the high order DG space combined
+with a low order coarse grid correction using algebraic multigrid where only low order components
+are explicitly assembled. The effectiveness of this approach is demonstrated by solving a set of
+representative elliptic PDEs of increasing complexity, including a convection dominated problem
+and the stationary SPE10 benchmark. 

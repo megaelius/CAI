@@ -1,0 +1,18 @@
+Estimating frequencies of certain items among a population is a basic step in data analytics, which
+enables more advanced data analytics (e.g., heavy hitter identification, frequent pattern mining),
+client software optimization, and detecting unwanted or malicious hijacking of user settings
+in browsers. Frequency estimation and heavy hitter identification with local differential privacy
+(LDP) protect user privacy as well as the data collector. Existing LDP algorithms cannot leverage
+1) prior knowledge about the noise in the estimated item frequencies and 2) prior knowledge about
+the true item frequencies. As a result, they achieve suboptimal performance in practice. In this
+work, we aim to design LDP algorithms that can leverage such prior knowledge. Specifically, we design
+${Calibrate}$ to incorporate the prior knowledge via statistical inference. ${Calibrate}$ can
+be appended to an existing LDP algorithm to reduce its estimation errors. We model the prior knowledge
+about the noise and the true item frequencies as two probability distributions, respectively.
+Given the two probability distributions and an estimated frequency of an item produced by an existing
+LDP algorithm, our ${Calibrate}$ computes the conditional probability distribution of the item's
+frequency and uses the mean of the conditional probability distribution as the calibrated frequency
+for the item. It is challenging to estimate the two probability distributions due to data sparsity.
+We address the challenge via integrating techniques from statistics and machine learning. Our
+empirical results on two real-world datasets show that ${Calibrate}$ significantly outperforms
+state-of-the-art LDP algorithms for frequency estimation and heavy hitter identification. 

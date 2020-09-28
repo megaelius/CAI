@@ -1,0 +1,17 @@
+Personal cryptographic keys are the foundation of many secure services, but storing these keys
+securely is a challenge, especially if they are used from multiple devices. Storing keys in a centralized
+location, like an Internet-accessible server, raises serious security concerns (e.g. server
+compromise). Hardware-based Trusted Execution Environments (TEEs) are a well-known solution
+for protecting sensitive data in untrusted environments, and are now becoming available on commodity
+server platforms. Although the idea of protecting keys using a server-side TEE is straight-forward,
+in this paper we validate this approach and show that it enables new desirable functionality. We
+describe the design, implementation, and evaluation of a TEE-based Cloud Key Store (CKS), an online
+service for securely generating, storing, and using personal cryptographic keys. Using remote
+attestation, users receive strong assurance about the behaviour of the CKS, and can authenticate
+themselves using passwords while avoiding typical risks of password-based authentication like
+password theft or phishing. In addition, this design allows users to i) define policy-based access
+controls for keys; ii) delegate keys to other CKS users for a specified time and/or a limited number
+of uses; and iii) audit all key usages via a secure audit log. We have implemented a proof of concept
+CKS using Intel SGX and integrated this into GnuPG on Linux and OpenKeychain on Android. Our CKS implementation
+performs approximately 6,000 signature operations per second on a single desktop PC. The latency
+is in the same order of magnitude as using locally-stored keys, and 20x faster than smart cards. 

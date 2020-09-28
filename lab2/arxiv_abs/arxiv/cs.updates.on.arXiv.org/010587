@@ -1,0 +1,20 @@
+In this work, we are motivated to make predictive functionality native to database (DB) systems,
+with a focus on time series data. We propose a system architecture, time series predict DB (tspDB),
+that enables predictive query functionality in any existing relational DB by building an additional
+prediction index for a time series of interest. Like standard DB indices, a prediction index must
+allow for fast data retrieval, but for entries that: (i) are for a future time step (i.e. forecasting);
+(ii) are missing/corrupted by noise (i.e. imputation). Such an index must satisfy: (i) statistical
+accuracy; (ii) high DB throughput; (iii) low predictive query latency; (iv) flexibility across
+DB/machines. Our hope is tspDB allows any analyst who can make a SQL query to make a predictive SQL
+query without loss of system performance, thereby increasing accessibility of machine learning.
+We build such a prediction index in PostgreSQL. it uses a recently developed prediction algorithm,
+which we alter to be incremental while maintaining its statistical accuracy. As an important algorithmic
+contribution, we develop a novel algorithm to estimate time-varying noise variance to enable uncertainty
+quantification. We argue it provides consistent estimation for a rich class of generating processes.
+Despite extensive literature, our variance estimation algorithm and associated analysis is first
+of its kind. For tspDB to function as a real-time system, we measure performance not only statistically
+but also through standard DB metrics such as latency/throughput. Statistically, the prediction
+index provides better accuracy compared to the state-of-art libraries. In terms of throughput,
+our index updates 2.83x faster than PostgreSQL bulk insert. Finally, predictive query latency
+with respect to standard SELECT queries is < 2.53x, < 6.09x for imputation/forecasting respectively
+(across DBs/machines) 

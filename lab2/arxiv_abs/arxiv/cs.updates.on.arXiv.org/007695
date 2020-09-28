@@ -1,0 +1,18 @@
+We study three orientation-based shape descriptors on a set of continuously moving points $P$:
+the first principal component, the smallest oriented bounding box and the thinnest strip. Each
+of these shape descriptors essentially defines a cost capturing the quality of the descriptor (sum
+of squared distances for principal component, area for oriented bounding box, and width for strip),
+and uses the orientation that minimizes the cost. This optimal orientation may be very unstable
+as the points are moving, which is undesirable in many practical scenarios. Alternatively, we can
+bound the speed with which the orientation of the descriptor may change. However, this can increase
+the cost (and hence lower the quality) of the resulting shape descriptor. In this paper we study the
+trade-off between stability and quality of these shape descriptors. % We first show that there is
+no stateless algorithm, which depends only on the input points in one time step and not on previous
+states, that both approximates the minimum cost of a shape descriptor and achieves bounded speed.
+On the other hand, if we can use the previous state of the shape descriptor to compute the new state,
+then we can define "chasing" algorithms that attempt to follow the optimal orientation with bounded
+speed. Under mild conditions, we show that chasing algorithms with sufficient bounded speed approximate
+the optimal cost at every time step for oriented bounding boxes and strips, but not for principal
+components. The analysis of such chasing algorithms is challenging and has received little attention
+in literature, hence we believe that our methods used to perform this analysis are of independent
+interest. 

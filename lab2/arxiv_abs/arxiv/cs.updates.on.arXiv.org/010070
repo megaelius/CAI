@@ -1,0 +1,20 @@
+We consider first order stochastic optimization where the oracle must quantize each subgradient
+estimate to $r$ bits. We treat two oracle models: the first where the Euclidean norm of the oracle
+output is almost surely bounded and the second where it is mean square bounded. Prior work in this
+setting assumes the availability of unbiased quantizers. While this assumption is valid in the
+case of almost surely bounded oracles, it does not hold true for the standard setting of mean square
+bounded oracles, and the bias can dramatically affect the convergence rate. We analyze the performance
+of standard quantizers from prior work in combination with projected stochastic gradient descent
+for both these oracle models and present two new adaptive quantizers that outperform the existing
+ones. Specifically, for almost surely bounded oracles, we establish first a lower bound for the
+precision needed to attain the standard convergence rate of $T^{-\frac 12}$ for optimizing convex
+functions over a $d$-dimentional domain. Our proposed Rotated Adaptive Tetra-iterated Quantizer
+(RATQ) is merely a factor $O(\log \log \log^\ast d)$ far from this lower bound. For mean square bounded
+oracles, we show that a state-of-the-art Rotated Uniform Quantizer (RUQ) from prior work would
+need atleast $\Omega(d\log T)$ bits to achieve the convergence rate of $T^{-\frac 12}$, using any
+optimization protocol. However, our proposed Rotated Adaptive Quantizer (RAQ) outperforms RUQ
+in this setting and attains a convergence rate of $T^{-\frac 12}$ using a precision of only $O(d\log\log
+T)$. For mean square bounded oracles, in the communication-starved regime where the precision
+$r$ is fixed to a constant independent of $T$, we show that RUQ cannot attain a convergence rate better
+than $T^{-\frac 14}$ for any $r$, while RAQ can attain convergence at rates arbitrarily close to
+$T^{-\frac 12}$ as $r$ increases. 

@@ -1,0 +1,20 @@
+In light of ever-increasing scale and sophistication of modern DDoS attacks, we argue that it is
+time to revisit in-network filtering or the idea of empowering DDoS victims to install in-network
+traffic filters in the upstream transit networks. Recent proposals have suggested that filtering
+DDoS traffic at a small number of large transit networks on behalf of remote DDoS victims can handle
+large volumetric attacks effectively. However, even if a transit network wishes to offer filtering
+services to remote DDoS victims, there still remains a practical issue of the lack of verifiable
+filtering - no one can check if the filtering service executes the filter rules correctly as requested
+by the DDoS victims. Without filtering verifiability, neighbor autonomous systems (ASes) and
+DDoS victims cannot detect when filtering is executed poorly or unfairly discriminates neighbor
+ASes. In this paper, we show the technical feasibility of verifiable in-network filtering, called
+VIF, that offers filtering verifiability to DDoS victims and neighbor ASes. We utilize Intel SGX
+as a feasible root of trust. As a practical deployment model, we suggest that Internet exchange points
+(IXPs) are the ideal candidates for the early adopters of our verifiable filters due to their central
+locations and flexible software-defined architecture. Our proof of concept demonstrates that
+a single VIF filter can handle nearly 10Gb/s traffic and execute up to 3000 filter rules. We show that
+VIF can easily scale to handle larger traffic volume (e.g., 500 Gb/s) and more complex filtering
+operations (e.g., 150,000 rules) by parallelizing SGX-based filters. Furthermore, our large-scale
+simulations of two realistic attacks (i.e., DNS amplification, Mirai-based flooding) show that
+only a small number (e.g., 5-25) of large IXPs are needed to offer VIF filtering service to handle
+the majority (e.g., up to 80-90%) of DDoS traffic. 

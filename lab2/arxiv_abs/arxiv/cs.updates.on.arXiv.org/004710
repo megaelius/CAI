@@ -1,0 +1,18 @@
+Recommender systems have been studied extensively due to their practical use in many real-world
+scenarios. Despite this, generating effective recommendations with sparse user ratings remains
+a challenge. Side information associated with items has been widely utilized to address rating
+sparsity. Existing recommendation models that use side information are linear and, hence, have
+restricted expressiveness. Deep learning has been used to capture non-linearities by learning
+deep item representations from side information but as side information is high-dimensional existing
+deep models tend to have large input dimensionality, which dominates their overall size. This makes
+them difficult to train, especially with small numbers of inputs. Rather than learning item representations,
+which is problematic with high-dimensional side information, in this paper, we propose to learn
+feature representation through deep learning from side information. Learning feature representations,
+on the other hand, ensures a sufficient number of inputs to train a deep network. To achieve this,
+we propose to simultaneously recover user ratings and side information, by using a Variational
+Autoencoder (VAE). Specifically, user ratings and side information are encoded and decoded collectively
+through the same inference network and generation network. This is possible as both user ratings
+and side information are data associated with items. To account for the heterogeneity of user rating
+and side information, the final layer of the generation network follows different distributions
+depending on the type of information. The proposed model is easy to implement and efficient to optimize
+and is shown to outperform state-of-the-art top-$N$ recommendation methods that use side information.

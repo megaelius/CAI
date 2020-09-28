@@ -1,0 +1,20 @@
+The design and implementation of decision procedures for checking path feasibility in string-manipulating
+programs is an important problem, whose applications include symbolic execution and automated
+detection of cross-site scripting (XSS) vulnerabilities. A (symbolic) path is a finite sequence
+of assignments and assertions (i.e. without loops), and checking its feasibility amounts to determining
+the existence of inputs that yield a successful execution. We give two general semantic conditions
+which together ensure the decidability of path feasibility: (1) each assertion admits regular
+monadic decomposition, and (2) each assignment uses a (possibly nondeterministic) function whose
+inverse relation preserves regularity. We show these conditions are expressive since they are
+satisfied by a multitude of string operations. They also strictly subsume existing decidable string
+theories, and most existing benchmarks (e.g. most of Kaluza's, and all of SLOG's, Stranger's, and
+SLOTH's). We give a simple decision procedure and an extensible architecture of a string solver
+in that a user may easily incorporate his/her own string functions. We show the general fragment
+has a tight, but high complexity. To address this, we propose to allow only partial string functions
+(i.e., prohibit nondeterminism) in condition (2). When nondeterministic functions are needed,
+we also provide a syntactic fragment that provides a support of nondeterministic functions but
+can be reduced to an existing solver SLOTH. We provide an efficient implementation of our decision
+procedure for deterministic partial string functions in a new string solver OSTRICH. It provides
+built-in support for concatenation, reverse, functional transducers, and replaceall and provides
+a framework for extensibility to support further string functions. We demonstrate the efficacy
+of our new solver against other competitive solvers. 

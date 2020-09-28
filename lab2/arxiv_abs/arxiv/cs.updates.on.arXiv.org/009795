@@ -1,0 +1,17 @@
+Dictionary based classifiers are a family of algorithms for time series classification (TSC),
+that focus on capturing the frequency of pattern occurrences in a time series. The ensemble based
+Bag of Symbolic Fourier Approximation Symbols (BOSS) was found to be a top performing TSC algorithm
+in a recent evaluation, as well as the best performing dictionary based classifier. A recent addition
+to the category, the Word Extraction for Time Series Classification (WEASEL), claims an improvement
+on this performance. Both of these algorithms however have non-trivial scalability issues, taking
+a considerable amount of build time and space on larger datasets. We evaluate changes to the way BOSS
+chooses classifiers for its ensemble, replacing its parameter search with random selection. This
+change allows for the easy implementation of contracting, setting a build time limit for the classifier
+and check-pointing, saving progress during the classifiers build. To differentiate between the
+two BOSS ensemble methods we refer to our randomised version as RBOSS. Additionally we test the application
+of common ensembling techniques to help retain accuracy from the loss of the BOSS parameter search.
+We achieve a significant reduction in build time without a significant change in accuracy on average
+when compared to BOSS by creating a size $n$ weighted ensemble selecting the best performers from
+$k$ randomly chosen parameter sets. Our experiments are conducted on datasets from the recently
+expanded UCR time series archive. We demonstrate the usability improvements to RBOSS with a case
+study using a large whale acoustics dataset for which BOSS proved infeasible. 

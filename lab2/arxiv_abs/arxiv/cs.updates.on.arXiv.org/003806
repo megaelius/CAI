@@ -1,0 +1,19 @@
+A fundamental question that shrouds the emergence of massively parallel computing (MPC) platforms
+is how can the additional power of the MPC paradigm be leveraged to achieve faster algorithms compared
+to classical parallel models such as PRAM? Previous research has identified the sparse graph connectivity
+problem as a major obstacle to such improvement: While classical logarithmic-round PRAM algorithms
+for finding connected components in any $n$-vertex graph have been known for more than three decades,
+no $o(\log{n})$-round MPC algorithms are known for this task with truly sublinear in $n$ memory
+per machine. This problem arises when processing massive yet sparse graphs with $O(n)$ edges, for
+which the interesting setting of parameters is $n^{1-\Omega(1)}$ memory per machine. It is conjectured
+that achieving an $o(\log{n})$-round algorithm for connectivity on general sparse graphs with
+$n^{1-\Omega(1)}$ per-machine memory may not be possible, and this conjecture also forms the basis
+for multiple conditional hardness results on the round complexity of other problems in the MPC model.
+We take an opportunistic approach towards the sparse graph connectivity problem, by designing
+an algorithm with improved performance guarantees in terms of the connectivity structure of the
+input graph. Formally, we design an algorithm that finds all connected components with spectral
+gap at least $\lambda$ in a graph in $O(\log\log{n} + \log{(1/\lambda)})$ MPC rounds and $n^{\Omega(1)}$
+memory per machine. As such, this algorithm achieves an exponential round reduction on sparse "well-connected"
+components (i.e., $\lambda \geq 1/\text{polylog}{(n)}$) using only $n^{\Omega(1)}$ memory
+per machine and $\widetilde{O}(n)$ total memory, and still operates in $o(\log n)$ rounds even
+when $\lambda = 1/n^{o(1)}$. 

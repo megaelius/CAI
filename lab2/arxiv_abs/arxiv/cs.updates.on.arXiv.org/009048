@@ -1,0 +1,18 @@
+Runtime variability in computing systems causes some tasks to straggle and take much longer than
+expected to complete. These straggler tasks are known to significantly slowdown distributed computation.
+Job execution with speculative execution of redundant tasks has been the most widely deployed technique
+for mitigating the impact of stragglers, and many recent theoretical papers have studied the advantages
+and disadvantages of using redundancy under various system and service models. However, no clear
+guidelines could yet be found on when, for which jobs, and how much redundancy should be employed
+in Master-Worker compute clusters, which is the most widely adopted architecture in modern compute
+systems. We are concerned with finding a strategy for scheduling jobs with redundancy that works
+well in practice. This is a complex optimization problem, which we address in stages. We first use
+Reinforcement Learning (RL) techniques to learn good scheduling principles from realistic experience.
+Building on these principles, we derive a simple scheduling policy and present an approximate analysis
+of its performance. Specifically, we derive expressions to decide when and which jobs should be
+scheduled with how much redundancy. We show that policy that we devise in this way performs as good
+as the more complex policies that are derived by RL. Finally, we extend our approximate analysis
+to the case when system employs the other widely deployed remedy for stragglers, which is relaunching
+straggler tasks after waiting some time. We show that scheduling with redundancy significantly
+outperforms straggler relaunch policy when the offered load on the system is low or moderate, and
+performs slightly worse when the offered load is very high. 

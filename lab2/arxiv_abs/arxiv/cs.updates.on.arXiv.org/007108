@@ -1,0 +1,18 @@
+The high amount of sensors required for autonomous driving poses enormous challenges on the capacity
+of automotive bus systems. There is a need to understand tradeoffs between bitrate and perception
+performance. In this paper, we compare the image compression standards JPEG, JPEG2000, and WebP
+to a modern encoder/decoder image compression approach based on generative adversarial networks
+(GANs). We evaluate both the pure compression performance using typical metrics such as peak signal-to-noise
+ratio (PSNR), structural similarity (SSIM) and others, but also the performance of a subsequent
+perception function, namely a semantic segmentation (characterized by the mean intersection
+over union (mIoU) measure). Not surprisingly, for all investigated compression methods, a higher
+bitrate means better results in all investigated quality metrics. Interestingly, however, we
+show that the semantic segmentation mIoU of the GAN autoencoder in the highly relevant low-bitrate
+regime (at 0.0625 bit/pixel) is better by 3.9% absolute than JPEG2000, although the latter still
+is considerably better in terms of PSNR (5.91 dB difference). This effect can greatly be enlarged
+by training the semantic segmentation model with images originating from the decoder, so that the
+mIoU using the segmentation model trained by GAN reconstructions exceeds the use of the model trained
+with original images by almost 20% absolute. We conclude that distributed perception in future
+autonomous driving will most probably not provide a solution to the automotive bus capacity bottleneck
+by using standard compression schemes such as JPEG2000, but requires modern coding approaches,
+with the GAN encoder/decoder method being a promising candidate. 

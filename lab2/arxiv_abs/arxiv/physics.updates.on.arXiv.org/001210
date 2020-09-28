@@ -1,0 +1,17 @@
+In this paper, a fourth-order compact gas-kinetic scheme (GKS) is developed for the compressible
+Euler and Navier-Stokes equations under the framework of two-stage fourth-order temporal discretization
+and Hermite WENO (HWENO) reconstruction. Due to the high-order gas evolution model, the GKS provides
+a time dependent gas distribution function at a cell interface. This time evolution solution can
+be used not only for the flux evaluation across a cell interface and its time derivative, but also
+time accurate evolution solution at a cell interface. As a result, besides updating the conservative
+flow variables inside each control volume, the GKS can get the cell averaged slopes inside each control
+volume as well through the differences of flow variables at the cell interfaces. So, with the updated
+flow variables and their slopes inside each cell, the HWENO reconstruction can be naturally implemented
+for the compact high-order reconstruction at the beginning of next step. Therefore, a compact higher-order
+GKS, such as the two-stages fourth-order compact scheme can be constructed. This scheme is as robust
+as second-order one, but more accurate solution can be obtained. In comparison with compact fourth-order
+DG method, the current scheme has only two stages instead of four within each time step for the fourth-order
+temporal accuracy, and the CFL number used here can be on the order of $0.5$ instead of $0.11$ for the
+DG method. Through this research, it concludes that the use of high-order time evolution model rather
+than the first order Riemann solution is extremely important for the design of robust, accurate,
+and efficient higher-order schemes for the compressible flows. 

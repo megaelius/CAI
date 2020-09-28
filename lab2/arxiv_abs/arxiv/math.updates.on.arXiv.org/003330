@@ -1,0 +1,18 @@
+Decades of advances in mixed-integer linear programming (MILP) and recent development in mixed-integer
+second-order-cone programming (MISOCP) have translated very mildly to progresses in global solving
+nonconvex mixed-integer quadratically constrained programs (MIQCP). In this paper we propose
+a new approach, namely Compact Disjunctive Approximation (CDA), to approximate nonconvex MIQCP
+to arbitrary precision by \textit{convex} MIQCPs, which can be solved by MISOCP solvers. For nonconvex
+MIQCP with $n$ variables and $m$ general quadratic constraints, our method yields relaxations
+with at most $O(n\log(1/\varepsilon))$ number of continuous/binary variables and linear constraints,
+together with $m$ \textit{convex} quadratic constraints, where $\varepsilon$ is the approximation
+accuracy. The main novelty of our method lies in a very compact lifted mixed-integer formulation
+for approximating the (scalar) square function. This is derived by first embedding the square function
+into the boundary of a three-dimensional second-order cone, and then exploiting rotational symmetry
+in a similar way as in the construction of BenTal-Nemirovski approximation. We further show that
+this lifted formulation characterize the union of finite number of simple convex sets, which naturally
+relax the square function in a piecewise manner with properly placed knots. We implement (with JuMP)
+a simple adaptive refinement algorithm. Numerical experiments on synthetic instances used in
+the literature show that our prototypical implementation (with hundreds of lines of Julia code)
+can already close a significant portion of gap left by various state-of-the-art global solvers
+on more difficult instances, indicating strong promises of our proposed approach. 

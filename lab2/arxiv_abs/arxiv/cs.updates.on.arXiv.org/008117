@@ -1,0 +1,18 @@
+This work presents an abstract model for the computations performed by analytic column stores or
+columnar query processors. The model is based on circuits whose wires carry columns rather than
+scalar values, and whose nodes apply operators with column inputs and outputs. This model allows
+expression of most of the architectural features of existing column-store DBMSes through columnar
+execution plans, rather than such features being implemented sui-generis, and without the column
+store maintaining significant out-of-plan data. A strict adherence to columnarity allows for
+a relatively simple and robust model; enabling extensive and intensive optimization of almost
+all aspects of query processing; and also enabling massive uniform parallelization of query process
+on modern hardware. Moreover, the computational model's expressivity makes it useful also as an
+\emph{analytical} tool for considering design aspects and features of existing column stores,
+individually and comparatively. To achieve the model's wide expressiveness, much of this work
+develops representation schemes of relevant data structures as combinations of plain columns,
+with columnar circuits used as scheme encoders and decoders. A particular focus is given to schemes
+which also compress the data, and their use in query execution --- as an integral part of the computation:
+Subcircuits of larger columnar circuits, not black boxes. Decoder and encoder circuits are thus
+also composed to form more elaborate schemes. Such formulation allows both for an alternative view
+of well-known compression schemes, and for the development of new columnar compression schemes
+with useful features; these should be of independent interest irrespective of column store systems.

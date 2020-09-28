@@ -1,0 +1,18 @@
+In Smart Grid applications, as the number of deployed electric smart meters increases, massive
+amounts of valuable meter data is generated and collected every day. To enable reliable data collection
+and make business decisions fast, high throughput storage and high-performance analysis of massive
+meter data become crucial for grid companies. Considering the advantage of high efficiency, fault
+tolerance, and price-performance of Hadoop and Hive systems, they are frequently deployed as underlying
+platform for big data processing. However, in real business use cases, these data analysis applications
+typically involve multidimensional range queries (MDRQ) as well as batch reading and statistics
+on the meter data. While Hive is high-performance at complex data batch reading and analysis, it
+lacks efficient indexing techniques for MDRQ. In this paper, we propose DGFIndex, an index structure
+for Hive that efficiently supports MDRQ for massive meter data. DGFIndex divides the data space
+into cubes using the grid file technique. Unlike the existing indexes in Hive, which stores all combinations
+of multiple dimensions, DGFIndex only stores the information of cubes. This leads to smaller index
+size and faster query processing. Furthermore, with pre-computing user-defined aggregations
+of each cube, DGFIndex only needs to access the boundary region for aggregation query. Our comprehensive
+experiments show that DGFIndex can save significant disk space in comparison with the existing
+indexes in Hive and the query performance with DGFIndex is 2-63 times faster than existing indexes
+in Hive, 2-94 times faster than HadoopDB, 2-75 times faster than scanning the whole table in different
+query selectivity. 

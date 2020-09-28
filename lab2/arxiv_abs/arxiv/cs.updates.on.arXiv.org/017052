@@ -1,0 +1,17 @@
+We (claim to) prove the extremely surprising fact that NP=RP. It is achieved by creating a Fully Polynomial-Time
+Randomized Approximation Scheme (FPRAS) for approximately counting the number of independent
+sets in bounded degree graphs, with any fixed degree bound, which is known to imply NP=RP. While our
+method is rooted in the well known Markov Chain Monte Carlo (MCMC) approach, we overcome the notorious
+problem of slow mixing by a new idea for generating a random sample from among the independent sets.
+A key tool that enables the result is a solution to a novel sampling task that we call Subset Sampling.
+In its basic form, a stationary sample is given from the (exponentially large) state space of a Markov
+chain, as input, and we want to transform it into another stationary sample that is conditioned on
+falling into a given subset, which is still exponentially large. In general, Subset Sampling can
+be both harder and easier than stationary sampling from a Markov chain. It can be harder, due to the
+conditioning on a subset, which may have more complex structure than the original state space. But
+it may also be easier, since a stationary sample is already given, which, in a sense, already encompasses
+"most of the hardness" of such sampling tasks, being already in the stationary distribution, which
+is hard to reach in a slowly mixing chain. We show that it is possible to efficiently balance the two
+sides: we can capitalize on already having a stationary sample from the original space, so that the
+complexity of confining it to a subset is mitigated. We prove that an efficient approximation is
+possible for the considered sampling task, and then it is applied recursively to create the FPRAS.

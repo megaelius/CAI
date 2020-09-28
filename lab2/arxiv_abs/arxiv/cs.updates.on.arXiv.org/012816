@@ -1,0 +1,20 @@
+We improve the fundamental security threshold of Proof-of-Stake (PoS) blockchain protocols,
+reflecting for the first time the positive effect of rounds with multiple honest leaders. Current
+analyses of the longest-chain rule in PoS blockchain protocols reduce consistency to the dynamics
+of an abstract, round-based block creation process determined by three probabilities: $p_A$,
+the probability that a round has at least one adversarial leader; $p_h$, the probability that a round
+has a single honest leader; and $p_H$, the probability that a round has multiple, but honest, leaders.
+We present a consistency analysis that achieves the optimal threshold $p_h + p_H > p_A$. This is a
+first in the literature and can be applied to both the simple synchronous setting and the setting
+with bounded delays. We also achieve the optimal consistency error $e^{-\Theta(k)}$, $k$ being
+the confirmation time. The consistency analyses in Ouroboros Praos (Eurocrypt 2018) and Genesis
+(CCS 2018) assume that $p_h - p_H > p_A$; the analyses in Sleepy Consensus (Asiacrypt 2017) and Snow
+White (Fin. Crypto 2019) assume that $p_h > p_A$. Thus existing analyses either incur a penalty for
+multiply-honest rounds, or treat them neutrally. In addition, previous analyses completely break
+down when $p_h < p_A$. Our new results can be directly applied to improve the consistency of these
+existing protocols. We emphasize that these thresholds determine the critical tradeoff between
+honest majority, network delays, and consistency error. We complement our results with a consistency
+analysis in the setting where uniquely honest slots are rare, event letting $p_h = 0$, under the added
+assumption that honest players adopt a consistent chain selection rule. Our analysis provides
+a direct connection between the Ouroboros analysis focusing on "relative margin" and the Sleepy
+analysis focusing on "strong pivots." 

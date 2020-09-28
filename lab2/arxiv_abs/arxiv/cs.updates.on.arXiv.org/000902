@@ -1,0 +1,18 @@
+Existing caching strategies, in the storage domain, though well suited to exploit short range spatio-temporal
+patterns, are unable to leverage long-range motifs for improving hitrates. Motivated by this,
+we investigate novel Bayesian non-parametric modeling(BNP) techniques for count vectors, to
+capture long range correlations for cache preloading, by mining Block I/O traces. Such traces comprise
+of a sequence of memory accesses that can be aggregated into high-dimensional sparse correlated
+count vector sequences. While there are several state of the art BNP algorithms for clustering and
+their temporal extensions for prediction, there has been no work on exploring these for correlated
+count vectors. Our first contribution addresses this gap by proposing a DP based mixture model of
+Multivariate Poisson (DP-MMVP) and its temporal extension(HMM-DP-MMVP) that captures the full
+covariance structure of multivariate count data. However, modeling full covariance structure
+for count vectors is computationally expensive, particularly for high dimensional data. Hence,
+we exploit sparsity in our count vectors, and as our main contribution, introduce the Sparse DP mixture
+of multivariate Poisson(Sparse-DP-MMVP), generalizing our DP-MMVP mixture model, also leading
+to more efficient inference. We then discuss a temporal extension to our model for cache preloading.
+We take the first step towards mining historical data, to capture long range patterns in storage
+traces for cache preloading. Experimentally, we show a dramatic improvement in hitrates on benchmark
+traces and lay the groundwork for further research in storage domain to reduce latencies using data
+mining techniques to capture long range motifs. 

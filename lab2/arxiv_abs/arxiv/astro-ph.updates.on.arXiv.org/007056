@@ -1,0 +1,17 @@
+We present Lampray: a multi-group long characteristics ray tracing method for adaptive mesh radiation
+hydrodynamics in the Ramses code. It avoids diffusion, captures shadows, and treats colliding
+beams correctly, and therefore complements existing moment-based ray tracing in Ramses. Lampray
+includes different options for interpolation between ray and cell domain, and use either integral,
+Fourier, or an implicit method for hydrogen ionization to solve the radiative transfer. The opacity
+can either be tabulated or computed through a coupling to the general non-equilibrium astro-chemistry
+framework Krome. We use an H-He-C-O network with 36 species and 240 reactions to track the photo-chemistry
+in the interstellar medium across 6 and 10 orders of magnitude in temperature and density. Self-shielding
+prescriptions for H$_2$ and CO are used together with a new model for the diffuse interstellar UV-field.
+We also track the dust temperature, formation of H$_2$ on grains, and H$_2$O and CO ices in detail.
+Lampray is tested against standard benchmarks for molecular cloud and star formation simulations,
+including the formation of a Str\"omgren sphere, the expansion of an ionization front, the photo-evaporation
+of a dense clump, and the H-He-C-O chemistry in a static photo-dissociation front. Efficient parallelisation
+is achieved with a separate domain decomposition for rays where points along a ray reside in the same
+memory space, and data movement from cell- to ray-domain is done with a direct hash-table lookup
+algorithm. Point sources are treated without splitting rays, and therefore the method currently
+only scales to a few point sources, while diffuse radiation has excellent scaling. 

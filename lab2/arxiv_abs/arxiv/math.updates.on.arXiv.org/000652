@@ -1,0 +1,19 @@
+Consider $N$ points in $\mathbb{R}^d$ and $M$ local coordinate systems that are related through
+unknown rigid transforms. For each point we are given (possibly noisy) measurements of its local
+coordinates in some of the coordinate systems. Alternatively, for each coordinate system, we observe
+the coordinates of a subset of the points. The problem of estimating the global coordinates of the
+$N$ points (up to a rigid transform) from such measurements comes up in distributed approaches to
+molecular conformation and sensor network localization, and also in computer vision and graphics.
+The least-squares formulation of this problem, though non-convex, has a well known closed-form
+solution when $M=2$ (based on the singular value decomposition). However, no closed form solution
+is known for $M\geq 3$. In this paper, we demonstrate how the least-squares formulation can be relaxed
+into a convex program, namely a semidefinite program (SDP). By setting up connections between the
+uniqueness of this SDP and results from rigidity theory, we prove conditions for exact and stable
+recovery for the SDP relaxation. In particular, we prove that the SDP relaxation can guarantee recovery
+under more adversarial conditions compared to earlier proposed spectral relaxations, and derive
+error bounds for the registration error incurred by the SDP relaxation. We also present results
+of numerical experiments on simulated data to confirm the theoretical findings. We empirically
+demonstrate that (a) unlike the spectral relaxation, the relaxation gap is mostly zero for the semidefinite
+program (i.e., we are able to solve the original non-convex least-squares problem) up to a certain
+noise threshold, and (b) the semidefinite program performs significantly better than spectral
+and manifold-optimization methods, particularly at large noise levels. 

@@ -1,0 +1,18 @@
+We abstract the core logical functions from applications that require ultra-low-latency wireless
+communications to provide a novel definition for reliability. Real-time applications -- such
+as intelligent transportation, remote surgery, and industrial automation -- involve a significant
+element of control and decision making. Such systems involve three logical components: observers
+(e.g. sensors) measuring the state of an environment or dynamical system, a centralized executive
+(e.g. controller) deciding on the state, and agents (e.g. actuators) that implement the executive's
+decisions. The executive harvests the observers' measurements and decides on the short-term trajectory
+of the system by instructing its agents to take appropriate actions. All observation packets (typically
+uplink) and action packets (typically downlink) must be delivered by hard deadlines to ensure the
+proper functioning of the controlled system. In-full on-time delivery cannot be guaranteed in
+wireless systems due to inherent uncertainties in the channel such as fading and unpredictable
+interference; accordingly, the executive will have to drop some packets. We develop a novel framework
+to formulate the observer selection problem (OSP) through which the executive schedules a sequence
+of observations that maximize its knowledge about the current state of the system. To solve this
+problem efficiently yet optimally, we devise a branch-and-bound algorithm that systematically
+prunes the search space. Our work is different from existing work on real-time communications in
+that communication reliability is not conveyed by packet loss or error rate, but rather by the extent
+of the executive's knowledge about the state of the system it controls. 

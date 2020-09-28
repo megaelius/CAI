@@ -1,0 +1,18 @@
+While fast multipole methods (FMMs) are in widespread use for the rapid evaluation of potential
+fields governed by the Laplace, Helmholtz, Maxwell or Stokes equations, their coupling to high-order
+quadratures for evaluating layer potentials is still an area of active research. In three dimensions,
+a number of issues need to be addressed, including the specification of the surface as the union of
+high-order patches, the incorporation of accurate quadrature rules for integrating singular
+or weakly singular Green's functions on such patches, and their coupling to the oct-tree data structures
+on which the FMM separates near and far field interactions. Although the latter is straightforward
+for point distributions, the near field for a patch is determined by its physical dimensions, not
+the distribution of discretization points on the surface. Here, we present a general framework
+for efficiently coupling locally corrected quadratures with FMMs, relying primarily on what are
+called generalized Gaussian quadratures rules, supplemented by adaptive integration. The approach,
+however, is quite general and easily applicable to other schemes, such as Quadrature by Expansion
+(QBX). We also introduce a number of accelerations to reduce the cost of quadrature generation itself,
+and present several numerical examples of acoustic scattering that demonstrate the accuracy,
+robustness, and computational efficiency of the scheme. On a single core of an Intel i5 2.3GHz processor,
+a Fortran implementation of the scheme can generate near field quadrature corrections for between
+1000 and 10,000 points per second, depending on the order of accuracy and the desired precision.
+A Fortran implementation of the algorithm described in this work is available at https://gitlab.com/fastalgorithms/fmm3dbie.

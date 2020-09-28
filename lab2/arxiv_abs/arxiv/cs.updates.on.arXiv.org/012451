@@ -1,0 +1,19 @@
+Reconstructing 3D human shape and pose from a monocular image is challenging despite the promising
+results achieved by the most recent learning-based methods. The commonly occurred misalignment
+comes from the facts that the mapping from images to the model space is highly non-linear and the rotation-based
+pose representation of the body model is prone to result in the drift of joint positions. In this work,
+we investigate learning 3D human shape and pose from dense correspondences of body parts and propose
+a Decompose-and-aggregate Network (DaNet) to address these issues. DaNet adopts the dense correspondence
+maps, which densely build a bridge between 2D pixels and 3D vertexes, as intermediate representations
+to facilitate the learning of 2D-to-3D mapping. The prediction modules of DaNet are decomposed
+into one global stream and multiple local streams to enable global and fine-grained perceptions
+for the shape and pose predictions, respectively. Messages from local streams are further aggregated
+to enhance the robust prediction of the rotation-based poses, where a position-aided rotation
+feature refinement strategy is proposed to exploit spatial relationships between body joints.
+Moreover, a Part-based Dropout (PartDrop) strategy is introduced to drop out dense information
+from intermediate representations during training, encouraging the network to focus on more complementary
+body parts as well as adjacent position features. The effectiveness of our method is validated on
+both in-door and real-world datasets including the Human3.6M, UP3D, and DensePose-COCO datasets.
+Experimental results show that the proposed method significantly improves the reconstruction
+performance in comparison with previous state-of-the-art methods. Our code will be made publicly
+available at https://hongwenzhang.github.io/dense2mesh . 

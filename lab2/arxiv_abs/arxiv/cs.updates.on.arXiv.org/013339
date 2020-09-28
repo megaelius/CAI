@@ -1,0 +1,19 @@
+In machine learning, statistics, econometrics and statistical physics cross-validation (CV)
+is used as a standard approach in quantifying the generalization performance of a statistical model.
+In practice, direct usage of CV is avoided for time-series due to several issues. A direct application
+of CV in time-series leads to the loss of serial correlations, a requirement of preserving any non-stationarity
+and the prediction of the past data using future data. In this work, we propose a meta-algorithm called
+reconstructive cross-validation (rCV ) that avoids all these issues. At first, k folds are formed
+with non-overlapping randomly selected subsets of the original time-series. Then, we generate
+k new partial time-series by removing data points from a given fold: every new partial time-series
+have missing points at random from a different entire fold. A suitable imputation or a smoothing
+technique is used to reconstruct k time-series. We call these reconstructions secondary models.
+Thereafter, we build the primary k time-series models using new time-series coming from the secondary
+models. The performance of the primary models is evaluated simultaneously by computing the deviations
+from the originally removed data points and out-of-sample (OSS) data. These amounts to reconstruction
+and prediction errors. If the secondary models use a technique that retains the data points exactly,
+such as Gaussian process regression, there will be no errors present on the data points that are not
+removed. By this procedure serial correlations are retained, any non-stationarity is preserved
+within models and there will be no prediction of past data using the future data points. The cross-validation
+in time-series model can be practised with rCV. Moreover, we can build time-series learning curves
+by repeating rCV procedure with different k values. 

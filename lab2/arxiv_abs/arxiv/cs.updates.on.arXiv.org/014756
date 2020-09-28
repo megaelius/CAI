@@ -1,0 +1,18 @@
+Generalizability is a concern when applying a deep learning (DL) model trained on one dataset to
+other datasets. Training a universal model that works anywhere, anytime, for anybody is unrealistic.
+In this work, we demonstrate the generalizability problem, then explore potential solutions based
+on transfer learning (TL) by using the cone-beam computed tomography (CBCT) to computed tomography
+(CT) image conversion task as the testbed. Previous works have converted CBCT to CT-like images.
+However, all of those works studied only one or two anatomical sites and used images from the same
+vendor's scanners. Here, we investigated how a model trained for one machine and one anatomical
+site works on other machines and other sites. We trained a model on CBCT images acquired from one vendor's
+scanners for head and neck cancer patients and applied it to images from another vendor's scanners
+and for other disease sites. We found that generalizability could be a significant problem for this
+particular application when applying a trained DL model to datasets from another vendor's scanners.
+We then explored three practical solutions based on TL to solve this generalization problem: the
+target model, which is trained on a target domain from scratch; the combined model, which is trained
+on both source and target domain datasets from scratch; and the adapted model, which fine-tunes
+the trained source model to a target domain. We found that when there are sufficient data in the target
+domain, all three models can achieve good performance. When the target dataset is limited, the adapted
+model works the best, which indicates that using the fine-tuning strategy to adapt the trained model
+to an unseen target domain dataset is a viable and easy way to implement DL models in the clinic. 

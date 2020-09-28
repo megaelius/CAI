@@ -1,0 +1,18 @@
+One of the most significant bottleneck in training large scale machine learning models on parameter
+server (PS) is the communication overhead, because it needs to frequently exchange the model gradients
+between the workers and servers during the training iterations. Gradient quantization has been
+proposed as an effective approach to reducing the communication volume. One key issue in gradient
+quantization is setting the number of bits for quantizing the gradients. Small number of bits can
+significantly reduce the communication overhead while hurts the gradient accuracies, and vise
+versa. An ideal quantization method would dynamically balance the communication overhead and
+model accuracy, through adjusting the number bits according to the knowledge learned from the immediate
+past training iterations. Existing methods, however, quantize the gradients either with fixed
+number of bits, or with predefined heuristic rules. In this paper we propose a novel adaptive quantization
+method within the framework of reinforcement learning. The method, referred to as MQGrad, formalizes
+the selection of quantization bits as actions in a Markov decision process (MDP) where the MDP states
+records the information collected from the past optimization iterations (e.g., the sequence of
+the loss function values). During the training iterations of a machine learning algorithm, MQGrad
+continuously updates the MDP state according to the changes of the loss function. Based on the information,
+MDP learns to select the optimal actions (number of bits) to quantize the gradients. Experimental
+results based on a benchmark dataset showed that MQGrad can accelerate the learning of a large scale
+deep neural network while keeping its prediction accuracies. 

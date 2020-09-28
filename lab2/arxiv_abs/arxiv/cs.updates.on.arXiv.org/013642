@@ -1,0 +1,20 @@
+This paper deals with the two fundamental problems concerning the handling of large n-gram language
+models: indexing, that is compressing the n-gram strings and associated satellite data without
+compromising their retrieval speed; and estimation, that is computing the probability distribution
+of the strings from a large textual source. Regarding the problem of indexing, we describe compressed,
+exact and lossless data structures that achieve, at the same time, high space reductions and no time
+degradation with respect to state-of-the-art solutions and related software packages. In particular,
+we present a compressed trie data structure in which each word following a context of fixed length
+k, i.e., its preceding k words, is encoded as an integer whose value is proportional to the number
+of words that follow such context. Since the number of words following a given context is typically
+very small in natural languages, we lower the space of representation to compression levels that
+were never achieved before. Despite the significant savings in space, our technique introduces
+a negligible penalty at query time. Regarding the problem of estimation, we present a novel algorithm
+for estimating modified Kneser-Ney language models, that have emerged as the de-facto choice for
+language modeling in both academia and industry, thanks to their relatively low perplexity performance.
+Estimating such models from large textual sources poses the challenge of devising algorithms that
+make a parsimonious use of the disk. The state-of-the-art algorithm uses three sorting steps in
+external memory: we show an improved construction that requires only one sorting step thanks to
+exploiting the properties of the extracted n-gram strings. With an extensive experimental analysis
+performed on billions of n-grams, we show an average improvement of 4.5X on the total running time
+of the state-of-the-art approach. 

@@ -1,0 +1,20 @@
+The study of graph problems in the Massively Parallel Computations (MPC) model has recently seen
+a burst of breakthroughs. Czumaj et al. [STOC'18], Assadi et al. [SODA'19], and Ghaffari et al. [PODC'18],
+gave algorithms for finding a $1+\varepsilon$ approximate maximum matching in $O(\log \log n)$
+rounds using $\widetilde{O}(n)$ memory per machine. Despite this progress, we still have a far
+more limited understanding of the central symmetry-breaking problem of maximal matching. The
+round complexity of all these algorithms blows up to $\Omega(\log n)$ in this case, which is considered
+inefficient. In fact, the only known subpolylogarithmic round algorithm remains to be that of Lattanzi
+et al. [SPAA'11] which undesirably requires a strictly super-linear space of $n^{1+\Omega(1)}$
+per machine. We resolve this shortcoming by providing exponentially faster algorithms for maximal
+matching. Perhaps more importantly, we obtain this by analyzing an extremely simple and natural
+algorithm. The algorithm edge-samples the graph, partitions the vertices at random, and finds
+a greedy maximal matching within each partition. We show that this algorithm drastically reduces
+the vertex degrees. This, among some other results, leads to an $O(\log \log \Delta)$ round algorithm
+for maximal matching with $O(n)$ space. The space can be further improved to mildly sublinear in
+$n$ by standard techniques. As an immediate corollary, we get a $2$ approximation for minimum vertex
+cover in essentially the same rounds and space. This is the best possible approximation factor under
+standard assumptions, culminating a long line of research. Other corollaries include more efficient
+algorithms for $1 + \varepsilon$ approximate matching and $2 + \varepsilon$ approximate weighted
+matching. All these results can also be implemented in the congested clique model within $O(\log
+\log \Delta)$ rounds. 

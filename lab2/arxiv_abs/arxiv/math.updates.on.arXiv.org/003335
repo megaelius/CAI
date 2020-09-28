@@ -1,0 +1,18 @@
+Currently, nearly all positivity preserving discontinuous Galerkin (DG) discretizations of
+partial differential equations are coupled with explicit time integration methods. Unfortunately,
+for many problems this can result in severe time-step restrictions. The techniques used to develop
+explicit positivity preserving DG discretizations can, however, not easily be combined with implicit
+time integration methods. In this paper we therefore present a new approach. Using Lagrange multipliers
+the conditions imposed by the positivity preserving limiters are directly coupled to a DG discretization
+combined with a Diagonally Implicit Runge-Kutta time integration method. The positivity preserving
+DG discretization is then reformulated as a Karush-Kuhn-Tucker (KKT) problem, which is frequently
+encountered in constrained optimization. Since the limiter is only active in areas where positivity
+must be enforced it does not affect the higher order DG discretization elsewhere. The resulting
+non-smooth nonlinear algebraic equations have, however, a different structure compared to most
+constrained optimization problems. We therefore develop an efficient active set semi-smooth
+Newton method that is suitable for the KKT formulation of time-implicit positivity preserving
+DG discretizations. Convergence of this semi-smooth Newton method is proven using a specially
+designed quasi-directional derivative of the time-implicit positivity preserving DG discretization.
+The time-implicit positivity preserving DG discretization is demonstrated for several nonlinear
+scalar conservation laws, which include the advection, Burgers, Allen-Cahn, Barenblatt, and
+Buckley-Leverett equations. 

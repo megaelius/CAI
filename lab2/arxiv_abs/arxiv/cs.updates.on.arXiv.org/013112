@@ -1,0 +1,20 @@
+In recent years, impressive progress has been made in the design of implicit probabilistic models
+via Generative Adversarial Networks (GAN) and its extension, the Conditional GAN (CGAN). Excellent
+solutions have been demonstrated mostly in image processing applications which involve large,
+continuous output spaces. There is almost no application of these powerful tools to problems having
+small dimensional output spaces. Regression problems involving the inductive learning of a map,
+$y=f(x,z)$, $z$ denoting noise, $f:\mathbb{R}^n\times \mathbb{R}^k \rightarrow \mathbb{R}^m$,
+with $m$ small (e.g., $m=1$ or just a few) is one good case in point. The standard approach to solve
+regression problems is to probabilistically model the output $y$ as the sum of a mean function $m(x)$
+and a noise term $z$; it is also usual to take the noise to be a Gaussian. These are done for convenience
+sake so that the likelihood of observed data is expressible in closed form. In the real world, on the
+other hand, stochasticity of the output is usually caused by missing or noisy input variables. Such
+a real world situation is best represented using an implicit model in which an extra noise vector,
+$z$ is included with $x$ as input. CGAN is naturally suited to design such implicit models. This paper
+makes the first step in this direction and compares the existing regression methods with CGAN. We
+notice however, that the existing methods like mixture density networks (MDN) and XGBoost do quite
+well compared to CGAN in terms of likelihood and mean absolute error, respectively. Both these methods
+are comparatively easier to train than CGANs. CGANs need more innovation to have a comparable modeling
+and ease-of-training with respect to the existing regression solvers. In summary, for modeling
+uncertainty MDNs are better while XGBoost is better for the cases where accurate prediction is more
+important. 

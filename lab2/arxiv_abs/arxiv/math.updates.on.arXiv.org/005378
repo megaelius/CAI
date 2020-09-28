@@ -1,0 +1,17 @@
+Projection-based model reduction has become a popular approach to reduce the cost associated with
+integrating large-scale dynamical systems so they can be used in many-query settings such as optimization
+and uncertainty quantification. For nonlinear systems, significant cost reduction is only possible
+with an additional layer of approximation to reduce the computational bottleneck of evaluating
+the projected nonlinear terms. Prevailing methods to approximate the nonlinear terms are code
+intrusive, potentially requiring years of development time to integrate into an existing codebase,
+and have been known to lack parametric robustness. This work develops a non-intrusive method to
+efficiently and accurately approximate the expensive nonlinear terms that arise in reduced nonlinear
+dynamical system using deep neural networks. The neural network is trained using only the simulation
+data used to construct the reduced basis and evaluations of the nonlinear terms at these snapshots.
+Once trained, the neural network-based reduced-order model only requires forward and backward
+propagation through the network to evaluate the nonlinear term and its derivative, which are used
+to integrate the reduced dynamical system at a new parameter configuration. We provide two numerical
+experiments---the dynamical systems result from the semi-discretization of parametrized, nonlinear,
+hyperbolic partial differential equations---that show, in addition to non-intrusivity, the
+proposed approach provides more stable and accurate approximations to each dynamical system across
+a large number of training and testing points than the popular empirical interpolation method.

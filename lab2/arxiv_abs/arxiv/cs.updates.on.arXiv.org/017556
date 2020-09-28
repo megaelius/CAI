@@ -1,0 +1,18 @@
+Motivation: Protein-protein interactions (PPI) are critical to the function of proteins in both
+normal and diseased cells, and many critical protein functions are mediated by interactions.Knowledge
+of the nature of these interactions is important for the construction of networks to analyse biological
+data. However, only a small percentage of PPIs captured in protein interaction databases have annotations
+of function available, e.g. only 4% of PPI are functionally annotated in the IntAct database. Here,
+we aim to label the function type of PPIs by extracting relationships described in PubMed abstracts.
+Method: We create a weakly supervised dataset from the IntAct PPI database containing interacting
+protein pairs with annotated function and associated abstracts from the PubMed database. We apply
+a state-of-the-art deep learning technique for biomedical natural language processing tasks,
+BioBERT, to build a model - dubbed PPI-BioBERT - for identifying the function of PPIs. In order to
+extract high quality PPI functions at large scale, we use an ensemble of PPI-BioBERT models to improve
+uncertainty estimation and apply an interaction type-specific threshold to counteract the effects
+of variations in the number of training samples per interaction type. Results: We scan 18 million
+PubMed abstracts to automatically identify 3253 new typed PPIs, including phosphorylation and
+acetylation interactions, with an overall precision of 46% (87% for acetylation) based on a human-reviewed
+sample. This work demonstrates that analysis of biomedical abstracts for PPI function extraction
+is a feasible approach to substantially increasing the number of interactions annotated with function
+captured in online databases. 

@@ -1,0 +1,18 @@
+Scene text recognition has attracted a great many researches for decades due to its importance to
+various applications. Existing sequence-to-sequence (seq2seq) recognizers mainly adopt Connectionist
+Temporal Classification (CTC) or Attention based Recurrent or Convolutional networks, and have
+made great progresses in scene text recognition. However, we observe that current methods suffer
+from slow training speed because the internal recurrence of RNNs limits training parallelization,
+and high complexity because of stacking too many convolutional layers in order to extract features
+over long input sequence. To tackle the above problems, this paper presents a no-recurrence seq2seq
+model, named NRTR, that relies only on the attention mechanism dispensing with recurrences and
+convolutions entirely. NRTR consists of an encoder that transforms an input sequence to the hidden
+feature representation, and a decoder that generates an output sequence of characters from the
+encoder output. Both of the encoder and the decoder are based on self-attention module to learn positional
+dependencies, which could be trained with more parallelization and less complexity. Besides,
+we also propose a modality-transform block to effectively transform the input image to the corresponding
+sequence, which could be used by the encoder directly. NRTR is end-to-end trainable and is not confined
+to any predefined lexicon. Extensive experiments on various benchmarks, including the IIIT5K,
+SVT and ICDAR datasets, show that NRTR achieves the state-of-the-art or highly-competitive performances
+in both lexicon-free and lexicon-based scene text recognition tasks, while requiring only one
+order of magnitude less time for model training compared to current methods. 

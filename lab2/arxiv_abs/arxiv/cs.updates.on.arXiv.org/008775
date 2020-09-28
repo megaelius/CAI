@@ -1,0 +1,17 @@
+We propose an iterative scheme for feature-based positioning using a new weighted dissimilarity
+measure with the goal of reducing the impact of large errors among the measured or modeled features.
+The weights are computed from the location-dependent standard deviations of the features and stored
+as part of the reference fingerprint map (RFM). Spatial filtering and kernel smoothing of the kinematically
+collected raw data allow efficiently estimating the standard deviations during RFM generation.
+In the positioning stage, the weights control the contribution of each feature to the dissimilarity
+measure, which in turn quantifies the difference between the set of online measured features and
+the fingerprints stored in the RFM. Features with little variability contribute more to the estimated
+position than features with high variability. Iterations are necessary because the variability
+depends on the location, and the location is initially unknown when estimating the position. Using
+real WiFi signal strength data from extended test measurements with ground truth in an office building,
+we show that the standard deviations of these features vary considerably within the region of interest
+and are neither simple functions of the signal strength nor of the distances from the corresponding
+access points. This is the motivation to include the empirical standard deviations in the RFM. We
+then analyze the deviations of the estimated positions with and without the location-dependent
+weighting. In the present example the maximum radial positioning error from ground truth are reduced
+by 40% comparing to kNN without the weighted dissimilarity measure. 

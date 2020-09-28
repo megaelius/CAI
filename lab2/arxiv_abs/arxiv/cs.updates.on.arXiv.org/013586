@@ -1,0 +1,18 @@
+As a mixed result of intensive dependency on third-party libraries, flexible mechanism to declare
+dependencies, and increased number of modules in a project, multiple versions of the same third-party
+library are directly depended in different modules of a project. Such library version inconsistencies
+can increase dependency maintenance cost, or even lead to dependency conflicts when modules are
+inter-dependent. Although automated build tools (e.g., Maven's enforcer plugin) provide partial
+support to detect library version inconsistencies, they do not provide any support to harmonize
+inconsistent library versions. We first conduct a survey with 131 Java developers from GitHub to
+retrieve first-hand information about the root causes, detection methods, reasons for fixing
+or not fixing, fixing strategies, fixing efforts, and tool expectations on library version inconsistencies.
+Then, based on the insights from our survey, we propose LibHarmo, an interactive, effort-aware
+library version harmonization technique, to detect library version inconsistencies, interactively
+suggest a harmonized version with the least harmonization efforts based on library API usage analysis,
+and refactor build configuration files. LibHarmo is currently developed for Java Maven projects.
+Our experimental study on 443 highly-starred Java Maven projects from GitHub indicates that i)
+LibHarmo identifies 621 library version inconsistencies covering 152 (34.3%) of projects, and
+ii) the average harmonization efforts are that 1 and 12 library API calls are affected, respectively
+due to the deleted and changed library APIs in the harmonized version. 5 library version inconsistencies
+have been confirmed, and 1 of them has been already harmonized by developers. 

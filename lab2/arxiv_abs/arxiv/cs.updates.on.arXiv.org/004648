@@ -1,0 +1,19 @@
+In recent years, research on image generation methods has been developing fast. The auto-encoding
+variational Bayes method (VAEs) was proposed in 2013, which uses variational inference to learn
+a latent space from the image database and then generates images using the decoder. The generative
+adversarial networks (GANs) came out as a promising framework, which uses adversarial training
+to improve the generative ability of the generator. However, the generated pictures by GANs are
+generally blurry. The deep convolutional generative adversarial networks (DCGANs) were then
+proposed to leverage the quality of generated images. Since the input noise vectors are randomly
+sampled from a Gaussian distribution, the generator has to map from a whole normal distribution
+to the images. This makes DCGANs unable to reflect the inherent structure of the training data. In
+this paper, we propose a novel deep model, called generative adversarial networks with decoder-encoder
+output noise (DE-GANs), which takes advantage of both the adversarial training and the variational
+Bayesain inference to improve the performance of image generation. DE-GANs use a pre-trained decoder-encoder
+architecture to map the random Gaussian noise vectors to informative ones and pass them to the generator
+of the adversarial networks. Since the decoder-encoder architecture is trained by the same images
+as the generators, the output vectors could carry the intrinsic distribution information of the
+original images. Moreover, the loss function of DE-GANs is different from GANs and DCGANs. A hidden-space
+loss function is added to the adversarial loss function to enhance the robustness of the model. Extensive
+empirical results show that DE-GANs can accelerate the convergence of the adversarial training
+process and improve the quality of the generated images. 

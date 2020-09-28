@@ -1,0 +1,19 @@
+Motion planning and control problems are embedded and essential in almost all robotics applications.
+These problems are often formulated as stochastic optimal control problems and solved using dynamic
+programming algorithms. Unfortunately, most existing algorithms that guarantee convergence
+to optimal solutions suffer from the curse of dimensionality: the run time of the algorithm grows
+exponentially with the dimension of the state space of the system. We propose novel dynamic programming
+algorithms that alleviate the curse of dimensionality in problems that exhibit certain low-rank
+structure. The proposed algorithms are based on continuous tensor decompositions recently developed
+by the authors. Essentially, the algorithms represent high-dimensional functions (e.g., the
+value function) in a compressed format, and directly perform dynamic programming computations
+(e.g., value iteration, policy iteration) in this format. Under certain technical assumptions,
+the new algorithms guarantee convergence towards optimal solutions with arbitrary precision.
+Furthermore, the run times of the new algorithms scale polynomially with the state dimension and
+polynomially with the ranks of the value function. This approach realizes substantial computational
+savings in "compressible" problem instances, where value functions admit low-rank approximations.
+We demonstrate the new algorithms in a wide range of problems, including a simulated six-dimensional
+agile quadcopter maneuvering example and a seven-dimensional aircraft perching example. In some
+of these examples, we estimate computational savings of up to ten orders of magnitude over standard
+value iteration algorithms. We further demonstrate the algorithms running in real time on board
+a quadcopter during a flight experiment under motion capture. 

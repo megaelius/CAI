@@ -1,0 +1,19 @@
+The construction and formal verification of dynamical models is important in engineering, biology
+and other disciplines. We focus on non-linear models containing a set of parameters governing their
+dynamics. The value of these parameters is often unknown and not directly observable through measurements,
+which are themselves noisy. When treating parameters as random variables, one can constrain their
+distribution by conditioning on observations and thereby constructing a posterior probability
+distribution. We aim to perform model verification with respect to this posterior. The main difficulty
+in performing verification on a model under the posterior distribution is that in general, it is
+difficult to obtain \emph{independent} samples from the posterior, especially for non-linear
+dynamical models. Standard statistical model checking methods require independent realizations
+of the system and are therefore not applicable in this context. We propose a Markov chain Monte Carlo
+based statistical model checking framework, which produces a sequence of dependent random realizations
+of the model dynamics over the parameter posterior. Using this sequence of samples, we use statistical
+hypothesis tests to verify whether the model satisfies a bounded temporal logic property with a
+certain probability. We use sample size bounds tailored to the setting of dependent samples for
+fixed sample size and sequential tests. We apply our method to a case-study from the domain of systems
+biology, to a model of the JAK-STAT biochemical pathway. The pathway is modeled as a system of non-linear
+ODEs containing a set of unknown parameters. Noisy, indirect observations of the system state are
+available from an experiment. The results show that the proposed method enables probabilistic
+verification with respect to the parameter posterior with specified error bounds. 

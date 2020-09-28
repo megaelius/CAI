@@ -1,0 +1,17 @@
+The detection of multiple curved lane markings on a non-flat road surface is still a challenging
+task for automotive applications. To make an improvement, the depth information can be used to greatly
+enhance the robustness of the lane detection systems. The proposed system in this paper is developed
+from our previous work where the dense vanishing point Vp is estimated globally to assist the detection
+of multiple curved lane markings. However, the outliers in the optimal solution may severely affect
+the accuracy of the least squares fitting when estimating Vp. Therefore, in this paper we use Random
+Sample Consensus to update the inliers and outliers iteratively until the fraction of the number
+of inliers versus the total number exceeds our pre-set threshold. This significantly helps the
+system to overcome some suddenly changing conditions. Furthermore, we propose a novel lane position
+validation approach which provides a piecewise weight based on Vp and the gradient to reduce the
+gradient magnitude of the non-lane candidates. Then, we compute the energy of each possible solution
+and select all satisfying lane positions for visualisation. The proposed system is implemented
+on a heterogeneous system which consists of an Intel Core i7-4720HQ CPU and a NVIDIA GTX 970M GPU.
+A processing speed of 143 fps has been achieved, which is over 38 times faster than our previous work.
+Also, in order to evaluate the detection precision, we tested 2495 frames with 5361 lanes from the
+KITTI database (1637 lanes more than our previous experiment). It is shown that the overall successful
+detection rate is improved from 98.7% to 99.5%. 

@@ -1,0 +1,17 @@
+Classical control of cyber-physical systems used to rely on basic linear controllers. These controllers
+provided a safe and robust behavior but lack the ability to perform more complex controls such as
+aggressive maneuvering or performing fuel-efficient controls. Another approach called optimal
+control is capable of computing such difficult trajectories but lacks the ability to adapt to dynamic
+changes in the environment. In both cases, the control was designed offline, relying on more or less
+complex algorithms to find the appropriate parameters. More recent kinds of approaches such as
+Linear Model-Predictive Control (MPC) rely on the online use of convex optimization to compute
+the best control at each sample time. In these settings, optimization algorithms are specialized
+for the specific control problem and embed on the device. This paper proposes to revisit the code
+generation of an interior point method (IPM)algorithm, an efficient family of convex optimization,
+focusing on the proof of its implementation at code level. Our approach relies on the code specialization
+phase to produce additional annotations formalizing the intented specification of the algorithm.
+Deductive methods are then used to prove automatically the validity of these assertions. Since
+the algorithm is complex, additional lemmas are also produced, allowing the complete proofto be
+checked by SMT solvers only. This work is the first to address the effective formal proof of an IPM
+algorithm. Theapproach could also be generalized more systematically to code generation frameworks,
+producing proof certificate along the code, for numerical intensive software. 

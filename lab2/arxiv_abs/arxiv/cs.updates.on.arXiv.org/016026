@@ -1,0 +1,17 @@
+Several studies show that during the training process, the distribution of stochastic gradients
+can be heavy-tailed especially for small batch sizes. In this case, weights and therefore post-activations
+can be modeled with a heavy-tailed distribution that has an infinite variance but has a finite (non-integer)
+fractional moment of order $s$ with $s < 2$. Motivated by this fact, we develop initialization schemes
+for fully connected feed-forward networks that can provably preserve any given moment of order
+$s\in (0,2]$ over the post-activations for a class of activations including ReLU, Leaky ReLU, Randomized
+Leaky ReLU, and linear activations. These generalized schemes recover traditional initialization
+schemes in the limit $s \to 2$ and serve as part of a principled theory for initialization. For all
+these schemes, we show that the network output admits a finite almost sure limit as the number of layers
+grows, and the limit is heavy-tailed in some settings. This sheds further light into the origins
+of heavy tail during signal propagation in DNNs. We also prove that the logarithm of the norm of the
+network outputs, if properly scaled, will converge to a Gaussian distribution with an explicit
+mean and variance we can compute depending on the activation used, the value of $s$ chosen and the
+network width. We also prove that our initialization scheme avoids small network output values
+more frequently compared to traditional approaches. The proposed initialization strategy does
+not have an extra cost during the training procedure. We show through numerical experiments that
+our initialization can improve the training and test performance. 

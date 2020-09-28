@@ -1,0 +1,19 @@
+In this work, we consider the popular tree-based search strategy within the framework of reinforcement
+learning, the Monte Carlo Tree Search (MCTS), in the context of infinite-horizon discounted cost
+Markov Decision Process (MDP). While MCTS is believed to provide an approximate value function
+for a given state with enough simulations, the claimed proof in the seminal works is incomplete.
+This is due to the fact that the variant, the Upper Confidence Bound for Trees (UCT), analyzed in prior
+works utilizes "logarithmic" bonus term for balancing exploration and exploitation within the
+tree-based search, following the insights from stochastic multi-arm bandit (MAB) literature.
+In effect, such an approach assumes that the regret of the underlying recursively dependent non-stationary
+MABs concentrates around their mean exponentially in the number of steps, which is unlikely to hold
+as pointed out in literature, even for stationary MABs. As the key contribution of this work, we establish
+polynomial concentration property of regret for a class of non-stationary MAB. This in turn establishes
+that the MCTS with appropriate polynomial rather than logarithmic bonus term in UCB has the claimed
+property. Using this as a building block, we argue that MCTS, combined with nearest neighbor supervised
+learning, acts as a "policy improvement" operator: it iteratively improves value function approximation
+for all states, due to combining with supervised learning, despite evaluating at only finitely
+many states. In effect, we establish that to learn an $\varepsilon$ approximation of the value function
+with respect to $\ell_\infty$ norm, MCTS combined with nearest neighbor requires a sample size
+scaling as $\widetilde{O}\big(\varepsilon^{-(d+4)}\big)$, where $d$ is the dimension of the
+state space. This is nearly optimal due to a minimax lower bound of $\widetilde{\Omega}\big(\varepsilon^{-(d+2)}\big)$.

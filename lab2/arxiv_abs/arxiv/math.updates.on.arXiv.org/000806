@@ -1,0 +1,20 @@
+Push-Pull is a well-studied round-robin rumor spreading protocol defined as follows: initially
+a node knows a rumor and wants to spread it to all nodes in a network quickly. In each round, every informed
+node sends the rumor to a random neighbor, and every uninformed node contacts a random neighbor and
+gets the rumor from her if she knows it. We analyze this protocol on random $k$-trees, a class of power
+law graphs, which are small-world and have large clustering coefficients, built as follows: initially
+we have a $k$-clique. In every step a new node is born, a random $k$-clique of the current graph is chosen,
+and the new node is joined to all nodes of the $k$-clique. When $k>1$ is fixed, we show that if initially
+a random node is aware of the rumor, then with probability $1-o(1)$ after $O\left((\log n)^{1+2/k}\cdot\log\log
+n\cdot f(n)\right)$ rounds the rumor propagates to $n-o(n)$ nodes, where $n$ is the number of nodes
+and $f(n)$ is any slowly growing function. Since these graphs have polynomially small conductance,
+vertex expansion $O(1/n)$ and constant treewidth, these results demonstrate that Push-Pull can
+be efficient even on poorly connected networks. On the negative side, we prove that with probability
+$1-o(1)$ the protocol needs at least $\Omega\left(n^{(k-1)/(k^2+k-1)}/f^2(n)\right)$ rounds
+to inform all nodes. This exponential dichotomy between time required for informing almost all
+and all nodes is striking. Our main contribution is to present, for the first time, a natural class
+of random graphs in which such a phenomenon can be observed. Our technique for proving the upper bound
+carries over to a closely related class of graphs, random $k$-Apollonian networks, for which we
+prove an upper bound of $O\left((\log n)^{c_k}\cdot\log\log n\cdot f(n)\right)$ rounds for informing
+$n-o(n)$ nodes with probability $1-o(1)$ when $k>2$ is fixed. Here, $c_k=(k^2-3)/(k-1)^2<1
++ 2/k$. 

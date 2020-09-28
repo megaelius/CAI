@@ -1,0 +1,18 @@
+Zero-shot learning (ZSL) can be formulated as a cross-domain matching problem: after being projected
+into a joint embedding space, a visual sample will match against all candidate class-level semantic
+descriptions and be assigned to the nearest class. In this process, the embedding space underpins
+the success of such matching and is crucial for ZSL. In this paper, we conduct an in-depth study on
+the construction of embedding space for ZSL and posit that an ideal embedding space should satisfy
+two criteria: intra-class compactness and inter-class separability. While the former encourages
+the embeddings of visual samples of one class to distribute tightly close to the semantic description
+embedding of this class, the latter requires embeddings from different classes to be well separated
+from each other. Towards this goal, we present a simple but effective two-branch network to simultaneously
+map semantic descriptions and visual samples into a joint space, on which visual embeddings are
+forced to regress to their class-level semantic embeddings and the embeddings crossing classes
+are required to be distinguishable by a trainable classifier. Furthermore, we extend our method
+to a transductive setting to better handle the model bias problem in ZSL (i.e., samples from unseen
+classes tend to be categorized into seen classes) with minimal extra supervision. Specifically,
+we propose a pseudo labeling strategy to progressively incorporate the testing samples into the
+training process and thus balance the model between seen and unseen classes. Experimental results
+on five standard ZSL datasets show the superior performance of the proposed method and its transductive
+extension. 

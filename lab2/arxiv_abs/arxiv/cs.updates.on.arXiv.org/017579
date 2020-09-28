@@ -1,0 +1,18 @@
+The fastest deterministic algorithms for connected components take logarithmic time and perform
+superlinear work on a Parallel Random Access Machine (PRAM). These algorithms maintain a spanning
+forest by merging and compressing trees, which requires pointer chasing operations that increase
+memory access latency and are limited to shared-memory systems. Many of these PRAM algorithms are
+also very complicated to implement. Another popular method is "leader-contraction" where the
+challenge is to select a constant fraction of leaders that are adjacent to a constant fraction of
+non-leaders with high probability. Instead we investigate label propagation because it is deterministic
+and does not rely on pointer-chasing. Label propagation exchanges representative labels within
+a component using simple graph traversal, but it is inherently difficult to complete in a sublinear
+number of steps. We are able to overcome the problems with label propagation for graph connectivity.
+We introduce a simple framework for deterministic graph connectivity using label propagation
+that is easily adaptable to many computational models. It propagates directed edges and alternates
+edge direction to achieve linear edge count each step and sublinear convergence. We present new
+algorithms in PRAM, Stream, and MapReduce for a simple, undirected graph $G=(V,E)$ with $n=|V|$
+vertices, $m=|E|$ edges. Our approach takes $O(m)$ work each step, but we can only prove logarithmic
+convergence on a path graph. It was conjectured by Liu and Tarjan (2019) to take $O(\log n)$ steps
+or possibly $O(\log^2 n)$ steps. Our experiments also suggest logarithmic convergence. We leave
+the proof of convergence as an open problem. 

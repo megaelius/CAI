@@ -1,0 +1,19 @@
+In order to build a national injury surveillance system based on emergency room (ER) visits we are
+developing a coding system to classify their causes from clinical notes content. Supervised learning
+techniques have shown good results in this area but require to manually build a large learning annotated
+dataset. New levels of performance have been recently achieved in neural language models (NLM)
+with the use of models based on the Transformer architecture with an unsupervised generative pre-training
+step. Our hypothesis is that methods involving a generative self-supervised pre-training step
+significantly reduce the number of annotated samples required for supervised fine-tuning. In
+this case study, we assessed whether we could predict from free text clinical notes whether a visit
+was the consequence of a traumatic or a non-traumatic event. We compared two strategies: Strategy
+A consisted in training the GPT-2 NLM on the full 161 930 samples dataset with all labels (trauma/non-trauma).
+In Strategy B, we split the training dataset in two parts, a large one of 151 930 samples without any
+label for the self-supervised pre-training phase and a smaller one (up to 10 000 samples) for the
+supervised fine-tuning with labels. While strategy A needed to process 40 000 samples to achieve
+good performance (AUC>0.95), strategy B needed only 500 samples, a gain of 80. Moreover, an AUC of
+0.93 was measured with only 30 labeled samples processed 3 times (3 epochs). To conclude, it is possible
+to adapt a multi-purpose NLM model such as the GPT-2 to create a powerful tool for classification
+of free-text notes with the need of a very small number of labeled samples. Only two modalities (trauma/non-trauma)
+were predicted for this case study but the same method can be applied for multimodal classification
+tasks such as diagnosis/disease terminologies. 

@@ -1,0 +1,19 @@
+Deep neural networks (DNNs) have achieved significant success in image restoration tasks by directly
+learning a powerful non-linear mapping from corrupted images to their latent clean ones. However,
+there still exist two major limitations for these deep learning (DL)-based methods. Firstly, the
+noises contained in real corrupted images are very complex, usually neglected and largely under-estimated
+in most current methods. Secondly, existing DL methods are mostly trained on one pre-assumed degradation
+process for all of the training image pairs, such as the widely used bicubic downsampling assumption
+in the image super-resolution task, inevitably leading to poor generalization performance when
+the true degradation does not match with such assumed one. To address these issues, we propose a unified
+generative model for the image restoration, which elaborately configures the degradation process
+from the latent clean image to the observed corrupted one. Specifically, different from most of
+current methods, the pixel-wisely non-i.i.d. Gaussian distribution, being with more flexibility,
+is adopted in our method to fit the complex real noises. Furthermore, the method is built on the general
+image degradation process, making it capable of adapting diverse degradations under one single
+model. Besides, we design a variational inference algorithm to learn all parameters involved in
+the proposed model with explicit form of objective loss. Specifically, beyond traditional variational
+methodology, two DNNs are employed to parameterize the posteriori distributions, one to infer
+the distribution of the latent clean image, and another to infer the distribution of the image noise.
+Extensive experiments demonstrate the superiority of the proposed method on three classical image
+restoration tasks, including image denoising, image super-resolution and JPEG image deblocking.

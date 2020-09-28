@@ -1,0 +1,17 @@
+A commonly used strategy for improving optimization algorithms is to restart the algorithm when
+it is believed to be trapped in an inferior part of the search space. Building on the recent success
+of Bet-and-Run approaches for restarted local search solvers, we introduce an improved generic
+Bet-and-Run strategy. The goal is to obtain the best possible results within a given time budget
+t using a given black-box optimization algorithm. If no prior knowledge about problem features
+and algorithm behavior is available, the question about how to use the time budget most efficiently
+arises. We propose to first start k>=1 independent runs of the algorithm during an initialization
+budget t1<t, pausing these runs, then apply a decision maker D to choose 1<=m<=k runs from them (consuming
+t2>=0 time units in doing so), and then continuing these runs for the remaining t3=t-t1-t2 time units.
+In previous Bet-and-Run strategies, the decision maker D=currentBest would simply select the
+run with the best- so-far results at negligible time. We propose using more advanced methods to discriminate
+between "good" and "bad" sample runs, with the goal of increasing the correlation of the chosen run
+with the a-posteriori best one. We test several different approaches, including neural networks
+trained or polynomials fitted on the current trace of the algorithm to predict which run may yield
+the best results if granted the remaining budget. We show with extensive experiments that this approach
+can yield better results than the previous methods, but also find that the currentBest method is
+a very reliable and robust baseline approach. 

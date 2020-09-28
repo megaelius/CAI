@@ -1,0 +1,19 @@
+As Lightning network payments are neither broadcasted nor publicly stored. Thus LN has been seen
+not only as scalability but also as privacy solution for Bitcoin. The protocol guarantees that only
+the latest channel state can be confirmed on channel closure. LN nodes gossip about channels available
+for routing and their total capacities. To issue a (multi-hop) payment, the sender creates a route
+based on its local knowledge of the graph. As local channel balances are not public, payments often
+fail due to insufficient balance at an intermediary hop. In that case, the payment is attempted along
+multiple routes until it succeeds. This constitutes a privacy-efficiency tradeoff: hidden balances
+improve privacy but hinder routing efficiency. In this work, we show that an attacker can easily
+discover channel balances using probing. This takes under a minute per channel and requires moderate
+capital commitment and no expenditures. We describe the algorithm and test our proof-of-concept
+implementation on Bitcoin's testnet. We argue that LN's balance between privacy and routing efficiency
+is suboptimal: channel balances are neither well protected nor utilized. We outline two ways for
+LN to evolve in respect to this issue. To emphasize privacy, we propose a modification of error handling
+that hides details of the erring channel from the sending node. This would break our probing technique
+but make routing failures more common, as the sender would not know which channel from the attempted
+route has failed. To improve efficiency, we propose a new API call that would let the sender query
+balances of channels that it is not a party of. We argue that combining these approaches can help LN
+take the best of both worlds: hide private data when feasible, and utilize public data for higher
+routing efficiency. 

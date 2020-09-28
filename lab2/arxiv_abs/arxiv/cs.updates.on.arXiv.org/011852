@@ -1,0 +1,19 @@
+Deep convolutional neural networks are known to be unstable during training at high learning rate
+unless normalization techniques are employed. Normalizing weights or activations allows the
+use of higher learning rates, resulting in faster convergence and higher test accuracy. Batch normalization
+requires minibatch statistics that approximate the dataset statistics but this incurs additional
+compute and memory costs and causes a communication bottleneck for distributed training. Weight
+normalization and initialization-only schemes do not achieve comparable test accuracy. We introduce
+a new understanding of the cause of training instability and provide a technique that is independent
+of normalization and minibatch statistics. Our approach treats training instability as a spatial
+common mode signal which is suppressed by placing the model on a channel-wise zero-mean isocline
+that is maintained throughout training. Firstly, we apply channel-wise zero-mean initialization
+of filter kernels with overall unity kernel magnitude. At each training step we modify the gradients
+of spatial kernels so that their weighted channel-wise mean is subtracted in order to maintain the
+common mode rejection condition. This prevents the onset of mean shift. This new technique allows
+direct training of the test graph so that training and test models are identical. We also demonstrate
+that injecting random noise throughout the network during training improves generalization.
+This is based on the idea that, as a side effect, batch normalization performs deep data augmentation
+by injecting minibatch noise due to the weakness of the dataset approximation. Our technique achieves
+higher accuracy compared to batch normalization and for the first time shows that minibatches and
+normalization are unnecessary for state-of-the-art training. 

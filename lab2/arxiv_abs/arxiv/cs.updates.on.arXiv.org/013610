@@ -1,0 +1,18 @@
+This paper describes one objective function for learning semantically coherent feature embeddings
+in multi-output classification problems, i.e., when the response variables have dimension higher
+than one. In particular, we consider the problems of identity retrieval and soft biometrics in visual
+surveillance environments, which have been attracting growing interests. Inspired by the triplet
+loss function, we propose a generalization of that concept: a quadruplet loss, that 1) defines a
+metric that analyzes the number of agreeing labels between pairs of elements; and 2) disregards
+the notion of anchor, replacing d(A1,A2) < d(A1,B) by d(A,B) < d(C,D) distance constraints, according
+to such perceived semantic similarity between the elements of each pair. Inherited from the triplet
+loss formulation, our proposal also privileges small distances between positive pairs, but also
+explicitly enforces that the distances between negative pairs directly correspond to their similarity
+in terms of the number of agreeing labels. This typically yields feature embeddings with a strong
+correspondence between the classes centroids and their semantic descriptions, i.e., where elements
+that share some of the labels are closer to each other in the destiny space than elements with fully
+disjoint classes membership. Also, in opposition to its triplet counterpart, the proposed loss
+is not particularly sensitive to the way learning pairs are mined, being agnostic with regard to
+demanding criteria for mining learning instances (such as the semi-hard pairs of triplet loss).
+Our experiments were carried out in four different datasets (BIODI, LFW, Megaface and PETA) and
+validate our assumptions, showing highly promising results. 

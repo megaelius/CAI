@@ -1,0 +1,19 @@
+Deep learning achieves state-of-the-art results in many areas. However recent works have shown
+that deep networks can be vulnerable to adversarial perturbations which slightly changes the input
+but leads to incorrect prediction. Adversarial training is an effective way of improving the robustness
+to the adversarial examples, typically formulated as a robust optimization problem for network
+training. To solve it, previous works directly run gradient descent on the "adversarial loss",
+i.e. replacing the input data with the corresponding adversaries. A major drawback of this approach
+is the computational overhead of adversary generation, which is much larger than network updating
+and leads to inconvenience in adversarial defense. To address this issue, we fully exploit structure
+of deep neural networks and propose a novel strategy to decouple the adversary update with the gradient
+back propagation. To achieve this goal, we follow the research line considering training deep neural
+network as an optimal control problem. We formulate the robust optimization as a differential game.
+This allows us to figure out the necessary conditions for optimality. In this way, we train the neural
+network via solving the Pontryagin's Maximum Principle (PMP). The adversary is only coupled with
+the first layer weight in PMP. It inspires us to split the adversary computation from the back propagation
+gradient computation. As a result, our proposed YOPO (You Only Propagate Once) avoids forward and
+backward the data too many times in one iteration, and restricts core descent directions computation
+to the first layer of the network, thus speeding up every iteration significantly. For adversarial
+example defense, our experiment shows that YOPO can achieve comparable defense accuracy using
+around 1/5 GPU time of the original projected gradient descent training. 

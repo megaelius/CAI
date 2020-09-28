@@ -1,0 +1,17 @@
+Recent efforts show that neural networks are vulnerable to small but intentional perturbations
+on input features in visual classification tasks. Due to the additional consideration of connections
+between examples (\eg articles with citation link tend to be in the same class), graph neural networks
+could be more sensitive to the perturbations, since the perturbations from connected examples
+exacerbate the impact on a target example. Adversarial Training (AT), a dynamic regularization
+technique, can resist the worst-case perturbations on input features and is a promising choice
+to improve model robustness and generalization. However, existing AT methods focus on standard
+classification, being less effective when training models on graph since it does not model the impact
+from connected examples. In this work, we explore adversarial training on graph, aiming to improve
+the robustness and generalization of models learned on graph. We propose Graph Adversarial Training
+(GraphAT), which takes the impact from connected examples into account when learning to construct
+and resist perturbations. We give a general formulation of GraphAT, which can be seen as a dynamic
+regularization scheme based on the graph structure. To demonstrate the utility of GraphAT, we employ
+it on a state-of-the-art graph neural network model --- Graph Convolutional Network (GCN). We conduct
+experiments on two citation graphs (Citeseer and Cora) and a knowledge graph (NELL), verifying
+the effectiveness of GraphAT which outperforms normal training on GCN by 4.51% in node classification
+accuracy. Codes are available via: https://github.com/fulifeng/GraphAT. 

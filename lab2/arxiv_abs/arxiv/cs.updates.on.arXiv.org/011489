@@ -1,0 +1,18 @@
+We consider the following constrained Rayleigh quotient optimization problem (CRQopt) $$ \min_{x\in
+\mathbb{R}^n} x^{T}Ax\,\,\mbox{subject to}\,\, x^{T}x=1\,\mbox{and}\,C^{T}x=b, $$ where
+$A$ is an $n\times n$ real symmetric matrix and $C$ is an $n\times m$ real matrix. Usually, $m\ll n$.
+The problem is also known as the constrained eigenvalue problem in the literature because it becomes
+an eigenvalue problem if the linear constraint $C^{T}x=b$ is removed. We start by equivalently
+transforming CRQopt into an optimization problem, called LGopt, of minimizing the Lagrangian
+multiplier of CRQopt, and then an problem, called QEPmin, of finding the smallest eigenvalue of
+a quadratic eigenvalue problem. Although such equivalences has been discussed in the literature,
+it appears to be the first time that these equivalences are rigorously justified. Then we propose
+to numerically solve LGopt and QEPmin by the Krylov subspace projection method via the Lanczos process.
+The basic idea, as the Lanczos method for the symmetric eigenvalue problem, is to first reduce LGopt
+and QEPmin by projecting them onto Krylov subspaces to yield problems of the same types but of much
+smaller sizes, and then solve the reduced problems by some direct methods, which is either a secular
+equation solver (in the case of LGopt) or an eigensolver (in the case of QEPmin). The resulting algorithm
+is called the Lanczos algorithm. We perform convergence analysis for the proposed method and obtain
+error bounds. The sharpness of the error bound is demonstrated by artificial examples, although
+in applications the method often converges much faster than the bounds suggest. Finally, we apply
+the Lanczos algorithm to semi-supervised learning in the context of constrained clustering. 

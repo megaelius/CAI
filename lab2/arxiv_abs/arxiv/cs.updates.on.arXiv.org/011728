@@ -1,0 +1,17 @@
+Principal component analysis (PCA) is arguably the most widely used dimension reduction method
+for vector type data. When applied to image data, PCA demands the images to be portrayed as vectors.
+The resulting computation is heavy because it will solve an eigenvalue problem of a huge covariance
+matrix due to the vectorization step. To mitigate the computation burden, multilinear PCA (MPCA)
+that generates each basis vector using a column vector and a row vector with a Kronecker product was
+introduced, for which the success was demonstrated on face image sets. However, when we apply MPCA
+on the cryo-electron microscopy (cryo-EM) particle images, the results are not satisfactory when
+compared with PCA. On the other hand, to compare the reduced spaces as well as the number of parameters
+of MPCA and PCA, Kronecker Envelope PCA (KEPCA) was proposed to provide a PCA-like basis from MPCA.
+Here, we apply KEPCA to denoise cryo-EM images through a two-stage dimension reduction (2SDR) algorithm.
+2SDR first applies MPCA to extract the projection scores and then applies PCA on these scores to further
+reduce the dimension. 2SDR has two benefits that it inherits the computation advantage of MPCA and
+its projection scores are uncorrelated as those of PCA. Testing with three cryo-EM benchmark experimental
+datasets shows that 2SDR performs better than MPCA and PCA alone in terms of the computation efficiency
+and denoising quality. Remarkably, the denoised particles boxed out from the 2SDR-denoised micrographs
+allow subsequent structural analysis to reach a high-quality 3D density map. This demonstrates
+that the high resolution information can be well preserved through this 2SDR denoising strategy.

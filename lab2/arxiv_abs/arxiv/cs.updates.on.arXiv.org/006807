@@ -1,0 +1,18 @@
+Our goal is compression of massive-scale grid-structured data, such as the multi-terabyte output
+of a high-fidelity computational simulation. For such data sets, we have developed a new software
+package called TuckerMPI, a parallel C++/MPI software package for compressing distributed data.
+The approach is based on treating the data as a tensor, i.e., a multidimensional array, and computing
+its truncated Tucker decomposition, a higher-order analogue to the truncated singular value decomposition
+of a matrix. The result is a low-rank approximation of the original tensor-structured data. Compression
+efficiency is achieved by detecting latent global structure within the data, which we contrast
+to most compression methods that are focused on local structure. In this work, we describe TuckerMPI,
+our implementation of the truncated Tucker decomposition, including details of the data distribution
+and in-memory layouts, the parallel and serial implementations of the key kernels, and analysis
+of the storage, communication, and computational costs. We test the software on 4.5 terabyte and
+6.7 terabyte data sets distributed across 100s of nodes (1000s of MPI processes), achieving compression
+rates between 100-200,000$\times$ which equates to 99-99.999% compression (depending on the
+desired accuracy) in substantially less time than it would take to even read the same dataset from
+a parallel filesystem. Moreover, we show that our method also allows for reconstruction of partial
+or down-sampled data on a single node, without a parallel computer so long as the reconstructed portion
+is small enough to fit on a single machine, e.g., in the instance of reconstructing/visualizing
+a single down-sampled time step or computing summary statistics. 

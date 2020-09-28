@@ -1,0 +1,18 @@
+Neural language models (LMs) based on recurrent neural networks (RNN) are some of the most successful
+word and character-level LMs. Why do they work so well, in particular better than linear neural LMs?
+Possible explanations are that RNNs have an implicitly better regularization or that RNNs have
+a higher capacity for storing patterns due to their nonlinearities or both. Here we argue for the
+first explanation in the limit of little training data and the second explanation for large amounts
+of text data. We show state-of-the-art performance on the popular and small Penn dataset when RNN
+LMs are regularized with random dropout. Nonetheless, we show even better performance from a simplified,
+much less expressive linear RNN model without off-diagonal entries in the recurrent matrix. We
+call this model an impulse-response LM (IRLM). Using random dropout, column normalization and
+annealed learning rates, IRLMs develop neurons that keep a memory of up to 50 words in the past and
+achieve a perplexity of 102.5 on the Penn dataset. On two large datasets however, the same regularization
+methods are unsuccessful for both models and the RNN's expressivity allows it to overtake the IRLM
+by 10 and 20 percent perplexity, respectively. Despite the perplexity gap, IRLMs still outperform
+RNNs on the Microsoft Research Sentence Completion (MRSC) task. We develop a slightly modified
+IRLM that separates long-context units (LCUs) from short-context units and show that the LCUs alone
+achieve a state-of-the-art performance on the MRSC task of 60.8%. Our analysis indicates that a
+fruitful direction of research for neural LMs lies in developing more accessible internal representations,
+and suggests an optimization regime of very high momentum terms for effectively training such models.

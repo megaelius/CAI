@@ -1,0 +1,19 @@
+The performance of finite element solvers on modern computer architectures is typically memory
+bound for sufficiently large problems. The main cause for this is that loading matrix elements from
+RAM into CPU cache is significantly slower than performing the arithmetic operations when solving
+the problem. In order to improve the performance of iterative solvers within the high-performance
+computing context, so-called matrix-free methods are widely adopted in the fluid mechanics community,
+where matrix-vector products are computed on-the-fly. To date, there have been few (if any) assessments
+into the applicability of the matrix-free approach to problems in solid mechanics. In this work,
+we perform an initial investigation on the application of the matrix-free approach to problems
+in quasi-static finite-strain hyperelasticity to determine whether it is viable for further extension.
+Specifically, we study different numerical implementations of the finite element tangent operator,
+and determine whether generalized methods of incorporating complex constitutive behavior might
+be feasible. In order to improve the convergence behavior of iterative solvers, we also propose
+a method by which to construct level tangent operators and employ them to define a geometric multigrid
+preconditioner. The performance of the matrix-free operator and the geometric multigrid preconditioner
+is compared to the matrix-based implementation with an algebraic multigrid preconditioner on
+a single node for a representative numerical example of a heterogeneous hyperelastic material
+in two and three dimensions. We conclude that the application of matrix-free methods to finite-strain
+solid mechanics is promising, and that is it possible to develop numerically efficient implementations
+that are independent of the hyperelastic constitutive law. 

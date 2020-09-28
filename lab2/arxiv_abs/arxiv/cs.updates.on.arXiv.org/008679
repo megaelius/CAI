@@ -1,0 +1,18 @@
+We study the complexity of training neural network models with one hidden nonlinear activation
+layer and an output weighted sum layer. We analyze Gradient Descent applied to learning a bounded
+target function on $n$ real-valued inputs. We give an agnostic learning guarantee for GD: starting
+from a randomly initialized network, it converges in mean squared loss to the minimum error (in $2$-norm)
+of the best approximation of the target function using a polynomial of degree at most $k$. Moreover,
+for any $k$, the size of the network and number of iterations needed are both bounded by $n^{O(k)}\log(1/\epsilon)$.
+In particular, this applies to training networks of unbiased sigmoids and ReLUs. We also rigorously
+explain the empirical finding that gradient descent discovers lower frequency Fourier components
+before higher frequency components. We complement this result with nearly matching lower bounds
+in the Statistical Query model. GD fits well in the SQ framework since each training step is determined
+by an expectation over the input distribution. We show that any SQ algorithm that achieves significant
+improvement over a constant function with queries of tolerance some inverse polynomial in the input
+dimensionality $n$ must use $n^{\Omega(k)}$ queries even when the target functions are restricted
+to a set of $n^{O(k)}$ degree-$k$ polynomials, and the input distribution is uniform over the unit
+sphere; for this class the information-theoretic lower bound is only $\Theta(k \log n)$. Our approach
+for both parts is based on spherical harmonics. We view gradient descent as an operator on the space
+of functions, and study its dynamics. An essential tool is the Funk-Hecke theorem, which explains
+the eigenfunctions of this operator in the case of the mean squared loss. 

@@ -1,0 +1,20 @@
+Highly non-linear machine learning algorithms have the capacity to handle large, complex datasets.
+However, the predictive performance of a model usually critically depends on the choice of multiple
+hyperparameters. Optimizing these (often) constitutes an expensive black-box problem. Model-based
+optimization is one state-of-the-art method to address this problem. Furthermore, resulting
+models often lack interpretability, as models usually contain many active features with non-linear
+effects and higher-order interactions. One model-agnostic way to enhance interpretability is
+to enforce sparse solutions through feature selection. It is in many applications desirable to
+forego a small drop in performance for a substantial gain in sparseness, leading to a natural treatment
+of feature selection as a multi-objective optimization task. Despite the practical relevance
+of both hyperparameter optimization and feature selection, they are often carried out separately
+from each other, which is neither efficient, nor does it take possible interactions between hyperparameters
+and selected features into account. We present, discuss and compare two algorithmically different
+approaches for joint and multi-objective hyperparameter optimization and feature selection:
+The first uses multi-objective model-based optimization to tune a feature filter ensemble. The
+second is an evolutionary NSGA-II-based wrapper-approach to feature selection which incorporates
+specialized sampling, mutation and recombination operators for the joint decision space of included
+features and hyperparameter settings. We compare and discuss the approaches on a variety of benchmark
+tasks. While model-based optimization needs fewer objective evaluations to achieve good performance,
+it incurs significant overhead compared to the NSGA-II-based approach. The preferred choice depends
+on the cost of training the ML model on the given data. 

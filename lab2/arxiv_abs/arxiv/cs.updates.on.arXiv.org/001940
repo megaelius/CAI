@@ -1,0 +1,18 @@
+This note is an attempt to unconditionally prove the existence of weak one way functions (OWF). Starting
+from a provably intractable decision problem $L_D$ (whose existence is nonconstructively assured
+from the well-known discrete time-hierarchy theorem from complexity theory), we construct another
+intractable decision problem $L\subseteq \{0,1\}^*$ that has its words scattered across $\{0,1\}^\ell$
+at a relative frequency $p(\ell)$, for which upper and lower bounds can be worked out. The value $p(\ell)$
+is computed from the density of the language within $\{0,1\}^\ell$ divided by the total word count
+$2^\ell$. It corresponds to the probability of retrieving a yes-instance of a decision problem
+upon a uniformly random draw from $\{0,1\}^\ell$. The trick to find a language with known bounds
+on $p(\ell)$ relies on switching from $L_D$ to $L_0:=L_D\cap L'$, where $L'$ is an easy-to-decide
+language with a known density across $\{0,1\}^*$. In defining $L'$ properly (and upon a suitable
+G\"odel numbering), the hardness of deciding $L_D\cap L'$ is inherited from $L_D$, while its density
+is controlled by that of $L'$. The lower and upper approximation of $p(\ell)$ then let us construct
+an explicit threshold function (as in random graph theory) that can be used to efficiently and intentionally
+sample yes- or no-instances of the decision problem (language) $L_0$ (however, without any auxiliary
+information that could ease the decision like a polynomial witness). In turn, this allows to construct
+a weak OWF that encodes a bit string $w\in\{0,1\}^*$ by efficiently (in polynomial time) emitting
+a sequence of randomly constructed intractable decision problems, whose answers correspond to
+the preimage $w$. 

@@ -1,0 +1,19 @@
+When a user requests a web page from a web archive, the user will typically either get an HTTP 200 if
+the page is available, or an HTTP 404 if the web page has not been archived. This is because web archives
+are typically accessed by URI lookup, and the response is binary: the archive either has the page
+or it does not, and the user will not know of other archived web pages that exist and are potentially
+similar to the requested web page. In this paper, we propose augmenting these binary responses with
+a model for selecting and ranking recommended web pages in a Web archive. This is to enhance both HTTP
+404 responses and HTTP 200 responses by surfacing web pages in the archive that the user may not know
+existed. First, we check if the URI is already classified in DMOZ or Wikipedia. If the requested URI
+is not found, we use ML to classify the URI using DMOZ as our ontology and collect candidate URIs to
+recommended to the user. Next, we filter the candidates based on if they are present in the archive.
+Finally, we rank candidates based on several features, such as archival quality, web page popularity,
+temporal similarity, and URI similarity. We calculated the F1 score for different methods of classifying
+the requested web page at the first level. We found that using all-grams from the URI after removing
+numerals and the TLD produced the best result with F1=0.59. For second-level classification, the
+micro-average F1=0.30. We found that 44.89% of the correctly classified URIs contained at least
+one word that exists in a dictionary and 50.07% of the correctly classified URIs contained long strings
+in the domain. In comparison with the URIs from our Wayback access logs, only 5.39% of those URIs contained
+only words from a dictionary, and 26.74% contained at least one word from a dictionary. These percentages
+are low and may affect the ability for the requested URI to be correctly classified. 

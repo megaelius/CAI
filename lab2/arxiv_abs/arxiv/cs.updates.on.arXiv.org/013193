@@ -1,0 +1,19 @@
+Interpreting neural network decisions and the information learned in intermediate layers is still
+a challenge due to the opaque internal state and shared non-linear interactions. Although \cite{kim2017interpretability}
+proposed to interpret intermediate layers by quantifying its ability to distinguish a user-defined
+concept (from random examples), the questions of robustness (variation against the choice of random
+examples) and effectiveness (retrieval rate of concept images) remain. We investigate these two
+properties and propose improvements to make concept activations reliable for practical use. Effectiveness:
+If the intermediate layer has effectively learned a user-defined concept, it should be able to recall
+--- at the testing step --- most of the images containing the proposed concept. For instance, we observed
+that the recall rate of Tiger shark and Great white shark from the ImageNet dataset with "Fins" as
+a user-defined concept was only 18.35% for VGG16. To increase the effectiveness of concept learning,
+we propose A-CAV --- the Adversarial Concept Activation Vector --- this results in larger margins
+between user concepts and (negative) random examples. This approach improves the aforesaid recall
+to 76.83% for VGG16. For robustness, we define it as the ability of an intermediate layer to be consistent
+in its recall rate (the effectiveness) for different random seeds. We observed that \cite{kim2017interpretable}
+has a large variance in recalling a concept across different random seeds. For example, the recall
+of cat images (from a layer learning the concept of \texttt{tail}) varies from 18% to 86% with 20.85%
+standard deviation on VGG16. We propose a simple and scalable modification that employs a Gram-Schmidt
+process to sample random noise from concepts and learn an average "concept classifier". This approach
+improves the aforesaid standard deviation from 20.85% to 6.4%. 

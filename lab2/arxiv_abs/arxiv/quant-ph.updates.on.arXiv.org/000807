@@ -1,0 +1,20 @@
+Quantum State Tomography is the task of determining an unknown quantum state by making measurements
+on identical copies of the state. Current algorithms are costly both on the experimental front --
+requiring vast numbers of measurements -- as well as in terms of the computational time to analyze
+those measurements. In this paper, we address the problem of analysis speed and flexibility, introducing
+\textit{Neural Adaptive Quantum State Tomography} (NA-QST), a machine learning based algorithm
+for quantum state tomography that adapts measurements and provides orders of magnitude faster
+processing while retaining state-of-the-art reconstruction accuracy. Our algorithm is inspired
+by particle swarm optimization and Bayesian particle-filter based adaptive methods, which we
+extend and enhance using neural networks. The resampling step, in which a bank of candidate solutions
+-- particles -- is refined, is in our case learned directly from data, removing the computational
+bottleneck of standard methods. We successfully replace the Bayesian calculation that requires
+computational time of $O(\mathrm{poly}(n))$ with a learned heuristic whose time complexity empirically
+scales as $O(\log(n))$ with the number of copies measured $n$, while retaining the same reconstruction
+accuracy. This corresponds to a factor of a million speedup for $10^7$ copies measured. We demonstrate
+that our algorithm learns to work with basis, symmetric informationally complete (SIC), as well
+as other types of POVMs. We discuss the value of measurement adaptivity for each POVM type, demonstrating
+that its effect is significant only for basis POVMs. Our algorithm can be retrained within hours
+on a single laptop for a two-qubit situation, which suggests a feasible time-cost when extended
+to larger systems. It can also adapt to a subset of possible states, a choice of the type of measurement,
+and other experimental details. 

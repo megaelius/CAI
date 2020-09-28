@@ -1,0 +1,19 @@
+This paper proposes a two-stage segmentation model, variable-input based uncertainty measures
+and an uncertainty-guided post-processing method for prostate segmentation on 3D magnetic resonance
+images (MRI). The two-stage model was based on 3D dilated U-Nets with the first stage to localize
+the prostate and the second stage to obtain an accurate segmentation from cropped images. For data
+augmentation, we proposed the variable-input method which crops the region of interest with additional
+random variations. Similar to other deep learning models, the proposed model also faced the challenge
+of suboptimal performance in certain testing cases due to varied training and testing image characteristics.
+Therefore, it is valuable to evaluate the confidence and performance of the network using uncertainty
+measures, which are often calculated from the probability maps or their standard deviations with
+multiple model outputs for the same testing case. However, few studies have quantitatively compared
+different methods of uncertainty calculation. Furthermore, unlike the commonly used Bayesian
+dropout during testing, we developed uncertainty measures based on the variable input images at
+the second stage and evaluated its performance by calculating the correlation with ground-truth-based
+performance metrics, such as Dice score. For performance estimation, we predicted Dice scores
+and Hausdorff distance with the most correlated uncertainty measure. For post-processing, we
+performed Gaussian filter on the underperformed slices to improve segmentation quality. Using
+PROMISE-12 data, we demonstrated the robustness of the two-stage model and showed high correlation
+of the proposed variable-input based uncertainty measures with GT-based performance. The uncertainty-guided
+post-processing method significantly improved label smoothness. 

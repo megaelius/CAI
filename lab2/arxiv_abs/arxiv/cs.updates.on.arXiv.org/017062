@@ -1,0 +1,18 @@
+In modern supervised learning, many deep neural networks are able to interpolate the data: the empirical
+loss can be driven to near zero on all samples simultaneously. In this work, we explicitly exploit
+this interpolation property for the design of a new optimization algorithm for deep learning, which
+we term Adaptive Learning-rates for Interpolation with Gradients (ALI-G). ALI-G retains the two
+main advantages of Stochastic Gradient Descent (SGD), which are (i) a low computational cost per
+iteration and (ii) good generalization performance in practice. At each iteration, ALI-G exploits
+the interpolation property to compute an adaptive learning-rate in closed form. In addition, ALI-G
+clips the learning-rate to a maximal value, which we prove to be helpful for non-convex problems.
+Crucially, in contrast to the learning-rate of SGD, the maximal learning-rate of ALI-G does not
+require a decay schedule, which makes it considerably easier to tune. We provide convergence guarantees
+of ALI-G in various stochastic settings. Notably, we tackle the realistic case where the interpolation
+property is satisfied up to some tolerance. We provide experiments on a variety of architectures
+and tasks: (i) learning a differentiable neural computer; (ii) training a wide residual network
+on the SVHN data set; (iii) training a Bi-LSTM on the SNLI data set; and (iv) training wide residual
+networks and densely connected networks on the CIFAR data sets. ALI-G produces state-of-the-art
+results among adaptive methods, and even yields comparable performance with SGD, which requires
+manually tuned learning-rate schedules. Furthermore, ALI-G is simple to implement in any standard
+deep learning framework and can be used as a drop-in replacement in existing code. 

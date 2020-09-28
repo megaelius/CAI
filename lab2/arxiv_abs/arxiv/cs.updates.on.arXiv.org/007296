@@ -1,0 +1,19 @@
+The automation of posterior inference in Bayesian data analysis has enabled experts and nonexperts
+alike to use more sophisticated models, engage in faster exploratory modeling and analysis, and
+ensure experimental reproducibility. However, standard automated posterior inference algorithms
+are not tractable at the scale of massive modern datasets, and modifications to make them so are typically
+model-specific, require expert tuning, and can break theoretical guarantees on inferential quality.
+Building on the Bayesian coresets framework, this work instead takes advantage of data redundancy
+to shrink the dataset itself as a preprocessing step, providing fully-automated, scalable Bayesian
+inference with theoretical guarantees. We begin with an intuitive reformulation of Bayesian coreset
+construction as sparse vector sum approximation, and demonstrate that its automation and performance-based
+shortcomings arise from the use of the supremum norm. To address these shortcomings we develop Hilbert
+coresets, i.e., Bayesian coresets constructed under a norm induced by an inner-product on the log-likelihood
+function space. We propose two Hilbert coreset construction algorithms---one based on importance
+sampling, and one based on the Frank-Wolfe algorithm---along with theoretical guarantees on approximation
+quality as a function of coreset size. Since the exact computation of the proposed inner-products
+is model-specific, we automate the construction with a random finite-dimensional projection
+of the log-likelihood functions. The resulting automated coreset construction algorithm is simple
+to implement, and experiments on a variety of models with real and synthetic datasets show that it
+provides high-quality posterior approximations and a significant reduction in the computational
+cost of inference. 

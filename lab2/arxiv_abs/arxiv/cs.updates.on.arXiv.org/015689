@@ -1,0 +1,20 @@
+Embodied perception refers to the ability of an autonomous agent to perceive its environment so
+that it can (re)act. The responsiveness of the agent is largely governed by latency of its processing
+pipeline. While past work has studied the algorithmic trade-off between latency and accuracy,
+there has not been a clear metric to compare different methods along the Pareto optimal latency-accuracy
+curve. We point out a discrepancy between standard offline evaluation and real-time applications:
+by the time an algorithm finishes processing a particular image frame, the surrounding world has
+changed. To these ends, we present an approach that coherently integrates latency and accuracy
+into a single metric for real-time online perception, which we refer to as "streaming accuracy".
+The key insight behind this metric is to jointly evaluate the output of the entire perception stack
+at every time instant, forcing the stack to consider the amount of streaming data that should be ignored
+while computation is occurring. More broadly, building upon this metric, we introduce a meta-benchmark
+that systematically converts any image understanding task into a streaming image understanding
+task. We focus on the illustrative tasks of object detection and instance segmentation in urban
+video streams, and contribute a novel dataset with high-quality and temporally-dense annotations.
+Our proposed solutions and their empirical analysis demonstrate a number of surprising conclusions:
+(1) there exists an optimal "sweet spot" that maximizes streaming accuracy along the Pareto optimal
+latency-accuracy curve, (2) asynchronous tracking and future forecasting naturally emerge as
+internal representations that enable streaming image understanding, and (3) dynamic scheduling
+can be used to overcome temporal aliasing, yielding the paradoxical result that latency is sometimes
+minimized by sitting idle and "doing nothing". 

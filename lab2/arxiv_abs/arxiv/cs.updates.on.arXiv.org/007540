@@ -1,0 +1,20 @@
+Modern software is constantly changing. Researchers and practitioners are increasingly aware
+that verification tools can be impactful if they embrace change through analyses that are compositional
+and span program versions. Reasoning about similarities and differences between programs goes
+back to Benton, who introduced state-based refinement relations, which were extended by Yang and
+others. However, to our knowledge, refinement relations have not been explored for traces. We present
+a novel theory that allows one to perform compositional reasoning about the similarities/differences
+between how fragments of two different programs behave over time through the use of what we call trace-refinement
+relations. We take a reactive view of programs and found Kleene Algebra with Tests (KAT) [Kozen]
+to be a natural choice to describe traces since it permits algebraic reasoning and has built-in composition.
+Our theory involves a two-step semantic abstraction from programs to KAT, and then our trace refinement
+relations correlate behaviors by (i) categorizing program behaviors into trace classes through
+KAT intersection and (ii) correlating atomic events/conditions across programs with KAT hypotheses.
+We next describe a synthesis algorithm that iteratively constructs trace-refinement relations
+between two programs by exploring sub-partitions of their traces, iteratively abstracting them
+as KAT expressions, discovering relationships through a custom edit-distance algorithm, and
+applying strategies (i) and (ii) above. We have implemented this algorithm as {\sc knotical}, the
+first tool capable of synthesizing trace-refinement relations. It built from the ground up in Ocaml,
+using InterProc and SymKAT. We have demonstrated that useful relations can be efficiently generated
+across a suite of 37 benchmarks that include changing fragments of array programs, systems code,
+and web servers. 

@@ -1,0 +1,18 @@
+Given a subset $\mathbf{S}=\{A_1, \dots, A_m\}$ of $\mathbb{S}^n$, the set of $n \times n$ real
+symmetric matrices, we define its {\it spectrahull} as the set $SH(\mathbf{S}) = \{p(X) \equiv
+(Tr(A_1 X), \dots, Tr(A_m X))^T : X \in \mathbf{\Delta}_n\}$, where ${\bf \Delta}_n$ is the {\it
+spectraplex}, $\{ X \in \mathbb{S}^n : Tr(X)=1, X \succeq 0 \}$. We let {\it spectrahull membership}
+(SHM) to be the problem of testing if a given $b \in \mathbb{R}^m$ lies in $SH(\mathbf{S})$. On the
+one hand when $A_i$'s are diagonal matrices, SHM reduces to the {\it convex hull membership} (CHM),
+a fundamental problem in LP. On the other hand, a bounded SDP feasibility is reducible to SHM. By building
+on the {\it Triangle Algorithm} (TA) \cite{kalchar,kalsep}, developed for CHM and its generalization,
+we design a TA for SHM, where given $\varepsilon$, in $O(1/\varepsilon^2)$ iterations it either
+computes a hyperplane separating $b$ from $SH(\mathbf{S})$, or $X_\varepsilon \in \mathbf{\Delta}_n$
+such that $\Vert p(X_\varepsilon) - b \Vert \leq \varepsilon R$, $R$ maximum error over $\mathbf{\Delta}_n$.
+Under certain conditions iteration complexity improves to $O(1/\varepsilon)$ or even $O(\ln
+1/\varepsilon)$. The worst-case complexity of each iteration is $O(mn^2)$, plus testing the existence
+of a pivot, shown to be equivalent to estimating the least eigenvalue of a symmetric matrix. This
+together with a semidefinite version of Carath\'eodory theorem allow implementing TA as if solving
+a CHM, resorting to the {\it power method} only as needed, thereby improving the complexity of iterations.
+The proposed Triangle Algorithm for SHM is simple, practical and applicable to general SDP feasibility
+and optimization. Also, it extends to a spectral analogue of SVM for separation of two spectrahulls.

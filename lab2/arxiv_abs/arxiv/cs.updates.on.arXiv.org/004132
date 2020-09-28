@@ -1,0 +1,19 @@
+The rise in popularity of permissioned blockchain platforms in recent time is significant. Hyperledger
+Fabric is one such permissioned blockchain platform and one of the Hyperledger projects hosted
+by the Linux Foundation. The Fabric comprises various components such as smart-contracts, endorsers,
+committers, validators, and orderers. As the performance of blockchain platform is a major concern
+for enterprise applications, in this work, we perform a comprehensive empirical study to characterize
+the performance of Hyperledger Fabric and identify potential performance bottlenecks to gain
+a better understanding of the system. We follow a two-phased approach. In the first phase, our goal
+is to understand the impact of various configuration parameters such as block size, endorsement
+policy, channels, resource allocation, state database choice on the transaction throughput &
+latency to provide various guidelines on configuring these parameters. In addition, we also aim
+to identify performance bottlenecks and hotspots. We observed that (1) endorsement policy verification,
+(2) sequential policy validation of transactions in a block, and (3) state validation and commit
+(with CouchDB) were the three major bottlenecks. In the second phase, we focus on optimizing Hyperledger
+Fabric v1.0 based on our observations. We introduced and studied various simple optimizations
+such as aggressive caching for endorsement policy verification in the cryptography component
+(3x improvement in the performance) and parallelizing endorsement policy verification (7x improvement).
+Further, we enhanced and measured the effect of an existing bulk read/write optimization for CouchDB
+during state validation & commit phase (2.5x improvement). By combining all three optimizations1,
+we improved the overall throughput by 16x (i.e., from 140 tps to 2250 tps). 

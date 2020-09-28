@@ -1,0 +1,19 @@
+Classic dynamic data structure problems maintain a data structure subject to a sequence S of updates
+and they answer queries using the latest version of the data structure, i.e., the data structure
+after processing the whole sequence. To handle operations that change the sequence S of updates,
+Demaine et al. (TALG 2007) introduced retroactive data structures. A retroactive operation modifies
+the update sequence S in a given position t, called time, and either creates or cancels an update in
+S at time t. A partially retroactive data structure restricts queries to be executed exclusively
+in the latest version of the data structure. A fully retroactive data structure supports queries
+at any time t: a query at time t is answered using only the updates of S up to time t. If the sequence S only
+consists of insertions, the resulting data structure is an incremental retroactive data structure.
+While efficient retroactive data structures have been proposed for classic data structures, e.g.,
+stack, priority queue and binary search tree, the retroactive version of graph problems are rarely
+studied. In this paper we study retroactive graph problems including connectivity, minimum spanning
+forest (MSF), maximum degree, etc. We provide fully retroactive data structures for maintaining
+the maximum degree, connectivity and MSF in $\tilde{O}(n)$ time per operation. We also give an algorithm
+for the incremental fully retroactive connectivity with $\tilde{O}(1)$ time per operation. We
+compliment our algorithms with almost tight hardness results. We show that under the OMv conjecture
+(proposed by Henzinger et al. (STOC 2015)), there does not exist fully retroactive data structures
+maintaining connectivity or MSF, or incremental fully retroactive data structure maintaining
+the maximum degree with $O(n^{1-\epsilon})$ time per operation, for any constant $\epsilon > 0$.

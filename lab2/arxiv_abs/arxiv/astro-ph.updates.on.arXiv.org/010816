@@ -1,0 +1,18 @@
+The implementation of a new particle module describing the physics of dust grains coupled to the
+gas via drag forces is the subject of this work. The proposed particle-gas hybrid scheme has been
+designed to work in Cartesian as well as in cylindrical and spherical geometries. The numerical
+method relies on a Godunov-type second-order scheme for the fluid and an exponential midpoint rule
+for dust particles which overcomes the stiffness introduced by the linear coupling term. Besides
+being time-reversible and globally second-order accurate in time, the exponential integrator
+provides energy errors which are always bounded and it remains stable in the limit of arbitrarily
+small particle stopping times yielding the correct asymptotic solution. Such properties make
+this method preferable to the more widely used semi-implicit or fully implicit schemes at a very
+modest increase in computational cost. Coupling between particles and grid quantities is achieved
+through particle deposition and field-weighting techniques borrowed from Particle-In-Cell
+simulation methods. In this respect, we derive new weight factors in curvilinear coordinates that
+are more accurate than traditional volume- or area-weighting. A comprehensive suite of numerical
+benchmarks is presented to assess the accuracy and robustness of the algorithm in Cartesian, cylindrical
+and spherical coordinates. Particular attention is devoted to the streaming instability which
+is analyzed in both local and global disk models. The module is part of the PLUTO code for astrophysical
+gas-dynamics and it is mainly intended for the numerical modeling of protoplanetary disks in which
+solid and gas interact via aerodynamic drag. 

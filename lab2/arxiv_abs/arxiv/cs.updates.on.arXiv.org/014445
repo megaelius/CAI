@@ -1,0 +1,19 @@
+Approximate memory is a technique to mitigate the performance gap between memory subsystems and
+CPUs with its reduced access latency at a cost of data integrity. To gain benefit from approximate
+memory for realistic applications, it is crucial to partition applications' data to approximate
+data and critical data and apply different error rates. However, error rates cannot be controlled
+in a fine-grained manner (e.g., per byte) due to fundamental limitations of how approximate memory
+can be realized. Due to this, if approximate data and critical data are interleaved in a data structure
+(e.g., a C struct that has a pointer and an approximatable number as its members), data partitioning
+may degrade the application's performance because the data structure must be split to separate
+memory regions that have different error rates. This paper is the first to conduct an analysis of
+realistic C/C++ code to assess the impact of this problem. First, we find the type of data (e.g., "int",
+"struct point") that is assessed by the instruction that incurs the largest number of cache misses
+in a benchmark, which we refer to as the target data type. Second, we qualitatively estimate if the
+target data type of an application has approximate data and critical data interleaved. To this end,
+we set up three criteria to analyze it because definitively distinguishing a piece of data as approximate
+data or critical data is infeasible since it depends on each use-case. We analyze 11 memory intensive
+benchmarks from SPEC CPU 2006 and 2 graph analytics frameworks, and show that the target data types
+of 9 benchmarks are either a C struct or a C++ class (criterion 1). Among them, two have a pointer and
+a non-pointer member together (criterion 2) and three have a floating point number and other members
+together (criterion 3). 

@@ -1,0 +1,19 @@
+In this paper we propose and analyze an energy stable numerical scheme for the square phase field
+crystal (SPFC) equation, a gradient flow modeling crystal dynamics at the atomic scale in space
+but on diffusive scales in time. In particular, a modification of the free energy potential to the
+standard phase field crystal model leads to a composition of the 4-Laplacian and the regular Laplacian
+operators. To overcome the difficulties associated with this highly nonlinear operator, we design
+numerical algorithms based on the structures of the individual energy terms. A Fourier pseudo-spectral
+approximation is taken in space, in such a way that the energy structure is respected, and summation-by-parts
+formulae enable us to study the discrete energy stability for such a high-order spatial discretization.
+In the temporal approximation, a second order BDF stencil is applied, combined with an appropriate
+extrapolation for the concave diffusion term(s). A second order artificial Douglas-Dupont-type
+regularization term is added to ensure energy stability, and a careful analysis leads to the artificial
+linear diffusion coming at an order lower that that of surface diffusion term. Such a choice leads
+to reduced numerical dissipation. At a theoretical level, the unique solvability, energy stability
+are established, and an optimal rate convergence analysis is derived in the $\ell^\infty (0,T;
+\ell^2) \cap \ell^2 (0,T; H_N^3)$ norm. In the numerical implementation, the preconditioned steepest
+descent (PSD) iteration is applied to solve for the composition of the highly nonlinear 4-Laplacian
+term and the standard Laplacian term, and a geometric convergence is assured for such an iteration.
+Finally, a few numerical experiments are presented, which confirm the robustness and accuracy
+of the proposed scheme. 

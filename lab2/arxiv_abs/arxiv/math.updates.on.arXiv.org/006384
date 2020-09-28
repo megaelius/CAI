@@ -1,0 +1,18 @@
+Sequential Monte Carlo (SMC), also known as particle filters, has been widely accepted as a powerful
+computational tool for making inference with dynamical systems. A key step in SMC is resampling,
+which plays the role of steering the algorithm towards the future dynamics. Several strategies
+have been proposed and used in practice, including multinomial resampling, residual resampling
+(Liu and Chen 1998), optimal resampling (Fearnhead and Clifford 2003), stratified resampling
+(Kitagawa 1996), and optimal transport resampling (Reich 2013). We show that, in the one dimensional
+case, optimal transport resampling is equivalent to stratified resampling on the sorted particles,
+and they both minimize the resampling variance as well as the expected squared energy distance between
+the original and resampled empirical distributions; in the multidimensional case, the variance
+of stratified resampling after sorting particles using Hilbert curve (Gerber et al. 2019) in $\mathbb{R}^d$
+is $O(m^{-(1+2/d)})$, an improved rate compared to the original $O(m^{-(1+1/d)})$, where $m$
+is the number of particles. This improved rate is the lowest for ordered stratified resampling schemes,
+as conjectured in Gerber et al. (2019). We also present an almost sure bound on the Wasserstein distance
+between the original and Hilbert-curve-resampled empirical distributions. In light of these
+theoretical results, we propose the stratified multiple-descendant growth (SMG) algorithm,
+which allows us to explore the sample space more efficiently compared to the standard i.i.d. multiple-descendant
+sampling-resampling approach as measured by the Wasserstein metric. Numerical evidence is provided
+to demonstrate the effectiveness of our proposed method. 

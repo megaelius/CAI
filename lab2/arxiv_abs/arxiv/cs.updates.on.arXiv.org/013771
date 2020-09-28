@@ -1,0 +1,19 @@
+We consider the online Min-Sum Set Cover (MSSC), a natural and intriguing generalization of the
+classical list update problem. In Online MSSC, the algorithm maintains a permutation on $n$ elements
+based on subsets $S_1, S_2, \ldots$ arriving online. The algorithm serves each set $S_t$ upon arrival,
+using its current permutation $\pi_{t}$, incurring an access cost equal to the position of the first
+element of $S_t$ in $\pi_{t}$. Then, the algorithm may update its permutation to $\pi_{t+1}$, incurring
+a moving cost equal to the Kendall tau distance of $\pi_{t}$ to $\pi_{t+1}$. The objective is to minimize
+the total access and moving cost for serving the entire sequence. We consider the $r$-uniform version,
+where each $S_t$ has cardinality $r$. List update is the special case where $r = 1$. We obtain tight
+bounds on the competitive ratio of deterministic online algorithms for MSSC against a static adversary,
+that serves the entire sequence by a single permutation. First, we show a lower bound of $(r+1)(1-\frac{r}{n+1})$
+on the competitive ratio. Then, we consider several natural generalizations of successful list
+update algorithms and show that they fail to achieve any interesting competitive guarantee. On
+the positive side, we obtain a $O(r)$-competitive deterministic algorithm using ideas from online
+learning and the multiplicative weight updates (MWU) algorithm. Furthermore, we consider efficient
+algorithms. We propose a memoryless online algorithm, called Move-All-Equally, which is inspired
+by the Double Coverage algorithm for the $k$-server problem. We show that its competitive ratio
+is $\Omega(r^2)$ and $2^{O(\sqrt{\log n \cdot \log r})}$, and conjecture that it is $f(r)$-competitive.
+We also compare Move-All-Equally against the dynamic optimal solution and obtain (almost) tight
+bounds by showing that it is $\Omega(r \sqrt{n})$ and $O(r^{3/2} \sqrt{n})$-competitive. 

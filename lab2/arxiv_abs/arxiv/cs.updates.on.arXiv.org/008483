@@ -1,0 +1,19 @@
+Machine learning (ML) used for static portable executable (PE) malware detection typically employs
+per-file numerical feature vector representations as input with one or more target labels during
+training. However, there is much orthogonal information that can be gleaned from the \textit{context}
+in which the file was seen. In this paper, we propose utilizing a static source of contextual information
+-- the path of the PE file -- as an auxiliary input to the classifier. While file paths are not malicious
+or benign in and of themselves, they do provide valuable context for a malicious/benign determination.
+Unlike dynamic contextual information, file paths are available with little overhead and can seamlessly
+be integrated into a multi-view static ML detector, yielding higher detection rates at very high
+throughput with minimal infrastructural changes. Here we propose a multi-view neural network,
+which takes feature vectors from PE file content as well as corresponding file paths as inputs and
+outputs a detection score. To ensure realistic evaluation, we use a dataset of approximately 10
+million samples -- files and file paths from user endpoints of an actual security vendor network.
+We then conduct an interpretability analysis via LIME modeling to ensure that our classifier has
+learned a sensible representation and see which parts of the file path most contributed to change
+in the classifier's score. We find that our model learns useful aspects of the file path for classification,
+while also learning artifacts from customers testing the vendor's product, e.g., by downloading
+a directory of malware samples each named as their hash. We prune these artifacts from our test dataset
+and demonstrate reductions in false negative rate of 32.3% at a $10^{-3}$ false positive rate (FPR)
+and 33.1% at $10^{-4}$ FPR, over a similar topology single input PE file content only model. 

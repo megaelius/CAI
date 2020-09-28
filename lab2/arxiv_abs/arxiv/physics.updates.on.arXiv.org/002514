@@ -1,0 +1,19 @@
+The open source MATLAB package IGUG for 3D inversion of gravity data is presented. It is based on methodology
+that was introduced by Bijani et al (2015), in which a homogeneous subsurface body is modeled by an
+ensemble of simple point masses. The model parameters are the Cartesian coordinates of the point
+masses and their total mass. Associating the point masses to the vertices of a weighted full graph
+with weights computed by the Euclidean pairwise distances separating vertices, Kruskal's algorithm
+is used to find the minimum spanning tree of the graph. Stabilization is achieved using an equidistance
+function that restricts the spatial distribution of the masses and favors a homogeneous subsurface
+structure. A regularization parameter $\lambda$ is introduced to balance the two terms of the objective
+function, and reasonable physically-relevant bound constraints are imposed on the model parameters.
+Then the bound constrained objective function is solved using a genetic algorithm. A new diagnostic
+approach is presented for determining a suitable choice for $\lambda$, requiring a limited number
+of solutions for a small set of $\lambda$ without using the L-curve as suggested by Bijani et al. Simulations
+for synthetic examples demonstrate the efficiency and effectiveness of the implementation of
+the algorithm. It is verified that the constraints on the model parameters are not restrictive.
+Included in the package is the script GMD.m which is used for generating synthetic data and for putting
+measurement data in the format required for the inversion implemented by IGUG.m The script Diagnostic_Results.m
+is included for analyzing and visualizing the results. The software can be used to verify the simulations
+and the analysis of real data that is presented here, The real data set uses gravity data from the Mobrun
+ore body, north east of Noranda, Quebec, Canada. 

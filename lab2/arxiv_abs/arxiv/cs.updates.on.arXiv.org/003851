@@ -1,0 +1,19 @@
+Herlihy's consensus hierarchy ranks the power of various synchronization primitives for solving
+consensus in a model where asynchronous processes communicate through shared memory and fail by
+halting. This paper revisits the consensus hierarchy in a model with crash-recovery failures,
+where the specification of consensus, called \emph{recoverable consensus} in this paper, is weakened
+by allowing non-terminating executions when a process fails infinitely often. Two variations
+of this model are considered: independent failures, and simultaneous (i.e., system-wide) failures.
+Several results are proved in this model: (i) We prove that any primitive at level two of Herlihy's
+hierarchy remains at level two if simultaneous crash-recovery failures are introduced. This is
+accomplished by transforming (one instance of) any 2-process conventional consensus algorithm
+to a 2-process recoverable consensus algorithm. (ii) For any $n > 1$ and $f > 0$, we show how to use $f+1$
+instances of any conventional $n$-process consensus algorithm and $\Theta(f + n)$ read/write
+registers to solve $n$-process recoverable consensus when crash-recovery failures are independent,
+assuming that every execution contains at most $f$ such failures. (iii) Next, we prove for any $f
+> 0$ that any 2-process recoverable consensus algorithm that uses TAS and read/writer registers
+requires at least $f+1$ TAS objects, assuming that crash-recovery failures are independent and
+every execution contains at most $f$ such failures. (iv) Lastly, we generalize and strengthen (iii)
+by proving that any universal construction of $n$-process recoverable consensus from a type $T$
+with consensus number $n$ and read/write registers requires at least $f+1$ base objects of type
+$T$ in executions with up to $f$ failures. 

@@ -1,0 +1,19 @@
+There has been extensive research on developing stochastic variance reduced methods to solve large-scale
+optimization problems. More recently, novel algorithms SARAH \citep{Lam2017a,Lam2017b} and
+SPIDER \citep{Fang2018} of such a type have been developed. In particular, SPIDER has been shown
+in \cite{Fang2018} to outperform existing algorithms of the same type and meet the lower bound in
+certain regimes for nonconvex optimization. Though appealing in theory, SPIDER requires $\epsilon$-level
+stepsize to guarantee the convergence, and consequently runs slow in practice. This paper proposes
+SpiderBoost as an improved scheme, which comes with two major advantages compared to SPIDER. First,
+it allows much larger stepsize without sacrificing the convergence rate, and hence runs substantially
+faster in practice. Second, it extends much more easily to proximal algorithms with guaranteed
+convergence for solving composite optimization problems, which appears challenging for SPIDER
+due to stringent requirement on per-iteration increment to guarantee its convergence. Both advantages
+can be attributed to the new convergence analysis we develop for SpiderBoost that allows much more
+flexibility for choosing algorithm parameters. As further generalization of SpiderBoost, we
+show that proximal SpiderBoost achieves a stochastic first-order oracle (SFO) complexity of $\mathcal{O}(\min
+\{n^{1/2}\epsilon^{-2},\epsilon^{-3}\})$ for composite optimization, which improves the
+existing best results by a factor of $\mathcal{O}(\min\{n^{1/6},\epsilon^{-1/3}\})$. Moreover,
+for nonconvex optimization under the gradient dominance condition and in an online setting, we
+also obtain improved oracle complexity results compared to the corresponding state-of-the-art
+results. 

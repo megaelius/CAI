@@ -1,0 +1,20 @@
+In recent years, algorithmic breakthroughs in stringology, computational social choice, scheduling,
+etc., were achieved by applying the theory of so-called $n$-fold integer programming. An $n$-fold
+integer program (IP) has a highly uniform block structured constraint matrix. Hemmecke, Onn, and
+Romanchuk [Math. Programming, 2013] showed an algorithm with runtime $a^{O(rst + r^2s)} n^3$,
+where $a$ is the largest coefficient, $r,s$, and $t$ are dimensions of blocks of the constraint matrix
+and $n$ is the total dimension of the IP; thus, an algorithm efficient if the blocks are of small size
+and with small coefficients. The algorithm works by iteratively improving a feasible solution
+with augmenting steps, and $n$-fold IPs have the special property that augmenting steps are guaranteed
+to exist in a not-too-large neighborhood. We have implemented the algorithm and learned the following
+along the way. The original algorithm is practically unusable, but we discover a series of improvements
+which make its evaluation possible. Crucially, we observe that a certain constant in the algorithm
+can be treated as a tuning parameter, which yields an efficient heuristic (essentially searching
+in a smaller-than-guaranteed neighborhood). Furthermore, the algorithm uses an overly expensive
+strategy to find a "best" step, while finding only an "approximatelly best" step is much cheaper,
+yet sufficient for quick convergence. Using this insight, we improve the asymptotic dependence
+on $n$ from $n^3$ to $n^2 \log n$. We show that decreasing the tuning parameter initially leads to
+an increased number of iterations needed for convergence and eventually to getting stuck in local
+optima, as expected. However, surprisingly small values of the parameter already exhibit good
+behavior. Second, our new strategy for finding "approximatelly best" steps wildly outperforms
+the original construction. 

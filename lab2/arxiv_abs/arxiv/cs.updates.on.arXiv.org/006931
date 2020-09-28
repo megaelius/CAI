@@ -1,0 +1,19 @@
+Depth estimation is a traditional computer vision task, which plays a crucial role in understanding
+3D scene geometry. Recently, deep-convolutional-neural-networks based methods have achieved
+promising results in the monocular depth estimation field. Specifically, the framework that combines
+the multi-scale features extracted by the dilated convolution based block (atrous spatial pyramid
+pooling, ASPP) has gained the significant improvement in the dense labeling task. However, the
+discretized and predefined dilation rates cannot capture the continuous context information
+that differs in diverse scenes and easily introduce the grid artifacts in depth estimation. In this
+paper, we propose an attention-based context aggregation network (ACAN) to tackle these difficulties.
+Based on the self-attention model, ACAN adaptively learns the task-specific similarities between
+pixels to model the context information. First, we recast the monocular depth estimation as a dense
+labeling multi-class classification problem. Then we propose a soft ordinal inference to transform
+the predicted probabilities to continuous depth values, which can reduce the discretization error
+(about 1% decrease in RMSE). Second, the proposed ACAN aggregates both the image-level and pixel-level
+context information for depth estimation, where the former expresses the statistical characteristic
+of the whole image and the latter extracts the long-range spatial dependencies for each pixel. Third,
+for further reducing the inconsistency between the RGB image and depth map, we construct an attention
+loss to minimize their information entropy. We evaluate on public monocular depth-estimation
+benchmark datasets (including NYU Depth V2, KITTI). The experiments demonstrate the superiority
+of our proposed ACAN and achieve the competitive results with the state of the arts. 

@@ -1,0 +1,18 @@
+The Brinkman equations can be regarded as a combination of the Stokes and Darcy equations which model
+transitions between the fast flow in channels (governed by Stokes equations) and the slow flow in
+porous media (governed by Darcy's law). The numerical challenge for this model is the designing
+of a numerical scheme which is stable for both the Stokes-dominated (high permeability) and the
+Darcy-dominated (low permeability) equations. In this paper, we solve the Brinkman model in $n$
+dimensions ($n = 2, 3$) by using the mixed discontinuous Galerkin (MDG) method, which meets this
+challenge. This MDG method is based on the pseudostress-velocity formulation and uses a discontinuous
+piecewise polynomial pair $\underline{\bm{\mathcal{P}}}_{k+1}^{\mathbb{S}}$-$\bm{\mathcal{P}}_k$
+$(k \geq 0)$, where the stress field is symmetric. The main unknowns are the pseudostress and the
+velocity, whereas the pressure is easily recovered through a simple postprocessing. A key step
+in the analysis is to establish the parameter-robust inf-sup stability through specific parameter-dependent
+norms at both continuous and discrete levels. Therefore, the stability results presented here
+are uniform with respect to the permeability. Thanks to the parameter-robust stability analysis,
+we obtain optimal error estimates for the stress in broken $\underline{\bm{H}}(\bm{{\rm div}})$-norm
+and velocity in $\bm{L}^2$-norm. Furthermore, the optimal $\underline{\bm{L}}^2$ error estimate
+for pseudostress is derived under certain conditions. Finally, numerical experiments are provided
+to support the theoretical results and to show the robustness, accuracy, and flexibility of the
+MDG method. 

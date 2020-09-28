@@ -1,0 +1,18 @@
+There are many approaches is use today to either prevent or minimize the impact of inter-query interactions
+on a shared cluster. Despite these measures, performance issues due to concurrent executions of
+mixed workloads still prevail causing undue waiting times for queries. Analyzing these resource
+interferences is thus critical in order to answer time sensitive questions like 'who is causing
+my query to slowdown' in a multi-tenant environment. More importantly, dignosing whether the slowdown
+of a query is a result of resource contentions caused by other queries or some other external factor
+can help an admin narrow down the many possibilities of performance degradation. This process of
+investigating the symptoms of resource contentions and attributing blame to concurrent queries
+is non-trivial and tedious, and involves hours of manually debugging through a cycle of query interactions.
+In this paper, we present ProtoXplore - a Proto or first system to eXplore contentions, that helps
+administrators determine whether the blame for resource bottlenecks can be attributed to concurrent
+queries, and uses a methodology called Resource Acquire Time Penalty (RATP) to quantify this blame
+towards contentious sources accurately. Further, ProtoXplore builds on the theory of explanations
+and enables a step-wise deep exploration of various levels of performance bottlenecks faced by
+a query during its execution using a multi-level directed acyclic graph called ProtoGraph. Our
+experimental evaluation uses ProtoXplore to analyze the interactions between TPC-DS queries
+on Apache Spark to show how ProtoXplore provides explanations that help in diagnosing contention
+related issues and better managing a changing mixed workload in a shared cluster. 

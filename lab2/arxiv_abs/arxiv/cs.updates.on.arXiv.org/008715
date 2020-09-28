@@ -1,0 +1,18 @@
+The supermarket model typically refers to a system with a large number of queues, where arriving
+customers choose $d$ queues at random and join the queue with fewest customers. The supermarket
+model demonstrates the power of even small amounts of choice, as compared to simply joining a queue
+chosen uniformly at random, for load balancing systems. In this work we perform simulation-based
+studies to consider variations where service times for a customer are predicted, as might be done
+in modern settings using machine learning techniques or related mechanisms. To begin, we start
+by considering the baseline where service times are known. We find that this allows for significant
+improvements. In particular, not only can the queue being joined be chosen based on the total work
+at the queue instead of the number of jobs, but also the jobs in the queue can be served using strategies
+that take advantage of the service times such as shortest job first or shortest remaining processing
+time. Such strategies greatly improve performance under high load. We then examine the impact of
+using predictions in place of true service times. Our main takeaway is that using even seemingly
+weak predictions of service times can yield significant benefits over blind First In First Out queueing
+in this context. However, some care must be taken when using predicted service time information
+to both choose a queue and order elements for service within a queue; while in many cases using the
+information for both choosing and ordering is beneficial, in many of our simulation settings we
+find that simply using the number of jobs to choose a queue is better when using predicted service
+times to order jobs in a queue. Our study leaves many natural open questions for further work. 

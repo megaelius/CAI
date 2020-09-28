@@ -1,0 +1,17 @@
+Given an $n$-vertex bipartite graph $I=(S,U,E)$, the goal of set cover problem is to find a minimum
+sized subset of $S$ such that every vertex in $U$ is adjacent to some vertex of this subset. It is NP-hard
+to approximate set cover to within a $(1-o(1))\ln n$ factor. If we use the size of the optimum solution
+$k$ as the parameter, then it can be solved in $n^{k+o(1)}$ time. A natural question is: can we approximate
+set cover to within an $o(\ln n)$ factor in $n^{k-\epsilon}$ time? In a recent breakthrough result,
+Karthik, Laekhanukit and Manurangsi showed that assuming the Strong Exponential Time Hypothesis
+(SETH), for any computable function $f$, no $f(k)\cdot n^{k-\epsilon}$-time algorithm can approximate
+set cover to a factor below $(\log n)^{\frac{1}{poly(k,e(\epsilon))}}$ for some function $e$.
+This paper presents a simple gap-producing reduction which, given a set cover instance $I=(S,U,E)$
+and two integers $k<h\le (1-o(1))\sqrt[k]{\log |S|/\log\log |S|}$, outputs a new set cover instance
+$I'=(S,U',E')$ with $|U'|=|U|^{h^k}|S|^{O(1)}$ in $|U|^{h^k}\cdot |S|^{O(1)}$ time such that:
+(1) if $I$ has a $k$-sized solution, then so does $I'$; (2) if $I$ has no $k$-sized solution, then every
+solution of $I'$ must contain at least $h$ vertices. Setting $h=(1-o(1))\sqrt[k]{\log |S|/\log\log
+|S|}$, we show that assuming SETH, for any computable function $f$, no $f(k)\cdot n^{k-\epsilon}$-time
+algorithm can distinguish between a set cover instance with $k$-sized solution and one whose minimum
+solution size is at least $(1-o(1))\cdot \sqrt[k]{\frac{\log n}{\log\log n}}$. This improves
+the result of Karthik, Laekhanukit and Manurangsi. 

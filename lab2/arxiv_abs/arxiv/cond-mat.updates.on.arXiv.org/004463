@@ -1,0 +1,19 @@
+Kinetic Monte Carlo (KMC) is an important computational tool in physics and chemistry. In contrast
+to standard Monte Carlo, KMC permits the description of time dependent dynamical processes and
+is not restricted to systems in equilibrium. Recently KMC has been applied successfully in modelling
+of novel energy materials such as Lithium-ion batteries and solar cells. We consider general solid
+state systems which contain free, interacting particles which can hop between localised sites
+in the material. The KMC transition rates for those hops depend on the change in total potential energy
+of the system. For charged particles this requires the frequent calculation of electrostatic interactions,
+which is usually the bottleneck of the simulation. To avoid this issue and obtain results in reasonable
+times, many studies replace the long-range potential by a short range approximation. This, however,
+leads to systematic errors and unphysical results. On the other hand standard electrostatic solvers
+such as Ewald summation or fast Poisson solvers are highly inefficient or introduce uncontrollable
+systematic errors at high resolution. In this paper we describe how the Fast Multipole Method by
+Greengard and Rokhlin can be adapted to overcome this issue by dramatically reducing computational
+costs. We exploit the fact that each update in the transition rate calculation corresponds to a single
+particle move and changes the configuration only by a small amount. This allows us to construct an
+algorithm which scales linearly in the number of charges for each KMC step, something which had not
+been deemed to be possible before. We demonstrate the performance and parallel scalability of the
+method by implementing it in a performance portable software library. We describe the high-level
+Python interface of the code which makes it easy to adapt to specific cases. 

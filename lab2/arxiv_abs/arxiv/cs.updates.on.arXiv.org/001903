@@ -1,0 +1,17 @@
+Popular anonymity protocols such as Tor provide low communication latency but are vulnerable to
+that can de-anonymize users. Traffic-analysis resistant protocols typically do not achieve low-latency
+communication (e.g., Dissent, Riffle), or are restricted to a specific type of traffic (e.g., Herd,
+Aqua). In this paper, we present PriFi, the first practical protocol for anonymous communication
+in local-area networks that is provably secure against traffic-analysis attacks, has a low communication
+latency, and is traffic agnostic. PriFi is based on Dining Cryptographer's networks}, and uses
+a 3-layer architecture which removes the usual anonymization bottleneck seen in mix networks:
+packets sent by the clients follow their usual path, without any additional hop that would add latency.
+As a second contribution, we propose a novel technique for protecting against equivocation attacks,
+in which a malicious relay de-anonymizes clients by sending them different information. In PriFi's
+architecture, this is achieved without adding extra latency; in particular, clients do not need
+to gossip or run consensus among themselves. Finally, we describe a technique for detecting disruption
+(jamming) attacks by malicious clients and a blaming mechanism to enforce accountability against
+such attacks. We have fully implemented PriFi and evaluated its performance with well-known datasets.
+Our analysis is twofold: first, we show that our architecture tolerates well client churn; second,
+we show that the system can be used in practice with minimal latency overhead (e.g., 70ms for 50 clients),
+and is compatible with delay-sensitive application such as VoIP. 

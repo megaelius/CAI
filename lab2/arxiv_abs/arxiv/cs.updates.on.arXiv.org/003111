@@ -1,0 +1,20 @@
+We propose a novel online learning algorithm for Restricted Boltzmann Machines (RBM), namely,
+the Online Generative Discriminative Restricted Boltzmann Machine (OGD-RBM), that provides
+the ability to build and adapt the network architecture of RBM according to the statistics of streaming
+data. The OGD-RBM is trained in two phases: (1) an online generative phase for unsupervised feature
+representation at the hidden layer and (2) a discriminative phase for classification. The online
+generative training begins with zero neurons in the hidden layer, adds and updates the neurons to
+adapt to statistics of streaming data in a single pass unsupervised manner, resulting in a feature
+representation best suited to the data. The discriminative phase is based on stochastic gradient
+descent and associates the represented features to the class labels. We demonstrate the OGD-RBM
+on a set of multi-category and binary classification problems for data sets having varying degrees
+of class-imbalance. We first apply the OGD-RBM algorithm on the multi-class MNIST dataset to characterize
+the network evolution. We demonstrate that the online generative phase converges to a stable, concise
+network architecture, wherein individual neurons are inherently discriminative to the class
+labels despite unsupervised training. We then benchmark OGD-RBM performance to other machine
+learning, neural network and ClassRBM techniques for credit scoring applications using 3 public
+non-stationary two-class credit datasets with varying degrees of class-imbalance. We report
+that OGD-RBM improves accuracy by 2.5-3% over batch learning techniques while requiring at least
+24%-70% fewer neurons and fewer training samples. This online generative training approach can
+be extended greedily to multiple layers for training Deep Belief Networks in non-stationary data
+mining applications without the need for a priori fixed architectures. 

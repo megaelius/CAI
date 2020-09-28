@@ -1,0 +1,17 @@
+The spectrum of a network or graph $G=(V,E)$ with adjacency matrix $A$, consists of the eigenvalues
+of the normalized Laplacian $L= I - D^{-1/2} A D^{-1/2}$. This set of eigenvalues encapsulates many
+aspects of the structure of the graph, including the extent to which the graph posses community structures
+at multiple scales. We study the problem of approximating the spectrum $\lambda = (\lambda_1,\dots,\lambda_{|V|})$,
+$0 \le \lambda_1,\le \dots, \le \lambda_{|V|}\le 2$ of $G$ in the regime where the graph is too large
+to explicitly calculate the spectrum. We present a sublinear time algorithm that, given the ability
+to query a random node in the graph and select a random neighbor of a given node, computes a succinct
+representation of an approximation $\widetilde \lambda = (\widetilde \lambda_1,\dots,\widetilde
+\lambda_{|V|})$, $0 \le \widetilde \lambda_1,\le \dots, \le \widetilde \lambda_{|V|}\le 2$
+such that $\|\widetilde \lambda - \lambda\|_1 \le \epsilon |V|$. Our algorithm has query complexity
+and running time $exp(O(1/\epsilon))$, independent of the size of the graph, $|V|$. We demonstrate
+the practical viability of our algorithm on 15 different real-world graphs from the Stanford Large
+Network Dataset Collection, including social networks, academic collaboration graphs, and road
+networks. For the smallest of these graphs, we are able to validate the accuracy of our algorithm
+by explicitly calculating the true spectrum; for the larger graphs, such a calculation is computationally
+prohibitive. In addition we study the implications of our algorithm to property testing in the bounded
+degree graph model. 

@@ -1,0 +1,18 @@
+We study the problem of "isotropically rounding" a polytope $K\subseteq\mathbb{R}^n$, that is,
+computing a linear transformation which makes the uniform distribution on the polytope have roughly
+identity covariance matrix. We assume that $K$ is defined by $m$ linear inequalities, with guarantee
+that $rB\subseteq K\subseteq RB$, where $B$ is the unit ball. We introduce a new variant of the ball
+walk Markov chain and show that, roughly, the expected number of arithmetic operations per-step
+of this Markov chain is $O(m)$ that is sublinear in the input size $mn$--the per-step time of all prior
+Markov chains. Subsequently, we give a rounding algorithm that succeeds with probability $1-\varepsilon$
+in $\tilde{O}(mn^{4.5}\mathrm{polylog}(\frac{1}{\varepsilon},\frac{R}{r}))$ arithmetic
+operations. This gives a factor of $\sqrt{n}$ improvement on the previous bound of $\tilde{O}(mn^{5}
+\mathrm{polylog}(\frac{1}{\varepsilon},\frac{R}{r}))$ for rounding, which uses the hit-and-run
+algorithm. Since the cost of the rounding preprocessing step is in many cases the bottleneck in improving
+sampling or volume computation, our results imply these tasks can also be achieved in roughly $\tilde{O}(mn^{4.5}\mathrm{polylog}(\frac{1}{\varepsilon},\frac{R}{r})+mn^4\delta^{-2})$
+operations for computing the volume of $K$ up to a factor $1+\delta$ and $\tilde{O}(m n^{4.5}\mathrm{polylog}(\frac{1}{\varepsilon},\frac{R}{r})))$
+for uniformly sampling on $K$ with TV error $\varepsilon$. This improves on the previous bounds
+of $\tilde{O}(mn^{5}\mathrm{polylog}(\frac{1}{\varepsilon},\frac{R}{r})+mn^4\delta^{-2})$
+for volume computation and $\tilde{O}(mn^{5}\mathrm{polylog}(\frac{1}{\varepsilon},\frac{R}{r}))$
+for sampling. We achieve this improvement by a novel method of computing polytope membership, where
+one avoids checking inequalities which are estimated to have a very low probability of being violated.

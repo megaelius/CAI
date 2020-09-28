@@ -1,0 +1,20 @@
+Machine Learning (ML) solutions are nowadays distributed, according to the so-called server/worker
+architecture. One server holds the model parameters while several workers train the model. Clearly,
+such architecture is prone to various types of component failures, which can be all encompassed
+within the spectrum of a Byzantine behavior. Several approaches have been proposed recently to
+tolerate Byzantine workers. Yet all require trusting a central parameter server. We initiate in
+this paper the study of the ``general'' Byzantine-resilient distributed machine learning problem
+where no individual component is trusted. We show that this problem can be solved in an asynchronous
+system, despite the presence of $\frac{1}{3}$ Byzantine parameter servers and $\frac{1}{3}$
+Byzantine workers (which is optimal). We present a new algorithm, ByzSGD, which solves the general
+Byzantine-resilient distributed machine learning problem by relying on three major schemes.
+The first, Scatter/Gather, is a communication scheme whose goal is to bound the maximum drift among
+models on correct servers. The second, Distributed Median Contraction (DMC), leverages the geometric
+properties of the median in high dimensional spaces to bring parameters within the correct servers
+back close to each other, ensuring learning convergence. The third, Minimum-Diameter Averaging
+(MDA), is a statistically-robust gradient aggregation rule whose goal is to tolerate Byzantine
+workers. MDA requires loose bound on the variance of non-Byzantine gradient estimates, compared
+to existing alternatives (e.g., Krum). Interestingly, ByzSGD ensures Byzantine resilience without
+adding communication rounds (on a normal path), compared to vanilla non-Byzantine alternatives.
+ByzSGD requires, however, a larger number of messages which, we show, can be reduced if we assume
+synchrony. 

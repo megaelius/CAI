@@ -1,0 +1,18 @@
+We introduce a numerical method for the solution of the time-dependent Schrodinger equation with
+a smooth potential, based on its reformulation as a Volterra integral equation. We present versions
+of the method both for periodic boundary conditions, and for free space problems with compactly
+supported initial data and potential. A spatially uniform electric field may be included, making
+the solver applicable to simulations of light-matter interaction. The primary computational
+challenge in using the Volterra formulation is the application of a space-time history dependent
+integral operator. This may be accomplished by projecting the solution onto a set of Fourier modes,
+and updating their coefficients from one time step to the next by a simple recurrence. In the periodic
+case, the modes are those of the usual Fourier series, and the fast Fourier transform (FFT) is used
+to alternate between physical and frequency domain grids. In the free space case, the oscillatory
+behavior of the spectral Green's function leads us to use a set of complex-frequency Fourier modes
+obtained by discretizing a contour deformation of the inverse Fourier transform, and we develop
+a corresponding fast transform based on the FFT. Our approach is related to pseudo-spectral methods,
+but applied to an integral rather than the usual differential formulation. This has several advantages:
+it avoids the need for artificial boundary conditions, admits simple, inexpensive high-order
+implicit time marching schemes, and naturally includes time-dependent potentials. We present
+examples in one and two dimensions showing spectral accuracy in space and eighth-order accuracy
+in time for both periodic and free space problems. 

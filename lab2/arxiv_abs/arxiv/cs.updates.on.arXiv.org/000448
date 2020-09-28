@@ -1,0 +1,20 @@
+We present a method to track the precise shape of an object in video based on new modeling and optimization
+on a new Riemannian manifold of parameterized regions. Joint dynamic shape and appearance models,
+in which a template of the object is propagated to match the object shape and radiance in the next frame,
+are advantageous over methods employing global image statistics in cases of complex object radiance
+and cluttered background. In cases of 3D object motion and viewpoint change, self-occlusions and
+dis-occlusions of the object are prominent, and current methods employing joint shape and appearance
+models are unable to adapt to new shape and appearance information, leading to inaccurate shape
+detection. In this work, we model self-occlusions and dis-occlusions in a joint shape and appearance
+tracking framework. Self-occlusions and the warp to propagate the template are coupled, thus a
+joint problem is formulated. We derive a coarse-to-fine optimization scheme, advantageous in
+object tracking, that initially perturbs the template by coarse perturbations before transitioning
+to finer-scale perturbations, traversing all scales, seamlessly and automatically. The scheme
+is a gradient descent on a novel infinite-dimensional Riemannian manifold that we introduce. The
+manifold consists of planar parameterized regions, and the metric that we introduce is a novel Sobolev-type
+metric defined on infinitesimal vector fields on regions. The metric has the property of resulting
+in a gradient descent that automatically favors coarse-scale deformations (when they reduce the
+energy) before moving to finer-scale deformations. Experiments on video exhibiting occlusion/dis-occlusion,
+complex radiance and background show that occlusion/dis-occlusion modeling leads to superior
+shape accuracy compared to recent methods employing joint shape/appearance models or employing
+global statistics. 

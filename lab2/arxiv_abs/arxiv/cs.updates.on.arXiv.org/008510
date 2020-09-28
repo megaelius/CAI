@@ -1,0 +1,17 @@
+In this work we derandomize two central results in graph algorithms, replacement paths and distance
+sensitivity oracles (DSOs) matching in both cases the running time of the randomized algorithms.
+For the replacement paths problem, let G = (V,E) be a directed unweighted graph with n vertices and
+m edges and let P be a shortest path from s to t in G. The {\sl replacement paths} problem is to find for
+every edge e \in P the shortest path from s to t avoiding e. Roditty and Zwick [ICALP 2005] obtained
+a randomized algorithm with running time of ~O(m \sqrt{n}). Here we provide the first deterministic
+algorithm for this problem, with the same ~O(m \sqrt{n}) time. For the problem of distance sensitivity
+oracles, let G = (V,E) be a directed graph with real-edge weights. An f-Sensitivity Distance Oracle
+(f-DSO) gets as input the graph G=(V,E) and a parameter f, preprocesses it into a data-structure,
+such that given a query (s,t,F) with s,t \in V and F \subseteq E \cup V, |F| \le f being a set of at most
+f edges or vertices (failures), the query algorithm efficiently computes the distance from s to
+t in the graph G \setminus F ({\sl i.e.}, the distance from s to t in the graph G after removing from it
+the failing edges and vertices F). For weighted graphs with real edge weights, Weimann and Yuster
+[FOCS 2010] presented a combinatorial randomized f-DSO with ~O(mn^{4-\alpha}) preprocessing
+time and subquadratic ~O(n^{2-2(1-\alpha)/f}) query time for every value of 0 < \alpha < 1. We derandomize
+this result and present a combinatorial deterministic f-DSO with the same asymptotic preprocessing
+and query time. 

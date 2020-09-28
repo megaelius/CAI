@@ -1,0 +1,19 @@
+With databases being a critical component in many applications, there is significant interest
+in outsourcing them securely. Hardware enclaves offer a strong practical foundation towards this
+goal by promising secure execution, but they still suffer from access pattern leaks that can reveal
+a great deal of information. The naive way to address this issue -- using generic Oblivious RAM (ORAM)
+primitives beneath a database -- adds prohibitive overhead. Despite a flurry of recent work on the
+subject, the goal of a general-purpose oblivious SQL database has remained out of reach. Systems
+like Opaque and Cipherbase support complex oblivious SQL queries but only for analytic queries
+that require scanning all the data. On the other hand, POSUP and Oblix support oblivious index lookups,
+but do not address the security or performance challenges of running general-purpose SQL queries
+over their indexes. The key missing ingredients are query processing algorithms that work efficiently
+regardless of query selectivity. In this paper, we introduce such algorithms and an engine design,
+ObliDB, that can support both kinds of workloads. ObliDB leverages a diverse array of new oblivious
+physical operators to accelerate oblivious SQL queries, giving up to order of magnitude speedups
+over naive ORAM. ObliDB supports a broad range of queries, including aggregation, joins, insertions,
+deletions and point queries. On analytics workloads, ObliDB ranges from competitive to 19x faster
+than previous oblivious, enclave-based systems designed only for analytics, such as Opaque, and
+comes within 2.6x of Spark SQL, which provides no security guarantees. In addition, ObliDB supports
+point queries with 3-10ms latency, which is 7-22x faster than previous encryption-based oblivious
+systems that support point queries. 

@@ -1,0 +1,18 @@
+Rectified linear units, or ReLUs, have become the preferred activation function for artificial
+neural networks. In this paper we consider two basic learning problems assuming that the underlying
+data follow a generative model based on a ReLU-network -- a neural network with ReLU activations.
+As a primarily theoretical study, we limit ourselves to a single-layer network. The first problem
+we study corresponds to dictionary-learning in the presence of nonlinearity (modeled by the ReLU
+functions). Given a set of observation vectors $\mathbf{y}^i \in \mathbb{R}^d, i =1, 2, \dots ,
+n$, we aim to recover $d\times k$ matrix $A$ and the latent vectors $\{\mathbf{c}^i\} \subset \mathbb{R}^k$
+under the model $\mathbf{y}^i = \mathrm{ReLU}(A\mathbf{c}^i +\mathbf{b})$, where $\mathbf{b}\in
+\mathbb{R}^d$ is a random bias. We show that it is possible to recover the column space of $A$ within
+an error of $O(d)$ (in Frobenius norm) under certain conditions on the probability distribution
+of $\mathbf{b}$. The second problem we consider is that of robust recovery of the signal in the presence
+of outliers, i.e., large but sparse noise. In this setting we are interested in recovering the latent
+vector $\mathbf{c}$ from its noisy nonlinear sketches of the form $\mathbf{v} = \mathrm{ReLU}(A\mathbf{c})
++ \mathbf{e}+\mathbf{w}$, where $\mathbf{e} \in \mathbb{R}^d$ denotes the outliers with sparsity
+$s$ and $\mathbf{w} \in \mathbb{R}^d$ denote the dense but small noise. This line of work has recently
+been studied (Soltanolkotabi, 2017) without the presence of outliers. For this problem, we show
+that a generalized LASSO algorithm is able to recover the signal $\mathbf{c} \in \mathbb{R}^k$
+within an $\ell_2$ error of $O(\sqrt{\frac{(k+s)\log d}{d}})$ when $A$ is a random Gaussian matrix.

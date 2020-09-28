@@ -1,0 +1,20 @@
+Thermal preferences vary from person to person and may change over time. The objective of this paper
+is to sequentially pose intelligent queries to occupants in order to optimally learn the room temperatures
+which maximize their satisfaction. Our central hypothesis is that an occupant's preference relation
+over room temperatures can be described using a scalar function of these temperatures, which we
+call the "occupant's thermal utility function". Information about an occupant's preference over
+room temperatures is available to us through their response to thermal preference queries : "prefer
+warmer," "prefer cooler" and "satisfied" which we interpret as statements about the derivative
+of their utility function, i.e. the utility function is "increasing", "decreasing" and "constant"
+respectively. We model this hidden utility function using a Gaussian process with a built-in unimodality
+constraint, i.e., the utility function has a unique maximum, and we train this model using Bayesian
+inference. This permits an expected improvement based selection of next preference query to pose
+to the occupant, which takes into account both exploration (sampling from areas of high uncertainty)
+and exploitation (sampling from areas which are likely to offer an improvement over current best
+observation). We use this framework to sequentially design experiments and illustrate its benefits
+by showing that it requires drastically fewer observations to learn the maximally preferred room
+temperature values as compared to other methods. This framework is an important step towards the
+development of intelligent HVAC systems which would be able to respond to individual occupants'
+personalized thermal comfort needs. In order to encourage the use of our PE framework and ensure
+reproducibility in results, we publish an implementation of our work named GPPrefElicit as an open-source
+package in the Python language . 

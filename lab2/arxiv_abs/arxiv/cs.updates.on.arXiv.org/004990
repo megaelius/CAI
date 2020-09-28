@@ -1,0 +1,18 @@
+The range, segment and rectangle query problems are fundamental problems in computational geometry,
+and have extensive applications in many domains. Despite the significant theoretical work on these
+problems, efficient implementations can be complicated. We know of very few practical implementations
+of the algorithms in parallel, and most implementations do not have tight theoretical bounds. We
+focus on simple and efficient parallel algorithms and implementations for these queries, which
+have tight worst-case bound in theory and good parallel performance in practice. We propose to use
+a simple framework (the augmented map) to model the problem. Based on the augmented map interface,
+we develop both multi-level tree structures and sweepline algorithms supporting range, segment
+and rectangle queries in two dimensions. For the sweepline algorithms, we propose a parallel paradigm
+and show corresponding cost bounds. All of our data structures are work-efficient to build in theory
+and achieve a low parallel depth. The query time is almost linear to the output size. We have implemented
+all the data structures described in the paper using a parallel augmented map library. Based on the
+library each data structure only requires about 100 lines of C++ code. We test their performance
+on large data sets (up to $10^8$ elements) and a machine with 72-cores (144 hyperthreads). The parallel
+construction achieves 32-68x speedup. Speedup numbers on queries are up to 126-fold. Our sequential
+implementation outperforms the CGAL library by at least 2x in both construction and queries. Our
+sequential implementation can be slightly slower than the R-tree in the Boost library in some cases
+(0.6-2.5x), but has significantly better query performance (1.6-1400x) than Boost. 

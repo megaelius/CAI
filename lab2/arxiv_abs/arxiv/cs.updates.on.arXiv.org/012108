@@ -1,0 +1,20 @@
+Neural networks (NNs) have been successfully deployed in many applications. However, architectural
+design of these models is still a challenging problem. Moreover, neural networks are known to have
+a lot of redundancy. This increases the computational cost of inference and poses an obstacle to
+deployment on Internet-of-Thing sensors and edge devices. To address these challenges, we propose
+the STEERAGE synthesis methodology. It consists of two complementary approaches: efficient architecture
+search, and grow-and-prune NN synthesis. The first step, covered in a global search module, uses
+an accuracy predictor to efficiently navigate the architectural search space. The predictor is
+built using boosted decision tree regression, iterative sampling, and efficient evolutionary
+search. The second step involves local search. By using various grow-and-prune methodologies
+for synthesizing convolutional and feed-forward NNs, it reduces the network redundancy, while
+boosting its performance. We have evaluated STEERAGE performance on various datasets, including
+MNIST and CIFAR-10. On MNIST dataset, our CNN architecture achieves an error rate of 0.66%, with
+8.6x fewer parameters compared to the LeNet-5 baseline. For the CIFAR-10 dataset, we used the ResNet
+architectures as the baseline. Our STEERAGE-synthesized ResNet-18 has a 2.52% accuracy improvement
+over the original ResNet-18, 1.74% over ResNet-101, and 0.16% over ResNet-1001, while having comparable
+number of parameters and FLOPs to the original ResNet-18. This shows that instead of just increasing
+the number of layers to increase accuracy, an alternative is to use a better NN architecture with
+fewer layers. In addition, STEERAGE achieves an error rate of just 3.86% with a variant of ResNet
+architecture with 40 layers. To the best of our knowledge, this is the highest accuracy obtained
+by ResNet-based architectures on the CIFAR-10 dataset. 

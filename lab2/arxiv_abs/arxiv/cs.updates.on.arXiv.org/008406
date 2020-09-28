@@ -1,0 +1,17 @@
+This paper presents a batch-parallel 2-3 tree T in the asynchronous PPM (parallel pointer machine)
+model that supports searches, insertions and deletions in sorted batches and has essentially optimal
+parallelism, even under the QRMW (queued read-modify-write) memory model where concurrent memory
+accesses to the same location are queued and serviced one by one. Specifically, if T has n items, then
+performing an item-sorted batch of b operations on T takes only O( b * log(n/b+1) + b ) work and O( log
+b + log n ) span (in the worst case as b,n -> inf). This is information-theoretically work-optimal
+for b <= n, and also span-optimal in the PPM model. The input batch can be any balanced binary tree,
+and hence T can also be used to implement sorted sets supporting optimal intersection, union and
+difference of sets with sizes m <= n in O( m * log(n/m+1) ) work and O( log m + log n ) span. To the author's
+knowledge, T is the first parallel sorted-set data structure with these performance bounds that
+can be used in an asynchronous multi-processor machine under a memory model with queued contention.
+This is unlike PRAM data structures such as the PVW 2-3 tree (by Paul, Vishkin and Wagener), which
+rely on lock-step synchronicity of the processors. In fact, T is designed to have bounded contention
+and satisfy the claimed work and span bounds regardless of the execution schedule. All data structures
+and algorithms in this paper fit into the dynamic multithreading paradigm. Also, as a consequence
+of working in the asynchronous PPM model, all their performance bounds are directly composable
+with those of other data structures and algorithms in the same model. 

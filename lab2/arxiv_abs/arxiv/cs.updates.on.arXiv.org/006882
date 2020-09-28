@@ -1,0 +1,18 @@
+We propose a solution approach for the problem (P) of minimizing an unconstrained binary polynomial
+optimization problem. We call this method PQCR (Polynomial Quadratic Convex Reformulation).
+The resolution is based on a 3-phase method. The first phase consists in reformulating (P) into a
+quadratic program (QP). For this, we recursively reduce the degree of (P) to two, by use of the standard
+substitution of the product of two variables by a new one. We then obtain a linearly constrained binary
+program. In the second phase, we rewrite the quadratic objective function into an equivalent and
+parametrized quadratic function using the equality x 2 i = x i and new valid quadratic equalities.
+Then, we focus on finding the best parameters to get a quadratic convex program which continuous
+relaxation's optimal value is maximized. For this, we build a semidefinite relaxation (SDP) of
+(QP). Then, we prove that the standard linearization inequalities, used for the quadratization
+step, are redundant in (SDP) in presence of the new quadratic equalities. Next, we deduce our optimal
+parameters from the dual optimal solution of (SDP). The third phase consists in solving (QP *), the
+optimal reformulated problem, with a standard solver. In particular, at each node of the branch-and-bound,
+the solver computes the optimal value of a continuous quadratic convex program. We present computational
+results on instances of the image restoration problem and of the low autocorrelation binary sequence
+problem. We compare PQCR with other convexification methods, and with the general solver Baron
+17.4.1 [39]. We observe that most of the considered instances can be solved with our approach combined
+with the use of Cplex [24]. 

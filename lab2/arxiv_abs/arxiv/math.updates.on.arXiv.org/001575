@@ -1,0 +1,18 @@
+Consider a channel where authorized transmitter Jack sends packets to authorized receiver Steve
+according to a Poisson process with rate $\lambda$ packets per second for a time period $T$. Suppose
+that covert transmitter Alice wishes to communicate information to covert receiver Bob on the same
+channel without being detected by a watchful adversary Willie. We consider two scenarios. In the
+first scenario, we assume that warden Willie cannot look at packet contents but rather can only observe
+packet timings, and Alice must send information by inserting her own packets into the channel. We
+show that the number of packets that Alice can covertly transmit to Bob is on the order of the square
+root of the number of packets that Jack transmits to Steve; conversely, if Alice transmits more than
+that, she will be detected by Willie with high probability. In the second scenario, we assume that
+Willie can look at packet contents but that Alice can communicate across an $M/M/1$ queue to Bob by
+altering the timings of the packets going from Jack to Steve. First, Alice builds a codebook, with
+each codeword consisting of a sequence of packet timings to be employed for conveying the information
+associated with that codeword. However, to successfully employ this codebook, Alice must always
+have a packet to send at the appropriate time. Hence, leveraging our result from the first scenario,
+we propose a construction where Alice covertly slows down the packet stream so as to buffer packets
+to use during a succeeding codeword transmission phase. Using this approach, Alice can covertly
+and reliably transmit $\mathcal{O}(\lambda T)$ covert bits to Bob in time period $T$ over an $M/M/1$
+queue with service rate $\mu > \lambda$. 

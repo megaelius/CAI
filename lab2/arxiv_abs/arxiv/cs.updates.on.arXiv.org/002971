@@ -1,0 +1,33 @@
+Virtualization allows the simulation of automotive ECUs on a Windows PC executing in closed-loop
+with a vehicle simulation model. This approach enables to move certain development tasks from road
+or test rigs and HiL (Hardware in the loop) to PCs, where they can often be performed faster and cheaper.
+Renault has recently established such a virtualization process for powertrain control software
+based on Simulink models. If the number of runnables exceeds a threshold (about 1500) the execution
+of the virtual ECU is no longer straight forward and specific techniques are required. This paper
+describes the motivation behind a Simulink model based process, the virtualization process and
+applications of the resulting virtual ECUs. Domain: Critical Transportation Systems Topic: Processes,
+methods and tools, in particular: virtual engineering and simulation 1. Motivation Since 2010,
+Renault has established a framework to develop engine control software for Diesel and Gasoline
+engines [6]. The framework is heavily based on MATLAB/Simulink and the idea of model-based development,
+which facilitates the carry-over and carry-across of application software between software projects.
+In the Renault EMS architecture software is composed in to about 20 functions, such as Air System,
+Combustion etc. A function consists of modules. A module is the smallest testable software unit
+and contains runnables to be scheduled and executed by the Operating System (Os) of the ECU. The Renault
+EMS development process includes basically the following steps [5]. 1. Specification of about
+200 generic configurable modules per ECU using MATLAB/Simulink. 2. Generation of C code (EMS application
+software) from all module specifications using MATLAB/Simulink Embedded Coder. 3. MiL (Model
+in the Loop) test and validation of the resulting executable specifications at module level in a
+simulated system environment, considering only essential interactions with other modules and
+system environment. This is essentially a back-to-back test to make sure that the Simulink model
+of a module and the corresponding production C code show equivalent and intended behaviour. To insure
+software quality, this step is repeatedly performed with steps 1 and 2, based on the simulation capabilities
+of MATLAB/Simulink. 4. Configuration of modules to fit to the specific needs of a software project,
+such as absence or presence of certain components. 5. Integration of generated configured C code
+and hand-coded platform software (basic software) on supplied target hardware, a real ECU that
+communicates with other controllers via CAN and other busses. 6. Validation and test of all modules
+on system level using the real ECU. In contrast to step 3, the interactions of all modules and interactions
+with the system environment are visible then and subject to testing. For example, the Os runs all
+scheduled runnables then, not just those of the modules considered to be 'essential' for a module
+under test. Critical assessment of the above process shows that there is a considerable delay between
+delivery of a set of specifications to the software project team (at the end of step 3) and system-level
+tests based on an ECU that runs entire software (step 6). Typical delays are weeks or months. 

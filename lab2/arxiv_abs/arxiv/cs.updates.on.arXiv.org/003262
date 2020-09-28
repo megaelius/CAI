@@ -1,0 +1,18 @@
+Recently, significant accuracy improvement has been achieved for acoustic recognition systems
+by increasing the model size of Long Short-Term Memory (LSTM) networks. Unfortunately, the ever-increasing
+size of LSTM model leads to inefficient designs on FPGAs due to the limited on-chip resources. The
+previous work proposes to use a pruning based compression technique to reduce the model size and
+thus speedups the inference on FPGAs. However, the random nature of the pruning technique transforms
+the dense matrices of the model to highly unstructured sparse ones, which leads to unbalanced computation
+and irregular memory accesses and thus hurts the overall performance and energy efficiency. In
+contrast, we propose to use a structured compression technique which could not only reduce the LSTM
+model size but also eliminate the irregularities of computation and memory accesses. This approach
+employs block-circulant instead of sparse matrices to compress weight matrices and reduces the
+storage requirement from $\mathcal{O}(k^2)$ to $\mathcal{O}(k)$. Fast Fourier Transform algorithm
+is utilized to further accelerate the inference by reducing the computational complexity from
+$\mathcal{O}(k^2)$ to $\mathcal{O}(k\text{log}k)$. The datapath and activation functions
+are quantized as 16-bit to improve the resource utilization. More importantly, we propose a comprehensive
+framework called C-LSTM to automatically optimize and implement a wide range of LSTM variants on
+FPGAs. According to the experimental results, C-LSTM achieves up to 18.8X and 33.5X gains for performance
+and energy efficiency compared with the state-of-the-art LSTM implementation under the same experimental
+setup, and the accuracy degradation is very small. 

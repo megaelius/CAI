@@ -1,0 +1,17 @@
+This article aims at developing a high order pressure-based solver for the solution of the 3D compressible
+Navier-Stokes system at all Mach numbers. We propose a cell-centered discretization of the governing
+equations that splits the fluxes into a fast and a slow scale part, that are treated implicitly and
+explicitly, respectively. A novel semi-implicit discretization is proposed for the kinetic energy
+as well as the enthalpy fluxes in the energy equation, hence avoiding any need of iterative solvers.
+The implicit discretization yields an elliptic equation on the pressure that can be solved for both
+ideal gas and general equation of state (EOS). A nested Newton method is used to solve the mildly nonlinear
+system for the pressure in case of nonlinear EOS. High order in time is granted by implicit-explicit
+(IMEX) time stepping, whereas a novel CWENO technique efficiently implemented in a dimension-by-dimension
+manner is developed for achieving high order in space for the discretization of explicit convective
+and viscous fluxes. A quadrature-free finite volume solver is then derived for the high order approximation
+of numerical fluxes. Central schemes with no dissipation of suitable order of accuracy are finally
+employed for the numerical approximation of the implicit terms. Consequently, the CFL-type stability
+condition on the maximum admissible time step is based only on the fluid velocity and not on the sound
+speed, so that the novel schemes work uniformly for all Mach numbers. Convergence and robustness
+of the proposed method are assessed through a wide set of benchmark problems involving low and high
+Mach number regimes, as well as inviscid and viscous flows. 

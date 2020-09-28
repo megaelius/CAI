@@ -1,0 +1,19 @@
+We study efficient algorithms for linear regression and covariance estimation in the absence of
+Gaussian assumptions on the underlying distributions of samples, making assumptions instead
+about only finitely-many moments. We focus on how many samples are needed to do estimation and regression
+with high accuracy and exponentially-good success probability. For covariance estimation, linear
+regression, and several other problems, estimators have recently been constructed with sample
+complexities and rates of error matching what is possible when the underlying distribution is Gaussian,
+but algorithms for these estimators require exponential time. We narrow the gap between the Gaussian
+and heavy-tailed settings for polynomial-time estimators with: 1. A polynomial-time estimator
+which takes $n$ samples from a random vector $X \in R^d$ with covariance $\Sigma$ and produces $\hat{\Sigma}$
+such that in spectral norm $\|\hat{\Sigma} - \Sigma \|_2 \leq \tilde{O}(d^{3/4}/\sqrt{n})$ w.p.
+$1-2^{-d}$. The information-theoretically optimal error bound is $\tilde{O}(\sqrt{d/n})$;
+previous approaches to polynomial-time algorithms were stuck at $\tilde{O}(d/\sqrt{n})$. 2.
+A polynomial-time algorithm which takes $n$ samples $(X_i,Y_i)$ where $Y_i = \langle u,X_i \rangle
++ \varepsilon_i$ and produces $\hat{u}$ such that the loss $\|u - \hat{u}\|^2 \leq O(d/n)$ w.p.
+$1-2^{-d}$ for any $n \geq d^{3/2} \log(d)^{O(1)}$. This (information-theoretically optimal)
+error is achieved by inefficient algorithms for any $n \gg d$; previous polynomial-time algorithms
+suffer loss $\Omega(d^2/n)$ and require $n \gg d^2$. Our algorithms use degree-$8$ sum-of-squares
+semidefinite programs. We offer preliminary evidence that improving these rates of error in polynomial
+time is not possible in the median of means framework our algorithms employ. 

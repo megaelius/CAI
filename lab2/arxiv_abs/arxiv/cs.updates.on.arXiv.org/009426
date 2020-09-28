@@ -1,0 +1,20 @@
+Software complexity has increased over the years. One common way to tackle this complexity during
+development is to encapsulate features into a shared library. This allows developers to reuse already
+implemented features instead of reimplementing them over and over again. However, not all features
+provided by a shared library are actually used by an application. As a result, an application using
+shared libraries loads unused code into memory, which an attacker can use to perform code-reuse
+and similar types of attacks. The same holds for applications written in a scripting language such
+as PHP or Ruby: The interpreter typically offers much more functionality than is actually required
+by the application and hence provides a larger overall attack surface. In this paper, we tackle this
+problem and propose a first step towards automated application-specific software stacks. We present
+a compiler extension capable of removing unneeded code from shared libraries and---with the help
+of domain knowledge---also capable of removing unused functionalities from an interpreter's
+code base during the compilation process. Our evaluation against a diverse set of real-world applications,
+among others Nginx, Lighttpd, and the PHP interpreter, removes on average 71.3% of the code in musl-libc,
+a popular libc implementation. The evaluation on web applications show that a tailored PHP interpreter
+can mitigate entire vulnerability classes, as is the case for OpenConf. We demonstrate the applicability
+of our debloating approach by creating an application-specific software stack for a Wordpress
+web application: we tailor the libc library to the Nginx web server and PHP interpreter, whereas
+the PHP interpreter is tailored to the Wordpress web application. In this real-world scenario,
+the code of the libc is decreased by 65.1% in total, thereby reducing the available code for code-reuse
+attacks. 

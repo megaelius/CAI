@@ -1,0 +1,19 @@
+In this paper, we address the problem of synthesizing multi-parameter magnetic resonance imaging
+(mp-MRI) data, i.e. Apparent Diffusion Coefficients (ADC) and T2-weighted (T2w), containing
+clinically significant (CS) prostate cancer (PCa) via semi-supervised adversarial learning.
+Specifically, our synthesizer generates mp-MRI data in a sequential manner: first generating
+ADC maps from 128-d latent vectors, followed by translating them to the T2w images. The synthesizer
+is trained in a semisupervised manner. In the supervised training process, a limited amount of paired
+ADC-T2w images and the corresponding ADC encodings are provided and the synthesizer learns the
+paired relationship by explicitly minimizing the reconstruction losses between synthetic and
+real images. To avoid overfitting limited ADC encodings, an unlimited amount of random latent vectors
+and unpaired ADC-T2w Images are utilized in the unsupervised training process for learning the
+marginal image distributions of real images. To improve the robustness of synthesizing, we decompose
+the difficult task of generating full-size images into several simpler tasks which generate sub-images
+only. A StitchLayer is then employed to fuse sub-images together in an interlaced manner into a full-size
+image. To enforce the synthetic images to indeed contain distinguishable CS PCa lesions, we propose
+to also maximize an auxiliary distance of Jensen-Shannon divergence (JSD) between CS and nonCS
+images. Experimental results show that our method can effectively synthesize a large variety of
+mpMRI images which contain meaningful CS PCa lesions, display a good visual quality and have the
+correct paired relationship. Compared to the state-of-the-art synthesis methods, our method
+achieves a significant improvement in terms of both visual and quantitative evaluation metrics.

@@ -1,0 +1,19 @@
+Future astrophysical surveys such as J-PAS will produce very large datasets, which will require
+the deployment of accurate and efficient Machine Learning (ML) methods. In this work, we analyze
+the miniJPAS survey, which observed about 1 deg2 of the AEGIS field with 56 narrow-band filters and
+4 ugri broad-band filters. We discuss the classification of miniJPAS sources into extended (galaxies)
+and point-like (e.g. stars) objects, a necessary step for the subsequent scientific analyses.
+We aim at developing an ML classifier that is complementary to traditional tools based on explicit
+modeling. In order to train and test our classifiers, we crossmatched the miniJPAS dataset with
+SDSS and HSC-SSP data. We trained and tested 6 different ML algorithms on the two crossmatched catalogs.
+As input for the ML algorithms we use the magnitudes from the 60 filters together with their errors,
+with and without the morphological parameters. We also use the mean PSF in the r detection band for
+each pointing. We find that the RF and ERT algorithms perform best in all scenarios. When analyzing
+the full magnitude range of 15<r<23.5 we find AUC=0.957 with RF when using only photometric information,
+and AUC=0.986 with ERT when using photometric and morphological information. Regarding feature
+importance, when using morphological parameters, FWHM is the most important feature. When using
+photometric information only, we observe that broad bands are not necessarily more important than
+narrow bands, and errors are as important as the measurements. ML algorithms can compete with traditional
+star/galaxy classifiers, outperforming the latter at fainter magnitudes (r>21). We use our best
+classifiers, with and without morphology, in order to produce a value added catalog available at
+https://j-pas.org/datareleases . 

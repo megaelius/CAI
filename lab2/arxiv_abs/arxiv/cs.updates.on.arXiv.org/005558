@@ -1,0 +1,20 @@
+Function-as-a-Service (FaaS) is a recent and already very popular paradigm in cloud computing.
+The function provider need only specify the function to be run, usually in a high-level language
+like JavaScript, and the service provider orchestrates all the necessary infrastructure and software
+stacks. The function provider is only billed for the actual computational resources used by the
+function invocation. Compared to previous cloud paradigms, FaaS requires significantly more
+fine-grained resource measurement mechanisms, e.g. to measure compute time and memory usage of
+a single function invocation with sub-second accuracy. Thanks to the short duration and stateless
+nature of functions, and the availability of multiple open-source frameworks, FaaS enables non-traditional
+service providers e.g. individuals or data centers with spare capacity. However, this exacerbates
+the challenge of ensuring that resource consumption is measured accurately and reported reliably.
+It also raises the issues of ensuring computation is done correctly and minimizing the amount of
+information leaked to service providers. To address these challenges, we introduce S-FaaS, the
+first architecture and implementation of FaaS to provide strong security and accountability guarantees
+backed by Intel SGX. To match the dynamic event-driven nature of FaaS, our design introduces a new
+key distribution enclave and a novel transitive attestation protocol. A core contribution of S-FaaS
+is our set of resource measurement mechanisms that securely measure compute time inside an enclave,
+and actual memory allocations. We have integrated S-FaaS into the popular OpenWhisk FaaS framework.
+We evaluate the security of our architecture, the accuracy of our resource measurement mechanisms,
+and the performance of our implementation, showing that our resource measurement mechanisms add
+less than 6.3% latency on standardized benchmarks. 

@@ -1,0 +1,17 @@
+The growth of data to be processed in the Oil & Gas industry matches the requirements imposed by evolving
+algorithms based on stencil computations, such as Full Waveform Inversion and Reverse Time Migration.
+Graphical processing units (GPUs) are an attractive architectural target for stencil computations
+because of its high degree of data parallelism. However, the rapid architectural and technological
+progression makes it difficult for even the most proficient programmers to remain up-to-date with
+the technological advances at a micro-architectural level. In this work, we present an extension
+for an open source compiler designed to produce highly optimized finite difference kernels for
+use in inversion methods named Devito. We embed it with the Oxford Parallel Domain Specific Language
+(OP-DSL) in order to enable automatic code generation for GPU architectures from a high-level representation.
+We aim to enable users coding in a symbolic representation level to effortlessly get their implementations
+leveraged by the processing capacities of GPU architectures. The implemented backend is evaluated
+on a NVIDIA GTX Titan Z, and on a NVIDIA Tesla V100 in terms of operational intensity through the roof-line
+model for varying space-order discretization levels of 3D acoustic isotropic wave propagation
+stencil kernels with and without symbolic optimizations. It achieves approximately 63% of V100's
+peak performance and 24% of Titan Z's peak performance for stencil kernels over grids with 256 points.
+Our study reveals that improving memory usage should be the most efficient strategy for leveraging
+the performance of the implemented solution on the evaluated architectures. 

@@ -1,0 +1,17 @@
+Common efficient schemes for the incompressible Navier-Stokes equations, such as projection
+or fractional step methods, have limited temporal accuracy as a result of matrix splitting errors,
+or introduce errors near the domain boundaries (which destroy uniform convergence to the solution).
+In this paper we recast the incompressible (constant density) Navier-Stokes equations (with the
+velocity prescribed at the boundary) as an equivalent system, for the primary variables velocity
+and pressure. We do this in the usual way away from the boundaries, by replacing the incompressibility
+condition on the velocity by a Poisson equation for the pressure. The key difference from the usual
+approaches occurs at the boundaries, where we use boundary conditions that unequivocally allow
+the pressure to be recovered from knowledge of the velocity at any fixed time. This avoids the common
+difficulty of an, apparently, over-determined Poisson problem. Since in this alternative formulation
+the pressure can be accurately and efficiently recovered from the velocity, the recast equations
+are ideal for numerical marching methods. The new system can be discretized using a variety of methods,
+in principle to any desired order of accuracy. In this work we illustrate the approach with a 2-D second
+order finite difference scheme on a Cartesian grid, and devise an algorithm to solve the equations
+on domains with curved (non-conforming) boundaries, including a case with a non-trivial topology
+(a circular obstruction inside the domain). This algorithm achieves second order accuracy (in
+L-infinity), for both the velocity and the pressure. The scheme has a natural extension to 3-D. 

@@ -1,0 +1,19 @@
+Early detection and classification of pulmonary nodules in Chest Computed tomography (CT) images
+is an essential step for effective treatment of lung cancer. However, due to the large volume of CT
+data, finding nodules in chest CT is a time consuming thus error prone task for radiologists. Benefited
+from the recent advances in Convolutional Neural Networks (ConvNets), many algorithms based on
+ConvNets for automatic nodule detection have been proposed. According to the data representation
+in their input, these algorithms can be further categorized into: 2D, 3D and 2.5D which uses a combination
+of 2D images to approximate 3D information. Leveraging 3D spatial and contextual information,
+the method using 3D input generally outperform that based on 2D or 2.5D input, whereas its large memory
+footprints becomes the bottleneck for many applications. In this paper, we propose a novel 2D data
+representation of a 3D CT volume, which is constructed by spiral scanning a set of radials originated
+from the 3D volume center, referred to as the 2.75D. Comparing to the 2.5D, the 2.75D representation
+captures omni-directional spatial information of a 3D volume. Based on 2.75D representation of
+3D nodule candidates in Chest CT, we train a convolutional neural network to perform the false positive
+reduction in the nodule detection pipeline. We evaluate the nodule false positive reduction system
+on the LUNA16 data set which contains 1186 nodules out of 551,065 candidates. By comparing 2.75D
+with 2D, 2.5D and 3D, we show that our system using 2.75D input outperforms 2D and 2.5D, yet slightly
+inferior to the systems using 3D input. The proposed strategy dramatically reduces the memory consumption
+thus allow fast inference and training by enabling larger number of batches comparing to the methods
+using 3D input. 

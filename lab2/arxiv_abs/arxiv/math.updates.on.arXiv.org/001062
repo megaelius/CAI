@@ -1,0 +1,18 @@
+In this paper, we speed up the solution of inverse problems in Bayesian settings. By computing the
+likelihood, the most expensive part of the Bayesian formula, one compares the available measurement
+data with the simulated data. To get simulated data, repeated solution of the forward problem is
+required. This could be a great challenge. Often, the available measurement is a functional $F(u)$
+of the solution $u$ or a small part of $u$. Typical examples of $F(u)$ are the solution in a point, solution
+on a coarser grid, in a small subdomain, the mean value in a subdomain. It is a waste of computational
+resources to evaluate, first, the whole solution and then compute a part of it. In this work, we compute
+the functional $F(u)$ direct, without computing the full inverse operator and without computing
+the whole solution $u$. The main ingredients of the developed approach are the hierarchical domain
+decomposition technique, the finite element method and the Schur complements. To speed up computations
+and to reduce the storage cost, we approximate the forward operator and the Schur complement in the
+hierarchical matrix format. Applying the hierarchical matrix technique, we reduced the computing
+cost to $\mathcal{O}(k^2n \log^2 n)$, where $k\ll n$ and $n$ is the number of degrees of freedom.
+Up to the hierarchical matrix accuracy, the computation of the functional $F(u)$ is exact. To reduce
+the computational resources further, we can approximate $F(u)$ on, for instance, multiple coarse
+meshes. The offered method is well suited for solving multiscale problems. A disadvantage of this
+method is the assumption that one has to have access to the discretisation and to the procedure of
+assembling the Galerkin matrix. 

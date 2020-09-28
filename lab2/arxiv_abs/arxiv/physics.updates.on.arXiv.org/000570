@@ -1,0 +1,20 @@
+We present and study two new Lagrangian numerical methods for solving the equations of hydrodynamics,
+in a systematic comparison with moving-mesh, SPH, and non-moving grid methods. The new methods
+are designed to capture many advantages of both smoothed-particle hydrodynamics (SPH) and grid-based
+or adaptive mesh refinement (AMR) schemes. They are based on a kernel discretization of the volume
+coupled to a high-order matrix gradient estimator and a Riemann solver acting over the volume 'overlap.'
+We implement and test a parallel, second-order version of the method with coupled self-gravity
+& cosmological integration, in the code GIZMO: this maintains exact mass, energy and momentum
+conservation; exhibits superior angular momentum conservation compared to all other methods
+we study; does not require 'artificial diffusion' terms; and allows fluid elements to move with
+the flow so resolution is automatically adaptive. We consider a large suite of test problems, and
+find that on all problems the new methods appear competitive with moving-mesh schemes, with some
+advantages (particularly in angular momentum conservation), at the cost of enhanced noise. The
+new methods have many advantages vs. SPH: proper convergence, good capturing of fluid-mixing instabilities,
+dramatically reduced 'particle noise' & numerical viscosity, more accurate sub-sonic flow
+evolution, & sharp shock-capturing. Advantages vs. non-moving meshes include: automatic
+adaptivity, dramatically reduced advection errors & numerical diffusion, velocity-independence
+of errors, accurate coupling to N-body gravity solvers, good angular momentum conservation, and
+elimination of 'grid alignment' effects. We can, for example, follow hundreds of orbits of gaseous
+disks, while AMR and SPH methods break down in a few orbits. All of these differences are important
+for a wide range of astrophysical problems. 

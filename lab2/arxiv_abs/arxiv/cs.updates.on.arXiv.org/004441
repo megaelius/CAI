@@ -1,0 +1,17 @@
+In this paper, we propose an image re-sampling compression method by learning virtual codec network
+(VCN) to resolve the non-differentiable problem of quantization function for image compression.
+Here, the image re-sampling not only refers to image full-resolution re-sampling but also low-resolution
+re-sampling. We generalize this method for standard-compliant image compression (SCIC) framework
+and deep neural networks based compression (DNNC) framework. Specifically, an input image is measured
+by re-sampling network (RSN) network to get re-sampled vectors. Then, these vectors are directly
+quantized in the feature space in SCIC, or discrete cosine transform coefficients of these vectors
+are quantized to further improve coding efficiency in DNNC. At the encoder, the quantized vectors
+or coefficients are losslessly compressed by arithmetic coding. At the receiver, the decoded vectors
+are utilized to restore input image by image decoder network (IDN). In order to train RSN network
+and IDN network together in an end-to-end fashion, our VCN network intimates projection from the
+re-sampled vectors to the IDN-decoded image. As a result, gradients from IDN network to RSN network
+can be approximated by VCN network's gradient. Because dimension reduction can be further achieved
+by quantization in some dimensional space after image re-sampling within auto-encoder architecture,
+we can well initialize our networks from pre-trained auto-encoder networks. Through extensive
+experiments and analysis, it is verified that the proposed method has more effectiveness and versatility
+than many state-of-the-art approaches. 

@@ -1,0 +1,19 @@
+Differential privacy (DP), ever since its advent, has been a controversial object. On the one hand,
+it provides strong provable protection of individuals in a data set, on the other hand, it has been
+heavily criticized for being not practical, partially due to its complete independence to the actual
+data set it tries to protect. In this paper, we address this issue by a new and more fine-grained notion
+of differential privacy --- per instance differential privacy (pDP), which captures the privacy
+of a specific individual with respect to a fixed data set. We show that this is a strict generalization
+of the standard DP and inherits all its desirable properties, e.g., composition, invariance to
+side information and closedness to postprocessing, except that they all hold for every instance
+separately. When the data is drawn from a distribution, we show that per-instance DP implies generalization.
+Moreover, we provide explicit calculations of the per-instance DP for the output perturbation
+on a class of smooth learning problems. The result reveals an interesting and intuitive fact that
+an individual has stronger privacy if he/she has small "leverage score" with respect to the data
+set and if he/she can be predicted more accurately using the leave-one-out data set. Using the developed
+techniques, we provide a novel analysis of the One-Posterior-Sample (OPS) estimator and show that
+when the data set is well-conditioned it provides $(\epsilon,\delta)$-pDP for any target individuals
+and matches the exact lower bound up to a $1+\tilde{O}(n^{-1}\epsilon^{-2})$ multiplicative
+factor. We also propose AdaOPS which uses adaptive regularization to achieve the same results with
+$(\epsilon,\delta)$-DP. Simulation shows several orders-of-magnitude more favorable privacy
+and utility trade-off when we consider the privacy of only the users in the data set. 

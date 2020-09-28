@@ -1,0 +1,19 @@
+To leverage data and computation capabilities of mobile devices, machine learning algorithms
+are deployed at the network edge for training artificial intelligence (AI) models, resulting in
+the new paradigm of edge learning. In this paper, we consider the framework of partitioned edge learning
+for iteratively training a large-scale model using many resource-constrained devices (called
+workers). To this end, in each iteration, the model is dynamically partitioned into parametric
+blocks, which are downloaded to worker groups for updating using data subsets. Then, the local updates
+are uploaded to and cascaded by the server for updating a global model. To reduce resource usage by
+minimizing the total learning-and-communication latency, this work focuses on the novel joint
+design of parameter (computation load) allocation and bandwidth allocation (for downloading
+and uploading). Two design approaches are adopted. First, a practical sequential approach, called
+partially integrated parameter-and-bandwidth allocation (PABA), yields two schemes, namely
+bandwidth aware parameter allocation and parameter aware bandwidth allocation. The former minimizes
+the load for the slowest (in computing) of worker groups, each training a same parametric block.
+The latter allocates the largest bandwidth to the worker being the latency bottleneck. Second,
+PABA are jointly optimized. Despite its being a nonconvex problem, an efficient and optimal solution
+algorithm is derived by intelligently nesting a bisection search and solving a convex problem.
+Experimental results using real data demonstrate that integrating PABA can substantially improve
+the performance of partitioned edge learning in terms of latency (by e.g., 46%) and accuracy (by
+e.g., 4%). 

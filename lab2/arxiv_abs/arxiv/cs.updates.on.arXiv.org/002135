@@ -1,0 +1,19 @@
+This paper initiates the study of I/O algorithms (minimizing cache misses) from the perspective
+of fine-grained complexity (conditional polynomial lower bounds). Specifically, we aim to answer
+why sparse graph problems are so hard, and why the Longest Common Subsequence problem gets a savings
+of a factor of the size of cache times the length of a cache line, but no more. We take the reductions
+and techniques from complexity and fine-grained complexity and apply them to the I/O model to generate
+new (conditional) lower bounds as well as faster algorithms. We also prove the existence of a time
+hierarchy for the I/O model, which motivates the fine-grained reductions. Using fine-grained
+reductions, we give an algorithm for distinguishing 2 vs. 3 diameter and radius that runs in $O(|E|^2/(MB))$
+cache misses, which for sparse graphs improves over the previous $O(|V|^2/B)$ running time. We
+give new reductions from radius and diameter to Wiener index and median. We show meaningful reductions
+between problems that have linear-time solutions in the RAM model. The reductions use low I/O complexity
+(typically $O(n/B)$), and thus help to finely capture the relationship between "I/O linear time"
+$\Theta(n/B)$ and RAM linear time $\Theta(n)$. We generate new I/O assumptions based on the difficulty
+of improving sparse graph problem running times in the I/O model. We create conjectures that the
+current best known algorithms for Single Source Shortest Paths (SSSP), diameter, and radius are
+optimal. From these I/O-model assumptions, we show that many of the known reductions in the word-RAM
+model can naturally extend to hold in the I/O model as well (e.g., a lower bound on the I/O complexity
+of Longest Common Subsequence that matches the best known running time). Finally, we prove an analog
+of the Time Hierarchy Theorem in the I/O model. 

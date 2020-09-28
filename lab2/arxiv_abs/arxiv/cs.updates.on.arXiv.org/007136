@@ -1,0 +1,17 @@
+The recent discovery of the Spectre and Meltdown attacks represents a watershed moment not just
+for the field of Computer Security, but also of Programming Languages. This paper explores speculative
+side-channel attacks and their implications for programming languages. These attacks leak information
+through micro-architectural side-channels which we show are not mere bugs, but in fact lie at the
+foundation of optimization. We identify three open problems, (1) finding side-channels, (2) understanding
+speculative vulnerabilities, and (3) mitigating them. For (1) we introduce a mathematical meta-model
+that clarifies the source of side-channels in simulations and CPUs. For (2) we introduce an architectural
+model with speculative semantics to study recently-discovered vulnerabilities. For (3) we explore
+and evaluate software mitigations and prove one correct for this model. Our analysis is informed
+by extensive offensive research and defensive implementation work for V8, the production JavaScript
+virtual machine in Chrome. Straightforward extensions to model real hardware suggest these vulnerabilities
+present formidable challenges for effective, efficient mitigation. As a result of our work, we
+now believe that speculative vulnerabilities on today's hardware defeat all language-enforced
+confidentiality with no known comprehensive software mitigations, as we have discovered that
+untrusted code can construct a universal read gadget to read all memory in the same address space
+through side-channels. In the face of this reality, we have shifted the security model of the Chrome
+web browser and V8 to process isolation. 

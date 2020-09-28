@@ -1,0 +1,19 @@
+Blockchain platforms such as Ethereum and several others execute complex transactions in blocks
+through user-defined scripts known as smart contracts. To append a correct block into blockchain,
+miners execute these transactions of smart contracts sequentially. Later the validators serially
+re-execute the smart contract transactions of the block to validate it. If validation is successful
+then the block is added to the blockchain using a consensus protocol and miner gets the incentive.
+In the current era of multi-core processors, by employing the serial execution of the transactions,
+the miners and validators fail to utilize the cores properly and as a result, have poor throughput.
+By entitling concurrency to smart contracts execution, we can achieve better efficiency and higher
+throughput. In this proposal, we develop a novel and efficient technique to execute the smart contract
+transactions concurrently by miner using optimistic Software Transactional Memory systems (STMs).
+The miner proposes a block which consists of the set of transactions, conflict graph, hash of previous
+block and final state of each shared data-objects. Later, we propose concurrent validator which
+re-executes the same smart contracts concurrently and deterministically with the help of conflict
+graph given by miner and verifies the final states. On successful validation, proposed block appended
+into the blockchain and miner gets the incentive. We consider a benchmarks from solidity documentation.
+We execute the smart contract transactions concurrently using Basic Time stamp Ordering (BTO)
+and Multi-Version Time stamp Ordering (MVTO) protocols as optimistic STMs. BTO and MVTO miner achieves
+3.6x and 3.7x average speedups over serial miner respectively. BTO and MVTO validator outperform
+average 40.8x and 47.1x than serial validator respectively. 

@@ -1,0 +1,18 @@
+In this paper, we put forth a new joint sparse recovery algorithm called signal space matching pursuit
+(SSMP). The key idea of the proposed SSMP algorithm is to sequentially investigate the support of
+jointly sparse vectors to minimize the subspace distance to the residual space. Our performance
+guarantee analysis indicates that SSMP accurately reconstructs any row $K$-sparse matrix of rank
+$r$ in the full row rank scenario if the sampling matrix $\mathbf{A}$ satisfies $\text{krank}(\mathbf{A})
+\ge K+1$, which meets the fundamental minimum requirement on $\mathbf{A}$ to ensure exact recovery.
+We also show that SSMP guarantees exact reconstruction in at most $K-r+\lceil \frac{r}{L} \rceil$
+iterations, provided that $\mathbf{A}$ satisfies the restricted isometry property (RIP) of order
+$L(K-r)+r+1$ with $$\delta_{L(K-r)+r+1} < \max \left \{ \frac{\sqrt{r}}{\sqrt{K+\frac{r}{4}}+\sqrt{\frac{r}{4}}},
+\frac{\sqrt{L}}{\sqrt{K}+1.15 \sqrt{L}} \right \},$$ where $L$ is the number of indices chosen
+in each iteration. This implies that the requirement on the RIP constant becomes less restrictive
+when $r$ increases. Such behavior seems to be natural but has not been reported for most of conventional
+methods. We further show that if $r=1$, then by running more than $K$ iterations, the performance
+guarantee of SSMP can be improved to $\delta_{\lfloor 7.8K \rfloor} \le 0.155$. In addition, we
+show that under a suitable RIP condition, the reconstruction error of SSMP is upper bounded by a constant
+multiple of the noise power, which demonstrates the stability of SSMP under measurement noise.
+Finally, from extensive numerical experiments, we show that SSMP outperforms conventional joint
+sparse recovery algorithms both in noiseless and noisy scenarios. 

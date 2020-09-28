@@ -1,0 +1,20 @@
+For emerging datacenter (in short, DC) workloads, such as online Internet services or offline data
+analytics, how to evaluate the upper bound performance and provide apple-to-apple comparisons
+are fundamental problems. To this end, a unified computation-centric metric is an essential requirement.
+As the most important computation-centric performance metric, FLOPS has guided computing systems
+evolutions for many years. However, our observations demonstrate that the average FLOPS efficiency
+of the DC workloads is only 0.1%, which implies that FLOPS is inappropriate for DC computing. To address
+the above issue, we propose BOPS (Basic Operations Per Second), which is the average number of BOPs
+(Basic OPerations) completed per second. We conduct the analysis on the characteristics of seventeen
+typical DC workloads and extract the minimum representative computation operations set, which
+is composed of integer and floating point computation operations of arithmetic, comparing and
+array addressing. Then, we propose the formalized BOPS definition and the BOPS based upper bound
+performance model. Finally, the BOPS measuring tool is also implemented. We perform experiments
+with seventeen DC workloads on three typical Intel processors platforms. First, BOPS can reflect
+the performance gap of different computing systems, the bias between the peak BOPS performance
+gap and the average DC workloads' wall clock time gap is no more than 10%. Second, the Sort workload
+can achieve 32% BOPS efficiency on the experimental platform. At last, we present two use cases of
+BOPS. One is the BOPS based system evaluation, we illustrate that BOPS can compare performance of
+workloads from multiple domains. The other is BOPS based optimizations. We show that under the guiding
+of the BOPS based upper bound model, the Sort workload and the Redis workload achieve 4.4X and 1.2X
+performance improvements respectively. 

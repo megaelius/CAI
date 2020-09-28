@@ -1,0 +1,19 @@
+The growing complexity of modern Cyber-Physical Systems (CPS) and the frequent communication
+between their components make them vulnerable to malicious attacks. As a result, secure state estimation
+is a critical requirement for the control of these systems. Many existing secure state estimation
+methods suffer from combinatorial complexity which grows with the number of states and sensors
+in the system. This complexity can be mitigated using optimization-based methods that relax the
+original state estimation problem, although at the cost of optimality as these methods often identify
+attack-free sensors as attacked. In this paper, we propose a new scalable and optimal graph-search
+algorithm to correctly identify malicious attacks in CPS modeled as linear time-invariant systems
+and to securely estimate their state. The graph consists of layers, each one containing two nodes
+capturing a truth assignment of any given sensor, and directed edges connecting adjacent layers
+only. Then, our algorithm searches the layers of this graph incrementally, favoring directions
+at higher layers with more attack-free assignments, while actively managing a repository of nodes
+to be expanded at later iterations. The proposed search bias and the ability to revisit nodes in the
+repository and self-correct, allow our graph-search algorithm to reach the optimal assignment
+fast and tackle larger problems. We show that our algorithm is complete and optimal provided that
+process and measurement noises do not dominate the attack signal. Moreover, we provide numerical
+simulations that demonstrate the ability of our algorithm to correctly identify attacked sensors
+and securely reconstruct the state. Our simulations show that our method outperforms existing
+algorithms both in terms of optimality and execution time. 

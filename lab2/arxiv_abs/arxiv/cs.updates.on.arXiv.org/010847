@@ -1,0 +1,19 @@
+In this paper, we introduce a distributed version of the classical stochastic Multi-Arm Bandit
+(MAB) problem. Our setting consists of a large number of agents $n$ that collaboratively and simultaneously
+solve the same instance of $K$ armed MAB to minimize the average cumulative regret over all agents.
+The agents can communicate and collaborate among each other \emph{only} through a pairwise asynchronous
+gossip based protocol that exchange a limited number of bits. In our model, agents at each point decide
+on (i) which arm to play, (ii) whether to, and if so (iii) what and whom to communicate with. Agents
+in our model are decentralized, namely their actions only depend on their observed history in the
+past. We develop a novel algorithm in which agents, whenever they choose, communicate only arm-ids
+and not samples, with another agent chosen uniformly and independently at random. The per-agent
+regret scaling achieved by our algorithm is $O \left( \frac{\lceil\frac{K}{n}\rceil+\log(n)}{\Delta}
+\log(T) + \frac{\log^3(n) \log \log(n)}{\Delta^2} \right)$. Furthermore, any agent in our algorithm
+communicates only a total of $\Theta(\log(T))$ times over a time interval of $T$. We compare our
+results to two benchmarks - one where there is no communication among agents and one corresponding
+to complete interaction. We show both theoretically and empirically, that our algorithm experiences
+a significant reduction both in per-agent regret when compared to the case when agents do not collaborate
+and in communication complexity when compared to the full interaction setting which requires $T$
+communication attempts by an agent over $T$ arm pulls. Our result thus demonstrates that even a minimal
+level of collaboration among the different agents enables a significant reduction in per-agent
+regret. 

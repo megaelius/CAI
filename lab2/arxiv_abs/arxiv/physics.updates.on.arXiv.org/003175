@@ -1,0 +1,18 @@
+Simulations involving free surfaces and fluid interfaces are important in many areas of engineering.
+There is, however, still a need for improved simulation methods. Recently, a new efficient geometric
+VOF method called isoAdvector for general polyhedral meshes was published. We investigate the
+interface reconstruction step of isoAdvector, and demonstrate that especially for unstructured
+meshes the applied isosurface based approach can lead to noisy interface orientations. We then
+introduce a novel computational interface reconstruction scheme based on calculation of a reconstructed
+distance function (RDF). By iterating over the RDF calculation and interface reconstruction,
+we obtain second order convergence of both the interface normal and position within cells even with
+a strict $L_{\infty}$ error norm. In 2D this is verified with reconstruction of a circle on Cartesian
+meshes and on unstructured triangular and polygonal prism meshes. In 3D the second order convergence
+is verified with reconstruction of a sphere on Cartesian meshes and on unstructured tetrahedral
+and polyhedral meshes. The new scheme is combined with the interface advection step of the isoAdvector
+algorithm. Significantly reduced absolute advection errors are obtained, and for CFL number 0.2
+and below we demonstrate second order convergence on all the mentioned mesh types in 2D and 3D. The
+implementation of the proposed interface reconstruction schemes is straightforward and the computational
+cost is significantly reduced compared to contemporary methods. The schemes are implemented as
+an extension to the Computational Fluid Dynamics (CFD) Open Source software package, OpenFOAM.
+The extension module and all test cases presented in this paper are released as open source. 

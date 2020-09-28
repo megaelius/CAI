@@ -1,0 +1,18 @@
+There are a diverse array of schemes for adaptive stochastic gradient descent for optimizing neural
+networks, from fully factorised methods with and without momentum (e.g.\ RMSProp and ADAM), to
+Kronecker factored methods that consider the Hessian for a full weight matrix. However, these schemes
+have been derived and justified using a wide variety of mathematical approaches, and as such, there
+is no unified theory of adaptive stochastic gradients descent methods. Here, we provide such a theory
+by showing that many successful adaptive stochastic gradient descent schemes emerge by considering
+a filtering-based inference in a Bayesian optimization problem. In particular, we use backpropagated
+gradients to compute a Gaussian posterior over the optimal neural network parameters, given the
+data minibatches seen so far. Our unified theory is able to give some guidance to practitioners on
+how to choose between the large number of available optimization methods. In the fully factorised
+setting, we recover RMSProp and ADAM under different priors, along with additional improvements
+such as Nesterov acceleration and AdamW. Moreover, we obtain new recommendations, including the
+possibility of combining RMSProp and ADAM updates. In the Kronecker factored setting, we obtain
+a adaptive natural gradient adaptation scheme that is derived specifically for the minibatch setting.
+Furthermore, under a modified prior, we obtain a Kronecker factored analogue of RMSProp or ADAM,
+that preconditions the gradient by whitening (i.e. by multiplying by the square root of the Hessian,
+as in RMSProp/ADAM). Our work raises the hope that it is possible to achieve unified theoretical
+understanding of empirically successful adaptive gradient descent schemes for neural networks.

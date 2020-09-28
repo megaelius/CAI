@@ -1,0 +1,19 @@
+Empirical Risk Minimization (ERM) is a standard technique in machine learning, where a model is
+selected by minimizing a loss function over constraint set. When the training dataset consists
+of private information, it is natural to use a differentially private ERM algorithm, and this problem
+has been the subject of a long line of work started with Chaudhuri and Monteleoni 2008. A private ERM
+algorithm outputs an approximate minimizer of the loss function and its error can be measured as
+the difference from the optimal value of the loss function. When the constraint set is arbitrary,
+the required error bounds are fairly well understood~\cite{BassilyST14}. In this work, we show
+that the geometric properties of the constraint set can be used to derive significantly better results.
+Specifically, we show that a differentially private version of Mirror Descent leads to error bounds
+of the form $\tilde{O}(G_{\mathcal{C}}/n)$ for a lipschitz loss function, improving on the $\tilde{O}(\sqrt{p}/n)$
+bounds in Bassily, Smith and Thakurta 2014. Here $p$ is the dimensionality of the problem, $n$ is
+the number of data points in the training set, and $G_{\mathcal{C}}$ denotes the Gaussian width
+of the constraint set that we optimize over. We show similar improvements for strongly convex functions,
+and for smooth functions. In addition, we show that when the loss function is Lipschitz with respect
+to the $\ell_1$ norm and $\mathcal{C}$ is $\ell_1$-bounded, a differentially private version
+of the Frank-Wolfe algorithm gives error bounds of the form $\tilde{O}(n^{-2/3})$. This captures
+the important and common case of sparse linear regression (LASSO), when the data $x_i$ satisfies
+$|x_i|_{\infty} \leq 1$ and we optimize over the $\ell_1$ ball. We show new lower bounds for this
+setting, that together with known bounds, imply that all our upper bounds are tight. 

@@ -1,0 +1,18 @@
+The 2D virtual try-on task has recently attracted a great interest from the research community,
+for its direct potential applications in online shopping as well as for its inherent and non-addressed
+scientific challenges. This task requires fitting an in-shop cloth image on the image of a person,
+which is highly challenging because it involves cloth warping, image compositing, and synthesizing.
+Casting virtual try-on into a supervised task faces a difficulty: available datasets are composed
+of pairs of pictures (cloth, person wearing the cloth). Thus, we have no access to ground-truth when
+the cloth on the person changes. State-of-the-art models solve this by masking the cloth information
+on the person with both a human parser and a pose estimator. Then, image synthesis modules are trained
+to reconstruct the person image from the masked person image and the cloth image. This procedure
+has several caveats: firstly, human parsers are prone to errors; secondly, it is a costly pre-processing
+step, which also has to be applied at inference time; finally, it makes the task harder than it is since
+the mask covers information that should be kept such as hands or accessories. In this paper, we propose
+a novel student-teacher paradigm where the teacher is trained in the standard way (reconstruction)
+before guiding the student to focus on the initial task (changing the cloth). The student additionally
+learns from an adversarial loss, which pushes it to follow the distribution of the real images. Consequently,
+the student exploits information that is masked to the teacher. A student trained without the adversarial
+loss would not use this information. Also, getting rid of both human parser and pose estimator at
+inference time allows obtaining a real-time virtual try-on. 

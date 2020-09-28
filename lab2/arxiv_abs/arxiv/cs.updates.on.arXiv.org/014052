@@ -1,0 +1,18 @@
+Variational Auto-encoders (VAEs) are deep generative latent variable models consisting of two
+components: a generative model that captures a data distribution p(x) by transforming a distribution
+p(z) over latent space, and an inference model that infers likely latent codes for each data point
+(Kingma and Welling, 2013). Recent work shows that traditional training methods tend to yield solutions
+that violate modeling desiderata: (1) the learned generative model captures the observed data
+distribution but does so while ignoring the latent codes, resulting in codes that do not represent
+the data (e.g. van den Oord et al. (2017); Kim et al. (2018)); (2) the aggregate of the learned latent
+codes does not match the prior p(z). This mismatch means that the learned generative model will be
+unable to generate realistic data with samples from p(z)(e.g. Makhzani et al. (2015); Tomczak and
+Welling (2017)). In this paper, we demonstrate that both issues stem from the fact that the global
+optima of the VAE training objective often correspond to undesirable solutions. Our analysis builds
+on two observations: (1) the generative model is unidentifiable - there exist many generative models
+that explain the data equally well, each with different (and potentially unwanted) properties
+and (2) bias in the VAE objective - the VAE objective may prefer generative models that explain the
+data poorly but have posteriors that are easy to approximate. We present a novel inference method,
+LiBI, mitigating the problems identified in our analysis. On synthetic datasets, we show that LiBI
+can learn generative models that capture the data distribution and inference models that better
+satisfy modeling assumptions when traditional methods struggle to do so. 

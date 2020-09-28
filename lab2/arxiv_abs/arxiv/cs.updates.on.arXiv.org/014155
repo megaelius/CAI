@@ -1,0 +1,18 @@
+Graph Convolutional Network (GCN) has shown strong effectiveness in graph learning tasks. However,
+GCN faces challenges in flexibility due to the fact of requiring the full graph Laplacian available
+in the training phase. Moreover, with the depth of layers increases, the computational and memory
+cost of GCN grows explosively on account of the recursive neighborhood expansion, which leads to
+a limitation in processing large graphs. To tackle these issues, we take advantage of image processing
+in agility and present Node2Img, a flexible architecture for large-scale graph learning. Node2Img
+maps the nodes to "images" (i.e. grid-like data in Euclidean space) which can be the inputs of Convolutional
+Neural Network (CNN). Instead of leveraging the fixed whole network as a batch to train the model,
+Node2Img supports a more efficacious framework in practice, where the batch size can be set elastically
+and the data in the same batch can be calculated parallelly. Specifically, by ranking each node's
+influence through degree, Node2Img selects the most influential first-order as well as second-order
+neighbors with central node fusion information to construct the grid-like data. For further improving
+the efficiency of downstream tasks, a simple CNN-based neural network is employed to capture the
+significant information from the Euclidean grids. Additionally, the attention mechanism is implemented,
+which enables implicitly specifying the different weights for neighboring nodes with different
+influences. Extensive experiments on real graphs' transductive and inductive learning tasks
+demonstrate the superiority of the proposed Node2Img model against the state-of-the-art GCN-based
+approaches. 

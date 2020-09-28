@@ -1,0 +1,19 @@
+Jupyter Notebooks have become a mainstream tool for interactive computing in every field of science.
+Jupyter Notebooks are suitable as companion applications for Science Gateways, providing more
+flexibility and post-processing capability to the users. Moreover they are often used in training
+events and workshops to provide immediate access to a pre-configured interactive computing environment.
+The Jupyter team released the JupyterHub web application to provide a platform where multiple users
+can login and access a Jupyter Notebook environment. When the number of users and memory requirements
+are low, it is easy to setup JupyterHub on a single server. However, setup becomes more complicated
+when we need to serve Jupyter Notebooks at scale to tens or hundreds of users. In this paper we will
+present three strategies for deploying JupyterHub at scale on XSEDE resources. All options share
+the deployment of JupyterHub on a Virtual Machine on XSEDE Jetstream. In the first scenario, JupyterHub
+connects to a supercomputer and launches a single node job on behalf of each user and proxies back
+the Notebook from the computing node back to the user's browser. In the second scenario, implemented
+in the context of a XSEDE consultation for the IRIS consortium for Seismology, we deploy Docker in
+Swarm mode to coordinate many XSEDE Jetstream virtual machines to provide Notebooks with persistent
+storage and quota. In the last scenario we install the Kubernetes containers orchestration framework
+on Jetstream to provide a fault-tolerant JupyterHub deployment with a distributed filesystem
+and capability to scale to thousands of users. In the conclusion section we provide a link to step-by-step
+tutorials complete with all the necessary commands and configuration files to replicate these
+deployments. 

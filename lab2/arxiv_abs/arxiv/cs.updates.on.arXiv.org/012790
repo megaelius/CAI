@@ -1,0 +1,19 @@
+Deployment of convolutional neural networks (CNNs) in mobile environments, their high computation
+and power budgets proves to be a major bottleneck. Convolution layers and fully connected layers,
+because of their intense use of multiplications, are the dominant contributer to this computation
+budget. This paper proposes to tackle this problem by introducing two new operations: convolutional
+shifts and fully-connected shifts, that replace multiplications all together with bitwise shift
+and sign flipping instead. For inference, both approaches may require only 6 bits to represent the
+weights. This family of neural network architectures (that use convolutional shifts and fully-connected
+shifts) are referred to as DeepShift models. We propose two methods to train DeepShift models: DeepShift-Q
+that trains regular weights constrained to powers of 2, and DeepShift-PS that trains the values
+of the shifts and sign flips directly. Training the DeepShift versions of ResNet18 architecture
+from scratch, we obtained accuracies of 92.33% on CIFAR10 dataset, and Top-1/Top-5 accuracies
+of 65.63%/86.33% on Imagenet dataset. Training the DeepShift version of VGG16 on ImageNet from
+scratch, resulted in a drop of less than 0.3% in Top-5 accuracy. Converting the pre-trained 32-bit
+floating point baseline model of GoogleNet to DeepShift and training it for 3 epochs, resulted in
+a Top-1/Top-5 accuracies of 69.87%/89.62% that are actually higher than that of the original model.
+Further testing is made on various well-known CNN architectures. Last but not least, we implemented
+the convolutional shifts and fully-connected shift GPU kernels and showed a reduction in latency
+time of 25\% when inferring ResNet18 compared to an unoptimized multiplication-based GPU kernels.
+The code is available online at https://github.com/mostafaelhoushi/DeepShift. 

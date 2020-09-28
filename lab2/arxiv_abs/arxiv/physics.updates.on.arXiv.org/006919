@@ -1,0 +1,17 @@
+A major remaining challenge for magnetic resonance-based attenuation correction methods (MRAC)
+is their susceptibility to sources of MRI artifacts (e.g. implants, motion) as well as uncertainties
+due to the limitations of MRI contrast (e.g. accurate bone delineation and density, and separation
+of air/bone). We propose using a Bayesian deep convolutional neural network that, in addition to
+generating an initial pseudo-CT from MR data, also produces uncertainty estimates of the pseudo-CT
+to quantify the limitations of the MR data. These outputs are combined with an MLAA reconstruction
+that uses the PET emission data to improve the attenuation maps. With the proposed approach (UpCT-MLAA),
+we demonstrate accurate estimation of PET uptake in pelvic lesions and show recovery of metal implants.
+In patients without metal implants, UpCT-MLAA had acceptable but slightly higher RMSE than ZeDD-CT
+for bone lesions (3.4% and 2.7%, p=0.037 respectively) and soft tissue lesions (4.8% and 4.1%, p=0.16,
+respectively) when compared to CTAC. In patients with metal implants, standard MLAA was able to
+extract the attenuation coefficients of the metal implant; however, the anatomy outside the implant
+region was heavily obscured by noise and cross-talk artifacts. BpCT-AC was able to estimate the
+attenuation coefficients in normal anatomy; however, the metal implant was estimated to have attenuation
+coefficients of air due to the metal artifact appearing as a signal void on the MRI. UpCT-MLAA estimated
+attenuation coefficients of the metal implants while still providing qualitatively and quantitatively
+accurate anatomic depiction outside of metal implant regions. 

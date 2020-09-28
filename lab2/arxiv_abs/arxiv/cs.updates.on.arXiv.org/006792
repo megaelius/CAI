@@ -1,0 +1,17 @@
+A key property underlying the success of evolutionary algorithms (EAs) is their global search behavior,
+which allows the algorithms to `jump' from a current state to other parts of the search space, thereby
+avoiding to get stuck in local optima. This property is obtained through a random choice of the radius
+at which offspring are sampled from previously evaluated solutions. It is well known that, thanks
+to this global search behavior, the probability that an EA using standard bit mutation finds a global
+optimum of an arbitrary function $f:\{0,1\}^n \to \mathbb{R}$ tends to one as the number of function
+evaluations grows. This advantage over heuristics using a fixed search radius, however, comes
+at the cost of using non-optimal step sizes also in those regimes in which the optimal rate is stable
+for a long time. This downside results in significant performance losses for many standard benchmark
+problems. We introduce in this work a simple way to interpolate between the random global search
+of EAs and their deterministic counterparts which sample from a fixed radius only. To this end, we
+introduce \emph{normalized standard bit mutation}, in which the binomial choice of the search
+radius is replaced by a normal distribution. Normalized standard bit mutation allows a straightforward
+way to control its variance, and hence the degree of randomness involved. We experiment with a self-adjusting
+choice of this variance, and demonstrate its effectiveness for the two classic benchmark problems
+LeadingOnes and OneMax. Our work thereby also touches a largely ignored question in discrete evolutionary
+computation: multi-dimensional parameter control. 

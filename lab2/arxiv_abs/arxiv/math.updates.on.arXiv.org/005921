@@ -1,0 +1,19 @@
+The $L_0$-regularized least squares problem (a.k.a. best subsets) is central to sparse statistical
+learning and has attracted significant attention across the wider statistics, machine learning,
+and optimization communities. Recent work has shown that modern mixed integer optimization (MIO)
+solvers can be used to address small to moderate instances of this problem. In spite of the usefulness
+of $L_0$-based estimators and generic MIO solvers, there is a steep computational price to pay when
+compared to popular sparse learning algorithms (e.g., based on $L_1$ regularization). In this
+paper, we aim to push the frontiers of computation for a family of $L_0$-regularized problems with
+additional convex penalties. We propose a new hierarchy of necessary optimality conditions for
+these problems. We develop fast algorithms, based on coordinate descent and local combinatorial
+optimization, that are guaranteed to converge to solutions satisfying these optimality conditions.
+From a statistical viewpoint, an interesting story emerges. When the signal strength is high, our
+combinatorial optimization algorithms have an edge in challenging statistical settings. When
+the signal is lower, pure $L_0$ benefits from additional convex regularization. We empirically
+demonstrate that our family of $L_0$-based estimators can outperform the state-of-the-art sparse
+learning algorithms in terms of a combination of prediction, estimation, and variable selection
+metrics under various regimes (e.g., different signal strengths, feature correlations, number
+of samples and features). Our new open-source sparse learning toolkit L0Learn (available on CRAN
+and Github) reaches up to a three-fold speedup (with $p$ up to $10^6$) when compared to competing
+toolkits such as glmnet and ncvreg. 

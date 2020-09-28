@@ -1,0 +1,17 @@
+In recent years, there has been an increasing interest in studying causality-related properties
+in machine learning models generally, and in generative models in particular. While that is well
+motivated, it inherits the fundamental computational hardness of probabilistic inference, making
+exact reasoning intractable. Probabilistic tractable models have also recently emerged, which
+guarantee that conditional marginals can be computed in time linear in the size of the model, where
+the model is usually learned from data. Although initially limited to low tree-width models, recent
+tractable models such as sum product networks (SPNs) and probabilistic sentential decision diagrams
+(PSDDs) exploit efficient function representations and also capture high tree-width models.
+In this paper, we ask the following technical question: can we use the distributions represented
+or learned by these models to perform causal queries, such as reasoning about interventions and
+counterfactuals? By appealing to some existing ideas on transforming such models to Bayesian networks,
+we answer mostly in the negative. We show that when transforming SPNs to a causal graph interventional
+reasoning reduces to computing marginal distributions; in other words, only trivial causal reasoning
+is possible. For PSDDs the situation is only slightly better. We first provide an algorithm for constructing
+a causal graph from a PSDD, which introduces augmented variables. Intervening on the original variables,
+once again, reduces to marginal distributions, but when intervening on the augmented variables,
+a deterministic but nonetheless causal-semantics can be provided for PSDDs. 

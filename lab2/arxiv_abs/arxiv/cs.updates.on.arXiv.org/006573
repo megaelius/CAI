@@ -1,0 +1,19 @@
+We consider single-hop radio networks with multiple channels as a model of wireless networks. There
+are $n$ stations connected to $b$ radio channels that do not provide collision detection. A station
+uses all the channels concurrently and independently. Some $k$ stations may become active spontaneously
+at arbitrary times. The goal is to wake up the network, which occurs when all the stations hear a successful
+transmission on some channel. Duration of a waking-up execution is measured starting from the first
+spontaneous activation. We present a deterministic algorithm for the general problem that wakes
+up the network in $O(k\log^{1/b} k\log n)$ time, where $k$ is unknown. We give a deterministic scalable
+algorithm for the special case when $b>d \log \log n$, for some constant $d>1$, which wakes up the
+network in $O(\frac{k}{b}\log n\log(b\log n))$ time, with $k$ unknown. This algorithm misses
+time optimality by at most a factor of $O(\log n(\log b +\log\log n))$, because any deterministic
+algorithm requires $\Omega(\frac{k}{b}\log \frac{n}{k})$ time. We give a randomized algorithm
+that wakes up the network within $O(k^{1/b}\ln \frac{1}{\epsilon})$ rounds with a probability
+that is at least $1-\epsilon$, for any $0<\epsilon<1$, where $k$ is known. We also consider a model
+of jamming, in which each channel in any round may be jammed to prevent a successful transmission,
+which happens with some known parameter probability $p$, independently across all channels and
+rounds. For this model, we give two deterministic algorithms for unknown~$k$: one wakes up the network
+in time $O(\log^{-1}(\frac{1}{p})\, k\log n\log^{1/b} k)$, and the other in time $O(\log^{-1}(\frac{1}{p})
+\, \frac{k}{b} \log n\log(b\log n))$ but assuming the inequality $b>\log(128b\log n)$, both with
+a probability that is at least $1-1/\mbox{poly}(n)$. 

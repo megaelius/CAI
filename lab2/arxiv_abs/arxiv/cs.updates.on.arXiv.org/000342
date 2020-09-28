@@ -1,0 +1,18 @@
+Submodular functions can be exactly minimized in polynomial time, and the special case that graph
+cuts solve with max flow \cite{KZ:PAMI04} has had significant impact in computer vision \cite{BVZ:PAMI01,Kwatra:SIGGRAPH03,Rother:GrabCut04}.
+In this paper we address the important class of sum-of-submodular (SoS) functions \cite{Arora:ECCV12,Kolmogorov:DAM12},
+which can be efficiently minimized via a variant of max flow called submodular flow \cite{Edmonds:ADM77}.
+SoS functions can naturally express higher order priors involving, e.g., local image patches;
+however, it is difficult to fully exploit their expressive power because they have so many parameters.
+Rather than trying to formulate existing higher order priors as an SoS function, we take a discriminative
+learning approach, effectively searching the space of SoS functions for a higher order prior that
+performs well on our training set. We adopt a structural SVM approach \cite{Joachims/etal/09a,Tsochantaridis/etal/04}
+and formulate the training problem in terms of quadratic programming; as a result we can efficiently
+search the space of SoS priors via an extended cutting-plane algorithm. We also show how the state-of-the-art
+max flow method for vision problems \cite{Goldberg:ESA11} can be modified to efficiently solve
+the submodular flow problem. Experimental comparisons are made against the OpenCV implementation
+of the GrabCut interactive segmentation technique \cite{Rother:GrabCut04}, which uses hand-tuned
+parameters instead of machine learning. On a standard dataset \cite{Gulshan:CVPR10} our method
+learns higher order priors with hundreds of parameter values, and produces significantly better
+segmentations. While our focus is on binary labeling problems, we show that our techniques can be
+naturally generalized to handle more than two labels. 

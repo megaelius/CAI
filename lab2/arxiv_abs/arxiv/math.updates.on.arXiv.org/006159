@@ -1,0 +1,20 @@
+Accurate predictions of reactive mixing are critical for many Earth and environmental science
+problems. To investigate mixing dynamics over time under different scenarios, a high-fidelity,
+finite-element-based numerical model is built to solve the fast, irreversible bimolecular reaction-diffusion
+equations to simulate a range of reactive-mixing scenarios. A total of 2,315 simulations are performed
+using different sets of model input parameters comprising various spatial scales of vortex structures
+in the velocity field, time-scales associated with velocity oscillations, the perturbation parameter
+for the vortex-based velocity, anisotropic dispersion contrast, and molecular diffusion. Outputs
+comprise concentration profiles of the reactants and products. The inputs and outputs of these
+simulations are concatenated into feature and label matrices, respectively, to train 20 different
+machine learning (ML) emulators to approximate system behavior. The 20 ML emulators based on linear
+methods, Bayesian methods, ensemble learning methods, and multilayer perceptron (MLP), are compared
+to assess these models. The ML emulators are specifically trained to classify the state of mixing
+and predict three quantities of interest (QoIs) characterizing species production, decay, and
+degree of mixing. Linear classifiers and regressors fail to reproduce the QoIs; however, ensemble
+methods (classifiers and regressors) and the MLP accurately classify the state of reactive mixing
+and the QoIs. Among ensemble methods, random forest and decision-tree-based AdaBoost faithfully
+predict the QoIs. At run time, trained ML emulators are $\approx10^5$ times faster than the high-fidelity
+numerical simulations. Speed and accuracy of the ensemble and MLP models facilitate uncertainty
+quantification, which usually requires 1,000s of model run, to estimate the uncertainty bounds
+on the QoIs. 

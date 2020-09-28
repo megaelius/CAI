@@ -1,0 +1,19 @@
+Many meta-learning methods are proposed for few-shot detection. However, previous most methods
+have two main problems, strong bias between all classes, and poor classification for few-shot classes.
+Previous works mainly depend on additional datasets and sub-module to alleviate these issues.
+However, they require more cost. In this paper, we find that the main challenge lies on imbalance
+between the examples, and poor shared distribution of class-based meta-features. Therefore,
+we propose a TCL for classification task and a category-based grouping mechanism. The TCL exploits
+the classification score of true-label class and the classification score of the most similar class
+to improve detection performance on few-shot classes. According to appearance and environment,
+the category-based grouping mechanism groups categories into different groupings to promote
+different similar semantic features more compact, alleviating the strong bias problem and further
+improving few-shot detection APs. The whole training consists of the base model and the fine-tuning
+phase. During training detection model, the category-related meta-features are regarded as the
+weights of the detection layer, exploiting the meta-features with a shared distribution between
+categories within a group to improve the detection performance. According to grouping mechanism,
+we group the meta-features vectors, so that the distribution difference between groups is obvious,
+and the one within each group is less. Experimental results on Pascal VOC dataset demonstrate that
+ours which combines the TCL with category-based grouping significantly outperforms previous
+state-of-the-art methods for 1, 2-shot detection, and obtains detection APs of almost 30% for 3-shot
+detection. 

@@ -1,0 +1,19 @@
+The Lightning Network promises to alleviate Bitcoin's known scalability problems. The operation
+of such second layer approaches relies on the ability of participants to turn to the blockchain to
+claim funds at any time, which is assumed to happen rarely. One of the risks that was identified early
+on is that of a wide systemic attack on the protocol, in which an attacker triggers the closure of many
+Lightning channels at once. The resulting high volume of transactions in the blockchain will not
+allow for the proper settlement of all debts, and attackers may get away with stealing some funds.
+This paper explores the details of such an attack and evaluates its cost and overall impact on Bitcoin
+and the Lightning Network. Specifically, we show that an attacker is able to simultaneously cause
+victim nodes to overload the Bitcoin blockchain with requests and to steal funds that were locked
+in channels. We go on to examine the interaction of Lightning nodes with the fee estimation mechanism
+and show that the attacker can continuously lower the fee of transactions that will later be used
+by the victim in its attempts to recover funds - eventually reaching a state in which only low fractions
+of the block are available for lightning transactions. Our attack is made easier even further as
+the Lightning protocol allows the attacker to increase the fee offered by his own transactions.
+We continue to empirically show that the vast majority of nodes agree to channel opening requests
+from unknown sources and are therefore susceptible to this attack. We highlight differences between
+various implementations of the Lightning Network protocol and review the susceptibility of each
+one to the attack. Finally, we propose mitigation strategies to lower the systemic attack risk of
+the network. 

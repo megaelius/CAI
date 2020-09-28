@@ -1,0 +1,19 @@
+In the unit-cost comparison model, a black box takes an input two items and outputs the result of the
+comparison. Problems like sorting and searching have been studied in this model, and it has been
+generalized to include the concept of priced information, where different pairs of items (say database
+records) have different comparison costs. These comparison costs can be arbitrary (in which case
+no algorithm can be close to optimal (Charikar et al. STOC 2000)), structured (for example, the comparison
+cost may depend on the length of the databases (Gupta et al. FOCS 2001)), or stochastic (Angelov et
+al. LATIN 2008). Motivated by the database setting where the cost depends on the sizes of the items,
+we consider the problems of sorting and batched predecessor where two non-uniform sets of items
+$A$ and $B$ are given as input. (1) In the RAM setting, we consider the scenario where both sets have
+$n$ keys each. The cost to compare two items in $A$ is $a$, to compare an item of $A$ to an item of $B$ is
+$b$, and to compare two items in $B$ is $c$. We give upper and lower bounds for the case $a \le b \le c$.
+Notice that the case $b=1, a=c=\infty$ is the famous ``nuts and bolts'' problem. (2) In the Disk-Access
+Model (DAM), where transferring elements between disk and internal memory is the main bottleneck,
+we consider the scenario where elements in $B$ are larger than elements in $A$. The larger items take
+more I/Os to be brought into memory, consume more space in internal memory, and are required in their
+entirety for comparisons. We first give output-sensitive lower and upper bounds on the batched
+predecessor problem, and use these to derive bounds on the complexity of sorting in the two models.
+Our bounds are tight in most cases, and require novel generalizations of the classical lower bound
+techniques in external memory to accommodate the non-uniformity of keys. 

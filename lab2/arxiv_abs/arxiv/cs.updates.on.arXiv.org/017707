@@ -1,0 +1,18 @@
+This work addresses the problem of temporal action localization with Variance-Aware Networks
+(VAN), i.e., DNNs that use second-order statistics in the input and/or the output of regression
+tasks. We first propose a network (VANp) that when presented with the second-order statistics of
+the input, i.e., each sample has a mean and a variance, it propagates the mean and the variance throughout
+the network to deliver outputs with second order statistics. In this framework, both the input and
+the output could be interpreted as Gaussians. To do so, we derive differentiable analytic solutions,
+or reasonable approximations, to propagate across commonly used NN layers. To train the network,
+we define a differentiable loss based on the KL-divergence between the predicted Gaussian and a
+Gaussian around the ground truth action borders, and use standard back-propagation. Importantly,
+the variances propagation in VANp does not require any additional parameters, and during testing,
+does not require any additional computations either. In action localization, the means and the
+variances of the input are computed at pooling operations, that are typically used to bring arbitrarily
+long videos to a vector with fixed dimensions. Second, we propose two alternative formulations
+that augment the first (respectively, the last) layer of a regression network with additional parameters
+so as to take in the input (respectively, predict in the output) both means and variances. Results
+in the action localization problem show that the incorporation of second order statistics improves
+over the baseline network, and that VANp surpasses the accuracy of virtually all other two-stage
+networks without involving any additional parameters. 

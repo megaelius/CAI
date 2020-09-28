@@ -1,0 +1,17 @@
+Consider a generalization of the classical binary search problem in linearly sorted data to the
+graph-theoretic setting. The goal is to design an adaptive query algorithm, called a strategy,
+that identifies an initially unknown target vertex in a graph by asking queries. Each query is conducted
+as follows: the strategy selects a vertex $q$ and receives a reply $v$: if $q$ is the target, then $v=q$,
+and if $q$ is not the target, then $v$ is a neighbor of $q$ that lies on a shortest path to the target.
+Furthermore, there is a noise parameter $0\leq p<\frac{1}{2}$, which means that each reply can
+be incorrect with probability $p$. The optimization criterion to be minimized is the overall number
+of queries asked by the strategy, called the query complexity. The query complexity is well understood
+to be $O(\varepsilon^{-2}\log n)$ for general graphs, where $n$ is the order of the graph and $\varepsilon=\frac{1}{2}-p$.
+However, implementing such a strategy is computationally expensive, with each query requiring
+possibly $O(n^2)$ operations. In this work we propose two efficient strategies that keep the optimal
+query complexity. The first strategy achieves the overall complexity of $O(\varepsilon^{-1}n\log
+n)$ per a single query. The second strategy is dedicated to graphs of small diameter $D$ and maximum
+degree $\Delta$ and has the average complexity of $O(n+\varepsilon^{-2}D\Delta\log n)$ per query.
+We stress out that we develop an algorithmic tool of graph median approximation that is of independent
+interest: the median can be efficiently approximated by finding a vertex minimizing the sum of distances
+to a randomly sampled vertex subset of size $O(\varepsilon^{-2}\log n)$. 

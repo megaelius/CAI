@@ -1,0 +1,17 @@
+We give the first efficient algorithm for the problem of list-decodable subspace recovery. Our
+algorithm takes input $n$ samples $\alpha n$ ($\alpha\ll 1/2$) are generated i.i.d. from Gaussian
+distribution $\mathcal{N}(0,\Sigma_*)$ on $\mathbb{R}^d$ with covariance $\Sigma_*$ of rank
+$r$ and the rest are arbitrary, potentially adversarial outliers. It outputs a list of $O(1/\alpha)$
+projection matrices guaranteed to contain a projection matrix $\Pi$ such that $\|\Pi-\Pi_*\|_F^2
+= \kappa^4 \log (r) \tilde{O}(1/\alpha^2)$, where $\tilde{O}$ hides polylogarithmic factors
+in $1/\alpha$. Here, $\Pi_*$ is the projection matrix to the range space of $\Sigma_*$. The algorithm
+needs $n=d^{\log (r \kappa) \tilde{O}(1/\alpha^2)}$ samples and runs in time $n^{\log (r \kappa)
+\tilde{O}(1/\alpha^4)}$ time where $\kappa$ is the ratio of the largest to smallest non-zero eigenvalues
+of $\Sigma_*$. Our algorithm builds on the recently developed framework for list-decodable learning
+via the sum-of-squares (SoS) method [KKK'19, RY'20] with some key technical and conceptual advancements.
+Our key conceptual contribution involves showing a (SoS "certified") lower bound on the eigenvalues
+of covariances of arbitrary small subsamples of an i.i.d. sample of a certifiably anti-concentrated
+distribution. One of our key technical contributions gives a new method that allows error reduction
+"within SoS" with only a logarithmic cost in the exponent in the running time (in contrast to polynomial
+cost in [KKK'19, RY'20]. In a concurrent and independent work, Raghavendra and Yau proved related
+results for list-decodable subspace recovery [RY'20]. 

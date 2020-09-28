@@ -1,0 +1,19 @@
+The discriminator from generative adversarial nets (GAN) has been used by researchers as a feature
+extractor in transfer learning and appeared worked well. However, there are also studies that believe
+this is the wrong research direction because intuitively the task of the discriminator focuses
+on separating the real samples from the generated ones, making features extracted in this way useless
+for most of the downstream tasks. To avoid this dilemma, we first conducted a thorough theoretical
+analysis of the relationship between the discriminator task and the features extracted. We found
+that the connection between the task of the discriminator and the feature is not as strong as was thought,
+for that the main factor restricting the feature learned by the discriminator is not the task, but
+is the need to prevent the entire GAN model from mode collapse during the training. From this perspective
+and combined with further analyses, we found that to avoid mode collapse, the features extracted
+by the discriminator are not guided to be different for the real samples, but divergence without
+noise is indeed allowed and occupies a large proportion of the feature space. This makes the features
+more robust and helps answer the question as to why the discriminator can succeed as a feature extractor
+in related research. Consequently, to expose the essence of the discriminator extractor as different
+from other extractors, we analyze the counterpart of the discriminator extractor, the classifier
+extractor that assigns the target samples to different categories. We found the performance of
+the discriminator extractor may be inferior to the classifier based extractor when the source classification
+task is similar to the target task, which is the common case, but the ability to avoid noise prevents
+the discriminator from being replaced by the classifier. 

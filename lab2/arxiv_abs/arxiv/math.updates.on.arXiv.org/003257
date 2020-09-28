@@ -1,0 +1,19 @@
+The fast marching method is well-known for its worst-case optimal computational complexity in
+solving the Eikonal equation, and has been employed in numerous scientific and engineering fields.
+However, it has barely benefited from fast-advancing multi-core and many-core architectures,
+due to the challenges presented by its apparent sequential nature. In this paper, we present a straightforward
+block-based approach for a highly scalable parallelization of the fast marching method on shard-memory
+computers. Central to our new algorithm is a simplified restarted narrow band strategy, with which
+the global bound for terminating the front marching is replaced by an incremental one, increasing
+by a given stride in each restart. It greatly reduces load imbalance among blocks through a synchronized
+exchanging step after the marching step. Furthermore, simple activation mechanisms are introduced
+to skip blocks not involved in either step. Thus the new algorithm mainly consists of two loops, each
+for performing one step on a group of blocks. Notably, it does not contain any data race conditions
+at all, ideal for a direct loop level parallelization using multiple threads. A systematic performance
+study is carried out for several point source problems with various speed functions on four grids
+with up to $1024^3$ points using two different computers. Substantial parallel speedups, e.g.,
+up to 3--5 times the number of cores on a 16-core/32-thread computer and up to two orders of magnitude
+on a 64-core/256-thread computer, are demonstrated with all cases. As an extra bonus, our new algorithm
+also gives improved sequential performance in most scenarios. Detailed pseudo-codes are provided
+to illustrate the modification procedure from the single-block sequential algorithm to the multi-block
+one in a step-by-step manner. 

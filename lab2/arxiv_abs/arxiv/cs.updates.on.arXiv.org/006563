@@ -1,0 +1,19 @@
+Many blockchain-based protocols, such as Bitcoin, implement a decentralized asset transfer (or
+exchange) system. As clearly stated in the original paper by Nakamoto, the crux of this problem lies
+in prohibiting any participant from engaging in double-spending. There seems to be a common belief
+that consensus is necessary for solving the double-spending problem. Indeed, whether it is for
+a permissionless or a permissioned environment, the typical solution uses consensus to build a
+totally ordered ledger of submitted transfers. In this paper we show that this common belief is false:
+consensus is not needed to implement of a decentralized asset transfer system. We do so by introducing
+AT2 (Asynchronous Trustworthy Transfers), a class of consensusless algorithms. To show formally
+that consensus is unnecessary for asset transfers, we consider this problem first in the shared-memory
+context. We introduce AT2$_{SM}$, a wait-free algorithm that asynchronously implements asset
+transfer in the read-write shared-memory model. In other words, we show that the consensus number
+of an asset-transfer object is one. In the message passing model with Byzantine faults, we introduce
+a generic asynchronous algorithm called AT2$_{MP}$ and discuss two instantiations of this solution.
+First, AT2$_{D}$ ensures deterministic guarantees and consequently targets a small scale deployment
+(tens to hundreds of nodes), typically for a permissioned environment. Second, AT2$_{P}$ provides
+probabilistic guarantees and scales well to a very large system size (tens of thousands of nodes),
+ensuring logarithmic latency and communication complexity. Instead of consensus, we construct
+AT2$_{D}$ and AT2$_{P}$ on top of a broadcast primitive with causal ordering guarantees offering
+deterministic and probabilistic properties, respectively. 

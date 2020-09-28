@@ -1,0 +1,18 @@
+While critical for the practical progress of spectrum sharing, modulation recognition has so far
+been investigated under unrealistic assumptions: (i) a transmitter's bandwidth must be scanned
+alone and in full, (ii) prior knowledge of the technology must be available and (iii) a transmitter
+must be trustworthy. In reality these assumptions cannot be readily met, as a transmitter's bandwidth
+may only be scanned intermittently, partially, or alongside other transmitters, and modulation
+obfuscation may be introduced by short-lived scans or malicious activity. This paper presents
+LinksIQ, which bridges the gap between real-world spectrum sensing and the growing body of modrec
+methods designed under simplifying assumptions. Our key insight is that ordered IQ samples form
+distinctive patterns across modulations, which persist even with scan deficiencies. We mine these
+patterns through a Fisher Kernel framework and employ lightweight linear support vector machine
+for modulation classification. LinksIQ is robust to noise, scan partiality and data biases without
+utilizing prior knowledge of transmitter technology. Its accuracy consistently outperforms
+baselines in both simulated and real traces. We evaluate LinksIQ performance in a testbed using
+two popular SDR platforms, RTL-SDR and USRP. We demonstrate high detection accuracy (i.e. 0.74)
+even with a $20 RTL-SDR scanning at 50% transmitter overlap. This constitutes an average of 43% improvement
+over existing counterparts employed on RTL-SDR scans. We also explore the effects of platform-aware
+classifier training and discuss implications on real-world modrec system design. Our results
+demonstrate the feasibility of low-cost transmitter fingerprinting at scale. 

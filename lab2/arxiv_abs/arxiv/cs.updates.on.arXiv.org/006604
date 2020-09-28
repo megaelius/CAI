@@ -1,0 +1,18 @@
+This work formalizes "Exact Real Computation" (ERC): a paradigm combining (i) ALGEBRAIC imperative
+programming of/over abstract data types (ADTs) for CONTINUOUS structures with (ii) a selection
+and sound semantics of primitives computable in the sense of Recursive ANALYSIS, that is, by means
+of approximations -- yet presented to the user as exact. We specify a small imperative programming
+language for the ADT of real (i.e., including transcendental) numbers with rigorous semantics:
+arguments are provided, passed to and received from calls to functions (like $e^x$), and operated
+on EXACTLY with partial tests and multivalued lazy selection (aka parallel-OR); yet REALIZING
+a function (again like $e^x$) requires only to APPROXIMATE its return value up to guaranteed absolute
+error $2^{p}$ for any given integer $p$: closure under composition is implicit. We prove this language
+Turing-COMPLETE: a partial real function is computable in the sense of Recursive Analysis iff it
+can be expressed in ERC; and similarly for functionALs. Three simple numerical problems demonstrate
+both the convenience and novel control-flow considerations of this approach to Reliable Numerics:
+multivalued integer rounding, solving systems of linear equations, and simple root finding. For
+rigorously specifying and arguing about such (non-extensional) computations, we propose a first-order
+theory over two sorts: integers and reals; and prove it both decidable and 'model complete': thus
+reflecting the elegance inherent to real (as opposed to rational/floating point) numbers. We accordingly
+extend the rules of Hoare Logic to support formal correctness proofs in ERC; and formally verify
+the aforementioned example programs with the Coq Proof Assistant. 

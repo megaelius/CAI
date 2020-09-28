@@ -1,0 +1,19 @@
+Decision trees are a powerful prediction model with many applications in statistics, data mining,
+and machine learning. In some settings, the model and the data to be classified may contain sensitive
+information belonging to different parties. In this paper, we, therefore, address the problem
+of privately evaluating a decision tree on private data. This scenario consists of a server holding
+a private decision tree model and a client interested in classifying its private attribute vector
+using the server's private model. The goal of the computation is to obtain the classification while
+preserving the privacy of both - the decision tree and the client input. After the computation, the
+classification result is revealed only to the client, and nothing else is revealed neither to the
+client nor to the server. Existing privacy-preserving protocols that address this problem use
+or combine different generic secure multiparty computation approaches resulting in several interactions
+between the client and the server. Our goal is to design and implement a novel client-server protocol
+that delegates the complete tree evaluation to the server while preserving privacy and reducing
+the overhead. The idea is to use fully (somewhat) homomorphic encryption and evaluate the tree on
+ciphertexts encrypted under the client's public key. However, since current somewhat homomorphic
+encryption schemes have high overhead, we combine efficient data representations with different
+algorithmic optimizations to keep the computational overhead and the communication cost low.
+As a result, we are able to provide the first non-interactive protocol, that allows the client to
+delegate the evaluation to the server by sending an encrypted input and receiving only the encryption
+of the result. Our scheme has only one round and can evaluate a complete tree of depth 10 within seconds.

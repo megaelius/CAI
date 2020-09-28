@@ -1,0 +1,19 @@
+Principal component analysis (PCA) is one of the most powerful tools in machine learning. The simplest
+method for PCA, the power iteration, requires $\mathcal O(1/\Delta)$ full-data passes to recover
+the principal component of a matrix with eigen-gap $\Delta$. Lanczos, a significantly more complex
+method, achieves an accelerated rate of $\mathcal O(1/\sqrt{\Delta})$ passes. Modern applications,
+however, motivate methods that only ingest a subset of available data, known as the stochastic setting.
+In the online stochastic setting, simple algorithms like Oja's iteration achieve the optimal sample
+complexity $\mathcal O(\sigma^2/\Delta^2)$. Unfortunately, they are fully sequential, and
+also require $\mathcal O(\sigma^2/\Delta^2)$ iterations, far from the $\mathcal O(1/\sqrt{\Delta})$
+rate of Lanczos. We propose a simple variant of the power iteration with an added momentum term, that
+achieves both the optimal sample and iteration complexity. In the full-pass setting, standard
+analysis shows that momentum achieves the accelerated rate, $\mathcal O(1/\sqrt{\Delta})$.
+We demonstrate empirically that naively applying momentum to a stochastic method, does not result
+in acceleration. We perform a novel, tight variance analysis that reveals the "breaking-point
+variance" beyond which this acceleration does not occur. By combining this insight with modern
+variance reduction techniques, we construct stochastic PCA algorithms, for the online and offline
+setting, that achieve an accelerated iteration complexity $\mathcal O(1/\sqrt{\Delta})$. Due
+to the embarassingly parallel nature of our methods, this acceleration translates directly to
+wall-clock time if deployed in a parallel environment. Our approach is very general, and applies
+to many non-convex optimization problems that can now be accelerated using the same technique.

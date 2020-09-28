@@ -1,0 +1,16 @@
+We consider approximation algorithms for packing integer programs (PIPs) of the form $\max\{\langle
+c, x\rangle : Ax \le b, x \in \{0,1\}^n\}$ where $c$, $A$, and $b$ are nonnegative. We let $W = \min_{i,j}
+b_i / A_{i,j}$ denote the width of $A$ which is at least $1$. Previous work by Bansal et al. \cite{bansal-sparse}
+obtained an $\Omega(\frac{1}{\Delta_0^{1/\lfloor W \rfloor}})$-approximation ratio where
+$\Delta_0$ is the maximum number of nonzeroes in any column of $A$ (in other words the $\ell_0$-column
+sparsity of $A$). They raised the question of obtaining approximation ratios based on the $\ell_1$-column
+sparsity of $A$ (denoted by $\Delta_1$) which can be much smaller than $\Delta_0$. Motivated by
+recent work on covering integer programs (CIPs) \cite{cq,chs-16} we show that simple algorithms
+based on randomized rounding followed by alteration, similar to those of Bansal et al. \cite{bansal-sparse}
+(but with a twist), yield approximation ratios for PIPs based on $\Delta_1$. First, following an
+integrality gap example from \cite{bansal-sparse}, we observe that the case of $W=1$ is as hard
+as maximum independent set even when $\Delta_1 \le 2$. In sharp contrast to this negative result,
+as soon as width is strictly larger than one, we obtain positive results via the natural LP relaxation.
+For PIPs with width $W = 1 + \epsilon$ where $\epsilon \in (0,1]$, we obtain an $\Omega(\epsilon^2/\Delta_1)$-approximation.
+In the large width regime, when $W \ge 2$, we obtain an $\Omega((\frac{1}{1 + \Delta_1/W})^{1/(W-1)})$-approximation.
+We also obtain a $(1-\epsilon)$-approximation when $W = \Omega(\frac{\log (\Delta_1/\epsilon)}{\epsilon^2})$.

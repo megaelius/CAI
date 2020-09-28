@@ -1,0 +1,19 @@
+We explore the loss landscape of fully-connected neural networks using random, low-dimensional
+hyperplanes and hyperspheres. Evaluating the Hessian, $H$, of the loss function on these hypersurfaces,
+we observe 1) an unusual excess of the number of positive eigenvalues of $H$, and 2) a large value of
+$\mathrm{Tr}(H) / |H|$ at a well defined range of configuration space radii, corresponding to a
+thick, hollow, spherical shell we refer to as the \textit{Goldilocks zone}. We observe this effect
+for fully-connected neural networks over a range of network widths and depths on MNIST and CIFAR-10
+with the $\mathrm{ReLU}$ non-linearity. The effect is not observed for the $\tanh$ non-linearity.
+Using our observations, we demonstrate a close connection between the Goldilocks zone, measures
+of local convexity/prevalence of positive curvature, and the suitability of a network initialization.
+We show that the high and stable accuracy reached when optimizing on random, low-dimensional hypersurfaces
+is directly related to the overlap between the hypersurface and the Goldilocks zone. We note that
+common initialization techniques initialize neural networks in this particular region of unusually
+high convexity, and offer a geometric intuition for their success. We take steps towards an analytic
+description of the general features of the loss function geometry, exploring its anisotropy and
+strong radial dependence. We support our theoretical results with experiments. Furthermore,
+we demonstrate that initializing a neural network at a number of points and selecting for high measures
+of local convexity such as $\mathrm{Tr}(H) / |H|$, number of positive eigenvalues of $H$, or low
+initial loss, leads to statistically significantly faster training on MNIST. Based on our observations,
+we hypothesize that the Goldilocks zone contains a high density of suitable initialization configurations.

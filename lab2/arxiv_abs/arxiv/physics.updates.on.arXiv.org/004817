@@ -1,0 +1,19 @@
+Convergence with respect to imaginary-time discretization (i.e., the number of ring-polymer
+beads) is an essential part of any path-integral-based molecular dynamics (MD) calculation. However,
+an unfortunate property of existing non-preconditioned numerical integration schemes for path-integral
+molecular dynamics (PIMD) - including essentially all existing ring-polymer molecular dynamics
+(RPMD) and thermostatted RPMD (T-RPMD) methods - is that for a given MD timestep, the overlap between
+the exact ring-polymer Boltzmann distribution and that sampled using MD becomes zero in the infinite-bead
+limit. This has clear implications for hybrid Metropolis Monte-Carlo/MD sampling schemes, and
+it also causes the well-known divergence with bead number of the primitive path-integral kinetic-energy
+expectation value when using standard RPMD or T-RPMD. We show that these problems can be avoided
+through the introduction of "dimension-free" numerical integration schemes for which the sampled
+ring-polymer distribution has non-zero overlap with the exact distribution in the infinite-bead
+limit. Moreover, we show that this can be achieved by using a (previously introduced) strongly stable
+method for the free-ring-polymer evolution in combination with a (newly introduced) mollification
+of the forces from the external physical potential. The resulting dimension-free numerical integration
+schemes yield finite error bounds for a given MD timestep, even as the number of beads is taken to infinity;
+these conclusions are proven for the case of a harmonic potential and borne out numerically for anharmonic
+cases. Importantly, dimension-free RPMD achieves these benefits while preserving strong stability,
+symplecticity, time reversibility, and global second-order accuracy; and it remains a simple,
+black-box method by avoiding computational costs, tunable parameters, or system-specific implementations.

@@ -1,0 +1,17 @@
+Getting the best performance from the ever-increasing number of hardware platforms has been a recurring
+challenge for data processing systems. In recent years, the advent of data science with its increasingly
+numerous and complex types of analytics has made this challenge even more difficult. In practice,
+system designers are overwhelmed by the number of combinations and typically implement only one
+analysis/platform combination, leading to repeated implementation effort -- and a plethora of
+semi-compatible tools for data scientists. In this paper, we propose the "Collection Virtual Machine"
+(or CVM) -- an extensible compiler framework designed to keep the specialization process of data
+analytics systems tractable. It can capture at the same time the essence of a large span of low-level,
+hardware-specific implementation techniques as well as high-level operations of different types
+of analyses. At its core lies a language for defining nested, collection-oriented intermediate
+representations (IRs). Frontends produce programs in their IR flavors defined in that language,
+which get optimized through a series of rewritings (possibly changing the IR flavor multiple times)
+until the program is finally expressed in an IR of platform-specific operators. While reducing
+the overall implementation effort, this also improves the interoperability of both analyses and
+hardware platforms. We have used CVM successfully to build specialized backends for platforms
+as diverse as multi-core CPUs, RDMA clusters, and serverless computing infrastructure in the cloud
+and expect similar results for many more frontends and hardware platforms in the near future. 

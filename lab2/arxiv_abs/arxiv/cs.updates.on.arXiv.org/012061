@@ -1,0 +1,19 @@
+We study the Low Rank Phase Retrieval (LRPR) problem defined as follows: recover an $n \times q$ matrix
+$X^*$ of rank $r$ from a different and independent set of $m$ phaseless (magnitude-only) linear
+projections of each of its columns. To be precise, we need to recover $X^*$ from $y_k := |A_k{}' x^*_k|,
+k=1,2,\dots, q$ when the measurement matrices $A_k$ are mutually independent. Here $y_k \in \mathbb{R}^m$.
+The question is when can we solve LRPR with $m \ll n$? Our work introduces the first provably correct
+solution, Alternating Minimization for Low-Rank Phase Retrieval (AltMinLowRaP), for solving
+LRPR. We demonstrate its advantage over existing work via extensive simulation, and some partly
+real data, experiments. Our guarantee for AltMinLowRaP shows that it can solve LRPR to $\epsilon$
+accuracy if $m q \ge C n r^4 \log(1/\epsilon)$, the matrices $A_k$ contain i.i.d. standard Gaussian
+entries, the condition number of $X^*$ is bounded by a numerical constant, and its right singular
+vectors satisfy the incoherence (denseness) assumption from matrix completion literature. Its
+time complexity is only $ C mq nr \log^2(1/\epsilon)$. In the regime of small $r$, our sample complexity
+is much better than what standard PR methods need; and it is only about $r^3$ times worse than its order-optimal
+value of $(n + q) r$. Moreover, if we replace $m$ by its lower bound for each approach, then the same
+can be said for the time complexity comparison with standard PR. We also briefly study the dynamic
+extension of LRPR. The LRPR problem occurs in phaseless dynamic imaging, e.g., Fourier ptychographic
+imaging of live biological specimens, where acquiring measurements is expensive. We should point
+out that LRPR is a very different problem than its $A_k =A$ version, or its $A_k = A$ and with-phase
+(linear) version, both of which have been extensively studied in the literature. 

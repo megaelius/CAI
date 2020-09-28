@@ -1,0 +1,19 @@
+Random via failure is a major concern for post-fabrication reliability and poor manufacturing
+yield. A demanding solution to this problem is redundant via insertion during post-routing optimization.
+It becomes very critical when a multi-layer routing solution already incurs a large number of vias.
+Very few global routers addressed unconstrained via minimization (UVM) problem, while using minimal
+pattern routing and layer assignment of nets. It also includes a recent floorplan based early global
+routability assessment tool STAIRoute \cite{karb2}. This work addresses an early version of unconstrained
+via minimization problem during early global routing by identifying a set of minimal bend routing
+regions in any floorplan, by a new recursive bipartitioning framework. These regions facilitate
+monotone pattern routing of a set of nets in the floorplan by STAIRoute. The area/number balanced
+floorplan bipartitionining is a multi-objective optimization problem and known to be NP-hard
+\cite{majum2}. No existing approaches considered bend minimization as an objective and some of
+them incurred higher runtime overhead. In this paper, we present a Greedy as well as randomized neighbor
+search based staircase wave-front propagation methods for obtaining optimal bipartitioning
+results for minimal bend routing through multiple routing layers, for a balanced trade-off between
+routability, wirelength and congestion. Experiments were conducted on MCNC/GSRC floorplanning
+benchmarks for studying the variation of early via count obtained by STAIRoute for different values
+of the trade-off parameters ($\gamma, \beta$) in this multi-objective optimization problem,
+using $8$ metal layers. We studied the impact of ($\gamma, \beta$) values on each of the objectives
+as well as their linear combination function $Gain$ of these objectives. 

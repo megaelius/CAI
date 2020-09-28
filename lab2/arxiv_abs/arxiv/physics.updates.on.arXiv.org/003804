@@ -1,0 +1,17 @@
+With Wendelstein 7-X now up and running, and the construction of ITER proceeding, predicting fast-ion
+losses to sensitive plasma-facing components and detectors is gaining significant interest.
+A common recipe to perform such studies is to push a large population of marker particles along their
+equations of motion, the trajectories randomized with Monte Carlo operators accounting for Coulomb
+collisions, and to record possible intersections of the marker trajectories with synthetic detectors
+or areas of interest in the first wall. While straightforward to implement and easy to parallelize,
+this Forward Monte Carlo (FMC) approach tends to suffer from poor statistics and error estimation
+as the detector domain is often small: it is difficult to guess how to set up the initial weights and
+locations of the markers for them to remain representative of the source distribution, yet record
+enough hits to the detector for good statistics. As an alternative, the FMC method can be replaced
+with a so-called Backward Monte Carlo (BMC) algorithm. Instead of starting with a given initial
+marker population, one starts from the end condition at the detector and records how the hit probability
+evolves backwards in time. The scheme eliminates the statistics issue present in the FMC scheme
+and may provide more accurate and efficient simulations of fast-ion loss signals. The purpose of
+this paper is to explain the BMC recipe in the fast-ion setting and to discuss the associated nuances,
+especially how to negate artificial diffusion. For illustration purposes, our numerical example
+considers a 1-D stochastic harmonic oscillator as a mock-up of a charged particle. 

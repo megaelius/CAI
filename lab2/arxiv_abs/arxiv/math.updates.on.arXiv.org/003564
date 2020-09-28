@@ -1,0 +1,18 @@
+We create a simple test for distinguishing between sets of primes and random numbers using just the
+sum-of-digits function. We find that the sum-of-the-digits of prime numbers does not have an equal
+probability of being odd or even. The authors know of no reason why prime numbers should bias themselves
+towards a particular parity in their sums of digits, but our empirical tests show a very strong bias;
+strong enough that we are able to devise a test to reliably differentiate between collections of
+prime numbers versus random numbers by looking only at their sums of digits. We are also able to create
+similar tests for products of primes. We are even able to test "tainted" sets with mixtures of primes
+and random numbers: as the percentage of (randomly chosen) prime numbers in a set of random numbers
+is varied, we get a reliable, linear change in our parity measure. For example, when we add up the digits
+of prime numbers in base 10, their sum is significantly more likely to be odd than even. This effect
+persists across base changes, although which parity is more common might change. Note that the last
+digit being odd in base 10 simply reverses the parity. We have tested this for the first fifty million
+primes -- not primes up to 50,000,000, but the first 50,000,000 prime numbers -- and have found that
+this effect persists, and does so in a predictable manner. The effect is quite significant; for 50,000,000
+primes in base 10, the number of primes which have an odd sum-of-digits is about an order of magnitude
+farther away from the mean than expected. We have run multiple tests to try and understand the source
+of this bias, including investigating primes modulo random numbers and adjusting for Chebyshev's
+bias. None of these tests yielded any satisfactory explanation for this phenomenon. 

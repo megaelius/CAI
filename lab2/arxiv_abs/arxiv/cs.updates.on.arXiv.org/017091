@@ -1,0 +1,17 @@
+With the memory-resource-limited constraints, class-incremental learning (CIL) usually suffers
+from the "catastrophic forgetting" problem when updating the joint classification model on the
+arrival of newly added classes. To cope with the forgetting problem, many CIL methods transfer the
+knowledge of old classes by preserving some exemplar samples into the size-constrained memory
+buffer. To utilize the memory buffer more efficiently, we propose to keep more auxiliary low-fidelity
+exemplar samples rather than the original real high-fidelity exemplar samples. Such memory-efficient
+exemplar preserving scheme make the old-class knowledge transfer more effective. However, the
+low-fidelity exemplar samples are often distributed in a different domain away from that of the
+original exemplar samples, that is, a domain shift. To alleviate this problem, we propose a duplet
+learning scheme that seeks to construct domain-compatible feature extractors and classifiers,
+which greatly narrows down the above domain gap. As a result, these low-fidelity auxiliary exemplar
+samples have the ability to moderately replace the original exemplar samples with a lower memory
+cost. In addition, we present a robust classifier adaptation scheme, which further refines the
+biased classifier (learned with the samples containing distillation label knowledge about old
+classes) with the help of the samples of pure true class labels. Experimental results demonstrate
+the effectiveness of this work against the state-of-the-art approaches. We will release the code,
+baselines, and training statistics for all models to facilitate future research. 

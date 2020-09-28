@@ -1,0 +1,17 @@
+We propose a novel data-driven method to accelerate the convergence of Alternating Direction Method
+of Multipliers (ADMM) for solving distributed DC optimal power flow (DC-OPF) where lines are shared
+between independent network partitions. Using previous observations of ADMM trajectories for
+a given system under varying load, the method trains a recurrent neural network (RNN) to predict
+the converged values of dual and consensus variables. Given a new realization of system load, a small
+number of initial ADMM iterations is taken as input to infer the converged values and directly inject
+them into the iteration. For this purpose, we utilize a recently proposed RNN architecture called
+antisymmetric RNN (aRNN) that avoids vanishing and exploding gradients via network weights designed
+to have the spectral properties of a convergent numerical integration scheme. We demonstrate empirically
+that the online injection of these values into the ADMM iteration accelerates convergence by a factor
+of 2-50x for partitioned 13-, 300- and 2848-bus test systems under differing load scenarios. The
+proposed method has several advantages: it can be easily integrated around an existing software
+framework, requiring no changes to underlying physical models; it maintains the security of private
+decision variables inherent in consensus ADMM; inference is fast and so may be used in online settings;
+historical data is leveraged to improve performance instead of being discarded or ignored. While
+we focus on the ADMM formulation of distributed DC-OPF in this paper, the ideas presented are naturally
+extended to other iterative optimization schemes. 

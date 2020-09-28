@@ -1,0 +1,18 @@
+We demonstrate model-based, visual robot manipulation of linear deformable objects. Our approach
+is based on a state-space representation of the physical system that the robot aims to control. This
+choice has multiple advantages, including the ease of incorporating physical priors in the dynamics
+model and perception model, and the ease of planning manipulation actions. In addition, physical
+states can naturally represent object instances of different appearances. Therefore, dynamics
+in the state space can be learned in one setting and directly used in other visually different settings.
+This is in contrast to dynamics learned in pixel space or latent space, where generalization to visual
+differences are not guaranteed. Challenges in taking the state-space approach are the estimation
+of the high-dimensional state of a deformable object from raw images, where annotations are very
+expensive on real data, and finding a dynamics model that is both accurate, generalizable, and efficient
+to compute. We are the first to demonstrate self-supervised training of rope state estimation on
+real images, without requiring expensive annotations. This is achieved by our novel differentiable
+renderer and image loss, which are generalizable across a wide range of visual appearances. With
+estimated rope states, we train a fast and differentiable neural network dynamics model that encodes
+the physics of mass-spring systems. Our method has a higher accuracy in predicting future states
+compared to models that do not involve explicit state estimation and do not use any physics prior.
+We also show that our approach achieves more efficient manipulation, both in simulation and on a
+real robot, when used within a model predictive controller. 

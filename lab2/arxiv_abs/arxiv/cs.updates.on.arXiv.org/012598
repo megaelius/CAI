@@ -1,0 +1,19 @@
+In this paper, we propose new listwise learning-to-rank models that mitigate the shortcomings
+of existing ones. Existing listwise learning-to-rank models are generally derived from the classical
+Plackett-Luce model, which has three major limitations. (1) Its permutation probabilities overlook
+ties, i.e., a situation when more than one document has the same rating with respect to a query. This
+can lead to imprecise permutation probabilities and inefficient training because of selecting
+documents one by one. (2) It does not favor documents having high relevance. (3) It has a loose assumption
+that sampling documents at different steps is independent. To overcome the first two limitations,
+we model ranking as selecting documents from a candidate set based on unique rating levels in decreasing
+order. The number of steps in training is determined by the number of unique rating levels. We propose
+a new loss function and associated four models for the entire sequence of weighted classification
+tasks by assigning high weights to the selected documents with high ratings for optimizing Normalized
+Discounted Cumulative Gain (NDCG). To overcome the final limitation, we further propose a novel
+and efficient way of refining prediction scores by combining an adapted Vanilla Recurrent Neural
+Network (RNN) model with pooling given selected documents at previous steps. We encode all of the
+documents already selected by an RNN model. In a single step, we rank all of the documents with the
+same ratings using the last cell of the RNN multiple times. We have implemented our models using three
+settings: neural networks, neural networks with gradient boosting, and regression trees with
+gradient boosting. We have conducted experiments on four public datasets. The experiments demonstrate
+that the models notably outperform state-of-the-art learning-to-rank models. 

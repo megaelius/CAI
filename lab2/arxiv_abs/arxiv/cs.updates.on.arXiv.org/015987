@@ -1,0 +1,19 @@
+Deep candidate generation (DCG), which narrows down the enormous corpus to a few hundred candidate
+items via representation learning, is integral to industrial recommender systems. Standard approaches
+adopt maximum likelihood estimation (MLE) and rely on sampling to ensure scalability, which reduces
+DCG to a task similar to language modeling. However, live recommender systems face severe unfairness
+of exposure with a corpus several orders of magnitude larger than that of natural language, which
+implies that (1) MLE will preserve and even exacerbate the exposure bias in the long run, as it aims
+to faithfully fit the history records, and (2) suboptimal sampling and inadequate use of item features
+can lead to inferior representations for the items that are unfairly ignored. In this paper, we introduce
+CLRec, a Contrastive Learning paradigm successfully deployed in a real-world massive recommender
+system, for alleviating exposure unfairness in DCG. We theoretically prove that a popular choice
+of contrastive loss is equivalent to reducing the exposure bias via inverse propensity scoring,
+which complements previous understanding of contrastive learning. We further implement a good
+sampling distribution and reuse most of the computation when encoding rich features for both positive
+and negative items, by employing a fix-sized queue to store items (and reuse the computed representations)
+from previous batches, where the queue serves as the negative sampler. In contrast, previous state-of-art
+DCG approaches do not use rich features for the negative items due to high computational costs, since
+the number of negative samples needs to be large. Extensive offline analyses and online A/B tests
+in Mobile Taobao demonstrate substantial improvement, including a dramatic reduction in the Matthew
+effect. 

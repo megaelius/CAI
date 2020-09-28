@@ -1,0 +1,20 @@
+We present an extensible software framework, hIPPYlib, for solution of large-scale deterministic
+and Bayesian inverse problems governed by partial differential equations (PDEs) with infinite-dimensional
+parameter fields (which are high-dimensional after discretization). hIPPYlib overcomes the
+prohibitive nature of Bayesian inversion for this class of problems by implementing state-of-the-art
+scalable algorithms for PDE-based inverse problems that exploit the structure of the underlying
+operators, notably the Hessian of the log-posterior. The key property of the algorithms implemented
+in hIPPYlib is that the solution of the deterministic and linearized Bayesian inverse problem is
+computed at a cost, measured in linearized forward PDE solves, that is independent of the parameter
+dimension. The mean of the posterior is approximated by the MAP point, which is found by minimizing
+the negative log-posterior. This deterministic nonlinear least-squares optimization problem
+is solved with an inexact matrix-free Newton-CG method. The posterior covariance is approximated
+by the inverse of the Hessian of the negative log posterior evaluated at the MAP point. This Gaussian
+approximation is exact when the parameter-to-observable map is linear; otherwise, its logarithm
+agrees to two derivatives with the log-posterior at the MAP point, and thus it can serve as a proposal
+for Hessian-based MCMC methods. The construction of the posterior covariance is made tractable
+by invoking a low-rank approximation of the Hessian of the log-likelihood. Scalable tools for sample
+generation are also implemented. hIPPYlib makes all of these advanced algorithms easily accessible
+to domain scientists and provides an environment that expedites the development of new algorithms.
+hIPPYlib is also a teaching tool to educate researchers and practitioners who are new to inverse
+problems and the Bayesian inference framework. 

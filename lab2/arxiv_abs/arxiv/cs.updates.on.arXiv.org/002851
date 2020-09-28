@@ -1,0 +1,20 @@
+The recent Meltdown and Spectre attacks highlight the importance of automated verification techniques
+for identifying hardware security vulnerabilities. We have developed a tool for synthesizing
+microarchitecture-specific programs capable of producing any user-specified hardware execution
+pattern of interest. Our tool takes two inputs: a formal description of (i) a microarchitecture
+in a domain-specific language, and (ii) a microarchitectural execution pattern of interest, e.g.
+a threat pattern. All programs synthesized by our tool are capable of producing the specified execution
+pattern on the supplied microarchitecture. We used our tool to specify a hardware execution pattern
+common to Flush+Reload attacks and automatically synthesized security litmus tests representative
+of those that have been publicly disclosed for conducting Meltdown and Spectre attacks. We also
+formulated a Prime+Probe threat pattern, enabling our tool to synthesize a new variant of each---MeltdownPrime
+and SpectrePrime. Both of these new exploits use Prime+Probe approaches to conduct the timing attack.
+They are both also novel in that they are 2-core attacks which leverage the cache line invalidation
+mechanism in modern cache coherence protocols. These are the first proposed Prime+Probe variants
+of Meltdown and Spectre. But more importantly, both Prime attacks exploit invalidation-based
+coherence protocols to achieve the same level of precision as a Flush+Reload attack. While mitigation
+techniques in software (e.g., barriers that prevent speculation) will likely be the same for our
+Prime variants as for original Spectre and Meltdown, we believe that hardware protection against
+them will be distinct. As a proof of concept, we implemented SpectrePrime as a C program and ran it
+on an Intel x86 processor, averaging about the same accuracy as Spectre over 100 runs---97.9% for
+Spectre and 99.95% for SpectrePrime. 

@@ -1,0 +1,19 @@
+We consider graph coloring and related problems in the distributed message-passing model. {Locally-iterative
+algorithms} are especially important in this setting. These are algorithms in which each vertex
+decides about its next color only as a function of the current colors in its 1-hop neighborhood. In
+STOC'93 Szegedy and Vishwanathan showed that any locally-iterative (Delta+1)-coloring algorithm
+requires Omega(Delta log Delta + log^* n) rounds, unless there is "a very special type of coloring
+that can be very efficiently reduced" \cite{SV93}. In this paper we obtain this special type of coloring.
+Specifically, we devise a locally-iterative (Delta+1)-coloring algorithm with running time
+O(Delta + log^* n), i.e., {below} Szegedy-Vishwanathan barrier. This demonstrates that this barrier
+is not an inherent limitation for locally-iterative algorithms. As a result, we also achieve significant
+improvements for dynamic, self-stabilizing and bandwidth-restricted settings: - We obtain self-stabilizing
+distributed algorithms for (Delta+1)-vertex-coloring, (2Delta-1)-edge-coloring, maximal
+independent set and maximal matching with O(Delta+log^* n) time. This significantly improves
+previously-known results that have O(n) or larger running times \cite{GK10}. - We devise a (2Delta-1)-edge-coloring
+algorithm in the CONGEST model with O(Delta + log^* n) time and in the Bit-Round model with O(Delta
++ log n) time. Previously-known algorithms had superlinear dependency on Delta for (2Delta-1)-edge-coloring
+in these models. - We obtain an arbdefective coloring algorithm with running time O(\sqrt Delta
++ log^* n). We employ it in order to compute proper colorings that improve the recent state-of-the-art
+bounds of Barenboim from PODC'15 \cite{B15} and Fraigniaud et al. from FOCS'16 \cite{FHK16} by
+polylogarithmic factors. - Our algorithms are applicable to the SET-LOCAL model of \cite{HKMS15}.

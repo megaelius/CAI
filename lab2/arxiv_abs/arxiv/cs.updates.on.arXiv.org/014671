@@ -1,0 +1,17 @@
+In this paper, we proposed two modified neural network architectures based on SFANet and SegNet
+respectively for accurate and efficient crowd counting. Inspired by SFANet, the first model is
+attached with two novel multi-scale-aware modules, called ASSP and CAN. This model is named M-SFANet.
+The encoder of M-SFANet is enhanced with ASSP containing parallel atrous convolutional layers
+with different sampling rates and hence able to extract multi-scale features of the target object
+and incorporate larger context. To further deal with scale variation throughout an input image,
+we leverage contextual module called CAN which adaptively encodes the scales of the contextual
+information. The combination yields an effective model for counting in both dense and sparse crowd
+scenes. Based on SFANet decoder structure, M-SFANet's decoder has dual paths, for density map generation
+and attention map generation. The second model is called M-SegNet, which is produced by replacing
+the bilinear upsampling in SFANet with max unpooling that is used in SegNet. This change provides
+the faster model while providing competitive counting performance. Designed for high-speed surveillance
+applications, M-SegNet has no additional multi-scale-aware module in order to not increase the
+complexity. Both models are encoder-decoder based architectures and are end-to-end trainable.
+We also conduct extensive experiments on five crowd counting datasets and one vehicle counting
+dataset to show that these modifications yield algorithms that could outperform some of state-of-the-art
+crowd counting methods. Codes are available at https://github.com/Pongpisit-Thanasutives/Variations-of-SFANet-for-Crowd-Counting.

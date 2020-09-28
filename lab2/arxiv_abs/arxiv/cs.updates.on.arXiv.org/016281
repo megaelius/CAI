@@ -1,0 +1,20 @@
+Graph Neural Networks (GNNs) have achieved significant improvements in various domains. Sparse
+Matrix-Matrix multiplication (SpMM) is a fundamental operator in GNNs, which performs a multiplication
+between a sparse matrix and a dense matrix. Accelerating SpMM on parallel hardware like GPUs can
+face the following challenges: From the GNN application perspective, the compatibility needs
+to be considered. General GNN algorithms require SpMM-like operations (e.g., pooling) between
+matrices, which are not supported in current high-performance GPU libraries (e.g., Nvidia cuSPARSE).
+Moreover, the sophisticated preprocessing in previous implementations will lead to heavy data
+format conversion overheads in GNN frameworks. From the GPU hardware perspective, optimizations
+in SpMV (Sparse Matrix-Vector) designs on GPUs do not apply well to SpMM. SpMM exposes the column-wise
+parallelism in the dense output matrix, but straightforward generalization from SpMV leads to
+inefficient, uncoalesced access to sparse matrix in global memory. The sparse row data can be reused
+among GPU threads, which is neither possible in SpMM designs inherited from SpMV. To tackle these
+challenges, we propose GE-SpMM. GE-SpMM performs SpMM-like operation on sparse matrices represented
+in the most common Compressed Sparse Row (CSR) format, so it can be embedded in GNN frameworks with
+no preprocessing overheads and support general GNN algorithms. We introduce the Coalesced Row
+Caching method to process columns in parallel and ensure coalesced access to sparse matrix data.
+We also present the Coarse-grained Warp Merging to reduce redundant data loading among GPU warps.
+Experiments on a real-world graph dataset show that GE-SpMM achieves up to 1.41X speedup over Nvidia
+cuSPARSE and up to 1.81X over GraphBLAST. We also embed GE-SpMM in GNN frameworks and get up to 3.67X
+speedup over popular GNN models like GCN and GraphSAGE. 

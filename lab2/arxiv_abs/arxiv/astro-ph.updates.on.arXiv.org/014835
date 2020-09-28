@@ -1,0 +1,17 @@
+As it stands today, the search for extraterrestrial intelligence (SETI) is highly dependent on
+our ability to detect interesting candidate signals, or technosignatures, in radio telescope
+observations and distinguish these from human radio frequency interference (RFI). Current signal
+search pipelines look for signals in spectrograms of intensity as a function of time and frequency
+(which can be thought of as images), but tend to do poorly in identifying multiple signals in a single
+data frame. This is especially apparent when there are dim signals in the same frame as bright, high
+signal-to-noise ratio (SNR) signals. In this work, we approach this problem using convolutional
+neural networks (CNN) as a computationally efficient method for localizing signals in synthetic
+observations resembling data collected by Breakthrough Listen using the Green Bank Telescope.
+We generate two synthetic datasets, the first with exactly one signal at various SNR levels and the
+second with exactly two signals, one of which represents RFI. We find that a residual CNN with strided
+convolutions and using multiple image normalizations as input outperforms a more basic CNN with
+max pooling trained on inputs with only one normalization. Training each model on a smaller subset
+of the training data at higher SNR levels results in a significant increase in model performance,
+reducing root mean square errors by at least a factor of 3 at an SNR of 25 dB. Although each model produces
+outliers with significant error, these results demonstrate that using CNNs to analyze signal location
+is promising, especially in image frames that are crowded with multiple signals. 

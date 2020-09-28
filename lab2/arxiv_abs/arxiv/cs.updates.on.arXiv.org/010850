@@ -1,0 +1,19 @@
+Unlike in statistical compression, where Shannon's entropy is a definitive lower bound, no such
+a clear measure exists for the compressibility of repetitive sequences other than the uncomputable
+Kolmogorov's complexity. Since statistical entropy does not capture repetitiveness, ad-hoc
+measures like the size $z$ of the Lempel-Ziv parse are frequently used to estimate it. Recently,
+a more principled measure, the size $\gamma$ of the smallest {\em attractor} of a string $S[1..n]$,
+was introduced. Measure $\gamma$ lower bounds all the previous relevant ones (e.g., $z$), yet $S$
+can be represented and indexed within space $O(\gamma\log(n/\gamma))$, which also upper bounds
+most measures. While $\gamma$ is certainly a better measure of repetitiveness, it is NP-complete
+to compute, and it is not known if $S$ can always be represented in $O(\gamma)$ space. In this paper
+we study a smaller measure, $\delta \le \gamma$, which can be computed in linear time. We show that
+$\delta$ captures better the concept of compressibility in repetitive strings: We prove that,
+for some string families, it holds $\gamma = \Omega(\delta \log n)$. Still, we can build a representation
+of $S$ of size $O(\delta\log(n/\delta))$, which supports direct access to any $S[i]$ in time $O(\log(n/\delta))$
+and finds the $occ$ occurrences of any pattern $P[1..m]$ in time $O(m\log n + occ\log^\epsilon n)$
+for any constant $\epsilon>0$. Further, such representation is worst-case optimal because, in
+some families, $S$ can only be represented in $\Omega(\delta\log n)$ space. We complete our characterization
+of $\delta$ by showing that $\gamma$, $z$ and other measures of repetitiveness are always $O(\delta\log(n/\delta))$,
+but in some string families, the smallest context-free grammar is of size $g=\Omega(\delta \log^2
+n / \log\log n)$. No such a lower bound is known to hold for $\gamma$. 

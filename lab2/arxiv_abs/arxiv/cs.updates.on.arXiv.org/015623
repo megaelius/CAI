@@ -1,0 +1,19 @@
+Transfer learning has been shown to be effective in many applications in which training data for
+the target problem are limited but data for a related (source) problem are abundant. In this paper,
+we apply transfer learning to the prediction of anti-cancer drug response. Previous transfer learning
+studies for drug response prediction focused on building models that predict the response of tumor
+cells to a specific drug treatment. We target the more challenging task of building general prediction
+models that can make predictions for both new tumor cells and new drugs. We apply the classic transfer
+learning framework that trains a prediction model on the source dataset and refines it on the target
+dataset, and extends the framework through ensemble. The ensemble transfer learning pipeline
+is implemented using LightGBM and two deep neural network (DNN) models with different architectures.
+Uniquely, we investigate its power for three application settings including drug repurposing,
+precision oncology, and new drug development, through different data partition schemes in cross-validation.
+We test the proposed ensemble transfer learning on benchmark in vitro drug screening datasets,
+taking one dataset as the source domain and another dataset as the target domain. The analysis results
+demonstrate the benefit of applying ensemble transfer learning for predicting anti-cancer drug
+response in all three applications with both LightGBM and DNN models. Compared between the different
+prediction models, a DNN model with two subnetworks for the inputs of tumor features and drug features
+separately outperforms LightGBM and the other DNN model that concatenates tumor features and drug
+features for input in the drug repurposing and precision oncology applications. In the more challenging
+application of new drug development, LightGBM performs better than the other two DNN models. 

@@ -1,0 +1,20 @@
+In this work we propose a high-order discretization of the Baer-Nunziato two-phase flow model (Baer
+and Nunziato, Int. J. Multiphase Flow, 12 (1986), pp. 861-889) with closures for interface velocity
+and pressure adapted to the treatment of discontinuous solutions, and stiffened gas equations
+of states. We use the discontinuous Galerkin spectral element method (DGSEM), based on collocation
+of quadrature and interpolation points (Kopriva and Gassner, J. Sci. Comput., 44 (2010), pp. 136-155).
+The DGSEM uses summation-by-parts (SBP) operators in the numerical quadrature for approximating
+the integrals over discretization elements (Carpenter et al., SIAM J. Sci. Comput., 36 (2014),
+pp. B835-B867; Gassner et al., J. Comput. Phys., 327 (2016), pp. 39-66). Here, we build upon the framework
+provided in (F. Renac, J. Comput. Phys., 382 (2019), pp. 1-36) for nonconservative hyperbolic systems
+to modify the integration over cell elements using the SBP operators and replace the physical fluxes
+with entropy conservative fluctuation fluxes from Castro et al. (SIAM J. Numer. Anal., 51 (2013),
+pp. 1371-1391), while we derive entropy stable fluxes applied at interfaces. This allows to establish
+a semi-discrete inequality for the cell-averaged physical entropy, while being high-order accurate.
+The design of the numerical fluxes also formally preserves the kinetic energy at the semi-discrete
+level. High-order integration in time is performed using strong stability-preserving Runge-Kutta
+schemes and we propose conditions on the numerical parameters for the positivity of the cell-averaged
+void fraction and partial densities. The positivity of the cell-averaged solution is extended
+to nodal values by the use of an a posteriori limiter. The high-order accuracy, nonlinear stability,
+and robustness of the present scheme are assessed through several numerical experiments in one
+and two space dimensions. 

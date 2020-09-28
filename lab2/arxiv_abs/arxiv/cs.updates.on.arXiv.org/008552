@@ -1,0 +1,17 @@
+There are different problems for resolution of complex LC-MS or GC-MS data, such as the existence
+of embedded chromatographic peaks, continuum background and overlapping in mass channels for
+different components. These problems cause rotational ambiguity in recovered profiles calculated
+using multivariate curve resolution (MCR) methods. Since mass spectra are sparse in nature, sparsity
+has been proposed recently as a constraint in MCR methods for analyzing LC-MS data. There are different
+ways for implementation of the sparsity constraint, and majority of methods rely on imposing a penalty
+based on the L0-, L1- and L2-norms of recovered mass spectra. Ridge regression and least absolute
+shrinkage and selection operator (Lasso) can be used for implementation of L2- and L1-norm penalties
+in MCR, respectively. The main question is which Lx-norm penalty is more worthwhile for implementation
+of the sparsity constraint in MCR methods. In order to address this question, two and three component
+LC-MS data were simulated and used for the case study in this work. The areas of feasible solutions
+(AFS) were calculated using the grid search strategy. Calculating Lx-norms values in AFS for x between
+zero and two revealed that the gradient of optimization surface increased from x values equal to
+two to x values near zero. However, for x equal to zero, the optimization surface was similar to a plateau,
+which increased the risk of sticking in local minima. Generally, results in this work, recommend
+the use of L1-norm penalty methods like Lasso for implementation of sparsity constraint in MCR-ALS
+algorithm for finding more sparse solutions and reducing the extent of rotational ambiguity. 

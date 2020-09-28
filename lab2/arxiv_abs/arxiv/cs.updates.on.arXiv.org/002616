@@ -1,0 +1,18 @@
+Recently, code reuse attacks (CRAs), such as return-oriented programming (ROP) and jump-oriented
+programming (JOP), have emerged as a new class of ingenious security threatens. Attackers can utilize
+CRAs to hijack the control flow of programs to perform malicious actions without injecting any codes.
+Many defenses, classed into software-based and hardware-based, have been proposed. However,
+software-based methods are difficult to be deployed in practical systems due to high performance
+overhead. Hardware-based methods can reduce performance overhead but may require extending instruction
+set architectures (ISAs) and modifying compiler or suffer the vulnerability of key leakage. To
+tackle these issues, this paper proposes a new hardware-based control flow checking method to resist
+CRAs with negligible performance overhead without extending ISAs, modifying compiler and leaking
+the encryption/decryption key. The key technique involves two control flow checking mechanisms.
+The first one is the encrypted Hamming distances (EHDs) matching between the physical unclonable
+function (PUF) response and the return addresses, which prevents attackers from returning between
+gadgets so long as the PUF response is secret, thus resisting ROP attacks. The second one is the liner
+encryption/decryption operation (XOR) between PUF response and the instructions at target addresses
+of call and jmp instructions to defeat JOP attacks. Advanced return-based full-function reuse
+attacks will be prevented with the dynamic key-updating method. Experimental evaluations on benchmarks
+demonstrate that the proposed method introduces negligible 0.95% run-time overhead and 0.78%
+binary size overhead on average. 

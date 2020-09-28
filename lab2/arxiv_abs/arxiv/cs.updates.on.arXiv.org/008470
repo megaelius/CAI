@@ -1,0 +1,17 @@
+In this paper, we propose a compositional approach for verifying autonomous track-based traffic
+control systems at runtime. This approach traces a sequence of changes propagated through the system
+and verifies the system concerning the changed/adapted components. The system is modeled by multiple
+interactive coordinated actor models, where each coordinated actor model corresponds to a component
+of the system. Each component interacts with several components, called its environment components.
+We define the operational semantics of a coordinated actor model and the multiple interactive coordinated
+actor models based on Timed Input Output Transition System (TIOTS). We call two (or more) TIOTSs
+composable if they do not reach an error state in their parallel composition. By detecting a change
+in a component, the component is adapted. If TIOTSs of the adapted component and its environment
+components are composable, the change does not propagate to the environment components and correctness
+constraints of the system are preserved. Otherwise, the change is propagated. In this case, all
+components affected by the change are adapted and are composed to form a composite component. It
+is then checked whether TIOTSs of the composite component and its environment components are composable.
+This procedure continues until the change does not propagate. To reduce the state space, for checking
+the composability we use a reduced version of the TIOTSs of the environment components. We implement
+our approach in the Ptolemy II framework. The results of our experiments indicate that the proposed
+approach improves the model checking time and the memory consumption. 

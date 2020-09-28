@@ -1,0 +1,19 @@
+The densest subgraph problem, introduced in the 80s by Picard and Queyranne as well as Goldberg,
+is a classic problem in combinatorial optimization with a wide range of applications. The lowest
+outdegree orientation problem is known to be its dual problem. We study both the problem of finding
+dense subgraphs and the problem of computing a low outdegree orientation in the distributed settings.
+Suppose $G=(V,E)$ is the underlying network as well as the input graph. Let $D$ denote the density
+of the maximum density subgraph of $G$. Our main results are as follows. Given a value $\tilde{D}
+\leq D$ and $0 < \epsilon < 1$, we show that a subgraph with density at least $(1-\epsilon)\tilde{D}$
+can be identified deterministically in $O((\log n) / \epsilon)$ rounds in the LOCAL model. We also
+present a lower bound showing that our result for the LOCAL model is tight up to an $O(\log n)$ factor.
+In the CONGEST model, we show that such a subgraph can be identified in $O((\log^3 n) / \epsilon^3)$
+rounds with high probability. Our techniques also lead to an $O(diameter + (\log^4 n)/\epsilon^4)$-round
+algorithm that yields a $1-\epsilon$ approximation to the densest subgraph. This improves upon
+the previous $O(diameter /\epsilon \cdot \log n)$-round algorithm by Das Sarma et al. [DISC 2012]
+that only yields a $1/2-\epsilon$ approximation. Given an integer $\tilde{D} \geq D$ and $\Omega(1/\tilde{D})
+< \epsilon < 1/4$, we give a deterministic, $\tilde{O}((\log^2 n) /\epsilon^2)$-round algorithm
+in the CONGEST model that computes an orientation where the outdegree of every vertex is upper bounded
+by $(1+\epsilon)\tilde{D}$. Previously, the best deterministic algorithm and randomized algorithm
+by Harris [FOCS 2019] run in $\tilde{O}((\log^6 n)/ \epsilon^4)$ rounds and $\tilde{O}((\log^3
+n) /\epsilon^3)$ rounds respectively and only work in the LOCAL model. 

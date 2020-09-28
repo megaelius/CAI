@@ -1,0 +1,17 @@
+Visual Question Answering (VQA) models employ attention mechanisms to discover image locations
+that are most relevant for answering a specific question. For this purpose, several multimodal
+fusion strategies have been proposed, ranging from relatively simple operations (e.g., linear
+sum) to more complex ones (e.g., Block). The resulting multimodal representations define an intermediate
+feature space for capturing the interplay between visual and semantic features, that is helpful
+in selectively focusing on image content. In this paper, we propose a question-agnostic attention
+mechanism that is complementary to the existing question-dependent attention mechanisms. Our
+proposed model parses object instances to obtain an `object map' and applies this map on the visual
+features to generate Question-Agnostic Attention (QAA) features. In contrast to question-dependent
+attention approaches that are learned end-to-end, the proposed QAA does not involve question-specific
+training, and can be easily included in almost any existing VQA model as a generic light-weight pre-processing
+step, thereby adding minimal computation overhead for training. Further, when used in complement
+with the question-dependent attention, the QAA allows the model to focus on the regions containing
+objects that might have been overlooked by the learned attention representation. Through extensive
+evaluation on VQAv1, VQAv2 and TDIUC datasets, we show that incorporating complementary QAA allows
+state-of-the-art VQA models to perform better, and provides significant boost to simplistic VQA
+models, enabling them to performance on par with highly sophisticated fusion strategies. 

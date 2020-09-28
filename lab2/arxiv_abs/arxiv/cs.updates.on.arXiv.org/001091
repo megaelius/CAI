@@ -1,0 +1,19 @@
+Memory-hard functions (MHF) are functions whose evaluation cost is dominated by memory cost. MHFs
+are egalitarian, in the sense that evaluating them on dedicated hardware (like FPGAs or ASICs) is
+not much cheaper than on off-the-shelf hardware (like x86 CPUs). MHFs have interesting cryptographic
+applications, most notably to password hashing and securing blockchains. Alwen and Serbinenko
+[STOC'15] define the cumulative memory complexity (cmc) of a function as the sum (over all time-steps)
+of the amount of memory required to compute the function. They advocate that a good MHF must have high
+cmc. Unlike previous notions, cmc takes into account that dedicated hardware might exploit amortization
+and parallelism. Still, cmc has been critizised as insufficient, as it fails to capture possible
+time-memory trade-offs, as memory cost doesn't scale linearly, functions with the same cmc could
+still have very different actual hardware cost. In this work we address this problem, and introduce
+the notion of sustained-memory complexity, which requires that any algorithm evaluating the function
+must use a large amount of memory for many steps. We construct functions (in the parallel random oracle
+model) whose sustained-memory complexity is almost optimal: our function can be evaluated using
+$n$ steps and $O(n/\log(n))$ memory, in each step making one query to the (fixed-input length) random
+oracle, while any algorithm that can make arbitrary many parallel queries to the random oracle,
+still needs $\Omega(n/\log(n))$ memory for $\Omega(n)$ steps. Our main technical contribution
+is the construction is a family of DAGs on $n$ nodes with constant indegree with high "sustained-space
+complexity", meaning that any parallel black-pebbling strategy requires $\Omega(n/\log(n))$
+pebbles for at least $\Omega(n)$ steps. 

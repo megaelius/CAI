@@ -1,0 +1,20 @@
+Encrypting data before sending it to the cloud protects it against hackers and malicious insiders,
+but requires the cloud to compute on encrypted data. Trusted (hardware) modules, e.g., secure enclaves
+like Intel's SGX, can very efficiently run entire programs in encrypted memory. However, it already
+has been demonstrated that software vulnerabilities give an attacker ample opportunity to insert
+arbitrary code into the program. This code can then modify the data flow of the program and leak any
+secret in the program to an observer in the cloud via SGX side-channels. Since any larger program
+is rife with software vulnerabilities, it is not a good idea to outsource entire programs to an SGX
+enclave. A secure alternative with a small trusted code base would be fully homomorphic encryption
+(FHE) -- the holy grail of encrypted computation. However, due to its high computational complexity
+it is unlikely to be adopted in the near future. As a result researchers have made several proposals
+for transforming programs to perform encrypted computations on less powerful encryption schemes.
+Yet, current approaches fail on programs that make control-flow decisions based on encrypted data.
+In this paper, we introduce the concept of data flow authentication (DFAuth). DFAuth prevents an
+adversary from arbitrarily deviating from the data flow of a program. Hence, an attacker cannot
+perform an attack as outlined before on SGX. This enables that all programs, even those including
+operations on control-flow decision variables, can be computed on encrypted data. We implemented
+DFAuth using a novel authenticated homomorphic encryption scheme, a Java bytecode-to-bytecode
+compiler producing fully executable programs, and SGX enclaves. A transformed neural network
+that performs machine learning on sensitive medical data can be evaluated on encrypted inputs and
+encrypted weights in 0.86 seconds. 

@@ -1,0 +1,19 @@
+We present a data partitioning technique performed over skip graphs that promotes significant
+quantitative and qualitative improvements on NUMA locality in concurrent data structures, as
+well as reduced contention. We build on previous techniques of thread-local indexing and laziness,
+and, at a high level, our design consists of a partitioned skip graph, well-integrated with thread-local
+sequential maps, operating without contention. As a proof-of-concept, we implemented map and
+relaxed priority queue ADTs using our technique. Maps were conceived using lazy and non-lazy approaches
+to insertions and removals, and our implementations are shown to be competitive with state-of-the-art
+maps. We observe a 6x higher CAS locality, a 68.6% reduction on the number of remote CAS operations,
+and a increase from 88.3% to 99% CAS success rate when using a lazy skip graph as compared to a control
+skip list (subject to the same codebase, optimizations, and implementation practices). Qualitatively
+speaking, remote memory accesses are not only reduced in number, but the larger the NUMA distance
+between threads, the larger the reduction is. We consider two alternative implementations of relaxed
+priority queues that further take advantage of our data partitioning over skip graphs: (a) using
+``spraying'', a well-known random-walk technique usually performed over skip lists, but now performed
+over skip graphs; and (b) a custom protocol that traverses the skip graph deterministically, marking
+elements along this traversal. We provide formal arguments indicating that the first approach
+is more \emph{relaxed}, that is, that the span of removed keys is larger, while the second approach
+has smaller contention. Experimental results indicate that the approach based on spraying performs
+better on skip graphs, yet both seem to scale appropriately. 

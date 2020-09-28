@@ -1,0 +1,17 @@
+In this work, we focus on the relaxed physical factorization (RPF) preconditioner for the block
+linear systems arising from the three-field formulation (displacement/velocity/pressure)
+of coupled poromechanics. Inspired by the relaxed dimensional factorization developed for the
+Navier-Stokes equations by Benzi et al. [J. Comput. Phys., 230 (2011), pp. 6185--6202; Comput.
+Methods Appl. Mech. Engrg., 300 (2016), pp. 129--145], the RPF preconditioner was recently advanced
+by Frigo et al. [SIAM J. Sci. Comp., 41 (2019), pp. B694--B720] and relies on: (i) combining proper
+physics-based splittings of the block matrix by field type, and (ii) introducing an optimal relaxation
+parameter $\alpha$. However, a possible drawback arises from the need of inverting blocks in the
+form $\hat{C} = ( C + \beta F F^T) $ for large values of the real coefficient $\beta$, where $C$ is a regular
+square matrix and $FF^T$ is a rank-deficient term. In this work, we propose a family of algebraic
+techniques to stabilize the inexact solve with $\hat{C}$, which can also prove useful in other problems
+where such an issue might arise, such as augmented Lagrangian preconditioning strategies for Navier-Stokes
+or incompressible elasticity. First, we introduce an iterative scheme obtained by a natural splitting
+of matrix $\hat{C}$. Second, we develop a technique based on the use of a proper projection operator
+onto the range of $F$. Both approaches give rise to a novel class of preconditioners denoted as Enhanced
+RPF (ERPF). Effectiveness and robustness of the proposed algorithms are demonstrated in both theoretical
+benchmarks and real-world large-size applications, outperforming the native RPF preconditioner.

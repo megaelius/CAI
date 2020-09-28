@@ -1,0 +1,19 @@
+We aimed to enhance the performance of a supervised model for clinical named-entity recognition
+(NER) using medical terminologies. In order to evaluate our system in French, we built a corpus for
+5 types of clinical entities. We used a terminology-based system as baseline, built upon UMLS and
+SNOMED. Then, we evaluated a biGRU-CRF, and an hybrid system using the prediction of the terminology-based
+system as feature for the biGRU-CRF. In English, we evaluated the NER systems on the i2b2-2009 Medication
+Challenge for Drug name recognition, which contained 8,573 entities for 268 documents. In French,
+we built APcNER, a corpus of 147 documents annotated for 5 entities (drug name, sign or symptom, disease
+or disorder, diagnostic procedure or lab test and therapeutic procedure). We evaluated each NER
+systems using exact and partial match definition of F-measure for NER. The APcNER contains 4,837
+entities which took 28 hours to annotate, the inter-annotator agreement was acceptable for Drug
+name in exact match (85%) and acceptable for other entity types in non-exact match (>70%). For drug
+name recognition on both i2b2-2009 and APcNER, the biGRU-CRF performed better that the terminology-based
+system, with an exact-match F-measure of 91.1% versus 73% and 81.9% versus 75% respectively. Moreover,
+the hybrid system outperformed the biGRU-CRF, with an exact-match F-measure of 92.2% versus 91.1%
+(i2b2-2009) and 88.4% versus 81.9% (APcNER). On APcNER corpus, the micro-average F-measure of
+the hybrid system on the 5 entities was 69.5% in exact match, and 84.1% in non-exact match. APcNER
+is a French corpus for clinical-NER of five type of entities which covers a large variety of document
+types. Extending supervised model with terminology allowed for an easy performance gain, especially
+in low regimes of entities, and established state of the art results on the i2b2-2009 corpus. 

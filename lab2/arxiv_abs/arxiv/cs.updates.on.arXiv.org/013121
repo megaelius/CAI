@@ -1,0 +1,19 @@
+Individual tooth segmentation from cone beam computed tomography (CBCT) images is an essential
+prerequisite for an anatomical understanding of orthodontic structures in several applications,
+such as tooth reformation planning and implant guide simulations. However, the presence of severe
+metal artifacts in CBCT images hinders the accurate segmentation of each individual tooth. In this
+study, we propose a neural network for pixel-wise labeling to exploit an instance segmentation
+framework that is robust to metal artifacts. Our method comprises of three steps: 1) image cropping
+and realignment by pose regressions, 2) metal-robust individual tooth detection, and 3) segmentation.
+We first extract the alignment information of the patient by pose regression neural networks to
+attain a volume-of-interest (VOI) region and realign the input image, which reduces the inter-overlapping
+area between tooth bounding boxes. Then, individual tooth regions are localized within a VOI realigned
+image using a convolutional detector. We improved the accuracy of the detector by employing non-maximum
+suppression and multiclass classification metrics in the region proposal network. Finally, we
+apply a convolutional neural network (CNN) to perform individual tooth segmentation by converting
+the pixel-wise labeling task to a distance regression task. Metal-intensive image augmentation
+is also employed for a robust segmentation of metal artifacts. The result shows that our proposed
+method outperforms other state-of-the-art methods, especially for teeth with metal artifacts.
+The primary significance of the proposed method is two-fold: 1) an introduction of pose-aware VOI
+realignment followed by a robust tooth detection and 2) a metal-robust CNN framework for accurate
+tooth segmentation. 

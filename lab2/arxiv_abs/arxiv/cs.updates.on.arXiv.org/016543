@@ -1,0 +1,17 @@
+Let $W$ be a string of length $n$ over an alphabet $\Sigma$, $k$ be a positive integer, and $\mathcal{S}$
+be a set of length-$k$ substrings of $W$. The ETFS problem asks us to construct a string $X_{\mathrm{ED}}$
+such that: (i) no string of $\mathcal{S}$ occurs in $X_{\mathrm{ED}}$; (ii) the order of all other
+length-$k$ substrings over $\Sigma$ is the same in $W$ and in $X_{\mathrm{ED}}$; and (iii) $X_{\mathrm{ED}}$
+has minimal edit distance to $W$. When $W$ represents an individual's data and $\mathcal{S}$ represents
+a set of confidential patterns, the ETFS problem asks for transforming $W$ to preserve its privacy
+and its utility [Bernardini et al., ECML PKDD 2019]. ETFS can be solved in $\mathcal{O}(n^2k)$ time
+[Bernardini et al., CPM 2020]. The same paper shows that ETFS cannot be solved in $\mathcal{O}(n^{2-\delta})$
+time, for any $\delta>0$, unless the Strong Exponential Time Hypothesis (SETH) is false. Our main
+results can be summarized as follows: (i) an $\mathcal{O}(n^2\log^2k)$-time algorithm to solve
+ETFS; and (ii) an $\mathcal{O}(n^2\log^2n)$-time algorithm to solve AETFS, a generalization
+of ETFS in which the elements of $\mathcal{S}$ can have arbitrary lengths. Our algorithms are thus
+optimal up to polylogarithmic factors, unless SETH fails. Let us also stress that our algorithms
+work under edit distance with arbitrary weights at no extra cost. As a bonus, we show how to modify
+some known techniques, which speed up the standard edit distance computation, to be applied to our
+problems. Beyond string sanitization, our techniques may inspire solutions to other problems
+related to regular expressions or context-free grammars. 

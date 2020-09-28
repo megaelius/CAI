@@ -1,0 +1,17 @@
+Network verification promises to detect errors, such as black holes and forwarding loops, by logically
+analyzing the control or data plane. To do so efficiently, the state-of-the-art (e.g., Veriflow)
+partitions packet headers with identical forwarding behavior into the same packet equivalence
+class (PEC). Recently, Yang and Lam showed how to construct the minimal set of PECs, called atomic
+predicates. Their construction uses Binary Decision Diagrams (BDDs). However, BDDs have been
+shown to incur significant overhead per packet header bit, performing poorly when analyzing large-scale
+data centers. The overhead of atomic predicates prompted ddNF to devise a specialized data structure
+of Ternary Bit Vectors (TBV) instead. However, TBVs are strictly less expressive than BDDs. Moreover,
+unlike atomic predicates, ddNF's set of PECs is not minimal. We show that ddNF's non-minimality
+is due to empty PECs. In addition, empty PECs are shown to trigger wrong analysis results. This reveals
+an inherent tension between precision, expressiveness and performance in formal network verification.
+Our paper resolves this tension through a new lattice-theoretical PEC-construction algorithm,
+#PEC, that advances the field as follows: (i) #PEC can encode more kinds of forwarding rules (e.g.,
+ip-tables) than ddNF and Veriflow, (ii) #PEC verifies a wider class of errors (e.g., shadowed rules)
+than ddNF, and (iii) on a broad range of real-world datasets, #PEC is 10X faster than atomic predicates.
+By achieving precision, expressiveness and performance, this paper answers a longstanding quest
+that has spanned three generations of formal network analysis techniques. 

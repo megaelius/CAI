@@ -1,0 +1,17 @@
+Three complementary methods have been implemented in the code Denovo that accelerate neutral particle
+transport calculations with methods that use leadership-class computers fully and effectively:
+a multigroup block (MG) Krylov solver, a Rayleigh Quotient Iteration (RQI) eigenvalue solver,
+and a multigrid in energy (MGE) preconditioner. The MG Krylov solver converges more quickly than
+Gauss Seidel and enables energy decomposition such that Denovo can scale to hundreds of thousands
+of cores. RQI should converge in fewer iterations than power iteration (PI) for large and challenging
+problems. RQI creates shifted systems that would not be tractable without the MG Krylov solver.
+It also creates ill-conditioned matrices. The MGE preconditioner reduces iteration count significantly
+when used with RQI and takes advantage of the new energy decomposition such that it can scale efficiently.
+Each individual method has been described before, but this is the first time they have been demonstrated
+to work together effectively. The combination of solvers enables the RQI eigenvalue solver to work
+better than the other available solvers for large reactors problems on leadership class machines.
+Using these methods together, RQI converged in fewer iterations and in less time than PI for a full
+pressurized water reactor core. These solvers also performed better than an Arnoldi eigenvalue
+solver for a reactor benchmark problem when energy decomposition is needed. The MG Krylov, MGE preconditioner,
+and RQI solver combination also scales well in energy. This solver set is a strong choice for very
+large and challenging problems. 

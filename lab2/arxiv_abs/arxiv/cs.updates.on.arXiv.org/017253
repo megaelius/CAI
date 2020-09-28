@@ -1,0 +1,19 @@
+Bio-inspired spiking neural networks (SNNs), operating with asynchronous binary signals (or
+spikes) distributed over time, can potentially lead to greater computational efficiency on event-driven
+hardware. The state-of-the-art SNNs suffer from high inference latency, resulting from inefficient
+input encoding, and sub-optimal settings of the neuron parameters (firing threshold, and membrane
+leak). We propose DIET-SNN, a low latency deep spiking network that is trained with gradient descent
+to optimize the membrane leak and the firing threshold along with other network parameters (weights).
+The membrane leak and threshold for each layer of the SNN are optimized with end-to-end backpropagation
+to achieve competitive accuracy at reduced latency. The analog pixel values of an image are directly
+applied to the input layer of DIET-SNN without the need to convert to spike-train. The information
+is converted into spikes in the first convolutional layer where leaky-integrate-and-fire (LIF)
+neurons integrate the weighted inputs and generate an output spike when the membrane potential
+crosses the trained firing threshold. The trained membrane leak controls the flow of input information
+and attenuates irrelevant inputs to increase the activation sparsity in the convolutional and
+linear layers of the network. The reduced latency combined with high activation sparsity provides
+large improvements in computational efficiency. We evaluate DIET-SNN on image classification
+tasks from CIFAR and ImageNet datasets on VGG and ResNet architectures. We achieve top-1 accuracy
+of 66.52% with 25 timesteps (inference latency) on the ImageNet dataset with 3.1X less compute energy
+than an equivalent standard ANN. Additionally, DIET-SNN performs 5-100X faster inference compared
+to other state-of-the-art SNN models. 

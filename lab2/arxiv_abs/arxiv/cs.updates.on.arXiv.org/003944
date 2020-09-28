@@ -1,0 +1,18 @@
+Snapshot isolation (SI) is a standard transactional consistency model used in databases, distributed
+systems and software transactional memory (STM). It is formally defined both declaratively as
+an acyclicity axiom, and operationally as a concurrent algorithm with memory bearing timestamps.
+In this paper, we develop two simpler equivalent operational definitions of SI as lock-based reference
+implementations that do not use timestamps. Our first locking implementation is prescient in that
+requires a priori knowledge of the data accessed by a transaction and carries out transactional
+writes eagerly (in-place). Our second implementation is non-prescient and performs transactional
+writes lazily by recording them in a local log and propagating them to memory at commit time. Whilst
+our first implementation is simpler and may be better suited for developing a program logic for SI
+transactions, our second implementation is more practical due to its non-prescience. We show that
+both implementations are sound and complete against the declarative SI specification and thus
+yield equivalent operational definitions for SI. We further consider, for the first time formally,
+the use of SI in a context with racy non-transactional accesses, as can arise in STM implementations
+of SI. We introduce robust snapshot isolation (RSI), an adaptation of SI with similar semantics
+and guarantees in this mixed setting. We present a declarative specification of RSI as an acyclicity
+axiom and analogously develop two operational models as lock-based reference implementations
+(one eager, one lazy). We show that these operational models are both sound and complete against
+the declarative RSI model. 

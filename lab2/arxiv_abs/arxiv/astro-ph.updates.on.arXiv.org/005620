@@ -1,0 +1,19 @@
+Numerical simulations based on particle methods have been widely used in various fields including
+astrophysics. To date, simulation softwares have been developed by individual researchers or
+research groups in each field, with a huge amount of time and effort, even though numerical algorithms
+used are very similar. To improve the situation, we have developed a framework, called FDPS, which
+enables researchers to easily develop massively parallel particle simulation codes for arbitrary
+particle methods. Until version 3.0, FDPS have provided API only for C++ programing language. This
+limitation comes from the fact that FDPS is developed using the template feature in C++, which is
+essential to support arbitrary data types of particle. However, there are many researchers who
+use Fortran to develop their codes. Thus, the previous versions of FDPS require such people to invest
+much time to learn C++. This is inefficient. To cope with this problem, we newly developed a Fortran
+interface layer in FDPS, which provides API for Fortran. In order to support arbitrary data types
+of particle in Fortran, we design the Fortran interface layer as follows. Based on a given derived
+data type in Fortran representing particle, a Python script provided by us automatically generates
+a library that manipulates the C++ core part of FDPS. This library is seen as a Fortran module providing
+API of FDPS from the Fortran side and uses C programs internally to interoperate Fortran with C++.
+In this way, we have overcome several technical issues when emulating `template' in Fortran. By
+using the Fortran interface, users can develop all parts of their codes in Fortran. We show that the
+overhead of the Fortran interface part is sufficiently small and a code written in Fortran shows
+a performance practically identical to the one written in C++. 

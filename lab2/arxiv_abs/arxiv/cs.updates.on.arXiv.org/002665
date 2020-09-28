@@ -1,0 +1,19 @@
+Volumetric lesion segmentation via medical imaging is a powerful means to precisely assess multiple
+time-point lesion/tumor changes. Because manual 3D segmentation is prohibitively time consuming
+and requires radiological experience, current practices rely on an imprecise surrogate called
+response evaluation criteria in solid tumors (RECIST). Despite their coarseness, RECIST marks
+are commonly found in current hospital picture and archiving systems (PACS), meaning they can provide
+a potentially powerful, yet extraordinarily challenging, source of weak supervision for full
+3D segmentation. Toward this end, we introduce a convolutional neural network based weakly supervised
+self-paced segmentation (WSSS) method to 1) generate the initial lesion segmentation on the axial
+RECIST-slice; 2) learn the data distribution on RECIST-slices; 3) adapt to segment the whole volume
+slice by slice to finally obtain a volumetric segmentation. In addition, we explore how super-resolution
+images (2~5 times beyond the physical CT imaging), generated from a proposed stacked generative
+adversarial network, can aid the WSSS performance. We employ the DeepLesion dataset, a comprehensive
+CT-image lesion dataset of 32,735 PACS-bookmarked findings, which include lesions, tumors, and
+lymph nodes of varying sizes, categories, body regions and surrounding contexts. These are drawn
+from 10,594 studies of 4,459 patients. We also validate on a lymph-node dataset, where 3D ground
+truth masks are available for all images. For the DeepLesion dataset, we report mean Dice coefficients
+of 93% on RECIST-slices and 76% in 3D lesion volumes. We further validate using a subjective user
+study, where an experienced radiologist accepted our WSSS-generated lesion segmentation results
+with a high probability of 92.4%. 

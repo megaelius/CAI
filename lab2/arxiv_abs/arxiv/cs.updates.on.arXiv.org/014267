@@ -1,0 +1,19 @@
+In this paper, we consider the problem of accelerating the numerical simulation of time dependent
+problems by time domain decomposition. The available algorithms enabling such decompositions
+present severe efficiency limitations and are an obstacle for the solution of large scale and high
+dimensional problems. Our main contribution is the improvement of the parallel efficiency of the
+parareal in time method. The parareal method is based on combining predictions made by a numerically
+inexpensive solver (with coarse physics and/or coarse resolution) with corrections coming from
+an expensive solver (with high-fidelity physics and high resolution). At convergence, the algorithm
+provides a solution that has the fine solver's high-fidelity physics and high resolution. In the
+classical version, the fine solver has a fixed high accuracy which is the major obstacle to achieve
+a competitive parallel efficiency. In this paper, we develop an adaptive variant that overcomes
+this obstacle by dynamically increasing the accuracy of the fine solver across the parareal iterations.
+We theoretically show that the parallel efficiency becomes very competitive in the ideal case where
+the cost of the coarse solver is small, thus proving that the only remaining factors impeding full
+scalability become the cost of the coarse solver and communication time. The developed theory has
+also the merit of setting a general framework to understand the success of several extensions of
+parareal based on iteratively improving the quality of the fine solver and re-using information
+from previous parareal steps. We illustrate the actual performance of the method in stiff ODEs,
+which are a challenging family of problems since the only mechanism for adaptivity is time and efficiency
+is affected by the cost of the coarse solver. 

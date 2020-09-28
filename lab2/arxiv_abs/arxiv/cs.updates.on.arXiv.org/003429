@@ -1,0 +1,19 @@
+Entity resolution (ER) is a key data integration problem. Despite the efforts in 70+ years in all
+aspects of ER, there is still a high demand for democratizing ER - humans are heavily involved in labeling
+data, performing feature engineering, tuning parameters, and defining blocking functions. With
+the recent advances in deep learning, in particular distributed representation of words (a.k.a.
+word embeddings), we present a novel ER system, called DeepER, that achieves good accuracy, high
+efficiency, as well as ease-of-use (i.e., much less human efforts). For accuracy, we use sophisticated
+composition methods, namely uni- and bi-directional recurrent neural networks (RNNs) with long
+short term memory (LSTM) hidden units, to convert each tuple to a distributed representation (i.e.,
+a vector), which can in turn be used to effectively capture similarities between tuples. We consider
+both the case where pre-trained word embeddings are available as well the case where they are not;
+we present ways to learn and tune the distributed representations. For efficiency, we propose a
+locality sensitive hashing (LSH) based blocking approach that uses distributed representations
+of tuples; it takes all attributes of a tuple into consideration and produces much smaller blocks,
+compared with traditional methods that consider only a few attributes. For ease-of-use, DeepER
+requires much less human labeled data and does not need feature engineering, compared with traditional
+machine learning based approaches which require handcrafted features, and similarity functions
+along with their associated thresholds. We evaluate our algorithms on multiple datasets (including
+benchmarks, biomedical data, as well as multi-lingual data) and the extensive experimental results
+show that DeepER outperforms existing solutions. 

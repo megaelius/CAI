@@ -1,0 +1,19 @@
+Effective representation learning from text has been an active area of research in the fields of
+NLP and text mining. Attention mechanisms have been at the forefront in order to learn contextual
+sentence representations. Current state-of-the-art approaches for many NLP tasks use large pre-trained
+language models such as BERT, XLNet and so on for learning representations. These models are based
+on the Transformer architecture that involves recurrent blocks of computation consisting of multi-head
+self-attention and feedforward networks. One of the major bottlenecks largely contributing to
+the computational complexity of the Transformer models is the self-attention layer, that is both
+computationally expensive and parameter intensive. In this work, we introduce a novel multi-head
+self-attention mechanism operating on GRUs that is shown to be computationally cheaper and more
+parameter efficient than self-attention mechanism proposed in Transformers for text classification
+tasks. The efficiency of our approach mainly stems from two optimizations; 1) we use low-rank matrix
+factorization of the affinity matrix to efficiently get multiple attention distributions instead
+of having separate parameters for each head 2) attention scores are obtained by querying a global
+context vector instead of densely querying all the words in the sentence. We evaluate the performance
+of the proposed model on tasks such as sentiment analysis from movie reviews, predicting business
+ratings from reviews and classifying news articles into topics. We find that the proposed approach
+matches or outperforms a series of strong baselines and is more parameter efficient than comparable
+multi-head approaches. We also perform qualitative analyses to verify that the proposed approach
+is interpretable and captures context-dependent word importance. 

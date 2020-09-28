@@ -1,0 +1,17 @@
+When simulating sky images, one often takes a galaxy image $F(x)$ defined by a set of pixelized samples
+and an interpolation kernel, and then wants to produce a new sampled image representing this galaxy
+as it would appear with a different point-spread function, a rotation, shearing, or magnification,
+and/or a different pixel scale. These operations are sometimes only possible, or most efficiently
+executed, as resamplings of the Fourier transform $\tilde F(u)$ of the image onto a $u$-space grid
+that differs from the one produced by a discrete Fourier transform (DFT) of the samples. In some applications
+it is essential that the resampled image be accurate to better than 1 part in $10^3$, so in this paper
+we first use standard Fourier techniques to show that Fourier-domain interpolation with a wrapped
+sinc function yields the exact value of $\tilde F(u)$ in terms of the input samples and kernel. This
+operation scales with image dimension as $N^4$ and can be prohibitively slow, so we next investigate
+the errors accrued from approximating the sinc function with a compact kernel. We show that these
+approximations produce a multiplicative error plus a pair of ghost images (in each dimension) in
+the simulated image. Standard Lanczos or cubic interpolators, when applied in Fourier domain,
+produce unacceptable artifacts. We find that errors $<1$ part in $10^3$ can be obtained by (1)
+4-fold zero-padding of the original image before executing the $x\rightarrow u$ DFT, followed
+by (2) resampling to the desired $u$ grid using a 6-point, piecewise-quintic interpolant that we
+design expressly to minimize the ghosts, then (3) executing the DFT back to $x$ domain. 

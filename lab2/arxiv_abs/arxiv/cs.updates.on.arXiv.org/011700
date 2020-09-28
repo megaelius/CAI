@@ -1,0 +1,18 @@
+Permissionless blockchains protocols such as Bitcoin are inherently limited in transaction throughput
+and latency. Current efforts to address this key issue focus on off-chain payment channels that
+can be combined in a Payment-Channel Network (PCN) to enable an unlimited number of payments without
+requiring to access the blockchain other than to register the initial and final capacity of each
+channel. While this approach paves the way for low latency and high throughput of payments, its deployment
+in practice raises several privacy concerns as well as technical challenges related to the inherently
+concurrent nature of payments, such as race conditions and deadlocks, that have been understudied
+so far. In this work, we lay the foundations for privacy and concurrency in PCNs, presenting a formal
+definition in the Universal Composability framework as well as practical and provably secure solutions.
+In particular, we present Fulgor and Rayo. Fulgor is the first payment protocol for PCNs that provides
+provable privacy guarantees for PCNs and is fully compatible with the Bitcoin scripting system.
+However, Fulgor is a blocking protocol and therefore prone to deadlocks of concurrent payments
+as in currently available PCNs. Instead, Rayo is the first protocol for PCNs that enforces non-blocking
+progress (i.e., at least one of the concurrent payments terminates). We show through a new impossibility
+result that non-blocking progress necessarily comes at the cost of weaker privacy. At the core of
+Fulgor and Rayo is Multi-Hop HTLC, a new smart contract, compatible with the Bitcoin scripting system,
+that provides conditional payments while reducing running time and communication overhead with
+respect to previous approaches. 

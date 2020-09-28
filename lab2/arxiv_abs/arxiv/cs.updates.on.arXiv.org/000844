@@ -1,0 +1,17 @@
+Software transactional memory implementations which allow transactions to work on inconsistent
+states of shared data, risk to cause application visible errors such as memory access violations
+or endless loops. Hence, many implementations rely on repeated incremental validation of every
+read of the transaction to always guarantee for a consistent view of shared data. Because this eager
+validation technique generates signi?cant processing costs several proposals have been published
+to establish a sandbox for transactions, which transparently prevents or suppresses those errors
+and thereby allows to reduce the frequency of in-flight validations. The most comprehensive sandboxing
+concept of transactions in software transactional memory based on deferred updates and considering
+unmanaged languages, integrates multiple techniques such as signal interposition, out-of-band
+validation and static and dynamic instrumentation. The latter comprises the insertion of a validation
+barrier in front of every direct write which addresses the execution stack of the thread and potentially
+results from unvalidated reads. This paper basically results from a review of this sandboxing approach,
+which revealed some improvements for sandboxing on C/C++. Based on knowledge about the runtime
+environment and the compiler an error model has been developed to identify critical paths to application
+visible errors. This analysis lead to a concept for stack protection with less frequent validation,
+an alternative out-of-band validation technique and revealed additional risks of so-called waivered
+regions without instrumentation inside transactions. 

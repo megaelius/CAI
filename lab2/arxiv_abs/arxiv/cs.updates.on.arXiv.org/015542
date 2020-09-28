@@ -1,0 +1,19 @@
+Currently, the divergence in distributions of design and operational data, and large computational
+complexity are limiting factors in the adoption of CNNs in real-world applications. For instance,
+person re-identification systems typically rely on a distributed set of cameras, where each camera
+has different capture conditions. This can translate to a considerable shift between source (e.g.
+lab setting) and target (e.g. operational camera) domains. Given the cost of annotating image data
+captured for fine-tuning in each target domain, unsupervised domain adaptation (UDA) has become
+a popular approach to adapt CNNs. Moreover, state-of-the-art deep learning models that provide
+a high level of accuracy often rely on architectures that are too complex for real-time applications.
+Although several compression and UDA approaches have recently been proposed to overcome these
+limitations, they do not allow optimizing a CNN to simultaneously address both. In this paper, we
+propose an unexplored direction -- the joint optimization of CNNs to provide a compressed model
+that is adapted to perform well for a given target domain. In particular, the proposed approach performs
+unsupervised knowledge distillation (KD) from a complex teacher model to a compact student model,
+by leveraging both source and target data. It also improves upon existing UDA techniques by progressively
+teaching the student about domain-invariant features, instead of directly adapting a compact
+model on target domain data. Our method is compared against state-of-the-art compression and UDA
+techniques, using two popular classification datasets for UDA -- Office31 and ImageClef-DA. In
+both datasets, results indicate that our method can achieve the highest level of accuracy while
+requiring a comparable or lower time complexity. 

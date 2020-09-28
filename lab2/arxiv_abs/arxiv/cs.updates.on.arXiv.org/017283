@@ -1,0 +1,18 @@
+In the load balancing problem, the input is an $n$-vertex bipartite graph $G = (C \cup S, E)$ and a positive
+weight for each client $c \in C$. The algorithm must assign each client $c \in C$ to an adjacent server
+$s \in S$. The load of a server is then the weighted sum of all the clients assigned to it. The goal is
+to compute an assignment that minimizes some function of the server loads, typically either the
+maximum server load (i.e., the $\ell_{\infty}$-norm) or the $\ell_p$-norm of the server loads.
+We study load balancing in the distributed setting. There are two existing results in the CONGEST
+model. Czygrinow et al. [DISC 2012] showed a 2-approximation for unweighted clients with round-complexity
+$O(\Delta^5)$, where $\Delta$ is the maximum degree of the input graph. Halld\'orsson et al. [SPAA
+2015] showed an $O(\log{n}/\log\log{n})$-approximation for unweighted clients and $O(\log^2\!{n}/\log\log{n})$-approximation
+for weighted clients with round-complexity polylog$(n)$. In this paper, we show the first distributed
+algorithms to compute an $O(1)$-approximation to the load balancing problem in polylog$(n)$ rounds.
+In the CONGEST model, we give an $O(1)$-approximation algorithm in polylog$(n)$ rounds for unweighted
+clients. For weighted clients, the approximation ratio is $O(\log{n})$. In the less constrained
+LOCAL model, we give an $O(1)$-approximation algorithm for weighted clients in polylog$(n)$ rounds.
+Our approach also has implications for the standard sequential setting in which we obtain the first
+$O(1)$-approximation for this problem that runs in near-linear time. A 2-approximation is already
+known, but it requires solving a linear program and is hence much slower. Finally, we note that all
+of our results simultaneously approximate all $\ell_p$-norms, including the $\ell_{\infty}$-norm.

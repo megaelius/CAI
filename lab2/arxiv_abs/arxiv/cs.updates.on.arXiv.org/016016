@@ -1,0 +1,20 @@
+Resistive crossbars designed with non-volatile memory devices have emerged as promising building
+blocks for Deep Neural Network (DNN) hardware, due to their ability to compactly and efficiently
+realize vector-matrix multiplication (VMM), the dominant computational kernel in DNNs. However,
+a key challenge with resistive crossbars is that they suffer from a range of device and circuit level
+non-idealities such as interconnect parasitics, peripheral circuits, sneak paths, and process
+variations. These non-idealities can lead to errors in VMMs, eventually degrading the DNN's accuracy.
+It is therefore critical to study the impact of crossbar non-idealities on the accuracy of large-scale
+DNNs. However, this is challenging because existing device and circuit models are too slow to use
+in application-level evaluations. We present RxNN, a fast and accurate simulation framework to
+evaluate large-scale DNNs on resistive crossbar systems. RxNN splits and maps the computations
+involved in each DNN layer into crossbar operations, and evaluates them using a Fast Crossbar Model
+(FCM) that accurately captures the errors arising due to crossbar non-idealities while being four-to-five
+orders of magnitude faster than circuit simulation. FCM models a crossbar-based VMM operation
+using three stages - non-linear models for the input and output peripheral circuits (DACs and ADCs),
+and an equivalent non-ideal conductance matrix for the core crossbar array. We implement RxNN by
+extending the Caffe machine learning framework and use it to evaluate a suite of six large-scale
+DNNs developed for the ImageNet Challenge. Our experiments reveal that resistive crossbar non-idealities
+can lead to significant accuracy degradations (9.6%-32%) for these large-scale DNNs. To the best
+of our knowledge, this work is the first quantitative evaluation of the accuracy of large-scale
+DNNs on resistive crossbar based hardware. 

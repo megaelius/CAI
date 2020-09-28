@@ -1,0 +1,18 @@
+We develop a framework that creates a new polygonal mesh representation of the sparse infill domain
+of a layer-by-layer 3D printing job. We guarantee the existence of a single, continuous tool path
+covering each connected piece of the domain in every layer. We present a tool path algorithm that
+traverses each such continuous tool path with no crossovers. The key construction at the heart of
+our framework is an Euler transformation which converts a 2-dimensional cell complex K into a new
+2-complex K^ such that every vertex in the 1-skeleton G^ of K^ has even degree. Hence G^ is Eulerian,
+and a Eulerian tour can be followed to print all edges in a continuous fashion. We start with a mesh
+K of the union of polygons obtained by projecting all layers to the plane. We compute its Euler transformation
+K^. In the slicing step, we clip K^ at each layer using its polygon to obtain a complex that may not necessarily
+be Euler. We then patch this complex by adding edges such that any odd-degree nodes created by slicing
+are transformed to have even degrees again. We print extra support edges in place of any segments
+left out to ensure there are no edges without support in the next layer. These support edges maintain
+the Euler nature of the complex. Finally we describe a tree-based search algorithm that builds the
+continuous tool path by traversing "concentric" cycles in the Euler complex. Our algorithm produces
+a tool path that avoids material collisions and crossovers, and can be printed in a continuous fashion
+irrespective of complex geometry or topology of the domain (e.g., holes). We implement our test
+our framework on several 3D objects. Apart from standard geometric shapes, we demonstrate the framework
+on the Stanford bunny. 

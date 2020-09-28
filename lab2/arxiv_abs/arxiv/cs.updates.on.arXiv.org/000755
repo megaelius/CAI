@@ -1,0 +1,19 @@
+This paper addresses the problem of designing a {\em fault-tolerant} $(\alpha, \beta)$ approximate
+BFS structure (or {\em FT-ABFS structure} for short), namely, a subgraph $H$ of the network $G$ such
+that subsequent to the failure of some subset $F$ of edges or vertices, the surviving part of $H$ still
+contains an \emph{approximate} BFS spanning tree for (the surviving part of) $G$, satisfying $dist(s,v,H\setminus
+F) \leq \alpha \cdot dist(s,v,G\setminus F)+\beta$ for every $v \in V$. We first consider {\em multiplicative}
+$(\alpha,0)$ FT-ABFS structures resilient to a failure of a single edge and present an algorithm
+that given an $n$-vertex unweighted undirected graph $G$ and a source $s$ constructs a $(3,0)$ FT-ABFS
+structure rooted at $s$ with at most $4n$ edges (improving by an $O(\log n)$ factor on the near-tight
+result of \cite{BS10} for the special case of edge failures). Assuming at most $f$ edge failures,
+for constant integer $f>1$, we prove that there exists a (poly-time constructible) $(3(f+1),
+(f+1) \log n)$ FT-ABFS structure with $O(f n)$ edges. We then consider {\em additive} $(1,\beta)$
+FT-ABFS structures. In contrast to the linear size of $(\alpha,0)$ FT-ABFS structures, we show
+that for every $\beta \in [1, O(\log n)]$ there exists an $n$-vertex graph $G$ with a source $s$ for
+which any $(1,\beta)$ FT-ABFS structure rooted at $s$ has $\Omega(n^{1+\epsilon(\beta)})$ edges,
+for some function $\epsilon(\beta) \in (0,1)$. In particular, $(1,3)$ FT-ABFS structures admit
+a lower bound of $\Omega(n^{5/4})$ edges. Our lower bounds are complemented by an upper bound, showing
+that there exists a poly-time algorithm that for every $n$-vertex unweighted undirected graph
+$G$ and source $s$ constructs a $(1,4)$ FT-ABFS structure rooted at $s$ with at most $O(n^{4/3})$
+edges. 

@@ -1,0 +1,19 @@
+This paper proposes CuRTAIL, an end-to-end computing framework for characterizing and thwarting
+adversarial space in the context of Deep Learning (DL). The framework protects deep neural networks
+against adversarial samples, which are perturbed inputs carefully crafted by malicious entities
+to mislead the underlying DL model. The precursor for the proposed methodology is a set of new quantitative
+metrics to assess the vulnerability of various deep learning architectures to adversarial samples.
+CuRTAIL formalizes the goal of preventing adversarial samples as a minimization of the space unexplored
+by the pertinent DL model that is characterized in CuRTAIL vulnerability analysis step. To thwart
+the adversarial machine learning attack, CuRTAIL introduces the concept of Modular Robust Redundancy
+(MRR) as a viable solution to achieve the formalized minimization objective. The MRR methodology
+explicitly characterizes the geometry of the input data and the DL model parameters. It then learns
+a set of complementary but disjoint models which maximally cover the unexplored subspaces of the
+target DL model, thus reducing the risk of integrity attacks. We extensively evaluate CuRTAIL performance
+against the state-of-the-art attack models including fast-sign-gradient, Jacobian Saliency
+Map Attack, and Deepfool. Proof-of-concept implementations for analyzing various data collections
+including MNIST, CIFAR10, and ImageNet corroborate CuRTAIL effectiveness to detect adversarial
+samples in different settings. The computations in each MRR module can be performed independently.
+As such, CuRTAIL detection algorithm can be completely parallelized among multiple hardware settings
+to achieve maximum throughput. We further provide an accompanying API to facilitate the adoption
+of the proposed framework for various applications. 

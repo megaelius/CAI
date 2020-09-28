@@ -1,0 +1,19 @@
+A multi-fidelity surrogate model for highly nonlinear multiscale problems is proposed. It is based
+on the introduction of two different surrogate models and an adaptive on-the-fly switching. The
+two concurrent surrogates are built incrementally starting from a moderate set of evaluations
+of the full order model. Therefore, a reduced order model (ROM) is generated. Using a hybrid ROM-preconditioned
+FE solver, additional effective stress-strain data is simulated while the number of samples is
+kept to a moderate level by using a dedicated and physics-guided sampling technique. Machine learning
+(ML) is subsequently used to build the second surrogate by means of artificial neural networks (ANN).
+Different ANN architectures are explored and the features used as inputs of the ANN are fine tuned
+in order to improve the overall quality of the ML model. Additional ANN surrogates for the stress
+errors are generated. Therefore, conservative design guidelines for error surrogates are presented
+by adapting the loss functions of the ANN training in pure regression or pure classification settings.
+The error surrogates can be used as quality indicators in order to adaptively select the appropriate
+-- i.e. efficient yet accurate -- surrogate. Two strategies for the on-the-fly switching are investigated
+and a practicable and robust algorithm is proposed that eliminates relevant technical difficulties
+attributed to model switching. The provided algorithms and ANN design guidelines can easily be
+adopted for different problem settings and, thereby, they enable generalization of the used machine
+learning techniques for a wide range of applications. The resulting hybrid surrogate is employed
+in challenging multilevel FE simulations for a three-phase composite with pseudo-plastic micro-constituents.
+Numerical examples highlight the performance of the proposed approach. 

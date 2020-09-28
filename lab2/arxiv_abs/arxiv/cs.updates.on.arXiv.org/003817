@@ -1,0 +1,18 @@
+This article summarizes key results of our work on experimental characterization and analysis
+of latency variation and latency-reliability trade-offs in modern DRAM chips, which was published
+in SIGMETRICS 2016, and examines the work's significance and future potential. The goal of this
+work is to (i) experimentally characterize and understand the latency variation across cells within
+a DRAM chip for these three fundamental DRAM operations, and (ii) develop new mechanisms that exploit
+our understanding of the latency variation to reliably improve performance. To this end, we comprehensively
+characterize 240 DRAM chips from three major vendors, and make six major new observations about
+latency variation within DRAM. Notably, we find that (i) there is large latency variation across
+the cells for each of the three operations; (ii) variation characteristics exhibit significant
+spatial locality: slower cells are clustered in certain regions of a DRAM chip; and (iii) the three
+fundamental operations exhibit different reliability characteristics when the latency of each
+operation is reduced. Based on our observations, we propose Flexible-LatencY DRAM (FLY-DRAM),
+a mechanism that exploits latency variation across DRAM cells within a DRAM chip to improve system
+performance. The key idea of FLY-DRAM is to exploit the spatial locality of slower cells within DRAM,
+and access the faster DRAM regions with reduced latencies for the fundamental operations. Our evaluations
+show that FLY-DRAM improves the performance of a wide range of applications by 13.3%, 17.6%, and
+19.5%, on average, for each of the three different vendors' real DRAM chips, in a simulated 8-core
+system. 

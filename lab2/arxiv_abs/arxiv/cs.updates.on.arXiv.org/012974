@@ -1,0 +1,20 @@
+Binary code analysis is widely used to assess an a program's correctness, performance, and provenance.
+Binary analysis applications often construct control flow graphs, analyze data flow, and use debugging
+information to understand how machine code relates to source lines, inlined functions, and data
+types. To date, binary analysis has been single-threaded, which is too slow for applications such
+as performance analysis and software forensics, where it is becoming common to analyze binaries
+that are gigabytes in size and in large batches that contain thousands of binaries. This paper describes
+our design and implementation for accelerating the Dyninst binary analysis infrastructure with
+multithreading. Our goal is to parallelize a commonly used set of binary analysis capabilities,
+making it easier to parallelize different binary analysis applications. New parallel binary analysis
+capabilities include constructing control flow graphs, analyzing loop nesting, parsing debugging
+information, and performing data flow analysis such as register liveness analysis and program
+slicing. We cover 146K lines of source code in Dyninst and its software dependencies. A systematic
+methodology to guide the parallelization is essential: we used data race detection tools to identify
+unsafe parallelism and employed performance profiling tools to pinpoint performance bottlenecks
+that merit attention. This methodology guided us to design a new parallel analysis for constructing
+control flow graphs and identify thread-safety issues widely spread in the codebase. We achieved
+as much as 25X speedup for constructing control flow graphs and as much as 14Xfor ingesting DWARF
+on 64 hardware threads. Binary analysis applications are significantly accelerated with the new
+parallel Dyninst: we achieve 8X for a performance analysis tool and 7X for a software forensic tool
+with 16 hardware threads. 

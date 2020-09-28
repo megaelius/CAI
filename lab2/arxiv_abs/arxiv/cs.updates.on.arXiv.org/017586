@@ -1,0 +1,18 @@
+Motivated by the general robustness properties of the 01 loss we propose a single hidden layer 01
+loss neural network trained with stochastic coordinate descent as a defense against adversarial
+attacks in machine learning. One measure of a model's robustness is the minimum distortion required
+to make the input adversarial. This can be approximated with the Boundary Attack (Brendel et. al.
+2018) and HopSkipJump (Chen et. al. 2019) methods. We compare the minimum distortion of the 01 loss
+network to the binarized neural network and the standard sigmoid activation network with cross-entropy
+loss all trained with and without Gaussian noise on the CIFAR10 benchmark binary classification
+between classes 0 and 1. Both with and without noise training we find our 01 loss network to have the
+largest adversarial distortion of the three models by non-trivial margins. To further validate
+these results we subject all models to substitute model black box attacks under different distortion
+thresholds and find that the 01 loss network is the hardest to attack across all distortions. At a
+distortion of 0.125 both sigmoid activated cross-entropy loss and binarized networks have almost
+0% accuracy on adversarial examples whereas the 01 loss network is at 40%. Even though both 01 loss
+and the binarized network use sign activations their training algorithms are different which in
+turn give different solutions for robustness. Finally we compare our network to simple convolutional
+models under substitute model black box attacks and find their accuracies to be comparable. Our
+work shows that the 01 loss network has the potential to defend against black box adversarial attacks
+better than convex loss and binarized networks. 

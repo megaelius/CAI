@@ -1,0 +1,19 @@
+It is well known that Maximum-Distance-Separable (MDS) codes, such as Reed-Solomon codes, provide
+the maximum storage efficiency in distributed storage systems. While the use of codes for providing
+improved reliability in archival storage systems, where the data is less frequently accessed,
+is well understood, the role of codes in the storage of more frequently accessed 'hot data', where
+latency is the key metric, is less clear. In this paper, we study storage systems based on MDS codes
+through the lens of queueing theory, and term this the "MDS queue." We analytically characterize
+its latency performance, for which we present insightful scheduling policies that form upper and
+lower bounds to performance. Extensive simulations are also provided and used to validate our theoretical
+analysis. Comparisons with replication-based systems reveal that codes provide a superior latency-performance
+(by up to 70%) than replication. The second part of the paper considers an alternative method of reducing
+latency in data centers, that of sending "redundant requests". Here, a request is sent to more servers
+than required, and is deemed served when any requisite number of servers complete service. Several
+recent works provide empirical evidence of the benefits of redundant requests in various settings,
+and in this paper, we aim to analytically characterize the situations when can redundant requests
+actually help. We show that under the MDS queue model (with exponential service times and negligible
+costs of cancelling jobs), in a replication-based system, the average latency strictly reduces
+with more redundancy in the requests, and that under a general MDS code, the average latency is minimized
+when requests are sent to all servers. To the best of our knowledge, these are the first analytical
+results that prove the benefits of sending redundant requests. 

@@ -1,0 +1,19 @@
+Distributed processing frameworks, such as MapReduce, Hadoop, and Spark are popular systems for
+processing large amounts of data. The design of efficient algorithms in these frameworks is a challenging
+problem, as the systems both require parallelism---since datasets are so large that multiple machines
+are necessary---and limit the degree of parallelism---since the number of machines grows sublinearly
+in the size of the data. Although MapReduce is over a dozen years old~\cite{dean2008mapreduce},
+many fundamental problems, such as Matrix Multiplication, 3-SUM, and All Pairs Shortest Paths,
+lack efficient MapReduce algorithms. We study these problems in the MapReduce setting. Our main
+contribution is to exhibit smooth trade-offs between the memory available on each machine, and
+the total number of machines necessary for each problem. Overall, we take the memory available to
+each machine as a parameter, and aim to minimize the number of rounds and number of machines. In this
+paper, we build on the well-known MapReduce theoretical framework initiated by Karloff, Suri,
+and Vassilvitskii ~\cite{karloff2010model} and give algorithms for many of these problems. The
+key to efficient algorithms in this setting lies in defining a sublinear number of large (polynomially
+sized) subproblems, that can then be solved in parallel. We give strategies for MapReduce-friendly
+partitioning, that result in new algorithms for all of the above problems. Specifically, we give
+constant round algorithms for the Orthogonal Vector (OV) and 3-SUM problems, and $O(\log n)$-round
+algorithms for Matrix Multiplication, All Pairs Shortest Paths (APSP), and Fast Fourier Transform
+(FFT), among others. In all of these we exhibit trade-offs between the number of machines and memory
+per machine. 

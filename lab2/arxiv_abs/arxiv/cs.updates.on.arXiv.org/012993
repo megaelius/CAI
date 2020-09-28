@@ -1,0 +1,17 @@
+Interprocedural data-flow analyses form an expressive and useful paradigm of numerous static
+analysis applications, such as live variables analysis, alias analysis and null pointers analysis.
+The most widely-used framework for interprocedural data-flow analysis is IFDS, which encompasses
+distributive data-flow functions over a finite domain. On-demand data-flow analyses restrict
+the focus of the analysis on specific program locations and data facts. This setting provides a natural
+split between (i) an offline (or preprocessing) phase, where the program is partially analyzed
+and analysis summaries are created, and (ii) an online (or query) phase, where analysis queries
+arrive on demand and the summaries are used to speed up answering queries. In this work, we consider
+on-demand IFDS analyses where the queries concern program locations of the same procedure (aka
+same-context queries). We exploit the fact that flow graphs of programs have low treewidth to develop
+faster algorithms that are space and time optimal for many common data-flow analyses, in both the
+preprocessing and the query phase. We also use treewidth to develop query solutions that are embarrassingly
+parallelizable, i.e. the total work for answering each query is split to a number of threads such
+that each thread performs only a constant amount of work. Finally, we implement a static analyzer
+based on our algorithms, and perform a series of on-demand analysis experiments on standard benchmarks.
+Our experimental results show a drastic speed-up of the queries after only a lightweight preprocessing
+phase, which significantly outperforms existing techniques. 

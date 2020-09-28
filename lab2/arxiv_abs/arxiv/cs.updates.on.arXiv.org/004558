@@ -1,0 +1,20 @@
+Given a graph where every node has certain attributes associated with it and some nodes have labels
+associated with them, Collective Classification (CC) is the task of assigning labels to every unlabeled
+node using information from the node as well as its neighbors. It is often the case that a node is not
+only influenced by its immediate neighbors but also by higher order neighbors, multiple hops away.
+Recent state-of-the-art models for CC learn end-to-end differentiable variations of Weisfeiler-Lehman
+(WL) kernels to aggregate multi-hop neighborhood information. In this work, we propose a Higher
+Order Propagation Framework, HOPF, which provides an iterative inference mechanism for these
+powerful differentiable kernels. Such combination of classical iterative inference mechanism
+with recent differentiable kernels allows the framework to learn graph convolutional filters
+that simultaneously exploit the attribute and label information available in the neighborhood.
+Further, these iterative differentiable kernels can scale to larger hops beyond the memory limitations
+of existing differentiable kernels. We also show that existing WL kernel-based models suffer from
+the problem of Node Information Morphing where the information of the node is morphed or overwhelmed
+by the information of its neighbors when considering multiple hops. To address this, we propose
+a specific instantiation of HOPF, called the NIP models, which preserves the node information at
+every propagation step. The iterative formulation of NIP models further helps in incorporating
+distant hop information concisely as summaries of the inferred labels. We do an extensive evaluation
+across 11 datasets from different domains. We show that existing CC models do not provide consistent
+performance, while the proposed NIP model with iterative inference is robust with a minimal overall
+shortfall in performance across datasets. 

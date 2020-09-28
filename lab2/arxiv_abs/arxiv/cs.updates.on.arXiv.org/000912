@@ -1,0 +1,19 @@
+Highly dynamic networks are characterized by frequent changes in the availability of communication
+links. Many of these networks are in general partitioned into several components that keep splitting
+and merging continuously and unpredictably. We present an algorithm that strives to maintain a
+forest of spanning trees in such networks, without any kind of assumption on the rate of changes.
+Our algorithm is the adaptation of a coarse-grain interaction algorithm (Casteigts et al., 2013)
+to the synchronous message passing model (for dynamic networks). While the high-level principles
+of the coarse-grain variant are preserved, the new algorithm turns out to be significantly more
+complex. In particular, it involves a new technique that consists of maintaining a distributed
+permutation of the set of all nodes IDs throughout the execution. The algorithm also inherits the
+properties of its original variant: It relies on purely localized decisions, for which no global
+information is ever collected at the nodes, and yet it maintains a number of critical properties
+whatever the frequency and scale of the changes. In particular, the network remains always covered
+by a spanning forest in which 1) no cycle can ever appear, 2) every node belongs to a tree, and 3) after
+an arbitrary number of edge disappearance, all maximal subtrees immediately restore exactly one
+token (at their root). These properties are ensured whatever the dynamics, even if it keeps going
+for an arbitrary long period of time. Optimality is not the focus here, however the number of tree
+per components -- the metric of interest here -- eventually converges to one if the network stops
+changing (which is never expected to happen, though). The algorithm correctness is proven and its
+behavior is tested through experimentation. 

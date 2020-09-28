@@ -1,0 +1,18 @@
+Fermi operator expansion (FOE) methods are powerful alternatives to diagonalization type methods
+for solving Kohn-Sham density functional theory (KSDFT). One example is the pole expansion and
+selected inversion (PEXSI) method, which approximates the Fermi operator by rational matrix functions
+and reduces the computational complexity to at most quadratic scaling for solving KSDFT. Unlike
+diagonalization type methods, the chemical potential often cannot be directly read off from the
+result of a single step of evaluation of the Fermi operator. Hence multiple evaluations are needed
+to be sequentially performed to compute the chemical potential to ensure the correct number of electrons
+within a given tolerance. This hinders the performance of FOE methods in practice. In this paper
+we develop an efficient and robust strategy to determine the chemical potential in the context of
+the PEXSI method. The main idea of the new method is not to find the exact chemical potential at each
+self-consistent-field (SCF) iteration iteration, but to dynamically and rigorously update the
+upper and lower bounds for the true chemical potential, so that the chemical potential reaches its
+convergence along the SCF iteration. Instead of evaluating the Fermi operator for multiple times
+sequentially, our method uses a two-level strategy that evaluates the Fermi operators in parallel.
+In the regime of full parallelization, the wall clock time of each SCF iteration is always close to
+the time for one single evaluation of the Fermi operator, even when the initial guess is far away from
+the converged solution. We demonstrate the effectiveness of the new method using examples with
+metallic and insulating characters, as well as results from ab initio molecular dynamics. 

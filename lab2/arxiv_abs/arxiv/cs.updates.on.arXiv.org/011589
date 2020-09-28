@@ -1,0 +1,17 @@
+As ethereum blockchain has become popular, the number of users and transactions has skyrocketed,
+causing an explosive increase of its data size. As a result, ordinary clients using PCs or smartphones
+cannot easily bootstrap as a full node, but rely on other full nodes such as the miners to run or verify
+transactions. This may affect the security of ethereum, so light bootstrapping techniques such
+as fast sync has been proposed to download only parts of full data, yet the space overhead is still
+too high. One of the biggest space overhead that cannot easily be reduced is caused by saving the state
+of all accounts in the block's state trie. Fortunately, we found that more than 90% of accounts are
+inactive and old transactions are hard to be manipulated. Based on these observations, this paper
+propose a novel optimization technique called ethanos that can reduce bootstrapping cost by sweeping
+inactive accounts periodically and by not downloading old transactions. If an inactive account
+becomes active, ethanos restore its state by running a restoration transaction. Also, ethanos
+gives incentives for archive nodes to maintain the old transactions for possible re-verification.
+We implemented ethanos by instrumenting the go-ethereum (geth) client and evaluated with the real
+113 million transactions from 14 million accounts between 7M-th and 8M-th blocks in ethereum. Our
+experimental result shows that ethanos can reduce the size of the account state by half, which, if
+combined with removing old transactions, may reduce the storage size for bootstrapping to around
+1GB. This would be reasonable enough for ordinary clients to bootstrap on their personal devices.

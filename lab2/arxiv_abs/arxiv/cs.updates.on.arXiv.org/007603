@@ -1,0 +1,18 @@
+A network effect is said to take place when a new feature not only impacts the people who receive it,
+but also other users of the platform, like their connections or the people who follow them. This very
+common phenomenon violates the fundamental assumption underpinning nearly all enterprise experimentation
+systems, the stable unit treatment value assumption (SUTVA). When this assumption is broken, a
+typical experimentation platform, which relies on Bernoulli randomization for assignment and
+two-sample t-test for assessment of significance, will not only fail to account for the network
+effect, but potentially give highly biased results. This paper outlines a simple and scalable solution
+to measuring network effects, using ego-network randomization, where a cluster is comprised of
+an "ego" (a focal individual), and her "alters" (the individuals she is immediately connected to).
+Our approach aims at maintaining representativity of clusters, avoiding strong modeling assumption,
+and significantly increasing power compared to traditional cluster-based randomization. In
+particular, it does not require product-specific experiment design, or high levels of investment
+from engineering teams, and does not require any changes to experimentation and analysis platforms,
+as it only requires assigning treatment an individual level. Each user either has the feature or
+does not, and no complex manipulation of interactions between users is needed. It focuses on measuring
+the one-out network effect (i.e the effect of my immediate connection's treatment on me), and gives
+reasonable estimates at a very low setup cost, allowing us to run such experiments dozens of times
+a year. 

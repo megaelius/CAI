@@ -1,0 +1,20 @@
+This paper is concerned with learning transferable forward models for push manipulation that can
+be applying to novel contexts and how to improve the quality of prediction when critical information
+is available. We propose to learn a parametric internal model for push interactions that, similar
+for humans, enables a robot to predict the outcome of a physical interaction even in novel contexts.
+Given a desired push action, humans are capable to identify where to place their finger on a new object
+so to produce a predictable motion of the object. We achieve the same behaviour by factorising the
+learning into two parts. First, we learn a set of local contact models to represent the geometrical
+relations between the robot pusher, the object, and the environment. Then we learn a set of parametric
+local motion models to predict how these contacts change throughout a push. The set of contact and
+motion models represent our internal model. By adjusting the shapes of the distributions over the
+physical parameters, we modify the internal model's response. Uniform distributions yield to
+coarse estimates when no information is available about the novel context (i.e. unbiased predictor).
+A more accurate predictor can be learned for a specific environment/object pair (e.g. low friction/high
+mass), i.e. biased predictor. The effectiveness of our approach is shown in a simulated environment
+in which a Pioneer 3-DX robot needs to predict a push outcome for a novel object, and we provide a proof
+of concept on a real robot. We train on 2 objects (a cube and a cylinder) for a total of 24,000 pushes
+in various conditions, and test on 6 objects encompassing a variety of shapes, sizes, and physical
+parameters for a total of 14,400 predicted push outcomes. Our results show that both biased and unbiased
+predictors can reliably produce predictions in line with the outcomes of a carefully tuned physics
+simulator. 

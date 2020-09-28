@@ -1,0 +1,17 @@
+Point-cloud is an efficient way to represent 3D world. Analysis of point-cloud deals with understanding
+the underlying 3D geometric structure. But due to the lack of smooth topology, and hence the lack
+of neighborhood structure, standard correlation can not be directly applied on point-cloud. One
+of the popular approaches to do point correlation is to partition the point-cloud into voxels and
+extract features using standard 3D correlation. But this approach suffers from sparsity of point-cloud
+and hence results in multiple empty voxels. One possible solution to deal with this problem is to
+learn a MLP to map a point or its local neighborhood to a high dimensional feature space. All these
+methods suffer from a large number of parameters requirement and are susceptible to random rotations.
+A popular way to make the model "invariant" to rotations is to use data augmentation techniques with
+small rotations but the potential drawback includes \item more training samples \item susceptible
+to large rotations. In this work, we develop a rotation invariant point-cloud segmentation and
+classification scheme based on the omni-directional camera model (dubbed as {\bf POIRot$^1$}).
+Our proposed model is rotationally invariant and can preserve geometric shape of a 3D point-cloud.
+Because of the inherent rotation invariant property, our proposed framework requires fewer number
+of parameters (please see \cite{Iandola2017SqueezeNetAA} and the references therein for motivation
+of lean models). Several experiments have been performed to show that our proposed method can beat
+the state-of-the-art algorithms in classification and part segmentation applications. 

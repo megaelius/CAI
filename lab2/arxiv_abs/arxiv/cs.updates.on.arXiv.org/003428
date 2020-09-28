@@ -1,0 +1,19 @@
+Software Transactional Memory systems (STMs) have garnered significant interest as an elegant
+alternative for addressing synchronization and concurrency issues with multi-threaded programming
+in multi-core systems. In order for STMs to be efficient, they must guarantee some progress properties.
+This work explores the notion of starvation-freedom in Software Transactional Memory Systems
+(STMs). An STM system is said to be starvation-free if every thread invoking a transaction gets opportunity
+to take a step (due to the presence of a fair scheduler) then the transaction will eventually commit.
+A few starvation-free algorithms have been proposed in the literature in the context of single-version
+STM Systems. These algorithm work on the basis of priority. But the drawback with this approach is
+that if a set of high-priority transactions become slow then they can cause several other transactions
+to abort. Multi-version STMs maintain multiple-versions for each transactional object or t-object.
+By storing multiple versions, these systems can achieve greater concurrency. In this paper, we
+propose a multi-version starvation free STM, KSFTM, which as the name suggests achieves starvation
+freedom while storing K versions of each t-object. Here K is an input parameter fixed by the application
+programmer depending on the requirement. Our algorithm is dynamic which can support different
+values of K ranging from 1 to infinity . If K is infinity then there is no limit on the number of versions.
+But a separate garbage-collection mechanism is required to collect unwanted versions. On the other
+hand, when K is 1, it becomes same as a single-version STM system. We prove the correctness and starvation-freedom
+property of the proposed KSFTM algorithm. To the best of our knowledge, this is the first multi-version
+STM system that is correct and satisfies starvation-freedom as well. 

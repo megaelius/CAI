@@ -1,0 +1,18 @@
+Can we reduce the search cost of Neural Architecture Search (NAS) from days down to only few hours?
+NAS methods automate the design of Convolutional Networks (ConvNets) under hardware constraints
+and they have emerged as key components of AutoML frameworks. However, the NAS problem remains challenging
+due to the combinatorially large design space and the significant search time (at least 200 GPU-hours).
+In this work, we alleviate the NAS search cost down to less than 3 hours, while achieving state-of-the-art
+image classification results under mobile latency constraints. We propose a novel differentiable
+NAS formulation, namely Single-Path NAS, that uses one single-path over-parameterized ConvNet
+to encode all architectural decisions based on shared convolutional kernel parameters, hence
+drastically decreasing the search overhead. Single-Path NAS achieves state-of-the-art top-1
+ImageNet accuracy (75.62%), hence outperforming existing mobile NAS methods in similar latency
+settings (~80ms). In particular, we enhance the accuracy-runtime trade-off in differentiable
+NAS by treating the Squeeze-and-Excitation path as a fully searchable operation with our novel
+single-path encoding. Our method has an overall cost of only 8 epochs (24 TPU-hours), which is up
+to 5,000x faster compared to prior work. Moreover, we study how different NAS formulation choices
+affect the performance of the designed ConvNets. Furthermore, we exploit the efficiency of our
+method to answer an interesting question: instead of empirically tuning the hyperparameters of
+the NAS solver (as in prior work), can we automatically find the hyperparameter values that yield
+the desired accuracy-runtime trade-off? We open-source our entire codebase at: https://github.com/dstamoulis/single-path-nas.

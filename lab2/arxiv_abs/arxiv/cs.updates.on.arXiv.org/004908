@@ -1,0 +1,17 @@
+Accurate automatic segmentation of brain anatomy from $T_1$-weighted~($T_1$-w) magnetic resonance
+images~(MRI) has been a computationally intensive bottleneck in neuroimaging pipelines, with
+state-of-the-art results obtained by unsupervised intensity modeling-based methods and multi-atlas
+registration and label fusion. With the advent of powerful supervised convolutional neural networks~(CNN)-based
+learning algorithms, it is now possible to produce a high quality brain segmentation within seconds.
+However, the very supervised nature of these methods makes it difficult to generalize them on data
+different from what they have been trained on. Modern neuroimaging studies are necessarily multi-center
+initiatives with a wide variety of acquisition protocols. Despite stringent protocol harmonization
+practices, it is not possible to standardize the whole gamut of MRI imaging parameters across scanners,
+field strengths, receive coils etc., that affect image contrast. In this paper we propose a CNN-based
+segmentation algorithm that, in addition to being highly accurate and fast, is also resilient to
+variation in the input $T_1$-w acquisition. Our approach relies on building approximate forward
+models of $T_1$-w pulse sequences that produce a typical test image. We use the forward models to
+augment the training data with test data specific training examples. These augmented data can be
+used to update and/or build a more robust segmentation model that is more attuned to the test data
+imaging properties. Our method generates highly accurate, state-of-the-art segmentation results~(overall
+Dice overlap=0.94), within seconds and is consistent across a wide-range of protocols. 

@@ -1,0 +1,19 @@
+Information flow security is classically formulated in terms of the absence of illegal information
+flows, with respect to a security setting consisting of a single flow policy that specifies what
+information flows should be permitted in the system. In this paper we investigate the security issues
+that emerge in distributed security settings, where each computation domain establishes its own
+local security policy, and where programs may exhibit location-dependent behavior. In particular,
+we study the interplay between two distinct flow policy layers: the declared flow policy, established
+by the program itself, and the allowed flow policy, established externally to the program by each
+computation domain. We refine two security properties that articulate how the behaviors of programs
+comply to the respective flow policies: Distributed Non-disclosure, for enabling programs to
+declare locally scoped flow policies; and Flow Policy Confinement, for controlling the flow policies
+that are declared by programs. We present enforcement mechanisms that are based on type and effect
+systems, ranging from purely static mechanisms to hybrid combinations with dynamic migration
+control, for enforcing the above properties on an expressive ML-like language with concurrent
+threads and code migration, and which includes an allowed flow policy construct that dynamically
+tests the allowed flow policy of the current context. Finally, we show that the combination of the
+above two properties guarantees that actual information flows do not violate the relevant allowed
+flow policies. To this end we propose and use the Distributed Non-Interference property, a natural
+generalization of Non-Interference to a distributed security setting that ensures that information
+flows in a program respect the allowed flow policy of the domains where they originate. 

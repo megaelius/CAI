@@ -1,0 +1,19 @@
+We study the problem of distributed hypothesis testing over a network of mobile agents. Each agent
+follows a planned trajectory and makes noisy local observations whose distribution is conditioned
+on the unknown true hypothesis (out of a finite set of candidate hypotheses) and the agent's current
+location. Due to the limited communication and sensing ranges, the mobile agent team induces a communication
+graph with a time-varying topology and needs to collaboratively detect the true hypothesis. In
+particular, we consider a scenario where there exists an unknown subset of compromised agents that
+may deliberately share altered information to undermine the team objective. We propose two distributed
+algorithms where each agent maintains and updates two sets of beliefs, namely local and actual beliefs.
+In both algorithms, at every time step, each agent shares its actual belief with other agents within
+its communication range, makes a local observation, and updates its local belief as a function of
+its local observation and local belief. Then both algorithms can use the shared information to update
+actual beliefs under certain conditions. One requires receiving a certain number of shared beliefs
+at each time instant; the other accumulates shared beliefs over time and updates after the number
+of shared beliefs exceeds a prescribed threshold. Otherwise, both algorithms rely on the agent's
+current local belief and actual beliefs to update the new actual belief. We prove under mild assumptions
+that the actual belief for every non-compromised agent converges almost surely to the true hypothesis.
+We guarantee this convergence without requiring that the underlying time-varying network topology
+is connected. We illustrate and compare the proposed algorithms with a simulation of a team of unmanned
+aerial vehicles aiming to classify adversarial agents among themselves. 

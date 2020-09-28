@@ -1,0 +1,18 @@
+Shuffled linear regression is the problem of performing a linear regression fit to a dataset for
+which the correspondences between the independent samples and the observations are unknown. Such
+a problem arises in diverse domains such as computer vision, communications and biology. In its
+simplest form, it is tantamount to solving a linear system of equations, for which the entries of
+the right hand side vector have been permuted. This type of data corruption renders the linear regression
+task considerably harder, even in the absence of other corruptions, such as noise, outliers or missing
+entries. Existing methods are either applicable only to noiseless data or they are very sensitive
+to initialization and work only for partially shuffled data. In this paper we address both of these
+issues via an algebraic geometric approach, which uses symmetric polynomials to extract permutation-invariant
+constraints that the parameters $\boldsymbol{x} \in \mathbb{R}^n$ of the linear regression model
+must satisfy. This naturally leads to a polynomial system of $n$ equations in $n$ unknowns, which
+contains $\boldsymbol{x}$ in its root locus. Using the machinery of algebraic geometry we prove
+that as long as the independent samples are generic, this polynomial system is always consistent
+with at most $n!$ complex roots, regardless of any type of corruption inflicted on the observations.
+The algorithmic implication of this fact is that one can always solve this polynomial system and
+use its most suitable root as initialization to the Expectation Maximization algorithm. To the
+best of our knowledge, the resulting method is the first working solution for small values of $n$
+able to handle thousands of fully shuffled noisy observations in milliseconds. 

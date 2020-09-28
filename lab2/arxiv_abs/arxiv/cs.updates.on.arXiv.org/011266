@@ -1,0 +1,18 @@
+Emerging non-volatile main memory (NVRAM) technologies provide novel features for large-scale
+graph analytics, combining byte-addressability, low idle power, and improved memory-density.
+Systems are likely to have an order of magnitude more NVRAM than traditional memory (DRAM), allowing
+large graph problems to be solved efficiently at a modest cost on a single machine. However, a significant
+challenge in achieving high performance is in accounting for the fact that NVRAM writes can be significantly
+more expensive than NVRAM reads. In this paper, we propose an approach to parallel graph analytics
+in which the graph is stored as a read-only data structure (in NVRAM), and the amount of mutable memory
+is kept proportional to the number of vertices. Similar to the popular semi-external and semi-streaming
+models for graph analytics, the approach assumes that the vertices of the graph fit in a fast read-write
+memory (DRAM), but the edges do not. In NVRAM systems, our approach eliminates writes to the NVRAM,
+among other benefits. We present a model, the Parallel Semi-Asymmetric Model (PSAM), to analyze
+algorithms in the setting, and run experiments on a 48-core NVRAM system to validate the effectiveness
+of these algorithms. To this end, we study over a dozen graph problems. We develop parallel algorithms
+for each that are efficient, often work-optimal, in the model. Experimentally, we run all of the
+algorithms on the largest publicly-available graph and show that our PSAM algorithms outperform
+the fastest prior algorithms designed for DRAM or NVRAM. We also show that our algorithms running
+on NVRAM nearly match the fastest prior algorithms running solely in DRAM, by effectively hiding
+the costs of repeatedly accessing NVRAM versus DRAM. 

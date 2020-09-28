@@ -1,0 +1,19 @@
+The onerous task of repeatedly resolving certain parametrized partial differential equations
+(pPDEs) in, e.g. the optimization context, makes it imperative to design vastly more efficient
+numerical solvers without sacrificing any accuracy. The reduced basis method (RBM) presents itself
+as such an option. With a mathematically rigorous error estimator, RBM seeks a surrogate solution
+in a carefully-built subspace of the parameter-induced high fidelity solution manifold. It can
+improve efficiency by several orders of magnitudes leveraging an offline-online decomposition
+procedure. However, this decomposition, usually through the empirical interpolation method
+(EIM) when the PDE is nonlinear or its parameter dependence nonaffine, is either challenging to
+implement, or severely degrading to the online efficiency. In this paper, we augment and extend
+the EIM approach in the context of solving pPDEs in two different ways, resulting in the Reduced Over-Collocation
+methods (ROC). These are stable and capable of avoiding the efficiency degradation inherent to
+a direct application of EIM. There are two ingredients of these methods. First is a strategy to collocate
+at about twice as many locations as the number of bases for the surrogate space. The second is an efficient
+approach for the strategic selection of the parameter values to build the reduced solution space
+for which we study two choices, a recent empirical L1 approach and a new indicator based on the reduced
+residual. Together, these two ingredients render the schemes, L1-ROC and R2-ROC, online efficient
+and immune from the efficiency degradation of EIM for nonlinear and nonaffine problems offline
+and online. Numerical tests on three different families of nonlinear problems demonstrate the
+high efficiency and accuracy of these new algorithms and their superior stability performance.

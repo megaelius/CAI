@@ -1,0 +1,20 @@
+This paper presents a methodology and workflow that overcome the limitations of the conventional
+Generative Adversarial Networks (GANs) for geological facies modeling. It attempts to improve
+the training stability and guarantee the diversity of the generated geology through interpretable
+latent vectors. The resulting samples are ensured to have the equal probability (or an unbiased
+distribution) as from the training dataset. This is critical when applying GANs to generate unbiased
+and representative geological models that can be further used to facilitate objective uncertainty
+evaluation and optimal decision-making in oil field exploration and development. We proposed
+and implemented a new variant of GANs called Info-WGAN for the geological facies modeling that combines
+Information Maximizing Generative Adversarial Network (InfoGAN) with Wasserstein distance
+and Gradient Penalty (GP) for learning interpretable latent codes as well as generating stable
+and unbiased distribution from the training data. Different from the original GAN design, InfoGAN
+can use the training images with full, partial, or no labels to perform disentanglement of the complex
+sedimentary types exhibited in the training dataset to achieve the variety and diversity of the
+generated samples. This is accomplished by adding additional categorical variables that provide
+disentangled semantic representations besides the mere randomized latent vector used in the original
+GANs. By such means, a regularization term is used to maximize the mutual information between such
+latent categorical codes and the generated geological facies in the loss function. Furthermore,
+the resulting unbiased sampling by Info-WGAN makes the data conditioning much easier than the conventional
+GANs in geological modeling because of the variety and diversity as well as the equal probability
+of the unconditional sampling by the generator. 

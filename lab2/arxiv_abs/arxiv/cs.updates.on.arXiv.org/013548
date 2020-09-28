@@ -1,0 +1,19 @@
+Graph coloring is a fundamental problem in computer science. We study the fully dynamic version
+of the problem in which the graph is undergoing edge insertions and deletions and we wish to maintain
+a vertex-coloring with small update time after each insertion and deletion. We show how to maintain
+an $O(\alpha \lg n)$-coloring with polylogarithmic update time, where $n$ is the number of vertices
+in the graph and $\alpha$ is the current arboricity of the graph. This improves upon a result by Solomon
+and Wein (ESA'18) who maintained an $O(\alpha_{\max}\lg^2 n)$-coloring, where $\alpha_{\max}$
+is the maximum arboricity of the graph over all updates. Furthermore, motivated by a lower bound
+by Barba et al. (Algorithmica'19), we initiate the study of implicit dynamic colorings. Barba et
+al. showed that dynamic algorithms with polylogarithmic update time cannot maintain an $f(\alpha)$-coloring
+for any function $f$ when the vertex colors are stored explicitly, i.e., for each vertex the color
+is stored explicitly in the memory. Previously, all dynamic algorithms maintained explicit colorings.
+Therefore, we propose to study implicit colorings, i.e., the data structure only needs to offer
+an efficient query procedure to return the color of a vertex (instead of storing its color explicitly).
+We provide an algorithm which breaks the lower bound and maintains an implicit $2^{O(\alpha)}$-coloring
+with polylogarithmic update time. In particular, this yields the first dynamic $O(1)$-coloring
+for graphs with constant arboricity such as planar graphs or graphs with bounded tree-width, which
+is impossible using explicit colorings. We also show how to dynamically maintain a partition of
+the graph's edges into $O(\alpha)$ forests with polylogarithmic update time. We believe this data
+structure is of independent interest and might have more applications in the future. 

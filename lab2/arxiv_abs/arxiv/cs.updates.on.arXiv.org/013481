@@ -1,0 +1,19 @@
+Diffusion-weighted magnetic resonance imaging (DW-MRI) is the only non-invasive approach for
+estimation of intra-voxel tissue microarchitecture and reconstruction of in vivo neural pathways
+for the human brain. With improvement in accelerated MRI acquisition technologies, DW-MRI protocols
+that make use of multiple levels of diffusion sensitization have gained popularity. A well-known
+advanced method for reconstruction of white matter microstructure that uses multi-shell data
+is multi-tissue constrained spherical deconvolution (MT-CSD). MT-CSD substantially improves
+the resolution of intra-voxel structure over the traditional single shell version, constrained
+spherical deconvolution (CSD). Herein, we explore the possibility of using deep learning on single
+shell data (using the b=1000 s/mm2 from the Human Connectome Project (HCP)) to estimate the information
+content captured by 8th order MT-CSD using the full three shell data (b=1000, 2000, and 3000 s/mm2
+from HCP). Briefly, we examine two network architectures: 1.) Sequential network of fully connected
+dense layers with a residual block in the middle (ResDNN), 2.) Patch based convolutional neural
+network with a residual block (ResCNN). For both networks an additional output block for estimation
+of voxel fraction was used with a modified loss function. Each approach was compared against the
+baseline of using MT-CSD on all data on 15 subjects from the HCP divided into 5 training, 2 validation,
+and 8 testing subjects with a total of 6.7 million voxels. The fiber orientation distribution function
+(fODF) can be recovered with high correlation (0.77 vs 0.74 and 0.65) as compared to the ground truth
+of MT-CST, which was derived from the multi-shell DW-MRI acquisitions. Source code and models have
+been made publicly available. 

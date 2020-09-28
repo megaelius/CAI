@@ -1,0 +1,18 @@
+The success of supervised learning requires large-scale ground truth labels which are very expensive,
+time-consuming, or may need special skills to annotate. To address this issue, many self- or un-supervised
+methods are developed. Unlike most existing self-supervised methods to learn only 2D image features
+or only 3D point cloud features, this paper presents a novel and effective self-supervised learning
+approach to jointly learn both 2D image features and 3D point cloud features by exploiting cross-modality
+and cross-view correspondences without using any human annotated labels. Specifically, 2D image
+features of rendered images from different views are extracted by a 2D convolutional neural network,
+and 3D point cloud features are extracted by a graph convolution neural network. Two types of features
+are fed into a two-layer fully connected neural network to estimate the cross-modality correspondence.
+The three networks are jointly trained (i.e. cross-modality) by verifying whether two sampled
+data of different modalities belong to the same object, meanwhile, the 2D convolutional neural
+network is additionally optimized through minimizing intra-object distance while maximizing
+inter-object distance of rendered images in different views (i.e. cross-view). The effectiveness
+of the learned 2D and 3D features is evaluated by transferring them on five different tasks including
+multi-view 2D shape recognition, 3D shape recognition, multi-view 2D shape retrieval, 3D shape
+retrieval, and 3D part-segmentation. Extensive evaluations on all the five different tasks across
+different datasets demonstrate strong generalization and effectiveness of the learned 2D and
+3D features by the proposed self-supervised method. 

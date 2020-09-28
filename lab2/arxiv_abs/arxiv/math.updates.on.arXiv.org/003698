@@ -1,0 +1,18 @@
+Combining the classical theory of optimal transport with modern operator splitting techniques,
+we develop a new numerical method for nonlinear, nonlocal partial differential equations, arising
+in models of porous media, materials science, and biological swarming. Using the JKO scheme, along
+with the Benamou-Brenier dynamical characterization of the Wasserstein distance, we reduce computing
+the solution of these evolutionary PDEs to solving a sequence of fully discrete minimization problems,
+with strictly convex objective function and linear constraint. We compute the minimizer of these
+fully discrete problems by applying a recent, provably convergent primal dual splitting scheme
+for three operators \cite{Yan17}. By leveraging the PDE's underlying variational structure,
+our method overcomes traditional stability issues arising from the strong nonlinearity and degeneracy,
+and it is also naturally positivity preserving and entropy decreasing. Furthermore, by transforming
+the traditional linear equality constraint, as has appeared in previous work, into a linear inequality
+constraint, our method converges in fewer iterations without sacrificing any accuracy. Remarkably,
+our method is also massively parallelizable and thus very efficient in resolving high dimensional
+problems. We prove that minimizers of the fully discrete problem converge to minimizers of the continuum
+JKO problem as the discretization is refined, and in the process, we recover convergence results
+for existing numerical methods for computing Wasserstein geodesics \cite{PPO14}. Finally, we
+conclude with simulations of nonlinear PDEs and Wasserstein geodesics in one and two dimensions
+that illustrate the key properties of our numerical method. 

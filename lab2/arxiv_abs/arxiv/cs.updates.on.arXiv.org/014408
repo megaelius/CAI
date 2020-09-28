@@ -1,0 +1,19 @@
+Mean field models are a popular tool used to analyse load balancing policies. In some exceptional
+cases the response time distribution of the mean field limit has an explicit form. In most cases it
+can be computed using either a recursion or a differential equation (for exponential job sizes with
+mean one). In this paper we study the value of the mean response time $E[R_\lambda]$ as the arrival
+rate $\lambda$ approaches $1$ (i.e. the system gets close to instability). As $E[R_\lambda]$ diverges
+to infinity, we scale with $-\log(1-\lambda)$ and present a method to compute the limit $\lim_{\lambda\rightarrow
+1^-}-E[R_\lambda]/\log(1-\lambda)$. This limit has been previously determined for SQ(d) and
+LL(d), two well-known policies that assign an incoming job to a server with either the shortest queue
+or least work left among $d$ randomly selected servers. However, the derivation of the result for
+SQ(d) relied on the closed form representation of the mean response time and does not seem to generalize
+well, moreover the proof for LL(d) is incomplete. In contrast, we present a general result that holds
+for any policy for which the associated recursion or differential equation satisfies a list of criteria.
+For SQ(d) and LL(d) these criteria are trivially verified. We apply our method to SQ(d,K) resp LL(d,K)
+with exponential job sizes of mean one. For these policies, jobs arrive in batches of size $K$ and
+join the $K$ servers with the shortest queue resp least amount of work left. For SQ(d,K) we obtain
+$\frac{1}{\log(d/K)}$ as limiting value, while for LL(d,K) we find the limit to be equal to $\frac{K}{d-K}$.
+We further analyse a policy where SQ(d_i) resp LL($d_i$) is used with probability $p_i$. For the
+shortest queue variant, we obtain the limit $\frac{1}{\log\left(\sum_{i=1}^np_id_i\right)}$,
+while for the least loaded variant, we obtain $\frac{1}{\sum_{i=1}^np_id_i-1}$. 

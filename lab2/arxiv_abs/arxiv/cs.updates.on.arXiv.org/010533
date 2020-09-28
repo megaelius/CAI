@@ -1,0 +1,20 @@
+Automated skin lesion segmentation and classification are two most essential and related tasks
+in the computer-aided diagnosis of skin cancer. Despite their prevalence, deep learning models
+are usually designed for only one task, ignoring the potential benefits in jointly performing both
+tasks. In this paper, we propose the mutual bootstrapping deep convolutional neural networks(MB-DCNN)
+model for simultaneous skin lesion segmentation and classification. This model consists of a coarse
+segmentation network(coarse-SN), a mask-guided classification network(mask-CN), and an enhanced
+segmentation network(enhanced-SN). On one hand, the coarse-SN generates coarse lesion masks
+that provide a prior bootstrapping for mask-CN to help it locate and classify skin lesions accurately.
+On the other hand, the lesion localization maps produced by mask-CN are then fed into enhanced-SN,
+aiming to transfer the localization information learned by mask-CN to enhanced-SN for accurate
+lesion segmentation. In this way, both segmentation and classification networks mutually transfer
+knowledge between each other and facilitate each other in a bootstrapping way. Meanwhile, we also
+design a novel rank loss and jointly use it with the Dice loss in segmentation networks to address
+the issues caused by class imbalance and hard-easy pixel imbalance. We evaluate the proposed MB-DCNN
+model on the ISIC-2017 and PH2 datasets, and achieve a Jaccard index of 80.4% and 89.4% in skin lesion
+segmentation and an average AUC of 93.8% and 97.7% in skin lesion classification, which are superior
+to the performance of representative state-of-the-art skin lesion segmentation and classification
+methods. Our results suggest that it is possible to boost the performance of skin lesion segmentation
+and classification simultaneously via training a unified model to perform both tasks in a mutual
+bootstrapping way. 

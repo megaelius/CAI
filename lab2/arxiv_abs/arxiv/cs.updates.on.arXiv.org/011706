@@ -1,0 +1,20 @@
+We observe a disconnect between the developers and the end users of linear algebra libraries. On
+the one hand, the numerical linear algebra and the high-performance communities invest significant
+effort in the development and optimization of highly sophisticated numerical kernels and libraries,
+aiming at the maximum exploitation of both the properties of the input matrices, and the architectural
+features of the target computing platform. On the other hand, end users are progressively less likely
+to go through the error-prone and time consuming process of directly using said libraries by writing
+their code in C or Fortran; instead, languages and libraries such as Matlab, Julia, Eigen and Armadillo,
+which offer a higher level of abstraction, are becoming more and more popular. Users are given the
+opportunity to code matrix computations with a syntax that closely resembles the mathematical
+description; it is then a compiler or an interpreter that internally maps the input program to lower
+level kernels, as provided by libraries such as BLAS and LAPACK. Unfortunately, our experience
+suggests that in terms of performance, this translation is typically vastly suboptimal. In this
+paper, we first introduce the Linear Algebra Mapping Problem, and then investigate how effectively
+a benchmark of test problems is solved by popular high-level programming languages. Specifically,
+we consider Matlab, Octave, Julia, R, Armadillo (C++), Eigen (C++), and NumPy (Python); the benchmark
+is meant to test both standard compiler optimizations such as common subexpression elimination
+and loop-invariant code motion, as well as linear algebra specific optimizations such as optimal
+parenthesization of a matrix product and kernel selection for matrices with properties. The aim
+of this study is to give concrete guidelines for the development of languages and libraries that
+support linear algebra computations. 

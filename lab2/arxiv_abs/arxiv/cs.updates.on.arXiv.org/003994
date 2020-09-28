@@ -1,0 +1,17 @@
+Traditional deep methods for skeleton-based action recognition usually structure the skeleton
+as a coordinates sequence or a pseudo-image to feed to RNNs or CNNs, which cannot explicitly exploit
+the natural connectivity among the joints. Recently, graph convolutional networks (GCNs), which
+generalize CNNs to more generic non-Euclidean structures, obtains remarkable performance for
+skeleton-based action recognition. In this work, we propose a novel adaptive spectral graph convolutional
+network which address the three major issues exposed in former GCN-based methods applied to action
+recognition: 1) The sampling function of graph convolutional operation applied in former methods
+is usually heuristically designed. We avoid the tricked definition of sampling function by transforming
+the GCN to frequency domain based on spectral graph theory. 2) The topology of the graph is set by hand
+and fixed over all layers, which may be not optimal for the action recognition task and the hierarchical
+CNN structures. In our model, the topology of the graph in each layer can be either uniformly or individually
+learned by BP algorithm, which can bring more flexibility and generality. 3) The first-order information
+(the coordinate of joints) is mainly used in former GCNs, while the second-order information (the
+length and direction of bones) is less exploited. A two-stream framework is proposed in this work
+to model both of the joints and bones information simultaneously. Extensive experiments on two
+large-scale datasets, NTU-RGB+D and Kinetics, demonstrate the performance of our model exceeds
+the state-of-the-art by a significant margin. 

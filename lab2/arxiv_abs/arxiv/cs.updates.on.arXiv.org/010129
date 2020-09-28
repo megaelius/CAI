@@ -1,0 +1,17 @@
+TensorFlow is a popular cloud computing framework that targets machine learning applications.
+It separates the specification of application logic (in a dataflow graph) from the execution of
+the logic. TensorFlow's native runtime executes the application with low overhead across a diverse
+set of hardware including CPUs, GPUs, and ASICs. Although the underlying dataflow engine supporting
+these features could be applied to computations beyond machine learning, certain design decisions
+limit this broader application, such as the inability for an application to differentiate between
+data items across concurrent requests. This paper introduces Pipelined TensorFlow (PTF), a system
+that extends TensorFlow's semantics to provide support for a broader variety of application logic.
+In particular, PTF supports applications that concurrently process finite batches of data on a
+single instantiation. PTF adds these semantics by partitioning the dataflow graph into a pipeline
+of smaller graphs and tagging each data item with metadata. These smaller graphs are separated by
+gates: new data structures in PTF that buffer data items between graphs and interpret the metadata
+to apply the new semantics. PTF's pipeline architecture executes on an unmodified TensorFlow runtime,
+maintaining compatibility with many existing TensorFlow library functions. Our evaluation shows
+that the pipelining mechanism of PTF can increase the throughput of a bioinformatics application
+by 4$\times$ while only increasing its latency by 0.13$\times$. This results in a sustained genome
+alignment and sorting rate of 321 megabases/second, using the compute and I/O resources of 20 computers.

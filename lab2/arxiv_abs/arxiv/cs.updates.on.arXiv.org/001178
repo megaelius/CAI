@@ -1,0 +1,18 @@
+BRDF of most real world materials has two components, the surface BRDF due to the light reflecting
+at the surface of the material and the subsurface BRDF due to the light entering and going through
+many scattering events inside the material. Each of these events modifies light's path, power,
+polarization state. Computing polarized subsurface BRDF of a material requires simulating the
+light transport inside the material. The transport of polarized light is modeled by the Vector Radiative
+Transfer Equation (VRTE), an integro-differential equation. Computing solution to that equation
+is expensive. The Discrete Ordinate Method (DOM) is a common approach to solving the VRTE. Such solvers
+are very time consuming for complex uses such as BRDF computation, where one must solve VRTE for surface
+radiance distribution due to light incident from every direction of the hemisphere above the surface.
+In this paper, we present a GPU based DOM solution of the VRTE to expedite the subsurface BRDF computation.
+As in other DOM based solutions, our solution is based on Fourier expansions of the phase function
+and the radiance function. This allows us to independently solve the VRTE for each order of expansion.
+We take advantage of those repetitions and of the repetitions in each of the sub-steps of the solution
+process. Our solver is implemented to run mainly on graphics hardware using the OpenCL library and
+runs up to seven times faster than its CPU equivalent, allowing the computation of subsurface BRDF
+in a matter of minutes. We compute and present the subsurface BRDF lobes due to powders and paints
+of a few materials. We also show the rendering of objects with the computed BRDF. The solver is available
+for public use through the authors' web site. 

@@ -1,0 +1,19 @@
+Many applications in Bayesian statistics are extremely computationally intensive. However,
+they are also often inherently parallel, making them prime targets for modern massively parallel
+central processing unit (CPU) architectures. While the use of multi-core and distributed computing
+is widely applied in the Bayesian community, very little attention has been given to fine-grain
+parallelisation using single instruction multiple data (SIMD) operations that are available
+on most modern commodity CPUs. Rather, most fine-grain tuning in the literature has centred around
+general purpose graphics processing units (GPGPUs). Since the effective utilisation of GPGPUs
+typically requires specialised programming languages, such technologies are not ideal for the
+wider Bayesian community. In this work, we practically demonstrate, using standard programming
+libraries, the utility of the SIMD approach for several topical Bayesian applications. In particular,
+we consider sampling of the prior predictive distribution for approximate Bayesian computation
+(ABC), the computation of Bayesian $p$-values for testing prior weak informativeness, and inference
+on a computationally challenging econometrics model. Through minor code alterations, we show
+that SIMD operations can improve the floating point arithmetic performance resulting in up to $6\times$
+improvement in the overall serial algorithm performance. Furthermore $4$-way parallel versions
+can lead to almost $19\times$ improvement over a na\"{i}ve serial implementation. We illustrate
+the potential of SIMD operations for accelerating Bayesian computations and provide the reader
+with essential implementation techniques required to exploit modern massively parallel processing
+environments using standard software development tools. 

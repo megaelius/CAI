@@ -1,0 +1,20 @@
+The development of synoptic sky surveys has led to a massive amount of data for which resources needed
+for analysis are beyond human capabilities. To process this information and to extract all possible
+knowledge, machine learning techniques become necessary. Here we present a new method to automatically
+discover unknown variable objects in large astronomical catalogs. With the aim of taking full advantage
+of all the information we have about known objects, our method is based on a supervised algorithm.
+In particular, we train a random forest classifier using known variability classes of objects and
+obtain votes for each of the objects in the training set. We then model this voting distribution with
+a Bayesian network and obtain the joint voting distribution among the training objects. Consequently,
+an unknown object is considered as an outlier insofar it has a low joint probability. Our method is
+suitable for exploring massive datasets given that the training process is performed offline.
+We tested our algorithm on 20 millions light-curves from the MACHO catalog and generated a list of
+anomalous candidates. We divided the candidates into two main classes of outliers: artifacts and
+intrinsic outliers. Artifacts were principally due to air mass variation, seasonal variation,
+bad calibration or instrumental errors and were consequently removed from our outlier list and
+added to the training set. After retraining, we selected about 4000 objects, which we passed to a
+post analysis stage by perfoming a cross-match with all publicly available catalogs. Within these
+candidates we identified certain known but rare objects such as eclipsing Cepheids, blue variables,
+cataclysmic variables and X-ray sources. For some outliers there were no additional information.
+Among them we identified three unknown variability types and few individual outliers that will
+be followed up for a deeper analysis. 

@@ -1,0 +1,18 @@
+Integration of aerial and ground images has been proved as an efficient approach to enhance the surface
+reconstruction in urban environments. However, as the first step, the feature point matching between
+aerial and ground images is remarkably difficult, due to the large differences in viewpoint and
+illumination conditions. Previous studies based on geometry-aware image rectification have
+alleviated this problem, but the performance and convenience of this strategy is limited by several
+flaws, e.g. quadratic image pairs, segregated extraction of descriptors and occlusions. To address
+these problems, we propose a novel approach: leveraging photogrammetric mesh models for aerial-ground
+image matching. The methods of this proposed approach have linear time complexity with regard to
+the number of images, can explicitly handle low overlap using multi-view images and can be directly
+injected into off-the-shelf structure-from-motion (SfM) and multi-view stereo (MVS) solutions.
+First, aerial and ground images are reconstructed separately and initially co-registered through
+weak georeferencing data. Second, aerial models are rendered to the initial ground views, in which
+the color, depth and normal images are obtained. Then, the synthesized color images and the corresponding
+ground images are matched by comparing the descriptors, filtered by local geometrical information,
+and then propagated to the aerial views using depth images and patch-based matching. Experimental
+evaluations using various datasets confirm the superior performance of the proposed methods in
+aerial-ground image matching. In addition, incorporation of the existing SfM and MVS solutions
+into these methods enables more complete and accurate models to be directly obtained. 

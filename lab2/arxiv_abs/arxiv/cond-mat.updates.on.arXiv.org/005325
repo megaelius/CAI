@@ -1,0 +1,19 @@
+How many training data are needed to learn a supervised task? It is often observed that the generalization
+error decreases as $n^{-\beta}$ where $n$ is the number of training examples and $\beta$ an exponent
+that depends on both data and algorithm. In this work we measure $\beta$ when applying kernel methods
+to real datasets. For MNIST we find $\beta\approx 0.4$ and for CIFAR10 $\beta\approx 0.1$, for both
+regression and classification tasks, and for Gaussian or Laplace kernels. To rationalize the existence
+of non-trivial exponents that can be independent of the specific kernel used, we study the Teacher-Student
+framework for kernels. In this scheme, a Teacher generates data according to a Gaussian random field,
+and a Student learns them via kernel regression. With a simplifying assumption -- namely that the
+data are sampled from a regular lattice -- we derive analytically $\beta$ for translation invariant
+kernels, using previous results from the kriging literature. Provided that the Student is not too
+sensitive to high frequencies, $\beta$ depends only on the smoothness and dimension of the training
+data. We confirm numerically that these predictions hold when the training points are sampled at
+random on a hypersphere. Overall, the test error is found to be controlled by the magnitude of the
+projection of the true function on the kernel eigenvectors whose rank is larger than $n$. Using this
+idea we predict relate the exponent $\beta$ to an exponent $a$ describing how the coefficients of
+the true function in the eigenbasis of the kernel decay with rank. We extract $a$ from real data by
+performing kernel PCA, leading to $\beta\approx0.36$ for MNIST and $\beta\approx0.07$ for CIFAR10,
+in good agreement with observations. We argue that these rather large exponents are possible due
+to the small effective dimension of the data. 

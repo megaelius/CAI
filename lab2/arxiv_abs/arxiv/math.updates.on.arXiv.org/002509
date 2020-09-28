@@ -1,0 +1,20 @@
+We propose a new framework to implement interior point method (IPM) to solve very large linear programs
+(LP). Traditional IPMs typically use Newton's method to approximately solve a subproblem that
+aims to minimize a log-barrier penalty function at each iteration. Due its connection to Newton's
+method, IPM is often classified as second-order method -- a genre that is attached with stability
+and accuracy at the expense of scalability. Indeed, computing a Newton step amounts to solving a
+large linear system, which can be efficiently implemented if the input data are reasonably-sized
+and/or sparse and/or well-structured. However, in case the above premises fail, then the challenge
+still stands on the way for a traditional IPM. To deal with this challenge, one approach is to apply
+the iterative procedure, such as preconditioned conjugate gradient method, to solve the linear
+system. Since the linear system is different each iteration, it is difficult to find good pre-conditioner
+to achieve the overall solution efficiency. In this paper, an alternative approach is proposed.
+Instead of applying Newton's method, we resort to the alternating direction method of multipliers
+(ADMM) to approximately minimize the log-barrier penalty function at each iteration, under the
+framework of primal-dual path-following for a homogeneous self-dual embedded LP model. The resulting
+algorithm is an ADMM-Based Interior Point Method, abbreviated as ABIP in this paper. The new method
+inherits stability from IPM, and scalability from ADMM. Because of its self-dual embedding structure,
+ABIP is set to solve any LP without requiring prior knowledge about its feasibility. We conduct extensive
+numerical experiments testing ABIP with large-scale LPs from NETLIB and machine learning applications.
+The results demonstrate that ABIP compares favorably with existing LP solvers including SDPT3,
+MOSEK, DSDP-CG and SCS. 

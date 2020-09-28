@@ -1,0 +1,19 @@
+Dropout is a well-known regularization method by sampling a sub-network from a larger deep neural
+network and training different sub-networks on different subsets of the data. Inspired by the dropout
+concept, we propose EDropout as an energy-based framework for pruning neural networks in classification
+tasks. In this approach, a set of binary pruning state vectors (population) represents a set of corresponding
+sub-networks from an arbitrary provided original neural network. An energy loss function assigns
+a scalar energy loss value to each pruning state. The energy-based model stochastically evolves
+the population to find states with lower energy loss. The best pruning state is then selected and
+applied to the original network. Similar to dropout, the kept weights are updated using backpropagation
+in a probabilistic model. The energy-based model again searches for better pruning states and the
+cycle continuous. Indeed, this procedure is in fact switching between the energy model, which manages
+the pruning states, and the probabilistic model, which updates the temporarily unpruned weights,
+in each iteration. The population can dynamically converge to a pruning state. This can be interpreted
+as dropout leading to pruning the network. From an implementation perspective, EDropout can prune
+typical neural networks without modification of the network architecture. We evaluated the proposed
+method on different flavours of ResNets, AlexNet, and SqueezeNet on the Kuzushiji, Fashion, CIFAR-10,
+CIFAR-100, and Flowers datasets, and compared the pruning rate and classification performance
+of the models. On average the networks trained with \textit{EDropout} achieved a pruning rate of
+more than $50\%$ of the trainable parameters with approximately $<5\%$ and $<1\%$ drop of Top-1
+and Top-5 classification accuracy, respectively. 

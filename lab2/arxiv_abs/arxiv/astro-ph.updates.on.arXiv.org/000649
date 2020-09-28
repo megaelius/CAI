@@ -1,0 +1,20 @@
+We present two independent numerical schemes for passive tracer particles in the hydrodynamical
+moving-mesh code Arepo, and compare their performance for various problems, from simple tests
+to cosmological simulations. The purpose of tracer particles is to allow the flow to be followed
+in a Lagrangian way, reliably tracing the evolution of the fluid. Such tracer particles can subsequently
+measure any local instantaneous fluid property, thereby recording the thermodynamical history
+of individual fluid parcels. We begin by discussing "velocity field tracers", which are advected
+according to the local velocity field of the fluid, and which have been commonly used in the literature.
+We find that such tracers do not in general follow the mass flow correctly, particularly in complex
+flows, and explain why this is the case. This weakness of the method can result in orders-of-magnitude
+biases in simulations of driven turbulence and in cosmological simulations of structure formation,
+rendering the velocity field tracers inappropriate for these flows. We then discuss a novel implementation
+of "Monte Carlo tracers", which are moved along with fluid cells, and are exchanged probabilistically
+between them following the mass flux. This method reproduces the mass distribution of the fluid
+correctly by construction, however it is more diffusive than the fluid itself. Nonetheless, we
+show that this novel approach is more reliable and demonstrate that it is appropriate for following
+hydrodynamical flows in mesh-based codes. The Monte Carlo tracers can also naturally be transferred
+between fluid cells and other types of particles, such as stellar particles, so that the mass flow
+in cosmological simulations can be followed in its entirety. Finally, we demonstrate a possible
+use of the tracer particles by studying the thermodynamical history of the halo atmosphere in the
+Santa Barbara Cluster. 

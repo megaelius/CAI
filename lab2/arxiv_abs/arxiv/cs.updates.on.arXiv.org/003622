@@ -1,0 +1,20 @@
+This paper considers stochastic optimization problems for a large class of objective functions,
+including convex and continuous submodular. Stochastic proximal gradient methods have been widely
+used to solve such problems; however, their applicability remains limited when the problem dimension
+is large and the projection onto a convex set is costly. Instead, stochastic conditional gradient
+methods are proposed as an alternative solution relying on (i) Approximating gradients via a simple
+averaging technique requiring a single stochastic gradient evaluation per iteration; (ii) Solving
+a linear program to compute the descent/ascent direction. The averaging technique reduces the
+noise of gradient approximations as time progresses, and replacing projection step in proximal
+methods by a linear program lowers the computational complexity of each iteration. We show that
+under convexity and smoothness assumptions, our proposed method converges to the optimal objective
+function value at a sublinear rate of $O(1/t^{1/3})$. Further, for a monotone and continuous DR-submodular
+function and subject to a general convex body constraint, we prove that our proposed method achieves
+a $((1-1/e)OPT-\eps)$ guarantee with $O(1/\eps^3)$ stochastic gradient computations. This
+guarantee matches the known hardness results and closes the gap between deterministic and stochastic
+continuous submodular maximization. Additionally, we obtain $((1/e)OPT -\eps)$ guarantee after
+using $O(1/\eps^3)$ stochastic gradients for the case that the objective function is continuous
+DR-submodular but non-monotone and the constraint set is down-closed. By using stochastic continuous
+optimization as an interface, we provide the first $(1-1/e)$ tight approximation guarantee for
+maximizing a monotone but stochastic submodular set function subject to a matroid constraint and
+$(1/e)$ approximation guarantee for the non-monotone case. 

@@ -1,0 +1,18 @@
+Recent progress has been made in using attention based encoder-decoder framework for image and
+video captioning. Most existing decoders apply the attention mechanism to every generated word
+including both visual words (e.g., "gun" and "shooting") and non-visual words (e.g. "the", "a").
+However, these non-visual words can be easily predicted using natural language model without considering
+visual signals or attention. Imposing attention mechanism on non-visual words could mislead and
+decrease the overall performance of visual captioning. Furthermore, the hierarchy of LSTMs enables
+more complex representation of visual data, capturing information at different scales. To address
+these issues, we propose a hierarchical LSTM with adaptive attention (hLSTMat) approach for image
+and video captioning. Specifically, the proposed framework utilizes the spatial or temporal attention
+for selecting specific regions or frames to predict the related words, while the adaptive attention
+is for deciding whether to depend on the visual information or the language context information.
+Also, a hierarchical LSTMs is designed to simultaneously consider both low-level visual information
+and high-level language context information to support the caption generation. We initially design
+our hLSTMat for video captioning task. Then, we further refine it and apply it to image captioning
+task. To demonstrate the effectiveness of our proposed framework, we test our method on both video
+and image captioning tasks. Experimental results show that our approach achieves the state-of-the-art
+performance for most of the evaluation metrics on both tasks. The effect of important components
+is also well exploited in the ablation study. 

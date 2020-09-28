@@ -1,0 +1,20 @@
+Modern prefetchers identify memory access patterns in order to predict future accesses. However,
+many applications exhibit irregular access patterns that do not manifest spatio-temporal locality
+in the memory address space. Such applications usually do not fall under the scope of existing prefetching
+techniques, which observe only the stream of addresses dispatched by the memory unit but not the
+code flows that produce them. Similarly, temporal correlation prefetchers detect recurring relations
+between accesses, but do not track the chain of causality in program code that manifested the memory
+locality. Conversely, techniques that are code-aware are limited to the basic program functionality
+and are bounded by the machine depth. In this paper we show that contextual analysis of the code flows
+that generate memory accesses can detect recurring code patterns and expose their underlying semantics
+even for irregular access patterns. Moreover, program locality artifacts can be used to enhance
+the memory traversal code and predict future accesses. We present the semantic prefetcher that
+analyzes programs at run-time and learns their memory dependency chains and address calculation
+flows. The prefetcher then constructs forecast slices and injects them at key points to trigger
+timely prefetching of future contextually-related iterations. We show how this approach takes
+the best of both worlds, augmenting code injection with forecast functionality and relying on context-based
+temporal correlation of code slices. This combination allows us to overcome critical memory latencies
+that are currently not covered by any other prefetcher. Our evaluation of the semantic prefetcher
+using an industrial-grade, cycle-accurate x86 simulator shows that it improves performance by
+24% on average over SPEC 2006 (outliers up to 3.7x), and 16% on average over SPEC 2017 (outliers up
+to 1.85x), using only ~6KB. 

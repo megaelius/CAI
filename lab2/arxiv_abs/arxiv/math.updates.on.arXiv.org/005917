@@ -1,0 +1,19 @@
+Regularization is necessary for solving nonlinear ill-posed inverse problems arising in different
+fields of geosciences. The base of a suitable regularization is the prior expressed by the regularizer,
+which can be non-adaptive or adaptive (data-driven). In this paper, we propose general black-box
+regularization algorithms for solving nonlinear inverse problems such as full-waveform inversion
+(FWI), which admit empirical priors that are determined adaptively by sophisticated denoising
+algorithms. The nonlinear inverse problem is solved by a proximal Newton method, which generalizes
+the traditional Newton step in such a way to involve the gradients/subgradients of a (possibly non-differentiable)
+regularization function through operator splitting and proximal mappings. Furthermore, it requires
+to account for the Hessian matrix in the regularized least-squares optimization problem. We propose
+two different splitting algorithms for this task. In the first, we compute the Newton search direction
+with an iterative method based upon the first-order generalized iterative shrinkage-thresholding
+algorithm (ISTA), and hence Newton-ISTA (NISTA). The iterations require only Hessian-vector
+products to compute the gradient step of the quadratic approximation of the nonlinear objective
+function. The second relies on the alternating direction method of multipliers (ADMM), and hence
+Newton-ADMM (NADMM), where the least-square optimization subproblem and the regularization
+subproblem in the composite are decoupled through auxiliary variable and solved in an alternating
+mode. We compare NISTA and NADMM numerically by solving full-waveform inversion with BM3D regularizations.
+The tests show promising results obtained by both algorithms. However, NADMM shows a faster convergence
+rate than Newton-ISTA when using L-BFGS to solve the Newton system. 

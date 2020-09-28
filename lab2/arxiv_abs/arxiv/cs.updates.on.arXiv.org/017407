@@ -1,0 +1,19 @@
+Cost-sensitive feature selection describes a feature selection problem, where features raise
+individual costs for inclusion in a model. These costs allow to incorporate disfavored aspects
+of features, e.g. failure rates of as measuring device, or patient harm, in the model selection process.
+Random Forests define a particularly challenging problem for feature selection, as features are
+generally entangled in an ensemble of multiple trees, which makes a post hoc removal of features
+infeasible. Feature selection methods therefore often either focus on simple pre-filtering methods,
+or require many Random Forest evaluations along their optimization path, which drastically increases
+the computational complexity. To solve both issues, we propose Shallow Tree Selection, a novel
+fast and multivariate feature selection method that selects features from small tree structures.
+Additionally, we also adapt three standard feature selection algorithms for cost-sensitive learning
+by introducing a hyperparameter-controlled benefit-cost ratio criterion (BCR) for each method.
+In an extensive simulation study, we assess this criterion, and compare the proposed methods to
+multiple performance-based baseline alternatives on four artificial data settings and seven
+real-world data settings. We show that all methods using a hyperparameterized BCR criterion outperform
+the baseline alternatives. In a direct comparison between the proposed methods, each method indicates
+strengths in certain settings, but no one-fits-all solution exists. On a global average, we could
+identify preferable choices among our BCR based methods. Nevertheless, we conclude that a practical
+analysis should never rely on a single method only, but always compare different approaches to obtain
+the best results. 

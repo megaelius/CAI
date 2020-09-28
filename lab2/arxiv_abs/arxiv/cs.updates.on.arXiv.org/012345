@@ -1,0 +1,19 @@
+Bilateral filtering (BF) is one of the most classical denoising filters, however, the manually
+initialized filtering kernel hampers its adaptivity across images with various characteristics.
+To deal with image variation (i.e., non-stationary noise), in this paper, we propose multi-kernel
+filter (MKF) which adapts filtering kernels to specific image characteristics automatically.
+The design of MKF takes inspiration from adaptive mechanisms of human vision that make full use of
+information in a visual context. More specifically, for simulating the visual context and its adaptive
+function, we construct the image context based on which we simulate the contextual impact on filtering
+kernels. We first design a hierarchically clustering algorithm to generate a hierarchy of large
+to small coherent image patches, organized as a cluster tree, so that obtain multi-scale image representation.
+The leaf cluster and corresponding predecessor clusters are used to generate one of multiple range
+kernels that are capable of catering to image variation. At first, we design a hierarchically clustering
+framework to generate a hierarchy of large to small coherent image patches that organized as a cluster
+tree, so that obtain multi-scale image representation, i.e., the image context. Next, a leaf cluster
+is used to generate one of the multiple kernels, and two corresponding predecessor clusters are
+used to fine-tune the adopted kernel. Ultimately, the single spatially-invariant kernel in BF
+becomes multiple spatially-varying ones. We evaluate MKF on two public datasets, BSD300 and BrainWeb
+which are added integrally-varying noise and spatially-varying noise, respectively. Extensive
+experiments show that MKF outperforms state-of-the-art filters w.r.t. both mean absolute error
+and structural similarity. 

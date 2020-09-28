@@ -1,0 +1,19 @@
+An elastic-degenerate (ED) string is a sequence of $n$ sets of strings of total length $N$, which
+was recently proposed to model a set of similar sequences. The ED string matching (EDSM) problem
+is to find all occurrences of a pattern of length $m$ in an ED text. The EDSM problem has recently received
+some attention in the combinatorial pattern matching community, and an $\mathcal{O}(nm^{1.5}\sqrt{\log
+m} + N)$-time algorithm is known [Aoyama et al., CPM 2018]. The standard assumption in the prior work
+on this question is that $N$ is substantially larger than both $n$ and $m$, and thus we would like to
+have a linear dependency on the former. Under this assumption, the natural open problem is whether
+we can decrease the 1.5 exponent in the time complexity, similarly as in the related (but, to the best
+of our knowledge, not equivalent) word break problem [Backurs and Indyk, FOCS 2016]. Our starting
+point is a conditional lower bound for the EDSM problem. We use the popular combinatorial Boolean
+matrix multiplication (BMM) conjecture stating that there is no truly subcubic combinatorial
+algorithm for BMM [Abboud and Williams, FOCS 2014]. By designing an appropriate reduction we show
+that a combinatorial algorithm solving the EDSM problem in $\mathcal{O}(nm^{1.5-\epsilon} +
+N)$ time, for any $\epsilon>0$, refutes this conjecture. Of course, the notion of combinatorial
+algorithms is not clearly defined, so our reduction should be understood as an indication that decreasing
+the exponent requires fast matrix multiplication. Two standard tools used in algorithms on strings
+are string periodicity and fast Fourier transform. Our main technical contribution is that we successfully
+combine these tools with fast matrix multiplication to design a non-combinatorial $\mathcal{O}(nm^{1.381}
++ N)$-time algorithm for EDSM. To the best of our knowledge, we are the first to do so. 

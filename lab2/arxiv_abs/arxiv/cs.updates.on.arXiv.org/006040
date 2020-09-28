@@ -1,0 +1,18 @@
+We study the complexity of training neural network models with one hidden nonlinear activation
+layer and an output weighted sum layer. We analyze Gradient Descent applied to learning a bounded
+target function on $n$ real-valued inputs. We give an agnostic learning guarantee for GD: starting
+from a randomly initialized network, it converges in mean squared loss to the minimum error (in $2$-norm)
+of the best approximation of the target function using a polynomial of degree at most $k$. Moreover,
+for any $k$, the size of the network and number of iterations needed are both bounded by $n^{O(k)}\log(1/\epsilon)$.
+The core of our analysis is the following existence theorem, which is of independent interest: for
+any $\epsilon > 0$, any bounded function that has a degree $k$ polynomial approximation with error
+$\epsilon_0$ (in $2$-norm), can be approximated to within error $\epsilon_0 + \epsilon$ as a linear
+combination of $n^{O(k)}\cdot \mbox{poly}(1/\epsilon)$ randomly chosen gates from any class
+of gates whose corresponding activation function has nonzero coefficients in its harmonic expansion
+for degrees up to $k$. In particular, this applies to training networks of unbiased sigmoids and
+ReLUs. We complement this result with a nearly matching lower bound in the Statistical Query model.
+GD fits well in the SQ framework since each training step is determined by an expectation over the
+input distribution. We show that any SQ algorithm that achieves significant improvement over a
+constant function with queries of tolerance some inverse polynomial in the input dimensionality
+$n$ must use $n^{\Omega(k)}$ queries even when the target functions are degree-$k$ polynomials,
+and the input distribution is uniform over the unit sphere. 

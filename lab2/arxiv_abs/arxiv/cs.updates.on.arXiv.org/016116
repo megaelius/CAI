@@ -1,0 +1,20 @@
+There are two broad approaches to deep neural network (DNN) pruning: 1) applying a deterministic
+constraint on the weight matrices, which takes advantage of their ease of implementation and the
+learned structures of the weight matrix, and 2) using a probabilistic framework aimed at maintaining
+the flow of information between layers, which leverages the connections between filters and their
+downstream impact. Each approach's advantage supplements the missing portions of the alternate
+approach yet no one has combined and fully capitalized on both of them. Further,there are some common
+practical issues that affect both, e.g., intense manual effort to analyze sensitivity and set the
+upper pruning limits of layers. In this work,we propose Slimming Neural networks using Adaptive
+Connectivity Measures(SNACS), as an algorithm that uses a probabilistic framework for compression
+while incorporating weight-based constraints at multiple levels to capitalize on both their strengths
+and overcome previous issues. We propose a hash-based estimator of Adaptive Conditional Mutual
+Information(ACMI) to evaluate the connectivity between filters of different layers, which includes
+a magnitude-based scaling criteria that leverages weight matrices. To reduce the amount of unnecessary
+manual effort required to set the upper pruning limit of different layers in a DNN we propose a set
+of operating constraints to help automatically set them. Further, we take extended advantage of
+weight matrices by defining a sensitivity criteria for filters that measures the strength of their
+contributions to the following layer and highlights critical filters that need to be protected
+from pruning. We show that our proposed approach is faster by over 17x the nearest comparable method
+and outperforms all existing pruning approaches on three standard Dataset-DNN benchmarks: CIFAR10-VGG16,
+CIFAR10-ResNet56 and ILSVRC2012-ResNet50. 

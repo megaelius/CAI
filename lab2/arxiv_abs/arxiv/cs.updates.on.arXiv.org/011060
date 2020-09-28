@@ -1,0 +1,17 @@
+A shared read/write register emulation provides the illusion of shared-memory on top of message-passing
+models. The main hurdle with such emulations is dealing with server faults in the system. Several
+crash-tolerant register emulations in static systems require algorithms to replicate the value
+of the shared register onto a majority of servers. Majority correctness is necessary for such emulations.
+Byzantine faults are considered to be the worst kind of faults that can happen in any distributed
+system. Emulating a Byzantine-tolerant register requires replicating the register value on to
+more than two-thirds of the servers. Emulating a register in a dynamic system where servers and clients
+can enter and leave the system and be faulty is harder than in static systems. There are several crash-tolerant
+register emulations for dynamic systems. This paper presents the first emulation of a multi-reader
+multi-writer atomic register in a system that can withstand nodes continually entering and leaving,
+imposes no upper bound on the system size and can tolerate Byzantine servers. The algorithm works
+as long as the number of servers entering and leaving during a fixed time interval is at most a constant
+fraction of the system size at the beginning of the interval, and as long as the number of Byzantine
+servers in the system is at most f. Although our algorithm requires that there be a constant known
+upper bound on the number of Byzantine servers, this restriction is unavoidable, as we show that
+it is impossible to emulate an atomic register if the system size and maximum number of servers that
+can be Byzantine in the system is unknown to the nodes. 

@@ -1,0 +1,19 @@
+We consider the scenario where a source streams a flow at a fixed rate to a receiver across the network,
+possibly using multiple paths. Each link has a finite capacity. Transmission over a link incurs
+an integer delay if the rate is within the link capacity, and an unbounded delay otherwise. The objective
+is to minimize the maximum end-to-end delay experienced by the flow. The problem, denoted as Min-Max-Delay,
+appears in various practical scenarios, e.g., delay-critical video conferencing using inter-datacenter
+networks. In this paper, we first show Min-Max-Delay is weakly NP-hard and develop an exact algorithm
+with pseudo-polynomial time complexity. We then propose a Fully Polynomial Time Approximation
+Scheme (FPTAS). These results reveal fundamental difference between Min-Max-Delay problem and
+a similar maximum latency problem studied in the literature, for which is APX-hard and no PTAS exists
+unless P = NP. Moreover, there exists no exact pseudo-polynomial-time algorithm or constant-approximate
+algorithm for the maximum latency problem. We evaluate our algorithms in the scenario of routing
+delay-critical video-conferencing traffic over multiple paths of inter-datacenter networks,
+using simulations based on Amazon EC2 topology. Our algorithms both achieve the optimal maximum
+delay performance in all simulation instances, consistently outperforming all state-of-the-art
+solutions which only obtain sub-optimal maximum delay performance in certain instances. Furthermore,
+simulation results show that our achieved optimal delay always meet the delay requirement for video
+conferencing, while sub-optimal delay obtained by the alternatives fail to satisfy video-conferencing
+delay requirement for up to 15% of simulation instances between certain cross-continental source-receiver
+pair. 

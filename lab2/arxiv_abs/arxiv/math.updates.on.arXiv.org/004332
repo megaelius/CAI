@@ -1,0 +1,19 @@
+The Lyapunov exponent corresponding to a set of square matrices $\mathcal{A} = \{A_1, \dots, A_n
+\}$ and a probability distribution $p$ over $\{1, \dots, n\}$ is $\lambda(\mathcal{A},p) := \lim_{k
+\to \infty} \frac{1}{k} \,\mathbb{E} \log \|A_{\sigma_k} \cdots A_{\sigma_2}A_{\sigma_1}\|$,
+where $\sigma_i$ are i.i.d. according to $p$. This quantity is of fundamental importance to control
+theory since it determines the asymptotic convergence rate $e^{\lambda(\mathcal{A},p)}$ of
+the stochastic linear dynamical system $x_{k+1} = A_{\sigma_k} x_k$. This paper investigates
+the following "design problem": given $\mathcal{A}$, compute the distribution $p$ minimizing
+$\lambda(\mathcal{A},p)$. Our main result is that it is NP-hard to decide whether there exists
+a distribution $p$ for which $\lambda(\mathcal{A},p)< 0$, i.e. it is NP-hard to decide whether
+this dynamical system can be stabilized. This hardness result holds even in the "simple"' case where
+$\mathcal{A}$ contains only rank-one matrices. Somewhat surprisingly, this is in stark contrast
+to the Joint Spectral Radius -- the deterministic kindred of the Lyapunov exponent -- for which the
+analogous optimization problem for rank-one matrices is known to be exactly computable in polynomial
+time. To prove this hardness result, we first observe via Birkhoff's Ergodic Theorem that the Lyapunov
+exponent of rank-one matrices admits a simple formula and in fact is a quadratic form in $p$. Hardness
+of the design problem is shown through a reduction from the Independent Set problem. Along the way,
+simple examples are given illustrating that $p \mapsto \lambda(\mathcal{A},p)$ is neither convex
+nor concave in general. We conclude with extensions to continuous distributions, exchangeable
+processes, Markov processes, and stationary ergodic processes. 

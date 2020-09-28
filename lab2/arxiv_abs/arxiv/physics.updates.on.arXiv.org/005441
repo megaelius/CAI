@@ -1,0 +1,17 @@
+Purpose: A supervised learning framework is proposed to automatically generate MR sequences and
+corresponding reconstruction without human knowledge on MR strategies. This enables a target-based
+optimization from scratch, as well as exploration of novel and flexible MR sequence strategies.
+Methods: The entire scanning and reconstruction process is simulated end-to-end in terms of RF
+events, gradient moment events in x and y, and delay times, acting on the input model spin system given
+in terms of proton density, T1 and T2, and B0. As proof of concept we use both conventional MR images
+but also binary masks and T1 maps as a target and optimize from scratch using the loss defined by data
+fidelity, SAR, and scan time. Results: In a first attempt, MRzero learns all gradient and RF events
+from zero, and is able to generate the aimed at target image. Appending a neural network layer to the
+reconstruction module also arbitrary targets were learned successfully. Experiments could be
+translated to image acquisition at a real system (3T Siemens, PRISMA) and could be verified in measurements
+of phantoms and the human brain in vivo. Discussion/Conclusion: We have developed a fully automated
+MR sequence generator based on Bloch equation simulations and supervised learning. While we focus
+on the method herein, having such a differentiable digital MR twin at hand paves the way to a novel
+way of generating MR sequence and reconstruction solely governed by the target provided, which
+can be a certain MR contrast, but the possibilities for targets are limitless, e.g. quantification,
+segmentation, as well as contrasts of other image modalities. 

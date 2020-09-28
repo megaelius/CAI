@@ -1,0 +1,19 @@
+In this paper, we attempt to provide a privacy-preserving and efficient solution for the "similar
+patient search" problem among several parties (e.g., hospitals) by addressing the shortcomings
+of previous attempts. We consider a scenario in which each hospital has its own genomic dataset and
+the goal of a physician (or researcher) is to search for a patient similar to a given one (based on a
+genomic makeup) among all the hospitals in the system. To enable this search, we let each hospital
+encrypt its dataset with its own key and outsource the storage of its dataset to a public cloud. The
+physician can get authorization from multiple hospitals and send a query to the cloud, which efficiently
+performs the search across authorized hospitals using a privacy-preserving index structure.
+We propose a hierarchical index structure to index each hospital's dataset with low memory requirements.
+Furthermore, we develop a novel privacy-preserving index merging mechanism that generates a common
+search index from individual indices of each hospital to significantly improve the search efficiency.
+We also consider the storage of medical information associated with genomic data of a patient (e.g.,
+diagnosis and treatment). We allow access to this information via a fine-grained access control
+policy that we develop through the combination of standard symmetric encryption and ciphertext
+policy attribute-based encryption. Using this mechanism, a physician can search for similar patients
+and obtain medical information about the matching records if the access policy holds. We conduct
+experiments on large-scale genomic data and show the efficiency of the proposed scheme. Notably,
+we show that under our experimental settings, the proposed scheme is more than $60$ times faster
+than Wang et al.'s protocol and $97$ times faster than Asharov et al.'s solution. 

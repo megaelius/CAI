@@ -1,0 +1,20 @@
+The problem of increased queueing delays in the Internet motivates the study of currently implemented
+transport protocols and active queue management (AQM) policies. We study Compound TCP (default
+protocol in Windows) with Random Early Detection (RED). RED uses an exponentially weighted moving
+average of the queue size to make packet-dropping decisions, aiming to control the queue size. One
+must study RED with current protocols in order to explore its viability in the context of increased
+queueing delays. We derive a non-linear time-delayed model for Compound TCP-RED. We derive a sufficient
+condition for local stability of this model, and examine the impact of (i) round-trip time (RTT)
+of the TCP flows, (ii) queue averaging parameter and (iii) packet-dropping thresholds. Further,
+we establish that the system undergoes a Hopf bifurcation as any of the above parameters is varied.
+This suggests the emergence of limit cycles in the queue size, which may lead to synchronisation
+of TCP flows and loss of link utilisation. Next, we study a regime where queue size averaging is not
+performed, and packet-dropping decisions are based on instantaneous queue size. In this regime,
+we derive the necessary and sufficient condition for local stability. A comparison of the stability
+results for Compound TCP-RED in the two regimes--with and without queue size averaging--reveals
+that averaging may not be beneficial to system stability. Packet-level simulations show that the
+queue size indeed exhibits limit cycle oscillations as system parameters are varied. We then outline
+a simple threshold-based queue policy, that could ensure stable low-latency operation. We show
+that the threshold policy outperforms RED in terms of queueing delay, flow completion time and packet
+loss. We highlight that the threshold-based policy could mitigate the issue of increased queueing
+delays in the Internet. 

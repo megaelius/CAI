@@ -1,0 +1,18 @@
+Deep net architectures have constantly evolved over the past few years, leading to significant
+advancements in a wide array of computer vision tasks. However, besides high accuracy, many applications
+also require a low computational load and limited memory footprint. To date, efficiency has typically
+been achieved either by architectural choices at the macro level (e.g. using skip connections or
+pruning techniques) or modifications at the level of the individual layers (e.g. using depth-wise
+convolutions or channel shuffle operations). Interestingly, much less attention has been devoted
+to the role of the activation functions in constructing efficient nets. Recently, Kligvasser et
+al. showed that incorporating spatial connections within the activation functions, enables a
+significant boost in performance in image restoration tasks, at any given budget of parameters.
+However, the effectiveness of their xUnit module has only been tested on simple small models, which
+are not characteristic of those used in high-level vision tasks. In this paper, we adopt and improve
+the xUnit activation, show how it can be incorporated into the DenseNet architecture, and illustrate
+its high effectiveness for classification and image restoration tasks alike. While the DenseNet
+architecture is extremely efficient to begin with, our dense xUnit net (DxNet) can typically achieve
+the same performance with far fewer parameters. For example, on ImageNet, our DxNet outperforms
+a ReLU-based DenseNet having 30% more parameters and achieves state-of-the-art results for this
+budget of parameters. Furthermore, in denoising and super-resolution, DxNet significantly improves
+upon all existing lightweight solutions, including the xUnit-based nets of Kligvasser et al. 

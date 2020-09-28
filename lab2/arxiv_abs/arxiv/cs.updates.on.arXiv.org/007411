@@ -1,0 +1,17 @@
+Deep learning based speech enhancement and source separation systems have recently reached unprecedented
+levels of quality, to the point that performance is reaching a new ceiling. Most systems rely on estimating
+the magnitude of a target source by estimating a real-valued mask to be applied to a time-frequency
+representation of the mixture signal. A limiting factor in such approaches is a lack of phase estimation:
+the phase of the mixture is most often used when reconstructing the estimated time-domain signal.
+Here, we propose "magbook", "phasebook", and "combook", three new types of layers based on discrete
+representations that can be used to estimate complex time-frequency masks. Magbook layers extend
+classical sigmoidal units and a recently introduced convex softmax activation for mask-based
+magnitude estimation. Phasebook layers use a similar structure to give an estimate of the phase
+mask without suffering from phase wrapping issues. Combook layers are an alternative to the magbook-phasebook
+combination that directly estimate complex masks. We present various training and inference schemes
+involving these representations, and explain in particular how to include them in an end-to-end
+learning framework. We also present an oracle study to assess upper bounds on performance for various
+types of masks using discrete phase representations. We evaluate the proposed methods on the wsj0-2mix
+dataset, a well-studied corpus for single-channel speaker-independent speaker separation,
+matching the performance of state-of-the-art mask-based approaches without requiring additional
+phase reconstruction steps. 

@@ -1,0 +1,20 @@
+The byte-addressable Non-Volatile Memory (NVM) is a promising technology since it simultaneously
+provides DRAM-like performance, disk-like capacity, and persistency. The current NVM deployment
+is symmetric, where NVM devices are directly attached to servers. Due to the higher density, NVM
+provides larger capacity and can be shared among servers. Unfortunately, in the symmetric setting,
+the availability of NVM devices is affected by the specific machine it is attached to. High availability
+can be realized by replicating data to NVM on a remote machine. However, it requires full replication
+of data structure in local memory, limiting the size of the working set. This paper rethinks NVM deployment
+and makes a case for the asymmetric NVM architecture, which decouples servers from persistent data
+storage. In the proposed AsymNVM architecture, NVM devices (back-end nodes) can be shared by multiple
+servers (front-end nodes) and provide recoverable persistent data structures. The asymmetric
+architecture is made possible by RDMA, and follows the recent industry trend of resource disaggregation.
+We build AsymNVM framework based on AsymNVM architecture that implements: 1) high performance
+persistent data structure update; 2) NVM data management; 3) concurrency control; and 4) crash-consistency
+and replication. The central idea is to use operation logs to reduce the stall due to RDMA writes and
+enable efficient batching and caching in front-end nodes. To evaluation performance, we construct
+eight widely used data structures and two applications based on AsymNVM framework, and use traces
+of industry workloads. In a cluster with ten machines, the results show that AsymNVM achieves comparable
+performance to the best possible symmetric architecture while avoiding all the drawbacks with
+disaggregation. Compared to the baseline AsymNVM, speedup brought by the proposed optimizations
+is 6~22x. 

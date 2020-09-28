@@ -1,0 +1,18 @@
+Privacy-minded Internet service operators anonymize IPv6 addresses by truncating them to a fixed
+length, perhaps due to long-standing use of this technique with IPv4 and a belief that it's "good
+enough." We claim that simple anonymization by truncation is suspect since it does not entail privacy
+guarantees nor does it take into account some common address assignment practices observed today.
+To investigate, with standard activity logs as input, we develop a counting method to determine
+a lower bound on the number of active IPv6 addresses that are simultaneously assigned, such as those
+of clients that access World-Wide Web services. In many instances, we find that these empirical
+measurements offer no evidence that truncating IPv6 addresses to a fixed number of bits, e.g., 48
+in common practice, protects individuals' privacy. To remedy this problem, we propose kIP anonymization,
+an aggregation method that ensures a certain level of address privacy. Our method adaptively determines
+variable truncation lengths using parameter k, the desired number of active (rather than merely
+potential) addresses, e.g., 32 or 256, that can not be distinguished from each other once anonymized.
+We describe our implementation and present first results of its application to millions of real
+IPv6 client addresses active over a week's time, demonstrating both feasibility at large scale
+and ability to automatically adapt to each network's address assignment practice and synthesize
+a set of anonymous aggregates (prefixes), each of which is guaranteed to cover (contain) at least
+k of the active addresses. Each address is anonymized by truncating it to the length of its longest
+matching prefix in that set. 

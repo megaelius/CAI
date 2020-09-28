@@ -1,0 +1,19 @@
+In this work, we study constrained clustering, where constraints are utilized to guide the clustering
+process. In existing works, two categories of constraints have been widely explored, namely pairwise
+and cardinality constraints. Pairwise constraints enforce the cluster labels of two instances
+to be the same (must-link constraints) or different (cannot-link constraints). Cardinality constraints
+encourage cluster sizes to satisfy a user-specified distribution. However, most existing constrained
+clustering models can only utilize one category of constraints at a time. In this paper, we enforce
+the above two categories into a unified clustering model starting with the integer program formulation
+of the standard K-means. As these two categories provide useful information at different levels,
+utilizing both of them is expected to allow for better clustering performance. However, the optimization
+is difficult due to the binary and quadratic constraints in the proposed unified formulation. To
+alleviate this difficulty, we utilize two techniques: equivalently replacing the binary constraints
+by the intersection of two continuous constraints; the other is transforming the quadratic constraints
+into bi-linear constraints by introducing extra variables. Then we derive an equivalent continuous
+reformulation with simple constraints, which can be efficiently solved by Alternating Direction
+Method of Multipliers (ADMM) algorithm. Extensive experiments on both synthetic and real data
+demonstrate: (1) when utilizing a single category of constraint, the proposed model is superior
+to or competitive with state-of-the-art constrained clustering models, and (2) when utilizing
+both categories of constraints jointly, the proposed model shows better performance than the case
+of the single category. 

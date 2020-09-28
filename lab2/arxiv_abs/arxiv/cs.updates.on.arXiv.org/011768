@@ -1,0 +1,19 @@
+Subgraph counting is a fundamental task in network analysis. Typically, algorithmic work is on
+total counting, where we wish to count the total frequency of a (small) pattern subgraph in a large
+input data set. But many applications require local counts (also called vertex orbit counts) wherein,
+for every vertex $v$ of the input graph, one needs the count of the pattern subgraph involving $v$.
+This provides a rich set of vertex features that can be used in machine learning tasks, especially
+classification and clustering. But getting local counts is extremely challenging. Even the easier
+problem of getting total counts has received much research attention. Local counts require algorithms
+that get much finer grained information, and the sheer output size makes it difficult to design scalable
+algorithms. We present EVOKE, a scalable algorithm that can determine vertex orbits counts for
+all 5-vertex pattern subgraphs. In other words, EVOKE exactly determines, for every vertex $v$
+of the input graph and every 5-vertex subgraph $H$, the number of copies of $H$ that $v$ participates
+in. EVOKE can process graphs with tens of millions of edges, within an hour on a commodity machine.
+EVOKE is typically hundreds of times faster than previous state of the art algorithms, and gets results
+on datasets beyond the reach of previous methods. Theoretically, we generalize a recent "graph
+cutting" framework to get vertex orbit counts. This framework generate a collection of polynomial
+equations relating vertex orbit counts of larger subgraphs to those of smaller subgraphs. EVOKE
+carefully exploits the structure among these equations to rapidly count. We prove and empirically
+validate that EVOKE only has a small constant factor overhead over the best (total) 5-vertex subgraph
+counter. 

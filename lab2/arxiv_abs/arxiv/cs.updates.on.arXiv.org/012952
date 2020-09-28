@@ -1,0 +1,20 @@
+In this paper we propose a new diffuse interface model for the numerical simulation of inviscid compressible
+flows around fixed and moving solid bodies of arbitrary shape. The solids are assumed to be moving
+rigid bodies, without any elastic properties. The model is a simplified case of the seven-equation
+Baer-Nunziato model of compressible multi-phase flows, and results in a nonlinear hyperbolic
+system with non-conservative products. The geometry of the solid bodies is simply specified via
+a scalar field that represents the volume fraction of the fluid present in each control volume. This
+allows the discretization of arbitrarily complex geometries on simple uniform or adaptive Cartesian
+meshes. Inside the solid bodies, the fluid volume fraction is zero, while it is unitary in the fluid
+phase. We prove that at the material interface, i.e. where the volume fraction jumps from unity to
+zero, the normal component of the fluid velocity assumes the value of the normal component of the
+solid velocity. This result can be directly derived from the governing equations, either via Riemann
+invariants or from the generalized Rankine Hugoniot conditions according to the theory of Dal Maso,
+Le Floch and Murat, which justifies the use of a path-conservative approach for treating the nonconservative
+products. The governing equations of our new model are solved on uniform Cartesian grids via a high
+order path-conservative ADER discontinuous Galerkin (DG) method with a posteriori sub-cell finite
+volume (FV) limiter. Since the numerical method is of the shock capturing type, the fluid-solid
+boundary is never explicitly tracked by the numerical method, neither via interface reconstruction,
+nor via mesh motion. The effectiveness of the proposed approach is tested on a set of numerical test
+problems, including 1D Riemann problems as well as supersonic flows over fixed and moving rigid
+bodies. 

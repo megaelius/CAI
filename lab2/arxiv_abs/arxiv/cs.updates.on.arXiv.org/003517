@@ -1,0 +1,19 @@
+Action classification is a widely known and popular task that offers an approach towards video understanding.
+The absence of an easy-to-use platform containing state-of-the-art (SOTA) models presents an
+issue for the community. Given that individual research code is not written with an end user in mind
+and in certain cases code is not released, even for published articles, the importance of a common
+unified platform capable of delivering results while removing the burden of developing an entire
+system cannot be overstated. To try and overcome these issues, we develop a tensorflow-based unified
+platform to abstract away unnecessary overheads in terms of an end-to-end pipeline setup in order
+to allow the user to quickly and easily prototype action classification models. With the use of a
+consistent coding style across different models and seamless data flow between various submodules,
+the platform lends itself to the quick generation of results on a wide range of SOTA methods across
+a variety of datasets. All of these features are made possible through the use of fully pre-defined
+training and testing blocks built on top of a small but powerful set of modular functions that handle
+asynchronous data loading, model initializations, metric calculations, saving and loading of
+checkpoints, and logging of results. The platform is geared towards easily creating models, with
+the minimum requirement being the definition of a network architecture and preprocessing steps
+from a large custom selection of layers and preprocessing functions. M-PACT currently houses four
+SOTA activity classification models which include, I3D, C3D, ResNet50+LSTM and TSN. The classification
+performance achieved by these models are, 43.86% for ResNet50+LSTM on HMDB51 while C3D and TSN achieve
+93.66% and 85.25% on UCF101 respectively. 

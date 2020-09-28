@@ -1,0 +1,19 @@
+The number of public and private web archives has increased, and we implicitly trust content delivered
+by these archives. Fixity is checked to ensure an archived resource has remained unaltered since
+the time it was captured. Some web archives do not allow users to access fixity information and, more
+importantly, even if fixity information is available, it is provided by the same archive from which
+the archived resources are requested. In this research, we propose two approaches, namely Atomic
+and Block, to establish and check fixity of archived resources. In the Atomic approach, the fixity
+information of each archived web page is stored in a JSON file (or a manifest), and published in a well-known
+web location (an Archival Fixity server) before it is disseminated to several on-demand web archives.
+In the Block approach, we first batch together fixity information of multiple archived pages in
+a single binary-searchable file (or a block) before it is published and disseminated to archives.
+In both approaches, the fixity information is not obtained directly from archives. Instead, we
+compute the fixity information (e.g., hash values) based on the playback of archived resources.
+One advantage of the Atomic approach is the ability to verify fixity of archived pages even with the
+absence of the Archival Fixity server. The Block approach requires pushing fewer resources into
+archives, and it performs fixity verification faster than the Atomic approach. On average, it takes
+about 1.25X, 4X, and 36X longer to disseminate a manifest to perma.cc, archive.org, and webcitation.org,
+respectively, than archive.is, while it takes 3.5X longer to disseminate a block to archive.org
+than perma.cc. The Block approach performs 4.46X faster than the Atomic approach on verifying the
+fixity of archived pages. 

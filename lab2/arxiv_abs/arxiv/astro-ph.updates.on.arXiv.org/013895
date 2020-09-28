@@ -1,0 +1,17 @@
+We present a numerical code for radiation hydrodynamics designed as a module for the freely available
+PLUTO code. We adopt a gray approximation and include radiative transfer following a two-moment
+approach by imposing the M1 closure to the radiation fields. This closure allows for a description
+of radiative transport in both the diffusion and free-streaming limits, and is able to describe
+highly anisotropic radiation transport as can be expected in the vicinity of an accreting planet
+in a protoplanetary disk. To reduce the computational cost caused by the timescale disparity between
+radiation and matter fields, we integrate their evolution equations separately in an operator-split
+way, using substepping to evolve the radiation equations. We further increase the code's efficiency
+by adopting the reduced speed of light approximation (RSLA). Our integration scheme for the evolution
+equations of radiation fields relies on implicit-explicit schemes, in which radiation-matter
+interaction terms are integrated implicitly while fluxes are integrated via Godunov-type solvers.
+The module is suitable for general astrophysical computations in 1, 2, and 3 dimensions in Cartesian,
+spherical and cylindrical coordinates, and can be implemented on rotating frames. We demonstrate
+the algorithm performance on different numerical benchmarks, paying particular attention to
+the applicability of the RSLA for computations of physical processes in protoplanetary disks.
+We show 2D simulations of vertical convection in disks and 3D simulations of gas accretion by planetary
+cores, which are the first of their kind to be solved with a two-moment approach. 

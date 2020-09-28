@@ -1,0 +1,18 @@
+Computed Tomography (CT) reconstruction is a fundamental component to a wide variety of applications
+ranging from security, to healthcare. The classical techniques require measuring projections,
+called sinograms, from a full 180$^\circ$ view of the object. This is impractical in a limited angle
+scenario, when the viewing angle is less than 180$^\circ$, which can occur due to different factors
+including restrictions on scanning time, limited flexibility of scanner rotation, etc. The sinograms
+obtained as a result, cause existing techniques to produce highly artifact-laden reconstructions.
+In this paper, we propose to address this problem through implicit sinogram completion, on a challenging
+real world dataset containing scans of common checked-in luggage. We propose a system, consisting
+of 1D and 2D convolutional neural networks, that operates on a limited angle sinogram to directly
+produce the best estimate of a reconstruction. Next, we use the x-ray transform on this reconstruction
+to obtain a "completed" sinogram, as if it came from a full 180$^\circ$ measurement. We feed this
+to standard analytical and iterative reconstruction techniques to obtain the final reconstruction.
+We show with extensive experimentation that this combined strategy outperforms many competitive
+baselines. We also propose a measure of confidence for the reconstruction that enables a practitioner
+to gauge the reliability of a prediction made by our network. We show that this measure is a strong
+indicator of quality as measured by the PSNR, while not requiring ground truth at test time. Finally,
+using a segmentation experiment, we show that our reconstruction preserves the 3D structure of
+objects effectively. 

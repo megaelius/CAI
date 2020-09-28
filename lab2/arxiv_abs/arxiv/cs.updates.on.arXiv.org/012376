@@ -1,0 +1,19 @@
+The development of deep convolutional neural network architecture is critical to the improvement
+of image classification task performance. Many image classification studies use deep convolutional
+neural network and focus on modifying the network structure to improve image classification performance.
+Conversely, our study focuses on loss function design. Cross-entropy Loss (CEL) has been widely
+used for training deep convolutional neural network for the task of multi-class classification.
+Although CEL has been successfully implemented in several image classification tasks, it only
+focuses on the posterior probability of the correct class. For this reason, a negative log likelihood
+ratio loss (NLLR) was proposed to better differentiate between the correct class and the competing
+incorrect ones. However, during the training of the deep convolutional neural network, the value
+of NLLR is not always positive or negative, which severely affects the convergence of NLLR. Our proposed
+competing ratio loss (CRL) calculates the posterior probability ratio between the correct class
+and the competing incorrect classes to further enlarge the probability difference between the
+correct and incorrect classes. We added hyperparameters to CRL, thereby ensuring its value to be
+positive and that the update size of backpropagation is suitable for the CRL's fast convergence.
+To demonstrate the performance of CRL, we conducted experiments on general image classification
+tasks (CIFAR10/100, SVHN, ImageNet), the fine-grained image classification tasks (CUB200-2011
+and Stanford Car), and the challenging face age estimation task (using Adience). Experimental
+results show the effectiveness and robustness of the proposed loss function on different deep convolutional
+neural network architectures and different image classification tasks. 

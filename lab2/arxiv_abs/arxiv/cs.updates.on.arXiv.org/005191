@@ -1,0 +1,17 @@
+In the United States, heart disease is the leading cause of death for males and females, accounting
+for 610,000 deaths each year [1]. Physicians use Magnetic Resonance Imaging (MRI) scans to take
+images of the heart in order to non-invasively estimate its structural and functional parameters
+for cardiovascular diagnosis and disease management. The end-systolic volume (ESV) and end-diastolic
+volume (EDV) of the left ventricle (LV), and the ejection fraction (EF) are indicators of heart disease.
+These measures can be derived from the segmented contours of the LV; thus, consistent and accurate
+segmentation of the LV from MRI images are critical to the accuracy of the ESV, EDV, and EF, and to non-invasive
+cardiac disease detection. In this work, various image preprocessing techniques, model configurations
+using the U-Net deep learning architecture, postprocessing methods, and approaches for volume
+estimation are investigated. An end-to-end analytics pipeline with multiple stages is provided
+for automated LV segmentation and volume estimation. First, image data are reformatted and processed
+from DICOM and NIfTI formats to raw images in array format. Secondly, raw images are processed with
+multiple image preprocessing methods and cropped to include only the Region of Interest (ROI).
+Thirdly, preprocessed images are segmented using U-Net models. Lastly, post processing of segmented
+images to remove extra contours along with intelligent slice and frame selection are applied, followed
+by calculation of the ESV, EDV, and EF. This analytics pipeline is implemented and runs on a distributed
+computing environment with a GPU cluster at the San Diego Supercomputer Center at UCSD. 

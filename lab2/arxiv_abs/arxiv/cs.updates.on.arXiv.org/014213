@@ -1,0 +1,18 @@
+Nonlinear parametric inverse problems appear in many applications and are typically very expensive
+to solve, especially if they involve many measurements. These problems pose huge computational
+challenges as evaluating the objective function or misfit requires the solution of a large number
+of parameterized partial differential equations, typically one per source term. Newton-type
+algorithms, which may be required for fast convergence, typically require the additional solution
+of a large number of adjoint problems. The use of parametric model reduction may substantially alleviate
+this problem. In [de Sturler, E., Gugercin, S., Kilmer, M. E., Chaturantabut, S., Beattie, C., and
+O'Connell, M. (2015). Nonlinear Parametric Inversion Using Interpolatory Model Reduction. SIAM
+Journal on Scientific Computing, 37(3)], interpolatory model reduction was successfully used
+to drastically speed up inversion for Diffuse Optical Tomography (DOT). However, when using model
+reduction in high dimensional parameter spaces, obtaining error bounds in parameter space is typically
+intractable. In this paper, we propose to use stochastic estimates to remedy this problem. At the
+cost of one (randomized) full-scale linear solve per optimization step we obtain a robust algorithm.
+Moreover, since we can now update the model when needed, this robustness allows us to further reduce
+the order of the reduced order model and hence the cost of computing and using it, further decreasing
+the cost of inversion. We also propose a method to update the model reduction basis that reduces the
+number of large linear solves required by 46%-98% compared with the fixed reduced-order model.
+We demonstrate that this leads to a highly efficient and robust inversion method. 

@@ -1,0 +1,19 @@
+We investigate regular matching problems. The classical reference is Conway's textbook "Regular
+algebra and finite machines". Some of his results can be stated as follows. Let $L\subseteq(\Sigma\cup
+X)^*$ and $R\subseteq\Sigma^*$ be regular languages where $\Sigma$ is a set of constants and $X$
+is a set of variables. Substituting every $x\in X$ by a regular subset $\sigma(x)$ of $\Sigma^*$
+yields a regular set $\sigma(L)\subseteq\Sigma^*$. A substitution $\sigma$ solves a matching
+problem "$L\subseteq R$?" if $\sigma(L)\subseteq R$. There are finitely many maximal solutions
+$\sigma$; they are effectively computable and $\sigma(x)$ is regular for all $x\in X$; and every
+solution is included in a maximal one. Also, in the case of words "$\exists\sigma:\sigma(L)=R$?"
+is decidable. Apart from the last property, we generalize these results to infinite trees. We define
+a notion of choice function $\gamma$ which for any tree $s$ over $\Sigma\cup X$ and position $u$ of
+a variable $x$ selects at most one tree $\gamma(u)\in\sigma(x)$; next, we define $\gamma_\infty(s)$
+as the limit of a Cauchy sequence; and the union over all $\gamma_\infty(s)$ yields $\sigma(s)$.
+Since our definition coincides with that for IO substitutions, we write $\sigma_{io}(L)$ instead
+of $\sigma(L)$. Our main result is the decidability of "$\exists\sigma:\sigma_{io}(L)\subseteq
+R$?" if $R$ is regular and $L$ belongs to a class of tree languages closed under intersection with
+regular sets. Such a special case pops up if $L$ is context-free. Note that "$\exists\sigma:\sigma_{io}(L)=R$?"
+is undecidable, in general in that case. However, the decidability of "$\exists\sigma:\sigma_{io}(L)=R$?"
+if both $L$ and $R$ are regular remains open because, in contrast to word languages, the homomorphic
+image of a regular tree language is not always regular if $\sigma(x)$ is regular for all $x\in X$.

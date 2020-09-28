@@ -1,0 +1,17 @@
+This paper presents a simple kinetic data structure for maintaining all the nearest neighbors of
+a set of $n$ moving points in $\mathbb{R}^d$, where the trajectory of each point is an algebraic function
+of at most constant degree $s$. The approach is based on maintaining the edges of the Semi-Yao graph,
+a sparse graph whose edge set includes the pairs of nearest neighbors as a subset. Our kinetic data
+structure (KDS) for maintaining all the nearest neighbors is deterministic. It processes $O(n^2\beta_{2s+2}^2(n)\log
+n)$ events with a total cost of $O(n^2\beta_{2s+2}(n)\log^{d+1} n)$. Here, $\beta_s(n)$ is an
+extremely slow-growing function. The best previous KDS for all the nearest neighbors in $ \mathbb{R}^d$
+is by Agarwal, Kaplan, and Sharir (TALG 2008). It is a randomized result. We improve that result by
+a factor of $\log^d n$ in the number of events and by a $\log n$ factor in the total cost. Also, their
+structure and analysis are more complex than ours. This paper generalizes and improves the 2013
+work of Rahmati, King and Whitesides (SoCG 2013) on maintaining the Semi-Yao graph in $\mathbb{R}^2$;
+its new technique provides the first KDS for the Semi-Yao graph in $\mathbb{R}^d$. Our KDS is local
+in the worst case, meaning that only a constant number of events is associated with any one point at
+any time. For maintaining all the nearest neighbors, neither our KDS nor the KDS by Agarwal \etal
+is local, and furthermore, each event in our KDS and in their KDS is handled in polylogarithmic time
+in an amortized sense. Finally, in this paper, we also give a KDS for maintenance of all the $(1+\epsilon)$-nearest
+neighbors. This KDS is local and it handles $O(n^2)$ events, each in worst-case time $O(\log^d n)$.

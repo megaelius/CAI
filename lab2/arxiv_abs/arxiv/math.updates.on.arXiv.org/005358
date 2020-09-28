@@ -1,0 +1,19 @@
+We consider the optimal multi-agent persistent monitoring problem defined for a team of agents
+traversing on a set of nodes (targets) interconnected according to a fixed graph topology. The underlying
+objective is to minimize a measure of mean overall node state uncertainty evaluated over a finite
+interval. The solution to this problem involves each agent's trajectory defined both by the sequence
+of nodes to be visited and the amount of time to be spent at each node. In literature, for this problem,
+a class of distributed threshold-based parametric controllers has been proposed where agent transitions
+from one node to the next are controlled via enforcing thresholds on the respective node uncertainties.
+Under such a policy, the behavior of the agent-target system is a hybrid dynamic system, which enables
+the use of Infinitesimal Perturbation Analysis (IPA) to find the optimal threshold parameters
+in an on-line manner using gradient descent. However, due to the non-convexity of the associated
+objective function, the used initial thresholds in the gradient descent scheme directly affects
+the final optimal solution (controller). Therefore, initial thresholds should be carefully chosen
+to achieve a better optimal solution. To overcome this initialization challenge, we extensively
+analyze the asymptotic steady-state behavior of the agent-target hybrid system under periodic
+agent trajectories. Then, based on the obtained theoretical results, we propose a computationally
+efficient offline greedy approach to generate a reasonably well-performing initial thresholds.
+In almost all the considered cases, it was observed that the initial thresholds provided by the proposing
+greedy technique is optimal (still local) and performs better than the locally optimal threshold
+policies given by the IPA techniques (with randomly chosen initial threshold). 

@@ -1,0 +1,19 @@
+Many data can be described by multidimensional arrays or tensors. Models on multidimensional arrays
+have been applied to a wide range of applications from pattern discovery from knowledge bases to
+brain imagining analysis. Infinite Tucker Decomposition (InfTucker) and random function prior
+models, as nonparametric Bayesian models on infinite exchangeable arrays, are more powerful models
+than widely-used multilinear factorization methods including Tucker and PARAFAC decomposition,
+(partly) due to their capability of modeling nonlinear relationships between array elements.
+Despite their great predictive performance and sound theoretical foundations, they are limited
+by their incapability of handling massive data. For example, InfTucker needs to apply eigen-decomposition
+on a Gram matrix over each mode and its time complexity is cubic to the size of the largest mode. In this
+paper, we present Distributed infinite Tucker (DinTucker) decomposition, a large-scale nonlinear
+tensor decomposition algorithm on MapReduce. While maintaining the predictive accuracy of InfTucker,
+it is scalable on massive data. DinTucker is based on a new hierarchical Bayesian model that enables
+local training of InfTucker on subarrays and information integration from all local training results.
+We use distributed stochastic gradient descent, coupled with variational inference, to train
+this model. We apply DinTucker to multidimensional arrays with billions of elements from applications
+in the "Read the Web" project (Carlson et al. 2010) and in information security and compare it with
+the state-of-the-art large-scale tensor decomposition method, GigaTensor. On both datasets,
+using the same Hadoop system DinTucker achieves significantly higher prediction accuracy than
+with less computational time. 

@@ -1,0 +1,18 @@
+State-of-the-art programming language techniques for incremental computation employ programmer-specified
+names, whose role is critical for the asymptotic efficiency of many online algorithms. These names
+identify "cache locations" for dynamic data and sub-computations---the program's dynamic dependencies.
+To work well, or at all, these names must be precise, meaning that for an evaluation derivation in
+question, each name identifies at most one value or subcomputation; we call all other names imprecise,
+or ambiguous. The precise name problem consists of statically verifying that a program allocates
+names precisely, for all inputs. Past theoretical work ignores this problem by not permitting programs
+to use names directly, and past implementations, which necessarily permit explicit names, employ
+ad hoc workarounds for imprecise incremental programs. In this work, we give the first static verification
+approach to the precise naming problem. Specifically, we define a refinement type system that gives
+name term and index term sub-languages for approximating programmer-specified names of dynamic
+data and sub-computations. We prove that our type system enforces that these names are precise.
+We demonstrate the practical value of our proposed type system by verifying examples of incremental
+sequences and sets from a recent collections library, including both library client and implementation
+code. Drawing closer to an implementation of our type system, we derive a bidirectional version,
+and prove that it corresponds to our declarative type system. A key challenge in implementing the
+bidirectional system is handling constraints over names, name terms and name sets; toward this
+goal, we give decidable, syntactic rules to guide these checks. 

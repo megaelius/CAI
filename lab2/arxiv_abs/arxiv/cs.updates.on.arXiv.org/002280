@@ -1,0 +1,20 @@
+As an agent moves through the world, the apparent motion of scene elements is (usually) inversely
+proportional to their depth. It is natural for a learning agent to associate image patterns with
+the magnitude of their displacement over time: as the agent moves, far away mountains don't move
+much; nearby trees move a lot. This natural relationship between the appearance of objects and their
+motion is a rich source of information about the world. In this work, we train a deep network, using
+fully automatic supervision, to predict relative scene depth from single images. The depth training
+images are automatically derived from simple videos of cars moving through a scene, using classic
+depth from motion techniques, and no human provided labels. We show that this pretext task of predicting
+depth from a single image induces features in the network that result in large improvements in a set
+of downstream tasks including semantic segmentation, joint road segmentation and car detection,
+and monocular (absolute) depth estimation, over a network trained from scratch. In particular,
+our pre-trained model outperforms an ImageNet counterpart for the monocular depth estimation
+task. Unlike work that analyzes video paired with additional information about direction of motion,
+our agent learns from "raw egomotion" video recorded from cars moving through the world. Unlike
+methods that require videos of moving objects, we neither depend on, nor are disrupted by, moving
+objects in the video. Indeed, we can benefit from predicting depth in the videos associated with
+various downstream tasks, showing that we can adapt to new scenes in an unsupervised manner to improve
+performance. By doing so, we achieve consistently better results over several different urban
+scene understanding tasks, obtaining results that are competitive with state-of-the-art method
+for monocular depth estimation. 

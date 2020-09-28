@@ -1,0 +1,18 @@
+We propose a novel method for massive Multiple-Input Multiple-Output (massive MIMO) in Frequency
+Division Duplexing (FDD) systems. Due to the large frequency separation between Uplink (UL) and
+Downlink (DL), in FDD systems channel reciprocity does not hold. Hence, in order to provide DL channel
+state information to the Base Station (BS), closed-loop DL channel probing and feedback is needed.
+In massive MIMO this incurs typically a large training overhead. For example, in a typical configuration
+with $M \simeq 200$ BS antennas and fading coherence block of $T \simeq 200$ symbols, the resulting
+rate penalty factor due to the DL training overhead, given by $\max\{0, 1 - M/T\}$, is close to 0. To
+reduce this overhead, we build upon the observation that the Angular Scattering Function (ASF)
+of the user channels is invariant over the frequency domain. We develop a robust and stable method
+to estimate the users' DL channel covariance matrices from pilots sent by the users in the UL. The
+resulting DL covariance information is used to optimize a sparsifying precoder, in order to limit
+the effective channel dimension of each user channel to be not larger than some desired DL pilot dimension
+$T_{\rm dl}$. In this way, we can maximize the rank of the effective sparsified channel matrix subject
+to a desired training overhead penalty factor $\max\{0, 1 - T_{\rm dl} / T\}$. We pose this problem
+as a Mixed Integer Linear Program, that can be efficiently solved. Furthermore, each user can simply
+feed back its $T_{\rm dl}$ pilot measurements. Thus, the proposed approach yields also a small feedback
+overhead and delay. We provide simulation results demonstrating the superiority of the proposed
+approach with respect to state-of-the-art "compressed DL pilot" schemes based on compressed sensing.

@@ -1,0 +1,19 @@
+Traditionally in regression one minimizes the number of fitting parameters or uses smoothing/regularization
+to trade training (TE) and generalization error (GE). Driving TE to zero by increasing fitting degrees
+of freedom (dof) is expected to increase GE. However modern big-data approaches, including deep
+nets, seem to over-parametrize and send TE to zero (data interpolation) without impacting GE. Overparametrization
+has the benefit that global minima of the empirical loss function proliferate and become easier
+to find. These phenomena have drawn theoretical attention. Regression and classification algorithms
+have been shown that interpolate data but also generalize optimally. An interesting related phenomenon
+has been noted: the existence of non-monotonic risk curves, with a peak in GE with increasing dof.
+It was suggested that this peak separates a classical regime from a modern regime where over-parametrization
+improves performance. Similar over-fitting peaks were reported previously (statistical physics
+approach to learning) and attributed to increased fitting model flexibility. We introduce a generative
+and fitting model pair ("Misparametrized Sparse Regression" or MiSpaR) and show that the overfitting
+peak can be dissociated from the point at which the fitting function gains enough dof's to match the
+data generative model and thus provides good generalization. This complicates the interpretation
+of overfitting peaks as separating a "classical" from a "modern" regime. Data interpolation itself
+cannot guarantee good generalization: we need to study the interpolation with different penalty
+terms. We present analytical formulae for GE curves for MiSpaR with $l_2$ and $l_1$ penalties, in
+the interpolating limit $\lambda\rightarrow 0$.These risk curves exhibit important differences
+and help elucidate the underlying phenomena. 

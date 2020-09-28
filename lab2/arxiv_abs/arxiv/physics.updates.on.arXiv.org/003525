@@ -1,0 +1,18 @@
+Mesoscopic simulations of hydrocarbon flow in source shales are challenging, in part due to the
+heterogeneous shale pores with sizes ranging from a few nanometers to a few micrometers. Additionally,
+the sub-continuum fluid-fluid and fluid-solid interactions in nano- to micro-scale shale pores,
+which are physically and chemically sophisticated, must be captured. To address those challenges,
+we present a GPU-accelerated package for simulation of flow in nano- to micro-pore networks with
+a many-body dissipative particle dynamics (mDPD) mesoscale model. Based on a fully distributed
+parallel paradigm, the code offloads all intensive workloads on GPUs. Other advancements, such
+as smart particle packing and no-slip boundary condition in complex pore geometries, are also implemented
+for the construction and the simulation of the realistic shale pores from 3D nanometer-resolution
+stack images. Our code is validated for accuracy and compared against the CPU counterpart for speedup.
+In our benchmark tests, the code delivers nearly perfect strong scaling and weak scaling (with up
+to 512 million particles) on up to 512 K20X GPUs on Oak Ridge National Laboratory's (ORNL) Titan supercomputer.
+Moreover, a single-GPU benchmark on ORNL's SummitDev and IBM's AC922 suggests that the host-to-device
+NVLink can boost performance over PCIe by a remarkable 40\%. Lastly, we demonstrate, through a flow
+simulation in realistic shale pores, that the CPU counterpart requires 840 Power9 cores to rival
+the performance delivered by our package with four V100 GPUs on ORNL's Summit architecture. This
+simulation package enables quick-turnaround and high-throughput mesoscopic numerical simulations
+for investigating complex flow phenomena in nano- to micro-porous rocks with realistic pore geometries.

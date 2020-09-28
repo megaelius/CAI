@@ -1,0 +1,20 @@
+Both professional coders and teachers frequently deal with imperfect (fragmentary, incomplete,
+ill-formed) code. Such fragments are common in STACKOVERFLOW; students also frequently produce
+ill-formed code, for which instructors, TAs (or students themselves) must find repairs. In either
+case, the developer experience could be greatly improved if such code could somehow be parsed & typed;
+this makes such code more amenable to use within IDEs and allows early detection and repair of potential
+errors. We introduce a lenient parser, which can parse & type fragments, even ones with simple errors.
+Training a machine learner to leniently parse and type imperfect code requires a large training
+set including many pairs of imperfect code and its repair; such training sets are limited by human
+effort and curation. In this paper, we present a novel, indirectly supervised, approach to train
+a lenient parser, without access to such human-curated training data. We leverage the huge corpus
+of mostly correct code available on Github, and the massive, efficient learning capacity of Transformer-based
+NN architectures. Using GitHub data, we first create a large dataset of fragments of code and corresponding
+tree fragments and type annotations; we then randomly corrupt the input fragments by seeding errors
+that mimic corruptions found in STACKOVERFLOW and student data. Using this data, we train high-capacity
+transformer models to overcome both fragmentation and corruption. With this novel approach, we
+can achieve reasonable performance on parsing & typing STACKOVERFLOW fragments; we also demonstrate
+that our approach performs well on shorter student error program and achieves best-in-class performance
+on longer programs that have more than 400 tokens. We also show that by blending Deepfix and our tool,
+we could achieve 77% accuracy, which outperforms all previously reported student error correction
+tools. 

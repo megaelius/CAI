@@ -1,0 +1,17 @@
+Infrastructure-as-a-service (IaaS) Clouds concurrently accommodate diverse sets of user requests,
+requiring an efficient strategy for storing and retrieving virtual machine images (VMIs) at a large
+scale. The VMI storage management require dealing with multiple VMIs, typically in the magnitude
+of gigabytes, which entails VMI sprawl issues hindering the elastic resource management and provisioning.
+Nevertheless, existing techniques to facilitate VMI management overlook VMI semantics (i.e at
+the level of base image and software packages) with either restricted possibility to identify and
+extract reusable functionalities or with higher VMI publish and retrieval overheads. In this paper,
+we design, implement and evaluate Expelliarmus, a novel VMI management system that helps to minimize
+storage, publish and retrieval overheads. To achieve this goal, Expelliarmus incorporates three
+complementary features. First, it makes use of VMIs modelled as semantic graphs to expedite the
+similarity computation between multiple VMIs. Second, Expelliarmus provides a semantic aware
+VMI decomposition and base image selection to extract and store non-redundant base image and software
+packages. Third, Expelliarmus can also assemble VMIs based on the required software packages upon
+user request. We evaluate Expelliarmus through a representative set of synthetic Cloud VMIs on
+the real test-bed. Experimental results show that our semantic-centric approach is able to optimize
+repository size by 2.2-16 times compared to state-of-the-art systems (e.g. IBM's Mirage and Hemera)
+with significant VMI publish and slight retrieval performance improvement. 

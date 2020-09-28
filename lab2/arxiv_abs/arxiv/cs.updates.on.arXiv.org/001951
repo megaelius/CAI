@@ -1,0 +1,19 @@
+Kjolstad et. al. proposed a tensor algebra compiler. It takes expressions that define a tensor element-wise,
+such as $f_{ij}(a,b,c,d) = \exp\left[-\sum_{k=0}^4 \left((a_{ik}+b_{jk})^2\, c_{ii} + d_{i+k}^3
+\right) \right]$, and generates the corresponding compute kernel code. For machine learning,
+especially deep learning, it is often necessary to compute the gradient of a loss function $l(a,b,c,d)=l(f(a,b,c,d))$
+with respect to parameters $a,b,c,d$. If tensor compilers are to be applied in this field, it is necessary
+to derive expressions for the derivatives of element-wise defined tensors, i.e. expressions for
+$(da)_{ik}=\partial l/\partial a_{ik}$. When the mapping between function indices and argument
+indices is not 1:1, special attention is required. For the function $f_{ij} (x) = x_i^2$, the derivative
+of the loss is $(dx)_i=\partial l/\partial x_i=\sum_j (df)_{ij}2x_i$; the sum is necessary because
+index $j$ does not appear in the indices of $f$. Another example is $f_{i}(x)=x_{ii}^2$, where $x$
+is a matrix; here we have $(dx)_{ij}=\delta_{ij}(df)_i2x_{ii}$; the Kronecker delta is necessary
+because the derivative is zero for off-diagonal elements. Another indexing scheme is used by $f_{ij}(x)=\exp
+x_{i+j}$; here the correct derivative is $(dx)_{k}=\sum_i (df)_{i,k-i} \exp x_{k}$, where the
+range of the sum must be chosen appropriately. In this publication we present an algorithm that can
+handle any case in which the indices of an argument are an arbitrary linear combination of the indices
+of the function, thus all the above examples can be handled. Sums (and their ranges) and Kronecker
+deltas are automatically inserted into the derivatives as necessary. Additionally, the indices
+are transformed, if required (as in the last example). The algorithm outputs a symbolic expression
+that can be subsequently fed into a tensor algebra compiler. Source code is provided. 

@@ -1,0 +1,20 @@
+Topology optimization under uncertainty (TOuU) often defines objectives and constraints by statistical
+moments of geometric and physical quantities of interest. Most traditional TOuU methods use gradient-based
+optimization algorithms and rely on accurate estimates of the statistical moments and their gradients,
+e.g., via adjoint calculations. When the number of uncertain inputs is large or the quantities of
+interest exhibit large variability, a large number of adjoint (and/or forward) solves may be required
+to ensure the accuracy of these gradients. The optimization procedure itself often requires a large
+number of iterations, which may render TOuU computationally expensive, if not infeasible. To tackle
+this difficulty, we here propose an optimization approach that generates a stochastic approximation
+of the objective, constraints, and their gradients via a small number of adjoint (and/or forward)
+solves, per iteration. A statistically independent (stochastic) approximation of these quantities
+is generated at each optimization iteration. The total cost of this approach is only a small factor
+larger than that of the corresponding deterministic TO problem. We incorporate the stochastic
+approximation of objective, constraints and their design sensitivities into two classes of optimization
+algorithms. First, we investigate the stochastic gradient descent (SGD) method and a number of
+its variants, which have been successfully applied to large-scale optimization problems for machine
+learning. Second, we study the use of the proposed stochastic approximation approach within conventional
+nonlinear programming methods, focusing on the Globally Convergent Method of Moving Asymptotes
+(GCMMA). The performance of these algorithms is investigated with structural design optimization
+problems utilizing a Solid Isotropic Material with Penalization (SIMP), as well as an explicit
+level set method. 

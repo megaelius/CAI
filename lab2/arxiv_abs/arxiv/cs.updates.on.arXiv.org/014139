@@ -1,0 +1,20 @@
+Manual count of mitotic figures, which is determined in the tumor region with the highest mitotic
+activity, is a key parameter of most grading schemes. It can be, however, strongly dependent on the
+area selection due to uneven mitotic figure distribution. We aimed to assess the question, how significantly
+the area selection impacts the mitotic count, which has a known high inter-rater disagreement.
+On a data set of 32 whole slide images of H&E-stained canine cutaneous mast cell tumor, fully annotated
+for mitotic figures, we asked 8 veterinary pathologists (5 board-certified, 3 in training) to select
+a field of interest for the mitotic count. To assess the potential difference in grading, we compared
+the mitotic count of the selected regions to the overall distribution on the slide. Additionally,
+we evaluated three deep learning-based methods on the same task: In one approach, the model would
+directly try to predict the mitotic count for the presented image patches as a regression task. The
+second method aims at deriving a segmentation mask for mitotic figures, which is then used to obtain
+a mitotic density. Finally, we evaluated a two-stage object-detection pipeline based on state-of-the-art
+architectures to identify individual mitotic figures. We found that the predictions by all models
+were, on average, better than those of the experts. The two-stage object detector performed best
+and outperformed most of the human experts on the majority of tumor cases. The correlation between
+the predicted and the ground truth mitotic count was also best for this approach (0.963 to 0.979).
+Further, we found considerable differences in position selection between experts, which could
+partially explain the high variance that has been reported for the manual mitotic count. To achieve
+better inter-rater agreement, we propose to use a computer-based area selection for the manual
+mitotic count. 

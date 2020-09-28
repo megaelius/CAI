@@ -1,0 +1,19 @@
+Randomized gossip is one of the most popular way of disseminating information in large scale networks.
+This method is appreciated for its simplicity, robustness, and efficiency. In the "push" protocol,
+every informed node selects, at every time step (a.k.a. round), one of its neighboring node uniformly
+at random and forwards the information to this node. This protocol is known to complete information
+spreading in $O(\log n)$ time steps with high probability (w.h.p.) in several families of $n$-node
+"static" networks. The Push protocol has also been empirically shown to perform well in practice,
+and, specifically, to be robust against dynamic topological changes. In this paper, we aim at analyzing
+the Push protocol in "dynamic" networks. We consider the "edge-Markovian" evolving graph model
+which captures natural temporal dependencies between the structure of the network at time $t$,
+and the one at time $t+1$. Precisely, a non-edge appears with probability $p$, while an existing
+edge dies with probability $q$. In order to fit with real-world traces, we mostly concentrate our
+study on the case where $p=\Omega(1/n)$ and $q$ is constant. We prove that, in this realistic scenario,
+the Push protocol does perform well, completing information spreading in $O(\log n)$ time steps
+w.h.p. Note that this performance holds even when the network is, w.h.p., disconnected at every
+time step (e.g., when $p << (\log n) / n$). Our result provides the first formal argument demonstrating
+the robustness of the Push protocol against network changes. We also address other ranges of parameters
+$p$ and $q$ (e.g., $p+q=1$ with arbitrary $p$ and $q$, and $p=1/n$ with arbitrary $q$). Although
+they do not precisely fit with the measures performed on real-world traces, they can be of independent
+interest for other settings. The results in these cases confirm the positive impact of dynamism.

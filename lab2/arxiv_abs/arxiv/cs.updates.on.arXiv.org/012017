@@ -1,0 +1,19 @@
+Once users have shared their data online, it is generally difficult for them to revoke access and
+ask for the data to be deleted. Machine learning (ML) exacerbates this problem because any model
+trained with said data may have memorized it, putting users at risk of a successful privacy attack
+exposing their information. Yet, having models unlearn is notoriously difficult. After a data
+point is removed from a training set, one often resorts to entirely retraining downstream models
+from scratch. We introduce SISA training, a framework that decreases the number of model parameters
+affected by an unlearning request and caches intermediate outputs of the training algorithm to
+limit the number of model updates that need to be computed to have these parameters unlearn. This
+framework reduces the computational overhead associated with unlearning, even in the worst-case
+setting where unlearning requests are made uniformly across the training set. In some cases, we
+may have a prior on the distribution of unlearning requests that will be issued by users. We may take
+this prior into account to partition and order data accordingly and further decrease overhead from
+unlearning. Our evaluation spans two datasets from different application domains, with corresponding
+motivations for unlearning. Under no distributional assumptions, we observe that SISA training
+improves unlearning for the Purchase dataset by 3.13x, and 1.658x for the SVHN dataset, over retraining
+from scratch. We also validate how knowledge of the unlearning distribution provides further improvements
+in retraining time by simulating a scenario where we model unlearning requests that come from users
+of a commercial product that is available in countries with varying sensitivity to privacy. Our
+work contributes to practical data governance in machine learning. 

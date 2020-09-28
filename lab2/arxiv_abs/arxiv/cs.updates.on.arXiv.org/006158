@@ -1,0 +1,17 @@
+We present a collection of algorithms to filter a stream of documents in such a way that the filtered
+documents will cover as well as possible the interest of a person, keeping in mind that, at any given
+time, the offered documents should not only be relevant, but should also be diversified, in the sense
+not only of avoiding nearly identical documents, but also of covering as well as possible all the
+interests of the person. We use a modification of the WEBSOM algorithm, with limited architectural
+adaptation, to create a user model (which we call the "user context" or simply the "context") based
+on a network of units laid out in the word space and trained using a collection of documents representative
+of the context. We introduce the concepts of novelty and coverage. Novelty is related to, but not
+identical to, the homonymous information retrieval concept: a document is novel it it belongs to
+a semantic area of interest to a person for which no documents have been seen in the recent past. A group
+of documents has coverage to the extent to which it is a good representation of all the interests of
+a person. In order to increase coverage, we introduce an "interest" (or "urgency") factor for each
+unit of the user model, modulated by the scores of the incoming documents: the interest of a unit is
+decreased drastically when a document arrives that belongs to its semantic area and slowly recovers
+its initial value if no documents from that semantic area are displayed. Our tests show that these
+algorithms can effectively increase the coverage of the documents that are shown to the user without
+overly affecting precision. 

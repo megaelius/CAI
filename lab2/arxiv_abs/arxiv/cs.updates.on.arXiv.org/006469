@@ -1,0 +1,20 @@
+High-level synthesis (HLS) has received significant attention in recent years, improving programmability
+for FPGAs. PolyMage is a domain-specific language (DSL) for image processing pipelines that also
+has a HLS backend to translate the input DSL into an equivalent circuit that can be synthesized on
+FPGAs, while leveraging an HLS suite. The data at each stage of a pipeline is stored using a fixed-point
+data type (alpha,beta) where alpha and beta denote the number of integral and fractional bits. The
+power and area savings while performing arithmetic operations on fixed-point data type is known
+to be significant over using floating point. In this paper, we first propose an interval-arithmetic
+based range analysis (alpha-analysis) algorithm to estimate the number of bits required to store
+the integral part of the data at each stage of an image processing pipeline. The analysis algorithm
+uses the homogeneity of pixel signals at each stage to cluster them and perform a combined range analysis.
+Secondly, we propose a software architecture for easily deploying any kind of interval/affine
+arithmetic based range analyses in the DSL compiler. Thirdly, we propose a new range analysis technique
+using Satisfiability Modulo Theory (SMT) solvers, and show that the range estimates obtained through
+it are very close to the lower bounds obtained through profile-driven analysis.We evaluated our
+bitwidth analysis algorithms on four image processing benchmarks listed in the order of increasing
+complexity: Unsharp Mask, Down-Up Sampling, Harris Corner Detection and Horn-Schunck Optical
+Flow. For example, on Optical Flow, the interval analysis based approach showed an 1.4x and 1.14x
+improvement on area and power metrics over floating-point representation respectively; whereas
+the SMT solver based approach showed 2.49x and 1.58x improvement on area and power metrics when compared
+to interval analysis. 

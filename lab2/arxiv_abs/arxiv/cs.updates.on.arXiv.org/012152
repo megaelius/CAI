@@ -1,0 +1,20 @@
+PAC-Bayesian set up involves a stochastic classifier characterized by a posterior distribution
+on a classifier set, offers a high probability bound on its averaged true risk and is robust to the
+training sample used. For a given posterior, this bound captures the trade off between averaged
+empirical risk and KL-divergence based model complexity term. Our goal is to identify an optimal
+posterior with the least PAC-Bayesian bound. We consider a finite classifier set and 5 distance
+functions: KL-divergence, its Pinsker's and a sixth degree polynomial approximations; linear
+and squared distances. Linear distance based model results in a convex optimization problem. We
+obtain closed form expression for its optimal posterior. For uniform prior, this posterior has
+full support with weights negative-exponentially proportional to number of misclassifications.
+Squared distance and Pinsker's approximation bounds are possibly quasi-convex and are observed
+to have single local minimum. We derive fixed point equations (FPEs) using partial KKT system with
+strict positivity constraints. This obviates the combinatorial search for subset support of the
+optimal posterior. For uniform prior, exponential search on a full-dimensional simplex can be
+limited to an ordered subset of classifiers with increasing empirical risk values. These FPEs converge
+rapidly to a stationary point, even for a large classifier set when a solver fails. We apply these
+approaches to SVMs generated using a finite set of SVM regularization parameter values on 9 UCI datasets.
+These posteriors yield stochastic SVM classifiers with tight bounds. KL-divergence based bound
+is the tightest, but is computationally expensive due to non-convexity and multiple calls to a root
+finding algorithm. Optimal posteriors for all 5 distance functions have lowest 10% test error values
+on most datasets, with linear distance being the easiest to obtain. 

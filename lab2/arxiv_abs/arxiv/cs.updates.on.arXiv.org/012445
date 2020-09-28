@@ -1,0 +1,17 @@
+Autonomous vehicles and mobile robotic systems are typically equipped with multiple sensors to
+provide redundancy. By integrating the observations from different sensors, these mobile agents
+are able to perceive the environment and estimate system states, e.g. locations and orientations.
+Although deep learning approaches for multimodal odometry estimation and localization have gained
+traction, they rarely focus on the issue of robust sensor fusion - a necessary consideration to deal
+with noisy or incomplete sensor observations in the real world. Moreover, current deep odometry
+models also suffer from a lack of interpretability. To this extent, we propose SelectFusion, an
+end-to-end selective sensor fusion module which can be applied to useful pairs of sensor modalities
+such as monocular images and inertial measurements, depth images and LIDAR point clouds. During
+prediction, the network is able to assess the reliability of the latent features from different
+sensor modalities and estimate both trajectory at scale and global pose. In particular, we propose
+two fusion modules based on different attention strategies: deterministic soft fusion and stochastic
+hard fusion, and we offer a comprehensive study of the new strategies compared to trivial direct
+fusion. We evaluate all fusion strategies in both ideal conditions and on progressively degraded
+datasets that present occlusions, noisy and missing data and time misalignment between sensors,
+and we investigate the effectiveness of the different fusion strategies in attending the most reliable
+features, which in itself, provides insights into the operation of the various models. 

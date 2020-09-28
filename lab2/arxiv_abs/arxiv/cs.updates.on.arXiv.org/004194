@@ -1,0 +1,17 @@
+In this work, we propose a new training method for finding minimum weight norm solutions in over-parameterized
+neural networks (NNs). This method seeks to improve training speed and generalization performance
+by framing NN training as a constrained optimization problem wherein the sum of the norm of the weights
+in each layer of the network is minimized, under the constraint of exactly fitting training data.
+It draws inspiration from support vector machines (SVMs), which are able to generalize well, despite
+often having an infinite number of free parameters in their primal form, and from recent theoretical
+generalization bounds on NNs which suggest that lower norm solutions generalize better. To solve
+this constrained optimization problem, our method employs Lagrange multipliers that act as integrators
+of error over training and identify `support vector'-like examples. The method can be implemented
+as a wrapper around gradient based methods and uses standard back-propagation of gradients from
+the NN for both regression and classification versions of the algorithm. We provide theoretical
+justifications for the effectiveness of this algorithm in comparison to early stopping and $L_2$-regularization
+using simple, analytically tractable settings. In particular, we show faster convergence to the
+max-margin hyperplane in a shallow network (compared to vanilla gradient descent); faster convergence
+to the minimum-norm solution in a linear chain (compared to $L_2$-regularization); and initialization-independent
+generalization performance in a deep linear network. Finally, using the MNIST dataset, we demonstrate
+that this algorithm can boost test accuracy and identify difficult examples in real-world datasets.

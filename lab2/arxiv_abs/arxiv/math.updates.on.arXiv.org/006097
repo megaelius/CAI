@@ -1,0 +1,19 @@
+Rank Decoding (RD) is the main underlying problem in rank-based cryptography. Based on this problem
+and quasi-cyclic versions of it, very efficient schemes have been proposed recently, such as those
+in the ROLLO and RQC submissions, which have reached the second round of the NIST Post-Quantum competition.
+Two main approaches have been studied to solve RD: combinatorial ones and algebraic ones. While
+the former has been studied extensively, a better understanding of the latter was recently obtained
+by Bardet et al. (EUROCRYPT20) where it appeared that algebraic attacks can often be more efficient
+than combinatorial ones for cryptographic parameters. This paper gives substantial improvements
+upon this attack in terms both of complexity and of the assumptions required by the cryptanalysis.
+We present attacks for ROLLO-I-128, 192, and 256 with bit complexity respectively in 70, 86, and
+158, to be compared to 117, 144, and 197 for the aforementionned previous attack. Moreover, unlike
+that previous attack, the new one does not rely on Gr\"obner basis computations and thus does not
+require any assumption. For a case called overdetermined, this modeling allows us to avoid Gr\"obner
+basis computations by going directly to solving a linear system. For the other case, called underdetermined,
+we also improve the results from the previous attack by combining the Ourivski-Johansson modeling
+together with a new modeling for a generic MinRank instance; the latter modeling allows us to refine
+the analysis of MinRank's complexity given in the paper by Verbel et al. (PQC19). Finally, since
+the proposed parameters of ROLLO and RQC are completely broken by our new attack, we give examples
+of new parameters for ROLLO and RQC that make them resistant to our attacks. These new parameters
+show that these systems remain attractive, with a loss of only about 50\% in terms of key size for ROLLO-I.

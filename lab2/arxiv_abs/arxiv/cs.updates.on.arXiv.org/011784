@@ -1,0 +1,18 @@
+The presence of noise is common in signal processing independent of the signal type. Deep neural
+networks have shown good performance in removing signal noise, especially in the image domain.
+In this work, we consider deep neural networks as a denoising tool where our focus is on one dimensional
+signals. For that purpose, we introduce an encoder-decoder network architecture to denoise signals,
+represented by a sequence of measurements. Instead of relying only on the standard reconstruction
+error to train the encoder-decoder network, we treat the task of signal denoising as distribution
+alignment between the clean and noisy signals. Then, we propose to train the encoder-decoder with
+adversarial learning, where the goal is to align the clean and noisy signal latent representation.
+Unlike standard adversarial learning, we do not have access to the distribution of the clean signal's
+latent representation in advance. For that reason, we propose a new formulation where both clean
+and noisy signals pass through the encoder to produce the latent representation. Afterwards, a
+discriminator neural network has to detect whether the latent representation comes from the clean
+or noisy signal. At the end of training, aligning the two signal distributions results in removing
+the noise. In our experiments, we study two signal types with complex noise models. First, we evaluate
+on electrocardiography and later on motion signal denoising. We show better performance than the
+related learning-based and non-learning approaches, such as autoencoders, wavenet denoiser,
+recurrent neural networks and wavelets, demonstrating the benefits of adversarial learning for
+one dimensional signal denoising. 

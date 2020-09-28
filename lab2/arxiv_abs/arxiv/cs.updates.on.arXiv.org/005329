@@ -1,0 +1,18 @@
+In this paper, we propose a preference-aware cooperative video streaming system for videos encoded
+using Scalable Video Coding (SVC) where all the collaborating users are interested in watching
+a video together on a shared screen. However, each user's willingness to cooperate is subject to
+her own constraints such as user data plans and/or energy consumption. Using SVC, each layer of every
+chunk can be fetched through any of the cooperating users. We formulate the problem of finding the
+optimal quality decisions and fetching policy of the SVC layers of video chunks subject to the available
+bandwidth, chunk deadlines, and cooperation willingness of the different users as an optimization
+problem. The objective is to optimize a QoE metric that maintains a trade-off between maximizing
+the playback rate of every chunk while ensuring fairness among all chunks for the minimum skip/stall
+duration without violating any of the imposed constraints. We propose an offline algorithm to solve
+the non-convex optimization problem when the bandwidth prediction is non-causally known. This
+algorithm has a run-time complexity that is polynomial in the video length and the number of cooperating
+users. Furthermore, we propose an online version of the algorithm for more practical scenarios
+where erroneous bandwidth prediction for a short window is used. Real implementation with android
+devices using SVC encoded video on public bandwidth traces' dataset reveals the robustness and
+performance of the proposed algorithm and shows that the algorithm significantly outperforms
+round robin based mechanisms in terms of avoiding skips/stalls and fetching video chunks at their
+highest quality possible. 

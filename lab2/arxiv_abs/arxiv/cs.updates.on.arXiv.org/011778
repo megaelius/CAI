@@ -1,0 +1,18 @@
+In this paper a new formulation of event recognition task is examined: it is required to predict event
+categories in a gallery of images, for which albums (groups of photos corresponding to a single event)
+are unknown. We propose the novel two-stage approach. At first, features are extracted in each photo
+using the pre-trained convolutional neural network. These features are classified individually.
+The scores of the classifier are used to group sequential photos into several clusters. Finally,
+the features of photos in each group are aggregated into a single descriptor using neural attention
+mechanism. This algorithm is optionally extended to improve the accuracy for classification of
+each image in an album. In contrast to conventional fine-tuning of convolutional neural networks
+(CNN) we proposed to use image captioning, i.e., generative model that converts images to textual
+descriptions. They are one-hot encoded and summarized into sparse feature vector suitable for
+learning of arbitrary classifier. Experimental study with Photo Event Collection and Multi-Label
+Curation of Flickr Events Dataset demonstrates that our approach is 9-20% more accurate than event
+recognition on single photos. Moreover, proposed method has 13-16% lower error rate than classification
+of groups of photos obtained with hierarchical clustering. It is experimentally shown that the
+image captions trained on Conceptual Captions dataset can be classified more accurately than the
+features from object detector, though they both are obviously not as rich as the CNN-based features.
+However, it is possible to combine our approach with conventional CNNs in an ensemble to provide
+the state-of-the-art results for several event datasets. 

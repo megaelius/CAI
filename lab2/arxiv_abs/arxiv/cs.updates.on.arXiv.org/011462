@@ -1,0 +1,17 @@
+Emerging Non-Volatile Memories (NVMs) bring a unique challenge to the security community, namely
+persistent security. As NVM-based memories are expected to restore their data after recovery,
+the security metadata must be recovered as well. However, persisting all affected security metadata
+on each memory write would significantly degrade performance and exacerbate the write endurance
+problem. Moreover, recovery time can increase significantly (up to hours for practical memory
+sizes) when security metadata are not updated strictly. Counter trees are used in state-of-the-art
+commercial secure processors, e.g., Intel's Safe Guard Extension (SGX). Counter trees have a unique
+challenge due to the inability to recover the whole tree from leaves. Thus, to ensure recoverability,
+all updates to the tree must be persisted, which can be tens of additional writes on each write. The
+state-of-art scheme, Anubis, enables recoverability but incurs an additional write per cache
+eviction, i.e., reduces lifetime to approximately half. Additionally, Anubis degrades performance
+significantly in many cases. In this paper, we propose Phoenix, a practical novel scheme which relies
+on elegantly reproducing the cache content before a crash, however with minimal overheads. Our
+evaluation results show that Phoenix reduces persisting security metadata overhead writes from
+87\% extra writes (for Anubis) to less than write-back compared to an encrypted system without recovery,
+thus improving the NVM lifetime by 2x. Overall Phoenix performance is better than the baseline,
+unlike Anubis which adds 7.9\% (max of 35\%) performance overhead. 

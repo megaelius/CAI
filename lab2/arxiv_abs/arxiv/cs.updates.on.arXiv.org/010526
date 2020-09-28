@@ -1,0 +1,17 @@
+Differential privacy offers a formal framework for reasoning about privacy and accuracy of computations
+on private data. It also offers a rich set of building blocks for constructing data analyses. When
+carefully calibrated, these analyses simultaneously guarantee privacy of the individuals contributing
+their data, and accuracy of their results for inferring useful properties about the population.
+The compositional nature of differential privacy has motivated the design and implementation
+of several programming languages aimed at helping a data analyst in programming differentially
+private analyses. However, most of the programming languages for differential privacy proposed
+so far provide support for reasoning about privacy but not for reasoning about the accuracy of data
+analyses. To overcome this limitation, in this work we present DPella, a programming framework
+providing data analysts with support for reasoning about privacy, accuracy and their trade-offs.
+The distinguishing feature of DPella is a novel component which statically tracks the accuracy
+of different data analyses. In order to make tighter accuracy estimations, this component leverages
+taint analysis for automatically inferring statistical independence of the different noise quantities
+added for guaranteeing privacy. We show the flexibility of our approach by not only implementing
+classical counting queries (e.g., CDFs) but also by analyzing hierarchical counting queries (like
+those done by Census Bureaus), where accuracy have different constraints per level and data analysts
+should figure out the best manner to calibrate privacy to meet the accuracy requirements. 

@@ -1,0 +1,18 @@
+This paper presents a new regularization method to train a fully convolutional network for semantic
+tissue segmentation in histopathological images. This method relies on benefiting unsupervised
+learning, in the form of image reconstruction, for the network training. To this end, it puts forward
+an idea of defining a new embedding that allows uniting the main supervised task of semantic segmentation
+and an auxiliary unsupervised task of image reconstruction into a single task and proposes to learn
+this united task by a single generative model. This embedding generates a multi-channel output
+image by superimposing an original input image on its segmentation map. Then, the method learns
+to translate the input image to this embedded output image using a conditional generative adversarial
+network, which is known to be quite effective for image-to-image translations. This proposal is
+different than the existing approach that uses image reconstruction for the same regularization
+purpose. The existing approach considers segmentation and image reconstruction as two separate
+tasks in a multi-task network, defines their losses independently, and then combines these losses
+in a joint loss function. However, the definition of such a function requires externally determining
+the right contribution amounts of the supervised and unsupervised losses that yield balanced learning
+between the segmentation and image reconstruction tasks. The proposed approach eliminates this
+difficulty by uniting these two tasks into a single one, which intrinsically combines their losses.
+Using histopathological image segmentation as a showcase application, our experiments demonstrate
+that this proposed approach leads to better segmentation results. 

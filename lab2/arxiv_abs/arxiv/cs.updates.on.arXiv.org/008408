@@ -1,0 +1,19 @@
+Many optimization problems can be cast into the maximum satisfiability (MAX-SAT) form, and many
+solvers have been developed for tackling such problems. To evaluate the performance of a MAX-SAT
+solver, it is convenient to generate difficult MAX-SAT instances with solutions known in advance.
+Here, we propose a method of generating weighted MAX-2-SAT instances inspired by the frustrated-loop
+algorithm used by the quantum annealing community to generate Ising spin-glass instances with
+nearest-neighbor coupling. Our algorithm is extended to instances whose underlying coupling
+graph is general, though we focus here on the case of bipartite coupling, with the associated energy
+being the restricted Boltzmann machine (RBM) energy. It is shown that any MAX-2-SAT problem can
+be reduced to the problem of minimizing an RBM energy over the nodal values. The algorithm is designed
+such that the difficulty of the generated instances can be tuned through a central parameter known
+as the frustration index. Two versions of the algorithm are presented: the random- and structured-loop
+algorithms. For the random-loop algorithm, we provide a thorough theoretical and empirical analysis
+on its mathematical properties from the perspective of frustration, and observe empirically,
+using simulated annealing, a double phase transition behavior in the difficulty scaling behavior
+driven by the frustration index. For the structured-loop algorithm, we show that it offers an improvement
+in difficulty of the generated instances over the random-loop algorithm, with the improvement
+factor scaling super-exponentially with respect to the frustration index for instances at high
+loop density. At the end of the paper, we provide a brief discussion of the relevance of this work to
+the pre-training of RBMs. 

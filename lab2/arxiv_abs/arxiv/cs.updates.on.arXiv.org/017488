@@ -1,0 +1,18 @@
+Symbolic quick error detection (SQED) is a formal pre-silicon verification technique targeted
+at processor designs. It leverages bounded model checking (BMC) to check a design for counterexamples
+to a self-consistency property: given the instruction set architecture (ISA) of the design, executing
+an instruction sequence twice on the same inputs must always produce the same outputs. Self-consistency
+is a universal, implementation-independent property. Consequently, in contrast to traditional
+verification approaches that use implementation-specific assertions (often generated manually),
+SQED does not require a full formal design specification or manually-written properties. Case
+studies have shown that SQED is effective for commercial designs and that SQED substantially improves
+design productivity. However, until now there has been no formal characterization of its bug-finding
+capabilities. We aim to close this gap by laying a formal foundation for SQED. We use a transition-system
+processor model and define the notion of a bug using an abstract specification relation. We prove
+the soundness of SQED, i.e., that any bug reported by SQED is in fact a real bug in the processor. Importantly,
+this result holds regardless of what the actual specification relation is. We next describe conditions
+under which SQED is complete, that is, what kinds of bugs it is guaranteed to find. We show that for
+a large class of bugs, SQED can always find a trace exhibiting the bug. Ultimately, we prove full completeness
+of a variant of SQED that uses specialized state reset instructions. Our results enable a rigorous
+understanding of SQED and its bug-finding capabilities and give insights on how to optimize implementations
+of SQED in practice. 

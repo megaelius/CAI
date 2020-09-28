@@ -1,0 +1,20 @@
+In $masked\ low-rank\ approximation$, one is given $A \in \mathbb{R}^{n \times n}$ and binary mask
+$W \in \{0,1\}^{n \times n}$. The goal is to find a rank-$k$ matrix $L$ for which: $$cost(L) = \sum_{i=1}^{n}
+\sum_{j = 1}^{n} W_{i,j} \cdot (A_{i,j} - L_{i,j} )^2 \leq OPT + \epsilon \|A\|_F^2 ,$$ where $OPT
+= \min_{rank-k\ \hat{L}} cost(\hat L)$ and $\epsilon$ is a given error parameter. Depending on
+the choice of $W$, this problem captures factor analysis, low-rank plus diagonal decomposition,
+robust PCA, low-rank matrix completion, low-rank plus block matrix approximation, and many problems.
+Many of these problems are NP-hard, and while some algorithms with provable guarantees are known,
+they either 1) run in time $n^{\Omega(k^2/\epsilon)}$ or 2) make strong assumptions, e.g., that
+$A$ is incoherent or that $W$ is random. We consider $bicriteria\ algorithms$, which output a rank-$k'$
+matrix $L$, with $k' > k$, for which $cost(L) \leq OPT + \epsilon \|A\|_F^2$. We show, rather surprisingly,
+that a common polynomial time heuristic, which simply sets $A$ to $0$ where $W$ is $0$, and then finds
+a standard low-rank approximation, achieves this error bound with rank $k'$ depending on public
+coin partition number of $W$. This partition number is in turn bounded by the $randomized\ communication\
+complexity$ of $W$, when interpreted as a two-player communication matrix. For many important
+examples of masked low-rank approximation, including all those listed above, this result yields
+bicriteria approximation guarantees with $k' = k \cdot poly(\log n/\epsilon)$. Further, we show
+that different models of communication yield algorithms for natural variants of masked low-rank
+approximation. For example, multi-player number-in-hand communication complexity connects
+to masked tensor decomposition and non-deterministic communication complexity to masked Boolean
+low-rank factorization. 

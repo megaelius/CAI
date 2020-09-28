@@ -1,0 +1,18 @@
+Myocardial contrast echocardiography (MCE) is an imaging technique that assesses left ventricle
+function and myocardial perfusion for the detection of coronary artery diseases. Automatic MCE
+perfusion quantification is challenging and requires accurate segmentation of the myocardium
+from noisy and time-varying images. Random forests (RF) have been successfully applied to many
+medical image segmentation tasks. However, the pixel-wise RF classifier ignores contextual relationships
+between label outputs of individual pixels. RF which only utilizes local appearance features is
+also susceptible to data suffering from large intensity variations. In this paper, we demonstrate
+how to overcome the above limitations of classic RF by presenting a fully automatic segmentation
+pipeline for myocardial segmentation in full-cycle 2D MCE data. Specifically, a statistical shape
+model is used to provide shape prior information that guide the RF segmentation in two ways. First,
+a novel shape model (SM) feature is incorporated into the RF framework to generate a more accurate
+RF probability map. Second, the shape model is fitted to the RF probability map to refine and constrain
+the final segmentation to plausible myocardial shapes. We further improve the performance by introducing
+a bounding box detection algorithm as a preprocessing step in the segmentation pipeline. Our approach
+on 2D image is further extended to 2D+t sequence which ensures temporal consistency in the resultant
+sequence segmentations. When evaluated on clinical MCE data, our proposed method achieves notable
+improvement in segmentation accuracy and outperforms other state-of-the-art methods including
+the classic RF and its variants, active shape model and image registration. 

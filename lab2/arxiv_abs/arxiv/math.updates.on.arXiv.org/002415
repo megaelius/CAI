@@ -1,0 +1,19 @@
+We present an adaptive grid matrix-free operator approximation scheme based on a "product-convolution"
+interpolation of convolution operators. This scheme is appropriate for operators that are locally
+approximately translation-invariant, even if these operators are high-rank or full-rank. Such
+operators arise in Schur complement methods for solving partial differential equations (PDEs),
+as Hessians in PDE-constrained optimization and inverse problems, as integral operators, as covariance
+operators, and as Dirichlet-to-Neumann maps. Constructing the approximation requires computing
+the impulse responses of the operator to delta function sources centered on nodes in an adaptively
+refined grid of sample points. A randomized a-posteriori error estimator drives the adaptivity.
+Once constructed, the approximation can be efficiently applied to vectors using the fast Fourier
+transform (FFT), and used in place of the operator. The approximation can also be efficiently converted
+to hierarchical matrix (H-matrix) format, then inverted or factorized using scalable H-matrix
+arithmetic. The quality of the approximation degrades gracefully as fewer sample points are used,
+allowing cheap lower quality approximations to be used as preconditioners. We directly address
+issues related to boundaries and prove that our scheme eliminates boundary artifacts. We test the
+scheme on the non-local component of a boundary Schur complement for the Poisson operator, and on
+the data misfit Hessian for an advection dominated advection-diffusion inverse problem. Numerical
+results show that the number of sample points required is independent of the mesh size for the non-local
+component of the Poisson Schur complement, and independent of the informativeness of the data for
+the advection-diffusion inverse problem data misfit Hessian. 

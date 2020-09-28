@@ -1,0 +1,19 @@
+While reduced-order models (ROMs) have demonstrated success in many applications across computational
+science, challenges remain when applied both to extreme-scale models due to the prohibitive cost
+of generating requisite training data, and to decomposable systems due to many-query problems
+often requiring repeated reconfigurations of system components. Therefore, we propose the domain-decomposition
+least-squares Petrov-Galerkin (DD-LSPG) model-reduction method applicable to parameterized
+systems of nonlinear algebraic equations. In contrast with previous works, we adopt an algebraically
+non-overlapping decomposition strategy rather than a spatial-decomposition strategy, which
+facilitates application to different spatial-discretization schemes. Rather than constructing
+a low-dimensional subspace for the entire state space in a monolithic fashion---which would be
+infeasible for extreme-scale systems and decomposable models---the methodology constructs
+separate subspaces for the different subdomains/components characterizing the original model.
+In the offline stage, the method constructs low-dimensional bases for the interior and interface
+of components. In the online stage, the approach constructs an LSPG ROM for each component and enforces
+strong or weak compatibility on the 'ports' connecting them. We propose four different ways to construct
+reduced bases on the interface/ports of subdomains and several ways to enforce compatibility across
+connecting ports. We derive a posteriori and a priori error bounds for the DD-LSPG solutions. Numerical
+results performed on nonlinear benchmark problems in heat transfer and fluid dynamics demonstrate
+that the proposed method performs well in terms of both accuracy and computational cost, with different
+choices of basis and compatibility constraints yielding different performance profiles. 

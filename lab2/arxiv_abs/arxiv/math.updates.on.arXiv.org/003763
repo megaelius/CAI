@@ -1,0 +1,19 @@
+Full waveform inversion (FWI) is a waveform matching procedure, which can provide a subsurface
+model with a wavelength-scale resolution. However, this high resolution makes FWI prone to cycle
+skipping, which drives the inversion to a local minimum when the initial model is not accurate enough.
+Other sources of nonlinearities and ill-posedness are noise, uneven illumination, approximate
+wave physics and parameter cross-talks. All these sources of error require robust and versatile
+regularized optimization approaches to mitigate their imprint on FWI while preserving its intrinsic
+resolution power. To achieve this goal, we implement bound constraints and total variation (TV)
+regularization in the so-called frequency-domain wavefield-reconstruction inversion (WRI)
+with the alternating direction method of multipliers (ADMM). In the ADMM framework, WRI relies
+on an augmented Lagrangian function, a combination of penalty and Lagrangian functions, to extend
+the FWI search space by relaxing the wave-equation constraint during early iterations. Moreover,
+ADMM breaks down the joint wavefield reconstruction plus parameter estimation problem into a sequence
+of two linear subproblems, whose solutions are coordinated to provide the solution of the global
+problem. The decomposability of ADMM is further exploited to interface in a straightforward way
+bound constraints and TV regularization with WRI via variable splitting and proximal operators.
+The resilience of our regularized WRI formulation to cycle skipping and noise as well as its resolution
+power are illustrated with two targets of the large-contrast BP salt model. Starting from a 3Hz frequency
+and a crude initial model, the extended search space allows for the reconstruction of the salt and
+subsalt structures with a high fidelity. 

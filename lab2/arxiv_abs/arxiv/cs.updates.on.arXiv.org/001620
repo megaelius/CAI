@@ -1,0 +1,19 @@
+Zero-resource speech technology is a growing research area that aims to develop methods for speech
+processing in the absence of transcriptions, lexicons, or language modelling text. Early term
+discovery systems focused on identifying isolated recurring patterns in a corpus, while more recent
+full-coverage systems attempt to completely segment and cluster the audio into word-like units---effectively
+performing unsupervised speech recognition. This article presents the first attempt we are aware
+of to apply such a system to large-vocabulary multi-speaker data. Our system uses a Bayesian modelling
+framework with segmental word representations: each word segment is represented as a fixed-dimensional
+acoustic embedding obtained by mapping the sequence of feature frames to a single embedding vector.
+We compare our system on English and Xitsonga datasets to state-of-the-art baselines, using a variety
+of measures including word error rate (obtained by mapping the unsupervised output to ground truth
+transcriptions). Very high word error rates are reported---in the order of 70--80% for speaker-dependent
+and 80--95% for speaker-independent systems---highlighting the difficulty of this task. Nevertheless,
+in terms of cluster quality and word segmentation metrics, we show that by imposing a consistent
+top-down segmentation while also using bottom-up knowledge from detected syllable boundaries,
+both single-speaker and multi-speaker versions of our system outperform a purely bottom-up single-speaker
+syllable-based approach. We also show that the discovered clusters can be made less speaker- and
+gender-specific by using an unsupervised autoencoder-like feature extractor to learn better
+frame-level features (prior to embedding). Our system's discovered clusters are still less pure
+than those of unsupervised term discovery systems, but provide far greater coverage. 

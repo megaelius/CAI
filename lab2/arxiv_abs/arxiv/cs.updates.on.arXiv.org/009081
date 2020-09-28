@@ -1,0 +1,18 @@
+A snapshot object simulates the behavior of an array of single-writer/multi-reader shared registers
+that can be read atomically. Delporte-Gallet et al. proposed two fault-tolerant algorithms for
+snapshot objects in asynchronous crash-prone message-passing systems. Their first algorithm
+is non-blocking; it allows snapshot operations to terminate once all write operations had ceased.
+It uses O(n) messages of O(n v) bits, where $n$ is the number of nodes and v is the number of bits it takes
+to represent the object. Their second algorithm allows snapshot operations to always terminate
+independently of write operations. It incurs O(n**2) messages. The fault model of Delporte-Gallet
+et al. considers both node failures (crashes). We aim at the design of even more robust snapshot objects.
+We do so through the lenses of self-stabilization---a very strong notion of fault-tolerance. In
+addition to Delporte-Gallet et al.'s fault model, a self-stabilizing algorithm can recover after
+the occurrence of transient faults; these faults represent arbitrary violations of the assumptions
+according to which the system was designed to operate (as long as the code stays intact). In particular,
+in this work, we propose self-stabilizing variations of Delporte-Gallet et al.'s non-blocking
+algorithm and always-terminating algorithm. Our algorithms have similar communication costs
+to the ones by Delporte-Gallet et al. and O(1) recovery time (in terms of asynchronous cycles) from
+transient faults. The main differences are that our proposal considers repeated gossiping of O(v)
+bits messages and deals with bounded space (which is a prerequisite for self-stabilization). Lastly,
+we explain how to extend the proposed solutions to reconfigurable ones. 

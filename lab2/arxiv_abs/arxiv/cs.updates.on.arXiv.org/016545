@@ -1,0 +1,20 @@
+In image compositing tasks, objects from different sources are put together to form a new image.
+Artists often increase realism by adding object shadows to match the scene geometry and lighting.
+However, creating realistic soft shadows requires skill and is time-consuming. We introduce a
+Soft Shadow Network to generate convincing soft shadows for 2D object cutouts automatically. SSN
+takes an object cutout mask as input and thus is agnostic to image types such as painting and vector
+art. Although inferring the 3D shape of an object from its silhouette can be ambiguous, it is easy
+for humans to get the 3D geometry from a 2D projection when it is in an iconic view. We follow this intuition
+and train the SSN to render soft shadows for objects' iconic views. To train our model, we design an
+efficient pipeline to produce diverse soft shadow training data using 3D object models. Our pipeline
+first computes a set of soft shadow bases by sampling hard shadows. During training, environment
+lighting maps that cover a wide spectrum of possible configurations are used to calculate the soft
+shadow ground truth using the shadow bases. This enables our model to see a complex lighting pattern
+and to learn the interaction between the lights and 3D geometries. In addition, we propose an inverse
+shadow map representation, which makes the training focused on the shadow area and leads to much
+faster convergence and better performance. We show that our model produces realistic soft shadow
+details for objects of different shapes. A user study shows that SSN generated shadows are often
+indistinguishable from shadows calculated by physics-based rendering. Our SSN can produce a shadow
+in real-time and it allows real-time interactive shadow manipulation. We develop a simple user
+interface and a second user study shows that amateur users can easily use our tool to generate soft
+shadows matching a reference shadow. 

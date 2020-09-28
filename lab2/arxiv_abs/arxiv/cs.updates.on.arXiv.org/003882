@@ -1,0 +1,20 @@
+Neuroscientific data analysis has classically involved methods for statistical signal and image
+processing, drawing on linear algebra and stochastic process theory. However, digitized neuroanatomical
+data sets containing labelled neurons, either individually or in groups labelled by tracer injections,
+do not fully fit into this classical framework. The tree-like shapes of neurons cannot mathematically
+be adequately described as points in a vector space. There is therefore a need for new approaches.
+Methods from computational topology and geometry are naturally suited to the analysis of neuronal
+shapes. Here we introduce methods from Discrete Morse Theory to extract tree-skeletons of individual
+neurons from volumetric brain image data, or to summarize collections of neurons labelled by localized
+anterograde tracer injections. Since individual neurons are topologically trees, it is sensible
+to summarize the collection of neurons labelled by a localized anterograde tracer injection using
+a consensus tree-shape. The algorithmic procedure includes an initial pre-processing step to
+extract a density field from the raw volumetric image data, followed by initial skeleton extraction
+from the density field using a discrete version of a 1-(un)stable manifold of the density field.
+Heuristically, if the density field is regarded as a mountainous landscape, then the 1-(un)stable
+manifold follows the "mountain ridges" connecting the maxima of the density field. We then simplify
+this skeleton-graph into a tree using a shortest-path approach and methods derived from persistent
+homology. The advantage of this approach is that it uses global information about the density field
+and is therefore robust to local fluctuations and non-uniformly distributed input signals. To
+be able to handle large data sets, we use a divide-and-conquer approach. The resulting software
+DiMorSC is available on Github. 

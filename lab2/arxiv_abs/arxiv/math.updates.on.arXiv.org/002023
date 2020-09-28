@@ -1,0 +1,18 @@
+Binary maximum distance separable (MDS) array codes are a special class of erasure codes for distributed
+storage that not only provide fault tolerance with minimum storage redundancy but also achieve
+low computational complexity. They are constructed by encoding $k$ information columns into $r$
+parity columns, in which each element in a column is a bit, such that any $k$ out of the $k+r$ columns
+suffice to recover all information bits. In addition to providing fault tolerance, it is critical
+to improve repair performance in practical applications. If one column of an MDS code is failed,
+it is known that we need to download at least $1/(d-k+1)$ fraction of the data stored in each of $d$
+healthy columns. If this lower bound is achieved for the repair of the failure column from accessing
+arbitrary $d$ healthy columns, we say that the MDS code has optimal repair. However, if such lower
+bound is only achieved by $d$ specific healthy columns, then we say the MDS code has weak-optimal
+repair. Existing binary MDS array codes that achieve high data rate (i.e., $k/(k+r)>1/2$) and optimal
+repair of information column only support double fault tolerance (i.e., $r=2$), which is insufficient
+for failure-prone distributed storage environments in practice. This paper fills the void by proposing
+two explicit constructions of binary MDS array codes with more parity columns (i.e., $r\geq 3$)
+that achieve asymptotically weak-optimal repair, where $k+1\leq d\leq k+\lfloor(r-1)/2\rfloor$.
+Codes in the first construction have odd number of parity columns and asymptotically weak-optimal
+repair for any one information failure, while codes in the second construction have even number
+of parity columns and asymptotically weak-optimal repair for any one column failure. 

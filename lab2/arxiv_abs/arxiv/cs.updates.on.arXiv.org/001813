@@ -1,0 +1,19 @@
+In this paper, we propose a method for cloud removal from visible light RGB satellite images by extending
+the conditional Generative Adversarial Networks (cGANs) from RGB images to multispectral images.
+Satellite images have been widely utilized for various purposes, such as natural environment monitoring
+(pollution, forest or rivers), transportation improvement and prompt emergency response to disasters.
+However, the obscurity caused by clouds makes it unstable to monitor the situation on the ground
+with the visible light camera. Images captured by a longer wavelength are introduced to reduce the
+effects of clouds. Synthetic Aperture Radar (SAR) is such an example that improves visibility even
+the clouds exist. On the other hand, the spatial resolution decreases as the wavelength increases.
+Furthermore, the images captured by long wavelengths differs considerably from those captured
+by visible light in terms of their appearance. Therefore, we propose a network that can remove clouds
+and generate visible light images from the multispectral images taken as inputs. This is achieved
+by extending the input channels of cGANs to be compatible with multispectral images. The networks
+are trained to output images that are close to the ground truth using the images synthesized with
+clouds over the ground truth as inputs. In the available dataset, the proportion of images of the
+forest or the sea is very high, which will introduce bias in the training dataset if uniformly sampled
+from the original dataset. Thus, we utilize the t-Distributed Stochastic Neighbor Embedding (t-SNE)
+to improve the problem of bias in the training dataset. Finally, we confirm the feasibility of the
+proposed network on the dataset of four bands images, which include three visible light bands and
+one near-infrared (NIR) band. 

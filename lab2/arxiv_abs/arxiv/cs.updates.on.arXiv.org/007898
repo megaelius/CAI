@@ -1,0 +1,18 @@
+We consider message-efficient continuous random sampling from a distributed stream, where the
+probability of inclusion of an item in the sample is proportional to a weight associated with the
+item. The unweighted version, where all weights are equal, is well studied, and admits tight upper
+and lower bounds on message complexity. For weighted sampling with replacement, there is a simple
+reduction to unweighted sampling with replacement. However, in many applications the stream has
+only a few heavy items which may dominate a random sample when chosen with replacement. Weighted
+sampling \textit{without replacement} (weighted SWOR) eludes this issue, since such heavy items
+can be sampled at most once. In this work, we present the first message-optimal algorithm for weighted
+SWOR from a distributed stream. Our algorithm also has optimal space and time complexity. As an application
+of our algorithm for weighted SWOR, we derive the first distributed streaming algorithms for tracking
+\textit{heavy hitters with residual error}. Here the goal is to identify stream items that contribute
+significantly to the residual stream, once the heaviest items are removed. Residual heavy hitters
+generalize the notion of $\ell_1$ heavy hitters and are important in streams that have a skewed distribution
+of weights. In addition to the upper bound, we also provide a lower bound on the message complexity
+that is nearly tight up to a $\log(1/\epsilon)$ factor. Finally, we use our weighted sampling algorithm
+to improve the message complexity of distributed $L_1$ tracking, also known as count tracking,
+which is a widely studied problem in distributed streaming. We also derive a tight message lower
+bound, which closes the message complexity of this fundamental problem. 

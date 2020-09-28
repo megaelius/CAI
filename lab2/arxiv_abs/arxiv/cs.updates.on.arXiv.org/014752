@@ -1,0 +1,18 @@
+Consider an undirected weighted graph $G = (V,E,w)$. We study the problem of computing $(1+\epsilon)$-approximate
+shortest paths for $S \times V$, for a subset $S \subseteq V$ of $|S| = n^r$ sources, for some $0 < r \le
+1$. We devise a significantly improved algorithm for this problem in the entire range of parameter
+$r$, in both the classical centralized and in the parallel (PRAM) models of computation. Specifically,
+our centralized algorithm for this problem requires time $\tilde{O}(|E| \cdot n^{o(1)} + n^{\omega(r)})$,
+where $n^{\omega(r)}$ is the time required to multiply an $n^r \times n$ matrix by an $n \times n$
+one. Our PRAM algorithm has polylogarithmic time $(\log n)^{O(1/\rho)}$, and its work complexity
+is $\tilde{O}(|E| \cdot n^\rho + n^{\omega(r)})$, for any arbitrarily small constant $\rho >0$.
+In particular, for $r \le 0.313\ldots$, our centralized algorithm computes $S \times V$ $(1+\epsilon)$-approximate
+shortest paths in $n^{2 + o(1)}$ time. Our PRAM polylogarithmic-time algorithm has work complexity
+$O(|E| \cdot n^\rho + n^{2+o(1)})$, for any arbitrarily small constant $\rho >0$. Previously existing
+solutions either require centralized time/parallel work of $O(|E| \cdot |S|)$ or provide much
+weaker approximation guarantees. We also devise efficient algorithms for computing $(1+\epsilon)$-approximate
+shortest paths from each vertex to its $k$ nearest neighbors in {\em directed} graphs. Here too the
+running time is only $O(n^{2+o(1)})$ even for polynomially large $k\le n^{0.168}$. Our algorithm
+combines fast matrix multiplication with hopsets. Related ideas were formerly used in the context
+of the Congested Clique model by Censor-Hillel et al. \cite{CDKL19}. That model, however, suppresses
+heavy local computations. We show that these computations can be replaced by fast matrix multiplication.

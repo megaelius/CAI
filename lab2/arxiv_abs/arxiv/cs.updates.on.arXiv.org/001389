@@ -1,0 +1,20 @@
+We study the problem of coalitional manipulation---where $k$ manipulators try to manipulate an
+election on $m$ candidates---under general scoring rules, with a focus on the Borda protocol. We
+do so both in the weighted and unweighted settings. We focus on minimizing the maximum score obtainable
+by a non-preferred candidate. In the strongest, most general setting, we provide an algorithm for
+any scoring rule as described by a vector $\vec{\alpha}=(\alpha_1,\ldots,\alpha_m)$: for some
+$\beta=O(\sqrt{m\log m})$, it obtains an additive approximation equal to $W\cdot \max_i \lvert
+\alpha_{i+\beta}-\alpha_i \rvert$, where $W$ is the sum of voter weights. For Borda, both the weighted
+and unweighted variants are known to be $NP$-hard. For the unweighted case, our simpler algorithm
+provides a randomized, additive $O(k \sqrt{m \log m} )$ approximation; in other words, if there
+exists a strategy enabling the preferred candidate to win by an $\Omega(k \sqrt{m \log m} )$ margin,
+our method, with high probability, will find a strategy enabling her to win (albeit with a possibly
+smaller margin). It thus provides a somewhat stronger guarantee compared to the previous methods,
+which implicitly implied a strategy that provides an $\Omega(m)$-additive approximation to the
+maximum score of a non-preferred candidate. For the weighted case, our generalized algorithm provides
+an $O(W \sqrt{m \log m} )$-additive approximation, where $W$ is the sum of voter weights. This is
+a clear advantage over previous methods: some of them do not generalize to the weighted case, while
+others---which approximate the number of manipulators---pose restrictions on the weights of
+extra manipulators added. Our methods are based on carefully rounding an exponentially-large
+configuration linear program that is solved by using the ellipsoid method with an efficient separation
+oracle. 

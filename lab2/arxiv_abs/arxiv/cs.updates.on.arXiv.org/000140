@@ -1,0 +1,20 @@
+The set disjointness problem is one of the most fundamental and well-studied problems in communication
+complexity. In this problem Alice and Bob hold sets $S, T \subseteq [n]$, respectively, and the goal
+is to decide if $S \cap T = \emptyset$. Reductions from set disjointness are a canonical way of proving
+lower bounds in data stream algorithms, data structures, and distributed computation. In these
+applications, often the set sizes $|S|$ and $|T|$ are bounded by a value $k$ which is much smaller
+than $n$. This is referred to as small set disjointness. A major restriction in the above applications
+is the number of rounds that the protocol can make, which, e.g., translates to the number of passes
+in streaming applications. A fundamental question is thus in understanding the round complexity
+of the small set disjointness problem. For an essentially equivalent problem, called OR-Equality,
+Brody et. al showed that with $r$ rounds of communication, the randomized communication complexity
+is $\Omega(k \ilog^r k)$, where$\ilog^r k$ denotes the $r$-th iterated logarithm function. Unfortunately
+their result requires the error probability of the protocol to be $1/k^{\Theta(1)}$. Since na\"ive
+amplification of the success probability of a protocol from constant to $1-1/k^{\Theta(1)}$ blows
+up the communication by a $\Theta(\log k)$ factor, this destroys their improvements over the well-known
+lower bound of $\Omega(k)$ which holds for any number of rounds. They pose it as an open question to
+achieve the same $\Omega(k \ilog^r k)$ lower bound for protocols with constant error probability.
+We answer this open question by showing that the $r$-round randomized communication complexity
+of ${\sf OREQ}_{n,k}$, and thus also of small set disjointness, with {\it constant error probability}
+is $\Omega(k \ilog^r k)$, asymptotically matching known upper bounds for ${\sf OREQ}_{n,k}$ and
+small set disjointness. 

@@ -1,0 +1,19 @@
+Most current blockchains require all full nodes to execute all tasks limits the throughput of existing
+blockchains, which are well documented and among the most significant hurdles for the widespread
+adoption of decentralized technology. This paper extends out presentation of Flow, a pipelined
+blockchain architecture, which separates the process of consensus on the transaction order from
+transaction computation. As we experimentally showed in our previous white paper, our architecture
+provides a significant throughput improvement while preserving the security of the system. Flow
+exploits the heterogeneity offered by the nodes, in terms of bandwidth, storage, and computational
+capacity, and defines the roles for the nodes based on their tasks in the pipeline, i.e., Collector,
+Consensus, Execution, and Verification. While transaction collection from the user agents is
+completed through the bandwidth-optimized Collector Nodes, the execution of them is done by the
+compute-optimized Execution Nodes. Checking the execution result is then distributed among a
+more extensive set of Verification Nodes, which confirm the result is correct in a distributed and
+parallel manner. In contrast to more traditional blockchain architectures, Flow's Consensus
+Nodes do not execute the transaction. Instead, Verification Nodes report observed faulty executions
+to the Consensus Nodes, which adjudicate the received challenges and slash malicious actors. In
+this paper, we detail the lifecycle of the transactions from the submission to the system until they
+are getting executed. The paper covers the Collector, Consensus, and Execution role. We provide
+a protocol specification of collecting the transactions, forming a block, and executing the resulting
+block. Moreover, we elaborate on the safety and liveness of the system concerning these processes.

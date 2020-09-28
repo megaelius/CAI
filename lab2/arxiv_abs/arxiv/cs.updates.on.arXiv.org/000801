@@ -1,0 +1,17 @@
+Sparse principal component analysis (PCA) involves nonconvex optimization for which the global
+solution is hard to obtain. To address this issue, one popular approach is convex relaxation. However,
+such an approach may produce suboptimal estimators due to the relaxation effect. To optimally estimate
+sparse principal subspaces, we propose a two-stage computational framework named "tighten after
+relax": Within the 'relax' stage, we approximately solve a convex relaxation of sparse PCA with
+early stopping to obtain a desired initial estimator; For the 'tighten' stage, we propose a novel
+algorithm called sparse orthogonal iteration pursuit (SOAP), which iteratively refines the initial
+estimator by directly solving the underlying nonconvex problem. A key concept of this two-stage
+framework is the basin of attraction. It represents a local region within which the `tighten' stage
+has desired computational and statistical guarantees. We prove that, the initial estimator obtained
+from the 'relax' stage falls into such a region, and hence SOAP geometrically converges to a principal
+subspace estimator which is minimax-optimal within a certain model class. Unlike most existing
+sparse PCA estimators, our approach applies to the non-spiked covariance models, and adapts to
+non-Gaussianity as well as dependent data settings. Moreover, through analyzing the computational
+complexity of the two stages, we illustrate an interesting phenomenon that larger sample size can
+reduce the total iteration complexity. Our framework motivates a general paradigm for solving
+many complex statistical problems which involve nonconvex optimization with provable guarantees.

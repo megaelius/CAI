@@ -1,0 +1,18 @@
+A shadow stack validates on-stack return addresses and prevents arbitrary code execution vulnerabilities
+due to malicious returns. Several recent works demonstrate that without shadow stack protection,
+control-flow-integrity -- a related security hardening scheme -- is vulnerable to attacks. Above
+benefits notwithstanding, shadow stacks have not found mass adoption due to the high overheads
+they impose. In this work, we re-examine the performance viability of shadow stacks as a binary hardening
+technique. Our work is inspired by the design principle of separating mechanism and policy. Existing
+research on shadow stacks focus on optimizing the implementation of the shadow stack, which is the
+mechanism. At a policy level, we define Return Address Safety (RA-Safety) to formally capture the
+impact of memory writes to return addresses. Based on RA-Safety, we design safe function elision
+and safe path elision, two novel algorithms to optimize the instrumentation policy for shadow stacks.
+These two algorithms statically identify functions and control-flow paths that will not overwrite
+any return address so we can safely elide instrumentation on them. Finally, we compliment above
+policy improvements with Register frame, Binary function inlining, and Dead register chasing;
+three new mechanism optimizations. We evaluate our new shadow stack implementation ShadowGuard,
+with SPEC 2017 and show that it reduces the geometric mean overhead from 8% to 2% over an unoptimized
+shadow stack. We also evaluate several hardened server benchmarks including Apache HTTP Server
+and Redis, and the results show above techniques significantly reduce the latency and throughput
+overheads. 

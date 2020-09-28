@@ -1,0 +1,17 @@
+Neural architecture search (NAS) has emerged as a promising avenue for automatically designing
+task-specific neural networks. Most existing NAS approaches require one complete search for each
+deployment specification of hardware or objective. This is a computationally impractical endeavor
+given the potentially large number of application scenarios. In this paper, we propose Neural Architecture
+Transfer (NAT) to overcome this limitation. NAT is designed to efficiently generate task-specific
+custom models that are competitive even under multiple conflicting objectives. To realize this
+goal we learn task-specific supernets from which specialized subnets can be sampled without any
+additional training. The key to our approach is an integrated online transfer learning and many-objective
+evolutionary search procedure. A pre-trained supernet is iteratively adapted while simultaneously
+searching for task-specific subnets. We demonstrate the efficacy of NAT on 11 benchmark image classification
+tasks ranging from large-scale multi-class to small-scale fine-grained datasets. In all cases,
+including ImageNet, NATNets improve upon the state-of-the-art under mobile settings ($\leq$
+600M Multiply-Adds). Surprisingly, small-scale fine-grained datasets benefit the most from
+NAT. At the same time, the architecture search and transfer is orders of magnitude more efficient
+than existing NAS methods. Overall, experimental evaluation indicates that across diverse image
+classification tasks and computational objectives, NAT is an appreciably more effective alternative
+to fine-tuning based transfer learning. Code is available at https://github.com/human-analysis/neural-architecture-transfer

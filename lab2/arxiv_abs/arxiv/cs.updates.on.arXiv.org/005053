@@ -1,0 +1,18 @@
+Distributed public blockchain platform such as ethereum entitle complex transactions in blocks
+through user defined scripts known as Smart Contract. To append a correct block into blockchain,
+miners execute these Smart Contract sequentially followed by validators serially re-execute
+it to verify. If validators validate the block as correct then block added to the blockchain successfully
+and miner gets incentive. In the modern era of multicore processors, serial execution of Smart Contract
+fails to utilize the cores properly. So, by entitling the concurrency to Smart Contract, we can achieve
+the better efficiency and throughput. We use an efficient framework as optimistic software transaction
+memory systems (STMs) to execute the Smart Contract concurrently. This paper introduces a novel
+way to improve the efficiency of blockchain via concurrent miners using optimistic transactional
+memory systems and concurrent validators. Miners execute Smart Contract concurrently using optimistic
+STMs and maintains the final state of each shared data-objects and produce the conflict graph in
+the form adjacency list. Finally, miner propose a block which consist of set of transactions, conflict
+graph, hash of previous block and final state of each shared data-objects. After that concurrent
+validators re-execute the same Smart Contract deterministically with the help of conflict graph
+given by miner and verify final state. If the validation is successful then proposed block appended
+into the blockchain and miner awards strong incentive otherwise discard the proposed block. STMs
+ensures correctness as opacity for concurrent miner and validator so programmer need not have to
+worry about consistency issues. 

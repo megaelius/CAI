@@ -1,0 +1,18 @@
+In the Interval Completion problem we are given a graph G and an integer k, and the task is to turn G using
+at most k edge additions into an interval graph, i.e., a graph admitting an intersection model of
+intervals on a line. Motivated by applications in sparse matrix multiplication and molecular biology,
+Kaplan, Shamir and Tarjan [FOCS 1994; SIAM J. Comput. 1999] asked for a fixed-parameter algorithm
+solving this problem. This question was answer affirmatively more than a decade later by Villanger
+at el. [STOC 2007; SIAM J. Comput. 2009], who presented an algorithm with running time $O(k^{2k}n^3m)$.
+In our work we show that Interval Completion is solvable in $k^{O(\sqrt{k})} n^{O(1)}$ time, that
+is, in subexponential parameterized time. Contrary to the previous algorithms that focused mostly
+on forbidden structures in interval graphs, our algorithm follows the approach developed recently
+by Fomin and Villanger [SODA 2012; SIAM J. Comput. 2013] for Chordal Completion and builds a model
+of the desired interval graph with dynamic programming. However, comparing to the case of Chordal
+Completion, we need to cope with two major difficulties. First, the knowledge of all candidates
+for maximal cliques or clique separators in the output interval graph is far from sufficient to perform
+a natural `left-to-right' dynamic programming, and we need to develop a completely different and
+much more involved way to build the desired interval model. Second, no efficient preprocessing
+routine (the so-called polynomial kernel) is known for Interval Completion, and circumventing
+this obstacle requires significantly new ideas and deeper insight into the structure of the input
+instance. 

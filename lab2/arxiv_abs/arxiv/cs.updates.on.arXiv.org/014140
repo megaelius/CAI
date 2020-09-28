@@ -1,0 +1,17 @@
+We introduce a neural-network architecture, termed the constrained recurrent sparse auto-encoder
+(CRsAE), that solves convolutional dictionary learning problems, thus establishing a link between
+dictionary learning and neural networks. Specifically, we leverage the interpretation of the
+alternating-minimization algorithm for dictionary learning as an approximate Expectation-Maximization
+algorithm to develop auto-encoders that enable the simultaneous training of the dictionary and
+regularization parameter (ReLU bias). The forward pass of the encoder approximates the sufficient
+statistics of the E-step as the solution to a sparse coding problem, using an iterative proximal
+gradient algorithm called FISTA. The encoder can be interpreted either as a recurrent neural network
+or as a deep residual network, with two-sided ReLU non-linearities in both cases. The M-step is implemented
+via a two-stage back-propagation. The first stage relies on a linear decoder applied to the encoder
+and a norm-squared loss. It parallels the dictionary update step in dictionary learning. The second
+stage updates the regularization parameter by applying a loss function to the encoder that includes
+a prior on the parameter motivated by Bayesian statistics. We demonstrate in an image-denoising
+task that CRsAE learns Gabor-like filters, and that the EM-inspired approach for learning biases
+is superior to the conventional approach. In an application to recordings of electrical activity
+from the brain, we demonstrate that CRsAE learns realistic spike templates and speeds up the process
+of identifying spike times by 900x compared to algorithms based on convex optimization. 

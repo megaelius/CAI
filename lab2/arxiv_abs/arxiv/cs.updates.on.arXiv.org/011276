@@ -1,0 +1,18 @@
+Shannon's entropy is a clear lower bound for statistical compression. The situation is not so well
+understood for dictionary-based compression. A plausible lower bound is $b$, the least number
+of phrases of a general bidirectional parse of a text, where phrases can be copied from anywhere else
+in the text. Since computing $b$ is NP-complete, a popular gold standard is $z$, the number of phrases
+in the Lempel-Ziv parse of the text, which is the optimal one when phrases can be copied only from the
+left. While $z$ can be computed in linear time with a greedy algorithm, almost nothing has been known
+for decades about its approximation ratio with respect to $b$. In this paper we prove that $z=O(b\log(n/b))$,
+where $n$ is the text length. We also show that the bound is tight as a function of $n$, by exhibiting
+a text family where $z = \Omega(b\log n)$. Our upper bound is obtained by building a run-length context-free
+grammar based on a locally consistent parsing of the text. Our lower bound is obtained by relating
+$b$ with $r$, the number of equal-letter runs in the Burrows-Wheeler transform of the text. We proceed
+by observing that Lempel-Ziv is just one particular case of greedy parses, meaning that the optimal
+value of $z$ is obtained by scanning the text and maximizing the phrase length at each step, and of
+ordered parses, meaning that there is an increasing order between phrases and their sources. As
+a new example of ordered greedy parses, we introduce {\em lexicographical} parses, where phrases
+can only be copied from lexicographically smaller text locations. We prove that the size $v$ of the
+optimal lexicographical parse is also obtained greedily in $O(n)$ time, that $v=O(b\log(n/b))$,
+and that there exists a text family where $v = \Omega(b\log n)$. 

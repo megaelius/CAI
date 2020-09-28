@@ -1,0 +1,17 @@
+This paper presents a new algorithm, termed \emph{truncated amplitude flow} (TAF), to recover
+an unknown vector $\bm{x}$ from a system of quadratic equations of the form $y_i=|\langle\bm{a}_i,\bm{x}\rangle|^2$,
+where $\bm{a}_i$'s are given random measurement vectors. This problem is known to be \emph{NP-hard}
+in general. We prove that as soon as the number of equations is on the order of the number of unknowns,
+TAF recovers the solution exactly (up to a global unimodular constant) with high probability and
+complexity growing linearly with both the number of unknowns and the number of equations. Our TAF
+approach adopts the \emph{amplitude-based} empirical loss function, and proceeds in two stages.
+In the first stage, we introduce an \emph{orthogonality-promoting} initialization that can be
+obtained with a few power iterations. Stage two refines the initial estimate by successive updates
+of scalable \emph{truncated generalized gradient iterations}, which are able to handle the rather
+challenging nonconvex and nonsmooth amplitude-based objective function. In particular, when
+vectors $\bm{x}$ and $\bm{a}_i$'s are real-valued, our gradient truncation rule provably eliminates
+erroneously estimated signs with high probability to markedly improve upon its untruncated version.
+Numerical tests using synthetic data and real images demonstrate that our initialization returns
+more accurate and robust estimates relative to spectral initializations. Furthermore, even under
+the same initialization, the proposed amplitude-based refinement outperforms existing Wirtinger
+flow variants, corroborating the superior performance of TAF over state-of-the-art algorithms.

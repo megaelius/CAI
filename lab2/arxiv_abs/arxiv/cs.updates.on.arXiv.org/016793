@@ -1,0 +1,19 @@
+We address the curve lane detection problem which poses more realistic challenges than conventional
+lane detection for better facilitating modern assisted/autonomous driving systems. Current
+hand-designed lane detection methods are not robust enough to capture the curve lanes especially
+the remote parts due to the lack of modeling both long-range contextual information and detailed
+curve trajectory. In this paper, we propose a novel lane-sensitive architecture search framework
+named CurveLane-NAS to automatically capture both long-ranged coherent and accurate short-range
+curve information while unifying both architecture search and post-processing on curve lane predictions
+via point blending. It consists of three search modules: a) a feature fusion search module to find
+a better fusion of the local and global context for multi-level hierarchy features; b) an elastic
+backbone search module to explore an efficient feature extractor with good semantics and latency;
+c) an adaptive point blending module to search a multi-level post-processing refinement strategy
+to combine multi-scale head prediction. The unified framework ensures lane-sensitive predictions
+by the mutual guidance between NAS and adaptive point blending. Furthermore, we also steer forward
+to release a more challenging benchmark named CurveLanes for addressing the most difficult curve
+lanes. It consists of 150K images with 680K labels.The new dataset can be downloaded at github.com/xbjxh/CurveLanes
+(already anonymized for this submission). Experiments on the new CurveLanes show that the SOTA
+lane detection methods suffer substantial performance drop while our model can still reach an 80+%
+F1-score. Extensive experiments on traditional lane benchmarks such as CULane also demonstrate
+the superiority of our CurveLane-NAS, e.g. achieving a new SOTA 74.8% F1-score on CULane. 

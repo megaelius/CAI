@@ -1,0 +1,18 @@
+Slow working nodes, known as stragglers, can greatly reduce the speed of distributed computation.
+Coded matrix multiplication is a recently introduced technique that enables straggler-resistant
+distributed multiplication of large matrices. A key property is that the finishing time depends
+only on the work completed by a set of the fastest workers, while the work done by the slowest workers
+is ignored completely. This paper is motivated by the observation that in real-world commercial
+cloud computing systems such as Amazon's Elastic Compute Cloud (EC2) the distinction between fast
+and slow nodes is often a soft one. Thus, if we could also exploit the work completed by stragglers
+we may realize substantial performance gains. To realize such gains, in this paper we use the idea
+of hierarchical coding (Ferdinand and Draper, IEEE Int. Symp. Inf. Theory, 2018). We decompose
+the overall matrix multiplication task into a hierarchy of heterogeneously sized subtasks. The
+duty to complete each subtask is shared amongst all workers and each subtask is (generally) of a different
+complexity. The motivation for the hierarchical decomposition is the recognition that more workers
+will finish the first subtask than the second (or third, forth, etc.). Connecting to error correction
+coding, earlier subtasks can therefore be designed to be of a higher rate than later subtasks. Through
+this hierarchical design our scheme exploits the work completed by stragglers, rather than ignoring
+it, even if that amount is much less than that completed by the fastest workers. We numerically show
+that our method realizes a 60% improvement in the expected finishing time for a widely studied statistical
+model of the speed of computation and, on Amazon EC2, the gain is 35%. 

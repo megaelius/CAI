@@ -1,0 +1,19 @@
+The widespread use of GPS-enabled smartphones along with the popularity of micro-blogging and
+social networking applications, e.g., Twitter and Facebook, has resulted in the generation of
+huge streams of geo-tagged textual data. Many applications require real-time processing of these
+streams. For example, location-based e-coupon and ad-targeting systems enable advertisers to
+register millions of ads to millions of users. The number of users is typically very high and they
+are continuously moving, and the ads change frequently as well. Hence sending the right ad to the
+matching users is very challenging. Existing streaming systems are either centralized or are not
+spatial-keyword aware, and cannot efficiently support the processing of rapidly arriving spatial-keyword
+data streams. This paper presents Tornado, a distributed spatial-keyword stream processing system.
+Tornado features routing units to fairly distribute the workload, and furthermore, co-locate
+the data objects and the corresponding queries at the same processing units. The routing units use
+the Augmented-Grid, a novel structure that is equipped with an efficient search algorithm for distributing
+the data objects and queries. Tornado uses evaluators to process the data objects against the queries.
+The routing units minimize the redundant communication by not sending data updates for processing
+when these updates do not match any query. By applying dynamically evaluated cost formulae that
+continuously represent the processing overhead at each evaluator, Tornado is adaptive to changes
+in the workload. Extensive experimental evaluation using spatio-textual range queries over real
+Twitter data indicates that Tornado outperforms the non-spatio-textually aware approaches by
+up to two orders of magnitude in terms of the overall system throughput. 

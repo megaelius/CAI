@@ -1,0 +1,18 @@
+The efficient solution of sparse, linear systems resulting from the discretization of partial
+differential equations is crucial to the performance of many physics-based simulations. The algorithmic
+optimality of multilevel approaches for common discretizations makes them a good candidate for
+an efficient parallel solver. Yet, modern architectures for high-performance computing systems
+continue to challenge the parallel scalability of multilevel solvers. While algebraic multigrid
+methods are robust for solving a variety of problems, the increasing importance of data locality
+and cost of data movement in modern architectures motivates the need to carefully exploit structure
+in the problem. Robust logically structured variational multigrid methods, such as Black Box Multigrid
+(BoxMG), maintain structure throughout the multigrid hierarchy. This avoids indirection and
+increased coarse-grid communication costs typical in parallel algebraic multigrid. Nevertheless,
+the parallel scalability of structured multigrid is challenged by coarse-grid problems where
+the overhead in communication dominates computation. In this paper, an algorithm is introduced
+for redistributing coarse-grid problems through incremental agglomeration. Guided by a predictive
+performance model, this algorithm provides robust redistribution decisions for structured multilevel
+solvers. A two-dimensional diffusion problem is used to demonstrate the significant gain in performance
+of this algorithm over the previous approach that used agglomeration to one processor. In addition,
+the parallel scalability of this approach is demonstrated on two large-scale computing systems,
+with solves on up to 500K+ cores. 

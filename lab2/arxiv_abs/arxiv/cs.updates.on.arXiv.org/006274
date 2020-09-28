@@ -1,0 +1,17 @@
+Virtual execution environments allow for consolidation of multiple applications onto the same
+physical server, thereby enabling more efficient use of server resources. However, users often
+statically configure the resources of virtual machines through guesswork, resulting in either
+insufficient resource allocations that hinder VM performance, or excessive allocations that
+waste precious data center resources. In this paper, we first characterize real-world resource
+allocation and utilization of VMs through the analysis of an extensive dataset, consisting of more
+than 250k VMs from over 3.6k private enterprise clusters. Our large-scale analysis confirms that
+VMs are often misconfigured, either overprovisioned or underprovisioned, and that this problem
+is pervasive across a wide range of private clusters. We then propose ADARES, an adaptive system
+that dynamically adjusts VM resources using machine learning techniques. In particular, ADARES
+leverages the contextual bandits framework to effectively manage the adaptations. Our system
+exploits easily collectible data, at the cluster, node, and VM levels, to make more sensible allocation
+decisions, and uses transfer learning to safely explore the configurations space and speed up training.
+Our empirical evaluation shows that ADARES can significantly improve system utilization without
+sacrificing performance. For instance, when compared to threshold and prediction-based baselines,
+it achieves more predictable VM-level performance and also reduces the amount of virtual CPUs and
+memory provisioned by up to 35% and 60% respectively for synthetic workloads on real clusters. 

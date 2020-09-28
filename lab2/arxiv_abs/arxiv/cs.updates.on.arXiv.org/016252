@@ -1,0 +1,19 @@
+Heterogeneous information network (HIN) embedding, aiming to map the structure and semantic information
+in a HIN to distributed representations, has drawn considerable research attention. Graph neural
+networks for HIN embeddings typically adopt a hierarchical attention (including node-level and
+meta-path-level attentions) to capture the information from meta-path-based neighbors. However,
+this complicated attention structure often cannot achieve the function of selecting meta-paths
+due to severe overfitting. Moreover, when propagating information, these methods do not distinguish
+direct (one-hop) meta-paths from indirect (multi-hop) ones. But from the perspective of network
+science, direct relationships are often believed to be more essential, which can only be used to
+model direct information propagation. To address these limitations, we propose a novel neural
+network method via implicitly utilizing attention and meta-paths, which can relieve the severe
+overfitting brought by the current over-parameterized attention mechanisms on HIN. We first use
+the multi-layer graph convolutional network (GCN) framework, which performs a discriminative
+aggregation at each layer, along with stacking the information propagation of direct linked meta-paths
+layer-by-layer, realizing the function of attentions for selecting meta-paths in an indirect
+way. We then give an effective relaxation and improvement via introducing a new propagation operation
+which can be separated from aggregation. That is, we first model the whole propagation process with
+well-defined probabilistic diffusion dynamics, and then introduce a random graph-based constraint
+which allows it to reduce noise with the increase of layers. Extensive experiments demonstrate
+the superiority of the new approach over state-of-the-art methods. 

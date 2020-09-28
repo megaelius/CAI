@@ -1,0 +1,18 @@
+We study the problem of estimating the volume of convex polytopes, focusing on H- and V-polytopes,
+as well as zonotopes. Although a lot of effort is devoted to practical algorithms for H-polytopes
+there is no such method for the latter two representations. We propose a new, practical algorithm
+for all representations, which is faster than existing methods. It relies on Hit-and-Run sampling,
+and combines a new simulated annealing method with the Multiphase Monte Carlo (MMC) approach. Our
+method introduces the following key features to make it adaptive: (a) It defines a sequence of convex
+bodies in MMC by introducing a new annealing schedule, whose length is shorter than in previous methods
+with high probability, and the need of computing an enclosing and an inscribed ball is removed; (b)
+It exploits statistical properties in rejection-sampling and proposes a better empirical convergence
+criterion for specifying each step; (c) For zonotopes, it may use a sequence of convex bodies for
+MMC different than balls, where the chosen body adapts to the input. We offer an open-source, optimized
+C++ implementation, and analyze its performance to show that it outperforms state-of-the-art
+software for H-polytopes by Cousins-Vempala (2016) and Emiris-Fisikopoulos (2018), while it
+undertakes volume computations that were intractable until now, as it is the first polynomial-time,
+practical method for V-polytopes and zonotopes that scales to high dimensions (currently 100).
+We further focus on zonotopes, and characterize them by their order (number of generators over dimension),
+because this largely determines sampling complexity. We analyze a related application, where
+we evaluate methods of zonotope approximation in engineering. 

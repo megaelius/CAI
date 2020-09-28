@@ -1,0 +1,18 @@
+Being able to efficiently test the membership of a word in a formal language is, arguably, one of the
+most fundamental problems in computer science. In this paper, we apply string-processing techniques
+(specifically, \emph{prefix-sorting}) to speed up solutions for this problem on languages described
+by particular finite automata. Prefix sorting can be generalized to objects more complex than strings:
+the recent notion of \emph{Wheeler graph} extends this concept to labeled graphs (for example,
+finite-state automata). A Wheeler graph admits a co-lexicographic ordering of its nodes and opens
+up the possibility of building fast and small data structures supporting path queries on the graph.
+However, while strings and trees can always be prefix-sorted in linear time, the situation on graphs
+is more complicated: not all graphs are Wheeler, and a recent result shows that the problem of identifying
+them is NP-complete even for acyclic NFAs. In this paper, we present the following results: (i) we
+show that the problem of recognizing and sorting Wheeler DFAs (even cyclic) can be solved offline
+in optimal linear time, (ii) when the DFA is acyclic, we give an online algorithm that, when fed with
+the DFA's states in any topological order, with logarithmic delay computes the co-lexicographic
+rank of a new incoming state or decides that such an ordering does not exist, and (iii) we show that
+also Wheeler 2-NFAs---i.e. those with at most two equally-labeled transitions leaving any state---admit
+a polynomial-time identification and prefix-sorting algorithm. Our algorithms (i)-(ii) generalize
+to labeled graphs existing prefix-sorting algorithms on strings and labeled trees that have been
+previously described in the literature. 

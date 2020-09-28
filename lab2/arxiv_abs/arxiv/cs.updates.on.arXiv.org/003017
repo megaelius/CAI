@@ -1,0 +1,19 @@
+One of the main drivers behind the rapid recent advances in machine learning has been the availability
+of efficient system support. This comes both through hardware acceleration, but also in the form
+of efficient software frameworks and programming models. Despite significant progress, scaling
+compute-intensive machine learning workloads to a large number of compute nodes is still a challenging
+task, with significant latency and bandwidth demands. In this paper, we address this challenge,
+by proposing SPARCML, a general, scalable communication layer for machine learning applications.
+SPARCML is built on the observation that many distributed machine learning algorithms either have
+naturally sparse communication patters, or have updates which can be sparsified in a structured
+way for improved performance, without any convergence or accuracy loss. To exploit this insight,
+we design and implement a set of communication efficient protocols for sparse input data, in conjunction
+with efficient machine learning algorithms which can leverage these primitives. Our communication
+protocols generalize standard collective operations, by allowing processes to contribute sparse
+input data vectors, of heterogeneous sizes. We call these operations sparse-input collectives,
+and present efficient practical algorithms with strong theoretical bounds on their running time
+and communication cost. Our generic communication layer is enriched with additional features,
+such support for non-blocking (asynchronous) operations, and support for low-precision data
+representations. We validate our algorithmic results experimentally on a range of large-scale
+machine learning applications and target architectures, showing that we can leverage sparsity
+for order- of-magnitude runtime savings, compared to state-of-the art methods and frameworks.

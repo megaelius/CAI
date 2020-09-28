@@ -1,0 +1,18 @@
+The main computing tasks of a finite element code(FE) for solving partial differential equations
+(PDE's) are the algebraic system assembly and the iterative solver. This work focuses on the first
+task, in the context of a hybrid MPI+X paradigm. Although we will describe algorithms in the FE context,
+a similar strategy can be straightforwardly applied to other discretization methods, like the
+finite volume method. The matrix assembly consists of a loop over the elements of the MPI partition
+to compute element matrices and right-hand sides and their assemblies in the local system to each
+MPI partition. In a MPI+X hybrid parallelism context, X has consisted traditionally of loop parallelism
+using OpenMP. Several strategies have been proposed in the literature to implement this loop parallelism,
+like coloring or substructuring techniques to circumvent the race condition that appears when
+assembling the element system into the local system. The main drawback of the first technique is
+the decrease of the IPC due to bad spatial locality. The second technique avoids this issue but requires
+extensive changes in the implementation, which can be cumbersome when several element loops should
+be treated. We propose an alternative, based on the task parallelism of the element loop using some
+extensions to the OpenMP programming model. The taskification of the assembly solves both aforementioned
+problems. In addition, dynamic load balance will be applied using the DLB library, especially efficient
+in the presence of hybrid meshes, where the relative costs of the different elements is impossible
+to estimate a priori. This paper presents the proposed methodology, its implementation and its
+validation through the solution of large computational mechanics problems up to 16k cores. 

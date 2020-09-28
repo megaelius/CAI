@@ -1,0 +1,20 @@
+To study radiotherapy-related adverse effects, detailed dose information (3D distribution)
+is needed for accurate dose-effect modeling. For childhood cancer survivors who underwent radiotherapy
+in the pre-CT era, only 2D radiographs were acquired, thus 3D dose distributions must be reconstructed.
+State-of-the-art methods achieve this by using 3D surrogate anatomies. These can however lack
+personalization and lead to coarse reconstructions. We present and validate a surrogate-free
+dose reconstruction method based on Machine Learning (ML). Abdominal planning CTs (n=142) of recently-treated
+childhood cancer patients were gathered, their organs at risk were segmented, and 300 artificial
+Wilms' tumor plans were sampled automatically. Each artificial plan was automatically emulated
+on the 142 CTs, resulting in 42,600 3D dose distributions from which dose-volume metrics were derived.
+Anatomical features were extracted from digitally reconstructed radiographs simulated from
+the CTs to resemble historical radiographs. Further, patient and radiotherapy plan features typically
+available from historical treatment records were collected. An evolutionary ML algorithm was
+then used to link features to dose-volume metrics. Besides 5-fold cross validation, a further evaluation
+was done on an independent dataset of five CTs each associated with two clinical plans. Cross-validation
+resulted in mean absolute errors $\leq$0.6 Gy for organs completely inside or outside the field.
+For organs positioned at the edge of the field, mean absolute errors $\leq$1.7 Gy for $D_{mean}$,
+$\leq$2.9 Gy for $D_{2cc}$, and $\leq$13% for $V_{5Gy}$ and $V_{10Gy}$, were obtained, without
+systematic bias. Similar results were found for the independent dataset. To conclude, our novel
+organ dose reconstruction method is not only accurate, but also efficient, as the setup of a surrogate
+is no longer needed. 

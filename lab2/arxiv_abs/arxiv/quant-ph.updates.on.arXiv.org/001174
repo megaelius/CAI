@@ -1,0 +1,19 @@
+Tensor network operators, such as the matrix product operator (MPO) and the projected entangled-pair
+operator (PEPO), can provide efficient representation of certain linear operators in high dimensional
+spaces. This paper focuses on the efficient representation of tensor network operators with long-range
+pairwise interactions such as the Coulomb interaction. For MPOs, we find that all existing efficient
+methods exploit a peculiar "upper-triangular low-rank" (UTLR) property, i.e. the upper-triangular
+part of the matrix can be well approximated by a low-rank matrix, while the matrix itself can be full-rank.
+This allows us to convert the problem of finding the efficient MPO representation into a matrix completion
+problem. We develop a modified incremental singular value decomposition method (ISVD) to solve
+this ill-conditioned matrix completion problem. This algorithm yields equivalent MPO representation
+to that developed in [Stoudenmire and White, Phys. Rev. Lett. 2017]. In order to efficiently treat
+more general tensor network operators, we develop another strategy for compressing tensor network
+operators based on hierarchical low-rank matrix formats, such as the hierarchical off-diagonal
+low-rank (HODLR) format, and the $\mathcal{H}$-matrix format. Though the pre-constant in the
+complexity is larger, the advantage of using the hierarchical low-rank matrix format is that it
+is applicable to both MPOs and PEPOs. For the Coulomb interaction, the operator can be represented
+by a linear combination of $\mathcal{O}(\log(N)\log(N/\epsilon))$ MPOs/PEPOs, each with a constant
+bond dimension, where $N$ is the system size and $\epsilon$ is the accuracy of the low-rank truncation.
+Neither the modified ISVD nor the hierarchical low-rank algorithm assumes that the long-range
+interaction takes a translation-invariant form. 

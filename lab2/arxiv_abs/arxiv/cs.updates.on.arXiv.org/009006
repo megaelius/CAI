@@ -1,0 +1,17 @@
+Blind image deblurring is a challenging problem in computer vision, which aims to restore both the
+blur kernel and the latent sharp image from only a blurry observation. Inspired by the prevalent
+self-example prior in image super-resolution, in this paper, we observe that a coarse enough image
+down-sampled from a blurry observation is approximately a low-resolution version of the latent
+sharp image. We prove this phenomenon theoretically and define the coarse enough image as a latent
+structure prior of the unknown sharp image. Starting from this prior, we propose to restore sharp
+images from the coarsest scale to the finest scale on a blurry image pyramid, and progressively update
+the prior image using the newly restored sharp image. These coarse-to-fine priors are referred
+to as \textit{Multi-Scale Latent Structures} (MSLS). Leveraging the MSLS prior, our algorithm
+comprises two phases: 1) we first preliminarily restore sharp images in the coarse scales; 2) we
+then apply a refinement process in the finest scale to obtain the final deblurred image. In each scale,
+to achieve lower computational complexity, we alternately perform a sharp image reconstruction
+with fast local self-example matching, an accelerated kernel estimation with error compensation,
+and a fast non-blind image deblurring, instead of computing any computationally expensive non-convex
+priors. We further extend the proposed algorithm to solve more challenging non-uniform blind image
+deblurring problem. Extensive experiments demonstrate that our algorithm achieves competitive
+results against the state-of-the-art methods with much faster running speed. 

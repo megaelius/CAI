@@ -1,0 +1,19 @@
+A powerful feature of linear sketches is that from sketches of two data vectors, one can compute the
+sketch of the difference between the vectors. This allows us to answer fine-grained questions about
+the difference between two data sets. In this work, we consider how to achieve this kind of property
+with sketches that are differentially private. We describe how to compute linear sketches for $F_0$,
+the number of distinct elements, that can efficiently be made differentially private. Specifically,
+we consider a sketch that is linear over GF(2), mapping a vector $x\in \{0,1\}^u$ to $Hx\in\{0,1\}^\tau$
+for a matrix $H$ sampled from a suitable distribution $\mathcal{H}$. Differential privacy is achieved
+by using randomized response, flipping each bit of $Hx$ with probability $p<1/2$. That is, for a
+vector $\varphi \in \{0,1\}^\tau$ where $\Pr[(\varphi)_j = 1] = p$ independently for each entry
+$j$, we consider the noisy sketch $Hx + \varphi$, where the addition of noise happens over GF(2).
+We show that for every choice of $0<\beta, \varepsilon < 1$ there exists $p<1/2$ and a distribution
+$\mathcal{H}$ of linear sketches of size $\tau = O(\log^4(u)\varepsilon^{-2}\beta^{-2})$ such
+that: 1) For random $H\sim\mathcal{H}$ and noise vector $\varphi$, given $Hx + \varphi$ we can compute
+an estimate of $\Vert x\Vert_0$ that is accurate within a factor $1\pm\beta$, plus an additive error
+$O(\log^3(u)\varepsilon^{-2}\beta^{-2})$, with high probability, and 2) For every $H\sim\mathcal{H}$,
+$Hx + \varphi$ is $\varepsilon$-differentially private over the randomness in $\varphi$. Previously,
+Mir et al.~(PODS 2011) had described a private way of sketching $F_0$, but their noise vector $\varphi$
+is constructed using the exponential mechanism, and is not computationally efficient (quasipolynomial
+time in the sketch size)... 

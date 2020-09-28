@@ -1,0 +1,18 @@
+We present a novel weed segmentation and mapping framework that processes multispectral images
+obtained from an unmanned aerial vehicle (UAV) using a deep neural network (DNN). Most studies on
+crop/weed semantic segmentation only consider single images for processing and classification.
+Images taken by UAVs often cover only a few hundred square meters with either color only or color and
+near-infrared (NIR) channels. Computing a single large and accurate vegetation map (e.g., crop/weed)
+using a DNN is non-trivial due to difficulties arising from: (1) limited ground sample distances
+(GSDs) in high-altitude datasets, (2) sacrificed resolution resulting from downsampling high-fidelity
+images, and (3) multispectral image alignment. To address these issues, we adopt a stand sliding
+window approach that operates on only small portions of multispectral orthomosaic maps (tiles),
+which are channel-wise aligned and calibrated radiometrically across the entire map. We define
+the tile size to be the same as that of the DNN input to avoid resolution loss. Compared to our baseline
+model (i.e., SegNet with 3 channel RGB inputs) yielding an area under the curve (AUC) of [background=0.607,
+crop=0.681, weed=0.576], our proposed model with 9 input channels achieves [0.839, 0.863, 0.782].
+Additionally, we provide an extensive analysis of 20 trained models, both qualitatively and quantitatively,
+in order to evaluate the effects of varying input channels and tunable network hyperparameters.
+Furthermore, we release a large sugar beet/weed aerial dataset with expertly guided annotations
+for further research in the fields of remote sensing, precision agriculture, and agricultural
+robotics. 

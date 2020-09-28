@@ -1,0 +1,19 @@
+Sheer amount of computation in deep neural networks has pushed their execution to the cloud. This
+de facto cloud-hosted inference, however, raises serious privacy concerns as private data is communicated
+and stored in remote servers. The data could be mishandled by cloud providers, used for unsolicited
+analytics, or simply compromised through network and system security vulnerability. To that end,
+this paper devises SHREDDER that reduces the information content of the communicated data without
+diminishing the cloud's ability to maintain acceptably high accuracy. To that end, SHREDDER learns
+two sets of noise distributions whose samples, named multiplicative and additive noise tensors,
+are applied to the communicated data while maintaining the inference accuracy. The key idea is that
+SHREDDER learns these noise distributions offline without altering the topology or the weights
+of the pre-trained network. SHREDDER repeatedly learns sample noise tensors from the distributions
+by casting the tensors as a set of trainable parameters while keeping the weights constant. Since
+the key idea is learning the noise, we are able to devise a loss function that strikes a balance between
+accuracy and information degradation. To this end, we use self-supervision to train the noise tensors
+to achieve an intermediate representation of the data that contains less private information.
+Experimentation with real-world deep neural networks shows that, compared to the original execution,
+SHREDDER reduces the mutual information between the input and the communicated data by 66.90%,
+and yields a misclassification rate of 94.5% over private labels, significantly reducing adversary's
+ability to infer private data, while sacrificing only 1.74% loss in accuracy without any knowledge
+about the private labels. 

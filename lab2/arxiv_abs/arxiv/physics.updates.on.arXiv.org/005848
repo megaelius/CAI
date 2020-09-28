@@ -1,0 +1,19 @@
+This report summarizes the major progresses to develop the dynamic core for next-generation atmospherical
+model for both numerical weather prediction and climate simulation. The numerical framework is
+based on a general formulation, so-called multi-moment constrained finite volume (MCV) method,
+which is well-balanced among solution quality (accuracy and robustness), algorithmic simplicity,
+computational efficiency and flexibility for model configuration. A local high-order limiting
+projection is also devised to remove spurious oscillations and noises in numerical solutions,
+which allows the numerical model working well alone without artificial diffusion or filter. The
+resulted numerical schemes are very simple, efficient and easy to implement for both structured
+and unstructured grids, which provide a promising plateform of great practical significance.
+We have implemented the MCV method to shallow water equations on various spherical grids, including
+Yin-Yang overset grid, cubed sphere grid and geodesic icosahedral grid, non-hydrostatic compressible
+atmosherical model under complex topographic boundary conditions. In addition, the moist dynamics
+simulation like moist thermal bubble has been validated by using direct microphysical feedback.
+We have also constructed a prototype of 3D global non-hydrostatic compressible atmosherical model
+on cubed sphere grid with an explicit/implicit-hybrid time integration scheme, which can be used
+as the base to develop global atmospheric GCM. All the MCV models have been verified with widely used
+benchmark tests. The numerical results show that the present MCV models have solution quality competitive
+to other exiting high order models. Parallelization of the MCV shallow water model on cubed sphere
+grid reveals its suitability for large scale parallel processing with desirable scalability.

@@ -1,0 +1,22 @@
+Modern modeling languages for general physical systems, such as Modelica, Amesim, or Simscape,
+rely on Differential Algebraic Equations (DAE), i.e., constraints of the form f(dot{x},x,u)=0.
+This drastically facilitates modeling from first principles of the physics and the reuse of models.
+In this paper we develop the mathematical theory needed to establish the development of compilers
+and tools for DAE based physical modeling languages on solid mathematical bases. Unlike Ordinary
+Differential Equations, DAE exhibit subtle issues because of the notion of differentiation index
+and related latent equations -- ODE are DAE of index zero for which no latent equation needs to be considered.
+Prior to generating execution code and calling solvers, the compilation of such languages requires
+a nontrivial \emph{structural analysis} step that reduces the differentiation index to a level
+acceptable by DAE solvers. The models supported by tools of the Modelica class involve multiple
+modes with mode-dependent DAE based dynamics and state-dependent mode switching. Multimode DAE
+are much more difficult than DAE. The main difficulty is the handling of the events of mode change.
+Unfortunately, the large literature devoted to the mathematical analysis of DAEs does not cover
+the multimode case, typically saying nothing about mode changes. This lack of foundations causes
+numerous difficulties to the existing modeling tools. Some models are well handled, others are
+not, with no clear boundary between the two classes. In this paper, we develop a comprehensive mathematical
+approach supporting compilation and code generation for this class of languages. Its core is the
+structural analysis of multimode DAE systems. As a byproduct of this structural analysis, we propose
+well sound criteria for accepting or rejecting models. For our mathematical development, we rely
+on nonstandard analysis, which allows us to cast hybrid systems dynamics to discrete time dynamics
+with infinitesimal step size, thus providing a uniform framework for handling both continuous
+dynamics and mode change events. 

@@ -1,0 +1,19 @@
+Among many submissions to the NIST post-quantum cryptography (PQC) project, NewHope is a promising
+key encapsulation mechanism (KEM) based on the Ring-Learning with errors (Ring-LWE) problem.
+Since NewHope is an indistinguishability (IND)-chosen ciphertext attack secure KEM by applying
+the Fujisaki-Okamoto transform to an IND-chosen plaintext attack secure public key encryption,
+accurate calculation of decryption failure rate (DFR) is required to guarantee resilience against
+attacks that exploit decryption failures. However, the current upper bound of DFR on NewHope is
+rather loose because the compression noise, the effect of encoding/decoding of NewHope, and the
+approximation effect of centered binomial distribution are not fully considered. Furthermore,
+since NewHope is a Ring-LWE based cryptosystem, there is a problem of error dependency among error
+coefficients, which makes accurate DFR calculation difficult. In this paper, we derive much tighter
+upper bound on DFR than the current upper bound using constraint relaxation and union bound. Especially,
+the above-mentioned factors are all considered in derivation of new upper bound and the centered
+binomial distribution is not approximated to subgaussian distribution. In addition, since the
+error dependency is considered, the new upper bound is much closer to the real DFR than the previous
+upper bound. Furthermore, the new upper bound is parameterized by using Chernoff-Cramer bound
+in order to facilitate calculation of new upper bound for the parameters of NewHope. Since the new
+upper bound is much lower than the DFR requirement of PQC, this DFR margin is used to improve the security
+and bandwidth efficiency of NewHope. As a result, the security level of NewHope is improved by 7.2
+% or bandwidth efficiency is improved by 5.9 %. 

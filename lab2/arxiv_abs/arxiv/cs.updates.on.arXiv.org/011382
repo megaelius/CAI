@@ -1,0 +1,19 @@
+We here adopt Bayesian nonparametric mixture models to extend multi-armed bandits in general,
+and Thompson sampling in particular, to complex scenarios where there is reward model uncertainty.
+The multi-armed bandit is a sequential allocation task where an agent must learn a policy that maximizes
+long term payoff, where only the reward of the played arm is observed at each interaction with the
+world. In the stochastic bandit setting, at each interaction, the reward for the selected action
+is generated from an unknown distribution. Thompson sampling is a generative and interpretable
+multi-armed bandit algorithm that has been shown both to perform well in practice, and to enjoy optimality
+properties for certain reward functions. Nevertheless, Thompson sampling requires knowledge
+of the true reward model, for calculation of expected rewards and sampling from its parameter posterior.
+In this work, we extend Thompson sampling to complex scenarios where there is model uncertainty,
+by adopting a very flexible set of reward distributions: nonparametric Gaussian mixture models.
+The generative process of Bayesian nonparametric mixtures naturally aligns with the Bayesian
+modeling of multi-armed bandits: the nonparametric model autonomously determines its complexity
+in an online fashion, as new rewards are observed for the played arms. By characterizing each arm's
+reward distribution with independent Dirichlet process mixtures and per-mixture parameters,
+the proposed method sequentially learns the model that best approximates the true underlying reward
+distribution, achieving successful performance in synthetic and real datasets. Our contribution
+is valuable for practical scenarios, as it avoids stringent case-by-case model specifications,
+and yet attains reduced regret in diverse bandit settings. 

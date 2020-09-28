@@ -1,0 +1,17 @@
+Sensors on mobile devices---accelerometers, gyroscopes, pressure meters, and GPS---invite
+new applications in gesture recognition, gaming, and fitness tracking. However, programming
+them remains challenging because human gestures captured by sensors are noisy. This paper illustrates
+that noisy gestures degrade training and classification accuracy for gesture recognition in state-of-the-art
+deterministic Hidden Markov Models (HMM). We introduce a new statistical quantization approach
+that mitigates these problems by (1) during training, producing gesture-specific codebooks,
+HMMs, and error models for gesture sequences; and (2) during classification, exploiting the error
+model to explore multiple feasible HMM state sequences. We implement classification in Uncertain<t>,
+a probabilistic programming system that encapsulates HMMs and error models and then automates
+sampling and inference in the runtime. Uncertain<T> developers directly express a choice of application-specific
+trade-off between recall and precision at gesture recognition time, rather than at training time.
+We demonstrate benefits in configurability, precision, recall, and recognition on two data sets
+with 25 gestures from 28 people and 4200 total gestures. Incorporating gesture error more accurately
+in modeling improves the average recognition rate of 20 gestures from 34\% in prior work to 62\%.
+Incorporating the error model during classification further improves the average gesture recognition
+rate to 71\%. As far as we are aware, no prior work shows how to generate an HMM error model during training
+and use it to improve classification rates. 

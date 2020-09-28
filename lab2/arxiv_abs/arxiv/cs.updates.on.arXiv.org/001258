@@ -1,0 +1,18 @@
+Genomic sequence alignment is an important research topic in bioinformatics and continues to attract
+significant efforts. As genomic data grow exponentially, however, most of alignment methods face
+challenges due to their huge computational costs. HMMER, a suite of bioinformatics tools, is widely
+used for the analysis of homologous protein and nucleotide sequences with high sensitivity, based
+on profile hidden Markov models (HMMs). Its latest version, HMMER3, introdues a heuristic pipeline
+to accelerate the alignment process, which is carried out on central processing units (CPUs) with
+the support of streaming SIMD extensions (SSE) instructions. Few acceleration results have since
+been reported based on HMMER3. In this paper, we propose a five-tiered parallel framework, CUDAMPF++,
+to accelerate the most computationally intensive stages of HMMER3's pipeline, multiple/single
+segment Viterbi (MSV/SSV), on a single graphics processing unit (GPU). As an architecture-aware
+design, the proposed framework aims to fully utilize hardware resources via exploiting finer-grained
+parallelism (multi-sequence alignment) compared with its predecessor (CUDAMPF). In addition,
+we propose a novel method that proactively sacrifices L1 Cache Hit Ratio (CHR) to get improved performance
+and scalability in return. A comprehensive evaluation shows that the proposed framework outperfroms
+all existig work and exhibits good consistency in performance regardless of the variation of query
+models or protein sequence datasets. For MSV (SSV) kernels, the peak performance of the CUDAMPF++
+is 283.9 (471.7) GCUPS on a single K40 GPU, and impressive speedups ranging from 1.x (1.7x) to 168.3x
+(160.7x) are achieved over the CPU-based implementation (16 cores, 32 threads). 

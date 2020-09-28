@@ -1,0 +1,17 @@
+Electric vhicles and autonomous driving dominate current research efforts in the automotive sector.
+The two topics go hand in hand in terms of enabling safer and more environmentally friendly driving.
+One fundamental building block of an autonomous vehicle is the ability to build a map of the environment
+and localize itself on such a map. In this paper, we make use of a stereo camera sensor in order to perceive
+the environment and create the map. With live Simultaneous Localization and Mapping (SLAM), there
+is a risk of mislocalization, since no ground truth map is used as a reference and errors accumulate
+over time. Therefore, we first build up and save a map of visual features of the environment at low
+driving speeds with our extension to the ORB-SLAM\,2 package. In a second run, we reload the map and
+then localize on the previously built-up map. Loading and localizing on a previously built map can
+improve the continuous localization accuracy for autonomous vehicles in comparison to a full SLAM.
+This map saving feature is missing in the original ORB-SLAM\,2 implementation. We evaluate the
+localization accuracy for scenes of the KITTI dataset against the built up SLAM map. Furthermore,
+we test the localization on data recorded with our own small scale electric model car. We show that
+the relative translation error of the localization stays under 1\% for a vehicle travelling at an
+average longitudinal speed of 36 m/s in a feature-rich environment. The localization mode contributes
+to a better localization accuracy and lower computational load compared to a full SLAM. The source
+code of our contribution to the ORB-SLAM2 will be made public at: https://github.com/TUMFTM/orbslam-map-saving-extension.

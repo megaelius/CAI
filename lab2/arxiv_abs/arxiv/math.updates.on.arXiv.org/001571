@@ -1,0 +1,17 @@
+This paper studies the optimal transmission switching (OTS) problem for power systems, where certain
+lines are fixed (uncontrollable) and the remaining ones are controllable via on/off switches.
+The goal is to identify a topology of the power grid that minimizes the cost of the system operation
+while satisfying the physical and operational constraints. Most of the existing methods for the
+problem are based on first converting the OTS into a mixed-integer linear program (MILP) or mixed-integer
+quadratic program (MIQP), and then iteratively solving a series of its convex relaxations. The
+performance of these methods depends heavily on the strength of the MILP or MIQP formulations. In
+this paper, it is shown that finding the strongest variable upper and lower bounds to be used in an
+MILP or MIQP formulation of the OTS based on the big-$M$ or McCormick inequalities is NP-hard. Furthermore,
+it is proven that unless P=NP, there is no constant-factor approximation algorithm for constructing
+these variable bounds. Despite the inherent difficulty of obtaining the strongest bounds in general,
+a simple bound strengthening method is presented to strengthen the convex relaxation of the problem
+when there exists a connected spanning subnetwork of the system with fixed lines. The proposed method
+can be treated as a preprocessing step that is independent of the solver to be later used for numerical
+calculations and can be carried out offline before initiating the solver. A remarkable speedup
+in the runtime of the mixed-integer solvers is obtained using the proposed bound strengthening
+method for medium- and large-scale real-world systems. 

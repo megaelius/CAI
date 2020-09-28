@@ -1,0 +1,18 @@
+Motivation: Seed location filtering is critical in DNA read mapping, a process where billions of
+DNA fragments (reads) sampled from a donor are mapped onto a reference genome to identify genomic
+variants of the donor. State-of-the-art read mappers 1) quickly generate possible mapping locations
+for seeds (i.e., smaller segments) within each read, 2) extract reference sequences at each of the
+mapping locations, and 3) check similarity between each read and its associated reference sequences
+with a computationally-expensive algorithm (i.e., sequence alignment) to determine the origin
+of the read. A seed location filter comes into play before alignment, discarding seed locations
+that alignment would deem a poor match. The ideal seed location filter would discard all poor match
+locations prior to alignment such that there is no wasted computation on unnecessary alignments.
+Results: We propose a novel seed location filtering algorithm, GRIM-Filter, optimized to exploit
+3D-stacked memory systems that integrate computation within a logic layer stacked under memory
+layers, to perform processing-in-memory (PIM). GRIM-Filter quickly filters seed locations by
+1) introducing a new representation of coarse-grained segments of the reference genome, and 2)
+using massively-parallel in-memory operations to identify read presence within each coarse-grained
+segment. Our evaluations show that for a sequence alignment error tolerance of 0.05, GRIM-Filter
+1) reduces the false negative rate of filtering by 5.59x--6.41x, and 2) provides an end-to-end read
+mapper speedup of 1.81x--3.65x, compared to a state-of-the-art read mapper employing the best
+previous seed location filtering algorithm. Availability: The code is available online at: https://github.com/CMU-SAFARI/GRIM

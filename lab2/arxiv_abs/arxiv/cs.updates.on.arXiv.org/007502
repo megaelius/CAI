@@ -1,0 +1,19 @@
+Scalable nonvolatile memory DIMMs will finally be commercially available with the release of the
+Intel Optane DC Persistent Memory Module (or just "Optane DC PMM"). This new nonvolatile DIMM supports
+byte-granularity accesses with access times on the order of DRAM, while also providing data storage
+that survives power outages. This work comprises the first in-depth, scholarly, performance review
+of Intel's Optane DC PMM, exploring its capabilities as a main memory device, and as persistent,
+byte-addressable memory exposed to user-space applications. This report details the technologies
+performance under a number of modes and scenarios, and across a wide variety of macro-scale benchmarks.
+Optane DC PMMs can be used as large memory devices with a DRAM cache to hide their lower bandwidth and
+higher latency. When used in this Memory (or cached) mode, Optane DC memory has little impact on applications
+with small memory footprints. Applications with larger memory footprints may experience some
+slow-down relative to DRAM, but are now able to keep much more data in memory. When used under a file
+system, Optane DC PMMs can result in significant performance gains, especially when the file system
+is optimized to use the load/store interface of the Optane DC PMM and the application uses many small,
+persistent writes. For instance, using the NOVA-relaxed NVMM file system, we can improve the performance
+of Kyoto Cabinet by almost 2x. Optane DC PMMs can also enable user-space persistence where the application
+explicitly controls its writes into persistent Optane DC media. In our experiments, modified applications
+that used user-space Optane DC persistence generally outperformed their file system counterparts.
+For instance, the persistent version of RocksDB performed almost 2x faster than the equivalent
+program utilizing an NVMM-aware file system. 

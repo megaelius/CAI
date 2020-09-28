@@ -1,0 +1,19 @@
+This paper considers a different aspect of anatomical face modeling: kinematic modeling of the
+jaw, i.e., the Temporo-Mandibular Joint (TMJ). Previous work often relies on simple models of jaw
+kinematics, even though the actual physiological behavior of the TMJ is quite complex, allowing
+not only for mouth opening, but also for some amount of sideways (lateral) and front-to-back (protrusion)
+motions. Fortuitously, the TMJ is the only joint whose kinematics can be accurately measured with
+optical methods, because the bones of the lower and upper jaw are rigidly connected to the lower and
+upper teeth. We construct a person-specific jaw kinematic model by asking an actor to exercise the
+entire range of motion of the jaw while keeping the lips open so that the teeth are at least partially
+visible. This performance is recorded with three calibrated cameras. We obtain highly accurate
+3D models of the teeth with a standard dental scanner and use these models to reconstruct the rigid
+body trajectories of the teeth from the videos (markerless tracking). The relative rigid transformations
+samples between the lower and upper teeth are mapped to the Lie algebra of rigid body motions in order
+to linearize the rotational motion. Our main contribution is to fit these samples with a three-dimensional
+nonlinear model parameterizing the entire range of motion of the TMJ. We show that standard Principal
+Component Analysis (PCA) fails to capture the nonlinear trajectories of the moving mandible. However,
+we found these nonlinearities can be captured with a special modification of autoencoder neural
+networks known as Nonlinear PCA. By mapping back to the Lie group of rigid transformations, we obtain
+parameterization of the jaw kinematics which provides an intuitive interface allowing the animators
+to explore realistic jaw motions in a user-friendly way. 

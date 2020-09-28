@@ -1,0 +1,20 @@
+Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to
+resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved
+changes to the algorithm which either introduce artificial correction terms or violate arguably
+the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum,
+and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be
+derived self-consistently from a discrete particle Lagrangian (guaranteeing manifest conservation)
+in a manner which tremendously improves treatment of instabilities and contact discontinuities.
+Saitoh & Makino recently noted that the volume element used to discretize the EOM does not need to
+explicitly invoke the mass density (as in the 'standard' approach); we show how this insight, and
+the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation
+that retains ideal conservation properties and includes the 'Grad-h' terms that account for variable
+smoothing lengths. We derive a general EOM for any choice of volume element (particle 'weights')
+and method of determining smoothing lengths. We then specify this to a 'pressure-entropy formulation'
+which resolves problems in the traditional treatment of fluid interfaces. Implementing this in
+a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g.
+Kelvin-Helmholtz & blob tests). And conservation is maintained even in strong shock/blastwave
+tests, where formulations without manifest conservation produce large errors. This also improves
+the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers.
+The code changes are trivial and entail no additional numerical expense. This provides a general
+framework for self-consistent derivation of different 'flavors' of SPH. 

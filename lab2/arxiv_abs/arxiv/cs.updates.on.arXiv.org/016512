@@ -1,0 +1,17 @@
+Segmentation-based, two-stage neural network has shown excellent results in the surface defect
+detection, enabling the network to learn from a relatively small number of samples. In this work,
+we introduce end-to-end training of the two-stage network together with several extensions to
+the training process, which reduce the amount of training time and improve the results on the surface
+defect detection tasks. To enable end-to-end training we carefully balance the contributions
+of both the segmentation and the classification loss throughout the learning. We adjust the gradient
+flow from the classification into the segmentation network in order to prevent the unstable features
+from corrupting the learning. As an additional extension to the learning, we propose frequency-of-use
+sampling scheme of negative samples to address the issue of over- and under-sampling of images during
+the training, while we employ the distance transform algorithm on the region-based segmentation
+masks as weights for positive pixels, giving greater importance to areas with higher probability
+of presence of defect without requiring a detailed annotation. We demonstrate the performance
+of the end-to-end training scheme and the proposed extensions on three defect detection datasets
+- DAGM, KolektorSDD and Severstal Steel defect dataset - where we show state-of-the-art results.
+On the DAGM and the KolektorSDD we demonstrate 100\% detection rate, therefore completely solving
+the datasets. Additional ablation study performed on all three datasets quantitatively demonstrates
+the contribution to the overall result improvements for each of the proposed extensions. 

@@ -1,0 +1,18 @@
+Motion compensation is one of the most essential methods for any video compression algorithm. Video
+frame prediction is a task analogous to motion compensation. In recent years, the task of frame prediction
+is undertaken by deep neural networks (DNNs). In this thesis we create a DNN to perform learned frame
+prediction and additionally implement a codec that contains our DNN. We train our network using
+two methods for two different goals. Firstly we train our network based on mean square error (MSE)
+only, aiming to obtain highest PSNR values at frame prediction and video compression. Secondly
+we use adversarial training to produce visually more realistic frame predictions. For frame prediction,
+we compare our method with the baseline methods of frame difference and 16x16 block motion compensation.
+For video compression we further include x264 video codec in the comparison. We show that in frame
+prediction, adversarial training produces frames that look sharper and more realistic, compared
+MSE based training, but in video compression it consistently performs worse. This proves that even
+though adversarial training is useful for generating video frames that are more pleasing to the
+human eye, they should not be employed for video compression. Moreover, our network trained with
+MSE produces accurate frame predictions, and in quantitative results, for both tasks, it produces
+comparable results in all videos and outperforms other methods on average. More specifically,
+learned frame prediction outperforms other methods in terms of rate-distortion performance in
+case of high motion video, while the rate-distortion performance of our method is competitive with
+that of x264 in low motion video. 

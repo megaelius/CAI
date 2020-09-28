@@ -1,0 +1,18 @@
+We introduce the tensor numerical method for solving optimal control problems that are constrained
+by fractional 2D and 3D elliptic operators with variable coefficients. We solve the governing equation
+for the control function which includes a sum of the fractional operator and its inverse, both discretized
+over large 3D $n\times n \times n$ spacial grids. Using the diagonalization of the arising matrix
+valued functions in the eigenbasis of the 1D Sturm-Liouville operators, we construct the rank-structured
+tensor approximation with controllable precision for the discretized fractional elliptic operators
+and the respective preconditioner. The right-hand side in the constraining equation (the optimal
+design function) is supposed to be represented in a form of a low-rank canonical tensor. Then the
+equation for the control function is solved in a tensor structured format by using preconditioned
+CG iteration with the adaptive rank truncation procedure that also ensures the accuracy of calculations,
+given an $\varepsilon$-threshold. This method reduces the numerical cost for solving the control
+problem to $O(n \log n)$ (plus the quadratic term $O(n^2)$ with a small weight), which is superior
+to the approaches based on the traditional linear algebra tools that yield at least $O(n^3 \log n)$
+complexity in the 3D case. The storage for the representation of all 3D nonlocal operators and functions
+involved is also estimated by $O(n \log n)$. This essentially outperforms the traditional methods
+operating with fully populated $n^3 \times n^3$ matrices and vectors in $\mathbb{R}^{n^3}$. Numerical
+tests for 2D/3D control problems indicate the almost linear complexity scaling of the rank truncated
+PCG iteration in the univariate grid size $n$. 

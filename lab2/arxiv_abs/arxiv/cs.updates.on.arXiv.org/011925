@@ -1,0 +1,17 @@
+In this paper, we present a comprehensive analysis investigating the reliability of SSD-based
+I/O caching architectures used in enterprise storage systems under power failure and high-operating
+temperature. We explore variety of SSDs from top vendors and investigate the cache reliability
+in mirrored configuration. To this end, we first develop a physical fault injection and failure
+detection platform and then investigate the impact of workload dependent parameters on the reliability
+of I/O cache in the presence of two common failure types in data centers, power outage and high temperature
+faults. We implement an I/O cache scheme using an open-source I/O cache module in Linux operating
+system. The experimental results obtained by conducting more than twenty thousand of physical
+fault injections on the implemented I/O cache with different write policies reveal that the failure
+rate of the I/O cache is significantly affected by workload dependent parameters. Our results show
+that unlike workload requests access pattern, the other workload dependent parameters such as
+request size, Working Set Size (WSS), and sequence of the accesses have considerable impact on the
+I/O cache failure rate. We observe a significant growth in the failure rate in the workloads by decreasing
+the size of the requests (by more than 14X). Furthermore, we observe that in addition to writes, the
+read accesses to the I/O cache are subjected to failure in presence of sudden power outage (the failure
+mainly occurs during promoting data to the cache). In addition, we observe that I/O cache experiences
+no data failure upon high temperature faults. 

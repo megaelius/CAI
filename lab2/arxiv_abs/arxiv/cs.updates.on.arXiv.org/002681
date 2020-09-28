@@ -1,0 +1,19 @@
+Stratified random sampling (SRS) is a fundamental sampling technique that provides accurate estimates
+for aggregate queries using a small size sample, and has been used widely for approximate query processing.
+A key question in SRS is how to partition a target sample size among different strata. While {\em Neyman
+allocation} provides a solution that minimizes the variance of an estimate using this sample, it
+works under the assumption that each stratum is abundant, i.e. has a large number of data points to
+choose from. This assumption may not hold in general: one or more strata may be bounded, and may not
+contain a large number of data points, even though the total data size may be large. We first present
+\voila, an offline method for allocating sample sizes to strata in a variance-optimal manner, even
+for the case when one or more strata may be bounded. We next consider SRS on streaming data that are
+continuously arriving. We show a lower bound, that any streaming algorithm for SRS must have (in
+the worst case) a variance that is $\Omega(r)$ factor away from the optimal, where $r$ is the number
+of strata. We present \svoila, a practical streaming algorithm for SRS that is {\em locally variance-optimal}
+in its allocation of sample sizes to different strata. Both the offline and streaming algorithms
+are built on a method for reducing the size of a stratified random sample in a variance-optimal manner,
+which could be of independent interest. Our results from experiments on real and synthetic data
+show that that \voila can have significantly smaller variance than Neyman allocation (\voila's
+variances are a factor of 1.4x-3000x smaller than that of Neyman allocation, with the same setting).
+The streaming algorithm \svoila results in a variance that is typically close to \voila, which was
+given the entire input beforehand. 

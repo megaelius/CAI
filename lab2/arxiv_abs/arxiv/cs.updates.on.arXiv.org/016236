@@ -1,0 +1,17 @@
+Clients of permissionless blockchain systems, like Bitcoin, rely on an underlying peer-to-peer
+network to send and receive transactions. It is critical that a client is connected to at least one
+honest peer, as otherwise the client can be convinced to accept a maliciously forked view of the blockchain.
+In such an eclipse attack, the client is unable to reliably distinguish the canonical view of the
+blockchain from the view provided by the attacker. The consequences of this can be catastrophic
+if the client makes business decisions based on a distorted view of the blockchain transactions.
+In this paper, we investigate the design space and propose two approaches for Bitcoin clients to
+detect whether an eclipse attack against them is ongoing. Each approach chooses a different trade-off
+between average attack detection time and network load. The first scheme is based on the detection
+of suspicious block timestamps. The second scheme allows blockchain clients to utilize their natural
+connections to the Internet (i.e., standard web activity) to gossip about their blockchain views
+with contacted servers and their other clients. Our proposals improve upon previously proposed
+eclipse attack countermeasures without introducing any dedicated infrastructure or changes
+to the Bitcoin protocol and network, and we discuss an implementation. We demonstrate the effectiveness
+of the gossip-based schemes through rigorous analysis using original Internet traffic traces
+and real-world deployment. The results indicate that our protocol incurs a negligible overhead
+and detects eclipse attacks rapidly with high probability, and is well-suited for practical deployment.

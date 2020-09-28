@@ -1,0 +1,19 @@
+Modern computing systems are embracing hybrid memory comprising of DRAM and non-volatile memory
+(NVM) to combine the best properties of both memory technologies, achieving low latency, high reliability,
+and high density. A prominent characteristic of DRAM-NVM hybrid memory is that it has NVM access
+latency much higher than DRAM access latency. We call this inter-memory asymmetry. We observe that
+parasitic components on a long bitline are a major source of high latency in both DRAM and NVM, and
+a significant factor contributing to high-voltage operations in NVM, which impact their reliability.
+We propose an architectural change, where each long bitline in DRAM and NVM is split into two segments
+by an isolation transistor. One segment can be accessed with lower latency and operating voltage
+than the other. By introducing tiers, we enable non-uniform accesses within each memory type (which
+we call intra-memory asymmetry), leading to performance and reliability trade-offs in DRAM-NVM
+hybrid memory. We extend existing NVM-DRAM OS in three ways. First, we exploit both inter- and intra-memory
+asymmetries to allocate and migrate memory pages between the tiers in DRAM and NVM. Second, we improve
+the OS's page allocation decisions by predicting the access intensity of a newly-referenced memory
+page in a program and placing it to a matching tier during its initial allocation. This minimizes
+page migrations during program execution, lowering the performance overhead. Third, we propose
+a solution to migrate pages between the tiers of the same memory without transferring data over the
+memory channel, minimizing channel occupancy and improving performance. Our overall approach,
+which we call MNEME, to enable and exploit asymmetries in DRAM-NVM hybrid tiered memory improves
+both performance and reliability for both single-core and multi-programmed workloads. 

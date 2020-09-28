@@ -1,0 +1,19 @@
+With an estimated 19 million operations performed annually, cataract surgery is the most common
+surgical procedure. This paper investigates the automatic monitoring of tool usage during a cataract
+surgery, with potential applications in report generation, surgical training and real-time decision
+support. In this study, tool usage is monitored in videos recorded through the surgical microscope.
+Following state-of-the-art video analysis solutions, each frame of the video is analyzed by convolutional
+neural networks (CNNs) whose outputs are fed to recurrent neural networks (RNNs) in order to take
+temporal relationships between events into account. Novelty lies in the way those CNNs and RNNs
+are trained. Computational complexity prevents the end-to-end training of "CNN+RNN" systems.
+Therefore, CNNs are usually trained first, independently from the RNNs. This approach is clearly
+suboptimal for surgical tool analysis: many tools are very similar to one another, but they can generally
+be differentiated based on past events. CNNs should be trained to extract the most useful visual
+features in combination with the temporal context. A novel boosting strategy is proposed to achieve
+this goal: the CNN and RNN parts of the system are simultaneously enriched by progressively adding
+weak classifiers (either CNNs or RNNs) trained to improve the overall classification accuracy.
+Experiments were performed in a new dataset of 50 cataract surgery videos where the usage of 21 surgical
+tools was manually annotated. Very good classification performance are achieved in this dataset:
+tool usage could be labeled with an average area under the ROC curve of $A_z$ = 0.9717 in offline mode
+(using past, present and future information) and $A_z$ = 0.9696 in online mode (using past and present
+information only). 

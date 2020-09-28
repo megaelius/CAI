@@ -1,0 +1,19 @@
+Protecting programs against control-flow hijacking attacks recently has become an arms race between
+defenders and attackers. While certain defenses, e.g., \textit{Control Flow Integrity} (CFI),
+restrict the targets of indirect control-flow transfers through static and dynamic analysis,
+attackers could search the program for available gadgets that fall into the legitimate target sets
+to bypass the defenses. There are several tools helping both attackers in developing exploits and
+analysts in strengthening their defenses. Yet, these tools fail to adequately (1) model the deployed
+defenses, (2) compare them in a head-to-head way, and (3) use program semantic information to help
+craft the attack and the countermeasures. Control Flow Integrity (CFI) has proved to be one of the
+promising defenses against control flow hijacks and tons of efforts have been made to improve CFI
+in various ways in the past decade. However, there is a lack of a systematic assessment of the existing
+CFI defenses. In this paper, we present Reckon, a static source code analysis tool for assessing
+state-of-the-art static CFI defenses, by first precisely modeling them and then evaluating them
+in a unified framework. Reckon helps determine the level of security offered by different CFI defenses,
+and find usable code gadgets even after the CFI defenses were applied, thus providing an important
+step towards successful exploits and stronger defenses. We have used Reckon to assess eight state-of-the-art
+static CFI defenses on real-world programs such as Google's Chrome and Apache Httpd. Reckon provides
+precise measurements of the residual attack surfaces, and accordingly ranks CFI policies against
+each other. It also successfully paves the way to construct code reuse attacks and to eliminate the
+remaining attack surface, by disclosing calltargets under one of the most restrictive CFI defenses.

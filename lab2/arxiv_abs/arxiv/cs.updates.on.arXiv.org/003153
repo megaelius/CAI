@@ -1,0 +1,17 @@
+Recent work on neural network pruning indicates that, at training time, neural networks need to
+be significantly larger in size than is necessary to represent the eventual functions that they
+learn. This paper articulates a new hypothesis to explain this phenomenon. This conjecture, which
+we term the "lottery ticket hypothesis," proposes that successful training depends on lucky random
+initialization of a smaller subcomponent of the network. Larger networks have more of these "lottery
+tickets," meaning they are more likely to luck out with a subcomponent initialized in a configuration
+amenable to successful optimization. This paper conducts a series of experiments with XOR and MNIST
+that support the lottery ticket hypothesis. In particular, we identify these fortuitously-initialized
+subcomponents by pruning low-magnitude weights from trained networks. We then demonstrate that
+these subcomponents can be successfully retrained in isolation so long as the subnetworks are given
+the same initializations as they had at the beginning of the training process. Initialized as such,
+these small networks reliably converge successfully, often faster than the original network at
+the same level of accuracy. However, when these subcomponents are randomly reinitialized or rearranged,
+they perform worse than the original network. In other words, large networks that train successfully
+contain small subnetworks with initializations conducive to optimization. The lottery ticket
+hypothesis and its connection to pruning are a step toward developing architectures, initializations,
+and training strategies that make it possible to solve the same problems with much smaller networks.

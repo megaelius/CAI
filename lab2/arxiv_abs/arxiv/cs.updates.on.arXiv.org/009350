@@ -1,0 +1,19 @@
+Quantum error-correcting codes are used to protect qubits involved in quantum computation. This
+process requires logical operators, acting on protected qubits, to be translated into physical
+operators (circuits) acting on physical quantum states. We propose a mathematical framework for
+synthesizing physical circuits that implement logical Clifford operators for stabilizer codes.
+Circuit synthesis is enabled by representing the desired physical Clifford operator in $\mathbb{C}^{N
+\times N}$ as a partial $2m \times 2m$ binary symplectic matrix, where $N = 2^m$. We state and prove
+two theorems that use symplectic transvections to efficiently enumerate all binary symplectic
+matrices that satisfy a system of linear equations. As a corollary of these results, we prove that
+for an $[\![ m,k ]\!]$ stabilizer code every logical Clifford operator has $2^{r(r+1)/2}$ symplectic
+solutions, where $r = m-k$, up to stabilizer degeneracy. The desired physical circuits are then
+obtained by decomposing each solution into a product of elementary symplectic matrices, that correspond
+to elementary circuits. This enumeration of all physical realizations enables optimization over
+the ensemble with respect to a suitable metric. Furthermore, we show that any circuit that normalizes
+the stabilizer of the code can be transformed into a circuit that centralizes the stabilizer, while
+realizing the same logical operation. Our method of circuit synthesis can be applied to any stabilizer
+code, and this paper discusses a proof of concept synthesis for the $[\![ 6,4,2 ]\!]$ CSS code. Programs
+implementing the algorithms in this paper, which includes routines to solve for binary symplectic
+solutions of general linear systems and our overall LCS (logical circuit synthesis) algorithm,
+can be found at: https://github.com/nrenga/symplectic-arxiv18a 

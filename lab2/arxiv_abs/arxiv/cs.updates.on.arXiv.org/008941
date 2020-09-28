@@ -1,0 +1,20 @@
+How can we efficiently find large numbers of clusters in large data sets with high-dimensional data
+points? Our aim is to explore the current efficiency and large-scale limits in fitting a parametric
+model for clustering to data distributions. To do so, we combine recent lines of research which have
+previously focused on separate specific methods for complexity reduction. We first show theoretically
+how the clustering objective of variational EM (which reduces complexity for many clusters) can
+be combined with coreset objectives (which reduce complexity for many data points). Secondly,
+we realize a concrete highly efficient iterative procedure which combines and translates the theoretical
+complexity gains of truncated variational EM and coresets into a practical algorithm. For very
+large scales, the high efficiency of parameter updates then requires (A) highly efficient coreset
+construction and (B) highly efficient initialization procedures (seeding) in order to avoid computational
+bottlenecks. Fortunately very efficient coreset construction has become available in the form
+of light-weight coresets, and very efficient initialization has become available in the form of
+AFK-MC$^2$ seeding. The resulting algorithm features balanced computational costs across all
+constituting components. In applications to standard large-scale benchmarks for clustering,
+we investigate the algorithm's efficiency/quality trade-off. Compared to the best recent approaches,
+we observe speedups of up to one order of magnitude, and up to two orders of magnitude compared to the
+$k$-means++ baseline. To demonstrate that the observed efficiency enables previously considered
+unfeasible applications, we cluster the entire and unscaled 80 Mio. Tiny Images dataset into up
+to 32,000 clusters. To the knowledge of the authors, this represents the largest scale fit of a parametric
+data model for clustering reported so far. 

@@ -1,0 +1,19 @@
+In genome rearrangements, the mutational event transposition swaps two adjacent blocks of genes
+in one chromosome. The Transposition Distance Problem (TDP) aims to find the minimum number of transpositions
+(distance) required to transform one chromosome into another, both represented as permutations.
+Setting the target permutation as the identity permutation, makes the TDP equivalent to the problem
+of Sorting by Transpositions (SBT). TDP is $\mathcal{NP}$-hard and the best approximation algorithm
+with a $1.375$ ratio was proposed in 2006 by Elias and Hartman. Their algorithm employs a technique
+called simplification to transform an input permutation $\pi$ into a simple permutation $\hat{\pi}$,
+obtained by inserting new symbols into $\pi$ in a way that the lower bound of the transposition distance
+of $\pi$ is kept on $\hat{\pi}$. The assumption is that handling with simple permutations is easier
+than with normal ones. A sequence of transpositions sorting $\hat{\pi}$ can be mimicked to sort
+$\pi$. In this work, we first show that the algorithm of Elias and Hartman may require one transposition
+above the intended approximation ratio of $1.375$, depending on how the input permutation is simplified.
+Then, we propose a new $1.375$-approximation algorithm to solve TDP based on an algebraic formalism
+which does not use simplification, ensuring the approximation ratio of $1.375$ for all the permutations
+in the Symmetric Group $S_n$. We also propose a new upper bound for the transposition distance. Implementations
+of our algorithm and the one of Elias and Hartman were audited using GRAAu tool. The results show that,
+taking as input short permutations with maximum length $13$, in addition to keeping the approximation
+below the $1.375$ ratio, our algorithm returns a higher percentage of exact distances than the one
+of Elias and Hartman. 

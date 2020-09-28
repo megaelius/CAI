@@ -1,0 +1,17 @@
+Given a database of vectors, a cosine threshold query returns all vectors in the database having
+cosine similarity to a query vector above a given threshold {\theta}. These queries arise naturally
+in many applications, such as document retrieval, image search, and mass spectrometry. The present
+paper considers the efficient evaluation of such queries, providing novel optimality guarantees
+and exhibiting good performance on real datasets. We take as a starting point Fagin's well-known
+Threshold Algorithm (TA), which can be used to answer cosine threshold queries as follows: an inverted
+index is first built from the database vectors during pre-processing; at query time, the algorithm
+traverses the index partially to gather a set of candidate vectors to be later verified for {\theta}-similarity.
+However, directly applying TA in its raw form misses significant optimization opportunities.
+Indeed, we first show that one can take advantage of the fact that the vectors can be assumed to be normalized,
+to obtain an improved, tight stopping condition for index traversal and to efficiently compute
+it incrementally. Then we show that one can take advantage of data skewness to obtain better traversal
+strategies. In particular, we show a novel traversal strategy that exploits a common data skewness
+condition which holds in multiple domains including mass spectrometry, documents, and image databases.
+We show that under the skewness assumption, the new traversal strategy has a strong, near-optimal
+performance guarantee. The techniques developed in the paper are quite general since they can be
+applied to a large class of similarity functions beyond cosine. 

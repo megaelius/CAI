@@ -1,0 +1,17 @@
+Overconfidence and underconfidence in machine learning classifiers is measured by calibration:
+the degree to which the probabilities predicted for each class match the accuracy of the classifier
+on that prediction. How one measures calibration remains a challenge: expected calibration error,
+the most popular metric, has numerous flaws which we outline, and there is no clear empirical understanding
+of how its choices affect conclusions in practice, and what recommendations there are to counteract
+its flaws. In this paper, we perform a comprehensive empirical study of choices in calibration measures
+including measuring all probabilities rather than just the maximum prediction, thresholding
+probability values, class conditionality, number of bins, bins that are adaptive to the datapoint
+density, and the norm used to compare accuracies to confidences. To analyze the sensitivity of calibration
+measures, we study the impact of optimizing directly for each variant with recalibration techniques.
+Across MNIST, Fashion MNIST, CIFAR-10/100, and ImageNet, we find that conclusions on the rank ordering
+of recalibration methods is drastically impacted by the choice of calibration measure. We find
+that conditioning on the class leads to more effective calibration evaluations, and that using
+the L2 norm rather than the L1 norm improves both optimization for calibration metrics and the rank
+correlation measuring metric consistency. Adaptive binning schemes lead to more stablity of metric
+rank ordering when the number of bins vary, and is also recommended. We open source a library for the
+use of our calibration measures. 

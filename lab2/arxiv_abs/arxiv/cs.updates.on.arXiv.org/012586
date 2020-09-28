@@ -1,0 +1,17 @@
+In this paper, we propose a novel, effective and simpler end-to-end image clustering auto-encoder
+algorithm: ICAE. The algorithm uses PEDCC (Predefined Evenly-Distributed Class Centroids) as
+the clustering centers, which ensures the inter-class distance of latent features is maximal,
+and adds data distribution constraint, data augmentation constraint, auto-encoder reconstruction
+constraint and Sobel smooth constraint to improve the clustering performance. Specifically,
+we perform one-to-one data augmentation to learn the more effective features. The data and the augmented
+data are simultaneously input into the autoencoder to obtain latent features and the augmented
+latent features whose similarity are constrained by an augmentation loss. Then, making use of the
+maximum mean discrepancy distance (MMD), we combine the latent features and augmented latent features
+to make their distribution close to the PEDCC distribution (uniform distribution between classes,
+Dirac distribution within the class) to further learn clustering-oriented features. At the same
+time, the MSE of the original input image and reconstructed image is used as reconstruction constraint,
+and the Sobel smooth loss to build generalization constraint to improve the generalization ability.
+Finally, extensive experiments on three common datasets MNIST, Fashion-MNIST, COIL20 are conducted.
+The experimental results show that the algorithm has achieved the best clustering results so far.
+In addition, we can use the predefined PEDCC class centers, and the decoder to clearly generate the
+samples of each class. The code can be downloaded at https://github.com/zyWang-Power/Clustering!

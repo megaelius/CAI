@@ -1,0 +1,17 @@
+A parallelized implementation of the Vlasov-Hybrid method [Nunn, 1993] is presented. This method
+is a hybrid between a gridded Eulerian description and Lagrangian meta-particles. Unlike the Particle-in-Cell
+method [Dawson, 1983] which simply adds up the contribution of meta-particles, this method does
+a reconstruction of the distribution function $f$ in every time step for each species. This interpolation
+method combines meta-particles with different weights in such a way that particles with large weight
+do not drown out particles that represent small contributions to the phase space density. These
+core properties allow the use of a much larger range of macro factors and can thus represent a much
+larger dynamic range in phase space density. The reconstructed phase space density $f$ is used to
+calculate momenta of the distribution function such as the charge density $\rho$. The charge density
+$\rho$ is also used as input into a spectral solver that calculates the self-consistent electrostatic
+field which is used to update the particles for the next time-step. Afterlive (A Fourier-based Tool
+in the Electrostatic limit for the Rapid Low-noise Integration of the Vlasov Equation) is fully
+parallelized using MPI and writes output using parallel HDF5. The input to the simulation is read
+from a JSON description that sets the initial particle distributions as well as domain size and discretization
+constraints. The implementation presented here is intentionally limited to one spatial dimension
+and resolves one or three dimensions in velocity space. Additional spatial dimensions can be added
+in a straight forward way, but make runs computationally even more costly. 

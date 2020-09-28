@@ -1,0 +1,20 @@
+We propose Deeply Supervised Object Detectors (DSOD), an object detection framework that can be
+trained from scratch. Recent advances in object detection heavily depend on the off-the-shelf
+models pre-trained on large-scale classification datasets like ImageNet and OpenImage. However,
+one problem is that adopting pre-trained models from classification to detection task may incur
+learning bias due to the different objective function and diverse distributions of object categories.
+Techniques like fine-tuning on detection task could alleviate this issue to some extent but are
+still not fundamental. Furthermore, transferring these pre-trained models across discrepant
+domains will be more difficult (e.g., from RGB to depth images). Thus, a better solution to handle
+these critical problems is to train object detectors from scratch, which motivates our proposed
+method. Previous efforts on this direction mainly failed by reasons of the limited training data
+and naive backbone network structures for object detection. In DSOD, we contribute a set of design
+principles for learning object detectors from scratch. One of the key principles is the deep supervision,
+enabled by layer-wise dense connections in both backbone networks and prediction layers, plays
+a critical role in learning good detectors from scratch. After involving several other principles,
+we build our DSOD based on the single-shot detection framework (SSD). We evaluate our method on PASCAL
+VOC 2007, 2012 and COCO datasets. DSOD achieves consistently better results than the state-of-the-art
+methods with much more compact models. Specifically, DSOD outperforms baseline method SSD on all
+three benchmarks, while requiring only 1/2 parameters. We also observe that DSOD can achieve comparable/slightly
+better results than Mask RCNN + FPN (under similar input size) with only 1/3 parameters, using no
+extra data or pre-trained models. 

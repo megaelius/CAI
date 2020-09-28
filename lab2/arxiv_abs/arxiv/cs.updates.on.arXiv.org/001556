@@ -1,0 +1,19 @@
+The ubiquity of spatio-textual data comes from the popularity of GPS-enabled smart devices, e.g.,
+smartphones. These devices provide a platform that supports a wide range of applications that generate
+and process spatio-textual data. These applications need to process massive amounts of spatio-textual
+data in real-time. For example, in location-aware ad targeting systems, it is required to disseminate
+millions of ads and promotions to millions of users based on the locations and textual profiles of
+users. To support this data scale, these applications require efficient spatio-textual indexing.
+There exist several related spatio-textual indexes that typically integrate a spatial index with
+a textual index. However, these indexes usually have a high demand for main-memory and assume that
+the entire vocabulary of keywords is known in advance. Also, these indexes do not successfully capture
+the variations of the frequencies of keywords across different spatial regions and treat frequent
+and infrequent keywords similarly. Moreover, existing indexes do not adapt to the changes in workload
+over space and time. For example, some keywords may be trending at certain times in certain locations
+and this may change as time passes. To maintain high performance, the index needs to adapt to these
+changes. In this paper, we introduce FAST, a main-memory index that requires up to one third of the
+memory needed by the state-of-the-art index. FAST accounts for the frequencies of keywords within
+their corresponding spatial regions to automatically choose the best indexing approach that optimizes
+the insertion and search times. Extensive experimental evaluation using two real datasets demonstrates
+that FAST is up to 3x faster in search time and 5x faster in insertion time than the state-of-the-art
+indexes. 

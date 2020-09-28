@@ -1,0 +1,17 @@
+The Variational Autoencoder (VAE) is a powerful framework for learning probabilistic latent variable
+generative models. However, typical assumptions on the approximate posterior distribution of
+the encoder and/or the prior, seriously restrict its capacity for inference and generative modeling.
+Variational inference based on neural autoregressive models respects the conditional dependencies
+of the exact posterior, but this flexibility comes at a cost: such models are expensive to train in
+high-dimensional regimes and can be slow to produce samples. In this work, we introduce an orthogonal
+solution, which we call self-reflective inference. By redesigning the hierarchical structure
+of existing VAE architectures, self-reflection ensures that the stochastic flow preserves the
+factorization of the exact posterior, sequentially updating the latent codes in a recurrent manner
+consistent with the generative model. We empirically demonstrate the clear advantages of matching
+the variational posterior to the exact posterior - on binarized MNIST, self-reflective inference
+achieves state-of-the art performance without resorting to complex, computationally expensive
+components such as autoregressive layers. Moreover, we design a variational normalizing flow
+that employs the proposed architecture, yielding predictive benefits compared to its purely generative
+counterpart. Our proposed modification is quite general and complements the existing literature;
+self-reflective inference can naturally leverage advances in distribution estimation and generative
+modeling to improve the capacity of each layer in the hierarchy. 

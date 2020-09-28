@@ -1,0 +1,19 @@
+We present here a new code-based digital signature scheme. This scheme uses $(U,U+V)$ codes where
+both $U$ and $V$ are random. We show that the distribution of signatures is uniform by suitable rejection
+sampling. This is one of the key ingredients for our proof that the scheme achieves {\em existential
+unforgeability under adaptive chosen message attacks} in the random oracle model under two assumptions
+from coding theory, both strongly related to the hardness of decoding in a random linear code. Another
+crucial ingredient is the proof that the syndromes produced by $(U,U+V)$ codes are statistically
+indistinguishable from random syndromes. Note that these two key properties are also required
+for applying a recent and generic proof for code-based signature schemes in the QROM model [CD17].
+As noticed there, this allows to instantiate the code family which is needed and yields a security
+proof of our scheme in the QROM. Our scheme also enjoys an efficient signature generation and verification.
+For a (classical) security of 128 bits, the signature size is less than one kilobyte. Contrarily
+to a current trend in code-based or lattice cryptography which reduces key sizes by using structured
+codes or lattices based on rings, we avoid this here and still get reasonable public key sizes (less
+than 2 megabytes for the aforementioned security level). Our key sizes compare favorably with TESLA,
+which is an (unstructured) lattice based signature scheme that has also a security reduction in
+the QROM model. This gives the first practical signature scheme based on binary codes which comes
+with a security proof and which scales well with the security parameter: for a security level of $2^\lambda$,
+the signature size is of order $O(\lambda)$, public key size is of size $O(\lambda^2)$, signature
+generation cost is of order $O(\lambda^3)$, and signature verification cost is of order $O(\lambda^2)$.

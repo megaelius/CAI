@@ -1,0 +1,8 @@
+Hi All,
+I've heard of a commercial package named ZINK, that could convert MS-Windows
+source-code to XWindows source-code (C). The only problem is, the package
+isn't available in Holland (at least, I can't find it anywhere :-( )
+Is there another package (preferrably free- or shareware), that can do the 
+same thing? And if so, where can I find or buy it?
+Thanks in advance
+Arjen

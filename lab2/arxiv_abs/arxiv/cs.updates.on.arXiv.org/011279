@@ -1,0 +1,20 @@
+The analysis of multi-modality positron emission tomography and computed tomography (PET-CT)
+images for computer aided diagnosis applications requires combining the sensitivity of PET to
+detect abnormal regions with anatomical localization from CT. Current methods for PET-CT image
+analysis either process the modalities separately or fuse information from each modality based
+on knowledge about the image analysis task. These methods generally do not consider the spatially
+varying visual characteristics that encode different information across the different modalities,
+which have different priorities at different locations. For example, a high abnormal PET uptake
+in the lungs is more meaningful for tumor detection than physiological PET uptake in the heart. Our
+aim is to improve fusion of the complementary information in multi-modality PET-CT with a new supervised
+convolutional neural network (CNN) that learns to fuse complementary information for multi-modality
+medical image analysis. Our CNN first encodes modality-specific features and then uses them to
+derive a spatially varying fusion map that quantifies the relative importance of each modality's
+features across different spatial locations. These fusion maps are then multiplied with the modality-specific
+feature maps to obtain a representation of the complementary multi-modality information at different
+locations, which can then be used for image analysis. We evaluated the ability of our CNN to detect
+and segment multiple regions with different fusion requirements using a dataset of PET-CT images
+of lung cancer. We compared our method to baseline techniques for multi-modality image fusion and
+segmentation. Our findings show that our CNN had a significantly higher foreground detection accuracy
+(99.29%, p < 0.05) than the fusion baselines and a significantly higher Dice score (63.85%) than
+recent PET-CT tumor segmentation methods. 

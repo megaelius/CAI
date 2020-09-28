@@ -1,0 +1,19 @@
+Ensemble Kalman filter (EnKF) has been widely used in state estimation and parameter estimation
+for the dynamic system where observational data is obtained sequentially in time. To reduce uncertainty
+and accelerate posterior inference, a two-stage ensemble Kalman filter is presented to improve
+the sequential analysis of EnKF. It is known that the final posterior ensemble may be concentrated
+in a small portion of the entire support of the initial prior ensemble. It will be much more efficient
+if we first build a new prior by some partial observations, and construct a surrogate only over the
+significant region of the new prior. To this end, we construct a very coarse model using generalized
+multiscale finite element method (GMsFEM) and generate a new prior ensemble in the first stage.
+GMsFEM provides a set of hierarchical multiscale basis functions supported in coarse blocks. This
+gives flexibility and adaptivity to choosing degree of freedoms to construct a reduce model. In
+the second stage, we build an initial surrogate model based on the new prior by using GMsFEM and sparse
+generalized polynomial chaos (gPC)-based stochastic collocation methods. To improve the initial
+surrogate model, we dynamically update the surrogate model, which is adapted to the sequential
+availability of data and the updated analysis. The two-stage EnKF can achieve a better estimation
+than standard EnKF, and significantly improve the efficiency to update the ensemble analysis (posterior
+exploration). To enhance the applicability and flexibility in Bayesian inverse problems, we extend
+the two-stage EnKF to non-Gaussian models and hierarchical models. In the paper, we focus on the
+time fractional diffusion-wave models in porous media and investigate their Bayesian inverse
+problems using the proposed two-stage EnKF. 

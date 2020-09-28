@@ -1,0 +1,17 @@
+Consider an undirected network with $n$ nodes and $K$ perceivable communities, where some nodes
+may have mixed memberships. We assume that for each node $1 \leq i \leq n$, there is a probability mass
+function $\pi_i$ defined over $\{1, 2, \ldots, K\}$ such that \[ \pi_i(k) = \mbox{the weight of node
+$i$ on community $k$}, \qquad 1 \leq k \leq K. \] The goal is to estimate $\{\pi_i, 1 \leq i \leq n\}$
+(i.e., membership estimation). We model the network with the {\it degree-corrected mixed membership
+(DCMM)} model \cite{Mixed-SCORE}. Since for many natural networks, the degrees have an approximate
+power-law tail, we allow {\it severe degree heterogeneity} in our model. For any membership estimation
+$\{\hat{\pi}_i, 1 \leq i \leq n\}$, since each $\pi_i$ is a probability mass function, it is natural
+to measure the errors by the average $\ell^1$-norm \[ \frac{1}{n} \sum_{i = 1}^n \| \hat{\pi}_i
+- \pi_i\|_1. \] We also consider a variant of the $\ell^1$-loss, where each $\|\hat{\pi}_i - \pi_i\|_1$
+is re-weighted by the degree parameter $\theta_i$ in DCMM (to be introduced). We present a sharp
+lower bound. We also show that such a lower bound is achievable under a broad situation. More discussion
+in this vein is continued in our forthcoming manuscript. The results are very different from those
+on community detection. For community detection, the focus is on the special case where all $\pi_i$
+are degenerate; the goal is clustering, so Hamming distance is the natural choice of loss function,
+and the rate can be exponentially fast. The setting here is broader and more difficult: it is more
+natural to use the $\ell^1$-loss, and the rate is only polynomially fast. 

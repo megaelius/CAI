@@ -1,0 +1,20 @@
+Depth first search is a natural algorithmic technique for constructing a closed route that visits
+all vertices of a graph. The length of such route equals, in an edge-weighted tree, twice the total
+weight of all edges of the tree and this is asymptotically optimal over all exploration strategies.
+This paper considers a variant of such search strategies where the length of each route is bounded
+by a positive integer $B$ (e.g. due to limited energy resources of the searcher). The objective is
+to cover all the edges of a tree $T$ using the minimum number of routes, each starting and ending at
+the root and each being of length at most $B$. To this end, we analyze the following natural greedy
+tree traversal process that is based on decomposing a depth first search traversal into a sequence
+of limited length routes. Given any arbitrary depth first search traversal $R$ of the tree $T$, we
+cover $R$ with routes $R_1,\ldots,R_l$, each of length at most $B$ such that: $R_i$ starts at the
+root, reaches directly the farthest point of $R$ visited by $R_{i-1}$, then $R_i$ continues along
+the path $R$ as far as possible, and finally $R_i$ returns to the root. We call the above algorithm
+\emph{piecemeal-DFS} and we prove that it achieves the asymptotically minimal number of routes
+$l$, regardless of the choice of $R$. Our analysis also shows that the total length of the traversal
+(and thus the traversal time) of piecemeal-DFS is asymptotically minimum over all energy-constrained
+exploration strategies. The fact that $R$ can be chosen arbitrarily means that the exploration
+strategy can be constructed in an online fashion when the input tree $T$ is not known in advance. Surprisingly,
+our results show that depth first search is efficient for energy constrained exploration of trees,
+even though it is known that the same does not hold for energy constrained exploration of arbitrary
+graphs. 

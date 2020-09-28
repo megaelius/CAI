@@ -1,0 +1,17 @@
+Deploying deep models on embedded devices has been a challenging problem since the great success
+of deep learning based networks. Fixed-point networks, which represent their data with low bits
+fixed-point and thus give remarkable savings on memory usage, are generally preferred. Even though
+current fixed-point networks employ relative low bits (e.g. 8-bits), the memory saving is far from
+enough for the embedded devices. On the other hand, quantization deep networks, for example XNOR-Net
+and HWGQNet, quantize the data into 1 or 2 bits resulting in more significant memory savings but still
+contain lots of floatingpoint data. In this paper, we propose a fixed-point network for embedded
+vision tasks through converting the floatingpoint data in a quantization network into fixed-point.
+Furthermore, to overcome the data loss caused by the conversion, we propose to compose floating-point
+data operations across multiple layers (e.g. convolution, batch normalization and quantization
+layers) and convert them into fixedpoint. We name the fixed-point network obtained through such
+integrated conversion as Integrated Fixed-point Quantization Networks (IFQ-Net). We demonstrate
+that our IFQNet gives 2.16x and 18x more savings on model size and runtime feature map memory respectively
+with similar accuracy on ImageNet. Furthermore, based on YOLOv2, we design IFQ-Tinier-YOLO face
+detector which is a fixed-point network with 256x reduction in model size (246k Bytes) than Tiny-YOLO.
+We illustrate the promising performance of our face detector in terms of detection rate on Face Detection
+Data Set and Bencmark (FDDB) and qualitative results of detecting small faces of Wider Face dataset.

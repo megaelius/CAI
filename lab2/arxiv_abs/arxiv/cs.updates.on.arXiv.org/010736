@@ -1,0 +1,19 @@
+For any fixed measure $H$ that maps graphs to real numbers, the MinH problem is defined as follows:
+given a graph $G$, an integer $k$, and a target $\tau$, is there a set $S$ of $k$ vertices that can be
+deleted, so that $H(G - S)$ is at most $\tau$? In this paper, we consider the MinH problem on trees.
+We call $H$ "balanced on trees" if, whenever $G$ is a tree, there is an optimal choice of $S$ such that
+the components of $G-S$ have sizes bounded by a polynomial in $n/k$. We show that MinH on trees is FPT
+for parameter $n/k$, and furthermore, can be solved in subexponential time, and polynomial space,
+if $H$ is additive, balanced on trees, and computable in polynomial time. A measure of interest is
+the Inverse Geodesic Length (IGL), which is used to gauge the connectedness of a graph. It is defined
+as the sum of inverse distances between every two vertices: $IGL(G)=\sum_{\{u,v\} \subseteq V}
+\frac{1}{d_G(u,v)}$. While MinIGL is W[1]-hard for parameter treewidth, and cannot be solved
+in $2^{o(k+n+m)}$ time, even on bipartite graphs with $n$ vertices and $m$ edges, the complexity
+status of the problem remains open on trees. We show that IGL is balanced on trees, to give a $2^{O((n\log
+n)^{5/6})}$ time, polynomial space algorithm. The distance distribution of $G$ is the sequence
+$\{a_i\}$ describing the number of vertex pairs distance $i$ apart in $G$: $a_i=|\{\{u, v\}: d_G(u,
+v)=i\}|$. We show that the distance distribution of a tree can be computed in $O(n\log^2 n)$ time
+by reduction to polynomial multiplication. We extend our result to graphs with small treewidth
+by showing that the first $p$ values of the distance distribution can be computed in $2^{O(tw(G))}
+n^{1+\varepsilon} \sqrt{p}$ time, and the entire distance distribution can be computed in $2^{O(tw(G))}
+n^{1+\varepsilon}$ time, when the diameter of $G$ is $O(n^{\varepsilon'})$ for every $\varepsilon'>0$.

@@ -1,0 +1,19 @@
+We use convolutional neural networks (CNNs) and recurrent neural networks (RNNs) to estimate the
+parameters of strong gravitational lenses from interferometric observations. We explore multiple
+strategies and find that the best results are obtained when the effects of the dirty beam are first
+removed from the images with a deconvolution performed with an RNN-based structure before estimating
+the parameters. For this purpose, we use the recurrent inference machine (RIM) introduced in Putzky
+& Welling (2017). This provides a fast and automated alternative to the traditional CLEAN algorithm.
+We obtain the uncertainties of the estimated parameters using variational inference with Bernoulli
+distributions. We test the performance of the networks with a simulated test dataset as well as with
+five ALMA observations of strong lenses. For the observed ALMA data we compare our estimates with
+values obtained from a maximum-likelihood lens modeling method which operates in the visibility
+space and find consistent results. We show that we can estimate the lensing parameters with high
+accuracy using a combination of an RNN structure performing image deconvolution and a CNN performing
+lensing analysis, with uncertainties less than a factor of two higher than those achieved with maximum-likelihood
+methods. Including the deconvolution procedure performed by RIM, a single evaluation can be done
+in about a second on a single GPU, providing a more than six orders of magnitude increase in analysis
+speed while using about eight orders of magnitude less computational resources compared to maximum-likelihood
+lens modeling in the uv-plane. We conclude that this is a promising method for the analysis of mm and
+cm interferometric data from current facilities (e.g., ALMA, JVLA) and future large interferometric
+observatories (e.g., SKA), where an analysis in the uv-plane could be difficult or unfeasible.

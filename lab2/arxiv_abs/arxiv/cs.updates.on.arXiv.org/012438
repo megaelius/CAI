@@ -1,0 +1,19 @@
+We consider the efficient estimation of a low-dimensional parameter in the presence of very high-dimensional
+nuisances that may depend on the parameter of interest. An important example is the quantile treatment
+effect (QTE) in causal inference, where the efficient estimation equation involves as a nuisance
+the conditional cumulative distribution evaluated at the quantile to be estimated. Debiased machine
+learning (DML) is a data-splitting approach to address the need to estimate nuisances using flexible
+machine learning methods that may not satisfy strong metric entropy conditions, but applying it
+to problems with estimand-dependent nuisances would require estimating too many nuisances to
+be practical. For the QTE estimation, DML requires we learn the whole conditional cumulative distribution
+function, which may be challenging in practice and stands in contrast to only needing to estimate
+just two regression functions as in the efficient estimation of average treatment effects. Instead,
+we propose localized debiased machine learning (LDML), a new three-way data-splitting approach
+that avoids this burdensome step and needs only estimate the nuisances at a single initial bad guess
+for the parameters. In particular, under a Frechet-derivative orthogonality condition, we show
+the oracle estimation equation is asymptotically equivalent to one where the nuisance is evaluated
+at the true parameter value and we provide a strategy to target this alternative formulation. In
+the case of QTE estimation, this involves only learning two binary regression models, for which
+many standard, time-tested machine learning methods exist. We prove that under certain lax rate
+conditions, our estimator has the same favorable asymptotic behavior as the infeasible oracle
+estimator that solves the estimating equation with the true nuisance functions. 

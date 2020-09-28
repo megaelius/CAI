@@ -1,0 +1,18 @@
+Given a set $X$ of $n$ binary words of equal length $w$, the 3XOR problem asks for three elements $a,
+b, c \in X$ such that $a \oplus b=c$, where $ \oplus$ denotes the bitwise XOR operation. The problem
+can be easily solved on a word RAM with word length $w$ in time $O(n^2 \log{n})$. Using Han's fast integer
+sorting algorithm (2002/2004) this can be reduced to $O(n^2 \log{\log{n}})$. With randomization
+or a sophisticated deterministic dictionary construction, creating a hash table for $X$ with constant
+lookup time leads to an algorithm with (expected) running time $O(n^2)$. At present, seemingly
+no faster algorithms are known. We present a surprisingly simple deterministic, quadratic time
+algorithm for 3XOR. Its core is a version of the Patricia trie for $X$, which makes it possible to traverse
+the set $a \oplus X$ in ascending order for arbitrary $a\in \{0, 1\}^{w}$ in linear time. Furthermore,
+we describe a randomized algorithm for 3XOR with expected running time $O(n^2\cdot\min\{\log^3{w}/w,
+(\log\log{n})^2/\log^2 n\})$. The algorithm transfers techniques to our setting that were used
+by Baran, Demaine, and P\u{a}tra\c{s}cu (2005/2008) for solving the related int3SUM problem (the
+same problem with integer addition in place of binary XOR) in expected time $o(n^2)$. As suggested
+by Jafargholi and Viola (2016), linear hash functions are employed. The latter authors also showed
+that assuming 3XOR needs expected running time $n^{2-o(1)}$ one can prove conditional lower bounds
+for triangle enumeration just as with 3SUM. We demonstrate that 3XOR can be reduced to other problems
+as well, treating the examples offline SetDisjointness and offline SetIntersection, which were
+studied for 3SUM by Kopelowitz, Pettie, and Porat (2016). 

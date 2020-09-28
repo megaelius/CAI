@@ -1,0 +1,18 @@
+Equilibrium Propagation (EP) is a biologically inspired alternative algorithm to backpropagation
+(BP) for training neural networks. It applies to RNNs fed by a static input x that settle to a steady
+state, such as Hopfield networks. EP is similar to BP in that in the second phase of training, an error
+signal propagates backwards in the layers of the network, but contrary to BP, the learning rule of
+EP is spatially local. Nonetheless, EP suffers from two major limitations. On the one hand, due to
+its formulation in terms of real-time dynamics, EP entails long simulation times, which limits
+its applicability to practical tasks. On the other hand, the biological plausibility of EP is limited
+by the fact that its learning rule is not local in time: the synapse update is performed after the dynamics
+of the second phase have converged and requires information of the first phase that is no longer available
+physically. Our work addresses these two issues and aims at widening the spectrum of EP from standard
+machine learning models to more bio-realistic neural networks. First, we propose a discrete-time
+formulation of EP which enables to simplify equations, speed up training and extend EP to CNNs. Our
+CNN model achieves the best performance ever reported on MNIST with EP. Using the same discrete-time
+formulation, we introduce Continual Equilibrium Propagation (C-EP): the weights of the network
+are adjusted continually in the second phase of training using local information in space and time.
+We show that in the limit of slow changes of synaptic strengths and small nudging, C-EP is equivalent
+to BPTT (Theorem 1). We numerically demonstrate Theorem 1 and C-EP training on MNIST and generalize
+it to the bio-realistic situation of a neural network with asymmetric connections between neurons.

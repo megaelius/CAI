@@ -1,0 +1,17 @@
+In recent years, we have witnessed an increased interest in temporal modeling of patient records
+from large scale Electronic Health Records (EHR). While simpler RNN models have been used for such
+problems, memory networks, which in other domains were found to generalize well, are underutilized.
+Traditional memory networks involve diffused and non-linear operations where influence of past
+events on outputs are not readily quantifiable. We posit that this lack of interpretability makes
+such networks not applicable for EHR analysis. While networks with explicit memory have been proposed
+recently, the discontinuities imposed by the discrete operations make such networks harder to
+train and require more supervision. The problem is further exacerbated in the limited data setting
+of EHR studies. In this paper, we propose a novel memory architecture that is more interpretable
+than traditional memory networks while being easier to train than explicit memory banks. Inspired
+by well-known models of human cognition, we propose partitioning the external memory space into
+(a) a primary explicit memory block to store exact replicas of recent events to support interpretations,
+followed by (b) a secondary blurred memory block that accumulates salient aspects of past events
+dropped from the explicit block as higher level abstractions and allow training with less supervision
+by stabilize the gradients. We apply the model for 3 learning problems on ICU records from the MIMIC
+III database spanning millions of data points. Our model performs comparably to the state-of the
+art while also, crucially, enabling ready interpretation of the results. 

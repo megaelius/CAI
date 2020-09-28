@@ -1,0 +1,18 @@
+Data-flow testing (DFT) aims to detect potential data interaction anomalies by focusing on the
+points at which variables receive values and the points at which these values are used. Such test
+objectives are referred as \emph{def-use pairs}. However, the complexity of DFT still overwhelms
+the testers in practice. To tackle this problem, we introduce a hybrid testing framework for data-flow
+based test generation: (1) The core of our framework is symbolic execution (SE), enhanced by a novel
+guided path exploration strategy to improve testing performance; and (2) we systematically cast
+DFT as reachability checking in software model checking (SMC) to complement SE, yielding practical
+DFT that combines the two techniques' strengths. We implemented our framework for C programs on
+top of the state-of-the-art symbolic execution engine KLEE and instantiated with three different
+software model checkers. Our evaluation on the 28,354 def-use pairs collected from 33 open-source
+and industrial program subjects shows (1) our SE-based approach can improve DFT performance by
+15$\sim$48% in terms of testing time, compared with existing search strategies; and (2) our combined
+approach can further reduce testing time by 20.1$\sim$93.6%, and improve data-flow coverage by
+27.8$\sim$45.2% by eliminating infeasible test objectives. Compared with the SMC-based approach
+alone, our combined approach can also reduce testing time by 19.9$\sim$23.8%, and improve data-flow
+coverage by 7$\sim$10%. This combined approach also enables the cross-checking of each component
+for reliable and robust testing results. We have made our testing framework and benchmarks publicly
+available to facilitate future research. 

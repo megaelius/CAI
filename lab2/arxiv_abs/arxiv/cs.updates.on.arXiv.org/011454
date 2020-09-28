@@ -1,0 +1,18 @@
+Multi-label classification studies the task where each example belongs to multiple labels simultaneously.
+As a representative method, Ranking Support Vector Machine (Rank-SVM) aims to minimize the Ranking
+Loss and can also mitigate the negative influence of the class-imbalance issue. However, due to
+its stacking-style way for thresholding, it may suffer error accumulation and thus reduces the
+final classification performance. Binary Relevance (BR) is another typical method, which aims
+to minimize the Hamming Loss and only needs one-step learning. Nevertheless, it might have the class-imbalance
+issue and does not take into account label correlations. To address the above issues, we propose
+a novel multi-label classification model, which joints Ranking support vector machine and Binary
+Relevance with robust Low-rank learning (RBRL). RBRL inherits the ranking loss minimization advantages
+of Rank-SVM, and thus overcomes the disadvantages of BR suffering the class-imbalance issue and
+ignoring the label correlations. Meanwhile, it utilizes the hamming loss minimization and one-step
+learning advantages of BR, and thus tackles the disadvantages of Rank-SVM including another thresholding
+learning step. Besides, a low-rank constraint is utilized to further exploit high-order label
+correlations under the assumption of low dimensional label space. Furthermore, to achieve nonlinear
+multi-label classifiers, we derive the kernelization RBRL. Two accelerated proximal gradient
+methods (APG) are used to solve the optimization problems efficiently. Extensive comparative
+experiments with several state-of-the-art methods illustrate a highly competitive or superior
+performance of our method RBRL. 

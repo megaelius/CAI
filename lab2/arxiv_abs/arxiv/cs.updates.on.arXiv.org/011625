@@ -1,0 +1,19 @@
+Deep Learning systems (DL) based on Deep Neural Networks (DNNs) are more and more used in various
+aspects of our life, including unmanned vehicles, speech processing, and robotics. However, due
+to the limited dataset and the dependence on manual labeling data, DNNs often fail to detect their
+erroneous behaviors, which may lead to serious problems. Several approaches have been proposed
+to enhance the input examples for testing DL systems. However, they have the following limitations.
+First, they design and generate adversarial examples from the perspective of model, which may cause
+low generalization ability when they are applied to other models. Second, they only use surface
+feature constraints to judge the difference between the adversarial example generated and the
+original example. The deep feature constraints, which contain high-level semantic information,
+such as image object category and scene semantics are completely neglected. To address these two
+problems, in this paper, we propose CAGFuzz, a Coverage-guided Adversarial Generative Fuzzing
+testing approach, which generates adversarial examples for a targeted DNN to discover its potential
+defects. First, we train an adversarial case generator (AEG) from the perspective of general data
+set. Second, we extract the depth features of the original and adversarial examples, and constrain
+the adversarial examples by cosine similarity to ensure that the semantic information of adversarial
+examples remains unchanged. Finally, we retrain effective adversarial examples to improve neuron
+testing coverage rate. Based on several popular data sets, we design a set of dedicated experiments
+to evaluate CAGFuzz. The experimental results show that CAGFuzz can improve the neuron coverage
+rate, detect hidden errors, and also improve the accuracy of the target DNN. 

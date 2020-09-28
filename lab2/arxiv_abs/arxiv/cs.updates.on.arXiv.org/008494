@@ -1,0 +1,17 @@
+Although the emergence of the programmable smart contract makes blockchain systems easily embrace
+a wider range of industrial areas, how to execute smart contracts efficiently becomes a big challenge
+nowadays. Due to the existence of Byzantine nodes, the mechanism of executing smart contracts is
+quite different from that in database systems, so that existing successful concurrency control
+protocols in database systems cannot be employed directly. Moreover, even though smart contract
+execution follows a two-phase style, i.e, the miner node executes a batch of smart contracts in the
+first phase and the validators replay them in the second phase, existing parallel solutions only
+focus on the optimization in the first phase, but not including the second phase. In this paper, we
+propose a novel efficient concurrency control scheme which is the first one to do optimization in
+both phases. Specifically, (i) in the first phase, we give a variant of OCC (Optimistic Concurrency
+Control) protocol based on {\em batching} feature to improve the concurrent execution efficiency
+for the miner and produce a schedule log with high parallelism for validators. Also, a graph partition
+algorithm is devised to divide the original schedule log into small pieces and further reduce the
+communication cost; and (ii) in the second phase, we give a deterministic OCC protocol to replay
+all smart contracts efficiently on multi-core validators where all cores can replay smart contracts
+independently. Theoretical analysis and extensive experimental results illustrate that the
+proposed scheme outperforms state-of-art solutions significantly. 

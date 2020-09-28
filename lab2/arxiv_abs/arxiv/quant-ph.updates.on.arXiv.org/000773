@@ -1,0 +1,17 @@
+Noisy Intermediate-Scale Quantum (NISQ) machines are not fault-tolerant, operate few qubits
+(currently, less than hundred), but are capable of executing interesting computations. Above
+the quantum supremacy threshold (approx. 60 qubits), NISQ machines are expected to be more powerful
+than existing classical computers. One of the most stringent problems is that computations (expressed
+as quantum circuits) have to be adapted (compiled) to the NISQ hardware, because the hardware does
+not support arbitrary interactions between the qubits. This procedure introduces additional
+gates (e.g. SWAP gates) into the circuits while leaving the implemented computations unchanged.
+Each additional gate increases the failure rate of the adapted (compiled) circuits, because the
+hardware and the circuits are not fault-tolerant. It is reasonable to expect that the placement
+influences the number of additionally introduced gates. Therefore, a combinatorial problem arises:
+how are circuit qubits allocated (placed) initially to the hardware qubits? The novelty of this
+work relies on the methodology used to investigate the influence of the initial placement. To this
+end, we introduce a novel heuristic and cost model to estimate the number of gates necessary to adapt
+a circuit to a given NISQ architecture. We implement the heuristic (source code available on github)
+and benchmark it using a standard compiler (e.g. from IBM Qiskit) treated as a black box. Preliminary
+results indicate that cost reductions of up to 10\% can be achieved for practical circuit instances
+on realistic NISQ architectures only by placing qubits differently than default (trivial placement).

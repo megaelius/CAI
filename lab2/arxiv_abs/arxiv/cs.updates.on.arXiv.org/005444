@@ -1,0 +1,19 @@
+We introduce the probably approximately correct (PAC) {Battling-Bandit} problem with the Plackett-Luce
+(PL) subset choice model---an online learning framework where at each trial the learner chooses
+a subset of $k$ arms from a fixed set of $n$ arms, and subsequently observes a stochastic feedback
+indicating preference information of the items in the chosen subset, e.g., the most preferred item
+or ranking of the top $m$ most preferred items etc. The objective is to identify a near-best item in
+the underlying PL model {with high confidence}. This generalizes the well-studied PAC {Dueling-Bandit}
+problem over $n$ arms, which aims to recover the {best-arm} from pairwise preference information,
+and is known to require $O(\frac{n}{\epsilon^2} \ln \frac{1}{\delta})$ sample complexity. We
+study the sample complexity of this problem under various feedback models: (1) Winner of the subset
+(WI), and (2) Ranking of top-$m$ items (TR) for $2\le m \le k$. We show, surprisingly, that with winner
+information (WI) feedback over subsets of size $2 \leq k \leq n$, the best achievable sample complexity
+is still $O\left( \frac{n}{\epsilon^2} \ln \frac{1}{\delta}\right)$, independent of $k$, and
+the same as that in the Dueling Bandit setting ($k=2$). For the more general top-$m$ ranking (TR)
+feedback model, we show a significantly smaller lower bound on sample complexity of $\Omega\bigg(
+\frac{n}{m\epsilon^2} \ln \frac{1}{\delta}\bigg)$, which suggests a multiplicative reduction
+by a factor ${m}$ owing to the additional information revealed from preferences among $m$ items
+instead of just $1$. We also propose two algorithms for the PAC problem with the TR feedback model
+with optimal (upto logarithmic factors) sample complexity guarantees, establishing the increase
+in statistical efficiency from exploiting rank-ordered feedback. 

@@ -1,0 +1,18 @@
+In this paper, we study the problem of training large-scale face identification model with imbalanced
+training data. This problem naturally exists in many real scenarios including large-scale celebrity
+recognition, movie actor annotation, etc. Our solution contains two components. First, we build
+a face feature extraction model, and improve its performance, especially for the persons with very
+limited training samples, by introducing a regularizer to the cross entropy loss for the multi-nomial
+logistic regression (MLR) learning. This regularizer encourages the directions of the face features
+from the same class to be close to the direction of their corresponding classification weight vector
+in the logistic regression. Second, we build a multi-class classifier using MLR on top of the learned
+face feature extraction model. Since the standard MLR has poor generalization capability for the
+one-shot classes even if these classes have been oversampled, we propose a novel supervision signal
+called underrepresented-classes promotion loss, which aligns the norms of the weight vectors
+of the one-shot classes (a.k.a. underrepresented-classes) to those of the normal classes. In addition
+to the original cross entropy loss, this new loss term effectively promotes the underrepresented
+classes in the learned model and leads to a remarkable improvement in face recognition performance.
+We test our solution on the MS-Celeb-1M low-shot learning benchmark task. Our solution recognizes
+94.89% of the test images at the precision of 99\% for the one-shot classes. To the best of our knowledge,
+this is the best performance among all the published methods using this benchmark task with the same
+setup, including all the participants in the recent MS-Celeb-1M challenge at ICCV 2017. 

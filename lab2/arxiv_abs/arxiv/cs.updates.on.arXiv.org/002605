@@ -1,0 +1,18 @@
+We consider the computational complexity of finding a legal black pebbling of a DAG $G=(V,E)$ with
+minimum cumulative cost. A black pebbling is a sequence $P_0,\ldots, P_t \subseteq V$ of sets of
+nodes which must satisfy the following properties: $P_0 = \emptyset$ (we start off with no pebbles
+on $G$), $\mathsf{sinks}(G) \subseteq \bigcup_{j \leq t} P_j$ (every sink node was pebbled at some
+point) and $\mathsf{parents}\big(P_{i+1}\backslash P_i\big) \subseteq P_i$ (we can only place
+a new pebble on a node $v$ if all of $v$'s parents had a pebble during the last round). The cumulative
+cost of a pebbling $P_0,P_1,\ldots, P_t \subseteq V$ is $\mathsf{cc}(P) = | P_1| + \ldots + | P_t|$.
+The cumulative pebbling cost is an especially important security metric for data-independent
+memory hard functions, an important primitive for password hashing. Thus, an efficient (approximation)
+algorithm would be an invaluable tool for the cryptanalysis of password hash functions as it would
+provide an automated tool to establish tight bounds on the amortized space-time cost of computing
+the function. We show that such a tool is unlikely to exist. In particular, we prove the following
+results. (1) It is $\texttt{NP}\mbox{-}\texttt{Hard}$ to find a pebbling minimizing cumulative
+cost. (2) The natural linear program relaxation for the problem has integrality gap $\tilde{O}(n)$,
+where $n$ is the number of nodes in $G$. We conjecture that the problem is hard to approximate. (3)
+We show that a related problem, find the minimum size subset $S\subseteq V$ such that $\textsf{depth}(G-S)
+\leq d$, is also $\texttt{NP}\mbox{-}\texttt{Hard}$. In fact, under the unique games conjecture
+there is no $(2-\epsilon)$-approximation algorithm. 

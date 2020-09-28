@@ -1,0 +1,19 @@
+Sampling from certain distributions is a prohibitively challenging task. Special-purpose hardware
+such as quantum annealers may be able to more efficiently sample from such distributions, which
+could find application in optimization, sampling tasks, and machine learning. Current quantum
+annealers impose certain constraints on the structure of the cost Hamiltonian due to the connectivity
+of the individual processing units. This means that in order to solve many problems of interest,
+one is required to embed the native graph into the hardware graph. The effect of embedding for sampling
+is more pronounced than for optimization; for optimization one is just concerned with mapping ground
+states to ground states, whereas for sampling one needs to consider states at all energies. We argue
+that as the problem size grows, or the embedding size grows, the chance of a sample being in the logical
+subspace is exponentially suppressed. It is therefore necessary to construct post-processing
+techniques to evade this exponential sampling overhead, techniques that project from the embedded
+distribution one is physically sampling from, back to the logical space of the native problem. We
+show that the most naive (and most common) projection technique, known as majority vote, can fail
+quite spectacularly at preserving distribution properties. We show that, even with care, one cannot
+avoid bias in the general case. Specifically we prove through a simple and generic (counter) example
+that no post-processing technique, under reasonable assumptions, can avoid biasing the statistics
+in the general case. On the positive side, we demonstrate a new resampling technique for performing
+this projection which substantially out-performs majority vote and may allow one to much more effectively
+sample from graphs of interest. 

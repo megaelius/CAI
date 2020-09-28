@@ -1,0 +1,19 @@
+Standard distributed machine learning frameworks require collecting the training data from data
+providers and storing it in a datacenter. To ease privacy concerns, alternative distributed machine
+learning frameworks (such as {\em Federated Learning}) have been proposed, wherein the training
+data is kept confidential by its providers from the learner, and the learner learns the model by communicating
+with data providers. However, such frameworks suffer from serious security risks, as data providers
+are vulnerable to adversarial attacks and the learner lacks of enough administrative power. We
+assume in each communication round, up to $q$ out of the $m$ data providers/workers suffer Byzantine
+faults. Each worker keeps a local sample of size $n$ and the total sample size is $N=nm$. Of particular
+interest is the high-dimensional regime, where the local sample size $n$ is much smaller than the
+model dimension $d$. We propose a secured variant of the gradient descent method and show that it
+tolerates up to a constant fraction of Byzantine workers. Moreover, we show the statistical estimation
+error of the iterates converges in $O(\log N)$ rounds to $O(\sqrt{q/N} + \sqrt{d/N})$, which is
+larger than the minimax-optimal error rate $O(\sqrt{d/N})$ in the failure-free setting by at most
+an additive term $O(\sqrt{q/N})$. As long as $q=O(d)$, our proposed algorithm achieves the optimal
+error rate $O(\sqrt{d/N})$. The core of our method is a robust gradient aggregator based on the iterative
+filtering algorithm proposed by Steinhardt et al. We establish a {\em uniform} concentration of
+the sample covariance matrix of gradients, and show that the aggregated gradient, as a function
+of model parameter, converges uniformly to the true gradient function. As a by-product, we develop
+a new concentration inequality for sample covariance matrices, which might be of independent interest.

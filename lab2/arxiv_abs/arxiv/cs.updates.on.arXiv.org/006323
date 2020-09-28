@@ -1,0 +1,19 @@
+Minification is a widely-accepted technique which aims at reducing the size of the code transmitted
+over the web. We study the problem of minifying Cascading Style Sheets (CSS) --- the de facto language
+for styling web documents. Traditionally, CSS minifiers focus on simple syntactic transformations
+(e.g. shortening colour names). In this paper, we propose a new minification method based on merging
+similar rules in a CSS file. We consider safe transformations of CSS files, which preserve the semantics
+of the CSS file. The semantics of CSS files are sensitive to the ordering of rules in the file. To automatically
+identify a rule merging opportunity that best minimises file size, we reduce the rule-merging problem
+to a problem on CSS-graphs, i.e., node-weighted bipartite graphs with a dependency ordering on
+the edges, where weights capture the number of characters (e.g. in a selector or in a property declaration).
+Roughly speaking, the corresponding CSS-graph problem concerns minimising the total weight of
+a sequence of bicliques (complete bipartite subgraphs) that covers the CSS-graph and respects
+the edge order. We provide the first full formalisation of CSS3 selectors and reduce dependency
+detection to satisfiability of quantifier-free integer linear arithmetic, for which highly-optimised
+SMT-solvers are available. To solve the above NP-hard graph optimisation problem, we show how Max-SAT
+solvers can be effectively employed. We have implemented our algorithms using Max-SAT and SMT-solvers
+as backends, and tested against approximately 70 real-world examples (including the top 20 most
+popular websites). In our benchmarks, our tool yields larger savings than six well-known minifiers
+(which do not perform rule-merging, but support many other optimisations). Our experiments also
+suggest that better savings can be achieved in combination with one of these six minifiers. 

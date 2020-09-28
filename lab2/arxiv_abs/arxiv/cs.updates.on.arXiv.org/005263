@@ -1,0 +1,19 @@
+Multi-agent settings are quickly gathering importance in machine learning. This includes a plethora
+of recent work on deep multi-agent reinforcement learning, but also can be extended to hierarchical
+RL, generative adversarial networks and decentralised optimisation. In all these settings the
+presence of multiple learning agents renders the training problem non-stationary and often leads
+to unstable training or undesired final results. We present Learning with Opponent-Learning Awareness
+(LOLA), a method in which each agent shapes the anticipated learning of the other agents in the environment.
+The LOLA learning rule includes a term that accounts for the impact of one agent's policy on the anticipated
+parameter update of the other agents. Results show that the encounter of two LOLA agents leads to
+the emergence of tit-for-tat and therefore cooperation in the iterated prisoners' dilemma, while
+independent learning does not. In this domain, LOLA also receives higher payouts compared to a naive
+learner, and is robust against exploitation by higher order gradient-based methods. Applied to
+repeated matching pennies, LOLA agents converge to the Nash equilibrium. In a round robin tournament
+we show that LOLA agents successfully shape the learning of a range of multi-agent learning algorithms
+from literature, resulting in the highest average returns on the IPD. We also show that the LOLA update
+rule can be efficiently calculated using an extension of the policy gradient estimator, making
+the method suitable for model-free RL. The method thus scales to large parameter and input spaces
+and nonlinear function approximators. We apply LOLA to a grid world task with an embedded social
+dilemma using recurrent policies and opponent modelling. By explicitly considering the learning
+of the other agent, LOLA agents learn to cooperate out of self-interest. The code is at github.com/alshedivat/lola.

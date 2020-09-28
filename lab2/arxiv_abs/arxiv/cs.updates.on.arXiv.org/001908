@@ -1,0 +1,17 @@
+An adversarial example is an example that has been adjusted to produce the wrong label when presented
+to a system at test time. If adversarial examples existed that could fool a detector, they could be
+used to (for example) wreak havoc on roads populated with smart vehicles. Recently, we described
+our difficulties creating physical adversarial stop signs that fool a detector. More recently,
+Evtimov et al. produced a physical adversarial stop sign that fools a proxy model of a detector. In
+this paper, we show that these physical adversarial stop signs do not fool two standard detectors
+(YOLO and Faster RCNN) in standard configuration. Evtimov et al.'s construction relies on a crop
+of the image to the stop sign; this crop is then resized and presented to a classifier. We argue that
+the cropping and resizing procedure largely eliminates the effects of rescaling and of view angle.
+Whether an adversarial attack is robust under rescaling and change of view direction remains moot.
+We argue that attacking a classifier is very different from attacking a detector, and that the structure
+of detectors - which must search for their own bounding box, and which cannot estimate that box very
+accurately - likely makes it difficult to make adversarial patterns. Finally, an adversarial pattern
+on a physical object that could fool a detector would have to be adversarial in the face of a wide family
+of parametric distortions (scale; view angle; box shift inside the detector; illumination; and
+so on). Such a pattern would be of great theoretical and practical interest. There is currently no
+evidence that such patterns exist. 

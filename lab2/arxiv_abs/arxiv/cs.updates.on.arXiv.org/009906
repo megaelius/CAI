@@ -1,0 +1,18 @@
+The web serving protocol stack is constantly changing and evolving to tackle technological shifts
+in networking infrastructure and website complexity. As a result of this evolution, the web serving
+stack includes a plethora of protocols and configuration parameters that enable the web serving
+stack to address a variety of realistic network conditions. Yet, today, most content providers
+have adopted a "one-size-fits-all" approach to configuring the networking stack of their user
+facing web servers (or at best employ moderate tuning), despite the significant diversity in end-user
+networks and devices. In this paper, we revisit this problem and ask a more fundamental question:
+Are there benefits to tuning the network stack? If so, what system design choices and algorithmic
+ensembles are required to enable modern content provider to dynamically and flexibly tune their
+protocol stacks. We demonstrate through substantial empirical evidence that this "one-size-fits-all"
+approach results in sub-optimal performance and argue for a novel framework that extends existing
+CDN architectures to provide programmatic control over the configuration options of the CDN serving
+stack. We designed ConfigTron a data-driven framework that leverages data from all connections
+to identify their network characteristics and learn the optimal configuration parameters to improve
+end-user performance. ConfigTron uses contextual multi-arm bandit-based learning algorithm
+to find optimal configurations in minimal time, enabling a content providers to systematically
+explore heterogeneous configurations while improving end-user page load time by as much as 19%
+(upto 750ms) on median. 

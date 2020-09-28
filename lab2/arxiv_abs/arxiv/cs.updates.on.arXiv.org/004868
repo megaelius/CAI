@@ -1,0 +1,17 @@
+This paper looks into the problem of grasping unknown objects in a cluttered environment using 3D
+point cloud data obtained from a range or an RGBD sensor. The objective is to identify graspable regions
+and detect suitable grasp poses from a single view, possibly, partial 3D point cloud without any
+apriori knowledge of the object geometry. The problem is solved in two steps: (1) identifying and
+segmenting various object surfaces and, (2) searching for suitable grasping handles on these surfaces
+by applying geometric constraints of the physical gripper. The first step is solved by using a modified
+version of region growing algorithm that uses a pair of thresholds for smoothness constraint on
+local surface normals to find natural boundaries of object surfaces. In this process, a novel concept
+of edge point is introduced that allows us to segment between different surfaces of the same object.
+The second step is solved by converting a 6D pose detection problem into a 1D linear search problem
+by projecting 3D cloud points onto the principal axes of the object surface. The graspable handles
+are then localized by applying physical constraints of the gripper. The resulting method allows
+us to grasp all kinds of objects including rectangular or box-type objects with flat surfaces which
+have been difficult so far to deal with in the grasping literature. The proposed method is simple
+and can be implemented in real-time and does not require any off-line training phase for finding
+these affordances. The improvements achieved is demonstrated through comparison with another
+state-of-the-art grasping algorithm on various publicly-available and self-created datasets.

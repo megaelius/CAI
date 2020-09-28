@@ -1,0 +1,19 @@
+We propose a generic mechanism to efficiently release differentially private synthetic versions
+of high-dimensional datasets with high utility. The core technique in our mechanism is the use of
+copulas. Specifically, we use the Gaussian copula to define dependencies of attributes in the input
+dataset, whose rows are modelled as samples from an unknown multivariate distribution, and then
+sample synthetic records through this copula. Despite the inherently numerical nature of Gaussian
+correlations we construct a method that is applicable to both numerical and categorical attributes
+alike. Our mechanism is efficient in that it only takes time proportional to the square of the number
+of attributes in the dataset. We propose a differentially private way of constructing the Gaussian
+copula without compromising computational efficiency. Through experiments on three real-world
+datasets, we show that we can obtain highly accurate answers to the set of all one-way marginal, and
+two-and three-way positive conjunction queries, with 99\% of the query answers having absolute
+(fractional) error rates between 0.01 to 3\%. Furthermore, for a majority of two-way and three-way
+queries, we outperform independent noise addition through the well-known Laplace mechanism.
+In terms of computational time we demonstrate that our mechanism can output synthetic datasets
+in around 6 minutes 47 seconds on average with an input dataset of about 200 binary attributes and
+more than 32,000 rows, and about 2 hours 30 mins to execute a much larger dataset of about 700 binary
+attributes and more than 5 million rows. To further demonstrate scalability, we ran the mechanism
+on larger (artificial) datasets with 1,000 and 2,000 binary attributes (and 5 million rows) obtaining
+synthetic outputs in approximately 6 and 19 hours, respectively. 

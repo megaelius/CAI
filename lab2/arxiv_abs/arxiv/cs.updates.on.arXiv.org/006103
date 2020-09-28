@@ -1,0 +1,20 @@
+Accurate localization and segmentation of intervertebral disc (IVD) is crucial for the assessment
+of spine disease diagnosis. Despite the technological advances in medical imaging, IVD localization
+and segmentation are still manually performed, which is time-consuming and prone to errors. If,
+in addition, multi-modal imaging is considered, the burden imposed on disease assessments increases
+substantially. In this paper, we propose an architecture for IVD localization and segmentation
+in multi-modal MRI, which extends the well-known UNet. Compared to single images, multi-modal
+data brings complementary information, contributing to better data representation and discriminative
+power. Our contributions are three-fold. First, how to effectively integrate and fully leverage
+multi-modal data remains almost unexplored. In this work, each MRI modality is processed in a different
+path to better exploit their unique information. Second, inspired by HyperDenseNet, the network
+is densely-connected both within each path and across different paths, granting the model the freedom
+to learn where and how the different modalities should be processed and combined. Third, we improved
+standard U-Net modules by extending inception modules with two dilated convolutions blocks of
+different scale, which helps handling multi-scale context. We report experiments over the data
+set of the public MICCAI 2018 Challenge on Automatic Intervertebral Disc Localization and Segmentation,
+with 13 multi-modal MRI images used for training and 3 for validation. We trained IVD-Net on an NVidia
+TITAN XP GPU with 16 GBs RAM, using ADAM as optimizer and a learning rate of 10e-5 during 200 epochs.
+Training took about 5 hours, and segmentation of a whole volume about 2-3 seconds, on average. Several
+baselines, with different multi-modal fusion strategies, were used to demonstrate the effectiveness
+of the proposed architecture. 

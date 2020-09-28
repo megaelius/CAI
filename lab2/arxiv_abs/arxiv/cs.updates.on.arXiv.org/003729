@@ -1,0 +1,20 @@
+In recent years, high interest in using Virtual Machines (VMs) in data centers and Cloud computing
+has significantly increased the demand for high-performance data storage systems. Recent studies
+suggest using SSDs as a caching layer for HDD-based storage subsystems in virtualization platforms.
+Such studies neglect to address the endurance and cost of SSDs, which can significantly affect the
+efficiency of I/O caching. Moreover, previous studies only configure the cache size to provide
+the required performance level for each VM, while neglecting other important parameters such as
+cache write policy and request type, which can adversely affect both performance-per-cost and
+endurance. In this paper, we present a new high-Endurance and Cost-efficient I/O Caching (ECI-Cache)
+scheme for virtualized platforms, which can significantly improve both the performance-per-cost
+and endurance of storage subsystems as opposed to previously proposed I/O caching schemes. Unlike
+traditional I/O caching schemes which allocate cache size only based on reuse distance of accesses,
+we propose a new metric, Useful Reuse Distance (URD), which considers the request type in reuse distance
+calculation, resulting in improved performance-per-cost and endurance for the SSD cache. Via
+online characterization of workloads and using URD, ECI-Cache partitions the SSD cache across
+VMs and is able to dynamically adjust the cache size and write policy for each VM. To evaluate the proposed
+scheme, we have implemented ECI-Cache in an open source hypervisor, QEMU (version 2.8.0), on a server
+running the CentOS 7 operating system (kernel version 3.10.0-327). Experimental results show
+that our proposed scheme improves the performance, performance-per-cost, and endurance of the
+SSD cache by 17%, 30% and 65%, respectively, compared to the state-of-the-art dynamic cache partitioning
+scheme. 

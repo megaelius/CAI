@@ -1,0 +1,18 @@
+Downsampling is a commonly-used technique in 3D point cloudprocessing for saving storage space,
+transmission bandwidth andcomputational complexity. The classic downsampling methods,such
+as farthest point sampling and Poisson disk sampling, thoughwidely used for decades, are independent
+of the subsequent applications, since the downsampled point cloud may compromisetheir performance
+severely. This paper explores the problem oftask-oriented downsampling, which aims to downsample
+a pointcloud and maintain the performance of subsequent applications asmuch as possible. We propose
+MOPS-Net, a novel end-to-end deepneural network which is designed from the perspective of matrixoptimization,
+making it fundamentally different from the existing deep learning-based methods. Due to its discrete
+and combinatorial nature, it is difficult to solve the downsampling problem directly. To tackle
+this challenge, we relax the binary constraint of each variableand lift 3D points to a higher dimensional
+feature space, in which a constrained and differentiable matrix optimization problem withan implicit
+objective function is formulated. We then propose a deep neural network architecture to mimic the
+matrix optimization problem by exploring both the local and the global structures of the input data.
+With a task network, MOPS-Net can be end-to-endtrained. Moreover, it is permutation-invariant,
+making it robust to input data. We also extend MOPS-Net such that a single network after one-time
+training is capable of handling arbitrary downsam-pling ratios. Extensive experimental results
+show that MOPS-Net can achieve favorable performance against state-of-the-art deeplearning-based
+method over various tasks, including point cloud classification, retrieval and reconstruction.

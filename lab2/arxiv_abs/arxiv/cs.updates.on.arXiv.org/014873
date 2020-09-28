@@ -1,0 +1,18 @@
+The Tor network uses a measurement system to estimate its relays' forwarding capacity and to balance
+traffic among them. This system has been shown to be vulnerable to adversarial manipulation. Moreover,
+its accuracy and effectiveness in benign circumstances has never been fully quantified. We first
+obtain such a quantification by analyzing Tor metrics data and performing experiments on the live
+network. Our results show that Tor currently underestimates its true capacity by about 50% and improperly
+balances its traffic by 15-25%. Then, to solve the problems with security and accuracy, we present
+FlashFlow, a system to measure the capacity of Tor relays. Our analysis shows that FlashFlow limits
+a malicious relay to obtaining a capacity estimate at most 1.33 times its true capacity. Through
+realistic Internet experiments, we find that FlashFlow measures relay capacity with at least 89%
+accuracy 95% of the time. Through simulation, we find that FlashFlow can measure the entire Tor network
+in less than 5 hours using 3 measurers with 1 Gbit/s of bandwidth each. Finally, simulations using
+FlashFlow for load balancing shows that, compared to TorFlow, network weight error decreases by
+86%, while the median of 50 KiB, 1 MiB, and 5 MiB transfer times decreases by 15%, 29%, and 37%, respectively.
+Moreover, FlashFlow yields more consistent client performance: the median rate of transfer timeouts
+decreases by 100%, while the standard deviation of 50 KiB, 1 MiB, and 5 MiB transfer times decreases
+by 55%, 61%, and 41%, respectively. We also find that the performance improvements increase relative
+to TorFlow as the total client-traffic load increases, demonstrating that FlashFlow is better
+suited to supporting network growth. 

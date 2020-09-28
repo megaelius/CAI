@@ -1,0 +1,20 @@
+Runtime verification is the process of verifying critical behavioral properties in big complex
+systems, where formal verification is not possible due to state space explosion. There have been
+several attempts to design efficient algorithms for runtime verification. Most of these algorithms
+have a formally defined correctness property as a reference and check whether the system consistently
+meets the demands of the property or it fails to satisfy the property at some point in runtime. LTL
+is a commonly used language for defining these kinds of properties and is also the language of focus
+in this paper. One of the main target systems for runtime verification are distributed systems,
+where the system consists of a number of processes connecting to each other using asynchronous message
+passing. There are two approaches for runtime verification in distributed systems. The first one
+consists of centralized algorithms, where all processes send their events to a specific decision-making
+process, which keeps track of all the events to evaluate the specified property. The second approach
+consists of distributed algorithms, where processes check the specified property collaboratively.
+Centralized algorithms are simple, but usually involve sending a large number of messages to the
+decision-making process. They also suffer from the problem of single point of failure, as well as
+high traffic loads towards one process. Distributed algorithms, on the other hand, are usually
+more complicated, but once implemented, offer more efficiency. In this paper, we focus on a class
+of asynchronous distributed systems, where each process can change its own local state at any arbitrary
+time and completely independent of others, while all processes share a global clock. We propose
+a sound and complete algorithm for decentralized runtime verification of LTL properties in these
+systems. 

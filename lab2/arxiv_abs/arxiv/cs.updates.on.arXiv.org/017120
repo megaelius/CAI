@@ -1,0 +1,18 @@
+Medical automatic diagnosis (MAD) aims to learn an agent that mimics the behavior of human doctors,
+i.e. inquiring symptoms and informing diseases. Due to medical ethics concerns, it is impractical
+to directly apply reinforcement learning techniques to MAD, e.g., training a reinforced agent
+with human patients. Developing a patient simulator by using the collected patient-doctor dialogue
+records has been proposed as a promising workaround to MAD. However, most of these existing works
+overlook the causal relationship between patient symptoms and diseases. For example, these simulators
+simply generate the "not-sure" response to the symptom inquiry if the symptom was not observed in
+the dialogue record. Consequently, the MAD agent is usually trained without exploiting the counterfactual
+reasoning beyond the factual observations. To address this problem, this paper presents a propensity-based
+patient simulator (PBPS), which is capable of facilitating the training of MAD agents by generating
+informative counterfactual answers along with the disease diagnosis. Specifically, our PBPS
+estimates the propensity score of each record with the patient-doctor dialogue reasoning, and
+can thus generate the counterfactual answers by searching across records. That is, the unrecorded
+symptom for one patient can be found in the records of other patients according to the propensity
+score matching. The informative and causal-aware responses from PBPS are beneficial for modeling
+diagnostic confidence. To this end, we also propose a progressive assurance agent~(P2A) trained
+with PBPS, which includes two separate yet cooperative branches accounting for the execution of
+symptom-inquiry and disease-diagnosis actions, respectively. 

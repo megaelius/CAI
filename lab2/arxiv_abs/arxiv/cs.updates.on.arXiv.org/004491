@@ -1,0 +1,18 @@
+Medical image registration is an active research topic and forms a basis for many medical image analysis
+tasks. Although image registration is a rather general concept specialized methods are usually
+required to target a specific registration problem. The development and implementation of such
+methods has been tough so far as the gradient of the objective has to be computed. Also, its evaluation
+has to be performed preferably on a GPU for larger images and for more complex transformation models
+and regularization terms. This hinders researchers from rapid prototyping and poses hurdles to
+reproduce research results. There is a clear need for an environment which hides this complexity
+to put the modeling and the experimental exploration of registration methods into the foreground.
+With the "Autograd Image Registration Laboratory" (AirLab), we introduce an open laboratory for
+image registration tasks, where the analytic gradients of the objective function are computed
+automatically and the device where the computations are performed, on a CPU or a GPU, is transparent.
+It is meant as a laboratory for researchers and developers enabling them to rapidly try out new ideas
+for registering images and to reproduce registration results which have already been published.
+AirLab is implemented in Python using PyTorch as tensor and optimization library and SimpleITK
+for basic image IO. Therefore, it profits from recent advances made by the machine learning community
+concerning optimization and deep neural network models. The present draft of this paper roughly
+outlines AirLab with first code snippets and performance analyses. A more exhaustive introduction
+will follow as a final version soon. 

@@ -1,0 +1,17 @@
+Dataset distillation is a method for reducing dataset sizes: the goal is to learn a small number of
+synthetic samples containing all the information of a large dataset. This has several benefits:
+speeding up model training in deep learning, reducing energy consumption, and reducing required
+storage space. Currently, each synthetic sample is assigned a single `hard' label, which limits
+the accuracies that models trained on distilled datasets can achieve. Also, currently dataset
+distillation can only be used with image data. We propose to simultaneously distill both images
+and their labels, and thus to assign each synthetic sample a `soft' label (a distribution of labels)
+rather than a single `hard' label. Our improved algorithm increases accuracy by 2-4% over the original
+dataset distillation algorithm for several image classification tasks. For example, training
+a LeNet model with just 10 distilled images (one per class) results in over 96% accuracy on the MNIST
+data. Using `soft' labels also enables distilled datasets to consist of fewer samples than there
+are classes as each sample can encode information for more than one class. For example, we show that
+LeNet achieves almost 92% accuracy on MNIST after being trained on just 5 distilled images. We also
+propose an extension of the dataset distillation algorithm that allows it to distill sequential
+datasets including texts. We demonstrate that text distillation outperforms other methods across
+multiple datasets. For example, we are able to train models to almost their original accuracy on
+the IMDB sentiment analysis task using just 20 distilled sentences. 

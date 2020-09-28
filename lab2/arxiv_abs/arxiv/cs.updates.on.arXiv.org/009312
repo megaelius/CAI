@@ -1,0 +1,20 @@
+In most of the modern day blockchain, transactions are executed serially by both miners and validators;
+also, PoW is determined serially. The serial execution limits the system throughput and increases
+transaction acceptance latency, even unable to exploit the modern multi-core resources efficiently.
+In this work, we try to increase the throughput by introducing parallel execution of the transactions
+using a static analysis based technique. We propose a framework DiPETrans for the distributed parallel
+execution of block transactions. In DiPETrans, trusted peers in the blockchain network form a community
+to execute the transactions and to find the PoW parallelly. The community follows a master-slave
+approach for parallel execution. The core idea is that master analyzes the transactions using a
+static analysis based technique, creates different groups (shards) of non-conflicting transactions,
+and distribute shards to workers (community members) to execute them parallelly. After transaction
+execution, communities compute power is utilized to find PoW parallelly. On successful creation
+of a block, the master broadcasts the proposed block to other peers in the network for validation.
+On receiving a block, validators re-executes the block transactions, either parallelly (community)
+or serially (solo validators). If they reach the same state as shared by the miner, then accept the
+block otherwise reject. We performed experiments with historical data from Ethereum blockchain
+and achieved linear speedup for transaction execution and end-to-end block creation with up to
+5 workers in the community. We experimented by varying the number of transactions per block from
+100 to 500 and obtained a maximum speedup of 2.18X for miner, 2.04X for info sharing validator, and
+2.02X for no info sharing validator. DiPETrans is first of its kind, and we will be evolving it to provide
+better performance. 

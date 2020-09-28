@@ -1,0 +1,18 @@
+Hyperparameter optimization aims to find the optimal hyperparameter configuration of a machine
+learning model, which provides the best performance on a validation dataset. Manual search usually
+leads to get stuck in a local hyperparameter configuration, and heavily depends on human intuition
+and experience. A simple alternative of manual search is random/grid search on a space of hyperparameters,
+which still undergoes extensive evaluations of validation errors in order to find its best configuration.
+Bayesian optimization that is a global optimization method for black-box functions is now popular
+for hyperparameter optimization, since it greatly reduces the number of validation error evaluations
+required, compared to random/grid search. Bayesian optimization generally finds the best hyperparameter
+configuration from random initialization without any prior knowledge. This motivates us to let
+Bayesian optimization start from the configurations that were successful on similar datasets,
+which are able to remarkably minimize the number of evaluations. In this paper, we propose deep metric
+learning to learn meta-features over datasets such that the similarity over them is effectively
+measured by Euclidean distance between their associated meta-features. To this end, we introduce
+a Siamese network composed of deep feature and meta-feature extractors, where deep feature extractor
+provides a semantic representation of each instance in a dataset and meta-feature extractor aggregates
+a set of deep features to encode a single representation over a dataset. Then, our learned meta-features
+are used to select a few datasets similar to the new dataset, so that hyperparameters in similar datasets
+are adopted as initializations to warm-start Bayesian hyperparameter optimization. 

@@ -1,0 +1,17 @@
+In this paper, we report on the construction of a deep Artificial Neural Network (ANN) to localize
+simulated gravitational wave signals in the sky with high accuracy. We have modelled the sky as a
+sphere and have considered cases where the sphere is divided into 18, 50, 128, 1024, 2048 and 4096
+sectors. The sky direction of the gravitational wave source is estimated by classifying the signal
+into one of these sectors based on it's right ascension and declination values for each of these cases.
+In order to do this, we have injected simulated binary black hole gravitational wave signals of component
+masses sampled uniformly between 30-80 solar mass into Gaussian noise and used the whitened strain
+values to obtain the input features for training our ANN. We input features such as the delays in arrival
+times, phase differences and amplitude ratios at each of the three detectors Hanford, Livingston
+and Virgo, from the raw time-domain strain values as well as from analytical versions of these signals,
+obtained through Hilbert transformation. We show that our model is able to classify gravitational
+wave samples, not used in the training process, into their correct sectors with very high accuracy
+(>90%) for coarse angular resolution using 18, 50 and 128 sectors. We also test our localization
+on test samples with injection parameters of the published LIGO binary black hole merger events
+GW150914, GW170818 and GW170823 for 1024, 2048 and 4096 sectors and compare the result with that
+from BAYESTAR and Parameter Estimation (PE). In addition, we report that the time taken by our model
+to localize one GW signal is around 0.018 secs on 14 Intel Xeon CPU cores. 

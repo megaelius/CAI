@@ -1,0 +1,20 @@
+Makespan minimization (on parallel identical or unrelated machines) is arguably the most natural
+and studied scheduling problem. A common approach in practical algorithm design is to reduce the
+size of a given instance by a fast preprocessing step while being able to recover key information
+even after this reduction. This notion is formally studied as kernelization (or simply, kernel)
+-- a polynomial time procedure which yields an equivalent instance whose size is bounded in terms
+of some given parameter. It follows from known results that makespan minimization parameterized
+by the longest job processing time $p_{\max}$ has a kernelization yielding a reduced instance whose
+size is exponential in $p_{\max}$. Can this be reduced to polynomial in $p_{\max}$? We answer this
+affirmatively not only for makespan minimization, but also for the (more complicated) objective
+of minimizing the weighted sum of completion times, also in the setting of unrelated machines when
+the number of machine kinds is a parameter. Our algorithm first solves the Configuration LP and based
+on its solution constructs a solution of an intermediate problem, called huge $N$-fold integer
+programming. This solution is further reduced in size by a series of steps, until its encoding length
+is polynomial in the parameters. Then, we show that huge $N$-fold IP is in NP, which implies that there
+is a polynomial reduction back to our scheduling problem, yielding a kernel. Our technique is highly
+novel in the context of kernelization, and our structural theorem about the Configuration LP is
+of independent interest. Moreover, we show a polynomial kernel for huge $N$-fold IP conditional
+on whether the so-called separation subproblem can be solved in polynomial time. Considering that
+integer programming does not admit polynomial kernels except for quite restricted cases, our "conditional
+kernel" provides new insight. 

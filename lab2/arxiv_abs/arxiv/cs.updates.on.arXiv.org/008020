@@ -1,0 +1,19 @@
+In low-rank approximation with missing entries, given $A\in \mathbb{R}^{n\times n}$ and binary
+$W \in \{0,1\}^{n\times n}$, the goal is to find a rank-$k$ matrix $L$ for which: $$cost(L)=\sum_{i=1}^{n}
+\sum_{j=1}^{n}W_{i,j}\cdot (A_{i,j} - L_{i,j})^2\le OPT+\epsilon \|A\|_F^2,$$ where $OPT=\min_{rank-k\
+\hat{L}}cost(\hat L)$. This problem is also known as matrix completion and, depending on the choice
+of $W$, captures low-rank plus diagonal decomposition, robust PCA, low-rank recovery from monotone
+missing data, and a number of other important problems. Many of these problems are NP-hard, and while
+algorithms with provable guarantees are known in some cases, they either 1) run in time $n^{\Omega(k^2/\epsilon)}$,
+or 2) make strong assumptions, e.g., that $A$ is incoherent or that $W$ is random. In this work, we
+consider $bicriteria\ algorithms$, which output $L$ with rank $k' > k$. We prove that a common heuristic,
+which simply sets $A$ to $0$ where $W$ is $0$, and then computes a standard low-rank approximation,
+achieves the above approximation bound with rank $k'$ depending on the $communication\ complexity$
+of $W$. Namely, interpreting $W$ as the communication matrix of a Boolean function $f(x,y)$ with
+$x,y\in \{0,1\}^{\log n}$, it suffices to set $k'=O(k\cdot 2^{R^{1-sided}_{\epsilon}(f)})$,
+where $R^{1-sided}_{\epsilon}(f)$ is the randomized communication complexity of $f$ with $1$-sided
+error probability $\epsilon$. For many problems, this yields bicriteria algorithms with $k'=k\cdot
+poly((\log n)/\epsilon)$. We prove a similar bound using the randomized communication complexity
+with $2$-sided error. Further, we show that different models of communication yield algorithms
+for natural variants of the problem. E.g., multi-player communication complexity connects to
+tensor decomposition and non-deterministic communication complexity to Boolean low-rank factorization.

@@ -1,0 +1,17 @@
+Minimum Spanning Tree (MST) is an important graph algorithm that has wide ranging applications
+in the areas of computer networks, VLSI routing, wireless communications among others. Today virtually
+every computer is built out of multi-core processors. Hence it is important to take advantage of
+such parallel computing power by parallelizing existing algorithms and applications. Most of
+the earlier work on parallelizing MST focused on algorithms for PRAM models. There are two limitations
+to such studies. First, PRAM models assume infinite memory bandwidth which is unrealistic. Second,
+PRAM model based algorithms require at least O(n) processors where n being total number of vertices.
+For large graphs this is infeasible. There are very few implementations which target real systems.
+In this paper I present and evaluate two new parallel MST algorithms that are a variant of Parallel
+Boruvka algorithms: i) First algorithm uses lock variables without spin-locks ii) Second algorithm
+uses only atomic compare-and-swap (CAS) primitive. I evaluated the performance of these algorithms
+on a six-core, 12-thread Intel system on various input graphs of sizes up to 1 million vertices. First
+algorithm showed a speedup of up to1.94 over an un-optimized sequential algorithm and a speedup
+of up to 1.4 over an optimized sequential algorithm. Second algorithm showed a speedup of up to 2.03
+over an un-optimized sequential algorithm and a speedup of up to 1.403 over an optimized sequential
+algorithm. When second algorithm using CAS is compared with the first algorithm second algorithm
+is found to be up to 1.15 times better than the first algorithm at four threads. 

@@ -1,0 +1,19 @@
+The goal of this work is to train a neural network which approximates solutions to the Navier-Stokes
+equations across a region of parameter space, in which the parameters define physical properties
+such as domain shape and boundary conditions. The contributions of this work are threefold: 1) To
+demonstrate that neural networks can be efficient aggregators of whole families of parameteric
+solutions to physical problems, trained using data created with traditional, trusted numerical
+methods such as finite elements. Advantages include extremely fast evaluation of pressure and
+velocity at any point in physical and parameter space (asymptotically, ~3 $\mu s$ / query), and data
+compression (the network requires 99\% less storage space compared to its own training data). 2)
+To demonstrate that the neural networks can accurately interpolate between finite element solutions
+in parameter space, allowing them to be instantly queried for pressure and velocity field solutions
+to problems for which traditional simulations have never been performed. 3) To introduce an active
+learning algorithm, so that during training, a finite element solver can automatically be queried
+to obtain additional training data in locations where the neural network's predictions are in most
+need of improvement, thus autonomously acquiring and efficiently distributing training data
+throughout parameter space. In addition to the obvious utility of Item 2, above, we demonstrate
+an application of the network in rapid parameter sweeping, very precisely predicting the degree
+of narrowing in a tube which would result in a 50\% increase in end-to-end pressure difference at
+a given flow rate. This capability could have applications in both medical diagnosis of arterial
+disease, and in computer-aided design. 

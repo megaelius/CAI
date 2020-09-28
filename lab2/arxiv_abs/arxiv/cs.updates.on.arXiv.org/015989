@@ -1,0 +1,18 @@
+This paper develops the theoretical framework and the equations of a new robust Generalized Maximum-likelihood-type
+Unscented Kalman Filter (GM-UKF) that is able to suppress observation and innovation outliers
+while filtering out non-Gaussian measurement noise. Because the errors of the real and reactive
+power measurements calculated using Phasor Measurement Units (PMUs) follow long-tailed probability
+distributions, the conventional UKF provides strongly biased state estimates since it relies
+on the weighted least squares estimator. By contrast, the state estimates and residuals of our GM-UKF
+are proved to be roughly Gaussian, allowing the sigma points to reliably approximate the mean and
+the covariance matrices of the predicted and corrected state vectors. To develop our GM-UKF, we
+first derive a batch-mode regression form by processing the predictions and observations simultaneously,
+where the statistical linearization approach is used. We show that the set of equations so derived
+are equivalent to those of the unscented transformation. Then, a robust GM-estimator that minimizes
+a convex Huber cost function while using weights calculated via Projection Statistics (PS's) is
+proposed. The PS's are applied to a two-dimensional matrix that consists of serially correlated
+predicted state and innovation vectors to detect observation and innovation outliers. These outliers
+are suppressed by the GM-estimator using the iteratively reweighted least squares algorithm.
+Finally, the asymptotic error covariance matrix of the GM-UKF state estimates is derived from the
+total influence function. In the companion paper, extensive simulation results will be shown to
+verify the effectiveness and robustness of the proposed method. 

@@ -1,0 +1,20 @@
+Most of the existing methods for sparse signal recovery assume a static system: the unknown signal
+is a finite-length vector for which a fixed set of linear measurements and a sparse representation
+basis are available and an L1-norm minimization program is solved for the reconstruction. However,
+the same representation and reconstruction framework is not readily applicable in a streaming
+system: the unknown signal changes over time, and it is measured and reconstructed sequentially
+over small time intervals. In this paper, we discuss two such streaming systems and a homotopy-based
+algorithm for quickly solving the associated L1-norm minimization programs: 1) Recovery of a smooth,
+time-varying signal for which, instead of using block transforms, we use lapped orthogonal transforms
+for sparse representation. 2) Recovery of a sparse, time-varying signal that follows a linear dynamic
+model. For both the systems, we iteratively process measurements over a sliding interval and estimate
+sparse coefficients by solving a weighted L1-norm minimization program. Instead of solving a new
+L1 program from scratch at every iteration, we use an available signal estimate as a starting point
+in a homotopy formulation. Starting with a warm-start vector, our homotopy algorithm updates the
+solution in a small number of computationally inexpensive steps as the system changes. The homotopy
+algorithm presented in this paper is highly versatile as it can update the solution for the L1 problem
+in a number of dynamical settings. We demonstrate with numerical experiments that our proposed
+streaming recovery framework outperforms the methods that represent and reconstruct a signal
+as independent, disjoint blocks, in terms of quality of reconstruction, and that our proposed homotopy-based
+updating scheme outperforms current state-of-the-art solvers in terms of the computation time
+and complexity. 

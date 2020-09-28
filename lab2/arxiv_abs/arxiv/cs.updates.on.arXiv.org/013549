@@ -1,0 +1,19 @@
+Data-parallel applications, such as data analytics, machine learning, and scientific computing,
+are placing an ever-growing demand on floating-point operations per second on emerging systems.
+With increasing integration density, the quest for energy efficiency becomes the number one design
+concern. While dedicated accelerators provide high energy efficiency, they are over-specialized
+and hard to adjust to algorithmic changes. We propose an architectural concept that tackles the
+issues of achieving extreme energy efficiency while still maintaining high flexibility as a general-purpose
+compute engine. The key idea is to pair a tiny 10kGE control core, called Snitch, with a double-precision
+FPU to adjust the compute to control ratio. While traditionally minimizing non-FPU area and achieving
+high floating-point utilization has been a trade-off, with Snitch, we achieve them both, by enhancing
+the ISA with two minimally intrusive extensions: stream semantic registers (SSR) and a floating-point
+repetition instruction (FREP). SSRs allow the core to implicitly encode load/store instructions
+as register reads/writes, eliding many explicit memory instructions. The FREP extension decouples
+the floating-point and integer pipeline by sequencing instructions from a micro-loop buffer.
+These ISA extensions significantly reduce the pressure on the core and free it up for other tasks,
+making Snitch and FPU effectively dual-issue at a minimal incremental cost of 3.2%. The two low overhead
+ISA extensions make Snitch more flexible than a contemporary vector processor lane, achieving
+a $2\times$ energy-efficiency improvement. We have evaluated the proposed core and ISA extensions
+on an octa-core cluster in 22nm technology. We achieve more than $5\times$ multi-core speed-up
+and a $3.5\times$ gain in energy efficiency on several parallel microkernels. 

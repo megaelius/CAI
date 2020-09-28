@@ -1,0 +1,19 @@
+The modeling of atmospheric processes in the context of weather and climate simulations is an important
+and computationally expensive challenge. The temporal integration of the underlying PDEs requires
+a very large number of time steps, even when the terms accounting for the propagation of fast atmospheric
+waves are treated implicitly. Therefore, the use of parallel-in-time integration schemes to reduce
+the time-to-solution is of increasing interest, particularly in the numerical weather forecasting
+field. We propose a multi-level parallel-in-time integration method combining the Parallel Full
+Approximation Scheme in Space and Time (PFASST) with a spatial discretization based on Spherical
+Harmonics (SH). This iterative algorithm computes multiple time steps concurrently by interweaving
+parallel high-order fine corrections and serial corrections performed on a coarsened problem
+to propagate the updated initial conditions between time steps. We design a methodology to coarsen
+and interpolate the problem in space using the spectral basis of the SH that is key for the accuracy
+and efficiency of the approach. The proposed methods are evaluated on the shallow-water equations
+on the rotating sphere using a set of tests commonly used in the atmospheric flow community and characterized
+by the fast generation of small-scale features in the solution. We assess the convergence of PFASST-SH
+upon refinement in time to investigate the impact of the coarsening strategy on the accuracy of the
+scheme, and specifically on its ability to capture the high-frequency modes accumulating in the
+solution. We also study the computational cost of PFASST-SH to demonstrate that our scheme can resolve
+the main features of the solution multiple times faster than the serial schemes and to illustrate
+the scalability of the approach. 

@@ -1,0 +1,19 @@
+Multithreaded programs generally leverage efficient and thread-safe concurrent objects like
+sets, key-value maps, and queues. While some concurrent-object operations are designed to behave
+atomically, each witnessing the atomic effects of predecessors in a linearization order, others
+forego such strong consistency to avoid complex control and synchronization bottlenecks. For
+example, contains (value) methods of key-value maps may iterate through key-value entries without
+blocking concurrent updates, to avoid unwanted performance bottlenecks, and consequently overlook
+the effects of some linearization-order predecessors. While such weakly-consistent operations
+may not be atomic, they still offer guarantees, e.g., only observing values that have been present.
+In this work we develop a methodology for proving that concurrent object implementations adhere
+to weak-consistency specifications. In particular, we consider (forward) simulation-based
+proofs of implementations against relaxed-visibility specifications, which allow designated
+operations to overlook some of their linearization-order predecessors, i.e., behaving as if they
+never occurred. Besides annotating implementation code to identify linearization points, i.e.,
+points at which operations' logical effects occur, we also annotate code to identify visible operations,
+i.e., operations whose effects are observed; in practice this annotation can be done automatically
+by tracking the writers to each accessed memory location. We formalize our methodology over a general
+notion of transition systems, agnostic to any particular programming language or memory model,
+and demonstrate its application, using automated theorem provers, by verifying models of Java
+concurrent object implementations. 

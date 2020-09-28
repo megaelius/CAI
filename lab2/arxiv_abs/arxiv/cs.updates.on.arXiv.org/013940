@@ -1,0 +1,19 @@
+Networks model a variety of complex phenomena across different domains. In many applications,
+one of the most essential tasks is to align two or more networks to infer the similarities between
+cross-network vertices and discover potential node-level correspondence. In this paper, we propose
+ELRUNA (Elimination rule-based network alignment), a novel network alignment algorithm that
+relies exclusively on the underlying graph structure. Under the guidance of the elimination rules
+that we defined, ELRUNA computes the similarity between a pair of cross-network vertices iteratively
+by accumulating the similarities between their selected neighbors. The resulting cross-network
+similarity matrix is then used to infer a permutation matrix that encodes the final alignment of
+cross-network vertices. In addition to the novel alignment algorithm, we also improve the performance
+of local search, a commonly used post-processing step for solving the network alignment problem,
+by introducing a novel selection method RAWSEM (Randomwalk based selection method) based on the
+propagation of the levels of mismatching (defined in the paper) of vertices across the networks.
+The key idea is to pass on the initial levels of mismatching of vertices throughout the entire network
+in a random-walk fashion. Through extensive numerical experiments on real networks, we demonstrate
+that ELRUNA significantly outperforms the state-of-the-art alignment methods in terms of alignment
+accuracy under lower or comparable running time. Moreover, ELRUNA is robust to network perturbations
+such that it can maintain a close to optimal objective value under a high level of noise added to the
+original networks. Finally, the proposed RAWSEM can further improve the alignment quality with
+a less number of iterations compared with the naive local search method. 

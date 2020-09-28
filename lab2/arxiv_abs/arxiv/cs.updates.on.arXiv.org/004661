@@ -1,0 +1,19 @@
+Since Sleator and Tarjan's seminal work on self-adjusting lists, heaps and binary search trees,
+researchers have been fascinated by dynamic datastructures and the questions related to their
+performance over time. This paper initiates the study of another classic datastructure, self-adjusting
+(binary) Complete Trees (CTs): trees which do not provide a simple search mechanism but allow to
+efficiently access items given a global map. Our problem finds applications, e.g., in the context
+of warehouse optimization or self-adjusting communication networks which can adapt to the demand
+they serve. We show that self-adjusting complete trees assume an interesting position between
+the complexity of self-adjusting (unordered) lists and binary search trees. In particular, we
+observe that in contrast to lists, a simple move-to-front strategy alone is insufficient to achieve
+a constant competitive ratio. Rather, and similarly to binary search trees, an additional (efficient)
+tree update rule is needed. Intriguingly, while it is unknown whether the working set is a lower bound
+for binary search trees, we show that this holds in our model. So while finding an update rule is still
+an open problem for binary search trees, this paper shows that there exists a simple, random update
+rule for complete trees. Our main result is a dynamically optimal (i.e., constant competitive)
+self-adjusting CT called Push-Down Tree, on expectation against an oblivious adversary. At the
+heart of our approach lies a distributed algorithm called Random-Push: this algorithm approximates
+a natural notion of Most Recently Used (MRU) tree (essentially an approximate working set), by first
+performing move-to-front, but then pushing less recently accessed items down the tree using a random
+walk. 

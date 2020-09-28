@@ -1,0 +1,20 @@
+There are hardly any data sets publicly available that can be used to evaluate intrusion detection
+algorithms. The biggest threat for industrial applications arises from state-sponsored and criminal
+groups. Often, formerly unknown exploits are employed by these attackers, so-called 0-day exploits.
+They cannot be discovered with signature-based intrusion detection. Thus, statistical or machine
+learning based anomaly detection lends itself readily. These methods especially, however, need
+a large amount of labelled training data. In this work, an exemplary industrial use case with real-world
+industrial hardware is presented. Siemens S7 Programmable Logic Controllers are used to control
+a real world-based control application using the OPC UA protocol: A pump, filling and emptying water
+tanks. This scenario is used to generate application specific network data. Furthermore, attacks
+are introduced into this data set. This is done in three ways: First, the normal process is monitored
+and captured. Common attacks are then synthetically introduced into this data set. Second, malicious
+behaviour is implemented on the Programmable Logic Controller program and executed live, the traffic
+is captured as well. Third, malicious behaviour is implemented on the Programmable Logic Controller
+while still keeping the same output behaviour as in normal operation. An attacker could exploit
+an application but forge valid sensor output so that no anomaly is detected. Sensors are employed,
+capturing temperature, sound and flow of water to create data that can be correlated to the network
+data and used to still detect the attack. All data is labelled, containing the ground truth, meaning
+all attacks are known and no unknown attacks occur. This makes them perfect for training of anomaly
+detection algorithms. The data is published to enable security researchers to evaluate intrusion
+detection solutions. 

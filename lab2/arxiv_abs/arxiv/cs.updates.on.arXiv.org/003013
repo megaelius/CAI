@@ -1,0 +1,20 @@
+Blind image deblurring, i.e., deblurring without knowledge of the blur kernel, is a highly ill-posed
+problem. The problem can be solved in two parts: i) estimate a blur kernel from the blurry image, and
+ii) given estimated blur kernel, de-convolve blurry input to restore the target image. In this paper,
+we propose a graph-based blind image deblurring algorithm by interpreting an image patch as a signal
+on a weighted graph. Specifically, we first argue that a skeleton image---a proxy that retains the
+strong gradients of the target but smooths out the details---can be used to accurately estimate
+the blur kernel and has a unique bi-modal edge weight distribution. Then, we design a reweighted
+graph total variation (RGTV) prior that can efficiently promote a bi-modal edge weight distribution
+given a blurry patch. Further, to analyze RGTV in the graph frequency domain, we introduce a new weight
+function to represent RGTV as a graph $l_1$-Laplacian regularizer. This leads to a graph spectral
+filtering interpretation of the prior with desirable properties, including robustness to noise
+and blur, strong piecewise smooth (PWS) filtering and sharpness promotion. Minimizing a blind
+image deblurring objective with RGTV results in a non-convex non-differentiable optimization
+problem. We leverage the new graph spectral interpretation for RGTV to design an efficient algorithm
+that solves for the skeleton image and the blur kernel alternately. Specifically for Gaussian blur,
+we propose a further speedup strategy for blind Gaussian deblurring using accelerated graph spectral
+filtering. Finally, with the computed blur kernel, recent non-blind image deblurring algorithms
+can be applied to restore the target image. Experimental results demonstrate that our algorithm
+successfully restores latent sharp images and outperforms state-of-the-art methods quantitatively
+and qualitatively. 

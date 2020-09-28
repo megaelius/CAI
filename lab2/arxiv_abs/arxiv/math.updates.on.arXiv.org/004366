@@ -1,0 +1,20 @@
+Independent samples from an unknown probability distribution $\bf p$ on a domain of size $k$ are
+distributed across $n$ players, with each player holding one sample. Each player can communicate
+$\ell$ bits to a central referee in a simultaneous message passing model of communication to help
+the referee infer a property of the unknown $\bf p$. What is the least number of players for inference
+required in the communication-starved setting of $\ell<\log k$? We begin by exploring a general
+"simulate-and-infer" strategy for such inference problems where the center simulates the desired
+number of samples from the unknown distribution and applies standard inference algorithms for
+the collocated setting. Our first result shows that for $\ell<\log k$ perfect simulation of even
+a single sample is not possible. Nonetheless, we present a Las Vegas algorithm that simulates a single
+sample from the unknown distribution using $O(k/2^\ell)$ samples in expectation. As an immediate
+corollary, we get that simulate-and-infer attains the optimal sample complexity of $\Theta(k^2/2^\ell\epsilon^2)$
+for learning the unknown distribution to total variation distance $\epsilon$. For the prototypical
+testing problem of identity testing, simulate-and-infer works with $O(k^{3/2}/2^\ell\epsilon^2)$
+samples, a requirement that seems to be inherent for all communication protocols not using any additional
+resources. Interestingly, we can break this barrier using public coins. Specifically, we exhibit
+a public-coin communication protocol that performs identity testing using $O(k/\sqrt{2^\ell}\epsilon^2)$
+samples. Furthermore, we show that this is optimal up to constant factors. Our theoretically sample-optimal
+protocol is easy to implement in practice. Our proof of lower bound entails showing a contraction
+in $\chi^2$ distance of product distributions due to communication constraints and may be of independent
+interest. 

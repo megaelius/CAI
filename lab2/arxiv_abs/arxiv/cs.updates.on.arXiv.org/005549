@@ -1,0 +1,20 @@
+We study the flow of information and the evolution of internal representations during deep neural
+network (DNN) training, aiming to demystify the compression aspect of the information bottleneck
+theory. The theory suggests that DNN training comprises a rapid fitting phase followed by a slower
+compression phase, in which the mutual information $I(X;T)$ between the input $X$ and internal
+representations $T$ decreases. Several papers observe compression of estimated mutual information
+on different DNN models, but the true $I(X;T)$ over these networks is provably either constant (discrete
+$X$) or infinite (continuous $X$). This work explains the discrepancy between theory and experiments,
+and clarifies what was actually measured by these past works. To this end, we introduce an auxiliary
+(noisy) DNN framework for which $I(X;T)$ is a meaningful quantity that depends on the network's
+parameters. This noisy framework is shown to be a good proxy for the original (deterministic) DNN
+both in terms of performance and the learned representations. We then develop a rigorous estimator
+for $I(X;T)$ in noisy DNNs and observe compression in various models. By relating $I(X;T)$ in the
+noisy DNN to an information-theoretic communication problem, we show that compression is driven
+by the progressive clustering of hidden representations of inputs from the same class. Several
+methods to directly monitor clustering of hidden representations, both in noisy and deterministic
+DNNs, are used to show that meaningful clusters form in the $T$ space. Finally, we return to the estimator
+of $I(X;T)$ employed in past works, and demonstrate that while it fails to capture the true (vacuous)
+mutual information, it does serve as a measure for clustering. This clarifies the past observations
+of compression and isolates the geometric clustering of hidden representations as the true phenomenon
+of interest. 

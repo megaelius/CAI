@@ -1,0 +1,17 @@
+Package managers for software repositories based on a single programming language are very common.
+Examples include npm (JavaScript), and PyPI (Python). These tools encourage code reuse, making
+it trivial for developers to import external packages. Unfortunately, repositories' size and
+the ease with which packages can be published facilitates the practice of typosquatting: the uploading
+of a package with name similar to that of a highly popular package, typically with the aim of capturing
+some of the popular package's installs. Typosquatting has serious negative implications, resulting
+in developers importing malicious packages, or -- as we show -- code clones which do not incorporate
+recent security updates. In order to tackle this problem, we present SpellBound, a tool for identifying
+and reporting potentially erroneous imports to developers. SpellBound implements a novel typosquatting
+detection technique, based on an in-depth analysis of npm and PyPI. Our technique leverages a model
+of lexical similarity between names, and further incorporates the notion of package popularity.
+This approach flags cases where unknown/scarcely used packages would be installed in place of popular
+ones with similar names, before installation occurs. We evaluated SpellBound on both npm and PyPI,
+with encouraging results: SpellBound flags typosquatting cases while generating limited warnings
+(0.5% of total package installs), and low overhead (only 2.5% of package install time). Furthermore,
+SpellBound allowed us to confirm known cases of typosquatting and discover one high-profile, unknown
+case of typosquatting that resulted in a package takedown by the npm security team. 

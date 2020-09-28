@@ -1,0 +1,19 @@
+A novel technique based on the Full Orthogonalization Arnoldi (FOA) is proposed to perform Dynamic
+Mode Decomposition (DMD) for a sequence of snapshots. Two modifications to Full Orthogonalization
+Arnoldi are discussed for situations where the matrix $A$ whose FOA is to be performed is unknown,
+but the vectors $A^{i-1}v_1$ are known. Finite precision error analysis is performed on both variants,
+and the one with better numerical properties is used as a kernel in the proposed Full Orthogonalization
+Arnoldi Dynamic Mode Decomposition (FOADMD) algorithm. The proposed method i) does not require
+SVD if the snapshot matrix has a reasonable condition number, ii) results in projected matrices
+whose eigenvalues and eigenvectors can be reliably computed in floating point arithmetic, iii)
+lends itself to easy parallelism as the main computational kernel involves only vector additions
+and dot products and iv) requires only one snapshot at a time, rather than all snapshots at once. Hence,
+the new technique is well-suited for DMD of large datasets on parallel computing platforms. It is
+shown that for FOADMD and SVD-based DMD method without rank truncation, the finite precision error
+in the computed projection of $A$ is $O(\epsilon_m\kappa_2(X))$. Based on finite precision error
+analysis, rank truncated FOADMD is proposed to accurately compute the projected linear mapping
+$A$ when the condition number of snapshot matrix is $O(1/\epsilon_m)$. Error indicators that indicate
+the quality of the obtained DMD eigenvector and DMD eigenvalues to devise stopping criterions for
+DMD are also presented and validated. The DMD eigenvalues and eigenvectors obtained from the implementation
+of FOADMD are compared to SVD-based DMD methods for a variety of problems of increasing dimensionality
+and varying condition number of snapshot matrix. 

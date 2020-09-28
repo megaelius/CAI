@@ -1,0 +1,18 @@
+Various 3D reconstruction methods have enabled civil engineers to detect damage on a road surface.
+To achieve the millimetre accuracy required for road condition assessment, a disparity map with
+subpixel resolution needs to be used. However, none of the existing stereo matching algorithms
+are specially suitable for the reconstruction of the road surface. Hence in this paper, we propose
+a novel dense subpixel disparity estimation algorithm with high computational efficiency and
+robustness. This is achieved by first transforming the perspective view of the target frame into
+the reference view, which not only increases the accuracy of the block matching for the road surface
+but also improves the processing speed. The disparities are then estimated iteratively using our
+previously published algorithm where the search range is propagated from three estimated neighbouring
+disparities. Since the search range is obtained from the previous iteration, errors may occur when
+the propagated search range is not sufficient. Therefore, a correlation maxima verification is
+performed to rectify this issue, and the subpixel resolution is achieved by conducting a parabola
+interpolation enhancement. Furthermore, a novel disparity global refinement approach developed
+from the Markov Random Fields and Fast Bilateral Stereo is introduced to further improve the accuracy
+of the estimated disparity map, where disparities are updated iteratively by minimising the energy
+function that is related to their interpolated correlation polynomials. The algorithm is implemented
+in C language with a near real-time performance. The experimental results illustrate that the absolute
+error of the reconstruction varies from 0.1 mm to 3 mm. 

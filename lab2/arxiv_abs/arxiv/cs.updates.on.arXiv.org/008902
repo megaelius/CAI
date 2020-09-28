@@ -1,0 +1,19 @@
+With the maturity of visual detection techniques, we are more ambitious in describing visual content
+with open-vocabulary, fine-grained and free-form language, i.e., the task of image captioning.
+In particular, we are interested in generating longer, richer and more fine-grained sentences
+and paragraphs as image descriptions. Image captioning can be translated to the task of sequential
+language prediction given visual content, where the output sequence forms natural language description
+with plausible grammar. However, existing image captioning methods focus only on language policy
+while not visual policy, and thus fail to capture visual context that are crucial for compositional
+reasoning such as object relationships (e.g., "man riding horse") and visual comparisons (e.g.,
+"small(er) cat"). This issue is especially severe when generating longer sequences such as a paragraph.
+To fill the gap, we propose a Context-Aware Visual Policy network (CAVP) for fine-grained image-to-language
+generation: image sentence captioning and image paragraph captioning. During captioning, CAVP
+explicitly considers the previous visual attentions as context, and decides whether the context
+is used for the current word/sentence generation given the current visual attention. Compared
+against traditional visual attention mechanism that only fixes a single visual region at each step,
+CAVP can attend to complex visual compositions over time. The whole image captioning model -- CAVP
+and its subsequent language policy network -- can be efficiently optimized end-to-end by using
+an actor-critic policy gradient method. We have demonstrated the effectiveness of CAVP by state-of-the-art
+performances on MS-COCO and Stanford captioning datasets, using various metrics and sensible
+visualizations of qualitative visual context. 

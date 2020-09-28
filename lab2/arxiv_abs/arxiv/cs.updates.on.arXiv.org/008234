@@ -1,0 +1,19 @@
+Internet-scale distributed systems often replicate data within and across data centers to provide
+low latency and high availability despite node and network failures. Replicas are required to accept
+updates without coordination with each other, and the updates are then propagated asynchronously.
+This brings the issue of conflict resolution among concurrent updates, which is often challenging
+and error-prone. The Conflict-free Replicated Data Type (CRDT) framework provides a principled
+approach to address this challenge. This work focuses on a special type of CRDT, namely the Conflict-free
+Replicated Data Collection (CRDC), e.g. list and queue. The CRDC can have complex and compound data
+items, which are organized in structures of rich semantics. Complex CRDCs can greatly ease the development
+of upper-layer applications, but also makes the conflict resolution notoriously difficult. This
+explains why existing CRDC designs are tricky, and hard to be generalized to other data types. A design
+framework is in great need to guide the systematic design of new CRDCs. To address the challenges
+above, we propose the Remove-Win Design Framework. The remove-win strategy for conflict resolution
+is simple but powerful. The remove operation just wipes out the data item, no matter how complex the
+value is. The user of the CRDC only needs to specify conflict resolution for non-remove operations.
+This resolution is destructed to three basic cases and are left as open terms in the CRDC design skeleton.
+Stubs containing user-specified conflict resolution logics are plugged into the skeleton to obtain
+concrete CRDC designs. We demonstrate the effectiveness of our design framework via a case study
+of designing a conflict-free replicated priority queue. Performance measurements also show the
+efficiency of the design derived from our design framework. 

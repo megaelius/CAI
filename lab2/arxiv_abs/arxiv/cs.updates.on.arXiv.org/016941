@@ -1,0 +1,17 @@
+Underwater robots in shallow waters usually suffer from strong wave forces, which may frequently
+exceed robot's control constraints. Learning-based controllers are suitable for disturbance
+rejection control, but the excessive disturbances heavily affect the state transition in Markov
+Decision Process (MDP) or Partially Observable Markov Decision Process (POMDP). Also, pure learning
+procedures on targeted system may encounter damaging exploratory actions or unpredictable system
+variations, and training exclusively on a prior model usually cannot address model mismatch from
+the targeted system. In this paper, we propose a transfer learning framework that adapts a control
+policy for excessive disturbance rejection of an underwater robot under dynamics model mismatch.
+A modular network of learning policies is applied, composed of a Generalized Control Policy (GCP)
+and an Online Disturbance Identification Model (ODI). GCP is first trained over a wide array of disturbance
+waveforms. ODI then learns to use past states and actions of the system to predict the disturbance
+waveforms which are provided as input to GCP (along with the system state). A transfer reinforcement
+learning algorithm using Transition Mismatch Compensation (TMC) is developed based on the modular
+architecture, that learns an additional compensatory policy through minimizing mismatch of transitions
+predicted by the two dynamics models of the source and target tasks. We demonstrated on a pose regulation
+task in simulation that TMC is able to successfully reject the disturbances and stabilize the robot
+under an empirical model of the robot system, meanwhile improve sample efficiency. 

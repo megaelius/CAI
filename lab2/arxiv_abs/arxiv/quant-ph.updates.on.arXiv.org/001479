@@ -1,0 +1,20 @@
+Modern quantitative risk management relies on an adequate modeling of the tail dependence and a
+possibly accurate quantification of risk measures, like Value at Risk (VaR), at high confidence
+levels like 1 in 100 or even 1 in 2000. Quantum computing makes such a quantification quadratically
+more efficient than the Monte Carlo method; see (Woerner and Egger, 2018) and, for a broader perspective,
+(Or\'us et al., 2018). An important element of the risk analysis toolbox is copula, see (Jouanin
+et al., 2004) regarding financial applications. However, to the best knowledge of the author, no
+quantum computing implementation for sampling from a risk modeling-relevant copula in explicit
+form has been published so far. Our focus here is implementation of simple yet powerful copula models,
+capable of a satisfactory capturing the joint tail behaviour of the modelled risk factors. This
+paper deals with a few simple copula families, including Multivariate B11 (MB11) copula family,
+presented in (Milek, 2014). We will show that this copula family is suitable for the risk aggregation
+as it is exceptionally able to reproduce tail dependence structures; see (Embrechts et al., 2016)
+for a relevant benchmark as well as necessary and sufficient conditions regarding the ultimate
+feasible bivariate tail dependence structures. It turns out that such a discretized copula can
+be expressed using simple constructs present in the quantum computing: binary fraction expansion
+format, comonotone/independent random variables, controlled gates, and convex combinations,
+and is therefore suitable for a quantum computer implementation. This paper presents design behind
+the quantum implementation circuits, numerical and symbolic simulation results, and experimental
+validation on IBM quantum computer. The paper proposes also a generic method for quantum implementation
+of any discretized copula. 

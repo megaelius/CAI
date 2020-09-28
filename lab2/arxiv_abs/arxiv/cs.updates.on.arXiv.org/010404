@@ -1,0 +1,18 @@
+We study fact-checking in this paper, which aims to verify a textual claim given textual evidence
+(e.g., retrieved sentences from Wikipedia). Existing studies typically either concatenate retrieved
+sentences as a single string or use feature fusion on the top of features of sentences, while ignoring
+semantic-level information including participants, location, and temporality of an event occurred
+in a sentence and relationships among multiple events. Such semantic-level information is crucial
+for understanding the relational structure of evidence and the deep reasoning procedure over that.
+In this paper, we address this issue by proposing a graph-based reasoning framework, called the
+Dynamic REAsoning Machine (DREAM) framework. We first construct a semantic-level graph, where
+nodes are extracted by semantic role labeling toolkits and are connected by inner- and inter- sentence
+edges. After having the automatically constructed graph, we use XLNet as the backbone of our approach
+and propose a graph-based contextual word representation learning module and a graph-based reasoning
+module to leverage the information of graphs. The first module is designed by considering a claim
+as a sequence, in which case we use the graph structure to re-define the relative distance of words.
+On top of this, we propose the second module by considering both the claim and the evidence as graphs
+and use a graph neural network to capture the semantic relationship at a more abstract level. We conduct
+experiments on FEVER, a large-scale benchmark dataset for fact-checking. Results show that both
+of the graph-based modules improve performance. Our system is the state-of-the-art system on the
+public leaderboard in terms of both accuracy and FEVER score. 

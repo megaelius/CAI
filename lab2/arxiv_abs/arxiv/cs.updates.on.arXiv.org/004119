@@ -1,0 +1,19 @@
+User Interfaces (UIs) intensively rely on event-driven programming: widgets send UI events, which
+capture users' interactions, to dedicated objects called controllers. Controllers use several
+UI listeners that handle these events to produce UI commands. First, we reveal the presence of design
+smells in the code that describes and controls UIs. Second, we demonstrate that specific code analyses
+are necessary to analyze and refactor UI code, because of its coupling with the rest of the code. We
+conducted an empirical study on four large Java Swing and SWT open-source software systems. We study
+to what extent the number of UI commands that a UI listener can produce has an impact on the change-
+and fault-proneness of the UI listener code. We develop a static code analysis for detecting UI commands
+in the code. We identify a new type of design smell, called Blob Listener that characterizes UI listeners
+that can produce more than two UI commands. We propose a systematic static code analysis procedure
+that searches for Blob Listeners that we implement in InspectorGuidget. We conducted experiments
+on the four software systems for which we manually identified 53 instances of Blob Listener. InspectorGuidget
+successfully detected 52 Blob Listeners out of 53. The results exhibit a precision of 81.25% and
+a recall of 98.11%. We then developed a semi-automatically and behavior-preserving refactoring
+process to remove Blob Listeners. 49.06% of the 53 Blob Listeners were automatically refactored.
+Patches for JabRef, and FreeCol have been accepted and merged. Discussions with developers of the
+four software systems assess the relevance of the Blob Listener. This work shows that UI code also
+suffers from design smells that have to be identified and characterized. We argue that studies have
+to be conducted to find other UI design smells and tools that analyze UI code must be developed. 

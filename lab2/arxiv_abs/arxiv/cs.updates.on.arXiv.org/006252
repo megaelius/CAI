@@ -1,0 +1,17 @@
+Multi-agent planning in dynamic domains is a challenging problem: the size of the configuration
+space increases exponentially in the number of agents, and plans need to be re-evaluated periodically
+to account for moving obstacles. However, we have two key insights that hold in several domains:
+1) conflicts between multi-agent plans often have geometrically local resolutions within a small
+repair window, even if such local resolutions are not globally optimal; and 2) the partial search
+tree for such local resolutions can then be iteratively improved over successively larger windows
+to eventually compute the global optimal plan. Building upon these two insights, we introduce a
+sparse, anytime variant of the A* planner, which we call X* (Expanding A*). X* operates by planning
+for each agent individually and forming local repair windows around collisions, repairing agents
+within that window. If time allows, X* grows the window and repeats. X* implements two novel techniques
+to reduce the computational cost compared to joint A*: 1) it preserves the partial X* search trees
+and priority queues between iterations of window growth; and 2) it defers explicit joint state enumeration
+until necessary. By preserving the search tree, X* significantly out-performs joint A* and a na\"ive
+window-growing A* algorithm. By deferring explicit joint state enumeration, X* reduces the number
+of priority queue operations by several orders of magnitude compared to a joint A* planner. We present
+empirical results from several domains, showing that X* outperforms existing state-of-the-art
+joint planners for sparse anytime multi-agent planning with optimality convergence. 

@@ -1,0 +1,20 @@
+Video Moment Retrieval (VMR) is a task to localize the temporal moment in untrimmed video specified
+by natural language query. For VMR, several methods that require full supervision for training
+have been proposed. Unfortunately, acquiring a large number of training videos with labeled temporal
+boundaries for each query is a labor-intensive process. This paper explores methods for performing
+VMR in a weakly-supervised manner (wVMR): training is performed without temporal moment labels
+but only with the text query that describes a segment of the video. Existing methods on wVMR generate
+multi-scale proposals and apply query-guided attention mechanisms to highlight the most relevant
+proposal. To leverage the weak supervision, contrastive learning is used which predicts higher
+scores for the correct video-query pairs than for the incorrect pairs. It has been observed that
+a large number of candidate proposals, coarse query representation, and one-way attention mechanism
+lead to blurry attention maps which limit the localization performance. To handle this issue, Video-Language
+Alignment Network (VLANet) is proposed that learns sharper attention by pruning out spurious candidate
+proposals and applying a multi-directional attention mechanism with fine-grained query representation.
+The Surrogate Proposal Selection module selects a proposal based on the proximity to the query in
+the joint embedding space, and thus substantially reduces candidate proposals which leads to lower
+computation load and sharper attention. Next, the Cascaded Cross-modal Attention module considers
+dense feature interactions and multi-directional attention flow to learn the multi-modal alignment.
+VLANet is trained end-to-end using contrastive loss which enforces semantically similar videos
+and queries to gather. The experiments show that the method achieves state-of-the-art performance
+on Charades-STA and DiDeMo datasets. 

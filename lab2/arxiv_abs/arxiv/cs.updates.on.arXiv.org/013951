@@ -1,0 +1,19 @@
+Structure learning for 3D shapes is vital for 3D computer vision. State-of-the-art methods show
+promising results by representing shapes using implicit functions in 3D that are learned using
+discriminative neural networks. However, learning implicit functions requires dense and irregular
+sampling in 3D space, which also makes the sampling methods affect the accuracy of shape reconstruction
+during test. To avoid dense and irregular sampling in 3D, we propose to represent shapes using 2D
+functions, where the output of the function at each 2D location is a sequence of line segments inside
+the shape. Our approach leverages the power of functional representations, but without the disadvantage
+of 3D sampling. Specifically, we use a voxel tubelization to represent a voxel grid as a set of tubes
+along any one of the X, Y, or Z axes. Each tube can be indexed by its 2D coordinates on the plane spanned
+by the other two axes. We further simplify each tube into a sequence of occupancy segments. Each occupancy
+segment consists of successive voxels occupied by the shape, which leads to a simple representation
+of its 1D start and end location. Given the 2D coordinates of the tube and a shape feature as condition,
+this representation enables us to learn 3D shape structures by sequentially predicting the start
+and end locations of each occupancy segment in the tube. We implement this approach using a Seq2Seq
+model with attention, called SeqXY2SeqZ, which learns the mapping from a sequence of 2D coordinates
+along two arbitrary axes to a sequence of 1D locations along the third axis. SeqXY2SeqZ not only benefits
+from the regularity of voxel grids in training and testing, but also achieves high memory efficiency.
+Our experiments show that SeqXY2SeqZ outperforms the state-ofthe-art methods under widely used
+benchmarks. 

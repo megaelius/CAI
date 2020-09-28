@@ -1,0 +1,19 @@
+Many blockchain-based algorithms, such as Bitcoin, implement a decentralized asset transfer
+system, often referred to as a cryptocurrency. As stated in the original paper by Nakamoto, at the
+heart of these systems lies the problem of preventing double-spending; this is usually solved by
+achieving consensus on the order of transfers among the participants. In this paper, we treat the
+asset transfer problem as a concurrent object and determine its consensus number, showing that
+consensus is, in fact, not necessary to prevent double-spending. We first consider the problem
+as defined by Nakamoto, where only a single process---the account owner---can withdraw from each
+account. Safety and liveness need to be ensured for correct account owners, whereas misbehaving
+account owners might be unable to perform transfers. We show that the consensus number of an asset
+transfer object is $1$. We then consider a more general $k$-shared asset transfer object where up
+to $k$ processes can atomically withdraw from the same account, and show that this object has consensus
+number $k$. We establish our results in the context of shared memory with benign faults, allowing
+us to properly understand the level of difficulty of the asset transfer problem. We also translate
+these results in the message passing setting with Byzantine players, a model that is more relevant
+in practice. In this model, we describe an asynchronous Byzantine fault-tolerant asset transfer
+implementation that is both simpler and more efficient than state-of-the-art consensus-based
+solutions. Our results are applicable to both the permissioned (private) and permissionless (public)
+setting, as normally their differentiation is hidden by the abstractions on top of which our algorithms
+are based. 

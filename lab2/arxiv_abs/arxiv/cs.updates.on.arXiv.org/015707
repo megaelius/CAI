@@ -1,0 +1,19 @@
+The problem of planar registration consists in finding the transformation that better aligns two
+point sets. In our setting, the search domain is the set of planar rigid transformations and the objective
+function is the sum of the distances between each point of the transformed source set and the destination
+set. We consider a Branch and Bound (BnB) method for finding the globally optimal solution. The algorithm
+recursively splits the search domain into boxes and computes an upper and a lower bound for the minimum
+value of the restricted problem. The main contribution of this work is the introduction of a novel
+lower bound, the relaxation bound, which corresponds to the solution of a concave relaxation of
+the objective function based on the linearization of the distance. In the BnB we also employ the so
+called cheap bound, equal to to the sum of the minimum distances between each point of source point
+set, transformed according to current box, and all the candidate points in the destination point
+set. We prove, both theoretically and practically, that the novel relaxation bound dominates the
+cheap bound over small boxes. More precisely, from the theoretical point of view, we prove that the
+relaxation bound is a second-order approximation of the minimum value, i.e., its distance from
+the minimum value decreases quadratically with respect to the diameter of the box (see Theorem 1),
+while the cheap bound is a first-order one (see Proposition 3). From the practical point of view,
+we show through different computational experiments that the addition of the relaxation bound
+considerably enhances the performance of the BnB algorithm, compensating the higher cost of its
+computation with respect to the cheap bound with a strong reduction of the number of BnB nodes to be
+explored. 

@@ -1,0 +1,18 @@
+Unsupervised domain adaptation aims at transferring knowledge from the labeled source domain
+to the unlabeled target domain. Previous methods mainly learn a domain-invariant feature transformation,
+where the cross-domain discrepancy can be reduced. Maximum Mean Discrepancy(MMD) is the most popular
+statistic to measure domain discrepancy. However, these methods may suffer from two challenges.
+1) MMD-based methods only measure the first-order statistic information across domains, while
+other useful information such as second-order statistic information has been ignored. 2) The classifier
+trained on the source domain may confuse to distinguish the correct class from a similar class, and
+the phenomenon is called class confusion. In this paper, we propose a method called \emph{Unsupervised
+domain adaptation with exploring more statistics and discriminative information}(MSDI), which
+tackle these two problems in the principle of structural risk minimization. We adopt the recently
+proposed statistic called MMCD to measure domain discrepancy which can capture both first-order
+and second-order statistics simultaneously in RKHS. Besides, we proposed to learn more discriminative
+features to avoid class confusion, where the inner of the classifier predictions with their transposes
+are used to reflect the confusion relationship between different classes. Moreover, we minimizing
+source empirical risk and adopt manifold regularization to explore geometry information in the
+target domain. MSDI learns a domain-invariant classifier in a unified learning framework incorporating
+the above objectives. We conduct comprehensive experiments on five real-world datasets and the
+results verify the effectiveness of the proposed method. 

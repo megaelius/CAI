@@ -1,0 +1,18 @@
+With the widespread use of GPS-enabled mobile devices, an unprecedented amount of trajectory data
+is becoming available from various sources such as Bikely, GPS-wayPoints, and Uber. The rise of
+innovative transportation services and recent break-throughs in autonomous vehicles will lead
+to the continued growth of trajectory data and related applications. Supporting these services
+in emerging platforms will require more efficient query processing in trajectory databases. In
+this paper, we propose two new coverage queries for trajectory databases: (i) k Maximizing Reverse
+Range Search on Trajectories (kMaxRRST); and (ii) a Maximum k Coverage Range Search on Trajectories
+(MaxkCovRST). We propose a novel index structure, the Trajectory Quadtree (TQ-tree) that utilizes
+a quadtree to hierarchically organize trajectories into different quadtree nodes, and then applies
+a z-ordering to further organize the trajectories by spatial locality inside each node. This structure
+is highly effective in pruning the trajectory search space, which is of independent interest. By
+exploiting the TQ-tree data structure, we develop a divide-and-conquer approach to compute the
+trajectory "service value", and a best-first strategy to explore the trajectories using the appropriate
+upper bound on the service value to efficiently process a kMaxRRST query. Moreover, to solve the
+MaxkCovRST, which is a non-submodular NP-hard problem, we propose a greedy approximation which
+also exploits the TQ-tree. We evaluate our algorithms through an extensive experimental study
+on several real datasets, and demonstrate that our TQ-tree based algorithms outperform common
+baselines by two to three orders of magnitude. 

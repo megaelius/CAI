@@ -1,0 +1,18 @@
+Fast and accurate anatomical landmark detection can benefit many medical image analysis methods.
+Here, we propose a method to automatically detect anatomical landmarks in medical images. Automatic
+landmark detection is performed with a patch-based fully convolutional neural network (FCNN)
+that combines regression and classification. For any given image patch, regression is used to predict
+the 3D displacement vector from the image patch to the landmark. Simultaneously, classification
+is used to identify patches that contain the landmark. Under the assumption that patches close to
+a landmark can determine the landmark location more precisely than patches farther from it, only
+those patches that contain the landmark according to classification are used to determine the landmark
+location. The landmark location is obtained by calculating the average landmark location using
+the computed 3D displacement vectors. The method is evaluated using detection of six clinically
+relevant landmarks in coronary CT angiography (CCTA) scans: the right and left ostium, the bifurcation
+of the left main coronary artery (LM) into the left anterior descending and the left circumflex artery,
+and the origin of the right, non-coronary, and left aortic valve commissure. The proposed method
+achieved an average Euclidean distance error of 2.19 mm and 2.88 mm for the right and left ostium respectively,
+3.78 mm for the bifurcation of the LM, and 1.82 mm, 2.10 mm and 1.89 mm for the origin of the right, non-coronary,
+and left aortic valve commissure respectively, demonstrating accurate performance. The proposed
+combination of regression and classification can be used to accurately detect landmarks in CCTA
+scans. 

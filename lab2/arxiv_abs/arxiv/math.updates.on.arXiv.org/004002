@@ -1,0 +1,20 @@
+Powerful interior-point methods (IPM) based commercial solvers such as Gurobi and Mosek have been
+hugely successful in solving large-scale linear programming (LP) problems. The high efficiency
+of these solvers depends critically on the sparsity of the problem data and advanced matrix factorization
+techniques. For a large scale LP problem with data matrix $A$ that is dense (possibly structured)
+or whose corresponding normal matrix $AA^T$ has a dense Cholesky factor (even with re-ordering),
+these solvers may require excessive computational cost and/or extremely heavy memory usage in
+each interior-point iteration. Unfortunately, the natural remedy, i.e., the use of iterative
+methods based IPM solvers, although can avoid the explicit computation of the coefficient matrix
+and its factorization, is not practically viable due to the inherent extreme ill-conditioning
+of the large scale normal equation arising in each interior-point iteration. To provide a better
+alternative choice for solving large scale LPs with dense data or requiring expensive factorization
+of its normal equation, we propose a semismooth Newton based inexact proximal augmented Lagrangian
+({\sc Snipal}) method. Different from classic IPMs, in each iteration of {\sc Snipal}, iterative
+methods can efficiently be used to solve simpler yet better conditioned semismooth Newton linear
+systems. Moreover, {\sc Snipal} not only enjoys a fast asymptotic superlinear convergence but
+{is also proven to enjoy a} finite termination property. Numerical comparisons with Gurobi have
+demonstrated encouraging potential of {\sc Snipal} for handling large-scale LP problems. For
+a few large LP instances arising from the correlation clustering, our algorithm can be up to $25-140$
+times faster than Gurobi in solving the problems to the high accuracy of $10^{-8}$ in the relative
+KKT residual. 

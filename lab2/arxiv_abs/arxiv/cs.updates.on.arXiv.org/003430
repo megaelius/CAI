@@ -1,0 +1,20 @@
+The dictionary matching is a task to find all occurrences of patterns in a set $D$ (called a dictionary)
+on a text $T$. The Aho-Corasick-automaton (AC-automaton) is a data structure which enables us to
+solve the dictionary matching problem in $O(d\log\sigma)$ preprocessing time and $O(n\log\sigma+occ)$
+matching time, where $d$ is the total length of the patterns in $D$, $n$ is the length of the text, $\sigma$
+is the alphabet size, and $occ$ is the total number of occurrences of all the patterns in the text.
+The dynamic dictionary matching is a variant where patterns may dynamically be inserted into and
+deleted from $D$. This problem is called semi-dynamic dictionary matching if only insertions are
+allowed. In this paper, we propose two efficient algorithms. For a pattern of length $m$, our first
+algorithm supports insertions in $O(m\log\sigma+\log d/\log\log d)$ time and pattern matching
+in $O(n\log\sigma+occ)$ time for the semi-dynamic setting and supports both insertions and deletions
+in $O(\sigma m+\log d/\log\log d)$ time and pattern matching in $O(n(\log d/\log\log d+\log\sigma)+occ(\log
+d/\log\log d))$ time for the dynamic setting by some modifications. This algorithm is based on the
+directed acyclic word graph. Our second algorithm, which is based on the AC-automaton, supports
+insertions in $O(m\log \sigma+u_f+u_o)$ time for the semi-dynamic setting and supports both insertions
+and deletions in $O(\sigma m+u_f+u_o)$ time for the dynamic setting, where $u_f$ and $u_o$ respectively
+denote the numbers of states in which the failure function and the output function need to be updated.
+This algorithm performs pattern matching in $O(n\log\sigma+occ)$ time for both settings. Our
+algorithm achieves optimal update time for AC-automaton based methods over constant-size alphabets,
+since any algorithm which explicitly maintains the AC-automaton requires $\Omega(m+u_f+u_o)$
+update time. 

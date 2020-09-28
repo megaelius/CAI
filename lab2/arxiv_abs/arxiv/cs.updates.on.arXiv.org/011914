@@ -1,0 +1,20 @@
+Tree ensemble models including random forests and gradient boosted decision trees, are widely
+used as security classifiers to detect malware, phishing, scam, social engineering, etc. However,
+the robustness of tree ensembles has not been thoroughly studied. Existing approaches mainly focus
+on adding more robust features and conducting feature ablation study, which do not provide robustness
+guarantee against strong adversaries. In this paper, we propose a new algorithm to train robust
+tree ensembles. Robust training maximizes the defender's gain as if the adversary is trying to minimize
+that. We design a general algorithm based on greedy heuristic to find better solutions to the minimization
+problem than previous work. We implement the algorithm for gradient boosted decision trees in xgboost
+and random forests in scikit-learn. Our evaluation over benchmark datasets show that, we can train
+more robust models than the start-of-the-art robust training algorithm in gradient boosted decision
+trees, with a 1.26X increase in the $L_\infty$ evasion distance required for the strongest whitebox
+attacker. In addition, our algorithm is general across different gain metrics and types of tree
+ensembles. We achieve 3.32X increase in $L_\infty$ robustness distance compared to the baseline
+random forest training method. Furthermore, to make the robustness increase meaningful in security
+applications, we propose attack-cost-driven constraints for the robust training process. Our
+training algorithm maximizes attacker's evasion cost by integrating domain knowledge about feature
+manipulation costs. We use twitter spam detection as a case study to analyze attacker's cost increase
+to evade our robust model. Our technique can train robust model to rank robust features as most important
+ones, and our robust model requires about 8.4X increase in attacker's economic cost to be evaded
+compared to the baseline. 

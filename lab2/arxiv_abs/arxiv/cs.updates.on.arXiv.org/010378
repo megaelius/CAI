@@ -1,0 +1,20 @@
+The problem of estimating Wasserstein distances between two densities living in high-dimension
+suffers from the curse of dimensionality: One needs an exponential (wrt dimension) number of samples
+to ensure that the distance between the two empirical measures is comparable to the distance between
+the original densities. Therefore, optimal transport (OT) geometry can only be used in machine
+learning if the OT problem is substantially regularized. On the other hand, one of the greatest achievements
+of the OT literature in recent years lies in regularity theory: Caffarelli showed that the OT map
+between two well behaved measures is Lipschitz, or, equivalently when considering 2-Wasserstein
+distances, that the Brenier convex potential (whose gradient yields an optimal map) is smooth.
+We propose in this work to draw inspiration from this theory and use regularity as a regularization
+tool. We give algorithms operating on two discrete measures that can recover nearly optimal transport
+maps with small distortion, or equivalently, nearly optimal Brenier potentials that are strongly
+convex and smooth. For univariate measures, we show that computing these potentials is equivalent
+to solving an isotonic regression problem with Lipschitz and strong monotonicity constraints.
+For multivariate measures the problem boils down to solving alternatively a convex QCQP and a discrete
+OT problem. We recover this way the values and gradients of the Brenier potential on sampled points,
+but also show more generally, that values and gradients of the potential can be computed out of sample,
+at the cost of solving a simpler QCQP for each evaluation. Building on these two formulations we propose
+algorithms to estimate and evaluate transport maps with desired regularity properties, benchmark
+their statistical performance, apply them to domain adaptation and visualize their action on a
+color transfer task. 

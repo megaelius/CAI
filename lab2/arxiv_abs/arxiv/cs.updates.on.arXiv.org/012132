@@ -1,0 +1,17 @@
+Reinforcement learning, evolutionary algorithms and imitation learning are three principal
+methods to deal with continuous control tasks. Reinforcement learning is sample efficient, yet
+sensitive to hyper-parameters setting and needs efficient exploration; Evolutionary algorithms
+are stable, but with low sample efficiency; Imitation learning is both sample efficient and stable,
+however it requires the guidance of expert data. In this paper, we propose Recruitment-imitation
+Mechanism (RIM) for evolutionary reinforcement learning, a scalable framework that combines
+advantages of the three methods mentioned above. The core of this framework is a dual-actors and
+single critic reinforcement learning agent. This agent can recruit high-fitness actors from the
+population of evolutionary algorithms, which instructs itself to learn from experience replay
+buffer. At the same time, low-fitness actors in the evolutionary population can imitate behavior
+patterns of the reinforcement learning agent and improve their adaptability. Reinforcement and
+imitation learners in this framework can be replaced with any off-policy actor-critic reinforcement
+learner or data-driven imitation learner. We evaluate RIM on a series of benchmarks for continuous
+control tasks in Mujoco. The experimental results show that RIM outperforms prior evolutionary
+or reinforcement learning methods. The performance of RIM's components is significantly better
+than components of previous evolutionary reinforcement learning algorithm, and the recruitment
+using soft update enables reinforcement learning agent to learn faster than that using hard update.

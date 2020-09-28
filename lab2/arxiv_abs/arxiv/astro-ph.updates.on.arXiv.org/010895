@@ -1,0 +1,17 @@
+Machine learning (ML) is a standard approach for estimating the redshifts of galaxies when only
+photometric information is available. ML photo-z solutions have traditionally ignored the morphological
+information available in galaxy images or partly included it in the form of hand-crafted features,
+with mixed results. We train a morphology-aware photometric redshift machine using modern deep
+learning tools. It uses a custom architecture that jointly trains on galaxy fluxes, colors and images.
+Galaxy-integrated quantities are fed to a Multi-Layer Perceptron (MLP) branch while images are
+fed to a convolutional (convnet) branch that can learn relevant morphological features. This split
+MLP-convnet architecture, which aims to disentangle strong photometric features from comparatively
+weak morphological ones, proves important for strong performance: a regular convnet-only architecture,
+while exposed to all available photometric information in images, delivers comparatively poor
+performance. We present a cross-validated MLP-convnet model trained on 130,000 SDSS-DR12 galaxies
+that outperforms a hyperoptimized Gradient Boosting solution (hyperopt+XGBoost), as well as
+the equivalent MLP-only architecture, on the redshift bias metric. The 4-fold cross-validated
+MLP-convnet model achieves a bias $\delta z / (1+z) =-0.70 \pm 1 \times 10^{-3} $, approaching the
+performance of a reference ANNZ2 ensemble of 100 distinct models trained on a comparable dataset.
+The relative performance of the morphology-aware and morphology-blind models indicates that
+galaxy morphology does improve ML-based photometric redshift estimation. 

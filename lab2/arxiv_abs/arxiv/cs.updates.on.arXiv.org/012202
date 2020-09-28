@@ -1,0 +1,17 @@
+We consider the problem of learning a mixture of linear regressions (MLRs). An MLR is specified by
+$k$ nonnegative mixing weights $p_1, \ldots, p_k$ summing to $1$, and $k$ unknown regressors $w_1,...,w_k\in\mathbb{R}^d$.
+A sample from the MLR is drawn by sampling $i$ with probability $p_i$, then outputting $(x, y)$ where
+$y = \langle x, w_i \rangle + \eta$, where $\eta\sim\mathcal{N}(0,\varsigma^2)$ for noise rate
+$\varsigma$. Mixtures of linear regressions are a popular generative model and have been studied
+extensively in machine learning and theoretical computer science. However, all previous algorithms
+for learning the parameters of an MLR require running time and sample complexity scaling exponentially
+with $k$. In this paper, we give the first algorithm for learning an MLR that runs in time which is sub-exponential
+in $k$. Specifically, we give an algorithm which runs in time $\widetilde{O}(d)\cdot\exp(\widetilde{O}(\sqrt{k}))$
+and outputs the parameters of the MLR to high accuracy, even in the presence of nontrivial regression
+noise. We demonstrate a new method that we call "Fourier moment descent" which uses univariate density
+estimation and low-degree moments of the Fourier transform of suitable univariate projections
+of the MLR to iteratively refine our estimate of the parameters. To the best of our knowledge, these
+techniques have never been used in the context of high dimensional distribution learning, and may
+be of independent interest. We also show that our techniques can be used to give a sub-exponential
+time algorithm for learning mixtures of hyperplanes, a natural hard instance of the subspace clustering
+problem. 

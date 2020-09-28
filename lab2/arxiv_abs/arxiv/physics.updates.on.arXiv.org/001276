@@ -1,0 +1,19 @@
+ALICE (A Large Heavy Ion Experiment) is one of the four major experiments at the Large Hadron Collider
+(LHC) at CERN, which is today the most powerful particle accelerator worldwide. The High Level Trigger
+(HLT) is an online compute farm of about 200 nodes, which reconstructs events measured by the ALICE
+detector in real-time. The HLT uses a custom online data-transport framework to distribute data
+and workload among the compute nodes. ALICE employs several calibration-sensitive subdetectors,
+e.g. the TPC (Time Projection Chamber). For a precise reconstruction, the HLT has to perform the
+calibration online. Online-calibration can make certain Offline calibration steps obsolete
+and can thus speed up Offline analysis. Looking forward to ALICE Run III starting in 2020, online
+calibration becomes a necessity. The main detector used for track reconstruction is the TPC. Reconstructing
+the trajectories in the TPC is the most compute-intense step during event reconstruction. Therefore,
+a fast tracking implementation is of great importance. Reconstructed TPC tracks build the basis
+for the calibration making a fast online-tracking mandatory. We present several components developed
+for the ALICE High Level Trigger to perform fast event reconstruction and to provide features required
+for online calibration. As first topic, we present our TPC tracker, which employs GPUs to speed up
+the processing, and which bases on a Cellular Automaton and on the Kalman filter. Our TPC tracking
+algorithm has been successfully used in 2011 and 2012 in the lead-lead and the proton-lead runs.
+We have improved it to leverage features of newer GPUs and we have ported it to support OpenCL, CUDA,
+and CPUs with a single common source code. This makes us vendor independent. As second topic, we present
+framework extensions required for online calibration. ... 

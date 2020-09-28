@@ -1,0 +1,19 @@
+Full nodes, which synchronize the entire blockchain history and independently validate all the
+blocks, form the backbone of any blockchain network by playing a vital role in ensuring security
+properties. On the other hand, a user running a full node needs to pay a heavy price in terms of storage
+costs. E.g., the Bitcoin blockchain size has grown over 215GB, in spite of its low throughput. The
+ledger size for a high throughput blockchain Ripple has already reached 9TB, and it is growing at
+an astonishing rate of 12GB per day! In this paper, we propose an architecture based on 'fountain
+codes', a class of erasure codes, that enables any full node to 'encode' validated blocks into a small
+number of 'coded blocks', thereby reducing its storage costs by orders of magnitude. In particular,
+our proposed "Secure Fountain (SeF)" architecture can achieve a near-optimal trade-off between
+the storage savings per node and the 'bootstrap cost' in terms of the number of (honest) storage-constrained
+nodes a new node needs to contact to recover the blockchain. A key technical innovation in SeF codes
+is to make fountain codes secure against adversarial nodes that can provide maliciously formed
+coded blocks. Our idea is to use the header-chain as a 'side-information' to check whether a coded
+block is maliciously formed while it is getting decoded. Further, the 'rateless property' of fountain
+codes helps in achieving high decentralization and scalability. Our experiments demonstrate
+that SeF codes tuned to achieve 1000x storage savings enable full nodes to encode the 191GB Bitcoin
+blockchain into 195MB on average. A new node can recover the blockchain from an arbitrary set of storage-constrained
+nodes as long as the set contains ~1100 honest nodes on average. Note that for a 1000x storage savings,
+the fundamental bound on the number of honest nodes to contact is 1000: we need about 10% more in practice.

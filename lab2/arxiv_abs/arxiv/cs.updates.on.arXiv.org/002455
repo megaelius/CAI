@@ -1,0 +1,19 @@
+Given a string $S$, the \emph{compressed indexing problem} is to preprocess $S$ into a compressed
+representation that supports fast \emph{substring queries}. The goal is to use little space relative
+to the compressed size of $S$ while supporting fast queries. We present a compressed index based
+on the Lempel--Ziv 1977 compression scheme. We obtain the following time-space trade-offs: For
+constant-sized alphabets; (i) $O(m + occ \lg\lg n)$ time using $O(z\lg(n/z)\lg\lg z)$ space, or
+(ii) $O(m(1 + \frac{\lg^\epsilon z}{\lg(n/z)}) + occ(\lg\lg n + \lg^\epsilon z))$ time using $O(z\lg(n/z))$
+space. For integer alphabets polynomially bounded by $n$; (iii) $O(m(1 + \frac{\lg^\epsilon z}{\lg(n/z)})
++ occ(\lg\lg n + \lg^\epsilon z))$ time using $O(z(\lg(n/z) + \lg\lg z))$ space, or (iv) $O(m + occ(\lg\lg
+n + \lg^{\epsilon} z))$ time using $O(z(\lg(n/z) + \lg^{\epsilon} z))$ space, where $n$ and $m$
+are the length of the input string and query string respectively, $z$ is the number of phrases in the
+LZ77 parse of the input string, $occ$ is the number of occurrences of the query in the input and $\epsilon
+> 0$ is an arbitrarily small constant. In particular, (i) improves the leading term in the query time
+of the previous best solution from $O(m\lg m)$ to $O(m)$ at the cost of increasing the space by a factor
+$\lg \lg z$. Alternatively, (ii) matches the previous best space bound, but has a leading term in
+the query time of $O(m(1+\frac{\lg^{\epsilon} z}{\lg (n/z)}))$. However, for any polynomial
+compression ratio, i.e., $z = O(n^{1-\delta})$, for constant $\delta > 0$, this becomes $O(m)$.
+Our index also supports extraction of any substring of length $\ell$ in $O(\ell + \lg(n/z))$ time.
+Technically, our results are obtained by novel extensions and combinations of existing data structures
+of independent interest, including a new batched variant of weak prefix search. 

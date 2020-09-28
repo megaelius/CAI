@@ -1,0 +1,18 @@
+Commodity OS kernels are known to have broad attack surfaces due to the large code base and the numerous
+features such as device drivers. For a real-world use case (e.g., an Apache Server), many kernel
+services are unused and only a small amount of kernel code is used. Within the used code, a certain
+part is invoked only at the runtime phase while the rest are executed at startup and/or shutdown phases
+in the kernel's lifetime run. In this paper, we propose a reliable and practical system, named KASR,
+which transparently reduces attack surfaces of commodity OS kernels at the runtime phase without
+requiring their source code. The KASR system, residing in a trusted hypervisor, achieves the attack
+surface reduction through two reliable steps: (1) deprives unused code of executable permissions,
+and (2) transparently segments used code and selectively activates them according to their phases.
+KASR also prevents unknown code from executing in the kernel space, and thus it is able to defend against
+all kernel code injection attacks. We implement a prototype of KASR on the Xen-4.8.2 hypervisor
+and evaluate its security effectiveness on Linux kernel-4.4.0-87-generic. Our evaluation shows
+that KASR reduces kernel attack surface by 64%, trims off 40% of in-memory CVE vulnerabilities and
+66% of system calls, and prohibits 99% of on-disk device drivers (including their related CVEs)
+from executing. Besides, KASR successfully detects and blocks all 6 real-world kernel rootkits.
+We measure its performance overhead with three benchmark tools (i.e., SPECINT, httperf and bonnie++).
+The experimental results indicate that KASR imposes less than 1% averaged performance overhead
+compared to an unmodified Xen hypervisor. 

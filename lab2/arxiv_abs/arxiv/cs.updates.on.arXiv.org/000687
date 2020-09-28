@@ -1,0 +1,20 @@
+In this work, we present EAGr, a system for supporting large numbers of continuous neighborhood-based
+("ego-centric") aggregate queries over large, highly dynamic, and rapidly evolving graphs. Examples
+of such queries include computation of personalized, tailored trends in social networks, anomaly/event
+detection in financial transaction networks, local search and alerts in spatio-temporal networks,
+to name a few. Key challenges in supporting such continuous queries include high update rates typically
+seen in these situations, large numbers of queries that need to be executed simultaneously, and
+stringent low latency requirements. We propose a flexible, general, and extensible in-memory
+framework for executing different types of ego-centric aggregate queries over large dynamic graphs
+with low latencies. Our framework is built around the notion of an aggregation overlay graph, a pre-compiled
+data structure that encodes the computations to be performed when an update/query is received.
+The overlay graph enables sharing of partial aggregates across multiple ego-centric queries (corresponding
+to the nodes in the graph), and also allows partial pre-computation of the aggregates to minimize
+the query latencies. We present several highly scalable techniques for constructing an overlay
+graph given an aggregation function, and also design incremental algorithms for handling structural
+changes to the underlying graph. We also present an optimal, polynomial-time algorithm for making
+the pre-computation decisions given an overlay graph, and evaluate an approach to incrementally
+adapt those decisions as the workload changes. Although our approach is naturally parallelizable,
+we focus on a single-machine deployment and show that our techniques can easily handle graphs of
+size up to 320 million nodes and edges, and achieve update/query throughputs of over 500K/s using
+a single, powerful machine. 

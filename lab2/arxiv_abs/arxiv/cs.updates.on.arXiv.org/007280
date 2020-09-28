@@ -1,0 +1,17 @@
+Static analyzers, including linters, can warn developers about programming errors, bugs, style
+errors, and generally suspicious code. Sometimes analyzer rules have obvious fixes but other times
+choosing an appropriate fix is more nuanced and can take some time for a developer to proceed. Offering
+fix suggestions for these trickier analyzers can therefore help save developer time, but in order
+for developers to accept the offered fix the patch must look natural. Additionally, in a production
+environment there is a limited amount of resources that can be spent validating fix candidates,
+so there is not time to evaluate a large number of fix candidates. Due to the expectation of a quick
+turnaround time during code review, we can generally only afford to validate a single fix candidate
+per bug. To solve these issues, we built Getafix, a tool which mines patterns from past fixes made
+by developers with enough context to accurately create natural-looking autofix suggestions.
+The patches we learn contain all the context needed to apply and rank them, so even though we only validate
+the top fix candidate we still are able to offer fix suggestions in a lot of cases. Additionally, our
+pattern mining approach can be directed at the whole code change history to find new lint warnings,
+avoiding the manual effort from developers to create new lint rules. Our pattern mining approach
+is more effective in discovering new and applicable patterns than previous work because it includes
+context about where and how the pattern should apply. This article is an expanded version of the blog
+post at https://code.fb.com/developer-tools/getafix-how-facebook-tools-learn-to-fix-bugs-automatically/.

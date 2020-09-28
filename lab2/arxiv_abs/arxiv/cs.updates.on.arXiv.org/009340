@@ -1,0 +1,18 @@
+The performance of biomolecular molecular dynamics (MD) simulations has steadily increased on
+modern high performance computing (HPC) resources but acceleration of the analysis of the output
+trajectories has lagged behind so that analyzing simulations is increasingly becoming a bottleneck.
+To close this gap, we studied the performance of parallel trajectory analysis with MPI and the Python
+MDAnalysis library on three different XSEDE supercomputers where trajectories were read from
+a Lustre parallel file system. We found that strong scaling performance was impeded by stragglers,
+MPI processes that were slower than the typical process and that therefore dominated the overall
+run time. Stragglers were less prevalent for compute-bound workloads, thus pointing to file reading
+as a crucial bottleneck for scaling. However, a more complicated picture emerged in which both the
+computation and the ingestion of data exhibited close to ideal strong scaling behavior whereas
+stragglers were primarily caused by either large MPI communication costs or long times to open the
+single shared trajectory file. We improved overall strong scaling performance by two different
+approaches to file access, namely subfiling (splitting the trajectory into as many trajectory
+segments as number of processes) and MPI-IO with Parallel HDF5 trajectory files. Applying these
+strategies, we obtained near ideal strong scaling on up to 384 cores (16 nodes). We summarize our
+lessons-learned in guidelines and strategies on how to take advantage of the available HPC resources
+to gain good scalability and potentially reduce trajectory analysis times by two orders of magnitude
+compared to the prevalent serial approach. 

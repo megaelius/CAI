@@ -1,0 +1,17 @@
+Transaction logging is an essential constituent to guarantee the atomicity and durability in online
+transaction processing (OLTP) systems. It always has a considerable impact on performance, especially
+in an in-memory database system. Conventional implementations of logging rely heavily on a centralized
+design, which guarantees the correctness of recovery by enforcing a total order of all operations
+such as log sequence number (LSN) allocation, log persistence, transaction committing and recovering.
+This strict sequential constraint seriously limits the scalability and parallelism of transaction
+logging and recovery, especially in the multi-core hardware environment. In this paper, we define
+recoverability for transaction logging and demonstrate its correctness for crash recovery. Based
+on recoverability, we propose a recoverable logging scheme named Poplar, which enables scalable
+and parallel log processing by easing the restrictions. Its main advantages are that (1) Poplar
+enables the parallel log persistence on multiple storage devices; (2) it replaces the centralized
+LSN allocation by calculating a partially ordered sequence number in a distributed manner, which
+allows log records to only track RAW and WAW dependencies among transactions; (3) it only demands
+transactions with RAW dependencies to be committed in serial order; (4) Poplar can concurrently
+restore a consistent database state based on the partially constrained logs after a crash. Experimental
+results show that Poplar scales well with the increase of IO devices and outperforms other logging
+approaches on both SSDs and emulated non-volatile memory. 

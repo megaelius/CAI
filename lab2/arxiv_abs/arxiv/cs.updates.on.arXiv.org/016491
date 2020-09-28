@@ -1,0 +1,19 @@
+Pointer analysis is one of the fundamental problems in static program analysis. Given a set of pointers,
+the task is to produce a useful over-approximation of the memory locations that each pointer may
+point-to at runtime. The most common formulation is Andersen's Pointer Analysis (APA), defined
+as an inclusion-based set of $m$ pointer constraints over a set of $n$ pointers. Existing algorithms
+solve APA in $O(n^2\cdot m)$ time, while it has been conjectured that the problem has no truly sub-cubic
+algorithm, with a proof so far having remained elusive. Besides this simple bound, the complexity
+of the problem has remained poorly understood. In this work we draw a rich fine-grained and parallel
+complexity landscape of APA, and present upper and lower bounds. First, we establish an $O(n^3)$
+upper-bound for general APA, improving over $O(n^2\cdot m)$ as $n=O(m)$. Second, we show that even
+on-demand APA (``may a \emph{specific} pointer $a$ point to a \emph{specific} location $b$?'')
+has an $\Omega(n^3)$ (combinatorial) lower bound under standard complexity-theoretic hypotheses.
+This formally establishes the long-conjectured ``cubic bottleneck'' of APA, and shows that our
+$O(n^3)$-time algorithm is optimal. Third, we show that under mild restrictions, APA is solvable
+in $\tilde{O}(n^{\omega})$ time, where $\omega<2.373$ is the matrix-multiplication coefficient.
+It is believed that $\omega=2+o(1)$, in which case this bound becomes quadratic. Fourth, we show
+that even under such restrictions, even the on-demand problem has an $\Omega(n^2)$ lower bound,
+and hence our algorithm is optimal when $\omega=2+o(1)$. Fifth, we study the parallelizability
+of APA and establish lower and upper bounds: (i) in general, the problem is P-complete and hence not
+parallelizable, whereas (ii) under mild restrictions, the problem is in NC and hence parallelizable.

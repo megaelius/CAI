@@ -1,0 +1,17 @@
+Even though automatic classification and interpretation would be highly desired features for
+the Magnetospheric Multiscale mission (MMS), the gold rush era in machine learning has yet to reach
+the science done with observations collected by MMS. We investigate the properties of the ion sky
+maps produced by the Dual Ion Spectrometers (DIS) from the Fast Plasma Investigation (FPI). Running
+the Principal Component Analysis (PCA) on a mixed subset of the data suggests that more than 500 components
+are needed to cover 80% of the variance. Hence, simple machine learning techniques might not deal
+with classification of plasma regions. Use of a three-dimensional (3D) convolutional autoencoder
+(3D-CAE) allows to reduce the data dimensionality by 128 times while still maintaining a decent
+quality energy distribution. However, k-means clustering computed over the compressed data is
+not capable of separating measurements according to the physical properties of the plasma. A three-dimensional
+convolutional neural network (3D-CNN), trained on a rather small amount of human labelled training
+examples is able to predict plasma regions with 99% accuracy. The low probability predictions of
+the 3D-CNN reveal the mixed state regions, such as the magnetopause or bow shock, which are of key
+interest to researchers of the MMS mission. The 3D-CNN and data processing software could easily
+be deployed on ground-based computers and provide classification for the whole MMS database. Data
+processing through the trained 3D-CNN is fast and efficient, opening up the possibility for deployment
+in data-centers or in situ operation onboard the spacecraft. 

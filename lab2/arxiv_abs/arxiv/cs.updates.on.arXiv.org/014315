@@ -1,0 +1,20 @@
+We study the question of how to compute a point in the convex hull of an input set $S$ of $n$ points in
+${\mathbb R}^d$ in a differentially private manner. This question, which is trivial non-privately,
+turns out to be quite deep when imposing differential privacy. In particular, it is known that the
+input points must reside on a fixed finite subset $G\subseteq{\mathbb R}^d$, and furthermore,
+the size of $S$ must grow with the size of $G$. Previous works focused on understanding how $n$ needs
+to grow with $|G|$, and showed that $n=O\left(d^{2.5}\cdot8^{\log^*|G|}\right)$ suffices (so
+$n$ does not have to grow significantly with $|G|$). However, the available constructions exhibit
+running time at least $|G|^{d^2}$, where typically $|G|=X^d$ for some (large) discretization
+parameter $X$, so the running time is in fact $\Omega(X^{d^3})$. In this paper we give a differentially
+private algorithm that runs in $O(n^d)$ time, assuming that $n=\Omega(d^4\log X)$. To get this
+result we study and exploit some structural properties of the Tukey levels (the regions $D_{\ge
+k}$ consisting of points whose Tukey depth is at least $k$, for $k=0,1,...$). In particular, we derive
+lower bounds on their volumes for point sets $S$ in general position, and develop a rather subtle
+mechanism for handling point sets $S$ in degenerate position (where the deep Tukey regions have
+zero volume). A naive approach to the construction of the Tukey regions requires $n^{O(d^2)}$ time.
+To reduce the cost to $O(n^d)$, we use an approximation scheme for estimating the volumes of the Tukey
+regions (within their affine spans in case of degeneracy), and for sampling a point from such a region,
+a scheme that is based on the volume estimation framework of Lov\'asz and Vempala (FOCS 2003) and
+of Cousins and Vempala (STOC 2015). Making this framework differentially private raises a set of
+technical challenges that we address. 

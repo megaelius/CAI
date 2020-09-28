@@ -1,0 +1,2 @@
+Is there a tn3270 program which support xterm? I don't like x3270 at all. You
+can't copy with other windows. Thanks.

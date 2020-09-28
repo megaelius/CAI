@@ -1,0 +1,19 @@
+Planning for systems with dynamics is challenging as often there is no local planner available and
+the only primitive to explore the state space is forward propagation of controls. In this context,
+tree sampling-based planners have been developed, some of which achieve asymptotic optimality
+by propagating random controls during each iteration. While desirable for the analysis, random
+controls result in slow convergence to high quality trajectories in practice. This short position
+statement first argues that if a kinodynamic planner has access to local maneuvers that appropriately
+balance an exploitation-exploration trade-off, the planner's per iteration performance is significantly
+improved. Generating such maneuvers during planning can be achieved by curating a large sample
+of random controls. This is, however, computationally very expensive. If such maneuvers can be
+generated fast, the planner's performance will also improve as a function of computation time.
+Towards objective, this short position statement argues for the integration of modern machine
+learning frameworks with state-of-the-art, informed and asymptotically optimal kinodynamic
+planners. The proposed approach involves using using neural networks to infer local maneuvers
+for a robotic system with dynamics, which properly balance the above exploitation-exploration
+trade-off. In particular, a neural network architecture is proposed, which is trained to reflect
+the choices of an online curation process, given local obstacle and heuristic information. The
+planner uses these maneuvers to efficiently explore the underlying state space, while still maintaining
+desirable properties. Preliminary indications in simulated environments and systems are promising
+but also point to certain challenges that motivate further research in this direction. 

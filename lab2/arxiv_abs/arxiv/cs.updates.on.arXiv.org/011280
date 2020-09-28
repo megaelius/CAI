@@ -1,0 +1,19 @@
+We propose a new approach to the numerical solution of radiative transfer equations with certified
+a posteriori error bounds. A key role is played by stable Petrov--Galerkin type variational formulations
+of parametric transport equations and corresponding radiative transfer equations. This allows
+us to formulate an iteration in a suitable, infinite dimensional function space that is guaranteed
+to converge with a fixed error reduction per step. The numerical scheme is then based on approximately
+realizing this iteration within dynamically updated accuracy tolerances that still ensure convergence
+to the exact solution. To advance this iteration two operations need to be performed within suitably
+tightened accuracy tolerances. First, the global scattering operator needs to be approximately
+applied to the current iterate within a tolerance comparable to the current accuracy level. Second,
+parameter dependent linear transport equations need to be solved, again at the required accuracy
+of the iteration. To ensure that the stage dependent error tolerances are met, one has to employ rigorous
+a posteriori error bounds which, in our case, rest on a Discontinuous Petrov--Galerkin (DPG) scheme.
+These a posteriori bounds are not only crucial for guaranteeing the convergence of the perturbed
+iteration but are also used to generate adapted parameter dependent spatial meshes. This turns
+out to significantly reduce overall computational complexity. Since the global operator is only
+applied, we avoid the need to solve linear systems with densely populated matrices. Moreover, the
+approximate application of the global scatterer accelerated through low-rank approximation
+and matrix compression techniques. The theoretical findings are illustrated and complemented
+by numerical experiments with non-trivial scattering kernels. 

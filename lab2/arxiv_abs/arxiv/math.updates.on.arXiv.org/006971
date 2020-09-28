@@ -1,0 +1,19 @@
+Data used to train machine learning models can be adversarial--maliciously constructed by adversaries
+to fool the model. Challenge also arises by privacy, confidentiality, or due to legal constraints
+when data are geographically gathered and stored across multiple learners, some of which may hold
+even an "anonymized" or unreliable dataset. In this context, the distributionally robust optimization
+framework is considered for training a parametric model, both in centralized and federated learning
+settings. The objective is to endow the trained model with robustness against adversarially manipulated
+input data, or, distributional uncertainties, such as mismatches between training and testing
+data distributions, or among datasets stored at different workers. To this aim, the data distribution
+is assumed unknown, and lies within a Wasserstein ball centered around the empirical data distribution.
+This robust learning task entails an infinite-dimensional optimization problem, which is challenging.
+Leveraging a strong duality result, a surrogate is obtained, for which three stochastic primal-dual
+algorithms are developed: i) stochastic proximal gradient descent with an $\epsilon$-accurate
+oracle, which invokes an oracle to solve the convex sub-problems; ii) stochastic proximal gradient
+descent-ascent, which approximates the solution of the convex sub-problems via a single gradient
+ascent step; and, iii) a distributionally robust federated learning algorithm, which solves the
+sub-problems locally at different workers where data are stored. Compared to the empirical risk
+minimization and federated learning methods, the proposed algorithms offer robustness with little
+computation overhead. Numerical tests using image datasets showcase the merits of the proposed
+algorithms under several existing adversarial attacks and distributional uncertainties. 

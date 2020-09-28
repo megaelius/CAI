@@ -1,0 +1,19 @@
+In the past few years, Generative Adversarial Networks (GANs) have dramatically advanced our ability
+to represent and parameterize high-dimensional, non-linear image manifolds. As a result, they
+have been widely adopted across a variety of applications, ranging from challenging inverse problems
+like image completion, to problems such as anomaly detection and adversarial defense. A recurring
+theme in many of these applications is the notion of projecting an image observation onto the manifold
+that is inferred by the generator. In this context, Projected Gradient Descent (PGD) has been the
+most popular approach, which essentially optimizes for a latent vector that minimizes the discrepancy
+between a generated image and the given observation. However, PGD is a brittle optimization technique
+that fails to identify the right projection (or latent vector) when the observation is corrupted,
+or perturbed even by a small amount. Such corruptions are common in the real world, for example images
+in the wild come with unknown crops, rotations, missing pixels, or other kinds of non-linear distributional
+shifts which break current encoding methods, rendering downstream applications unusable. To
+address this, we propose corruption mimicking -- a new robust projection technique, that utilizes
+a surrogate network to approximate the unknown corruption directly at test time, without the need
+for additional supervision or data augmentation. The proposed method is significantly more robust
+than PGD and other competing methods under a wide variety of corruptions, thereby enabling a more
+effective use of GANs in real-world applications. More importantly, we show that our approach produces
+state-of-the-art performance in several GAN-based applications -- anomaly detection, domain
+adaptation, and adversarial defense, that benefit from an accurate projection. 

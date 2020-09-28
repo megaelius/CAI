@@ -1,0 +1,18 @@
+Practical attacks that exploit speculative execution can leak confidential information via microarchitectural
+side channels. The recently-demonstrated Spectre attacks leverage speculative loads which circumvent
+access checks to read memory-resident secrets, transmitting them to an attacker using cache timing
+or other covert communication channels. We introduce Spectre1.1, a new Spectre-v1 variant that
+leverages speculative stores to create speculative buffer overflows. Much like classic buffer
+overflows, speculative out-of-bounds stores can modify data and code pointers. Data-value attacks
+can bypass some Spectre-v1 mitigations, either directly or by redirecting control flow. Control-flow
+attacks enable arbitrary speculative code execution, which can bypass fence instructions and
+all other software mitigations for previous speculative-execution attacks. It is easy to construct
+return-oriented-programming (ROP) gadgets that can be used to build alternative attack payloads.
+We also present Spectre1.2: on CPUs that do not enforce read/write protections, speculative stores
+can overwrite read-only data and code pointers to breach sandboxes. We highlight new risks posed
+by these vulnerabilities, discuss possible software mitigations, and sketch microarchitectural
+mechanisms that could serve as hardware defenses. We have not yet evaluated the performance impact
+of our proposed software and hardware mitigations. We describe the salient vulnerability features
+and additional hypothetical attack scenarios only to the detail necessary to guide hardware and
+software vendors in threat analysis and mitigations. We advise users to refer to more user-friendly
+vendor recommendations for mitigations against speculative buffer overflows or available patches.

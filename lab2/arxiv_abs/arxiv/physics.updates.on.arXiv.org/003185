@@ -1,0 +1,19 @@
+This paper presents an efficient high-order sharp-interface method for solving the three-dimensional
+(3D) Poisson equation with Dirichlet boundary conditions on a nonuniform Cartesian grid with irregular
+domain boundaries. The new approach is based on the combination of the fourth-order compact finite
+difference scheme and the preconditioned stabilized biconjugate-gradient (BiCGSTAB) method.
+Contrary to the original immersed interface method by LeVeque and Li [1], the new method does not
+require jump corrections, instead, the (regular) compact finite difference stencil is adjusted
+at the irregular grid points (in the vicinity of the interfaces of the immersed bodies) to obtain
+a solution that is sharp across the interface while keeping the fourth-order global accuracy. The
+contribution of the present work is the design of a fourth-order-accurate 3D Poisson solver whose
+accuracy and efficiency does not deteriorate in the presence of an immersed boundary. This is attributed
+to (i) the modification of the discrete operators near immersed boundaries does not lead to a wide
+grid stencil due to the compact nature of the discretization and (ii) a preconditioning technique
+whose efficiency and cost are independent of the complexity of the geometry and the presence or not
+of an immersed boundary. The accuracy and computational efficiency of the proposed algorithm is
+demonstrated and validated over a range of problems including smooth and irregular boundaries.
+The test cases show that the new method is fourth-order accurate in the maximum norm whether an immersed
+boundary is present or not, on uniform or nonuniform grids. Furthermore, the efficiency of the preconditioned
+BiCGSTAB is demonstrated with regard to convergence rate and `extra' floating-point operation
+($FLOP_{extra}$) which is due to the presence of immersed boundaries. 

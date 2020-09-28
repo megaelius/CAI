@@ -1,0 +1,17 @@
+Distributed consensus is a key enabler for many distributed systems including distributed databases
+and blockchains. Canopus is a scalable distributed consensus protocol that ensures that live nodes
+in a system agree on an ordered sequence of operations (called transactions). Unlike most prior
+consensus protocols, Canopus does not rely on a single leader. Instead, it uses a virtual tree overlay
+for message dissemination to limit network traffic across oversubscribed links. It leverages
+hardware redundancies, both within a rack and inside the network fabric, to reduce both protocol
+complexity and communication overhead. These design decisions enable Canopus to support large
+deployments without significant performance degradation. The existing Canopus protocol is resilient
+in the face of node and communication failures, but its focus is primarily on performance, so does
+not respond well to other types of failures. For example, the failure of a single rack of servers causes
+all live nodes to stall. The protocol is also open to attack by Byzantine nodes, which can cause different
+live nodes to conclude the protocol with different transaction orders. In this paper, we describe
+RCanopus (`resilent Canopus') which extends Canopus to add liveness, that is, allowing live nodes
+to make progress, when possible, despite many types of failures. This requires RCanopus to accurately
+detect and recover from failure despite using unreliable failure detectors, and tolerance of Byzantine
+attacks. Second, RCanopus guarantees safety, that is, agreement amongst live nodes of transaction
+order, in the presence of Byzantine attacks and network partitioning. 

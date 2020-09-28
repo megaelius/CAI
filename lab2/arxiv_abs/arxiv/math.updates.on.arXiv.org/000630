@@ -1,0 +1,19 @@
+The efficient generation of meshes is an important step in the numerical solution of various problems
+in physics and engineering. We are interested in situations where global mesh quality and tight
+coupling to the physical solution is important. We consider elliptic PDE based mesh generation
+and present a method for the construction of adaptive meshes in two spatial dimensions using domain
+decomposition that is suitable for an implementation on parallel computing architectures. The
+method uses the stochastic representation of the exact solution of a linear mesh generator of Winslow
+type to find the points of the adaptive mesh along the subdomain interfaces. The meshes over the single
+subdomains can then be obtained completely independently of each other using the probabilistically
+computed solutions along the interfaces as boundary conditions for the linear mesh generator.
+Further to the previously acknowledged performance characteristics, we demonstrate how the stochastic
+domain decomposition approach is particularly suited to the problem of grid generation - generating
+quality meshes efficiently. In addition we show further improvements are possible using interpolation
+of the subdomain interfaces and smoothing of mesh candidates. An optimal placement strategy is
+introduced to automatically choose the number and placement of points along the interface using
+the mesh density function. Various examples of meshes constructed using this stochastic-deterministic
+domain decomposition technique are shown and compared to the respective single domain solutions
+using a representative mesh quality measure. A brief performance study is included to show the viability
+of the stochastic domain decomposition approach and to illustrate the effect of algorithmic choices
+on the solver's efficiency. 

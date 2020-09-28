@@ -1,0 +1,18 @@
+We study the vertex-decremental Single-Source Shortest Paths (SSSP) problem: given an undirected
+graph $G=(V,E)$ with lengths $\ell(e)\geq 1$ on its edges and a source vertex $s$, we need to support
+(approximate) shortest-path queries in $G$, as $G$ undergoes vertex deletions. In a shortest-path
+query, given a vertex $v$, we need to return a path connecting $s$ to $v$, whose length is at most $(1+\epsilon)$
+times the length of the shortest such path, where $\epsilon$ is a given accuracy parameter. The problem
+has many applications, for example to flow and cut problems in vertex-capacitated graphs. Our main
+result is a randomized algorithm for vertex-decremental SSSP with total expected update time $O(n^{2+o(1)}\log
+L)$, that responds to each shortest-path query in $O(n\log L)$ time in expectation, returning a
+$(1+\epsilon)$-approximate shortest path. The algorithm works against an adaptive adversary.
+The main technical ingredient of our algorithm is an $\tilde O(|E(G)|+ n^{1+o(1)})$-time algorithm
+to compute a \emph{core decomposition} of a given dense graph $G$, which allows us to compute short
+paths between pairs of query vertices in $G$ efficiently. We believe that this core decomposition
+algorithm may be of independent interest. We use our result for vertex-decremental SSSP to obtain
+$(1+\epsilon)$-approximation algorithms for maximum $s$-$t$ flow and minimum $s$-$t$ cut in
+vertex-capacitated graphs, in expected time $n^{2+o(1)}$, and an $O(\log^4n)$-approximation
+algorithm for the vertex version of the sparsest cut problem with expected running time $n^{2+o(1)}$.
+These results improve upon the previous best known results for these problems in the regime where
+$m= \omega(n^{1.5 + o(1)})$. 

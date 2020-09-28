@@ -1,0 +1,18 @@
+Authentication is vital for the Internet of Things (IoT) applications involving sensitive data
+(e.g., medical and financial systems). Digital signatures offer scalable authentication with
+non-repudiation and public verifiability, which are necessary for auditing and dispute resolution
+in such IoT applications. However, digital signatures have been shown to be highly costly for low-end
+IoT devices, especially when embedded devices (e.g., medical implants) must operate without a
+battery replacement for a long time. We propose an Energy-aware Signature for Embedded Medical
+devices (ESEM) that achieves near-optimal signer efficiency. ESEM signature generation does
+not require any costly operations (e.g., elliptic curve (EC) scalar multiplication/addition),
+but only a small constant-number of pseudo-random function calls, additions, and a single modular
+multiplication. ESEM has the smallest signature size among its EC-based counterparts with an identical
+private key size. We achieve this by eliminating the use of the ephemeral public key (i.e, commitment)
+in Schnorr-type signatures from the signing via a distributed construction at the verifier without
+interaction with the signer while permitting a constant-size public key. We proved that ESEM is
+secure (in random oracle model), and fully implemented it on an 8-bit AVR microcontroller that is
+commonly used in medical devices. Our experiments showed that ESEM achieves 8.4x higher energy
+efficiency over its closest counterpart while offering a smaller signature and code size. Hence,
+ESEM can be suitable for deployment on resource limited embedded devices in IoT. We open-sourced
+our software for public testing and wide-adoption. 

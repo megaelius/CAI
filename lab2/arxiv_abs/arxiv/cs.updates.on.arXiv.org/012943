@@ -1,0 +1,17 @@
+For probabilistic programs, it is usually not possible to automatically derive exact information
+about their properties, such as the distribution of states at a given program point. Instead, one
+can attempt to derive approximations, such as upper bounds on tail probabilities. Such bounds can
+be obtained via concentration inequalities, which rely on the moments of a distribution, such as
+the expectation (the first raw moment) or the variance (the second central moment). Tail bounds
+obtained using central moments are often tighter than the ones obtained using raw moments, but automatically
+analyzing higher moments is more challenging. This paper presents an analysis for probabilistic
+programs that automatically derives symbolic over- and under-approximations for variances,
+as well as higher central moments. To overcome the challenges of higher-moment analysis, it generalizes
+analyses for expectations with an algebraic abstraction that simultaneously analyzes different
+moments, utilizing relations between them. The analysis is proved sound with respect to a trace-based,
+small-step model that maps programs to Markov chains. A key innovation is the notion of semantic
+optional stopping, and a generalization of the classical optional-stopping theorem. The analysis
+has been implemented using a template-based technique that reduces the inference of polynomial
+approximations to linear programming. Experiments with our prototype central-moment analyzer
+show that, despite the analyzer's over-/under-approximations of various quantities, it obtains
+tighter tail bounds than a prior system that uses only raw moments, such as expectations. 

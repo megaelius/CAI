@@ -1,0 +1,18 @@
+Real-time accurate detection of three-dimensional (3D) objects is a fundamental necessity for
+self-driving vehicles. Most existing computer vision approaches are based on convolutional neural
+networks (CNNs). Although the CNN-based approaches can achieve high detection accuracy, their
+high energy consumption is a severe drawback. To resolve this problem, novel energy efficient approaches
+should be explored. Spiking neural network (SNN) is a promising candidate because it has orders-of-magnitude
+lower energy consumption than CNN. Unfortunately, the studying of SNN has been limited in small
+networks only. The application of SNN for large 3D object detection networks has remain largely
+open. In this paper, we integrate spiking convolutional neural network (SCNN) with temporal coding
+into the YOLOv2 architecture for real-time object detection. To take the advantage of spiking signals,
+we develop a novel data preprocessing layer that translates 3D point-cloud data into spike time
+data. We propose an analog circuit to implement the non-leaky integrate and fire neuron used in our
+SCNN, from which the energy consumption of each spike is estimated. Moreover, we present a method
+to calculate the network sparsity and the energy consumption of the overall network. Extensive
+experiments have been conducted based on the KITTI dataset, which show that the proposed network
+can reach competitive detection accuracy as existing approaches, yet with much lower average energy
+consumption. If implemented in dedicated hardware, our network could have a mean sparsity of 56.24%
+and extremely low total energy consumption of 0.247mJ only. Implemented in NVIDIA GTX 1080i GPU,
+we can achieve 35.7 fps frame rate, high enough for real-time object detection. 

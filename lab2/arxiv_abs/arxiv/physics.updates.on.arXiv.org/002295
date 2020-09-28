@@ -1,0 +1,19 @@
+The Immersed Boundary Method (IBM) is one of the popular one-fluid mixed Eulerian-Lagrangian methods
+to simulate motion of droplets. While the treatment of a moving complex boundary is an extremely
+time consuming and formidable task in a traditional boundary-fitted fluid solver, the one-fluid
+methods provide a relatively easier way to track moving interfaces on a fixed Cartesian grid since
+the regeneration of a mesh system that conforms to the interface at every time step can be avoided.
+In the IBM, a series of connected Lagrangian markers are used to represent a fluid-fluid interface
+and the boundary condition is enforced by adding a forcing term to the Navier-Stokes equations.
+It is known that the IBM suffers two problems. One is spontaneous generation of unphysical kinetic
+energy, which is known as parasitic currents, and the other is spurious reconstruction of interface.
+These two problems need to be solved for useful long-time-scale simulations of droplets with high
+density ratio and large surface tension. This work detects that the discrete delta function is the
+cause of unphysical parasitic currents. Specifically, the irrotational condition is not preserved
+when the common discrete delta function is used to spread the surface tension from Lagrangian markers
+to Cartesian grid cells. To solve this problem, a new scheme that preserves the irrotational condition
+is proposed to remove the spurious currents. Furthermore, for a smooth reconstruction of an interface,
+a B-spline fitting by least squares is adopted to relocate the Lagrangian markers. The conventional
+and new interpolation schemes are implemented in a multigrid finite volume Direct Numerical Simulation
+(DNS) solver and are subjected to standard test cases. It is confirmed that the unphysical parasitic
+currents are substantially reduced in the new scheme and droplet's surface fluctuation is eliminated.

@@ -1,0 +1,19 @@
+Recent advances in deep neural networks (DNNs) owe their success to training algorithms that use
+backpropagation and gradient-descent. Backpropagation, while highly effective on von Neumann
+architectures, becomes inefficient when scaling to large networks. Commonly referred to as the
+weight transport problem, each neuron's dependence on the weights and errors located deeper in
+the network require exhaustive data movement which presents a key problem in enhancing the performance
+and energy-efficiency of machine-learning hardware. In this work, we propose a bio-plausible
+alternative to backpropagation drawing from advances in feedback alignment algorithms in which
+the error computation at a single synapse reduces to the product of three scalar values. Using a sparse
+feedback matrix, we show that a neuron needs only a fraction of the information previously used by
+the feedback alignment algorithms. Consequently, memory and compute can be partitioned and distributed
+whichever way produces the most efficient forward pass so long as a single error can be delivered
+to each neuron. Our results show orders of magnitude improvement in data movement and $2\times$
+improvement in multiply-and-accumulate operations over backpropagation. Like previous work,
+we observe that any variant of feedback alignment suffers significant losses in classification
+accuracy on deep convolutional neural networks. By transferring trained convolutional layers
+and training the fully connected layers using direct feedback alignment, we demonstrate that direct
+feedback alignment can obtain results competitive with backpropagation. Furthermore, we observe
+that using an extremely sparse feedback matrix, rather than a dense one, results in a small accuracy
+drop while yielding hardware advantages. All the code and results are available under https://github.com/bcrafton/ssdfa.

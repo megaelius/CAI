@@ -1,0 +1,20 @@
+Current low-latency anonymity systems use complex overlay networks to conceal a user's IP address,
+introducing significant latency and network efficiency penalties compared to normal Internet
+usage. Rather than obfuscating network identity through higher level protocols, we propose a more
+direct solution: a routing protocol that allows communication without exposing network identity,
+providing a strong foundation for Internet privacy, while allowing identity to be defined in those
+higher level protocols where it adds value. Given current research initiatives advocating "clean
+slate" Internet designs, an opportunity exists to design an internetwork layer routing protocol
+that decouples identity from network location and thereby simplifies the anonymity problem. Recently,
+Hsiao et al. proposed such a protocol (LAP), but it does not protect the user against a local eavesdropper
+or an untrusted ISP, which will not be acceptable for many users. Thus, we propose Dovetail, a next-generation
+Internet routing protocol that provides anonymity against an active attacker located at any single
+point within the network, including the user's ISP. A major design challenge is to provide this protection
+without including an application-layer proxy in data transmission. We address this challenge
+in path construction by using a matchmaker node (an end host) to overlap two path segments at a dovetail
+node (a router). The dovetail then trims away part of the path so that data transmission bypasses
+the matchmaker. Additional design features include the choice of many different paths through
+the network and the joining of path segments without requiring a trusted third party. We develop
+a systematic mechanism to measure the topological anonymity of our designs, and we demonstrate
+the privacy and efficiency of our proposal by simulation, using a model of the complete Internet
+at the AS-level. 

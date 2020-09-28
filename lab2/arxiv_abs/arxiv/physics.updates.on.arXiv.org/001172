@@ -1,0 +1,20 @@
+The advent of high density 3D wide azimuth survey configurations has greatly increased the cost
+of seismic acquisition. Simultaneous source acquisition presents an opportunity to decrease
+costs by reducing the survey time. Source time delays are typically long enough for seismic reflection
+energy to decay to negligible levels before firing another source. Simultaneous source acquisition
+abandons this minimum time restriction and allows interference between seismic sources to compress
+the survey time. Seismic data processing methods must address the interference introduced by simultaneous
+overlapping sources. Simultaneous source data are characterized by high amplitude interference
+artefacts that may be stronger than the primary signal. These large amplitudes are due to the time
+delay between sources and the rapid decay of seismic energy with arrival time. Therefore, source
+interference will appear as outliers in denoising algorithms that make use of a Radon transform.
+This will reduce the accuracy of Radon transform de-noising especially for weak signals. Formulating
+the Radon transform as an inverse problem with an L1 misfit makes it robust to outliers caused by source
+interference. This provides the ability to attenuate strong source interference while preserving
+weak underlying signal. In order to improve coherent signal focusing, an apex shifted hyperbolic
+Radon transform (ASHRT) is used to remove source interferences. ASHRT transform basis functions
+are tailored to match the travel time hyperbolas of reflections in common receiver gathers. However,
+the ASHRT transform has a high computational cost due to the extension of the model dimensions by
+scanning for apex locations. By reformulating the ASHRT operator using a Stolt migration/demigration
+kernel that exploits the Fast Fourier Transform (FFT), the computational efficiency of the operator
+is drastically improved. 

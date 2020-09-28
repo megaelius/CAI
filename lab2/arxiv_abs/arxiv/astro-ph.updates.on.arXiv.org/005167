@@ -1,0 +1,18 @@
+Scanamorphos is public software initially developed to post-process scan observations performed
+with the Herschel photometer arrays. This post-processing mainly consists in subtracting the
+total low-frequency noise (both its thermal and non-thermal components), masking cosmic ray hits,
+and projecting the data onto a map. Building upon the results obtained for P-ArT\'eMiS (the prototype
+of ArT\'eMiS), Herschel and then NIKA2 (a resident camera of the IRAM 30-m telescope operating at
+1.25 and 2 mm), it has now been tailored to the ArT\'eMiS camera, an ESO and OSO P.I. instrument installed
+at the APEX 12-m telescope, demonstrating our initial claim that the software principles were directly
+transposable to scan observations made with other instruments, including from the ground, provided
+they entail sufficient redundancy. This document explains how the algorithm was modified to cope
+with the specificities of ArT\'eMiS observations and with the atmospheric emission at 350 and 450
+$\mu$m, far dominating the instrumental drifts that were the only low-frequency noise component
+in Herschel data. Like in the original software, this was accomplished without assuming any noise
+model and without applying any Fourier-space filtering, by exploiting the redundancy built in
+the observations - taking advantage of the fact that each portion of the sky is sampled at multiple
+times by multiple bolometers. It remains an interactive software in the sense that the user is allowed
+to optionally visualize and control results at each intermediate step, but the processing is fully
+automated. It has been grafted onto the ArT\'eMiS pipeline, in charge of the formatting, calibration
+and projection of the data, that is described elsewhere. 

@@ -1,0 +1,19 @@
+Detecting frequent items is a fundamental problem in data streaming research. However, in many
+applications, besides the frequent items themselves, meta data such as the timestamps of when the
+frequent items appeared or other application-specific data that "arrives" with the frequent items
+needs to be reported too. To this end, we introduce the Neighborhood Detection problem in graph streams,
+which both accurately models situations such as those stated above, and addresses the fundamental
+problem of detecting large neighborhoods or stars in graph streams. In Neighborhood Detection,
+an algorithm receives the edges of a bipartite graph $G=(A, B, E)$ with $|A| = n$ and $|B| = \text{poly}~n$
+in arbitrary order and is given a threshold parameter $d$. Provided that there is at least one $A$-node
+of degree at least $d$, the objective is to output a node $a \in A$ together with at least $\frac{d}{c}$
+of its neighbors, where $c$ is the approximation factor. We show that in insertion-only streams,
+there is a one-pass $\tilde{O}(n + n^{\frac{1}{c}}d)$ space $c$-approximation streaming algorithm,
+for integral values of $c \ge 2$. We complement this result with a lower bound, showing that computing
+a $(c/1.01)$-approximation requires space $\Omega(n / c^2 + n^{\frac{1}{c-1}}d / c^2)$, for any
+integral $c \ge 2$, which renders our algorithm optimal for a large range of settings (up to logarithmic
+factors). In insertion-deletion (turnstile) streams, we give a one-pass $c$-approximation algorithm
+with space $\tilde{O}(\frac{dn}{c^2})$ (if $c \le \sqrt{n}$). We also prove that this is best possible
+up to logarithmic factors. Our lower bounds are obtained by defining new multi-party and two-party
+communication problems, respectively, and proving lower bounds on their communication complexities
+using information theoretic arguments. 

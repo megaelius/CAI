@@ -1,0 +1,19 @@
+Super point is a special host in network which communicates with lots of other hosts in a certain time
+period. The number of hosts contacting with a super point is called as its cardinality. Cardinality
+estimating plays important roles in network management and security. All of existing works focus
+on how to estimate super point's cardinality under discrete time window. But discrete time window
+causes great delay and the accuracy of estimating result is subject to the starting of the window.
+sliding time window, moving forwarding a small slice every time, offers a more accuracy and timely
+scale to monitor super point's cardinality. On the other hand, super point's cardinality estimating
+under sliding time window is more difficult because it requires an algorithm to record the cardinality
+incrementally and report them immediately at the end of the sliding duration. This paper firstly
+solves this problem by devising a sliding time window available algorithm SRLA. SRLA records hosts
+cardinality by a novel structure which could be updated incrementally. In order to reduce the cardinality
+estimating time at the end of every sliding time window, SRLA generates a super point candidate list
+while scanning packets and calculates the cardinality of hosts in the candidate list only. It also
+has the ability to run parallel to deal with high speed network in line speed. This paper gives the
+way to deploy SRLA on a common GPU. Experiments on real world traffics which have 40 GB/s bandwidth
+show that SRLA successfully estimates super point's cardinality within 100 milliseconds under
+sliding time window when running on a low cost Nvidia GPU, GTX650 with 1 GB memory. The estimating
+time of SRLA is much smaller than that of other algorithms which consumes more than 2000 milliseconds
+under discrete time window. 

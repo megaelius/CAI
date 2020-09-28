@@ -1,0 +1,20 @@
+In medicine, needles are frequently used to deliver treatments to subsurface targets or to take
+tissue samples from the inside of an organ. Current clinical practice is to insert needles under
+image guidance or haptic feedback, although that may involve reinsertions and adjustments since
+the needle and its interaction with the tissue during insertion cannot be completely controlled.
+(Automated) needle steering could in theory improve the accuracy with which a target is reached
+and thus reduce surgical traumata especially for minimally invasive procedures, e.g., brachytherapy
+or biopsy. Yet, flexible needles and needle-tissue interaction are both complex and expensive
+to model and can often be computed approximatively only. In this paper we propose to employ timed
+games to navigate flexible needles with a bevel tip to reach a fixed target in tissue. We use a simple
+non-holonomic model of needle-tissue interaction, which abstracts in particular from the various
+physical forces involved and appears to be simplistic compared to related models from medical robotics.
+Based on the model, we synthesize strategies from which we can derive sufficiently precise motion
+plans to steer the needle in soft tissue. However, applying those strategies in practice, one is
+faced with the problem of an unpredictable behavior of the needle at the initial insertion point.
+Our proposal is to implement a preprocessing step to initialize the model based on data from the real
+system, once the needle is inserted. Taking into account the actual needle tip angle and position,
+we generate strategies to reach the desired target. We have implemented the model in Uppaal Stratego
+and evaluated it on steering a flexible needle in gelatin phantoms; gelatin phantoms are commonly
+used in medical technology to simulate the behavior of soft tissue. The experiments show that strategies
+can be synthesized for both generated and measured needle motions with a maximum deviation of 1.84mm.

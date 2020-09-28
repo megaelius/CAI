@@ -1,0 +1,18 @@
+Manually authoring transition animations for a complete locomotion system can be a tedious and
+time-consuming task, especially for large games that allow complex and constrained locomotion
+movements, where the number of transitions grows exponentially with the number of states. In this
+paper, we present a novel approach, based on deep recurrent neural networks, to automatically generate
+such transitions given a past context of a few frames and a target character state to reach. We present
+the Recurrent Transition Network (RTN), based on a modified version of the Long-Short-Term-Memory
+(LSTM) network, designed specifically for transition generation and trained without any gait,
+phase, contact or action labels. We further propose a simple yet principled way to initialize the
+hidden states of the LSTM layer for a given sequence which improves the performance and generalization
+to new motions. We both quantitatively and qualitatively evaluate our system and show that making
+the network terrain-aware by adding a local terrain representation to the input yields better performance
+for rough-terrain navigation on long transitions. Our system produces realistic and fluid transitions
+that rival the quality of Motion Capture-based ground-truth motions, even before applying any
+inverse-kinematics postprocess. Direct benefits of our approach could be to accelerate the creation
+of transition variations for large coverage, or even to entirely replace transition nodes in an
+animation graph. We further explore applications of this model in a animation super-resolution
+setting where we temporally decompress animations saved at 1 frame per second and show that the network
+is able to reconstruct motions that are hard to distinguish from un-compressed locomotion sequences.

@@ -1,0 +1,17 @@
+When comparing human with artificial intelligence, one major difference is apparent: Humans can
+generalize very broadly from sparse data sets because they are able to recombine and reintegrate
+data components in compositional manners. To investigate differences in efficient learning,
+Joshua B. Tenenbaum and colleagues developed the character challenge: First an algorithm is trained
+in generating handwritten characters. In a next step, one version of a new type of character is presented.
+An efficient learning algorithm is expected to be able to re-generate this new character, to identify
+similar versions of this character, to generate new variants of it, and to create completely new
+character types. In the past, the character challenge was only met by complex algorithms that were
+provided with stochastic primitives. Here, we tackle the challenge without providing primitives.
+We apply a minimal recurrent neural network (RNN) model with one feedforward layer and one LSTM layer
+and train it to generate sequential handwritten character trajectories from one-hot encoded inputs.
+To manage the re-generation of untrained characters, when presented with only one example of them,
+we introduce a one-shot inference mechanism: the gradient signal is backpropagated to the feedforward
+layer weights only, leaving the LSTM layer untouched. We show that our model is able to meet the character
+challenge by recombining previously learned dynamic substructures, which are visible in the hidden
+LSTM states. Making use of the compositional abilities of RNNs in this way might be an important step
+towards bridging the gap between human and artificial intelligence. 

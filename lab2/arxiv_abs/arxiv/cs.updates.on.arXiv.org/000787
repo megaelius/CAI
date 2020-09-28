@@ -1,0 +1,19 @@
+The goal of regression testing is to ensure that the behavior of existing code is not altered by new
+program changes. The primary focus of regression testing should be on code associated with: a) earlier
+bug fixes; and b) particular application scenarios considered to be important by the tester. Existing
+coverage criteria do not enable such focus, e.g., 100% branch coverage does not guarantee that a
+given bug fix is exercised or a given application scenario is tested. Therefore, there is a need for
+a complementary coverage criterion in which the user can define a test requirement characterizing
+a given behavior to be covered as opposed to choosing from a pool of pre-defined and generic program
+elements. We propose UCov, a user-defined coverage criterion wherein a test requirement is an execution
+pattern of program elements and predicates. Our proposed criterion is not meant to replace existing
+criteria, but to complement them as it focuses the testing on important code patterns that could
+go untested otherwise. UCov supports test case intent verification. For example, following a bug
+fix, the testing team may augment the regression suite with the test case that revealed the bug. However,
+this test case might become obsolete due to code modifications not related to the bug. But if an execution
+pattern characterizing the bug was defined by the user, UCov would determine that test case intent
+verification failed. We implemented our methodology for the Java platform and applied it onto two
+real life case studies. Our implementation comprises the following: 1) an Eclipse plugin allowing
+the user to easily specify non-trivial test requirements; 2) the ability of cross referencing test
+requirements across subsequent versions of a given program; and 3) the ability of checking whether
+user-defined test requirements were satisfied, i.e., test case intent verification. 

@@ -1,0 +1,18 @@
+Deep face recognition has made remarkable advances in the last few years, while the training scheme
+still remains challenging in the large-scale data situation where many hard cases occur. Especially
+in the range of low false accept rate (FAR), there are various hard cases in both positives ($\textit{i.e.}$
+intra-class) and negatives ($\textit{i.e.}$ inter-class). In this paper, we study how to make
+better use of these hard samples for improving the training. The existing training methods deal
+with the challenge by adding margins in either the positive logit (such as SphereFace, CosFace,
+ArcFace) or the negative logit (such as MV-softmax, ArcNegFace, CurricularFace). However, the
+correlation between hard positive and hard negative is overlooked, as well as the relation between
+the margin in positive logit and the margin in negative logit. We find such correlation is significant,
+especially in the large-scale dataset, and one can take advantage from it to boost the training via
+relating the positive and negative margins for each training sample. To this end, we propose an explicit
+cooperation between positive and negative margins sample-wisely. Given a batch of hard samples,
+a novel Negative-Positive Cooperation loss, named NPCFace, is formulated, which emphasizes the
+training on both the negative and positive hard cases via a cooperative-margin mechanism in the
+softmax logits, and also brings better interpretation of negative-positive hardness correlation.
+Besides, the negative emphasis is implemented with an improved formulation to achieve stable convergence
+and flexible parameter setting.We validate the effectiveness of our approach on various benchmarks
+of large-scale face recognition and outperform the previous methods especially in the low FAR range.

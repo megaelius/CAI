@@ -1,0 +1,20 @@
+Purpose: Very fast Monte Carlo (MC) simulations of proton transport have been implemented recently
+on GPUs. However, these usually use simplified models for non-elastic (NE) proton-nucleus interactions.
+Our primary goal is to build a GPU-based proton transport MC with detailed modeling of elastic and
+NE collisions. Methods: Using CUDA, we implemented GPU kernels for these tasks: (1) Simulation
+of spots from our scanning nozzle configurations, (2) Proton propagation through CT geometry,
+considering nuclear elastic scattering, multiple scattering, and energy loss straggling, (3)
+Modeling of the intranuclear cascade stage of NE interactions, (4) Nuclear evaporation simulation,
+and (5) Statistical error estimates on the dose. To validate our MC, we performed: (1) Secondary
+particle yield calculations in NE collisions, (2) Dose calculations in homogeneous phantoms,
+(3) Re-calculations of head and neck plans from a commercial treatment planning system (TPS), and
+compared with Geant4.9.6p2/TOPAS. Results: Yields, energy and angular distributions of secondaries
+from NE collisions on various nuclei agree well with the Geant4 Bertini and Binary cascade models.
+The 3D-gamma pass rate at 2\%-2 mm for treatment plan simulations is typically 98\%. The net calculation
+time on a NVIDIA GTX680 card, including all data transfers, is $\sim$20 s for $1\times10^7$ proton
+histories. Conclusions: Our GPU-based MC is the first of its kind to include a detailed nuclear model
+to handle NE interactions of protons with any nucleus. Dosimetric calculations are in very good
+agreement with Geant4/TOPAS. Our MC is being used to perform fast routine clinical QA of pencil-beam
+based treatment plans, and has also been adopted as the dose engine in a clinically-applicable MC-based
+IMPT TPS. The detailed nuclear modeling will allow us to perform very fast linear energy transfer
+and neutron dose estimates on the GPU. 

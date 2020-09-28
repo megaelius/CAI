@@ -1,0 +1,17 @@
+Automated design of architectures tailored for a specific task at hand is an extremely promising,
+albeit inherently difficult, venue to explore. While most results in this domain have been achieved
+on image classification and language modelling problems, here we concentrate on dense per-pixel
+tasks, in particular, semantic image segmentation using fully convolutional networks. In contrast
+to the aforementioned areas, the design choice of a fully convolutional network requires several
+changes, ranging from the sort of operations that need to be used - e.g., dilated convolutions - to
+solving of a more difficult optimisation problem. In this work, we are particularly interested
+in searching for high-performance compact segmentation architectures, able to run in real-time
+using limited resources. To achieve that, we intentionally over-parameterise the architecture
+during the training time via a set of auxiliary cells that provide an intermediate supervisory signal
+and can be omitted during the evaluation phase. The design of the auxiliary cell is emitted by a controller,
+a neural architecture with the fixed structure trained using reinforcement learning. More crucially,
+we demonstrate how to efficiently search for these architectures within limited time and computational
+budgets. In particular, we rely on a progressive strategy that terminates non-promising architectures
+from being further trained, and on Polyak averaging coupled with knowledge distillation to speed-up
+the convergence. Quantitatively, in 8 GPU-days our approach discovers a set of architectures performing
+on-par with state-of-the-art among compact models. 

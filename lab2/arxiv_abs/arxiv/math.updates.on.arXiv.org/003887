@@ -1,0 +1,19 @@
+The Alternating Direction Method of Multipliers (ADMM) has gained a lot of attention for solving
+large-scale and objective-separable constrained optimization. However, the two-block variable
+structure of the ADMM still limits the practical computational efficiency of the method, because,
+e.g., one big matrix factorization is needed at least once even for linear and convex quadratic programming.
+This drawback may be overcome by enforcing a multi-block structure of the decision variables in
+the original optimization problem. Unfortunately, the multi-block ADMM, with more than two blocks,
+is not guaranteed to be convergent. On the other hand, two positive developments have been made:
+first, if in each cyclic loop one randomly permutes the updating order of the multiple blocks, then
+the method converges in expectation for solving any system of linear equations with any number of
+blocks; secondly, such a randomly permuted ADMM also works for equality-constrained convex quadratic
+programming even when the objective function is not separable. The goal of this paper is twofold.
+First, we add more randomness into the ADMM by developing a randomly assembled cyclic ADMM (RAC-ADMM)
+where the decision variables in each block are randomly assembled. We discuss the theoretical perpetuities
+of RAC-ADMM and show when random assembling helps and when it hurts. Secondly, using the theoretical
+guidance on RAC-ADMM, we conduct multiple numerical tests on solving both randomly generated and
+large-scale bench-mark quadratic optimization problems, which include continuous and binary
+graph-partition and quadratic assignment problems. Our numerical tests show that the RAC-ADMM,
+with a variable-grouping strategy, could significantly improve the computation efficiency on
+solving most quadratic optimization problems. 

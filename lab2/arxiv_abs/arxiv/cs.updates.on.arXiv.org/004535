@@ -1,0 +1,18 @@
+Recent image-to-image translation tasks attempt to extend the model from one-to-one mapping to
+multiple mappings by injecting latent code. Based on the mathematical formulation of networks
+with existing way of latent code injection, we show the role of latent code is to control the mean of
+the feature maps after convolution. Then we find common normalization strategies might reduce
+the diversity of different mappings or the consistency of one specific mapping, which is not suitable
+for the multi-mapping tasks. We provide the mathematical derivation that the effects of latent
+code are eliminated after instance normalization and the distributions of the same mapping become
+inconsistent after batch normalization. To address these problems, we present consistency within
+diversity design criteria for multi-mapping networks and propose central biasing normalization
+by applying a slight yet significant change to existing normalization strategies. Instead of spatial
+replicating and concatenating into the input layers, we inject the latent code into the normalization
+layers where the offset of feature maps is eliminated to ensure the output consistency for one specific
+mapping and the bias calculated by latent code is appended to achieve the output diversity for different
+mappings. In this way, not only is the proposed design criteria met, but the modified generator network
+has much smaller number of parameters. We apply this technique to multi-modal and multi-domain
+translation tasks. Both quantitative and qualitative evaluations show that our method outperforms
+current state-of-the-art methods. Code and pretrained models are available at https://github.com/Xiaoming-Yu/cbn
+. 

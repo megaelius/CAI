@@ -1,0 +1,18 @@
+Many proteins in cells are capable of sensing and responding to piconewton scale forces, a regime
+in which conformational changes are small but significant for biological processes. In order to
+efficiently and effectively sample the response of these proteins to small forces, enhanced sampling
+techniques will be required. In this work, we derive, implement, and evaluate an efficient method
+to simultaneously sample the result of applying any constant pulling force within a specified range
+to a molecular system of interest. We start from Simulated Tempering in Force, whereby force is applied
+as a linear bias on a collective variable to the system's Hamiltonian, and the coefficient is taken
+as a continuous auxiliary degree of freedom. We derive a formula for an average collective-variable-dependent
+force, which depends on a set of weights, learned on-the-fly throughout a simulation, that reflect
+the limit where force varies infinitely quickly. These weights can then be used to retroactively
+compute averages of any observable at any force within the specified range. This technique is based
+on recent work deriving similar equations for Infinite Switch Simulated Tempering in Temperature,
+that showed the infinite switch limit is the most efficient for sampling. Here, we demonstrate that
+our method accurately and simultaneously samples molecular systems at all forces within a user
+defined force range, and show how it can serve as an enhanced sampling tool for cases where the pulling
+direction destabilizes states of low free-energy at zero-force. This method is implemented in,
+and will be freely-distributed with, the PLUMED open-source sampling library, and hence can be
+readily applied to problems using a wide range of molecular dynamics software packages. 

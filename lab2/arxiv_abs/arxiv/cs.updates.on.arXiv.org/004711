@@ -1,0 +1,20 @@
+Given a directed graph, the vertex connectivity from $u$ to $v$ is the maximum number of internally
+vertex-disjoint paths from $u$ to $v$. We design faster algorithms that, given as input a directed
+graph $G$ with unit node capacities and a threshold $k$, report for all vertex pairs $(s,t)$ the size
+of a minimum $st$-vertex cut (or maximum $st$-flow or vertex connectivity) if it is $<k$, or report
+that it is $\ge k$ otherwise. We abbreviate this problem kAPMVC, and the unit edge capacities version
+as kAPMC. We present a randomized algorithm for kAPMVC that runs in time $O((nk)^{\omega})$, where
+$\omega$ is the fast matrix multiplication exponent. This result stems from an application of the
+network coding method by Cheung, Lau, and Leung [SICOMP 2013] to vertex-capacitated digraphs.
+We also present two deterministic algorithms for DAGs for the harder kAPMC and where we also compute
+min-cut witnesses. The first algorithm is combinatorial and runs in time $O(2^{O(k^2)}mn)$. The
+second algorithm is faster on dense DAGs and runs in time $O((k\log n)^{4^k+o(k)} n^{\omega})$.
+Notice that a solution even to kAPMVC, for any $k\ge 1$, implies a solution to triangle finding and
+to transitive closure: thus, our bounds for $k=o(\sqrt{\log n})$ and for $k=o(\log\log n)$, are
+tight up to subpolynomial factors in $n$, where the former applies to combinatorial algorithms
+[Abboud and Williams, FOCS 2014]. Our results rule out that kAPMVC can be solved as efficiently as
+a transitive closure computation for all $k$. We design a novel reduction showing a lower bound of
+$n^{\omega-1-o(1)} k^2$ for kAPMVC assuming that $4$-Clique requires $n^{\omega+1-o(1)}$ time.
+For combinatorial algorithms, our reduction implies an $n^{2-o(1)} k^2$ conditional lower bound.
+These lower bounds are higher than previously known ones (under SETH) even for the general case of
+$k=n$ and for the All-Pairs Max-Flow problem. 

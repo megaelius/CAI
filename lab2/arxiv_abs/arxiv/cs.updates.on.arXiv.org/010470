@@ -1,0 +1,18 @@
+In this paper, a high-throughput Cryptographically Secure Pseudo-Random Number Generator (CSPRNG)
+using the bitslicing technique is proposed. In such technique, instead of the conventional row-major
+data representation, column-major data representation is employed which allows the bitsliced
+implementation to take full advantage of all the available datapath of the hardware platform. We
+use LFSR-based (Linear Feedback Shift Register) PRNG for our implementation since its register
+oriented architecture perfectly suits the GPU's many-core structure and allows for usage of bitslicing
+technique which can further improve its performance. In our GPU implementation, each GPU thread
+is capable of generating a remarkable number of 32 pseudo-random bits in each LFSR clock cycle. In
+order to obtain cryptographically suitable properties, we propose an SIMD vectorized fully parallel
+bitsliced implementation of the LFSR-based, cryptographically secure MICKEY 2.0 stream cipher
+algorithm for CSPRNG. To the best of our knowledge, our method not only achieves better performance,
+but also significantly outperforms optical solutions in terms of performance per cost while maintaining
+an acceptable measure of randomness. It should be mentioned that our implementation successfully
+passes the NIST test for statistical randomness and bitwise correlation criteria. Our proposed
+methodology significantly outperforms the current best implementations in the literature for
+computer-based PRNG. Moreover, our evaluations show 6.6x improvement over the Nvidia's proprietary
+high-performance PRNG, cuRAND library, achieving 5.2 Tb/s of throughput on the affordable Nvidia
+GTX 980 Ti. 

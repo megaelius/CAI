@@ -1,0 +1,20 @@
+The Jiangmen Underground Neutrino Observatory (JUNO) is a neutrino experiment to determine neutrino
+mass hierarchy. It has a central detector used for neutrino detection, which consists of a spherical
+acrylic vessel containing 20 kt LS and about 18,000 20-inch PMTs to collect light from LS. Around
+the CD, there is a water pool to shield radioactivities. The WP is equipped with about 2000 PMTs to
+measure cosmic ray muons by detecting Cherenkov light. As one of the important parts in JUNO offline
+software, the serial simulation framework is developed based on SNiPER. It is in charge of physics
+generator, detector simulation, event mixing and digitization. However Geant4 based detector
+simulation of such a large detector is time-consuming and challenging. It is necessary to take full
+advantages of parallel computing to speedup simulation. Starting from version 10, Geant4 supports
+event-level parallelism. Even though based on pthread, it could be extended with other libraries
+such as Intel TBB. Therefore it is possible to parallelize JUNO simulation framework via integrating
+Geant4 and SNiPER. In this paper, our progress in developing parallelized simulation software
+are presented. The SNiPER framework can run in sequential mode, Intel TBB mode or other modes. The
+SNiPER task component is in charge of event loop, which is like a simplified application manager.
+Two types of tasks are introduced in the simulation framework, one is global task and another is worker
+task. The global task will run only once to initialize detector geometry and physics processes.
+The worker tasks will be spawned after global task is done. In each worker task, a Geant4 run manager
+is invoked to do the real simulation. Therefore the simulation framework and the underlying TBB
+have been decoupled. Finally, the software performance of parallelized JUNO simulation software
+is also presented. 

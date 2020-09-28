@@ -1,0 +1,19 @@
+Algorithms for Magnetic Resonance (MR) image reconstruction from undersampled measurements
+exploit prior information to compensate for missing k-space data. Deep learning (DL) provides
+a powerful framework for extracting such information from existing image datasets, through learning,
+and then using it for reconstruction. Leveraging this, recent methods employed DL to learn mappings
+from undersampled to fully sampled images using paired datasets, including undersampled and corresponding
+fully sampled images, integrating prior knowledge implicitly. In this article, we propose an alternative
+approach that learns the probability distribution of fully sampled MR images using unsupervised
+DL, specifically Variational Autoencoders (VAE), and use this as an explicit prior term in reconstruction,
+completely decoupling the encoding operation from the prior. The resulting reconstruction algorithm
+enjoys a powerful image prior to compensate for missing k-space data without requiring paired datasets
+for training nor being prone to associated sensitivities, such as deviations in undersampling
+patterns used in training and test time or coil settings. We evaluated the proposed method with T1
+weighted images from a publicly available dataset, multi-coil complex images acquired from healthy
+volunteers (N=8) and images with white matter lesions. The proposed algorithm, using the VAE prior,
+produced visually high quality reconstructions and achieved low RMSE values, outperforming most
+of the alternative methods on the same dataset. On multi-coil complex data, the algorithm yielded
+accurate magnitude and phase reconstruction results. In the experiments on images with white matter
+lesions, the method faithfully reconstructed the lesions. Keywords: Reconstruction, MRI, prior
+probability, machine learning, deep learning, unsupervised learning, density estimation 

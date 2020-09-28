@@ -1,0 +1,20 @@
+In a poisoning attack against a learning algorithm, an adversary tampers with a fraction of the training
+data $T$ with the goal of increasing the classification error of the constructed hypothesis/model
+over the final test distribution. In the distributed setting, $T$ might be gathered gradually from
+$m$ data providers $P_1,\dots,P_m$ who generate and submit their shares of $T$ in an online way.
+In this work, we initiate a formal study of $(k,p)$-poisoning attacks in which an adversary controls
+$k\in[n]$ of the parties, and even for each corrupted party $P_i$, the adversary submits some poisoned
+data $T'_i$ on behalf of $P_i$ that is still "$(1-p)$-close" to the correct data $T_i$ (e.g., $1-p$
+fraction of $T'_i$ is still honestly generated). For $k=m$, this model becomes the traditional
+notion of poisoning, and for $p=1$ it coincides with the standard notion of corruption in multi-party
+computation. We prove that if there is an initial constant error for the generated hypothesis $h$,
+there is always a $(k,p)$-poisoning attacker who can decrease the confidence of $h$ (to have a small
+error), or alternatively increase the error of $h$, by $\Omega(p \cdot k/m)$. Our attacks can be
+implemented in polynomial time given samples from the correct data, and they use no wrong labels
+if the original distributions are not noisy. At a technical level, we prove a general lemma about
+biasing bounded functions $f(x_1,\dots,x_n)\in[0,1]$ through an attack model in which each block
+$x_i$ might be controlled by an adversary with marginal probability $p$ in an online way. When the
+probabilities are independent, this coincides with the model of $p$-tampering attacks, thus we
+call our model generalized $p$-tampering. We prove the power of such attacks by incorporating ideas
+from the context of coin-flipping attacks into the $p$-tampering model and generalize the results
+in both of these areas. 

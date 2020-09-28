@@ -1,0 +1,17 @@
+Although the anchor-based detectors have taken a big step forward in pedestrian detection, the
+overall performance of algorithm still needs further improvement for practical applications,
+\emph{e.g.}, a good trade-off between the accuracy and efficiency. To this end, this paper proposes
+a series of systematic optimization strategies for the detection pipeline of one-stage detector,
+forming a single shot anchor-based detector (SADet) for efficient and accurate pedestrian detection,
+which includes three main improvements. Firstly, we optimize the sample generation process by
+assigning soft tags to the outlier samples to generate semi-positive samples with continuous tag
+value between $0$ and $1$, which not only produces more valid samples, but also strengthens the robustness
+of the model. Secondly, a novel Center-$IoU$ loss is applied as a new regression loss for bounding
+box regression, which not only retains the good characteristics of IoU loss, but also solves some
+defects of it. Thirdly, we also design Cosine-NMS for the postprocess of predicted bounding boxes,
+and further propose adaptive anchor matching to enable the model to adaptively match the anchor
+boxes to full or visible bounding boxes according to the degree of occlusion, making the NMS and anchor
+matching algorithms more suitable for occluded pedestrian detection. Though structurally simple,
+it presents state-of-the-art result and real-time speed of $20$ FPS for VGA-resolution images
+($640 \times 480$) on challenging pedestrian detection benchmarks, i.e., CityPersons, Caltech,
+and human detection benchmark CrowdHuman, leading to a new attractive pedestrian detector. 

@@ -1,0 +1,20 @@
+We study online learning in repeated first-price auctions with censored feedback, where a bidder,
+only observing the winning bid at the end of each auction, learns to adaptively bid in order to maximize
+her cumulative payoff. To achieve this goal, the bidder faces a challenging dilemma: if she wins
+the bid--the only way to achieve positive payoffs--then she is not able to observe the highest bid
+of the other bidders, which we assume is iid drawn from an unknown distribution. This dilemma, despite
+being reminiscent of the exploration-exploitation trade-off in contextual bandits, cannot directly
+be addressed by the existing UCB or Thompson sampling algorithms in that literature, mainly because
+contrary to the standard bandits setting, when a positive reward is obtained here, nothing about
+the environment can be learned. In this paper, by exploiting the structural properties of first-price
+auctions, we develop the first learning algorithm that achieves $O(\sqrt{T}\log^2 T)$ regret
+bound when the bidder's private values are stochastically generated. We do so by providing an algorithm
+on a general class of problems, which we call monotone group contextual bandits, where the same regret
+bound is established under stochastically generated contexts. Further, by a novel lower bound
+argument, we characterize an $\Omega(T^{2/3})$ lower bound for the case where the contexts are
+adversarially generated, thus highlighting the impact of the contexts generation mechanism on
+the fundamental learning limit. Despite this, we further exploit the structure of first-price
+auctions and develop a learning algorithm that operates sample-efficiently (and computationally
+efficiently) in the presence of adversarially generated private values. We establish an $O(\sqrt{T}\log^5
+T)$ regret bound for this algorithm, hence providing a complete characterization of optimal learning
+guarantees for this problem. 

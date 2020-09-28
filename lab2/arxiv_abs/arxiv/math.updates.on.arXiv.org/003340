@@ -1,0 +1,17 @@
+RMSProp and ADAM continue to be extremely popular algorithms for training neural nets but their
+theoretical convergence properties have remained unclear. Further, recent work has seemed to
+suggest that these algorithms have worse generalization properties when compared to carefully
+tuned stochastic gradient descent or its momentum variants. In this work, we make progress towards
+a deeper understanding of ADAM and RMSProp in two ways. First, we provide proofs that these adaptive
+gradient algorithms are guaranteed to reach criticality for smooth non-convex objectives, and
+we give bounds on the running time. Next we design experiments to empirically study the convergence
+and generalization properties of RMSProp and ADAM against Nesterov's Accelerated Gradient method
+on a variety of common autoencoder setups and on VGG-9 with CIFAR-10. Through these experiments
+we demonstrate the interesting sensitivity that ADAM has to its momentum parameter $\beta_1$.
+We show that at very high values of the momentum parameter ($\beta_1 = 0.99$) ADAM outperforms a carefully
+tuned NAG on most of our experiments, in terms of getting lower training and test losses. On the other
+hand, NAG can sometimes do better when ADAM's $\beta_1$ is set to the most commonly used value: $\beta_1
+= 0.9$, indicating the importance of tuning the hyperparameters of ADAM to get better generalization
+performance. We also report experiments on different autoencoders to demonstrate that NAG has
+better abilities in terms of reducing the gradient norms, and it also produces iterates which exhibit
+an increasing trend for the minimum eigenvalue of the Hessian of the loss function at the iterates.

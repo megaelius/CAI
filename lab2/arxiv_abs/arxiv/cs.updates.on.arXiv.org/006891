@@ -1,0 +1,18 @@
+Rivest's seminal paper introduced the first All-Or-Nothing (AON) method transforming input data
+into ciphertext in a way that the decryption of the input data is only possible when the ciphertext
+is complete. The AON processing, when combined with data fragmentation and dispersal, protects
+against an attacker that was able to acquire the encryption key but could not gather all of the data
+fragments. The reinforcement in data protection comes at the cost of a significant decrease of performance
+as Rivest's proposal requires at least two rounds of data encryption. Recently, a new scheme named
+Bastion was introduced that protects fragmented data against key exposure using only a single round
+of data encryption combined with a linear post-processing transform. In this paper, we make three
+advancements in the state-of-the-art. First, we formulate a new security model for the all-or-nothing
+processing that depends not on the amount of data acquired by the attacker but on the number of compromised
+storage nodes. Second, we introduce the Circular All-Or-Nothing (CAON): an algorithm protecting
+encrypted data against a situation of key exposure. It transforms, fragments, and disperses data
+in a way that initial data is protected unless all of the storage nodes are compromised. It is faster
+than the Bastion's scheme as it reduces the number of exclusive-or operations made in addition to
+encryption by almost a half. We believe it can be integrated inside modern distributed storage systems
+or multi-cloud data solutions in order to reinforce the confidentiality level of the stored data
+at the cost of a very small, almost negligible, performance overhead. Third, we provide security
+properties that are easy to formalize under standard cryptographic hypotheses. 

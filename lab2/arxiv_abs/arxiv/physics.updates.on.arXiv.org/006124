@@ -1,0 +1,19 @@
+We present vec2pix, a deep neural network designed to predict categorical or continuous 2D subsurface
+property fields from one-dimensional measurement data (e.g., time series), thereby, offering
+a new way to solve inverse problems. The performance of the method is investigated through two types
+of synthetic inverse problems: (a) a crosshole ground penetrating radar (GPR) tomography experiment
+with GPR travel times being used to infer a 2D velocity field, and (2) a multi-well pumping experiment
+within an unconfined aquifer with time series of transient hydraulic heads being used to retrieve
+a 2D hydraulic conductivity field. For each type of problem, both a multi-Gaussian and a binary channelized
+subsurface domain with long-range connectivity are considered. Using a training set of 20,000
+examples, the method is found to recover a 2D model that is in much closer agreement with the true model
+than the closest training model in the forward-simulated data space. Further testing with smaller
+training sample sizes shows that despite a moderate reduction in performance, this remains the
+case when using 5000 training examples only. Even if the recovered models obtained by vec2pix are
+visually close to the true ones, the data misfits associated with their forward responses are generally
+larger than the noise level used to contaminate the true data. If finding a model that fits the data
+noise level is required, then vec2pix-based inversion models can be used as initial inputs for more
+traditional multiple-point statistics inversion. Uncertainty of the inverse solution is partially
+assessed using deep ensembles, in which the network is trained repeatedly with random initialization.
+Overall, this study opens up a promising research avenue on how to use deep learning to infer subsurface
+models from indirect measurement data. 

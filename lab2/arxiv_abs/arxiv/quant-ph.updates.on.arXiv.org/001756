@@ -1,0 +1,20 @@
+We propose a quantum-classical hybrid algorithm of the power method, here dubbed as quantum power
+method, to evaluate $\hat{\mathcal{H}}^{n}|\psi\rangle$ with quantum computers, where $n$
+is a nonnegative integer, $\hat{\mathcal{H}}$ is a time-independent Hamiltonian of interest,
+and $|\psi\rangle$ is a quantum state. The quantum power method is formulated on the fact that the
+Hamiltonian power $\hat{\mathcal{H}}^{n}$ can generally be approximated by a linear combination
+of time-evolution operators $\hat{U}(t)=\mathrm{e}^{-\mathrm{i} \hat{\mathcal{H}}t}$ at
+$n+1$ different time ($t$) variables. The formalism is based on a time-discretized form of the higher-order
+derivative $\hat{\mathcal{H}}^{n}={\rm i}^n \mathrm{d}^n\hat{U}(t)/\mathrm{d} t^n|_{t=0}$
+incorporated with the central-finite-difference scheme and the symmetric Suzuki-Trotter decomposition,
+by which the approximated Hamiltonian power retains its Hermiticity under a controlled accuracy.
+In the quantum power method, the Suzuki-Trotter decomposition is employed to evaluate each time-evolution
+operator $\hat{U}(t)$ separately at different time $t$ close to zero on quantum computers, while
+a linear combination of these time-evolution operators is treated on classical computers. The
+number of gates required for approximating $\hat{\mathcal{H}}^n$ is $O(N n)$, where $N$ is the
+number of qubits assuming a local Hamiltonian $\hat{\mathcal{H}}$. For an application of the quantum
+power method, we combine this method with a multireference Krylov-subspace diagonalization scheme
+and show, by noiseless numerical simulations for a spin-$1/2$ Heisenberg model with the Hamiltonian
+power $\hat{\mathcal{H}}^{n}$ up to $n=11$ (but not limited), that the estimated ground-state
+energy and the ground-state fidelity over a variational-quantum-eigensolver scheme is systematically
+improved with increasing the power $n$. 

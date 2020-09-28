@@ -1,0 +1,18 @@
+Low light images suffer from severe noise, low brightness, low contrast, etc. In previous researches,
+many image enhancement methods have been proposed, but few methods can deal with these problems
+simultaneously. In this paper, to solve these problems simultaneously, we propose a low light image
+enhancement method that can combined with supervised learning and previous HSV (Hue, Saturation,
+Value) or Retinex model based image enhancement methods. First, we analyse the relationship between
+the HSV color space and the Retinex theory, and show that the V channel (V channel in HSV color space,
+equals the maximum channel in RGB color space) of the enhanced image can well represent the contrast
+and brightness enhancement process. Then, a data-driven conditional re-enhancement network
+(denoted as CRENet) is proposed. The network takes low light images as input and the enhanced V channel
+as condition, then it can re-enhance the contrast and brightness of the low light image and at the
+same time reduce noise and color distortion. It should be noted that during the training process,
+any paired images with different exposure time can be used for training, and there is no need to carefully
+select the supervised images which will save a lot. In addition, it takes less than 20 ms to process
+a color image with the resolution 400*600 on a 2080Ti GPU. Finally, some comparative experiments
+are implemented to prove the effectiveness of the method. The results show that the method proposed
+in this paper can significantly improve the quality of the enhanced image, and by combining with
+other image contrast enhancement methods, the final enhancement result can even be better than
+the reference image in contrast and brightness. (Code will be available at https://github.com/hitzhangyu/image-enhancement-with-denoise)

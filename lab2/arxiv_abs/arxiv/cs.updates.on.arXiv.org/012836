@@ -1,0 +1,17 @@
+Storage has become a constrained resource on smartphones. Gaming is a popular activity on mobile
+devices and the explosive growth in the number of games coupled with their growing size contributes
+to the storage crunch. Even where storage is plentiful, it takes a long time to download and install
+a heavy app before it can be launched. This paper presents AppStreamer, a novel technique for reducing
+the storage requirements or startup delay of mobile games, and heavy mobile apps in general. AppStreamer
+is based on the intuition that most apps do not need the entirety of its files (images, audio and video
+clips, etc.) at any one time. AppStreamer can, therefore, keep only a small part of the files on the
+device, akin to a "cache", and download the remainder from a cloud storage server or a nearby edge
+server when it predicts that the app will need them in the near future. AppStreamer continuously
+predicts file blocks for the near future as the user uses the app, and fetches them from the storage
+server before the user sees a stall due to missing resources. We implement AppStreamer at the Android
+file system layer. This ensures that the apps require no source code or modification, and the approach
+generalizes across apps. We evaluate AppStreamer using two popular games: Dead Effect 2, a 3D first-person
+shooter, and Fire Emblem Heroes, a 2D turn-based strategy role-playing game. Through a user study,
+75% and 87% of the users respectively find that AppStreamer provides the same quality of user experience
+as the baseline where all files are stored on the device. AppStreamer cuts down the storage requirement
+by 87% for Dead Effect 2 and 86% for Fire Emblem Heroes. 

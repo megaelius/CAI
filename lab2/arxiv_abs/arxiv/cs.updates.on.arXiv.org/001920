@@ -1,0 +1,20 @@
+When training a deep network for image classification, one can broadly distinguish between two
+types of latent features of images that will drive the classification: (i) "immutable" or "core"
+features that are inherent to the object in question and do not change substantially from one instance
+of the object to another and (ii) "mutable" or "style" features such as position, rotation or image
+quality but also more complex ones like hair color or posture for images of persons. The distribution
+of the style features can change in the future. While transfer learning would try to adapt to a shift
+in the distribution(s), we here want to protect against future adversarial domain shifts, arising
+through changing style features, by ideally not using the mutable style features altogether. There
+are two broad scenarios and we show how exploiting grouping information in the data helps in both.
+(a) If the style features are known explicitly (e.g. rotation) one usually proceeds by using data
+augmentation. By exploiting the grouping information about which original image an augmented
+sample belongs to, we can reduce the sample size required to achieve invariance to the style feature
+in question. (b) Sometimes the style features are not known explicitly but we still have information
+about samples that belong to the same underlying object (such as different pictures of the same person).
+By constraining the classification to give the same forecast for all instances that belong to the
+same object, we show how using this grouping information leads to invariance to such implicit style
+features and helps to protect against adversarial domain shifts. We provide a causal framework
+for the problem and treat groups of instances of the same object as counterfactuals under different
+interventions on the mutable style features. We show links to questions of fairness, transfer learning
+and adversarial examples. 

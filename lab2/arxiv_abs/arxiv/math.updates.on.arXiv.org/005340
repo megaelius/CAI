@@ -1,0 +1,17 @@
+Given a set $S$ of $n$ (distinct) keys from key space $[U]$, each associated with a value from $\Sigma$,
+the \emph{static dictionary} problem asks to preprocess these (key, value) pairs into a data structure,
+supporting value-retrieval queries: for any given $x\in [U]$, $\mathtt{valRet}(x)$ must return
+the value associated with $x$ if $x\in S$, or return $\bot$ if $x\notin S$. The special case where
+$|\Sigma|=1$ is called the \emph{membership} problem. The "textbook" solution is to use a hash
+table, which occupies linear space and answers each query in constant time. On the other hand, the
+minimum possible space to encode all (key, value) pairs is only $\mathtt{OPT}:= \lceil\lg_2\binom{U}{n}+n\lg_2|\Sigma|\rceil$
+bits, which could be much less. In this paper, we design a randomized dictionary data structure using
+$\mathtt{OPT}+\mathrm{poly}\lg n+O(\lg\lg\lg\lg\lg U)$ bits of space, and it has \emph{expected
+constant} query time, assuming the query algorithm can access an external lookup table of size $n^{0.001}$.
+The lookup table depends only on $U$, $n$ and $|\Sigma|$, and not the input. Previously, even for
+membership queries and $U\leq n^{O(1)}$, the best known data structure with constant query time
+requires $\mathtt{OPT}+n/\mathrm{poly}\lg n$ bits of space (Pagh [Pag01] and P\v{a}tra\c{s}cu
+[Pat08]); the best-known using $\mathtt{OPT}+n^{0.999}$ space has query time $O(\lg n)$; the
+only known non-trivial data structure with $\mathtt{OPT}+n^{0.001}$ space has $O(\lg n)$ query
+time and requires a lookup table of size $\geq n^{2.99}$ (!). Our new data structure answers open
+questions by P\v{a}tra\c{s}cu and Thorup [Pat08,Tho13]. 

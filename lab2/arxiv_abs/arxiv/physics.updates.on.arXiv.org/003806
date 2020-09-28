@@ -1,0 +1,20 @@
+The practical use of many types of near-term quantum computers requires accounting for their limited
+connectivity. One way of overcoming limited connectivity is to insert swaps in the circuit so that
+logical operations can be performed on physically adjacent qubits, which we refer to as solving
+the `routing via matchings' problem. We address the routing problem for families of quantum circuits
+defined by a hypergraph wherein each hyperedge corresponds to a potential gate. Our main result
+is that any unordered set of $k$-qubit gates on distinct $k$-qubit subsets of $n$ logical qubits
+can be ordered and parallelized in $O(n^{k-1})$ depth using a linear arrangement of $n$ physical
+qubits; the construction is completely general and achieves optimal scaling in the case where gates
+acting on all $\binom{n}{k}$ sets of $k$ qubits are desired. We highlight two classes of problems
+for which our method is particularly useful. First, it applies to sets of mutually commuting gates,
+as in the (diagonal) phase separators of Quantum Alternating Operator Ansatz (Quantum Approximate
+Optimization Algorithm) circuits. For example, a single level of a QAOA circuit for Maximum Cut
+can be implemented in linear depth, and a single level for $3$-SAT in quadratic depth. Second, it
+applies to sets of gates that do not commute but for which compilation efficiency is the dominant
+criterion in their ordering. In particular, it can be adapted to Trotterized time-evolution of
+fermionic Hamiltonians under the Jordan-Wigner transformation, and also to non-standard mixers
+in QAOA. Using our method, a single Trotter step of the electronic structure Hamiltonian in an arbitrary
+basis of $n$ orbitals can be done in $O(n^3)$ depth while a Trotter step of the unitary coupled cluster
+singles and doubles method can be implemented in $O(n^2 \eta)$ depth, where $\eta$ is the number
+of electrons. 

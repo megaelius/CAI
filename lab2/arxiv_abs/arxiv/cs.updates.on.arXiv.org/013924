@@ -1,0 +1,17 @@
+Many proofs of concept blockchain applications built using Hyperledger Fabric, a permissioned
+blockchain platform, have recently been transformed into production. However, the performance
+provided by Hyperledger Fabric is of significant concern for enterprises due to steady growth in
+network usage. Hence, in this paper, we study the performance achieved in a Fabric network using
+vertical scaling (i.e., by adding more vCPUs) and horizontal scaling (i.e., by adding more nodes)
+techniques. We observe that network scales very poorly with both of these techniques. With vertical
+scaling, due to serial execution of validation & commit phases of transactions, the allocated vCPUs
+are underutilized. With horizontal scaling, due to redundant work between nodes, allocated resources
+are wasted though it is utilized. Further, we identify these techniques to be unsuited for dynamically
+scaling a network quickly to mitigate an overload situation, and hence, it results in a 30% drop in
+the performance. To increase the CPU utilization and hence the performance, we re-architect Fabric
+to enable pipelined execution of validation & commit phases by introducing dirty state management
+using a trie data structure. Additionally, we facilitated the validation phase to validate transactions
+in parallel by introducing a waiting-transactions dependency graph. To avoid redundant work performed
+between nodes and to quickly scale up a network, we propose a new type of peer node called sparse peer,
+which selective commits transactions. Overall, we improved the throughput by 3x and reduced the
+time taken to scale up a network by 96%. 

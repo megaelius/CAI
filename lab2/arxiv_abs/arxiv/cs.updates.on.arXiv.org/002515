@@ -1,0 +1,18 @@
+To detect and fix bugs and security vulnerabilities, software companies use static analysis as
+part of the development process. However, static analysis code itself is also prone to bugs. To ensure
+a consistent level of precision, as analyzed programs grow more complex, a static analysis has to
+handle more code constructs, frameworks, and libraries that the programs use. While more complex
+analyses are written and used in production systems every day, the cost of debugging and fixing them
+also increases tremendously. To better understand the difficulties of debugging static analyses,
+we surveyed 115 static analysis writers. From their responses, we extracted the core requirements
+to build a debugger for static analysis, which revolve around two main issues: (1) abstracting from
+two code bases at the same time (the analysis code and the analyzed code) and (2) tracking the analysis
+internal state throughout both code bases. Most current debugging tools that our survey participants
+use lack the capabilities to address both issues. Focusing on those requirements, we introduce
+VisuFlow, a debugging environment for static data-flow analysis that is integrated in the Eclipse
+development environment. VisuFlow features graph visualizations that enable users to view the
+state of a data-flow analysis and its intermediate results at any time. Special breakpoints in VisuFlow
+help users step through the analysis code and the analyzed simultaneously. To evaluate the usefulness
+of VisuFlow, we have conducted a user study on 20 static analysis writers. Using VisuFlow helped
+our sample of analysis writers identify 25% and fix 50% more errors in the analysis code compared
+to using the standard Eclipse debugging environment. 

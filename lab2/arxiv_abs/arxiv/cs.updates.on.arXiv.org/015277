@@ -1,0 +1,19 @@
+Linear mixed modelling is a popular approach for detecting and correcting spurious sample correlations
+due to hidden confounders in genome-wide gene expression data. In applications where some confounding
+factors are known, estimating simultaneously the contribution of known and latent variance components
+in linear mixed models is a challenge that has so far relied on numerical gradient-based optimizers
+to maximize the likelihood function. This is unsatisfactory because the resulting solution is
+poorly characterized and the efficiency of the method may be suboptimal. Here we prove analytically
+that maximum-likelihood latent variables can always be chosen orthogonal to the known confounding
+factors, in other words, that maximum-likelihood latent variables explain sample covariances
+not already explained by known factors. Based on this result we propose a restricted maximum-likelihood
+method which estimates the latent variables by maximizing the likelihood on the restricted subspace
+orthogonal to the known confounding factors, and show that this reduces to probabilistic PCA on
+that subspace. The method then estimates the variance-covariance parameters by maximizing the
+remaining terms in the likelihood function given the latent variables, using a newly derived analytic
+solution for this problem. Compared to gradient-based optimizers, our method attains equal or
+higher likelihood values, can be computed using standard matrix operations, results in latent
+factors that don't overlap with any known factors, and has a runtime reduced by several orders of
+magnitude. We anticipate that the restricted maximum-likelihood method will facilitate the application
+of linear mixed modelling strategies for learning latent variance components to much larger gene
+expression datasets than currently possible. 

@@ -1,0 +1,17 @@
+Many complex domains, such as robotics control and real-time strategy (RTS) games, require an agent
+to learn a continuous control. In the former, an agent learns a policy over $\mathbb{R}^d$ and in
+the latter, over a discrete set of actions each of which is parametrized by a continuous parameter.
+Such problems are naturally solved using policy based reinforcement learning (RL) methods, but
+unfortunately these often suffer from high variance leading to instability and slow convergence.
+We show that in many cases a substantial portion of the variance in policy gradient estimators is
+completely unnecessary and can be eliminated without introducing bias. Unnecessary variance
+is introduced whenever policies over bounded action spaces are modeled using distributions with
+unbounded support, by applying a transformation $T$ to the sampled action before execution in the
+environment. Recent works have studied variance reduced policy gradients for actions in bounded
+intervals, but to date no variance reduced methods exist when the action is a direction -- constrained
+to the unit sphere -- something often seen in RTS games. To address these challenges we: (1) introduce
+a stochastic policy gradient method for directional control; (2) introduce the marginal policy
+gradient framework, a powerful technique to obtain variance reduced policy gradients for arbitrary
+$T$; (3) show that marginal policy gradients are guaranteed to reduce variance, quantifying that
+reduction exactly; (4) validate our framework by applying the methods to a popular RTS game and a
+navigation task, demonstrating improvement over a policy gradient baseline. 

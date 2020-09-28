@@ -1,0 +1,20 @@
+Deep learning systems have been applied mostly to Euclidean data such as images, video, and audio.
+In many applications, however, information and their relationships are better expressed with
+graphs. Graph convolutional networks (GCNs) appear to be a promising approach to efficiently learn
+from graph data structures, having shown advantages in many critical applications such as power
+system analysis, chemical reactivity prediction, material property prediction, E-commerce,
+cybersecurity, etc. As with other deep learning modalities, hardware acceleration is critical.
+The challenge is that real-world graphs are often extremely large and unbalanced; this poses both
+significant performance demands and design challenges. We propose an architecture that accelerates
+GCN inference, the Ultra Workload Balanced GCN (UWB-GCN). To address the major performance bottleneck
+of workload imbalance we propose two techniques, dynamic local sharing and dynamic remote switching.
+Both rely on hardware flexibility to autotune the system; this is effected with the negligible area
+and delay overhead. In particular, UWB-GCN profiles the sparse graph pattern while continuously
+adjusting the workload distribution strategy among a large number of processing elements (PEs).
+Once the system converges to an ideal configuration, this configuration is used for the remaining
+iterations. To the best of our knowledge, UWB-GCN is the first accelerator design targeting GCNs
+and the first that autotunes workload balance in the accelerator in hardware rather than software.
+These methods result in a near-ideal workload balance in processing sparse matrices. Experimental
+results show that UWB-GCN can perform inference of the Nell graph (66K vertices, 266K edges) in 8.1
+ms; this corresponds to speedups of 199x, 16x, and 7.5x as compared with, respectively, CPU, GPU,
+and a baseline design with no workload rebalancing. 

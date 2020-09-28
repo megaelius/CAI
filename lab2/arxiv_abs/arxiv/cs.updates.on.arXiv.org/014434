@@ -1,0 +1,19 @@
+Collecting realistic driving trajectories is crucial for training machine learning models that
+imitate human driving behavior. Most of today's autonomous driving datasets contain only a few
+trajectories per location and are recorded with test vehicles that are cautiously driven by trained
+drivers. In particular in interactive scenarios such as highway merges, the test driver's behavior
+significantly influences other vehicles. This influence prevents recording the whole traffic
+space of human driving behavior. In this work, we present a novel methodology to extract trajectories
+of traffic objects using infrastructure sensors. Infrastructure sensors allow us to record a lot
+of data for one location and take the test drivers out of the loop. We develop both a hardware setup
+consisting of a camera and a traffic surveillance radar and a trajectory extraction algorithm.
+Our vision pipeline accurately detects objects, fuses camera and radar detections and tracks them
+over time. We improve a state-of-the-art object tracker by combining the tracking in image coordinates
+with a Kalman filter in road coordinates. We show that our sensor fusion approach successfully combines
+the advantages of camera and radar detections and outperforms either single sensor. Finally, we
+also evaluate the accuracy of our trajectory extraction pipeline. For that, we equip our test vehicle
+with a differential GPS sensor and use it to collect ground truth trajectories. With this data we
+compute the measurement errors. While we use the mean error to de-bias the trajectories, the error
+standard deviation is in the magnitude of the ground truth data inaccuracy. Hence, the extracted
+trajectories are not only naturalistic but also highly accurate and prove the potential of using
+infrastructure sensors to extract real-world trajectories. 

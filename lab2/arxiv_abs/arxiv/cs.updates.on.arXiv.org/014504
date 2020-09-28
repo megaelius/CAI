@@ -1,0 +1,19 @@
+A compressed index is a data structure representing a text within compressed space and supporting
+fast count and locate queries: count/return all positions where a pattern occurs. The first compressed
+indexes operate within a space bounded by the text's entropy. Entropy, however, is insensitive
+to long repetitions. For this reason, in recent years more powerful compressed indexes have emerged;
+these are based on the Lempel-Ziv factorization, the run-length BWT, context-free grammars and,
+more recently, string attractors. Labeled trees add a whole new dimension to the problem: one needs
+not only to compress the labels, but also the tree's topology. On this side, less is known. Jacobson
+showed how to represent the topology of a tree with n nodes in 2n+o(n) bits of space (succinct) while
+also supporting constant-time navigation queries. Ferragina et al. presented the first entropy-compressed
+labeled tree representation (the XBWT) able to count, but not locate, paths labeled with a given
+pattern. Grammars and the Lempel-Ziv factorization have been extended to trees, but those representations
+do not support indexing queries. In this paper, we show for the first time how to support the powerful
+locate queries on compressed trees. We start by proposing suitable generalizations of run-length
+BWT, high-order entropy, and string attractors to cardinal trees (tries). We show that the number
+r $\leq$ n of XBWT-runs upper-bounds the size of the smallest tree attractor and lower-bounds the
+trie's high-order worst-case entropy H. We finally present the first trie index able to locate in
+pre-order nodes reached by a path labeled with a given pattern. Our index locates path occurrences
+in constant time each and takes 2n + o(n) + O(r log n) $\leq$ 2n + o(n) + O(H log n) bits of space: the reporting
+time is optimal and the locate machinery fits within compressed space on top of the succinct topology.

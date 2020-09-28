@@ -1,0 +1,19 @@
+We present an efficient method to solve the narrow capture and narrow escape problems for the sphere.
+The narrow capture problem models the equilibrium behavior of a Brownian particle in the exterior
+of a sphere whose surface is reflective, except for a collection of small absorbing patches. The
+narrow escape problem is the dual problem: it models the behavior of a Brownian particle confined
+to the interior of a sphere whose surface is reflective, except for a collection of small patches
+through which it can escape. Mathematically, these give rise to mixed Dirichlet/Neumann boundary
+value problems of the Poisson equation. They are numerically challenging for two main reasons:
+(1) the solutions are non-smooth at Dirichlet-Neumann interfaces, and (2) they involve adaptive
+mesh refinement and the solution of large, ill-conditioned linear systems when the number of small
+patches is large. By using the Neumann Green's functions for the sphere, we recast each boundary
+value problem as a system of first-kind integral equations on the collection of patches. A block-diagonal
+preconditioner together with a multiple scattering formalism leads to a well-conditioned system
+of second-kind integral equations and a very efficient approach to discretization. This system
+is solved iteratively using GMRES. We develop a hierarchical, fast multipole method-like algorithm
+to accelerate each matrix-vector product. Our method is insensitive to the patch size, and the total
+cost scales with the number N of patches as O(N log N), after a precomputation whose cost depends only
+on the patch size and not on the number or arrangement of patches. We demonstrate the method with several
+numerical examples, and are able to achieve highly accurate solutions with 100,000 patches in one
+hour on a 60-core workstation. 

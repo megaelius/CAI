@@ -1,0 +1,18 @@
+Deep Neural Networks (DNNs) on hardware is facing excessive computation cost due to the massive
+number of parameters. A typical training pipeline to mitigate over-parameterization is to pre-define
+a DNN structure first with redundant learning units (filters and neurons) under the goal of high
+accuracy, then to prune redundant learning units after training with the purpose of efficient inference.
+We argue that it is sub-optimal to introduce redundancy into training for the purpose of reducing
+redundancy later in inference. Moreover, the fixed network structure further results in poor adaption
+to dynamic tasks, such as lifelong learning. In contrast, structural plasticity plays an indispensable
+role in mammalian brains to achieve compact and accurate learning. Throughout the lifetime, active
+connections are continuously created while those no longer important are degenerated. Inspired
+by such observation, we propose a training scheme, namely Continuous Growth and Pruning (CGaP),
+where we start the training from a small network seed, then literally execute continuous growth
+by adding important learning units and finally prune secondary ones for efficient inference. The
+inference model generated from CGaP is sparse in the structure, largely decreasing the inference
+power and latency when deployed on hardware platforms. With popular DNN structures on representative
+datasets, the efficacy of CGaP is benchmarked by both algorithm simulation and architectural modeling
+on Field-programmable Gate Arrays (FPGA). For example, CGaP decreases the FLOPs, model size, DRAM
+access energy and inference latency by 63.3%, 64.0%, 11.8% and 40.2%, respectively, for ResNet-110
+on CIFAR-10. 

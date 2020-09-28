@@ -1,0 +1,19 @@
+Most SLAM algorithms are based on the assumption that the scene is static. However, in practice,
+most scenes are dynamic which usually contains moving objects, these methods are not suitable.
+In this paper, we introduce DymSLAM, a dynamic stereo visual SLAM system being capable of reconstructing
+a 4D (3D + time) dynamic scene with rigid moving objects. The only input of DymSLAM is stereo video,
+and its output includes a dense map of the static environment, 3D model of the moving objects and the
+trajectories of the camera and the moving objects. We at first detect and match the interesting points
+between successive frames by using traditional SLAM methods. Then the interesting points belonging
+to different motion models (including ego-motion and motion models of rigid moving objects) are
+segmented by a multi-model fitting approach. Based on the interesting points belonging to the ego-motion,
+we are able to estimate the trajectory of the camera and reconstruct the static background. The interesting
+points belonging to the motion models of rigid moving objects are then used to estimate their relative
+motion models to the camera and reconstruct the 3D models of the objects. We then transform the relative
+motion to the trajectories of the moving objects in the global reference frame. Finally, we then
+fuse the 3D models of the moving objects into the 3D map of the environment by considering their motion
+trajectories to obtain a 4D (3D+time) sequence. DymSLAM obtains information about the dynamic
+objects instead of ignoring them and is suitable for unknown rigid objects. Hence, the proposed
+system allows the robot to be employed for high-level tasks, such as obstacle avoidance for dynamic
+objects. We conducted experiments in a real-world environment where both the camera and the objects
+were moving in a wide range. 

@@ -1,0 +1,18 @@
+We present a distributed solver for a large and important class of Laplacian systems that we call
+"one-sink" Laplacian systems. Specifically, our solver can produce solutions for systems of the
+form $Lx = b$ where exactly one of the coordinates of $b$ is negative. Our solver is an organically
+distributed algorithm that takes $\widetilde{O}(t_{hit})$ rounds to produce an approximate
+solution where $t_{hit}$ is the hitting time of the random walk on the graph, which is $\Theta(n)$
+for a large set of important graphs. The $\widetilde{O}$ notation hides a dependency on error parameters
+and a logarithmic dependency on the inverse of $\lambda_2^L$, the second smallest eigenvalue of
+$L$. This constitutes an improvement over the past work on distributed solvers which have a linear
+dependence on $1/\lambda_2^L$. The class of one-sink Laplacians includes the important voltage
+computation problem and allows us to compute the effective resistance between nodes in a distributed
+setting assuming the CONGEST model, i.e., each message is $\Theta(\log n)$ in size. As a result,
+our Laplacian solver can be used to adapt the approach by Kelner and M\k{a}dry (2009) to give the first
+distributed algorithm to compute approximate random spanning trees efficiently. Our solver,
+which we call "Distributed Random Walk-based Laplacian Solver" (DRW-LSolve) works by quickly
+approximating the stationary distribution of a multi-dimensional Markov chain induced by a queueing
+network model that we call the "data collection" process. We show that when this multidimensional
+chain is ergodic the vector whose $v$th coordinate is proportional to the probability at stationarity
+of the queue at $v$ being non-empty is a solution to $Lx=b$. 

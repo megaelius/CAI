@@ -1,0 +1,17 @@
+Transfer learning accelerates the development of new models (Student Models). It applies relevant
+knowledge from a pre-trained model (Teacher Model) to the new ones with a small amount of training
+data, yet without affecting the model accuracy. However, these Teacher Models are normally open
+in order to facilitate sharing and reuse, which creates an attack plane in transfer learning systems.
+Among others, recent emerging attacks demonstrate that adversarial inputs can be built with negligible
+perturbations to the normal inputs. Such inputs can mimic the internal features of the student models
+directly based on the knowledge of the Teacher Models and cause misclassification in final predictions.
+In this paper, we propose an effective defence against the above misclassification attacks in transfer
+learning. First, we propose a distilled differentiator that can address the targeted attacks,
+where adversarial inputs are misclassified to a specific class. Specifically, this dedicated
+differentiator is designed with network activation pruning and retraining in a fine-tuned manner,
+so as to reach high defence rates and high model accuracy. To address the non-targeted attacks that
+misclassify adversarial inputs to randomly selected classes, we further employ an ensemble structure
+from the differentiators to cover all possible misclassification. Our evaluations over common
+image recognition tasks confirm that the student models applying our defence can reject most of
+the adversarial inputs with a marginal accuracy loss. We also show that our defence outperforms
+prior approaches in both targeted and non-targeted attacks. 

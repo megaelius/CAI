@@ -1,0 +1,19 @@
+Passwords are ubiquitous and most commonly used to authenticate users when logging into online
+services. Using high entropy passwords is critical to prevent unauthorized access and password
+policies emerged to enforce this requirement on passwords. However, with current methods of password
+storage, poor practices and server breaches have leaked many passwords to the public. To protect
+one's sensitive information in case of such events, passwords should be hidden from servers. Verifier-based
+password authenticated key exchange, proposed by Bellovin and Merrit (IEEE S\&P, 1992), allows
+authenticated secure channels to be established with a hash of a password (verifier). Unfortunately,
+this restricts password policies as passwords cannot be checked from their verifier. To address
+this issue, Kiefer and Manulis (ESORICS 2014) proposed zero-knowledge password policy check (ZKPPC).
+A ZKPPC protocol allows users to prove in zero knowledge that a hash of the user's password satisfies
+the password policy required by the server. Unfortunately, their proposal is not quantum resistant
+with the use of discrete logarithm-based cryptographic tools and there are currently no other viable
+alternatives. In this work, we construct the first post-quantum ZKPPC using lattice-based tools.
+To this end, we introduce a new randomised password hashing scheme for ASCII-based passwords and
+design an accompanying zero-knowledge protocol for policy compliance. Interestingly, our proposal
+does not follow the framework established by Kiefer and Manulis and offers an alternate construction
+without homomorphic commitments. Although our protocol is not ready to be used in practice, we think
+it is an important first step towards a quantum-resistant privacy-preserving password-based
+authentication and key exchange system. 

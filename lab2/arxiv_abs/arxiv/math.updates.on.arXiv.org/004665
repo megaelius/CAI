@@ -1,0 +1,18 @@
+This manuscript presents a fast direct solution technique for solving two dimensional wave scattering
+problems from quasi-periodic multilayered structures. The fast solver is built from the linear
+system that results from the discretization of a boundary integral formulation that is robust at
+Wood's anomalies. When the interface geometries are complex, the linear system is too large to be
+handled via dense linear algebra. The key building block of the proposed solver is a fast direct direct
+solver for the large sparse block system that corresponds to the discretization of boundary integral
+equations. The solver makes use of hierarchical matrix inversion techniques, has a cost that scales
+linearly with respect to the number of unknowns on the interfaces and the precomputation can be used
+for all choices of boundary data. By partitioning the remainder of the precomputation into parts
+based on their dependence on incident angle, the proposed direct solver is efficient for problems
+involving many incident angles like those that arise in applications. For example for a problem
+on an eleven layer geometry where the solution is desired for 287 incident angles, the proposed solution
+technique is 87 times faster than building a new fast direct solver for each new incident angle. An
+additional feature of the proposed solution technique is that solving a problem where an interface
+or layer property is changed require an update in the precomputation that cost linearly with respect
+to the number points on the affected interfaces with a small constant prefactor. The efficiency
+for modified geometries and multiple solves make the solution technique well suited for optimal
+design and inverse scattering applications. 

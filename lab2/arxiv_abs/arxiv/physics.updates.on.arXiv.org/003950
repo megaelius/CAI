@@ -1,0 +1,18 @@
+Image reconstruction in low-count PET is particularly challenging because gammas from natural
+radioactivity in Lu-based crystals cause high random fractions that lower the measurement signal-to-noise-ratio
+(SNR). In model-based image reconstruction (MBIR), using more iterations of an unregularized
+method may increase the noise, so incorporating regularization into the image reconstruction
+is desirable to control the noise. New regularization methods based on learned convolutional operators
+are emerging in MBIR. We modify the architecture of a variational neural network, BCD-Net, for PET
+MBIR, and demonstrate the efficacy of the trained BCD-Net using XCAT phantom data that simulates
+the low true coincidence count-rates with high random fractions typical for Y-90 PET patient imaging
+after Y-90 microsphere radioembolization. Numerical results show that the proposed BCD-Net significantly
+improves PET reconstruction performance compared to MBIR methods using non-trained regularizers,
+total variation (TV) and non-local means (NLM), and a non-MBIR method using a single forward pass
+deep neural network, U-Net. BCD-Net improved activity recovery for a hot sphere significantly
+and reduced noise, whereas non-trained regularizers had a trade-off between noise and quantification.
+BCD-Net improved CNR and RMSE by 43.4% (85.7%) and 12.9% (29.1%) compared to TV (NLM) regularized
+MBIR. Moreover, whereas the image reconstruction results show that the non-MBIR U-Net over-fits
+the training data, BCD-Net successfully generalizes to data that differs from training data. Improvements
+were also demonstrated for the clinically relevant phantom measurement data where we used training
+and testing datasets having very different activity distribution and count-level. 

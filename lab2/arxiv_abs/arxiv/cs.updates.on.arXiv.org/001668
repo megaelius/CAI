@@ -1,0 +1,19 @@
+In the presence of security countermeasures, a malware designed for data exfiltration must do so
+using a covert channel to achieve its goal. Among existing covert channels stands the domain name
+system (DNS) protocol. Although the detection of covert channels over the DNS has been thoroughly
+studied in the last decade, previous research dealt with a specific subclass of covert channels,
+namely DNS tunneling. While the importance of tunneling detection is not undermined, an entire
+class of low throughput DNS exfiltration malware remained overlooked. The goal of this study is
+to propose a method for detecting both tunneling and low-throughput data exfiltration over the
+DNS. Towards this end, we propose a solution composed of a supervised feature selection method,
+and an interchangeable, and adjustable anomaly detection model trained on legitimate traffic.
+In the first step, a one-class classifier is applied for detecting domain-specific traffic that
+does not conform with the normal behavior. Then, in the second step, in order to reduce the false positive
+rate resulting from the attempt to detect the low-throughput data exfiltration we apply a rule-based
+filter that filters data exchange over DNS used by legitimate services. Our solution was evaluated
+on a medium-scale recursive DNS server logs, and involved more than 75,000 legitimate uses and almost
+2,000 attacks. Evaluation results shows that while DNS tunneling is covered with at least 99% recall
+rate and less than 0.01% false positive rate, the detection of low throughput exfiltration is more
+difficult. While not preventing it completely, our solution limits a malware attempting to avoid
+detection with at most a 1kb/h of payload under the limitations of the DNS syntax (equivalent to five
+credit cards details, or ten user credentials per hour) which reduces the effectiveness of the attack.

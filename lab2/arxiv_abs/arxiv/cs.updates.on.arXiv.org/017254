@@ -1,0 +1,19 @@
+In data streams, the data distribution of arriving observations at different time points may change
+- a phenomenon called concept drift. While detecting concept drift is a relatively mature area of
+study, solutions to the uncertainty introduced by observations with missing values have only been
+studied in isolation. No one has yet explored whether or how these solutions might impact drift detection
+performance. We, however, believe that data imputation methods may actually increase uncertainty
+in the data rather than reducing it. We also conjecture that imputation can introduce bias into the
+process of estimating distribution changes during drift detection, which can make it more difficult
+to train a learning model. Our idea is to focus on estimating the distance between observations rather
+than estimating the missing values, and to define membership functions that allocate observations
+to histogram bins according to the estimation errors. Our solution comprises a novel masked distance
+learning (MDL) algorithm to reduce the cumulative errors caused by iteratively estimating each
+missing value in an observation and a fuzzy-weighted frequency (FWF) method for identifying discrepancies
+in the data distribution. The concept drift detection algorithm proposed in this paper is a singular
+and unified algorithm that can handle missing values, but not an imputation algorithm combined
+with a concept drift detection algorithm. Experiments on both synthetic and real-world data sets
+demonstrate the advantages of this method and show its robustness in detecting drift in data with
+missing values. These findings reveal that missing values exert a profound impact on concept drift
+detection, but using fuzzy set theory to model observations can produce more reliable results than
+imputation. 

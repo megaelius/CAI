@@ -1,0 +1,18 @@
+Winner-Take-All (WTA) refers to the neural operation that selects a (typically small) group of
+neurons from a large neuron pool. It is conjectured to underlie many of the brain's fundamental computational
+abilities. However, not much is known about the robustness of a spike-based WTA network to the inherent
+randomness of the input spike trains. In this work, we consider a spike-based $k$--WTA model wherein
+$n$ randomly generated input spike trains compete with each other based on their underlying statistics,
+and $k$ winners are supposed to be selected. We slot the time evenly with each time slot of length $1\,
+ms$, and model the $n$ input spike trains as $n$ independent Bernoulli processes. The Bernoulli
+process is a good approximation of the popular Poisson process but is more biologically relevant
+as it takes the refractory periods into account. Due to the randomness in the input spike trains,
+no circuits can guarantee to successfully select the correct winners in finite time. We focus on
+analytically characterizing the minimal amount of time needed so that a target minimax decision
+accuracy (success probability) can be reached. We first derive an information-theoretic lower
+bound on the decision time. We show that to have a (minimax) decision error $\le \delta$ (where $\delta
+\in (0,1)$), the computation time of any WTA circuit is at least \[ ((1-\delta) \log(k(n -k)+1) -1)T_{\mathcal{R}},
+\] where $T_{\mathcal{R}}$ is a difficulty parameter of a WTA task that is independent of $\delta$,
+$n$, and $k$. We then design a simple WTA circuit whose decision time is \[ O( \log\frac{1}{\delta}+\log
+k(n-k))T_{\mathcal{R}}). \] It turns out that for any fixed $\delta \in (0,1)$, this decision time
+is order-optimal in terms of its scaling in $n$, $k$, and $T_{\mathcal{R}}$. 

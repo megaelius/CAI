@@ -1,0 +1,17 @@
+This paper considers the problem of code design for a channel where communications and radar systems
+coexist, modeled as having both Additive White Gaussian Noise (AWGN) and Additive Radar Interference
+(ARI). The issue of how to adapt or re-design convolutional codes (decoded by the Viterbi algorithm)
+and LDPC codes (decoded by the sum-product algorithm and optimized by using the EXIT chart method)
+to effectively handle the overall non-Gaussian ARI noise is investigated. A decoding metric is
+derived from the non-Gaussian ARI channel transition probability as a function of the Signal-to-Noise
+Ratio (SNR) and Interference-to-Noise Ratio (INR). Two design methodologies are benchmarked
+against a baseline "unaltered legacy system", where a code designed for AWGN-only noise, but used
+on the non-Gaussian ARI channel, is decoded by using the AWGN-only metric (i.e., as if INR is zero).
+The methodologies are: M1) codes designed for AWGN-only noise, but decoded with the new metric that
+accounts for both SNR and INR; and M2) codes optimized for the overall non-Gaussian ARI channel.
+Both methodologies give better average Bit Error Rate (BER) in the high INR regime compared to the
+baseline. In the low INR regime, both methodologies perform as the baseline since in this case the
+radar interference is weak. Interestingly, the performance improvement of M2 over M1 is minimal.
+In practice, this implies that specifications in terms of channel error correcting codes for commercially
+available wireless systems need not be changed, and that it suffices to use an appropriate INR-based
+decoding metric in order to effectively cope with the ARI. 

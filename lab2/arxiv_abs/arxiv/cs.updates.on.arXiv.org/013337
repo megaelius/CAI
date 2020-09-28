@@ -1,0 +1,18 @@
+Time Series Classification (TSC) has seen enormous progress over the last two decades. HIVE-COTE
+(Hierarchical Vote Collective of Transformation-based Ensembles) is the current state of the
+art in terms of classification accuracy. HIVE-COTE recognizes that time series data are a specific
+data type for which the traditional attribute-value representation, used predominantly in machine
+learning, fails to provide a relevant representation. HIVE-COTE combines multiple types of classifiers:
+each extracting information about a specific aspect of a time series, be it in the time domain, frequency
+domain or summarization of intervals within the series. However, HIVE-COTE (and its predecessor,
+FLAT-COTE) is often infeasible to run on even modest amounts of data. For instance, training HIVE-COTE
+on a dataset with only 1,500 time series can require 8 days of CPU time. It has polynomial runtime with
+respect to the training set size, so this problem compounds as data quantity increases. We propose
+a novel TSC algorithm, TS-CHIEF (Time Series Combination of Heterogeneous and Integrated Embedding
+Forest), which rivals HIVE-COTE in accuracy but requires only a fraction of the runtime. TS-CHIEF
+constructs an ensemble classifier that integrates the most effective embeddings of time series
+that research has developed in the last decade. It uses tree-structured classifiers to do so efficiently.
+We assess TS-CHIEF on 85 datasets of the University of California Riverside (UCR) archive, where
+it achieves state-of-the-art accuracy with scalability and efficiency. We demonstrate that TS-CHIEF
+can be trained on 130k time series in 2 days, a data quantity that is beyond the reach of any TSC algorithm
+with comparable accuracy. 

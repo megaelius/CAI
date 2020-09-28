@@ -1,0 +1,19 @@
+Patching is a common activity in software development. It is generally performed on a source code
+base to address bugs or add new functionalities. In this context, given the recurrence of bugs across
+projects, the associated similar patches can be leveraged to extract generic fix actions. While
+the literature includes various approaches leveraging similarity among patches to guide program
+repair, these approaches often do not yield fix patterns that are tractable and reusable as actionable
+input to APR systems. In this paper, we propose a systematic and automated approach to mining relevant
+and actionable fix patterns based on an iterative clustering strategy applied to atomic changes
+within patches. The goal of FixMiner is thus to infer separate and reusable fix patterns that can
+be leveraged in other patch generation systems. Our technique, FixMiner, leverages Rich Edit Script
+which is a specialized tree structure of the edit scripts that captures the AST-level context of
+the code changes. FixMiner uses different tree representations of Rich Edit Scripts for each round
+of clustering to identify similar changes. These are abstract syntax trees, edit actions trees,
+and code context trees. We have evaluated FixMiner on thousands of software patches collected from
+open source projects. Preliminary results show that we are able to mine accurate patterns, efficiently
+exploiting change information in Rich Edit Scripts. We further integrated the mined patterns to
+an automated program repair prototype, PARFixMiner, with which we are able to correctly fix 26 bugs
+of the Defects4J benchmark. Beyond this quantitative performance, we show that the mined fix patterns
+are sufficiently relevant to produce patches with a high probability of correctness: 81% of PARFixMiner's
+generated plausible patches are correct. 

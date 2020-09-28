@@ -1,0 +1,19 @@
+We consider the following string matching problem on a node-labeled graph $G=(V,E)$: given a pattern
+string $P$, decide whether there exists a path in $G$ whose concatenation of node labels equals $P$.
+This is a basic primitive in various problems in bioinformatics, graph databases, or networks.
+The hardness results of Backurs and Indyk (FOCS 2016) imply that this problem cannot be solved in
+better than $O(|E||P|)$ time, under the Orthogonal Vectors Hypothesis (OVH), and this holds even
+under various restrictions on the graph (Equi et al., ICALP 2019). In this paper we consider its offline
+version, namely the one in which we are allowed to index the graph in order to support time-efficient
+string matching queries. Indeed, it was tantalizing in the string matching community to believe
+that sub-quadratic time queries can be achieved, e.g. at the cost of a high-degree polynomial-time
+indexing. We disprove this belief, showing that, under OVH, no polynomial-time index can support
+querying $P$ in time $O(|E|^\delta|P|^\beta)$, with either $\delta < 1$ or $\beta < 1$. We prove
+this tight bound employing a known self-reducibility technique, e.g. from the field of dynamic
+algorithms, which translates conditional lower bounds for an online problem to its offline version.
+As a side-contribution, we formalize this technique with the notion of linear independent-components
+reduction, allowing for a simple proof of our result. As another illustration of our technique,
+we also translate the quadratic conditional lower bound of Backurs and Indyk (STOC 2015) for the
+problem of matching a query string inside a text, under edit distance. We obtain an analogous tight
+quadratic lower bound for its offline version, improving the recent result of Cohen-Addad, Feuilloley
+and Starikovskaya (SODA 2019), but with a slightly different boundary condition. 

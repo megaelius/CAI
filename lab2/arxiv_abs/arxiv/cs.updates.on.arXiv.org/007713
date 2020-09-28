@@ -1,0 +1,18 @@
+Graph sketching has emerged as a powerful technique for processing massive graphs that change over
+time (i.e., are presented as a dynamic stream of edge updates) over the past few years, starting with
+the work of Ahn, Guha and McGregor (SODA'12) on graph connectivity via sketching. In this paper we
+consider the problem of designing spectral approximations to graphs, or spectral sparsifiers,
+using a small number of linear measurements, with the additional constraint that the sketches admit
+an efficient recovery scheme. Prior to our work, sketching algorithms were known with near optimal
+$\tilde O(n)$ space complexity, but $\Omega(n^2)$ time decoding (brute-force over all potential
+edges of the input graph), or with subquadratic time, but rather large $\Omega(n^{5/3})$ space
+complexity (due to their reliance on a rather weak relation between connectivity and effective
+resistances). In this paper we first show how a simple relation between effective resistances and
+edge connectivity leads to an improved $\widetilde O(n^{3/2})$ space and time algorithm, which
+we show is a natural barrier for connectivity based approaches. Our main result then gives the first
+algorithm that achieves subquadratic recovery time, i.e. avoids brute-force decoding, and at
+the same time nontrivially uses the effective resistance metric, achieving $n^{1.4+o(1)}$ space
+and recovery time. Our main technical contribution is a novel method for `bucketing' vertices of
+the input graph into clusters that allows fast recovery of edges of high effective resistance: the
+buckets are formed by performing ball-carving on the input graph using (an approximation to) its
+effective resistance metric. We feel that this technique is likely to be of independent interest.

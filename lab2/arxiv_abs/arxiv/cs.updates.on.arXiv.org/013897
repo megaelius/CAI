@@ -1,0 +1,20 @@
+Homomorphic Encryption (HE) draws a significant attention as a privacy-preserving way for cloud
+computing because it allows computation on encrypted messages called ciphertexts. Among numerous
+HE schemes proposed, HE for Arithmetic of Approximate Numbers (HEAAN) is rapidly gaining popularity
+across a wide range of applications because it supports messages that can tolerate approximate
+computation with no limit on the number of arithmetic operations applicable to the corresponding
+ciphertexts. A critical shortcoming of HE is the high computation complexity of ciphertext arithmetic;
+especially, HE multiplication (HE Mul) is more than 10,000 times slower than the corresponding
+multiplication between unencrypted messages. This leads to a large body of HE acceleration studies,
+including ones exploiting FPGAs; however, those did not conduct a rigorous analysis of computational
+complexity and data access patterns of HE Mul. Moreover, the proposals mostly focused on designs
+with small parameter sizes, making it difficult to accurately estimate their performance in conducting
+a series of complex arithmetic operations. In this paper, we first describe how HE Mul of HEAAN is
+performed in a manner friendly to computer architects. Then we conduct a disciplined analysis on
+its computational and memory access characteristics, through which we (1) extract parallelism
+in the key functions composing HE Mul and (2) demonstrate how to effectively map the parallelism
+to the popular parallel processing platforms, multicore CPUs and GPUs, by applying a series of optimization
+techniques such as transposing matrices and pinning data to threads. This leads to the performance
+improvement of HE Mul on a CPU and a GPU by 42.9x and 134.1x, respectively, over the single-thread
+reference HEAAN running on a CPU. The conducted analysis and optimization would set a new foundation
+for future HE acceleration research. 

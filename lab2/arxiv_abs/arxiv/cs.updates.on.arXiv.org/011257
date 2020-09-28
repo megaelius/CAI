@@ -1,0 +1,17 @@
+This work compares Deep Reinforcement Learning (DRL) and Model Predictive Control (MPC) for optimal
+control. We consider a longitudinal Adaptive Cruise Control (ACC), i.e., car-following control,
+problem whose state-space equations have three state variables. Within the state-space representation,
+a first-order system is used as the Control-Oriented Model (COM) to describe the acceleration dynamics
+of a 2015 Toyota Prius hybrid electric vehicle. The multi-objective cost function for car following
+penalizes gap-keeping errors, control efforts, and jerks. Based on the state-space equations
+and the cost function, we train a DRL policy using the Deep Deterministic Policy Gradient (DDPG)
+algorithm and formulate the MPC optimization problem to be solved via Interior-Point Optimization
+(IPO). We first test the DRL-trained policy and the MPC approach with the COM, considering no modeling
+errors. The COM test results show that the DRL solution is equivalent to MPC with a sufficiently long
+prediction horizon with regards to episode cost. Particularly, the DRL episode cost is 4.29% higher
+than a benchmark solution provided by optimizing the entire episode via IPO. Then the DRL-trained
+policy and MPC are tested with a High-Fidelity Model (HFM) of the Prius, considering modeling errors.
+We find that the DRL-trained policy is more tolerant to modeling errors than MPC regarding episode
+costs. When tested with the Highway Fuel Economy Test (HWFET), the Federal Test Procedure 75 (FTP-75),
+and the US06 Supplemental Federal Test Procedure on the HFM, the MPC episode costs are 49.62%, 30.20%,
+and 41.22% higher than those of the DRL solutions, respectively. 

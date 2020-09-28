@@ -1,0 +1,20 @@
+We study the consensus problem in a synchronous distributed system of $n$ nodes under an adaptive
+adversary that has a slightly outdated view of the system and can block all incoming and outgoing
+communication of a constant fraction of the nodes in each round. Motivated by a result of Ben-Or and
+Bar-Joseph (1998), showing that any consensus algorithm that is resilient against a linear number
+of crash faults requires $\tilde \Omega(\sqrt{n})$ rounds in an $n$-node network against an adaptive
+adversary, we consider a late adaptive adversary, who has full knowledge of the network state at
+the beginning of the previous round and unlimited computational power, but is oblivious to the current
+state of the nodes. Our main contributions are randomized distributed algorithms that achieve
+almost-everywhere consensus w.h.p. against a late adaptive adversary who can block up to $\epsilon
+n$ nodes in each round, for a small constant $\epsilon >0$. Our first protocol achieves binary and
+plurality consensus, and the second one achieves multi-value consensus. Both of our algorithms
+succeed in $O(\log n)$ rounds with high probability, thus showing an exponential gap to the aforementioned
+lower bound for strongly adaptive crash-failure adversaries, which can be strengthened to $\Omega(n)$
+when allowing the adversary to block nodes instead of permanently crashing them. In our algorithms
+each node contacts only an (amortized) constant number of peers in each communication round. We
+show that our algorithms are optimal up to constant (resp. sub-logarithmic) factors by proving
+that every almost-everywhere consensus protocol takes $\Omega(\log_d n)$ rounds in the worst
+case, where $d$ is an upper bound on the number of communication requests initiated per node in each
+round. We complement our theoretical results with an experimental evaluation of the first protocol
+revealing a short convergence time. 

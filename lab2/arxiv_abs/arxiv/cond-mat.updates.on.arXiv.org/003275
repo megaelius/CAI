@@ -1,0 +1,20 @@
+We employ Gaussian process (GP) regression to adjust for systematic errors in D3-type dispersion
+corrections introducing the associated, statistically improved model D3-GP. We generated a data
+set containing interaction energies for 1,248 molecular dimers, which resemble the dispersion-dominated
+systems contained in the S66 data set. Our systems do not only represent equilibrium structures,
+but also dimers with various relative orientations and conformations at both shorter and longer
+distances. To train our D3-GP model, we engineered two different vectorial representations of
+(supra-)molecular systems, both derived from the matrix of atom-pairwise D3(BJ) interaction
+terms: (a) a distance-resolved interaction energy histogram and (b) eigenvalues of the interaction
+matrix ordered according to their decreasing absolute value. We harness the prediction variance
+obtained from GP regression to select optimal training sets in an automated fashion. The larger
+the variance, the more information the corresponding data point may add to the training set. For
+a given set of molecular systems, variance-based sampling can approximately determine the smallest
+subset being subjected to reference calculations such that all dispersion corrections for the
+remaining systems fall below a predefined accuracy threshold. Our refined learning algorithm
+selects multiple (instead of single) systems which can be subjected to reference calculations
+simultaneously. We refer to the underlying selection strategy as batch-wise variance-based sampling
+(BVS). BVS-guided active learning is an essential component of our D3-GP workflow, which is implemented
+in a black-box fashion. This approach leads overall to a self-improving model (D3-GP) that predicts
+system-focused and GP-refined D3-type dispersion corrections for any given system of reference
+data. 

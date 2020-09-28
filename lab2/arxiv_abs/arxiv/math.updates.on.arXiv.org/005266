@@ -1,0 +1,19 @@
+Training a machine learning model is both compute and data-intensive. Most of the model training
+is performed on high performance compute nodes and the training data is stored near these nodes for
+faster training. But there is a growing interest in enabling training near the data. For instance,
+mobile devices are rich sources of training data. It may not be feasible to consolidate the data from
+mobile devices into a cloud service, due to bandwidth and data privacy reasons. Training at mobile
+devices is however fraught with challenges. First mobile devices may join or leave the distributed
+setting, either voluntarily or due to environmental uncertainties, such as lack of power. Tolerating
+uncertainties is critical to the success of distributed mobile training. One proactive approach
+to tolerate computational uncertainty is to store data in a coded format and perform training on
+coded data. Encoding data is a challenging task since erasure codes require multiple devices to
+exchange their data to create a coded data partition, which places a significant bandwidth constraint.
+Furthermore, coded computing traditionally relied on a central node to encode and distribute data
+to all the worker nodes, which is not practical in a distributed mobile setting. In this paper, we
+tackle the uncertainty in distributed mobile training using a bandwidth-efficient encoding strategy.
+We use a Random Linear Network coding (RLNC) which reduces the need to exchange data partitions across
+all participating mobile devices, while at the same time preserving the property of coded computing
+to tolerate uncertainties. We implement gradient descent for logistic regression and SVM to evaluate
+the effectiveness of our mobile training framework. We demonstrate a 50% reduction in total required
+communication bandwidth compared to MDS coded computation, one of the popular erasure codes. 

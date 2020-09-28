@@ -1,0 +1,20 @@
+There is growing interest in large-scale machine learning and optimization over decentralized
+networks, e.g. in the context of multi-agent learning and federated learning. Due to the imminent
+need to alleviate the communication burden, the investigation of communication-efficient distributed
+optimization algorithms - particularly for empirical risk minimization - has flourished in recent
+years. A large fraction of these algorithms have been developed for the master/slave setting, relying
+on a central parameter server that can communicate with all agents. This paper focuses on distributed
+optimization over networks, or decentralized optimization, where each agent is only allowed to
+aggregate information from its neighbors. By properly adjusting the global gradient estimate
+via local averaging in conjunction with proper correction, we develop a communication-efficient
+approximate Newton-type method Network-DANE, which generalizes DANE to the decentralized scenarios.
+Our key ideas can be applied in a systematic manner to obtain decentralized versions of other master/slave
+distributed algorithms. A notable development is Network-SVRG/SARAH, which employs variance
+reduction to further accelerate local computation. We establish linear convergence of Network-DANE
+and Network-SVRG for strongly convex losses, and Network-SARAH for quadratic losses, which shed
+light on the impacts of data homogeneity, network connectivity, and local averaging upon the rate
+of convergence. We further extend Network-DANE to composite optimization by allowing a nonsmooth
+penalty term. Numerical evidence is provided to demonstrate the appealing performance of our algorithms
+over competitive baselines, in terms of both communication and computation efficiency. Our work
+suggests that performing a certain amount of local communications and computations per iteration
+can substantially improve the overall efficiency. 

@@ -1,0 +1,17 @@
+Upcoming astronomical surveys such as the Large Synoptic Survey Telescope (LSST) will rely on photometric
+classification to identify the majority of the transients and variables that they discover. We
+present a set of techniques for photometric classification that can be applied even when the training
+set of spectroscopically-confirmed objects is heavily biased towards bright, low-redshift objects.
+Using Gaussian process regression to model arbitrary light curves in all bands simultaneously,
+we "augment" the training set by generating new versions of the original light curves covering a
+range of redshifts and observing conditions. We train a boosted decision tree classifier on features
+extracted from the augmented light curves, and we show how such a classifier can be designed to produce
+classifications that are independent of the redshift distributions of objects in the training
+sample. Our classification algorithm was the best-performing among the 1,094 models considered
+in the blinded phase of the Photometric LSST Astronomical Time-Series Classification Challenge
+(PLAsTiCC), scoring 0.468 on the organizers' logarithmic-loss metric with flat weights for all
+object classes in the training set, and achieving an AUC of 0.957 for classification of Type Ia supernovae.
+Our results suggest that spectroscopic campaigns used for training photometric classifiers should
+focus on typing large numbers of well-observed, intermediate redshift transients instead of attempting
+to type a sample of transients that is directly representative of the full dataset being classified.
+All of the algorithms described in this paper are implemented in the avocado software package. 

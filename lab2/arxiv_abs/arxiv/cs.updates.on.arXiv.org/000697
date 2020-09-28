@@ -1,0 +1,18 @@
+Certificates to a linear algebra computation are additional data structures for each output, which
+can be used by a---possibly randomized---verification algorithm that proves the correctness
+of each output. The certificates are essentially optimal if the time (and space) complexity of verification
+is essentially linear in the input size $N$, meaning $N$ times a factor $N^{o(1)}$, i.e., a factor
+$N^{\eta(N)}$ with $\lim_{N\to \infty} \eta(N)$ $=$ $0$. We give algorithms that compute essentially
+optimal certificates for the positive semidefiniteness, Frobenius form, characteristic and
+minimal polynomial of an $n\times n$ dense integer matrix $A$. Our certificates can be verified
+in Monte-Carlo bit complexity $(n^2 \lognormA)^{1+o(1)}$, where $\lognormA$ is the bit size of
+the integer entries, solving an open problem in [Kaltofen, Nehring, Saunders, Proc.\ ISSAC 2011]
+subject to computational hardness assumptions. Second, we give algorithms that compute certificates
+for the rank of sparse or structured $n\times n$ matrices over an abstract field, whose Monte Carlo
+verification complexity is $2$ matrix-times-vector products $+$ $n^{1+o(1)}$ arithmetic operations
+in the field. For example, if the $n\times n$ input matrix is sparse with $n^{1+o(1)}$ non-zero entries,
+our rank certificate can be verified in $n^{1+o(1)}$ field operations. This extends also to integer
+matrices with only an extra $||A||^{1+o(1)}$ factor. All our certificates are based on interactive
+verification protocols with the interaction removed by a Fiat-Shamir identification heuristic.
+The validity of our verification procedure is subject to standard computational hardness assumptions
+from cryptography. 

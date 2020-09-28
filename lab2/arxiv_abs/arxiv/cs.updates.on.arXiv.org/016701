@@ -1,0 +1,19 @@
+Autonomous aerial surveillance using drone feed is an interesting and challenging research domain.
+To ensure safety from intruders and potential objects posing threats to the zone being protected,
+it is crucial to be able to distinguish between normal and abnormal states in real-time. Additionally,
+we also need to consider any device malfunction. However, the inherent uncertainty embedded within
+the type and level of abnormality makes supervised techniques less suitable since the adversary
+may present a unique anomaly for intrusion. As a result, an unsupervised method for anomaly detection
+is preferable taking the unpredictable nature of attacks into account. Again in our case, the autonomous
+drone provides heterogeneous data streams consisting of images and other analog or digital sensor
+data, all of which can play a role in anomaly detection if they are ensembled synergistically. To
+that end, an ensemble detection mechanism is proposed here which estimates the degree of abnormality
+of analyzing the real-time image and IMU (Inertial Measurement Unit) sensor data in an unsupervised
+manner. First, we have implemented a Convolutional Neural Network (CNN) regression block, named
+AngleNet to estimate the angle between a reference image and current test image, which provides
+us with a measure of the anomaly of the device. Moreover, the IMU data are used in autoencoders to predict
+abnormality. Finally, the results from these two pipelines are ensembled to estimate the final
+degree of abnormality. Furthermore, we have applied adversarial attack to test the robustness
+and security of the proposed approach and integrated defense mechanism. The proposed method performs
+satisfactorily on the IEEE SP Cup-2020 dataset with an accuracy of 97.8%. Additionally, we have
+also tested this approach on an in-house dataset to validate its robustness. 

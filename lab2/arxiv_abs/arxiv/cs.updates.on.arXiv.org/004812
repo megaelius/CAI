@@ -1,0 +1,19 @@
+The Congested Clique model, proposed by Lotker et al. [SPAA'03, SICOMP'05], was introduced in order
+to provide a simple abstraction for overlay networks. Congested Clique is a model of distributed
+(or parallel) computing, in which there are $n$ players (nodes) with unique identifiers from set
+{1, ..., n}, which perform computations in synchronous rounds. Each round consists of the phase
+of unlimited local computation and the communication phase. While communicating, each pair of
+nodes is allowed to exchange a single message of size $\mathcal{O}(\log n)$ bits. Since, in a single
+round, each player can communicate with even $\Theta(n)$ other players, the model seems to be to
+powerful to imitate bandwidth restriction emerging from the underlying network. In this paper
+we study a restricted version of the Congested Clique model, the Node Congested Clique model, proposed
+by Augustine et al. [arxiv1805]. The additional restriction is that in a single communication phase,
+a player is allowed to send / receive only $\mathcal{O}(\log n)$ messages. In this paper, we provide
+communication primitives that improve the round complexity of the MST (Minimum Spanning Tree)
+algorithm by Augustine et al. [arxiv1805] to $\mathcal{O}(\log^3 n)$ rounds. Moreover, we propose
+a different approach to this problem that requires only $\mathcal{O}(\log^3 n / \log \log n)$ rounds,
+and has smaller dependence on the weights of the edges. Besides the faster MST algorithm, we consider
+the key contributions to be: - an efficient implementation of some basic protocols, - a tighter analysis
+of a special case of the sampling approach by Karger, Klein and Tarjan [JACM'95] (and related results
+by Pemmaraju and Sardeshmukh [FSTTCS'16]), - an application of sparse recovery techniques going
+slightly beyond the standard usage of linear graph sketching by Ahn, Guha and McGregor [SODA'12]

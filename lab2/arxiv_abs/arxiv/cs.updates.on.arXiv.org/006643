@@ -1,0 +1,19 @@
+Programming a robot to deal with open-ended tasks remains a challenge, in particular if the robot
+has to manipulate objects. Launching, grasping, pushing or any other object interaction can be
+simulated but the corresponding models are not reversible and the robot behavior thus cannot be
+directly deduced. These behaviors are hard to learn without a demonstration as the search space
+is large and the reward sparse. We propose a method to autonomously generate a diverse repertoire
+of simple object interaction behaviors in simulation. Our goal is to bootstrap a robot learning
+and development process with limited informations about what the robot has to achieve and how. This
+repertoire can be exploited to solve different tasks in reality thanks to a proposed adaptation
+method or could be used as a training set for data-hungry algorithms. The proposed approach relies
+on the definition of a goal space and generates a repertoire of trajectories to reach attainable
+goals, thus allowing the robot to control this goal space. The repertoire is built with an off-the-shelf
+simulation thanks to a quality diversity algorithm. The result is a set of solutions tested in simulation
+only. It may result in two different problems: (1) as the repertoire is discrete and finite, it may
+not contain the trajectory to deal with a given situation or (2) some trajectories may lead to a behavior
+in reality that differs from simulation because of a reality gap. We propose an approach to deal with
+both issues by using a local linearization between the motion parameters and the observed effects.
+Furthermore, we present an approach to update the existing solution repertoire with the tests done
+on the real robot. The approach has been validated on two different experiments on the Baxter robot:
+a ball launching and a joystick manipulation tasks. 

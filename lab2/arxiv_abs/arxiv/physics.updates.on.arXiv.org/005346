@@ -1,0 +1,20 @@
+Solving Bayesian inference problems approximately with variational approaches can provide fast
+and accurate results. Capturing correlation within the approximation requires an explicit parametrization.
+This intrinsically limits this approach to either moderately dimensional problems, or requiring
+the strongly simplifying mean-field approach. We propose Metric Gaussian Variational Inference
+(MGVI) as a method that goes beyond mean-field. Here correlations between all model parameters
+are taken into account, while still scaling linearly in computational time and memory. With this
+method we achieve higher accuracy and in many cases a significant speedup compared to traditional
+methods. MGVI is an iterative method that performs a series of Gaussian approximations to the posterior.
+We alternate between approximating the covariance with the inverse Fisher information metric
+evaluated at an intermediate mean estimate and optimizing the KL-divergence for the given covariance
+with respect to the mean. This procedure is iterated until the uncertainty estimate is self-consistent
+with the mean parameter. We achieve linear scaling by avoiding to store the covariance explicitly
+at any time. Instead we draw samples from the approximating distribution relying on an implicit
+representation and numerical schemes to approximately solve linear equations. Those samples
+are used to approximate the KL-divergence and its gradient. The usage of natural gradient descent
+allows for rapid convergence. Formulating the Bayesian model in standardized coordinates makes
+MGVI applicable to any inference problem with continuous parameters. We demonstrate the high accuracy
+of MGVI by comparing it to HMC and its fast convergence relative to other established methods in several
+examples. We investigate real-data applications, as well as synthetic examples of varying size
+and complexity and up to a million model parameters. 

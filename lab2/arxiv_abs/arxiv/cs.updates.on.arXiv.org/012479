@@ -1,0 +1,20 @@
+Deep Neural Networks (DNNs) are inherently computation-intensive and also power-hungry. Hardware
+accelerators such as Field Programmable Gate Arrays (FPGAs) are a promising solution that can satisfy
+these requirements for both embedded and High-Performance Computing (HPC) systems. In FPGAs,
+as well as CPUs and GPUs, aggressive voltage scaling below the nominal level is an effective technique
+for power dissipation minimization. Unfortunately, bit-flip faults start to appear as the voltage
+is scaled down closer to the transistor threshold due to timing issues, thus creating a resilience
+issue. This paper experimentally evaluates the resilience of the training phase of DNNs in the presence
+of voltage underscaling related faults of FPGAs, especially in on-chip memories. Toward this goal,
+we have experimentally evaluated the resilience of LeNet-5 and also a specially designed network
+for CIFAR-10 dataset with different activation functions of Rectified Linear Unit (Relu) and Hyperbolic
+Tangent (Tanh). We have found that modern FPGAs are robust enough in extremely low-voltage levels
+and that low-voltage related faults can be automatically masked within the training iterations,
+so there is no need for costly software- or hardware-oriented fault mitigation techniques like
+ECC. Approximately 10% more training iterations are needed to fill the gap in the accuracy. This
+observation is the result of the relatively low rate of undervolting faults, i.e., <0.1\%, measured
+on real FPGA fabrics. We have also increased the fault rate significantly for the LeNet-5 network
+by randomly generated fault injection campaigns and observed that the training accuracy starts
+to degrade. When the fault rate increases, the network with Tanh activation function outperforms
+the one with Relu in terms of accuracy, e.g., when the fault rate is 30% the accuracy difference is
+4.92%. 

@@ -1,0 +1,17 @@
+Interaction between pharmacological agents can trigger unexpected adverse events. Capturing
+richer and more comprehensive information about drug-drug interactions (DDI) is one of the key
+tasks in public health and drug development. Recently, several knowledge graph embedding approaches
+have received increasing attention in the DDI domain due to their capability of projecting drugs
+and interactions into a low-dimensional feature space for predicting links and classifying triplets.
+However, existing methods only apply a uniformly random mode to construct negative samples. As
+a consequence, these samples are often too simplistic to train an effective model. In this paper,
+we propose a new knowledge graph embedding framework by introducing adversarial autoencoders
+(AAE) based on Wasserstein distances and Gumbel-Softmax relaxation for drug-drug interactions
+tasks. In our framework, the autoencoder is employed to generate high-quality negative samples
+and the hidden vector of the autoencoder is regarded as a plausible drug candidate. Afterwards,
+the discriminator learns the embeddings of drugs and interactions based on both positive and negative
+triplets. Meanwhile, in order to solve vanishing gradient problems on the discrete representation--an
+inherent flaw in traditional generative models--we utilize the Gumbel-Softmax relaxation and
+the Wasserstein distance to train the embedding model steadily. We empirically evaluate our method
+on two tasks, link prediction and DDI classification. The experimental results show that our framework
+can attain significant improvements and noticeably outperform competitive baselines. 

@@ -1,0 +1,18 @@
+We review the theory of, and develop algorithms for transforming a finite point set in ${\bf R}^d$
+into a set in \emph{radial isotropic position} by a nonsingular linear transformation followed
+by rescaling each image point to the unit sphere. This problem arises in a wide spectrum of applications
+in computer science and mathematics. Our algorithms use gradient descent methods for a particular
+convex function $f$ whose minimum defines the transformation, and our main focus is on analyzing
+their performance. Although the minimum can be computed exactly, by expensive symbolic algebra
+techniques, gradient descent only approximates the desired minimum to any desired level of accuracy.
+We show that computing the gradient of $f$ amounts to computing the Singular Value Decomposition
+(SVD) of a certain matrix associated with the input set, making it simple to implement. We believe
+it to be superior to other approximate techniques (mainly the ellipsoid algorithm) used previously
+to find this transformation, and it should run much faster in practice. We prove that $f$ is smooth,
+which yields convergence rate proportional to $1/\epsilon$, where $\epsilon$ is the desired approximation
+accuracy. To complete the analysis, we provide upper bounds on the norm of the optimal solution which
+depend on new parameters measuring "the degeneracy" in our input. We believe that our parameters
+capture degeneracy better than other, seemingly weaker, parameters used in previous works. We
+next analyze the strong convexity of $f$, and present two worst-case lower bounds on the smallest
+eigenvalue of its Hessian. This gives another worst-case bound on the convergence rate of another
+variant of gradient decent that depends only logarithmically on $1/\epsilon$. 

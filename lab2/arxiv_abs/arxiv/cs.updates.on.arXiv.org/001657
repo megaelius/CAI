@@ -1,0 +1,17 @@
+Several applications of slicing require a program to be sliced with respect to more than one slicing
+criterion. Program specialization, parallelization and cohesion measurement are examples of
+such applications. These applications can benefit from an incremental static slicing method in
+which a significant extent of the computations for slicing with respect to one criterion could be
+reused for another. In this paper, we consider the problem of incremental slicing of functional
+programs. We first present a non-incremental version of the slicing algorithm which does a polyvariant
+analysis 1 of functions. Since polyvariant analyses tend to be costly, we compute a compact context-independent
+summary of each function and then use this summary at the call sites of the function. The construction
+of the function summary is non-trivial and helps in the development of the incremental version.
+The incremental method, on the other hand, consists of a one-time pre-computation step that uses
+the non-incremental version to slice the program with respect to a fixed default slicing criterion
+and processes the results further to a canonical form. Presented with an actual slicing criterion,
+the incremental step involves a low-cost computation that uses the results of the pre-computation
+to obtain the slice. We have implemented a prototype of the slicer for a pure subset of Scheme, with
+pairs and lists as the only algebraic data types. Our experiments show that the incremental step
+of the slicer runs orders of magnitude faster than the non-incremental version. We have also proved
+the correctness of our incremental algorithm with respect to the non-incremental version. 

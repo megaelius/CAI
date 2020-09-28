@@ -1,0 +1,18 @@
+We present a new solver for massively parallel simulations of fully three-dimensional multiphase
+flows. The solver runs on a variety of computer architectures from laptops to supercomputers and
+on 65536 threads or more (limited only by the availability to us of more threads). The code is wholly
+written by the authors in Fortran 2003 and uses a domain decomposition strategy for parallelization
+with MPI. The fluid interface solver is based on a parallel implementation of the LCRM hybrid Front
+Tracking/Level Set method designed to handle highly deforming interfaces with complex topology
+changes. We discuss the implementation of this interface method and its particular suitability
+to distributed processing where all operations are carried out locally on distributed subdomains.
+We have developed parallel GMRES and Multigrid iterative solvers suited to the linear systems arising
+from the implicit solution of the fluid velocities and pressure in the presence of strong density
+and viscosity discontinuities across fluid phases. Particular attention is drawn to the details
+and performance of the parallel Multigrid solver. The code includes modules for flow interaction
+with immersed solid objects, contact line dynamics, species and thermal transport with phase change.
+Here, however, we focus on the simulation of the canonical problem of drop splash onto a liquid film
+and report on the parallel performance of the code on varying numbers of threads. The 3D simulations
+were run on mesh resolutions up to $1024^3$ with results at the higher resolutions showing the fine
+details and features of droplet ejection, crown formation and rim instability observed under similar
+experimental conditions. Keywords: 

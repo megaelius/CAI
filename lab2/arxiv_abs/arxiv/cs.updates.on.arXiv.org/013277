@@ -1,0 +1,19 @@
+We study the problem of finding "fair" stable matchings in the Stable Marriage problem with Incomplete
+lists (SMI). In particular, we seek stable matchings that are optimal with respect to profile, which
+is a vector that indicates the number of agents who have their first-, second-, third-choice partner,
+etc. In a rank maximal stable matching, the maximum number of agents have their first-choice partner,
+and subject to this, the maximum number of agents have their second-choice partner, etc., whilst
+in a generous stable matching $M$, the minimum number of agents have their $d$th-choice partner,
+and subject to this, the minimum number of agents have their $(d-1)$th-choice partner, etc., where
+$d$ is the maximum rank of an agent's partner in $M$. Irving et al. presented an $O(n^5\log n)$ algorithm
+for finding a rank-maximal stable matching, which can be adapted easily to the generous stable matching
+case, where $n$ is the number of men / women. An $O(n^{0.5}m^{1.5})$ algorithm for the rank-maximal
+stable matching problem was later given by Feder, where $m$ is the number of possible man-woman pairs.
+However these approaches involve the use of weights that are in general exponential in $n$, potentially
+leading to inaccuracies or memory issues upon implementation. In this paper we present an $O(n^5\log
+n)$ algorithm for finding a rank-maximal stable matching using an approach that involves weights
+that are polynomially-bounded in $n$. We show how to adapt our algorithm for the generous case to
+run in O$(n^2d^3 \log n)$ time. Additionally we conduct an empirical evaluation to compare various
+measures over many different types of "fair" stable matchings. In particular, we observe that a
+generous stable matching is typically considerably closer than a rank-maximal stable matching
+in terms of the egalitarian and sex-equality optimality criteria. 

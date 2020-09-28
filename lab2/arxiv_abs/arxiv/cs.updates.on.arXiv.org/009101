@@ -1,0 +1,19 @@
+There has been a significant amount of work in the literature proposing semantic relaxation of concurrent
+data structures for improving scalability and performance. By relaxing the semantics of a data
+structure, a bigger design space, that allows weaker synchronization and more useful parallelism,
+is unveiled. Investigating new data structure designs, capable of trading semantics for achieving
+better performance in a monotonic way, is a major challenge in the area. We algorithmically address
+this challenge in this paper. We present an efficient, lock-free, concurrent data structure design
+framework for out-of-order semantic relaxation. Our framework introduces a new two dimensional
+algorithmic design, that uses multiple instances of a given data structure. The first dimension
+of our design is the number of data structure instances operations are spread to, in order to benefit
+from parallelism through disjoint memory access. The second dimension is the number of consecutive
+operations that try to use the same data structure instance in order to benefit from data locality.
+Our design can flexibly explore this two-dimensional space to achieve the property of monotonically
+relaxing concurrent data structure semantics for achieving better throughput performance within
+a tight deterministic relaxation bound, as we prove in the paper. We show how our framework can instantiate
+lock-free out-of-order queues, stacks, counters and dequeues. We provide implementations of
+these relaxed data structures and evaluate their performance and behaviour on two parallel architectures.
+Experimental evaluation shows that our two-dimensional data structures significantly outperform
+the respected previous proposed ones with respect to scalability and throughput performance.
+Moreover, their throughput increases monotonically as relaxation increases. 

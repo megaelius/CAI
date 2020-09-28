@@ -1,0 +1,19 @@
+Congestion control is vastly important in computer networks. Arising naturally from the bursty
+nature of Internet traffic, congestion plagues not only the network edge, but also the network core.
+Many remedies have been proposed to fight congestion; active queue management (AQM) is one such
+proposal. AQM seeks to prevent congestion by actively avoiding it. Some queuing disciplines such
+as Random Early Detection (RED) will prematurely drop a random packet (with some probability) when
+the queue nears capacity to signal the sender to back off. However, RED utilizes queue length as a
+mechanism to indicate congestion. On the other hand, the Controlled Delay (CoDel) queuing discipline
+uses queuing delay as an indication of congestion. The problem with both RED and CoDel are that they
+indiscriminately treat all packets the same. Normally implemented using a FIFO queue, CoDel simply
+enqueues and dequeues packets in a first-come, first-served manner. Priority queuing can be carefully
+utilized to selectively service packets utilizing the very same metric CoDel uses for AQM, queuing
+delay. That said, Least Slack Time First (LSTF), a multi-processor scheduling algorithm employs
+priority scheduling, which coincidentally, is also based on delay. In the context of computer networks
+LSTF can be applied in the control plane or in the data plane. At the control plane, LSTF functions
+across the entire network, but in doing so requires all intermediary routers to implement it; LSTF
+also requires support at the packet level in terms of a slack entry. Within the data plane, LSTF can
+be implemented as a queuing mechanism based on delay spent in the router (just like CoDel AQM). This
+paper applies data plane level LSTF to CoDel AQM to enable delay-based packet classification within
+the confines of the CoDel AQM algorithm. 

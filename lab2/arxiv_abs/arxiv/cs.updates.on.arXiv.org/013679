@@ -1,0 +1,20 @@
+As deep neural networks make their ways into different domains, their compute efficiency is becoming
+a first-order constraint. Deep quantization, which reduces the bitwidth of the operations (below
+8 bits), offers a unique opportunity as it can reduce both the storage and compute requirements of
+the network super-linearly. However, if not employed with diligence, this can lead to significant
+accuracy loss. Due to the strong inter-dependence between layers and exhibiting different characteristics
+across the same network, choosing an optimal bitwidth per layer granularity is not a straight forward.
+As such, deep quantization opens a large hyper-parameter space, the exploration of which is a major
+challenge. We propose a novel sinusoidal regularization, called SINAREQ, for deep quantized training.
+Leveraging the sinusoidal properties, we seek to learn multiple quantization parameterization
+in conjunction during gradient-based training process. Specifically, we learn (i) a per-layer
+quantization bitwidth along with (ii) a scale factor through learning the period of the sinusoidal
+function. At the same time, we exploit the periodicity, differentiability, and the local convexity
+profile in sinusoidal functions to automatically propel (iii) network weights towards values
+quantized at levels that are jointly determined. We show how SINAREQ balance compute efficiency
+and accuracy, and provide a heterogeneous bitwidth assignment for quantization of a large variety
+of deep networks (AlexNet, CIFAR-10, MobileNet, ResNet-18, ResNet-20, SVHN, and VGG-11) that
+virtually preserves the accuracy. Furthermore, we carry out experimentation using fixed homogenous
+bitwidths with 3- to 5-bit assignment and show the versatility of SINAREQ in enhancing quantized
+training algorithms (DoReFa and WRPN) with about 4.8% accuracy improvements on average, and then
+outperforming multiple state-of-the-art techniques. 

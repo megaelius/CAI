@@ -1,0 +1,17 @@
+Density functional theory (DFT) is one of the main methods in Quantum Chemistry that offers an attractive
+trade off between the cost and accuracy of quantum chemical computations. The electron density
+plays a key role in DFT. In this work, we explore whether machine learning - more specifically, deep
+neural networks (DNNs) - can be trained to predict electron densities faster than DFT. First, we
+choose a practically efficient combination of a DFT functional and a basis set (PBE0/pcS-3) and
+use it to generate a database of DFT solutions for more than 133,000 organic molecules from a previously
+published database QM9. Next, we train a DNN to predict electron densities and energies of such molecules.
+The only input to the DNN is an approximate electron density computed with a cheap quantum chemical
+method in a small basis set (HF/cc-VDZ). We demonstrate that the DNN successfully learns differences
+in the electron densities arising both from electron correlation and small basis set artifacts
+in the HF computations. All qualitative features in density differences, including local minima
+on lone pairs, local maxima on nuclei, toroidal shapes around C-H and C-C bonds, complex shapes around
+aromatic and cyclopropane rings and CN group, etc. are captured by the DNN. Accuracy of energy predictions
+by the DNN is ~ 1 kcal/mol, on par with other models reported in the literature, while those models
+do not predict the electron density. Computations with the DNN, including HF computations, take
+much less time that DFT computations (by a factor of ~20-30 for most QM9 molecules in the current version,
+and it is clear how it could be further improved). 

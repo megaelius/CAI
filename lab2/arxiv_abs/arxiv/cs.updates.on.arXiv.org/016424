@@ -1,0 +1,17 @@
+Online template attack (OTA) is a powerful technique previously used to attack elliptic curve scalar
+multiplication algorithms. This attack has been only analyzed in the realm of power-consumption
+and EM side-channels, where the signals leak about the value to be processed. However, no microarchitecture
+analysis variant has been proposed, especially considering the different nature between power-consumption
+signals and microarchitecture-based ones. In this paper we start filling this gap by revisiting
+the original OTA description, proposing a generic framework and evaluation metrics for any side-channel
+signal. Our analysis reveals OTA features not covered before, increasing its application scenarios
+that requires revisiting original countermeasures to prevent it. In this regard we demonstrate
+that OTA can work in the backward direction allowing to mount an augmented projective coordinates
+attack wrt the proposed by Naccache et al. (Eurocrypt 2004). We analyze three libraries libgcrypt,
+mbedTLS, and wolfSSL using two microarchitecture side-channels. For the libgcrypt case we target
+its EdDSA implementation using Curve25519 twist curve. We obtain similar results for mbedTLS and
+wolfSSL with curve secp256r1. For each library we execute extensive attack instances being able
+to recover the complete scalar in all cases using a single trace. In this work demonstrate that microarchitecture
+online template attacks are also very powerful in this scenario, recovering secret information
+without knowing a leakage model. This highlights the importance of developing secure-by-default
+implementations, instead of fix-on-demand ones. 

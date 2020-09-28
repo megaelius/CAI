@@ -1,0 +1,20 @@
+In machine learning and other fields, suggesting a good solution to a problem is usually a harder
+task than evaluating the quality of such a solution. This asymmetry is the basis for a large number
+of selection oriented methods that use a generator system to guess a set of solutions and an evaluator
+system to rank and select the best solutions. This work examines the use of this approach to the problem
+of panoptic image segmentation and class agnostic parts segmentation. The generator/evaluator
+approach for this case consists of two independent convolutional neural nets: a generator net that
+suggests variety segments corresponding to objects, stuff and parts regions in the image, and an
+evaluator net that chooses the best segments to be merged into the segmentation map. The result is
+a trial and error evolutionary approach in which a generator that guesses segments with low average
+accuracy, but with wide variability, can still produce good results when coupled with an accurate
+evaluator. The generator consists of a Pointer net that receives an image and a point in the image,
+and predicts the region of the segment containing the point. Generating and evaluating each segment
+separately is essential in this case since it demands exponentially fewer guesses compared to a
+system that guesses and evaluates the full segmentation map in each try. The classification of the
+selected segments is done by an independent region-specific classification net. This allows the
+segmentation to be class agnostic and hence, capable of segmenting unfamiliar categories that
+were not part of the training set. The method was examined on the COCO Panoptic segmentation benchmark
+and gave results comparable to those of the basic semantic segmentation and Mask-RCNN methods.
+In addition, the system was used for the task of splitting objects of unseen classes (that did not
+appear in the training set) into parts. 

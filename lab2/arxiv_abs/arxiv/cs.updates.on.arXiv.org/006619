@@ -1,0 +1,19 @@
+One of the most important tasks in network management is identifying different types of traffic
+flows. As a result, a type of management service, called Network Traffic Classifier (NTC), has been
+introduced. One type of NTCs that has gained huge attention in recent years applies deep learning
+on packets in order to classify flows. Internet is an imbalanced environment i.e., some classes
+of applications are a lot more populated than others e.g., HTTP. Additionally, one of the challenges
+in deep learning methods is that they do not perform well in imbalanced environments in terms of evaluation
+metrics such as precision, recall, and $\mathrm{F_1}$ measure. In order to solve this problem,
+we recommend the use of augmentation methods to balance the dataset. In this paper, we propose a novel
+data augmentation approach based on the use of Long Short Term Memory (LSTM) networks for generating
+traffic flow patterns and Kernel Density Estimation (KDE) for replicating the numerical features
+of each class. First, we use the LSTM network in order to learn and generate the sequence of packets
+in a flow for classes with less population. Then, we complete the features of the sequence with generating
+random values based on the distribution of a certain feature, which will be estimated using KDE.
+Finally, we compare the training of a Convolutional Recurrent Neural Network (CRNN) in large-scale
+imbalanced, sampled, and augmented datasets. The contribution of our augmentation scheme is then
+evaluated on all of the datasets through measurements of precision, recall, and F1 measure for every
+class of application. The results demonstrate that our scheme is well suited for network traffic
+flow datasets and improves the performance of deep learning algorithms when it comes to above-mentioned
+metrics. 

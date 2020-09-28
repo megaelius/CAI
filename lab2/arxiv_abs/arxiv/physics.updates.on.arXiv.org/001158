@@ -1,0 +1,18 @@
+Limits on power dissipation have pushed CPUs to grow in parallel processing capabilities rather
+than clock rate, leading to the rise of "manycore" or GPU-like processors. In order to achieve the
+best performance, applications must be able to take full advantage of vector units across multiple
+cores, or some analogous arrangement on an accelerator card. Such parallel performance is becoming
+a critical requirement for methods to reconstruct the tracks of charged particles at the Large Hadron
+Collider and, in the future, at the High Luminosity LHC. This is because the steady increase in luminosity
+is causing an exponential growth in the overall event reconstruction time, and tracking is by far
+the most demanding task for both online and offline processing. Many past and present collider experiments
+adopted Kalman filter-based algorithms for tracking because of their robustness and their excellent
+physics performance, especially for solid state detectors where material interactions play a
+significant role. We report on the progress of our studies towards a Kalman filter track reconstruction
+algorithm with optimal performance on manycore architectures. The combinatorial structure of
+these algorithms is not immediately compatible with an efficient SIMD (or SIMT) implementation;
+the challenge for us is to recast the existing software so it can readily generate hundreds of shared-memory
+threads that exploit the underlying instruction set of modern processors. We show how the data and
+associated tasks can be organized in a way that is conducive to both multithreading and vectorization.
+We demonstrate very good performance on Intel Xeon and Xeon Phi architectures, as well as promising
+first results on Nvidia GPUs. 

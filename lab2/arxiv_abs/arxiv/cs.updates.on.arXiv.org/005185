@@ -1,0 +1,19 @@
+In this Letter, we propose a quantum machine learning scheme for the classification of classical
+nonlinear data. The main ingredients of our method are variational quantum perceptron (VQP) and
+a quantum generalization of classical ensemble learning. Our VQP employs parameterized quantum
+circuits to learn a Grover search (or amplitude amplification) operation with classical optimization,
+and can achieve quadratic speedup in query complexity compared to its classical counterparts.
+We show how the trained VQP can be used to predict future data with $O(1)$ {query} complexity. Ultimately,
+a stronger nonlinear classifier can be established, the so-called quantum ensemble learning (QEL),
+by combining a set of weak VQPs produced using a subsampling method. The subsampling method has two
+significant advantages. First, all $T$ weak VQPs employed in QEL can be trained in parallel, therefore,
+the query complexity of QEL is equal to that of each weak VQP multiplied by $T$. Second, it dramatically
+reduce the {runtime} complexity of encoding circuits that map classical data to a quantum state
+because this dataset can be significantly smaller than the original dataset given to QEL. This arguably
+provides a most satisfactory solution to one of the most criticized issues in quantum machine learning
+proposals. To conclude, we perform two numerical experiments for our VQP and QEL, implemented by
+Python and pyQuil library. Our experiments show that excellent performance can be achieved using
+a very small quantum circuit size that is implementable under current quantum hardware development.
+Specifically, given a nonlinear synthetic dataset with $4$ features for each example, the trained
+QEL can classify the test examples that are sampled away from the decision boundaries using $146$
+single and two qubits quantum gates with $92\%$ accuracy. 

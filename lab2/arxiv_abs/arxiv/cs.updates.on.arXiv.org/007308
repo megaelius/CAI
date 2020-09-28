@@ -1,0 +1,18 @@
+One key issue in managing a large scale 3D shape dataset is to identify an effective way to retrieve
+a shape-of-interest. The sketch-based query, which enjoys the flexibility in representing the
+user's intention, has received growing interests in recent years due to the popularization of the
+touchscreen technology. Essentially, the sketch depicts an abstraction of an shape in a certain
+view while the shape contains the full 3D information. Matching between them is a cross-modality
+retrieval problem. However, for a given query, only part of the viewpoints of the 3D shape is representative.
+Thus, blindly projecting a 3D shape into a feature vector without considering what is the query will
+inevitably bring query-unrepresentative information. To handle this issue, in this paper we propose
+a Deep Point-to-Subspace Metric Learning (DPSML) framework to project a sketch into a feature vector
+and a 3D shape into a subspace spanned by a few selected basis feature vectors. The similarity between
+them is defined as the distance between the query feature vector and its closest point in the subspace
+by solving an optimization problem on the fly. Note that, the closest point is query-adaptive and
+can reflect the viewpoint information that is representative to the given query. To efficiently
+learn such a deep model, we formulate it as a classification problem with a special classifier design.
+To reduce the redundancy of 3D shapes, we also introduce a Representative-View Selection (RVS)
+module to select the most representative views of a 3D shape. By conducting extensive experiments
+on various datasets, we show that the proposed approach can achieve superior performance over its
+competitive baselines and attain the state-of-the-art performance. 

@@ -1,0 +1,16 @@
+In much of the literature on function approximation by deep networks, the function is assumed to
+be defined on some known domain, such as a cube or a sphere. In practice, the data might not be dense
+on these domains, and therefore, the approximation theory results are observed to be too conservative.
+In manifold learning, one assumes instead that the data is sampled from an unknown manifold; i.e.,
+the manifold is defined by the data itself. Function approximation on this unknown manifold is then
+a two stage procedure: first, one approximates the Laplace-Beltrami operator (and its eigen-decomposition)
+on this manifold using a graph Laplacian, and next, approximates the target function using the eigen-functions.
+Alternatively, one estimates first some atlas on the manifold and then uses local approximation
+techniques based on the local coordinate charts. In this paper, we propose a more direct approach
+to function approximation on \emph{unknown}, data defined manifolds without computing the eigen-decomposition
+of some operator or an atlas for the manifold, and without any kind of training in the classical sense.
+Our constructions are universal; i.e., do not require the knowledge of any prior on the target function
+other than continuity on the manifold. We estimate the degree of approximation. For smooth functions,
+the estimates do not suffer from the so-called saturation phenomenon. We demonstrate via a property
+called good propagation of errors how the results can be lifted for function approximation using
+deep networks where each channel evaluates a Gaussian network on a possibly unknown manifold. 

@@ -1,0 +1,20 @@
+The Hessian-vector product has been utilized to find a second-order stationary solution with strong
+complexity guarantee (e.g., almost linear time complexity in the problem's dimensionality).
+In this paper, we propose to further reduce the number of Hessian-vector products for faster non-convex
+optimization. Previous algorithms need to approximate the smallest eigen-value with a sufficient
+precision (e.g., $\epsilon_2\ll 1$) in order to achieve a sufficiently accurate second-order
+stationary solution (i.e., $\lambda_{\min}(\nabla^2 f(\x))\geq -\epsilon_2)$. In contrast,
+the proposed algorithms only need to compute the smallest eigen-vector approximating the corresponding
+eigen-value up to a small power of current gradient's norm. As a result, it can dramatically reduce
+the number of Hessian-vector products during the course of optimization before reaching first-order
+stationary points (e.g., saddle points). The key building block of the proposed algorithms is a
+novel updating step named the NCG step, which lets a noisy negative curvature descent compete with
+the gradient descent. We show that the worst-case time complexity of the proposed algorithms with
+their favorable prescribed accuracy requirements can match the best in literature for achieving
+a second-order stationary point but with an arguably smaller per-iteration cost. We also show that
+the proposed algorithms can benefit from inexact Hessian by developing their variants accepting
+inexact Hessian under a mild condition for achieving the same goal. Moreover, we develop a stochastic
+algorithm for a finite or infinite sum non-convex optimization problem. To the best of our knowledge,
+the proposed stochastic algorithm is the first one that converges to a second-order stationary
+point in {\it high probability} with a time complexity independent of the sample size and almost
+linear in dimensionality. 

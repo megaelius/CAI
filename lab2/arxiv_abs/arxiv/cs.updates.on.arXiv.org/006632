@@ -1,0 +1,17 @@
+Past decade has seen the development of many shared-memory graph processing frameworks intended
+to reduce the effort of developing high performance parallel applications. However, many of these
+frameworks, based on Vertex-centric or Edge-centric paradigms suffer from several issues such
+as poor cache utilization, irregular memory accesses, heavy use of synchronization primitives
+or theoretical inefficiency, that deteriorate overall performance and scalability. In this paper,
+we generalize a recent partition-centric paradigm for PageRank computation to a novel Graph Processing
+Over Partitions (GPOP) framework that exploits the locality of partitioning to dramatically improve
+the cache performance of a variety of graph algorithms. It achieves high scalability by enabling
+completely lock and atomic free computation. Its built-in analytical performance model enables
+it to use a hybrid of source and partition centric communication modes in a way that ensures work-efficiency
+each iteration while simultaneously boosting high bandwidth sequential memory accesses. Finally,
+the GPOP framework is designed with programmability in mind. It completely abstracts away underlying
+programming model details from the user and provides an easy to program set of APIs with the ability
+to selectively continue the active vertex set across iterations. We extensively evaluate the performance
+of GPOP for a variety of graph algorithms, using several large datasets. We observe that GPOP incurs
+upto 8.6x and 5.2x less L2 cache misses compared to Ligra and GraphMat, respectively. In terms of
+execution time, GPOP is upto 19x and 6.1x faster than Ligra and GraphMat, respectively. 

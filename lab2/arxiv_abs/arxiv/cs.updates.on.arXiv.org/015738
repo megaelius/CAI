@@ -1,0 +1,19 @@
+Consider a sequential active learning problem where, at each round, an agent selects a batch of unlabeled
+data points, queries their labels and updates a binary classifier. While there exists a rich body
+of work on active learning in this general form, in this paper, we focus on problems with two distinguishing
+characteristics: severe class imbalance (skew) and small amounts of initial training data. Both
+of these problems occur with surprising frequency in many web applications. For instance, detecting
+offensive or sensitive content in online communities (pornography, violence, and hate-speech)
+is receiving enormous attention from industry as well as research communities. Such problems have
+both the characteristics we describe -- a vast majority of content is not offensive, so the number
+of positive examples for such content is orders of magnitude smaller than the negative examples.
+Furthermore, there is usually only a small amount of initial training data available when building
+machine-learned models to solve such problems. To address both these issues, we propose a hybrid
+active learning algorithm (HAL) that balances exploiting the knowledge available through the
+currently labeled training examples with exploring the large amount of unlabeled data available.
+Through simulation results, we show that HAL makes significantly better choices for what points
+to label when compared to strong baselines like margin-sampling. Classifiers trained on the examples
+selected for labeling by HAL easily out-perform the baselines on target metrics (like area under
+the precision-recall curve) given the same budget for labeling examples. We believe HAL offers
+a simple, intuitive, and computationally tractable way to structure active learning for a wide
+range of machine learning applications. 

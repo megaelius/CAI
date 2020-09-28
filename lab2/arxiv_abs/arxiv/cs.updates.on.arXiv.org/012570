@@ -1,0 +1,18 @@
+Deep learning-based models have greatly advanced the performance of speech enhancement (SE) systems.
+However, two problems remain unsolved, which are closely related to model generalizability to
+noisy conditions: (1) mismatched noisy condition during testing, i.e., the performance is generally
+sub-optimal when models are tested with unseen noise types that are not involved in the training
+data; (2) local focus on specific noisy conditions, i.e., models trained using multiple types of
+noises cannot optimally remove a specific noise type even though the noise type has been involved
+in the training data. These problems are common in real applications. In this paper, we propose a
+novel denoising autoencoder with a multi-branched encoder (termed DAEME) model to deal with these
+two problems. In the DAEME model, two stages are involved: offline and online. In the offline stage,
+we build multiple component models to form a multi-branched encoder based on a dynamically-sized
+decision tree(DSDT). The DSDT is built based on a prior knowledge of speech and noisy conditions
+(the speaker, environment, and signal factors are considered in this paper), where each component
+of the multi-branched encoder performs a particular mapping from noisy to clean speech along the
+branch in the DSDT. Finally, a decoder is trained on top of the multi-branched encoder. In the online
+stage, noisy speech is first processed by the tree and fed to each component model. The multiple outputs
+from these models are then integrated into the decoder to determine the final enhanced speech. Experimental
+results show that DAEME is superior to several baseline models in terms of objective evaluation
+metrics and the quality of subjective human listening tests. 

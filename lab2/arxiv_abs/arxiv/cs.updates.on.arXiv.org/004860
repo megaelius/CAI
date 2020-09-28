@@ -1,0 +1,19 @@
+Shared memory emulation can be used as a fault-tolerant and highly available distributed storage
+solution or as a low-level synchronization primitive. Attiya, Bar-Noy, and Dolev were the first
+to propose a single-writer, multi-reader linearizable register emulation where the register
+is replicated to all servers. Recently, Cadambe et al. proposed the Coded Atomic Storage (CAS) algorithm,
+which uses erasure coding for achieving data redundancy with much lower communication cost than
+previous algorithmic solutions. Although CAS can tolerate server crashes, it was not designed
+to recover from unexpected, transient faults, without the need of external (human) intervention.
+In this respect, Dolev, Petig, and Schiller have recently developed a self-stabilizing version
+of CAS, which we call CASSS. As one would expect, self-stabilization does not come as a free lunch;
+it introduces, mainly, communication overhead for detecting inconsistencies and stale information.
+So, one would wonder whether the overhead introduced by self-stabilization would nullify the gain
+of erasure coding. To answer this question, we have implemented and experimentally evaluated the
+CASSS algorithm on PlanetLab; a planetary scale distributed infrastructure. The evaluation shows
+that our implementation of CASSS scales very well in terms of the number of servers, the number of
+concurrent clients, as well as the size of the replicated object. More importantly, it shows (a)
+to have only a constant overhead compared to the traditional CAS algorithm (which we also implement)
+and (b) the recovery period (after the last occurrence of a transient fault) is as fast as a few client
+(read/write) operations. Our results suggest that CASSS does not significantly impact efficiency
+while dealing with automatic recovery from transient faults and bounded size of needed resources.

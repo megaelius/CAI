@@ -1,0 +1,20 @@
+This work is focused on the entropy analysis of a semi-discrete nodal discontinuous Galerkin spectral
+element method (DGSEM) on moving meshes for hyperbolic conservation laws. The DGSEM is constructed
+with a local tensor-product Lagrange-polynomial basis computed from Legendre-Gauss-Lobatto
+(LGL) points. Furthermore, the collocation of interpolation and quadrature nodes is used in the
+spatial discretization. This approach leads to discrete derivative approximations in space that
+are summation-by-parts (SBP) operators. On a static mesh, the SBP property and suitable two-point
+flux functions, which satisfy the entropy condition from Tadmor, allow to mimic results from the
+continuous entropy analysis on the discrete level. In this paper, Tadmor's condition is extended
+to the moving mesh framework. Based on the moving mesh entropy condition, entropy conservative
+two-point flux functions for the homogeneous shallow water equations and the compressible Euler
+equations are constructed. Furthermore, it will be proven that the semi-discrete moving mesh DGSEM
+is an entropy conservative scheme when a two-point flux function, which satisfies the moving mesh
+entropy condition, is applied in the split form DG framework. This proof does not require any exactness
+of quadrature in the spatial integrals of the variational form. Nevertheless, entropy conservation
+is not sufficient to tame discontinuities in the numerical solution and thus the entropy conservative
+moving mesh DGSEM is modified by adding numerical dissipation matrices to the entropy conservative
+fluxes. Then, the method becomes entropy stable such that the discrete mathematical entropy is
+bounded at any time by its initial and boundary data when the boundary conditions are specified appropriately.
+The theoretical properties of the moving mesh DGSEM will be validated by numerical experiments
+for the compressible Euler equations. 

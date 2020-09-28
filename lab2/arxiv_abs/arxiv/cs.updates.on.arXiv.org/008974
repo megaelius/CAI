@@ -1,0 +1,17 @@
+The parity constrained shortest path problem is a well-known variant that is tractable via weighted
+matching if a graph is undirected and has nonnegative edge length. As a generalization, we focus
+on the problem of finding a shortest non-zero path between two specified vertices $s$ and $t$ in a
+given group-labeled graph. For the case when the group $\Gamma$ in question is finite and abelian,
+Kobayashi and Toyooka (2017) proposed a randomized, pseudopolynomial-time algorithm via permanent
+computation. For a slightly more general case when $\Gamma$ is finitely generated and abelian,
+Yamaguchi (2016) showed a reduction of the problem to the weighted linear matroid parity problem.
+In particular, some cases are solved in strongly polynomial time via the reduction with the aid of
+a deterministic, polynomial-time algorithm for the weighted linear matroid parity problem due
+to Iwata and Kobayashi (2017), which generalizes the aforementioned fact that the parity constrained
+shortest path problem in undirected graphs is solved via weighted matching. In this paper, as the
+first general solution independently of the group $\Gamma$, we present a rather simple, deterministic,
+and strongly polynomial-time algorithm for the shortest non-zero path problem in group-labeled
+graphs. The basic strategy is as follows: we first compute a shortest path tree rooted at $s$, and
+if the unique $s$--$t$ path in the tree is not non-zero, then we find a shortest $s$--$t$ path among
+those who have different labels. The former part is done just by Dijkstra's algorithm, and the key
+technique in the latter part is like Edmonds' blossom shrinking algorithm for matching problems.

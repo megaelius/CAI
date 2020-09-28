@@ -1,0 +1,19 @@
+A new method has been developed for the correction of the distortions and/or enhanced phase differentiation
+in Electron Backscatter Diffraction (EBSD) data. Using a multi-modal data approach, the method
+uses segmented images of the phase of interest (laths, precipitates, voids, inclusions) on images
+gathered by backscattered or secondary electrons of the same area as the EBSD map. The proposed approach
+then search for the best transformation to correct their relative distortions and recombines the
+data in a new EBSD file. Speckles of the features of interest are first segmented in both the EBSD and
+image data modes. The speckle extracted from the EBSD data is then meshed, and the Covariance Matrix
+Adaptation Evolution Strategy (CMA-ES) is implemented to distort the mesh until the speckles superimpose.
+The quality of the matching is quantified via a score that is linked to the number of overlapping pixels
+in the speckles. The locations of the points of the distorted mesh are compared to those of the initial
+positions to create pairs of matching points that are used to calculate the polynomial function
+that describes the distortion the best. This function is then applied to un-distort the EBSD data,
+and the phase information is inferred using the data of the segmented speckle. Fast and versatile,
+this method does not require any human annotation and can be applied to large datasets and wide areas.
+Besides, this method requires very few assumptions concerning the shape of the distortion function.
+It can be used for the single compensation of the distortions or combined with the phase differentiation.
+The accuracy of this method is of the order of the pixel size. Some application examples in multiphase
+materials with feature sizes down to 1 $\mu$m are presented, including Ti-6Al-4V Titanium alloy,
+Rene 65 and additive manufactured Inconel 718 Nickel-base superalloys. 

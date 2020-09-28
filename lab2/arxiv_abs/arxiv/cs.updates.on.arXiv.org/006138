@@ -1,0 +1,19 @@
+Neural network based classifiers are still prone to manipulation through adversarial perturbations.
+State of the art attacks can overcome most of the defense or detection mechanisms suggested so far,
+and adversaries have the upper hand in this arms race. Adversarial examples are designed to resemble
+the normal input from which they were constructed, while triggering an incorrect classification.
+This basic design goal leads to a characteristic spatial behavior within the context of Activation
+Spaces, a term coined by the authors to refer to the hyperspaces formed by the activation values of
+the network's layers. Within the output of the first layers of the network, an adversarial example
+is likely to resemble normal instances of the source class, while in the final layers such examples
+will diverge towards the adversary's target class. The steps below enable us to leverage this inherent
+shift from one class to another in order to form a novel adversarial example detector. We construct
+Euclidian spaces out of the activation values of each of the deep neural network layers. Then, we
+induce a set of k-nearest neighbor classifiers (k-NN), one per activation space of each neural network
+layer, using the non-adversarial examples. We leverage those classifiers to produce a sequence
+of class labels for each nonperturbed input sample and estimate the a priori probability for a class
+label change between one activation space and another. During the detection phase we compute a sequence
+of classification labels for each input using the trained classifiers. We then estimate the likelihood
+of those classification sequences and show that adversarial sequences are far less likely than
+normal ones. We evaluated our detection method against the state of the art C&W attack method, using
+two image classification datasets (MNIST, CIFAR-10) reaching an AUC 0f 0.95 for the CIFAR-10 dataset.

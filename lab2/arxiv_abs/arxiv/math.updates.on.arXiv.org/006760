@@ -1,0 +1,18 @@
+In compressed sensing, the restricted isometry property (RIP) on $M \times N$ sensing matrices
+(where $M < N$) guarantees efficient reconstruction of sparse vectors. A matrix has the $(s,\delta)$-$\mathsf{RIP}$
+property if behaves as a $\delta$-approximate isometry on $s$-sparse vectors. It is well known
+that an $M\times N$ matrix with i.i.d. $\mathcal{N}(0,1/M)$ entries is $(s,\delta)$-$\mathsf{RIP}$
+with high probability as long as $s\lesssim \delta^2 M/\log N$. On the other hand, most prior works
+aiming to deterministically construct $(s,\delta)$-$\mathsf{RIP}$ matrices have failed when
+$s \gg \sqrt{M}$. An alternative way to find an RIP matrix could be to draw a random gaussian matrix
+and certify that it is indeed RIP. However, there is evidence that this certification task is computationally
+hard when $s \gg \sqrt{M}$, both in the worst case and the average case. In this paper, we investigate
+the exact average-case time complexity of certifying the RIP property for $M\times N$ matrices
+with i.i.d. $\mathcal{N}(0,1/M)$ entries, in the "possible but hard" regime $\sqrt{M} \ll s\lesssim
+M/\log N$, assuming that $M$ scales proportional to $N$. Based on analysis of the low-degree likelihood
+ratio, we give rigorous evidence that subexponential runtime $N^{\tilde\Omega(s^2/N)}$ is required,
+demonstrating a smooth tradeoff between the maximum tolerated sparsity and the required computational
+power. The lower bound is essentially tight, matching the runtime of an existing algorithm due to
+Koiran and Zouzias. Our hardness result allows $\delta$ to take any constant value in $(0,1)$, which
+captures the relevant regime for compressed sensing. This improves upon the existing average-case
+hardness result of Wang, Berthet, and Plan, which is limited to $\delta = o(1)$. 

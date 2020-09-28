@@ -1,0 +1,19 @@
+Tracking a target of interest in both sparse and crowded environments is a challenging problem,
+not yet successfully addressed in the literature. In this paper, we propose a new long-term visual
+tracking algorithm, learning discriminative correlation filters and using an online classifier,
+to track a target of interest in both sparse and crowded video sequences. First, we learn a translation
+correlation filter using a multi-layer hybrid of convolutional neural networks (CNN) and traditional
+hand-crafted features. We combine advantages of both the lower convolutional layer which retains
+more spatial details for precise localization and the higher convolutional layer which encodes
+semantic information for handling appearance variations, and then integrate these with histogram
+of oriented gradients (HOG) and color-naming traditional features. Second, we include a re-detection
+module for overcoming tracking failures due to long-term occlusions by training an incremental
+(online) SVM on the most confident frames using hand-engineered features. This re-detection module
+is activated only when the correlation response of the object is below some pre-defined threshold.
+This generates high score detection proposals which are temporally filtered using a Gaussian mixture
+probability hypothesis density (GM-PHD) filter to find the detection proposal with the maximum
+weight as the target state estimate by removing the other detection proposals as clutter. Finally,
+we learn a scale correlation filter for estimating the scale of a target by constructing a target
+pyramid around the estimated or re-detected position using the HOG features. We carry out extensive
+experiments on both sparse and dense data sets which show that our method significantly outperforms
+state-of-the-art methods. 

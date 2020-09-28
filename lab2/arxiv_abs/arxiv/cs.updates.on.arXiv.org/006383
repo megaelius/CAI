@@ -1,0 +1,20 @@
+Discovering temporal lagged and inter-dependencies in multivariate time series data is an important
+task. However, in many real-world applications, such as commercial cloud management, manufacturing
+predictive maintenance, and portfolios performance analysis, such dependencies can be non-linear
+and time-variant, which makes it more challenging to extract such dependencies through traditional
+methods such as Granger causality or clustering. In this work, we present a novel deep learning model
+that uses multiple layers of customized gated recurrent units (GRUs) for discovering both time
+lagged behaviors as well as inter-timeseries dependencies in the form of directed weighted graphs.
+We introduce a key component of Dual-purpose recurrent neural network that decodes information
+in the temporal domain to discover lagged dependencies within each time series, and encodes them
+into a set of vectors which, collected from all component time series, form the informative inputs
+to discover inter-dependencies. Though the discovery of two types of dependencies are separated
+at different hierarchical levels, they are tightly connected and jointly trained in an end-to-end
+manner. With this joint training, learning of one type of dependency immediately impacts the learning
+of the other one, leading to overall accurate dependencies discovery. We empirically test our model
+on synthetic time series data in which the exact form of (non-linear) dependencies is known. We also
+evaluate its performance on two real-world applications, (i) performance monitoring data from
+a commercial cloud provider, which exhibit highly dynamic, non-linear, and volatile behavior
+and, (ii) sensor data from a manufacturing plant. We further show how our approach is able to capture
+these dependency behaviors via intuitive and interpretable dependency graphs and use them to generate
+highly accurate forecasts. 

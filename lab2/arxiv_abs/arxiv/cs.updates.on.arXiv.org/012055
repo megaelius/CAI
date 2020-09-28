@@ -1,0 +1,19 @@
+Non-Volatile Memories (NVMs) have attracted the attentions of academia and industry, which is
+expected to become the next-generation memory. However, due to the nonvolatile property, NVMs
+become vulnerable to attacks and require security mechanisms, e.g., counter mode encryption and
+integrity tree, which introduce the security metadata. NVMs promise to recover these security
+metadata after a system crash, including the counter and integrity tree. However, unlike merkle
+tree reconstructed from user data, recovering SGX integrity tree (SIT) has to address the challenges
+from unique top-down hierarchical dependency. Moreover, writing overhead and recovery time are
+important metrics for evaluating persistent memory system due to the high costs of NVM writes and
+IT downtime. How to recover the security metadata, i.e., counter blocks and integrity tree nodes,
+with low write overhead and short recovery time, becomes much important. To provide a fast recovery
+scheme with low write overhead, we propose STAR, a cost-efficient scheme for recovering counter
+blocks and SGX integrity tree nodes after crashes. For fast recovery and verification, STAR synergizes
+the MAC and correct data, uses bitmap lines in ADR to indicate the location of stale node and constructs
+a cached merkle tree to verify the correctness of the recovery process. Moreover, STAR uses a multi-layer
+index to speed up the recovery process. STAR also allows different configurations to meet adaptive
+requirements for write overhead and recovery time. Our evaluation results show that the proposed
+STAR reduces the number of memory writes by up to 87\% compared with state-of-the-art work, Anubis,
+which needs extra 1x memory writes. For a 4MB security metadata cache, STAR needs 0.039s/0.023s/0.004s
+in three different configurations to recover the metadata cache while Anubis needs 0.020s. 

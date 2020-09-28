@@ -1,0 +1,19 @@
+This paper presents a robust and efficient method for tracking topological features in time-varying
+scalar data. Structures are tracked based on the optimal matching between persistence diagrams
+with respect to the Wasserstein metric. This fundamentally relies on solving the assignment problem,
+a special case of optimal transport, for all consecutive timesteps. Our approach relies on two main
+contributions. First, we revisit the seminal assignment algorithm by Kuhn and Munkres which we
+specifically adapt to the problem of matching persistence diagrams in an efficient way. Second,
+we propose an extension of the Wasserstein metric that significantly improves the geometrical
+stability of the matching of domain-embedded persistence pairs. We show that this geometrical
+lifting has the additional positive side-effect of improving the assignment matrix sparsity and
+therefore computing time. The global framework implements a coarse-grained parallelism by computing
+persistence diagrams and finding optimal matchings in parallel for every couple of consecutive
+timesteps. Critical trajectories are constructed by associating successively matched persistence
+pairs over time. Merging and splitting events are detected with a geometrical threshold in a post-processing
+stage. Extensive experiments on real-life datasets show that our matching approach is an order
+of magnitude faster than the seminal Munkres algorithm. Moreover, compared to a modern approximation
+method, our method provides competitive runtimes while yielding exact results. We demonstrate
+the utility of our global framework by extracting critical point trajectories from various simulated
+time-varying datasets and compare it to the existing methods based on associated overlaps of volumes.
+Robustness to noise and temporal resolution downsampling is empirically demonstrated. 

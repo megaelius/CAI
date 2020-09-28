@@ -1,0 +1,18 @@
+Transfer learning from natural image to medical image has been established as one of the most practical
+paradigms in deep learning for medical image analysis. To fit this paradigm, however, 3D imaging
+tasks in the most prominent imaging modalities (e.g., CT and MRI) have to be reformulated and solved
+in 2D, losing rich 3D anatomical information, thereby inevitably compromising its performance.
+To overcome this limitation, we have built a set of models, called Generic Autodidactic Models,
+nicknamed Models Genesis, because they are created ex nihilo (with no manual labeling), self-taught
+(learnt by self-supervision), and generic (served as source models for generating application-specific
+target models). Our extensive experiments demonstrate that our Models Genesis significantly
+outperform learning from scratch in all five target 3D applications covering both segmentation
+and classification. More importantly, learning a model from scratch simply in 3D may not necessarily
+yield performance better than transfer learning from ImageNet in 2D, but our Models Genesis consistently
+top any 2D/2.5D approaches including fine-tuning the models pre-trained from ImageNet as well
+as fine-tuning the 2D versions of our Models Genesis, confirming the importance of 3D anatomical
+information and significance of Models Genesis for 3D medical imaging. This performance is attributed
+to our unified self-supervised learning framework, built on a simple yet powerful observation:
+the sophisticated and recurrent anatomy in medical images can serve as strong yet free supervision
+signals for deep models to learn common anatomical representation automatically via self-supervision.
+As open science, all codes and pre-trained Models Genesis are available at https://github.com/MrGiovanni/ModelsGenesis

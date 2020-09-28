@@ -1,0 +1,17 @@
+We present STREAmS, an in-house high-fidelity solver for large-scale, massively parallel direct
+numerical simulations (DNS) of compressible turbulent flows on graphical processing units (GPUs).
+STREAmS is written in the Fortran 90 language and it is tailored to carry out DNS of canonical compressible
+wall-bounded flows, namely turbulent plane channel, zero-pressure gradient turbulent boundary
+layer and supersonic oblique shock-wave/boundary layer interactions. The solver incorporates
+state-of-the-art numerical algorithms, specifically designed to cope with the challenging problems
+associated with the solution of high-speed turbulent flows and can be used across a wide range of
+Mach numbers, extending from the low subsonic up to the hypersonic regime. The use of cuf automatic
+kernels allowed an easy and efficient porting on the GPU architecture minimizing the changes to
+the original CPU code, which is also maintained. We discuss a memory allocation strategy based on
+duplicated arrays for host and device which carefully minimizes the memory usage making the solver
+suitable for large scale computations on the latest GPU cards. Comparison between different CPUs
+and GPUs architectures strongly favor the latter, and executing the solver on a single NVIDIA Tesla
+P100 corresponds to using approximately 330 Intel Knights Landing CPU cores. STREAmS shows very
+good strong scalability and essentially ideal weak scalability up to 2048 GPUs, paving the way to
+simulations in the genuine high-Reynolds number regime, possibly at friction Reynolds number
+$Re_{\tau} > 10^4$. The solver is released open source under GPLv3 license and is available at https://github.com/matteobernardini/STREAmS.

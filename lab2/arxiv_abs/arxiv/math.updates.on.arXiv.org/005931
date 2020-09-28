@@ -1,0 +1,19 @@
+The future of high-performance computing, specifically on future Exascale computers, will presumably
+see memory capacity and bandwidth fail to keep pace with data generated, for instance, from massively
+parallel partial differential equation (PDE) systems. Current strategies proposed to address
+this bottleneck entail the omission of large fractions of data, as well as the incorporation of $\textit{in
+situ}$ compression algorithms to avoid overuse of memory. To ensure that post-processing operations
+are successful, this must be done in a way that a sufficiently accurate representation of the solution
+is stored. Moreover, in situations where the input/output system becomes a bottleneck in analysis,
+visualization, etc., or the execution of the PDE solver is expensive, the the number of passes made
+over the data must be minimized. In the interest of addressing this problem, this work focuses on
+the utility of pass-efficient, parallelizable, low-rank, matrix decomposition methods in compressing
+high-dimensional simulation data from turbulent flows. A particular emphasis is placed on using
+coarse representation of the data -- compatible with the PDE discretization grid -- to accelerate
+the construction of the low-rank factorization. This includes the presentation of a novel single-pass
+matrix decomposition algorithm for computing the so-called interpolative decomposition. The
+methods are described extensively and numerical experiments on two turbulent channel flow data
+are performed. In the first (unladen) channel flow case, compression factors exceeding $400$ are
+achieved while maintaining accuracy with respect to first- and second-order flow statistics.
+In the particle-laden case, compression factors of 100 are achieved and the compressed data is used
+to recover particle velocities. 

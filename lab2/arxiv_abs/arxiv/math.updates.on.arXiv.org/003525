@@ -1,0 +1,17 @@
+We propose a general, very fast method to quickly approximate the solution of a parabolic Partial
+Differential Equation (PDEs) with explicit formulas. Our method also provides equaly fast approximations
+of the derivatives of the solution, which is a challenge for many other methods. Our approach is based
+on a computable series expansion in terms of a "small" parameter. As an example, we treat in detail
+the important case of the SABR PDE for $\beta = 1$, namely $\partial_{\tau}u = \sigma^2 \big [ \frac{1}{2}
+(\partial^2_xu - \partial_xu) + \nu \rho \partial_x\partial_\sigma u + \frac{1}{2} \nu^2 \partial^2_\sigma
+u \, \big ] + \kappa (\theta - \sigma) \partial_\sigma$, by choosing $\nu$ as small parameter. This
+yields $u = u_0 + \nu u_1 + \nu^2 u_2 + \ldots$, with $u_j$ independent of $\nu$. The terms $u_j$ are
+explicitly computable, which is also a challenge for many other, related methods. Truncating this
+expansion leads to computable approximations of $u$ that are in "closed form," and hence can be evaluated
+very quickly. Most of the other related methods use the "time" $\tau$ as a small parameter. The advantage
+of our method is that it leads to shorter and hence easier to determine and to generalize formulas.
+We obtain also an explicit expansion for the implied volatility in the SABR model in terms of $\nu$,
+similar to Hagan's formula, but including also the {\em mean reverting term.} We provide several
+numerical tests that show the performance of our method. In particular, we compare our formula to
+the one due to Hagan. Our results also behave well when used for actual market data and show the mean
+reverting property of the volatility. 

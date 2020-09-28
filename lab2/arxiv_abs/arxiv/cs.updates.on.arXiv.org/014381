@@ -1,0 +1,18 @@
+Previous studies demonstrate that word embeddings and part-of-speech (POS) tags are helpful for
+punctuation restoration tasks. However, two drawbacks still exist. One is that word embeddings
+are pre-trained by unidirectional language modeling objectives. Thus the word embeddings only
+contain left-to-right context information. The other is that POS tags are provided by an external
+POS tagger. So computation cost will be increased and incorrect predicted tags may affect the performance
+of restoring punctuation marks during decoding. This paper proposes adversarial transfer learning
+to address these problems. A pre-trained bidirectional encoder representations from transformers
+(BERT) model is used to initialize a punctuation model. Thus the transferred model parameters carry
+both left-to-right and right-to-left representations. Furthermore, adversarial multi-task
+learning is introduced to learn task invariant knowledge for punctuation prediction. We use an
+extra POS tagging task to help the training of the punctuation predicting task. Adversarial training
+is utilized to prevent the shared parameters from containing task specific information. We only
+use the punctuation predicting task to restore marks during decoding stage. Therefore, it will
+not need extra computation and not introduce incorrect tags from the POS tagger. Experiments are
+conducted on IWSLT2011 datasets. The results demonstrate that the punctuation predicting models
+obtain further performance improvement with task invariant knowledge from the POS tagging task.
+Our best model outperforms the previous state-of-the-art model trained only with lexical features
+by up to 9.2% absolute overall F_1-score on test set. 

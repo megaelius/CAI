@@ -1,0 +1,18 @@
+The simulation of heat flow through heterogeneous material is important for the design of structural
+and electronic components. Classical analytical solutions to the heat equation PDE are not known
+for many such domains, even those having simple geometries. The finite element method can provide
+approximations to a weak form continuum solution, with increasing accuracy as the number of degrees
+of freedom in the model increases. This comes at a cost of increased memory usage and computation
+time; even when taking advantage of sparse matrix techniques for the finite element system matrix.
+We summarize recent approaches in solving problems in structural mechanics and steady state heat
+conduction which do not require the explicit assembly of any system matrices, and adapt them to a
+method for solving the time-depended flow of heat. These approaches are highly parallelizable,
+and can be performed on graphical processing units (GPUs). Furthermore, they lend themselves to
+the simulation of heterogeneous material, with a minimum of added complexity. We present the mathematical
+framework of assembly-free FEM approaches, through which we summarize the benefits of GPU computation.
+We discuss our implementation using the OpenCL computing framework, and show how it is further adapted
+for use on multiple GPUs. We compare the performance of single and dual GPUs implementations of our
+method with previous GPU computing strategies from the literature and a CPU sparse matrix approach.
+The utility of the novel method is demonstrated through the solution of a real-world coefficient
+inverse problem that requires thousands of transient heat flow simulations, each of which involves
+solving a 1 million degree of freedom linear system over hundreds of time steps. 

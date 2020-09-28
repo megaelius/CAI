@@ -1,0 +1,19 @@
+Recently, there has been growing interest in developing optimization methods for solving large-scale
+machine learning problems. Most of these problems boil down to the problem of minimizing an average
+of a finite set of smooth and strongly convex functions where the number of functions $n$ is large.
+Gradient descent method (GD) is successful in minimizing convex problems at a fast linear rate;
+however, it is not applicable to the considered large-scale optimization setting because of the
+high computational complexity. Incremental methods resolve this drawback of gradient methods
+by replacing the required gradient for the descent direction with an incremental gradient approximation.
+They operate by evaluating one gradient per iteration and executing the average of the $n$ available
+gradients as a gradient approximate. Although, incremental methods reduce the computational
+cost of GD, their convergence rates do not justify their advantage relative to GD in terms of the total
+number of gradient evaluations until convergence. In this paper, we introduce a Double Incremental
+Aggregated Gradient method (DIAG) that computes the gradient of only one function at each iteration,
+which is chosen based on a cyclic scheme, and uses the aggregated average gradient of all the functions
+to approximate the full gradient. The iterates of the proposed DIAG method uses averages of both
+iterates and gradients in oppose to classic incremental methods that utilize gradient averages
+but do not utilize iterate averages. We prove that not only the proposed DIAG method converges linearly
+to the optimal solution, but also its linear convergence factor justifies the advantage of incremental
+methods on GD. In particular, we prove that the worst case performance of DIAG is better than the worst
+case performance of GD. 

@@ -1,0 +1,18 @@
+Top-K queries are an established heuristic in information retrieval. This paper presents an approach
+for optimal tiered storage allocation under stream processing workloads using this heuristic:
+those requiring the analysis of only the top-$K$ ranked most relevant, or most interesting, documents
+from a fixed-length stream, stream window, or batch job. In this workflow, documents are analyzed
+relevance with a user-specified interestingness function, on which they are ranked, the top-$K$
+being selected (and hence stored) for further processing. This workflow allows human in the loop
+systems, including supervised machine learning, to prioritize documents. This scenario bears
+similarity to the classic Secretary Hiring Problem (SHP), and the expected rate of document writes,
+and document lifetime, can be modelled as a function of document index. We present parameter-based
+algorithms for storage tier placement, minimizing document storage and transport costs. We show
+that optimal parameter values are a function of these costs. It is possible to model application
+IO behaviour a priori for this class of workloads. When combined with tiered storage, the tractability
+of the probabilistic model of IO makes it easy to optimize tier allocation, yielding simple analytic
+solutions. This contrasts with (often complex) existing work on tiered storage optimization,
+which is either tightly coupled to specific use cases, or requires active monitoring of application
+IO load (a reactive approach) -- ill-suited to long-running or one-off operations common in the
+scientific computing domain.We validate our model with a trace-driven simulation of a bio-chemical
+model exploration, and give worked examples for two cloud storage case studies. 

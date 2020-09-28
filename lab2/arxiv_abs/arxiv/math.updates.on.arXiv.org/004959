@@ -1,0 +1,20 @@
+Spectral induced polarization (SIP) is a non-intrusive geophysical method that is widely used
+to detect sulfide minerals, clay minerals, metallic objects, municipal wastes, hydrocarbons,
+and salinity intrusion. However, SIP is a static method that cannot measure the dynamics of flow
+and solute/species transport in the subsurface. To capture these dynamics, the data collected
+with the SIP technique needs to be coupled with fluid flow and reactive-transport models. To our
+knowledge, currently, there is no simulator in the open-source literature that couples fluid flow,
+solute transport, and SIP process models to analyze geoelectrical signatures in a large-scale
+system. A massively parallel simulation framework (PFLOTRAN-SIP) was built to couple SIP data
+to fluid flow and solute transport processes. This framework built on the PFLOTRAN-E4D simulator
+that couples PFLOTRAN and E4D, without sacrificing computational performance. PFLOTRAN solves
+the coupled flow and solute transport process models to estimate solute concentrations, which
+were used in Archie's model to compute bulk electrical conductivities at near-zero frequency.
+These bulk electrical conductivities were modified using the Cole-Cole model to account for frequency
+dependence. Using the estimated frequency-dependent bulk conductivities, E4D simulated the
+real and complex electrical potential signals for selected frequencies for SIP. The PFLOTRAN-SIP
+framework was demonstrated through a synthetic tracer-transport model simulating tracer concentration
+and electrical impedances for four frequencies. Later, SIP inversion estimated bulk electrical
+conductivities by matching electrical impedances for each specified frequency. The estimated
+bulk electrical conductivities were consistent with the simulated tracer concentrations from
+the PFLOTRAN-SIP forward model. 

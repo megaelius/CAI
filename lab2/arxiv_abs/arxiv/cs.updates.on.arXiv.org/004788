@@ -1,0 +1,20 @@
+The design of DNNs has increasingly focused on reducing the computational complexity in addition
+to improving accuracy. While emerging DNNs tend to have fewer weights and operations, they also
+reduce the amount of data reuse with more widely varying layer shapes and sizes. This leads to a diverse
+set of DNNs, ranging from large ones with high reuse (e.g., AlexNet) to compact ones with high bandwidth
+requirements (e.g., MobileNet). However, many existing DNN processors depend on certain DNN properties,
+e.g., a large number of channels, to achieve high performance and energy efficiency and do not have
+sufficient flexibility to efficiently process a diverse set of DNNs. In this work, we present Eyexam,
+a performance analysis framework that quantitatively identifies the sources of performance loss
+in DNN processors. It highlights two architectural bottlenecks in many existing designs. First,
+their dataflows are not flexible enough to adapt to the varying layer shapes and sizes of different
+DNNs. Second, their network-on-chip (NoC) can't adapt to support both high data reuse and high bandwidth
+scenarios. Based on this analysis, we present Eyeriss v2, a high-performance DNN accelerator that
+adapts to a wide range of DNNs. Eyeriss v2 has a new dataflow, called Row-Stationary Plus (RS+), that
+enables the spatial tiling of data from all dimensions to fully utilize the parallelism for high
+performance. To support RS+, it has a low-cost and scalable NoC design, called hierarchical mesh,
+that connects the high-bandwidth global buffer to the array of processing elements (PEs) in a two-level
+hierarchy. This enables high-bandwidth data delivery while still being able to harness any available
+data reuse. Compared with Eyeriss, Eyeriss v2 has a performance increase of 10.4x-17.9x for 256
+PEs, 37.7x-71.5x for 1024 PEs, and 448.8x-1086.7x for 16384 PEs on DNNs with widely varying amounts
+of data reuse. 

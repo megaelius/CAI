@@ -1,0 +1,19 @@
+We develop a machine learning-based framework to predict the HI content of galaxies using more straightforwardly
+observable quantities such as optical photometry and environmental parameters. We train the algorithm
+on z=0-2 outputs from the Mufasa cosmological hydrodynamic simulation, which includes star formation,
+feedback, and a heuristic model to quench massive galaxies that yields a reasonable match to a range
+of survey data including HI. We employ a variety of machine learning methods (regressors), and quantify
+their performance using the root mean square error ({\sc rmse}) and the Pearson correlation coefficient
+(r). Considering SDSS photometry, 3$^{rd}$ nearest neighbor environment and line of sight peculiar
+velocities as features, we obtain r $> 0.8$ accuracy of the HI-richness prediction, corresponding
+to {\sc rmse}$<0.3$. Adding near-IR photometry to the features yields some improvement to the prediction.
+Compared to all the regressors, random forest shows the best performance, with r $>0.9$ at $z=0$,
+followed by a Deep Neural Network with r $>0.85$. All regressors exhibit a declining performance
+with increasing redshift, which limits the utility of this approach to $z\la 1$, and they tend to
+somewhat over-predict the HI content of low-HI galaxies which might be due to Eddington bias in the
+training sample. We test our approach on the RESOLVE survey data. Training on a subset of RESOLVE
+data, we find that our machine learning method can reasonably well predict the HI-richness of the
+remaining RESOLVE data, with {\sc rmse}$\sim0.28$. When we train on mock data from Mufasa and test
+on RESOLVE, this increases to {\sc rmse}$\sim0.45$. Our method will be useful for making galaxy-by-galaxy
+survey predictions and incompleteness corrections for upcoming HI 21cm surveys such as the LADUMA
+and MIGHTEE surveys on MeerKAT, over regions where photometry is already available. 

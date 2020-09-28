@@ -1,0 +1,20 @@
+Increasingly modern data science platforms today have non-intrusive and extensible provenance
+ingestion mechanisms to collect rich provenance and context information, handle modifications
+to the same file using distinguishable versions, and use graph data models (e.g., property graphs)
+and query languages (e.g., Cypher) to represent and manipulate the stored provenance/context
+information. Due to the schema-later nature of the metadata, multiple versions of the same files,
+and unfamiliar artifacts introduced by team members, the "provenance graph" is verbose and evolving,
+and hard to understand; using standard graph query model, it is difficult to compose queries and
+utilize this valuable information. In this paper, we propose two high-level graph query operators
+to address the verboseness and evolving nature of such provenance graphs. First, we introduce a
+graph segmentation operator, which queries the retrospective provenance between a set of source
+vertices and a set of destination vertices via flexible boundary criteria to help users get insight
+about the derivation relationships among those vertices. We show the semantics of such a query in
+terms of a context-free grammar, and develop efficient algorithms that run orders of magnitude
+faster than state-of-the-art. Second, we propose a graph summarization operator that combines
+similar segments together to query prospective provenance of the underlying project. The operator
+allows tuning the summary by ignoring vertex details and characterizing local structures, and
+ensures the provenance meaning using path constraints. We show the optimal summary problem is PSPACE-complete
+and develop effective approximation algorithms. The operators are implemented on top of a property
+graph backend. We evaluate our query methods extensively and show the effectiveness and efficiency
+of the proposed methods. 

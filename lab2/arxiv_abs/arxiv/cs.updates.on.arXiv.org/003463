@@ -1,0 +1,19 @@
+The Bloom filter---or, more generally, an approximate membership query data structure (AMQ)---maintains
+a compact, probabilistic representation of a set S of keys from a universe U. An AMQ supports lookups,
+inserts, and (for some AMQs) deletes. A query for an x in S is guaranteed to return "present." A query
+for x not in S returns "absent" with probability at least 1-epsilon, where epsilon is a tunable false
+positive probability. If a query returns "present," but x is not in S, then x is a false positive of
+the AMQ. Because AMQs have a nonzero probability of false-positives, they require far less space
+than explicit set representations. AMQs are widely used to speed up dictionaries that are stored
+remotely (e.g., on disk/across a network). Most AMQs offer weak guarantees on the number of false
+positives they will return on a sequence of queries. The false-positive probability of epsilon
+holds only for a single query. It is easy for an adversary to drive an AMQ's false-positive rate towards
+1 by simply repeating false positives. This paper shows what it takes to get strong guarantees on
+the number of false positives. We say that an AMQs is adaptive if it guarantees a false-positive probability
+of epsilon for every query, regardless of answers to previous queries. First, we prove that it is
+impossible to build a small adaptive AMQ, even when the AMQ is immediately told whenever it returns
+a false positive. We then show how to build an adaptive AMQ that partitions its state into a small local
+component and a larger remote component. In addition to being adaptive, the local component of our
+AMQ dominates existing AMQs in all regards. It uses optimal space up to lower-order terms and supports
+queries and updates in worst-case constant time, with high probability. Thus, we show that adaptivity
+has no cost. 

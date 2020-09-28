@@ -1,0 +1,19 @@
+"Classical" First Order (FO) algorithms of convex optimization, such as Mirror Descent algorithm
+or Nesterov's optimal algorithm of smooth convex optimization, are well known to have optimal (theoretical)
+complexity estimates which do not depend on the problem dimension. However, to attain the optimality,
+the domain of the problem should admit a "good proximal setup". The latter essentially means that
+1) the problem domain should satisfy certain geometric conditions of "favorable geometry", and
+2) the practical use of these methods is conditioned by our ability to compute at a moderate cost {\em
+proximal transformation} at each iteration. More often than not these two conditions are satisfied
+in optimization problems arising in computational learning, what explains why proximal type FO
+methods recently became methods of choice when solving various learning problems. Yet, they meet
+their limits in several important problems such as multi-task learning with large number of tasks,
+where the problem domain does not exhibit favorable geometry, and learning and matrix completion
+problems with nuclear norm constraint, when the numerical cost of computing proximal transformation
+becomes prohibitive in large-scale problems. We propose a novel approach to solving nonsmooth
+optimization problems arising in learning applications where Fenchel-type representation of
+the objective function is available. The approach is based on applying FO algorithms to the dual
+problem and using the {\em accuracy certificates} supplied by the method to recover the primal solution.
+While suboptimal in terms of accuracy guaranties, the proposed approach does not rely upon "good
+proximal setup" for the primal problem but requires the problem domain to admit a Linear Optimization
+oracle -- the ability to efficiently maximize a linear form on the domain of the primal problem. 

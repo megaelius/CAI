@@ -1,0 +1,19 @@
+Scheduling query execution plans is a particularly complex problem in shared-nothing parallel
+systems, where each site consists of a collection of local time-shared (e.g., CPU(s) or disk(s))
+and space-shared (e.g., memory) resources and communicates with remote sites by message-passing.
+Earlier work on parallel query scheduling employs either (a) one-dimensional models of parallel
+task scheduling, effectively ignoring the potential benefits of resource sharing, or (b) models
+of globally accessible resource units, which are appropriate only for shared-memory architectures,
+since they cannot capture the affinity of system resources to sites. In this paper, we develop a general
+approach capturing the full complexity of scheduling distributed, multi-dimensional resource
+units for all forms of parallelism within and across queries and operators. We present a level-based
+list scheduling heuristic algorithm for independent query tasks (i.e., physical operator pipelines)
+that is provably near-optimal for given degrees of partitioned parallelism (with a worst-case
+performance ratio that depends on the number of time-shared and space-shared resources per site
+and the granularity of the clones). We also propose extensions to handle blocking constraints in
+logical operator (e.g., hash-join) pipelines and bushy query plans as well as on-line task arrivals
+(e.g., in a dynamic or multi-query execution environment). Experiments with our scheduling algorithms
+implemented on top of a detailed simulation model verify their effectiveness compared to existing
+approaches in a realistic setting. Based on our analytical and experimental results, we revisit
+the open problem of designing efficient cost models for parallel query optimization and propose
+a solution that captures all the important parameters of parallel execution. 

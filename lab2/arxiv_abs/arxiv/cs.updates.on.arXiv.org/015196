@@ -1,0 +1,19 @@
+Real-world multi-agent systems such as warehouse robots operate under significant time constraints
+-- in such settings, rather than spend time solving for optimal paths, it is instead preferable to
+find valid collision-free paths quickly, even if suboptimal, and given additional time, to iteratively
+refine such paths to improve their cost. In such domains, we observe that agent-agent collisions
+are sparse -- they involve small local subsets of agents, and are geographically contained within
+a small region of the overall space. Leveraging this insight, we can first plan paths for each agent
+individually, and in the cases of collisions between agents, perform small local repairs limited
+to local subspace windows. As time permits, these windows can be successively grown and the repairs
+within them refined, thereby improving the path quality, and eventually converging to the global
+joint optimal solution. % Using these insights, we present two algorithmic contributions: 1) a
+Windowed Anytime Multiagent Planning Framework (WAMPF) for a class of anytime planners that quickly
+generates valid paths with suboptimality estimates and generates optimal paths given sufficient
+time, and 2) X*, an efficient WAMPF-based planner. X* is able to efficiently find successive valid
+solutions by employing re-use techniques during the repair growth step of WAMPF. Experimentally,
+we demonstrate that in sparse domains: 1) X* outperforms state-of-the-art anytime or optimal MAPF
+solvers in time to valid path, 2) X* is competitive with state-of-the-art anytime or optimal MAPF
+solvers in time to optimal path, 3) X* quickly converges to very tight suboptimality bounds, and
+4) X* is competitive with state-of-the-art suboptimal MAPF solvers in time to valid path for small
+numbers of agents while providing much higher quality paths. 

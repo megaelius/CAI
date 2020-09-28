@@ -1,0 +1,18 @@
+A noticeable fraction of Algorithms papers in the last few decades improve the running time of well-known
+algorithms for fundamental problems by logarithmic factors. For example, the $O(n^2)$ dynamic
+programming solution to the Longest Common Subsequence problem (LCS) was improved to $O(n^2/\log^2
+n)$ in several ways and using a variety of ingenious tricks. This line of research, also known as "the
+art of shaving log factors", lacks a tool for proving negative results. Specifically, how can we
+show that it is unlikely that LCS can be solved in time $O(n^2/\log^3 n)$? Perhaps the only approach
+for such results was suggested in a recent paper of Abboud, Hansen, Vassilevska W. and Williams (STOC'16).
+The authors blame the hardness of shaving logs on the hardness of solving satisfiability on Boolean
+formulas (Formula-SAT) faster than exhaustive search. They show that an $O(n^2/\log^{1000} n)$
+algorithm for LCS would imply a major advance in circuit lower bounds. Whether this approach can
+lead to tighter barriers was unclear. In this paper, we push this approach to its limit and, in particular,
+prove that a well-known barrier from complexity theory stands in the way for shaving five additional
+log factors for fundamental combinatorial problems. For LCS, regular expression pattern matching,
+as well as the Fr\'echet distance problem from Computational Geometry, we show that an $O(n^2/\log^{7+\varepsilon}
+n)$ runtime would imply new Formula-SAT algorithms. Our main result is a reduction from SAT on formulas
+of size $s$ over $n$ variables to LCS on sequences of length $N=2^{n/2} \cdot s^{1+o(1)}$. Our reduction
+is essentially as efficient as possible, and it greatly improves the previously known reduction
+for LCS with $N=2^{n/2} \cdot s^c$, for some $c \geq 100$. 

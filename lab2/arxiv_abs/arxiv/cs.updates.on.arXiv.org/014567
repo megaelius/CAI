@@ -1,0 +1,18 @@
+Given a separation oracle for a convex set $K \subset \mathbb{R}^n$ that is contained in a box of radius
+$R$, the goal is to either compute a point in $K$ or prove that $K$ does not contain a ball of radius $\epsilon$.
+We propose a new cutting plane algorithm that uses an optimal $O(n \log (\kappa))$ evaluations of
+the oracle and an additional $O(n^2)$ time per evaluation, where $\kappa = nR/\epsilon$. $\bullet$
+This improves upon Vaidya's $O( \text{SO} \cdot n \log (\kappa) + n^{\omega+1} \log (\kappa))$
+time algorithm [Vaidya, FOCS 1989a] in terms of polynomial dependence on $n$, where $\omega < 2.373$
+is the exponent of matrix multiplication and $\text{SO}$ is the time for oracle evaluation. $\bullet$
+This improves upon Lee-Sidford-Wong's $O( \text{SO} \cdot n \log (\kappa) + n^3 \log^{O(1)} (\kappa))$
+time algorithm [Lee, Sidford and Wong, FOCS 2015] in terms of dependence on $\kappa$. For many important
+applications in economics, $\kappa = \Omega(\exp(n))$ and this leads to a significant difference
+between $\log(\kappa)$ and $\mathrm{poly}(\log (\kappa))$. We also provide evidence that the
+$n^2$ time per evaluation cannot be improved and thus our running time is optimal. A bottleneck of
+previous cutting plane methods is to compute leverage scores, a measure of the relative importance
+of past constraints. Our result is achieved by a novel multi-layered data structure for leverage
+score maintenance, which is a sophisticated combination of diverse techniques such as random projection,
+batched low-rank update, inverse maintenance, polynomial interpolation, and fast rectangular
+matrix multiplication. Interestingly, our method requires a combination of different fast rectangular
+matrix multiplication algorithms. 

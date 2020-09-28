@@ -1,0 +1,17 @@
+Software systems usually record important runtime information in their logs. Logs help practitioners
+understand system runtime behaviors and diagnose field failures. As logs are usually very large
+in size, automated log analysis is needed to assist practitioners in their software operation and
+maintenance efforts. Typically, the first step of automated log analysis is log parsing, i.e.,
+converting unstructured raw logs into structured data. However, log parsing is challenging, because
+logs are produced by static templates in the source code (i.e., logging statements) yet the templates
+are usually inaccessible when parsing logs. Prior work proposed automated log parsing approaches
+that have achieved high accuracy. However, as the volume of logs grows rapidly in the era of cloud
+computing, efficiency becomes a major concern in log parsing. In this work, we propose an automated
+log parsing approach, Logram, which leverages n-gram dictionaries to achieve efficient log parsing.
+We evaluated Logram on 16 public log datasets and compared Logram with five state-of-the-art log
+parsing approaches. We found that Logram achieves a similar parsing accuracy to the best existing
+approaches while outperforms these approaches in efficiency (i.e., 1.8 to 5.1 times faster than
+the second fastest approaches). Furthermore, we deployed Logram on Spark and we found that Logram
+scales out efficiently with the number of Spark nodes (e.g., with near-linear scalability) without
+sacrificing parsing accuracy. In addition, we demonstrated that Logram can support effective
+online parsing of logs, achieving similar parsing results and efficiency with the offline mode.

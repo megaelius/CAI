@@ -1,0 +1,19 @@
+Given a zero-dimensional ideal I in K[x1,...,xn] of degree D, the transformation of the ordering
+of its Groebner basis from DRL to LEX is a key step in polynomial system solving and turns out to be the
+bottleneck of the whole solving process. Thus it is of crucial importance to design efficient algorithms
+to perform the change of ordering. The main contributions of this paper are several efficient methods
+for the change of ordering which take advantage of the sparsity of multiplication matrices in the
+classical FGLM algorithm. Combing all these methods, we propose a deterministic top-level algorithm
+that automatically detects which method to use depending on the input. As a by-product, we have a
+fast implementation that is able to handle ideals of degree over 40000. Such an implementation outperforms
+the Magma and Singular ones, as shown by our experiments. First for the shape position case, two methods
+are designed based on the Wiedemann algorithm: the first is probabilistic and its complexity to
+complete the change of ordering is O(D(N1+nlog(D))), where N1 is the number of nonzero entries of
+a multiplication matrix; the other is deterministic and computes the LEX Groebner basis of the radical
+of I via Chinese Remainder Theorem. Then for the general case, the designed method is characterized
+by the Berlekamp-Massey-Sakata algorithm from Coding Theory to handle the multi-dimensional
+linearly recurring relations. Complexity analyses of all proposed methods are also provided.
+Furthermore, for generic polynomial systems, we present an explicit formula for the estimation
+of the sparsity of one main multiplication matrix, and prove its construction is free. With the asymptotic
+analysis of such sparsity, we are able to show for generic systems the complexity above becomes $O(\sqrt{6/n
+\pi} D^{2+(n-1)/n}})$. 

@@ -1,0 +1,19 @@
+Password strength estimators are used to help users avoid picking weak passwords. Existing probabilistic
+estimators use various approaches to predict how many attempts a password cracker would need until
+it finds a given password. In this paper we present the first method for estimating the strength of
+human-chosen text passwords that is able to tweak the estimation according to each user's personal
+context, without retraining its model. Our method is able to incorporate context such as the user's
+name, preferred suffix, or previously cracked passwords (if available) when estimating the current
+password's strength. The tweaking takes only a few seconds per password. Our idea is to cast the question
+in a probabilistic framework used in side-channel cryptography. We view each password as a point
+in a d-dimensional search space, and learn the probability distribution of each dimension separately.
+The a-priori probability of a given password is the product of the d probabilities of its sub-passwords.
+After a detailed evaluation of leaked password corpora we found that an effective choice is to use
+d=5 dimensions: base word, prefix, suffix, shift-pattern, and l33t transformation. We coupled
+this decomposition with a state-of-the-art rank estimation algorithm to create our new PESrank
+estimator. We show that PESrank is more powerful than previous methods: it can crack more passwords,
+with fewer attempts, than the password crackers we compared it to. Even without using per-user context,
+PESrank is more accurate than previous methods for crackable passwords whose rank is smaller than
+10^{12}. Furthermore, its training time is drastically shorter than previous methods, taking
+minutes, rather than days, to train on comparably-sized training sets, and taking a few hours to
+train on 905 million passwords, which is 8 times more passwords than previously used. 

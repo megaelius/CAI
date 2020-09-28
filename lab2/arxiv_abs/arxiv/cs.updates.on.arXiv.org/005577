@@ -1,0 +1,19 @@
+In the context of robustness testing, the boundary between the valid and invalid regions of the input
+space can be an interesting source of erroneous inputs. Knowing where a specific software under
+test (SUT) has a boundary is essential for validation in relation to requirements. However, finding
+where a SUT actually implements the boundary is a non-trivial problem that has not gotten much attention.
+This paper proposes a method of finding the boundary between the valid and invalid regions of the
+input space. The proposed method consists of two steps. First, test data generators, directed by
+a search algorithm to maximise distance to known, valid test cases, generate valid test cases that
+are closer to the boundary. Second, these valid test cases undergo mutations to try to push them over
+the boundary and into the invalid part of the input space. This results in a pair of test sets, one consisting
+of test cases on the valid side of the boundary and a matched set on the outer side, with only a small
+distance between the two sets. The method is evaluated on a number of examples from the standard library
+of a modern programming language. We propose a method of determining the boundary between valid
+and invalid regions of the input space and apply it on a SUT that has a non-contiguous valid region
+of the input space. From the small distance between the developed pairs of test sets, and the fact
+that one test set contains valid test cases and the other invalid test cases, we conclude that the
+pair of test sets described the boundary between the valid and invalid regions of that input space.
+Differences of behaviour can be observed between different distances and sets of mutation operators,
+but all show that the method is able to identify the boundary between the valid and invalid regions
+of the input space. This is an important step towards more automated robustness testing. 

@@ -1,0 +1,17 @@
+To analyze whole-genome genetic data inherited in families, the likelihood is typically obtained
+from a Hidden Markov Model (HMM) having a state space of 2^n hidden states where n is the number of meioses
+or edges in the pedigree. There have been several attempts to speed up this calculation by reducing
+the state-space of the HMM. One of these methods has been automated in a calculation that is more efficient
+than the naive HMM calculation; however, that method treats a special case and the efficiency gain
+is available for only those rare pedigrees containing long chains of single-child lineages. The
+other existing state-space reduction method treats the general case, but the existing algorithm
+has super-exponential running time. We present three formulations of the state-space reduction
+problem, two dealing with groups and one with partitions. One of these problems, the maximum isometry
+group problem was discussed in detail by Browning and Browning. We show that for pedigrees, all three
+of these problems have identical solutions. Furthermore, we are able to prove the uniqueness of
+the solution using the algorithm that we introduce. This algorithm leverages the insight provided
+by the equivalence between the partition and group formulations of the problem to quickly find the
+optimal state-space reduction for general pedigrees. We propose a new likelihood calculation
+which is a two-stage process: find the optimal state-space, then run the HMM forward-backward algorithm
+on the optimal state-space. In comparison with the one-stage HMM calculation, this new method more
+quickly calculates the exact pedigree likelihood. 

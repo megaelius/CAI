@@ -1,0 +1,19 @@
+For several years, attempts have been made to interface Geant4 and other software packages with
+the aim of simulating the complete response of a gaseous particle detector. In such a simulation,
+Geant4 is always responsible for the primary particle generation and the interactions that occur
+in the non-gaseous detector material. Garfield++ on the hand always deals with the drift of ions
+and electrons, amplification via electron avalanches and finally signal generation and readout
+of the signal. For the ionizing interaction of particles with the gas, different options and physics
+models exist. The present paper focuses on how to use Geant4, Garfield++ (including its Heed and
+SRIM interfaces) and Degrad to create the ionization electron-ion pairs in the gas. Software wise,
+the proposed idea is to use the Geant4 physics parameterization feature, and to implement a Garfield++
+or Degrad based detector simulation as an external model. With a Degrad model, detailed simulations
+of the X-ray interaction in gaseous detectors, including shell absorption by photoelectric effect,
+subsequent Auger cascade, shake-off, and fluorescence emission, become possible. A simple Garfield++
+model can be used for photons (Heed), ions (SRIM) and relativistic charged particles (Heed). For
+non-relativistic charged particles, more effort is required, and a combined Geant4/Garfield++
+model (the Geant4/Heed PAI model interface) must be used. Parameters, such as the lower production
+cut of the Geant4 PAI model and the lowest electron energy limit of the physics list have to be set correctly.
+The paper demonstrates how to determine these parameters for certain values of the W parameter and
+Fano factor of the gas mixture. The simulation results of this Geant4/Heed PAI model interface are
+then verified against the results obtained with the stand-alone software packages. 

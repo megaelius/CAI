@@ -1,0 +1,18 @@
+Mutual exclusion (ME) is one of the most commonly used techniques to handle conflicts in concurrent
+systems. Traditionally, mutual exclusion algorithms have been designed under the assumption
+that a process does not fail while acquiring/releasing a lock or while executing its critical section.
+However, failures do occur in real life, potentially leaving the lock in an inconsistent state.
+This gives rise to the problem of \emph{recoverable mutual exclusion (RME)} that involves designing
+a mutual exclusion algorithm that can tolerate failures, while maintaining safety and liveness
+properties. One of the important measures of performance of any ME algorithm, including an RME algorithm,
+is the number of \emph{remote memory references (RMRs)} made by a process (for acquiring and releasing
+a lock as well as recovering the lock structure after a failure). The best known RME algorithm solves
+the problem for $n$ processes in sub-logarithmic number of RMRs, given by $\mathcal{O}(\frac{\log
+n}{\log \log n})$, irrespective of the number of failures in the system. In this work, we present
+a new algorithm for solving the RME problem whose RMR complexity gradually \emph{adapts} to the
+number of failures that have occurred in the system "recently". In the absence of failures, our algorithm
+generates only $\mathcal{O}(1)$ RMRs. Furthermore, its RMR complexity is given by $\mathcal{O}(\min\{
+\sqrt{F}, \frac{\log n}{\log \log n} \})$ where $F$ is the total number of failures in the "recent"
+past. In addition to read and write instructions, our algorithm uses compare-and-swap (\CAS{})
+and fetch-and-store (\FAS{}) hardware instructions, both of which are commonly available in most
+modern processors. 

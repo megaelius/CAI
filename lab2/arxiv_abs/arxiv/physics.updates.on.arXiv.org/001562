@@ -1,0 +1,20 @@
+To enable magnetic resonance (MR)-only radiotherapy and facilitate modelling of radiation attenuation
+in humans, synthetic CT (sCT) images need to be generated. Considering the application of MR-guided
+radiotherapy, sCT generation should occur within minutes. This work aims at assessing whether
+an existing deep learning network can rapidly generate sCT images leading to accurate MR-based
+dose calculations in the entire pelvis. A study was conducted on data of 91 patients with prostate
+(59), rectal (18) and cervical (14) cancer who underwent external beam radiotherapy acquiring
+both CT and MRI for patients' simulation. Dixon reconstructed water, fat and in-phase images obtained
+from a conventional dual gradient-recalled echo sequence were used to generate sCT images. A conditional
+generative adversarial network (cGAN) was used to generate sCT images. The network was trained
+in a paired fashion on 2D transverse slices of 32 prostate patients and feed-forward evaluated on
+the remaining patients (test set). For 30 patients in the test set, dose recalculations of the clinical
+plan were performed on sCT images. Dose distributions were evaluated comparing voxel-based dose
+differences, gamma and dose-volume histogram (DVH) analysis. The sCT generation required 5.6s
+and 21s for a single patient volume on a GPU and CPU, respectively. On average, sCT images resulted
+in a higher dose to the target of maximum 0.3%. The average gamma pass rates using the 3%,3mm and 2%,2mm
+criteria were above 97 and 91%, respectively, for all volumes of interests considered. All DVH points
+from the sCT-based plans differed less than $\pm$2.5% from the corresponding points on CT-based
+plans. Results suggest that accurate MR-based dose calculation using sCT images generated with
+a cGAN is feasible for the entire pelvis. The sCT generation was sufficiently fast to be integrated
+into an MR-guided radiotherapy workflow. 

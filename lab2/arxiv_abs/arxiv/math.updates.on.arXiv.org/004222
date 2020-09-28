@@ -1,0 +1,19 @@
+We present a new family of very high order accurate direct Arbitrary-Lagrangian-Eulerian (ALE)
+Finite Volume (FV) and Discontinuous Galerkin (DG) schemes for the solution of nonlinear hyperbolic
+PDE systems on moving Voronoi meshes that are regenerated at each time step and which explicitly
+allow topology changes in time. The Voronoi tessellations are obtained from a set of generator points
+that move with the local fluid velocity. We employ an AREPO-type approach, which rapidly rebuilds
+a new high quality mesh exploiting the previous one, but \textit{rearranging} the element shapes
+and neighbors in order to guarantee that the mesh evolution is robust even for vortex flows and for
+very long computational times. The old and new Voronoi elements associated to the same generator
+point are connected in space--time to construct closed space-time control volumes, whose bottom
+and top faces may be polygons with a different number of sides. We also need to incorporate some degenerate
+space--time sliver elements, which are needed in order to fill the space-time holes that arise because
+of the topology changes. The final ALE FV-DG scheme is obtained by a novel redesign of the high order
+accurate fully discrete direct ALE schemes of Boscheri and Dumbser, which have been extended here
+to general moving Voronoi meshes and space--time sliver elements, and it is based on the integration
+over arbitrary shaped closed space-time control volumes. Numerical convergence studies as well
+as a large set of benchmark problems for hydrodynamics and magnetohydrodynamics (MHD) demonstrate
+the accuracy and robustness of the method. Our numerical results clearly show that the new combination
+of very high order schemes with regenerated meshes that allow topology changes in each time step
+lead to substantial improvements over the existing state of the art in direct ALE methods. 

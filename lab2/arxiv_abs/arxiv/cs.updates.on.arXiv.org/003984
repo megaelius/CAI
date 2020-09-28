@@ -1,0 +1,18 @@
+Brain-related disorders such as epilepsy can be diagnosed by analyzing electroencephalograms
+(EEG). However, manual analysis of EEG data requires highly trained clinicians, and is a procedure
+that is known to have relatively low inter-rater agreement (IRA). Moreover, the volume of the data
+and the rate at which new data becomes available make manual interpretation a time-consuming, resource-hungry,
+and expensive process. In contrast, automated analysis of EEG data offers the potential to improve
+the quality of patient care by shortening the time to diagnosis and reducing manual error. In this
+paper, we focus on one of the first steps in interpreting an EEG session - identifying whether the
+brain activity is abnormal or normal. To solve this task, we propose a novel recurrent neural network
+(RNN) architecture termed ChronoNet which is inspired by recent developments from the field of
+image classification and designed to work efficiently with EEG data. ChronoNet is formed by stacking
+multiple 1D convolution layers followed by deep gated recurrent unit (GRU) layers where each 1D
+convolution layer uses multiple filters of exponentially varying lengths and the stacked GRU layers
+are densely connected in a feed-forward manner. We used the recently released TUH Abnormal EEG Corpus
+dataset for evaluating the performance of ChronoNet. Unlike previous studies using this dataset,
+ChronoNet directly takes time-series EEG as input and learns meaningful representations of brain
+activity patterns. ChronoNet outperforms the previously reported best results by 7.79% thereby
+setting a new benchmark for this dataset. Furthermore, we demonstrate the domain-independent
+nature of ChronoNet by successfully applying it to classify speech commands. 

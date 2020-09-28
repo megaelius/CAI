@@ -1,0 +1,19 @@
+Let $G=(V,E,w)$ be a weighted undirected graph with $n$ vertices and $m$ edges, and fix a set of $s$
+sources $S\subseteq V$. We study the problem of computing {\em almost shortest paths} (ASP) for
+all pairs in $S \times V$ in both classical centralized and parallel (PRAM) models of computation.
+Consider the regime of multiplicative approximation of $1+\epsilon$, for an arbitrarily small
+constant $\epsilon > 0$ . In this regime existing centralized algorithms require $\Omega(\min\{|E|s,n^\omega\})$
+time, where $\omega < 2.372$ is the matrix multiplication exponent. Existing PRAM algorithms with
+polylogarithmic depth (aka time) require work $\Omega(\min\{|E|s,n^\omega\})$. Our centralized
+algorithm has running time $O((m+ ns)n^\rho)$, and its PRAM counterpart has polylogarithmic depth
+and work $O((m + ns)n^\rho)$, for an arbitrarily small constant $\rho > 0$. For a pair $(s,v) \in S\times
+V$, it provides a path of length $\hat{d}(s,v)$ that satisfies $\hat{d}(s,v) \le (1+\epsilon)d_G(s,v)
++ \beta \cdot W(s,v)$, where $W(s,v)$ is the weight of the heaviest edge on some shortest $s-v$ path.
+Hence our additive term depends linearly on a {\em local} maximum edge weight, as opposed to the global
+maximum edge weight in previous works. Finally, our $\beta = (1/\rho)^{O(1/\rho)}$. We also extend
+a centralized algorithm of Dor et al. \cite{DHZ00}. For a parameter $\kappa = 1,2,\ldots$, this
+algorithm provides for {\em unweighted} graphs a purely additive approximation of $2(\kappa -1)$
+for {\em all pairs shortest paths} (APASP) in time $\tilde{O}(n^{2+1/\kappa})$. Within the same
+running time, our algorithm for {\em weighted} graphs provides a purely additive error of $2(\kappa
+- 1) W(u,v)$, for every vertex pair $(u,v) \in {V \choose 2}$, with $W(u,v)$ defined as above. On the
+way to these results we devise a suit of novel constructions of spanners, emulators and hopsets.

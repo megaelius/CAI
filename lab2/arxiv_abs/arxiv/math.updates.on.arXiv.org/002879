@@ -1,0 +1,20 @@
+We present a robust numerical scheme for simulating high density and high shear multiphase flows
+on staggered Cartesian grids. The Cartesian grids are dynamically refined to adapt to the evolving
+interfaces and high vorticity regions. The algorithm combines the interface capturing level set
+method with a novel velocity-pressure coupled, variable-coefficient incompressible Navier-Stokes
+solver that is able to implicitly handle six orders of magnitude difference in the material properties.
+The monolithic solver employs a hybrid preconditioner that ensures second-order pointwise accuracy
+for both velocity and pressure with several physical boundary treatments, including velocity
+and traction boundary conditions. We present several test cases to demonstrate the order of accuracy
+and scalability of the flow solver. To ensure the stability of the numerical scheme in the presence
+of high density and viscosity ratios, we employ a consistent treatment of mass and momentum transport
+in the conservative form of discrete equations. This consistency is achieved by solving an additional
+mass balance equation using the stable SSP-RK3 time integrator, and employing the same mass flux
+(obtained from the mass equation) in the discrete momentum equation. Fluctuations in the density
+field due its transport are avoided by employing higher-order total variation diminishing (TVD)
+and convection-boundedness criterion (CBC) satisfying limiters. The high-order bounded convective
+transport is done on a dimension by dimension basis, which makes our scheme simple to extend to two
+and three spatial dimensions. We also demonstrate through several test cases that the lack of consistent
+mass and momentum transport in the frequently used non-conservative multiphase flow solvers and/or
+the use of non-CBC satisfying limiters can fail miserably for convection-dominant high density
+ratio flows. 

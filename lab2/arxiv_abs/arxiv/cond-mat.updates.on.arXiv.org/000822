@@ -1,0 +1,19 @@
+We introduce methods for large scale Brownian Dynamics (BD) simulation of many rigid particles
+of arbitrary shape suspended in a fluctuating fluid. Our method adds Brownian motion to the rigid
+multiblob method at a cost comparable to the cost of deterministic simulations. We demonstrate
+that we can efficiently generate deterministic and random displacements for many particles using
+preconditioned Krylov iterative methods, if kernel methods to efficiently compute the action
+of the Rotne-Prager-Yamakawa (RPY) mobility matrix and it "square" root are available for the given
+boundary conditions. We address a major challenge in large-scale BD simulations, capturing the
+stochastic drift term that arises because of the configuration-dependent mobility. Unlike the
+widely-used Fixman midpoint scheme, our methods utilize random finite differences and do not require
+the solution of resistance problems or the computation of the action of the inverse square root of
+the RPY mobility matrix. We construct two temporal schemes which are viable for large scale simulations,
+an Euler-Maruyama traction scheme and a Trapezoidal Slip scheme, which minimize the number of mobility
+solves per time step while capturing the required stochastic drift terms. We validate and compare
+these schemes numerically by modeling suspensions of boomerang shaped particles sedimented near
+a bottom wall. Using the trapezoidal scheme, we investigate the steady-state active motion in a
+dense suspensions of confined microrollers, whose height above the wall is set by a combination
+of thermal noise and active flows. We find the existence of two populations of active particles,
+slower ones closer to the bottom and faster ones above them, and demonstrate that our method provides
+quantitative accuracy even with relatively coarse resolutions of the particle geometry. 

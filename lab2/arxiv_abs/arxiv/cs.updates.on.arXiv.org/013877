@@ -1,0 +1,19 @@
+Long reads produced by third-generation sequencing technologies are used to construct an assembly
+(i.e., the subject's genome), which is further used in downstream genome analysis. Unfortunately,
+long reads have high sequencing error rates and a large proportion of bps in these long reads are incorrectly
+identified. These errors propagate to the assembly and affect the accuracy of genome analysis.
+Assembly polishing algorithms minimize such error propagation by polishing or fixing errors in
+the assembly by using information from alignments between reads and the assembly (i.e., read-to-assembly
+alignment information). However, assembly polishing algorithms can only polish an assembly using
+reads either from a certain sequencing technology or from a small assembly. Such technology-dependency
+and assembly-size dependency require researchers to 1) run multiple polishing algorithms and
+2) use small chunks of a large genome to use all available read sets and polish large genomes. We introduce
+Apollo, a universal assembly polishing algorithm that scales well to polish an assembly of any size
+(i.e., both large and small genomes) using reads from all sequencing technologies (i.e., second-
+and third-generation). Our goal is to provide a single algorithm that uses read sets from all available
+sequencing technologies to improve the accuracy of assembly polishing and that can polish large
+genomes. Apollo 1) models an assembly as a profile hidden Markov model (pHMM), 2) uses read-to-assembly
+alignment to train the pHMM with the Forward-Backward algorithm, and 3) decodes the trained model
+with the Viterbi algorithm to produce a polished assembly. Our experiments with real read sets demonstrate
+that Apollo is the only algorithm that 1) uses reads from any sequencing technology within a single
+run and 2) scales well to polish large assemblies without splitting the assembly into multiple parts.

@@ -1,0 +1,19 @@
+Consider designing a distributed coin-tossing protocol for n processors such that the probability
+of heads is X0 in [0,1], and an adversary can reset one processor to change the distribution of the
+final outcome. For X0=1/2, in the non-cryptographic setting, Blum's majority protocol is $\frac1{\sqrt{2\pi
+n}}$ insecure. For computationally bounded adversaries and any X0 in [0,1], the protocol of Moran,Naor,Segev
+(2009) is only O(1/n) insecure. In this paper, we study discrete-time martingales (X0,X1,..,Xn)
+such that Xi in [0,1], for all i in {0,..,n}, and Xn in {0,1}. In particular, for any X0 in [0,1], we construct
+martingales that yield $\frac12\sqrt{\frac{X_0(1-X_0)}{n}}$ insecure coin-tossing protocols
+with n-bit communication; irrespective of the number of bits required to represent the output distribution.
+Note that for sufficiently small X0, we achieve higher security than Moran et al's protocol even
+against computationally unbounded adversaries. For X0=1/2, our protocol requires only 40% of
+the processors to obtain the same security as the majority protocol. We introduce a new inductive
+technique that uses geometric transformations to estimate the large gaps in these martingales.
+For any X0 in [0,1], we show that there exists a stopping time $T$ such that $\mathbb{E}[|{X_T-X_{T-1}}|]\geq\frac2{\sqrt{2n-1}}\cdot
+X_0(1-X_0)$. The inductive technique also constructs martingales that demonstrate the optimality
+of our bound - we construct optimal martingales such that any $T$ has$\mathbb{E}[|{X_T-X_{T-1}}|]\leq\frac1{\sqrt{n}}\cdot\sqrt{X_0(1-X_0)}$.
+Our lower-bound holds for all X0 in [0,1]; while the previous bound of Cleve,Impagliazzo (1993)
+exists only for positive constant X0. Our approach only employs elementary techniques and avoids
+the complex probabilistic tools inherent to the approaches of Cleve,Impagliazzo (1993) and Beimel,Haitner,Makriyannis,Omri
+(2018). 

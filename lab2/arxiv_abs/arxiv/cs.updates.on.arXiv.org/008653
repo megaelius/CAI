@@ -1,0 +1,19 @@
+Automatic identification of brain lesions from magnetic resonance imaging (MRI) scans of stroke
+survivors would be a useful aid in patient diagnosis and treatment planning. We propose a multi-modal
+multi-path convolutional neural network system for automating stroke lesion segmentation. Our
+system has nine end-to-end UNets that take as input 2-dimensional (2D) slices and examines all three
+planes with three different normalizations. Outputs from these nine total paths are concatenated
+into a 3D volume that is then passed to a 3D convolutional neural network to output a final lesion mask.
+We trained and tested our method on datasets from three sources: Medical College of Wisconsin (MCW),
+Kessler Foundation (KF), and the publicly available Anatomical Tracings of Lesions After Stroke
+(ATLAS) dataset. Cross-study validation results (with independent training and validation datasets)
+were obtained to compare with previous methods based on naive Bayes, random forests, and three recently
+published convolutional neural networks. Model performance was quantified in terms of the Dice
+coefficient. Training on the KF and MCW images and testing on the ATLAS images yielded a mean Dice
+coefficient of 0.54. This was reliably better than the next best previous model, UNet, at 0.47. Reversing
+the train and test datasets yields a mean Dice of 0.47 on KF and MCW images, whereas the next best UNet
+reaches 0.45. With all three datasets combined, the current system compared to previous methods
+also attained a reliably higher cross-validation accuracy. It also achieved high Dice values for
+many smaller lesions that existing methods have difficulty identifying. Overall, our system is
+a clear improvement over previous methods for automating stroke lesion segmentation, bringing
+us an important step closer to the inter-rater accuracy level of human experts. 

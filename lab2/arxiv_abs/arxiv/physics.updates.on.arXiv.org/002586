@@ -1,0 +1,19 @@
+We present a modified Ziggurat algorithm that could generate a random number from all unimodal and
+unbounded PDFs. For PDFs that have unbounded density and/or unbounded support we use a combination
+of nonlinear mapping function and rejection sampling to generate a random number from the peak and/or
+the tail distribution. A family of mapping functions and their corresponding acceptance probability
+functions are presented (along with the criteria for their use and their efficiency) that could
+be used to generate random numbers from infinite tails and unbounded densities. The Zest library
+which is a C++ implementation of this algorithm is also presented. Zest can efficiently generate
+normal, exponential, cauchy, gamma, Weibull, log-normal, chi-squared, student's t and Fisher's
+f variates. The user can also define their custom PDF as a class and supply it as a template argument
+to our library's class without modifying any part of the library. Performance of Zest is compared
+against performance of random modules of (GCC's implementation of) Standard Template Library
+(STL) and Boost. The presented results show that Zest is faster than both in most cases, sometimes
+by a factor of more than 10. We also present a C++ implementation of a uniform floating-point random
+number generator (RNG) which is capable of producing all representable floating-point numbers
+in $[0,1)$ which will be used in the Ziggurat algorithm near unbounded peaks and tails. The common
+method of dividing a random integer by the range of the RNG can not produce random floating-point
+numbers with fully random fraction bits and very small random numbers. The presented uniform floating-point
+RNG is very efficient and in the case of producing double precision floating-point numbers it's
+even faster than simply multiplying a 64-bit integer by $2^{-64}$. 

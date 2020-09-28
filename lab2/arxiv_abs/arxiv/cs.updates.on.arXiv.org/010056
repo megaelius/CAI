@@ -1,0 +1,24 @@
+The decidability and complexity of reachability problems and model-checking for flat counter
+systems have been explored in detail. However, only few results are known for flat FIFO systems,
+only in some particular cases (a single loop or a single bounded expression). We prove, by establishing
+reductions between properties, and by reducing SAT to a subset of these properties that many verification
+problems like reachability, non-termination, unboundedness are Np-complete for flat FIFO systems,
+generalizing similar existing results for flat counter systems. We construct a trace-flattable
+counter system that is bisimilar to a given flat FIFO system, which allows to model-check the original
+flat FIFO system. Our results lay the theoretical foundations and open the way to build a verification
+tool for (general) FIFO systems based on analysis of flat subsystems. 2012 ACM Subject Classification
+Theory of computation $\rightarrow$ Parallel computing models 1 Introduction FIFO systems Asynchronous
+distributed processes communicating through First In First Out (FIFO) channels are used since
+the seventies as models for protocols [40], distributed and concurrent programming and more recently
+for web service choreography interface [14]. Since FIFO systems simulate counter machines, most
+reachability properties are undecidable for FIFO systems: for example, the basic task of checking
+if the number of messages buffered in a channel can grow unboundedly is undecidable [13]. There aren't
+many interesting and useful FIFO subclasses with a decidable reachability problem. Considering
+FIFO systems with a unique FIFO channel is not a useful restriction since they may simulate Turing
+machines [13]. A few examples of decidable subclasses are half-duplex systems [15] (but they are
+restricted to two machines since the natural extension to three machines leads to undecidability),
+existentially bounded deadlock free FIFO systems [31] (but it is undecidable to check if a system
+is existentially bounded, even for deadlock free FIFO systems), synchronisable FIFO systems (the
+property of synchronisability is undecidable [28] and moreover, it is not clear which properties
+of synchronisable systems are decidable), flat FIFO systems [8, 9] and lossy FIFO systems [2] (but
+one loses the perfect FIFO mechanism). 

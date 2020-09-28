@@ -1,0 +1,20 @@
+Vehicle tracking in Wide Area Motion Imagery (WAMI) relies on associating vehicle detections across
+multiple WAMI frames to form tracks corresponding to individual vehicles. The temporal window
+length, i.e., the number $M$ of sequential frames, over which associations are collectively estimated
+poses a trade-off between accuracy and computational complexity. A larger $M$ improves performance
+because the increased temporal context enables the use of motion models and allows occlusions and
+spurious detections to be handled better. The number of total hypotheses tracks, on the other hand,
+grows exponentially with increasing $M$, making larger values of $M$ computationally challenging
+to tackle. In this paper, we introduce SPAAM an iterative approach that progressively grows $M$
+with each iteration to improve estimated tracks by exploiting the enlarged temporal context while
+keeping computation manageable through two novel approaches for pruning association hypotheses.
+First, guided by a road network, accurately co-registered to the WAMI frames, we disregard unlikely
+associations that do not agree with the road network. Second, as $M$ is progressively enlarged at
+each iteration, the related increase in association hypotheses is limited by revisiting only the
+subset of association possibilities rendered open by stochastically determined dis-associations
+for the previous iteration. The stochastic dis-association at each iteration maintains each estimated
+association according to an estimated probability for confidence, obtained via a probabilistic
+model. Associations at each iteration are then estimated globally over the $M$ frames by (approximately)
+solving a binary integer programming problem for selecting a set of compatible tracks. Vehicle
+tracking results obtained over test WAMI datasets indicate that our proposed approach provides
+significant performance improvements over 3 alternatives. 

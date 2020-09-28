@@ -1,0 +1,18 @@
+This study investigates the optimization aspects of imposing hard inequality constraints on the
+outputs of CNNs. In the context of deep networks, constraints are commonly handled with penalties
+for their simplicity, and despite their well-known limitations. Lagrangian-dual optimization
+has been largely avoided, except for a few recent works, mainly due to the computational complexity
+and stability/convergence issues caused by alternating explicit dual updates/projections and
+stochastic optimization. Several studies showed that, surprisingly for deep CNNs, the theoretical
+and practical advantages of Lagrangian optimization over penalties do not materialize in practice.
+We propose log-barrier extensions, which approximate Lagrangian optimization of constrained-CNN
+problems with a sequence of unconstrained losses. Unlike standard interior-point and log-barrier
+methods, our formulation does not need an initial feasible solution. Furthermore, we provide a
+new technical result, which shows that the proposed extensions yield an upper bound on the duality
+gap. This generalizes the duality-gap result of standard log-barriers, yielding sub-optimality
+certificates for feasible solutions. While sub-optimality is not guaranteed for non-convex problems,
+our result shows that log-barrier extensions are a principled way to approximate Lagrangian optimization
+for constrained CNNs via implicit dual variables. We report comprehensive weakly supervised segmentation
+experiments, with various constraints, showing that our formulation outperforms substantially
+the existing constrained-CNN methods, both in terms of accuracy, constraint satisfaction and
+training stability, more so when dealing with a large number of constraints. 

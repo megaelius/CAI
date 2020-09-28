@@ -1,0 +1,20 @@
+We present recent results that demonstrate the power of viewing the problem of V-formation in a flock
+of birds as one of Model Predictive Control (MPC). The V-formation-MPC marriage can be understood
+in terms of the problem of synthesizing an optimal plan for a continuous-space and continuous-time
+Markov decision process (MDP), where the goal is to reach a target state that minimizes a given cost
+function. First, we consider ARES, an approximation algorithm for generating optimal plans (action
+sequences) that take an initial state of an MDP to a state whose cost is below a specified (convergence)
+threshold. ARES uses Particle Swarm Optimization, with adaptive sizing for both the receding horizon
+and the particle swarm. Inspired by Importance Splitting, the length of the horizon and the number
+of particles are chosen such that at least one particle reaches a next-level state. ARES can alternatively
+be viewed as a model-predictive control (MPC) algorithm that utilizes an adaptive receding horizon,
+aka Adaptive MPC (AMPC). We next present Distributed AMPC (DAMPC), a distributed version of AMPC
+that works with local neighborhoods. We introduce adaptive neighborhood resizing, whereby the
+neighborhood size is determined by the cost-based Lyapunov function evaluated over a global system
+state. Our experiments show that DAMPC can perform almost as well as centralized AMPC, while using
+only local information and a form of distributed consensus in each time step. Finally, inspired
+by security attacks on cyber-physical systems, we introduce controller-attacker games (CAG),
+where two players, a controller and an attacker, have antagonistic objectives. We formulate a special
+case of CAG called V-formation games, where the attacker's goal is to prevent the controller from
+attaining V-formation. We demonstrate how adaptation in the design of the controller helps in overcoming
+certain attacks. 

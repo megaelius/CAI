@@ -1,0 +1,20 @@
+This thesis presents an automated method for verifying security properties of protocol implementations
+written in the C language. We assume that each successful run of a protocol follows the same path through
+the C code, justified by the fact that typical security protocols have linear structure. We then
+perform symbolic execution of that path to extract a model expressed in a process calculus similar
+to the one used by the CryptoVerif tool. The symbolic execution uses a novel algorithm that allows
+symbolic variables to represent bitstrings of potentially unknown length to model incoming protocol
+messages. The extracted models do not use pointer-addressed memory, but they may still contain
+low-level details concerning message formats. In the next step we replace the message formatting
+expressions by abstract tupling and projection operators. The properties of these operators,
+such as the projection operation being the inverse of the tupling operation, are typically only
+satisfied with respect to inputs of correct types. Therefore we typecheck the model to ensure that
+all type-safety constraints are satisfied. The resulting model can then be verified with CryptoVerif
+to obtain a computational security result directly, or with ProVerif, to obtain a computational
+security result by invoking a computational soundness theorem. Our method achieves high automation
+and does not require user input beyond what is necessary to specify the properties of the cryptographic
+primitives and the desired security goals. We evaluated the method on several protocol implementations,
+totalling over 3000 lines of code. The biggest case study was a 1000-line implementation that was
+independently written without verification in mind. We found several flaws that were acknowledged
+and fixed by the authors, and were able to verify the fixed code without any further modifications
+to it. 

@@ -1,0 +1,18 @@
+Reinforcement learning, mathematically described by Markov Decision Problems, may be approached
+either through dynamic programming or policy search. Actor-critic algorithms combine the merits
+of both approaches by alternating between steps to estimate the value function and policy gradient
+updates. Due to the fact that the updates exhibit correlated noise and biased gradient updates,
+only the asymptotic behavior of actor-critic is known by connecting its behavior to dynamical systems.
+This work puts forth a new variant of actor-critic that employs Monte Carlo rollouts during the policy
+search updates, which results in controllable bias that depends on the number of critic evaluations.
+As a result, we are able to provide for the first time the convergence rate of actor-critic algorithms
+when the policy search step employs policy gradient, agnostic to the choice of policy evaluation
+technique. In particular, we establish conditions under which the sample complexity is comparable
+to stochastic gradient method for non-convex problems or slower as a result of the critic estimation
+error, which is the main complexity bottleneck. These results hold for in continuous state and action
+spaces with linear function approximation for the value function. We then specialize these conceptual
+results to the case where the critic is estimated by Temporal Difference, Gradient Temporal Difference,
+and Accelerated Gradient Temporal Difference. These learning rates are then corroborated on a
+navigation problem involving an obstacle, which suggests that learning more slowly may lead to
+improved limit points, providing insight into the interplay between optimization and generalization
+in reinforcement learning. 

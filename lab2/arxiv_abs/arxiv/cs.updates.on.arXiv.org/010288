@@ -1,0 +1,19 @@
+Gaussian Conditional Random Fields (GCRF), as a structured regression model, is designed to achieve
+higher regression accuracy than unstructured predictors at the expense of execution time, taking
+into account the objects similarities and the outputs of unstructured predictors simultaneously.
+As most structural models, the GCRF model does not scale well with large networks. One of the approaches
+consists of performing calculations on factor graphs (if it is possible) rather than on the full
+graph, which is more computationally efficient. The Kronecker product of the graphs appears to
+be a natural choice for a graph decomposition. However, this idea is not straightforwardly applicable
+for GCRF, since characterizing a Laplacian spectrum of the Kronecker product of graphs, which GCRF
+is based on, from spectra of its factor graphs has remained an open problem. In this paper we apply
+new estimations for the Laplacian eigenvalues and eigenvectors, and achieve high prediction accuracy
+of the proposed models, while the computational complexity of the models, compared to the original
+GCRF model, is improved from $O(n_{1}^{3}n_{2}^{3})$ to $O(n_{1}^{3} + n_{2}^{3})$. Furthermore,
+we study the GCRF model with a non-Kronecker graph, where the model consists of finding the nearest
+Kronecker product of graph for an initial graph. Although the proposed models are more complex,
+they achieve high prediction accuracy too, while the execution time is still much better compare
+to the original GCRF model. The effectiveness of the proposed models is characterized on three types
+of random networks where the proposed models were consistently away more accurate than the previously
+presented GCRF model for multiscale networks [Jesse Glass and Zoran Obradovic. Structured regression
+on multiscale networks. IEEE Intelligent Systems, 32(2):23-30, 2017.]. 

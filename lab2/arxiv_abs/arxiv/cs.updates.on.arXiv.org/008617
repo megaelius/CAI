@@ -1,0 +1,19 @@
+Modern application domains such as Composite Event Recognition (CER) and real-time Analytics
+require the ability to dynamically refresh query results under high update rates. Traditional
+approaches to this problem are based either on the materialization of subresults (to avoid their
+recomputation) or on the recomputation of subresults (to avoid the space overhead of materialization).
+Both techniques have recently been shown suboptimal: instead of materializing results and subresults,
+one can maintain a data structure that supports efficient maintenance under updates and can quickly
+enumerate the full query output, as well as the changes produced under single updates. Unfortunately,
+these data structures have been developed only for aggregate-join queries composed of equi-joins,
+limiting their applicability in domains such as CER where temporal joins are commonplace. In this
+paper, we present a new approach for dynamically evaluating queries with multi-way theta-joins
+under updates that is effective in avoiding both materialization and recomputation of results,
+while supporting a wide range of applications. To do this we generalize Dynamic Yannakakis, an algorithm
+for dynamically processing acyclic equi-join queries. In tandem, and of independent interest,
+we generalize the notions of acyclicity and free-connexity to arbitrary theta-joins and show how
+to compute corresponding join trees. We instantiate our framework to the case where theta-joins
+are only composed of equalities and inequalities and experimentally compare our algorithm to state
+of the art CER systems as well as incremental view maintenance engines. Our approach performs consistently
+better than the competitor systems with up to two orders of magnitude improvements in both time and
+memory consumption. 

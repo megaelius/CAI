@@ -1,0 +1,19 @@
+A new non-hydrostatic and cloud-resolving atmospheric model is developed for studying moist convection
+and cloud formation in planetary atmospheres. It is built on top of the Athena++ framework, utilizing
+its static/adaptive mesh-refinement, parallelization, curvilinear geometry, and dynamic task
+scheduling. We extend the original hydrodynamic solver to vapors, clouds, and precipitation.
+Microphysics is formulated generically so that it can be applied to both Earth and Jovian planets.
+We implemented the Low Mach number Approximate Riemann Solver (LMARS) for simulating low speed
+atmospheric flows in addition to the usual Roe and HLLC Riemann solvers. Coupled with a fifth-order
+Weighted Essentially Nonoscillatory (WENO) subgrid-reconstruction method, the sharpness of
+critical fields such as clouds is well-preserved, and no extra hyperviscosity or spatial filter
+is needed to stabilize the model. Unlike many atmospheric models, total energy is used as the prognostic
+variable of the thermodynamic equation. One significant advantage of using total energy as a prognostic
+variable is that the entropy production due to irreversible mixing process can be properly captured.
+The model is designed to provide a unified framework for exploring planetary atmospheres across
+various conditions, both terrestrial and Jovian. First, a series of standard numerical tests for
+Earth's atmosphere is carried out to demonstrate the performance and robustness of the new model.
+Second, simulation of an idealized Jovian atmosphere in radiative-convective equilibrium shows
+that 1) the temperature gradient is superadiabatic near the water condensation level because of
+the changing of the mean molecular weight, and 2) the mean profile of ammonia gas shows a depletion
+in the subcloud layer down to nearly 10 bars. Relevance to the recent Juno observations is discussed.

@@ -1,0 +1,19 @@
+Real-time 3D scene reconstruction from RGB-D sensor data, as well as the exploration of such data
+in VR/AR settings, has seen tremendous progress in recent years. The combination of both these components
+into telepresence systems, however, comes with significant technical challenges. All approaches
+proposed so far are extremely demanding on input and output devices, compute resources and transmission
+bandwidth, and they do not reach the level of immediacy required for applications such as remote
+collaboration. Here, we introduce what we believe is the first practical client-server system
+for real-time capture and many-user exploration of static 3D scenes. Our system is based on the observation
+that interactive frame rates are sufficient for capturing and reconstruction, and real-time performance
+is only required on the client site to achieve lag-free view updates when rendering the 3D model.
+Starting from this insight, we extend previous voxel block hashing frameworks by overcoming internal
+dependencies and introducing, to the best of our knowledge, the first thread-safe GPU hash map data
+structure that is robust under massively concurrent retrieval, insertion and removal of entries
+on a thread level. We further propose a novel transmission scheme for volume data that is specifically
+targeted to Marching Cubes geometry reconstruction and enables a 90% reduction in bandwidth between
+server and exploration clients. The resulting system poses very moderate requirements on network
+bandwidth, latency and client-side computation, which enables it to rely entirely on consumer-grade
+hardware, including mobile devices. We demonstrate that our technique achieves state-of-the-art
+representation accuracy while providing, for any number of clients, an immersive and fluid lag-free
+viewing experience even during network outages. 

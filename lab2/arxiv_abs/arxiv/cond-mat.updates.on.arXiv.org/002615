@@ -1,0 +1,20 @@
+Limited precision of synaptic weights is a key aspect of both biological and hardware implementation
+of neural networks. To assign low-precise weights during learning is a non-trivial task, but may
+benefit from representing to-be-learned items using sparse code. However, the computational
+difficulty resulting from low weight precision and the advantage of sparse coding remain not fully
+understood. Here, we study a perceptron model, which associates binary (0 or 1) input patterns with
+outputs using binary (0 or 1) weights, modeling a single neuron receiving excitatory inputs. We
+considered a decimation process, where every time step, marginal probabilities of unfixed weights
+were evaluated, then the most polarized weight was fixed at its preferred value. We showed that decimation
+is a process approaching the dense solution region in weight configuration space. In two efficient
+algorithms (SBPI and rBP) for solving binary-weight perceptron, most time steps are spent on determining
+values of the weights fixed late in decimation. This algorithmic difficult point may result from
+strong cross-correlation between late-decimation-fixed weights in the solution subspace where
+early-decimation-fixed weights take their fixed values, and is related to solution condensation
+in this subspace during decimation. Input sparseness reduces the time steps that SBPI and rBP need
+to find solutions, by reducing time steps used to assign values to late-decimation-fixed weights,
+due to the reduction of cross-correlation between late-decimation-fixed weights. Our work suggests
+that the computational difficulty of constraint satisfaction problem originates from the subspace
+of late-decimation-fixed variables. Our work highlights the heterogeneity of learning dynamics
+of weights, which may help understand axonal pruning in brain development, and inspire more efficient
+algorithms to train artificial neural networks. 

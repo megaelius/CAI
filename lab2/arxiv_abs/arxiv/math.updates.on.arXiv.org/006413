@@ -1,0 +1,19 @@
+We study federated machine learning (ML) at the wireless edge, where power- and bandwidth-limited
+wireless devices with local datasets carry out distributed stochastic gradient descent (DSGD)
+with the help of a remote parameter server (PS). Standard approaches assume separate computation
+and communication, where local gradient estimates are compressed and transmitted to the PS over
+orthogonal links. Following this digital approach, we introduce D-DSGD, in which the wireless
+devices employ gradient quantization and error accumulation, and transmit their gradient estimates
+to the PS over a multiple access channel (MAC). We then introduce a novel analog scheme, called A-DSGD,
+which exploits the additive nature of the wireless MAC for over-the-air gradient computation,
+and provide convergence analysis for this approach. In A-DSGD, the devices first sparsify their
+gradient estimates, and then project them to a lower dimensional space imposed by the available
+channel bandwidth. These projections are sent directly over the MAC without employing any digital
+code. Numerical results show that A-DSGD converges faster than D-DSGD thanks to its more efficient
+use of the limited bandwidth and the natural alignment of the gradient estimates over the channel.
+The improvement is particularly compelling at low power and low bandwidth regimes. We also illustrate
+for a classification problem that, A-DSGD is more robust to bias in data distribution across devices,
+while D-DSGD significantly outperforms other digital schemes in the literature. We also observe
+that both D-DSGD and A-DSGD perform better by increasing the number of devices (while keeping the
+total dataset size constant), showing their ability in harnessing the computation power of edge
+devices. 

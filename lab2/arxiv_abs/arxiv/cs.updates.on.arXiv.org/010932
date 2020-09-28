@@ -1,0 +1,19 @@
+Parallel-in-time methods, such as multigrid reduction-in-time (MGRIT) and Parareal, provide
+an attractive option for increasing concurrency when simulating time-dependent PDEs in modern
+high-performance computing environments. While these techniques have been very successful for
+parabolic equations, it has often been observed that their performance suffers dramatically when
+applied to advection-dominated problems or purely hyperbolic PDEs using standard rediscretization
+approaches on coarse grids. In this paper, we apply MGRIT or Parareal to the constant-coefficient
+linear advection equation, appealing to existing convergence theory to provide insight into the
+typically non-scalable or even divergent behaviour of these solvers for this problem. To overcome
+these failings, we replace rediscretization on coarse grids with near-optimal coarse-grid operators
+that are computed by applying optimization techniques to approximately minimize error estimates
+from the convergence theory. Our main finding is that, in order to obtain fast convergence as for
+parabolic problems, coarse-grid operators should take into account the behaviour of the hyperbolic
+problem by tracking the characteristic curves. Our approach is tested on discretizations of various
+orders that use explicit or implicit Runge-Kutta time integration with upwind-finite-difference
+spatial discretizations, for which we obtain fast and scalable convergence in all cases. Parallel
+tests also demonstrate significant speed-ups over sequential time-stepping. Our insight of tracking
+characteristics on coarse grids is implemented for linear advection using an optimization approach,
+but the principle is general, and provides a key idea for solving the long-standing problem of efficient
+parallel-in-time integration for hyperbolic PDEs. 

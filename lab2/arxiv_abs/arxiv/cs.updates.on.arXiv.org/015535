@@ -1,0 +1,17 @@
+The problem of "debloating" programs for security and performance purposes has begun to see increased
+attention. Of particular interest in many environments is debloating commodity off-the-shelf
+(COTS) software, which is most commonly made available to end users as stripped binaries (i.e.,
+neither source code nor symbol-table/debugging information is available). Toward this end, we
+created a system, called GenXGen[MC], that specializes stripped binaries. Many aspects of the
+debloating problem can be addressed via techniques from the literature on partial evaluation.
+However, applying such techniques to real-world programs, particularly stripped binaries, involves
+non-trivial state-management manipulations that have never been addressed in a completely satisfactory
+manner in previous systems. In particular, a partial evaluator needs to be able to (i) save and restore
+arbitrary program states, and (ii) determine whether a program state is equal to one that arose earlier.
+Moreover, to specialize stripped binaries, the system must also be able to handle program states
+consisting of memory that is undifferentiated beyond the standard coarse division into regions
+for the stack, the heap, and global data. This paper presents a new approach to state management in
+a program specializer. The technique has been incorporated into GenXGen[MC], a novel tool for producing
+machine-code generating extensions. Our experiments show that our solution to issue (i) significantly
+decreases the space required to represent program states, and our solution to issue (ii) drastically
+improves the time for producing a specialized program (as much as 13,000x speedup). 

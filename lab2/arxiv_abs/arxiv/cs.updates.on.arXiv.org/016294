@@ -1,0 +1,20 @@
+Automatic instance segmentation of glomeruli within kidney Whole Slide Imaging (WSI) is essential
+for clinical research in renal pathology. In computer vision, the end-to-end instance segmentation
+methods (e.g., Mask-RCNN) have shown their advantages relative to detect-then-segment approaches
+by performing complementary detection and segmentation tasks simultaneously. As a result, the
+end-to-end Mask-RCNN approach has been the de facto standard method in recent glomerular segmentation
+studies, where downsampling and patch-based techniques are used to properly evaluate the high
+resolution images from WSI (e.g., >10,000x10,000 pixels on 40x). However, in high resolution WSI,
+a single glomerulus itself can be more than 1,000x1,000 pixels in original resolution which yields
+significant information loss when the corresponding features maps are downsampled via the Mask-RCNN
+pipeline. In this paper, we assess if the end-to-end instance segmentation framework is optimal
+for high-resolution WSI objects by comparing Mask-RCNN with our proposed detect-then-segment
+framework. Beyond such a comparison, we also comprehensively evaluate the performance of our detect-then-segment
+pipeline through: 1) two of the most prevalent segmentation backbones (U-Net and DeepLab_v3);
+2) six different image resolutions (from 512x512 to 28x28); and 3) two different color spaces (RGB
+and LAB). Our detect-then-segment pipeline, with the DeepLab_v3 segmentation framework operating
+on previously detected glomeruli of 512x512 resolution, achieved a 0.953 dice similarity coefficient
+(DSC), compared with a 0.902 DSC from the end-to-end Mask-RCNN pipeline. Further, we found that
+neither RGB nor LAB color spaces yield better performance when compared against each other in the
+context of a detect-then-segment framework. Detect-then-segment pipeline achieved better segmentation
+performance compared with End-to-end method. 

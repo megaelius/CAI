@@ -1,0 +1,20 @@
+Given a user-specified minimum degree threshold {\gamma}, a {\gamma}-quasi-clique is a subgraph
+where each vertex connects to at least {\gamma} fraction of the other vertices. Mining maximal quasi-cliques
+is notoriously expensive with the state-of-the-art algorithm scaling only to small graphs with
+thousands of vertices. This has hampered its popularity in real applications involving big graphs.
+We developed a task-based system called G-thinker for massively parallel graph mining, which is
+the first graph mining system that scales with the number of CPU cores. G-thinker provides a unique
+opportunity to scale the compute-intensive quasi-clique mining. This paper designs parallel
+algorithms for mining maximal quasi-cliques on G-thinker that scale to big graphs. Our algorithms
+follow the idea of divide and conquer which partitions the problem of mining a big graph into tasks
+that mine smaller subgraphs. However, we find that a direct application of G-thinker is insufficient
+due to the drastically different running time of different tasks that violates the original design
+assumption of G-thinker, requiring a system reforge. We also observe that the running time of a task
+is highly unpredictable solely from the features extracted from its subgraph, leading to difficulty
+in pinpoint expensive tasks to decompose for concurrent processing, and size-threshold based
+partitioning under-partitions some tasks but over-partitions others, leading to bad load balancing
+and enormous task partitioning overheads. We address this issue by proposing a novel time-delayed
+divide-and-conquer strategy that strikes a balance between the workloads spent on actual mining
+and the cost of balancing the workloads. Extensive experiments verify that our G-thinker algorithm
+scales perfectly with the number of CPU cores, achieving over 300x speedup when running on a graph
+with over 1M vertices in a small cluster. 

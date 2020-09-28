@@ -1,0 +1,18 @@
+Users frequently seek to fabricate objects whose outer surfaces consist of regions with different
+surface attributes, such as color or material. Manufacturing such objects in a single piece is often
+challenging or even impossible. The alternative is to partition them into single-attribute volumetric
+parts that can be fabricated separately and then assembled to form the target object. Facilitating
+this approach requires partitioning the input model into parts that conform to the surface segmentation
+and that can be moved apart with no collisions. We propose Surface2Volume, a partition algorithm
+capable of producing such assemblable parts, each of which is affiliated with a single attribute,
+the outer surface of whose assembly conforms to the input surface geometry and segmentation. In
+computing the partition we strictly enforce conformity with surface segmentation and assemblability,
+and optimize for ease of fabrication by minimizing part count, promoting part simplicity, and simplifying
+assembly sequencing. We note that computing the desired partition requires solving for three types
+of variables: per-part assembly trajectories, partition topology, i.e. the connectivity of the
+interface surfaces separating the different parts, and the geometry, or location, of these interfaces.
+We efficiently produce the desired partitions by addressing one type of variables at a time: first
+computing the assembly trajectories, then determining interface topology, and finally computing
+interface locations that allow parts assemblability. We algorithmically identify inputs that
+necessitate sequential assembly, and partition these inputs gradually by computing and disassembling
+a subset of assemblable parts at a time. We demonstrate our method.... 

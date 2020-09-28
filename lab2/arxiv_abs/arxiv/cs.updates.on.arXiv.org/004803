@@ -1,0 +1,17 @@
+We suggest a new optimization technique for minimizing the sum $\sum_{i=1}^n f_i(x)$ of $n$ non-convex
+real functions that satisfy a property that we call piecewise log-Lipschitz. This is by forging
+links between techniques in computational geometry, combinatorics and convex optimization.
+Example applications include the first constant-factor approximation algorithms whose running-time
+is polynomial in $n$ for the following fundamental problems: (i) Constrained $\ell_z$ Linear Regression:
+Given $z>0$, $n$ vectors $p_1,\cdots,p_n$ on the plane, and a vector $b\in\mathbb{R}^n$, compute
+a unit vector $x$ and a permutation $\pi:[n]\to[n]$ that minimizes $\sum_{i=1}^n |p_ix-b_{\pi(i)}|^z$.
+(ii) Points-to-Lines alignment: Given $n$ lines $\ell_1,\cdots,\ell_n$ on the plane, compute
+the matching $\pi:[n]\to[n]$ and alignment (rotation matrix $R$ and a translation vector $t$)
+that minimize the sum of Euclidean distances \[ \sum_{i=1}^n \mathrm{dist}(Rp_i-t,\ell_{\pi(i)})^z
+\] between each point to its corresponding line. These problems are open even if $z=1$ and the matching
+$\pi$ is given. In this case, the running time of our algorithms reduces to $O(n)$ using core-sets
+that support: streaming, dynamic, and distributed parallel computations (e.g. on the cloud) in
+poly-logarithmic update time. Generalizations for handling e.g. outliers or pseudo-distances
+such as $M$-estimators for these problems are also provided. Experimental results show that our
+provable algorithms improve existing heuristics also in practice. A demonstration in the context
+of Augmented Reality show how such algorithms may be used in real-time systems. 

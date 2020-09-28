@@ -1,0 +1,19 @@
+Recent work on adversarial attack and defense suggests that PGD is a universal $l_\infty$ first-order
+attack, and PGD adversarial training can significantly improve network robustness against a wide
+range of first-order $l_\infty$-bounded attacks, represented as the state-of-the-art defense
+method. However, an obvious weakness of PGD adversarial training is its highly-computational
+cost in generating adversarial samples, making it computationally infeasible for large and high-resolution
+real datasets such as the ImageNet dataset. In addition, recent work also has suggested a simple
+"close-form" solution to a robust model on MNIST. Therefore, a natural question raised is that is
+PGD adversarial training really necessary for robust defense? In this paper, we give a negative
+answer by proposing a training paradigm that is comparable to PGD adversarial training on several
+standard datasets, while only using noisy-natural samples. Specifically, we reformulate the
+min-max objective in PGD adversarial training by a problem to minimize the original network loss
+plus $l_1$ norms of its gradients w.r.t. the inputs. For the $l_1$-norm loss, we propose a computationally-feasible
+solution by embedding a differentiable soft-quantization layer after the network input layer.
+We show formally that the soft-quantization layer trained with noisy-natural samples is an alternative
+approach to minimizing the $l_1$-gradient norms as in PGD adversarial training. Extensive empirical
+evaluations on standard datasets show that our proposed models are comparable to PGD-adversarially-trained
+models under PGD and BPDA attacks. Remarkably, our method achieves a 24X speed-up on MNIST while
+maintaining a comparable defensive ability, and for the first time fine-tunes a robust Imagenet
+model within only two days. Code is provided on \url{https://github.com/tianzheng4/Noisy-Training-Soft-Quantization}

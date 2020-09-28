@@ -1,0 +1,17 @@
+The longest common substring problem consists in finding a longest string that appears as a (contiguous)
+substring of two input strings. We consider the dynamic variant of this problem, in which we are to
+maintain two dynamic strings $S$ and $T$, each of length at most $n$, that undergo substitutions
+of letters, in order to be able to return a longest common substring after each substitution. Recently,
+Amir et al. [ESA 2019] presented a solution for this problem that needs only $\tilde{\mathcal{O}}(n^{2/3})$
+time per update. This brought the challenge of determining whether there exists a faster solution
+with polylogarithmic update time, or (as is the case for other dynamic problems), we should expect
+a polynomial (conditional) lower bound. We answer this question by designing a significantly faster
+algorithm that processes each substitution in amortized $\log^{\mathcal{O}(1)} n$ time with
+high probability. Our solution relies on exploiting the local consistency of the parsing of a collection
+of dynamic strings due to Gawrychowski et al. [SODA 2018], and on maintaining two dynamic trees with
+labeled bicolored leaves, so that after each update we can report a pair of nodes, one from each tree,
+of maximum combined weight, which have at least one common leaf-descendant of each color. We complement
+this with a lower bound of $\Omega(\log n/ \log\log n)$ for the update time of any polynomial-size
+data structure that maintains the LCS of two dynamic strings, and the same lower bound for the update
+time of any data structure of size $\tilde{\mathcal{O}}(n)$ that maintains the LCS of a static and
+a dynamic string. Both lower bounds hold even allowing amortization and randomization. 

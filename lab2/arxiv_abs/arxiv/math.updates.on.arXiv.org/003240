@@ -1,0 +1,17 @@
+In this paper, a multiscale flux basis algorithm is developed to efficiently solve a flow problem
+in fractured porous media. Here, we take into account a mixed-dimensional setting of the discrete
+fracture matrix model, where the fracture network is represented as lower-dimensional object.
+We assume the linear Darcy model in the rock matrix and the non-linear Forchheimer model in the fractures.
+In our formulation, we are able to reformulate the matrix-fracture problem to only the fracture
+network problem and, therefore, significantly reduce the computational cost. The resulting problem
+is then a non-linear interface problem that can be solved using a fixed-point or Newton-Krylov methods,
+which in each iteration require several solves of Robin problems in the surrounding rock matrices.
+To achieve this, the flux exchange (a linear Robin-to-Neumann co-dimensional mapping) between
+the porous medium and the fracture network is done offline by pre-computing a multiscale flux basis
+that consists of the flux response from each degree of freedom on the fracture network. This delivers
+a conserve for the basis that handles the solutions in the rock matrices for each degree of freedom
+in the fractures pressure space. Then, any Robin sub-domain problems are replaced by linear combinations
+of the multiscale flux basis during the interface iteration. The proposed approach is, thus, agnostic
+to the physical model in the fracture network. Numerical experiments demonstrate the computational
+gains of pre-computing the flux exchange between the porous medium and the fracture network against
+standard non-linear domain decomposition approaches. 

@@ -1,0 +1,18 @@
+Ethereum smart contracts are executable programs, deployed on a peer-to-peer network and executed
+in a consensus-based fashion. Their bytecode is public, immutable and once deployed to the blockchain,
+cannot be patched anymore. As smart contracts may hold Ether worth of several million dollars, they
+are attractive targets for attackers and indeed some contracts have successfully been exploited
+in the recent past, resulting in tremendous financial losses. The correctness of smart contracts
+is thus of utmost importance. While first approaches on formal verification exist, they demand
+users to be well-versed in formal methods which are alien to many developers and are only able to analyze
+individual contracts, without considering their execution environment, i.e., calls to external
+contracts, sequences of transaction, and values from the actual blockchain storage. In this paper,
+we present Annotary, a concolic execution framework to analyze smart contracts for vulnerabilities,
+supported by annotations which developers write directly in the Solidity source code. In contrast
+to existing work, Annotary supports analysis of inter-transactional, inter-contract control
+flows and combines symbolic execution of EVM bytecode with a resolution of concrete values from
+the public Ethereum blockchain. While the analysis of Annotary tends to weight precision higher
+than soundness, we analyze inter-transactional call chains to eliminate false positives from
+unreachable states that traditional symbolic execution would not be able to handle. We present
+the annotation and analysis concepts of Annotary, explain its implementation on top of the Laser
+symbolic virtual machine, and demonstrate its usage as a plugin for the Sublime Text editor. 

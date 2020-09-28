@@ -1,0 +1,19 @@
+Numerous combinatorial optimization problems (knapsack, maximum-weight matching, etc.) can
+be expressed as \emph{subset maximization problems}: One is given a ground set $N=\{1,\dots,n\}$,
+a collection $\mathcal{F}\subseteq 2^N$ of subsets thereof such that $\emptyset\in\mathcal{F}$,
+and an objective (profit) function $p:\mathcal{F}\rightarrow\mathbb{R}_+$. The task is to choose
+a set $S\in\mathcal{F}$ that maximizes $p(S)$. We consider the \emph{multistage} version (Eisenstat
+et al., Gupta et al., both ICALP 2014) of such problems: The profit function $p_t$ (and possibly the
+set of feasible solutions $\mathcal{F}_t$) may change over time. Since in many applications changing
+the solution is costly, the task becomes to find a sequence of solutions that optimizes the trade-off
+between good per-time solutions and stable solutions taking into account an additional similarity
+bonus. As similarity measure for two consecutive solutions, we consider either the size of the intersection
+of the two solutions or the difference of $n$ and the Hamming distance between the two characteristic
+vectors. We study multistage subset maximization problems in the \emph{online} setting, that
+is, $p_t$ (along with possibly $\mathcal{F}_t$) only arrive one by one and, upon such an arrival,
+the online algorithm has to output the corresponding solution without knowledge of the future.
+We develop general techniques for online multistage subset maximization and thereby characterize
+those models (given by the type of data evolution and the type of similarity measure) that admit a
+constant-competitive online algorithm. When no constant competitive ratio is possible, we employ
+lookahead to circumvent this issue. When a constant competitive ratio is possible, we provide almost
+matching lower and upper bounds on the best achievable one. 

@@ -1,0 +1,20 @@
+Unsupervised domain adaptation (UDA) seeks to alleviate the problem of domain shift between the
+distribution of unlabeled data from the target domain w.r.t labeled data from source domain. While
+the single-target domain scenario is well studied in UDA literature, the Multi-Target Domain Adaptation
+(MTDA) setting remains largely unexplored despite its importance. For instance, in video surveillance,
+each camera can corresponds to a different viewpoint (target domain). MTDA problem can be addressed
+by adapting one specialized model per target domain, although this solution is too costly in many
+applications. It has also been addressed by blending target data for multi-domain adaptation to
+train a common model, yet this may lead to a reduction in performance. In this paper, we propose a new
+unsupervised MTDA approach to train a common CNN that can generalize across multiple target domains.
+Our approach the Multi-Teacher MTDA (MT-MTDA) relies on multi-teacher knowledge distillation
+(KD) in order to distill target domain knowledge from multiple teachers to a common student. Inspired
+by a common education scenario, a different target domain is assigned to each teacher model for UDA,
+and these teachers alternatively distill their knowledge to one common student model. The KD process
+is performed in a progressive manner, where the student is trained by each teacher on how to perform
+UDA, instead of directly learning domain adapted features. Finally, instead of directly combining
+the knowledge from each teacher, MT-MTDA alternates between teachers that distill knowledge in
+order to preserve the specificity of each target (teacher) when learning to adapt the student. MT-MTDA
+is compared against state-of-the-art methods on OfficeHome, Office31 and Digits-5 datasets,
+and empirical results show that our proposed model can provide a considerably higher level of accuracy
+across multiple target domains. 

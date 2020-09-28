@@ -1,0 +1,19 @@
+We consider the problem of selecting a seed set to maximize the expected number of influenced nodes
+in the social network, referred to as the \textit{influence maximization} (IM) problem. We assume
+that the topology of the social network is prescribed while the influence probabilities among edges
+are unknown. In order to learn the influence probabilities and simultaneously maximize the influence
+spread, we consider the tradeoff between exploiting the current estimation of the influence probabilities
+to ensure certain influence spread and exploring more nodes to learn better about the influence
+probabilities. The exploitation-exploration trade-off is the core issue in the multi-armed bandit
+(MAB) problem. If we regard the influence spread as the reward, then the IM problem could be reduced
+to the combinatorial multi-armed bandits. At each round, the learner selects a limited number of
+seed nodes in the social network, then the influence spreads over the network according to the real
+influence probabilities. The learner could observe the activation status of the edge if and only
+if its start node is influenced, which is referred to as the edge-level semi-bandit feedback. Two
+classical bandit algorithms including Thompson Sampling and Epsilon Greedy are used to solve this
+combinatorial problem. To ensure the robustness of these two algorithms, we use an automatic ensemble
+learning strategy, which combines the exploration strategy with exploitation strategy. The ensemble
+algorithm is self-adaptive regarding that the probability of each algorithm could be adjusted
+based on the historical performance of the algorithm. Experimental evaluation illustrates the
+effectiveness of the automatically adjusted hybridization of exploration algorithm with exploitation
+algorithm. 

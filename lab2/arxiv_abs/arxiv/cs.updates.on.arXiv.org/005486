@@ -1,0 +1,19 @@
+In Maximum $k$-Vertex Cover (Max $k$-VC), the input is an edge-weighted graph $G$ and an integer
+$k$, and the goal is to find a subset $S$ of $k$ vertices that maximizes the total weight of edges covered
+by $S$. Here we say that an edge is covered by $S$ iff at least one of its endpoints lies in $S$. We present
+an FPT approximation scheme (FPT-AS) that runs in $(1/\epsilon)^{O(k)} poly(n)$ time for the problem,
+which improves upon Gupta et al.'s $(k/\epsilon)^{O(k)} poly(n)$-time FPT-AS [SODA'18, FOCS'18].
+Our algorithm is simple: just use brute force to find the best $k$-vertex subset among the $O(k/\epsilon)$
+vertices with maximum weighted degrees. Our algorithm naturally yields an efficient approximate
+kernelization scheme of $O(k/\epsilon)$ vertices; previously, an $O(k^5/\epsilon^2)$-vertex
+approximate kernel is only known for the unweighted version of Max $k$-VC [Lokshtanov et al., STOC'17].
+Interestingly, this has an application outside of parameterized complexity: using our approximate
+kernelization as a preprocessing step, we can directly apply Raghavendra and Tan's SDP-based algorithm
+for 2SAT with cardinality constraint [SODA'12] to give an $0.92$-approximation for Max $k$-VC
+in polynomial time. This improves upon Feige and Langberg's algorithm [J. Algorithms'01] which
+yields $(0.75 + \delta)$-approximation for some (unspecified) constant $\delta > 0$. We also consider
+the minimization version (Min $k$-VC), where the goal is to minimize the total weight of edges covered
+by $S$. We provide an FPT-AS for Min $k$-VC with similar running time of $(1/\epsilon)^{O(k)} poly(n)$,
+which again improves on a $(k/\epsilon)^{O(k)} poly(n)$-time FPT-AS of Gupta et al. On the other
+hand, we show that there is unlikely a polynomial size approximate kernelization for Min $k$-VC
+for any factor less than two. 

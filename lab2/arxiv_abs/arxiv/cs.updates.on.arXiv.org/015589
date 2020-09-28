@@ -1,0 +1,19 @@
+Binary code analysis is widely used to assess a program's correctness, performance, and provenance.
+Binary analysis applications often construct control flow graphs, analyze data flow, and use debugging
+information to understand how machine code relates to source lines, inlined functions, and data
+types. To date, binary analysis has been single-threaded, which is too slow for applications such
+as performance analysis and software forensics, where it is becoming common to analyze binaries
+that are gigabytes in size and in large batches that contain thousands of binaries. This paper describes
+our design and implementation for accelerating the task of constructing control flow graphs (CFGs)
+from binaries with multithreading. Existing research focuses on addressing challenging code
+constructs encountered during constructing CFGs, including functions sharing code, jump table
+analysis, non-returning functions, and tail calls. However, existing analyses do not consider
+the complex interactions between concurrent analysis of shared code, making it difficult to extend
+existing serial algorithms to be parallel. A systematic methodology to guide the design of parallel
+algorithms is essential. We abstract the task of constructing CFGs as repeated applications of
+several core CFG operations regarding to creating functions, basic blocks, and edges. We then derive
+properties among CFG operations, including operation dependency, commutativity, monotonicity.
+These operation properties guide our design of a new parallel analysis for constructing CFGs. We
+achieved as much as 25$\times$ speedup for constructing CFGs on 64 hardware threads. Binary analysis
+applications are significantly accelerated with the new parallel analysis: we achieve 8$\times$
+for a performance analysis tool and 7$\times$ for a software forensic tool with 16 hardware threads.

@@ -1,0 +1,19 @@
+A collection of $U \: (\in \mathbb{N})$ data vectors is called a $U$-tuple, and the association strength
+among the vectors of a tuple is termed as the \emph{hyperlink weight}, that is assumed to be symmetric
+with respect to permutation of the entries in the index. We herein propose Bregman hyperlink regression
+(BHLR), which learns a user-specified symmetric similarity function such that it predicts the
+tuple's hyperlink weight from data vectors stored in the $U$-tuple. BHLR is a simple and general
+framework for hyper-relational learning, that minimizes Bregman-divergence (BD) between the
+hyperlink weights and estimated similarities defined for the corresponding tuples; BHLR encompasses
+various existing methods, such as logistic regression ($U=1$), Poisson regression ($U=1$), link
+prediction ($U=2$), and those for representation learning, such as graph embedding ($U=2$), matrix
+factorization ($U=2$), tensor factorization ($U \geq 2$), and their variants equipped with arbitrary
+BD. Nonlinear functions (e.g., neural networks), can be employed for the similarity functions.
+However, there are theoretical challenges such that some of different tuples of BHLR may share data
+vectors therein, unlike the i.i.d. setting of classical regression. We address these theoretical
+issues, and proved that BHLR equipped with arbitrary BD and $U \in \mathbb{N}$ is (P-1) statistically
+consistent, that is, it asymptotically recovers the underlying true conditional expectation
+of hyperlink weights given data vectors, and (P-2) computationally tractable, that is, it is efficiently
+computed by stochastic optimization algorithms using a novel generalized minibatch sampling
+procedure for hyper-relational data. Consequently, theoretical guarantees for BHLR including
+several existing methods, that have been examined experimentally, are provided in a unified manner.

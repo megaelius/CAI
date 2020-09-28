@@ -1,0 +1,19 @@
+The particle-in-cell (PIC) method is widely used to model the self-consistent interaction between
+discrete particles and electromagnetic fields. It has been successfully applied to problems across
+plasma physics including plasma based acceleration, inertial confinement fusion, magnetically
+confined fusion, space physics, astrophysics, high energy density plasmas. In many cases the physics
+involves how relativistic particles are generated and interact with plasmas. However, when relativistic
+particles stream across the grid both in vacuum and in plasma there are many numerical issues that
+may arise which can lead to incorrect physics. We present a detailed analysis of how discretized
+Maxwell solvers used in PIC codes can lead to numerical errors to the fields that surround particles
+that move at relativistic speeds across the grid. Expressions for the axial electric field as integrals
+in k space are presented. Two types of errors to these expressions are identified. The first arises
+from errors to the numerator of the integrand and leads to unphysical fields that are antisymmetric
+about the particle. The second arises from errors to the denominator of the integrand and lead to
+Cerenkov like radiation in "vacuum". These fields are not anti-symmetric, extend behind the particle,
+and cause the particle to accelerate or decelerate depending on the solver and parameters. The unphysical
+fields are studied in detail for two representative solvers - the Yee solver and the FFT based solver.
+A solution for eliminating these unphysical fields by modifying the k operator in the axial direction
+is also presented. Using a customized finite difference solver, this solution was successfully
+implemented into OSIRIS. Results from the customized solver are also presented. This solution
+will be useful for a beam of particles that all move in one direction with a small angular divergence.

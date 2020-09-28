@@ -1,0 +1,17 @@
+Embedded systems are increasingly deployed in devices that can have physical consequences if compromised
+by an attacker - including automobile control systems, smart locks, drones, and implantable medical
+devices. Due to resource and execution-time constraints, C is the primary programming language
+for writing both operating systems and bare-metal applications on these devices. Unfortunately,
+C is neither memory safe nor type safe. In this paper, we present an efficient intra-address space
+isolation technique for embedded ARM processors that leverages unprivileged store instructions.
+Using a compiler transformation, dubbed store promotion, which transforms regular stores into
+unprivileged equivalents, we can restrict a subset of the program's memory accesses to unprivileged
+memory while simultaneously allowing security instrumentation to access security-critical
+data structures (e.g., a shadow stack) - all without the need for expensive context switching. Using
+store promotion, we built Silhouette: a software defense that mitigates control-flow hijacking
+attacks using a combination of hardware configuration, runtime instrumentation, and code transformation.
+Silhouette enforces Control-Flow Integrity and provides an incorruptible shadow stack for return
+addresses. We implemented Silhouette on an ARMv7-M board and our evaluation shows that Silhouette
+incurs an arithmetic mean of 9.23% performance overhead and 16.93% code size overhead. Furthermore,
+we built Silhouette-Invert, an alternative implementation of Silhouette, which incurs just 2.54%
+performance overhead and 5.40% code size overhead, at the cost of a minor hardware change. 

@@ -1,0 +1,19 @@
+Generative adversarial networks (GANs) have provided promising data enrichment solutions by
+synthesizing high-fidelity images. However, generating large sets of labeled images with new
+anatomical variations remains unexplored. We propose a novel method for synthesizing cardiac
+magnetic resonance (CMR) images on a population of virtual subjects with a large anatomical variation,
+introduced using the 4D eXtended Cardiac and Torso (XCAT) computerized human phantom. We investigate
+two conditional image synthesis approaches grounded on a semantically-consistent mask-guided
+image generation technique: 4-class and 8-class XCAT-GANs. The 4-class technique relies on only
+the annotations of the heart; while the 8-class technique employs a predicted multi-tissue label
+map of the heart-surrounding organs and provides better guidance for our conditional image synthesis.
+For both techniques, we train our conditional XCAT-GAN with real images paired with corresponding
+labels and subsequently at the inference time, we substitute the labels with the XCAT derived ones.
+Therefore, the trained network accurately transfers the tissue-specific textures to the new label
+maps. By creating 33 virtual subjects of synthetic CMR images at the end-diastolic and end-systolic
+phases, we evaluate the usefulness of such data in the downstream cardiac cavity segmentation task
+under different augmentation strategies. Results demonstrate that even with only 20% of real images
+(40 volumes) seen during training, segmentation performance is retained with the addition of synthetic
+CMR images. Moreover, the improvement in utilizing synthetic images for augmenting the real data
+is evident through the reduction of Hausdorff distance up to 28% and an increase in the Dice score
+up to 5%, indicating a higher similarity to the ground truth in all dimensions. 

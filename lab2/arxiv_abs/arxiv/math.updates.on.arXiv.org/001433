@@ -1,0 +1,19 @@
+Sub-8-bit representation of DNNs incur some discernible loss of accuracy despite rigorous (re)training
+at low-precision. Such loss of accuracy essentially makes them equivalent to a much shallower counterpart,
+diminishing the power of being deep networks. To address this problem of accuracy drop we introduce
+the notion of \textit{residual networks} where we add more low-precision edges to sensitive branches
+of the sub-8-bit network to compensate for the lost accuracy. Further, we present a perturbation
+theory to identify such sensitive edges. Aided by such an elegant trade-off between accuracy and
+compute, the 8-2 model (8-bit activations, ternary weights), enhanced by ternary residual edges,
+turns out to be sophisticated enough to achieve very high accuracy ($\sim 1\%$ drop from our FP-32
+baseline), despite $\sim 1.6\times$ reduction in model size, $\sim 26\times$ reduction in number
+of multiplications, and potentially $\sim 2\times$ power-performance gain comparing to 8-8 representation,
+on the state-of-the-art deep network ResNet-101 pre-trained on ImageNet dataset. Moreover, depending
+on the varying accuracy requirements in a dynamic environment, the deployed low-precision model
+can be upgraded/downgraded on-the-fly by partially enabling/disabling residual connections.
+For example, disabling the least important residual connections in the above enhanced network,
+the accuracy drop is $\sim 2\%$ (from FP32), despite $\sim 1.9\times$ reduction in model size, $\sim
+32\times$ reduction in number of multiplications, and potentially $\sim 2.3\times$ power-performance
+gain comparing to 8-8 representation. Finally, all the ternary connections are sparse in nature,
+and the ternary residual conversion can be done in a resource-constraint setting with no low-precision
+(re)training. 

@@ -1,0 +1,19 @@
+Person re-identification (re-id) is to match people across disjoint camera views in a multi-camera
+system, and re-id has been an important technology applied in smart city in recent years. However,
+the majority of existing person re-id methods are not designed for processing sequential data in
+an online way. This ignores the real-world scenario that person images detected from multi-cameras
+system are coming sequentially. While there is a few work on discussing online re-id, most of them
+require considerable storage of all passed data samples that have been ever observed, and this could
+be unrealistic for processing data from a large camera network. In this work, we present an onepass
+person re-id model that adapts the re-id model based on each newly observed data and no passed data
+are directly used for each update. More specifically, we develop an Sketch online Discriminant
+Analysis (SoDA) by embedding sketch processing into Fisher discriminant analysis (FDA). SoDA
+can efficiently keep the main data variations of all passed samples in a low rank matrix when processing
+sequential data samples, and estimate the approximate within-class variance (i.e. within-class
+covariance matrix) from the sketch data information. We provide theoretical analysis on the effect
+of the estimated approximate within-class covariance matrix. In particular, we derive upper and
+lower bounds on the Fisher discriminant score (i.e. the quotient between between-class variation
+and within-class variation after feature transformation) in order to investigate how the optimal
+feature transformation learned by SoDA sequentially approximates the offline FDA that is learned
+on all observed data. Extensive experimental results have shown the effectiveness of our SoDA and
+empirically support our theoretical analysis. 

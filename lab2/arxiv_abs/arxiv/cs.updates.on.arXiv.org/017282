@@ -1,0 +1,17 @@
+We propose a deep-learning-based channel quantization, feedback, and precoding method for downlink
+multiuser multiple-input multiple-output systems. In the proposed system, the traditional codebook-based
+channel quantization process for limited feedback is handled by a receiver deep neural network
+(DNN) for each user. The precoder selection process is handled by a transmitter DNN for the base station.
+At each receiver DNN, a binarization layer is adopted to emulate the channel quantization process
+and enable end-to-end learning. However, during training, receiver DNNs with the binarization
+layer can be trapped at a poor local minimum because of inaccurate gradients caused by the binarization
+layer. To address this, we consider a method of knowledge distillation, in which the existing DNNs
+are jointly trained with an additional auxiliary transmitter DNN. By using the auxiliary DNN as
+a teacher network, the receiver DNNs can additionally exploit lossless gradients, which is useful
+in avoiding a poor local minimum. Moreover, through joint training, the existing DNNs can be generalized
+including the quantization loss from binarization. All DNNs at the associated users and transmitter
+are trained offline in an end-to-end manner, with the aid of the auxiliary transmitter DNN. The purpose
+of the end-to-end learning is to determine the precoding matrices that maximize the downlink sum
+rate. Our DNN-based precoding scheme can achieve a significantly higher downlink rate compared
+to traditional linear precoding with codebook-based limited feedback, for the same number of feedback
+bits, particularly when the number of receive antennas is greater than one. 

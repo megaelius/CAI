@@ -1,0 +1,17 @@
+The effectiveness of recommender system algorithms varies in different real-world scenarios.
+It is difficult to choose a best algorithm for a scenario due to the quantity of algorithms available,
+and because of their varying performances. Furthermore, it is not possible to choose one single
+algorithm that will work optimally for all recommendation requests. We apply meta-learning to
+this problem of algorithm selection for scholarly article recommendation. We train a random forest,
+gradient boosting machine, and generalized linear model, to predict a best-algorithm from a pool
+of content similarity-based algorithms. We evaluate our approach on an offline dataset for scholarly
+article recommendation and attempt to predict the best algorithm per-instance. The best meta-learning
+model achieved an average increase in F1 of 88% when compared to the average F1 of all base-algorithms
+(F1; 0.0708 vs 0.0376) and was significantly able to correctly select each base-algorithm (Paired
+t-test; p < 0.1). The meta-learner had a 3% higher F1 when compared to the single-best base-algorithm
+(F1; 0.0739 vs 0.0717). We further perform an online evaluation of our approach, conducting an A/B
+test through our recommender-as-a-service platform Mr. DLib. We deliver 148K recommendations
+to users between January and March 2019. User engagement was significantly increased for recommendations
+generated using our meta-learning approach when compared to a random selection of algorithm (Click-through
+rate (CTR); 0.51% vs. 0.44%, Chi-Squared test; p < 0.1), however our approach did not produce a higher
+CTR than the best algorithm alone (CTR; MoreLikeThis (Title): 0.58%). 

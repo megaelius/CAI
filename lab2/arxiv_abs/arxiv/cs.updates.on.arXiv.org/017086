@@ -1,0 +1,17 @@
+We hypothesize that an agent that can look around in static scenes can learn rich visual representations
+applicable to 3D object tracking in complex dynamic scenes. We are motivated in this pursuit by the
+fact that the physical world itself is mostly static, and multiview correspondence labels are relatively
+cheap to collect in static scenes, e.g., by triangulation. We propose to leverage multiview data
+of \textit{static points} in arbitrary scenes (static or dynamic), to learn a neural 3D mapping
+module which produces features that are correspondable across time. The neural 3D mapper consumes
+RGB-D data as input, and produces a 3D voxel grid of deep features as output. We train the voxel features
+to be correspondable across viewpoints, using a contrastive loss, and correspondability across
+time emerges automatically. At test time, given an RGB-D video with approximate camera poses, and
+given the 3D box of an object to track, we track the target object by generating a map of each timestep
+and locating the object's features within each map. In contrast to models that represent video streams
+in 2D or 2.5D, our model's 3D scene representation is disentangled from projection artifacts, is
+stable under camera motion, and is robust to partial occlusions. We test the proposed architectures
+in challenging simulated and real data, and show that our unsupervised 3D object trackers outperform
+prior unsupervised 2D and 2.5D trackers, and approach the accuracy of supervised trackers. This
+work demonstrates that 3D object trackers can emerge without tracking labels, through multiview
+self-supervision on static data. 

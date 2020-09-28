@@ -1,0 +1,19 @@
+We present preconditioned stochastic gradient descent (SGD) algorithms for the $\ell_1$ minimization
+problem $\min_{x}\|A x - b\|_1$ in the overdetermined case, where there are far more constraints
+than variables. Specifically, we have $A \in \mathbb{R}^{n \times d}$ for $n \gg d$. Commonly known
+as the Least Absolute Deviations problem, $\ell_1$ regression can be used to solve many important
+combinatorial problems, such as minimum cut and shortest path. SGD-based algorithms are appealing
+for their simplicity and practical efficiency. Our primary insight is that careful preprocessing
+can yield preconditioned matrices $\tilde{A}$ with strong properties (besides good condition
+number and low-dimension) that allow for faster convergence of gradient descent. In particular,
+we precondition using Lewis weights to obtain an isotropic matrix with fewer rows and strong upper
+bounds on all row norms. We leverage these conditions to find a good initialization, which we use
+along with recent smoothing reductions and accelerated stochastic gradient descent algorithms
+to achieve $\epsilon$ relative error in $\tilde{O}(nnz(A) + d^{2.5} \epsilon^{-2})$ time with
+high probability, where $nnz(A)$ is the number of non-zeros in $A$. This improves over the previous
+best result using gradient descent for $\ell_1$ regression. We also match the best known running
+times for interior point methods in several settings. Finally, we also show that if our original
+matrix $A$ is approximately isotropic and the row norms are approximately equal, we can give an algorithm
+that avoids using fast matrix multiplication and obtains a running time of $\tilde{O}(nnz(A) +
+s d^{1.5}\epsilon^{-2} + d^2\epsilon^{-2})$, where $s$ is the maximum number of non-zeros in a
+row of $A$. In this setting, we beat the best interior point methods for certain parameter regimes.

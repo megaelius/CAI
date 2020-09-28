@@ -1,0 +1,18 @@
+As well known, the huge memory and compute costs of both artificial neural networks (ANNs) and spiking
+neural networks (SNNs) greatly hinder their deployment on edge devices with high efficiency. Model
+compression has been proposed as a promising technique to improve the running efficiency via parameter
+and operation reduction. Whereas, this technique is mainly practiced in ANNs rather than SNNs.
+It is interesting to answer how much an SNN model can be compressed without compromising its functionality,
+where two challenges should be addressed: i) the accuracy of SNNs is usually sensitive to model compression,
+which requires an accurate compression methodology; ii) the computation of SNNs is event-driven
+rather than static, which produces an extra compression dimension on dynamic spikes. To this end,
+we realize a comprehensive SNN compression through three steps. First, we formulate the connection
+pruning and weight quantization as a constrained optimization problem. Second, we combine spatio-temporal
+backpropagation (STBP) and alternating direction method of multipliers (ADMM) to solve the problem
+with minimum accuracy loss. Third, we further propose activity regularization to reduce the spike
+events for fewer active operations. These methods can be applied in either a single way for moderate
+compression or a joint way for aggressive compression. We define several quantitative metrics
+to evaluation the compression performance for SNNs. Our methodology is validated in pattern recognition
+tasks over MNIST, N-MNIST, CIFAR10, and CIFAR100 datasets, where extensive comparisons, analyses,
+and insights are provided. To our best knowledge, this is the first work that studies SNN compression
+in a comprehensive manner by exploiting all compressible components and achieves better results.

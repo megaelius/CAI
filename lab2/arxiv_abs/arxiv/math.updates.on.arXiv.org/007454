@@ -1,0 +1,19 @@
+In this work, we discuss and develop multidimensional limiting techniques for discontinuous Galerkin
+(DG) discretizations of scalar hyperbolic problems. To ensure that each cell average satisfies
+a local discrete maximum principle (DMP), we impose inequality constraints on the local Lax-Friedrichs
+fluxes of a piecewise-linear (P1) approximation. Since the piecewise-constant (P0) version corresponds
+to a property-preserving low-order finite volume method, the validity of DMP conditions can always
+be enforced using slope and/or flux limiters. We show that the (currently rather uncommon) use of
+direct flux limiting makes it possible to construct more accurate DMP-satisfying approximations
+in which a weak form of slope limiting is used to prevent unbounded growth of solution gradients.
+Moreover, both fluxes and slopes can be limited in a manner which produces nonlinear problems with
+well-defined residuals even at steady state. We derive/present slope limiters based on different
+kinds of inequality constraints, discuss their properties and introduce new anisotropic limiters
+for problems that require different treatment of different space directions. At the flux limiting
+stage, the anisotropy of the problem at hand can be taken into account by using a customized definition
+of local bounds for the DMP constraints. At the slope limiting stage, we adjust the magnitude of individual
+directional derivatives using low-order reconstructions from cell averages to define the bounds.
+In this way, we avoid unnecessary limiting of well-resolved derivatives at smooth peaks and in internal/boundary
+layers. The properties of selected algorithms are explored in numerical studies for DG-P1 discretizations
+of two-dimensional test problems. In the context of hp-adaptive DG methods, the new limiting procedures
+can be used in P1 subcells of macroelements marked as `troubled' by a smoothness indicator. 

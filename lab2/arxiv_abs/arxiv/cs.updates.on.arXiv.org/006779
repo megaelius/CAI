@@ -1,0 +1,18 @@
+We study the problem of testing identity against a given distribution with a focus on the high confidence
+regime. More precisely, given samples from an unknown distribution $p$ over $n$ elements, an explicitly
+given distribution $q$, and parameters $0< \epsilon, \delta < 1$, we wish to distinguish, {\em with
+probability at least $1-\delta$}, whether the distributions are identical versus $\varepsilon$-far
+in total variation distance. Most prior work focused on the case that $\delta = \Omega(1)$, for which
+the sample complexity of identity testing is known to be $\Theta(\sqrt{n}/\epsilon^2)$. Given
+such an algorithm, one can achieve arbitrarily small values of $\delta$ via black-box amplification,
+which multiplies the required number of samples by $\Theta(\log(1/\delta))$. We show that black-box
+amplification is suboptimal for any $\delta = o(1)$, and give a new identity tester that achieves
+the optimal sample complexity. Our new upper and lower bounds show that the optimal sample complexity
+of identity testing is \[ \Theta\left( \frac{1}{\epsilon^2}\left(\sqrt{n \log(1/\delta)}
++ \log(1/\delta) \right)\right) \] for any $n, \varepsilon$, and $\delta$. For the special case
+of uniformity testing, where the given distribution is the uniform distribution $U_n$ over the
+domain, our new tester is surprisingly simple: to test whether $p = U_n$ versus $d_{\mathrm TV}(p,
+U_n) \geq \varepsilon$, we simply threshold $d_{\mathrm TV}(\widehat{p}, U_n)$, where $\widehat{p}$
+is the empirical probability distribution. The fact that this simple "plug-in" estimator is sample-optimal
+is surprising, even in the constant $\delta$ case. Indeed, it was believed that such a tester would
+not attain sublinear sample complexity even for constant values of $\varepsilon$ and $\delta$.

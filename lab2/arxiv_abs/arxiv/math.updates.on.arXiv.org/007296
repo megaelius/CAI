@@ -1,0 +1,17 @@
+We propose a new approach to computing global minimizers of singular value functions in two real
+variables. Specifically, we present new algorithms to compute the Kreiss constant of a matrix and
+the distance to uncontrollability of a linear control system, both to arbitrary accuracy. Previous
+state-of-the-art methods for these two quantities rely on 2D level-set tests that are based on solving
+large eigenvalue problems. Consequently, these methods are costly, i.e., $\mathcal{O}(n^6)$
+work using dense eigensolvers, and often multiple tests are needed before convergence. Divide-and-conquer
+techniques have been proposed that reduce the work complexity to $\mathcal{O}(n^4)$ on average
+and $\mathcal{O}(n^5)$ in the worst case, but these variants are nevertheless still very expensive
+and can be numerically unreliable. In contrast, our new interpolation-based globality certificates
+perform level-set tests by building interpolant approximations to certain one-variable continuous
+functions that are both relatively cheap and numerically robust to evaluate. Our new approach has
+a $\mathcal{O}(kn^3)$ work complexity and lower memory requirements, where $k$ is the number of
+function evaluations necessary to build the interpolants. Not only is this interpolation process
+mostly "embarrassingly parallel," but also low-fidelity approximations typically suffice for
+all but the final interpolant, which must be built to high accuracy. Even without taking advantage
+of the aforementioned parallelism, $k$ is sufficiently small that our new approach is generally
+orders of magnitude faster than the previous state-of-the-art. 

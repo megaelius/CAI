@@ -1,0 +1,20 @@
+Adjoint-based optimization methods are attractive for aerodynamic shape design primarily due
+to their computational costs being independent of the dimensionality of the input space and their
+ability to generate high-fidelity gradients that can then be used in a gradient-based optimizer.
+This makes them very well suited for high-fidelity simulation based aerodynamic shape optimization
+of highly parametrized geometries such as aircraft wings. However, the development of adjoint-based
+solvers involve careful mathematical treatment and their implementation require detailed software
+development. Furthermore, they can become prohibitively expensive when multiple optimization
+problems are being solved, each requiring multiple restarts to circumvent local optima. In this
+work, we propose a machine learning enabled, surrogate-based framework that replaces the expensive
+adjoint solver, without compromising on predicting predictive accuracy. Specifically, we first
+train a deep neural network (DNN) from training data generated from evaluating the high-fidelity
+simulation model on a model-agnostic, design of experiments on the geometry shape parameters.
+The optimum shape may then be computed by using a gradient-based optimizer coupled with the trained
+DNN. Subsequently, we also perform a gradient-free Bayesian optimization, where the trained DNN
+is used as the prior mean. We observe that the latter framework (DNN-BO) improves upon the DNN-only
+based optimization strategy for the same computational cost. Overall, this framework predicts
+the true optimum with very high accuracy, while requiring far fewer high-fidelity function calls
+compared to the adjoint-based method. Furthermore, we show that multiple optimization problems
+can be solved with the same machine learning model with high accuracy, to amortize the offline costs
+associated with constructing our models. 

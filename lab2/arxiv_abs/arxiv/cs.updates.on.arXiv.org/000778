@@ -1,0 +1,19 @@
+Let $\epsilon>0$ be any constant and let $P$ be a set of $n$ points in $\mathbb{R}^d$. We design
+new streaming and approximation algorithms for clustering points of $P$. Consider the projective
+clustering problem: Given $k, q < n$, compute a set $F$ of $k$ $q$-flats such that the function
+$f_k^q(P,\rho)=\sum_{p\in P}d(p, F)^\rho$ is minimized; here $d(p, F)$ represents the distance
+of $p$ to the closest $q$-flat in $F$. For $\rho=\infty$, we interpret $f_k^q(P,\rho)$ to be $\max_{r\in
+P}d(r, F)$. When $\rho=1,2$ and $\infty$ and $q=0$, the problem corresponds to the well-known $k$-median,
+$k$-mean and the $k$-center clustering problems respectively. Our two main technical contributions
+are as follows: (i) Consider an orthogonal projection of $P$ to a randomly chosen $O(C_\rho(q,\epsilon)\log
+n/\epsilon^2)$-dimensional flat. For every subset $S \subseteq P$, we show that such a random projection
+will $\epsilon$-approximate $f_1^q(S,\rho)$. This result holds for any integer norm $\rho \ge
+1$, including $\rho=\infty$; here $C_\rho(q,\epsilon)$ is the size of the smallest coreset that
+$\epsilon$-approximates $f_1^q(\cdot,\rho)$. For $\rho=1,2$ and $\infty$, $C_\rho(q,\epsilon)$
+is known to be a constant which depends only on $q$ and $\epsilon$. (ii) We improve the size of the coreset
+when $\rho = \infty$. In particular, we improve the bounds of $C_\infty(q,\epsilon)$ to $O(q^3/\epsilon^2)$
+from the previously-known $O(q^6/\epsilon^5 \log 1/\epsilon)$. As applications, we obtain better
+approximation and streaming algorithms for various projective clustering problems over high
+dimensional point sets. E.g., when $\rho =\infty$ and $q\geq 1$, we obtain a streaming algorithm
+that maintains an $\epsilon$-approximate solution using $O((d + n)q^3(\log n/\epsilon^4))$
+space, which is better than the input size $O(nd)$. 

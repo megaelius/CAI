@@ -1,0 +1,23 @@
+Verification of algorithms and data structures utilized in modern autonomous and semi-autonomous
+vehicles for land, sea, air, and space presents a significant challenge. Autonomy algorithms,
+e.g., route planning, pattern matching, and inference, are based on complex data structures such
+as directed graphs and algebraic data types. Proof techniques for these data structures exist,
+but are oriented to unbounded, functional realizations, which are not typically efficient in either
+space or time. Autonomous systems designers, on the other hand, generally limit the space and time
+allocations for any given function, and require that algorithms deliver results within a finite
+time, or suffer a watchdog timeout. Furthermore, high-assurance design rules frown on dynamic
+memory allocation, preferring simple array-based data structure implementations. In order to
+provide efficient implementations of high-level data structures used in autonomous systems with
+the high assurance needed for accreditation, we have developed a verifying compilation technique
+that supports the "natural" functional proof style, but yet applies to more efficient data structure
+implementations. Our toolchain features code generation to mainstream programming languages,
+as well as GPU-based and hardware-based realizations. We base the Intermediate Verification Language
+for our toolchain upon higher-order logic; however, we have used ACL2 to develop our efficient yet
+verifiable data structure design. ACL2 is particularly well-suited for this work, with its sophisticated
+libraries for reasoning about aggregate data structures of arbitrary size, efficient execution
+of formal specifications, as well as its support for "single-threaded objects" -- functional datatypes
+with imperative "under the hood" implementations. In this paper, we detail our high-assurance
+data structure design approach, including examples in ACL2 of common algebraic data types implemented
+using this design approach, proofs of correctness for those data types carried out in ACL2, as well
+as sample ACL2 implementations of relevant algorithms utilizing these efficient, high-assurance
+data structures. 

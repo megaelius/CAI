@@ -1,0 +1,19 @@
+We present priority queues in the cache-oblivious external memory model with block size $B$ and
+main memory size $M$ that support on $N$ elements, operation \textsc{UPDATE} (combination of \textsc{INSERT}
+and \textsc{DECREASEKEY}) in $O \left(\frac{1}{B}\log_{\frac{\lambda}{B}} \frac{N}{B}\right)$
+amortized I/Os and operations \textsc{EXTRACT-MIN} and \textsc{DELETE} in $O \left(\lceil \frac{\lambda^{\varepsilon}}{B}
+\log_{\frac{\lambda}{B}} \frac{N}{B} \rceil \log_{\frac{\lambda}{B}} \frac{N}{B}\right)$
+amortized I/Os, using $O \left(\frac{N}{B}\log_{\frac{\lambda}{B}} \frac{N}{B}\right)$
+blocks, for a user-defined parameter $\lambda \in [2, N ]$ and any real $\varepsilon \in (0,1)$.
+Our result improves upon previous I/O-efficient cache-oblivious and cache-aware priority queues
+[Chowdhury and Ramachandran, TALG 2018], [Brodal et al., SWAT 2004], [Kumar and Schwabe, SPDP 1996],
+[Arge et al., SICOMP 2007], [Fadel et al., TCS 1999]. We also present buffered repository trees that
+support on a multi-set of $N$ elements, operation \textsc{INSERT} in $O \left(\frac{1}{B}\log_{\frac{\lambda}{B}}
+\frac{N}{B}\right)$ I/Os and operation \textsc{EXTRACT} on $K$ extracted elements in $O \left(\frac{\lambda^{\varepsilon}}{B}
+\log_{\frac{\lambda}{B}} \frac{N}{B} + \frac{K}{B}\right)$ amortized I/Os, using $O \left(\frac{N}{B}\right)$
+blocks, improving previous cache-aware and cache-oblivious results [Arge et al., SICOMP '07],
+[Buchsbaum et al., SODA '00]. In the cache-oblivious model, for $\lambda = O \left(E/V\right)$,
+we achieve $O \left(\frac{E}{B}\log_{\frac{E}{V B}} \frac{E}{B}\right)$ I/Os for single-source
+shortest paths, depth-first search and breadth-first search algorithms on massive directed dense
+graphs $(V,E)$. Our algorithms are I/O-optimal for $E/V = \Omega (M)$ (and in the cache-aware setting
+for $\lambda = O(M)$). 

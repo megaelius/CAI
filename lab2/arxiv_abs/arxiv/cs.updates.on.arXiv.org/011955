@@ -1,0 +1,20 @@
+Software based fault isolation (SFI) is a powerful approach to reduce the impact of security vulnerabilities
+in large C/C++ applications like Firefox and Apache. Unfortunately, practical SFI tools have not
+been broadly available. Developing SFI toolchains are a significant engineering challenge. Only
+in recent years have browser vendors invested in building production quality SFI tools like Native
+Client (NaCl) to sandbox code. Further, without committed support, these tools are not viable,
+e.g. NaCl has been discontinued, orphaning projects that relied on it. WebAssembly (Wasm) offers
+a promising solution---it can support high performance sandboxing and has been embraced by all
+major browser vendors---thus seems to have a viable future. However, Wasm presently only offers
+a solution for sandboxing mobile code. Providing SFI for native application, such as C/C++ libraries
+requires additional steps. To reconcile the different worlds of Wasm on the browser and native platforms,
+we present Gobi. Gobi is a system of compiler changes and runtime support that can sandbox normal
+C/C++ libraries with Wasm---allowing them to be compiled and linked into native applications.
+Gobi has been tested on libjpeg, libpng, and zlib. Based on our experience developing Gobi, we conclude
+with a call to arms to the Wasm community and SFI research community to make Wasm based module sandboxing
+a first class use case and describe how this can significantly benefit both communities. Addendum:
+This short paper was originally written in January of 2019. Since then, the implementation and design
+of Gobi has evolved substantially as some of the issues raised in this paper have been addressed by
+the Wasm community. Nevertheless, several challenges still remain. We have thus left the paper
+largely intact and only provide a brief update on the state of Wasm tooling as of November 2019 in the
+last section. 

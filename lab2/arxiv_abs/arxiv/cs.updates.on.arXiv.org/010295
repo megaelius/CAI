@@ -1,0 +1,20 @@
+This paper presents a robust, adaptive numerical scheme for simulating high density ratio and high
+shear multiphase flows on locally refined Cartesian grids that adapt to the evolving interfaces
+and track regions of high vorticity. The algorithm combines the interface capturing level set method
+with a variable-coefficient incompressible Navier-Stokes solver that is demonstrated to stably
+resolve material contrast ratios of up to six orders of magnitude. The discretization approach
+ensures second-order pointwise accuracy for both velocity and pressure with several physical
+boundary treatments, including velocity and traction boundary conditions. The paper includes
+several test cases that demonstrate the order of accuracy and algorithmic scalability of the flow
+solver. To ensure the stability of the numerical scheme in the presence of high density and viscosity
+ratios, we employ a consistent treatment of mass and momentum transport in the conservative form
+of discrete equations. This consistency is achieved by solving an additional mass balance equation,
+which we approximate via a strong stability preserving Runga-Kutta time integrator and by employing
+the same mass flux (obtained from the mass equation) in the discrete momentum equation. The scheme
+uses higher-order total variation diminishing (TVD) and convection-boundedness criterion (CBC)
+satisfying limiter to avoid numerical fluctuations in the transported density field. The high-order
+bounded convective transport is done on a dimension-by-dimension basis, which makes the scheme
+simple to implement. We also demonstrate through several test cases that the lack of consistent
+mass and momentum transport in non-conservative formulations, which are commonly used in practice,
+or the use of non-CBC satisfying limiters can yield very large numerical error and very poor accuracy
+for convection-dominant high density ratio flows. 

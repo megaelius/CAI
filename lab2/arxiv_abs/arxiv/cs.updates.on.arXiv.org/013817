@@ -1,0 +1,20 @@
+The most common approach to speaker diarization is clustering of speaker embeddings. However,
+the clustering-based approach has a number of problems; i.e., (i) it is not optimized to minimize
+diarization errors directly, (ii) it cannot handle speaker overlaps correctly, and (iii) it has
+trouble adapting their speaker embedding models to real audio recordings with speaker overlaps.
+To solve these problems, we propose the End-to-End Neural Diarization (EEND), in which a neural
+network directly outputs speaker diarization results given a multi-speaker recording. To realize
+such an end-to-end model, we formulate the speaker diarization problem as a multi-label classification
+problem and introduce a permutation-free objective function to directly minimize diarization
+errors. Besides its end-to-end simplicity, the EEND method can explicitly handle speaker overlaps
+during training and inference. Just by feeding multi-speaker recordings with corresponding speaker
+segment labels, our model can be easily adapted to real conversations. We evaluated our method on
+simulated speech mixtures and real conversation datasets. The results showed that the EEND method
+outperformed the state-of-the-art x-vector clustering-based method, while it correctly handled
+speaker overlaps. We explored the neural network architecture for the EEND method, and found that
+the self-attention-based neural network was the key to achieving excellent performance. In contrast
+to conditioning the network only on its previous and next hidden states, as is done using bidirectional
+long short-term memory (BLSTM), self-attention is directly conditioned on all the frames. By visualizing
+the attention weights, we show that self-attention captures global speaker characteristics in
+addition to local speech activity dynamics, making it especially suitable for dealing with the
+speaker diarization problem. 

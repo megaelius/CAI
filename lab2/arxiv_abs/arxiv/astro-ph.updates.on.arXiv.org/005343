@@ -1,0 +1,19 @@
+The sensitivity of the the pyramid wavefront sensor (PyWFS) has made it a popular choice for astronomical
+adaptive optics (AAO) systems, and it is at its most sensitive when it is used without modulation
+of the input beam. In non-modulated mode, the device is highly nonlinear. Hence, all PyWFS implementations
+on current AAO systems employ modulation to make the device more linear. The upcoming era of 30-m
+class telescopes and the demand for ultra-precise wavefront control stemming from science objectives
+that include direct imaging of exoplanets make using the PyWFS without modulation desirable. This
+article argues that nonlinear estimation based on Newton's method for nonlinear optimization
+can be useful for mitigating the effects of nonlinearity in the non-modulated PyWFS. The proposed
+approach requires all optical modeling to be pre-computed, which has the advantage of avoiding
+real-time simulations of beam propagation. Further, the required real-time calculations are
+amenable to massively parallel computation. Numerical experiments simulate a currently operational
+PyWFS. A singular value analysis shows that the common practice of calculating two "slope" images
+from the four PyWFS pupil images discards critical information and is unsuitable for the non-modulated
+PyWFS simulated here. Instead, this article advocates estimators that use the raw pixel values
+not only from the four geometrical images of the pupil, but from surrounding pixels as well. The simulations
+indicate that nonlinear estimation can be effective when the Strehl ratio of the input beam is greater
+than 0.3, and the improvement relative to linear estimation tends to increase at larger Strehl ratios.
+At Strehl ratios less than about 0.5, the performances of both the nonlinear and linear estimators
+are relatively insensitive to noise, since they are dominated by nonlinearity error. 

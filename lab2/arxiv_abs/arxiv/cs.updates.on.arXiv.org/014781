@@ -1,0 +1,19 @@
+Spectral methods have been the mainstay in several domains such as machine learning and scientific
+computing. They involve finding a certain kind of spectral decomposition to obtain basis functions
+that can capture important structures for the problem at hand. The most common spectral method is
+the principal component analysis (PCA). It utilizes the top eigenvectors of the data covariance
+matrix, e.g. to carry out dimensionality reduction. This data pre-processing step is often effective
+in separating signal from noise. PCA and other spectral techniques applied to matrices have several
+limitations. By limiting to only pairwise moments, they are effectively making a Gaussian approximation
+on the underlying data and fail on data with hidden variables which lead to non-Gaussianity. However,
+in most data sets, there are latent effects that cannot be directly observed, e.g., topics in a document
+corpus, or underlying causes of a disease. By extending the spectral decomposition methods to higher
+order moments, we demonstrate the ability to learn a wide range of latent variable models efficiently.
+Higher-order moments can be represented by tensors, and intuitively, they can encode more information
+than just pairwise moment matrices. More crucially, tensor decomposition can pick up latent effects
+that are missed by matrix methods, e.g. uniquely identify non-orthogonal components. Exploiting
+these aspects turns out to be fruitful for provable unsupervised learning of a wide range of latent
+variable models. We also outline the computational techniques to design efficient tensor decomposition
+methods. We introduce Tensorly, which has a simple python interface for expressing tensor operations.
+It has a flexible back-end system supporting NumPy, PyTorch, TensorFlow and MXNet amongst others,
+allowing multi-GPU and CPU operations and seamless integration with deep-learning functionalities.

@@ -1,0 +1,19 @@
+We propose a new constrained-optimization formulation for deep ordinal classification, in which
+uni-modality of the label distribution is enforced implicitly via a set of inequality constraints
+over all the pairs of adjacent labels. Based on (c-1) constraints for c labels, our model is non-parametric
+and, therefore, more flexible than the existing deep ordinal classification techniques. Unlike
+these, it does not restrict the learned representation to a single and specific parametric model
+(or penalty) imposed on all the labels. Therefore, it enables the training to explore larger spaces
+of solutions, while removing the need for ad hoc choices and scaling up to large numbers of labels.
+It can be used in conjunction with any standard classification loss and any deep architecture. To
+tackle the ensuing challenging optimization problem, we solve a sequence of unconstrained losses
+based on a powerful extension of the log-barrier method. This handles effectively competing constraints
+and accommodates standard SGD for deep networks, while avoiding computationally expensive Lagrangian
+dual steps and outperforming substantially penalty methods. Furthermore, we propose a new performance
+metric for ordinal classification, as a proxy to measure distribution uni-modality, referred
+to as the Sides Order Index (SOI). We report comprehensive evaluations and comparisons to state-of-the-art
+methods on benchmark public datasets for several ordinal classification tasks, showing the merits
+of our approach in terms of label consistency, classification accuracy and scalability. Importantly,
+enforcing label consistency with our model does not incur higher classification errors, unlike
+many existing ordinal classification methods. A public reproducible PyTorch implementation
+is provided. (https://github.com/sbelharbi/unimodal-prob-deep-oc-free-distribution)

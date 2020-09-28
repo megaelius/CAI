@@ -1,0 +1,18 @@
+The array is a fundamental data structure that provides an efficient way to store and retrieve non-sparse
+data contiguous in memory. Arrays are important for the performance of many memory-intensive applications
+due to the design of modern memory hierarchies: contiguous storage facilitates spatial locality
+and predictive access patterns which enables prefetching.perations on large arrays often lend
+themselves well to parallelisation, such as a fork-join style divide-and-conquer algorithm for
+sorting. For parallel operations on arrays to be deterministic, data-race freedom must be guaranteed.
+For operations on arrays of primitive data, data-race freedom is obtained by coordinating accesses
+so that no two threads operate on the same array indices. This is however not enough for arrays of non-primitives
+due to aliasing: accesses of separate array elements may return pointers to the same object, or overlapping
+structures.eference capabilities have been used successfully in the past to statically guarantee
+the absence of data-races in object-oriented programs. This paper presents the first extension
+of reference capabilities---called array capabilities---that support concurrent and parallel
+operations on arrays of both primitive and non-primitive values. In addition to element access,
+array capabilities support the abstract manipulation of arrays, logical splitting of arrays into
+subarrays, and merging subarrays. These operations allow expressing a wide range of array use cases.
+(edited) his paper presents the array capability design space and show how it applies to a number
+of array use cases. The core ideas are formalised and proven sound in a simple calculus, along with
+a proof that shows that well-typed programs with array capabilities are free from data-races. 

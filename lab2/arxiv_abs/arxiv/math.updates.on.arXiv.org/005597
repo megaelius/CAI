@@ -1,0 +1,20 @@
+Fast computation of three-dimensional gravity and magnetic forward models is considered. Measurement
+data is assumed to be obtained on a uniform grid which is staggered with respect to the discretization
+of the parameter volume. Then, the resulting kernel sensitivity matrices exhibit block-Toeplitz
+Toeplitz-block (BTTB) structure. These matrices are symmetric for the gravity problem but non-symmetric
+for the magnetic problem. In each case, the structure facilitates fast forward computation using
+two-dimensional fast Fourier transforms. The construction of the kernel matrices and the application
+of the transform for fast forward multiplication, for each problem, is carefully described. But,
+for purposes of comparison with the transform approach, the generation of the unique entries that
+define a given kernel matrix is also explained. It is also demonstrated how the matrices, and hence
+transforms, are adjusted when padding around the volume domain is introduced. The transform algorithms
+for fast forward matrix multiplication with the sensitivity matrix and its transpose, without
+the direct construction of the relevant matrices, are presented. Numerical experiments demonstrate
+the significant reduction in computation time that is achieved using the transform implementation.
+Moreover, it becomes feasible, both in terms of reduced memory requirements and computational
+time, to implement the transform algorithms for large three-dimensional volumes. All presented
+algorithms, including with variable padding, are coded for optimal memory, storage and computation
+as an open source MATLAB code which can be adapted for any convolution kernel which generates a BTTB
+matrix. This work, therefore, provides a general tool for the efficient simulation of gravity and
+magnetic field data, as well as any formulation which admits a sensitivity matrix with the required
+structure. 

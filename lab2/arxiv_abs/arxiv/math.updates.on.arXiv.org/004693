@@ -1,0 +1,17 @@
+We consider the problem of rigid registration, where we wish to jointly register multiple point
+sets via rigid transforms. This arises in applications such as sensor network localization, multiview
+registration, and protein structure determination. The least-squares estimator for this problem
+can be reduced to a rank-constrained semidefinite program (REG-SDP). It was recently shown that
+by formally applying the alternating direction method of multipliers (ADMM), we can derive an iterative
+solver (REG-ADMM) for REG-SDP, wherein each subproblem admits a simple closed-form solution.
+The empirical success of REG-ADMM has been demonstrated for multiview registration. However,
+its convergence does not follow from the existing literature on nonconvex ADMM. In this work, we
+study the convergence of REG-ADMM and our main findings are as follows. We prove that any fixed point
+of REG-ADMM is a stationary (KKT) point of REG-SDP. Moreover, for clean measurements, we give an
+explicit formula for the ADMM parameter $\rho$, for which REG-ADMM is guaranteed to converge to
+the global optimum (with arbitrary initialization). If the noise is low, we can still show that the
+iterates converge to the global optimum, provided they are initialized sufficiently close to the
+optimum. On the other hand, if the noise is high, we explain why REG-ADMM becomes unstable if $\rho$
+is less than some threshold, irrespective of the initialization. We present simulation results
+to support our theoretical predictions. The novelty of our analysis lies in the fact that we exploit
+the notion of tightness of convex relaxation to arrive at our convergence results. 

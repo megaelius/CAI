@@ -1,0 +1,20 @@
+The application resource specification--a static specification of several parameters such as
+the number of threads and the scratchpad memory usage per thread block--forms a critical component
+of the existing GPU programming models. This specification determines the performance of the application
+during execution because the corresponding on-chip hardware resources are allocated and managed
+purely based on this specification. This tight coupling between the software-provided resource
+specification and resource management in hardware leads to significant challenges in programming
+ease, portability, and performance, as we demonstrate in this work. Our goal in this work is to reduce
+the dependence of performance on the software-provided resource specification to simultaneously
+alleviate the above challenges. To this end, we introduce Zorua, a new resource virtualization
+framework, that decouples the programmer-specified resource usage of a GPU application from the
+actual allocation in the on-chip hardware resources. Zorua enables this decoupling by virtualizing
+each resource transparently to the programmer. We demonstrate that by providing the illusion of
+more resources than physically available, Zorua offers several important benefits: (i) Programming
+Ease: Zorua eases the burden on the programmer to provide code that is tuned to efficiently utilize
+the physically available on-chip resources. (ii) Portability: Zorua alleviates the necessity
+of re-tuning an application's resource usage when porting the application across GPU generations.
+(iii) Performance: By dynamically allocating resources and carefully oversubscribing them when
+necessary, Zorua improves or retains the performance of applications that are already highly tuned
+to best utilize the resources. The holistic virtualization provided by Zorua has many other potential
+uses which we describe in this paper. 

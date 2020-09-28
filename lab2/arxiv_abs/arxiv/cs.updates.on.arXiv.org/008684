@@ -1,0 +1,19 @@
+An $(\epsilon,\phi)$-expander decomposition of a graph $G=(V,E)$ is a clustering of the vertices
+$V=V_{1}\cup\cdots\cup V_{x}$ such that (1) each cluster $V_{i}$ induces subgraph with conductance
+at least $\phi$, and (2) the number of inter-cluster edges is at most $\epsilon|E|$. In this paper,
+we give an improved distributed expander decomposition. Specifically, we construct an $(\epsilon,\phi)$-expander
+decomposition with $\phi=(\epsilon/\log n)^{2^{O(k)}}$ in $O(n^{2/k}\cdot\text{poly}(1/\phi,\log
+n))$ rounds for any $\epsilon\in(0,1)$ and positive integer $k$. For example, a $(0.01,1/\text{poly}\log
+n)$-expander decomposition can be computed in $O(n^{\gamma})$ rounds, for any arbitrarily small
+constant $\gamma>0$. Previously, the algorithm by Chang, Pettie, and Zhang can construct a $(1/6,1/\text{poly}\log
+n)$-expander decomposition using $\tilde{O}(n^{1-\delta})$ rounds for any $\delta>0$, with
+a caveat that the algorithm is allowed to throw away a set of edges into an extra part which forms a subgraph
+with arboricity at most $n^{\delta}$. Our algorithm does not have this caveat. By slightly modifying
+the distributed algorithm for routing on expanders by Ghaffari, Kuhn and Su [PODC'17], we obtain
+a triangle enumeration algorithm using $\tilde{O}(n^{1/3})$ rounds. This matches the lower bound
+by Izumi and Le Gall [PODC'17] and Pandurangan, Robinson and Scquizzato [SPAA'18] of $\tilde{\Omega}(n^{1/3})$
+which holds even in the CONGESTED CLIQUE model. This provides the first non-trivial example for
+a distributed problem that has essentially the same complexity (up to a polylogarithmic factor)
+in both CONGEST and CONGESTED CLIQUE. The key technique in our proof is the first distributed approximation
+algorithm for finding a low conductance cut that is as balanced as possible. Previous distributed
+sparse cut algorithms do not have this nearly most balanced guarantee. 

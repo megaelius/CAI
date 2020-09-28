@@ -1,0 +1,20 @@
+Simultaneous Localization and Mapping (SLAM) is the problem of constructing a map of an agent's
+environment while localizing or tracking the mobile agent's position and orientation within the
+map. Algorithms for SLAM have high computational requirements, which has hindered their use on
+embedded devices. Approximation can be used to reduce the time and energy requirements of SLAM implementations
+as long as the approximations do not prevent the agent from navigating correctly through the environment.
+Previous studies of approximation in SLAM have assumed that the entire trajectory of the agent is
+known before the agent starts to move, and they have focused on offline controllers that use features
+of the trajectory to set approximation knobs at the start of the trajectory. In practice, the trajectory
+is not usually known ahead of time, and allowing knob settings to change dynamically opens up more
+opportunities for reducing computation time and energy. We describe SLAMBooster, an application-aware
+online control system for SLAM that adaptively controls approximation knobs during the motion
+of the agent. SLAMBooster is based on a control technique called hierarchical proportional control
+but our experiments showed this application-agnostic control led to an unacceptable reduction
+in the quality of localization. To address this problem, SLAMBooster exploits domain knowledge:
+it uses features extracted from input frames and from the estimated motion of the agent in its algorithm
+for controlling approximation. We implemented SLAMBooster in the open-source SLAMBench framework.
+Our experiments show that SLAMBooster reduces the computation time and energy consumption by around
+half on the average on an embedded platform, while maintaining the accuracy of the localization
+within reasonable bounds. These improvements make it feasible to deploy SLAM on a wider range of
+devices. 

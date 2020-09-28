@@ -1,0 +1,20 @@
+The fundamental problems of pricing high-dimensional path-dependent options and optimal stopping
+are central to applied probability and financial engineering. Modern approaches, often relying
+on ADP, simulation, and/or duality, have limited rigorous guarantees, which may scale poorly and/or
+require previous knowledge of basis functions. A key difficulty with many approaches is that to
+yield stronger guarantees, they would necessitate the computation of deeply nested conditional
+expectations, with the depth scaling with the time horizon T. We overcome this fundamental obstacle
+by providing an algorithm which can trade-off between the guaranteed quality of approximation
+and the level of nesting required in a principled manner, without requiring a set of good basis functions.
+We develop a novel pure-dual approach, inspired by a connection to network flows. This leads to a
+representation for the optimal value as an infinite sum for which: 1. each term is the expectation
+of an elegant recursively defined infimum; 2. the first k terms only require k levels of nesting;
+and 3. truncating at the first k terms yields an error of 1/k. This enables us to devise a simple randomized
+algorithm whose runtime is effectively independent of the dimension, beyond the need to simulate
+sample paths of the underlying process. Indeed, our algorithm is completely data-driven in that
+it only needs the ability to simulate the original process, and requires no prior knowledge of the
+underlying distribution. Our method allows one to elegantly trade-off between accuracy and runtime
+through a parameter epsilon controlling the associated performance guarantee, with computational
+and sample complexity both polynomial in T (and effectively independent of the dimension) for any
+fixed epsilon, in contrast to past methods typically requiring a complexity scaling exponentially
+in these parameters. 

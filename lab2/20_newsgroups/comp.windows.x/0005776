@@ -1,0 +1,7 @@
+In article <46464@sophia.inria.fr>, muller@mafalda.inria.fr (Christophe Muller) writes:
+> Anyway, at SIMULOG, we will abandon xv. We were using it mostly for slide-
+> shows because of its "-loop" feature that display does not have (display
+> from the *wonderful* ImageMagick package! :-D), but I think I will implement
+> it myself (even a shell-script should do the job) and forget xv.
+xli and xloadimage have a -goto flag.
+	Graeme Gill.

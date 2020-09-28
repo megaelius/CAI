@@ -1,0 +1,17 @@
+We introduce an iterative method named BiLQ for solving general square linear systems Ax = b based
+on the Lanczos biorthogonalization process defined by least-norm subproblems, and that is a natural
+companion to BiCG and QMR. Whereas the BiCG (Fletcher, 1976), CGS (Sonneveld, 1989) and BiCGSTAB
+(van der Vorst, 1992) iterates may not exist when the tridiagonal projection of A is singular, BiLQ
+is reliable on compatible systems even if A is ill-conditioned or rank deficient. As in the symmetric
+case, the BiCG residual is often smaller than the BiLQ residual and, when the BiCG iterate exists,
+an inexpensive transfer from the BiLQ iterate is possible. Although the Euclidean norm of the BiLQ
+error is usually not monotonic, it is monotonic in a different norm that depends on the Lanczos vectors.
+We establish a similar property for the QMR (Freund and Nachtigal, 1991) residual. BiLQ combines
+with QMR to take advantage of two initial vectors and solve a system and an adjoint system simultaneously
+at a cost similar to that of applying either method. We derive an analogous combination of USYMLQ
+and USYMQR based on the orthogonal tridiagonalization process (Saunders, Simon, and Yip, 1988).
+The resulting combinations, named BiLQR and TriLQR, may be used to estimate integral functionals
+involving the solution of a primal and an adjoint system. We compare BiLQR and TriLQR with Minres-qlp
+on a related augmented system, which performs a comparable amount of work and requires comparable
+storage. In our experiments, BiLQR terminates earlier than TriLQR and MINRES-QLP in terms of residual
+and error of the primal and adjoint systems. 

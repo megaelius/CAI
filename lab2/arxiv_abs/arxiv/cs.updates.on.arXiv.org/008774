@@ -1,0 +1,20 @@
+Consider the setting of Linear Regression where the observed response variables, in expectation,
+are linear functions of the $p$-dimensional covariates. To achieve vanishing prediction error,
+the number of required samples scales faster than $p \sigma^2$, where $\sigma^2$ is a bound on the
+noise variance. In high-dimensional settings where $p$ is large but the covariates admit a low-dimensional
+representation (say $r \ll p$), Principal Component Regression (PCR) is an effective approach;
+here, the response variables are regressed with respect to the principal components of the covariates.
+The resulting number of required samples to achieve vanishing prediction error now scales faster
+than $r \sigma^2 (\ll p \sigma^2)$. Despite the tremendous utility of PCR, its ability to handle
+settings with noisy, missing, and mixed (discrete and continuous) valued covariates is not understood
+and remains an important open challenge. As our main contribution, we address this challenge by
+rigorously establishing that PCR is robust to noisy, sparse, and possibly mixed valued covariates.
+Specifically, under PCR, vanishing prediction error is achieved if the number of samples scales
+as $r \max(\sigma^2, \rho^{-4} \log^5(p))$, where $\rho$ denotes the fraction of observed (noisy)
+covariates. We establish generalization error bounds for PCR, which provides a systematic approach
+to select the number of components $r$ in a data-driven manner. The key to our result is a simple, but
+powerful equivalence between: (i) PCR; (ii) Linear Regression with covariate pre-processing
+via Hard Singular Value Thresholding (HSVT). From a technical standpoint, this work advances the
+state-of-the-art analysis for HSVT by establishing stronger guarantees with respect to the $\|
+\cdot \|_{2, \infty}$-error for the estimated matrix rather than the Frobenius norm as is standard
+in the matrix estimation/completion literature. 

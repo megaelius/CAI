@@ -1,0 +1,19 @@
+HEP event selection is traditionally considered a binary classification problem, involving the
+dichotomous categories of signal and background. In distribution fits for particle masses or couplings,
+however, signal events are not all equivalent, as the signal differential cross section has different
+sensitivities to the measured parameter in different regions of phase space. In this paper, I describe
+a mathematical framework for the evaluation and optimization of HEP parameter fits, where this
+sensitivity is defined on an event-by-event basis, and for MC events it is modeled in terms of their
+MC weight derivatives with respect to the measured parameter. Minimising the statistical error
+on a measurement implies the need to resolve (i.e. separate) events with different sensitivities,
+which ultimately represents a non-dichotomous classification problem. Since MC weight derivatives
+are not available for real data, the practical strategy I suggest consists in training a regressor
+of weight derivatives against MC events, and then using it as an optimal partitioning variable for
+1-dimensional fits of data events. This CHEP2019 paper is an extension of the study presented at
+CHEP2018: in particular, event-by-event sensitivities allow the exact computation of the "FIP"
+ratio between the Fisher information obtained from an analysis and the maximum information that
+could possibly be obtained with an ideal detector. Using this expression, I discuss the relationship
+between FIP and two metrics commonly used in Meteorology (Brier score and MSE), and the importance
+of "sharpness" both in HEP and in that domain. I finally point out that HEP distribution fits should
+be optimized and evaluated using probabilistic metrics (like FIP or MSE), whereas ranking metrics
+(like AUC) or threshold metrics (like accuracy) are of limited relevance for these specific problems.

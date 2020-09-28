@@ -1,0 +1,19 @@
+Recently, there have been growing interests in solving consensus optimization problems in a multi-agent
+network. In this paper, we develop a decentralized algorithm for the consensus optimization problem
+$$\min\limits_{x\in\mathbb{R}^p}\bar{f}(x)=\frac{1}{n}\sum\limits_{i=1}^n f_i(x),$$
+which is defined over a connected network of $n$ agents, where each $f_i$ is held privately by agent
+$i$ and encodes the agent's data and objective. All the agents shall collaboratively find the minimizer
+while each agent can only communicate with its neighbors. Such a computation scheme avoids a data
+fusion center or long-distance communication and offers better load balance to the network. This
+paper proposes a novel decentralized \uline{ex}act firs\uline{t}-orde\uline{r} \uline{a}lgorithm
+(abbreviated as EXTRA) to solve the consensus optimization problem. "Exact" means that it can converge
+to the exact solution. EXTRA can use a fixed, large step size and has synchronized iterations, and
+the local variable of every agent $i$ converges uniformly and consensually to an exact minimizer
+of $\bar{f}$. In contrast, the well-known decentralized gradient descent (DGD) method must use
+diminishing step sizes in order to converge to an exact minimizer. EXTRA and DGD have a similar per-iteration
+complexity. EXTRA uses the gradients of the last two iterates instead of the last one only by DGD.
+EXTRA has the best known convergence {rates} among the existing first-order decentralized algorithms
+for decentralized consensus optimization with convex differentiable objectives. Specifically,
+if $f_i$'s are convex and have Lipschitz continuous gradients, EXTRA has an ergodic convergence
+rate $O\left(\frac{1}{k}\right)$. If $\bar{f}$ is also (restricted) strongly convex, the rate
+improves to linear at $O(C^{-k})$ for some constant $C>1$. 

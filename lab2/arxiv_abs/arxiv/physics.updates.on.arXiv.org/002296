@@ -1,0 +1,19 @@
+In this work, we introduce three algorithmic improvements to reduce the cost and improve the scaling
+of orbital space variational Monte Carlo (VMC). First, we show that by appropriately screening
+the one- and two-electron integrals of the Hamiltonian one can improve the efficiency of the algorithm
+by several orders of magnitude. This improved efficiency comes with the added benefit that the resulting
+algorithm scales as the second power of the system size $O(N^2)$, down from the fourth power $O(N^4)$.
+Using numerical results, we demonstrate that the practical scaling obtained is in fact $O(N^{1.5})$
+for a chain of Hydrogen atoms, and $O(N^{1.2})$ for the Hubbard model. Second, we introduce the use
+of the rejection-free continuous time Monte Carlo (CTMC) to sample the determinants. CTMC is usually
+prohibitively expensive because of the need to calculate a large number of intermediates. Here,
+we take advantage of the fact that these intermediates are already calculated during the evaluation
+of the local energy and consequently, just by storing them one can use the CTCM algorithm with virtually
+no overhead. Third, we show that by using the adaptive stochastic gradient descent algorithm called
+AMSGrad one can optimize the wavefunction energies robustly and efficiently. The combination
+of these three improvements allows us to calculate the ground state energy of a chain of 160 hydrogen
+atoms using a wavefunction containing $\sim 2\times 10^5$ variational parameters with an accuracy
+of 1 $mE_h$/particle at a cost of just 25 CPU hours, which when split over 2 nodes of 24 processors each
+amounts to only about half hour of wall time. This low cost coupled with embarrassing parallelizability
+of the VMC algorithm and great freedom in the forms of usable wavefunctions, represents a highly
+effective method for calculating the electronic structure of model and \emph{ab initio} systems.

@@ -1,0 +1,17 @@
+Programmable data planes recently emerged as a prominent innovation in Software Defined Networking
+(SDN), by permitting support of stateful flow processing functions over hardware network switches
+specifically designed for network processing. Unlike early SDN solutions such as OpenFlow, modern
+stateful data planes permit to keep (and dynamically update) local per-flow states inside network
+switches, thus dramatically improving reactiveness of network applications to state changes.
+Still, also in stateful data planes, the control and update of non-local states is assumed to be completely
+delegated to a centralized controller and thus accessed only at the price of extra delay. Our LOADER
+proposal aims at contrasting the apparent dichotomy between local states and global states. We
+do so by introducing a new possibility: permit to take localized (in-switch) decisions not only
+on local states but also on replicated global states, thus providing support for network-wide applications
+without incurring the drawbacks of classical approaches. To this purpose, i) we provide high-level
+programming abstractions devised to define the states and the update logic of a generic network-wide
+application, and ii) we detail the underlying low level state management and replication mechanisms.
+We then show LOADER's independence of the stateful data plane technology employed, by implementing
+it over two distinct stateful data planes (P4 switches and OPP - Open Packet Processor - switches),
+and by experimentally validating both implementations in an emulated testbed using a simple distributed
+Deny-of-Service (DoS) detection application. 

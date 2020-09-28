@@ -1,0 +1,19 @@
+In this paper, two flux-only least-squares finite element methods (LSFEM) for the linear hyperbolic
+transport problem are developed. The transport equation often has discontinuous solutions and
+discontinuous inflow boundary conditions, but the normal component of the flux across the mesh
+interfaces is continuous. In traditional LSFEMs, the continuous finite element space is used to
+approximate the solution. This will cause unnecessary error around the discontinuity and serious
+overshooting. In arXiv:1807.01524 [math.NA], we reformulate the equation by introducing a new
+flux variable to separate the continuity requirements of the flux and the solution. Realizing that
+the Raviart-Thomas mixed element space has enough degrees of freedom to approximate both the flux
+and its divergence, we eliminate the solution from the system and get two flux-only formulations,
+and develop corresponding LSFEMs. The solution then is recovered by simple post-processing methods
+using its relation with the flux. These two versions of flux-only LSFEMs use less DOFs than the method
+we developed in arXiv:1807.01524 [math.NA]. Similar to the LSFEM developed in arXiv:1807.01524
+[math.NA], both flux-only LSFEMs can handle discontinuous solutions better than the traditional
+continuous polynomial approximations. We show the existence, uniqueness, a priori and a posteriori
+error estimates of the proposed methods. With adaptive mesh refinements driven by the least-squares
+a posteriori error estimators, the solution can be accurately approximated even when the mesh is
+not aligned with discontinuity. The overshooting phenomenon is very mild if a piecewise constant
+reconstruction of the solution is used. Extensive numerical tests are done to show the effectiveness
+of the methods developed in the paper. 

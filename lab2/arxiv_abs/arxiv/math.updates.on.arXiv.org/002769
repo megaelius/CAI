@@ -1,0 +1,17 @@
+In partial differential equations-based (PDE-based) inverse problems with many measurements,
+many large-scale discretized PDEs must be solved for each evaluation of the misfit or objective
+function. In the nonlinear case, evaluating the Jacobian requires solving an additional set of
+systems. This leads to a tremendous computational cost, and this is by far the dominant cost for these
+problems. Several authors have proposed randomization and stochastic programming techniques
+to drastically reduce the number of system solves by estimating the objective function using only
+a few appropriately chosen random linear combinations of the sources. While some have reported
+good solution quality at a greatly reduced cost, for our problem of interest, diffuse optical tomography,
+the approach often does not lead to sufficiently accurate solutions. We propose two improvements.
+First, to efficiently exploit Newton-type methods, we modify the stochastic estimates to include
+random linear combinations of detectors, drastically reducing the number of adjoint solves. Second,
+after solving to a modest tolerance, we compute a few simultaneous sources and detectors that maximize
+the Frobenius norm of the sampled Jacobian to improve the rate of convergence and obtain more accurate
+solutions. We complement these optimized simultaneous sources and detectors by random simultaneous
+sources and detectors constrained to a complementary subspace. Our approach leads to solutions
+of the same quality as obtained using all sources and detectors but at a greatly reduced computational
+cost, as the number of large-scale linear systems to be solved is significantly reduced. 

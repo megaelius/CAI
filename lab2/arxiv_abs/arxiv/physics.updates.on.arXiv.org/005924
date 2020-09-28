@@ -1,0 +1,19 @@
+The Computer-Assisted Diagnosis systems could save workloads and give objective diagnostic to
+ophthalmologists. At first, feature extraction is a fundamental step. One of these retinal features
+is the fovea. The fovea is a small fossa on the fundus. The main vessels diverge from the optic nerve
+head and follow a specific course that can be geometrically modeled as a parabola, with a common vertex
+inside the optic nerve head and the fovea located along the apex of this parabola curve. Therefore,
+based on this assumption, the main retinal blood vessels are segmented and fitted to a parabolic
+model. With respect to the core vascular structure, we can thus detect fovea in the fundus images.
+For the vessel segmentation, our algorithm addresses the image locally where homogeneity of features
+is more likely to occur. The algorithm is composed of 4 steps: multi-overlapping windows, local
+Radon transform, vessel validation, and parabolic fitting. In order to extract blood vessels,
+sub-vessels should be extracted in local windows. The high contrast between blood vessels and image
+background in the images cause the vessels to be associated with peaks in the Radon space. The largest
+vessels, using a high threshold of the Radon transform, determine the main course or overall configuration
+of the blood vessels which when fitted to a parabola, leads to the future localization of the fovea.
+In effect, with an accurate fit, the fovea normally lies along the slope joining the vertex and the
+focus. The darkest region along this line is indicative of the fovea. To evaluate our method, we used
+220 fundus images from a rural database (MUMS-DB) and one public one (DRIVE). The results show that
+among 20 images of the first public database (DRIVE) we detected fovea in 85\% of them. Also for the
+MUMS-DB database among 200 images, we detect fovea correctly in 83% on them. 

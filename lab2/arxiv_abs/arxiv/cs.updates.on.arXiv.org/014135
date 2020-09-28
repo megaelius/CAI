@@ -1,0 +1,19 @@
+Several classic problems in graph processing and computational geometry are solved via incremental
+algorithms, which split computation into a series of small tasks acting on shared state, which gets
+updated progressively. While the sequential variant of such algorithms usually specifies a fixed
+(but sometimes random) order in which the tasks should be performed, a standard approach to parallelizing
+such algorithms is to relax this constraint to allow for out-of-order parallel execution. This
+is the case for parallel implementations of Dijkstra's single-source shortest-paths algorithm
+(SSSP), and for parallel Delaunay mesh triangulation. While many software frameworks parallelize
+incremental computation in this way, it is still not well understood whether this relaxed ordering
+approach can still provide any complexity guarantees. In this paper, we address this problem, and
+analyze the efficiency guarantees provided by a range of incremental algorithms when parallelized
+via relaxed schedulers. We show that, for algorithms such as Delaunay mesh triangulation and sorting
+by insertion, schedulers with a maximum relaxation factor of $k$ in terms of the maximum priority
+inversion allowed will introduce a maximum amount of wasted work of $O(log(n) poly (k) ), $ where
+$n$ is the number of tasks to be executed. For SSSP, we show that the additional work is $O(poly (k)
+d_{max} / w_{min}), $ where $d_{\max}$ is the maximum distance between two nodes, and $w_{min}$
+is the minimum such distance. In practical settings where $n \gg k$, this suggests that the overheads
+of relaxation will be outweighed by the improved scalability of the relaxed scheduler. On the negative
+side, we provide lower bounds showing that certain algorithms will inherently incur a non-trivial
+amount of wasted work due to scheduler relaxation, even for relatively benign relaxed schedulers.

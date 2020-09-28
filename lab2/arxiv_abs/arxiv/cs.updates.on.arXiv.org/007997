@@ -1,0 +1,18 @@
+While the use of deep learning in drug discovery is gaining increasing attention, the lack of methods
+to compute reliable errors in prediction for Neural Networks prevents their application to guide
+decision making in domains where identifying unreliable predictions is essential, e.g. precision
+medicine. Here, we present a framework to compute reliable errors in prediction for Neural Networks
+using Test-Time Dropout and Conformal Prediction. Specifically, the algorithm consists of training
+a single Neural Network using dropout, and then applying it N times to both the validation and test
+sets, also employing dropout in this step. Therefore, for each instance in the validation and test
+sets an ensemble of predictions were generated. The residuals and absolute errors in prediction
+for the validation set were then used to compute prediction errors for test set instances using Conformal
+Prediction. We show using 24 bioactivity data sets from ChEMBL 23 that dropout Conformal Predictors
+are valid (i.e., the fraction of instances whose true value lies within the predicted interval strongly
+correlates with the confidence level) and efficient, as the predicted confidence intervals span
+a narrower set of values than those computed with Conformal Predictors generated using Random Forest
+(RF) models. Lastly, we show in retrospective virtual screening experiments that dropout and RF-based
+Conformal Predictors lead to comparable retrieval rates of active compounds. Overall, we propose
+a computationally efficient framework (as only N extra forward passes are required in addition
+to training a single network) to harness Test-Time Dropout and the Conformal Prediction framework,
+and to thereby generate reliable prediction errors for deep Neural Networks. 

@@ -1,0 +1,18 @@
+Recently, businesses have started using MapReduce as a popular computation framework for processing
+large amount of data, such as spam detection, and different data mining tasks, in both public and
+private clouds. Two of the challenging questions in such environments are (1) choosing suitable
+values for MapReduce configuration parameters e.g., number of mappers, number of reducers, and
+DFS block size, and (2) predicting the amount of resources that a user should lease from the service
+provider. Currently, the tasks of both choosing configuration parameters and estimating required
+resources are solely the users responsibilities. In this paper, we present an approach to provision
+the total CPU usage in clock cycles of jobs in MapReduce environment. For a MapReduce job, a profile
+of total CPU usage in clock cycles is built from the job past executions with different values of two
+configuration parameters e.g., number of mappers, and number of reducers. Then, a polynomial regression
+is used to model the relation between these configuration parameters and total CPU usage in clock
+cycles of the job. We also briefly study the influence of input data scaling on measured total CPU
+usage in clock cycles. This derived model along with the scaling result can then be used to provision
+the total CPU usage in clock cycles of the same jobs with different input data size. We validate the
+accuracy of our models using three realistic applications (WordCount, Exim MainLog parsing, and
+TeraSort). Results show that the predicted total CPU usage in clock cycles of generated resource
+provisioning options are less than 8% of the measured total CPU usage in clock cycles in our 20-node
+virtual Hadoop cluster. 

@@ -1,0 +1,18 @@
+Statistical inference of analytically non-tractable posteriors is a difficult problem because
+of marginalization of correlated variables and stochastic methods such as MCMC and VI are commonly
+used. We argue that stochastic KL divergence minimization used by MCMC and VI is noisy, and we propose
+instead EL_2O, expectation optimization of L_2 distance squared between the approximate log posterior
+q and the un-normalized log posterior of p. When sampling from q the solutions agree with stochastic
+KL divergence minimization based VI in the large sample limit, however EL_2O method is free of sampling
+noise, has better optimization properties, and requires only as many sample evaluations as the
+number of parameters we are optimizing if q covers p. As a consequence, increasing the expressivity
+of q improves both the quality of results and the convergence rate, allowing EL_2O to approach exact
+inference. Use of automatic differentiation methods enables us to develop Hessian, gradient and
+gradient free versions of the method, which can determine M(M+2)/2+1, M+1 and 1 parameter(s) of
+q with a single sample, respectively. EL_2O provides a reliable estimate of the quality of the approximating
+posterior, and converges rapidly on full rank gaussian approximation for q and extensions beyond
+it, such as nonlinear transformations and gaussian mixtures. These can handle general posteriors,
+while still allowing fast analytic marginalizations. We test it on several examples, including
+a realistic 13 dimensional galaxy clustering analysis, showing that it is several orders of magnitude
+faster than MCMC, while giving smooth and accurate non-gaussian posteriors, often requiring a
+few to a few dozen of iterations only. 

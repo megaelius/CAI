@@ -1,0 +1,20 @@
+Nyquist ghost artifacts in EPI are originated from phase mismatch between the even and odd echoes.
+However, conventional correction methods using reference scans often produce erroneous results
+especially in high-field MRI due to the non-linear and time-varying local magnetic field changes.
+Recently, it was shown that the problem of ghost correction can be reformulated as k-space interpolation
+problem that can be solved using structured low-rank Hankel matrix approaches. Another recent
+work showed that data driven Hankel matrix decomposition can be reformulated to exhibit similar
+structures as deep convolutional neural network. By synergistically combining these findings,
+we propose a k-space deep learning approach that immediately corrects the phase mismatch without
+a reference scan in both accelerated and non-accelerated EPI acquisitions. To take advantage of
+the even and odd-phase directional redundancy, the k-space data is divided into two channels configured
+with even and odd phase encodings. The redundancies between coils are also exploited by stacking
+the multi-coil k-space data into additional input channels. Then, our k-space ghost correction
+network is trained to learn the interpolation kernel to estimate the missing virtual k-space data.
+For the accelerated EPI data, the same neural network is trained to directly estimate the interpolation
+kernels for missing k-space data from both ghost and subsampling. Reconstruction results using
+3T and 7T in-vivo data showed that the proposed method outperformed the image quality compared to
+the existing methods, and the computing time is much faster.The proposed k-space deep learning
+for EPI ghost correction is highly robust and fast, and can be combined with acceleration, so that
+it can be used as a promising correction tool for high-field MRI without changing the current acquisition
+protocol. 

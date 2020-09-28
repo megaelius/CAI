@@ -1,0 +1,18 @@
+We consider expected risk minimization in multi-agent systems comprised of distinct subsets of
+agents operating without a common time-scale. Each individual in the network is charged with minimizing
+the global objective function, which is an average of sum of the statistical average loss function
+of each agent in the network. Since agents are not assumed to observe data from identical distributions,
+the hypothesis that all agents seek a common action is violated, and thus the hypothesis upon which
+consensus constraints are formulated is violated. Thus, we consider nonlinear network proximity
+constraints which incentivize nearby nodes to make decisions which are close to one another but
+not necessarily coincide. Moreover, agents are not assumed to receive their sequentially arriving
+observations on a common time index, and thus seek to learn in an asynchronous manner. An asynchronous
+stochastic variant of the Arrow-Hurwicz saddle point method is proposed to solve this problem which
+operates by alternating primal stochastic descent steps and Lagrange multiplier updates which
+penalize the discrepancies between agents. This tool leads to an implementation that allows for
+each agent to operate asynchronously with local information only and message passing with neighbors.
+Our main result establishes that the proposed method yields convergence in expectation both in
+terms of the primal sub-optimality and constraint violation to radii of sizes $\mathcal{O}(\sqrt{T})$
+and $\mathcal{O}(T^{3/4})$, respectively. Empirical evaluation on an asynchronously operating
+wireless network that manages user channel interference through an adaptive communications pricing
+mechanism demonstrates that our theoretical results translates well to practice. 

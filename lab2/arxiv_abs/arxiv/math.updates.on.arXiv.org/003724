@@ -1,0 +1,19 @@
+Markov chain Monte Carlo methods are a powerful and commonly used family of numerical methods for
+sampling from complex probability distributions. As applications of these methods increase in
+size and complexity, the need for efficient methods increases. In this paper, we present a particle
+ensemble algorithm. At each iteration, an importance sampling proposal distribution is formed
+using an ensemble of particles. A stratified sample is taken from this distribution and weighted
+under the posterior, a state-of-the-art ensemble transport resampling method is then used to create
+an evenly weighted sample ready for the next iteration. We demonstrate that this ensemble transport
+adaptive importance sampling (ETAIS) method outperforms MCMC methods with equivalent proposal
+distributions for low dimensional problems, and in fact shows better than linear improvements
+in convergence rates with respect to the number of ensemble members. We also introduce a new resampling
+strategy, multinomial transformation (MT), which while not as accurate as the ensemble transport
+resampler, is substantially less costly for large ensemble sizes, and can then be used in conjunction
+with ETAIS for complex problems. We also focus on how algorithmic parameters regarding the mixture
+proposal can be quickly tuned to optimise performance. In particular, we demonstrate this methodology's
+superior sampling for multimodal problems, such as those arising from inference for mixture models,
+and for problems with expensive likelihoods requiring the solution of a differential equation,
+for which speed-ups of orders of magnitude are demonstrated. Likelihood evaluations of the ensemble
+could be computed in a distributed manner, suggesting that this methodology is a good candidate
+for parallel Bayesian computations. 

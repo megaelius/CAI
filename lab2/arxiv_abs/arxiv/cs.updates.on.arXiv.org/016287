@@ -1,0 +1,19 @@
+Ischemic stroke lesion segmentation from Computed Tomography Perfusion (CTP) images is important
+for accurate diagnosis of stroke in acute care units. However, it is challenged by low image contrast
+and resolution of the perfusion parameter maps, in addition to the complex appearance of the lesion.
+To deal with this problem, we propose a novel framework based on synthesized pseudo Diffusion-Weighted
+Imaging (DWI) from perfusion parameter maps to obtain better image quality for more accurate segmentation.
+Our framework consists of three components based on Convolutional Neural Networks (CNNs) and is
+trained end-to-end. First, a feature extractor is used to obtain both a low-level and high-level
+compact representation of the raw spatiotemporal Computed Tomography Angiography (CTA) images.
+Second, a pseudo DWI generator takes as input the concatenation of CTP perfusion parameter maps
+and our extracted features to obtain the synthesized pseudo DWI. To achieve better synthesis quality,
+we propose a hybrid loss function that pays more attention to lesion regions and encourages high-level
+contextual consistency. Finally, we segment the lesion region from the synthesized pseudo DWI,
+where the segmentation network is based on switchable normalization and channel calibration for
+better performance. Experimental results showed that our framework achieved the top performance
+on ISLES 2018 challenge and: 1) our method using synthesized pseudo DWI outperformed methods segmenting
+the lesion from perfusion parameter maps directly; 2) the feature extractor exploiting additional
+spatiotemporal CTA images led to better synthesized pseudo DWI quality and higher segmentation
+accuracy; and 3) the proposed loss functions and network structure improved the pseudo DWI synthesis
+and lesion segmentation performance. 

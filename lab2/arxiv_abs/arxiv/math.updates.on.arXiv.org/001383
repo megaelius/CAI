@@ -1,0 +1,18 @@
+Single-Particle Reconstruction (SPR) in Cryo-Electron Microscopy (cryo-EM) is the task of estimating
+the 3D structure of a molecule from a set of noisy 2D projections, taken from unknown viewing directions.
+Many algorithms for SPR start from an initial reference molecule, and alternate between refining
+the estimated viewing angles given the molecule, and refining the molecule given the viewing angles.
+This scheme is called iterative refinement. Reliance on an initial, user-chosen reference introduces
+model bias, and poor initialization can lead to slow convergence. Furthermore, since no ground
+truth is available for an unsolved molecule, it is difficult to validate the obtained results. This
+creates the need for high quality ab initio models that can be quickly obtained from experimental
+data with minimal priors, and which can also be used for validation. We propose a procedure to obtain
+such an ab initio model directly from raw data using Kam's autocorrelation method. Kam's method
+has been known since 1980, but it leads to an underdetermined system, with missing orthogonal matrices.
+Until now, this system has been solved only for special cases, such as highly symmetric molecules
+or molecules for which a homologous structure was already available. In this paper, we show that
+knowledge of just two clean projections is sufficient to guarantee a unique solution to the system.
+This system is solved by an optimization-based heuristic. For the first time, we are then able to
+obtain a low-resolution ab initio model of an asymmetric molecule directly from raw data, without
+2D class averaging and without tilting. Numerical results are presented on both synthetic and experimental
+data. 

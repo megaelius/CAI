@@ -1,0 +1,19 @@
+Obtaining a non-trivial (super-linear) lower bound for computation of the Fourier transform in
+the linear circuit model has been a long standing open problem. All lower bounds so far have made strong
+restrictions on the computational model. An early result by Morgenstern from 1973, provides an
+$\Omega(n \log n)$ lower bound for the \emph{unnormalized} FFT when the constants used in the computation
+are bounded. The proof uses a potential function related to a determinant. The determinant of the
+unnormalized Fourier transform is $n^{n/2}$, and thus by showing that it can grow by at most a constant
+factor after each step yields the result. This classic result does not explain why the normalized
+Fourier transform (of unit determinant) should require $\Omega(n\log n)$ steps. More recently,
+Ailon (2013) showed that if only unitary 2-by-2 gates are used, one obtains an $\Omega(n\log n)$
+lower bound. The normalized FFT works in this model. In this work we take another step and show an $\Omega(n\log
+n)$ lower bound in a considerably less restricted computational model. In this model, we allow the
+gates to perform any nonsingular (not necessarily unitary) transformation. Our restriction is
+that, at any moment, the corresponding transformation is well conditioned with constant $R$. This
+is a practical requirement from an engineering point of view because an ill conditioned transformation
+must result in numerical instability for certain inputs. The main technical technique is extending
+the notion of matrix entropy of Ailon (2013) to the nonsingular group. For the unitary subgroup this
+was easily defined as Shannon entropy of the distribution defined using the matrix elements squared.
+For nonsingular matrices, it turns out that the correct way to define this potential is by using both
+the matrix and its inverse, and also to allow ``negative probabilities''. 

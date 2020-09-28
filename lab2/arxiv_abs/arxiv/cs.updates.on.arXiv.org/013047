@@ -1,0 +1,18 @@
+We present a novel approach to perform the unsupervised domain adaptation for object detection
+through forward-backward cyclic (FBC) training. Recent adversarial training based domain adaptation
+methods have shown their effectiveness on minimizing domain discrepancy via marginal feature
+distributions alignment. However, aligning the marginal feature distributions does not guarantee
+the alignment of class conditional distributions. This limitation is more evident when adapting
+object detectors as the domain discrepancy is larger compared to the image classification task,
+e.g. various number of objects exist in one image and the majority of content in an image is the background.
+This motivates us to learn domain invariance for category level semantics via gradient alignment.
+Intuitively, if the gradients of two domains point in similar directions, then the learning of one
+domain can improve that of another domain. To achieve gradient alignment, we propose Forward-Backward
+Cyclic Adaptation, which iteratively computes adaptation from source to target via backward hopping
+and from target to source via forward passing. In addition, we align low-level features for adapting
+holistic color/texture via adversarial training. However, the detector performs well on both
+domains is not ideal for target domain. As such, in each cycle, domain diversity is enforced by maximum
+entropy regularization on the source domain to penalize confident source-specific learning and
+minimum entropy regularization on target domain to intrigue target-specific learning. Theoretical
+analysis of the training process is provided, and extensive experiments on challenging cross-domain
+object detection datasets have shown the superiority of our approach over the state-of-the-art.

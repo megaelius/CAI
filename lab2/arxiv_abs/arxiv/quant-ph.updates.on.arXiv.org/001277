@@ -1,0 +1,18 @@
+We study quantum period finding algorithms such as Simon and Shor (and its variants Eker\aa-H\aa
+stad and Mosca-Ekert). For a periodic function $f$ these algorithms produce -- via some quantum
+embedding of $f$ -- a quantum superposition $\sum_x |x\rangle|f(x)\rangle$, which requires a
+certain amount of output qubits that represent $|f(x)\rangle$. We show that one can lower this amount
+to a single output qubit by hashing $f$ down to a single bit in an oracle setting. Namely, we replace
+the embedding of $f$ in quantum period finding circuits by oracle access to several embeddings of
+hashed versions of $f$. We show that on expectation this modification only doubles the required
+amount of quantum measurements, while significantly reducing the total number of qubits. For example,
+for Simon's period finding algorithm in some $n$-bit function $f: \mathbb{F}_2^n \rightarrow
+\mathbb{F}_2^n$ our hashing technique reduces the required output qubits from $n$ down to $1$,
+and therefore the total amount of qubits from $2n$ to $n+1$. We also show that Simon's algorithm admits
+real world applications with only $n+1$ qubits by giving a concrete realization of a hashed version
+of the cryptographic Even-Mansour construction. Our oracle-based hashed version of the Eker\aa-H\aa
+stad algorithm for factoring $n$-bit RSA reduces the required qubits from $(\frac 3 2 + o(1))n$ down
+to $(\frac 1 2 + o(1))n$. In principle our hashing approach also works for the Mosca-Ekert algorithm,
+but requires strong properties of the hash function family. A hashed version of Mosca-Ekert with
+as few as $\mathcal{O}(\log n)$ qubits would imply classical polynomial time factoring. Therefore,
+the search for suitable hash functions might open a new path to factoring in ${\cal P}$. 

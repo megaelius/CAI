@@ -1,0 +1,18 @@
+Model-based reinforcement learning (MBRL) has been proposed as a promising alternative solution
+to tackle the high sampling cost challenge in the canonical reinforcement learning (RL), by leveraging
+a learned model to generate synthesized data for policy training purpose. The MBRL framework, nevertheless,
+is inherently limited by the convoluted process of jointly learning control policy and configuring
+hyper-parameters (e.g., global/local models, real and synthesized data, etc). The training process
+could be tedious and prohibitively costly. In this research, we propose an "reinforcement on reinforcement"
+(RoR) architecture to decompose the convoluted tasks into two layers of reinforcement learning.
+The inner layer is the canonical model-based RL training process environment (TPE), which learns
+the control policy for the underlying system and exposes interfaces to access states, actions and
+rewards. The outer layer presents an RL agent, called as AI trainer, to learn an optimal hyper-parameter
+configuration for the inner TPE. This decomposition approach provides a desirable flexibility
+to implement different trainer designs, called as "train the trainer". In our research, we propose
+and optimize two alternative trainer designs: 1) a uni-head trainer and 2) a multi-head trainer.
+Our proposed RoR framework is evaluated for five tasks in the OpenAI gym (i.e., Pendulum, Mountain
+Car, Reacher, Half Cheetah and Swimmer). Compared to three other baseline algorithms, our proposed
+Train-the-Trainer algorithm has a competitive performance in auto-tuning capability, with upto
+56% expected sampling cost saving without knowing the best parameter setting in advance. The proposed
+trainer framework can be easily extended to other cases in which the hyper-parameter tuning is costly.

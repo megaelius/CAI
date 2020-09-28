@@ -1,0 +1,20 @@
+State machines are a common model for robot behaviors. Transition functions often rely on parameterized
+conditions to model preconditions for the controllers, where the correct values of the parameters
+depend on factors relating to the environment or the specific robot. In the absence of specific calibration
+procedures a roboticist must painstakingly adjust the parameters through a series of trial and
+error experiments. In this process, identifying when the robot has taken an incorrect action, and
+what should be done is straightforward, but finding the right parameter values can be difficult.
+We present an alternative approach that we call, interactive SMT-based Robot Transition Repair.
+During execution we record an execution trace of the transition function, and we ask the roboticist
+to identify a few instances where the robot has transitioned incorrectly, and what the correct transition
+should have been. A user supplies these corrections based on the type of error to repair, and an automated
+analysis of the traces partially evaluates the transition function for each correction. This system
+of constraints is then formulated as a MaxSMT problem, where the solution is a minimal adjustment
+to the parameters that satisfies the maximum number of constraints. In order to identify a repair
+that accurately captures user intentions and generalizes to novel scenarios, solutions are explored
+by iteratively adding constraints to the MaxSMT problem to yield sets of alternative repairs. We
+test with state machines from multiple domains including robot soccer and autonomous driving,
+and we evaluate solver based repair with respect to solver choice and optimization hyperparameters.
+Our results demonstrate that SRTR can repair a variety of states machines and error types 1) quickly,
+2) with small numbers of corrections, while 3) not overcorrecting state machines and harming generalized
+performance. 

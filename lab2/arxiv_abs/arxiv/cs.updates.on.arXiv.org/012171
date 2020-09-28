@@ -1,0 +1,17 @@
+State-of-the-art stream processing platforms make use of checkpointing to support fault tolerance,
+where a "checkpoint tuple" flows through the topology to all operators, indicating a checkpoint
+and triggering a checkpoint operation. The checkpoint will enable recovering from any kind of failure,
+be it as localized as a process fault or as wide spread as power supply loss to an entire rack of machines.
+As we move towards Exascale computing, it is becoming clear that this kind of "single-level" checkpointing
+is too inefficient to scale. Some HPC researchers are now investigating multi-level checkpointing,
+where checkpoint operations at each level are tailored to specific kinds of failure to address the
+inefficiencies of single-level checkpointing. Multi-level checkpointing has been shown in practice
+to be superior, giving greater efficiency in operation over single-level checkpointing. However,
+to date there is no theoretical basis that provides optimal parameter settings for an interval-based
+coordinated multi-level checkpointing approach. This paper presents a theoretical framework
+for determining optimal parameter settings in an interval-based multi-level periodic checkpointing
+system, that is applicable to stream processing. Our approach is stochastic, where at a given checkpoint
+interval, a level is selected with some probability for checkpointing. We derive the optimal checkpoint
+interval and associated optimal checkpoint probabilities for a multi-level checkpointing system,
+that considers failure rates, checkpoint costs, restart costs and possible failure during restarting,
+at every level. We confirm our results with stochastic simulation and practical experimentation.

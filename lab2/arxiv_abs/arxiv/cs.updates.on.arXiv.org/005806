@@ -1,0 +1,20 @@
+Multiple design iterations are inevitable in nanometer Integrated Circuit (IC) design flow until
+desired printability and performance metrics are achieved. This starts with placement optimization
+aimed at improving routability, wirelength, congestion and timing in the design. Contrarily,
+no such practice exists on a floorplanned layout, during the early stage of the design flow. Recently,
+STAIRoute \cite{karb2} aimed to address that by identifying the shortest routing path of a net through
+a set of routing regions in the floorplan in multiple metal layers. Since the blocks in hierarchical
+ASIC/SoC designs do not use all the permissible routing layers for the internal routing corresponding
+to standard cell connectivity, the proposed STAIRoute framework is not an effective for early global
+routability assessment. This leads to improper utilization of routing area, specifically in higher
+routing layers with fewer routing blockages, as the lack of placement of standard cells does not
+facilitates any routing of their interconnections. This paper presents a generalized model for
+early global routability assessment, HGR, by utilizing the free regions over the blocks beyond
+certain metal layers. The proposed (hybrid) routing model comprises of (a) the junction graph model
+in STAIRoute routing through the block boundary regions in lower routing layers, and (ii) the grid
+graph model for routing in higher layers over the free regions of the blocks. Experiment with the
+latest floorplanning benchmarks exhibit an average reduction of $4\%$, $54\%$ and $70\%$ in netlength,
+via count, and congestion respectively when HGR is used over STAIRoute. Further, we conducted another
+experiment on an industrial design flow targeted for $45nm$ process, and the results are encouraging
+with $~3$X runtime boost when early global routing is used in conjunction with the existing physical
+design flow. 

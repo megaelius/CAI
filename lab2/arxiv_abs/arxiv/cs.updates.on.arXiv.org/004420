@@ -1,0 +1,18 @@
+Modern processors utilize an increasingly large register set to facilitate efficient floating
+point and SIMD computation. This large register set is a burden for operating systems, as its content
+needs to be saved and restored when the operating system context switches between tasks. As an optimization,
+the operating system can defer the context switch of the FPU and SIMD register set until the first
+instruction is executed that needs access to these registers. Meanwhile, the old content is left
+in place with the hope that the current task might not use these registers at all. This optimization
+is commonly called lazy FPU context switching. To make it possible, a processor offers the ability
+to toggle the availability of instructions utilizing floating point and SIMD registers. If the
+instructions are turned off, any attempt of executing them will generate a fault. In this paper,
+we present an attack that exploits lazy FPU context switching and allows an adversary to recover
+the FPU and SIMD register set of arbitrary processes or VMs. The attack works on processors that transiently
+execute FPU or SIMD instructions that follow an instruction generating the fault indicating the
+first use of FPU or SIMD instructions. On operating systems using lazy FPU context switching, the
+FPU and SIMD register content of other processes or virtual machines can then be reconstructed via
+cache side effects. With SIMD registers not only being used for cryptographic computation, but
+also increasingly for simple operations, such as copying memory, we argue that lazy FPU context
+switching is a dangerous optimization that needs to be turned off in all operating systems, if there
+is a chance that they run on affected processors. 

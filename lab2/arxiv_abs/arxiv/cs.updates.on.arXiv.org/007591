@@ -1,0 +1,17 @@
+Advances in neuroscience uncover the mechanisms employed by the brain to efficiently solve complex
+learning tasks with very limited resources. However, the efficiency is often lost when one tries
+to port these findings to a silicon substrate, since brain-inspired algorithms often make extensive
+use of complex functions such as random number generators, that are expensive to compute on standard
+general purpose hardware. The prototype chip of the 2nd generation SpiNNaker system is designed
+to overcome this problem. Low-power ARM processors equipped with a random number generator and
+an exponential function accelerator enable the efficient execution of brain-inspired algorithms.
+We implement the recently introduced reward-based synaptic sampling model that employs structural
+plasticity to learn a function or task. The numerical simulation of the model requires to update
+the synapse variables in each time step including an explorative random term. To the best of our knowledge,
+this is the most complex synapse model implemented so far on the SpiNNaker system. By making efficient
+use of the hardware accelerators and numerical optimizations the computation time of one plasticity
+update is reduced by a factor of 2. This, combined with fitting the model into to the local SRAM, leads
+to 62% energy reduction compared to the case without accelerators and the use of external DRAM. The
+model implementation is integrated into the SpiNNaker software framework allowing for scalability
+onto larger systems. The hardware-software system presented in this work paves the way for power-efficient
+mobile and biomedical applications with biologically plausible brain-inspired algorithms.

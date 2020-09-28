@@ -1,0 +1,19 @@
+We present a grism extraction package (LINEAR) designed to reconstruct one-dimensional spectra
+from a collection of slitless spectroscopic images, ideally taken at a variety of orientations,
+dispersion directions, and/or dither positions. Our approach is to enumerate every transformation
+between all direct image positions (ie. a potential source) and the collection of grism images at
+all relevant wavelengths. This leads to solving a large, sparse system of linear equations, which
+we invert using the standard LSQR algorithm. We implement a number of color and geometric corrections
+(such as flat field, pixel-area map, source morphology, and spectral bandwidth), but assume many
+effects have been calibrated out (such as basic reductions, background subtraction, and astrometric
+refinement). We demonstrate the power of our approach with several Monte Carlo simulations and
+the analysis of archival data. The simulations include astrometric and photometric uncertainties,
+sky-background estimation, and signal-to-noise calculations. The data are G141 observations
+obtained with the Wide-Field Camera 3 of the Hubble Ultra-Deep Field, and show the power of our formalism
+by improving the spectral resolution without sacrificing the signal-to-noise (a tradeoff that
+is often made by current approaches). Additionally, our approach naturally accounts for source
+contamination, which is only handled heuristically by present softwares. We conclude with a discussion
+of various observations where our approach will provide much improved spectral one-dimensional
+spectra, such as crowded fields (star or galaxy clusters), spatially resolved spectroscopy, or
+surveys with strict completeness requirements. At present our software is heavily geared for Wide-Field
+Camera 3 IR, however we plan extend the codebase for additional instruments. 

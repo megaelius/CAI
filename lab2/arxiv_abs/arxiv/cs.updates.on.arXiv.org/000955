@@ -1,0 +1,17 @@
+In the context of mapping high-level algorithms to hardware, we consider the basic problem of generating
+an efficient hardware implementation of a single threaded program, in particular, that of an inner
+loop. We describe a control-flow mechanism which provides dynamic loop-pipelining capability
+in hardware, so that multiple iterations of an arbitrary inner loop can be made simultaneously active
+in the generated hardware, We study the impact of this loop-pipelining scheme in conjunction with
+source-level loop-unrolling. In particular, we apply this technique to some common loop kernels:
+regular kernels such as the fast-fourier transform and matrix multiplication, as well as an example
+of an inner loop whose body has branching. The resulting resulting hardware descriptions are synthesized
+to an FPGA target, and then characterized for performance and resource utilization. We observe
+that the use of dynamic loop-pipelining mechanism alone typically results in a significant improvements
+in the performance of the hardware. If the loop is statically unrolled and if loop-pipelining is
+applied to the unrolled program, then the performance improvement is still substantial. When dynamic
+loop pipelining is used in conjunction with static loop unrolling, the improvement in performance
+ranges from 6X to 20X (in terms of number of clock cycles needed for the computation) across the loop
+kernels that we have studied. These optimizations do have a hardware overhead, but, in spite of this,
+we observe that the joint use of these loop optimizations not only improves performance, but also
+the performance/cost ratio of the resulting hardware. 

@@ -1,0 +1,18 @@
+The problem of continuous optimal control (over finite time horizon) is to minimize a given cost
+function over the sequence of continuous control variables. The problem of continuous inverse
+optimal control is to learn the unknown cost function from expert demonstrations. In this article,
+we study this fundamental problem in the framework of energy-based model, where the observed expert
+trajectories are assumed to be random samples from a probability density function defined as the
+exponential of the negative cost function up to a normalizing constant. The parameters of the cost
+function are learned by maximum likelihood via an "analysis by synthesis" scheme, which iterates
+the following two steps: (1) Synthesis step: sample the synthesized trajectories from the current
+probability density using the Langevin dynamics. (2) Analysis step: update the model parameters
+based on the difference between the synthesized trajectories and the observed trajectories. Given
+the fact that an efficient optimization algorithm is usually available for an optimal control problem,
+we also consider a variation of the above learning method, where we modify the synthesis step (1)
+into an optimization step while keeping the analysis step (2) unchanged. Specifically, instead
+of sampling each synthesized trajectory from the current probability density, we minimize the
+current cost function over the sequence of control variables using the existing optimization algorithm.
+We give justifications for this optimization-based method. We demonstrate the proposed energy-based
+continuous optimal control methods on autonomous driving tasks, and show that the proposed methods
+can learn suitable cost functions for optimal control. 

@@ -1,0 +1,19 @@
+Consider the following fundamental learning problem: given input examples $x \in \mathbb{R}^d$
+and their vector-valued labels, as defined by an underlying generative neural network, recover
+the weight matrices of this network. We consider two-layer networks, mapping $\mathbb{R}^d$ to
+$\mathbb{R}^m$, with $k$ non-linear activation units $f(\cdot)$, where $f(x) = \max \{x , 0\}$
+is the ReLU. Such a network is specified by two weight matrices, $\mathbf{U}^* \in \mathbb{R}^{m
+\times k}, \mathbf{V}^* \in \mathbb{R}^{k \times d}$, such that the label of an example $x \in \mathbb{R}^{d}$
+is given by $\mathbf{U}^* f(\mathbf{V}^* x)$, where $f(\cdot)$ is applied coordinate-wise. Given
+$n$ samples as a matrix $\mathbf{X} \in \mathbb{R}^{d \times n}$ and the (possibly noisy) labels
+$\mathbf{U}^* f(\mathbf{V}^* \mathbf{X}) + \mathbf{E}$ of the network on these samples, where
+$\mathbf{E}$ is a noise matrix, our goal is to recover the weight matrices $\mathbf{U}^*$ and $\mathbf{V}^*$.
+In this work, we develop algorithms and hardness results under varying assumptions on the input
+and noise. Although the problem is NP-hard even for $k=2$, by assuming Gaussian marginals over the
+input $\mathbf{X}$ we are able to develop polynomial time algorithms for the approximate recovery
+of $\mathbf{U}^*$ and $\mathbf{V}^*$. Perhaps surprisingly, in the noiseless case our algorithms
+recover $\mathbf{U}^*,\mathbf{V}^*$ exactly, i.e., with no error. To the best of the our knowledge,
+this is the first algorithm to accomplish exact recovery. For the noisy case, we give the first polynomial
+time algorithm that approximately recovers the weights in the presence of mean-zero noise $\mathbf{E}$.
+Our algorithms generalize to a larger class of rectified activation functions, $f(x) = 0$ when $x\leq
+0$, and $f(x) > 0$ otherwise. 

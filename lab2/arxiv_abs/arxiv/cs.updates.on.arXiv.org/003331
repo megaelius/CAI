@@ -1,0 +1,17 @@
+Consider two data providers, each maintaining records of different feature sets about common entities.
+They aim to learn a linear model over the whole set of features. This problem of federated learning
+over vertically partitioned data includes a crucial upstream issue: entity resolution, i.e. finding
+the correspondence between the rows of the datasets. It is well known that entity resolution, just
+like learning, is mistake-prone in the real world. Despite the importance of the problem, there
+has been no formal assessment of how errors in entity resolution impact learning. In this paper,
+we provide a thorough answer to this question, answering how optimal classifiers, empirical losses,
+margins and generalisation abilities are affected. While our answer spans a wide set of losses ---
+going beyond proper, convex, or classification calibrated ---, it brings simple practical arguments
+to upgrade entity resolution as a preprocessing step to learning. One of these suggests that entity
+resolution should be aimed at controlling or minimizing the number of matching errors between examples
+of distinct classes. In our experiments, we modify a simple token-based entity resolution algorithm
+so that it indeed aims at avoiding matching rows belonging to different classes, and perform experiments
+in the setting where entity resolution relies on noisy data, which is very relevant to real world
+domains. Notably, our approach covers the case where one peer \textit{does not} have classes, or
+a noisy record of classes. Experiments display that using the class information during entity resolution
+can buy significant uplift for learning at little expense from the complexity standpoint. 

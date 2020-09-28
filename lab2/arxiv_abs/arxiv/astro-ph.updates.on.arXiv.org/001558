@@ -1,0 +1,17 @@
+In a companion paper we have shown how the equations describing gas and dust as two fluids coupled
+by a drag term can be reformulated to describe the system as a single fluid mixture. Here we present
+a numerical implementation of the one-fluid dusty gas algorithm using Smoothed Particle Hydrodynamics
+(SPH). The algorithm preserves the conservation properties of the SPH formalism. In particular,
+the total gas and dust mass, momentum, angular momentum and energy are all exactly conserved. Shock
+viscosity and conductivity terms are generalised to handle the two-phase mixture accordingly.
+The algorithm is benchmarked against a comprehensive suit of problems: dustybox, dustywave, dustyshock
+and dustyoscill, each of them addressing different properties of the method. We compare the performance
+of the one-fluid algorithm to the standard two-fluid approach. The one-fluid algorithm is found
+to solve both of the fundamental limitations of the two- fluid algorithm: it is no longer possible
+to concentrate dust below the resolution of the gas (they have the same resolution by definition),
+and the spatial resolution criterion h < csts, required in two-fluid codes to avoid over-damping
+of kinetic energy, is unnecessary. Implicit time stepping is straightforward. As a result, the
+algorithm is up to ten billion times more efficient for 3D simulations of small grains. Additional
+benefits include the use of half as many particles, a single kernel and fewer SPH interpolations.
+The only limitation is that it does not capture multi-streaming of dust in the limit of zero coupling,
+suggesting that in this case a hybrid approach may be required. 

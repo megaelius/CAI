@@ -1,0 +1,19 @@
+While 3D reconstruction is a well-established and widely explored research topic, semantic 3D
+reconstruction has only recently witnessed an increasing share of attention from the Computer
+Vision community. Semantic annotations allow in fact to enforce strong class-dependent priors,
+as planarity for ground and walls, which can be exploited to refine the reconstruction often resulting
+in non-trivial performance improvements. State-of-the art methods propose volumetric approaches
+to fuse RGB image data with semantic labels; even if successful, they do not scale well and fail to
+output high resolution meshes. In this paper we propose a novel method to refine both the geometry
+and the semantic labeling of a given mesh. We refine the mesh geometry by applying a variational method
+that optimizes a composite energy made of a state-of-the-art pairwise photo-metric term and a single-view
+term that models the semantic consistency between the labels of the 3D mesh and those of the segmented
+images. We also update the semantic labeling through a novel Markov Random Field (MRF) formulation
+that, together with the classical data and smoothness terms, takes into account class-specific
+priors estimated directly from the annotated mesh. This is in contrast to state-of-the-art methods
+that are typically based on handcrafted or learned priors. We are the first, jointly with the very
+recent and seminal work of [M. Blaha et al arXiv:1706.08336, 2017], to propose the use of semantics
+inside a mesh refinement framework. Differently from [M. Blaha et al arXiv:1706.08336, 2017],
+which adopts a more classical pairwise comparison to estimate the flow of the mesh, we apply a single-view
+comparison between the semantically annotated image and the current 3D mesh labels; this improves
+the robustness in case of noisy segmentations. 

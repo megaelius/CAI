@@ -1,0 +1,20 @@
+In Multi-Agent Reinforcement Learning, independent cooperative learners must overcome a number
+of pathologies in order to learn optimal joint policies. These pathologies include action-shadowing,
+stochasticity, the moving target and alter-exploration problems (Matignon, Laurent, and Le Fort-Piat
+2012; Wei and Luke 2016). Numerous methods have been proposed to address these pathologies, but
+evaluations are predominately conducted in repeated strategic-form games and stochastic games
+consisting of only a small number of state transitions. This raises the question of the scalability
+of the methods to complex, temporally extended, partially observable domains with stochastic
+transitions and rewards. In this paper we study such complex settings, which require reasoning
+over long time horizons and confront agents with the curse of dimensionality. To deal with the dimensionality,
+we adopt a Multi-Agent Deep Reinforcement Learning (MA-DRL) approach. We find that when the agents
+have to make critical decisions in seclusion, existing methods succumb to a combination of relative
+overgeneralisation (a type of action shadowing), the alter-exploration problem, and the stochasticity.
+To address these pathologies we introduce expanding negative update intervals that enable independent
+learners to establish the near-optimal average utility values for higher-level strategies while
+largely discarding transitions from episodes that result in mis-coordination. We evaluate Negative
+Update Intervals Double-DQN (NUI-DDQN) within a temporally extended Climb Game, a normal form
+game which has frequently been used to study relative over-generalisation and other pathologies.
+We show that NUI-DDQN can converge towards optimal joint-policies in deterministic and stochastic
+reward settings, overcoming relative-overgeneralisation and the alter-exploration problem
+while mitigating the moving target problem. 

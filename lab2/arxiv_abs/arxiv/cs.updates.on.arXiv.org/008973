@@ -1,0 +1,18 @@
+The Teyjus system realizes the higher-order logic programming language$\lambda$Prolog by compiling
+programs into bytecode for an abstract machine and executing this translated form using a simulator
+for the machine. Teyjus supports a number of builtin relations that are realized through C code.
+In the current scheme, these relations are realized by including the C programs that implement them
+within the simulator and tailoring the compiler to produce instructions to invoke such code. There
+are two drawbacks to such an approach. First, the entire collection of library functions must be
+included within the system, thereby leading to a larger than necessary memory footprint. Second,
+enhancing the collection of built-in predicates requires changing parts of the simulator and compiler,
+a task whose accomplishment requires specific knowledge of these two subsystems. This project
+addresses these problems in three steps. First, the code for the builtin functions is moved from
+the simulator into a library from where relevant parts, determined by information in the bytecode
+file, are linked into the runtime system at load time. Second, information is associated with each
+library function about how it can be invoked from a $\lambda$Prolog program and where the C code for
+it is to be found. Finally, the compiler is modified to use the preceding information to include relevant
+linking instructions in the bytecode file and to translate invocations to builtin relations into
+a special instruction that calls the dynamically linked code. More generally, these ideas are capable
+of supporting an interface in $\lambda$Prolog to "foreign functions" implemented in C, a possibility
+that is also discussed. 

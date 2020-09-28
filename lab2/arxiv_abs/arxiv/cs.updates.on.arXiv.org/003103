@@ -1,0 +1,18 @@
+Robotic algorithms typically depend on various parameters, the choice of which significantly
+affects the robot's performance. While an initial guess for the parameters may be obtained from
+dynamic models of the robot, parameters are usually tuned manually on the real system to achieve
+the best performance. Optimization algorithms, such as Bayesian optimization, have been used
+to automate this process. However, these methods may evaluate unsafe parameters during the optimization
+process that lead to safety-critical system failures. Recently, a safe Bayesian optimization
+algorithm, called SafeOpt, has been developed, which guarantees that the performance of the system
+never falls below a critical value; that is, safety is defined based on the performance function.
+However, coupling performance and safety is often not desirable in robotics. For example, high-gain
+controllers might achieve low average tracking error (performance), but can overshoot and violate
+input constraints. In this paper, we present a generalized algorithm that allows for multiple safety
+constraints separate from the objective. Given an initial set of safe parameters, the algorithm
+maximizes performance but only evaluates parameters that satisfy safety for all constraints with
+high probability. To this end, it carefully explores the parameter space by exploiting regularity
+assumptions in terms of a Gaussian process prior. Moreover, we show how context variables can be
+used to safely transfer knowledge to new situations and tasks. We provide a theoretical analysis
+and demonstrate that the proposed algorithm enables fast, automatic, and safe optimization of
+tuning parameters in experiments on a quadrotor vehicle. 

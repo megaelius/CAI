@@ -1,0 +1,18 @@
+In this paper, we study an intermediate form of supervision, i.e., single-frame supervision, for
+temporal action localization (TAL). To obtain the single-frame supervision, the annotators are
+asked to identify only a single frame within the temporal window of an action. This can significantly
+reduce the labor cost of obtaining full supervision which requires annotating the action boundary.
+Compared to the weak supervision that only annotates the video-level label, the single-frame supervision
+introduces extra temporal action signals while maintaining low annotation overhead. To make full
+use of such single-frame supervision, we propose a unified system called SF-Net. First, we propose
+to predict an actionness score for each video frame. Along with a typical category score, the actionness
+score can provide comprehensive information about the occurrence of a potential action and aid
+the temporal boundary refinement during inference. Second, we mine pseudo action and background
+frames based on the single-frame annotations. We identify pseudo action frames by adaptively expanding
+each annotated single frame to its nearby, contextual frames and we mine pseudo background frames
+from all the unannotated frames across multiple videos. Together with the ground-truth labeled
+frames, these pseudo-labeled frames are further used for training the classifier. In extensive
+experiments on THUMOS14, GTEA, and BEOID, SF-Net significantly improves upon state-of-the-art
+weakly-supervised methods in terms of both segment localization and single-frame localization.
+Notably, SF-Net achieves comparable results to its fully-supervised counterpart which requires
+much more resource intensive annotations. The code is available at https://github.com/Flowerfan/SF-Net.

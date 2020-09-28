@@ -1,0 +1,17 @@
+In this paper, we focus on solving a distributed convex optimization problem in a network, where
+each agent has its own convex cost function and the goal is to minimize the sum of the agents' cost functions
+while obeying the network connectivity structure. In order to minimize the sum of the cost functions,
+we consider new distributed gradient-based methods where each node maintains two estimates, namely,
+an estimate of the optimal decision variable and an estimate of the gradient for the average of the
+agents' objective functions. From the viewpoint of an agent, the information about the gradients
+is pushed to the neighbors, while the information about the decision variable is pulled from the
+neighbors hence giving the name "push-pull gradient methods". The methods utilize two different
+graphs for the information exchange among agents, and as such, unify the algorithms with different
+types of distributed architecture, including decentralized (peer-to-peer), centralized (master-slave),
+and semi-centralized (leader-follower) architecture. We show that the proposed algorithms and
+their many variants converge linearly for strongly convex and smooth objective functions over
+a network (possibly with unidirectional data links) in both synchronous and asynchronous random-gossip
+settings. In particular, under the random-gossip setting, "push-pull" is the first class of algorithms
+for distributed optimization over directed graphs. Moreover, we numerically evaluate our proposed
+algorithms in both scenarios, and show that they outperform other existing linearly convergent
+schemes, especially for ill-conditioned problems and networks that are not well balanced. 

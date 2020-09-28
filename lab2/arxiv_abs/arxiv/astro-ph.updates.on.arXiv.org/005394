@@ -1,0 +1,19 @@
+We present a proof of concept for a new algorithm which can be used to detect exoplanets in high contrast
+images. The algorithm properly combines mutliple observations acquired during different nights,
+taking into account the orbital motion of the planet. Methods. We simulate SPHERE/IRDIS time series
+of observations in which we blindly inject planets on random orbits, at random level of S/N, below
+the detection limit (down to S/N 1.5). We then use an optimization algorithm to guess the orbital
+parameters, and take into account the orbital motion to properly recombine the different images,
+and eventually detect the planets. We show that an optimization algorithm can indeed be used to find
+undetected planets in temporal sequences of images, even if they are spread over orbital time scales.
+As expected, the typical gain in S/N ratio is sqrt(n), n being the number of observations combined.
+We find that the K-Stacker algorithm is able de-orbit and combine the images to reach a level of performance
+similar to what could be expected if the planet was not moving. We find recovery rates of 50% at S/N=5.
+We also find that the algorithm is able to determine the position of the planet in individual frames
+at one pixel precision, even despite the fact that the planet itself is below the detection limit
+in each frame. Our simulations show that K-Stacker can be used to increase the contrast limit of current
+exoplanet imaging instruments and to discover fainter bodies. We also suggest that the ability
+of K-Stacker to determine the position of the planet in every image of the time serie could be used
+as part of a new observing strategy in which long exposures would be broken into shorter ones spread
+over months. This could make possible to determine the orbital parameters of a planet without requiring
+multiple high S/N > 5 detections. 

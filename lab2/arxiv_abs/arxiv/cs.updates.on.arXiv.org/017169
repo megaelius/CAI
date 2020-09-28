@@ -1,0 +1,18 @@
+Since 2016, multiple microarchitectural attacks have exploited an effect that is attributed to
+prefetching. These works observe that certain user-space operations can fetch kernel addresses
+into the cache. Fetching user-inaccessible data into the cache enables KASLR breaks and assists
+various Meltdown-type attacks, especially Foreshadow. In this paper, we provide a systematic
+analysis of the root cause of this prefetching effect. While we confirm the empirical results of
+previous papers, we show that the attribution to a prefetching mechanism is fundamentally incorrect
+in all previous papers describing or exploiting this effect. In particular, neither the prefetch
+instruction nor other user-space instructions actually prefetch kernel addresses into the cache,
+leading to incorrect conclusions and ineffectiveness of proposed defenses. The effect exploited
+in all of these papers is, in fact, caused by speculative dereferencing of user-space registers
+in the kernel. Hence, mitigation techniques such as KAISER do not eliminate this leakage as previously
+believed. Beyond our thorough analysis of these previous works, we also demonstrate new attacks
+enabled by understanding the root cause, namely an address-translation attack in more restricted
+contexts, direct leakage of register values in certain scenarios, and the first end-to-end Foreshadow
+(L1TF) exploit targeting non-L1 data. The latter is effective even with the recommended Foreshadow
+mitigations enabled and thus revives the Foreshadow attack. We demonstrate that these dereferencing
+effects exist even on the most recent Intel CPUs with the latest hardware mitigations, and on CPUs
+previously believed to be unaffected, i.e., ARM, IBM, and AMD CPUs. 

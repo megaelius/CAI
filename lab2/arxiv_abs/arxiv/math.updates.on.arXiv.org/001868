@@ -1,0 +1,19 @@
+Statistical image reconstruction (SIR) methods for X-ray CT produce high-quality and accurate
+images, while greatly reducing patient exposure to radiation. When further reducing X-ray dose
+to an ultra-low level by lowering the tube current, photon starvation happens and electronic noise
+starts to dominate, which introduces negative or zero values into the raw measurements. These non-positive
+values pose challenges to post-log SIR methods that require taking the logarithm of the raw data,
+and causes artifacts in the reconstructed images if simple correction methods are used to process
+these non-positive raw measurements. The raw data at ultra-low dose deviates significantly from
+Poisson or shifted Poisson statistics for pre-log data and from Gaussian statistics for post-log
+data. This paper proposes a novel SIR method called MPG (mixed Poisson-Gaussian). MPG models the
+raw noisy measurements using a mixed Poisson-Gaussian distribution that accounts for both the
+quantum noise and electronic noise. MPG is able to directly use the negative and zero values in raw
+data without any pre-processing. MPG cost function contains a reweighted least square data-fit
+term, an edge preserving regularization term and a non-negativity constraint term. We use Alternating
+Direction Method of Multipliers (ADMM) to separate the MPG optimization problem into several sub-problems
+that are easier to solve. Our results on 3D simulated cone-beam data set and synthetic helical data
+set generated from clinical data indicate that the proposed MPG method reduces noise and decreases
+bias in the reconstructed images, comparing with the conventional filtered back projection (FBP),
+penalized weighted least-square (PWLS) and shift Poisson (SP) method for ultra-low dose CT (ULDCT)
+imaging. 

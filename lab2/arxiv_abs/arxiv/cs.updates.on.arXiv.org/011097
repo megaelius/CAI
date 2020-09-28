@@ -1,0 +1,20 @@
+We propose a simple and computationally efficient method for dense subgraph discovery, which is
+a classic problem both in theory and in practice. It is well known that dense subgraphs can have strong
+correlation with structures of interest in real-world networks across various domains ranging
+from social networks to biological systems [Gionis and Tsourakakis `15]. For the densest subgraph
+problem, Charikar's greedy algorithm [Asashiro `00, Charikar `00] is very simple, and can typically
+find result of quality much better than the provable factor 2-approximation, which makes it very
+popular in practice. However, it is also known to give suboptimal output in many real-world examples.
+On the other hand, finding the exact optimal solution requires the computation of maximum flow.
+Despite the existence of highly optimized maximum flow solvers, such computation still incurs
+prohibitive computational costs for the massive graphs arising in modern data science applications.
+We devise an iterative algorithm which naturally generalizes the greedy algorithm of Charikar.
+Our algorithm draws insights from the iterative approaches from convex optimization, and also
+exploits the dual interpretation of the densest subgraph problem. We have empirical evidence that
+our algorithm is much more robust against the structural heterogeneities in real-world datasets,
+and converges to the optimal subgraph density even when the simple greedy algorithm fails. On the
+other hand, in instances where Charikar's algorithm performs well, our algorithm is able to quickly
+verify its optimality. Furthermore, we demonstrate that our method is significantly faster than
+the maximum flow based exact optimal algorithm. We conduct experiments on datasets from broad domains,
+and our algorithm achieves $\sim$145$\times$ speedup on average to find subgraphs whose density
+is at least 90\% of the optimal value. 

@@ -1,0 +1,21 @@
+Numerical schemes for the solution of the Euler equations have recently been developed, which involve
+the discretisation of the internal energy equation, with corrective terms to ensure the correct
+capture of shocks, and, more generally, the consistency in the Lax-Wendroff sense. These schemes
+may be staggered or colocated, using either struc-tured meshes or general simplicial or tetrahedral/hexahedral
+meshes. The time discretization is performed by fractional-step algorithms; these may be either
+based on semi-implicit pressure correction techniques or segregated in such a way that only explicit
+steps are involved (referred to hereafter as "explicit" variants). In order to ensure the positivity
+of the density, the internal energy and the pressure, the discrete convection operators for the
+mass and internal energy balance equations are carefully designed; they use an upwind technique
+with respect to the material velocity only. The construction of the fluxes thus does not need any
+Rie-mann or approximate Riemann solver, and yields easily implementable algorithms. The stability
+is obtained without restriction on the time step for the pressure correction scheme and under a CFL-like
+condition for explicit variants: preservation of the integral of the total energy over the computational
+domain, and positivity of the density and the internal energy. The semi-implicit first-order upwind
+scheme satisfies a local discrete entropy inequality. If a MUSCL-like scheme is used in order to
+limit the scheme diffusion, then a weaker property holds: the entropy inequality is satisfied up
+to a remainder term which is shown to tend to zero with the space and time steps, if the discrete solution
+is controlled in L $\infty$ and BV norms. The explicit upwind variant also satisfies such a weaker
+property, at the price of an estimate for the velocity which could be derived from the introduction
+of a new stabilization term in the momentum balance. Still for the explicit scheme, with the above-mentioned
+MUSCL-like scheme, the same result only holds if the ratio of the time to the space step tends to zero.

@@ -1,0 +1,18 @@
+Sound event detection (SED) aims to detect when and recognize what sound events happen in an audio
+clip. Many supervised SED algorithms rely on strongly labelled data which contains the onset and
+offset annotations of sound events. However, many audio tagging datasets are weakly labelled,
+that is, only the presence of the sound events is known, without knowing their onset and offset annotations.
+In this paper, we propose a time-frequency (T-F) segmentation framework trained on weakly labelled
+data to tackle the sound event detection and separation problem. In training, a segmentation mapping
+is applied on a T-F representation, such as log mel spectrogram of an audio clip to obtain T-F segmentation
+masks of sound events. The T-F segmentation masks can be used for separating the sound events from
+the background scenes in the time-frequency domain. Then a classification mapping is applied on
+the T-F segmentation masks to estimate the presence probabilities of the sound events. We model
+the segmentation mapping using a convolutional neural network and the classification mapping
+using a global weighted rank pooling (GWRP). In SED, predicted onset and offset times can be obtained
+from the T-F segmentation masks. As a byproduct, separated waveforms of sound events can be obtained
+from the T-F segmentation masks. We remixed the DCASE 2018 Task 1 acoustic scene data with the DCASE
+2018 Task 2 sound events data. When mixing under 0 dB, the proposed method achieved F1 scores of 0.534,
+0.398 and 0.167 in audio tagging, frame-wise SED and event-wise SED, outperforming the fully connected
+deep neural network baseline of 0.331, 0.237 and 0.120, respectively. In T-F segmentation, we achieved
+an F1 score of 0.218, where previous methods were not able to do T-F segmentation. 

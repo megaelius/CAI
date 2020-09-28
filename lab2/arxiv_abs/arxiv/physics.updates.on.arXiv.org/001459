@@ -1,0 +1,18 @@
+Purpose: To reconstruct artifact-free images from measured k-space data, when the actual k-space
+trajectory deviates from the nominal trajectory due to gradient imperfections. Methods: Trajectory
+errors arising from eddy currents and gradient delays introduce phase inconsistencies in several
+fast scanning MR pulse sequences, resulting in image artifacts. The proposed algorithm provides
+a novel framework to compensate for this phase distortion. The algorithm relies on the construction
+of a multi-block Hankel matrix, where each block is constructed from k-space segments with the same
+phase distortion. In the presence of spatially smooth phase distortions between the segments,
+the complete block-Hankel matrix is known to be highly low-rank. Since each k-space segment is only
+acquiring part of the k-space data, the reconstruction of the phase compensated image from their
+partially parallel measurements is posed as a structured low-rank matrix optimization problem,
+assuming the coil sensitivities to be known. Results: The proposed formulation is tested on radial
+acquisitions in several settings including partial Fourier and golden-angle acquisitions. The
+experiments demonstrate the ability of the algorithm to successfully remove the artifacts arising
+from the trajectory errors, without the need for trajectory or phase calibration. The quality of
+the reconstruction was comparable to corrections achieved using the Trajectory Auto-Corrected
+Image Reconstruction (TrACR) for radial acquisitions. Conclusion: The proposed method provides
+a general framework for the recovery of artifact-free images from radial trajectories without
+the need for trajectory calibration. 

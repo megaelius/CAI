@@ -1,0 +1,20 @@
+Proper Orthogonal Decomposition (POD), also known as Principal component analysis (PCA), is a
+dimensionality reduction technique used to capture the energetically dominant features of datasets,
+known as eigenfeatures or POD modes. These modes can be obtained by finding a low rank approximation
+of the data matrix using singular value decomposition (SVD). In this paper, we explore random sampling
+techniques, which is one approach to obtain an approximate low rank description of the dataset in
+a computationally efficient manner. We analyse the performance of two algorithms proposed by [1],
+namely LTSVD and CTSVD, and discuss their advantages and limitations. We modify the two algorithms
+to improve the runtime of the methods and prove the equivalence of our modified algorithms with LTSVD
+and CTSVD. The modifications we propose are independent of sampling probability distributions
+and can be used to improve runtime whenever sampling is done with replacement. We use the modified
+algorithms along with a previously proposed merging technique to obtain the SVD of large matrices
+that do not fit in memory. We also propose an iterative algorithm to improve the approximation of
+the POD modes and the subspace spanned by the modes. Unlike the previous methods for multiple rounds
+of sampling, we obtain an updated approximation to the POD modes in each iteration and stop when the
+modes or subspace spanned by the modes have converged. The performance of our proposed solutions
+is analysed using four datasets of various sizes for single and multi-threaded execution. In all
+cases, we obtain a significant speedup over using a truncated SVD. The speedup of our modified LTSVD
+and CTSVD algorithms with respect to the existing algorithms depends on the error parameters. For
+low values of error parameters, we get upto 2-3x speedup. The results of the iterative algorithms
+have significantly better accuracies. 

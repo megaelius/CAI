@@ -1,0 +1,20 @@
+Failure in brittle materials under dynamic loading conditions is a result of the propagation and
+coalescence of microcracks. Simulating this mechanism at the continuum level is computationally
+expensive or, in some cases, intractable. The computational cost is due to the need for highly resolved
+computational meshes required to capture complex crack growth behavior, such as branching, turning,
+etc. Typically, continuum-scale models that account for brittle damage evolution homogenize
+the crack network in some way, which reduces the overall computational cost, but can also neglect
+key physics of the subgrid crack growth behavior, sacrificing accuracy for efficiency. We have
+developed an approach using machine learning that overcomes the current inability to represent
+micro-scale physics at the macro-scale. Our approach leverages damage and stress data from a high-fidelity
+model that explicitly resolves microcrack behavior to build an inexpensive machine learning emulator,
+which runs in seconds as opposed to the high-fidelity model, which takes hours. Once trained, the
+machine learning emulator is used to predict the evolution of crack length statistics. A continuum-scale
+constitutive model is then informed with these crack statistics, speeding up the workflow by four
+orders of magnitude. Both the machine learning model and the continuum-scale model are validated
+against a high-fidelity model and experimental data, respectively, showing excellent agreement.
+There are two key findings. The first is that we can reduce the dimensionality of the problem, establishing
+that the machine learning emulator only needs the length of the longest crack and one of the maximum
+stress components to capture the necessary physics. Another compelling finding is that the emulator
+can be trained in one experimental setting and transferred successfully to predict behavior in
+a different setting. 

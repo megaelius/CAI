@@ -1,0 +1,17 @@
+User profiling is a useful primitive for constructing personalised services, such as content recommendation.
+In the present paper we investigate the feasibility of user profiling in a distributed setting,
+with no central authority and only local information exchanges between users. We compute a profile
+vector for each user (i.e., a low-dimensional vector that characterises her taste) via spectral
+transformation of observed user-produced ratings for items. Our two main contributions follow:
+i) We consider a low-rank probabilistic model of user taste. More specifically, we consider that
+users and items are partitioned in a constant number of classes, such that users and items within
+the same class are statistically identical. We prove that without prior knowledge of the compositions
+of the classes, based solely on few random observed ratings (namely $O(N\log N)$ such ratings for
+$N$ users), we can predict user preference with high probability for unrated items by running a local
+vote among users with similar profile vectors. In addition, we provide empirical evaluations characterising
+the way in which spectral profiling performance depends on the dimension of the profile space. Such
+evaluations are performed on a data set of real user ratings provided by Netflix. ii) We develop distributed
+algorithms which provably achieve an embedding of users into a low-dimensional space, based on
+spectral transformation. These involve simple message passing among users, and provably converge
+to the desired embedding. Our method essentially relies on a novel combination of gossiping and
+the algorithm proposed by Oja and Karhunen. 

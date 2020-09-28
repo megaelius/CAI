@@ -1,0 +1,20 @@
+To overcome the high dimensionality of data, learning latent feature representations for clustering
+has been widely studied. Recently, ClusterGAN combined GAN with an encoder to learn a mixture of
+one-hot discrete and continuous latent variables, and achieved remarkable clustering performance.
+However, the performance of ClusterGAN decreases when it is applied to complex data. In this paper,
+we analyze the reasons for performance degeneracy in ClusterGAN. We show that minimizing the cycle-consistency
+loss of continuous latent variables in ClusterGAN trends to generate trivial latent features.
+Moreover, the objective of ClusterGAN doesn't include a real conditional distribution term, which
+makes it difficult to be generalized to real data. Therefore, we propose Disentangling Latent Space
+Clustering (DLS-Clustering), a new clustering mechanism that directly learns cluster assignments
+from disentangled latent spacing without additional clustering methods. We enforce the inference
+network (encoder) and the generator of GAN to form an encoder-generator pair in addition to the generator-encoder
+pair. We train the encoder-generator pair using real data, which can estimate the real conditional
+distribution. Moreover, the encoder-generator pair competes with the generator-encoder pair
+during optimization, which can avoid the triviality of continuous latent variables. Furthermore,
+we utilize a weight-sharing procedure to disentangle the one-hot discrete and the continuous latent
+variables generated from the encoder. This process enforces the disentangled latent space to match
+the independence of GAN inputs. Eventually, the one-hot discrete latent variables can be directly
+expressed as clusters and the continuous latent variables represent remaining unspecified factors.
+Experiments on benchmark datasets of different types demonstrate that our method outperforms
+existing state-of-the-art methods. 

@@ -1,0 +1,18 @@
+The increasing availability of sensor data at machine tools makes automatic chatter detection
+algorithms a trending topic in metal cutting. Two prominent and advanced methods for feature extraction
+via signal decomposition are Wavelet Packet Transform (WPT) and Ensemble Empirical Mode Decomposition
+(EEMD). We apply these two methods to time series acquired from an acceleration sensor at the tool
+holder of a lathe. Different turning experiments with varying dynamic behavior of the machine tool
+structure were performed. We compare the performance of these two methods with Support Vector Machine
+(SVM) classifier combined with Recursive Feature Elimination (RFE). We also show that the common
+WPT-based approach of choosing wavelet packets with the highest energy ratios as representative
+features for chatter does not always result in packets that enclose the chatter frequency, thus
+reducing the classification accuracy. Further, we test the transfer learning capability of each
+of these methods by training the classifier on one of the cutting configurations and then testing
+it on the other cases. It is found that when training and testing on data from the same cutting configuration
+both methods yield high accuracies reaching in one of the cases as high as 94% and 91%, respectively,
+for WPT and EEMD. However, EEMD is shown to outperform WPT in transfer learning applications with
+accuracy of up to 84%. Therefore, for systems where the movement of the cutting center leads to significant
+variations in the stiffness of the machine-tool system, we recommend using EEMD over WPT for training
+a classifier. This is because EEMD retains higher accuracy rates in comparison to WPT when the input
+data stream deviates from the data that was used to train the classifier. 

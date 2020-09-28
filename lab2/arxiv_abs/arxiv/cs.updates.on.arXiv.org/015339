@@ -1,0 +1,19 @@
+Domain Adaptation (DA) aims to generalize the classifier learned from the source domain to the target
+domain. Existing DA methods usually assume that rich labels could be available in the source domain.
+However, there are usually a large number of unlabeled data but only a few labeled data in the source
+domain, and how to transfer knowledge from this sparsely-labeled source domain to the target domain
+is still a challenge, which greatly limits their application in the wild. This paper proposes a novel
+Sparsely-Labeled Source Assisted Domain Adaptation (SLSA-DA) algorithm to address the challenge
+with limited labeled source domain samples. Specifically, due to the label scarcity problem, the
+projected clustering is conducted on both the source and target domains, so that the discriminative
+structures of data could be leveraged elegantly. Then the label propagation is adopted to propagate
+the labels from those limited labeled source samples to the whole unlabeled data progressively,
+so that the cluster labels are revealed correctly. Finally, we jointly align the marginal and conditional
+distributions to mitigate the cross-domain mismatch problem, and optimize those three procedures
+iteratively. However, it is nontrivial to incorporate those three procedures into a unified optimization
+framework seamlessly since some variables to be optimized are implicitly involved in their formulas,
+thus they could not promote to each other. Remarkably, we prove that the projected clustering and
+conditional distribution alignment could be reformulated as different expressions, thus the
+implicit variables are revealed in different optimization steps. As such, the variables related
+to those three quantities could be optimized in a unified optimization framework and facilitate
+to each other, to improve the recognition performance obviously. 

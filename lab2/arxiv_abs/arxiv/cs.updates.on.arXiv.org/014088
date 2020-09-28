@@ -1,0 +1,19 @@
+We develop a joint offloading and resource allocation framework for a multi-layer cooperative
+fog computing network, aiming to minimize the total energy consumption of multiple mobile devices
+subject to their service delay requirements. The resulting optimization involves both binary
+(offloading decisions) and real variables (resource allocations), making it an NP-hard and computationally
+intractable problem. To tackle it, we first propose an improved branch-and-bound algorithm (IBBA)
+that is implemented in a centralized manner. However, due to the large size of the cooperative fog
+computing network, the computational complexity of the proposed IBBA is relatively high. To speed
+up the optimal solution searching as well as to enable its distributed implementation, we then leverage
+the unique structure of the underlying problem and the parallel processing at fog nodes. To that
+end, we propose a distributed framework, namely feasibility finding Benders decomposition (FFBD),
+that decomposes the original problem into a master problem for the offloading decision and subproblems
+for resource allocation. The master problem (MP) is then equipped with powerful cutting-planes
+to exploit the fact of resource limitation at fog nodes. The subproblems (SP) for resource allocation
+can find their closed-form solutions using our fast solution detection method. These (simpler)
+subproblems can then be solved in parallel at fog nodes. The numerical results show that the FFBD
+always returns the optimal solution of the problem with significantly less computation time (e.g.,
+compared with the centralized IBBA approach). The FFBD with the fast solution detection method,
+namely FFBD-F, can reduce up to $60\%$ and $90\%$ of computation time, respectively, compared with
+those of the conventional FFBD, namely FFBD-S, and IBBA. 

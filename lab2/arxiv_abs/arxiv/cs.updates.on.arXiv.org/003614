@@ -1,0 +1,24 @@
+We present a quasi linear-time algorithm for Maximum Matching on distance-hereditary graphs and
+some of their generalizations. This improves on [Dragan, WG'97], who proposed such an algorithm
+for the subclass of (tent,hexahedron)-free distance-hereditary graphs. Furthermore, our result
+is derived from a more general one that is obtained for b-Matching. In the (unit cost) b-Matching
+problem, we are given a graph G = (V, E) together with a nonnegative integer capacity b v for every vertex
+v $\in$ V. The objective is to assign nonnegative integer weights (x e) e$\in$E so that: for every
+v $\in$ V the sum of the weights of its incident edges does not exceed b v , and e$\in$E x e is maximized.
+We present the first algorithm for solving b-Matching on cographs, distance-hereditary graphs
+and some of their generalizations in quasi linear time. For that, we use a decomposition algorithm
+that outputs for any graph G a collection of subgraphs of G with no edge-cutsets inducing a complete
+bipartite subgraph (a.k.a., splits). The latter collection is sometimes called a split decomposition
+of G. Furthermore, there exists a generic method in order to design graph algorithms based on split
+decomposition [Rao, DAM'08]. However, this technique only applies to "localized" problems: for
+which a "best" partial solution for any given subgraph in a split decomposition can be computed almost
+independently from the remaining of the graph. Such framework does not apply to matching problems
+since an augmenting path may cross the subgraphs arbitrarily. We introduce a new technique that
+somehow captures all the partial solutions for a given union of subgraphs in a split decomposition,
+in a compact and amenable way for algorithms - assuming some piecewise linear assumption holds on
+the value of such solutions. The latter assumption is shown to hold for b-Matching. Doing so, we prove
+that solving b-Matching on any pair G, b can be reduced in quasi linear-time to solving this problem
+on a collection of smaller graphs: that are obtained from the subgraphs in any split decomposition
+of G by replacing every vertex with a constant-size module. In particular, if G has a split decomposition
+where all subgraphs have order at most a fixed k, then we can solve b-Matching for G, b in O((k log 2 k)$\times$(m+n)$\times$log
+||b|| 1)-time. This answers an open question of [Coudert et al., SODA'18]. 

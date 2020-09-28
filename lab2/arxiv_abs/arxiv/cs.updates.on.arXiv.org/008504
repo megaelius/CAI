@@ -1,0 +1,19 @@
+Deep Neural Networks (DNNs) typically require massive amount of computation resource in inference
+tasks for computer vision applications. Quantization can significantly reduce DNN computation
+and storage by decreasing the bitwidth of network encodings. Recent research affirms that carefully
+selecting the quantization levels for each layer can preserve the accuracy while pushing the bitwidth
+below eight bits. However, without arduous manual effort, this deep quantization can lead to significant
+accuracy loss, leaving it in a position of questionable utility. As such, deep quantization opens
+a large hyper-parameter space (bitwidth of the layers), the exploration of which is a major challenge.
+We propose a systematic approach to tackle this problem, by automating the process of discovering
+the quantization levels through an end-to-end deep reinforcement learning framework (ReLeQ).
+We adapt policy optimization methods to the problem of quantization, and focus on finding the best
+design decisions in choosing the state and action spaces, network architecture and training framework,
+as well as the tuning of various hyperparamters. We show how ReLeQ can balance speed and quality,
+and provide an asymmetric general solution for quantization of a large variety of deep networks
+(AlexNet, CIFAR-10, LeNet, MobileNet-V1, ResNet-20, SVHN, and VGG-11) that virtually preserves
+the accuracy (=< 0.3% loss) while minimizing the computation and storage cost. With these DNNs,
+ReLeQ enables conventional hardware to achieve 2.2x speedup over 8-bit execution. Similarly,
+a custom DNN accelerator achieves 2.0x speedup and energy reduction compared to 8-bit runs. These
+encouraging results mark ReLeQ as the initial step towards automating the deep quantization of
+neural networks. 

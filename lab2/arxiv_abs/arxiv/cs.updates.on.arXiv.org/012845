@@ -1,0 +1,19 @@
+Graph-Laplacians and their spectral embeddings play an important role in multiple areas of machine
+learning. This paper is focused on graph-Laplacian dimension reduction for the spectral clustering
+of data as a primary application. Spectral embedding provides a low-dimensional parametrization
+of the data manifold which makes the subsequent task (e.g., clustering) much easier. However, despite
+reducing the dimensionality of data, the overall computational cost may still be prohibitive for
+large data sets due to two factors. First, computing the partial eigendecomposition of the graph-Laplacian
+typically requires a large Krylov subspace. Second, after the spectral embedding is complete,
+one still has to operate with the same number of data points. For example, clustering of the embedded
+data is typically performed with various relaxations of k-means which computational cost scales
+poorly with respect to the size of data set. In this work, we switch the focus from the entire data set
+to a subset of graph vertices (target subset). We develop two novel algorithms for such low-dimensional
+representation of the original graph that preserves important global distances between the nodes
+of the target subset. In particular, it allows to ensure that target subset clustering is consistent
+with the spectral clustering of the full data set if one would perform such. That is achieved by a properly
+parametrized reduced-order model (ROM) of the graph-Laplacian that approximates accurately
+the diffusion transfer function of the original graph for inputs and outputs restricted to the target
+subset. Working with a small target subset reduces greatly the required dimension of Krylov subspace
+and allows to exploit the conventional algorithms (like approximations of k-means) in the regimes
+when they are most robust and efficient. 

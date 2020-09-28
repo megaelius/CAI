@@ -1,0 +1,18 @@
+In the past few years, consumer review sites have become the main target of deceptive opinion spam,
+where fictitious opinions or reviews are deliberately written to sound authentic. Most of the existing
+work to detect the deceptive reviews focus on building supervised classifiers based on syntactic
+and lexical patterns of an opinion. With the successful use of Neural Networks on various classification
+applications, in this paper, we propose FakeGAN a system that for the first time augments and adopts
+Generative Adversarial Networks (GANs) for a text classification task, in particular, detecting
+deceptive reviews. Unlike standard GAN models which have a single Generator and Discriminator
+model, FakeGAN uses two discriminator models and one generative model. The generator is modeled
+as a stochastic policy agent in reinforcement learning (RL), and the discriminators use Monte Carlo
+search algorithm to estimate and pass the intermediate action-value as the RL reward to the generator.
+Providing the generator model with two discriminator models avoids the mod collapse issue by learning
+from both distributions of truthful and deceptive reviews. Indeed, our experiments show that using
+two discriminators provides FakeGAN high stability, which is a known issue for GAN architectures.
+While FakeGAN is built upon a semi-supervised classifier, known for less accuracy, our evaluation
+results on a dataset of TripAdvisor hotel reviews show the same performance in terms of accuracy
+as of the state-of-the-art approaches that apply supervised machine learning. These results indicate
+that GANs can be effective for text classification tasks. Specifically, FakeGAN is effective at
+detecting deceptive reviews. 

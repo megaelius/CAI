@@ -1,0 +1,17 @@
+While deep learning has shown promise in the domain of disease classification from medical images,
+models based on state-of-the-art convolutional neural network architectures often exhibit performance
+loss due to dataset shift. Models trained using data from one hospital system achieve high predictive
+performance when tested on data from the same hospital, but perform significantly worse when they
+are tested in different hospital systems. Furthermore, even within a given hospital system, deep
+learning models have been shown to depend on hospital- and patient-level confounders rather than
+meaningful pathology to make classifications. In order for these models to be safely deployed,
+we would like to ensure that they do not use confounding variables to make their classification,
+and that they will work well even when tested on images from hospitals that were not included in the
+training data. We attempt to address this problem in the context of pneumonia classification from
+chest radiographs. We propose an approach based on adversarial optimization, which allows us to
+learn more robust models that do not depend on confounders. Specifically, we demonstrate improved
+out-of-hospital generalization performance of a pneumonia classifier by training a model that
+is invariant to the view position of chest radiographs (anterior-posterior vs. posterior-anterior).
+Our approach leads to better predictive performance on external hospital data than both a standard
+baseline and previously proposed methods to handle confounding, and also suggests a method for
+identifying models that may rely on confounders. Code available at https://github.com/suinleelab/cxr_adv.

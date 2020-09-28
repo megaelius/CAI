@@ -1,0 +1,18 @@
+The High Efficiency Video Coding (HEVC/H.265) standard doubles the compression efficiency of
+the widely used H.264/AVC standard. For practical applications, rate control (RC) algorithms
+for HEVC need to be developed. Based on the R-Q, R-${\rho}$ or R-${\lambda}$ models, rate control
+algorithms aim at encoding a video clip/segment to a target bit rate accurately with high video quality
+after compression. Among the various models used by HEVC rate control algorithms, the R-${\lambda}$
+model performs the best in both coding efficiency and rate control accuracy. However, compared
+with encoding with a fixed quantization parameter (QP), even the best rate control algorithm [1]
+still under-performs when comparing the video quality achieved at identical average bit rates.
+In this paper, we propose a novel generalized rate-distortion-${\lambda}$ (R-D-${\lambda}$)
+model for the relationship between rate (R), distortion (D) and the Lagrangian multiplier (${\lambda}$)
+in rate-distortion (RD) optimized encoding. In addition to the well designed hierarchical initialization
+and coefficient update scheme, a new model based rate allocation scheme composed of amortization,
+smooth window and consistency control is proposed for a better rate allocation. Experimental results
+implementing the proposed algorithm in the HEVC reference software HM-16.9 show that the proposed
+rate control algorithm is able to achieve an average of BDBR saving of 6.09%, 3.15% and 4.03% for random
+access (RA), low delay P (LDP) and low delay B (LDB) configurations respectively as compared with
+the R-${\lambda}$ model based RC algorithm [1] implemented in HM. The proposed algorithm also outperforms
+the state-of-the-art algorithms, while rate control accuracy and encoding speed are hardly impacted.

@@ -1,0 +1,19 @@
+Data size is the bottleneck for developing deep saliency models, because collecting eye-movement
+data is very time consuming and expensive. Most of current studies on human attention and saliency
+modeling have used high quality stereotype stimuli. In real world, however, captured images undergo
+various types of transformations. Can we use these transformations to augment existing saliency
+datasets? Here, we first create a novel saliency dataset including fixations of 10 observers over
+1900 images degraded by 19 types of transformations. Second, by analyzing eye movements, we find
+that observers look at different locations over transformed versus original images. Third, we
+utilize the new data over transformed images, called data augmentation transformation (DAT),
+to train deep saliency models. We find that label preserving DATs with negligible impact on human
+gaze boost saliency prediction, whereas some other DATs that severely impact human gaze degrade
+the performance. These label preserving valid augmentation transformations provide a solution
+to enlarge existing saliency datasets. Finally, we introduce a novel saliency model based on generative
+adversarial network (dubbed GazeGAN). A modified UNet is proposed as the generator of the GazeGAN,
+which combines classic skip connections with a novel center-surround connection (CSC), in order
+to leverage multi level features. We also propose a histogram loss based on Alternative Chi Square
+Distance (ACS HistLoss) to refine the saliency map in terms of luminance distribution. Extensive
+experiments and comparisons over 3 datasets indicate that GazeGAN achieves the best performance
+in terms of popular saliency evaluation metrics, and is more robust to various perturbations. Our
+code and data are available at: https://github.com/CZHQuality/Sal-CFS-GAN. 

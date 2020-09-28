@@ -1,0 +1,19 @@
+The domain name system (DNS) is a crucial backbone of the Internet and millions of new domains are
+created on a daily basis. While the vast majority of these domains are legitimate, adversaries also
+register new hostnames to carry out nefarious purposes, such as scams, phishing, or other types
+of attacks. In this paper, we present insights on the global utilization of DNS through a measurement
+study examining exclusively newly observed hostnames via passive DNS data analysis. We analyzed
+more than two billion such hostnames collected over a period of two months. Surprisingly, we find
+that only three second-level domains are responsible for more than half of all newly observed hostnames
+every day. More specifically, we found that Google's Accelerated Mobile Pages (AMP) project, the
+music streaming service Spotify, and a DNS tunnel provider generate the majority of new domains
+on the Internet. DNS tunneling is a covert channel technique to transfer arbitrary information
+over DNS via DNS queries and answers. This technique is often (ab)used by attackers to transfer data
+in a stealthy way, bypassing traditional network security systems. We find that potential DNS tunnels
+cause a significant fraction of the global DNS requests for new hostnames: our analysis reveals
+that nearly all resource record type NULL requests and more than a third of all TXT requests can be
+attributed to DNS tunnels. Motivated by these empirical measurement results, we propose and implement
+a method to identify DNS tunnels via a step-wise filtering approach that relies on general characteristics
+of such tunnels (e.g., number of subdomains or resource record type). Using our approach on empirical
+data, we successfully identified 273 suspicious domains related to DNS tunnels, including two
+known APT campaigns (Wekby and APT32). 

@@ -1,0 +1,20 @@
+The solution to the regularized least-squares problem $min_{\mathbf{x} \in \mathbb{R}^{p+}}
+\frac{1}{2} \|\mathbf{y}-\mathbf{A}\mathbf{x}_2^2 + \lambda \|\mathbf{x}\|_1$, assuming
+$\mathbf{A}$ is unitary, is given by the soft-thresholding operator, or ReLu in neural network
+parlance, applied component-wise to $\mathbf{A}^\text{T}\mathbf{y}$. This equivalence is
+at the core of recent work that has sought to build a parallel between deep neural network architectures
+and sparse recovery and estimation, namely that a deep neural network architecture with ReLu nonlinearities
+arises from a finite sequence of cascaded sparse coding models, the outputs of which, except for
+the last element in the cascade, are sparse and unobservable. We show that if the measurement matrices
+in the cascaded sparse coding model (a) satisfy RIP and (b) all have sparse columns except for the
+last, they can be recovered with high probability in the absence of noise using an optimization algorithm
+that, beginning with the last element of the cascade, alternates between estimating the dictionary
+and the sparse code and then, at convergence, proceeds to the preceding element in the cascade. The
+method of choice in deep learning to solve this problem is by training an auto-encoder whose architecture
+we specify. Our algorithm provides a sound alternative, with theoretical guarantees, as well as
+sample complexity assessments. Letting $r_\ell$ be the dimension of the input of the $\ell^\text{th}$
+transformation (embedding dimension) and $s_{\mathbf{Y}^{(\ell)}}$ the sparsity of this input
+(number of active neurons), the computational complexity is $\mathcal{O} \left(\text{max}_{\ell}
+r_\ell s_{\mathbf{Y}^{(\ell-1)}} \right) $, i.e. the maximum, across layers, of the product of
+the number of active neurons and the embedding dimension. Our proof relies on a certain type of sparse
+random matrix satisfying the RIP property. 

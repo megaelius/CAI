@@ -1,0 +1,20 @@
+Convolutional Neural Networks (CNNs) can learn effective features, though have been shown to suffer
+from a performance drop when the distribution of the data changes from training to test data. In this
+paper we analyze the internal representations of CNNs and observe that the representations of unseen
+data in each class, spread more (with higher variance) in the embedding space of the CNN compared
+to representations of the training data. More importantly, this difference is more extreme if the
+unseen data comes from a shifted distribution. Based on this observation, we objectively evaluate
+the degree of representation's variance in each class via eigenvalue decomposition on the within-class
+covariance of the internal representations of CNNs and observe the same behaviour. This can be problematic
+as larger variances might lead to mis-classification if the sample crosses the decision boundary
+of its class. We apply nearest neighbor classification on the representations and empirically
+show that the embeddings with the high variance actually have significantly worse KNN classification
+performances, although this could not be foreseen from their end-to-end classification results.
+To tackle this problem, we propose Deep Within-Class Covariance Analysis (DWCCA), a deep neural
+network layer that significantly reduces the within-class covariance of a DNN's representation,
+improving performance on unseen test data from a shifted distribution. We empirically evaluate
+DWCCA on two datasets for Acoustic Scene Classification (DCASE2016 and DCASE2017). We demonstrate
+that not only does DWCCA significantly improve the network's internal representation, it also
+increases the end-to-end classification accuracy, especially when the test set exhibits a distribution
+shift. By adding DWCCA to a VGG network, we achieve around 6 percentage points improvement in the
+case of a distribution mismatch. 

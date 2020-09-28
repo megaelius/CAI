@@ -1,0 +1,19 @@
+We report the results of a study to compare the performance of two common database indexing methods,
+HTM and HEALPix, on Solaris and Windows database servers installed with PostgreSQL, and a Windows
+Server installed with MS SQL Server. The indexing was applied to the 2MASS All-Sky Catalog and to
+the Hubble Source Catalog, which approximate the diversity of catalogs common in astronomy. On
+each server, the study compared indexing performance by submitting 1 million queries at each index
+level with random sky positions and random cone search radius, which was computed on a logarithmic
+scale between 1 arcsec and 1 degree, and measuring the time to complete the query and write the output.
+These simulated queries, intended to model realistic use patterns, were run in a uniform way on many
+combinations of indexing method and indexing depth. The query times in all simulations are strongly
+I/O-bound and are linear with number of records returned for large numbers of sources. There are,
+however, considerable differences between simulations, which reveal that hardware I/O throughput
+is a more important factor in managing the performance of a DBMS than the choice of indexing scheme.
+The choice of index itself is relatively unimportant: for comparable index levels, the performance
+is consistent within the scatter of the timings. At small index levels (large cells; e.g. level 4;
+cell size 3.7 deg), there is large scatter in the timings because of wide variations in the number
+of sources found in the cells. At larger index levels, performance improves and scatter decreases,
+but the improvement at level 8 (14 arcmin) and higher is masked to some extent in the timing scatter
+caused by the range of query sizes. At very high levels (20; 0.0004 arsec), the granularity of the
+cells becomes so high that a large number of extraneous empty cells begin to degrade performance.

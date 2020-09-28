@@ -1,0 +1,20 @@
+We describe the design and performance of the digital servo and motion control system for the 6-meter
+diameter parabolic antennas of the Submillimeter Array (SMA) on Mauna Kea, Hawaii. The system is
+divided into three nested layers operating at a different, appropriate bandwidth. (1) A rack-mounted,
+real-time Unix system runs the position loop which reads the high resolution azimuth and elevation
+encoders and sends velocity and acceleration commands at 100 Hz to a custom-designed servo control
+board (SCB). (2) The microcontroller-based SCB reads the motor axis tachometers and implements
+the velocity loop by sending torque commands to the motor amplifiers at 558 Hz. (3) The motor amplifiers
+implement the torque loop by monitoring and sending current to the three-phase brushless drive
+motors at 20 kHz. The velocity loop uses a traditional proportional-integral-derivative (PID)
+control algorithm, while the position loop uses only a proportional term and implements a command
+shaper based on the Gauss error function. Calibration factors and software filters are applied
+to the tachometer feedback prior to the application of the servo gains in the torque computations.
+All of these parameters are remotely adjustable in software. The three layers of the control system
+monitor each other and are capable of shutting down the system safely if a failure or anomaly occurs.
+The Unix system continuously relays antenna status to the central observatory computer via reflective
+memory. In each antenna, a Palm Vx hand controller displays system status and allows full local control
+of the drives in an intuitive touchscreen user interface. It can also be connected outside the cabin
+for convenience during antenna reconfigurations. Excellent tracking performance (0.3 arcsec
+rms) is achieved with this system. It has been in reliable operation on 8 antennas for over 10 years
+and has required minimal maintenance. 

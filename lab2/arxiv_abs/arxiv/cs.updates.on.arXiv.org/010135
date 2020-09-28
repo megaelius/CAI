@@ -1,0 +1,17 @@
+The high computational throughput of modern graphics processing units (GPUs) make them the de-facto
+architecture for high-performance computing applications. However, to achieve peak performance,
+GPUs require highly parallel workloads, as well as memory access patterns that exhibit good locality
+of reference. As a result, many state-of-the-art algorithms and data structures designed for GPUs
+sacrifice work-optimality to achieve the necessary parallelism. Furthermore, some abstract
+data types are avoided completely due to there being no corresponding data structure that performs
+well on the GPU. One such abstract data type is the priority queue. Many well-known algorithms rely
+on priority queue operations as a building block. While various priority queue structures have
+been developed that are parallel, cache-aware, or cache-oblivious, none has been shown to be efficient
+on GPUs. In this paper, we present the parBucketHeap, a parallel, cache-efficient data structure
+designed for modern GPU architectures that supports standard priority queue operations, as well
+as bulk update. We analyze the structure in several well-known computational models and show that
+it provides both optimal parallelism and is cache-efficient. We implement the parBucketHeap and,
+using it, we solve the single-source shortest path (SSSP) problem. Experimental results indicate
+that, for sufficiently large, dense graphs with high diameter, we out-perform current state-of-the-art
+SSSP algorithms on the GPU by up to a factor of 5. Unlike existing GPU SSSP algorithms, our approach
+is work-optimal and places significantly less load on the GPU, reducing power consumption. 

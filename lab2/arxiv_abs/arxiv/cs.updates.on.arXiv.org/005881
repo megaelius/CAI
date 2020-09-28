@@ -1,0 +1,19 @@
+We consider the ILP Feasibility problem: given an integer linear program $\{Ax = b, x\geq 0\}$, where
+$A$ is an integer matrix with $k$ rows and $\ell$ columns and $b$ is a vector of $k$ integers, we ask
+whether there exists $x\in\mathbb{N}^\ell$ that satisfies $Ax = b$. Our goal is to study the complexity
+of ILP Feasibility when both $k$, the number of constraints (rows of $A$), and $\|A\|_\infty$, the
+largest absolute value in $A$, are small. Papadimitriou [J. ACM, 1981] was the first to give a fixed-parameter
+algorithm for ILP Feasibility in this setting, with running time $\left((\|A\mid b\|_\infty)
+\cdot k\right)^{O(k^2)}$. This was very recently improved by Eisenbrand and Weismantel [SODA
+2018], who used the Steinitz lemma to design an algorithm with running time $(k\|A\|_\infty)^{O(k)}\cdot
+\|b\|_\infty^2$, and subsequently by Jansen and Rohwedder [2018] to $O(k\|A\|_\infty)^{k}\cdot
+\log \|b\|_\infty$. We prove that for $\{0,1\}$-matrices $A$, the dependency on $k$ is probably
+optimal: an algorithm with running time $2^{o(k\log k)}\cdot (\ell+\|b\|_\infty)^{o(k)}$ would
+contradict ETH. This improves previous non-tight lower bounds of Fomin et al. [ESA 2018]. We then
+consider ILPs with many constraints, but structured in a shallow way. Precisely, we consider the
+dual treedepth of the matrix $A$, which is the treedepth of the graph over the rows of $A$, with two
+rows adjacent if in some column they both contain a non-zero entry. It was recently shown by Kouteck\'{y}
+et al. [ICALP 2018] that ILP Feasibility can be solved in time $\|A\|_\infty^{2^{O(td(A))}}\cdot
+(k+\ell+\log \|b\|_\infty)^{O(1)}$. We present a streamlined proof of this fact and prove optimality:
+even assuming that all entries of $A$ and $b$ are in $\{-1,0,1\}$, the existence of an algorithm with
+running time $2^{2^{o(td(A))}}\cdot (k+\ell)^{O(1)}$ would contradict ETH. 

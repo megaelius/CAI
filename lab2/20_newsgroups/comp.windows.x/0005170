@@ -1,0 +1,9 @@
+I caught up a mailmessage from an NCD guy, who stated that Tek
+might be quitting it's X terminal activities and would be looking
+for an interested buyer.
+Since the source of this message is NCD, THIS MIGHT ONLY BE NASTY
+Can anyone say more about this??
+Dick.
++==============================Ahold NV===============================+
+| Room 146 , Ankersmidplein 2, 1506 CK Zaandam,  The Netherlands, EEC |
+| Dick.Heijne@ccsds.ahold.nl - Tel: +31 75 592151, Fax: +31 75 313030 |

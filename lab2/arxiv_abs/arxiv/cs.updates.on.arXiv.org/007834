@@ -1,0 +1,20 @@
+We address a cost optimization problem faced by a user who runs instances of applications in a remote
+cloud configuration constructed of multiple virtual machines (VMs). Each VM runs a single application
+instance which can execute tasks specific to that application. Managing the VMs involves a sophisticated
+trade-off between cloud-related demands, which are expressed by the provisional costs of leased
+cloud resources, and exogenous cost demands expressed by service revenues that are typically bound
+to SLAs. The internal costs may include VM deployment/termination cost, and VM lease cost. The exogenous
+costs refer to rewards accumulated due to the successfully accomplished tasks being run by each
+application instance. In the case where the SLA restricts performance to a certain load level at
+each VM, tasks incoming at VMs that reached that level are rejected. Rejections cause fines deducted
+against the rewards. The performance level is also quantified, namely, by means of a delay cost,
+according to the average delay experienced by tasks. Typical examples for specific applications
+which fall within this class of problems include handling of scientific worklflows and network
+functioning virtualization (NFV). We model this problem by cost-optimal load balancing to a queuing
+system with a flexible number of queues, where a queue (VM) can be deployed, can have a task directed
+to it and can be terminated. We analyze the system by Markov decision process (MDP) and numerically
+solve it to find the optimal policy, which captures the aforementioned costs and performance constraints.
+Within this constrained framework, we also investigate the impact of average VM deployment time.
+We show that the optimal policy possesses decision thresholds which depend on several parameters.
+We validate policies found by MDP, through directing an exogenous computational tasks flow to a
+set-up implemented on AWS. 

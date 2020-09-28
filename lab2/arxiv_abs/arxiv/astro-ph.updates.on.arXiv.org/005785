@@ -1,0 +1,20 @@
+Using mock spectra based on Vazdekis/MILES library fitted within the wavelength region 3600-7350\AA,
+we analyze the bias and scatter on the resulting physical parameters induced by the choice of fitting
+algorithms and observational uncertainties, but avoid effects of those model uncertainties.
+We consider two full-spectrum fitting codes: pPXF and STARLIGHT, in fitting for stellar population
+age, metallicity, mass-to-light ratio, and dust extinction. With pPXF we find that both the bias
+in the population parameters and the scatter in the recovered logarithmic values follows the expected
+trend. The bias increases for younger ages and systematically makes recovered ages older, $M_*/L_r$
+larger and metallicities lower than the true values. For reference, at S/N=30, and for the worst
+case ($t=10^8$yr), the bias is 0.06 dex in $M_*/L_r$, 0.03 dex in both age and [M/H]. There is no significant
+dependence on either E(B-V) or the shape of the error spectrum. Moreover, the results are consistent
+for both our 1-SSP and 2-SSP tests. With the STARLIGHT algorithm, we find trends similar to pPXF,
+when the input E(B-V)<0.2 mag. However, with larger input E(B-V), the biases of the output parameter
+do not converge to zero even at the highest S/N and are strongly affected by the shape of the error spectra.
+This effect is particularly dramatic for youngest age, for which all population parameters can
+be strongly different from the input values, with significantly underestimated dust extinction
+and [M/H], and larger ages and $M_*/L_r$. Results degrade when moving from our 1-SSP to the 2-SSP
+tests. The STARLIGHT convergence to the true values can be improved by increasing Markov Chains
+and annealing loops to the "slow mode". For the same input spectrum, pPXF is about two order of magnitudes
+faster than STARLIGHT's "default mode" and about three order of magnitude faster than STARLIGHT's
+"slow mode". 

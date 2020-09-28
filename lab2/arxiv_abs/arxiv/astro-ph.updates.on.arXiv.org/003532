@@ -1,0 +1,19 @@
+I report results from accurate numerical integrations of Solar System orbits over the past 100Myr
+with the integrator package HNBody. The simulations used different integrator algorithms, step
+sizes, initial conditions, and included effects from general relativity, different models of
+the Moon, the Sun's quadrupole moment, and up to sixteen asteroids. I also probed the potential effect
+of a hypothetical Planet 9, using one set of possible orbital elements. The most expensive integration
+(Bulirsch-Stoer) required 4~months wall-clock time with a maximum relative energy error <~3e{-13}.
+The difference in Earth's eccentricity (DeE) was used to track the difference between two solutions,
+considered to diverge at time tau when max|DeE| irreversibly crossed ~10\% of mean eE (~0.028x0.1).
+The results indicate that finding a unique orbital solution is limited by initial conditions from
+current ephemerides and asteroid perturbations to ~54Myr. Bizarrely, the 4-month Bulirsch-Stoer
+integration and a symplectic integration that required only 5~hours wall-clock time (12-day time
+step, Moon as a simple quadrupole perturbation), agree to ~63Myr. Internally, such symplectic
+integrations are remarkably consistent even for large time steps, suggesting that the relationship
+between time step and tau is not a robust indicator for the absolute accuracy of symplectic integrations.
+The effect of a hypothetical Planet~9 on DeE becomes discernible at ~65Myr. Using tau as a criterion,
+the current state-of-the-art solutions all differ from previously published results beyond ~50Myr.
+I also conducted an eigenmode analysis, which provides some insight into the chaotic nature of the
+inner Solar System. The current study provides new orbital solutions for application in geological
+studies. 

@@ -1,0 +1,19 @@
+We examine a reductions approach to fair optimization and learning where a black-box optimizer
+is used to learn a fair model for classification or regression [Alabi et al., 2018, Agarwal et al.,
+2018] and explore the creation of such fair models that adhere to data privacy guarantees (specifically
+differential privacy). For this approach, we consider two suites of use cases: the first is for optimizing
+convex performance measures of the confusion matrix (such as those derived from the $G$-mean and
+$H$-mean); the second is for satisfying statistical definitions of algorithmic fairness (such
+as equalized odds, demographic parity, and the gini index of inequality). The reductions approach
+to fair optimization can be abstracted as the constrained group-objective optimization problem
+where we aim to optimize an objective that is a function of losses of individual groups, subject to
+some constraints. We present two generic differentially private algorithms to solve this problem:
+an $(\epsilon, 0)$ exponential sampling algorithm and an $(\epsilon, \delta)$ algorithm that
+uses an approximate linear optimizer to incrementally move toward the best decision. Compared
+to a previous method for ensuring differential privacy subject to a relaxed form of the equalized
+odds fairness constraint, the $(\epsilon, \delta)$ differentially private algorithm we present
+provides asymptotically better sample complexity guarantees in certain parameter regimes. The
+technique of using an approximate linear optimizer oracle to achieve privacy might be applicable
+to other problems not considered in this paper. Finally, we show an algorithm-agnostic information-theoretic
+lower bound on the excess risk (or equivalently, the sample complexity) of any solution to the problem
+of $(\epsilon, 0)$ or $(\epsilon, \delta)$ private constrained group-objective optimization.

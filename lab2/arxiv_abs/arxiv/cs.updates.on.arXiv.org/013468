@@ -1,0 +1,18 @@
+The adversarial model presented by trusted execution environments (TEEs) has prompted researchers
+to investigate unusual attack vectors. One particularly powerful class of controlled-channel
+attacks abuses page-table modifications to reliably track enclave memory accesses at a page-level
+granularity. Crucially, in contrast to noisy microarchitectural timing leakages, this line of
+deterministic controlled-channel attacks abuses indispensable architectural interfaces and
+hence cannot be mitigated by tweaking microarchitectural resources. We propose an innovative
+controlled-channel attack, named CopyCat, that deterministically counts the number of instructions
+executed within a single enclave code page. We show that combining the instruction counts harvested
+by CopyCat with traditional, coarse-grained page-level leakage allows to accurately reconstruct
+enclave control flow at a maximal instruction-level granularity. CopyCat can identify intra-page
+and intra-cache line branch decisions which may ultimately differ only in a single instruction,
+highlighting that even extremely subtle control flow deviations can deterministically be leaked
+from secure enclaves. We demonstrate the improved resolution and practicality of CopyCat on Intel
+SGX platforms in an extensive study of single-trace and deterministic attacks against side-channel
+hardened cryptographic libraries. As a result, we disclose multiple vulnerabilities in the the
+latest version of widely-used cryptographic libraries: WolfSSL, Libgcrypt and OpenSSL, and propose
+novel algorithmic attacks to perform single-trace key extraction. Our findings mark the importance
+of stricter verification of cryptographic implementations, especially in the context of TEEs.

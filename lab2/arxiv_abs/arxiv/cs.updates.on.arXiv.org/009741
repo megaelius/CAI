@@ -1,0 +1,19 @@
+Motivated, in part, by the rise of permissionless systems such as Bitcoin where arbitrary nodes
+(whose identities are not known apriori) can join and leave at will, we extend established research
+in scalable Byzantine agreement to a more practical model where each node (initially) does not know
+the identity of other nodes. A node can send to new destinations only by sending to random (or arbitrary)
+nodes, or responding (if it chooses) to messages received from those destinations. We assume a synchronous
+and fully-connected network, with a full-information, but static Byzantine adversary. A general
+drawback of existing Byzantine protocols is that the communication cost incurred by the honest
+nodes may not be proportional to those incurred by the Byzantine nodes; in fact, they can be significantly
+higher. Our goal is to design Byzantine protocols for fundamental problems which are {\em resource
+competitive}, i.e., the number of bits sent by honest nodes is not much more than those sent by Byzantine
+nodes. We describe a randomized scalable algorithm to solve Byzantine agreement, leader election,
+and committee election in this model. Our algorithm sends an expected $O((T+n)\log n)$ bits and
+has latency $O(polylog(n))$, where $n$ is the number of nodes, and $T$ is the minimum of $n^2$ and
+the number of bits sent by adversarially controlled nodes. The algorithm is resilient to $(1/4-\epsilon)n$
+Byzantine nodes for any fixed $\epsilon > 0$, and succeeds with high probability. Our work can be
+considered as a first application of resource-competitive analysis to fundamental Byzantine
+problems. To complement our algorithm we also show lower bounds for resource-competitive Byzantine
+agreement. We prove that, in general, one cannot hope to design Byzantine protocols that have communication
+cost that is significantly smaller than the cost of the Byzantine adversary. 

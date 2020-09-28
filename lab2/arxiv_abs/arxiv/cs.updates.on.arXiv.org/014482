@@ -1,0 +1,17 @@
+The quantized neural network (QNN) is an efficient approach for network compression and can be widely
+used in the implementation of FPGAs. This paper proposes a novel learning framework for n-bit QNNs,
+whose weights are constrained to the power of two. To solve the gradient vanishing problem, we propose
+a reconstructed gradient function for QNNs in back-propagation algorithm that can directly get
+the real gradient rather than estimating an approximate gradient of the expected loss. We also propose
+a novel QNN structure named n-BQ-NN, which uses shift operation to replace the multiply operation
+and is more suitable for the inference on FPGAs. Furthermore, we also design a shift vector processing
+element (SVPE) array to replace all 16-bit multiplications with SHIFT operations in convolution
+operation on FPGAs. We also carry out comparable experiments to evaluate our framework. The experimental
+results show that the quantized models of ResNet, DenseNet and AlexNet through our learning framework
+can achieve almost the same accuracies with the original full-precision models. Moreover, when
+using our learning framework to train our n-BQ-NN from scratch, it can achieve state-of-the-art
+results compared with typical low-precision QNNs. Experiments on Xilinx ZCU102 platform show
+that our n-BQ-NN with our SVPE can execute 2.9 times faster than with the vector processing element
+(VPE) in inference. As the SHIFT operation in our SVPE array will not consume Digital Signal Processings
+(DSPs) resources on FPGAs, the experiments have shown that the use of SVPE array also reduces average
+energy consumption to 68.7% of the VPE array with 16-bit. 

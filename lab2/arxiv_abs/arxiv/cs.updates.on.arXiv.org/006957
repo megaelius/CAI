@@ -1,0 +1,19 @@
+We recently proposed an approach for the specification and modular formal verification of the interactive
+(I/O) behavior of programs, based on an embedding of Petri nets into separation logic. While this
+approach is scalable and modular in terms of the I/O APIs available to a program, enables composing
+low-level I/O actions into high-level ones, and enables a convenient verification experience,
+it does not support high-level I/O actions that involve memory manipulation as well as low-level
+I/O (such as buffered I/O), or that are in fact "virtual I/O" actions that are implemented purely
+through memory manipulation. Furthermore, it does not allow rewriting an I/O specification into
+an equivalent one. In this paper, we propose a refined approach that does have these properties.
+The essential insight is to fix the set of places of the Petri net to be the set of separation logic assertions,
+thus making available the full power of separation logic for abstractly stating an arbitrary operation's
+specification in Petri net form, for composing operations into an I/O specification, and for equivalence
+reasoning on I/O specifications. Our refinement resolves the issue of the justification of the
+choice of Petri nets over other formalisms such as general state transition systems, in that it "refines
+them away" into the more essential constructs of separating conjunction and abstract nested triples.
+To enable a convenient treatment of input operations, we propose the use of prophecy variables to
+eliminate their non-determinism. We illustrate the approach through a number of example programs,
+including one where subroutines specified and verified using I/O specifications run as threads
+communicating through shared memory. The theory and examples of the paper have been machine-checked
+using the Iris library for program verification in the Coq proof assistant. 

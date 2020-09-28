@@ -1,0 +1,20 @@
+We exhibit a randomized algorithm which given a square $n\times n$ complex matrix $A$ with $\|A\|
+\le 1$ and $\delta>0$, computes with high probability invertible $V$ and diagonal $D$ such that
+$$\|A-VDV^{-1}\|\le \delta $$ and $\|V\|\|V^{-1}\| \le O(n^{2.5}/\delta)$ in $O(T_{MM}\>(n)\log^2(n/\delta))$
+arithmetic operations on a floating point machine with $O(\log^4(n/\delta)\log n)$ bits of precision.
+Here $T_{MM}\>(n)$ is the number of arithmetic operations required to multiply two $n\times n$
+complex matrices numerically stably, with $T_{MM}\,\,(n)=O(n^{\omega+\eta}\>\>)$ for every
+$\eta>0$, where $\omega$ is the exponent of matrix multiplication. The algorithm is a variant of
+the spectral bisection algorithm in numerical linear algebra (Beavers and Denman, 1974). This
+running time is optimal up to polylogarithmic factors, in the sense that verifying that a given similarity
+diagonalizes a matrix requires at least matrix multiplication time. It significantly improves
+best previously provable running times of $O(n^9/\delta^2)$ arithmetic operations for diagonalization
+of general matrices (Armentano et al., 2018), and (w.r.t. dependence on $n$) $O(n^3)$ arithmetic
+operations for Hermitian matrices (Parlett, 1998). The proof rests on two new ingredients. (1)
+We show that adding a small complex Gaussian perturbation to any matrix splits its pseudospectrum
+into $n$ small well-separated components. This implies that the eigenvalues of the perturbation
+have a large minimum gap, a property of independent interest in random matrix theory. (2) We rigorously
+analyze Roberts' Newton iteration method for computing the matrix sign function in finite arithmetic,
+itself an open problem in numerical analysis since at least 1986. This is achieved by controlling
+the evolution the iterates' pseudospectra using a carefully chosen sequence of shrinking contour
+integrals in the complex plane. 

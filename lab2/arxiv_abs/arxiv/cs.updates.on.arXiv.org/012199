@@ -1,0 +1,19 @@
+Recommender systems widely use implicit feedback such as click data because of its general availability.
+Although the presence of clicks signals the users' preference to some extent, the lack of such clicks
+does not necessarily indicate a negative response from the users, as it is possible that the users
+were not exposed to the items (positive-unlabeled problem). This leads to a difficulty in predicting
+the users' preferences from implicit feedback. Previous studies addressed the positive-unlabeled
+problem by uniformly upweighting the loss for the positive feedback data or estimating the confidence
+of each data having relevance information via the EM-algorithm. However, these methods failed
+to address the missing-not-at-random problem in which popular or frequently recommended items
+are more likely to be clicked than other items even if a user does not have a considerable interest
+in them. To overcome these limitations, we first define an ideal loss function to be optimized to
+realize recommendations that maximize the relevance and propose an unbiased estimator for the
+ideal loss. Subsequently, we analyze the variance of the proposed unbiased estimator and further
+propose a clipped estimator that includes the unbiased estimator as a special case. We demonstrate
+that the clipped estimator is expected to improve the performance of the recommender system, by
+considering the bias-variance trade-off. We conduct semi-synthetic and real-world experiments
+and demonstrate that the proposed method largely outperforms the baselines. In particular, the
+proposed method works better for rare items that are less frequently observed in the training data.
+The findings indicate that the proposed method can better achieve the objective of recommending
+items with the highest relevance. 

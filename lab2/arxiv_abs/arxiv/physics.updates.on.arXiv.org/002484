@@ -1,0 +1,20 @@
+We present a new method to accelerate real time-time dependent density functional theory (rt-TDDFT)
+calculations with hybrid exchange-correlation functionals. For large basis set, the computational
+bottleneck for large scale calculations is the application of the Fock exchange operator to the
+time-dependent orbitals. Our main goal is to reduce the frequency of applying the Fock exchange
+operator, without loss of accuracy. We achieve this by combining the recently developed parallel
+transport (PT) gauge formalism and the adaptively compressed exchange operator (ACE) formalism.
+The PT gauge yields the slowest possible dynamics among all choices of gauge. When coupled with implicit
+time integrators such as the Crank-Nicolson (CN) scheme, the resulting PT-CN scheme can significantly
+increase the time step from sub-attoseconds to 10-100 attoseconds. At each time step $t_{n}$, PT-CN
+requires the self-consistent solution of the orbitals at time $t_{n+1}$. We use ACE to delay the
+update of the Fock exchange operator in this nonlinear system, while maintaining the same self-consistent
+solution. We verify the performance of the resulting PT-CN-ACE method by computing the absorption
+spectrum of a benzene molecule and the response of bulk silicon systems to an ultrafast laser pulse,
+using the planewave basis set and the HSE functional. We report the strong and weak scaling of the
+PT-CN-ACE method for silicon systems ranging from 32 to 1024 atoms, with up to 2048 computational
+cores. Compared to standard explicit time integrators such as the 4th order Runge-Kutta method
+(RK4), the PT-CN-ACE can reduce the Fock exchange operator application by nearly 70 times, thus
+reduce the overall wall clock time time by 46 times for the system with 1024 atoms. Hence our work enables
+hybrid functional rt-TDDFT calculations to be routinely performed with a large basis set for the
+first time. 

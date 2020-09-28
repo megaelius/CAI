@@ -1,0 +1,18 @@
+This work presents a partitioned solution procedure to compute shape gradients in fluid-structure
+interaction (FSI) using black-box adjoint solvers. Special attention is paid to project the gradients
+onto the undeformed configuration. This is due to the mixed Lagrangian-Eulerian formulation of
+large-displacement FSI in this work. Adjoint FSI problem is partitioned as an assembly of well-known
+adjoint fluid and structural problems, without requiring expensive cross-derivatives. The sub-adjoint
+problems are coupled with each other by augmenting the target functions with auxiliary functions,
+independent of the concrete choice of the underlying adjoint formulations. The auxiliary functions
+are linear force-based or displacement-based functionals which are readily available in well-established
+single-disciplinary adjoint solvers. Adjoint structural displacements, adjoint fluid displacements,
+and domain-based adjoint sensitivities of the fluid are the coupling fields to be exchanged between
+the adjoint solvers. A reduced formulation is also derived for the case of boundary-based adjoint
+shape sensitivity analysis for fluids. Numerical studies show that the complete formulation computes
+accurate shape gradients whereas inaccuracies appear in the reduced gradients, specially in regions
+of strong flow gradients and near singularities. Nevertheless, reduced gradient formulations
+are found to be a compromise between computational costs and accuracy. Mapping techniques including
+nearest element interpolation and the mortar method are studied in computational adjoint FSI.
+It is numerically shown that the mortar method does not introduce spurious oscillations in primal
+and sensitivity fields along non-matching interfaces, unlike the nearest element interpolation.

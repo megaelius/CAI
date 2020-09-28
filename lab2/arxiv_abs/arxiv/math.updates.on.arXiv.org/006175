@@ -1,0 +1,18 @@
+The linear Navier-Stokes equations in three dimensions are given by: $u_{it}(x,t)-\rho \triangle
+u_i(x,t)-p_{x_i}(x,t)=$ $w_i(x,t)$ , $div \textbf{u}(x,t)=0,i=1,2,3$ with initial conditions:
+$\textbf{u}|_{(t=0)\bigcup\partial\Omega}=0$. The Green function to the Dirichlet problem
+$\textbf{u}|_{(t=0)\bigcup\partial\Omega}=0$ of the equation $u_{it}(x,t)-\rho\triangle
+u_i(x,t)=f_i(x,t)$ present as: $G(x,t;\xi,\tau)=Z(x,t;\xi,\tau)+V(x,t;\xi,\tau).$ Where
+$Z(x,t;\xi,\tau)=\frac{1}{8\pi^{3/2}(t-\tau)^{3/2}}\cdot e^{-\frac{(x_1-\xi_1)^2+(x_2-\xi_2)^2+(x_3-\xi_3)^2}{4(t-\tau)}}$
+is the fundamental solution to this equation and $V(x,t;\xi,\tau)$ is the smooth function of variables
+$(x,t;\xi,\tau)$. The construction of the function $G(x,t;\xi,\tau)$ is resulted in the book
+[1 p.106]. By the Green function we present the Navier-Stokes equation as: $u_i(x,t)=\int_0^t\int_{\Omega}\Big(Z(x,t;\xi,\tau)+V(x,t;\xi,\tau)\Big)\frac{dp(\xi,\tau)}{d\xi}d\xi
+d\tau +\int_0^t\int_{\Omega}G(x,t;\xi,\tau)w_i(\xi,\tau)d\xi d\tau$. But $div \textbf{u}(x,t)=\sum_1^3
+\frac{du_i(x,t)}{dx_i}=0.$ Using these equations and the following properties of the fundamental
+function: $Z(x,t;\xi,\tau)$: $\frac{dZ(x,t;\xi,\tau)}{d x_i}=-\frac{d Z(x,t; \xi,\tau)}{d
+\xi_i},$ for the definition of the unknown pressure p(x,t) we shall receive the integral equation.
+From this integral equation we define the explicit expression of the pressure: $p(x,t)=-\frac{d}{dt}\triangle^{-1}\ast\int_0^t\int_{\Omega}\sum_1^3
+\frac{dG(x,t;\xi,\tau)}{dx_i}w_i(\xi,\tau)d\xi d\tau+\rho\cdot\int_0^t\int_{\Omega}\sum_1^3\frac{dG(x,t;\xi,\tau)}{dx_i}w_i(\xi,\tau)d\xi
+d\tau.$ By this formula the following estimate: $\int_0^t\sum_1^3\Big\|\frac{\partial p(x,\tau)}{\partial
+x_i}\Big\|_{L_2(\Omega)}^2 d \tau<c\cdot\int_0^t\sum_1^3\|w_i(x,\tau)\|_{L_2(\Omega)}^2
+d\tau$ holds. 

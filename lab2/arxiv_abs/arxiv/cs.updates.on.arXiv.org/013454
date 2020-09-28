@@ -1,0 +1,19 @@
+For graphs $G$ and $H$, a \emph{homomorphism} from $G$ to $H$ is an edge-preserving mapping from
+the vertex set of $G$ to the vertex set of $H$. For a fixed graph $H$, by \textsc{Hom($H$)} we denote
+the computational problem which asks whether a given graph $G$ admits a homomorphism to $H$. If $H$
+is a complete graph with $k$ vertices, then \textsc{Hom($H$)} is equivalent to the $k$-\textsc{Coloring}
+problem, so graph homomorphisms can be seen as generalizations of colorings. It is known that \textsc{Hom($H$)}
+is polynomial-time solvable if $H$ is bipartite or has a vertex with a loop, and NP-complete otherwise
+[Hell and Ne\v{s}et\v{r}il, JCTB 1990]. In this paper we are interested in the complexity of the
+problem, parameterized by the treewidth of the input graph $G$. If $G$ has $n$ vertices and is given
+along with its tree decomposition of width $\mathrm{tw}(G)$, then the problem can be solved in time
+$|V(H)|^{\mathrm{tw}(G)} \cdot n^{\mathcal{O}(1)}$, using a straightforward dynamic programming.
+We explore whether this bound can be improved. We show that if $H$ is a \emph{projective core}, then
+the existence of such a faster algorithm is unlikely: assuming the Strong Exponential Time Hypothesis
+(SETH), the \textsc{Hom($H$)} problem cannot be solved in time $(|V(H)|-\epsilon)^{\mathrm{tw}(G)}
+\cdot n^{\mathcal{O}(1)}$, for any $\epsilon > 0$. This result provides a full complexity characterization
+for a large class of graphs $H$, as almost all graphs are projective cores. We also notice that the
+naive algorithm can be improved for some graphs $H$, and show a complexity classification for all
+graphs $H$, assuming two conjectures from algebraic graph theory. In particular, there are no known
+graphs $H$ which are not covered by our result. In order to prove our results, we bring together some
+tools and techniques from algebra and from fine-grained complexity. 

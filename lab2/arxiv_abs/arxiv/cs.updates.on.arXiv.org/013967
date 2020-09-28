@@ -1,0 +1,19 @@
+Transfer learning provides an effective solution for feasibly and fast customize accurate \textit{Student}
+models, by transferring the learned knowledge of pre-trained \textit{Teacher} models over large
+datasets via fine-tuning. Many pre-trained Teacher models used in transfer learning are publicly
+available and maintained by public platforms, increasing their vulnerability to backdoor attacks.
+In this paper, we demonstrate a backdoor threat to transfer learning tasks on both image and time-series
+data leveraging the knowledge of publicly accessible Teacher models, aimed at defeating three
+commonly-adopted defenses: \textit{pruning-based}, \textit{retraining-based} and \textit{input
+pre-processing-based defenses}. Specifically, (A) ranking-based selection mechanism to speed
+up the backdoor trigger generation and perturbation process while defeating \textit{pruning-based}
+and/or \textit{retraining-based defenses}. (B) autoencoder-powered trigger generation is
+proposed to produce a robust trigger that can defeat the \textit{input pre-processing-based defense},
+while guaranteeing that selected neuron(s) can be significantly activated. (C) defense-aware
+retraining to generate the manipulated model using reverse-engineered model inputs. We launch
+effective misclassification attacks on Student models over real-world images, brain Magnetic
+Resonance Imaging (MRI) data and Electrocardiography (ECG) learning systems. The experiments
+reveal that our enhanced attack can maintain the $98.4\%$ and $97.2\%$ classification accuracy
+as the genuine model on clean image and time series inputs respectively while improving $27.9\%-100\%$
+and $27.1\%-56.1\%$ attack success rate on trojaned image and time series inputs respectively
+in the presence of pruning-based and/or retraining-based defenses. 

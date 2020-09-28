@@ -1,0 +1,18 @@
+Markov chain Monte Carlo (MCMC) simulation methods are widely used to assess parametric uncertainties
+of hydrologic models conditioned on measurements of observable state variables. However, when
+the model is CPU-intensive and high-dimensional, the computational cost of MCMC simulation will
+be prohibitive. In this situation, a CPU-efficient while less accurate low-fidelity model (e.g.,
+a numerical model with a coarser discretization, or a data-driven surrogate) is usually adopted.
+Nowadays, multi-fidelity simulation methods that can take advantage of both the efficiency of
+the low-fidelity model and the accuracy of the high-fidelity model are gaining popularity. In the
+MCMC simulation, as the posterior distribution of the unknown model parameters is the region of
+interest, it is wise to distribute most of the computational budget (i.e., the high-fidelity model
+evaluations) therein. Based on this idea, in this paper we propose an adaptive multi-fidelity MCMC
+algorithm for efficient inverse modeling of hydrologic systems. In this method, we evaluate the
+high-fidelity model mainly in the posterior region through iteratively running MCMC based on a
+Gaussian process (GP) system that is adaptively constructed with multi-fidelity simulation.
+The error of the GP system is rigorously considered in the MCMC simulation and gradually reduced
+to a negligible level in the posterior region. Thus, the proposed method can obtain an accurate estimate
+of the posterior distribution with a small number of the high-fidelity model evaluations. The performance
+of the proposed method is demonstrated by three numerical case studies in inverse modeling of hydrologic
+systems. 

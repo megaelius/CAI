@@ -1,0 +1,20 @@
+We have replicated some experiments in 'Development and validation of a deep learning algorithm
+for detection of diabetic retinopathy in retinal fundus photographs' that was published in JAMA
+2016; 316(22). We re-implemented the methods since the source code is not available. The original
+study used fundus images from EyePACS and three hospitals in India for training their detection
+algorithm. We used a different EyePACS data set that was made available in a Kaggle competition.
+For evaluating the algorithm's performance the benchmark data set Messidor-2 was used. We used
+the similar Messidor-Original data set to evaluate our algorithm's performance. In the original
+study licensed ophthalmologists re-graded all their obtained images for diabetic retinopathy,
+macular edema, and image gradability. Our challenge was to re-implement the methods with publicly
+available data sets and one diabetic retinopathy grade per image, find the hyper-parameter settings
+for training and validation that were not described in the original study, and make an assessment
+on the impact of training with ungradable images. We were not able to reproduce the performance as
+reported in the original study. We believe our model did not learn to recognize lesions in fundus
+images, since we only had a singular grade for diabetic retinopathy per image, instead of multiple
+grades per images. Furthermore, the original study missed details regarding hyper-parameter
+settings for training and validation. The original study may also have used image quality grades
+as input for training the network. We believe that deep learning algorithms should be easily replicated,
+and that ideally source code should be published so that other researchers can confirm the results
+of the experiments. Our source code and instructions for running the replication are available
+at: https://github.com/mikevoets/jama16-retina-replication. 

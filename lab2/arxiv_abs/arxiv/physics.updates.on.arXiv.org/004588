@@ -1,0 +1,19 @@
+Purpose: This paper describes a new method to apply deep-learning algorithms for automatic segmentation
+of radiosensitive organs from 3D tomographic CT images before computing organ doses using a GPU-based
+Monte Carlo code. Methods: A deep convolutional neural network (CNN) for organ segmentation is
+trained to automatically delineate radiosensitive organs from CT. With a GPU-based Monte Carlo
+dose engine (ARCHER) to derive CT dose of a phantom made from a subject's CT scan, we are then able to
+compute the patient-specific CT dose for each of the segmented organs. The developed tool is validated
+by using Relative Dose Error (RDE) against the organ doses calculated by ARCHER with manual segmentation
+performed by radiologists. The dose computation results are also compared against organ doses
+from population-average phantoms to demonstrate the improvement achieved by using the developed
+tool. In this study, two datasets were used: The Lung CT Segmentation Challenge 2017 (LCTSC) dataset,
+which contains 60 thoracic CT scan patients each with 5 segmented organs, and the Pancreas-CT (PCT)
+dataset, which contains 43 abdominal CT scan patients each with 8 segmented organs. Five-fold cross-validation
+of the new method is performed on both datasets. Results: Comparing with the traditional organ dose
+evaluation method that based on population-average phantom, our proposed method achieved the
+smaller RDE range on all organs with -4.3%~1.5% vs -31.5%~33.9% (lung), -7.0%~2.3% vs -15.2%~125.1%
+(heart), -18.8%~40.2% vs -10.3%~124.1% (esophagus) in the LCTSC dataset and -5.6%~1.6% vs -20.3%~57.4%
+(spleen), -4.5%~4.6% vs -19.5%~61.0% (pancreas), -2.3%~4.4% vs -37.8%~75.8% (left kidney),
+-14.9%~5.4% vs -39.9% ~14.6% (gall bladder), -0.9%~1.6% vs -30.1%~72.5% (liver), and -23.0%~11.1%
+vs -52.5%~-1.3% (stomach) in the PCT dataset. 

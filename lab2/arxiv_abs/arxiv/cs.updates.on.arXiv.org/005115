@@ -1,0 +1,18 @@
+We study \emph{sublinear} algorithms that solve linear systems locally. In the classical version
+of this problem the input is a matrix $S\in \mathbb{R}^{n\times n}$ and a vector $b\in\mathbb{R}^n$
+in the range of $S$, and the goal is to output $x\in \mathbb{R}^n$ satisfying $Sx=b$. For the case
+when the matrix $S$ is symmetric diagonally dominant (SDD), the breakthrough algorithm of Spielman
+and Teng [STOC 2004] approximately solves this problem in near-linear time (in the input size which
+is the number of non-zeros in $S$), and subsequent papers have further simplified, improved, and
+generalized the algorithms for this setting. Here we focus on computing one (or a few) coordinates
+of $x$, which potentially allows for sublinear algorithms. Formally, given an index $u\in [n]$
+together with $S$ and $b$ as above, the goal is to output an approximation $\hat{x}_u$ for $x^*_u$,
+where $x^*$ is a fixed solution to $Sx=b$. Our results show that there is a qualitative gap between
+SDD matrices and the more general class of positive semidefinite (PSD) matrices. For SDD matrices,
+we develop an algorithm that approximates a single coordinate $x_{u}$ in time that is polylogarithmic
+in $n$, provided that $S$ is sparse and has a small condition number (e.g., Laplacian of an expander
+graph). The approximation guarantee is additive $| \hat{x}_u-x^*_u | \le \epsilon \| x^* \|_\infty$
+for accuracy parameter $\epsilon>0$. We further prove that the condition-number assumption is
+necessary and tight. In contrast to the SDD matrices, we prove that for certain PSD matrices $S$,
+the running time must be at least polynomial in $n$. This holds even when one wants to obtain the same
+additive approximation, and $S$ has bounded sparsity and condition number. 

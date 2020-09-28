@@ -1,0 +1,19 @@
+Due to the large combinatorial problem, current beam orientation optimization algorithms for
+radiotherapy, such as column generation (CG), are typically heuristic or greedy in nature, leading
+to suboptimal solutions. We propose a reinforcement learning strategy using Monte Carlo Tree Search
+capable of finding a superior beam orientation set and in less time than CG.We utilized a reinforcement
+learning structure involving a supervised learning network to guide Monte Carlo tree search (GTS)
+to explore the decision space of beam orientation selection problem. We have previously trained
+a deep neural network (DNN) that takes in the patient anatomy, organ weights, and current beams,
+and then approximates beam fitness values, indicating the next best beam to add. This DNN is used
+to probabilistically guide the traversal of the branches of the Monte Carlo decision tree to add
+a new beam to the plan. To test the feasibility of the algorithm, we solved for 5-beam plans, using
+13 test prostate cancer patients, different from the 57 training and validation patients originally
+trained the DNN. To show the strength of GTS to other search methods, performances of three other
+search methods including a guided search, uniform tree search and random search algorithms are
+also provided. On average GTS outperforms all other methods, it find a solution better than CG in
+237 seconds on average, compared to CG which takes 360 seconds, and outperforms all other methods
+in finding a solution with lower objective function value in less than 1000 seconds. Using our guided
+tree search (GTS) method we were able to maintain a similar planning target volume (PTV) coverage
+within 1% error, and reduce the organ at risk (OAR) mean dose for body, rectum, left and right femoral
+heads, but a slight increase of 1% in bladder mean dose. 

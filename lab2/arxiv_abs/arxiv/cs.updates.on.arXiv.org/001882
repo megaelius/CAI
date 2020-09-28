@@ -1,0 +1,20 @@
+Anomaly detection (AD) has garnered ample attention in security research, as such algorithms complement
+existing signature-based methods but promise detection of never-before-seen attacks. Cyber
+operations manage a high volume of heterogeneous log data; hence, AD in such operations involves
+multiple (e.g., per IP, per data type) ensembles of detectors modeling heterogeneous characteristics
+(e.g., rate, size, type) often with adaptive online models producing alerts in near real time. Because
+of high data volume, setting the threshold for each detector in such a system is an essential yet underdeveloped
+configuration issue that, if slightly mistuned, can leave the system useless, either producing
+a myriad of alerts and flooding downstream systems, or giving none. In this work, we build on the foundations
+of Ferragut et al. to provide a set of rigorous results for understanding the relationship between
+threshold values and alert quantities, and we propose an algorithm for setting the threshold in
+practice. Specifically, we give an algorithm for setting the threshold of multiple, heterogeneous,
+possibly dynamic detectors completely a priori, in principle. Indeed, if the underlying distribution
+of the incoming data is known (closely estimated), the algorithm provides provably manageable
+thresholds. If the distribution is unknown (e.g., has changed over time) our analysis reveals how
+the model distribution differs from the actual distribution, indicating a period of model refitting
+is necessary. We provide empirical experiments showing the efficacy of the capability by regulating
+the alert rate of a system with $\approx$2,500 adaptive detectors scoring over 1.5M events in 5 hours.
+Further, we demonstrate on the real network data and detection framework of Harshaw et al. the alternative
+case, showing how the inability to regulate alerts indicates the detection model is a bad fit to the
+data. 

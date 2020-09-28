@@ -1,0 +1,17 @@
+Radiation pressure (RP; or photon momentum absorbed by gas) is important in a tremendous range of
+astrophysical systems. But we show the usual method for assigning absorbed photon momentum to gas
+in numerical radiation-hydrodynamics simulations (integrating over cell volumes or evaluating
+at cell centers) can severely under-estimate the RP force in the immediate vicinity around un-resolved
+(point/discrete) sources (and subsequently under-estimate its effects on bulk gas properties),
+unless photon mean-free-paths are highly-resolved in the fluid grid. The existence of this error
+is independent of the numerical radiation transfer (RT) method (even in exact ray-tracing/Monte-Carlo
+methods), because it depends on how the RT solution is interpolated back onto fluid elements. Brute-force
+convergence (resolving mean-free paths) is impossible in many cases (especially where UV/ionizing
+photons are involved). Instead, we show a 'face-integrated' method -- integrating and applying
+the momentum fluxes at interfaces between fluid elements -- better approximates the correct solution
+at all resolution levels. The 'fix' is simple and we provide example implementations for ray-tracing,
+Monte-Carlo, and moments RT methods in both grid and mesh-free fluid schemes. We consider an example
+of star formation in a molecular cloud with UV/ionizing RP. At state-of-the-art resolution, cell-integrated
+methods under-estimate the net effects of RP by an order of magnitude, leading (incorrectly) to
+the conclusion that RP is unimportant, while face-integrated methods predict strong self-regulation
+of star formation and cloud destruction via RP. 

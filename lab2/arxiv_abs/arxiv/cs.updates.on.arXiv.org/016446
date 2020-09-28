@@ -1,0 +1,19 @@
+Inclusion-based (i.e., Andersen-style) points-to analysis is a fundamental static analysis
+problem. The seminal work of Andersen gave a worst-case cubic $O(n^3)$ time points-to analysis
+algorithm for C, where $n$ is proportional to the number of program variables. An algorithm is truly
+subcubic if it runs in $O(n^{3-\delta})$ time for some $\delta > 0$. Despite decades of extensive
+effort on improving points-to analysis, the cubic bound remains unbeaten. The best combinatorial
+analysis algorithms have a ``slightly subcubic'' $O(n^3 / \text{log } n)$ complexity. It is an interesting
+open problem whether points-to analysis can be solved in truly subcubic time. In this paper, we prove
+that a truly subcubic $O(n^{3-\delta})$ time combinatorial algorithm for inclusion-based points-to
+analysis is unlikely: a truly subcubic combinatorial points-to analysis algorithm implies a truly
+subcubic combinatorial algorithm for Boolean Matrix Multiplication (BMM). BMM is a well-studied
+problem, and no truly subcubic combinatorial BMM algorithm has been known. The fastest combinatorial
+BMM algorithms run in time $O(n^3/ \text{log}^4 n)$. Our result includes a simplified proof of the
+BMM-hardness of Dyck-reachability. The reduction is interesting in its own right. First, it is
+slightly stronger than the existing BMM-hardness results because our reduction only requires
+one type of parenthesis in Dyck-reachability ($D_1$-reachability). Second, we formally attribute
+the ``cubic bottleneck'' to the need to solve $D_1$-reachability, which captures the semantics
+of pointer references/dereferences. This new perspective enables a more general reduction that
+applies to programs with arbitrary pointer statements types. Last, our reduction based on $D_1$-reachability
+shows that demand-driven points-to analysis is as hard as the exhaustive counterpart. 

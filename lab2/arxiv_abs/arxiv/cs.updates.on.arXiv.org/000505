@@ -1,0 +1,20 @@
+This paper explores combinatorial optimization for problems of max-weight graph matching on multi-partite
+graphs, which arise in integrating multiple data sources. Entity resolution-the data integration
+problem of performing noisy joins on structured data-typically proceeds by first hashing each
+record into zero or more blocks, scoring pairs of records that are co-blocked for similarity, and
+then matching pairs of sufficient similarity. In the most common case of matching two sources, it
+is often desirable for the final matching to be one-to-one (a record may be matched with at most one
+other); members of the database and statistical record linkage communities accomplish such matchings
+in the final stage by weighted bipartite graph matching on similarity scores. Such matchings are
+intuitively appealing: they leverage a natural global property of many real-world entity stores-that
+of being nearly deduped-and are known to provide significant improvements to precision and recall.
+Unfortunately unlike the bipartite case, exact max-weight matching on multi-partite graphs is
+known to be NP-hard. Our two-fold algorithmic contributions approximate multi-partite max-weight
+matching: our first algorithm borrows optimization techniques common to Bayesian probabilistic
+inference; our second is a greedy approximation algorithm. In addition to a theoretical guarantee
+on the latter, we present comparisons on a real-world ER problem from Bing significantly larger
+than typically found in the literature, publication data, and on a series of synthetic problems.
+Our results quantify significant improvements due to exploiting multiple sources, which are made
+possible by global one-to-one constraints linking otherwise independent matching sub-problems.
+We also discover that our algorithms are complementary: one being much more robust under noise,
+and the other being simple to implement and very fast to run. 

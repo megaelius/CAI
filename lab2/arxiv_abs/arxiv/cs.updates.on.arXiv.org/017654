@@ -1,0 +1,19 @@
+In several important routing contexts it is required to identify a set of routes, each of which optimizes
+a different criterion. For instance, in the context of vehicle routing, one route would minimize
+the total distance traveled, while other routes would also consider the total travel time or the
+total incurred cost, or combinations thereof. In general, providing such a set of diverse routes
+is obtained by finding optimal routes with respect to different sets of weights on the network edges.
+This can be simply achieved by consecutively executing a standard shortest path algorithm. However,
+in the case of a large number of weight sets, this may require an excessively large number of executions
+of such an algorithm, thus incurring a prohibitively large running time. We indicate that, quite
+often, the different edge weights reflect different combinations of some "raw" performance metrics
+(e.g., delay, cost). In such cases, there is an inherent dependency among the different weights
+of the same edge. This may well result in some similarity among the shortest routes, each of which
+being optimal with respect to a specific set of weights. In this study, we aim to exploit such similarity
+in order to improve the performance of the solution scheme. Specifically, we contemplate edge weights
+that are obtained through different linear combinations of some (``raw'') edge performance metrics.
+We establish and validate a novel algorithm that efficiently computes a shortest path for each set
+of edge weights. We demonstrate that, under reasonable assumptions, the algorithm significantly
+outperforms the standard approach. Similarly to the standard approach, the algorithm iteratively
+searches for routes, one per set of edge weights; however, instead of executing each iteration independently,
+it reduces the average running time by skillfully sharing information among the iterations. 

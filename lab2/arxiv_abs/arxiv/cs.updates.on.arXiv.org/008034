@@ -1,0 +1,17 @@
+Community detection is a discovery tool used by network scientists to analyze the structure of real-world
+networks. It seeks to identify natural divisions that may exist in the input networks that partition
+the vertices into coherent modules (or communities). While this problem space is rich with efficient
+algorithms and software, most of this literature caters to the static use-case where the underlying
+network does not change. However, many emerging real-world use-cases give rise to a need to incorporate
+dynamic graphs as inputs. In this paper, we present a fast and efficient incremental approach toward
+dynamic community detection. The key contribution is a generic technique called $\Delta-screening$,
+which examines the most recent batch of changes made to an input graph and selects a subset of vertices
+to reevaluate for potential community (re)assignment. This technique can be incorporated into
+any of the community detection methods that use modularity as its objective function for clustering.
+For demonstration purposes, we incorporated the technique into two well-known community detection
+tools. Our experiments demonstrate that our new incremental approach is able to generate performance
+speedups without compromising on the output quality (despite its heuristic nature). For instance,
+on a real-world network with 63M temporal edges (over 12 time steps), our approach was able to complete
+in 1056 seconds, yielding a 3x speedup over a baseline implementation. In addition to demonstrating
+the performance benefits, we also show how to use our approach to delineate appropriate intervals
+of temporal resolutions at which to analyze an input network. 

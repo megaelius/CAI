@@ -1,0 +1,20 @@
+For a given software bug report, identifying an appropriate developer who could potentially fix
+the bug is the primary task of a bug triaging process. A bug title (summary) and a detailed description
+is present in most of the bug tracking systems. Automatic bug triaging algorithm can be formulated
+as a classification problem, with the bug title and description as the input, mapping it to one of
+the available developers (classes). The major challenge is that the bug description usually contains
+a combination of free unstructured text, code snippets, and stack trace making the input data noisy.
+The existing bag-of-words (BOW) feature models do not consider the syntactical and sequential
+word information available in the unstructured text. We propose a novel bug report representation
+algorithm using an attention based deep bidirectional recurrent neural network (DBRNN-A) model
+that learns a syntactic and semantic feature from long word sequences in an unsupervised manner.
+Instead of BOW features, the DBRNN-A based bug representation is then used for training the classifier.
+Using an attention mechanism enables the model to learn the context representation over a long word
+sequence, as in a bug report. To provide a large amount of data to learn the feature learning model,
+the unfixed bug reports (~70% bugs in an open source bug tracking system) are leveraged, which were
+completely ignored in the previous studies. Another contribution is to make this research reproducible
+by making the source code available and creating a public benchmark dataset of bug reports from three
+open source bug tracking system: Google Chromium (383,104 bug reports), Mozilla Core (314,388
+bug reports), and Mozilla Firefox (162,307 bug reports). Experimentally we compare our approach
+with BOW model and machine learning approaches and observe that DBRNN-A provides a higher rank-10
+average accuracy. 

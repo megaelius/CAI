@@ -1,0 +1,18 @@
+We present PyHessian, a new scalable framework that enables fast computation of Hessian (i.e.,
+second-order derivative) information for deep neural networks. This framework is developed in
+Pytorch, and it enables distributed-memory execution on both cloud and supercomputer systems.
+PyHessian enables fast computations of the top Hessian eigenvalues, the Hessian trace, and the
+full Hessian eigenvalue/spectral density. This general framework can be used to analyze neural
+network models, including the topology of the loss landscape (i.e., curvature information) to
+gain insight into the behavior of different models/optimizers. To illustrate this, we apply PyHessian
+to analyze the effect of residual connections and Batch Normalization layers on the smoothness
+of the loss landscape during training. One recent claim, based on simpler first-order analysis,
+is that residual connections and Batch Normalization make the loss landscape ``smoother,'' thus
+making it easier for Stochastic Gradient Descent to converge to a good solution. We perform an extensive
+analysis of this hypothesis, on four residual networks (ResNet20/32/38/56) on the Cifar-10/100
+dataset, by measuring directly the Hessian spectrum using PyHessian. This analysis leads to finer-scale
+insight, demonstrating that while conventional wisdom is sometimes validated, in other cases
+it is simply incorrect. In particular, we find that Batch Normalization layers do not necessarily
+make the loss landscape smoother, especially for shallow networks. Instead, the claimed smoother
+loss landscape only becomes evident for deeper neural networks, at least within this ResNet series.
+We have open-sourced the PyHessian framework for Hessian spectrum computation. 

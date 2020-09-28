@@ -1,0 +1,19 @@
+Automated driving in urban settings is challenging chiefly due to the indeterministic nature of
+the human participants of the traffic. These behaviors are difficult to model, and conventional,
+rule-based Automated Driving Systems (ADSs) tend to fail when they face unmodeled dynamics. On
+the other hand, the more recent, end-to-end Deep Reinforcement Learning (DRL) based ADSs have shown
+promising results. However, pure learning-based approaches lack the hard-coded safety measures
+of model-based methods. Here we propose a hybrid approach that integrates a model-based path planner
+into a vision based DRL framework to alleviate the shortcomings of both worlds. In summary, the DRL
+agent learns to overrule the model-based planner's decisions if it predicts that better future
+rewards can be obtained while doing so, e.g., avoiding an accident. Otherwise, the DRL agent tends
+to follow the model-based planner as close as possible. This logic is learned, i.e., no switching
+model is designed here. The agent learns this by considering two penalties: the penalty of straying
+away from the model-based path planner and the penalty of having a collision. The latter has precedence
+over the former, i.e., the penalty is greater. Therefore, after training, the agent learns to follow
+the model-based planner when it is safe to do so, otherwise, it gets penalized. However, it also learns
+to sacrifice positive rewards for following the model-based planner to avoid a potential big negative
+penalty for making a collision in the future. Experimental results show that the proposed method
+can plan its path and navigate while avoiding obstacles between randomly chosen origin-destination
+points in CARLA, a dynamic urban simulation environment. Our code is open-source and available
+online. 

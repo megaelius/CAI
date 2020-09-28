@@ -1,0 +1,19 @@
+The present paper studies local distributed graph problems in highly dynamic networks. Communication
+and changes of the graph happen in synchronous rounds and our algorithms always, i.e., in every round,
+satisfy non-trivial guarantees, no matter how dynamic the network is. We define a (in our view) natural
+generalization of static graph problems to the dynamic graph setting. Throughout the execution
+of an algorithm we consider a sliding window over the last $T$, e.g., polylogarithmic, rounds. Then,
+in some round, the feasibility of an output only depends on the topology of the graphs in the current
+sliding window and we call a feasible output a $T$-dynamic solution. The guarantees of a $T$-dynamic
+solution become stronger the more stable the graph is during this sliding window and, in particular,
+they coincide with the definition of the static graph problem if the graph is static throughout the
+window. We further present an abstract framework that allows to develop algorithms that output
+$T$-dynamic solutions in all rounds. The resulting algorithms have another desirable property:
+If a constant neighborhood around some part of the graph is stable during an interval $[t_1,t_2]$,
+the algorithms compute a static solution for this part of the graph throughout the interval $[t_1+T',t_2]$
+for some (small) $T'>0$. We demonstrate our generic framework with two sample problems that abstract
+basic operations in dynamic networks, namely $\textit{(degree+1)-vertex coloring}$ and $\textit{maximal
+independent set (MIS)}$. To illustrate the given guarantees consider the vertex coloring problem:
+The sliding window of our (randomized) algorithm is of length $T=O(\log n)$ and any conflict between
+two nodes caused by a newly inserted edge is resolved within that time. During this conflict resolving
+both nodes always output colors that are not in conflict with their respective 'old' neighbors.

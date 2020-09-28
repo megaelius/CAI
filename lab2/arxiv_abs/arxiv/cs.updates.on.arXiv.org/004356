@@ -1,0 +1,18 @@
+Cyber-physical systems involve a network of discrete controllers that control physical processes.
+Examples range from autonomous cars to implantable medical devices, which are highly safety critical.
+Hybrid Automata (HA) based formal approach is gaining momentum for the specification and validation
+of CPS. HA combines the model of the plant along with its discrete controller resulting in a piece-wise
+continuous system with discontinuities. Accurate detection of these discontinuities, using
+appropriate level crossing detectors, is a key challenge to simulation of CPS based on HA. Existing
+techniques employ time discrete numerical integration with bracketing for level crossing detection.
+These techniques involve back-tracking and are highly non-deterministic and hence error prone.
+As level crossings happen based on the values of continuous variables, Quantized State System (QSS)-
+integration may be more suitable. Existing QSS integrators, based on fixed quanta, are also unsuitable
+for simulating HAs. This is since the quantum selected is not dependent on the HA guard conditions,
+which are the main cause of discontinuities. Considering this, we propose a new dynamic quanta based
+formal model called Quantized State Hybrid Automata (QSHA). The developed formal model and the
+associated simulation framework guarantees that (1) all level crossings are accurately detected
+and (2) the time of the level crossing is also accurate within floating point error bounds. Interestingly,
+benchmarking results reveal that the proposed simulation technique takes 720, 1.33 and 4.41 times
+fewer simulation steps compared to standard Quantized State System (QSS)-1, Runge-Kutta (RK)-45,
+and Differential Algebraic System Solver (DASSL) integration based techniques respectively.

@@ -1,0 +1,18 @@
+Information flow analysis prevents secret or untrusted data from flowing into public or trusted
+sinks. Existing mechanisms cover a wide array of options, ranging from lightweight taint analysis
+to heavyweight information flow control that also considers implicit flows. Dynamic analysis,
+which is particularly popular for languages such as JavaScript, faces the question whether to invest
+in analyzing flows caused by not executing a particular branch, so-called hidden implicit flows.
+This paper addresses the questions how common different kinds of flows are in real-world programs,
+how important these flows are to enforce security policies, and how costly it is to consider these
+flows. We address these questions in an empirical study that analyzes 56 real-world JavaScript
+programs that suffer from various security problems, such as code injection vulnerabilities,
+denial of service vulnerabilities, memory leaks, and privacy leaks. The study is based on a state-of-the-art
+dynamic information flow analysis and a formalization of its core. We find that implicit flows are
+expensive to track in terms of permissiveness, label creep, and runtime overhead. We find a lightweight
+taint analysis to be sufficient for most of the studied security problems, while for some privacy-related
+code, observable tracking is sometimes required. In contrast, we do not find any evidence that tracking
+hidden implicit flows reveals otherwise missed security problems. Our results help security analysts
+and analysis designers to understand the cost-benefit tradeoffs of information flow analysis
+and provide empirical evidence that analyzing implicit flows in a cost-effective way is a relevant
+problem. 

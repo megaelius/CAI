@@ -1,0 +1,18 @@
+Parameter estimation problems of mathematical models can often be formulated as nonlinear least
+squares problems. Typically these problems are solved numerically using iterative methods. The
+solution obtained using these iterative methods usually depends on the choice of the initial iterate.
+Especially, when there is no unique minimum to the nonlinear least squares problem, the algorithm
+finds one of the solutions near the initial iterate. Hence, the estimated parameter and subsequent
+analyses using the estimated parameter depends on the choice of the initial iterate. One way to reduce
+the analysis bias due to the choice of the initial iterate is to repeat the algorithm from multiple
+initial iterates. However, the procedure can be computationally intensive and is not often implemented
+in practice. To overcome this problem, we propose the Cluster Gauss-Newton (CGN) method, an efficient
+algorithm for finding multiple possible solutions of nonlinear-least squares problems. The algorithm
+simultaneously solves the nonlinear least squares problem from multiple initial iterates. The
+algorithm iteratively improves the solutions from these initial iterates similarly to the Gauss-Newton
+method. However, it uses a global linear approximation instead of the gradient. The global linear
+approximations are computed collectively among all the initial iterates to minimise the computational
+cost and increase the robustness against convergence to local minima. We use mathematical models
+used in pharmaceutical drug development to demonstrate its use and that the proposed algorithm
+is computationally more efficient and more robust against local minima compared to the Levenberg-Marquardt
+method. 

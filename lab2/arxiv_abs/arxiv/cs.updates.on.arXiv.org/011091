@@ -1,0 +1,19 @@
+Cloud computing offers the economies of scale for computational resources with the ease of management,
+elasticity, and fault tolerance. To take advantage of these benefits, many enterprises are contemplating
+to outsource the middlebox processing services in the cloud. However, middleboxes that process
+confidential and private data cannot be securely deployed in the untrusted environment of the cloud.
+To securely outsource middleboxes to the cloud, the state-of-the-art systems advocate network
+processing over the encrypted traffic. Unfortunately, these systems support only restrictive
+middlebox functionalities, and incur prohibitively high overheads due to the complex computations
+involved over the encrypted traffic. This motivated the design of Slick --- a secure middlebox framework
+for deploying high-performance Network Functions (NFs) on untrusted commodity servers. Slick
+exposes a generic interface based on Click to design and implement a wide-range of NFs using its out-of-the
+box elements and C++ extensions. Slick leverages SCONE (a shielded execution framework based on
+Intel SGX) and DPDK to securely process confidential data at line rate. More specifically, Slick
+provides hardware-assisted memory protection, and configuration and attestation service for
+seamless and verifiable deployment of middleboxes. We have also added several new features for
+commonly required functionalities: new specialized Click elements for secure packet processing,
+secure shared memory packet transfer for NFs chaining, secure state persistence, an efficient
+on-NIC timer for SGX enclaves, and memory safety against DPDK-specific Iago attacks. Furthermore,
+we have implemented several SGX-specific optimizations in Slick. Our evaluation shows that Slick
+achieves near-native throughput and latency. 

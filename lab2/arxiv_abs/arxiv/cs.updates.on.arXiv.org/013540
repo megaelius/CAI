@@ -1,0 +1,17 @@
+It is known that problems like Vertex Cover, Feedback Vertex Set and Odd Cycle Transversal are polynomial
+time solvable in the class of chordal graphs. We consider these problems in a graph that has at most
+$k$ vertices whose deletion results in a chordal graph, when parameterized by $k$. While this investigation
+fits naturally into the recent trend of what are called `structural parameterizations', here we
+assume that the deletion set is not given. One method to solve them is to compute a $k$-sized or an approximate
+($f(k)$ sized, for a function $f$) chordal vertex deletion set and then use the structural properties
+of the graph to design an algorithm. This method leads to at least $k^{\mathcal{O}(k)}n^{\mathcal{O}(1)}$
+running time when we use the known parameterized or approximation algorithms for finding a $k$-sized
+chordal deletion set on an $n$ vertex graph. In this work, we design $2^{\mathcal{O}(k)}n^{\mathcal{O}(1)}$
+time algorithms for these problems. Our algorithms do not compute a chordal vertex deletion set
+(or even an approximate solution). Instead, we construct a tree decomposition of the given graph
+in time $2^{\mathcal{O}(k)}n^{\mathcal{O}(1)}$ where each bag is a union of four cliques and $\mathcal{O}(k)$
+vertices. We then apply standard dynamic programming algorithms over this special tree decomposition.
+This special tree decomposition can be of independent interest. Our algorithms are adaptive (robust)
+in the sense that given an integer $k$, they detect whether the graph has a chordal vertex deletion
+set of size at most $k$ or output the special tree decomposition and solve the problem. We also show
+lower bounds for the problems we deal with under the Strong Exponential Time Hypothesis (SETH).

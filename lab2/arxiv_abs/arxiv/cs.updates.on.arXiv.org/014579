@@ -1,0 +1,19 @@
+The deployment of deep learning applications has to address the growing privacy concerns when using
+private and sensitive data for training. A conventional deep learning model is prone to privacy
+attacks that can recover the sensitive information of individuals from either model parameters
+or accesses to the target model. Recently, differential privacy that offers provable privacy guarantees
+has been proposed to train neural networks in a privacy-preserving manner to protect training data.
+However, many approaches tend to provide the worst case privacy guarantees for model publishing,
+inevitably impairing the accuracy of the trained models. In this paper, we present a novel private
+knowledge transfer strategy, where the private teacher trained on sensitive data is not publicly
+accessible but teaches a student to be publicly released. In particular, a three-player (teacher-student-discriminator)
+learning framework is proposed to achieve trade-off between utility and privacy, where the student
+acquires the distilled knowledge from the teacher and is trained with the discriminator to generate
+similar outputs as the teacher. We then integrate a differential privacy protection mechanism
+into the learning procedure, which enables a rigorous privacy budget for the training. The framework
+eventually allows student to be trained with only unlabelled public data and very few epochs, and
+hence prevents the exposure of sensitive training data, while ensuring model utility with a modest
+privacy budget. The experiments on MNIST, SVHN and CIFAR-10 datasets show that our students obtain
+the accuracy losses w.r.t teachers of 0.89%, 2.29%, 5.16%, respectively with the privacy bounds
+of (1.93, 10^-5), (5.02, 10^-6), (8.81, 10^-6). When compared with the existing works \cite{papernot2016semi,wang2019private},
+the proposed work can achieve 5-82% accuracy loss improvement. 

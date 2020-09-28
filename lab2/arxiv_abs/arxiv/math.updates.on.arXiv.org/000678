@@ -1,0 +1,19 @@
+We propose numerical algorithms for solving large deformation diffeomorphic image registration
+problems. We formulate the non-rigid image registration problem as a problem of optimal control.
+This leads to an infinite-dimensional partial differential equation (PDE) constrained optimization
+problem. The PDE constraint consists, in its simplest form, of a hyperbolic transport equation
+for the evolution of the image intensity. The control variable is the velocity field. Tikhonov regularization
+ensures well-posedness. We consider standard smoothness regularization based on $H^1$- or $H^2$-norms
+of the velocity field. We augment this regularization scheme with a constraint on the divergence
+of the velocity field rendering the flow incompressible. We use a Fourier pseudo-spectral discretization
+in space and a Chebyshev pseudo-spectral discretization in time. We use a preconditioned, matrix-free,
+inexact Gauss-Newton-Krylov reduced space sequential quadratic programming (RSQP) method for
+numerical optimization. A parameter continuation, which can intuitively be informed about regularity
+requirements, is designed to estimate an optimal regularization parameter. Regularity is ensured
+by controlling geometric features of the deformation field. Overall, we arrive at a black-box solver
+that exploits computational tools precisely tailored for solving the optimality system. We study
+spectral properties of the Hessian, grid convergence, numerical accuracy, computational efficiency,
+and deformation regularity of our scheme. We compare the designed Gauss-Newton-Krylov RSQP method
+with a Picard method. We study the influence of a varying number of unknowns in time. The reported
+results demonstrate excellent numerical accuracy, guaranteed local deformation regularity,
+and computational efficiency with an optional control on local mass conservation. 

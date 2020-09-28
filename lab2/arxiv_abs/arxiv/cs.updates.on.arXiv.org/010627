@@ -1,0 +1,18 @@
+Traffic forecasting approaches are critical to developing adaptive strategies for mobility.
+Traffic patterns have complex spatial and temporal dependencies that make accurate forecasting
+on large highway networks a challenging task. Recently, diffusion convolutional recurrent neural
+networks (DCRNNs) have achieved state-of-the-art results in traffic forecasting by capturing
+the spatiotemporal dynamics of the traffic. Despite the promising results, adopting DCRNN for
+large highway networks still remains elusive because of computational and memory bottlenecks.
+We present an approach to apply DCRNN for a large highway network. We use a graph-partitioning approach
+to decompose a large highway network into smaller networks and train them simultaneously on a cluster
+with graphics processing units (GPU). For the first time, we forecast the traffic of the entire California
+highway network with 11,160 traffic sensor locations simultaneously. We show that our approach
+can be trained within 3 hours of wall-clock time using 64 GPUs to forecast speed with high accuracy.
+Further improvements in the accuracy are attained by including overlapping sensor locations from
+nearby partitions and finding high-performing hyperparameter configurations for the DCRNN using
+DeepHyper, a hyperparameter tuning package. We demonstrate that a single DCRNN model can be used
+to train and forecast the speed and flow simultaneously and the results preserve fundamental traffic
+flow dynamics. We expect our approach for modeling a large highway network in short wall-clock time
+as a potential core capability in advanced highway traffic monitoring systems, where forecasts
+can be used to adjust traffic management strategies proactively given anticipated future conditions.

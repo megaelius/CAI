@@ -1,0 +1,20 @@
+We revisit a classical scenario in communication theory: a source is generating a waveform which
+we sample at regular intervals; we wish to transform the signal in such a way as to minimize distortion
+in its reconstruction, despite noise. The transformation must be online (also called causal),
+in order to enable real-time signaling. The noise model we consider is adversarial $\ell_1$-bounded;
+this is the "atomic norm" convex relaxation of the standard adversary model in discrete-alphabet
+communications, namely sparsity (low Hamming weight). We require that our encoding not increase
+the power of the original signal. In the "block coding" setting such encoding is possible due to the
+existence of large almost-Euclidean sections in $\ell_1$ spaces (established in the work of Dvoretzky,
+Milman, Ka\v{s}in, and Figiel, Lindenstrauss and Milman). Our main result is that an analogous
+result is achievable even online. Equivalently, we show a "lower triangular" version of $\ell_1$
+Dvoretzky theorems. In terms of communication, the result has the following form: If the signal
+is a stream of reals $x_1,\ldots$, one per unit time, which we encode causally into $\rho$ (a constant)
+reals per unit time (forming altogether an output stream $\mathcal{E}(x)$), and if the adversarial
+noise added to this encoded stream up to time $s$ is a vector $\vec{y}$, then at time $s$ the decoder's
+reconstruction of the input prefix $x_{[s]}$ is accurate in a time-weighted $\ell_2$ norm, to within
+$s^{-1/2+\delta}$ (any $\delta>0$) times the adversary's noise as measured in a time-weighted
+$\ell_1$ norm. The time-weighted decoding norm forces increasingly accurate reconstruction
+of the distant past, while the time-weighted noise norm permits only vanishing effect from noise
+in the distant past. Encoding is linear, and decoding is performed by an LP analogous to those used
+in compressed sensing. 

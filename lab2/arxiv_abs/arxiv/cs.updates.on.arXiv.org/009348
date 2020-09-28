@@ -1,0 +1,18 @@
+There is widespread interest in emerging technologies, especially resistive crossbars for accelerating
+Deep Neural Networks (DNNs). Resistive crossbars offer a highly-parallel and efficient matrix-vector-multiplication
+(MVM) operation. MVM being the most dominant operation in DNNs makes crossbars ideally suited.
+However, various sources of device and circuit non-idealities lead to errors in the MVM output,
+thereby reducing DNN accuracy. Towards that end, we propose crossbar re-mapping strategies to
+mitigate line-resistance induced accuracy degradation in DNNs, without having to re-train the
+learned weights, unlike most prior works. Line-resistances degrade the voltage levels along the
+crossbar columns, thereby inducing more errors at the columns away from the drivers. We rank the
+DNN weights and kernels based on a sensitivity analysis, and re-arrange the columns such that the
+most sensitive kernels are mapped closer to the drivers, thereby minimizing the impact of errors
+on the overall accuracy. We propose two algorithms $-$ static remapping strategy (SRS) and dynamic
+remapping strategy (DRS), to optimize the crossbar re-arrangement of a pre-trained DNN. We demonstrate
+the benefits of our approach on a standard VGG16 network trained using CIFAR10 dataset. Our results
+show that SRS and DRS limit the accuracy degradation to 2.9\% and 2.1\%, respectively, compared
+to a 5.6\% drop from an as it is mapping of weights and kernels to crossbars. We believe this work brings
+an additional aspect for optimization, which can be used in tandem with existing mitigation techniques,
+such as in-situ compensation, technology aware training and re-training approaches, to enhance
+system performance. 

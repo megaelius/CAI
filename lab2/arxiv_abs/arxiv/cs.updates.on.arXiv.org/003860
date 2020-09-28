@@ -1,0 +1,17 @@
+Continuous Integration (CI) testing is a popular software development technique that allows developers
+to easily check that their code can build successfully and pass tests across various system environments.
+In order to use a CI platform, a developer must include a set of configuration files to a code repository
+for specifying build conditions. Incorrect configuration settings lead to CI build failures,
+which can take hours to run, wasting valuable developer time and delaying product release dates.
+Debugging CI configurations is challenging because users must manage configurations for the build
+across many system environments, to which they may not have local access. Thus, the only way to check
+a CI configuration is to push a commit and wait for the build result. To address this problem, we present
+the first approach, VeriCI, for statically checking for errors in a given CI configuration before
+the developer pushes a commit to build on the CI server. Our key insight is that the repositories in
+a CI environment contain lists of build histories which offer the time-aware repository build status.
+Driven by this insight, we introduce the Misclassification Guided Abstraction Refinement (MiGAR)
+loop that automates part of the learning process across the heterogeneous build environments in
+CI. We then use decision tree learning to generate constraints on the CI configuration that must
+hold for a build to succeed by training on a large history of continuous integration repository build
+results. We evaluate VeriCI on real-world data from GitHub and find that we have 83% accuracy of predicting
+a build failure. 

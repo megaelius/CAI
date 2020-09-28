@@ -1,0 +1,17 @@
+Computer aided diagnosis (CAD) systems are designed to assist clinicians in various tasks, including
+highlighting abnormal regions in a medical image. A common approach consists in training a voxel-level
+binary classifier on a set of feature vectors extracted from normal and pathological areas in patients'
+scans. However, many pathologies (such as epilepsy) are characterized by lesions that may be located
+anywhere in the brain, have various shapes, sizes and texture. An adequate representation of such
+a heterogeneity requires a significant amount of annotated data which is a major issue in the medical
+domain. Therefore, we built on a previously proposed approach that considers epilepsy lesion detection
+task as a voxel-level outlier detection problem. It consists in building a oc-SVM classifier for
+each voxel in the brain volume using a small number of clinically-guided features El Azami et al.,
+2016. Our goal in this study is to make a step forward by replacing the handcrafted features with automatically
+learnt representations using neural networks. We propose a novel version of siamese networks trained
+on patches extracted from healthy patients' scans only. This network, composed of stacked autoencoders
+as subnetworks, is regularized by the reconstruction error of the patches. It is designed to learn
+representations that bring patches centered at the same voxel localization 'closer' with respect
+to the chosen metric (i.e. cosine). Finally, the middle layer representations of the subnetworks
+are fed to oc-SVM classifiers at voxel-level. The method is validated on 3 patients' MRI scans with
+confirmed epilepsy lesions and shows a promising performance. 

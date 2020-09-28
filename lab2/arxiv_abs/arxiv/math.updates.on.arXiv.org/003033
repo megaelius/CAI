@@ -1,0 +1,17 @@
+The limited memory BFGS (L-BFGS) method is widely used for large-scale unconstrained optimization,
+but its behavior on nonsmooth problems has received little attention. L-BFGS can be used with or
+without "scaling"; the use of scaling is normally recommended. A simple special case, when just
+one BFGS update is stored and used at every iteration, is sometimes also known as memoryless BFGS.
+We analyze memoryless BFGS with scaling, using any Armijo-Wolfe line search, on the function $f(x)
+= a|x^{(1)}| + \sum_{i=2}^{n} x^{(i)}$, initiated at any point $x_0$ with $x_0^{(1)}\not = 0$.
+We show that if $a\ge 2\sqrt{n-1}$, the absolute value of the normalized search direction generated
+by this method converges to a constant vector, and if, in addition, $a$ is larger than a quantity that
+depends on the Armijo parameter, then the iterates converge to a non-optimal point $\bar x$ with
+$\bar x^{(1)}=0$, although $f$ is unbounded below. As we showed in previous work, the gradient method
+with any Armijo-Wolfe line search also fails on the same function if $a\geq \sqrt{n-1}$ and $a$ is
+larger than another quantity depending on the Armijo parameter, but scaled memoryless BFGS fails
+under a weaker condition relating $a$ to the Armijo parameter than that implying failure of the gradient
+method. Furthermore, in sharp contrast to the gradient method, if a specific standard Armijo-Wolfe
+bracketing line search is used, scaled memoryless BFGS fails when $a\ge 2 \sqrt{n-1} $ regardless
+of the Armijo parameter. Finally, numerical experiments indicate that similar results hold for
+scaled L-BFGS with any fixed number of updates. 

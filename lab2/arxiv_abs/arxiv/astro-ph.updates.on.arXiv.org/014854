@@ -1,0 +1,17 @@
+In the standard theory of the formation of planets in our Solar System, terrestrial planets and the
+cores of gas giant planets are formed through accretion of km size objects (planetesimals) in the
+protoplanetary disk. The gravitational $N$-body simulations of planetesimal systems is the most
+direct way to study the accretion process of the planets. However, the use of $N$-body simulations
+has been limited to idealized model (e.g., perfect accretion) and/or narrow radial range, due to
+the limited number of particles available. We have developed a new N-body simulation code with particle-particle
+particle-tree (P3T) scheme for planetary system formation, GPLUM. GPLUM uses a fourth-order Hermite
+scheme to calculate gravitational interactions between particles within cut-off radii of individual
+particles and the Barnes-Hut tree scheme for gravitational interactions with particles outside
+the cut-off radii. In existing implementations of the P3T schemes, the same cut-off radius is used
+for all particles. Thus, when the range of the mass of the planetesimals becomes large, the calculation
+speed decreases. We have solved this problem by allowing each particle to determine its appropriate
+cutoff radius depending on its mass, distance from the central star, and the local velocity dispersion,
+and thus achieved a significant speedup when the range of the masses of particles is wide. We have
+also improved the scalability of the code, and have achieved good strong-scaling performance for
+up to 1,024 cores in the case of N=10^6. GPLUM is freely available from https://github.com/YotaIshigaki/GPLUM
+with MIT licence. 

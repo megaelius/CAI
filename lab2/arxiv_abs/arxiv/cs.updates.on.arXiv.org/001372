@@ -1,0 +1,17 @@
+Graphlets are small connected induced subgraphs of a larger graph $G$. Graphlets are now commonly
+used to quantify local and global topology of networks in the field. Methods exist to exhaustively
+enumerate all graphlets (and their orbits) in large networks as efficiently as possible using orbit
+counting equations. However, the number of graphlets in $G$ is exponential in both the number of
+nodes and edges in $G$. Enumerating them all is already unacceptably expensive on existing large
+networks, and the problem will only get worse as networks continue to grow in size and density. Here
+we introduce an efficient method designed to aid statistical sampling of graphlets up to size $k=8$
+from a large network. We define graphettes as the generalization of graphlets allowing for disconnected
+graphlets. Given a particular (undirected) graphette $g$, we introduce the idea of the canonical
+graphette $\mathcal K(g)$ as a representative member of the isomorphism group $Iso(g)$ of $g$.
+We compute the mapping $\mathcal K$, in the form of a lookup table, from all $2^{k(k-1)/2}$ undirected
+graphettes $g$ of size $k\le 8$ to their canonical representatives $\mathcal K(g)$, as well as the
+permutation that transforms $g$ to $\mathcal K(g)$. We also compute all automorphism orbits for
+each canonical graphette. Thus, given any $k\le 8$ nodes in a graph $G$, we can in constant time infer
+which graphette it is, as well as which orbit each of the $k$ nodes belongs to. Sampling a large number
+$N$ of such $k$-sets of nodes provides an approximation of both the distribution of graphlets and
+orbits across $G$, and the orbit degree vector at each node. 

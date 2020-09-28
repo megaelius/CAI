@@ -1,0 +1,18 @@
+We describe a novel iterative strategy for Kohn-Sham density functional theory calculations aimed
+at large systems (> 1000 electrons), applicable to metals and insulators alike. In lieu of explicit
+diagonalization of the Kohn-Sham Hamiltonian on every self-consistent field (SCF) iteration,
+we employ a two-level Chebyshev polynomial filter based complementary subspace strategy to: 1)
+compute a set of vectors that span the occupied subspace of the Hamiltonian; 2) reduce subspace diagonalization
+to just partially occupied states; and 3) obtain those states in an efficient, scalable manner via
+an inner Chebyshev-filter iteration. By reducing the necessary computation to just partially
+occupied states, and obtaining these through an inner Chebyshev iteration, our approach reduces
+the cost of large metallic calculations significantly, while eliminating subspace diagonalization
+for insulating systems altogether. We describe the implementation of the method within the framework
+of the Discontinuous Galerkin (DG) electronic structure method and show that this results in a computational
+scheme that can effectively tackle bulk and nano systems containing tens of thousands of electrons,
+with chemical accuracy, within a few minutes or less of wall clock time per SCF iteration on large-scale
+computing platforms. We anticipate that our method will be instrumental in pushing the envelope
+of large-scale ab initio molecular dynamics. As a demonstration of this, we simulate a bulk silicon
+system containing 8,000 atoms at finite temperature, and obtain an average SCF step wall time of
+51 seconds on 34,560 processors; thus allowing us to carry out 1.0 ps of ab initio molecular dynamics
+in approximately 28 hours (of wall time). 

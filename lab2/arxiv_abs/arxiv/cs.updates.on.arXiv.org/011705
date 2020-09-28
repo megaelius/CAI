@@ -1,0 +1,18 @@
+Android applications are executed on smartphones equipped with a variety of resources that must
+be properly accessed and controlled, otherwise the correctness of the executions and the stability
+of the entire environment might be negatively affected. For example, apps must properly acquire,
+use, and release microphones, cameras, and other multimedia devices otherwise the behavior of
+the apps that use the same resources might be compromised. Unfortunately, several apps do not use
+resources correctly, for instance due to faults and inaccurate design decisions. By interacting
+with these apps users may experience unexpected behaviors, which in turn may cause instability
+and sporadic failures, especially when resources are accessed. In this paper, we present an approach
+that lets users protect their environment from the apps that use resources improperly by enforcing
+the correct usage protocol. This is achieved by using software enforcers that can observe executions
+and change them when necessary. For instance, enforcers can detect that a resource has been acquired
+but not released, and automatically perform the release operation, thus giving the possibility
+to use that same resource to the other apps. The main idea is that software libraries, in particular
+the ones controlling access to resources, can be augmented with enforcers that can be activated
+and deactivated on demand by users to protect their environment from unwanted app behaviors. We
+call the software libraries augmented with one or more enforcers proactive libraries because the
+activation of the enforcer decorates the library with proactive behaviors that can guarantee the
+correctness of the execution despite the invocation of the operations implemented by the library.

@@ -1,0 +1,18 @@
+Pancreas segmentation in medical imaging data is of great significance for clinical pancreas diagnostics
+and treatment. However, the large population variations in the pancreas shape and volume cause
+enormous segmentation difficulties, even for state-of-the-art algorithms utilizing fully-convolutional
+neural networks (FCNs). Specifically, pancreas segmentation suffers from the loss of spatial
+information in 2D methods, and the high computational cost of 3D methods. To alleviate these problems,
+we propose a probabilistic-map-guided bi-directional recurrent UNet (PBR-UNet) architecture,
+which fuses intra-slice information and inter-slice probabilistic maps into a local 3D hybrid
+regularization scheme, which is followed by bi-directional recurrent network optimization.
+The PBR-UNet method consists of an initial estimation module for efficiently extracting pixel-level
+probabilistic maps and a primary segmentation module for propagating hybrid information through
+a 2.5D U-Net architecture. Specifically, local 3D information is inferred by combining an input
+image with the probabilistic maps of the adjacent slices into multichannel hybrid data, and then
+hierarchically aggregating the hybrid information of the entire segmentation network. Besides,
+a bi-directional recurrent optimization mechanism is developed to update the hybrid information
+in both the forward and the backward directions. This allows the proposed network to make full and
+optimal use of the local context information. Quantitative and qualitative evaluation was performed
+on the NIH Pancreas-CT dataset, and our proposed PBR-UNet method achieved better segmentation
+results with less computational cost compared to other state-of-the-art methods. 

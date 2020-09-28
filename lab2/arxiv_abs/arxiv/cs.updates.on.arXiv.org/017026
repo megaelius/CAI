@@ -1,0 +1,19 @@
+Stream processing engines enable modern systems to conduct large-scale analytics over unbounded
+data streams in real time. They often view an application as a direct acyclic graph with streams flowing
+through pipelined instances of various processing units. One key challenge that emerges is instance
+placement, i.e., to decide the placement of instances across servers with minimum traffic across
+servers and maximum resource utilization. The challenge roots in not only its intrinsic complexity
+but also the impact between successive application deployments. Most updated engines such as Apache
+Heron exploits a more modularized scheduler design that decomposes the task into two stages: One
+decides the instance-to-container mapping while the other focuses on the container-to-server
+mapping that is delegated to standalone resource managers. The unaligned objectives and scheduler
+designs in the two stages may lead to long response times or low utilization. However, so far little
+work has appeared to address the challenge. Inspired by the recent success of applications of Monte
+Carlo Tree Search (MCTS) methods in various fields, we develop a novel model to characterize such
+systems, formulate the problem, and cast each stage of mapping into a sequential decision process.
+By adopting MCTS methods, we propose MIPS, an MCTS-based Instance Placement Scheme to decide the
+two-staged mapping in a timely yet efficient manner. In addition, we discuss practical issues and
+refine MIPS to further improve its performance. Results from extensive simulations show, given
+mild-value of samples, MIPS outperforms existing schemes with a significant traffic reduction
+and utilization improvement. To our best knowledge, this paper is the first to study the two-staged
+mapping problem and to apply MCTS to solving the challenge. 

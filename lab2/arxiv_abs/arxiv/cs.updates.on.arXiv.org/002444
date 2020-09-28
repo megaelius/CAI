@@ -1,0 +1,19 @@
+Given a non-negative $n \times m$ real matrix $A$, the {\em matrix scaling} problem is to determine
+if it is possible to scale the rows and columns so that each row and each column sums to a specified target
+value for it. This problem arises in many algorithmic applications, perhaps most notably as a preconditioning
+step in solving a linear system of equations. One of the most natural and by now classical approach
+to matrix scaling is the Sinkhorn-Knopp algorithm (also known as the RAS method) where one alternately
+scales either all rows or all columns to meet the target values. In addition to being extremely simple
+and natural, another appeal of this procedure is that it easily lends itself to parallelization.
+A central question is to understand the rate of convergence of the Sinkhorn-Knopp algorithm. In
+this paper, we present an elementary convergence analysis for the Sinkhorn-Knopp algorithm that
+improves upon the previous best bound. In a nutshell, our approach is to show a simple bound on the
+number of iterations needed so that the KL-divergence between the current row-sums and the target
+row-sums drops below a specified threshold $\delta$, and then connect the KL-divergence with $\ell_1$
+and $\ell_2$ distances. For $\ell_1$, we can use Pinsker's inequality. For $\ell_2$, we develop
+a strengthening of Pinsker's inequality, called (KL vs $\ell_1/\ell_2$) in the paper, which lower
+bounds the KL-divergence by a combination of $\ell_1$ and $\ell_2$ distance. This inequality may
+be of independent interest. The idea of studying Sinkhorn-Knopp convergence via KL-divergence
+is not new and has indeed been previously explored. Our contribution is an elementary, self-contained
+presentation of this approach and an interesting new inequality that yields a significantly stronger
+convergence guarantee for the extensively studied $\ell_2$-error. 

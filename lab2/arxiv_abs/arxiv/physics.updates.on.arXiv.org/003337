@@ -1,0 +1,20 @@
+A major challenge in X-ray computed tomography (CT) is reducing radiation dose while maintaining
+high quality of reconstructed images. To reduce the radiation dose, one can reduce the number of
+projection views (sparse-view CT); however, it becomes difficult to achieve high-quality image
+reconstruction as the number of projection views decreases. Researchers have applied the concept
+of learning sparse representations from (high-quality) CT image dataset to the sparse-view CT
+reconstruction. We propose a new statistical CT reconstruction model that combines penalized
+weighted-least squares (PWLS) and $\ell_1$ regularization with learned sparsifying transform
+(PWLS-ST-$\ell_1$), and a corresponding efficient algorithm based on Alternating Direction
+Method of Multipliers (ADMM). To moderate the difficulty of tuning ADMM parameters, we propose
+a new ADMM parameter selection scheme based on approximated condition numbers. We interpret the
+proposed model by analyzing the minimum mean square error of its ($\ell_2$-norm relaxed) image
+update estimator. Numerical experiments with the extended cardiac-torso (XCAT) phantom show
+that, for sparse-view 2D fan-beam CT and 3D axial cone-beam CT, PWLS-ST-$\ell_1$ significantly
+improves the quality of reconstructed images compared to the CT reconstruction methods using edge-preserving
+regularizer and $\ell_2$ regularization with learned ST. These experiments also show that, for
+sparse-view 2D fan-beam CT, PWLS-ST-$\ell_1$ outperforms PWLS-DL using a learned overcomplete
+dictionary by providing both significantly better image quality and much shorter runtime. Numerical
+experiments with clinical data show that, PWLS-ST-$\ell_1$ using the unsupervised learned regularizer
+generalizes better than a state-of-the-art deep regression neural network that does not use a physical
+imaging model. 

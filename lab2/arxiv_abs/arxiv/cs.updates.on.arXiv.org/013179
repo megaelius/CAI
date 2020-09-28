@@ -1,0 +1,19 @@
+Diversity maximization is a fundamental problem in web search and data mining. For a given dataset
+$S$ of $n$ elements, the problem requires to determine a subset of $S$ containing $k\ll n$ "representatives"
+which minimize some diversity function expressed in terms of pairwise distances, where distance
+models dissimilarity. An important variant of the problem prescribes that the solution satisfy
+an additional orthogonal requirement, which can be specified as a matroid constraint (i.e., a feasible
+solution must be an independent set of size $k$ of a given matroid). While unconstrained diversity
+maximization admits efficient coreset-based strategies for several diversity functions, known
+approaches dealing with the additional matroid constraint apply only to one diversity function
+(sum of distances), and are based on an expensive, inherently sequential, local search over the
+entire input dataset. We devise the first coreset-based algorithms for diversity maximization
+under matroid constraints for various diversity functions, together with efficient sequential,
+MapReduce and Streaming implementations. Technically, our algorithms rely on the construction
+of a small coreset, that is, a subset of $S$ containing a feasible solution which is no more than a factor
+$1-\epsilon$ away from the optimal solution for $S$. While our algorithms are fully general, for
+the partition and transversal matroids, if $\epsilon$ is a constant in $(0,1)$ and $S$ has bounded
+doubling dimension, the coreset size is independent of $n$ and it is small enough to afford the execution
+of a slow sequential algorithm to extract a final, accurate, solution in reasonable time. Extensive
+experiments show that our algorithms are accurate, fast and scalable, and therefore they are capable
+of dealing with the large input instances typical of the big data scenario. 

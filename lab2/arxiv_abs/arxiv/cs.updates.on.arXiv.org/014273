@@ -1,0 +1,17 @@
+Transient execution attacks,such as Spectre and Meltdown, utilize micro-architectural covert
+channels to leak secrets that should not have been accessible during logical program execution.
+Commonly used micro-architectural covert channels in such attacks are those that leave lasting
+footprints in the micro-architectural state, for example, a cache state change. This lasting footprint
+has led attackers to utilize an attack framework where secrets are transmitted into covert channel
+during transient execution and later, after transient execution is complete, read secret from
+covert channel. This has led to the proposal of high performance hardware defenses that track potential
+secret data during transient execution and either discard or revert micro-architectural changes
+once transient execution has completed. In this work, we create a new framework for transient execution
+attacks that we call SpectreRewind. Our framework allows the attacker to both transmit and receive
+secret before transient execution has completed, bypassing defenses that try to revert changes
+caused by the attack. Unlike similar techniques utilizing hyper-threading, SpectreRewind is
+designed to be performed on a single hardware thread making it viable on systems where attacker cannot
+utilize SMT. We accomplish this by reading from covert channel with instructions that come logically
+before the transient execution in program order. Using our framework, we are even able to utilize
+simultaneous covert channels from a single hardware thread and show this by creating a channel that
+utilizes contention on the floating point divisional unit of modern commodity processors. 

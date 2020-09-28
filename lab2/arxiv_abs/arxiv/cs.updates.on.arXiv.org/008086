@@ -1,0 +1,18 @@
+Originally implemented by Google, QUIC gathers a growing interest by providing, on top of UDP, the
+same service as the classical TCP/TLS/HTTP/2 stack. The IETF will finalise the QUIC specification
+in 2019. A key feature of QUIC is that almost all its packets, including most of its headers, are fully
+encrypted. This prevents eavesdropping and interferences caused by middleboxes. Thanks to this
+feature and its clean design, QUIC is easier to extend than TCP. In this paper, we revisit the reliable
+transmission mechanisms that are included in QUIC. More specifically, we design, implement and
+evaluate Forward Erasure Correction (FEC) extensions to QUIC. These extensions are mainly intended
+for high-delays and lossy communications such as In-Flight Communications. Our design includes
+a generic FEC frame and our implementation supports the XOR, Reed-Solomon and Convolutional RLC
+error-correcting codes. We also conservatively avoid hindering the loss-based congestion signal
+by distinguishing the packets that have been received from the packets that have been recovered
+by the FEC. We evaluate its performance by applying an experimental design covering a wide range
+of delay and packet loss conditions with reproducible experiments. These confirm that our modular
+design allows the protocol to adapt to the network conditions. For long data transfers or when the
+loss rate and delay are small, the FEC overhead negatively impacts the download completion time.
+However, with high packet loss rates and long delays or smaller files, FEC allows drastically reducing
+the download completion time by avoiding costly retransmission timeouts. These results show that
+there is a need to use FEC adaptively to the network conditions. 

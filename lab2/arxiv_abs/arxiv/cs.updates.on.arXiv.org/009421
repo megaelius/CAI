@@ -1,0 +1,19 @@
+Constraints among test parameters often have substantial effects on the performance of test case
+generation for combinatorial interaction testing. This paper investigates the effectiveness
+of the use of Binary Decision Diagrams (BDDs) for constraint handling. BDDs are a data structure
+used to represent and manipulate Boolean functions. The core role of a constraint handler is to perform
+a check to determine if a partial test case with unspecified parameter values satisfies the constraints.
+In the course of generating a test suite, this check is executed a number of times; thus the efficiency
+of the check significantly affects the overall time required for test case generation. In the paper,
+we study two different approaches. The first approach performs this check by computing the logical
+AND of Boolean functions that represent all constraint-satisfying full test cases and a given partial
+test case. The second approach uses a new technique to construct a BDD that represents all constraint-satisfying
+partial test cases. With this BDD, the check can be performed by simply traversing the BDD from the
+root to a sink. We developed a program that incorporates both approaches into IPOG, a well-known
+test case generation algorithm. Using this program, we empirically evaluate the performance of
+these BDD-based constraint handling approaches using a total of 62 problem instances. In the evaluation,
+the two approaches are compared with three different constraint handling approaches, namely,
+those based on Boolean satisfiability (SAT) solving, Minimum Forbidden Tuples (MFTs), and Constraint
+Satisfiction Problem (CSP) solving. The results of the evaluation show that the two BDD-based approaches
+usually outperform the other constraint handling techniques and that the BDD-based approach using
+the new technique exhibits best performance. 

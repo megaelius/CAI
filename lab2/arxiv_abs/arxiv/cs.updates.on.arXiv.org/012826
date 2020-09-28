@@ -1,0 +1,20 @@
+We propose the first fast and certifiable algorithm for the registration of two sets of 3D points
+in the presence of large amounts of outlier correspondences. Towards this goal, we first reformulate
+the registration problem using a Truncated Least Squares (TLS) cost that makes the estimation insensitive
+to spurious correspondences. Then, we provide a general graph-theoretic framework to decouple
+scale, rotation, and translation estimation, which allows solving in cascade for the three transformations.
+Despite the fact that each subproblem is still non-convex and combinatorial in nature, we show that
+(i) TLS scale and (component-wise) translation estimation can be solved in polynomial time via
+an adaptive voting scheme, (ii) TLS rotation estimation can be relaxed to a semidefinite program
+(SDP) and the relaxation is tight, even in the presence of extreme outlier rates. We name the resulting
+algorithm TEASER (Truncated least squares Estimation And SEmidefinite Relaxation). While solving
+large SDP relaxations is typically slow, we develop a second certifiable algorithm, named TEASER++,
+that circumvents the need to solve an SDP and runs in milliseconds. For both algorithms, we provide
+theoretical bounds on the estimation errors, which are the first of their kind for robust registration
+problems. Moreover, we test their performance on standard benchmarks, object detection datasets,
+and the 3DMatch scan matching dataset, and show that (i) both algorithms dominate the state of the
+art (e.g., RANSAC, branch-&-bound, heuristics) and are robust to more than 99% outliers, (ii) TEASER++
+can run in milliseconds and it is currently the fastest robust registration algorithm, (iii) TEASER++
+is so robust it can also solve problems without correspondences (e.g., hypothesizing all-to-all
+correspondences) where it largely outperforms ICP. We release a fast open-source C++ implementation
+of TEASER++. 

@@ -1,0 +1,19 @@
+High-dimensional sparse linear regression is a basic problem in machine learning and statistics.
+Consider a linear model $y = X\theta^\star + w$, where $y \in \mathbb{R}^n$ is the vector of observations,
+$X \in \mathbb{R}^{n \times d}$ is the covariate matrix with $i$th row representing the covariates
+for the $i$th observation, and $w \in \mathbb{R}^n$ is an unknown noise vector. In many applications,
+the linear regression model is high-dimensional in nature, meaning that the number of observations
+$n$ may be substantially smaller than the number of covariates $d$. In these cases, it is common to
+assume that $\theta^\star$ is sparse, and the goal in sparse linear regression is to estimate this
+sparse $\theta^\star$, given $(X,y)$. In this paper, we study a variant of the traditional sparse
+linear regression problem where each of the $n$ covariate vectors in $\mathbb{R}^d$ are individually
+projected by a random linear transformation to $\mathbb{R}^m$ with $m \ll d$. Such transformations
+are commonly applied in practice for computational savings in resources such as storage space,
+transmission bandwidth, and processing time. Our main result shows that one can estimate $\theta^\star$
+with a low $\ell_2$-error, even with access to only these projected covariate vectors, under some
+mild assumptions on the problem instance. Our approach is based on solving a variant of the popular
+Lasso optimization problem. While the conditions (such as the restricted eigenvalue condition
+on $X$) for success of a Lasso formulation in estimating $\theta^\star$ are well-understood, we
+investigate conditions under which this variant of Lasso estimates $\theta^\star$. The main technical
+ingredient of our result, a bound on the restricted eigenvalue on certain projections of a deterministic
+matrix satisfying a stable rank condition, could be of interest beyond sparse regression. 

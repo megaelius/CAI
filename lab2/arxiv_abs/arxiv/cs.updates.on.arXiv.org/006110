@@ -1,0 +1,17 @@
+Most of the existing tracking methods based on CNN(convolutional neural networks) are too slow
+for real-time application despite the excellent tracking precision compared with the traditional
+ones. Moreover, neural networks are memory intensive which will take up lots of hardware resources.
+In this paper, a feature selection visual tracking algorithm combining CNN based MDNet(Multi-Domain
+Network) and RoIAlign was developed. We find that there is a lot of redundancy in feature maps from
+convolutional layers. So valid feature maps are selected by mutual information and others are abandoned
+which can reduce the complexity and computation of the network and do not affect the precision. The
+major problem of MDNet also lies in the time efficiency. Considering the computational complexity
+of MDNet is mainly caused by the large amount of convolution operations and fine-tuning of the network
+during tracking, a RoIAlign layer which could conduct the convolution over the whole image instead
+of each RoI is added to accelerate the convolution and a new strategy of fine-tuning the fully-connected
+layers is used to accelerate the update. With RoIAlign employed, the computation speed has been
+increased and it shows greater precision than RoIPool. Because RoIAlign can process float number
+coordinates by bilinear interpolation. These strategies can accelerate the processing, reduce
+the complexity with very low impact on precision and it can run at around 10 fps(while the speed of
+MDNet is about 1 fps). The proposed algorithm has been evaluated on a benchmark: OTB100, on which
+high precision and speed have been obtained. 

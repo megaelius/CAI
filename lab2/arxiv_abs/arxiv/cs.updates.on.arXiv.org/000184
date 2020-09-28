@@ -1,0 +1,20 @@
+Recently, researchers have been working toward the development of practical general-purpose
+protocols for verifiable computation. These protocols enable a computationally weak verifier
+to offload computations to a powerful but untrusted prover, while providing the verifier with a
+guarantee that the prover performed the computations correctly. Despite substantial progress,
+existing implementations are not yet practical. The main bottleneck is typically the extra effort
+required by the prover to return an answer with a guarantee of correctness, compared to returning
+an answer with no guarantee. We describe a refinement of a powerful interactive proof protocol originally
+due to Goldwasser, Kalai, and Rothblum. Cormode, Mitzenmacher, and Thaler show how to implement
+the prover in this protocol in time O(S log S), where S is the size of an arithmetic circuit computing
+the function of interest. Our refinements apply to circuits whose wiring pattern is sufficiently
+"regular"; for these circuits, we bring the runtime of the prover down to O(S). That is, our prover
+can evaluate the circuit with a guarantee of correctness, with only a constant-factor blowup in
+work compared to evaluating the circuit with no guarantee. We argue that our refinements capture
+a large class of circuits, and prove some theorems formalizing this. Experimentally, our refinements
+yield a 200x speedup for the prover over the implementation of Cormode et al., and our prover is less
+than 10x slower than a C++ program that simply evaluates the circuit. Along the way, we describe a
+special-purpose protocol for matrix multiplication that is of interest in its own right. Our final
+contribution is a protocol targeted at general data parallel computation. Compared to prior work,
+this protocol can more efficiently verify complicated computations as long as that computation
+is applied independently to many pieces of data. 

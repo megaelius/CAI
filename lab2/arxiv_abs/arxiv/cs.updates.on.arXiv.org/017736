@@ -1,0 +1,17 @@
+While it is a common knowledge that AC coefficients of Fourier-related transforms, like DCT-II
+of JPEG image compression, are from Laplace distribution, there was tested more general EPD (exponential
+power distribution) $\rho\sim \exp(-(|x-\mu|/\sigma)^{\kappa})$ family, leading to maximum
+likelihood estimated (MLE) $\kappa\approx 0.5$ instead of Laplace distribution $\kappa=1$ -
+such replacement gives $\approx 0.1$ bits/value mean savings (per pixel for grayscale, up to $3\times$
+for RGB). There is also discussed predicting distributions (as $\mu, \sigma, \kappa$ parameters)
+for DCT coefficients from already decoded coefficients in the current and neighboring DCT blocks.
+Predicting values $(\mu)$ from neighboring blocks allows to reduce blocking artifacts, also improve
+compression ratio - for which prediction of uncertainty/width $\sigma$ alone provides much larger
+$\approx 0.5$ bits/value mean savings opportunity (often neglected). Especially for such continuous
+distributions, there is also discussed quantization approach through optimized continuous \emph{quantization
+density function} $q$, which inverse CDF (cumulative distribution function) $Q$ on regular lattice
+$\{Q^{-1}((i-1/2)/N):i=1\ldots N\}$ gives quantization nodes - allowing for flexible inexpensive
+choice of optimized (non-uniform) quantization - of varying size $N$, with rate-distortion control.
+Optimizing $q$ for distortion alone leads to significant improvement, however, at cost of increased
+entropy due to more uniform distribution. Optimizing both turns out leading to nearly uniform quantization
+here, with automatized tail handling. 

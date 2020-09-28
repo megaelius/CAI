@@ -1,0 +1,19 @@
+It is well-known that the verification of partial correctness properties of imperative programs
+can be reduced to the satisfiability problem for constrained Horn clauses (CHCs). However, state-of-the-art
+solvers for CHCs (CHC solvers) based on predicate abstraction are sometimes unable to verify satisfiability
+because they look for models that are definable in a given class A of constraints, called A-definable
+models. We introduce a transformation technique, called Predicate Pairing (PP), which is able,
+in many interesting cases, to transform a set of clauses into an equisatisfiable set whose satisfiability
+can be proved by finding an A-definable model, and hence can be effectively verified by CHC solvers.
+We prove that, under very general conditions on A, the unfold/fold transformation rules preserve
+the existence of an A-definable model, i.e., if the original clauses have an A-definable model,
+then the transformed clauses have an A-definable model. The converse does not hold in general, and
+we provide suitable conditions under which the transformed clauses have an A-definable model iff
+the original ones have an A-definable model. Then, we present the PP strategy which guides the application
+of the transformation rules with the objective of deriving a set of clauses whose satisfiability
+can be proved by looking for A-definable models. PP introduces a new predicate defined by the conjunction
+of two predicates together with some constraints. We show through some examples that an A-definable
+model may exist for the new predicate even if it does not exist for its defining atomic conjuncts.
+We also present some case studies showing that PP plays a crucial role in the verification of relational
+properties of programs (e.g., program equivalence and non-interference). Finally, we perform
+an experimental evaluation to assess the effectiveness of PP in increasing the power of CHC solving.

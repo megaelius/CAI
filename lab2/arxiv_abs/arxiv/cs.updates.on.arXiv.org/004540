@@ -1,0 +1,20 @@
+CNNs have been shown to maintain reasonable classification accuracy when quantized to lower precisions.
+Quantizing to sub 8-bit activations and weights can result in accuracy falling below an acceptable
+threshold. Techniques exist for closing the accuracy gap of limited numeric precision typically
+by increasing computation. This results in a trade-off between throughput and accuracy and can
+be tailored for different networks through various combinations of activation and weight data
+widths. Hardware architectures like FPGAs provide the opportunity for data width specific computation
+through unique logic configurations leading to highly optimized processing that is unattainable
+by full precision networks. Ternary and binary weighted networks offer an efficient method of inference
+for 2-bit and 1-bit data respectively. Most hardware architectures can take advantage of the memory
+storage and bandwidth savings that come along with smaller datapaths, but very few architectures
+can take advantage of limited numeric precision at the computation level. In this paper, we present
+a hardware design for FPGAs that takes advantage of bandwidth, memory, power, and computation savings
+of limited numerical precision data. We provide insights into the trade-offs between throughput
+and accuracy for various networks and how they map to our framework. Further, we show how limited
+numeric precision computation can be efficiently mapped onto FPGAs for both ternary and binary
+cases. Starting with Arria 10, we show a 2-bit activation and ternary weighted AlexNet running in
+hardware that achieves 3,700 images per second on the ImageNet dataset with a top-1 accuracy of 0.49.
+Using a hardware modeler designed for our low numeric precision framework we project performance
+most notably for a 55.5 TOPS Stratix 10 device running a modified ResNet-34 with only 3.7% accuracy
+degradation compared with single precision. 

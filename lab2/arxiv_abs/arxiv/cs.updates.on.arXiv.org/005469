@@ -1,0 +1,20 @@
+This paper focuses on showing time-message trade-offs in distributed algorithms for fundamental
+problems such as leader election, broadcast, spanning tree (ST), minimum spanning tree (MST),
+minimum cut, and many graph verification problems. We consider the synchronous CONGEST distributed
+computing model and assume that each node has initial knowledge of itself and the identifiers of
+its neighbors - the so-called KT1 model - a well-studied model that also naturally arises in many
+applications. Recently, it has been established that one can obtain (almost) singularly optimal
+algorithms, i.e., algorithms that have simultaneously optimal time and message complexity (up
+to polylogarithmic factors), for many fundamental problems in the standard KT0 model (where nodes
+have only local knowledge of themselves and not their neighbors). The situation is less clear in
+the KT1 model. In this paper, we present several new distributed algorithms in the KT1 model that
+trade off between time and message complexity. Our distributed algorithms are based on a uniform
+approach which involves constructing a sparsified spanning subgraph of the original graph - called
+a danner - that trades off the number of edges with the diameter of the sparsifier. In particular,
+a key ingredient of our approach is a distributed randomized algorithm that, given a graph G and any
+delta in [0, 1], with high probability constructs a danner that has diameter Otilde(D + n^(1 - delta))
+and Otilde(min{m, n^(1 + delta)}) edges in Otilde(n^(1 - delta)) rounds while using Otilde(min{m,
+n^(1 + delta)}) messages, where n, m, and D are the number of nodes, edges, and the diameter of G, respectively.
+Using our danner construction, we present a family of distributed randomized algorithms for various
+fundamental problems that exhibit a trade-off between message and time complexity and that improve
+over previous results. 

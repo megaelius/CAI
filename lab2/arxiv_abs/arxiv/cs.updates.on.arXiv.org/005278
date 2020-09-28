@@ -1,0 +1,19 @@
+Deep learning systems extensively use convolution operations to process input data. Though convolution
+is clearly defined for structured data such as 2D images or 3D volumes, this is not true for other data
+types such as sparse point clouds. Previous techniques have developed approximations to convolutions
+for restricted conditions. Unfortunately, their applicability is limited and cannot be used for
+general point clouds. We propose an efficient and effective method to learn convolutions for non-uniformly
+sampled point clouds, as they are obtained with modern acquisition techniques. Learning is enabled
+by four key novelties: first, representing the convolution kernel itself as a multilayer perceptron;
+second, phrasing convolution as a Monte Carlo integration problem, third, using this notion to
+combine information from multiple samplings at different levels; and fourth using Poisson disk
+sampling as a scalable means of hierarchical point cloud learning. The key idea across all these
+contributions is to guarantee adequate consideration of the underlying non-uniform sample distribution
+function from a Monte Carlo perspective. To make the proposed concepts applicable to real-world
+tasks, we furthermore propose an efficient implementation which significantly reduces the GPU
+memory required during the training process. By employing our method in hierarchical network architectures
+we can outperform most of the state-of-the-art networks on established point cloud segmentation,
+classification and normal estimation benchmarks. Furthermore, in contrast to most existing approaches,
+we also demonstrate the robustness of our method with respect to sampling variations, even when
+training with uniformly sampled data only. To support the direct application of these concepts,
+we provide a ready-to-use TensorFlow implementation of these layers at https://github.com/viscom-ulm/MCCNN

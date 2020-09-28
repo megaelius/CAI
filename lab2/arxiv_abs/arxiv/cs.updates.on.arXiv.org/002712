@@ -1,0 +1,20 @@
+Planning robust executions under uncertainty is a fundamental challenge for building autonomous
+robots. Partially Observable Markov Decision Processes (POMDPs) provide a standard framework
+for modeling uncertainty in many robot applications. A key algorithmic problem for POMDPs is policy
+synthesis. While this problem has traditionally been posed w.r.t. optimality objectives, many
+robot applications are better modeled by POMDPs where the objective is a boolean requirement. In
+this paper, we study the latter problem in a setting where the requirement is a safe-reachability
+property, which states that with a probability above a certain threshold, it is possible to eventually
+reach a goal state while satisfying a safety requirement. The central challenge in our problem is
+that it requires reasoning over a vast space of probability distributions. What's more, it has been
+shown that policy synthesis of POMDPs with reachability objectives is undecidable in general.
+To address these challenges, we introduce the notion of a goal-constrained belief space, which
+only contains beliefs (probability distributions over states) reachable from the initial belief
+under desired executions. This constrained space is generally much smaller than the original belief
+space. Our approach compactly represents this space over a bounded horizon using symbolic constraints,
+and employs an incremental Satisfiability Modulo Theories (SMT) solver to efficiently search
+for a valid policy over it. We evaluate our method using a case study involving a partially observable
+robotics domain with uncertain obstacles. Our results suggest that it is possible to synthesize
+policies over large belief spaces with a small number of SMT solver calls by focusing on goal-constrained
+belief space, and our method o ers a stronger guarantee of both safety and reachability than alternative
+unconstrained/constrained POMDP formulations. 

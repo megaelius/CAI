@@ -1,0 +1,18 @@
+The data revolution is fueled by advances in machine learning, databases, and hardware design.
+Programmable accelerators are making their way into each of these areas independently. As such,
+there is a void of solutions that enables hardware acceleration at the intersection of these disjoint
+fields. This paper sets out to be the initial step towards a unifying solution for in-Database Acceleration
+of Advanced Analytics (DAnA). Deploying specialized hardware, such as FPGAs, for in-database
+analytics currently requires hand-designing the hardware and manually routing the data. Instead,
+DAnA automatically maps a high-level specification of advanced analytics queries to an FPGA accelerator.
+The accelerator implementation is generated for a User Defined Function (UDF), expressed as a part
+of an SQL query using a Python-embedded Domain-Specific Language (DSL). To realize an efficient
+in-database integration, DAnA accelerators contain a novel hardware structure, Striders, that
+directly interface with the buffer pool of the database. Striders extract, cleanse, and process
+the training data tuples that are consumed by a multi-threaded FPGA engine that executes the analytics
+algorithm. We integrate DAnA with PostgreSQL to generate hardware accelerators for a range of real-world
+and synthetic datasets running diverse ML algorithms. Results show that DAnA-enhanced PostgreSQL
+provides, on average, 8.3x end-to-end speedup for real datasets, with a maximum of 28.2x. Moreover,
+DAnA-enhanced PostgreSQL is, on average, 4.0x faster than the multi-threaded Apache MADLib running
+on Greenplum. DAnA provides these benefits while hiding the complexity of hardware design from
+data scientists and allowing them to express the algorithm in =30-60 lines of Python. 

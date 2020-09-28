@@ -1,0 +1,17 @@
+We propose a novel network that learns a part-aligned representation for person re-identification.
+It handles the body part misalignment problem, that is, body parts are misaligned across human detections
+due to pose/viewpoint change and unreliable detection. Our model consists of a two-stream network
+(one stream for appearance map extraction and the other one for body part map extraction) and a bilinear-pooling
+layer that generates and spatially pools a part-aligned map. Each local feature of the part-aligned
+map is obtained by a bilinear mapping of the corresponding local appearance and body part descriptors.
+Our new representation leads to a robust image matching similarity, which is equivalent to an aggregation
+of the local similarities of the corresponding body parts combined with the weighted appearance
+similarity. This part-aligned representation reduces the part misalignment problem significantly.
+Our approach is also advantageous over other pose-guided representations (e.g., extracting representations
+over the bounding box of each body part) by learning part descriptors optimal for person re-identification.
+For training the network, our approach does not require any part annotation on the person re-identification
+dataset. Instead, we simply initialize the part sub-stream using a pre-trained sub-network of
+an existing pose estimation network, and train the whole network to minimize the re-identification
+loss. We validate the effectiveness of our approach by demonstrating its superiority over the state-of-the-art
+methods on the standard benchmark datasets, including Market-1501, CUHK03, CUHK01 and DukeMTMC,
+and standard video dataset MARS. 

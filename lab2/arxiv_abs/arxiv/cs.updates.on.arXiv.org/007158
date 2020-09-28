@@ -1,0 +1,17 @@
+We introduce a new scheduling problem in distributed computing that we call the DSMS problem. We
+are given a set of $k \geq 1$ mobile identical servers that are initially hosted by some processors
+of the given network. Further, we are given a set of requests that are issued by the processors possibly
+at any time in an online fashion, and the servers must serve them. A request must be scheduled before
+the request is served. The delay for scheduling a request is the time taken since the request is issued
+until it is scheduled. The goal is to minimize the average delay. Navigating mobile servers in a large-scale
+distributed system needs a scalable location service. We devise the distributed GNN protocol,
+a novel linked-reversal-based protocol for the DSMS problem that works on overlay trees. We prove
+that GNN is a starvation-free protocol that correctly integrates locating the servers and synchronizing
+the concurrent access to the servers despite asynchrony. Further, we analyze the GNN protocol for
+one-shot executions where all requests are simultaneously issued. We show that when running the
+GNN protocol on top of a special family of tree topologies---known as hierarchically well-separated
+trees (HSTs)---we obtain a randomized distributed protocol with an expected competitive ratio
+of $O(\log n)$ on general network topologies for the DSMS problem where $n$ is the number of processors
+in the given network. From a technical point of view, the main result of our paper shows that the GNN
+protocol optimally solves the DSMS problem on HSTs for one-shot executions. Our results hold even
+if communication is asynchronous. 

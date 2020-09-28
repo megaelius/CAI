@@ -1,0 +1,19 @@
+Instrumenting programs for performing run-time checking of properties, such as regular shapes,
+is a common and useful technique that helps programmers detect incorrect program behaviors. This
+is specially true in dynamic languages such as Prolog. However, such run-time checks inevitably
+introduce run-time overhead (in execution time, memory, energy, etc.). Several approaches have
+been proposed for reducing such overhead, such as eliminating the checks that can statically be
+proved to always succeed, and/or optimizing the way in which the (remaining) checks are performed.
+However, there are cases in which it is not possible to remove all checks statically (e.g., open libraries
+which must check their interfaces, complex properties, unknown code, etc.) and in which, even after
+optimizations, these remaining checks still may introduce an unacceptable level of overhead.
+It is thus important for programmers to be able to determine the additional cost due to the run-time
+checks and compare it to some notion of admissible cost. The common practice used for estimating
+run-time checking overhead is profiling, which is not exhaustive by nature. Instead, we propose
+a method that uses static analysis to estimate such overhead, with the advantage that the estimations
+are functions parameterized by input data sizes. Unlike profiling, this approach can provide guarantees
+for all possible execution traces, and allows assessing how the overhead grows as the size of the
+input grows. Our method also extends an existing assertion verification framework to express "admissible"
+overheads, and statically and automatically checks whether the instrumented program conforms
+with such specifications. Finally, we present an experimental evaluation of our approach that
+suggests that our method is feasible and promising. 

@@ -1,0 +1,18 @@
+Spiking Neural Networks (SNNs) are gaining interest due to their event-driven processing which
+potentially consumes low power/energy computations in hardware platforms, while offering unsupervised
+learning capability due to the spike-timing-dependent plasticity (STDP) rule. However, state-of-the-art
+SNNs require a large memory footprint to achieve high accuracy, thereby making them difficult to
+be deployed on embedded systems, for instance on battery-powered mobile devices and IoT Edge nodes.
+Towards this, we propose FSpiNN, an optimization framework for obtaining memory- and energy-efficient
+SNNs for training and inference processing, with unsupervised learning capability while maintaining
+accuracy. It is achieved by (1) reducing the computational requirements of neuronal and STDP operations,
+(2) improving the accuracy of STDP-based learning, (3) compressing the SNN through a fixed-point
+quantization, and (4) incorporating the memory and energy requirements in the optimization process.
+FSpiNN reduces the computational requirements by reducing the number of neuronal operations,
+the STDP-based synaptic weight updates, and the STDP complexity. To improve the accuracy of learning,
+FSpiNN employs timestep-based synaptic weight updates, and adaptively determines the STDP potentiation
+factor and the effective inhibition strength. The experimental results show that, as compared
+to the state-of-the-art work, FSpiNN achieves 7.5x memory saving, and improves the energy-efficiency
+by 3.5x on average for training and by 1.8x on average for inference, across MNIST and Fashion MNIST
+datasets, with no accuracy loss for a network with 4900 excitatory neurons, thereby enabling energy-efficient
+SNNs for edge devices/embedded systems. 

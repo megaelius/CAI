@@ -1,0 +1,20 @@
+Predicting stochastic cellular dynamics as emerging from the mechanistic models of molecular
+interactions is a long-standing challenge in systems biology: low-level chemical reaction network
+(CRN) models give raise to a highly-dimensional continuous-time Markov chain (CTMC) which is computationally
+demanding and often prohibitive to analyse in practice. A recently proposed abstraction method
+uses deep learning to replace this CTMC with a discrete-time continuous-space process, by training
+a mixture density deep neural network with traces sampled at regular time intervals (which can obtained
+either by simulating a given CRN or as time-series data from experiment). The major advantage of
+such abstraction is that it produces a computational model that is dramatically cheaper to execute,
+while preserving the statistical features of the training data. In general, the abstraction accuracy
+improves with the amount of training data. However, depending on a CRN, the overall quality of the
+method -- the efficiency gain and abstraction accuracy -- will also depend on the choice of neural
+network architecture given by hyper-parameters such as the layer types and connections between
+them. As a consequence, in practice, the modeller would have to take care of finding the suitable
+architecture manually, for each given CRN, through a tedious and time-consuming trial-and-error
+cycle. In this paper, we propose to further automatise deep abstractions for stochastic CRNs, through
+learning the optimal neural network architecture along with learning the transition kernel of
+the abstract process. Automated search of the architecture makes the method applicable directly
+to any given CRN, which is time-saving for deep learning experts and crucial for non-specialists.
+We implement the method and demonstrate its performance on a number of representative CRNs with
+multi-modal emergent phenotypes. 

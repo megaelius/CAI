@@ -1,0 +1,18 @@
+Consider a variant of the Mastermind game in which queries are $\ell_p$ distances, rather than the
+usual Hamming distance. That is, a codemaker chooses a hidden vector $\mathbf{y}\in\{-k,-k+1,\dots,k-1,k\}^n$
+and answers to queries of the form $\Vert\mathbf{y}-\mathbf{x}\Vert_p$ where $\mathbf{x}\in\{-k,-k+1,\dots,k-1,k\}^n$.
+The goal is to minimize the number of queries made in order to correctly guess $\mathbf{y}$. Motivated
+by this question, in this work, we develop a nonadaptive polynomial time algorithm that works for
+a natural class of separable distance measures, i.e.\ coordinate-wise sums of functions of the
+absolute value. This in particular includes distances such as the smooth max (LogSumExp) as well
+as many widely-studied $M$-estimator losses, such as $\ell_p$ norms, the $\ell_1$-$\ell_2$ loss,
+the Huber loss, and the Fair estimator loss. When we apply this result to $\ell_p$ queries, we obtain
+an upper bound of $O\left(\min\left\{n,\frac{n\log k}{\log n}\right\}\right)$ queries for
+any real $1\leq p<\infty$. We also show matching lower bounds up to constant factors for the $\ell_p$
+problem, even for adaptive algorithms for the approximation version of the problem, in which the
+problem is to output $\mathbf{y}'$ such that $\Vert\mathbf{y}'-\mathbf{y}\Vert_p\leq R$ for
+any $R\leq k^{1-\varepsilon}n^{1/p}$ for constant $\varepsilon>0$. Thus, essentially any approximation
+of this problem is as hard as finding the hidden vector exactly, up to constant factors. Finally,
+we show that for the noisy version of the problem, i.e. the setting when the codemaker answers queries
+with any $q = (1\pm\varepsilon)\Vert\mathbf{y}-\mathbf{x}\Vert_p$, there is no query efficient
+algorithm. 

@@ -1,0 +1,18 @@
+Numerical solutions of partial differential equations enable a broad range of scientific research.
+The Dedalus Project is a flexible, open-source, parallelized computational framework for solving
+general partial differential equations using spectral methods. Dedalus translates plain-text
+strings describing partial differential equations into efficient solvers. This paper details
+the numerical method that enables this translation, describes the design and implementation of
+the codebase, and illustrates its capabilities with a variety of example problems. The numerical
+method is a first-order generalized tau formulation that discretizes equations into banded matrices.
+This method is implemented with an object-oriented design. Classes for spectral bases and domains
+manage the discretization and automatic parallel distribution of variables. Discretized fields
+and mathematical operators are symbolically manipulated with a basic computer algebra system.
+Initial value, boundary value, and eigenvalue problems are efficiently solved using high-performance
+linear algebra, transform, and parallel communication libraries. Custom analysis outputs can
+also be specified in plain text and stored in self-describing portable formats. The performance
+of the code is evaluated with a parallel scaling benchmark and a comparison to a finite-volume code.
+The features and flexibility of the codebase are illustrated by solving several examples: the nonlinear
+Schrodinger equation on a graph, a supersonic magnetohydrodynamic vortex, quasigeostrophic
+flow, Stokes flow in a cylindrical annulus, normal modes of a radiative atmosphere, and diamagnetic
+levitation. The Dedalus code and the example problems are available online at this http URL 

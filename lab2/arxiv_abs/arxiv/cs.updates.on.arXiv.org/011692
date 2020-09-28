@@ -1,0 +1,17 @@
+In this paper, we demonstrate the ability to discriminate between cultivated maize plant and grass
+or grass-like weed image segments using the context surrounding the image segments. While convolutional
+neural networks have brought state of the art accuracies within object detection, errors arise
+when objects in different classes share similar features. This scenario often occurs when objects
+in images are viewed at too small of a scale to discern distinct differences in features, causing
+images to be incorrectly classified or localized. To solve this problem, we will explore using context
+when classifying image segments. This technique involves feeding a convolutional neural network
+a central square image along with a border of its direct surroundings at train and test times. This
+means that although images are labelled at a smaller scale to preserve accurate localization, the
+network classifies the images and learns features that include the wider context. We demonstrate
+the benefits of this context technique in the object detection task through a case study of grass
+(foxtail) and grass-like (yellow nutsedge) weed detection in maize fields. In this standard situation,
+adding context alone nearly halved the error of the neural network from 7.1% to 4.3%. After only one
+epoch with context, the network also achieved a higher accuracy than the network without context
+did after 50 epochs. The benefits of using the context technique are likely to particularly evident
+in agricultural contexts in which parts (such as leaves) of several plants may appear similar when
+not taking into account the context in which those parts appear. 

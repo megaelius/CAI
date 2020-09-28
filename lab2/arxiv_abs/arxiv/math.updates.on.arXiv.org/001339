@@ -1,0 +1,17 @@
+A/B testing is ubiquitous within the machine learning and data science operations of internet companies.
+Generically, the idea is to perform a statistical test of the hypothesis that a new feature is better
+than the existing platform---for example, it results in higher revenue. If the p value for the test
+is below some pre-defined threshold---often, 0.05---the new feature is implemented. The difficulty
+of choosing an appropriate threshold has been noted before, particularly because dependent tests
+are often done sequentially, leading some to propose control of the false discovery rate (FDR) rather
+than use of a single, universal threshold. However, it is still necessary to make an arbitrary choice
+of the level at which to control FDR. Here we suggest a decision-theoretic approach to determining
+whether to adopt a new feature, which enables automated selection of an appropriate threshold.
+Our method has the basic ingredients of any decision-theory problem: a loss function, action space,
+and a notion of optimality, for which we choose Bayes risk. However, the loss function and the action
+space differ from the typical choices made in the literature, which has focused on the theory of point
+estimation. We give some basic results for Bayes-optimal thresholding rules for the feature adoption
+decision, and give some examples using eBay data. The results suggest that the 0.05 p-value threshold
+may be too conservative in some settings, but that its widespread use may reflect an ad-hoc means
+of controlling multiplicity in the common case of repeatedly testing variants of an experiment
+when the threshold is not reached. 

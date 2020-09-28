@@ -1,0 +1,19 @@
+As datasets continue to increase in size and multi-core computer architectures are developed,
+asynchronous parallel optimization algorithms become more and more essential to the field of Machine
+Learning. Unfortunately, conducting the theoretical analysis asynchronous methods is difficult,
+notably due to the introduction of delay and inconsistency in inherently sequential algorithms.
+Handling these issues often requires resorting to simplifying but unrealistic assumptions. Through
+a novel perspective, we revisit and clarify a subtle but important technical issue present in a large
+fraction of the recent convergence rate proofs for asynchronous parallel optimization algorithms,
+and propose a simplification of the recently introduced "perturbed iterate" framework that resolves
+it. We demonstrate the usefulness of our new framework by analyzing three distinct asynchronous
+parallel incremental optimization algorithms: Hogwild (asynchronous SGD), KROMAGNON (asynchronous
+SVRG) and ASAGA, a novel asynchronous parallel version of the incremental gradient algorithm SAGA
+that enjoys fast linear convergence rates. We are able to both remove problematic assumptions and
+obtain better theoretical results. Notably, we prove that ASAGA and KROMAGNON can obtain a theoretical
+linear speedup on multi-core systems even without sparsity assumptions. We present results of
+an implementation on a 40-core architecture illustrating the practical speedups as well as the
+hardware overhead. Finally, we investigate the overlap constant, an ill-understood but central
+quantity for the theoretical analysis of asynchronous parallel algorithms. We find that it encompasses
+much more complexity than suggested in previous work, and often is order-of-magnitude bigger than
+traditionally thought. 

@@ -1,0 +1,17 @@
+Providing resilient network control is a critical concern for deploying Software-Defined Networking
+(SDN) into Wide-Area Networks (WANs). For performance reasons, a Software-Defined WAN is divided
+into multiple domains controlled by multiple controllers with a logically centralized view. Under
+controller failures, we need to remap the control of offline switches from failed controllers to
+other active controllers. Existing solutions could either overload active controllers to interrupt
+their normal operations or degrade network performance because of increasing the controller-switch
+communication overhead. In this paper, we propose RetroFlow to achieve low communication overhead
+without interrupting the normal processing of active controllers during controller failures.
+By intelligently configuring a set of selected offline switches working under the legacy routing
+mode, RetroFlow relieves the active controllers from controlling the selected offline switches
+while maintaining the flow programmability (e.g., the ability to change paths of flows) of SDN.
+RetroFlow also smartly transfers the control of offline switches with the SDN routing mode to active
+controllers to minimize the communication overhead from these offline switches to the active controllers.
+Simulation results show that compared with the baseline algorithm, RetroFlow can reduce the communication
+overhead up to 52.6% during a moderate controller failure by recovering 100% flows from offline
+switches and can reduce the communication overhead up to 61.2% during a serious controller failure
+by setting to recover 90% of flows from offline switches. 

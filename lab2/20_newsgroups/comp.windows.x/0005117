@@ -1,0 +1,11 @@
+I have a peculiar color problem with MacX, Apple's Macintosh X server.
+I'd like to know if others have seen the same problem. It's happened
+with the current version (1.2), and with version 1.1.7.
+When some types of client windows are displayed, parts of the windows
+are in the wrong color; if the window is moved slightly, forcing the server
+to repaint it, it is repainted in the correct colors. It doesn't happen
+for xterm windows, but has happened for graphic windows and with some
+Motif clients.
+Stan Kerr    
+Computing & Communications Services Office, U of Illinois/Urbana
+Phone: 217-333-5217  Email: stankerr@uiuc.edu   

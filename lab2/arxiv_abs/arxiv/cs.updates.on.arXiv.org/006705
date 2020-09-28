@@ -1,0 +1,17 @@
+This paper presents an approach for constrained Gaussian Process (GP) regression where we assume
+that a set of linear transformations of the process are bounded. It is motivated by machine learning
+applications for high-consequence engineering systems, where this kind of information is often
+made available from phenomenological knowledge, and the resulting constraints may be essential
+to achieve the level of confidence needed. We consider a GP $f$ over functions on $\mathcal{X} \subset
+\mathbb{R}^{n}$ taking values in $\mathbb{R}$, where the process $\mathcal{L}f$ is still Gaussian
+when $\mathcal{L}$ is a linear operator. Our goal is to model $f$ under the constraint that realizations
+of $\mathcal{L}f$ are confined to a convex set of functions. In particular we require that $a \leq
+\mathcal{L}f \leq b$ given two functions $a$ and $b$ where $a < b$ pointwise. This formulation provides
+a consistent way of encoding multiple linear constraints, such as shape-constraints based on e.g.
+boundedness, monotonicity or convexity as a relevant example. We adopt the approach of using a sufficiently
+dense set of virtual observation locations where the constraint is required to hold, and derive
+the exact posterior for a conjugate likelihood. The results needed for stable numerical implementation
+are derived, together with an efficient sampling scheme for estimating the posterior process which
+is exact in the limit. A few numerical examples focusing on noiseless observations are given. This
+is relevant for computer code emulation and is also more computationally demanding than the alternative
+scenario with i.i.d. Gaussian noise. 

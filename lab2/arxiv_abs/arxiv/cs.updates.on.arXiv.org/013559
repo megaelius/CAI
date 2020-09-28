@@ -1,0 +1,20 @@
+Many applications today, such as NLP, network analysis, and code analysis, rely on semantically
+embedding objects into low-dimensional fixed-length vectors. Such embeddings naturally provide
+a way to perform useful downstream tasks, such as identifying relations among objects or predicting
+objects for a given context, etc. Unfortunately, the training necessary for accurate embeddings
+is usually computationally intensive and requires processing large amounts of data. Furthermore,
+distributing this training is challenging. Most embedding training uses stochastic gradient
+descent (SGD), an "inherently" sequential algorithm. Prior approaches to parallelizing SGD do
+not honor these dependencies and thus potentially suffer poor convergence. This paper presents
+a distributed training framework for a class of applications that use Skip-gram-like models to
+generate embeddings. We call this class Any2Vec and it includes Word2Vec, DeepWalk, and Node2Vec
+among others. We first formulate Any2Vec training algorithm as a graph application and leverage
+the state-of-the-art distributed graph analytics framework, D-Galois. We adapt D-Galois to support
+dynamic graph generation and repartitioning, and incorporate novel communication optimizations.
+Finally, we introduce a novel way to combine gradients during distributed training to prevent accuracy
+loss. We show that our framework, called GraphAny2Vec, matches on a cluster of 32 hosts the accuracy
+of the state-of-the-art shared-memory implementations of Word2Vec and Vertex2Vec on 1 host, and
+gives a geo-mean speedup of 12x and 5x respectively. Furthermore, GraphAny2Vec is on average 2x
+faster than the state-of-the-art distributed Word2Vec implementation, DMTK, on 32 hosts. We also
+show the superiority of our Gradient Combiner independent of GraphAny2Vec by incorporating it
+in DMTK, which raises its accuracy by > 30%. 

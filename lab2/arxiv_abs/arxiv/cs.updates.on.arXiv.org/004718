@@ -1,0 +1,20 @@
+Detection of pulmonary nodules in chest CT imaging plays a crucial role in early diagnosis of lung
+cancer. Manual examination is highly time-consuming and error prone, calling for computer-aided
+detection, both to improve efficiency and reduce misdiagnosis. Over the years, a range of systems
+have been proposed, mostly following a two-phase paradigm with: 1) candidate detection, 2) false
+positive reduction. Recently, deep learning has become a dominant force in algorithm development.
+As for candidate detection, prior art was mainly based on the two-stage Faster R-CNN framework,
+which starts with an initial sub-net to generate a set of class-agnostic region proposals, followed
+by a second sub-net to perform classification and bounding-box regression. In contrast, we abandon
+the conventional two-phase paradigm and two-stage framework altogether and propose to train a
+single network for end-to-end nodule detection instead, without transfer learning or further
+post-processing. Our feature learning model is a modification of the ResNet and feature pyramid
+network combined, powered by RReLU activation. The major challenge is the condition of extreme
+inter-class and intra-class sample imbalance, where the positives are overwhelmed by a large negative
+pool, which is mostly composed of easy and a handful of hard negatives. Direct training on all samples
+can seriously undermine training efficacy. We propose a patch-based sampling strategy over a set
+of regularly updating anchors, which narrows sampling scope to all positives and only hard negatives,
+effectively addressing this issue. As a result, our approach substantially outperforms prior
+art in terms of both accuracy and speed. Finally, the prevailing FROC evaluation over [1/8, 1/4,
+1/2, 1, 2, 4, 8] false positives per scan, is far from ideal in real clinical environments. We suggest
+FROC over [1, 2, 4] false positives as a better metric. 

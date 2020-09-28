@@ -1,0 +1,20 @@
+Recent advances in deep neural networks (DNNs) have led to object detectors that can rapidly process
+pictures or videos, and recognize the objects that they contain. Despite the promising progress
+by industrial manufacturers such as Amazon and Google in commercializing deep learning-based
+object detection as a standard computer vision service, object detection systems - similar to traditional
+software - may still produce incorrect results. These errors, in turn, can lead to severe negative
+outcomes for the users of these object detection systems. For instance, an autonomous driving system
+that fails to detect pedestrians can cause accidents or even fatalities. However, principled,
+systematic methods for testing object detection systems do not yet exist, despite their importance.
+To fill this critical gap, we introduce the design and realization of MetaOD, the first metamorphic
+testing system for object detectors to effectively reveal erroneous detection results by commercial
+object detectors. To this end, we (1) synthesize natural-looking images by inserting extra object
+instances into background images, and (2) design metamorphic conditions asserting the equivalence
+of object detection results between the original and synthetic images after excluding the prediction
+results on the inserted objects. MetaOD is designed as a streamlined workflow that performs object
+extraction, selection, and insertion. Evaluated on four commercial object detection services
+and four pretrained models provided by the TensorFlow API, MetaOD found tens of thousands of detection
+defects in these object detectors. To further demonstrate the practical usage of MetaOD, we use
+the synthetic images that cause erroneous detection results to retrain the model. Our results show
+that the model performance is increased significantly, from an mAP score of 9.3 to an mAP score of
+10.5. 

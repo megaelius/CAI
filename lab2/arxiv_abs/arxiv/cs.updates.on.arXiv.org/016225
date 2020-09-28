@@ -1,0 +1,18 @@
+This report deals with the design of handover schemes for radio access networks (RAN) in 5G networks,
+using programmable data plane switches. In 5G networks, the NG-RAN architecture splits the Base
+Band Unit (BBU) into Central and Distributed Units (CU and DU). This structure has created a mid-haul
+Network, connecting CUs and DUs. The recent advancements in dataplane programmability can be used
+to enhance system performance. We show how P4 switches can be used to parse the packets between DU,
+CU, and Back Haul (Core Network) for potential system improvements. In particular, we consider
+the scenario of mobile handover. The proposed protocol is called SMARTHO, illustrating a smart
+handover. Programming Protocol-Independent Packet Processors (P4) is a programming language
+designed to support specification and programming the forwarding plane behavior of network switches/routers.
+In SMARTHO, we use P4 Switches to intervene in the handover process for fixed-path mobile users.
+A resource pre-allocation scheme that reserves resources before the UE reaches a future cell, is
+proposed. The solution is implemented using a P4-based switch introduced between the CU and the
+DU. The P4 switch is used to spoof the behavior of User Equipment (UE) and perform the resource allocation
+in advance. The proposed SMARTHO framework is implemented in the mininet emulation environment
+and in a reconfigurable hardware environment using NetFPGA-SUME boards. The emulation results
+show a handover response time improvement of 18% for a tandem of two HOs and 25% for a tandem of three
+HOs. For testbed implementation, we used NetFPGA-SUME boards as P4 switches. The handover time
+was measured to be approximately 50~milliseconds in the experiments conducted. 

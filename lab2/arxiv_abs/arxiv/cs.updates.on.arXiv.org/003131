@@ -1,0 +1,19 @@
+Modern supervised learning techniques, particularly those using so called deep nets, involve
+fitting high dimensional labelled data sets with functions containing very large numbers of parameters.
+Much of this work is empirical, and interesting phenomena have been observed that require theoretical
+explanations, however the non-convexity of the loss functions complicates the analysis. Recently
+it has been proposed that some of the success of these techniques resides in the effectiveness of
+the simple stochastic gradient descent algorithm in the so called interpolation limit in which
+all labels are fit perfectly. This analysis is made possible since the SGD algorithm reduces to a
+stochastic linear system near the interpolating minimum of the loss function. Here we exploit this
+insight by analyzing a distributed algorithm for gradient descent, also in the interpolating limit.
+The algorithm corresponds to gradient descent applied to a simple penalized distributed loss function,
+$L({\bf w}_1,...,{\bf w}_n) = \Sigma_i l_i({\bf w}_i) + \mu \sum_{<i,j>}|{\bf w}_i-{\bf w}_j|^2$.
+Here each node is allowed its own parameter vector and $<i,j>$ denotes edges of a connected graph
+defining the communication links between nodes. It is shown that this distributed algorithm converges
+linearly (ie the error reduces exponentially with iteration number), with a rate $1-\frac{\eta}{n}\lambda_{min}(H)<R<1$
+where $\lambda_{min}(H)$ is the smallest nonzero eigenvalue of the sample covariance or the Hessian
+H. In contrast with previous usage of similar penalty functions to enforce consensus between nodes,
+in the interpolating limit it is not required to take the penalty parameter to infinity for consensus
+to occur. The analysis further reinforces the utility of this limit in the theoretical treatment
+of modern machine learning algorithms. 

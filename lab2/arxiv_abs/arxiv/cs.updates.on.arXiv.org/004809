@@ -1,0 +1,25 @@
+Brain-inspired hyperdimensional (HD) computing models neural activity patterns of the very size
+of the brain's circuits with points of a hyperdimensional space, that is, with hypervectors. Hypervectors
+are $D$-dimensional (pseudo)random vectors with independent and identically distributed (i.i.d.)
+components constituting ultra-wide holographic words: $D = 10,000$ bits, for instance. At its
+very core, HD computing manipulates a set of seed hypervectors to build composite hypervectors
+representing objects of interest. It demands memory optimizations with simple operations for
+an e cient hardware realization. In this paper, we propose hardware techniques for optimizations
+of HD computing, in a synthesizable VHDL library, to enable co-located implementation of both learning
+and classification tasks on only a small portion of Xilinx(R) UltraScale(TM) FPGAs: (1) We propose
+simple logical operations to rematerialize the hypervectors on the fly rather than loading them
+from memory. These operations massively reduce the memory footprint by directly computing the
+composite hypervectors whose individual seed hypervectors do not need to be stored in memory. (2)
+Bundling a series of hypervectors over time requires a multibit counter per every hypervector component.
+We instead propose a binarized back-to-back bundling without requiring any counters. This truly
+enables on-chip learning with minimal resources as every hypervector component remains binary
+over the course of training to avoid otherwise multibit component. (3) For every classification
+event, an associative memory is in charge of finding the closest match between a set of learned hypervectors
+and a query hypervector by using a distance metric. This operator is proportional to hypervector
+dimension ($D$), and hence may take $\mathcal{O}(D)$ cycles per classification event. Accordingly,
+we significantly improve the throughput of classification by proposing associative memories
+that steadily reduce the latency of classification to the extreme of single cycle. (4) We perform
+a design space exploration incorporating the proposed techniques on FPGAs for a wearable biosignal
+processing application as a case study. Our techniques achieve up to 2.39x area saving, or 2337x
+throughput improvement. The Pareto optimal HD architecture is mapped on only 18340 configurable
+logic blocks (CLBs) to learn and classify five hand gestures using four electromyography sensors.

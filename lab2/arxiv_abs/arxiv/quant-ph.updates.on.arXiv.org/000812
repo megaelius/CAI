@@ -1,0 +1,18 @@
+For quantum key distribution (QKD) with finite-size effects, parameter optimization - the choice
+of intensities and probabilities of sending them - is a crucial step to gain optimal performance.
+Traditionally, such an optimization relies on brute-force search, or local search algorithm such
+as Coordinate Descent. Here we present a new method of using a neural network to learn to predict the
+optimal point for the convex optimization of parameters for QKD with any given set of experiment
+devices and quantum channel conditions. Selecting one protocol (symmetric 4-intensity measurement-device-independent
+QKD) as an example, we show that with neural-network-predicted parameters we can achieve over 99.99%
+of the optimal key rate. Harnessing the parallel processing power of a graphical processing unit
+(GPU), the neural network allows us to efficiently pre-generate on a desktop PC a large "look-up
+table" of optimal parameters for all possible experimental parameter and channel conditions,
+up to a finite resolution, and deploy this table to low-power devices. This eliminates the need for
+any on-device computation, and allows us to deploy finite-size QKD with optimal parameter setting
+to low-power mobile QKD devices that have limited computing power, short communication time, and
+quickly changing channel losses and experimental parameters (e.g. misalignment and background
+noise), such as in satellite, drone, or handheld QKD systems. We show that, on a Raspberry Pi 3 single-board
+computer, using look-up table is up to 15-25 times faster than local search. In addition to the look-up
+table method, we also point out the potential to directly deploy neural networks to an increasing
+number of mobile devices equipped with neural processing units for real-time fast parameter optimization.

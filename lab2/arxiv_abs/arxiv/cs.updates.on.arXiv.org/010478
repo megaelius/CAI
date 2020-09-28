@@ -1,0 +1,18 @@
+Cumulative entropy regularization introduces a regulatory signal to the reinforcement learning
+(RL) problem that encourages policies with high-entropy actions, which is equivalent to enforcing
+small deviations from a uniform reference marginal policy. This has been shown to improve exploration
+and robustness, and it tackles the value overestimation problem. It also leads to a significant
+performance increase in tabular and high-dimensional settings, as demonstrated via algorithms
+such as soft Q-learning (SQL) and soft actor-critic (SAC). Cumulative entropy regularization
+has been extended to optimize over the reference marginal policy instead of keeping it fixed, yielding
+a regularization that minimizes the mutual information between states and actions. While this
+has been initially proposed for Markov Decision Processes (MDPs) in tabular settings, it was recently
+shown that a similar principle leads to significant improvements over vanilla SQL in RL for high-dimensional
+domains with discrete actions and function approximators. Here, we follow the motivation of mutual-information
+regularization from an inference perspective and theoretically analyze the corresponding Bellman
+operator. Inspired by this Bellman operator, we devise a novel mutual-information regularized
+actor-critic learning (MIRACLE) algorithm for continuous action spaces that optimizes over the
+reference marginal policy. We empirically validate MIRACLE in the Mujoco robotics simulator,
+where we demonstrate that it can compete with contemporary RL methods. Most notably, it can improve
+over the model-free state-of-the-art SAC algorithm which implicitly assumes a fixed reference
+policy. 

@@ -1,0 +1,19 @@
+Two distinct limits for deep learning have been derived as the network width $h\rightarrow \infty$,
+depending on how the weights of the last layer scale with $h$. In the Neural Tangent Kernel (NTK) limit,
+the dynamics becomes linear in the weights and is described by a frozen kernel $\Theta$ (the NTK).
+By contrast, in the Mean Field limit, the dynamics can be expressed in terms of the distribution of
+the parameters associated to a neuron, that follows a partial differential equation. In this work
+we consider deep networks where the weights in the last layer scale as $\alpha h^{-1/2}$ at initialization.
+By varying $\alpha$ and $h$, we probe the crossover between the two limits. We observe two regimes
+that we call "lazy training" and "feature training". In the lazy-training regime, the dynamics
+is almost linear and the NTK does barely change after initialization. The feature-training regime
+includes the mean-field formulation as a limiting case and is characterized by a kernel that evolves
+in time, and thus learns some features. We perform numerical experiments on MNIST, Fashion-MNIST,
+EMNIST and CIFAR10 and consider various architectures. We find that: (i) The two regimes are separated
+by an $\alpha^*$ that scales as $\frac{1}{\sqrt{h}}$. (ii) Network architecture and data structure
+play an important role in determining which regime is better: in our tests, fully-connected networks
+generally perform better in the lazy-training regime (except when we reduce the dataset via PCA),
+and we provide an example of a convolutional network that achieves a lower error in the feature-training
+regime. (iii) In both regimes, the fluctuations $\delta F$ induced by initial conditions on the
+learned function decay as $\delta F \sim 1/\sqrt{h}$, leading to a performance that increases with
+$h$. (iv) In the feature-training regime we identify a time scale $t_1 \sim \sqrt{h}\alpha$ 

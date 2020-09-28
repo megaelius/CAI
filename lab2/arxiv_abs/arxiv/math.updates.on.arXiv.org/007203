@@ -1,0 +1,20 @@
+Random forest (RF) is one of the most popular methods for estimating regression functions. The local
+nature of the RF algorithm, based on intra-node means and variances, is ideal when errors are i.i.d.
+For dependent error processes like time series and spatial settings where data in all the nodes will
+be correlated, operating locally ignores this dependence. Also, RF will involve resampling of
+correlated data, violating the principles of bootstrap. Theoretically, consistency of RF has
+been established for i.i.d. errors, but little is known about the case of dependent errors. We propose
+RF-GLS, a novel extension of RF for dependent error processes in the same way Generalized Least Squares
+(GLS) fundamentally extends Ordinary Least Squares (OLS) for linear models under dependence.
+The key to this extension is the equivalent representation of the local decision-making in a regression
+tree as a global OLS optimization which is then replaced with a GLS loss to create a GLS-style regression
+tree. This also synergistically addresses the resampling issue, as the use of GLS loss amounts to
+resampling uncorrelated contrasts (pre-whitened data) instead of the correlated data. For spatial
+settings, RF-GLS can be used in conjunction with Gaussian Process correlated errors to generate
+kriging predictions at new locations. RF becomes a special case of RF-GLS with an identity working
+covariance matrix. We establish consistency of RF-GLS under beta- (absolutely regular) mixing
+error processes and show that this general result subsumes important cases like autoregressive
+time series and spatial Matern Gaussian Processes. As a byproduct, we also establish consistency
+of RF for beta-mixing processes, which to our knowledge, is the first such result for RF under dependence.
+We empirically demonstrate the improvement achieved by RF-GLS over RF for both estimation and prediction
+under dependence. 

@@ -1,0 +1,20 @@
+The ubiquity of deep neural networks (DNNs) continues to rise, making them a crucial application
+class for hardware optimizations. However, detailed profiling and characterization of DNN training
+remains difficult as these applications often run for hours to days on real hardware. Prior works
+exploit the iterative nature of DNNs to profile a few training iterations. While such a strategy
+is sound for networks like convolutional neural networks (CNNs), where the nature of the computation
+is largely input independent, we observe in this work that this approach is sub-optimal for sequence-based
+neural networks (SQNNs) such as recurrent neural networks (RNNs). The amount and nature of computations
+in SQNNs can vary for each input, resulting in heterogeneity across iterations. Thus, arbitrarily
+selecting a few iterations is insufficient to accurately summarize the behavior of the entire training
+run. To tackle this challenge, we carefully study the factors that impact SQNN training iterations
+and identify input sequence length as the key determining factor for variations across iterations.
+We then use this observation to characterize all iterations of an SQNN training run (requiring no
+profiling or simulation of the application) and select representative iterations, which we term
+SeqPoints. We analyze two state-of-the-art SQNNs, DeepSpeech2 and Google's Neural Machine Translation
+(GNMT), and show that SeqPoints can represent their entire training runs accurately, resulting
+in geomean errors of only 0.11% and 0.53%, respectively, when projecting overall runtime and 0.13%
+and 1.50% when projecting speedups due to architectural changes. This high accuracy is achieved
+while reducing the time needed for profiling by 345x and 214x for the two networks compared to full
+training runs. As a result, SeqPoint can enable analysis of SQNN training runs in mere minutes instead
+of hours or days. 

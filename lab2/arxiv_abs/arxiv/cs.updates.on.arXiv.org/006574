@@ -1,0 +1,17 @@
+As massive graphs become more prevalent, there is a rapidly growing need for scalable algorithms
+that solve classical graph problems, such as maximum matching and minimum vertex cover, on large
+datasets. For massive inputs, several different computational models have been introduced, including
+the streaming model, the distributed communication model, and the massively parallel computation
+(MPC) model that is a common abstraction of MapReduce-style computation. In each model, algorithms
+are analyzed in terms of resources such as space used or rounds of communication needed, in addition
+to the more traditional approximation ratio. In this paper, we give a single unified approach that
+yields better approximation algorithms for matching and vertex cover in all these models. The highlights
+include: * The first one pass, significantly-better-than-2-approximation for matching in random
+arrival streams that uses subquadratic space, namely a $(1.5+\epsilon)$-approximation streaming
+algorithm that uses $O(n^{1.5})$ space for constant $\epsilon > 0$. * The first 2-round, better-than-2-approximation
+for matching in the MPC model that uses subquadratic space per machine, namely a $(1.5+\epsilon)$-approximation
+algorithm with $O(\sqrt{mn} + n)$ memory per machine for constant $\epsilon > 0$. By building on
+our unified approach, we further develop parallel algorithms in the MPC model that give a $(1 + \epsilon)$-approximation
+to matching and an $O(1)$-approximation to vertex cover in only $O(\log\log{n})$ MPC rounds and
+$O(n/poly\log{(n)})$ memory per machine. These results settle multiple open questions posed
+in the recent paper of Czumaj~et.al. [STOC 2018]. 

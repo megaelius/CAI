@@ -1,0 +1,17 @@
+Range queries over multidimensional data are an important part of database workloads in many applications.
+Their execution may be accelerated by using multidimensional index structures (MDIS), such as
+kd-trees or R-trees. As for most index structures, the usefulness of this approach depends on the
+selectivity of the queries, and common wisdom told that a simple scan beats MDIS for queries accessing
+more than 15%-20% of a dataset. However, this wisdom is largely based on evaluations that are almost
+two decades old, performed on data being held on disks, applying IO-optimized data structures,
+and using single-core systems. The question is whether this rule of thumb still holds when multidimensional
+range queries (MDRQ) are performed on modern architectures with large main memories holding all
+data, multi-core CPUs and data-parallel instruction sets. In this paper, we study the question
+whether and how much modern hardware influences the performance ratio between index structures
+and scans for MDRQ. To this end, we conservatively adapted three popular MDIS, namely the R*-tree,
+the kd-tree, and the VA-file, to exploit features of modern servers and compared their performance
+to different flavors of parallel scans using multiple (synthetic and real-world) analytical workloads
+over multiple (synthetic and real-world) datasets of varying size, dimensionality, and skew.
+We find that all approaches benefit considerably from using main memory and parallelization, yet
+to varying degrees. Our evaluation indicates that, on current machines, scanning should be favored
+over parallel versions of classical MDIS even for very selective queries. 

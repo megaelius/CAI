@@ -1,0 +1,20 @@
+Generative Adversarial Networks (GANs) are the emerging machine learning technology that can
+learn to automatically create labeled datasets in application domains such as speech, image, video
+and texts. A GAN typically includes a generative model that is taught to generate any distribution
+of data, and a discriminator trained to distinguish the synthetic data from real-world data. Both
+convolutional and deconvolutional layers are the major sources of performance overhead for GANs
+and directly impact the efficiency of GAN-based systems. There are many prior works investigating
+specialized hardware architectures that can accelerate convolution and deconvolution simultaneously,
+but they entail intensive hardware modifications to the existing deep learning accelerators like
+Google TPU and Diannao that focus on convolution acceleration. In contrast, this work proposes
+a novel deconvolution layer implementation with a software approach and enables fast and efficient
+generative network inference on the legacy deep learning processors. Our proposed method reorganizes
+the computation of deconvolutional layer and allows the deep learning processor to treat it as the
+standard convolutional layer after we split the original deconvolutional filters into multiple
+small filters. The proposed data flow is implemented on representative deep learning processors
+including the dot-production array and the regular 2D PE array architectures. Compared to prior
+acceleration schemes, the implemented acceleration scheme achieves 2.41X - 4.34X performance
+speedup and reduces the energy consumption by 27.7% - 54.5% on a set of realistic benchmarks. In addition,
+we also applied the deconvolution computing approach to off-the-shelf commodity deep learning
+processor chips. The performance of GANs on the Google TPU chip and Intel NCS2 exhibits 1.67X - 3.04X
+speedup on average over prior deconvolution implementations. 

@@ -1,0 +1,17 @@
+State-of-the-art password guessing tools, such as HashCat and John the Ripper, enable users to
+check billions of passwords per second against password hashes. In addition to performing straightforward
+dictionary attacks, these tools can expand password dictionaries using password generation rules,
+such as concatenation of words (e.g., "password123456") and leet speak (e.g., "password" becomes
+"p4s5w0rd"). Although these rules work well in practice, expanding them to model further passwords
+is a laborious task that requires specialized expertise. To address this issue, in this paper we
+introduce PassGAN, a novel approach that replaces human-generated password rules with theory-grounded
+machine learning algorithms. Instead of relying on manual password analysis, PassGAN uses a Generative
+Adversarial Network (GAN) to autonomously learn the distribution of real passwords from actual
+password leaks, and to generate high-quality password guesses. Our experiments show that this
+approach is very promising. When we evaluated PassGAN on two large password datasets, we were able
+to surpass rule-based and state-of-the-art machine learning password guessing tools. However,
+in contrast with the other tools, PassGAN achieved this result without any a-priori knowledge on
+passwords or common password structures. Additionally, when we combined the output of PassGAN
+with the output of HashCat, we were able to match 51%-73% more passwords than with HashCat alone.
+This is remarkable, because it shows that PassGAN can autonomously extract a considerable number
+of password properties that current state-of-the art rules do not encode. 

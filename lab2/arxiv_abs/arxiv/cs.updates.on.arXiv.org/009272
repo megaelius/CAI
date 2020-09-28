@@ -1,0 +1,17 @@
+The problems of point-cloud registration and attitude estimation from vector observations (Wahba's
+problem) have widespread applications in computer vision and mobile robotics. This work introduces
+a simple approach for integrating sets of geometric feature observations (points, lines, and planes)
+in such a way that any solution to either point-cloud registration or to Wahba's problem can be used
+to find the SE(3) transformation between the two sets that minimizes the corresponding cost function.
+We compare the performance of three solutions: classic Horn's optimal quaternion method, Optimal
+Linear Attitude Estimator (OLAE) that efficiently recovers the optimal Gibbs-Rodrigues vector
+solving a small linear system, and an iterative non-linear Gauss-Newton solver. Special care is
+given to explain how to overcome the Gibbs vector singularity for OLAE by using the method of sequential
+rotations. Gross outliers in point-to-point correspondences can be discarded by means of detecting
+transformation scale mismatches. The approach also allows the introduction of per-primitive
+relative weights, including an optional robust loss function that is applicable only if an initial
+guess for the solution is known in advance. Experiments are presented to evaluate how the three solutions
+tolerate noise in the input data for different kinds of geometric primitives. Finally, experiments
+with real datasets validate the suitability of the optimal alignment algorithm as the core of an
+Iterative Closest Point/Primitive (ICP) algorithm. An open-source implementation of all the
+described algorithms is provided in https://github.com/MOLAorg/mp2p_icp 

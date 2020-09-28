@@ -1,0 +1,11 @@
+	Hi. I'm trying to figure out how to make a window manager
+place the window where the create window command tells it,
+regardless of what it may think is right. (my application has
+reason to know better)
+	I don't want to set the override-redirect because I do
+want all the embellishments that the window manager gives, I just
+want the wm to accept my choice of location.
+	I've tried twm, tvtwm and mwm and they are all
+uncooperative.
+	Thanks,
+	-- Ethan

@@ -1,0 +1,17 @@
+We compare machine learning explainability methods based on the theory of atomic (Shapley, 1953)
+and infinitesimal (Aumann and Shapley, 1974) games, in a theoretical and experimental investigation
+into how the model and choice of integration path can influence the resulting feature attributions.
+To gain insight into differences in attributions resulting from interventional Shapley values
+(Sundararajan and Najmi, 2019; Janzing et al., 2019; Chen et al., 2019) and Generalized Integrated
+Gradients (GIG) (Merrill et al., 2019) we note interventional Shapley is equivalent to a multi-path
+integration along $n!$ paths where $n$ is the number of model input features. Applying Stoke's theorem
+we show that the path symmetry of these two methods results in the same attributions when the model
+is composed of a sum of separable functions of individual features and a sum of two-feature products.
+We then perform a series of experiments with varying degrees of data missingness to demonstrate
+how interventional Shapley's multi-path approach can yield less consistent attributions than
+the single straight-line path of Aumann-Shapley. We argue this is because the multiple paths employed
+by interventional Shaply extend away from the training data manifold and are therefore more likely
+to pass through regions where the model has little support. In the absence of a more meaningful path
+choice, we therefore advocate the straight-line path since it will almost always pass closer to
+the data manifold. Among straight-line path attribution algorithms, GIG is uniquely robust since
+it will still yield Shapley values for atomic games modeled by decision trees. 

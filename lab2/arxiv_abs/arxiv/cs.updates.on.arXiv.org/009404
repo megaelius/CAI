@@ -1,0 +1,19 @@
+Binary code similarity comparison is a methodology for identifying similar or identical code fragments
+in binary programs. It is indispensable in fields of software engineering and security, which has
+many important applications (e.g., plagiarism detection, bug detection). With the widespread
+of smart and IoT (Internet of Things) devices, an increasing number of programs are ported to multiple
+architectures (e.g. ARM, MIPS). It becomes necessary to detect similar binary code across architectures
+as well. The main challenge of this topic lies in the semantics-equivalent code transformation
+resulting from different compilation settings, code obfuscation, and varied instruction set
+architectures. Another challenge is the trade-off between comparison accuracy and coverage.
+Unfortunately, existing methods still heavily rely on semantics-less code features which are
+susceptible to the code transformation. Additionally, they perform the comparison merely either
+in a static or in a dynamic manner, which cannot achieve high accuracy and coverage simultaneously.
+In this paper, we propose a semantics-based hybrid method to compare binary function similarity.
+We execute the reference function with test cases, then emulate the execution of every target function
+with the runtime information migrated from the reference function. Semantic signatures are extracted
+during the execution as well as the emulation. Lastly, similarity scores are calculated from the
+signatures to measure the likeness of functions. We have implemented the method in a prototype system
+designated as BinMatch and evaluate it with nine real-word projects compiled with different compilation
+settings, on variant architectures, and with commonly-used obfuscation methods, totally performing
+over 100 million pairs of function comparison. 

@@ -1,0 +1,20 @@
+Deformable image registration is a fundamental task in medical image analysis, aiming to establish
+a dense and non-linear correspondence between a pair of images. Previous deep-learning studies
+usually employ supervised neural networks to directly learn the spatial transformation from one
+image to another, requiring task-specific ground-truth registration for model training. Due
+to the difficulty in collecting precise ground-truth registration, implementation of these supervised
+methods is practically challenging. Although several unsupervised networks have been recently
+developed, these methods usually ignore the inherent inverse-consistent property (essential
+for diffeomorphic mapping) of transformations between a pair of images. Also, existing approaches
+usually encourage the to-be-estimated transformation to be locally smooth via a smoothness constraint
+only, which could not completely avoid folding in the resulting transformation. To this end, we
+propose an Inverse-Consistent deep Network (ICNet) for unsupervised deformable image registration.
+Specifically, we develop an inverse-consistent constraint to encourage that a pair of images are
+symmetrically deformed toward one another, until both warped images are matched. Besides using
+the conventional smoothness constraint, we also propose an anti-folding constraint to further
+avoid folding in the transformation. The proposed method does not require any supervision information,
+while encouraging the diffeomoprhic property of the transformation via the proposed inverse-consistent
+and anti-folding constraints. We evaluate our method on T1-weighted brain magnetic resonance
+imaging (MRI) scans for tissue segmentation and anatomical landmark detection, with results demonstrating
+the superior performance of our ICNet over several state-of-the-art approaches for deformable
+image registration. Our code will be made publicly available. 

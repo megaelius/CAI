@@ -1,0 +1,20 @@
+Composable many-core systems enable the independent development and analysis of applications
+which will be executed on a shared platform where the mix of concurrently executed applications
+may change dynamically at run time. For each individual application, an off-line Design Space Exploration
+(DSE) is performed to compute several mapping alternatives on the platform, offering Pareto-optimal
+trade-offs in terms of real-time guarantees, resource usage, etc. At run time, one mapping is then
+chosen to launch the application on demand. In this context, to enable an independent analysis of
+each individual application at design time, so-called inter-application isolation schemes are
+applied which specify temporal or spatial isolation policies between applications. S.o.t.a.
+composable many-core systems are developed based on a fixed isolation scheme that is exclusively
+applied to every resource in every mapping of every application and use a timing analysis tailored
+to that isolation scheme to derive timing guarantees for each mapping. A fixed isolation scheme,
+however, heavily restricts the explored space of solutions and can, therefore, lead to suboptimality.
+Lifting this restriction necessitates a timing analysis that is applicable to mappings with an
+arbitrary mix of isolation schemes on different resources. To address this issue, we present an
+isolation-aware timing analysis that unlike existing analyses can handle multiple isolation
+schemes in combination within one mapping and delivers safe yet tight timing bounds by identifying
+and excluding interference scenarios that can never happen under the given combination of isolation
+schemes. Based on the timing analysis, we present a DSE which explores the choices of isolation scheme
+per resource within each mapping. Experimental results demonstrate the advantage of the proposed
+approach over approaches based on a fixed isolation scheme. 

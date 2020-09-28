@@ -1,0 +1,18 @@
+The GRAPES-3 muon telescope located in Ooty, India records 4x10^9 muons daily. These muons are produced
+by interaction of primary cosmic rays (PCRs) in the atmosphere. The high statistics of muons enables
+GRAPES-3 to make precise measurement of various sun-induced phenomenon including coronal mass
+ejections (CME), Forbush decreases, geomagnetic storms (GMS) and atmosphere acceleration during
+the overhead passage of thunderclouds. However, the understanding and interpretation of observed
+data requires Monte Carlo (MC) simulation of PCRs and subsequent development of showers in the atmosphere.
+CORSIKA is a standard MC simulation code widely used for this purpose. However, these simulations
+are time consuming as large number of interactions and decays need to be taken into account at various
+stages of shower development from top of the atmosphere down to ground level. Therefore, computing
+resources become an important consideration particularly when billion of PCRs need to be simulated
+to match the high statistical accuracy of the data. During the GRAPES-3 simulations, it was observed
+that over 60% of simulated events don't really reach the Earth's atmosphere. The geomagnetic field
+(GMF) creates a threshold to PCRs called cutoff rigidity Rc, a direction dependent parameter below
+which PCRs can't reach the Earth's atmosphere. However, in CORSIKA there is no provision to set a
+direction dependent threshold. We have devised an efficient method that has taken into account
+of this Rc dependence. A reduction by a factor ~3 in simulation time and ~2 in output data size was achieved
+for GRAPES-3 simulations. This has been incorporated in CORSIKA version v75600 onwards. Detailed
+implementation of this along the potential benefits are discussed in this work. 

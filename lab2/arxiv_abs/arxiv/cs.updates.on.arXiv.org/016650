@@ -1,0 +1,18 @@
+In the matroid center problem, which generalizes the $k$-center problem, we need to pick a set of
+centers that is an independent set of a matroid with rank $r$. We study this problem in streaming,
+where elements of the ground set arrive in the stream. We first show that any randomized one-pass
+streaming algorithm that computes a better than $\Delta$-approximation for partition-matroid
+center must use $\Omega(r^2)$ bits of space, where $\Delta$ is the aspect ratio of the metric and
+can be arbitrarily large. This shows a quadratic separation between matroid center and $k$-center,
+for which the Doubling algorithm gives an $8$-approximation using $O(k)$-space and one pass. To
+complement this, we give a one-pass algorithm for matroid center that stores at most $O(r^2\log(1/\varepsilon)/\varepsilon)$
+points (viz., stream summary) among which a $(7+\varepsilon)$-approximate solution exists,
+which can be found by brute force, or a $(17+\varepsilon)$-approximation can be found with an efficient
+algorithm. If we are allowed a second pass, we can compute a $(3+\varepsilon)$-approximation efficiently;
+this also achieves almost the known-best approximation ratio (of $3+\varepsilon$) with total
+running time of $O((nr + r^{3.5})\log(1/\varepsilon)/\varepsilon + r^2(\log \Delta)/\varepsilon)$,
+where $n$ is the number of input points. We also consider the problem of matroid center with $z$ outliers
+and give a one-pass algorithm that outputs a set of $O((r^2+rz)\log(1/\varepsilon)/\varepsilon)$
+points that contains a $(15+\varepsilon)$-approximate solution. Our techniques extend to knapsack
+center and knapsack center with outliers in a straightforward way, and we get algorithms that use
+space linear in the size of a largest feasible set (as opposed to quadratic space for matroid center).

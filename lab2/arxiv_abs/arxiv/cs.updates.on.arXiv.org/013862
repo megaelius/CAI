@@ -1,0 +1,20 @@
+Detecting malignant pulmonary nodules at an early stage can allow medical interventions which
+increases the survival rate of lung cancer patients. Using computer vision techniques to detect
+nodules can improve the sensitivity and the speed of interpreting chest CT for lung cancer screening.
+Many studies have used CNNs to detect nodule candidates. Though such approaches have been shown
+to outperform the conventional image processing based methods regarding the detection accuracy,
+CNNs are also known to be limited to generalize on under-represented samples in the training set
+and prone to imperceptible noise perturbations. Such limitations can not be easily addressed by
+scaling up the dataset or the models. In this work, we propose to add adversarial synthetic nodules
+and adversarial attack samples to the training data to improve the generalization and the robustness
+of the lung nodule detection systems. In order to generate hard examples of nodules from a differentiable
+nodule synthesizer, we use projected gradient descent (PGD) to search the latent code within a bounded
+neighbourhood that would generate nodules to decrease the detector response. To make the network
+more robust to unanticipated noise perturbations, we use PGD to search for noise patterns that can
+trigger the network to give over-confident mistakes. By evaluating on two different benchmark
+datasets containing consensus annotations from three radiologists, we show that the proposed
+techniques can improve the detection performance on real CT data. To understand the limitations
+of both the conventional networks and the proposed augmented networks, we also perform stress-tests
+on the false positive reduction networks by feeding different types of artificially produced patches.
+We show that the augmented networks are more robust to both under-represented nodules as well as
+resistant to noise perturbations. 

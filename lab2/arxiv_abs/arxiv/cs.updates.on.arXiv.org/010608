@@ -1,0 +1,18 @@
+Localizing objects with weak supervision in an image is a key problem of the research in computer
+vision community. Many existing Weakly-Supervised Object Localization (WSOL) approaches tackle
+this problem by estimating the most discriminative regions with feature maps (activation maps)
+obtained by Deep Convolutional Neural Network, that is, only the objects or parts of them with the
+most discriminative response will be located. However, the activation maps often display different
+local maximum responses or relatively weak response when one image contains multiple objects with
+the same type or small objects. In this paper, we propose a simple yet effective multi-scale discriminative
+region discovery method to localize not only more integral objects but also as many as possible with
+only image-level class labels. The gradient weights flowing into different convolutional layers
+of CNN are taken as the input of our method, which is different from previous methods only considering
+that of the final convolutional layer. To mine more discriminative regions for the task of object
+localization, the multiple local maximum from the gradient weight maps are leveraged to generate
+the localization map with a parallel sliding window. Furthermore, multi-scale localization maps
+from different convolutional layers are fused to produce the final result. We evaluate the proposed
+method with the foundation of VGGnet on the ILSVRC 2016, CUB-200-2011 and PASCAL VOC 2012 datasets.
+On ILSVRC 2016, the proposed method yields the Top-1 localization error of 48.65\%, which outperforms
+previous results by 2.75\%. On PASCAL VOC 2012, our approach achieve the highest localization accuracy
+of 0.43. Even for CUB-200-2011 dataset, our method still achieves competitive results. 

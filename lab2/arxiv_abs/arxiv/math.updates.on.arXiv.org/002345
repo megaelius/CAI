@@ -1,0 +1,17 @@
+Venous valves are bicuspidal valves that ensure that blood in veins only flows back to the heart.
+To prevent retrograde blood flow, the two intraluminal leaflets meet in the center of the vein and
+occlude the vessel. In fluid-structure interaction (FSI) simulations of venous valves, the large
+structural displacements may lead to mesh deteriorations and entanglements, causing instabilities
+of the solver and, consequently, the numerical solution to diverge. In this paper, we propose an
+Arbitrary Lagrangian-Eulerian (ALE) scheme for FSI simulations designed to solve these instabilities.
+A monolithic formulation for the FSI problem is considered and, due to the complexity of the operators,
+the exact Jacobian matrix is evaluated using automatic differentiation. The method relies on the
+introduction of a staggered in time velocity %in the discretization scheme to improve stability,
+and on fictitious springs to model the contact force of the valve leaflets. Since the large structural
+displacements may compromise the quality of the fluid mesh as well, a smoother fluid displacement,
+obtained with the introduction of a scaling factor that measures the distance of a fluid element
+from the valve leaflet tip, guarantees that there are no mesh entanglements in the fluid domain.
+To further improve stability, a Streamline Upwind Petrov Galerkin (SUPG) method is employed. The
+proposed ALE scheme is applied to a 2D model of a venous valve. The presented simulations show that
+the proposed method deals well with the large structural displacements of the problem, allowing
+a reconstruction of the valve behavior in both the opening and closing phase. 

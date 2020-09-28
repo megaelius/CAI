@@ -1,0 +1,19 @@
+The Backup Placement problem in networks in the $\mathcal{CONGEST}$ distributed setting considers
+a network graph $G = (V,E)$, in which the goal of each vertex $v \in V$ is selecting a neighbor, such
+that the maximum number of vertices in $V$ that select the same vertex is minimized [Halldorsson
+et al., 2015]. The problem is called 1-Backup-Placement when each vertex selects exactly one neighbor.
+A more general version, in which each vertex selects $K$ neighbors, for a positive parameter $K$,
+is called $K$-Backup-Placement. In [SOSA & APOCS, 2020] Barenboim and Oren studied approximate
+backup placement algorithms in sparse and dense networks and proved their correctness, specifically
+that each vertex is selected by at most $O(1)$ neighbors, and achieving a desired load-balancing.
+However, those algorithm suffer from obliviousness to some main factors of heterogeneous wireless
+network. Specifically, there is no consideration of the nodes memory and storage capacities and
+the heterogeneity of capacity, and no reference to a case in which nodes have different energy capacity,
+and thus can leave (or join) the network at any time. Those parameters coupled in wireless networks,
+as the load on different parts of the network can differ greatly, thus requiring more messages, energy,
+memory and storage. In this work we suggest two complementary algorithms which address this problem.
+In the first one we divide the memory of each node to many small parts, but assign each vertex the memories
+of a large number of its neighbors. Thus more memory for more vertices is gained but with much fragmentation.
+In the second algorithm we execute more rounds, but do not produce fragmentation, and allow for a
+larger virtual memory per vertex. A key technical contribution of ours is an algorithm for $K$-Backup-Placement,
+that is used as a building block for these two procedures. Its running time is just one round. 

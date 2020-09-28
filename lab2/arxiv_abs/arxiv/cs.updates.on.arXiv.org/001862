@@ -1,0 +1,18 @@
+Combinatorial branch and bound searches are a common technique for solving global optimisation
+and decision problems. Their performance often depends on good search order heuristics, refined
+over decades of algorithms research. Parallel search necessarily deviates from the sequential
+search order, sometimes dramatically and unpredictably, e.g. by distributing work at random.
+This can disrupt effective search order heuristics and lead to unexpected and highly variable parallel
+performance. The variability makes it hard to reason about the parallel performance of combinatorial
+searches. This paper presents a generic parallel branch and bound skeleton, implemented in Haskell,
+with replicable parallel performance. The skeleton aims to preserve the search order heuristic
+by distributing work in an ordered fashion, closely following the sequential search order. We demonstrate
+the generality of the approach by applying the skeleton to 40 instances of three combinatorial problems:
+Maximum Clique, 0/1 Knapsack and Travelling Salesperson. The overheads of our Haskell skeleton
+are reasonable: giving slowdown factors of between 1.9 and 6.2 compared with a class-leading, dedicated,
+and highly optimised C++ Maximum Clique solver. We demonstrate scaling up to 200 cores of a Beowulf
+cluster, achieving speedups of 100x for several Maximum Clique instances. We demonstrate low variance
+of parallel performance across all instances of the three combinatorial problems and at all scales
+up to 200 cores, with median Relative Standard Deviation (RSD) below 2%. Parallel solvers that do
+not follow the sequential search order exhibit far higher variance, with median RSD exceeding 85%
+for Knapsack. 

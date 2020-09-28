@@ -1,0 +1,17 @@
+In this paper we present two versions of a parallel finger structure FS on p processors that supports
+searches, insertions and deletions, and has a finger at each end. This is to our knowledge the first
+implementation of a parallel search structure that is work-optimal with respect to the finger bound
+and yet has very good parallelism (within a factor of O( (log p)^2 ) of optimal). We utilize an extended
+implicit batching framework that transparently facilitates the use of FS by any parallel program
+P that is modelled by a dynamically generated DAG D where each node is either a unit-time instruction
+or a call to FS. The total work done by either version of FS is bounded by the finger bound F[L] (for some
+linearization L of D ), i.e. each operation on an item with finger distance r takes O( log r + 1 ) amortized
+work; it is cheaper for items closer to a finger. Running P using the simpler version takes O( ( T[1]
++ F[L] ) / p + T[inf] + d * ( (log p)^2 + log n ) ) time on a greedy scheduler, where T[1],T[inf] are the size
+and span of D respectively, and n is the maximum number of items in FS, and d is the maximum number of
+calls to FS along any path in D. Using the faster version, this is reduced to O( ( T[1] + F[L] ) / p + T[inf]
++ d * (log p)^2 + s[L] ) time, where s[L] is the weighted span of D where each call to FS is weighted by its
+cost according to F[L]. We also sketch how to extend FS to support a fixed number of movable fingers.
+The data structures in our paper fit into the dynamic multithreading paradigm, and their performance
+bounds are directly composable with other data structures given in the same paradigm. Also, the
+results can be translated to practical implementations using work-stealing schedulers. 

@@ -1,0 +1,19 @@
+Partial differential equations (PDEs) with inputs that depend on infinitely many parameters pose
+serious theoretical and computational challenges. Sophisticated numerical algorithms that
+automatically determine which parameters need to be activated in the approximation space in order
+to estimate a quantity of interest to a prescribed error tolerance are needed. For elliptic PDEs
+with parameter-dependent coefficients, stochastic Galerkin finite element methods (SGFEMs)
+have been well studied. Under certain assumptions, it can be shown that there exists a sequence of
+SGFEM approximation spaces for which the energy norm of the error decays to zero at a rate that is independent
+of the number of input parameters. However, it is not clear how to adaptively construct these spaces
+in a practical and computationally efficient way. We present a new adaptive SGFEM algorithm that
+tackles elliptic PDEs with parameter-dependent coefficients quickly and efficiently. We consider
+approximation spaces with a multilevel structure---where each solution mode is associated with
+a finite element space on a potentially different mesh---and use an implicit a posteriori error
+estimation strategy to steer the adaptive enrichment of the space. At each step, the components
+of the error estimator are used to assess the potential benefits of a variety of enrichment strategies,
+including whether or not to activate more parameters. No marking or tuning parameters are required.
+Numerical experiments for a selection of test problems demonstrate that the new method performs
+optimally in that it generates a sequence of approximations for which the estimated energy error
+decays to zero at the same rate as the error for the underlying finite element method applied to the
+associated parameter-free problem. 

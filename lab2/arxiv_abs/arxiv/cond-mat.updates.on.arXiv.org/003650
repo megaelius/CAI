@@ -1,0 +1,18 @@
+ANNs are currently trained by generating large quantities (On the order of $10^{4}$ or greater)
+of structural data in hopes that the ANN has adequately sampled the energy landscape both near and
+far-from-equilibrium. This can, however, be a bit prohibitive when it comes to more accurate levels
+of quantum theory. As such it is desirable to train a model using the absolute minimal data set possible,
+especially when costs of high-fidelity calculations such as CCSD and QMC are high. Here, we present
+an Active Learning approach that iteratively trains an ANN model to faithfully replicate the coarse-grained
+energy surface of water clusters using only 426 total structures in its training data. Our active
+learning workflow starts with a sparse training dataset which is continually updated via a Monte
+Carlo scheme that sparsely queries the energy landscape and tests the network performance. Next,
+the network is retrained with an updated training set that includes failed configurations/energies
+from previous iteration until convergence is attained. Once trained, we generate an extensive
+test set of ~100,000 configurations sampled across clusters ranging from 1 to 200 molecules and
+demonstrate that the trained network adequately reproduces the energies (within mean absolute
+error (MAE) of ~ 2 meV/molecule) and forces (MAE ~ 40 meV/{\r{A}}) compared to the reference model.
+More importantly, the trained ANN model also accurately captures both the structure as well as the
+free energy as a function of the various cluster sizes. Overall, this study reports a new active learning
+scheme with promising strategy to develop accurate force-fields for molecular simulations using
+extremely sparse training data sets. 

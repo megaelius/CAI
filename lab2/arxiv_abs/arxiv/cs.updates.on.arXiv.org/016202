@@ -1,0 +1,19 @@
+In the Token Jumping problem we are given a graph $G = (V,E)$ and two independent sets $S$ and $T$ of
+$G$, each of size $k \geq 1$. The goal is to determine whether there exists a sequence of $k$-sized
+independent sets in $G$, $\langle S_0, S_1, \ldots, S_\ell \rangle$, such that for every $i$, $|S_i|
+= k$, $S_i$ is an independent set, $S = S_0$, $S_\ell = T$, and $|S_i \Delta S_{i+1}| = 2$. In other words,
+if we view each independent set as a collection of tokens placed on a subset of the vertices of $G$,
+then the problem asks for a sequence of independent sets which transforms $S$ to $T$ by individual
+token jumps which maintain the independence of the sets. This problem is known to be PSPACE-complete
+on very restricted graph classes, e.g., planar bounded degree graphs and graphs of bounded bandwidth.
+A closely related problem is the Token Sliding problem, where instead of allowing a token to jump
+to any vertex of the graph we instead require that a token slides along an edge of the graph. Token Sliding
+is also known to be PSPACE-complete on the aforementioned graph classes. We investigate the parameterized
+complexity of both problems on several graph classes, focusing on the effect of excluding certain
+cycles from the input graph. In particular, we show that both Token Sliding and Token Jumping are
+fixed-parameter tractable on $C_4$-free bipartite graphs when parameterized by $k$. For Token
+Jumping, we in fact show that the problem admits a polynomial kernel on $\{C_3,C_4\}$-free graphs.
+In the case of Token Sliding, we also show that the problem admits a polynomial kernel on bipartite
+graphs of bounded degree. We complement these positive results by showing that, for any constant
+$p \geq 4$, both problems are W[1]-hard on $C_\ell$-free graphs, where $4 \leq \ell \leq p$, and Token
+Sliding remains W[1]-hard even on bipartite graphs. 

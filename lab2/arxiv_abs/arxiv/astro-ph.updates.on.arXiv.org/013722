@@ -1,0 +1,19 @@
+Correlated noise affects most astronomical datasets and to neglect accounting for it can lead to
+spurious signal detections, especially in low signal-to-noise conditions, which is often the
+context in which new discoveries are pursued. For instance, in the realm of exoplanet detection
+with radial velocity time series, stellar variability can induce false detections. However, a
+white noise approximation is often used because accounting for correlated noise when analyzing
+data implies a more complex analysis. Moreover, the computational cost can be prohibitive as it
+typically scales as the cube of the dataset size. For some restricted classes of correlated noise
+models, there are specific algorithms that can be used to help bring down the computational cost.
+This improvement in speed is particularly useful in the context of Gaussian process regression,
+however, it comes at the expense of the generality of the noise model. Here, we present the S+LEAF
+noise model, which allows us to account for a large class of correlated noises with a linear scaling
+of the computational cost with respect to the size of the dataset. The S+LEAF model includes, in particular,
+mixtures of quasiperiodic kernels and calibration noise. This efficient modeling is made possible
+by a sparse representation of the covariance matrix of the noise and the use of dedicated algorithms
+for matrix inversion, solving, determinant computation, etc. We applied the S+LEAF model to reanalyze
+the HARPS radial velocity time series of HD 136352. We illustrate the flexibility of the S+LEAF model
+in handling various sources of noise. We demonstrate the importance of taking correlated noise
+into account, and especially calibration noise, to correctly assess the significance of detected
+signals. We provide an open-source implementation of the S+LEAF model, available at https://gitlab.unige.ch/jean-baptiste.delisle/spleaf.

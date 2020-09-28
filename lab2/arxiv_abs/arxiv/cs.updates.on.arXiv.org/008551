@@ -1,0 +1,18 @@
+In the context of self-stabilization, a \emph{silent} algorithm guarantees that the register
+of every node does not change once the algorithm has stabilized. At the end of the 90's, Dolev et al.
+[Acta Inf. '99] showed that, for finding the centers of a graph, for electing a leader, or for constructing
+a spanning tree, every silent algorithm must use a memory of $\Omega(\log n)$ bits per register in
+$n$-node networks. Similarly, Korman et al. [Dist. Comp. '07] proved, using the notion of proof-labeling-scheme,
+that, for constructing a minimum-weight spanning trees (MST), every silent algorithm must use
+a memory of $\Omega(\log^2n)$ bits per register. It follows that requiring the algorithm to be silent
+has a cost in terms of memory space, while, in the context of self-stabilization, where every node
+constantly checks the states of its neighbors, the silence property can be of limited practical
+interest. In fact, it is known that relaxing this requirement results in algorithms with smaller
+space-complexity. In this paper, we are aiming at measuring how much gain in terms of memory can be
+expected by using arbitrary self-stabilizing algorithms, not necessarily silent. To our knowledge,
+the only known lower bound on the memory requirement for general algorithms, also established at
+the end of the 90's, is due to Beauquier et al.~[PODC '99] who proved that registers of constant size
+are not sufficient for leader election algorithms. We improve this result by establishing a tight
+lower bound of $\Theta(\log \Delta+\log \log n)$ bits per register for self-stabilizing algorithms
+solving $(\Delta+1)$-coloring or constructing a spanning tree in networks of maximum degree~$\Delta$.
+The lower bound $\Omega(\log \log n)$ bits per register also holds for leader election. 

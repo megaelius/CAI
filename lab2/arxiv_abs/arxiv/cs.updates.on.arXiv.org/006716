@@ -1,0 +1,20 @@
+Graphs of developer networks are important for software engineering research and practice. For
+these graphs to realistically represent the networks, accurate developer identities are imperative.
+We aim to identify developer identity errors from open source software repositories in VCS, investigate
+the nature of these errors, design corrective algorithms, and estimate the impact of the errors
+on networks inferred from this data. We investigate these questions using over 1B Git commits with
+over 23M recorded author identities. By inspecting the author strings that occur most frequently,
+we group identity errors into categories. We then augment the author strings with 3 behavioral fingerprints:
+time-zone frequencies, the set of files modified, and a vector embedding of the commit messages.
+We create a manually validated set of identities for a subset of OpenStack developers using an active
+learning approach and use it to fit supervised learning models to predict the identities for the
+remaining author strings in OpenStack. We compare these predictions with a commercial effort and
+a leading research method. Finally, we compare network measures for file-induced author networks
+based on corrected and raw data. We find commits done from different environments, misspellings,
+organizational IDs, default values, and anonymous IDs to be the major sources of errors. We also
+find supervised learning methods to reduce errors by several times in comparison to existing methods
+and the active learning approach to be an effective way to create validated datasets and that correction
+of developer identity has a large impact on the inference of the social network. We believe that our
+proposed Active Learning Fingerprint Based Anti-Aliasing (ALFAA) approach will expedite research
+progress in the software engineering domain for applications that depend upon graphs of developers
+or other social networks. 

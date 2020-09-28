@@ -1,0 +1,19 @@
+Recent beyond worst-case optimal join algorithms Minesweeper and its generalization Tetris have
+brought the theory of indexing and join processing together by developing a geometric framework
+for joins. These algorithms take as input an index $\mathcal{B}$, referred to as a box cover, that
+stores output gaps that can be inferred from traditional indexes, such as B+ trees or tries, on the
+input relations. The performances of these algorithms highly depend on the certificate of $\mathcal{B}$,
+which is the smallest subset of gaps in $\mathcal{B}$ whose union covers all of the gaps in the output
+space of a query $Q$. Different box covers can have different size certificates and the sizes of both
+the box covers and certificates highly depend on the ordering of the domain values of the attributes
+in $Q$. We study how to generate box covers that contain small size certificates to guarantee efficient
+runtimes for these algorithms. First, given a query $Q$ over a set of relations of size $N$ and a fixed
+set of domain orderings for the attributes, we give a $\tilde{O}(N)$-time algorithm that generates
+a box cover for $Q$ that is guaranteed to contain the smallest size certificate across any box cover
+for $Q$. Second, we show that finding a domain ordering to minimize the box cover size and certificate
+is NP-hard through a reduction from the 2 consecutive block minimization problem on boolean matrices.
+Our third contribution is an $\tilde{O}(N)$-time approximation algorithm to compute domain orderings,
+under which one can compute a box cover of size $\tilde{O}(K^r)$, where $K$ is the minimum box cover
+for $Q$ under any domain ordering and $r$ is the maximum arity of any relation. This guarantees certificates
+of size $\tilde{O}(K^r)$. Our results provide several new beyond worst-case bounds, which on some
+inputs and queries can be unboundedly better than the bounds stated in prior work. 

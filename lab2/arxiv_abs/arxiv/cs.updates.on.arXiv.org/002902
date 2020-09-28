@@ -1,0 +1,20 @@
+This thesis addresses the problem of verifying the geographic locations of Internet clients. First,
+we demonstrate how current state-of-the-art delay-based geolocation techniques are susceptible
+to evasion through delay manipulations, which involve both increasing and decreasing the Internet
+delays that are observed between a client and a remote measuring party. We then propose Client Presence
+Verification (CPV) as a delay-based technique to verify an assertion about a client's physical
+presence in a prescribed geographic region. Three verifiers geographically encapsulating a client's
+asserted location are used to corroborate that assertion by measuring the delays between themselves
+and the client. CPV infers geographic distances from these delays and thus, using the smaller of
+the forward and reverse one-way delay between each verifier and the client is expected to result
+in a more accurate distance inference than using the conventional round-trip times. Accordingly,
+we devise a novel protocol for accurate one-way delay measurements between the client and the three
+verifiers to be used by CPV, taking into account that the client could manipulate the measurements
+to defeat the verification process. We evaluate CPV through extensive real-world experiments
+with legitimate clients (those truly present at where they asserted to be) modeled to use both wired
+and wireless access networks. Wired evaluation is done using the PlanetLab testbed, during which
+we examine various factors affecting CPV's efficacy, such as the client's geographical nearness
+to the verifiers. For wireless evaluation, we leverage the Internet delay information collected
+for wired clients from PlanetLab, and model additional delays representing the last-mile wireless
+link. Finally, we reinforce CPV against a (hypothetical) middlebox that an adversary specifically
+customizes to defeat CPV. 

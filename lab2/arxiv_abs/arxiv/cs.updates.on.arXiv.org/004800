@@ -1,0 +1,19 @@
+We consider the classic maximal and maximum independent set problems in three models of graph streams:
+In the edge-arrival model we see a stream of edges which collectively define a graph, this model has
+been well-studied for a variety of problems. We first show that the space complexity for a one-pass
+streaming algorithm to find a maximal independent set is quadratic (i.e. we must store all edges).
+We further show that the problem does not become much easier if we only require approximate maximality.
+In the "explicit" vertex stream model, the input stream is a sequence of vertices making up the graph,
+where every vertex arrives along with its incident edges that connect to previously arrived vertices.
+Various graph problems require substantially less space to solve in this setting than for edge-arrival
+streams. We show that every one-pass $c$-approximation algorithm for maximum independent set
+(MIS) on explicit vertex streams requires space $\Omega(\frac{n^2}{c^7})$, where $n$ is the number
+of vertices of the input graph, and it is already known that space $\tilde{\Theta}(\frac{n^2}{c^2})$
+is necessary and sufficient in the edge arrival model (Halld\'orsson et al. 2012). The MIS problem
+is thus not significantly easier to solve under the explicit vertex arrival order assumption. Our
+result is proved via a reduction to a new multi-party communication problem closely related to pointer
+jumping. In the "implicit" vertex stream model, the input stream consists of a sequence of objects,
+one per vertex. The algorithm is equipped with a function that can map a pair of objects to the presence
+or absence of an edge, thus defining the graph. This model captures, for example, geometric intersection
+graphs such as unit disc graphs. Our final set of results consists of several improved upper and lower
+bounds for ball intersection graphs, in both explicit and implicit streams. 

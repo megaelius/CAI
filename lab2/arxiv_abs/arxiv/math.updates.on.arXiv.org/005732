@@ -1,0 +1,20 @@
+We study the problem of private set intersection (PSI). In this problem, there are two entities $E_i$,
+for $i=1, 2$, each storing a set $\mathcal{P}_i$, whose elements are picked from a finite field $\mathbb{F}_K$,
+on $N_i$ replicated and non-colluding databases. It is required to determine the set intersection
+$\mathcal{P}_1 \cap \mathcal{P}_2$ without leaking any information about the remaining elements
+to the other entity with the least amount of downloaded bits. We first show that the PSI problem can
+be recast as a multi-message symmetric private information retrieval (MM-SPIR) problem. Next,
+as a stand-alone result, we derive the information-theoretic sum capacity of MM-SPIR, $C_{MM-SPIR}$.
+We show that with $K$ messages, $N$ databases, and the size of the desired message set $P$, the exact
+capacity of MM-SPIR is $C_{MM-SPIR} = 1 - \frac{1}{N}$ when $P \leq K-1$, provided that the entropy
+of the common randomness $S$ satisfies $H(S) \geq \frac{P}{N-1}$ per desired symbol. This result
+implies that there is no gain for MM-SPIR over successive single-message SPIR (SM-SPIR). For the
+MM-SPIR problem, we present a novel capacity-achieving scheme that builds on the near-optimal
+scheme of Banawan-Ulukus originally proposed for the multi-message PIR (MM-PIR) problem without
+database privacy constraints. Surprisingly, our scheme here is exactly optimal for the MM-SPIR
+problem for any $P$, in contrast to the scheme for the MM-PIR problem, which was proved only to be near-optimal.
+Our scheme is an alternative to the SM-SPIR scheme of Sun-Jafar. Based on this capacity result for
+MM-SPIR, and after addressing the added requirements in its conversion to the PSI problem, we show
+that the optimal download cost for the PSI problem is $\min\left\{\left\lceil\frac{P_1 N_2}{N_2-1}\right\rceil,
+\left\lceil\frac{P_2 N_1}{N_1-1}\right\rceil\right\}$, where $P_i$ is the cardinality of
+set $\mathcal{P}_i$ 

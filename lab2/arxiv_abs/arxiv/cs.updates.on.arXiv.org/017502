@@ -1,0 +1,18 @@
+In complex industrial systems, the number of possible fault types is uncountable, making it impossible
+to train supervised models covering them all. Instead, anomaly detectors are trained on healthy
+operating condition data and raise an alarm when the data deviate from the healthy conditions, indicating
+the possible occurrence of faults. Data-driven anomaly detection performance relies on a representative
+collection of samples of the normal (healthy) class distribution. This means that the samples used
+to train the model should be sufficient in number and distributed so as to empirically determine
+the full healthy distribution. But for industrial systems in gradually varying environments or
+subject to changing usage, acquiring such a comprehensive set of samples would require a long collection
+period and delay the point at which the anomaly detector could be trained and operational. In this
+paper, we propose a framework for the transfer of complementary operating conditions between different
+units, to train more robust anomaly detectors. The domain shift due to different units' specificities
+needs to be accounted for. This problem is an extension of Unsupervised Domain Adaptation to the
+one-class classification task. We solve the problem with adversarial deep learning and replace
+the traditional classification loss, unavailable in one-class problems, with a new loss inspired
+by a dimensionality reduction tool. This loss enforces the conservation of the inherent variability
+of each dataset while the adversarial architecture ensures the alignment of the distributions,
+hence correcting the domain shift. We demonstrate the benefit of this approach using three open
+source datasets. 

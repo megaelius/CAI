@@ -1,0 +1,19 @@
+Consider a kidney-exchange application where we want to find a max-matching in a random graph. To
+find whether an edge $e$ exists, we need to perform an expensive test, in which case the edge $e$ appears
+independently with a \emph{known} probability $p_e$. Given a budget on the total cost of the tests,
+our goal is to find a testing strategy that maximizes the expected maximum matching size. The above
+application is an example of the stochastic probing problem. In general the optimal stochastic
+probing strategy is difficult to find because it is \emph{adaptive}---decides on the next edge
+to probe based on the outcomes of the probed edges. An alternate approach is to show the \emph{adaptivity
+gap} is small, i.e., the best \emph{non-adaptive} strategy always has a value close to the best adaptive
+strategy. This allows us to focus on designing non-adaptive strategies that are much simpler. Previous
+works, however, have focused on Bernoulli random variables that can only capture whether an edge
+appears or not. In this work we introduce a multi-value stochastic probing problem, which can also
+model situations where the weight of an edge has a probability distribution over multiple values.
+Our main technical contribution is to obtain (near) optimal bounds for the (worst-case) adaptivity
+gaps for multi-value stochastic probing over prefix-closed constraints. For a monotone submodular
+function, we show the adaptivity gap is at most $2$ and provide a matching lower bound. For a weighted
+rank function of a $k$-extendible system (a generalization of intersection of $k$ matroids), we
+show the adaptivity gap is between $O(k\log k)$ and $k$. None of these results were known even in the
+Bernoulli case where both our upper and lower bounds also apply, thereby resolving an open question
+of Gupta et al. 

@@ -1,0 +1,18 @@
+In this work, we develop an importance sampling estimator by coupling the reduced-order model and
+the generative model in a problem setting of uncertainty quantification. The target is to estimate
+the probability that the quantity of interest (QoI) in a complex system is beyond a given threshold.
+To avoid the prohibitive cost of sampling a large scale system, the reduced-order model is usually
+considered for a trade-off between efficiency and accuracy. However, the Monte Carlo estimator
+given by the reduced-order model is biased due to the error from dimension reduction. To correct
+the bias, we still need to sample the fine model. An effective technique to reduce the variance reduction
+is importance sampling, where we employ the generative model to estimate the distribution of the
+data from the reduced-order model and use it for the change of measure in the importance sampling
+estimator. To compensate the approximation errors of the reduced-order model, more data that induce
+a slightly smaller QoI than the threshold need to be included into the training set. Although the
+amount of these data can be controlled by a posterior error estimate, redundant data, which may outnumber
+the effective data, will be kept due to the epistemic uncertainty. To deal with this issue, we introduce
+a weighted empirical distribution to process the data from the reduced-order model. The generative
+model is then trained by minimizing the cross entropy between it and the weighted empirical distribution.
+We also introduce a penalty term into the objective function to deal with the overfitting for more
+robustness. Numerical results are presented to demonstrate the effectiveness of the proposed
+methodology. 

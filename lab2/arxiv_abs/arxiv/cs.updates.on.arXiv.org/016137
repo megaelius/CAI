@@ -1,0 +1,19 @@
+Computer vision systems in real-world applications need to be robust to partial occlusion while
+also being explainable. In this work, we show that black-box deep convolutional neural networks
+(DCNNs) have only limited robustness to partial occlusion. We overcome these limitations by unifying
+DCNNs with part-based models into Compositional Convolutional Neural Networks (CompositionalNets)
+- an interpretable deep architecture with innate robustness to partial occlusion. Specifically,
+we propose to replace the fully connected classification head of DCNNs with a differentiable compositional
+model that can be trained end-to-end. The structure of the compositional model enables CompositionalNets
+to decompose images into objects and context, as well as to further decompose object representations
+in terms of individual parts and the objects' pose. The generative nature of our compositional model
+enables it to localize occluders and to recognize objects based on their non-occluded parts. We
+conduct extensive experiments in terms of image classification and object detection on images
+of artificially occluded objects from the PASCAL3D+ and ImageNet dataset, and real images of partially
+occluded vehicles from the MS-COCO dataset. Our experiments show that CompositionalNets made
+from several popular DCNN backbones (VGG-16, ResNet50, ResNext) improve by a large margin over
+their non-compositional counterparts at classifying and detecting partially occluded objects.
+Furthermore, they can localize occluders accurately despite being trained with class-level supervision
+only. Finally, we demonstrate that CompositionalNets provide human interpretable predictions
+as their individual components can be understood as detecting parts and estimating an objects'
+viewpoint. 

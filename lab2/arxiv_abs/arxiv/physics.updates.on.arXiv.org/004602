@@ -1,0 +1,19 @@
+We report a complete implementation of the coupled-cluster method with single, double, and triple
+excitations (CCSDT) where tensor decompositions are used to reduce its scaling and overall computational
+costs. For the decomposition of the electron repulsion integrals the standard density fitting
+(or Cholesky decomposition) format is used. The coupled-cluster single and double amplitudes
+are treated conventionally, and for the triple amplitudes tensor we employ the Tucker-3 compression
+formula, $t_{ijk}^{abc} \approx t_{XYZ} \,U^X_{ai}\,U^Y_{bj} \,U^Z_{ck}$. The auxiliary quantities
+$U^X_{ai}$ come from singular value decomposition (SVD) of an approximate triple amplitudes tensor
+based on perturbation theory. The efficiency of the proposed method relies on an observation that
+the dimension of the "compressed" tensor $t_{XYZ}$ sufficient to deliver a constant relative accuracy
+of the correlation energy grows only linearly with the size of the system, $N$. This fact, combined
+with proper factorization of the coupled-cluster equations, leads to practically $N^6$ scaling
+of the computational costs of the proposed method, as illustrated numerically for linear alkanes
+with increasing chain length. This constitutes a considerable improvement over the $N^8$ scaling
+of the conventional (uncompressed) CCSDT theory. The accuracy of the proposed method is verified
+by benchmark calculations of total and relative energies for several small molecular systems and
+comparison with the exact CCSDT method. The accuracy levels of 1 kJ/mol are easily achievable with
+reasonable SVD subspace size, and even more demanding levels of accuracy can be reached with a considerable
+reduction of the computational costs. Extensions of the proposed method to include higher excitations
+are briefly discussed, along with possible strategies of reducing other residual errors. 

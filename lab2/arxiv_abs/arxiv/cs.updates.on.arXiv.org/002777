@@ -1,0 +1,19 @@
+Computation of the vertices of the convex hull of a set $S$ of $n$ points in $\mathbb{R} ^m$ is a fundamental
+problem in computational geometry, optimization, machine learning and more. We present "All Vertex
+Triangle Algorithm" (AVTA), a robust and efficient algorithm for computing the subset $\overline
+S$ of all $K$ vertices of $conv(S)$, the convex hull of $S$. If $\Gamma_*$ is the minimum of the distances
+from each vertex to the convex hull of the remaining vertices, given any $\gamma \leq \gamma_* = \Gamma_*/R$,
+$R$ the diameter of $S$, $AVTA$ computes $\overline S$ in $O(nK(m+ \gamma^{-2}))$ operations.
+If $\gamma_*$ is unknown but $K$ is known, AVTA computes $\overline S$ in $O(nK(m+ \gamma_*^{-2}))
+\log(\gamma_*^{-1})$ operations. More generally, given $t \in (0,1)$, AVTA computes a subset
+$\overline S^t$ of $\overline S$ in $O(n |\overline S^t|(m+ t^{-2}))$ operations, where the distance
+between any $p \in conv(S)$ to $conv(\overline S^t)$ is at most $t R$. Next we consider AVTA where
+input is $S_\varepsilon$, an $\varepsilon$ perturbation of $S$. Assuming a bound on $\varepsilon$
+in terms of the minimum of the distances of vertices of $conv(S)$ to the convex hull of the remaining
+point of $S$, we derive analogous complexity bounds for computing $\overline S_\varepsilon$.
+We also analyze AVTA under random projections of $S$ or $S_\varepsilon$. Finally, via AVTA we design
+new practical algorithms for two popular machine learning problems: topic modeling and non-negative
+matrix factorization. For topic models AVTA leads to significantly better reconstruction of the
+topic-word matrix than state of the art approaches~\cite{arora2013practical, bansal2014provable}.
+For non-negative matrix AVTA is competitive with existing methods~\cite{arora2012computing}.
+Empirically AVTA is robust and can handle larger amounts of noise than existing methods. 

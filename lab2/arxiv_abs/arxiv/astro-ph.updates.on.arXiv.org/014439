@@ -1,0 +1,19 @@
+Fast and precise propagation of satellite orbits is required for mission design, orbit determination
+in support of operations and payload data analysis. This demand must also comply with the different
+accuracy requirements set by a growing variety of scientific and service missions. This contribution
+proposes a method to improve the computational performance of orbit propagators through an efficient
+numerical integration that meets the accuracy requirements set by the specific application. This
+is achieved by appropriately tuning the parameters of the numerical propagator (relative tolerance
+and maximum time step), establishing a threshold for the perturbing accelerations (Earth's gravitational
+potential, atmospheric drag, solar radiation pressure, third-body perturbations, relativistic
+correction to gravity) below which they can be neglected without altering the quality of the results
+and implementing an efficient and precise algorithm for the harmonic synthesis of the geo-potential
+and its first-order gradient. In particular, when performing the harmonic synthesis, the number
+of spherical harmonics to retain (i.e., the expansion degree) is determined by the accuracy requirement.
+Given that higher-order harmonics decay rapidly with altitude, the expansion degree necessary
+to meet the target accuracy decreases with height. To improve the computational efficiency, the
+number of degrees to retain is determined dynamically while the trajectory is being computed. The
+optimum expansion degree for each altitude is determined by ensuring that the truncation error
+of the harmonic synthesis is below the threshold acceleration. The work is a generalization to arbitrary
+orbits of a previous study that focused on communication satellites in geosynchronous inclined
+orbits. The method is presented and a set of test cases is analysed and discussed. 

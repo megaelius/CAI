@@ -1,0 +1,18 @@
+Motion planning has been studied for nearly four decades now. Complete, combinatorial motion planning
+approaches are theoretically well-rooted with completeness guarantees but they are hard to implement.
+Sampling-based and heuristic methods are easy-to-implement and quite simple to customize but
+they lack completeness guarantees. Can the best of both worlds be ever achieved, particularly for
+mission-critical applications such as robotic surgery, space explorations, and handling hazardous
+material? In this paper, we answer affirmatively to that question. We present a new methodology,
+NuRA, to numerically approximate the roadmap (a network of one-dimensional algebraic curves)
+that is computed in the complete motion planning algorithms, namely the Canny's algorithm. Our
+algorithm encloses the roadmap with a chain of tiny boxes each of which contains a piece of the roadmap
+and whose connectivity captures the roadmap connectivity. Our algorithm starts by enclosing the
+entire space with a box. In each iteration, remaining boxes are shrunk on all sides and then split
+into smaller sized boxes. Those boxes that are empty are detected in the shrink phase and removed.
+The algorithm terminates when all remaining boxes are smaller than an input size. Shrink operation
+is cast as a polynomial optimization with semialgebraic constraints, which is in turn transformed
+into a (series of) semidefinite programs (SDP) using the Lasserre's approach. NuRA's success is
+due to fast SDP solvers. To confirm the effectiveness of NuRA, the three-leaf clover planar curve
+and torus roadmap were computed. In both cases, NuRA completely captured the connectivity. Since
+boxes are independent from one another, NuRA can be parallelized particularly on GPUs. 

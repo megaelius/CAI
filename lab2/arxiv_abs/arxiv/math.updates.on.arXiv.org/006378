@@ -1,0 +1,18 @@
+When base stations (BSs) are deployed with multiple antennas, they need to have downlink (DL) channel
+state information (CSI) to optimize downlink transmissions by beamforming. The DL CSI is usually
+measured at mobile stations (MSs) through DL training and fed back to the BS in frequency division
+duplexing (FDD). The DL training and uplink (UL) feedback might become infeasible due to insufficient
+coherence time interval when the channel rapidly changes due to high speed of MSs. Without the feedback
+from MSs, it may be possible for the BS to directly obtain the DL CSI using the inherent relation of
+UL and DL channels even in FDD, which is called DL extrapolation. Although the exact relation would
+be highly nonlinear, previous studies have shown that a neural network (NN) can be used to estimate
+the DL CSI from the UL CSI at the BS. Most of previous works on this line of research trained the NN using
+full dimensional UL and DL channels; however, the NN training complexity becomes severe as the number
+of antennas at the BS increases. To reduce the training complexity and improve DL CSI estimation
+quality, this paper proposes a novel DL extrapolation technique using simplified input and output
+of the NN. It is shown through many measurement campaigns that the UL and DL channels still share common
+components like path delays and angles in FDD. The proposed technique first extracts these common
+coefficients from the UL and DL channels and trains the NN only using the path gains, which depend
+on frequency bands, with reduced dimension compared to the full UL and DL channels. Extensive simulation
+results show that the proposed technique outperforms the conventional approach, which relies
+on the full UL and DL channels to train the NN, regardless of the speed of MSs. 

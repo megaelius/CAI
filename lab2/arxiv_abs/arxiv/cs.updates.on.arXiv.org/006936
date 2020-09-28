@@ -1,0 +1,18 @@
+Performing searches over encrypted data is a very current and active area. Several efficient solutions
+have been provided for the single-writer scenario in which all sensitive data originates with one
+party (the Data Owner) that encrypts it and uploads it to a public repository. Subsequently the Data
+Owner (or authorized clients, the Query Sources) accesses the encrypted data through a Query Processor
+which has direct access to the public encrypted repository. Motivated by the recent trend in pervasive
+data collection, we depart from this model and consider a multi-writer scenario in which data originates
+with several and mutually untrusted parties. In this new scenario the Data Owner provides public
+parameters so that each item of the generated data stream can be put into an encrypted stream; moreover,
+the Data Owner keeps some related secret information needed to generate tokens so that different
+subscribers can access different subsets of the encrypted stream in clear, as specified by corresponding
+access policies. We propose a new public-key scheme, Secure Selective Stream (SSS), built upon
+an Amortized Encryption Scheme (AOE), that can be used to encrypt each item in the stream so that the
+ciphertexts have size proportional to the un-encrypted data; moreover, encryption and decryption
+take time linear in the data item size. We provide constructions for SSS and AOE. We provide a game-based
+and an indistinguishability-based security notions for SSS, we prove that the SSS scheme is game-base
+secure given that the AOE scheme is game-based secure as well. We prove that AOE is secure under hardness
+assumptions in the bilinear setting. We provide an implementation in C++ all the basic operations
+in our multi-writer scenario using one round of communication. 

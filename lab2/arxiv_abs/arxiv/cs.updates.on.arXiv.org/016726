@@ -1,0 +1,18 @@
+Natural language processing models have attracted much interest in the deep learning community.
+This branch of study is composed of some applications such as machine translation, sentiment analysis,
+named entity recognition, question and answer, and others. Word embeddings are continuous word
+representations, they are an essential module for those applications and are generally used as
+input word representation to the deep learning models. Word2Vec and GloVe are two popular methods
+to learn word embeddings. They achieve good word representations, however, they learn representations
+with limited information because they ignore the morphological information of the words and consider
+only one representation vector for each word. This approach implies that Word2Vec and GloVe are
+unaware of the word inner structure. To mitigate this problem, the FastText model represents each
+word as a bag of characters n-grams. Hence, each n-gram has a continuous vector representation,
+and the final word representation is the sum of its characters n-grams vectors. Nevertheless, the
+use of all n-grams character of a word is a poor approach since some n-grams have no semantic relation
+with their words and increase the amount of potentially useless information. This approach also
+increases the training phase time. In this work, we propose a new method for training word embeddings,
+and its goal is to replace the FastText bag of character n-grams for a bag of word morphemes through
+the morphological analysis of the word. Thus, words with similar context and morphemes are represented
+by vectors close to each other. To evaluate our new approach, we performed intrinsic evaluations
+considering 15 different tasks, and the results show a competitive performance compared to FastText.

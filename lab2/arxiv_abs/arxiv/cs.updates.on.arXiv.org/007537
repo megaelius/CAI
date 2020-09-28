@@ -1,0 +1,20 @@
+Disease progression modeling (DPM) using longitudinal data is a challenging machine learning
+task. Existing DPM algorithms neglect temporal dependencies among measurements, make parametric
+assumptions about biomarker trajectories, do not model multiple biomarkers jointly, and need
+an alignment of subjects' trajectories. In this paper, recurrent neural networks (RNNs) are utilized
+to address these issues. However, in many cases, longitudinal cohorts contain incomplete data,
+which hinders the application of standard RNNs and requires a pre-processing step such as imputation
+of the missing values. Instead, we propose a generalized training rule for the most widely used RNN
+architecture, long short-term memory (LSTM) networks, that can handle both missing predictor
+and target values. The proposed LSTM algorithm is applied to model the progression of Alzheimer's
+disease (AD) using six volumetric magnetic resonance imaging (MRI) biomarkers, i.e., volumes
+of ventricles, hippocampus, whole brain, fusiform, middle temporal gyrus, and entorhinal cortex,
+and it is compared to standard LSTM networks with data imputation and a parametric, regression-based
+DPM method. The results show that the proposed algorithm achieves a significantly lower mean absolute
+error (MAE) than the alternatives with p < 0.05 using Wilcoxon signed rank test in predicting values
+of almost all of the MRI biomarkers. Moreover, a linear discriminant analysis (LDA) classifier
+applied to the predicted biomarker values produces a significantly larger AUC of 0.90 vs. at most
+0.84 with p < 0.001 using McNemar's test for clinical diagnosis of AD. Inspection of MAE curves as
+a function of the amount of missing data reveals that the proposed LSTM algorithm achieves the best
+performance up until more than 74% missing values. Finally, it is illustrated how the method can
+successfully be applied to data with varying time intervals. 

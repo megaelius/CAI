@@ -1,0 +1,20 @@
+State-of-the-art simulations of detailed neural models follow the Bulk Synchronous Parallel
+execution model. Execution is divided in equidistant communication intervals, equivalent to
+the shortest synaptic delay in the network. Neurons stepping is performed independently, with
+collective communication guiding synchronization and exchange of synaptic events. The interpolation
+step size is fixed and chosen based on some prior knowledge of the fastest possible dynamics in the
+system. However, simulations driven by stiff dynamics or a wide range of time scales - such as multiscale
+simulations of neural networks - struggle with fixed step interpolation methods, yielding excessive
+computation of intervals of quasi-constant activity, inaccurate interpolation of periods of
+high volatility solution, and being incapable of handling unknown or distinct time constants.
+A common alternative is the usage of adaptive stepping methods, however they have been deemed inefficient
+in parallel executions due to computational load imbalance at the synchronization barriers that
+characterize the BSP execution model. We introduce a distributed fully-asynchronous execution
+model that removes global synchronization, allowing for longer variable timestep interpolations.
+Asynchronicity is provided by active point-to-point communication notifying neurons' time advancement
+to synaptic connectivities. Time stepping is driven by scheduled neuron advancements based on
+synaptic delays across neurons, yielding an "exhaustive yet not speculative" adaptive-step execution.
+Execution benchmarks on 64 Cray XE6 compute nodes demonstrate a reduced number of interpolation
+steps, higher numerical accuracy and lower time to solution, compared to state-of-the-art methods.
+Efficiency is shown to be activity-dependent, with scaling of the algorithm demonstrated on a simulation
+of a laboratory experiment. 

@@ -1,0 +1,18 @@
+Label information plays an important role in supervised hyperspectral image classification problem.
+However, current classification methods all ignore an important and inevitable problem---labels
+may be corrupted and collecting clean labels for training samples is difficult, and often impractical.
+Therefore, how to learn from the database with noisy labels is a problem of great practical importance.
+In this paper, we study the influence of label noise on hyperspectral image classification, and
+develop a random label propagation algorithm (RLPA) to cleanse the label noise. The key idea of RLPA
+is to exploit knowledge (e.g., the superpixel based spectral-spatial constraints) from the observed
+hyperspectral images and apply it to the process of label propagation. Specifically, RLPA first
+constructs a spectral-spatial probability transfer matrix (SSPTM) that simultaneously considers
+the spectral similarity and superpixel based spatial information. It then randomly chooses some
+training samples as "clean" samples and sets the rest as unlabeled samples, and propagates the label
+information from the "clean" samples to the rest unlabeled samples with the SSPTM. By repeating
+the random assignment (of "clean" labeled samples and unlabeled samples) and propagation, we can
+obtain multiple labels for each training sample. Therefore, the final propagated label can be calculated
+by a majority vote algorithm. Experimental studies show that RLPA can reduce the level of noisy label
+and demonstrates the advantages of our proposed method over four major classifiers with a significant
+margin---the gains in terms of the average OA, AA, Kappa are impressive, e.g., 9.18%, 9.58%, and
+0.1043. The Matlab source code is available at https://github.com/junjun-jiang/RLPA 

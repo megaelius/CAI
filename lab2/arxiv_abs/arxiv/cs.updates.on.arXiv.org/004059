@@ -1,0 +1,17 @@
+Time-of-flight (ToF) imaging has become a widespread technique for depth estimation, allowing
+affordable off-the-shelf cameras to provide depth maps in real time. However, multipath interference
+(MPI) resulting from indirect illumination significantly degrades the captured depth. Most previous
+works have tried to solve this problem by means of complex hardware modifications or costly computations.
+In this work we avoid these approaches, and propose a new technique that corrects errors in depth
+caused by MPI that requires no camera modifications, and corrects depth in just 10 milliseconds
+per frame. By observing that most MPI information can be expressed as a function of the captured depth,
+we pose MPI removal as a convolutional approach, and model it using a convolutional neural network.
+In particular, given that the input and output data present similar structure, we base our network
+in an autoencoder, which we train in two stages: first, we use the encoder (convolution filters)
+to learn a suitable basis to represent corrupted range images; then, we train the decoder (deconvolution
+filters) to correct depth from the learned basis from synthetically generated scenes. This approach
+allows us to tackle the lack of reference data, by using a large-scale captured training set with
+corrupted depth to train the encoder, and a smaller synthetic training set with ground truth depth
+to train the corrector stage of the network, which we generate by using a physically-based, time-resolved
+rendering. We demonstrate and validate our method on both synthetic and real complex scenarios,
+using an off-the-shelf ToF camera, and with only the captured incorrect depth as input. 

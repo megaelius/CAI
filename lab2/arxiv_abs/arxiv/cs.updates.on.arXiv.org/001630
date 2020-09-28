@@ -1,0 +1,19 @@
+Major cloud computing operators provide powerful monitoring tools to understand the current (and
+prior) state of the distributed systems deployed in their infrastructure. While such tools provide
+a detailed monitoring mechanism at scale, they also pose a significant challenge for the application
+developers/operators to transform the huge space of monitored metrics into useful insights. These
+insights are essential to build effective management tools for improving the efficiency, resiliency,
+and dependability of distributed systems. This paper reports on our experience with building and
+deploying Sieve - a platform to derive actionable insights from monitored metrics in distributed
+systems. Sieve builds on two core components: a metrics reduction framework, and a metrics dependency
+extractor. More specifically, Sieve first reduces the dimensionality of metrics by automatically
+filtering out unimportant metrics by observing their signal over time. Afterwards, Sieve infers
+metrics dependencies between distributed components of the system using a predictive-causality
+model by testing for Granger Causality. We implemented Sieve as a generic platform and deployed
+it for two microservices-based distributed systems: OpenStack and ShareLatex. Our experience
+shows that (1) Sieve can reduce the number of metrics by at least an order of magnitude (10 - 100$\times$),
+while preserving the statistical equivalence to the total number of monitored metrics; (2) Sieve
+can dramatically improve existing monitoring infrastructures by reducing the associated overheads
+over the entire system stack (CPU - 80%, storage - 90%, and network - 50%); (3) Lastly, Sieve can be
+effective to support a wide-range of workflows in distributed systems - we showcase two such workflows:
+orchestration of autoscaling, and Root Cause Analysis (RCA). 

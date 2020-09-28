@@ -1,0 +1,17 @@
+We present the first version of the ALeRCE (Automatic Learning for the Rapid Classification of Events)
+broker light curve classifier. ALeRCE is currently processing the Zwicky Transient Facility (ZTF)
+alert stream, in preparation for the Vera C. Rubin Observatory. The ALeRCE light curve classifier
+uses variability features computed from the ZTF alert stream, and colors obtained from AllWISE
+and ZTF photometry. We apply a Balanced Hierarchical Random Forest algorithm with a two-level scheme,
+where the top level classifies each source as periodic, stochastic, or transient, and the bottom
+level further resolve each hierarchical class, yielding a total of 15 classes. This classifier
+corresponds to the first attempt to classify multiple classes of stochastic variables (including
+nucleus- and host-dominated active galactic nuclei, blazars, young stellar objects, and cataclysmic
+variables) in addition to different classes of periodic and transient sources, using real data.
+We created a labeled set using various public catalogs (such as the Catalina Surveys and {\em Gaia}
+DR2 variable stars catalogs, and the Million Quasars catalog), and we classify all objects with
+$\geq6$ $g$-band or $\geq6$ $r$-band detections in ZTF (868,371 sources as of 2020/06/09), providing
+updated classifications for sources with new alerts every day. For the top level we obtain macro-averaged
+precision and recall scores of 0.96 and 0.99, respectively, and for the bottom level we obtain macro-averaged
+precision and recall scores of 0.57 and 0.76, respectively. Updated classifications from the light
+curve classifier can be found at this http URL 

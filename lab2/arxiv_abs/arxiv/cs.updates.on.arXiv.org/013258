@@ -1,0 +1,18 @@
+The FEAST library package represents an unified framework for solving various family of eigenvalue
+problems and achieving accuracy, robustness, high-performance and scalability on parallel architectures.
+Its originality lies with a new transformative numerical approach to the traditional eigenvalue
+algorithm design - the FEAST algorithm. The algorithm gathers key elements from complex analysis,
+numerical linear algebra and approximation theory, to construct an optimal subspace iteration
+technique using approximate spectral projectors. FEAST can be used for solving both standard and
+generalized forms of the Hermitian or non-Hermitian problems (linear or non-linear), and it belongs
+to the family of contour integration eigensolvers. FEAST's main computational task consists of
+a numerical quadrature computation that involves solving independent linear systems along a complex
+contour, each with multiple right hand sides. In v4.0, FEAST has been reimplemented using an inverse
+residual iteration algorithm which enables the linear systems to be solved with very low accuracy
+(in single precision) with no impact on the FEAST double precision convergence rate. As a result,
+v4.0 is on average 3-4 times faster than v2.1 and v3.0 using new default optimization parameters
+(v2.1 has been featured as Intel-MKL's principal HPC eigensolver since 2013). v4.0 also implements
+new important features such as IFEAST (using Inexact Iterative solver), Non-linear polynomial
+FEAST, and PFEAST with its 3-MPI levels of parallelism. FEAST is both a comprehensive library package,
+and an easy to use software. It includes flexible reverse communication interfaces and ready to
+use driver interfaces for dense, banded and sparse systems. 

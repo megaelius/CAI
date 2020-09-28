@@ -1,0 +1,18 @@
+We describe a novel Godunov-type numerical method for solving the equations of resistive relativistic
+magnetohydrodynamics. In the proposed approach, the spatial components of both magnetic and electric
+fields are located at zone interfaces and are evolved using the constrained transport formalism.
+Direct application of Stokes' theorem to Faraday's and Ampere's laws ensures that the resulting
+discretization is divergence-free for the magnetic field and charge-conserving for the electric
+field. Hydrodynamic variables retain, instead, the usual zone-centred representation commonly
+adopted in finite-volume schemes. Temporal discretization is based on Runge-Kutta implicit-explicit
+(IMEX) schemes in order to resolve the temporal scale disparity introduced by the stiff source term
+in Ampere's law. The implicit step is accomplished by means of an improved and more efficient Newton-Broyden
+multidimensional root-finding algorithm. The explicit step relies on a multidimensional Riemann
+solver to compute the line-averaged electric and magnetic fields at zone edges and it employs a one-dimensional
+Riemann solver at zone interfaces to update zone-centred hydrodynamic quantities. For the latter,
+we introduce a five-wave solver based on the frozen limit of the relaxation system whereby the solution
+to the Riemann problem can be decomposed into an outer Maxwell solver and an inner hydrodynamic solver.
+A number of numerical benchmarks demonstrate that our method is superior in stability and robustness
+to the more popular charge-conserving divergence cleaning approach where both primary electric
+and magnetic fields are zone-centered. In addition, the employment of a less diffusive Riemann
+solver noticeably improves the accuracy of the computations. 

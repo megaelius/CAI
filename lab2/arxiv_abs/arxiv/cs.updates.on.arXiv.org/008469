@@ -1,0 +1,17 @@
+Access to sufficient annotated data is a common challenge in training deep neural networks on medical
+images. As annotating data is expensive and time-consuming, it is difficult for an individual medical
+center to reach large enough sample sizes to build their own, personalized models. As an alternative,
+data from all centers could be pooled to train a centralized model that everyone can use. However,
+such a strategy is often infeasible due to the privacy-sensitive nature of medical data. Recently,
+federated learning (FL) has been introduced to collaboratively learn a shared prediction model
+across centers without the need for sharing data. In FL, clients are locally training models on site-specific
+datasets for a few epochs and then sharing their model weights with a central server, which orchestrates
+the overall training process. Importantly, the sharing of models does not compromise patient privacy.
+A disadvantage of FL is the dependence on a central server, which requires all clients to agree on
+one trusted central body, and whose failure would disrupt the training process of all clients. In
+this paper, we introduce BrainTorrent, a new FL framework without a central server, particularly
+targeted towards medical applications. BrainTorrent presents a highly dynamic peer-to-peer
+environment, where all centers directly interact with each other without depending on a central
+body. We demonstrate the overall effectiveness of FL for the challenging task of whole brain segmentation
+and observe that the proposed server-less BrainTorrent approach does not only outperform the traditional
+server-based one but reaches a similar performance to a model trained on pooled data. 

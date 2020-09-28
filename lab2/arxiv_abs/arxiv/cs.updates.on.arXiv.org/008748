@@ -1,0 +1,17 @@
+Recently, there has been growing debate as to whether or not static analysis can be truly sound. In
+spite of this concern, research on techniques seeking to at least partially answer undecidable
+questions has a long history. However, little attention has been given to the more empirical question
+of how often an exact solution might be given to a question despite the question being, at least in
+theory, undecidable. This paper investigates this issue by exploring sub-Turing islands -- regions
+of code for which a question of interest is decidable. We define such islands and then consider how
+to identify them. We implemented Cook, a prototype for finding sub-Turing islands and applied it
+to a corpus of 1100 Android applications, containing over 2 million methods. Results reveal that
+55\% of the all methods are sub-Turing. Our results also provide empirical, scientific evidence
+for the scalability of sub-Turing island identification. Sub-Turing identification has many
+downstream applications, because islands are so amenable to static analysis. We illustrate two
+downstream uses of the analysis. In the first, we found that over 37\% of the verification conditions
+associated with runtime exceptions fell within sub-Turing islands and thus are statically decidable.
+A second use of our analysis is during code review where it provides guidance to developers. The sub-Turing
+islands from our study turns out to contain significantly fewer bugs than `theswamp' (non sub-Turing
+methods). The greater bug density in the swamp is unsurprising; the fact that bugs remain prevalent
+in islands is, however, surprising: these are bugs whose repair can be fully automated. 

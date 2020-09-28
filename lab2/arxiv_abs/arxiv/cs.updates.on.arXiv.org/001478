@@ -1,0 +1,19 @@
+Private record linkage is the problem of identifying pairs of records that are similar as per an input
+matching rule from databases that are held by two parties that do not trust one another. We identify
+three key desiderata that a PRL solution must ensure: a proof of end-to-end privacy, communication
+and computational costs that scale subquadratically in the number of input records, perfect precision
+and high recall of matching pairs. We show that all of the existing solutions for PRL -- including
+secure 2-party computation (S2PC), and their variants that use non-private or differentially
+private (DP) blocking -- violate at least one of the three desiderata. In particular, S2PC techniques
+guarantee end-to-end privacy but have either low recall or high cost. We show that DP blocking based
+techniques do not provide an end-to-end privacy guarantee as DP does not permit the release of any
+exact answers (including matching records in PRL). In light of this deficiency, we propose a novel
+privacy model, called output constrained differential privacy, that shares the strong privacy
+protection of DP, but allows for the truthful release of the output of a certain function applied
+to the data. We apply this to PRL, and show that protocols satisfying this privacy model permit the
+disclosure of the true matching records, but their execution is insensitive to the presence or absence
+of a single non-matching record. We develop novel protocols that satisfy this end-to-end privacy
+guarantee and permit a tradeoff between recall, privacy and efficiency. Our empirical evaluations
+on real and synthetic datasets show that our protocols have high recall, scale near linearly in the
+size of the input databases (and the output set of matching pairs), and have communication and computational
+costs that are at least 2 orders of magnitude smaller than S2PC baselines. 

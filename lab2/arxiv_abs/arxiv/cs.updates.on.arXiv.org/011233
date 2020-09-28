@@ -1,0 +1,19 @@
+Purpose: To rapidly reconstruct undersampled 3D non-Cartesian image-based navigators (iNAVs)
+using an unrolled deep learning (DL) model for non-rigid motion correction in coronary magnetic
+resonance angiography (CMRA). Methods: An unrolled network is trained to reconstruct beat-to-beat
+3D iNAVs acquired as part of a CMRA sequence. The unrolled model incorporates a non-uniform FFT operator
+to perform the data consistency operation, and the regularization term is learned by a convolutional
+neural network (CNN) based on the proximal gradient descent algorithm. The training set includes
+6,000 3D iNAVs acquired from 7 different subjects and 11 scans using a variable-density (VD) cones
+trajectory. For testing, 3D iNAVs from 4 additional subjects are reconstructed using the unrolled
+model. To validate reconstruction accuracy, global and localized motion estimates from DL model-based
+3D iNAVs are compared with those extracted from 3D iNAVs reconstructed with $\textit{l}_{1}$-ESPIRiT.
+Then, the high-resolution coronary MRA images motion corrected with autofocusing using the $\textit{l}_{1}$-ESPIRiT
+and DL model-based 3D iNAVs are assessed for differences. Results: 3D iNAVs reconstructed using
+the DL model-based approach and conventional $\textit{l}_{1}$-ESPIRiT generate similar global
+and localized motion estimates and provide equivalent coronary image quality. Reconstruction
+with the unrolled network completes in a fraction of the time compared to CPU and GPU implementations
+of $\textit{l}_{1}$-ESPIRiT (20x and 3x speed increases, respectively). Conclusion: We have
+developed a deep neural network architecture to reconstruct undersampled 3D non-Cartesian VD
+cones iNAVs. Our approach decreases reconstruction time for 3D iNAVs, while preserving the accuracy
+of non-rigid motion information offered by them for correction. 

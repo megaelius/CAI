@@ -1,0 +1,18 @@
+The JVO ALMA WebQL web service - available through the JVO ALMA FITS archive - has been upgraded to
+include legacy data from other telescopes, for example Nobeyama NRO45M in Japan. The updated server
+software has been renamed FITSWebQL. In addition, a standalone desktop version supporting Linux,
+macOS and Windows 10 Linux Subsystem (Bash on Windows) is also available for download from this http
+URL . The FITSWebQL server enables viewing of even 100GB-large FITS files in a web browser running
+on a PC with a limited amount of RAM. Users can interactively zoom-in to selected areas of interest
+with the corresponding frequency spectrum being calculated on the server in near real-time. The
+client (a browser) is a JavaScript application built on WebSockets, HTML5, WebGL and SVG. There
+are many challenges when providing a web browser-based real-time FITS data cube preview service
+over high-latency low-bandwidth network connections. The upgraded version tries to overcome
+the latency issue by predicting user mouse movements with a Kalman Filter in order to speculatively
+deliver the real-time spectrum data at a point where the user is likely to be looking at. The new version
+also allows one to view multiple FITS files simultaneously in an RGB composite mode (NRO45M FUGIN
+only), where each dataset is assigned one RGB channel to form a colour image. Spectra from multiple
+FITS cubes are shown together too. The paper briefly describes main features of FITSWebQL. We also
+touch on some of the recent developments, such as an experimental switch from C/C++ to Rust (see https://www.rust-lang.org/)
+for improved stability, better memory management and fearless concurrency, or attempts to display
+FITS data cubes in the form of interactive on-demand video streams in a web browser. 

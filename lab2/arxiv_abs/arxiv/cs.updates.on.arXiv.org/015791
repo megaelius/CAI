@@ -1,0 +1,17 @@
+The Variable Block Row (VBR) format is an influential blocked sparse matrix format designed to represent
+shared sparsity structure between adjacent rows and columns. VBR consists of groups of adjacent
+rows and columns, storing the resulting blocks that contain nonzeros in a dense format. This reduces
+the memory footprint and enables optimizations such as register blocking and instruction-level
+parallelism. Existing approaches use heuristics to determine which rows and columns should be
+grouped together. We adapt and optimize a dynamic programming algorithm for sequential hypergraph
+partitioning to produce a linear time algorithm which can determine the optimal partition of rows
+under an expressive cost model, assuming the column partition remains fixed. Furthermore, we show
+that the problem of determining an optimal partition for the rows and columns simultaneously is
+NP-Hard under a simple linear cost model. To evaluate our algorithm empirically against existing
+heuristics, we introduce the 1D-VBR format, a specialization of VBR format where columns are left
+ungrouped. We evaluate our algorithms on all 1626 real-valued matrices in the SuiteSparse Matrix
+Collection. When asked to minimize an empirically derived cost model for a sparse matrix-vector
+multiplication kernel, our algorithm produced partitions whose 1D-VBR realizations achieve
+a speedup of at least 1.18 over an unblocked kernel on 25% of the matrices, and a speedup of at least
+1.59 on 12.5% of the matrices. The 1D-VBR representation produced by our algorithm had faster SpMVs
+than the 1D-VBR representations produced by any existing heuristics on 87.8% of the test matrices.

@@ -1,0 +1,20 @@
+Mesh-free methods have significant potential for simulations in complex geometries, as the time
+consuming process of mesh-generation is avoided. Smoothed Particle Hydrodynamics (SPH) is the
+most widely used mesh-free method, but suffers from a lack of consistency. High order, consistent,
+and local (using compact computational stencils) mesh-free methods are particularly desirable.
+Here we present a novel framework for generating local high order difference operators for arbitrary
+node distributions, referred to as the Local Anisotropic Basis Function Method (LABFM). Weights
+are constructed from linear sums of anisotropic basis functions (ABFs), chosen to ensure exact
+reproduction of polynomial fields up to a given order. The ABFs are based on a fundamental Radial
+Basis Function (RBF), and the choice of fundamental RBF has small effect on accuracy, but influences
+stability. LABFM is able to generate high order difference operators with compact computational
+stencils (4th order with 25 nodes, 8th order with 60 nodes in two dimensions). At domain boundaries
+(with incomplete support) LABFM automatically provides one-sided differences of the same order
+as the internal scheme, up to 4th order. We use the method to solve elliptic, parabolic and mixed hyperbolic-parabolic
+PDEs, showing up to 8th order convergence. The inclusion of hyperviscosity is straightforward,
+and can effectively provide stability when solving hyperbolic problems. LABFM is a promising new
+mesh-free method for the numerical solution of PDEs in complex geometries. The method is highly
+scalable, and for Eulerian schemes, the computational efficiency is competitive with RBF-FD for
+a given accuracy. A particularly attractive feature is that in the low order limit, LABFM collapses
+to SPH, and there is potential for Arbitrary Lagrangian-Eulerian schemes with natural adaptivity
+of resolution and accuracy. 

@@ -1,0 +1,18 @@
+Despite the significant advances in recent years, Generative Adversarial Networks (GANs) are
+still notoriously hard to train. In this paper, we propose three novel curriculum learning strategies
+for training GANs. All strategies are first based on ranking the training images by their difficulty
+scores, which are estimated by a state-of-the-art image difficulty predictor. Our first strategy
+is to divide images into gradually more difficult batches. Our second strategy introduces a novel
+curriculum loss function for the discriminator that takes into account the difficulty scores of
+the real images. Our third strategy is based on sampling from an evolving distribution, which favors
+the easier images during the initial training stages and gradually converges to a uniform distribution,
+in which samples are equally likely, regardless of difficulty. We compare our curriculum learning
+strategies with the classic training procedure on two tasks: image generation and image translation.
+Our experiments indicate that all strategies provide faster convergence and superior results.
+For example, our best curriculum learning strategy applied on spectrally normalized GANs (SNGANs)
+fooled human annotators in thinking that generated CIFAR-like images are real in 25.0% of the presented
+cases, while the SNGANs trained using the classic procedure fooled the annotators in only 18.4%
+cases. Similarly, in image translation, the human annotators preferred the images produced by
+the Cycle-consistent GAN (CycleGAN) trained using curriculum learning in 40.5% cases and those
+produced by CycleGAN based on classic training in only 19.8% cases, 39.7% cases being labeled as
+ties. 

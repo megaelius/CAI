@@ -1,0 +1,19 @@
+Partial differential equations with distributional sources---in particular, involving (derivatives
+of) delta distributions---have become increasingly ubiquitous in numerous areas of physics and
+applied mathematics. It is often of considerable interest to obtain numerical solutions for such
+equations, but any singular ("particle"-like) source modeling invariably introduces nontrivial
+computational obstacles. A common method to circumvent these is through some form of delta function
+approximation procedure on the computational grid; however, this often carries significant limitations
+on the efficiency of the numerical convergence rates, or sometimes even the resolvability of the
+problem at all. In this paper, we present an alternative technique for tackling such equations which
+avoids the singular behavior entirely: the "Particle-without-Particle" method. Previously
+introduced in the context of the self-force problem in gravitational physics, the idea is to discretize
+the computational domain into two (or more) disjoint pseudospectral (Chebyshev-Lobatto) grids
+such that the "particle" is always at the interface between them; thus, one only needs to solve homogeneous
+equations in each domain, with the source effectively replaced by jump (boundary) conditions thereon.
+We prove here that this method yields solutions to any linear PDE the source of which is any linear
+combination of delta distributions and derivatives thereof supported on a one-dimensional subspace
+of the problem domain. We then implement it to numerically solve a variety of relevant PDEs: hyperbolic
+(with applications to neuroscience and acoustics), parabolic (with applications to finance),
+and elliptic. We generically obtain improved convergence rates relative to typical past implementations
+relying on delta function approximations. 

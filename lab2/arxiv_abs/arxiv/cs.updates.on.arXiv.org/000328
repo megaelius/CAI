@@ -1,0 +1,17 @@
+Graphs and networks are used to model interactions in a variety of contexts. There is a growing need
+to quickly assess the characteristics of a graph in order to understand its underlying structure.
+Some of the most useful metrics are triangle-based and give a measure of the connectedness of mutual
+friends. This is often summarized in terms of clustering coefficients, which measure the likelihood
+that two neighbors of a node are themselves connected. Computing these measures exactly for large-scale
+networks is prohibitively expensive in both memory and time. However, a recent wedge sampling algorithm
+has proved successful in efficiently and accurately estimating clustering coefficients. In this
+paper, we describe how to implement this approach in MapReduce to deal with massive graphs. We show
+results on publicly-available networks, the largest of which is 132M nodes and 4.7B edges, as well
+as artificially generated networks (using the Graph500 benchmark), the largest of which has 240M
+nodes and 8.5B edges. We can estimate the clustering coefficient by degree bin (e.g., we use exponential
+binning) and the number of triangles per bin, as well as the global clustering coefficient and total
+number of triangles, in an average of 0.33 seconds per million edges plus overhead (approximately
+225 seconds total for our configuration). The technique can also be used to study triangle statistics
+such as the ratio of the highest and lowest degree, and we highlight differences between social and
+non-social networks. To the best of our knowledge, these are the largest triangle-based graph computations
+published to date. 

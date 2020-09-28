@@ -1,0 +1,17 @@
+The split-operator algorithm combined with the dynamic Fourier method is a popular approach for
+quantum dynamics in systems with separable kinetic and potential energies because it is explicit,
+easy to implement, and preserves many geometric invariants of the exact evolution. Although the
+standard version has only second-order accuracy, it can be recursively symmetrically composed
+to obtain geometric integrators of arbitrary even order of accuracy in the time step. We have implemented
+such integrators for nonadiabatic quantum dynamics in the diabatic basis using the triple-jump,
+Suzuki-fractal, and several non-recursive "optimal" compositions of the second-order split-operator
+algorithm. Because the automatically generated splitting coefficients are redundant, we reduce
+the computational cost by pruning these coefficients and lower memory requirements by identifying
+unique coefficients. The composed integrators are exactly unitary, symplectic, symmetric, time-reversible,
+and stable regardless of the accuracy of the solution. The order of convergence and preservation
+of geometric properties are justified analytically and confirmed numerically on a two-surface
+NaI model in the diabatic representation. Efficiency of higher-order algorithms is sometimes
+questioned because the number of splitting steps grows exponentially with the order. Yet, we show
+that, if higher accuracy is desired, higher-order integrators become the most efficient; a 600-fold
+speedup compared to the second-order split-operator method and a 17000-fold speedup compared
+to the trapezoidal rule (the Crank-Nicolson method) was observed for convergence error of 10$^{-10}$.

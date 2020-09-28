@@ -1,0 +1,18 @@
+The Shapley value is a common tool in game theory to evaluate the importance of a player in a cooperative
+setting. In a geometric context, it provides a way to measure the contribution of a geometric object
+in a set towards some function on the set. Recently, Cabello and Chan (SoCG 2019) presented algorithms
+for computing Shapley values for a number of functions for point sets in the plane. More formally,
+a coalition game consists of a set of players $N$ and a characteristic function $v: 2^N \to \mathbb{R}$
+with $v(\emptyset) = 0$. Let $\pi$ be a uniformly random permutation of $N$, and $P_N(\pi, i)$ be
+the set of players in $N$ that appear before player $i$ in the permutation $\pi$. The Shapley value
+of the game is defined to be $\phi(i) = \mathbb{E}_\pi[v(P_N(\pi, i) \cup \{i\}) - v(P_N(\pi, i))]$.
+More intuitively, the Shapley value represents the impact of player $i$'s appearance over all insertion
+orders. We present an algorithm to compute Shapley values in 3-D, where we treat points as players
+and use the mean width of the convex hull as the characteristic function. Our algorithm runs in $O(n^3\log^2{n})$
+time and $O(n)$ space. Our approach is based on a new data structure for a variant of the dynamic convolution
+problem $(u, v, p)$, where we want to answer $u\cdot v$ dynamically. Our data structure supports
+updating $u$ at position $p$, incrementing and decrementing $p$ and rotating $v$ by $1$. We present
+a data structure that supports $n$ operations in $O(n\log^2{n})$ time and $O(n)$ space. Moreover,
+the same approach can be used to compute the Shapley values for the mean volume of the convex hull projection
+onto a uniformly random $(d - 2)$-subspace in $O(n^d\log^2{n})$ time and $O(n)$ space for a point
+set in $d$-dimensional space ($d \geq 3$). 

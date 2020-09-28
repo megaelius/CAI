@@ -1,0 +1,19 @@
+Monte Carlo simulations of quantum field theories on a lattice become increasingly expensive as
+the continuum limit is approached since the cost per independent sample grows with a high power of
+the inverse lattice spacing. Simulations on fine lattices suffer from critical slowdown, the rapid
+growth of autocorrelations in the Markov chain with decreasing lattice spacing. This causes a strong
+increase in the number of lattice configurations that have to be generated to obtain statistically
+significant results. This paper discusses hierarchical sampling methods to tame this growth in
+autocorrelations. Combined with multilevel variance reduction, this significantly reduces
+the computational cost of simulations for given tolerances $\epsilon_{\text{disc}}$ on the discretisation
+error and $\epsilon_{\text{stat}}$ on the statistical error. For an observable with lattice errors
+of order $\alpha$ and an integrated autocorrelation time that grows like $\tau_{\mathrm{int}}\propto
+a^{-z}$, multilevel Monte Carlo (MLMC) can reduce the cost from $\mathcal{O}(\epsilon_{\text{stat}}^{-2}\epsilon_{\text{disc}}^{-(1+z)/\alpha})$
+to $\mathcal{O}(\epsilon_{\text{stat}}^{-2}\vert\log \epsilon_{\text{disc}} \vert^2+\epsilon_{\text{disc}}^{-1/\alpha})$.
+Even higher performance gains are expected for simulations of quantum field theories in $D$ dimensions.
+The efficiency of the approach is demonstrated on two model systems, including a topological oscillator
+that is badly affected by critical slowdown due to freezing of the topological charge. On fine lattices,
+the new methods are orders of magnitude faster than standard sampling based on Hybrid Monte Carlo.
+For high resolutions, MLMC can be used to accelerate even the cluster algorithm for the topological
+oscillator. Performance is further improved through perturbative matching which guarantees
+efficient coupling of theories on the multilevel hierarchy. 

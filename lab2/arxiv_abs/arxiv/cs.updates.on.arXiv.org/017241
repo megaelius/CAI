@@ -1,0 +1,19 @@
+In the CNN based object detectors, feature pyramids are widely exploited to alleviate the problem
+of scale variation across object instances. These object detectors, which strengthen features
+via a top-down pathway and lateral connections, are mainly to enrich the semantic information of
+low-level features, but ignore the enhancement of high-level features. This can lead to an imbalance
+between different levels of features, in particular a serious lack of detailed information in the
+high-level features, which makes it difficult to get accurate bounding boxes. In this paper, we
+introduce a novel two-pronged transductive idea to explore the relationship among different layers
+in both backward and forward directions, which can enrich the semantic information of low-level
+features and detailed information of high-level features at the same time. Under the guidance of
+the two-pronged idea, we propose a Two-Pronged Network (TPNet) to achieve bidirectional transfer
+between high-level features and low-level features, which is useful for accurately detecting
+object at different scales. Furthermore, due to the distribution imbalance between the hard and
+easy samples in single-stage detectors, the gradient of localization loss is always dominated
+by the hard examples that have poor localization accuracy. This will enable the model to be biased
+toward the hard samples. So in our TPNet, an adaptive IoU based localization loss, named Rectified
+IoU (RIoU) loss, is proposed to rectify the gradients of each kind of samples. The Rectified IoU loss
+increases the gradients of examples with high IoU while suppressing the gradients of examples with
+low IoU, which can improve the overall localization accuracy of model. Extensive experiments demonstrate
+the superiority of our TPNet and RIoU loss. 

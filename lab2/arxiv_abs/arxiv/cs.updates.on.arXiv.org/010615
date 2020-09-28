@@ -1,0 +1,19 @@
+Consider the following distance query for an $n$-node graph $G$ undergoing edge insertions and
+deletions: given two sets of nodes $I$ and $J$, return the distances between every pair of nodes in
+$I\times J$. This query is rather general and captures several versions of the dynamic shortest
+paths problem. In this paper, we develop an efficient $(1+\epsilon)$-approximation algorithm
+for this query using fast matrix multiplication. Our algorithm leads to answers for some open problems
+for Single-Source and All-Pairs Shortest Paths (SSSP and APSP), as well as for Diameter, Radius,
+and Eccentricities. Below are some highlights. Note that all our algorithms guarantee worst-case
+update time and are randomized (Monte Carlo), but do not need the oblivious adversary assumption.
+Subquadratic update time for SSSP, Diameter, Centralities, ect.: When we want to maintain distances
+from a single node explicitly (without queries), a fundamental question is to beat trivially calling
+Dijkstra's static algorithm after each update, taking $\Theta(n^2)$ update time on dense graphs.
+It was known to be improbable for exact algorithms and for combinatorial any-approximation algorithms
+to polynomially beat the $\Omega(n^2)$ bound (under some conjectures) [Roditty, Zwick, ESA'04;
+Abboud, V. Williams, FOCS'14]. Our algorithm with $I=\{s\}$ and $J=V(G)$ implies a $(1+\epsilon)$-approximation
+algorithm for this, guaranteeing $\tilde O(n^{1.823}/\epsilon^2)$ worst-case update time for
+directed graphs with positive real weights in $[1, W]$. With ideas from [Roditty, V. Williams, STOC'13],
+we also obtain the first subquadratic worst-case update time for $(5/3+\epsilon)$-approximating
+the eccentricities and $(1.5+\epsilon)$-approximating the diameter and radius for unweighted
+graphs (with small additive errors). [...] 

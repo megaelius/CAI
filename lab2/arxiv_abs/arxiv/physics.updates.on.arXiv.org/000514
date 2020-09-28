@@ -1,0 +1,19 @@
+In this paper, we present a new method to generate an instantaneous volumetric image using a single
+x-ray projection. To fully extract motion information hidden in projection images, we partitioned
+a projection image into small patches. We utilized a sparse learning method to automatically select
+patches that have a high correlation with principal component analysis (PCA) coefficients of a
+lung motion model. A model that maps the patch intensity to the PCA coefficients is built along with
+the patch selection process. Based on this model, a measured projection can be used to predict the
+PCA coefficients, which are further used to generate a motion vector field and hence a volumetric
+image. We have also proposed an intensity baseline correction method based on the partitioned projection,
+where the first and the second moments of pixel intensities at a patch in a simulated image are matched
+with those in a measured image via a linear transformation. The proposed method has been valid in
+simulated data and real phantom data. The algorithm is able to identify patches that contain relevant
+motion information, e.g. diaphragm region. It is found that intensity correction step is important
+to remove the systematic error in the motion prediction. For the simulation case, the sparse learning
+model reduced prediction error for the first PCA coefficient to 5%, compared to the 10% error when
+sparse learning is not used. 95th percentile error for the predicted motion vector is reduced from
+2.40 mm to 0.92mm. In the phantom case, the predicted tumor motion trajectory is successfully reconstructed
+with 0.82 mm mean vector field error compared to 1.66 mm error without using the sparse learning method.
+The algorithm robustness with respect to sparse level, patch size, and existence of diaphragm,
+as well as computation time, has also been studied. 

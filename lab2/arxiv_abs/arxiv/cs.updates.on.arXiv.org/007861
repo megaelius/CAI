@@ -1,0 +1,19 @@
+Object-oriented programming has long been regarded as too inefficient for SIMD high-performance
+computing, despite the fact that many important HPC applications have an inherent object structure.
+On SIMD accelerators, including GPUs, this is mainly due to performance problems with memory allocation
+and memory access: There are a few libraries that support parallel memory allocation directly on
+accelerator devices, but all of them suffer from uncoalesed memory accesses. We discovered a broad
+class of object-oriented programs with many important real-world applications that can be implemented
+efficiently on massively parallel SIMD accelerators. We call this class Single-Method Multiple-Objects
+(SMMO), because parallelism is expressed by running a method on all objects of a type. To make fast
+GPU programming available to average programmers, we developed DynaSOAr, a CUDA framework for
+SMMO applications. DynaSOAr consists of (1) a fully-parallel, lock-free, dynamic memory allocator,
+(2) a data layout DSL and (3) an efficient, parallel do-all operation. DynaSOAr achieves performance
+superior to state-of-the-art GPU memory allocators by controlling both memory allocation and
+memory access. DynaSOAr improves the usage of allocated memory with a Structure of Arrays data layout
+and achieves low memory fragmentation through efficient management of free and allocated memory
+blocks with lock-free, hierarchical bitmaps. Contrary to other allocators, our design is heavily
+based on atomic operations, trading raw (de)allocation performance for better overall application
+performance. In our benchmarks, DynaSOAr achieves a speedup of application code of up to 3x over
+state-of-the-art allocators. Moreover, DynaSOAr manages heap memory more efficiently than other
+allocators, allowing programmers to run up to 2x larger problem sizes with the same amount of memory.

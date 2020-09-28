@@ -1,0 +1,19 @@
+Due to their high degree of expressiveness, neural networks have recently been used as surrogate
+models for mapping inputs of an engineering system to outputs of interest. Once trained, neural
+networks are computationally inexpensive to evaluate and remove the need for repeated evaluations
+of computationally expensive models in uncertainty quantification applications. However, given
+the highly parameterized construction of neural networks, especially deep neural networks, accurate
+training often requires large amounts of simulation data that may not be available in the case of
+computationally expensive systems. In this paper, to alleviate this issue for uncertainty propagation,
+we explore the application of transfer learning techniques using training data generated from
+both high- and low-fidelity models. We explore two strategies for coupling these two datasets during
+the training procedure, namely, the standard transfer learning and the bi-fidelity weighted learning.
+In the former approach, a neural network model mapping the inputs to the outputs of interest is trained
+based on the low-fidelity data. The high-fidelity data is then used to adapt the parameters of the
+upper layer(s) of the low-fidelity network, or train a simpler neural network to map the output of
+the low-fidelity network to that of the high-fidelity model. In the latter approach, the entire
+low-fidelity network parameters are updated using data generated via a Gaussian process model
+trained with a small high-fidelity dataset. The parameter updates are performed via a variant of
+stochastic gradient descent with learning rates given by the Gaussian process model. Using three
+numerical examples, we illustrate the utility of these bi-fidelity transfer learning methods
+where we focus on accuracy improvement achieved by transfer learning over standard training approaches.

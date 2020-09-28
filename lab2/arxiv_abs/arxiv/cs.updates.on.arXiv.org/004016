@@ -1,0 +1,20 @@
+This paper seeks to address the question of designing distributed algorithms for the setting of
+compact memory i.e. sublinear bits working memory for arbitrary connected networks. The nodes
+in our networks may have much lower internal memory as compared to the number of their possible neighbours
+implying that a node may not be able to store all the IDs of its neighbours. These algorithms are useful
+for large networks of small devices such as the Internet of Things, for wireless or ad-hoc networks,
+and, in general, as memory efficient algorithms. We introduce the Compact Message Passing(CMP)
+model;an extension of the standard message passing model considered at a finer granularity where
+a node can interleave reads and writes with internal computations, using a port only once in a round.
+The interleaving is required for meaningful computations due to the low memory requirement and
+is akin to a distributed network with nodes executing streaming algorithms. Note that the internal
+memory size upper bounds the message sizes and hence e.g. for log-memory, the model is weaker than
+the Congest model; for such models our algorithms will work directly too. We present early results
+in the CMP model for nodes with log^2-memory. We introduce the concepts of local compact functions
+and compact protocols and give solutions for some classic distributed problems (leader election,
+tree constructions and traversals). We build on these to solve the open problem of compact preprocessing
+for the compact self-healing routing algorithm CompactFTZ posed in Compact Routing Messages in
+Self-Healing Trees(TCS2017) by designing local compact functions for finding particular subtrees
+of labeled binary trees. Hence, we introduce the first fully compact self-healing routing algorithm.
+We also give independent fully compact versions of the Forgiving Tree[PODC08] and Thorup-Zwick's
+tree based compact routing[SPAA01]. 

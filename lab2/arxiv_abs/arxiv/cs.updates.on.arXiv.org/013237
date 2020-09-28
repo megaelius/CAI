@@ -1,0 +1,19 @@
+For many algorithmic problems on graphs of treewidth $t$, a standard dynamic programming approach
+gives an algorithm with time and space complexity $2^{\mathcal{O}(t)}\cdot n^{\mathcal{O}(1)}$.
+It turns out that when one considers a more restrictive parameter treedepth, it is often the case
+that a variation of this technique can be used to reduce the space complexity to polynomial, while
+retaining time complexity of the form $2^{\mathcal{O}(d)}\cdot n^{\mathcal{O}(1)}$, where
+$d$ is the treedepth. This transfer of methodology is, however, far from being automatic. For instance,
+for problems with connectivity constraints, standard dynamic programming techniques give algorithms
+with time and space complexity $2^{\mathcal{O}(t\log t)}\cdot n^{\mathcal{O}(1)}$ on graphs
+of treewidth $t$, but it is not clear how to convert them into time-efficient polynomial space algorithms
+for graphs of low treedepth. Cygan et al. (FOCS'11) introduced the Cut&Count technique and showed
+that a certain class of problems with connectivity constraints can be solved in time and space complexity
+$2^{\mathcal{O}(t)}\cdot n^{\mathcal{O}(1)}$. Recently, Hegerfeld and Kratsch (STACS'20)
+showed that, for some of those problems, the Cut&Count technique can be also applied in the setting
+of treedepth, and it gives algorithms with running time $2^{\mathcal{O}(d)}\cdot n^{\mathcal{O}(1)}$
+and polynomial space usage. However, a number of important problems eluded such a treatment, with
+the most prominent examples being Hamiltonian Cycle and Longest Path. In this paper we clarify the
+situation by showing that Hamiltonian Cycle, Hamiltonian Path, Long Cycle, Long Path, and Min Cycle
+Cover all admit $5^d\cdot n^{\mathcal{O}(1)}$-time and polynomial space algorithms on graphs
+of treedepth $d$. The algorithms are randomized Monte Carlo with only false negatives. 

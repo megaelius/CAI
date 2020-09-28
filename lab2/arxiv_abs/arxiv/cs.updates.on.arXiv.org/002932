@@ -1,0 +1,19 @@
+Andromeda is an LCF-style proof assistant where the user builds derivable judgments by writing
+code in a meta-level programming language AML. The only trusted component of Andromeda is a minimalist
+nucleus (an implementation of the inference rules of an object-level type theory), which controls
+construction and decomposition of type-theoretic judgments. Since the nucleus does not perform
+complex tasks like equality checking beyond syntactic equality, this responsibility is delegated
+to the user, who implements one or more equality checking procedures in the meta-language. The AML
+interpreter requests witnesses of equality from user code using the mechanism of algebraic operations
+and handlers. Dynamic checks in the nucleus guarantee that no invalid object-level derivations
+can be constructed. %even if the AML code (or interpreter) is untrusted. To demonstrate the flexibility
+of this system structure, we implemented a nucleus consisting of dependent type theory with equality
+reflection. Equality reflection provides a very high level of expressiveness, as it allows the
+user to add new judgmental equalities, but it also destroys desirable meta-theoretic properties
+of type theory (such as decidability and strong normalization). The power of effects and handlers
+in AML is demonstrated by a standard library that provides default algorithms for equality checking,
+computation of normal forms, and implicit argument filling. Users can extend these new algorithms
+by providing local "hints" or by completely replacing these algorithms for particular developments.
+We demonstrate the resulting system by showing how to axiomatize and compute with natural numbers,
+by axiomatizing the untyped $\lambda$-calculus, and by implementing a simple automated system
+for managing a universe of types. 

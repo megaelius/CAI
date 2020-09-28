@@ -1,0 +1,19 @@
+We present a computational framework for the simulation of blood flow with fully resolved red blood
+cells (RBCs) using a modular approach that consists of a lattice Boltzmann solver for the blood plasma,
+a novel finite element based solver for the deformable bodies and an immersed boundary method for
+the fluid-solid interaction. For the RBCs, we propose a nodal projective FEM (npFEM) solver which
+has theoretical advantages over the more commonly used mass-spring systems (mesoscopic modeling),
+such as an unconditional stability, versatile material expressivity, and one set of parameters
+to fully describe the behavior of the body at any mesh resolution. At the same time, the method is substantially
+faster than other FEM solvers proposed in this field, and has an efficiency that is comparable to
+the one of mesoscopic models. At its core, the solver uses specially defined potential energies,
+and builds upon them a fast iterative procedure based on quasi-Newton techniques. For a known material,
+our solver has only one free parameter that demands tuning, related to the body viscoelasticity.
+In contrast, state-of-the-art solvers for deformable bodies have more free parameters, and the
+calibration of the models demands special assumptions regarding the mesh topology, which restrict
+their generality and mesh independence. We propose as well a correction to the potential energy
+proposed by Skalak et al. 1973 for the red blood cell membrane, which enhances the strain hardening
+behavior at higher deformations. Our viscoelastic model for the red blood cell, while simple enough
+and applicable to any kind of solver as a post-convergence step, can capture accurately the characteristic
+recovery time and tank-treading frequencies. The framework is validated using experimental data,
+and it proves to be scalable for multiple deformable bodies. 

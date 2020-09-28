@@ -1,0 +1,17 @@
+In this paper, a new sequential surrogate-based optimization (SSBO) algorithm is developed, which
+aims to improve the global search ability and local search efficiency for the global optimization
+of expensive black-box models. The proposed method involves three basic sub-criteria to infill
+new samples asynchronously to balance the global exploration and local exploitation. First, to
+capture the promising possible global optimal region, searching for the global optimum with genetic
+algorithm (GA) based on the current surrogate models of the objective and constraint functions.
+Second, to infill samples in the region with sparse samples to improve the global accuracy of the
+surrogate models, a grid searching with Latin hypercube sampling (LHS) with the current surrogate
+model is adopted to explore the sample space. Third, to accelerate the local searching efficiency,
+searching for a local optimum with sequential quadratic programming (SQP) based on the local surrogate
+models in the reduced interval, which involves some samples near the current optimum. When the new
+sample is too close to the existing ones, the new sample should be abandoned, due to the poor additional
+information. According to the three sub-criteria, the new samples are placed in the regions which
+have not been fully explored and includes the possible global optimum point. When a possible global
+optimum point is found, the local searching sub-criterion captures the local optimum around it
+rapidly. Numerical and engineering examples are used to verify the efficiency of the proposed method.
+The statistical results show that the proposed method has good global searching ability and efficiency.

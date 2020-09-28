@@ -1,0 +1,19 @@
+We frame the task of predicting a semantic labeling as a sparse reconstruction procedure that applies
+a target-specific learned transfer function to a generic deep sparse code representation of an
+image. This strategy partitions training into two distinct stages. First, in an unsupervised manner,
+we learn a set of generic dictionaries optimized for sparse coding of image patches. We train a multilayer
+representation via recursive sparse dictionary learning on pooled codes output by earlier layers.
+Second, we encode all training images with the generic dictionaries and learn a transfer function
+that optimizes reconstruction of patches extracted from annotated ground-truth given the sparse
+codes of their corresponding image patches. At test time, we encode a novel image using the generic
+dictionaries and then reconstruct using the transfer function. The output reconstruction is a
+semantic labeling of the test image. Applying this strategy to the task of contour detection, we
+demonstrate performance competitive with state-of-the-art systems. Unlike almost all prior
+work, our approach obviates the need for any form of hand-designed features or filters. To illustrate
+general applicability, we also show initial results on semantic part labeling of human faces. The
+effectiveness of our approach opens new avenues for research on deep sparse representations. Our
+classifiers utilize this representation in a novel manner. Rather than acting on nodes in the deepest
+layer, they attach to nodes along a slice through multiple layers of the network in order to make predictions
+about local patches. Our flexible combination of a generatively learned sparse representation
+with discriminatively trained transfer classifiers extends the notion of sparse reconstruction
+to encompass arbitrary semantic labeling tasks. 

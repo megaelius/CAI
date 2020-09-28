@@ -1,0 +1,18 @@
+A key task in Bayesian machine learning is sampling from distributions that are only specified up
+to a partition function (i.e., constant of proportionality). One prevalent example of this is sampling
+posteriors in parametric distributions, such as latent-variable generative models. However
+sampling (even very approximately) can be #P-hard. Classical results going back to Bakry and \'Emery
+(1985) on sampling focus on log-concave distributions, and show a natural Markov chain called Langevin
+diffusion mixes in polynomial time. However, all log-concave distributions are uni-modal, while
+in practice it is very common for the distribution of interest to have multiple modes. In this case,
+Langevin diffusion suffers from torpid mixing. We address this problem by combining Langevin diffusion
+with simulated tempering. The result is a Markov chain that mixes more rapidly by transitioning
+between different temperatures of the distribution. We analyze this Markov chain for a mixture
+of (strongly) log-concave distributions of the same shape. In particular, our technique applies
+to the canonical multi-modal distribution: a mixture of gaussians (of equal variance). Our algorithm
+efficiently samples from these distributions given only access to the gradient of the log-pdf.
+For the analysis, we introduce novel techniques for proving spectral gaps based on decomposing
+the action of the generator of the diffusion. Previous approaches rely on decomposing the state
+space as a partition of sets, while our approach can be thought of as decomposing the stationary measure
+as a mixture of distributions (a "soft partition"). Additional materials for the paper can be found
+at this http URL The proof and results have been improved and generalized from the precursor at www.arxiv.org/abs/1710.02736.

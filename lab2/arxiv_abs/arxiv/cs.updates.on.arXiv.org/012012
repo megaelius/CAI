@@ -1,0 +1,17 @@
+Register allocation, which is a crucial phase of a good optimizing compiler, relies on graph coloring.
+Hence, an efficient graph coloring algorithm is of paramount importance. In this work we try to learn
+a good heuristic for coloring interference graphs that are used in the register allocation phase.
+We aim to handle moderate sized interference graphs which have 100 nodes or less. For such graphs
+we can get the optimal allocation of colors to the nodes. Such optimal coloring is then used to train
+our Deep Learning network which is based on several layers of LSTM that output a color for each node
+of the graph. However, the current network may allocate the same color to the nodes connected by an
+edge resulting in an invalid coloring of the interference graph. Since it is difficult to encode
+constraints in an LSTM to avoid invalid coloring, we augment our deep learning network with a color
+correction phase that runs after the colors have been allocated by the network. Thus, our algorithm
+is hybrid in nature consisting of a mix of a deep learning algorithm followed by a more traditional
+correction phase. We have trained our network using several thousand random graphs of varying sparsity.
+On application of our hybrid algorithm to various popular graphs found in literature we see that
+our algorithm does very well when compared to the optimal coloring of these graphs. We have also run
+our algorithm against LLVMs popular greedy register allocator for several SPEC CPU 2017 benchmarks
+and notice that the hybrid algorithm performs on par or better than such a well-tuned allocator for
+most of these benchmarks. 

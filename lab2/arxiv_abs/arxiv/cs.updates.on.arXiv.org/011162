@@ -1,0 +1,18 @@
+In this work, by employing a bitsliced data representation as building blocks of algorithms, we
+showcase the capability and scalability of our proposed method in a variety of PRNG methods in the
+category of block and stream ciphers. While demonstrating the suitability of stream-ciphers for
+high throughput PRNG, as an example, we implement and investigate a bitsliced MICKEY 2.0 PRNG by
+altering the paradigm of internal functions and data structure. The LFSR-based (Linear Feedback
+Shift Register) nature of the PRNG in our implementation perfectly suits the GPU's many-core structure
+due to its register oriented architecture and allows the usage of bit slicing technique to further
+improve the performance. In our SIMD vectorized fully parallel GPU implementation, each GPU thread
+is capable of generating a remarkable number of 32 pseudo-random bits in each LFSR clock cycle. We
+then compare our implementation with some of the most significant PRNGs that display a satisfactory
+performance in both throughput and randomness criteria. The proposed implementation successfully
+passes the NIST test for statistical randomness and bit-wise correlation criteria. To the best
+of authors' best knowledge, our method outperforms the current best implementations in the literature
+for computer-based PRNG and the optical solutions in terms of performance and performance per cost,
+while maintaining an acceptable measure of randomness. Our highest performance among all of the
+implemented CPRNGs with the proposed method is achieved by the MICKEY 2.0 algorithm which shows
+1.9x improvement over the state of the art NVIDIA's proprietary high-performance PRNG, cuRAND
+library, achieving 1.6 Tb/s of throughput on the affordable NVIDIA GTX 980 Ti. 

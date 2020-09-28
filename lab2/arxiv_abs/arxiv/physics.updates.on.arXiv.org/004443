@@ -1,0 +1,18 @@
+Consider a space object in an orbit about the earth. An uncertain initial state can be represented
+as a point cloud which can be propagated to later times by the laws of Newtonian motion. If the state
+of the object is represented in Cartesian earth centered inertial (Cartesian-ECI) coordinates,
+then even if initial uncertainty is Gaussian in this coordinate system, the distribution quickly
+becomes non-Gaussian as the propagation time increases. Similar problems arise in other standard
+fixed coordinate systems in astrodynamics, e.g. Keplerian and to some extent equinoctial. To address
+these problems, a local "Adapted STructural (AST)" coordinate system has been developed in which
+uncertainty is represented in terms of deviations from a "central state". In this coordinate system
+initial Gaussian uncertainty remains Gaussian for all propagation times under Keplerian dynamics.
+Further, it can be shown that the transformation between Cartesian-ECI and AST coordinates is approximately
+linear. Statistical tests are carried out to confirm the quality of the Gaussian approximation.
+Given a sequence of angles-only measurements, it is straightforward to implement any of the standard
+variants of the Kalman filter. It turns out that iterated nonlinear extended (IEKF) and unscented
+(IUKF) Kalman filters are often the most appropriate variants to use. In particular, they can be
+much more accurate than the more commonly used non-iterated versions, the extended (EKF) and unscented
+(UKF) Kalman filters, especially under high ellipticity. In addition, iterated Kalman filters
+can often be well-approximated by two new closed form filters, the observation-centered extended
+(OCEKF) and unscented (OCUKF) Kalman filters. 

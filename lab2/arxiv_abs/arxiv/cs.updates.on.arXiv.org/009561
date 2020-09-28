@@ -1,0 +1,20 @@
+We propose a strategy to compress and store large volumes of scientific data represented on unstructured
+grids. Approaches utilizing tensor decompositions for data compression have already been proposed.
+Here, data on a structured grid is stored as a tensor which is then subjected to appropriate decomposition
+in suitable tensor formats. Such decompositions are based on generalization of singular value
+decomposition to tensors and capture essential features in the data with storage cost lower by orders
+of magnitude. However, tensor based data compression is limited by the fact that one can only consider
+scientific data represented on structured grids. In case of data on unstructured meshes, we propose
+to consider data as realizations of a function that is based on functional view of the tensor thus
+avoiding such limitations. The key is to efficiently estimate the parameters of the function whose
+complexity is small compared to the cardinality of the dataset (otherwise there is no compression).
+Here, we introduce the set of functional sparse Tucker tensors and propose a method to construct
+approximation in this set such that the resulting compact functional tensor can be rapidly evaluated
+to recover the original data. The compression procedure consists of three steps. In the first step,
+we consider a fraction of the original dataset for interpolation on a structured grid followed by
+sequentially truncated higher order singular value decomposition to get a compressed version
+of the interpolated data.We then fit singular vectors on a set of functional basis using sparse approximation
+to obtain corresponding functional sparse Tucker tensor representation. Finally, we re-evaluate
+the coefficients of this functional tensor using randomized least squares at a reduced computational
+complexity. This strategy leads to compression ratio of orders of magnitude on combustion simulation
+datasets. 

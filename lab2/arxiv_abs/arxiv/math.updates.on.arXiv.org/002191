@@ -1,0 +1,19 @@
+We prove a \emph{query complexity} lower bound for approximating the top $r$ dimensional eigenspace
+of a matrix. We consider an oracle model where, given a symmetric matrix $\mathbf{M} \in \mathbb{R}^{d
+\times d}$, an algorithm $\mathsf{Alg}$ is allowed to make $\mathsf{T}$ exact queries of the form
+$\mathsf{w}^{(i)} = \mathbf{M} \mathsf{v}^{(i)}$ for $i$ in $\{1,...,\mathsf{T}\}$, where
+$\mathsf{v}^{(i)}$ is drawn from a distribution which depends arbitrarily on the past queries
+and measurements $\{\mathsf{v}^{(j)},\mathsf{w}^{(i)}\}_{1 \le j \le i-1}$. We show that for
+every $\mathtt{gap} \in (0,1/2]$, there exists a distribution over matrices $\mathbf{M}$ for
+which 1) $\mathrm{gap}_r(\mathbf{M}) = \Omega(\mathtt{gap})$ (where $\mathrm{gap}_r(\mathbf{M})$
+is the normalized gap between the $r$ and $r+1$-st largest-magnitude eigenvector of $\mathbf{M}$),
+and 2) any algorithm $\mathsf{Alg}$ which takes fewer than $\mathrm{const} \times \frac{r \log
+d}{\sqrt{\mathtt{gap}}}$ queries fails (with overwhelming probability) to identity a matrix
+$\widehat{\mathsf{V}} \in \mathbb{R}^{d \times r}$ with orthonormal columns for which $\langle
+\widehat{\mathsf{V}}, \mathbf{M} \widehat{\mathsf{V}}\rangle \ge (1 - \mathrm{const} \times
+\mathtt{gap})\sum_{i=1}^r \lambda_i(\mathbf{M})$. Our bound requires only that $d$ is a small
+polynomial in $1/\mathtt{gap}$ and $r$, and matches the upper bounds of Musco and Musco '15. Moreover,
+it establishes a strict separation between convex optimization and \emph{randomized}, "strict-saddle"
+non-convex optimization of which PCA is a canonical example: in the former, first-order methods
+can have dimension-free iteration complexity, whereas in PCA, the iteration complexity of gradient-based
+methods must necessarily grow with the dimension. 

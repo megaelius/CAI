@@ -1,0 +1,23 @@
+Symmetric tensor decomposition is an important problem with applications in several areas for
+example signal processing, statistics, data analysis and computational neuroscience. It is equivalent
+to Waring's problem for homogeneous polynomials, that is to write a homogeneous polynomial in $n$
+variables of degree $D$ as a sum of $D$-th powers of linear forms, using the minimal number of summands.
+This minimal number is called the \emph{rank} of the polynomial/tensor. We focus on decomposing
+binary forms, a problem that corresponds to the decomposition of symmetric tensors of dimension
+$2$ and order $D$. Under this formulation, the problem finds its roots in invariant theory where
+the decompositions are known as canonical forms. In this context many different algorithms were
+proposed. We introduce a \emph{superfast} algorithm that improves the previous approaches with
+results from \emph{structured linear algebra}. It achieves a \emph{softly linear} arithmetic
+complexity bound. To the best of our knowledge, the previously known algorithms have at least quadratic
+complexity bounds. Our algorithm computes a symbolic decomposition in $O(\mathtt{M}(D) \log(D))$
+arithmetic operations, where $\mathtt{M}(D)$ is the complexity of multiplying two polynomials
+of degree $D$. It is deterministic when the decomposition is unique. When the decomposition is not
+unique, our algorithm is randomized. We present a Monte Carlo version of it and we show how to modify
+it to a Las Vegas one, within the same complexity. From the symbolic decomposition, we approximate
+the terms of the decomposition with an error of $2^{-\varepsilon}$, in $O\big(D \log^2(D)\big(\log^2(D)
++ \log(\varepsilon)\big)\big)$ arithmetic operations. We use results from \citet{kaltofen1989improved}
+to bound the size of the representation of the coefficients involved in the decomposition and we
+bound the algebraic degree of the problem by $\min(rank, D-rank+1)$. We show that this bound can
+be tight. When the input polynomial has integer coefficients, our algorithm performs, up to poly-logarithmic
+factors, $\widetilde{O}_B(D \ell + D^4 + D^3 \tau)$ bit operations, where $\tau$ is the maximum
+bitsize of the coefficients and $2^{-\ell}$ is the relative error of the terms in the decomposition.

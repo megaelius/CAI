@@ -1,0 +1,20 @@
+Cosmic shear is a primary cosmological probe for several present and upcoming surveys investigating
+dark matter and dark energy, such as Euclid or WFIRST. The probe requires an extremely accurate measurement
+of the shapes of millions of galaxies based on imaging data. Crucially, the shear measurement must
+address and compensate for a range of interwoven nuisance effects related to the instrument optics
+and detector, noise, unknown galaxy morphologies, colors, blending of sources, and selection
+effects. This paper explores the use of supervised machine learning (ML) as a tool to solve this inverse
+problem. We present a simple architecture that learns to regress shear point estimates and weights
+via shallow artificial neural networks. The networks are trained on simulations of the forward
+observing process, and take combinations of moments of the galaxy images as inputs. A challenging
+peculiarity of this ML application is the combination of the noisiness of the input features and
+the requirements on the accuracy of the inverse regression. To address this issue, the proposed
+training algorithm minimizes bias over multiple realizations of individual source galaxies,
+reducing the sensitivity to properties of the overall sample of source galaxies. Importantly,
+an observational selection function of these source galaxies can be straightforwardly taken into
+account via the weights. We first introduce key aspects of our approach using toy-model simulations,
+and then demonstrate its potential on images mimicking Euclid data. Finally, we analyze images
+from the GREAT3 challenge, obtaining competitively low shear biases despite the use of a simple
+training set. We conclude that the further development of ML approaches is of high interest to meet
+the stringent requirements on the shear measurement in current and future surveys. A demonstration
+implementation of our technique is publicly available. 

@@ -1,0 +1,20 @@
+We present LibrettOS, an OS design that fuses two paradigms to simultaneously address issues of
+isolation, performance, compatibility, failure recoverability, and run-time upgrades. LibrettOS
+acts as a microkernel OS that runs servers in an isolated manner. LibrettOS can also act as a library
+OS when, for better performance, selected applications are granted exclusive access to virtual
+hardware resources such as storage and networking. Furthermore, applications can switch between
+the two OS modes with no interruption at run-time. LibrettOS has a uniquely distinguishing advantage
+in that, the two paradigms seamlessly coexist in the same OS, enabling users to simultaneously exploit
+their respective strengths (i.e., greater isolation, high performance). Systems code, such as
+device drivers, network stacks, and file systems remain identical in the two modes, enabling dynamic
+mode switching and reducing development and maintenance costs. To illustrate these design principles,
+we implemented a prototype of LibrettOS using rump kernels, allowing us to reuse existent, hardened
+NetBSD device drivers and a large ecosystem of POSIX/BSD-compatible applications. We use hardware
+(VM) virtualization to strongly isolate different rump kernel instances from each other. Because
+the original rumprun unikernel targeted a much simpler model for uniprocessor systems, we redesigned
+it to support multicore systems. Unlike kernel-bypass libraries such as DPDK, applications need
+not be modified to benefit from direct hardware access. LibrettOS also supports indirect access
+through a network server that we have developed. Applications remain uninterrupted even when network
+components fail or need to be upgraded. Finally, to efficiently use hardware resources, applications
+can dynamically switch between the indirect and direct modes based on their I/O load at run-time.
+[full abstract is in the paper] 

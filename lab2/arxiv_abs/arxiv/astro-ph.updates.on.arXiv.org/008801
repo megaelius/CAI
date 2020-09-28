@@ -1,0 +1,18 @@
+Telescope scheduling is the task of determining the best sequence of observations (pointings and
+filter choices) for a survey system. The definition of "best" typically comprises a weighted combination
+of performance metrics, such as cadence, uniformity of coverage, and image depth. One popular scheduling
+algorithm -- the local greedy optimizer -- rank-orders candidate fields and picks the sequence
+of $N$ upcoming observations so as to maximize a composite merit function. One point of this paper
+is to stress that a local greedy optimizer does not typically produce a global optimum for a multi-year
+survey such as LSST. We show here that a deterministic scheduler that forces LSST to observe fields
+close to the meridian, alternating between sky regions N and S of the observatory latitude on alternate
+nights, equals or outperforms the LSST baseline scheduler in essentially all quantitative performance
+metrics. This is due to a number of factors, including our forcing dual visits to a field to occur in
+different filters. We find it easier to use a deterministic algorithm than to adjust weights and
+penalties to persuade a greedy optimizer to produce a desired outcome. We have developed a prototype
+implementation of this deterministic alternative scheduler, which produces observing sequences
+that can be compared directly with the LSST baseline plan. Our implementation is considerably faster
+than the OpSim, the simulated greedy optimizer currently used by the LSST project: a full ten year
+survey can be simulated in 4 minutes, as opposed to tens of hours for OpSim. We also describe a dithering
+strategy that achieves uniform spatial coverage at the sub-field level, that is superior to a fixed-field-center
+framework. 

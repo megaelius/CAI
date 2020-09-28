@@ -1,0 +1,18 @@
+In order to understand the state and evolution of the entirety of open source software we need to get
+a handle on the set of distinct software projects. Most of open source projects presently utilize
+Git, which is a distributed version control system allowing easy creation of clones and resulting
+in numerous repositories that are almost entirely based on some parent repository from which they
+were cloned. Git commits are based on Merkle Tree and two commits are highly unlikely to be produced
+independently. Shared commits, therefore, appear like an excellent way to group cloned repositories
+and obtain an accurate map for such repositories. We use World of Code infrastructure containing
+approximately 2B commits and 100M repositories to create and share such a map. We discover that the
+largest group contains almost 14M repositories most of which are unrelated to each other. As it turns
+out, the developers can push git object to an arbitrary repository or pull objects from unrelated
+repositories, thus linking unrelated repositories. To address this, we apply Louvain community
+detection algorithm to this very large graph consisting of links between commits and projects.
+The approach successfully reduces the size of the megacluster with the largest group of highly interconnected
+projects containing under 100K repositories. We expect the tools that the resulting map of related
+projects as well as tools and methods to handle the very large graph will serve as a reference set for
+mining software projects and other applications. Further work is needed to determine different
+types of relationships among projects induced by shared commits and other relationships, for example,
+by shared source code or similar filenames. 

@@ -1,0 +1,19 @@
+Dense conditional random fields (CRFs) with Gaussian pairwise potentials have become a popular
+framework for modelling several problems in computer vision such as stereo correspondence and
+multi-class semantic segmentation. By modelling long-range interactions, dense CRFs provide
+a more detailed labelling compared to their sparse counterparts. Currently the state-of-the-art
+algorithm performs mean-field inference using a filter-based method to obtain accurate segmentations,
+but fails to provide strong theoretical guarantees on the quality of the solution. Whilst the underlying
+model of a dense CRF provides enough information to yield well defined segmentations, it lacks the
+richness introduced via higher order potentials. The mean-field inference strategy was also extended
+to incorporate higher order potentials, but again failed to obtain a bound on the quality of the solution.
+To this extent, we show that a dense CRF can be aggregated with sparse higher order potentials in a
+way that is amenable to continuous relaxations. We will then show that, by using a filter-based method,
+these continuous relaxations can be optimised efficiently using state-of-the-art algorithms.
+Specifically we will solve a quadratic programming (QP) relaxation using the Frank-Wolfe algorithm
+and a linear programming (LP) relaxation by developing a proximal minimisation framework. By exploiting
+labelling consistency in the higher order potentials and utilising the filter-based method, we
+are able to formulate the above algorithms such that each iteration has a complexity linear in the
+number of classes and random variables. The experiments are performed on the standard publicly
+available MSRC data set and demonstrate the low energies achieved from the minimisation and the
+accuracy of the resulting segmentations. 

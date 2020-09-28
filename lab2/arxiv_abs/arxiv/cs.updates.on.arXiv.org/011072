@@ -1,0 +1,18 @@
+We demonstrate that Non-Maximum Suppression (NMS), which is commonly used in Object Detection
+(OD) tasks to filter redundant detection results, is no longer secure. Considering that NMS has
+been an integral part of OD systems, thwarting the functionality of NMS can result in unexpected
+or even lethal consequences for such systems. In this paper, we propose an adversarial example attack
+which triggers malfunctioning of NMS in end-to-end OD models. Our attack, namely Daedalus, compresses
+the dimensions of detection boxes to evade NMS. As a result, the final detection output contains
+extremely dense false positives. This can be fatal for many OD applications such as autonomous vehicle
+and surveillance system. Our attack can be generalised to different end-to-end OD models, such
+that the attack cripples various OD applications. Furthermore, we propose a way to craft robust
+adversarial examples by using an ensemble of popular detection models as the substitutes. Considering
+the pervasive nature of model reusing in real-world OD scenarios, Daedalus examples crafted based
+on an ensemble of substitutes can launch attacks without knowing the parameters of the victim models.
+Our experiments demonstrate that the attack effectively stops NMS from filtering redundant bounding
+boxes. As the evaluation results suggest, Daedalus increases the false positive rate in detection
+results to 99.9% and reduces the mean average precision scores to 0, while maintaining a low cost
+of distortion on the original inputs. With the widespread applications of OD, our work shows that
+there are serious vulnerabilities in the fundamental components of such systems and further investigation
+on them is required in this area. 

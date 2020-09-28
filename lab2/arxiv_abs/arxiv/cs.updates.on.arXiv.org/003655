@@ -1,0 +1,19 @@
+Recent research has shown that deep ensemble for forest can achieve a huge increase in classification
+accuracy compared with the general ensemble learning method. Especially when there are only few
+training data. In this paper, we decide to take full advantage of this observation and introduce
+the Dense Adaptive Cascade Forest (daForest), which has better performance than the original one
+named Cascade Forest. And it is particularly noteworthy that daForest has a powerful ability to
+handle high-dimensional sparse data without any preprocessing on raw data like PCA or any other
+dimensional reduction methods. Our model is distinguished by three major features: the first feature
+is the combination of the SAMME.R boosting algorithm in the model, boosting gives the model the ability
+to continuously improve as the number of layer increases, which is not possible in stacking model
+or plain cascade forest. The second feature is our model connects each layer to its subsequent layers
+in a feed-forward fashion, to some extent this structure enhances the ability of the model to resist
+degeneration. When number of layers goes up, accuracy of model goes up a little in the first few layers
+then drop down quickly, we call this phenomenon degeneration in training stacking model. The third
+feature is that we add a hyper-parameter optimization layer before the first classification layer
+in the proposed deep model, which can search for the optimal hyper-parameter and set up the model
+in a brief period and nearly halve the training time without having too much impact on the final performance.
+Experimental results show that daForest performs particularly well on both high-dimensional
+low-order features and low-dimensional high-order features, and in some cases, even better than
+neural networks and achieves state-of-the-art results. 

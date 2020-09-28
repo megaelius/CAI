@@ -1,0 +1,18 @@
+Modern pattern recognition methods are based on convolutional networks since they are able to learn
+complex patterns that benefit the classification. However, convolutional networks are computationally
+expensive and require a considerable amount of memory, which limits their deployment on low-power
+and resource-constrained systems. To handle these problems, recent approaches have proposed
+pruning strategies that find and remove unimportant neurons (i.e., filters) in these networks.
+Despite achieving remarkable results, existing pruning approaches are ineffective since the
+accuracy of the original network is degraded. In this work, we propose a novel approach to efficiently
+remove filters from convolutional networks. Our approach estimates the filter importance based
+on its relationship with the class label on a low-dimensional space. This relationship is computed
+using Partial Least Squares (PLS) and Variable Importance in Projection (VIP). Our method is able
+to reduce up to 67% of the floating point operations (FLOPs) without penalizing the network accuracy.
+With a negligible drop in accuracy, we can reduce up to 90% of FLOPs. Additionally, sometimes the
+method is even able to improve the accuracy compared to original, unpruned, network. We show that
+employing PLS+VIP as the criterion for detecting the filters to be removed is better than recent
+feature selection techniques, which have been employed by state-of-the-art pruning methods.
+Finally, we show that the proposed method achieves the highest FLOPs reduction and the smallest
+drop in accuracy when compared to state-of-the-art pruning approaches. Codes are available at:
+https://github.com/arturjordao/PruningNeuralNetworks 

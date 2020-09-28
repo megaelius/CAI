@@ -1,0 +1,17 @@
+Boundary conditions on arbitrary geometries are a common issue in simulating partial differential
+equations. The conventional approach is to discretize on a grid conforming to the geometry. However
+grid construction is challenging, and this difficulty is compounded for evolving domains. Several
+methods instead augment the equations themselves to implicitly enforce the boundary conditions.
+This paper examines the Volume Penalty Method, which approximates Dirichlet boundary conditions
+in the Navier Stokes equations with rapid linear damping (non-dimensional time scale $\eta$) inside
+the object. This technique is proven to converge to the true solution, and also leads to simple volume-integral
+force and torque calculations. Unfortunately, previous analysis showed convergence of only $\mathcal{O}(\eta^{1/2})$.
+We analyze the source of this error using matched asymptotic expansions and show that it stems from
+a displacement length, proportional to a Reynolds number Re dependent boundary layer of size $\mathcal{O}(\eta^{1/2}\text{Re}^{-1/2})$.
+The relative size of the displacement length and damping time scale lead to the emergence of multiple
+asymptotic regimes. The key finding is that there is a simple correction that can be efficiently
+calculated to eliminate the displacement length and promote the accuracy to $\mathcal{O}(\eta)$.
+This improvement also extends to the force and torque calculations. We demonstrate these findings
+in 1D planar Poiseuille flow, 2D steady flow past a viscous stagnation point, and 2D unsteady flow
+past a rotating cylinder, and finally show that Richardson extrapolation can be used with our correction
+to further improve convergence to $\mathcal{O}(\eta^{2})$. 

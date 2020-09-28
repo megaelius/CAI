@@ -1,0 +1,19 @@
+Coloring line art images based on the colors of reference images is an important stage in animation
+production, which is time-consuming and tedious. In this paper, we propose a deep architecture
+to automatically color line art videos with the same color style as the given reference images. Our
+framework consists of a color transform network and a temporal constraint network. The color transform
+network takes the target line art images as well as the line art and color images of one or more reference
+images as input, and generates corresponding target color images. To cope with larger differences
+between the target line art image and reference color images, our architecture utilizes non-local
+similarity matching to determine the region correspondences between the target image and the reference
+images, which are used to transform the local color information from the references to the target.
+To ensure global color style consistency, we further incorporate Adaptive Instance Normalization
+(AdaIN) with the transformation parameters obtained from a style embedding vector that describes
+the global color style of the references, extracted by an embedder. The temporal constraint network
+takes the reference images and the target image together in chronological order, and learns the
+spatiotemporal features through 3D convolution to ensure the temporal consistency of the target
+image and the reference image. Our model can achieve even better coloring results by fine-tuning
+the parameters with only a small amount of samples when dealing with an animation of a new style. To
+evaluate our method, we build a line art coloring dataset. Experiments show that our method achieves
+the best performance on line art video coloring compared to the state-of-the-art methods and other
+baselines. 

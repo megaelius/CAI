@@ -1,0 +1,20 @@
+Semantic image segmentation is one the most demanding task, especially for analysis of traffic
+conditions for self-driving cars. Here the results of application of several deep learning architectures
+(PSPNet and ICNet) for semantic image segmentation of traffic stereo-pair images are presented.
+The images from Cityscapes dataset and custom urban images were analyzed as to the segmentation
+accuracy and image inference time. For the models pre-trained on Cityscapes dataset, the inference
+time was equal in the limits of standard deviation, but the segmentation accuracy was different
+for various cities and stereo channels even. The distributions of accuracy (mean intersection
+over union - mIoU) values for each city and channel are asymmetric, long-tailed, and have many extreme
+outliers, especially for PSPNet network in comparison to ICNet network. Some statistical properties
+of these distributions (skewness, kurtosis) allow us to distinguish these two networks and open
+the question about relations between architecture of deep learning networks and statistical distribution
+of the predicted results (mIoU here). The results obtained demonstrated the different sensitivity
+of these networks to: (1) the local street view peculiarities in different cities that should be
+taken into account during the targeted fine tuning the models before their practical applications,
+(2) the right and left data channels in stereo-pairs. For both networks, the difference in the predicted
+results (mIoU here) for the right and left data channels in stereo-pairs is out of the limits of statistical
+error in relation to mIoU values. It means that the traffic stereo pairs can be effectively used not
+only for depth calculations (as it is usually used), but also as an additional data channel that can
+provide much more information about scene objects than simple duplication of the same street view
+images. 

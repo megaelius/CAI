@@ -1,0 +1,17 @@
+Motion planning under uncertainty is essential for reliable robot operation. Despite substantial
+advances over the past decade, the problem remains difficult for systems with complex dynamics.
+Most state-of-the-art methods perform search that relies on a large number of forward simulations.
+For systems with complex dynamics, this generally require costly numerical integrations which
+significantly slows down the planning process. Linearization-based methods have been proposed
+that can alleviate the above problem. However, it is not clear how linearization affects the quality
+of the generated motion strategy, and when such simplifications are admissible. We propose a non-linearity
+measure, called Statistical-distance-based Non-linearity Measure (SNM), that can identify
+where linearization is beneficial and where it should be avoided. We show that when the problem is
+framed as the Partially Observable Markov Decision Process, the value difference between the optimal
+strategy for the original model and the linearized model can be upper bounded by a function linear
+in SNM. Comparisons with an existing measure on various scenarios indicate that SNM is more suitable
+in estimating the effectiveness of linearization-based solvers. To test the applicability of
+SNM in motion planning, we propose a simple on-line planner that uses SNM as a heuristic to switch
+between a general and a linearization-based solver. Results on a car-like robot with second order
+dynamics and 4-DOFs and 7-DOFs torque-controlled manipulators indicate that SNM can appropriately
+decide if and when a linearization-based solver should be used. 

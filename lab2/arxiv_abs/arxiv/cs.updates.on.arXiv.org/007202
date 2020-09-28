@@ -1,0 +1,19 @@
+A graph spanner is a fundamental graph structure that faithfully preserves the pairwise distances
+in the input graph up to a small multiplicative stretch. The common objective in the computation
+of spanners is to achieve the best-known existential size-stretch trade-off efficiently. Classical
+models and algorithmic analysis of graph spanners essentially assume that the algorithm can read
+the input graph, construct the desired spanner, and write the answer to the output tape. However,
+when considering massive graphs containing millions or even billions of nodes not only the input
+graph, but also the output spanner might be too large for a single processor to store. To tackle this
+challenge, we initiate the study of local computation algorithms (LCAs) for graph spanners in general
+graphs, where the algorithm should locally decide whether a given edge $(u,v) \in E$ belongs to the
+output spanner. Such LCAs give the user the `illusion' that a specific sparse spanner for the graph
+is maintained, without ever fully computing it. We present the following results: -For general
+$n$-vertex graphs and $r \in \{2,3\}$, there exists an LCA for $(2r-1)$-spanners with $\widetilde{O}(n^{1+1/r})$
+edges and sublinear probe complexity of $\widetilde{O}(n^{1-1/2r})$. These size/stretch tradeoffs
+are best possible (up to polylogarithmic factors). -For every $k \geq 1$ and $n$-vertex graph with
+maximum degree $\Delta$, there exists an LCA for $O(k^2)$ spanners with $\widetilde{O}(n^{1+1/k})$
+edges, probe complexity of $\widetilde{O}(\Delta^4 n^{2/3})$, and random seed of size $\mathrm{polylog}(n)$.
+This improves upon, and extends the work of [Lenzen-Levi, 2018]. We also complement our results
+by providing a polynomial lower bound on the probe complexity of LCAs for graph spanners that holds
+even for the simpler task of computing a sparse connected subgraph with $o(m)$ edges. 

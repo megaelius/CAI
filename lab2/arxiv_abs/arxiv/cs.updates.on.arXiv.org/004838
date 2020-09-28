@@ -1,0 +1,18 @@
+From the viewpoint of physical-layer authentication, spoofing attacks can be foiled by checking
+channel state information (CSI). Existing CSI-based authentication algorithms mostly require
+a deep knowledge of the channel to deliver decent performance. In this paper, we investigate CSI-based
+authenticators that can spare the effort to predetermine channel properties by utilizing deep
+neural networks (DNNs). We first propose a convolutional neural network (CNN)-enabled authenticator
+that is able to extract the local features in CSI. Next, we employ the recurrent neural network (RNN)
+to capture the dependencies between different frequencies in CSI. In addition, we propose to use
+the convolutional recurrent neural network (CRNN)---a combination of the CNN and the RNN---to
+learn local and contextual information in CSI for user authentication. To effectively train these
+DNNs, one needs a large amount of labeled channel records. However, it is often expensive to label
+large channel observations in the presence of a spoofer. In view of this, we further study a case in
+which only a small part of the the channel observations are labeled. To handle it, we extend these
+DNNs-enabled approaches into semi-supervised ones. This extension is based on a semi-supervised
+learning technique that employs both the labeled and unlabeled data to train a DNN. To be specific,
+our semi-supervised method begins by generating pseudo labels for the unlabeled channel samples
+through implementing the K-means algorithm in a semi-supervised manner. Subsequently, both the
+labeled and pseudo labeled data are exploited to pre-train a DNN, which is then fine-tuned based
+on the labeled channel records. 

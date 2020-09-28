@@ -1,0 +1,19 @@
+To operate with limited sensor horizons in unpredictable environments, autonomous robots use
+a receding-horizon strategy to plan trajectories, wherein they execute a short plan while creating
+the next plan. However, creating safe, dynamically-feasible trajectories in real time is challenging;
+and, planners must ensure persistent feasibility, meaning a new trajectory is always available
+before the previous one has finished executing. Existing approaches make a tradeoff between model
+complexity and planning speed, which can require sacrificing guarantees of safety and dynamic
+feasibility. This work presents the Reachability-based Trajectory Design (RTD) method for trajectory
+planning. RTD begins with an offline Forward Reachable Set (FRS) computation of a robot's motion
+when tracking parameterized trajectories; the FRS provably bounds tracking error. At runtime,
+the FRS is used to map obstacles to parameterized trajectories, allowing RTD to select a safe trajectory
+at every planning iteration. RTD prescribes an obstacle representation to ensure that obstacle
+constraints can be created and evaluated in real time while maintaining safety. Persistent feasibility
+is achieved by prescribing a minimum sensor horizon and a minimum duration for the planned trajectories.
+A system decomposition approach is used to improve the tractability of computing the FRS, allowing
+RTD to create more complex plans at runtime. RTD is compared in simulation with Rapidly-Exploring
+Random Trees and Nonlinear Model-Predictive Control. RTD is also demonstrated in randomly-crafted
+environments on two hardware platforms: a differential-drive Segway, and a car-like Rover. The
+proposed method is safe and persistently feasible across thousands of simulations and dozens of
+real-world hardware demos. 

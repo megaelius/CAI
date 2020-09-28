@@ -1,0 +1,18 @@
+Since the first publication of the "OWASP Top 10" (2004), cross-site scripting (XSS) vulnerabilities
+have always been among the top 5 web application security bugs. Black-box vulnerability scanners
+are widely used in the industry to reproduce (XSS) attacks automatically. In spite of the technical
+sophistication and advancement, previous work showed that black-box scanners miss a non-negligible
+portion of vulnerabilities, and report non-existing, non-exploitable or uninteresting vulnerabilities.
+Unfortunately, these results hold true even for XSS vulnerabilities, which are relatively simple
+to trigger if compared, for instance, to logic flaws. Black-box scanners have not been studied in
+depth on this vertical: knowing precisely how scanners try to detect XSS can provide useful insights
+to understand their limitations, to design better detection methods. In this paper, we present
+and discuss the results of a detailed and systematic study on 6 black-box web scanners (both proprietary
+and open source) that we conducted in coordination with the respective vendors. To this end, we developed
+an automated tool to (1) extract the payloads used by each scanner, (2) distill the "templates" that
+have originated each payload, (3) evaluate them according to quality indicators, and (4) perform
+a cross-scanner analysis. Unlike previous work, our testbed application, which contains a large
+set of XSS vulnerabilities, including DOM XSS, was gradually retrofitted to accomodate for the
+payloads that triggered no vulnerabilities. Our analysis reveals a highly fragmented scenario.
+Scanners exhibit a wide variety of distinct payloads, a non-uniform approach to fuzzing and mutating
+the payloads, and a very diverse detection effectiveness. 

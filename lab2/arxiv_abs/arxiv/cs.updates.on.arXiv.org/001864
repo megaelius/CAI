@@ -1,0 +1,19 @@
+Oblivious RAM (ORAM) is a renowned technique to hide the access patterns of an application to an untrusted
+memory. According to the standard ORAM definition presented by Goldreich and Ostrovsky, two ORAM
+access sequences must be computationally indistinguishable if the lengths of these sequences
+are identically distributed. An artifact of this definition is that it does not apply to modern ORAM
+implementations adapted in current secure processors technology because of their arbitrary lengths
+of memory access sequences depending on programs' behaviors (their termination times). As a result,
+the ORAM definition does not directly apply; the theoretical foundations of ORAM do not clearly
+argue about the timing and termination channels. This paper conducts a first rigorous study of the
+standard Goldreich-Ostrovsky ORAM definition in view of modern practical ORAMs (e.g., Path ORAM)
+and demonstrates the gap between theoretical foundations and real implementations. A new ORAM
+formulation which clearly separates out termination channel leakage is proposed. It is shown how
+this definition implies the standard ORAM definition (for finite length input access sequences)
+and better fits the modern practical ORAM implementations. The proposed definition relaxes the
+constraints around the stash size and overflow probability for Path ORAM, and essentially transforms
+its security argument into a performance consideration problem. Finally, a `strong' ORAM formulation
+which clearly includes obfuscation of termination leakage is shown to imply our new ORAM formulation
+and applies to ORAM for outsourced disk storage. In this strong formulation constraints are not
+relaxed and the security argument for Path ORAM remains complex as one needs to prove that the stash
+overflows with negligible probability. 

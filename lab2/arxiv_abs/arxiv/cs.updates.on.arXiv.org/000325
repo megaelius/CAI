@@ -1,0 +1,18 @@
+Restricted Boltzmann Machines (RBMs) are generative models which can learn useful representations
+from samples of a dataset in an unsupervised fashion. They have been widely employed as an unsupervised
+pre-training method in machine learning. RBMs have been modified to model time series in two main
+ways: The Temporal RBM stacks a number of RBMs laterally and introduces temporal dependencies between
+the hidden layer units; The Conditional RBM, on the other hand, considers past samples of the dataset
+as a conditional bias and learns a representation which takes these into account. Here we propose
+a new training method for both the TRBM and the CRBM, which enforces the dynamic structure of temporal
+datasets. We do so by treating the temporal models as denoising autoencoders, considering past
+frames of the dataset as corrupted versions of the present frame and minimizing the reconstruction
+error of the present data by the model. We call this approach Temporal Autoencoding. This leads to
+a significant improvement in the performance of both models in a filling-in-frames task across
+a number of datasets. The error reduction for motion capture data is 56\% for the CRBM and 80\% for
+the TRBM. Taking the posterior mean prediction instead of single samples further improves the model's
+estimates, decreasing the error by as much as 91\% for the CRBM on motion capture data. We also trained
+the model to perform forecasting on a large number of datasets and have found TA pretraining to consistently
+improve the performance of the forecasts. Furthermore, by looking at the prediction error across
+time, we can see that this improvement reflects a better representation of the dynamics of the data
+as opposed to a bias towards reconstructing the observed data on a short time scale. 

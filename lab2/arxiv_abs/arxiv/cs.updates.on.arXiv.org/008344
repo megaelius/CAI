@@ -1,0 +1,19 @@
+Shannon's sampling theorem is one of the cornerstone topics that is well understood and explored,
+both mathematically and algorithmically. That said, practical realization of this theorem still
+suffers from a severe bottleneck due to the fundamental assumption that the samples can span an arbitrary
+range of amplitudes. In practice, the theorem is realized using so-called analog-to-digital converters
+(ADCs) which clip or saturate whenever the signal amplitude exceeds the maximum recordable ADC
+voltage thus leading to a significant information loss. In this paper, we develop an alternative
+paradigm for sensing and recovery, called the Unlimited Sampling Framework. It is based on the observation
+that when a signal is mapped to an appropriate bounded interval via a modulo operation before entering
+the ADC, the saturation problem no longer exists, but one rather encounters a different type of information
+loss due to the modulo operation. Such an alternative setup can be implemented, for example, via
+so-called folding or self-reset ADCs, as they have been proposed in various contexts in the circuit
+design literature. The key task that we need to accomplish in order to cope with this new type of information
+loss is to recover a bandlimited signal from its modulo samples. In this paper we derive conditions
+when this is possible and present an empirically stable recovery algorithm with guaranteed perfect
+recovery. The sampling density required for recovery is independent of the maximum recordable
+ADC voltage and depends on the signal bandwidth only. Numerical experiments validate our approach
+and indeed show that it is possible to perfectly recover functions that take values that are orders
+of magnitude higher than the ADC's threshold. Applications of the unlimited sampling paradigm
+can be found in a number of fields such as signal processing, communication and imaging. 

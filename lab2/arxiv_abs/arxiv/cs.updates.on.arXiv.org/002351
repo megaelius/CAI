@@ -1,0 +1,18 @@
+Vector clock algorithms are basic wait-free building blocks that facilitate causal ordering of
+events. As wait-free algorithms, they are guaranteed to complete their operations within a finite
+number of steps. Stabilizing algorithms allow the system to recover after the occurrence of transient
+faults, such as soft errors and arbitrary violations of the assumptions according to which the system
+was designed to behave. We present the first, to the best of our knowledge, stabilizing vector clock
+algorithm for asynchronous crash-prone message-passing systems that can recover in a wait-free
+manner after the occurrence of transient faults. In these settings, it is challenging to demonstrate
+a finite and wait-free recovery from (communication and crash failures as well as) transient faults,
+bound the message and storage sizes, deal with the removal of all stale information without blocking,
+and deal with counter overflow events (which occur at different network nodes concurrently). We
+present an algorithm that never violates safety in the absence of transient faults and provides
+bounded time recovery during fair executions that follow the last transient fault. The novelty
+is that in the absence of execution fairness, the algorithm guarantees a bound on the number of times
+in which the system might violate safety (while existing algorithms might block forever due to the
+presence of both transient faults and crash failures). Since vector clocks facilitate a number
+of elementary synchronization building blocks (without requiring remote replica synchronization)
+in asynchronous systems, we believe that our analytical insights are useful for the design of other
+systems that cannot guarantee execution fairness. 

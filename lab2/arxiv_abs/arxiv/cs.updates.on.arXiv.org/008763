@@ -1,0 +1,20 @@
+Mutation-based fuzzing typically uses an initial set of valid seed inputs from which to generate
+new inputs by random mutation. A corpus of potential seeds will often contain thousands of similar
+inputs. This lack of diversity can lead to wasted effort, as fuzzing will exhaustively explore mutation
+from all seeds. To address this, fuzzers such as AFL come with distillation tools (eg, cmin) that
+select seeds as the smallest subset of a given corpus that triggers the same range of instrumentation
+data points as the full corpus. Experience suggests that minimizing both number and cumulative
+size of seeds may improve fuzzing efficiency. We present a theoretical framework for understanding
+the value of distillation techniques and a new algorithm for minimization based on this theory called
+ML. The theory characterizes the performance of ML as near-optimal, outperforming existing greedy
+methods to deliver smaller seed sets. We then compare the effectiveness of ML-distilled seed selection
+in a long campaign, comparing against cmin, with ML configured to give weight to different characteristics
+of the seeds (ie, unweighted, file size, or execution time), as well as against each target's full
+corpus and a singleton set containing only an "empty" valid input seed. Our results demonstrate
+that seeds selected by ML outperform the existing greedy cmin, and that weighting by file size is
+usually the best option. We target six common open-source programs, covering seven different file
+formats, and show that ML outperforms cmin in terms of the number of (unique) crashes generated over
+multiple sustained campaigns. Moreover, ML not only generates at least as many crashes as cmin,
+but also finds bugs that cmin does not. Our crash analysis for one target reveals four previously
+unreported bugs, all of which are security-relevant and have received CVEs. Three of these four
+were found only with ML. 

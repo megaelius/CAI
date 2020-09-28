@@ -1,0 +1,19 @@
+Decision forests (DFs), in particular random forests and gradient boosting trees, have demonstrated
+state-of-the-art accuracy compared to other methods in many supervised learning scenarios. In
+particular, DFs dominate other methods in tabular data, that is, when the feature space is unstructured,
+so that the signal is invariant to permuting feature indices. However, in structured data lying
+on a manifold---such as images, text, and speech---deep networks (DNs), specifically convolutional
+deep networks (ConvNets), tend to outperform DFs. We conjecture that at least part of the reason
+for this is that the input to DNs is not simply the feature magnitudes, but also their indices (for
+example, the convolution operation uses feature locality). In contrast, naive DF implementations
+fail to explicitly consider feature indices. A recently proposed DF approach demonstrates that
+DFs, for each node, implicitly sample a random matrix from some specific distribution. These DFs,
+like some classes of DNs, learn by partitioning the feature space into convex polytopes corresponding
+to linear functions. We build on that approach and show that one can choose distributions in a manifold-aware
+fashion to incorporate feature locality. We demonstrate the empirical performance on data whose
+features live on three different manifolds: a torus, images, and time-series. In all simulations,
+our Manifold Oblique Random Forest (MORF) algorithm empirically dominates other state-of-the-art
+approaches that ignore feature space structure and challenges the performance of ConvNets. Moreover,
+MORF runs significantly faster than ConvNets and maintains interpretability and theoretical
+justification. This approach, therefore, has promise to enable DFs and other machine learning
+methods to close the gap to deep networks on manifold-valued data. 

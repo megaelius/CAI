@@ -1,0 +1,18 @@
+Programs that respond to asynchronous events are challenging to write; they are difficult to reason
+about and tricky to test and debug. Because these programs can have a huge space of possible input
+timings and interleaving, the programmer may easily miss corner cases. We propose applying synthesis
+to aid programmers in creating programs more easily and with a higher degree of confidence in their
+correctness. We have written an efficient encoding of functional reactive programming (FRP) semantics
+based on functional programming over lists lifted in Rosette. We demonstrate that this technique
+is state-of-the-art by first comparing its performance against two existing synthesis tools that
+produce list manipulation programs, and then by synthesizing a suite of benchmarks given complete
+specifications. We also propose an interactive tool in which a programmer provides some initial
+partial specification in the form of input/output examples or invariants; the tool finds ambiguity
+in the specification by synthesizing two candidate programs and gives the user an input that distinguishes
+them; the user updates the specification and continues iterating until the correct program is found.
+As evaluation, we demonstrate the use of the tool on a suite of benchmarks from the web programming
+and Internet of Things domains and walk through a sample interaction on a realistic web benchmark,
+showing that we can converge on the target program with a tractable number of interactions. As future
+work, we discuss encoding additional FRP languages to in order to explore metalinguistic features,
+strategies for decomposition that would allow the synthesis of larger programs, and improved programmer
+tools such as a GUI to more easily elicit specifications. 

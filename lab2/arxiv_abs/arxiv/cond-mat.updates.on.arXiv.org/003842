@@ -1,0 +1,18 @@
+Simulating the dynamics of ions near polarizable nanoparticles (NPs) using coarse-grained models
+is extremely challenging due to the need to solve the Poisson equation at every simulation timestep.
+Recently, a molecular dynamics (MD) method based on a dynamical optimization framework bypassed
+this obstacle by representing the polarization charge density as virtual dynamic variables, and
+evolving them in parallel with the physical dynamics of ions. We highlight the computational gains
+accessible with the integration of machine learning (ML) methods for parameter prediction in MD
+simulations by demonstrating how they were realized in MD simulations of ions near polarizable
+NPs. An artificial neural network based regression model was integrated with MD simulation and
+predicted the optimal simulation timestep and optimization parameters characterizing the virtual
+system with $94.3\%$ success. The ML-enabled auto-tuning of parameters generated accurate dynamics
+of ions for $\approx 10$ million steps while improving the stability of the simulation by over an
+order of magnitude. The integration of ML-enhanced framework with hybrid OpenMP/MPI parallelization
+techniques reduced the computational time of simulating systems with thousands of ions and induced
+charges from thousands of hours to tens of hours, yielding a maximum speedup of $\approx 3$ from ML-only
+acceleration and a maximum speedup of $\approx 600$ from the combination of ML and parallel computing
+methods. Extraction of ionic structure in concentrated electrolytes near oil-water emulsions
+demonstrates the success of the method. The approach can be generalized to select optimal parameters
+in other MD applications and energy minimization problems. 

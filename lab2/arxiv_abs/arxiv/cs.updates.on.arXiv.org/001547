@@ -1,0 +1,19 @@
+In this dissertation we focus on providing effective adaptations that can be localised and applied
+to specific concurrent actors, thereby only causing a temporary disruption to the parts of the system
+requiring mitigation, while leaving the rest of the system intact. We make the application of localised
+adaptations efficient through incremental synchronisation, whereby the specifier can strategically
+suspend specific parts of the system, whenever this is strictly required for ensuring that adaptations
+are effectively applied. We also study static analysis techniques to determine whether the specified
+incremental synchronisation is in some sense adequate for local adaptations to be carried out.
+We thus identify a number of generic adaptations that can be applied to any actor system, regardless
+of its design and the code that it executes. We implement the identified adaptations as an extension
+of an existing Runtime Verification tool for actor-systems, thereby creating a RA framework for
+monitoring and mitigating actor systems. In parallel to our implementation we also develop a formal
+model of our RA framework that further serves to guide our implementation. This model also enables
+us to better understand the subtle errors that erroneously specified adaptation scripts may introduce.
+We thus develop a static type system for detecting and rejecting erroneous adaptation scripts prior
+to deployment, thereby providing the specifier with assistance for writing valid scripts. Although
+the static typesystem analyses scripts with respect to certain assumptions, we do not assume that
+the monitored system abides by these assumptions. We therefore augment our RA framework with dynamic
+checks for halting monitoring whenever the system deviates from our assumption. Based on this dynamically
+checked model of our RA framework, we prove type soundness for our static type system. 

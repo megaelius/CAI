@@ -1,0 +1,18 @@
+Segmentation of the pixels corresponding to human skin is an essential first step in multiple applications
+ranging from surveillance to heart-rate estimation from remote-photoplethysmography. However,
+the existing literature considers the problem only in the visible-range of the EM-spectrum which
+limits their utility in low or no light settings where the criticality of the application is higher.
+To alleviate this problem, we consider the problem of skin segmentation from the Near-infrared
+images. However, Deep learning based state-of-the-art segmentation techniques demands large
+amounts of labelled data that is unavailable for the current problem. Therefore we cast the skin
+segmentation problem as that of target-independent Unsupervised Domain Adaptation (UDA) where
+we use the data from the Red-channel of the visible-range to develop skin segmentation algorithm
+on NIR images. We propose a method for target-independent segmentation where the 'nearest-clone'
+of a target image in the source domain is searched and used as a proxy in the segmentation network trained
+only on the source domain. We prove the existence of 'nearest-clone' and propose a method to find
+it through an optimization algorithm over the latent space of a Deep generative model based on variational
+inference. We demonstrate the efficacy of the proposed method for NIR skin segmentation over the
+state-of-the-art UDA segmentation methods on the two newly created skin segmentation datasets
+in NIR domain despite not having access to the target NIR data. Additionally, we report state-of-the-art
+results for adaption from Synthia to Cityscapes which is a popular setting in Unsupervised Domain
+Adaptation for semantic segmentation. The code and datasets are available at https://github.com/ambekarsameer96/GLSS.

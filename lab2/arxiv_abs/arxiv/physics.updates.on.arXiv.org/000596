@@ -1,0 +1,17 @@
+Community detection has become a fundamental operation in numerous graph-theoretic applications.
+It is used to reveal natural divisions that exist within real world networks without imposing prior
+size or cardinality constraints on the set of communities. Despite its potential for application,
+there is only limited support for community detection on large-scale parallel computers, largely
+owing to the irregular and inherently sequential nature of the underlying heuristics. In this paper,
+we present parallelization heuristics for fast community detection using the Louvain method as
+the serial template. The Louvain method is an iterative heuristic for modularity optimization.
+Originally developed by Blondel et al. in 2008, the method has become increasingly popular owing
+to its ability to detect high modularity community partitions in a fast and memory-efficient manner.
+However, the method is also inherently sequential, thereby limiting its scalability. Here, we
+observe certain key properties of this method that present challenges for its parallelization,
+and consequently propose heuristics that are designed to break the sequential barrier. For evaluation
+purposes, we implemented our heuristics using OpenMP multithreading, and tested them over real
+world graphs derived from multiple application domains (e.g., internet, citation, biological).
+Compared to the serial Louvain implementation, our parallel implementation is able to produce
+community outputs with a higher modularity for most of the inputs tested, in comparable number or
+fewer iterations, while providing absolute speedups of up to 16x using 32 threads. 

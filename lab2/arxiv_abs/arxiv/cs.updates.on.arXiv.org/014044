@@ -1,0 +1,17 @@
+This article introduces the solutions of the two champion teams, `MMfruit' for the detection track
+and `MMfruitSeg' for the segmentation track, in OpenImage Challenge 2019. It is commonly known
+that for an object detector, the shared feature at the end of the backbone is not appropriate for both
+classification and regression, which greatly limits the performance of both single stage detector
+and Faster RCNN \cite{ren2015faster} based detector. In this competition, we observe that even
+with a shared feature, different locations in one object has completely inconsistent performances
+for the two tasks. \textit{E.g. the features of salient locations are usually good for classification,
+while those around the object edge are good for regression.} Inspired by this, we propose the Decoupling
+Head (DH) to disentangle the object classification and regression via the self-learned optimal
+feature extraction, which leads to a great improvement. Furthermore, we adjust the soft-NMS algorithm
+to adj-NMS to obtain stable performance improvement. Finally, a well-designed ensemble strategy
+via voting the bounding box location and confidence is proposed. We will also introduce several
+training/inferencing strategies and a bag of tricks that give minor improvement. Given those masses
+of details, we train and aggregate 28 global models with various backbones, heads and 3+2 expert
+models, and achieves the 1st place on the OpenImage 2019 Object Detection Challenge on the both public
+and private leadboards. Given such good instance bounding box, we further design a simple instance-level
+semantic segmentation pipeline and achieve the 1st place on the segmentation challenge. 

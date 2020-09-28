@@ -1,0 +1,19 @@
+Denoising has to do with estimating a signal $x_0$ from its noisy observations $y=x_0+z$. In this
+paper, we focus on the "structured denoising problem", where the signal $x_0$ possesses a certain
+structure and $z$ has independent normally distributed entries with mean zero and variance $\sigma^2$.
+We employ a structure-inducing convex function $f(\cdot)$ and solve $\min_x\{\frac{1}{2}\|y-x\|_2^2+\sigma\lambda
+f(x)\}$ to estimate $x_0$, for some $\lambda>0$. Common choices for $f(\cdot)$ include the
+$\ell_1$ norm for sparse vectors, the $\ell_1-\ell_2$ norm for block-sparse signals and the nuclear
+norm for low-rank matrices. The metric we use to evaluate the performance of an estimate $x^*$ is
+the normalized mean-squared-error $\text{NMSE}(\sigma)=\frac{\mathbb{E}\|x^*-x_0\|_2^2}{\sigma^2}$.
+We show that NMSE is maximized as $\sigma\rightarrow 0$ and we find the \emph{exact} worst case NMSE,
+which has a simple geometric interpretation: the mean-squared-distance of a standard normal vector
+to the $\lambda$-scaled subdifferential $\lambda\partial f(x_0)$. When $\lambda$ is optimally
+tuned to minimize the worst-case NMSE, our results can be related to the constrained denoising problem
+$\min_{f(x)\leq f(x_0)}\{\|y-x\|_2\}$. The paper also connects these results to the generalized
+LASSO problem, in which, one solves $\min_{f(x)\leq f(x_0)}\{\|y-Ax\|_2\}$ to estimate $x_0$
+from noisy linear observations $y=Ax_0+z$. We show that certain properties of the LASSO problem
+are closely related to the denoising problem. In particular, we characterize the normalized LASSO
+cost and show that it exhibits a "phase transition" as a function of number of observations. Our results
+are significant in two ways. First, we find a simple formula for the performance of a general convex
+estimator. Secondly, we establish a connection between the denoising and linear inverse problems.

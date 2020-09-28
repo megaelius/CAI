@@ -1,0 +1,19 @@
+We present the checkpoint ensembles method that can learn ensemble models on a single training process.
+Although checkpoint ensembles can be applied to any parametric iterative learning technique,
+here we focus on neural networks. Neural networks' composable and simple neurons make it possible
+to capture many individual and interaction effects among features. However, small sample sizes
+and sampling noise may result in patterns in the training data that are not representative of the
+true relationship between the features and the outcome. As a solution, regularization during training
+is often used (e.g. dropout). However, regularization is no panacea -- it does not perfectly address
+overfitting. Even with methods like dropout, two methodologies are commonly used in practice.
+First is to utilize a validation set independent to the training set as a way to decide when to stop
+training. Second is to use ensemble methods to further reduce overfitting and take advantage of
+local optima (i.e. averaging over the predictions of several models). In this paper, we explore
+checkpoint ensembles -- a simple technique that combines these two ideas in one training process.
+Checkpoint ensembles improve performance by averaging the predictions from "checkpoints" of
+the best models within single training process. We use three real-world data sets -- text, image,
+and electronic health record data -- using three prediction models: a vanilla neural network, a
+convolutional neural network, and a long short term memory network to show that checkpoint ensembles
+outperform existing methods: a method that selects a model by minimum validation score, and two
+methods that average models by weights. Our results also show that checkpoint ensembles capture
+a portion of the performance gains that traditional ensembles provide. 

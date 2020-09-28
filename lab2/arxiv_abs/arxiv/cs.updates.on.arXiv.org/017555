@@ -1,0 +1,19 @@
+A leading proposal for verifying near-term quantum supremacy experiments on noisy random quantum
+circuits is linear cross-entropy benchmarking. For a quantum circuit $C$ on $n$ qubits and a sample
+$z \in \{0,1\}^n$, the benchmark involves computing $|\langle z|C|0^n \rangle|^2$, i.e. the probability
+of measuring $z$ from the output distribution of $C$ on the all zeros input. Under a strong conjecture
+about the classical hardness of estimating output probabilities of quantum circuits, no polynomial-time
+classical algorithm given $C$ can output a string $z$ such that $|\langle z|C|0^n\rangle|^2$ is
+substantially larger than $\frac{1}{2^n}$ (Aaronson and Gunn, 2019). On the other hand, for a random
+quantum circuit $C$, sampling $z$ from the output distribution of $C$ achieves $|\langle z|C|0^n\rangle|^2
+\approx \frac{2}{2^n}$ on average (Arute et al., 2019). In analogy with the Tsirelson inequality
+from quantum nonlocal correlations, we ask: can a polynomial-time quantum algorithm do substantially
+better than $\frac{2}{2^n}$? We study this question in the query (or black box) model, where the
+quantum algorithm is given oracle access to $C$. We show that, for any $\varepsilon \ge \frac{1}{\mathrm{poly}(n)}$,
+outputting a sample $z$ such that $|\langle z|C|0^n\rangle|^2 \ge \frac{2 + \varepsilon}{2^n}$
+on average requires at least $\Omega\left(\frac{2^{n/4}}{\mathrm{poly}(n)}\right)$ queries
+to $C$, but not more than $O\left(2^{n/3}\right)$ queries to $C$, if $C$ is either a Haar-random
+$n$-qubit unitary, or a canonical state preparation oracle for a Haar-random $n$-qubit state.
+We also show that when $C$ samples from the Fourier distribution of a random Boolean function, the
+naive algorithm that samples from $C$ is the optimal 1-query algorithm for maximizing $|\langle
+z|C|0^n\rangle|^2$ on average. 

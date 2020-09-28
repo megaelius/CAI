@@ -1,0 +1,19 @@
+This paper summarizes the idea of Subarray-Level Parallelism (SALP) in DRAM, which was published
+in ISCA 2012, and examines the work's significance and future potential. Modern DRAMs have multiple
+banks to serve multiple memory requests in parallel. However, when two requests go to the same bank,
+they have to be served serially, exacerbating the high latency of on-chip memory. Adding more banks
+to the system to mitigate this problem incurs high system cost. Our goal in this work is to achieve
+the benefits of increasing the number of banks with a low-cost approach. To this end, we propose three
+new mechanisms, SALP-1, SALP-2, and MASA (Multitude of Activated Subarrays), to reduce the serialization
+of different requests that go to the same bank. The key observation exploited by our mechanisms is
+that a modern DRAM bank is implemented as a collection of subarrays that operate largely independently
+while sharing few global peripheral structures. Our three proposed mechanisms mitigate the negative
+impact of bank serialization by overlapping different components of the bank access latencies
+of multiple requests that go to different subarrays within the same bank. SALP-1 requires no changes
+to the existing DRAM structure, and needs to only reinterpret some of the existing DRAM timing parameters.
+SALP-2 and MASA require only modest changes (< 0.15% area overhead) to the DRAM peripheral structures,
+which are much less design constrained than the DRAM core. Our evaluations show that SALP-1, SALP-2
+and MASA significantly improve performance for both single-core systems (7%/13%/17%) and multi-core
+systems (15%/16%/20%), averaged across a wide range of workloads. We also demonstrate that our
+mechanisms can be combined with application-aware memory request scheduling in multicore systems
+to further improve performance and fairness. 

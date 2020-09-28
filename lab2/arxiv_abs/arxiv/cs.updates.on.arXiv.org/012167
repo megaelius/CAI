@@ -1,0 +1,18 @@
+Convolutional Recurrent Neural Network (CRNN) is a popular network for recognizing texts in images.
+Advances like the variants of CRNN, such as Dense Convolutional Network with Connectionist Temporal
+Classification, has reduced the running time of the networks, but exposing the inner computation
+cost of the convolutional networks as a bottleneck. Specifically, DenseNet based frameworks use
+the dense blocks as the core module, but the inner features are combined in the form of concatenation
+in dense blocks. As a result, the number of channels of combined features delivered as the input of
+the layers close to the output and the relevant computational cost grows rapidly with the dense blocks
+getting deeper. This will severely bring heavy computational cost and restrict the depth of dense
+blocks. In this paper, we propose an efficient convolutional block called Fast Dense Block (FDB).
+To reduce the computing cost, we redefine and design the way of combining internal features of dense
+blocks. FDB is a convolutional block similarly as the dense block, but it applies both sum and concatenating
+operations to connect the inner features in blocks, which can reduce the computation cost to (1/L,
+2/L), compared with the original dense block, where L is the number of layers in the dense block. Importantly,
+since the parameters of standard dense block and our new FDB keep consistent except the way of combining
+features, and their inputs and outputs have the same size and same number of channels, so FDB can be
+easily used to replace the original dense block in any DenseNet based framework. Based on the designed
+FDBs, we further propose a fast network of DenseNet to improve the text recognition performance
+in images. 

@@ -1,0 +1,19 @@
+The Graph Convolutional Network (GCN) model and its variants are powerful graph embedding tools
+for facilitating classification and clustering on graphs. However, a major challenge is to reduce
+the complexity of layered GCNs and make them parallelizable and scalable on very large graphs --
+state-of the art techniques are unable to achieve scalability without losing accuracy and efficiency.
+In this paper, we propose novel parallelization techniques for graph sampling-based GCNs that
+achieve superior scalable performance on very large graphs without compromising accuracy. Specifically,
+our GCN guarantees work-efficient training and produces order of magnitude savings in computation
+and communication. To scale GCN training on tightly-coupled shared memory systems, we develop
+parallelization strategies for the key steps in training: For the graph sampling step, we exploit
+parallelism within and across multiple sampling instances, and devise an efficient data structure
+for concurrent accesses that provides theoretical guarantee of near-linear speedup with number
+of processing units. For the feature propagation step within the sampled graph, we improve cache
+utilization and reduce DRAM communication by data partitioning. We prove that our partitioning
+strategy is a 2-approximation for minimizing the communication time compared to the optimal strategy.
+We demonstrate that our parallel graph embedding outperforms state-of-the-art methods in scalability
+(with respect to number of processors, graph size and GCN model size), efficiency and accuracy on
+several large datasets. On a 40-core Xeon platform, our parallel training achieves $64\times$
+speedup (with AVX) in the sampling step and $25\times$ speedup in the feature propagation step,
+compared to the serial implementation, resulting in a net speedup of $21\times$. 

@@ -1,0 +1,17 @@
+The segmentation of the breast from the chest wall is an important first step in the analysis of breast
+magnetic resonance images. 3D U-nets have been shown to obtain high segmentation accuracy and appear
+to generalize well when trained on one scanner type and tested on another scanner, provided that
+a very similar T1-weighted MR protocol is used. There has, however, been little work addressing
+the problem of domain adaptation when image intensities or patient orientation differ markedly
+between the training set and an unseen test set. To overcome the domain shift we propose to apply extensive
+intensity augmentation in addition to geometric augmentation during training. We explored both
+style transfer and a novel intensity remapping approach as intensity augmentation strategies.
+For our experiments, we trained a 3D U-net on T1-weighted scans and tested on T2-weighted scans.
+By applying intensity augmentation we increased segmentation performance from a DSC of 0.71 to
+0.90. This performance is very close to the baseline performance of training and testing on T2-weighted
+scans (0.92). Furthermore, we applied our network to an independent test set made up of publicly
+available scans acquired using a T1-weighted TWIST sequence and a different coil configuration.
+On this dataset we obtained a performance of 0.89, close to the inter-observer variability of the
+ground truth segmentations (0.92). Our results show that using intensity augmentation in addition
+to geometric augmentation is a suitable method to overcome the intensity domain shift and we expect
+it to be useful for a wide range of segmentation tasks. 

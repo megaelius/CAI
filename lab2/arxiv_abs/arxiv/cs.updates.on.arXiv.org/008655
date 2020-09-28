@@ -1,0 +1,20 @@
+One of the unresolved questions in the context of deep learning is the triumph of GD based optimization,
+which is guaranteed to converge to one of many local minima. To shed light on the nature of the solutions
+that are thus being discovered, we investigate the ensemble of solutions reached by the same network
+architecture, with different random initialization of weights and random mini-batches. Surprisingly,
+we observe that these solutions are in fact very similar - more often than not, each train and test
+example is either classified correctly by all the networks, or by none at all. Moreover, all the networks
+seem to share the same learning dynamics, whereby initially the same train and test examples are
+incorporated into the learnt model, followed by other examples which are learnt in roughly the same
+order. When different neural network architectures are compared, the same learning dynamics is
+observed even when one architecture is significantly stronger than the other and achieves higher
+accuracy. Finally, when investigating other methods that involve the gradual refinement of a solution,
+such as boosting, once again we see the same learning pattern. In all cases, it appears as if all the
+classifiers start by learning to classify correctly the same train and test examples, while the
+more powerful classifiers continue to learn to classify correctly additional examples. These
+results are incredibly robust, observed for a large variety of architectures, hyperparameters
+and different datasets of images. Thus we observe that different classification solutions may
+be discovered by different means, but typically they evolve in roughly the same manner and demonstrate
+a similar success and failure behavior. For a given dataset, such behavior seems to be strongly correlated
+with effective generalization, while the induced ranking of examples may reflect inherent structure
+in the data. 

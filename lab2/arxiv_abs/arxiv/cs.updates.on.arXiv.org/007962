@@ -1,0 +1,18 @@
+Deep neural networks are usually trained with stochastic gradient descent (SGD), which minimizes
+objective function using very rough approximations of gradient, only averaging to the real gradient.
+Standard approaches like momentum or ADAM only consider a single direction, and do not try to model
+distance from extremum - neglecting valuable information from calculated sequence of gradients,
+often stagnating in some suboptimal plateau. second order methods could exploit these missed opportunities,
+however, beside suffering from very large cost and numerical instabilities, many of them attract
+to suboptimal points like saddles due to negligence of signs of curvatures (as eigenvalues of Hessian).
+Saddle-free Newton method (SFN)~\cite{SFN} is a rare example of addressing this issue - changes
+saddle attraction into repulsion, and was shown to provide essential improvement of final value
+this way. However, it neglects noise while modelling second order behavior, focuses on Krylov subspace
+for numerical reasons, and requires costly eigendecomposion. Maintaining SFN advantages, there
+are suggested ways for exploiting these opportunities. Second order behavior is linear change
+of first order - we can optimally estimate it from sequence of noisy gradients with least square linear
+regression, in online setting here: with weakening weights of old gradients. Statistically relevant
+subspace is suggested by PCA of recent noisy gradients - it online setting it can be made by slowly
+rotating considered directions toward new gradients, gradually replacing old directions with
+recent statistically relevant. Eigendecomposition can be also performed online: with regularly
+performed step of QR method to maintain diagonal Hessian. 

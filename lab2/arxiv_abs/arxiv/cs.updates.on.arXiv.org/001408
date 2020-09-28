@@ -1,0 +1,20 @@
+A minimum path cover of a directed acyclic graph (DAG) is a minimum-cardinality set of paths covering
+all its nodes. It is a fundamental concept in combinatorics and computer science, with various applications
+in both theory (e.g., reachability queries) and practice (e.g., bioinformatics). In this paper
+we study the case when the size $k$ of a minimum path cover is small, which is often the case in practice,
+and make three main contributions: (1) We propose an algorithm for finding a minimum path cover of
+a DAG $(V,E)$ in $O(k|E|\log|V|)$ time, improving all known time-bounds when $k$ is small. An immediate
+consequence is an improved space/time tradeoff for reachability queries in arbitrary directed
+graphs; (2) We introduce a general technique for extending dynamic programming (DP) algorithms
+from sequences to DAGs. This is enabled by our minimum path cover algorithm, and works by mimicking
+the DP algorithm for sequences on each path of the minimum path cover. This technique generally produces
+algorithms that are slower than their counterparts on sequences only by a factor $k$. We illustrate
+this on two classical problems extended to labeled DAGs: longest increasing subsequence and longest
+common subsequence. For the former we obtain an algorithm with running time $O(k|E|\log |V|)$.
+This matches the optimal solution to the classical problem variant when, e.g., the input sequence
+is modeled as a path. We obtain an analogous result for the longest common subsequence problem; (3)
+We also apply this technique to the co-linear chaining problem, which has attracted interest recently
+in bioinformatics. This is a generalization of both of the above two problems. The algorithm for
+this problem turns out to be more involved, needing further ingredients, such as an FM-index tailored
+for large alphabets, and a two-dimensional range search tree modified to support range maximum
+queries. 

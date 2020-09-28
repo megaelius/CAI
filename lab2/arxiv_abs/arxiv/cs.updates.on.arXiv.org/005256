@@ -1,0 +1,19 @@
+A choice dictionary can be initialized with a parameter $n\in\mathbb{N}$ and subsequently maintains
+an initially empty subset $S$ of $\{1,\ldots,n\}$ under insertion, deletion, membership queries
+and an operation $\textit{choice}$ that returns an arbitrary element of $S$. The choice dictionary
+is fundamental in space-efficient computing and has numerous applications. The best previous
+choice dictionary can be initialized with $n$ and $t\in\mathbb{N}$ and subsequently executes
+all operations in $O(t)$ time and occupies $n+O(n({t/w})^t+\log n)$ bits on a word RAM with a word
+length of $w=\Omega(\log n)$ bits. We describe a new choice dictionary that executes all operations
+in constant time and, in addition to the space needed to store the integer $n$, occupies only $n+1$
+bits, which is shown to be optimal if $w=o(n)$. A generalization of the choice dictionary called
+a colored choice dictionary is initialized with $c\in\mathbb{N}$ in addition to $n$ and subsequently
+maintains a semipartition $(S_0,\ldots,S_{c-1})$ of $\{1,\ldots,n\}$ under the operations
+$\textit{setcolor}(j,\ell)$, which moves $\ell$ from its current subset to $S_j$, $\textit{color}(\ell)$,
+which returns the unique $j\in\{0,\ldots,c-1\}$ with $\ell\in S_j$, and $\textit{choice}(j)$,
+which returns an arbitrary element of $S_j$. We describe new colored choice dictionaries that,
+if initialized with constant $c$, execute $\textit{setcolor}$, $\textit{color}$ and $\textit{choice}$
+in constant time and occupy $n\log_2\!c+1$ bits plus the space needed to store $n$ if $c$ is a power
+of 2, and at most $n\log_2\!c+n^\epsilon$ bits in general, for arbitrary fixed $\epsilon>0$. We
+also study the possibility of iterating over the set $S$ or over $S_j$ for given $j\in\{0,\ldots,c-1\}$
+and an application of this to breadth-first search. 

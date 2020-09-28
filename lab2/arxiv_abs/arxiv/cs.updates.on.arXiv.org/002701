@@ -1,0 +1,19 @@
+Aligning sequencing reads on graph representations of genomes is an important ingredient of pan-genomics.
+Such approaches typically find a set of local anchors that indicate plausible matches between substrings
+of a read to subpaths of the graph. These anchor matches are then combined to form a (semi-local) alignment
+of the complete read on a subpath. Co-linear chaining is an algorithmically rigorous approach to
+combine the anchors. It is a well-known approach for the case of two sequences as inputs. Here we extend
+the approach so that one of the inputs can be a directed acyclic graph (DAGs), e.g. a splicing graph
+in transcriptomics or a variant graph in pan-genomics. This extension to DAGs turns out to have a
+tight connection to the minimum path cover problem, asking for a minimum-cardinality set of paths
+that cover all the nodes of a DAG. We study the case when the size $k$ of a minimum path cover is small,
+which is often the case in practice. First, we propose an algorithm for finding a minimum path cover
+of a DAG $(V,E)$ in $O(k|E|\log|V|)$ time, improving all known time-bounds when $k$ is small and
+the DAG is not too dense. Second, we introduce a general technique for extending dynamic programming
+(DP) algorithms from sequences to DAGs. This is enabled by our minimum path cover algorithm, and
+works by mimicking the DP algorithm for sequences on each path of the minimum path cover. This technique
+generally produces algorithms that are slower than their counterparts on sequences only by a factor
+$k$. Our technique can be applied, for example, to the classical longest increasing subsequence
+and longest common subsequence problems, extended to labeled DAGs. Finally, we apply this technique
+to the co-linear chaining problem. We also implemented the new co-linear chaining approach. Experiments
+on splicing graphs show that the new method is efficient also in practice. 

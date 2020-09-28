@@ -1,0 +1,19 @@
+The Massively Parallel Computation (MPC) model is an emerging model which distills core aspects
+of distributed and parallel computation. The aim is to solve (typically graph) problems in systems
+where the input is distributed over many machines with limited space. Recent work has focused on
+the regime in which machines have sublinear memory, with randomized algorithms presented for the
+tasks of Maximal Matching, Maximal Independent Set (MIS) and $(\Delta+1)$-Coloring. However,
+there have been no prior corresponding deterministic algorithms. We introduce a new graph sparsification
+technique that deterministically computes a low-degree subgraph with additional desired properties.
+The degree of the nodes in this subgraph is small in the sense that the edges of each node can be now stored
+on a single machine. Depending on the specific local problem, the low-degree subgraph also has the
+property that solving the problem on this subgraph provides a large global progress. We obtain the
+following deterministic MPC algorithms with $O(n^{\epsilon})$ space on each machine for any constant
+$\epsilon >0$: - We show an $O(\log \Delta+\log\log n)$ communication round algorithms for solving
+maximal matching and MIS, by derandomizing the well-known randomized algorithm of Luby [SICOMP'86].
+Based on the recent work of Ghaffari et al. [FOCS'18], this additive $O(\log\log n)$ factor is conditionally
+essential. These algorithms can also be shown to run in $O(\log \Delta)$ rounds in the closely related
+model of Congested Clique. This improves up on the state-of-the-art bound of $O(\log^2 \Delta)$
+rounds by Censor-Hillel et al. [DISC'17]. - By employing our graph sparsification technique accompanied
+with a palette sparsification, we give a deterministic (deg+1)-list coloring (and thus also a $(\Delta+1)$-coloring)
+algorithm in $O(\log \Delta+\log\log n)$ rounds. 

@@ -1,0 +1,19 @@
+With few exceptions (namely, algorithms for maximal matching, $2$-approximate vertex cover,
+and certain constant-stretch spanners), all known fully dynamic algorithms in general graphs
+require (amortized) $\Omega(\log n)$ update/query time. Showing for the first time that techniques
+from property testing can lead to constant-time fully dynamic graph algorithms we prove the following
+results: (1) We give a fully dynamic (Las-Vegas style) algorithm with constant expected amortized
+time per update that maintains a proper $(\Delta+1)$-vertex coloring of a graph with maximum degree
+at most $\Delta$. This improves upon the previous $O(\log \Delta)$-time algorithm by Bhattacharya
+et al. (SODA 2018). We show that our result does not only have optimal running time, but is also optimal
+in the sense that already deciding whether a $\Delta$-coloring exists in a dynamically changing
+graph with maximum degree at most $\Delta$ takes $\Omega(\log n)$ time per operation. (2) We give
+two fully dynamic algorithms that maintain a $(1+\varepsilon)$-approximation of the weight $M$
+of the minimum spanning forest of a graph $G$ with edges weights in $[1,W]$. Our deterministic algorithm
+takes $O({W^2 \log W}/{\varepsilon^3})$ worst-case time, which is constant if both $W$ and $\varepsilon$
+are constant. This is somewhat surprising as a lower bound by Patrascu and Demaine (SIAM J. Comput.
+2006) shows that it takes $\Omega(\log n)$ time per operation to maintain the exact weight of the
+MSF that holds even for $W=1$. Our randomized (Monte-Carlo style) algorithm works with high probability
+and runs in worst-case $O(\frac{1}{\varepsilon^4}\log^2(\frac{1}{\varepsilon}))$ time if
+$W= O({(m^*)^{1/3}}/{\log^3 n})$, where $m^*$ is the minimum number of edges in the graph throughout
+all the updates. It works even against an adaptive adversary. 

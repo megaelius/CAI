@@ -1,0 +1,18 @@
+We study distributed algorithms for string matching problem in presence of wildcard characters.
+Given a string T (a text), we look for all occurrences of another string P (a pattern) as a substring
+of string T . Each wildcard character in the pattern matches a specific class of strings based on its
+type. String matching is one of the most fundamental problems in computer science, especially in
+the fields of bioinformatics and machine learning. Persistent effort has led to a variety of algorithms
+for the problem since 1960s. With rise of big data and the inevitable demand to solve problems on huge
+data sets, there have been many attempts to adapt classic algorithms into the MPC framework to obtain
+further efficiency. MPC is a recent framework for parallel computation of big data, which is designed
+to capture the MapReduce-like algorithms. In this paper, we study the string matching problem using
+a set of tools translated to MPC model. We consider three types of wildcards in string matching: -
+'?' wildcard: In this setting, the pattern is allowed to contain special '?' characters or don't
+cares that match any character of the text. String matching with don't cares could be solved by fast
+convolutions, and we give a constant round MPC algorithm for which by utilizing FFT in a constant
+number of MPC rounds. - '+' wildcard: '+' wildcard is a special character that allows for arbitrary
+repetitions of a character. When the pattern contains '+' wildcard characters, our algorithm runs
+in a constant number of MPC rounds by a reduction from subset matching problem. - '*' wildcard: '*'
+is a special character that matches with any substring of the text. When '*' is allowed in the pattern,
+we solve two special cases of the problem in logarithmic rounds. 

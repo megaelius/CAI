@@ -1,0 +1,19 @@
+A new scalable ISP level system architecture to secure and protect all IoT devices in a large number
+of homes is presented. The system is based on whitelisting, as in the Manufacturer Usage Description
+(MUD) framework, implemented as a VNF. Unlike common MUD suggestions that place the whitelist application
+at the home/enterprise network, our approach is to place the enforcement upstream at the provider
+network, combining an NFV (Network Function Virtualization) with router/switching filtering
+capabilities, e.g., ACLs. The VNF monitors many home networks simultaneously, and therefore,
+is a highly-scalable managed service solution that provides both the end customers and the ISP with
+excellent visibility and security of the IoT devices at the customer premises. The system includes
+a mechanism to distinguish between flows of different devices at the ISP level despite the fact that
+most home networks (and their IoT devices) are behind a NAT and all the flows from the same home come
+out with the same source IP address. Moreover, the NFV system needs to receive only the first packet
+of each connection at the VNF, and rules space is proportional to the number of unique types of IoT
+devices rather than the number of IoT devices. The monitoring part of the solution is off the critical
+path and can also uniquely protect from incoming DDoS attacks. To cope with internal traffic, that
+is not visible outside the customer premise and often consists of P2P communication, we suggest
+a hybrid approach, where we deploy a lightweight component at the CPE, whose sole purpose is to monitor
+P2P communication. As current MUD solution does not provide a secure solution to P2P communication,
+we also extend the MUD protocol to deal also with peer-to-peer communicating devices. A PoC with
+a large national level ISP proves that our technology works as expected. 

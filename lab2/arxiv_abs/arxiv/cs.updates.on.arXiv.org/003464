@@ -1,0 +1,19 @@
+In the Set Cover problem, the input is a ground set of $n$ elements and a collection of $m$ sets, and
+the goal is to find the smallest sub-collection of sets whose union is the entire ground set. The fastest
+algorithm known runs in time $O(mn2^n)$ [Fomin et al., WG 2004], and the Set Cover Conjecture (SeCoCo)
+[Cygan et al., TALG 2016] asserts that for every fixed $\varepsilon>0$, no algorithm can solve Set
+Cover in time $2^{(1-\varepsilon)n}poly(m)$, even if set sizes are bounded by $\Delta=\Delta(\varepsilon)$.
+We show strong connections between this problem and kTree, a special case of Subgraph Isomorphism
+where the input is an $n$-node graph $G$ and a $k$-node tree $T$, and the goal is to determine whether
+$G$ has a subgraph isomorphic to $T$. First, we propose a weaker conjecture Log-SeCoCo, that allows
+input sets of size $\Delta=O(1/\varepsilon \cdot\log n)$, and show that an algorithm breaking
+Log-SeCoCo would imply a faster algorithm than the currently known $2^n poly(n)$-time algorithm
+[Koutis and Williams, TALG 2016] for Directed nTree, which is kTree with $k=n$ and arbitrary directions
+to the edges of $G$ and $T$. This would also improve the running time for Directed Hamiltonicity,
+for which no algorithm significantly faster than $2^n poly(n)$ is known despite extensive research.
+Second, we prove that if Set Cover cannot be solved significantly faster than $2^npoly(m)$ (an assumption
+even weaker than Log-SeCoCo), then kTree cannot be computed significantly faster than $2^kpoly(n)$,
+the running time of the Koutis and Williams' algorithm. Applying the same techniques to the p-Partial
+Cover problem, a parameterized version of Set Cover that requires covering at least $p$ elements,
+we obtain a new algorithm with running time $(2+\varepsilon)^p (m+n)^{O(1/\varepsilon)}$ for
+arbitrary $\varepsilon>0$, which improves previous work and is nearly optimal assuming say Log-SeCoCo.

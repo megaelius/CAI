@@ -1,0 +1,7 @@
+Hi,
+	Iam looking for information on any work that deals with real-time
+support in X-windows????!!
+	Would be happy if you could provide any pointers or information
+thanks
+Lakshman
+lakshman@ms.uky.edu 

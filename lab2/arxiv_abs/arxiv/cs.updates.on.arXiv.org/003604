@@ -1,0 +1,19 @@
+Deep artificial neural networks (DNNs) are typically trained via gradient-based learning algorithms,
+namely backpropagation. Evolution strategies (ES) can rival backprop-based algorithms such
+as Q-learning and policy gradients on challenging deep reinforcement learning (RL) problems.
+However, ES can be considered a gradient-based algorithm because it performs stochastic gradient
+descent via an operation similar to a finite-difference approximation of the gradient. That raises
+the question of whether non-gradient-based evolutionary algorithms can work at DNN scales. Here
+we demonstrate they can: we evolve the weights of a DNN with a simple, gradient-free, population-based
+genetic algorithm (GA) and it performs well on hard deep RL problems, including Atari and humanoid
+locomotion. The Deep GA successfully evolves networks with over four million free parameters,
+the largest neural networks ever evolved with a traditional evolutionary algorithm. These results
+(1) expand our sense of the scale at which GAs can operate, (2) suggest intriguingly that in some cases
+following the gradient is not the best choice for optimizing performance, and (3) make immediately
+available the multitude of neuroevolution techniques that improve performance. We demonstrate
+the latter by showing that combining DNNs with novelty search, which encourages exploration on
+tasks with deceptive or sparse reward functions, can solve a high-dimensional problem on which
+reward-maximizing algorithms (e.g.\ DQN, A3C, ES, and the GA) fail. Additionally, the Deep GA is
+faster than ES, A3C, and DQN (it can train Atari in ${\raise.17ex\hbox{$\scriptstyle\sim$}}$4
+hours on one desktop or ${\raise.17ex\hbox{$\scriptstyle\sim$}}$1 hour distributed on 720 cores),
+and enables a state-of-the-art, up to 10,000-fold compact encoding technique. 

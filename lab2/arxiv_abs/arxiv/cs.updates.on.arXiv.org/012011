@@ -1,0 +1,18 @@
+Domain Adaptation (DA) transfers a learning model from a labeled source domain to an unlabeled target
+domain which follows different distributions. There are a variety of DA scenarios subject to label
+sets and domain configurations, including closed-set and partial-set DA, as well as multi-source
+and multi-target DA. It is notable that existing DA methods are generally designed only for a specific
+scenario, and may underperform for scenarios they are not tailored to. Towards a versatile DA method,
+a more universal inductive bias other than the domain alignment should be explored. In this paper,
+we delve into a missing piece of existing methods: class confusion, the tendency that a classifier
+confuses the predictions between the correct and ambiguous classes for target examples. We unveil
+that less class confusion explicitly indicates more class discriminability and implicitly implies
+more domain transferability in all the above scenarios. Based on the more universal inductive bias,
+we propose a general loss function: Minimum Class Confusion (MCC). It can be characterized by (1)
+a non-adversarial DA method without explicitly deploying domain alignment, enjoying fast convergence
+speed (about 3x faster than mainstream adversarial methods); (2) a versatile approach that can
+handle Closed-Set, Partial-Set, Multi-Source, and Multi-Target DA, outperforming the state-of-the-art
+methods in these scenarios, especially on the largest and hardest dataset to date (7.25% on DomainNet).
+In addition, it can also be used as a general regularizer that is orthogonal and complementary to
+a variety of existing DA methods, accelerating convergence and pushing those readily competitive
+methods to a stronger level. We will release our code for reproducibility. 

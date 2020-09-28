@@ -1,0 +1,18 @@
+Bandit-style algorithms have been studied extensively in stochastic and adversarial settings.
+Such algorithms have been shown to be useful in multiplayer settings, e.g. to solve the wireless
+network selection problem, which can be formulated as an adversarial bandit problem. A leading
+bandit algorithm for the adversarial setting is EXP3. However, network behavior is often repetitive,
+where user density and network behavior follow regular patterns. Bandit algorithms, like EXP3,
+fail to provide good guarantees for periodic behaviors. A major reason is that these algorithms
+compete against fixed-action policies, which is ineffective in a periodic setting. In this paper,
+we define a periodic bandit setting, and periodic regret as a better performance measure for this
+type of setting. Instead of comparing an algorithm's performance to fixed-action policies, we
+aim to be competitive with policies that play arms under some set of possible periodic patterns $F$
+(for example, all possible periodic functions with periods $1,2,\cdots,P$). We propose Periodic
+EXP4, a computationally efficient variant of the EXP4 algorithm for periodic settings. With $K$
+arms, $T$ time steps, and where each periodic pattern in $F$ is of length at most $P$, we show that the
+periodic regret obtained by Periodic EXP4 is at most $O\big(\sqrt{PKT \log K + KT \log |F|}\big)$.
+We also prove a lower bound of $\Omega\big(\sqrt{PKT + KT \frac{\log |F|}{\log K}} \big)$ for the
+periodic setting, showing that this is optimal within log-factors. As an example, we focus on the
+wireless network selection problem. Through simulation, we show that Periodic EXP4 learns the
+periodic pattern over time, adapts to changes in a dynamic environment, and far outperforms EXP3.

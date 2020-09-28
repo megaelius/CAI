@@ -1,0 +1,20 @@
+The $\chi^2$-principle generalizes the Morozov discrepancy principle (MDP) to the augmented
+residual of the Tikhonov regularized least squares problem. Weighting of the data fidelity by a
+known Gaussian noise distribution on the measured data, when the regularization term is weighted
+by unknown inverse covariance information on the model parameters, the minimum of the Tikhonov
+functional is a random variable following a $\chi^2$-distribution with $m+p-n$ degrees of freedom,
+model matrix $G:$ $m \times n$ and regularizer $L:$ $p\times n$. It is proved that the result holds
+also for $m<n$ when $m+p\ge n$. A Newton root-finding algorithm is used to find the regularization
+parameter $\alpha$ which yields the optimal inverse covariance weighting in the case of a white
+noise assumption on the mapped model data. It is implemented for small-scale problems using the
+generalized singular value decomposition. Numerical results verify the algorithm for the case
+of regularizers approximating zero to second order derivative approximations, contrasted with
+the methods of generalized cross validation and unbiased predictive risk estimation. The inversion
+of underdetermined $2D$ focusing gravity data produces models with non-smooth properties, for
+which typical implementations in this field use the iterative minimum support (MS) stabilizer
+and both regularizer and regularizing parameter are updated each iteration. For a simulated data
+set with noise, the regularization parameter estimation methods for underdetermined data sets
+are used in this iterative framework, also contrasted with the L-curve and MDP. Experiments demonstrate
+efficiency and robustness of the $\chi^2$-principle, moreover the L-curve and MDP are generally
+outperformed. Furthermore, the MS is of general use for the $\chi^2$-principle when implemented
+without the knowledge of a mean value of the model. 

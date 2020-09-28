@@ -1,0 +1,19 @@
+Public key infrastructures (PKIs) are one of the main building blocks for securing communications
+over the Internet. Currently, PKIs are under the control of centralized authorities, which is problematic
+as evidenced by numerous incidents where they have been compromised. The distributed, fault tolerant
+log of transactions provided by blockchains and more recently, smart contract platforms, constitutes
+a powerful tool for the decentralization of PKIs. To verify the validity of identity records, blockchain-based
+identity systems store on chain either all identity records, or, a small (or even constant) sized
+amount of data to verify identity records stored off chain. However, as most of these systems have
+never been implemented, there is little information regarding the practical implications of each
+design's tradeoffs. In this work, we first implement and evaluate the only provably secure, smart
+contract based PKI of [1] on top of Ethereum. This construction incurs constant-sized storage at
+the expense of computational complexity. To explore this tradeoff, we propose and implement a second
+construction which, eliminates the need for trusted setup, preserves the security properties
+of [1] and, as illustrated through our evaluation, is the only version with constant-sized state
+that can be deployed on the live chain of Ethereum. Furthermore, we compare these two systems with
+the simple approach of most prior works, e.g., the Ethereum Name Service, where all identity records
+are stored on the smart contract's state, to illustrate several shortcomings of Ethereum and its
+cost model. We propose several modifications for fine tuning the model, which would be useful to
+be considered for any smart contract platform like Ethereum so that it reaches its full potential
+to support arbitrary distributed applications. 

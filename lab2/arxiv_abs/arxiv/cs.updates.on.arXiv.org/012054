@@ -1,0 +1,17 @@
+Diabetic retinopathy (DR) is a complication of diabetes that severely affects eyes. It can be graded
+into five levels of severity according to international protocol. However, optimizing a grading
+model to have strong generalizability requires a large amount of balanced training data, which
+is difficult to collect particularly for the high severity levels. Typical data augmentation methods,
+including random flipping and rotation, cannot generate data with high diversity. In this paper,
+we propose a diabetic retinopathy generative adversarial network (DR-GAN) to synthesize high-resolution
+fundus images which can be manipulated with arbitrary grading and lesion information. Thus, large-scale
+generated data can be used for more meaningful augmentation to train a DR grading and lesion segmentation
+model. The proposed retina generator is conditioned on the structural and lesion masks, as well
+as adaptive grading vectors sampled from the latent grading space, which can be adopted to control
+the synthesized grading severity. Moreover, a multi-scale spatial and channel attention module
+is devised to improve the generation ability to synthesize details. Multi-scale discriminators
+are designed to operate from large to small receptive fields, and joint adversarial losses are adopted
+to optimize the whole network in an end-to-end manner. With extensive experiments evaluated on
+the EyePACS dataset connected to Kaggle, as well as our private dataset (SKA - will be released once
+get official permission), we validate the effectiveness of our method, which can both synthesize
+highly realistic (1280 x 1280) controllable fundus images and contribute to the DR grading task.

@@ -1,0 +1,18 @@
+Upcoming experiments such as the SKA will provide huge quantities of data. Fast modelling of the
+high-redshift 21cm signal will be crucial for efficiently comparing these data sets with theory.
+The most detailed theoretical predictions currently come from numerical simulations and from
+faster but less accurate semi-numerical simulations. Recently, machine learning techniques
+have been proposed to emulate the behaviour of these semi-numerical simulations with drastically
+reduced time and computing cost. We compare the viability of five such machine learning techniques
+for emulating the 21cm power spectrum of the publicly-available code SimFast21. Our best emulator
+is a multilayer perceptron with three hidden layers, reproducing SimFast21 power spectra $10^8$
+times faster than the simulation with 4% mean squared error averaged across all redshifts and input
+parameters. The other techniques (interpolation, Gaussian processes regression, and support
+vector machine) have slower prediction times and worse prediction accuracy than the multilayer
+perceptron. All our emulators can make predictions at any redshift and scale, which gives more flexible
+predictions but results in significantly worse prediction accuracy at lower redshifts. We then
+present a proof-of-concept technique for mapping between two different simulations, exploiting
+our best emulator's fast prediction speed. We demonstrate this technique to find a mapping between
+SimFast21 and another publicly-available code 21cmFAST. We observe a noticeable offset between
+the simulations for some regions of the input space. Such techniques could potentially be used as
+a bridge between fast semi-numerical simulations and accurate numerical radiative transfer simulations.

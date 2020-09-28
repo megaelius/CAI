@@ -1,0 +1,18 @@
+The k-means++ algorithm due to Arthur and Vassilvitskii has become the most popular seeding method
+for Lloyd's algorithm. It samples the first center uniformly at random from the data set and the other
+$k-1$ centers iteratively according to $D^2$-sampling where the probability that a data point
+becomes the next center is proportional to its squared distance to the closest center chosen so far.
+k-means++ is known to achieve an approximation factor of $O(\log k)$ in expectation. Already in
+the original paper on k-means++, Arthur and Vassilvitskii suggested a variation called greedy
+k-means++ algorithm in which in each iteration multiple possible centers are sampled according
+to $D^2$-sampling and only the one that decreases the objective the most is chosen as a center for
+that iteration. It is stated as an open question whether this also leads to an $O(\log k)$-approximation
+(or even better). We show that this is not the case by presenting a family of instances on which greedy
+k-means++ yields only an $\Omega(\ell\cdot \log k)$-approximation in expectation where $\ell$
+is the number of possible centers that are sampled in each iteration. We also study a variation, which
+we call noisy k-means++ algorithm. In this variation only one center is sampled in every iteration
+but not exactly by $D^2$-sampling anymore. Instead in each iteration an adversary is allowed to
+change the probabilities arising from $D^2$-sampling individually for each point by a factor between
+$1-\epsilon_1$ and $1+\epsilon_2$ for parameters $\epsilon_1 \in [0,1)$ and $\epsilon_2 \ge
+0$. We prove that noisy k-means++ compute an $O(\log^2 k)$-approximation in expectation. We also
+discuss some applications of this result. 

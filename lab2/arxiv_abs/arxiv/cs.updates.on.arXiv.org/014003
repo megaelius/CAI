@@ -1,0 +1,19 @@
+The analog nature of computing in Memristive crossbars poses significant issues due to various
+non-idealities such as: parasitic resistances, non-linear I-V characteristics of the device
+etc. The non-idealities can have a detrimental impact on the functionality i.e. computational
+accuracy of crossbars. Past works have explored modeling the non-idealities using analytical
+techniques. However, several non-idealities have data dependent behavior. This can not be captured
+using analytical (non data-dependent) models thereby, limiting their suitability in predicting
+application accuracy. To address this, we propose a Generalized Approach to Emulating Non-Ideality
+in Memristive Crossbars using Neural Networks (GENIEx), which accurately captures the data-dependent
+nature of non-idealities. We perform extensive HSPICE simulations of crossbars with different
+voltage and conductance combinations. Following that, we train a neural network to learn the transfer
+characteristics of the non-ideal crossbar. Next, we build a functional simulator which includes
+key architectural facets such as \textit{tiling}, and \textit{bit-slicing} to analyze the impact
+of non-idealities on the classification accuracy of large-scale neural networks. We show that
+GENIEx achieves \textit{low} root mean square errors (RMSE) of $0.25$ and $0.7$ for low and high
+voltages, respectively, compared to HSPICE. Additionally, the GENIEx errors are $7\times$ and
+$12.8\times$ better than an analytical model which can only capture the linear non-idealities.
+Further, using the functional simulator and GENIEx, we demonstrate that an analytical model can
+overestimate the degradation in classification accuracy by $\ge 10\%$ on CIFAR-100 and $3.7\%$
+on ImageNet datasets compared to GENIEx. 

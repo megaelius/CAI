@@ -1,0 +1,18 @@
+For service mobile robots to be most effective, it must be possible for non-experts and even end-users
+to program them to do new tasks. Regardless of the programming method (e.g., by demonstration or
+traditional programming), robot task programs are challenging to write, because they rely on multiple
+actions to succeed, including human-robot interactions. Unfortunately, interactions are prone
+to fail, because a human may perform the wrong action (e.g., if the robot's request is not clear).
+Moreover, when the robot cannot directly observe the human action, it may not detect the failure
+until several steps after it occurs. Therefore, writing fault-tolerant robot tasks is beyond the
+ability of non-experts. This paper presents a principled approach to detect and recover from a broad
+class of failures that occur in end-user programs on service mobile robots. We present a two-tiered
+Robot Task Programming Language (RTPL): 1) an expert roboticist uses a specification language
+to write a probabilistic model of the robot's actions and interactions, and 2) a non-expert then
+writes an ordinary sequential program for a particular task. The RTPL runtime system executes the
+task program sequentially, while using the probabilistic model to build a Bayesian network that
+tracks possible, unobserved failures. If an error is observed, RTPL uses Bayesian inference to
+find the likely root cause of the error, and then attempts to re-execute a portion of the program for
+recovery. Our empirical results show that RTPL 1) allows complex tasks to be written concisely,
+2) correctly identifies the root cause of failure, and 3) allows multiple tasks to recover from a
+variety of errors, without task-specific error-recovery code. 

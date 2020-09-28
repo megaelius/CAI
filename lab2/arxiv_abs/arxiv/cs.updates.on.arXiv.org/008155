@@ -1,0 +1,18 @@
+Programmers frequently maintain implicit data invariants, which are relations between different
+data structures in a program. Traditionally, such invariants are manually enforced and checked
+by programmers. This ad-hoc practice is difficult because the programmer must manually account
+for all the locations and configurations that break an invariant. Moreover, implicit invariants
+are brittle under code-evolution: when the invariants and data structures change, the programmer
+must repeat the process of manually repairing all of the code locations where invariants are violated.
+A much better approach is to introduce data invariants as a language feature and rely on language
+support to maintain invariants. To handle this challenge, we introduce Targeted Synthesis, a technique
+for integrating data invariants with invariant-agnostic imperative code at compile-time. This
+technique is nontrivial due to the complex structure of both invariant specifications, as well
+as general imperative code. The key insight is to take a language co-design approach involving both
+the language of data invariants, as well as the imperative language. We leverage this insight to
+produce two high-level results: first, we support a language with iterators without requiring
+general quantified reasoning, and second, we infer complicated invariant-preserving patches.
+We evaluate these claims through a language termed Spyder, a core calculus of data invariants over
+imperative iterator programs. We evaluate the expressiveness and performance of Spyder on a variety
+of programs inspired by web applications, and we find that Spyder efficiently compiles and maintains
+data invariants. 

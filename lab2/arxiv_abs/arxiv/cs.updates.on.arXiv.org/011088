@@ -1,0 +1,17 @@
+Offline Handwritten Signature verification presents a challenging Pattern Recognition problem,
+where only knowledge of the positive class is available for training. While classifiers have access
+to a few genuine signatures for training, during generalization they also need to discriminate
+forgeries. This is particularly challenging for skilled forgeries, where a forger practices imitating
+the user's signature, and often is able to create forgeries visually close to the original signatures.
+Most work in the literature address this issue by training for a surrogate objective: discriminating
+genuine signatures of a user and random forgeries (signatures from other users). In this work, we
+propose a solution for this problem based on meta-learning, where there are two levels of learning:
+a task-level (where a task is to learn a classifier for a given user) and a meta-level (learning across
+tasks). In particular, the meta-learner guides the adaptation (learning) of a classifier for each
+user, which is a lightweight operation that only requires genuine signatures. The meta-learning
+procedure learns what is common for the classification across different users. In a scenario where
+skilled forgeries from a subset of users are available, the meta-learner can guide classifiers
+to be discriminative of skilled forgeries even if the classifiers themselves do not use skilled
+forgeries for learning. Experiments conducted on the GPDS-960 dataset show improved performance
+compared to Writer-Independent systems, and achieve results comparable to state-of-the-art
+Writer-Dependent systems in the regime of few samples per user (5 reference signatures). 

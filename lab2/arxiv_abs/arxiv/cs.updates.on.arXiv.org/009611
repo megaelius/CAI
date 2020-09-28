@@ -1,0 +1,19 @@
+With the proliferation of multi-core hardware, parallel programs have become ubiquitous. These
+programs have their own type of bugs known as concurrency bugs and among them, data race bugs have
+been mostly in the focus of researchers over the past decades. In fact, detecting data races is a very
+challenging and important task. There have been several research paths in this area with many sophisticated
+tools designed and utilized that focus on detecting data race at the file level. In this paper, we
+propose DeepRace, a novel approach toward detecting data races in the source code. We build a deep
+neural network model to find data races instead of creating a data race detector manually. Our model
+uses a one-layer convolutional neural network (CNN) with different window size to find data races
+method. Then we adopt the class activation map function with global average pooling to extract the
+weights of the last convolutional layer and backpropagate it with the input source code to extract
+the line of codes with a data race. Thus, the DeepRace model can detect the data race bugs on a file and
+line of code level. In addition, we noticed that DeepRace successfully detects several buggy lines
+of code at different locations of the file. We tested the model with OpenMP and POSIX source code datasets
+which consist of more than 5000 and 8000 source code files respectively. We were able to successfully
+classify buggy source code files and achieve accuracies ranging from 81% and 86%. We also measured
+the performance of detecting and visualizing the data race at the line of code levels and our model
+achieved promising results. We only had a small number of false positives and false, ranging from
+1 to 10. Furthermore, we used the intersection of union to measure the accuracy of the buggy lines
+of code, our model achieved promising results of 66 percent. 

@@ -1,0 +1,20 @@
+Cloud platforms have emerged as a prominent environment to execute high performance computing
+(HPC) applications providing on-demand resources as well as scalability. They usually offer different
+classes of Virtual Machines (VMs) which ensure different guarantees in terms of availability and
+volatility, provisioning the same resource through multiple pricing models. For instance, in
+Amazon EC2 cloud, the user pays per hour for on-demand VMs while spot VMs are unused instances available
+for lower price. Despite the monetary advantages, a spot VM can be terminated, stopped, or hibernated
+by EC2 at any moment. Using both hibernation-prone spot VMs (for cost sake) and on-demand VMs, we
+propose in this paper a static scheduling for HPC applications which are composed by independent
+tasks (bag-of-task) with deadline constraints. However, if a spot VM hibernates and it does not
+resume within a time which guarantees the application's deadline, a temporal failure takes place.
+Our scheduling, thus, aims at minimizing monetary costs of bag-of-tasks applications in EC2 cloud,
+respecting its deadline and avoiding temporal failures. To this end, our algorithm statically
+creates two scheduling maps: (i) the first one contains, for each task, its starting time and on which
+VM (i.e., an available spot or on-demand VM with the current lowest price) the task should execute;
+(ii) the second one contains, for each task allocated on a VM spot in the first map, its starting time
+and on which on-demand VM it should be executed to meet the application deadline in order to avoid
+temporal failures. The latter will be used whenever the hibernation period of a spot VM exceeds a
+time limit. Performance results from simulation with task execution traces, configuration of
+Amazon EC2 VM classes, and VMs market history confirms the effectiveness of our scheduling and that
+it tolerates temporal failures. 

@@ -1,0 +1,17 @@
+We present an adaptive space-time mesh refinement approach based a domain decomposition approach
+(Singh and Wheeler, 2018) that allows different time-step sizes and mesh refinements in different
+subdomains. Our numerical experiments indicate that non-linear solvers fail to converge, to the
+desired tolerance, due to large non-linear residuals in a smaller subdomain. We exploit this feature
+to identify subdomains where smaller time-step sizes are necessary while using large time-step
+sizes in the rest of the reservoir domain. The three key components of our approach are: (1) a space-time,
+enhanced velocity, domain decomposition approach that allows different mesh refinements and
+time-step sizes in different subdomains while preserving local mass conservation, (2) a residual
+based error estimator to identify or mark regions (or subdomains) that pose non-linear convergence
+issues, and (3) a fully coupled monolithic solver is also presented that solves the coarse and fine
+subdomain problems, both in space and time, simultaneously. This solution scheme is fully implicit
+and is therefore unconditionally stable. The proposed space-time domain decomposition approach,
+with smaller time-step sizes in a subdomain and large time-step sizes everywhere else, circumvents
+the non-linear convergence issue without adding computational costs. Additionally, a space-time
+monolithic solver renders a massively parallel, time concurrent framework for solving flow and
+transport problems in subsurface porous media. Since the proposed approach is similar to the widely
+used finite difference scheme, it can be easily integrated in any existing legacy reservoir simulator.

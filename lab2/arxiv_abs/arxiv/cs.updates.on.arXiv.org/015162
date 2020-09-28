@@ -1,0 +1,18 @@
+We study the problem of computing an approximate maximum cardinality matching in the semi-streaming
+model when edges arrive in a \emph{random} order. In the semi-streaming model, the edges of the input
+graph G = (V,E) are given as a stream e_1, ..., e_m, and the algorithm is allowed to make a single pass
+over this stream while using $O(n \textrm{polylog}(n))$ space ($m = |E|$ and $n = |V|$). If the order
+of edges is adversarial, a simple single-pass greedy algorithm yields a $1/2$-approximation in
+$O(n)$ space; achieving a better approximation in adversarial streams remains an elusive open
+question. A line of recent work shows that one can improve upon the $1/2$-approximation if the edges
+of the stream arrive in a random order. The state of the art for this model is two-fold: Assadi et al.
+[SODA 2019] show how to compute a $2/3(\sim.66)$-approximate matching, but the space requirement
+is $O(n^{1.5} \textrm{polylog}(n))$. Very recently, Farhadi et al. [SODA 2020] presented an algorithm
+with the desired space usage of $O(n \textrm{polylog}(n))$, but a worse approximation ratio of
+$6/11(\sim.545)$, or $3/5(=.6)$ in bipartite graphs. In this paper, we present an algorithm that
+computes a $2/3(\sim.66)$-approximate matching using only $O(n \log(n))$ space, improving upon
+both results above. We also note that for adversarial streams, a lower bound of Kapralov [SODA 2013]
+shows that any algorithm that achieves a $1-1/e(\sim.63)$-approximation requires $(n^{1+\Omega(1/\log\log(n))})$
+space. Our result for random-order streams is the first to go beyond the adversarial-order lower
+bound, thus establishing that computing a maximum matching is provably easier in random-order
+streams. 

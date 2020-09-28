@@ -1,0 +1,19 @@
+Quantum adiabatic optimization (QAO) is performed using a time-dependent Hamiltonian $H(s)$
+with spectral gap $\gamma(s)$. Assuming the existence of an oracle $\Gamma$ such that $\gamma(s)
+= \Theta\left(\Gamma(s)\right)$, we provide an algorithm that reliably performs QAO in time $\mathcal{O}{\gamma_\min^{-1}
+\log(\gamma_\min^{-1})}$ with $\mathcal{O}{\log(\gamma_\min^{-1})}$ oracle queries, where
+$\gamma_\min = \min_s \gamma(s)$. Our strategy is not heuristic and does not require guessing time
+parameters or annealing paths. Rather, our algorithm naturally produces an annealing path such
+that $dH/ds \approx \gamma(s)$ and chooses its own runtime $T$ to be as close as possible to optimal
+while promising convergence to the ground state. We then demonstrate the feasibility of this approach
+in practice by explicitly constructing a gap oracle $\Gamma$ for the problem of finding a vertex
+$m = \mathrm{argmin}_u W(u)$ of the cost function $W:\mathcal{V}\longrightarrow [0,1]$, restricting
+ourselves to computational basis measurements and driving Hamiltonian $H(0)=I - V^{-1}\sum_{u,v
+\in \mathcal{V}}|u\rangle \langle v |$, with $V = |\mathcal{V}|$. Requiring only that $W$ have
+a constant lower bound on its spectral gap and upper bound $\kappa$ on its spectral ratio, our QAO
+algorithm returns $m$ using $\Gamma$ with probability $(1-\epsilon)(1-e^{-1/\epsilon})$ in
+time $\widetilde{\mathcal{O}}(\epsilon^{-1}[\sqrt{V} + (\kappa-1)^{2/3}V^{2/3}])$. This
+achieves a quantum advantage for all $\kappa$, and when $\kappa \approx 1$, recovers Grover scaling
+up to logarithmic factors. We implement the algorithm as a subroutine in an optimization procedure
+that produces $m$ with exponentially small failure probability and expected runtime $\widetilde{\mathcal{O}}(\epsilon^{-1}[\sqrt{V}
++ (\kappa-1)^{2/3}V^{2/3}])$, even when $\kappa$ is not known beforehand. 

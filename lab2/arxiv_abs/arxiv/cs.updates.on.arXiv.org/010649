@@ -1,0 +1,18 @@
+Dynamic spectrum access (DSA) benefits from detection and classification of interference sources
+including in-network users, out-network users, and jammers that may all coexist in a wireless network.
+We present a deep learning based signal (modulation) classification solution in a realistic wireless
+network setting, where 1) signal types may change over time; 2) some signal types may be unknown for
+which there is no training data; 3) signals may be spoofed such as the smart jammers replaying other
+signal types; and 4) different signal types may be superimposed due to the interference from concurrent
+transmissions. For case 1, we apply continual learning and train a Convolutional Neural Network
+(CNN) using an Elastic Weight Consolidation (EWC) based loss. For case 2, we detect unknown signals
+via outlier detection applied to the outputs of convolutional layers using Minimum Covariance
+Determinant (MCD) and k-means clustering methods. For case 3, we extend the CNN structure to capture
+phase shifts due to radio hardware effects to identify the spoofing signal sources. For case 4, we
+apply blind source separation using Independent Component Analysis (ICA) to separate interfering
+signals. We utilize the signal classification results in a distributed scheduling protocol, where
+in-network (secondary) users employ signal classification scores to make channel access decisions
+and share the spectrum with each other while avoiding interference with out-network (primary)
+users and jammers. Compared with benchmark TDMA-based schemes, we show that distributed scheduling
+constructed upon signal classification results provides major improvements to in-network user
+throughput and out-network user success ratio. 

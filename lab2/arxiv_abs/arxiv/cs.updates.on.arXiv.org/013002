@@ -1,0 +1,19 @@
+Reliable global optimization is dedicated to finding a global minimum in the presence of rounding
+errors. The only approaches for achieving a numerical proof of global optimality are interval branch
+and bound methods that interleave branching of the search-space and pruning of the subdomains that
+cannot contain an optimal solution. It is of the utmost importance: i) to compute sharp enclosures
+of the objective function and the constraints on a given subdomain; ii) to find a good approximation
+(an upper bound) of the global minimum. State-of-the-art solvers are generally integrative methods,
+that is they embed local optimization algorithms to compute a good upper bound of the global minimum
+over each subspace. In this document, we propose a cooperative framework in which interval methods
+cooperate with evolutionary algorithms. The latter are stochastic algorithms in which a population
+of candidate solutions iteratively evolves in the search-space to reach satisfactory solutions.
+Evolutionary algorithms, endowed with operators that help individuals escape from local minima,
+are particularly suited for difficult problems on which traditional methods struggle to converge.
+Within our cooperative solver Charibde, the evolutionary algorithm and the interval-based algorithm
+run in parallel and exchange bounds, solutions and search-space via message passing. A novel strategy
+prevents premature convergence toward local minima. A comparison of Charibde with state-of-the-art
+solvers (GlobSol, IBBA, Ibex) on a benchmark of difficult problems shows that Charibde converges
+faster by an order of magnitude. New optimality results are provided for five multimodal problems,
+for which few solutions were available in the literature. Finally, we provide the first numerical
+proof of optimality for the open Lennard-Jones cluster problem with five atoms. 

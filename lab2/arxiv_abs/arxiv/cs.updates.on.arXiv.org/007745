@@ -1,0 +1,17 @@
+A private data federation enables data owners to pool their information for querying without disclosing
+their secret tuples to one another. Here, a client queries the union of the records of all data owners.
+The data owners work together to answer the query using privacy-preserving algorithms that prevent
+them from learning unauthorized information about the inputs of their peers. Only the client, and
+a federation coordinator, learn the query's output. KloakDB is a private data federation that uses
+trusted hardware to process SQL queries over the inputs of two or more parties. Currently private
+data federations compute their queries fully-obliviously, guaranteeing that no information
+is revealed about the sensitive inputs of a data owner to their peers by observing the query's instruction
+traces and memory access patterns. Oblivious querying almost always exacts multiple orders of
+magnitude slowdown in query runtimes compared to plaintext execution, making it impractical for
+many applications. KloakDB offers a semi-oblivious computing framework, $k$-anonymous query
+processing. We make the query's observable transcript $k$-anonymous because it is a popular standard
+for data release in many domains including medicine, educational research, and government data.
+KloakDB's queries run such that each data owner may deduce information about no fewer than $k$ individuals
+in the data of their peers. In addition, stakeholders set $k$, creating a novel trade-off between
+privacy and performance. Our results show that KloakDB enjoys speedups of up to $117$X using k-anonymous
+query processing over full-oblivious evaluation. 

@@ -1,0 +1,18 @@
+Automated 3D pose estimation of satellites and other known space objects is a critical component
+of space situational awareness. Ground-based imagery offers a convenient data source for satellite
+characterization; however, analysis algorithms must contend with atmospheric distortion, variable
+lighting, and unknown reflectance properties. Traditional feature-based pose estimation approaches
+are unable to discover an accurate correlation between a known 3D model and imagery given this challenging
+image environment. This paper presents an innovative method for automated 3D pose estimation of
+known space objects in the absence of satisfactory texture. The proposed approach fits the silhouette
+of a known satellite model to ground-based imagery via particle filtering. Each particle contains
+enough information (orientation, position, scale, model articulation) to generate an accurate
+object silhouette. The silhouette of individual particles is compared to an observed image. Comparison
+is done probabilistically by calculating the joint probability that pixels inside the silhouette
+belong to the foreground distribution and that pixels outside the silhouette belong to the background
+distribution. Both foreground and background distributions are computed by observing empty space.
+The population of particles are resampled at each new image observation, with the probability of
+a particle being resampled proportional to how the particle's silhouette matches the observation
+image. The resampling process maintains multiple pose estimates which is beneficial in preventing
+and escaping local minimums. Experiments were conducted on both commercial imagery and on LEO satellite
+imagery. Imagery from the commercial experiments are shown in this paper. 

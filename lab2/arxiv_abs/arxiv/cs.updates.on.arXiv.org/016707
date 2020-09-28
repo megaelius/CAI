@@ -1,0 +1,18 @@
+Face detection from low-light images is challenging due to limited photos and inevitable noise,
+which, to make the task even harder, are often spatially unevenly distributed. A natural solution
+is to borrow the idea from multi-exposure, which captures multiple shots to obtain well-exposed
+images under challenging conditions. High-quality implementation/approximation of multi-exposure
+from a single image is however nontrivial. Fortunately, as shown in this paper, neither is such high-quality
+necessary since our task is face detection rather than image enhancement. Specifically, we propose
+a novel Recurrent Exposure Generation (REG) module and couple it seamlessly with a Multi-Exposure
+Detection (MED) module, and thus significantly improve face detection performance by effectively
+inhibiting non-uniform illumination and noise issues. REG produces progressively and efficiently
+intermediate images corresponding to various exposure settings, and such pseudo-exposures are
+then fused by MED to detect faces across different lighting conditions. The proposed method, named
+REGDet, is the first `detection-with-enhancement' framework for low-light face detection. It
+not only encourages rich interaction and feature fusion across different illumination levels,
+but also enables effective end-to-end learning of the REG component to be better tailored for face
+detection. Moreover, as clearly shown in our experiments, REG can be flexibly coupled with different
+face detectors without extra low/normal-light image pairs for training. We tested REGDet on the
+DARK FACE low-light face benchmark with thorough ablation study, where REGDet outperforms previous
+state-of-the-arts by a significant margin, with only negligible extra parameters. 

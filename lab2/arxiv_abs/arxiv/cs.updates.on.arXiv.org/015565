@@ -1,0 +1,19 @@
+Recently exposed vulnerabilities reveal the necessity to improve the security of branch predictors.
+Branch predictors record history about the execution of different programs, and such information
+from different processes are stored in the same structure and thus accessible to each other. This
+leaves the attackers with the opportunities for malicious training and malicious perception.
+Instead of flush-based or physical isolation of hardware resources, we want to achieve isolation
+of the content in these hardware tables with some lightweight processing using randomization as
+follows. (1) Content encoding. We propose to use hardware-based thread-private random numbers
+to encode the contents of the branch predictor tables (both direction and destination histories)
+which we call XOR-BP. Specifically, the data is encoded by XOR operation with the key before written
+in the table and decoded after read from the table. Such a mechanism obfuscates the information adding
+difficulties to cross-process or cross-privilege level analysis and perception. It achieves
+a similar effect of logical isolation but adds little in terms of space or time overheads. (2) Index
+encoding. We propose a randomized index mechanism of the branch predictor (Noisy-XOR-BP). Similar
+to the XOR-BP, another thread-private random number is used together with the branch instruction
+address as the input to compute the index of the branch predictor. This randomized indexing mechanism
+disrupts the correspondence between the branch instruction address and the branch predictor entry,
+thus increases the noise for malicious perception attacks. Our analyses using an FPGA-based RISC-V
+processor prototype and additional auxiliary simulations suggest that the proposed mechanisms
+incur a very small performance cost while providing strong protection. 

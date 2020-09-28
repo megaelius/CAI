@@ -1,0 +1,18 @@
+With the advent of deep generative models in computational chemistry, in silico anticancer drug
+design has undergone an unprecedented transformation. While state-of-the-art deep learning
+approaches have shown potential in generating compounds with desired chemical properties, they
+disregard the genetic profile and properties of the target disease. Here, we introduce the first
+generative model capable of tailoring anticancer compounds for a specific biomolecular profile.
+Using a RL framework, the transcriptomic profiles of cancer cells are used as a context for the generation
+of candidate molecules. Our molecule generator combines two separately pretrained variational
+autoencoders (VAEs) - the first VAE encodes transcriptomic profiles into a smooth, latent space
+which in turn is used to condition a second VAE to generate novel molecular structures on the given
+transcriptomic profile. The generative process is optimized through PaccMann, a previously developed
+drug sensitivity prediction model to obtain effective anticancer compounds for the given context
+(i.e., transcriptomic profile). We demonstrate how the molecule generation can be biased towards
+compounds with high predicted inhibitory effect against individual cell lines or specific cancer
+sites. We verify our approach by investigating candidate drugs generated against specific cancer
+types and find the highest structural similarity to existing compounds with known efficacy against
+these cancer types. We envision our approach to transform in silico anticancer drug design by leveraging
+the biomolecular characteristics of the disease in order to increase success rates in lead compound
+discovery. 

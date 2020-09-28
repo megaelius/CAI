@@ -1,0 +1,19 @@
+Network embedding aims to learn a latent, low-dimensional vector representations of network nodes,
+effective in supporting various network analytic tasks. While prior arts on network embedding
+focus primarily on preserving network topology structure to learn node representations, recently
+proposed attributed network embedding algorithms attempt to integrate rich node content information
+with network topological structure for enhancing the quality of network embedding. In reality,
+networks often have sparse content, incomplete node attributes, as well as the discrepancy between
+node attribute feature space and network structure space, which severely deteriorates the performance
+of existing methods. In this paper, we propose a unified framework for attributed network embedding-attri2vec-that
+learns node embeddings by discovering a latent node attribute subspace via a network structure
+guided transformation performed on the original attribute space. The resultant latent subspace
+can respect network structure in a more consistent way towards learning high-quality node representations.
+We formulate an optimization problem which is solved by an efficient stochastic gradient descent
+algorithm, with linear time complexity to the number of nodes. We investigate a series of linear
+and non-linear transformations performed on node attributes and empirically validate their effectiveness
+on various types of networks. Another advantage of attri2vec is its ability to solve out-of-sample
+problems, where embeddings of new coming nodes can be inferred from their node attributes through
+the learned mapping function. Experiments on various types of networks confirm that attri2vec
+is superior to state-of-the-art baselines for node classification, node clustering, as well as
+out-of-sample link prediction tasks. The source code of this paper is available at https://github.com/daokunzhang/attri2vec.

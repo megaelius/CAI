@@ -1,0 +1,17 @@
+The newly proposed panoptic segmentation task, which aims to encompass the tasks of instance segmentation
+(for things) and semantic segmentation (for stuff), is an essential step toward real-world vision
+systems and has attracted a lot of attention in the vision community. Recently, several works have
+been proposed for this task. Most of them focused on unifying two tasks by sharing the backbone but
+ignored to highlight the significance of fully interweaving features between tasks, such as providing
+the spatial context of objects to both semantic and instance segmentation. However, being well
+aware of locations of objects is fundamental to many vision tasks, e.g., object detection, instance
+segmentation, semantic segmentation. In this paper, we propose object spatial information flows,
+which can bridge all tasks together by delivering the spatial context from the box regression task
+to others. Based on these flows, we present a location-aware and unified framework for panoptic
+segmentation, {\em SpatialFlow}. The spatial information flows in {\em SpatialFlow} can provide
+clues for segmenting both things and stuff and help networks better understand the whole image.
+Moreover, instead of endowing Mask R-CNN with a stuff segmentation branch on a shared backbone,
+we design four parallel sub-networks for sub-tasks, which facilitate the feature integration
+among different tasks. We perform a detail ablation study on MS-COCO and Cityscapes panoptic benchmarks.
+Extensive experiments show that SpatialFlow achieves state-of-the-art results and can boost
+the performance of things and stuff segmentation at the same time. 

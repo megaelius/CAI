@@ -1,0 +1,19 @@
+Land cover maps are a vital input variable to many types of environmental research and management.
+While they can be produced automatically by machine learning techniques, these techniques require
+substantial training data to achieve high levels of accuracy, which are not always available. One
+technique researchers use when labelled training data are scarce is domain adaptation (DA) -- where
+data from an alternate region, known as the source domain, are used to train a classifier and this
+model is adapted to map the study region, or target domain. The scenario we address in this paper is
+known as semi-supervised DA, where some labelled samples are available in the target domain. In
+this paper we present Sourcerer, a Bayesian-inspired, deep learning-based, semi-supervised
+DA technique for producing land cover maps from SITS data. The technique takes a convolutional neural
+network trained on a source domain and then trains further on the available target domain with a novel
+regularizer applied to the model weights. The regularizer adjusts the degree to which the model
+is modified to fit the target data, limiting the degree of change when the target data are few in number
+and increasing it as target data quantity increases. Our experiments on Sentinel-2 time series
+images compare Sourcerer with two state-of-the-art semi-supervised domain adaptation techniques
+and four baseline models. We show that on two different source-target domain pairings Sourcerer
+outperforms all other methods for any quantity of labelled target data available. In fact, the results
+on the more difficult target domain show that the starting accuracy of Sourcerer (when no labelled
+target data are available), 74.2%, is greater than the next-best state-of-the-art method trained
+on 20,000 labelled target instances. 

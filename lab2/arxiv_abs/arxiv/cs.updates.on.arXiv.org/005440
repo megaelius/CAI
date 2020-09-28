@@ -1,0 +1,17 @@
+Depth prediction is one of the fundamental problems in computer vision. In this paper, we propose
+a simple yet effective convolutional spatial propagation network (CSPN) to learn the affinity
+matrix for various depth estimation tasks. Specifically, it is an efficient linear propagation
+model, in which the propagation is performed with a manner of recurrent convolutional operation,
+and the affinity among neighboring pixels is learned through a deep convolutional neural network
+(CNN). We can append this module to any output from a state-of-the-art (SOTA) depth estimation networks
+to improve their performances. In practice, we further extend CSPN in two aspects: 1) take sparse
+depth map as additional input, which is useful for the task of depth completion; 2) similar to commonly
+used 3D convolution operation in CNNs, we propose 3D CSPN to handle features with one additional
+dimension, which is effective in the task of stereo matching using 3D cost volume. For the tasks of
+sparse to dense, a.k.a depth completion. We experimented the proposed CPSN conjunct algorithms
+over the popular NYU v2 and KITTI datasets, where we show that our proposed algorithms not only produce
+high quality (e.g., 30% more reduction in depth error), but also run faster (e.g., 2 to 5x faster)
+than previous SOTA spatial propagation network. We also evaluated our stereo matching algorithm
+on the Scene Flow and KITTI Stereo datasets, and rank 1st on both the KITTI Stereo 2012 and 2015 benchmarks,
+which demonstrates the effectiveness of the proposed module. The code of CSPN proposed in this work
+will be released at https://github.com/XinJCheng/CSPN. 

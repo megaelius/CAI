@@ -1,0 +1,19 @@
+Subject categories of scholarly papers generally refer to the knowledge domain(s) to which the
+papers belong, examples being computer science or physics. Subject category information can be
+used for building faceted search for digital library search engines. This can significantly assist
+users in narrowing down their search space of relevant documents. Unfortunately, many academic
+papers do not have such information as part of their metadata. Existing methods for solving this
+task usually focus on unsupervised learning that often relies on citation networks. However, a
+complete list of papers citing the current paper may not be readily available. In particular, new
+papers that have few or no citations cannot be classified using such methods. Here, we propose a deep
+attentive neural network (DANN) that classifies scholarly papers using only their abstracts.
+The network is trained using 9 million abstracts from Web of Science (WoS). We also use the WoS schema
+that covers 104 subject categories. The proposed network consists of two bi-directional recurrent
+neural networks followed by an attention layer. We compare our model against baselines by varying
+the architecture and text representation. Our best model achieves micro-F1 measure of 0.76 with
+F1 of individual subject categories ranging from 0.50-0.95. The results showed the importance
+of retraining word embedding models to maximize the vocabulary overlap and the effectiveness of
+the attention mechanism. The combination of word vectors with TFIDF outperforms character and
+sentence level embedding models. We discuss imbalanced samples and overlapping categories and
+suggest possible strategies for mitigation. We also determine the subject category distribution
+in CiteSeerX by classifying a random sample of one million academic papers. 

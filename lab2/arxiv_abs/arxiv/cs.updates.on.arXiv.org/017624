@@ -1,0 +1,20 @@
+Graph mining tasks, which focus on extracting structural information from subgraphs, are gaining
+increasing attention recently. While the performance of recent systems---Arabesque, RStream,
+AutoMine, GraphZero, Pangolin and Peregrine---have been improved significantly over time, e.g.,
+Peregrine can be up to 1317x and 2016x faster than Arabesque and RStream, all current systems treat
+each pattern to be mined as a whole. Since the computation cost could increase rapidly as the pattern
+size grows, the key obstacle is the size of patterns a system can handle, e.g., Automine fails to mine
+all 6-motif patterns within one week on a small graph with 7k vertices. To overcome the challenge,
+this paper takes a drastically different approach focusing on reducing pattern size. We present
+DwarvesGraph, the first graph mining system based on pattern decomposition, which first decomposes
+the target pattern into several sub-patterns, and then computes the count of each. The results of
+the target pattern can be calculated using the sub-pattern counts with very low additional cost.
+Although decomposition-based algorithms have been studied for years, this paper addresses several
+key system challenges. Specifically, we propose: 1) an efficient search method to jointly determine
+the decomposition of all concrete patterns of an application, considering the computation cost
+and cross-pattern computation reuse; 2) the partial symmetry breaking technique to eliminate
+redundant enumeration for each sub-pattern while preserving equivalence of computation semantics;
+and 3) a decomposition-centric programming model with efficient supports for pattern existence
+query and advanced graph mining applications such as FSM. Our extensive experiments show that DwarvesGraph
+is orders of magnitude faster than all existing state-of-the-art systems and capable of mining
+large patterns that none of them can handle. 

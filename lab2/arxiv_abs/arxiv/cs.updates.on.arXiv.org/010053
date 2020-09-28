@@ -1,0 +1,18 @@
+ARM TrustZone technology is widely used to provide Trusted Execution Environments (TEE) for mobile
+devices. However, most TEE OSes are implemented as monolithic kernels. In such designs, device
+drivers, kernel services and kernel modules all run in the kernel, which results in large size of
+the kernel. It is difficult to guarantee that all components of the kernel have no security vulnerabilities
+in the monolithic kernel architecture, such as the integer overflow vulnerability in Qualcomm
+QSEE TrustZone and the TZDriver vulnerability in HUAWEI Hisilicon TEE architecture. This paper
+presents MicroTEE, a TEE OS based on the microkernel architecture. In MicroTEE, the microkernel
+provides strong isolation for TEE OS's basic services, such as crypto service and platform key management
+service. The kernel is only responsible for providing core services such as address space management,
+thread management, and inter-process communication. Other fundamental services, such as crypto
+service and platform key management service are implemented as applications at the user layer.
+Crypto Services and Key Management are used to provide Trusted Applications (TAs) with sensitive
+information encryption, data signing, and platform attestation functions. Our design avoids
+the compromise of the whole TEE OS if only one kernel service is vulnerable. A monitor has also been
+added to perform the switch between the secure world and the normal world. Finally, we implemented
+a MicroTEE prototype on the Freescale i.MX6Q Sabre Lite development board and tested its performance.
+Evaluation results show that the performance of cryptographic operations in MicroTEE is better
+than it in Linux when the size of data is small. 

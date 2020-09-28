@@ -1,0 +1,17 @@
+Many real-world data sets, especially in biology, are produced by complex nonlinear dynamical
+systems. In this paper, we focus on brain calcium imaging (CaI) of different organisms (zebrafish
+and rat), aiming to build a model of joint activation dynamics in large neuronal populations, including
+the whole brain of zebrafish. We propose a new approach for capturing dynamics of temporal SVD components
+that uses the coupled (multivariate) van der Pol (VDP) oscillator, a nonlinear ordinary differential
+equation (ODE) model describing neural activity, with a new parameter estimation technique that
+combines variable projection optimization and stochastic search. We show that the approach successfully
+handles nonlinearities and hidden state variables in the coupled VDP. The approach is accurate,
+achieving 0.82 to 0.94 correlation between the actual and model-generated components, and interpretable,
+as VDP's coupling matrix reveals anatomically meaningful positive (excitatory) and negative
+(inhibitory) interactions across different brain subsystems corresponding to spatial SVD components.
+Moreover, VDP is comparable to (or sometimes better than) recurrent neural networks (LSTM) for
+(short-term) prediction of future brain activity; VDP needs less parameters to train, which was
+a plus on our small training data. Finally, the overall best predictive method, greatly outperforming
+both VDP and LSTM in short- and long-term predictive settings on both datasets, was the new hybrid
+VDP-LSTM approach that used VDP to simulate large domain-specific dataset for LSTM pretraining;
+note that simple LSTM data-augmentation via noisy versions of training data was much less effective.

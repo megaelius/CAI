@@ -1,0 +1,20 @@
+The most prevalent notions of fairness in machine learning are statistical definitions: they fix
+a small collection of pre-defined subgroups, and then ask for parity of some statistic of the classifier
+across these subgroups. Constraints of this form are susceptible to (intentional or inadvertent)
+fairness gerrymandering, in which a classifier appears to be fair on each individual subgroup,
+but badly violates the fairness constraint on one or more structured subgroups defined over the
+protected attributes. We propose instead to demand statistical notions of fairness across exponentially
+(or infinitely) many subgroups, defined by a structured class of functions over the protected attributes.
+This interpolates between statistical definitions of fairness, and recently proposed individual
+notions of fairness, but it raises several computational challenges. It is no longer clear how to
+even audit a fixed classifier to see if it satisfies such a strong definition of fairness. We prove
+that the computational problem of auditing subgroup fairness for both equality of false positive
+rates and statistical parity is equivalent to the problem of weak agnostic learning --- which means
+it is computationally hard in the worst case, even for simple structured subclasses. However, it
+also suggests that common heuristics for learning can be applied to successfully solve the auditing
+problem in practice. We then derive an algorithm that provably converges to the best fair distribution
+over classifiers in a given class, given access to oracles which can solve the agnostic learning
+and auditing problems. The algorithm is based on a formulation of subgroup fairness as fictitious
+play in a two-player zero-sum game between a Learner and an Auditor. We implement our algorithm using
+linear regression as a heuristic oracle, and show that we can effectively both audit and learn fair
+classifiers on real datasets. 

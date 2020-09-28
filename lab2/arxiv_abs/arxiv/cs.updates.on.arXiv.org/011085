@@ -1,0 +1,20 @@
+Maintaining a resilient computer network is a delicate task with conflicting priorities. Flows
+should be served while controlling risk due to attackers. Configuration is time intensive and largely
+static until a major new vulnerability forces change. Tools exist to check network reachability
+(Khurshid et al., NSDI 2013) and risk using (probabilistic) attack graphs (Sheyner et al., IEEE
+S\&P 2002). However, these tools are not designed to fashion configurations that simultaneously
+satisfy multiple properties. We introduce FASHION: a linear optimizer that fashions network configurations
+that balance functionality and security requirements. FASHION formalizes functionality as a
+multi-commodity flow problem with side-constraints. FASHION's primary technical contribution
+is formulating an approximation of network risk that can be solved using a binary integer program.
+The approximation linearly combines two measures. One measure is the impact of the set of nodes the
+attacker can reach in the attack graph (ignoring probability). The second is the maximum probability
+path in the attack graph. FASHION is evaluated on data center networks. The evaluation synthesizes
+attack graphs on the fat tree topology with up to 128 hosts and 81 network devices. FASHION usually
+outputs a solution in under 10 minutes, allowing response to short term changes in functionality
+or security. Solutions are monotonic for all observed experiments: as one increases weight on the
+security objective, the actual risk, as evaluated by a probabilistic attack graph analysis, never
+increases. FASHION outputs a set of software-defined networking rules consumable by a Frenetic
+controller (Foster et al., ICFP 2011). FASHION allows an enterprise to automatically reconfigure
+their network upon a change in functionality (shift in user demand) or security (publication or
+patching of a vulnerability). 

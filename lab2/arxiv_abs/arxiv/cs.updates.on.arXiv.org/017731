@@ -1,0 +1,19 @@
+This article introduces SCALPEL3, a scalable open-source framework for studies involving Large
+Observational Databases (LODs). Its design eases medical observational studies thanks to abstractions
+allowing concept extraction, high-level cohort manipulation, and production of data formats
+compatible with machine learning libraries. SCALPEL3 has successfully been used on the SNDS database
+(see Tuppin et al. (2017)), a huge healthcare claims database that handles the reimbursement of
+almost all French citizens. SCALPEL3 focuses on scalability, easy interactive analysis and helpers
+for data flow analysis to accelerate studies performed on LODs. It consists of three open-source
+libraries based on Apache Spark. SCALPEL-Flattening allows denormalization of the LOD (only SNDS
+for now) by joining tables sequentially in a big table. SCALPEL-Extraction provides fast concept
+extraction from a big table such as the one produced by SCALPEL-Flattening. Finally, SCALPEL-Analysis
+allows interactive cohort manipulations, monitoring statistics of cohort flows and building
+datasets to be used with machine learning libraries. The first two provide a Scala API while the last
+one provides a Python API that can be used in an interactive environment. Our code is available on
+GitHub. SCALPEL3 allowed to extract successfully complex concepts for studies such as Morel et
+al (2017) or studies with 14.5 million patients observed over three years (corresponding to more
+than 15 billion healthcare events and roughly 15 TeraBytes of data) in less than 49 minutes on a small
+15 nodes HDFS cluster. SCALPEL3 provides a sharp interactive control of data processing through
+legible code, which helps to build studies with full reproducibility, leading to improved maintainability
+and audit of studies performed on LODs. 

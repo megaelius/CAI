@@ -1,0 +1,20 @@
+In database-as-a-service platforms, automated verification of query equivalence helps eliminate
+redundant computation across queries (i.e., overlapping sub-queries). State-of-the-art tools
+for automated detection of query equivalence adopt two different approaches. The first technique
+is based on reducing queries to algebraic expressions and proving their equivalence using an algebraic
+theory. The limitations of this approach are threefold. It cannot prove the equivalence of queries
+with significant differences in the attributes of their relational operators. It does not support
+certain widely-used SQL features. Its verification procedure is computationally intensive.
+The second technique is based on deriving the symbolic representation of the queries and proving
+their equivalence using the satisfiability modulo theory. The limitations of this approach are
+twofold. It only proves equivalence of queries under set semantics. It cannot prove the equivalence
+of queries with significant structural differences in their abstract syntax trees. In this paper,
+we present a novel two-stage approach to automated verification of query equivalence that addresses
+the limitations of these individual techniques. The first stage consists of reducing queries to
+a novel algebraic representation and then normalizing the resulting algebraic expressions to
+minimize structural differences. The second stage consists of applying a verification algorithm
+to convert the normalized algebraic expressions to a novel query pair symbolic representation
+and proving their equivalence under bag semantics using satisfiability modulo theory. We implement
+our two-stage approach in SPES. SPES proves the equivalence of a larger set of query pairs (90/232)
+under bag semantics compared to the state-of-the-art tools based on algebraic (30/232) under bag
+semantics and symbolic approaches (67/232) under set semantics. 

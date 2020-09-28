@@ -1,0 +1,19 @@
+In the area of dynamic matching algorithms, the number of changes to the matching per update step,
+or the {recourse bound}, is an important measure of quality. Nevertheless, the worst-case recourse
+bounds of almost all known dynamic approximate matching algorithms are prohibitively large, significantly
+larger than the corresponding update times. In this paper we fill in this gap via a surprisingly simple
+observation: Any dynamic algorithm for maintaining a $\beta$-approximate maximum matching with
+update time $T$, for any $\beta \ge 1$, $T$ and $\epsilon > 0$, can be transformed into an algorithm
+for maintaining a $(\beta(1 +\epsilon))$-approximate maximum matching with update time $T + O(1/\epsilon)$
+and recourse bound $O(1/\epsilon)$. If the original update time $T$ is amortized/worst-case,
+so is the resulting update time $T + O(1/\epsilon)$, while the recourse bound $O(1/\epsilon)$ holds
+in the worst-case. This transformation applies to the fully dynamic setting under edge updates
+and vertex updates. We complement this positive result by showing that, for $\beta = 1+\epsilon$,
+the worst-case recourse bound provided by our transformation is optimal: For any $\epsilon = \Omega(1/n)$,
+maintaining a $(1+\epsilon)$-approximate maximum matching in an $n$-vertex graph requires $\Omega(1/\epsilon)$
+changes to the matching per step, even in the amortized sense and even in the incremental and decremental
+settings. As a corollary, several key dynamic approximate matching algorithms, with low update
+time bounds but poor recourse bounds, are strengthened to achieve near-optimal recourse bounds
+with no loss in the update time. Furthermore, although a direct application of this transformation
+may only hurt the update time, we demonstrate the usefulness of this transformation in achieving
+low update time bounds in some natural settings (where we might not care about recourse bounds).

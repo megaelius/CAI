@@ -1,0 +1,32 @@
+Context: Compilation time is an important factor in the adaptability of a software project. Fast
+recompilation enables cheap experimentation with changes to a project, as those changes can be
+tested quickly. Separate and incremental compilation has been a topic of interest for a long time
+to facilitate fast recompilation. Inquiry: Despite the benefits of an incremental compiler, such
+compilers are usually not the default. This is because incrementalization requires cross-cutting,
+complicated, and error-prone techniques such as dependency tracking, caching, cache invalidation,
+and change detection. Especially in compilers for languages with cross-module definitions and
+integration, correctly and efficiently implementing an incremental compiler can be a challenge.
+Retrofitting incrementality into a compiler is even harder. We address this problem by developing
+a compiler design approach that reuses parts of an existing non-incremental compiler to lower the
+cost of building an incremental compiler. It also gives an intuition into compiling difficult-to-incrementalize
+language features through staging. Approach: We use the compiler design approach presented in
+this paper to develop an incremental compiler for the Stratego term-rewriting language. This language
+has a set of features that at first glance look incompatible with incremental compilation. Therefore,
+we treat Stratego as our critical case to demonstrate the approach on. We show how this approach decomposes
+the original compiler and has a solution to compile Stratego incrementally. The key idea on which
+we build our incremental compiler is to internally use an incremental build system to wire together
+the components we extract from the original compiler. Knowledge: The resulting compiler is already
+in use as a replacement of the original whole-program compiler. We find that the incremental build
+system inside the compiler is a crucial component of our approach. This allows a compiler writer
+to think in multiple steps of compilation, and combine that into a incremental compiler almost effortlessly.
+Normally, separate compilation \`a la C is facilitated by an external build system, where the programmer
+is responsible for managing dependencies between files. We reuse an existing sound and optimal
+incremental build system, and integrate its dependency tracking into the compiler. Grounding:
+The incremental compiler for Stratego is available as an artefact along with this article. We evaluate
+it on a large Stratego project to test its performance. The benchmark replays edits to the Stratego
+project from version control. These benchmarks are part of the artefact, packaged as a virtual machine
+image for easy reproducibility. Importance: Although we demonstrate our design approach on the
+Stratego programming language, we also describe it generally throughout this paper. Many currently
+used programming languages have a compiler that is much slower than necessary. Our design provides
+an approach to change this, by reusing an existing compiler and making it incremental within a reasonable
+amount of time. 

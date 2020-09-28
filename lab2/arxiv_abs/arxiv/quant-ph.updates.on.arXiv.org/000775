@@ -1,0 +1,20 @@
+Here we present a flexible tensor network based simulator for quantum circuits on different topologies,
+including the Google Bristlecone QPU. Our simulator can compute both exact amplitudes, a task essential
+for the verification of the quantum hardware, as well as low-fidelity amplitudes to mimic Noisy
+Intermediate-Scale Quantum (NISQ) devices. While our simulator can be used to compute amplitudes
+of arbitrary quantum circuits, we focus on random quantum circuits (RQCs) [Boixo et al., Nature
+Physics 14] in the range of sizes expected for supremacy experiments. Our simulator enables the
+simulation of sampling on quantum circuits that were out of reach for previous approaches. For instance,
+our simulator is able to output single amplitudes with depth 1+32+1 for the full Bristlecone QPU
+in less than $(f \cdot 4200)$ hours on a single core, where $0<f\leq1$ is the target fidelity, on $2\times20$-core
+Intel Xeon Gold 6148 processors (Skylake). We also estimate that computing $10^6$ amplitudes (with
+fidelity 0.50\%) needed to sample from the full Bristlecone QPU with depth (1+32+1) would require
+about 3.5 days using the NASA Pleiades and Electra supercomputers combined. In addition, we discuss
+the hardness of the classical simulation of RQCs, as well as give evidence for the higher complexity
+in the simulation of Bristlecone topology as compared to other two-dimensional grids with the same
+number of qubits. Our analysis is supported by extensive simulations on NASA HPC clusters Pleiades
+and Electra. For the most computationally demanding simulation we had, namely the simulation of
+a $60$-qubit sub-lattice of Bristlecone, the two HPC clusters combined reached a peak of 20 PFLOPS
+(single precision), that is $64\%$ of their maximum achievable performance. To date, this numerical
+computation is the largest in terms of sustained PFLOPS and number of nodes utilized ever run on NASA
+HPC clusters. 

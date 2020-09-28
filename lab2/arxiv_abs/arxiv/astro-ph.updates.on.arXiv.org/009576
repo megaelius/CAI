@@ -1,0 +1,18 @@
+There is a great need in several areas of astrophysics and space-physics to carry out high order of
+accuracy, divergence-free MHD simulations on spherical meshes. This requires us to pay careful
+attention to the interplay between mesh quality and numerical algorithms. Methods have been designed
+that fundamentally integrate high order isoparametric mappings with the other high accuracy algorithms
+that are needed for divergence-free MHD simulations on geodesic meshes. The goal of this paper is
+to document such algorithms that are implemented in the geodesic mesh version of the RIEMANN code.
+The fluid variables are reconstructed using a special kind of WENO-AO algorithm that integrates
+the mesh geometry into the reconstruction process from the ground-up. A novel divergence-free
+reconstruction strategy for the magnetic field that performs efficiently at all orders, even on
+isoparametrically mapped meshes, is then presented. The MHD equations are evolved in space and
+time using a novel ADER predictor algorithm that is efficiently adapted to the isoparametrically
+mapped geometry. The application of one-dimensional and multidimensional Riemann solvers at
+suitable locations on the mesh then provides the corrector step. The corrector step for the magnetic
+field uses a Yee-type staggering of magnetic fields. This results in a scheme with divergence-free
+update for the magnetic field. The use of ADER enables a one-step update which only requires one messaging
+operation per complete timestep. This is very beneficial for parallel processing. Several accuracy
+tests are presented as are stringent test problems. PetaScale performance is also demonstrated
+on the largest available supercomputers. 

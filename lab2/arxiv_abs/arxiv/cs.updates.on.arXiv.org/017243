@@ -1,0 +1,18 @@
+It is well known that the extension of Watkins' algorithm to general function approximation settings
+is challenging: does the projected Bellman equation have a solution? If so, is the solution useful
+in the sense of generating a good policy? And, if the preceding questions are answered in the affirmative,
+is the algorithm consistent? These questions are unanswered even in the special case of Q-function
+approximations that are linear in the parameter. The challenge seems paradoxical, given the long
+history of convex analytic approaches to dynamic programming. The paper begins with a brief survey
+of linear programming approaches to optimal control, leading to a particular over parameterization
+that lends itself to applications in reinforcement learning. The main conclusions are summarized
+as follows: (i) The new class of convex Q-learning algorithms is introduced based on the convex relaxation
+of the Bellman equation. Convergence is established under general conditions, including a linear
+function approximation for the Q-function. (ii) A batch implementation appears similar to the
+famed DQN algorithm (one engine behind AlphaZero). It is shown that in fact the algorithms are very
+different: while convex Q-learning solves a convex program that approximates the Bellman equation,
+theory for DQN is no stronger than for Watkins' algorithm with function approximation: (a) it is
+shown that both seek solutions to the same fixed point equation, and (b) the ODE approximations for
+the two algorithms coincide, and little is known about the stability of this ODE. These results are
+obtained for deterministic nonlinear systems with total cost criterion. Many extensions are proposed,
+including kernel implementation, and extension to MDP models. 

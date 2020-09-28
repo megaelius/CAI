@@ -1,0 +1,17 @@
+The ability to scale distributed optimization to large node counts has been one of the main enablers
+of recent progress in machine learning. To this end, several techniques have been explored, such
+as asynchronous and decentralized execution--which significantly reduce the impact of communication
+and synchronization, and the ability for nodes to perform several local model updates before communicating--which
+reduces the frequency of communication. In this paper, we show that these techniques, which have
+so far been considered independently, can be jointly leveraged to obtain near-perfect scalability
+for training neural network models via stochastic gradient descent (SGD). We consider a setting
+with minimal coordination: we have a large number of nodes on a communication graph, each with a local
+subset of data, performing independent SGD updates onto their local models. After some number of
+local updates, each node chooses an interaction partner uniformly at random from its neighbors,
+and averages its local model with the neighbor's model. Our first contribution is in proving that,
+even under such a relaxed setting, SGD can still be guaranteed to converge to local minima under standard
+assumptions. The proof improves existing techniques by jointly handling decentralization, asynchrony,
+and local updates, and by bounding their impact. On the practical side, we instantiate this algorithm
+onto a supercomputing environment, and show that it can successfully converge and scale for large-scale
+image classification models, matching or even slightly improving the accuracy of the baseline
+parallel variants. 

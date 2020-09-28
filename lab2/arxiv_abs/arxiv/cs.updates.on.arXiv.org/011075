@@ -1,0 +1,19 @@
+We develop a logic-based framework for formal specification and algorithmic verification of homogeneous
+and dynamic concurrent multi-agent transition systems (HDMAS). Homogeneity means that all agents
+have the same available actions at any given state and the actions have the same effects regardless
+of which agents perform them. The state transitions are therefore determined only by the vector
+of numbers of agents performing each action and are specified symbolically, by means of conditions
+on these numbers definable in Presburger arithmetic. The agents are divided into controllable
+(by the system supervisor/controller) and uncontrollable, representing the environment or adversary.
+Dynamicity means that the numbers of controllable and uncontrollable agents may vary throughout
+the system evolution, possibly at every transition. As a language for formal specification we use
+a suitably extended version of Alternating-time Temporal Logic (ATL), where one can specify properties
+of the type "a coalition of (at least) $n$ controllable agents can ensure against (at most) $m$ uncontrollable
+agents that any possible evolution of the system satisfies a given objective $\varphi$", where
+$\varphi$ is specified again as a formula of that language and each of $n$ and $m$ is either a fixed
+number or a variable that can be quantified over. We provide formal semantics to our logic $\mathcal{L}_{HDMAS}$
+and define normal form of its formulae. We then prove that every formula in $\mathcal{L}_{HDMAS}$
+is equivalent in the finite to one in a normal form and develop an algorithm for global model checking
+of formulae in normal form in finite HDMAS models, which invokes model checking truth of Presburger
+formulae. We establish worst case complexity estimates for the model checking algorithm and illustrate
+it on a running example. 

@@ -1,0 +1,17 @@
+Most of the existing tracking methods based on CNN(convolutional neural networks) are too slow
+for real-time application despite the excellent tracking precision compared with the traditional
+ones. In this paper, a fast dynamic visual tracking algorithm combining CNN based MDNet(Multi-Domain
+Network) and RoIAlign was developed. The major problem of MDNet also lies in the time efficiency.
+Considering the computational complexity of MDNet is mainly caused by the large amount of convolution
+operations and fine-tuning of the network during tracking, a RoIPool layer which could conduct
+the convolution over the whole image instead of each RoI is added to accelerate the convolution and
+a new strategy of fine-tuning the fully-connected layers is used to accelerate the update. With
+RoIPool employed, the computation speed has been increased but the tracking precision has dropped
+simultaneously. RoIPool could lose some positioning precision because it can not handle locations
+represented by floating numbers. So RoIAlign, instead of RoIPool, which can process floating numbers
+of locations by bilinear interpolation has been added to the network. The results show the target
+localization precision has been improved and it hardly increases the computational cost. These
+strategies can accelerate the processing and make it 7x faster than MDNet with very low impact on
+precision and it can run at around 7 fps. The proposed algorithm has been evaluated on two benchmarks:
+OTB100 and VOT2016, on which high precision and speed have been obtained. The influence of the network
+structure and training data are also discussed with experiments. 

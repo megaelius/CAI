@@ -1,0 +1,20 @@
+Dynamic Contrast-Enhanced Magnetic Resonance Imaging (DCE-MRI) is a valuable tool to localize,
+characterize, and evaluate anomalous prostate tissue. Ultrafast gradient-echo acquisitions
+of MRI volumes are generated at regular time intervals while the patient receives a paramagnetic
+contrast agent. The result is a time series where each voxel exhibits a particular behavior of contrast
+uptake (wash-in) and posterior wash-out. In this work, a segmentation method is proposed that groups
+together neighboring voxels with similar contrast wash-out responses, using a variant of the region
+growing GrowCut cellular automaton algorithm, that evolves iteratively according to the relationship
+of a cell to its neighboring cells. Initially, seed cells are determined through morphological
+filters that identify homogeneous regions in the volume that are representatives of the clinically
+relevant types of tissues in the prostate. Each cell is characterized by three parameters: a label
+that identifies the type of tissue in the associated voxel, a vector with the values of the DCE-MRI
+time series, and a strength coefficient with values between 0 and 1 that represents the probability
+with which the cell belongs to its assigned label. Every non-seed cell can modify its state; this
+occurs when each cell is attacked by its neighbors with a strength of attack that is inversely proportional
+to the similarity of the values of the time series between the cells. If the strength of the attacked
+cell is less than the strength of the attack of one of its neighbors, its state changes to the one of
+the attacking cell. The attacked cell also updates its strength making it equal to the strength of
+the attack with which it was conquered. To perform a clinical validation of the resulting segmentations,
+we used various cases from the database of The Cancer Imaging Archive (TCIA), National Cancer Institute
+(NCI). 

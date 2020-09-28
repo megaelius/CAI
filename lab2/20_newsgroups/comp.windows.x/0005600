@@ -1,0 +1,16 @@
+I got the following today from Gary Risebrough and it worked fine:
+Excerpts from mail: 29-Apr-93 Re: ol{v}wm 3 virtual keybo..
+ITO2@aodc.gov.au (554)
+> hi,
+> With regard to :
+> > I have the following lines in my .Xresources:
+> > olwm.KeyboardCommands: Full
+> > olvwm.KeyboardCommands: Full
+> > olwm.GrabVirtualKeys:  true
+> > olvwm.GrabVirtualKeys: true
+> I have :
+> > OpenWindows.KeyboardCommands:   Full
+> > OpenWindows.VirtualGrabKeys :   False
+> which seems to work.
+> Cheers!
+> Gary Riseborough                         Phone :  +61 2 563  gary@AODC.gov.au

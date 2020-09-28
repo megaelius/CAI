@@ -1,0 +1,17 @@
+Modelling radar wave propagation in frequency domain is appealing in full waveform inversion because
+it allows decreasing the non-linearity of the problem, decreasing the dimension of the data space,
+better description of attenuation, and handling efficiently multiple sources. Besides, performing
+2.5D modelling is interesting when physical properties can be assumed invariant in one horizontal
+dimension because it allows reducing drastically computation requirements compared to the 3D
+case. In 2.5D, finite-difference methods can be used to propagate the wave in two directions in space
+and a spatial Fourier transform is performed in the third direction to get a full three dimensional
+solution. With a simple central finite-difference implementation, second order accuracy in space
+is obtained and up to twenty grid points per wavelength are necessary to accurately simulate electromagnetic
+waves. Such a large number of grid points will impact on the storage requirement associated with
+frequency domain modelling. We propose a high accuracy algorithm to solve the frequency domain
+electromagnetic wave equation by finite-differences in 2.5D. The algorithm relies on a nine-point
+stencil to build weighted-averaging numerical operators. The weights are chosen to minimize numerical
+dispersion and anisotropy, which allows relaxing the requirements on grid cell size and thus decreases
+computational costs by a factor of about 3.6 compared to the central finite-difference method.
+This new algorithm reduces the numerical error without increasing the numerical bandwidth of the
+matrix system to solve, and can be easily transposed to 3D frequency domain modelling. 

@@ -1,0 +1,19 @@
+Generative Adversarial Networks (GANs) are one of the most recent deep learning models that generate
+synthetic data from limited genuine datasets. GANs are on the frontier as further extension of deep
+learning into many domains (e.g., medicine, robotics, content synthesis) requires massive sets
+of labeled data that is generally either unavailable or prohibitively costly to collect. Although
+GANs are gaining prominence in various fields, there are no accelerators for these new models. In
+fact, GANs leverage a new operator, called transposed convolution, that exposes unique challenges
+for hardware acceleration. This operator first inserts zeros within the multidimensional input,
+then convolves a kernel over this expanded array to add information to the embedded zeros. Even though
+there is a convolution stage in this operator, the inserted zeros lead to underutilization of the
+compute resources when a conventional convolution accelerator is employed. We propose the GANAX
+architecture to alleviate the sources of inefficiency associated with the acceleration of GANs
+using conventional convolution accelerators, making the first GAN accelerator design possible.
+We propose a reorganization of the output computations to allocate compute rows with similar patterns
+of zeros to adjacent processing engines, which also avoids inconsequential multiply-adds on the
+zeros. This compulsory adjacency reclaims data reuse across these neighboring processing engines,
+which had otherwise diminished due to the inserted zeros. The reordering breaks the full SIMD execution
+model, which is prominent in convolution accelerators. Therefore, we propose a unified MIMD-SIMD
+design for GANAX that leverages repeated patterns in the computation to create distinct microprograms
+that execute concurrently in SIMD mode. 

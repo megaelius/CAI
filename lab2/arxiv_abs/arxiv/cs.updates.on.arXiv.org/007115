@@ -1,0 +1,18 @@
+We combine two recent lines of research on sublinear clustering to significantly increase the efficiency
+in the training of large-scale Gaussian mixture models (GMMs). First, we use a novel truncated variational
+EM approach for GMMs with isotropic Gaussians in order to increase clustering efficiency for large
+$C$ (many clusters). Second, we use recent coreset approaches to increase clustering efficiency
+for large $N$ (many data points). In order to derive a novel accelerated algorithm, we first show
+analytically how variational EM and coreset objectives can be merged to give rise to a new, combined
+clustering objective. Each iteration of the novel algorithm derived from this merged objective
+is then shown to have a run-time cost of $\mathcal{O}(N' G^2 D)$ per iteration, where $N'<N$ is the
+coreset size and $G^2<C$ is a constant related to the extent of local cluster neighborhoods. While
+the approach strongly reduces the number of distance evaluations per EM iteration, we observe the
+iterations to maintain a very effective increase of the clustering objective. In a series of numerical
+experiments, we use efficient seeding for initialization and measure the net computational demand
+of the merged approach in comparison to other recent approaches. For standard benchmarks which
+evaluate the trade-off between values of the clustering objective and clustering efficiency,
+the merged approach significantly improves the state-of-the-art. Depending on the data set and
+number of clusters, we observe several times (and up to an order of magnitude) faster execution times
+to reach the same quantization errors compared to the best recent approaches such as highly efficient
+coreset-based $k$-means. 

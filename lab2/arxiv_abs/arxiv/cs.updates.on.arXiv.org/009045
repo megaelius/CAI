@@ -1,0 +1,19 @@
+A shallow model commonly appears in machine learning and signal processing. Whether it is parametric
+or non-parametric, a shallow model is formulated as the integration of feature maps against an unknown
+\emph{parameter distribution}, or a complex-valued measure. As is often the case with neural networks,
+if a model is parameterized in vectors, the parameter dimension needs to be manually determined
+by model selection; and the gradient descent training often results in a non-convex optimization
+problem, even when the loss function is convex. On the other hand, if the model is re-parameterized
+in measures, the parameter dimension can be automatically determined; and the training is convex
+when the loss function is convex. Therefore, it is natural to consider training the parameter distribution.
+However, handling a measure is difficult in practice because (1) we need a finite sum of point masses,
+and (2) the parameterization is not always unique. In other words, two different parameter distributions
+may indicate the same function. For example, kernels on the input space, priors on the parameter
+space, and random feature methods are too weak to handle point masses, because they turn point masses
+into smooth functions. On the other hand, versatile topologies for measures such as the total variation
+and the Wasserstein distance are too strong when the parameterization is not unique. Namely, these
+topologies unnecessarily distinguish two measures that indicate the same function, which causes
+another non-convexity. To address these difficulties, we investigate the \emph{generalized
+kernel quadrature} for handling complex-valued point masses; and propose to employ \emph{unitary
+kernel embedding} for killing non-uniqueness. The proposed method converges in $L^2$-norm at
+Barron's theoretical fast ratio. 

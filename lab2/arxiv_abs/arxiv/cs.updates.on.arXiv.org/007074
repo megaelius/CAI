@@ -1,0 +1,18 @@
+In Software-Defined Networking (SDN), network applications use the logically centralized network
+view provided by the controller to remotely orchestrate the network switches. To avoid the controller
+being a single point of failure, traditional fault-tolerance techniques are employed to guarantee
+availability, a fundamental requirement in production environments. Unfortunately, these techniques
+fall short of ensuring correct network behaviour under controller failures. The problem of these
+techniques is that they deal with only part of the problem: guaranteeing that application and controller
+state remains consistent between replicas. However, in an SDN the switches maintain hard state
+that must also be handled consistently. Fault-tolerant SDN must therefore include switch state
+into the problem. A recently proposed fault-tolerant controller platform, Ravana, solves this
+problem by extending fault-tolerant SDN control with mechanisms that guarantee control messages
+to be processed transactionally and exactly once, at both the controllers and the switches. These
+guarantees are given even in the face of controller and switch crashes. The elegance of this solution
+comes at a cost. Ravana requires switches to be modified and OpenFlow to be extended with hitherto
+unforeseen additions to the protocol. In face of this challenge we propose Rama, a fault-tolerant
+SDN controller platform that offers the same strong guarantees as Ravana without requiring modifications
+to switches or to the OpenFlow protocol. Experiments with our prototype implementation show the
+additional overhead to be modest, making Rama the first fault-tolerant SDN solution that can be
+immediately deployable. 

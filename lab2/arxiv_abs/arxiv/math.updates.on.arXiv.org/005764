@@ -1,0 +1,19 @@
+One of the most studied problems in machine learning is finding reasonable constraints that guarantee
+the generalization of a learning algorithm. These constraints are usually expressed as some simplicity
+assumptions on the target. For instance, in the Vapnik-Chervonenkis (VC) theory the space of possible
+hypotheses is considered to have a limited VC dimension. In this paper, the constraint on the entropy
+$H(X)$ of the input variable $X$ is studied as a simplicity assumption. It is proven that the sample
+complexity to achieve an $\epsilon$-$\delta$ Probably Approximately Correct (PAC) hypothesis
+is bounded by $\frac{2^{ \left.6H(X)\middle/\epsilon\right.}+\log{\frac{1}{\delta}}}{\epsilon^2}$
+which is sharp up to the $\frac{1}{\epsilon^2}$ factor. Morever, it is shown that if a feature learning
+process is employed to learn the compressed representation from the dataset, this bound no longer
+exists. These findings have important implications on the Information Bottleneck (IB) theory
+which had been utilized to explain the generalization power of Deep Neural Networks (DNNs), but
+its applicability for this purpose is currently under debate by researchers. In particular, this
+is a rigorous proof for the previous heuristic that compressed representations are exponentially
+easier to be learned. However, our analysis pinpoints two factors preventing the IB, in its current
+form, to be applicable in studying neural networks. Firstly, the exponential dependence of sample
+complexity on $\frac{1}{\epsilon}$, which can lead to a dramatic effect on the bounds in practical
+applications when $\epsilon$ is small. Secondly, our analysis reveals that arguments based on
+input compression are inherently insufficient to explain generalization of methods like DNNs
+in which the features are also learned using available data. 

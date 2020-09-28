@@ -1,0 +1,20 @@
+The Lyman-alpha forest provides strong constraints on both cosmological parameters and intergalactic
+medium astrophysics, which are forecast to improve further with the next generation of surveys
+including eBOSS and DESI. As is generic in cosmological inference, extracting this information
+requires a likelihood to be computed throughout a high-dimensional parameter space. Evaluating
+the likelihood requires a robust and accurate mapping between the parameters and observables,
+in this case the 1D flux power spectrum. Cosmological simulations enable such a mapping, but due
+to computational time constraints can only be evaluated at a handful of sample points; "emulators"
+are designed to interpolate between these. The problem then reduces to placing the sample points
+such that an accurate mapping is obtained while minimising the number of expensive simulations
+required. To address this, we introduce an emulation procedure that employs Bayesian optimisation
+of the training set for a Gaussian process interpolation scheme. Starting with a Latin hypercube
+sampling (other schemes with good space-filling properties can be used), we iteratively augment
+the training set with extra simulations at new parameter positions which balance the need to reduce
+interpolation error while focussing on regions of high likelihood. We show that smaller emulator
+error from the Bayesian optimisation propagates to smaller widths on the posterior distribution.
+Even with fewer simulations than a Latin hypercube, Bayesian optimisation shrinks the 95% credible
+volume by 90% and, e.g., the 1 sigma error on the amplitude of small-scale primordial fluctuations
+by 38%. This is the first demonstration of Bayesian optimisation applied to large-scale structure
+emulation, and we anticipate the technique will generalise to many other probes such as galaxy clustering,
+weak lensing and 21cm. 

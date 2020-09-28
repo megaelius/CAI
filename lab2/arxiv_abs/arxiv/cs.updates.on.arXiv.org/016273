@@ -1,0 +1,19 @@
+Given a matrix $A \in \mathbb{R}^{n\times n}$, we consider the problem of maximizing $x^TAx$ subject
+to the constraint $x \in \{-1,1\}^n$. This problem, called MaxQP by Charikar and Wirth [FOCS'04],
+generalizes MaxCut and has natural applications in data clustering and in the study of disordered
+magnetic phases of matter. Charikar and Wirth showed that the problem admits an $\Omega(1/\lg n)$
+approximation via semidefinite programming, and Alon, Makarychev, Makarychev, and Naor [STOC'05]
+showed that the same approach yields an $\Omega(1)$ approximation when $A$ corresponds to a graph
+of bounded chromatic number. Both these results rely on solving the semidefinite relaxation of
+MaxQP, whose currently best running time is $\tilde{O}(n^{1.5}\cdot \min\{N,n^{1.5}\})$, where
+$N$ is the number of nonzero entries in $A$ and $\tilde{O}$ ignores polylogarithmic factors. In
+this sequel, we abandon the semidefinite approach and design purely combinatorial approximation
+algorithms for special cases of MaxQP where $A$ is sparse (i.e., has $O(n)$ nonzero entries). Our
+algorithms are superior to the semidefinite approach in terms of running time, yet are still competitive
+in terms of their approximation guarantees. More specifically, we show that: - UnitMaxQP, where
+$A \in \{-1,0,1\}^{n\times n}$, admits an $(1/3d)$-approximation in $O(n^{1.5})$ time, when
+the corresponding graph has no isolated vertices and at most $dn$ edges. - MaxQP admits an $\Omega(1/\lg
+a_{\max})$-approximation in $O(n^{1.5} \lg a_{\max})$ time, where $a_{\max}$ is the maximum
+absolute value in $A$, when the corresponding graph is $d$-degenerate. - MaxQP admits a $(1-\varepsilon)$-approximation
+in $O(n)$ time when the corresponding graph has bounded local treewidth. - UnitMaxQP admits a $(1-\varepsilon)$-approximation
+in $O(n^2)$ time when the corresponding graph is $H$-minor-free. 

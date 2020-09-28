@@ -1,0 +1,18 @@
+In this work, we propose a novel approach to prioritize the depth map computation of multi-view stereo
+(MVS) to obtain compact 3D point clouds of high quality and completeness at low computational cost.
+Our prioritization approach operates before the MVS algorithm is executed and consists of two steps.
+In the first step, we aim to find a good set of matching partners for each view. In the second step, we
+rank the resulting view clusters (i.e. key views with matching partners) according to their impact
+on the fulfillment of desired quality parameters such as completeness, ground resolution and accuracy.
+Additional to geometric analysis, we use a novel machine learning technique for training a confidence
+predictor. The purpose of this confidence predictor is to estimate the chances of a successful depth
+reconstruction for each pixel in each image for one specific MVS algorithm based on the RGB images
+and the image constellation. The underlying machine learning technique does not require any ground
+truth or manually labeled data for training, but instead adapts ideas from depth map fusion for providing
+a supervision signal. The trained confidence predictor allows us to evaluate the quality of image
+constellations and their potential impact to the resulting 3D reconstruction and thus builds a
+solid foundation for our prioritization approach. In our experiments, we are thus able to reach
+more than 70% of the maximal reachable quality fulfillment using only 5% of the available images
+as key views. For evaluating our approach within and across different domains, we use two completely
+different scenarios, i.e. cultural heritage preservation and reconstruction of single family
+houses. 

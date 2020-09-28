@@ -1,0 +1,19 @@
+The power consumption of supercomputers is a major challenge for system owners, users, and society.
+It limits the capacity of system installations, it requires large cooling infrastructures, and
+it is the cause of a large carbon footprint. Reducing power during application execution without
+changing the application source code or increasing time-to-completion is highly desirable in
+real-life high-performance computing scenarios. The power management run-time frameworks proposed
+in the last decade are based on the assumption that the duration of communication and application
+phases in an MPI application can be predicted and used at run-time to trade-off communication slack
+with power consumption. In this manuscript, we first show that this assumption is too general and
+leads to mispredictions, slowing down applications, thereby jeopardizing the claimed benefits.
+We then propose a new approach based on (i) the separation of communication phases and slack during
+MPI calls and (ii) a timeout algorithm to cope with the hardware power management latency, which
+jointly makes it possible to achieve performance-neutral power saving in MPI applications without
+requiring labor-intensive and risky application source code modifications. We validate our approach
+in a tier-1 production environment with widely adopted scientific applications. Our approach
+has a time-to-completion overhead lower than 1%, while it successfully exploits slack in communication
+phases to achieve an average energy saving of 10%. If we focus on a large-scale application runs,
+the proposed approach achieves 22% energy saving with an overhead of only 0.4%. With respect to state-of-the-art
+approaches, COUNTDOWN Slack is the only that always leads to an energy saving with negligible overhead
+(<3%). 

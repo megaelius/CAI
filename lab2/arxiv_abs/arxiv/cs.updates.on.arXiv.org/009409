@@ -1,0 +1,17 @@
+In computer vision, the gradient and Laplacian of an image are used in different applications, such
+as edge detection, feature extraction, and seamless image cloning. Computing the gradient of an
+image is straightforward since numerical derivatives are available in most computer vision toolboxes.
+However, the reverse problem is more difficult, since computing an image from its gradient requires
+to solve the Laplacian equation, also called Poisson equation. Current discrete methods are either
+slow or require heavy parallel computing. The objective of this paper is to present a novel fast and
+robust method of solving the image gradient or Laplacian with minimal error, which can be used for
+gradient domain editing. By using a single convolution based on a numerical Green's function, the
+whole process is faster and straightforward to implement with different computer vision libraries.
+It can also be optimized on a GPU using fast Fourier transforms and can easily be generalized for an
+n dimension image. The tests show that, for images of resolution 801x1200, the proposed GFC can solve
+100 Laplacian in parallel in around 1.0 milliseconds ms. This is orders of magnitude faster than
+our nearest competitor which requires 294ms for a single image. Furthermore, we prove mathematically
+and demonstrate empirically that the proposed method is the least error solver for gradient domain
+editing. The developed method is also validated with examples of Poisson blending, gradient removal,
+and the proposed gradient domain merging GDM. Finally, we present how the GDM can be leveraged in
+future works for convolutional neural networks CNN. 

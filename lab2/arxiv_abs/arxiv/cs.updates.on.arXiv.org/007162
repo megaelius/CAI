@@ -1,0 +1,20 @@
+We study the weak call-by-value $\lambda$-calculus as a model for computational complexity theory
+and establish the natural measures for time and space -- the number of beta-reductions and the size
+of the largest term in a computation -- as reasonable measures with respect to the invariance thesis
+of Slot and van Emde Boas [STOC~84]. More precisely, we show that, using those measures, Turing machines
+and the weak call-by-value $\lambda$-calculus can simulate each other within a polynomial overhead
+in time and a constant factor overhead in space for all computations that terminate in (encodings)
+of 'true' or 'false'. We consider this result as a solution to the long-standing open problem, explicitly
+posed by Accattoli [ENTCS~18], of whether the natural measures for time and space of the $\lambda$-calculus
+are reasonable, at least in case of weak call-by-value evaluation. Our proof relies on a hybrid of
+two simulation strategies of reductions in the weak call-by-value $\lambda$-calculus by Turing
+machines, both of which are insufficient if taken alone. The first strategy is the most naive one
+in the sense that a reduction sequence is simulated precisely as given by the reduction rules; in
+particular, all substitutions are executed immediately. This simulation runs within a constant
+overhead in space, but the overhead in time might be exponential. The second strategy is heap-based
+and relies on structure sharing, similar to existing compilers of eager functional languages.
+This strategy only has a polynomial overhead in time, but the space consumption might require an
+additional factor of $\log n$, which is essentially due to the size of the pointers required for this
+strategy. Our main contribution is the construction and verification of a space-aware interleaving
+of the two strategies, which is shown to yield both a constant overhead in space and a polynomial overhead
+in time. 

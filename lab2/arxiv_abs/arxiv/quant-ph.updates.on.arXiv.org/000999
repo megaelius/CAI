@@ -1,0 +1,17 @@
+Compiling quantum algorithms for near-term quantum computers (accounting for connectivity and
+native gate alphabets) is a major challenge that has received significant attention both by industry
+and academia. Avoiding the exponential overhead of classical simulation of quantum dynamics will
+allow compilation of larger algorithms, and a strategy for this is to evaluate an algorithm's cost
+on a quantum computer. To this end, we propose a variational hybrid quantum-classical algorithm
+called quantum-assisted quantum compiling (QAQC). In QAQC, we use the overlap between a target
+unitary $U$ and a trainable unitary $V$ as the cost function to be evaluated on the quantum computer.
+More precisely, to ensure that QAQC scales well with problem size, our cost involves not only the
+global overlap ${\rm Tr} (V^\dagger U)$ but also the local overlaps with respect to individual qubits.
+We introduce novel short-depth quantum circuits to quantify the terms in our cost function, and
+we prove that our cost cannot be efficiently approximated with a classical algorithm under reasonable
+complexity assumptions. We present both gradient-free and gradient-based approaches to minimizing
+this cost. As a demonstration of QAQC, we compile various one-qubit gates on IBM's and Rigetti's
+quantum computers into their respective native gate alphabets. Furthermore, we successfully
+simulate QAQC up to a problem size of 9 qubits, and these simulations highlight both the scalability
+of our cost function as well as the noise resilience of QAQC. Future applications of QAQC include
+algorithm depth compression, black-box compiling, noise mitigation, and benchmarking. 

@@ -1,0 +1,18 @@
+Android is a famous OS among users. Existing vulnerabilities in Android apps cause severe harms
+to the security and privacy of users. Among different methods for detecting vulnerabilities, concolic
+execution is a dynamic method leading to high code coverage as opposed to random input generation
+testing. To the best of our knowledge, there is not any tool for detecting vulnerabilities in Android
+apps with concolic execution. In addition, there is not any Android concolic execution engine.
+By extending the code applications without any effect on their original source codes with mocking
+technique, they can be treated as Java application to be concolicly executed by SPF. Android apps
+are event-driven and inseparable from Google SDK. Our extending codes artificially generate events
+and make the codes independent from SDK libraries, generated automatically by static analysis.
+In addition, we take advantage of static analysis to adjust SPF to only inspect those suspicious
+paths to SQL injection vulnerability. A path is suspicious if it contains a vulnerable function
+leading to leakage. We conduct SPF such that it makes all application inputs and return values of
+vulnerable functions tainted. To taint such values, we present the idea of symbolic mock for input
+and vulnerable functions. An SQL injection vulnerability is detected when a vulnerable function
+receives a tainted value. Our extended SPF is equipped with taint analysis to detect SQL injection
+vulnerability. To illustrate the applicability of ConsiDroid, we have inspected 140 apps from
+F-Droid repository selected randomly. From these apps, we found three apps vulnerable to SQL injection.
+To validate their vulnerability, we analyzed them manually based on ConsiDroid report. 

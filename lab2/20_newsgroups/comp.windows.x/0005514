@@ -1,0 +1,23 @@
+Hi Xperts,
+this is a repost (no one responded to my desperate yell 8-(
+I can't believe there is no XView wizards any more 8-)...
+I'm using sliders in my XView apps, usually with editable numeric
+field. But I seem to have no control over the length of this field.
+In some apps it appears long enough to keep several characters,
+in some - it cannot keep even the maximum value set by 
+As I understand, PANEL_VALUE_DISPLAY_LENGTH, which controls
+number of characters to be displayed in text items, doesn't
+work in the case of slider, despite the fact that <panel.h>
+contains the following bit:
+	/* Panel_multiline_text_item, Panel_numeric_text_item,
+	 * Panel_slider_item and Panel_text_item attributes
+which gives a hint that this attribute can be used for sliders.
+But 1) setting this attribute gives nothing, and 2) xv_get'ting
+this attribute gives warning: Bad attribute, and returns value 0.
+Strange thing is that DEC's port of XView gives plenty of space
+in a text fields, but not Sun's Xview...
+Can someone share his experience in managing sliders in XView with me,
+and clear this problem? 
+Any help is very much appreciated.
+Yuri
+yuri@uk.ac.hw.phy

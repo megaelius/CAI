@@ -1,0 +1,18 @@
+Concern about how to aggregate sensitive user data without compromising individual privacy is
+a major barrier to greater availability of data. The model of differential privacy has emerged as
+an accepted model to release sensitive information while giving a statistical guarantee for privacy.
+Many different algorithms are possible to address different target functions. We focus on the core
+problem of count queries, and seek to design mechanisms to release data associated with a group of
+n individuals. Prior work has focused on designing mechanisms by raw optimization of a loss function,
+without regard to the consequences on the results. This can leads to mechanisms with undesirable
+properties, such as never reporting some outputs (gaps), and overreporting others (spikes). We
+tame these pathological behaviors by introducing a set of desirable properties that mechanisms
+can obey. Any combination of these can be satisfied by solving a linear program (LP) which minimizes
+a cost function, with constraints enforcing the properties. We focus on a particular cost function,
+and provide explicit constructions that are optimal for certain combinations of properties, and
+show a closed form for their cost. In the end, there are only a handful of distinct optimal mechanisms
+to choose between: one is the well-known (truncated) geometric mechanism; the second a novel mechanism
+that we introduce here, and the remainder are found as the solution to particular LPs. These all avoid
+the bad behaviors we identify. We demonstrate in a set of experiments on real and synthetic data which
+is preferable in practice, for different combinations of data distributions, constraints, and
+privacy parameters. 

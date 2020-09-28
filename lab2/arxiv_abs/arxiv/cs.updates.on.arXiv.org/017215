@@ -1,0 +1,20 @@
+Missing value problem in spatiotemporal traffic data has long been a challenging topic, in particular
+for large-scale and high-dimensional data with complex missing mechanisms and diverse degrees
+of missingness. Recent studies based on tensor nuclear norm have demonstrated the superiority
+of tensor learning in imputation tasks by effectively characterizing the complex correlations/dependencies
+in spatiotemporal data. However, despite the promising results, these approaches do not scale
+well to large tensors. In this paper, we focus on addressing the missing data imputation problem
+for large-scale spatiotemporal traffic data. To achieve both high accuracy and efficiency, we
+develop a scalable autoregressive tensor learning model---Low-Tubal-Rank Autoregressive Tensor
+Completion (LATC-Tubal)---based on the existing framework of Low-Rank Autoregressive Tensor
+Completion (LATC), which is well-suited for spatiotemporal traffic data that characterized by
+multidimensional structure of location$\times$ time of day $\times$ day. In particular, the proposed
+LATC-Tubal model involves a scalable tensor nuclear norm minimization scheme by integrating linear
+unitary transformation. Therefore, the tensor nuclear norm minimization can be solved by singular
+value thresholding on the transformed matrix of each day while the day-to-day correlation can be
+effectively preserved by the unitary transform matrix. Before setting up the experiment, we consider
+two large-scale 5-minute traffic speed data sets collected by the California PeMS system with 11160
+sensors. We compare LATC-Tubal with state-of-the-art baseline models, and find that LATC-Tubal
+can achieve competitively accuracy with a significantly lower computational cost. In addition,
+the LATC-Tubal will also benefit other tasks in modeling large-scale spatiotemporal traffic data,
+such as network-level traffic forecasting. 

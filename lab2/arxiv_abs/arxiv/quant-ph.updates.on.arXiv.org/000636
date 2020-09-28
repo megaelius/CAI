@@ -1,0 +1,18 @@
+Benchmarking methods that can be adapted to multi-qubit systems are essential tools for assessing
+the overall or "holistic" performance of nascent quantum processors. The current industry standard
+is Clifford randomized benchmarking (RB), which measures a single error rate that quantifies overall
+performance. But scaling Clifford RB to many qubits is surprisingly hard. It has only been performed
+on 1, 2, and 3 qubits as of this writing. This reflects a fundamental inefficiency in Clifford RB:
+the $n$-qubit Clifford gates at its core have to be compiled into large circuits over the 1- and 2-qubit
+gates native to a device. As $n$ grows, the quality of these Clifford gates quickly degrades, making
+Clifford RB impractical at relatively low $n$. In this Letter, we propose a direct RB protocol that
+mostly avoids compiling. Instead, it uses random circuits over the native gates in a device, seeded
+by an initial layer of Clifford-like randomization. We demonstrate this protocol experimentally
+on 2 - 5 qubits, using the publicly available IBMQX5. We believe this to be the greatest number of qubits
+holistically benchmarked, and this was achieved on a freely available device without any special
+tuning up. Our protocol retains the simplicity and convenient properties of Clifford RB: it estimates
+an error rate from an exponential decay. But it can be extended to processors with more qubits - we
+present simulations on 10+ qubits - and it reports a more directly informative and flexible error
+rate than the one reported by Clifford RB. We show how to use this flexibility to measure separate
+error rates for distinct sets of gates, which includes tasks such as measuring an average CNOT error
+rate. 

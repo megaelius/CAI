@@ -1,0 +1,19 @@
+Recommender systems rely on large datasets of historical data and entail serious privacy risks.
+A server offering Recommendation as a Service to a client might leak more information than necessary
+regarding its recommendation model and dataset. At the same time, the disclosure of the client's
+preferences to the server is also a matter of concern. Devising privacy-preserving protocols using
+general cryptographic primitives (e.g., secure multi-party computation or homomorphic encryption),
+is a typical approach to overcome privacy concerns, but in conjunction with state-of-the-art recommender
+systems often yields far-from-practical solutions. In this paper, we tackle this problem from
+the direction of constructing crypto-friendly machine learning algorithms. In particular, we
+propose CryptoRec, a secure two-party computation protocol for Recommendation as a Service, which
+encompasses a novel recommender system. This model possesses two interesting properties: (1)
+It models user-item interactions in an item-only latent feature space in which personalized user
+representations are automatically captured by an aggregation of pre-learned item features. This
+means that a server with a pre-trained model can provide recommendations for a client whose data
+is not in its training set. Nevertheless, re-training the model with the client's data still improves
+accuracy. (2) It only uses addition and multiplication operations, making the model straightforwardly
+compatible with homomorphic encryption schemes. We demonstrate the efficiency and accuracy of
+CryptoRec on three real-world datasets. CryptoRec allows a server with thousands of items to privately
+answer a prediction query within a few seconds on a single PC, while its prediction accuracy still
+competitive with state-of-the-art recommender systems computing over clear data. 

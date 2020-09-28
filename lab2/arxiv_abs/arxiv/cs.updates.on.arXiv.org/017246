@@ -1,0 +1,20 @@
+Android apps are GUI-based event-driven software and have become ubiquitous in recent years. Besides
+fail-stop errors like app crashes, functional correctness is critical for an app's success. However,
+functional bugs (e.g., inadvertent function failures, sudden user data lost, and incorrect display
+information) are prevalent, even in popular, well-tested apps, due to significant challenges
+in effectively detecting them: (1) current practices heavily rely on expensive, small-scale manual
+validation (the lack of automation); and (2) modern automated testing has been limited to app crashes
+(the lack of test oracles). This paper fills this gap by introducing independent view fuzzing, the
+first automated approach for detecting functional bugs in Android apps. Our key insight is to leverage
+the commonly-held independent view property of Android apps to manufacture property-preserving
+mutant tests from a set of seed tests that validate certain app properties. The mutated tests help
+exercise the tested apps under additional, adverse conditions. Any property violations indicate
+likely functional bugs. We have realized our approach as a practical, end-to-end functional fuzzing
+tool, Genie. Given an off-the-shelf app, Genie (1) automatically detects functional bugs without
+requiring human-provided tests and oracles (thus fully automated), and (2) the detected functional
+bugs are diverse (thus general and not limited to specific functional properties). We have evaluated
+Genie on twelve popular, well-maintained Android apps and successfully uncovered 33 previously
+unknown functional bugs in their latest releases -- all have been confirmed, and 21 have already
+been fixed. Most of the detected bugs are nontrivial and have escaped developer (and user) testing
+for at least one year and affected many app releases, thus clearly demonstrating Genie's practical
+utility. 

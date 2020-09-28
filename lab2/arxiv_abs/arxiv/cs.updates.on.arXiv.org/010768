@@ -1,0 +1,18 @@
+Error recovery is an essential feature for a parser that should be plugged in Integrated Development
+Environments (IDEs), which must build Abstract Syntax Trees (ASTs) even for syntactically invalid
+programs in order to offer features such as automated refactoring and code completion. Parsing
+Expressions Grammars (PEGs) are a formalism that naturally describes recursive top-down parsers
+using a restricted form of backtracking. Labeled failures are a conservative extension of PEGs
+that adds an error reporting mechanism for PEG parsers, and these labels can also be associated with
+recovery expressions to provide an error recovery mechanism. These expressions can use the full
+expressivity of PEGs to recover from syntactic errors. Manually annotating a large grammar with
+labels and recovery expressions can be difficult. In this work, we present two approaches, Standard
+and Unique, to automatically annotate a PEG with labels, and to build their corresponding recovery
+expressions. The Standard approach annotates a grammar in a way similar to manual annotation, but
+it may insert labels incorrectly, while the Unique approach is more conservative to annotate a grammar
+and does not insert labels incorrectly. We evaluate both approaches by using them to generate error
+recovering parsers for four programming languages: Titan, C, Pascal and Java. In our evaluation,
+the parsers produced using the Standard approach, after a manual intervention to remove the labels
+incorrectly added, gave an acceptable recovery for at least 70% of the files in each language. By
+it turn, the acceptable recovery rate of the parsers produced via the Unique approach, without the
+need of manual intervention, ranged from 41% to 76%. 

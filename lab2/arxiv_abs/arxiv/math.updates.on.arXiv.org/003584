@@ -1,0 +1,17 @@
+We consider a scenario involving computations over a massive dataset stored distributedly across
+multiple workers, which is at the core of distributed learning algorithms. We propose Lagrange
+Coded Computing (LCC), a new framework to simultaneously provide (1) resiliency against stragglers
+that may prolong computations; (2) security against Byzantine (or malicious) workers that deliberately
+modify the computation for their benefit; and (3) (information-theoretic) privacy of the dataset
+amidst possible collusion of workers. LCC, which leverages the well-known Lagrange polynomial
+to create computation redundancy in a novel coded form across workers, can be applied to any computation
+scenario in which the function of interest is an arbitrary multivariate polynomial of the input
+dataset, hence covering many computations of interest in machine learning. LCC significantly
+generalizes prior works to go beyond linear computations. It also enables secure and private computing
+in distributed settings, improving the computation and communication efficiency of the state-of-the-art.
+Furthermore, we prove the optimality of LCC by showing that it achieves the optimal tradeoff between
+resiliency, security, and privacy, i.e., in terms of tolerating the maximum number of stragglers
+and adversaries, and providing data privacy against the maximum number of colluding workers. Finally,
+we show via experiments on Amazon EC2 that LCC speeds up the conventional uncoded implementation
+of distributed least-squares linear regression by up to $13.43\times$, and also achieves a $2.36\times$-$12.65\times$
+speedup over the state-of-the-art straggler mitigation strategies. 

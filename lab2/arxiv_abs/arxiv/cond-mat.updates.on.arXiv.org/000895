@@ -1,0 +1,19 @@
+We develop a Split Reactive Brownian Dynamics (SRBD) algorithm for particle simulations of reaction-diffusion
+systems based on the Doi or volume reactivity model, in which pairs of particles react with a specified
+Poisson rate if they are closer than a chosen reactive distance. In our Doi model, we ensure that the
+microscopic reaction rules for various association and disassociation reactions are consistent
+with detailed balance (time reversibility) at thermodynamic equilibrium. The SRBD algorithm
+uses Strang splitting in time to separate reaction and diffusion, and solves both the diffusion-only
+and reaction-only subproblems exactly, even at high packing densities. To efficiently process
+reactions without uncontrolled approximations, SRBD employs an event-driven algorithm that
+processes reactions in a time-ordered sequence over the duration of the time step. A grid of cells
+with size larger than all of the reactive distances is used to schedule and process the reactions,
+but unlike traditional grid-based methods such as Reaction-Diffusion Master Equation (RDME)
+algorithms, the results of SRBD are statistically independent of the size of the grid used to accelerate
+the processing of reactions. We use the SRBD algorithm to compute the effective macroscopic reaction
+rate for both reaction- and diffusion-limited irreversible association in three dimensions.
+We also study long-time tails in the time correlation functions for reversible association at thermodynamic
+equilibrium. Finally, we compare different particle and continuum methods on a model exhibiting
+a Turing-like instability and pattern formation. We find that for models in which particles diffuse
+off lattice, such as the Doi model, reactions lead to a spurious enhancement of the effective diffusion
+coefficients. 

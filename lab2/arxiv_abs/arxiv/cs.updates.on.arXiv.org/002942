@@ -1,0 +1,19 @@
+For an arbitrary initial configuration of indivisible loads over vertices of a distributed network,
+we consider the problem of minimizing the discrepancy between the maximum and minimum load among
+all vertices. For this problem, diffusion-based algorithms are well studied because of its simplicity.
+This paper presents a new randomized diffusion-based algorithm inspired by multiple random walks.
+In our algorithm, at each vertex, each token $k$ ($k\in \{0,1,\ldots, X-1\}$) generate a random
+number in $[k/X, (k+1)/X)$, and moves to a vertex corresponding to the given probability distribution.
+Our algorithm is adaptive to any transition transition probabilities while almost all previous
+works are concerned with uniform transition probabilities. For this algorithm, we analyze the
+discrepancy between the token configuration and its expected value, and give an upper bound depending
+on the local 2-divergence of the transition matrix and $\sqrt{\log n}$, where $n$ is the number of
+vertices. The local 2-divergence is a measure which often appeared in previous works. We also give
+an upper bound of the local-2 divergence for any reversible and lazy transition matrix. These yield
+the following specific results. First, our algorithm achieves $O(\sqrt{d \log n})$ discrepancy
+for any $d$ regular graph, which matches the best result on previous works of diffusion model. Note
+that our algorithm does not need any assumption such as negative loads which are often assumed in
+previous works. Second, for general graphs with maximum degree $d_{\max}$, our algorithm achieves
+$O(\sqrt{ d_{\max} \log n})$ discrepancy using the transition matrix based on the metropolis hasting
+algorithm. Note that this algorithm does not need information of $d_{\max}$ while almost all previous
+works use it. 

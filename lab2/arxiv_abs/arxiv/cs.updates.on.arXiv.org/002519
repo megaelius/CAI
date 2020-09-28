@@ -1,0 +1,20 @@
+Wave propagation and scattering problems in acoustics are often solved with boundary element methods.
+They lead to a discretization matrix that is typically dense and large: its size and condition number
+grow with increasing frequency. Yet, high frequency scattering problems are intrinsically local
+in nature, which is well represented by highly localized rays bouncing around. Asymptotic methods
+can be used to reduce the size of the linear system, even making it frequency independent, by explicitly
+extracting the oscillatory properties from the solution using ray tracing or analogous techniques.
+However, ray tracing becomes expensive or even intractable in the presence of (multiple) scattering
+obstacles with complicated geometries. In this paper, we start from the same discretization that
+constructs the fully resolved large and dense matrix, and achieve asymptotic compression by explicitly
+localizing the Green's function instead. This results in a large but sparse matrix, with a faster
+associated matrix-vector product and, as numerical experiments indicate, a much improved condition
+number. Though an appropriate localisation of the Green's function also depends on asymptotic
+information unavailable for general geometries, we can construct it adaptively in a frequency
+sweep from small to large frequencies in a way which automatically takes into account a general incident
+wave. We show that the approach is robust with respect to non-convex, multiple and even near-trapping
+domains, though the compression rate is clearly lower in the latter case. Furthermore, in spite
+of its asymptotic nature, the method is robust with respect to low-order discretizations such as
+piecewise constants, linears or cubics, commonly used in applications. On the other hand, we do
+not decrease the total number of degrees of freedom compared to a conventional classical discretization.
+The combination of the ... 

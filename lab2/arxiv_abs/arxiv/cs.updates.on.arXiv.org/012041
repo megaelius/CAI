@@ -1,0 +1,20 @@
+One of the key challenges arising when compilers vectorize loops for today's SIMD-compatible architectures
+is to decide if vectorization or interleaving is beneficial. Then, the compiler has to determine
+how many instructions to pack together and how many loop iterations to interleave. Compilers are
+designed today to use fixed-cost models that are based on heuristics to make vectorization decisions
+on loops. However, these models are unable to capture the data dependency, the computation graph,
+or the organization of instructions. Alternatively, software engineers often hand-write the
+vectorization factors of every loop. This, however, places a huge burden on them, since it requires
+prior experience and significantly increases the development time. In this work, we explore a novel
+approach for handling loop vectorization and propose an end-to-end solution using deep reinforcement
+learning (RL). We conjecture that deep RL can capture different instructions, dependencies, and
+data structures to enable learning a sophisticated model that can better predict the actual performance
+cost and determine the optimal vectorization factors. We develop an end-to-end framework, from
+code to vectorization, that integrates deep RL in the LLVM compiler. Our proposed framework takes
+benchmark codes as input and extracts the loop codes. These loop codes are then fed to a loop embedding
+generator that learns an embedding for these loops. Finally, the learned embeddings are used as
+input to a Deep RL agent, which determines the vectorization factors for all the loops. We further
+extend our framework to support multiple supervised learning methods. We evaluate our approaches
+against the currently used LLVM vectorizer and loop polyhedral optimization techniques. Our experiments
+show 1.29X-4.73X performance speedup compared to baseline and only 3X worse than the brute-force
+search on a wide range of benchmarks. 

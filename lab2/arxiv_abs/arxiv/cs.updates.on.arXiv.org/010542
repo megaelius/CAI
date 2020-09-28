@@ -1,0 +1,18 @@
+Distributed deep learning training usually adopts All-Reduce as the synchronization mechanism
+for data parallel algorithms due to its high performance in homogeneous environment. However,
+its performance is bounded by the slowest worker among all workers, and is significantly slower
+in heterogeneous situations. AD-PSGD, a newly proposed synchronization method which provides
+numerically fast convergence and heterogeneity tolerance, suffers from deadlock issues and high
+synchronization overhead. Is it possible to get the best of both worlds - designing a distributed
+training method that has both high performance as All-Reduce in homogeneous environment and good
+heterogeneity tolerance as AD-PSGD? In this paper, we propose Ripples, a high-performance heterogeneity-aware
+asynchronous decentralized training approach. We achieve the above goal with intensive synchronization
+optimization, emphasizing the interplay between algorithm and system implementation. To reduce
+synchronization cost, we propose a novel communication primitive Partial All-Reduce that allows
+a large group of workers to synchronize quickly. To reduce synchronization conflict, we propose
+static group scheduling in homogeneous environment and simple techniques (Group Buffer and Group
+Division) to avoid conflicts with slightly reduced randomness. Our experiments show that in homogeneous
+environment, Ripples is 1.1 times faster than the state-of-the-art implementation of All-Reduce,
+5.1 times faster than Parameter Server and 4.3 times faster than AD-PSGD. In a heterogeneous setting,
+Ripples shows 2 times speedup over All-Reduce, and still obtains 3 times speedup over the Parameter
+Server baseline. 

@@ -1,0 +1,19 @@
+Building classification models is an intrinsically practical exercise that requires many design
+decisions prior to deployment. We aim to provide some guidance in this decision making process.
+Specifically, given a classification problem with real valued attributes, we consider which classifier
+or family of classifiers should one use. Strong contenders are tree based homogeneous ensembles,
+support vector machines or deep neural networks. All three families of model could claim to be state-of-the-art,
+and yet it is not clear when one is preferable to the others. Our extensive experiments with over 200
+data sets from two distinct archives demonstrate that, rather than choose a single family and expend
+computing resources on optimising that model, it is significantly better to build simpler versions
+of classifiers from each family and ensemble. We show that the Heterogeneous Ensembles of Standard
+Classification Algorithms (HESCA), which ensembles based on error estimates formed on the train
+data, is significantly better (in terms of error, balanced error, negative log likelihood and area
+under the ROC curve) than its individual components, picking the component that is best on train
+data, and a support vector machine tuned over 1089 different parameter configurations. We demonstrate
+HESCA+, which contains a deep neural network, a support vector machine and two decision tree forests,
+is significantly better than its components, picking the best component, and HESCA. We analyse
+the results further and find that HESCA and HESCA+ are of particular value when the train set size
+is relatively small and the problem has multiple classes. HESCA is a fast approach that is, on average,
+as good as state-of-the-art classifiers, whereas HESCA+ is significantly better than average
+and represents a strong benchmark for future research. 

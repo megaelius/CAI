@@ -1,0 +1,19 @@
+Consider the following problem: given a graph and two maximal independent sets (MIS), is there a
+valid sequence of independent sets starting from the first one and ending in the second, in which
+a single node is inserted to or removed from the set at each step? While this would be trivial without
+any restrictions by simply removing all the nodes and then inserting the required ones, this problem,
+called the MIS reconfiguration problem, has been studied in the centralized setting with the caveat
+that intermediate sets in the sequence (schedule) must be at least of a certain size. In this paper,
+we investigate a distributed MIS reconfiguration problem, in which nodes can be inserted or removed
+from the sets concurrently. Each node of the graph is aware of its membership in the initial and final
+independent sets, and the nodes communicate with their neighbors in order to produce a reconfiguration
+schedule. The schedule is restricted by forbidding two neighbors to change their membership status
+at the same step. Here, we do not impose a lower bound on the size of the intermediate independent sets,
+as this would be hard to coordinate in a non-centralized fashion. However, we do want the independent
+sets to be non-trivial. We show that obtaining an actual MIS (and even a 3-dominating set) in each
+intermediate step is impossible. However, we provide efficient solutions when the intermediate
+sets are only required to be independent and 4-dominating. We prove that a constant length schedule
+can be found in $O(MIS+R32)$ rounds, where $MIS$ is the complexity of finding an MIS on a worst-case
+graph and $R32$ is the complexity of finding a $(3,2)$-ruling set. For bounded degree graphs, this
+is $O(\log^*n)$ rounds and we show that it is necessary. On the other extreme, we show that with a constant
+number of rounds we can find a linear length schedule. 

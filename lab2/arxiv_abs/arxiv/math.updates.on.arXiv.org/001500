@@ -1,0 +1,18 @@
+The work presented in this paper is related to the development of positivity preserving Discontinuous
+Galerkin (DG) methods for Boltzmann - Poisson (BP) computational models of electronic transport
+in semiconductors. We pose the Boltzmann Equation for electron transport in curvilinear coordinates
+for the momentum. We consider the 1D diode problem with azimuthal symmetry, which is a 3D plus time
+problem. We choose for this problem the spherical coordinate system $\vec{p}(|\vec{p}|,\mu=cos\theta,\varphi)$,
+slightly different to the choice in previous DG solvers for BP, because its DG formulation gives
+simpler integrals involving just piecewise polynomial functions for both transport and collision
+terms. Applying the strategy of Zhang \& Shu, \cite{ZhangShu1}, \cite{ZhangShu2}, Cheng, Gamba,
+Proft, \cite{CGP}, and Endeve et al. \cite{EECHXM-JCP}, we treat the collision operator as a source
+term, and find convex combinations of the transport and collision terms which guarantee the positivity
+of the cell average of our numerical probability density function at the next time step. The positivity
+of the numerical solution to the pdf in the whole domain is guaranteed by applying the limiters in
+\cite{ZhangShu1}, \cite{ZhangShu2} that preserve the cell average but modify the slope of the
+piecewise linear solutions in order to make the function non - negative. In addition of the proofs
+of positivity preservation in the DG scheme, we prove the stability of the semi-discrete DG scheme
+under an entropy norm, using the dissipative properties of our collisional operator given by its
+entropy inequalities. The entropy inequality we use depends on an exponential of the Hamiltonian
+rather than the Maxwellian associated just to the kinetic energy. 

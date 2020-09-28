@@ -1,0 +1,17 @@
+Neuromorphic hardware with non-volatile memory (NVM) can implement machine learning workload
+in an energy-efficient manner. Unfortunately, certain NVMs such as phase change memory (PCM) require
+high voltages for correct operation. These voltages are supplied from an on-chip charge pump. If
+the charge pump is activated too frequently, its internal CMOS devices do not recover from stress,
+accelerating their aging and leading to negative bias temperature instability (NBTI) generated
+defects. Forcefully discharging the stressed charge pump can lower the aging rate of its CMOS devices,
+but makes the neuromorphic hardware unavailable to perform computations while its charge pump
+is being discharged. This negatively impacts performance such as latency and accuracy of the machine
+learning workload being executed. In this paper, we propose a novel framework to exploit workload-specific
+performance and lifetime trade-offs in neuromorphic computing. Our framework first extracts
+the precise times at which a charge pump in the hardware is activated to support neural computations
+within a workload. This timing information is then used with a characterized NBTI reliability model
+to estimate the charge pump's aging during the workload execution. We use our framework to evaluate
+workload-specific performance and reliability impacts of using 1) different SNN mapping strategies
+and 2) different charge pump discharge strategies. We show that our framework can be used by system
+designers to explore performance and reliability trade-offs early in the design of neuromorphic
+hardware such that appropriate reliability-oriented design margins can be set. 

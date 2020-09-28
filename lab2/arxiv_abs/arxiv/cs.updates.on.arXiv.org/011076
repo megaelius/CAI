@@ -1,0 +1,17 @@
+Federated learning promises to make machine learning feasible on distributed, private datasets
+by implementing gradient descent using secure aggregation methods. The idea is to compute a global
+weight update without revealing the contributions of individual users. Current practical protocols
+for secure aggregation work in an ``honest but curious'' setting where a curious adversary observing
+all communication to and from the server cannot learn any private information assuming the server
+is honest and follows the protocol. A more scalable and robust primitive for privacy-preserving
+protocols is shuffling of user data, so as to hide the origin of each data item. Highly scalable and
+secure protocols for shuffling, so-called mixnets, have been proposed as a primitive for privacy-preserving
+analytics in the Encode-Shuffle-Analyze framework by Bittau et al., which was later analytically
+studied by Erlingsson et al. and Cheu et al.. The recent papers by Cheu et al., and Balle et al. have
+given protocols for secure aggregation that achieve differential privacy guarantees in this ``shuffled
+model''. Their protocols come at a cost, though: Either the expected aggregation error or the amount
+of communication per user scales as a polynomial $n^{\Omega(1)}$ in the number of users $n$. In this
+paper we propose simple and more efficient protocol for aggregation in the shuffled model, where
+communication as well as error increases only polylogarithmically in $n$. Our new technique is
+a conceptual ``invisibility cloak'' that makes users' data almost indistinguishable from random
+noise while introducing zero distortion on the sum. 

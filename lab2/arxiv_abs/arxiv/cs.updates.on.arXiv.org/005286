@@ -1,0 +1,18 @@
+Modern 3D Computer-Aided-Design (CAD) systems use mainly two types of geometric models. Classically,
+objects are defined by a Boundary Representation (B-Rep), where only the objects' surfaces with
+their corresponding edges and nodes are stored. One disadvantage concerning a numerical simulation
+is that B-Rep models are not necessarily watertight. These 'dirty geometries' cause major difficulties
+in computational analysis because even basic geometric operations such as point-in-membership
+tests fail, not to mention meshing as required by classical boundary conforming finite element
+methods. Alternatively, objects may be represented by Constructive Solid Geometry (CSG), which
+is strongly related to Procedural Modeling (PM). In this context, the model is created using Boolean
+operations on primitives. The modeling process is then either stored as a sequence (PM), or as a construction
+tree (CSG). In contrast to B-Rep models, CSG models are intrinsically water-tight. To run a finite
+element simulation on a water-tight CSG model, two alternatives are possible: (i) it can either
+be converted to a B-Rep-model to obtain a finite element mesh or (ii) its implicit description can
+be used directly by applying an embedded domain approach, like the Finite Cell Method (FCM). In this
+contribution, we present a design-through analysis methodology using CSG and FCM. A crucial point
+in FCM is a fast and reliable point-in-membership test which can be directly derived from the CSG
+model. We present the outline of the modeling approach, the realization of the point-in-membership
+test as a sequence of CSG-operations, and discuss advantages and limitations on complex models
+of relevance in mechanical engineering. 

@@ -1,0 +1,19 @@
+Multi-label learning problems have manifested themselves in various machine learning applications.
+The key to successful multi-label learning algorithms lies in the exploration of inter-label correlations,
+which usually incur great computational cost. Another notable factor in multi-label learning
+is that the label vectors are usually extremely sparse, especially when the candidate label vocabulary
+is very large and only a few instances are assigned to each category. Recently, a label space transformation
+(LST) framework has been proposed targeting these challenges. However, current methods based
+on LST usually suffer from information loss in the label space dimension reduction process and fail
+to address the sparsity problem effectively. In this paper, we propose a distribution-based label
+space transformation (DLST) model. By defining the distribution based on the similarity of label
+vectors, a more comprehensive label structure can be captured. Then, by minimizing KL-divergence
+of two distributions, the information of the original label space can be approximately preserved
+in the latent space. Consequently, multi-label classifier trained using the dense latent codes
+yields better performance. The leverage of distribution enables DLST to fill out additional information
+about the label correlations. This endows DLST the capability to handle label set sparsity and training
+data sparsity in multi-label learning problems. With the optimal latent code, a kernel logistic
+regression function is learned for the mapping from feature space to the latent space. Then ML-KNN
+is employed to recover the original label vector from the transformed latent code. Extensive experiments
+on several benchmark datasets demonstrate that DLST not only achieves high classification performance
+but also is computationally more efficient. 

@@ -1,0 +1,18 @@
+A powerful feature of linear sketches is that from sketches of two data vectors, one can compute the
+sketch of the difference between the vectors. This allows us to answer fine-grained questions about
+the difference between two data sets. In this work, we consider how to construct sketches for weighted
+$F_0$, i.e., the summed weights of the elements in the data set, that are small, differentially private,
+and computationally efficient. Let a weight vector $w\in(0,1]^u$ be given. For $x\in\{0,1\}^u$
+we are interested in estimating $\Vert x\circ w\Vert_1$ where $\circ$ is the Hadamard product (entrywise
+product). Building on a technique of Kushilevitz et al.~(STOC 1998), we introduce a sketch (depending
+on $w$) that is linear over GF(2), mapping a vector $x\in \{0,1\}^u$ to $Hx\in\{0,1\}^\tau$ for
+a matrix $H$ sampled from a suitable distribution $\mathcal{H}$. Differential privacy is achieved
+by using randomized response, flipping each bit of $Hx$ with probability $p<1/2$. We show that for
+every choice of $0<\beta < 1$ and $\varepsilon=O(1)$ there exists $p<1/2$ and a distribution $\mathcal{H}$
+of linear sketches of size $\tau = O(\log^2(u)\varepsilon^{-2}\beta^{-2})$ such that: 1) For
+random $H\sim\mathcal{H}$ and noise vector $\varphi$, given $Hx + \varphi$ we can compute an estimate
+of $\Vert x\circ w\Vert_1$ that is accurate within a factor $1\pm\beta$, plus additive error $O(\log(u)\varepsilon^{-2}\beta^{-2})$,
+with probability $1-1/u$, and 2) For every $H\sim\mathcal{H}$, $Hx + \varphi$ is $\varepsilon$-differentially
+private over the randomness in $\varphi$. The special case $w=(1,\dots,1)$ is unweighted $F_0$.
+Our results both improve the efficiency of existing methods for unweighted $F_0$ estimating and
+extend to a weighted generalization. 

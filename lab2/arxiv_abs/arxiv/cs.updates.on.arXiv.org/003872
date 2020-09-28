@@ -1,0 +1,20 @@
+We show that many classical optimization problems --- such as $(1\pm\epsilon)$-approximate maximum
+flow, shortest path, and transshipment --- can be computed in $\newcommand{\tmix}{{\tau_{\text{mix}}}}\tmix(G)\cdot
+n^{o(1)}$ rounds of distributed message passing, where $\tmix(G)$ is the mixing time of the network
+graph $G$. This extends the result of Ghaffari et al.\ [PODC'17], whose main result is a distributed
+MST algorithm in $\tmix(G)\cdot 2^{O(\sqrt{\log n \log\log n})}$ rounds in the CONGEST model,
+to a much wider class of optimization problems. For many practical networks of interest, e.g., peer-to-peer
+or overlay network structures, the mixing time $\tmix(G)$ is small, e.g., polylogarithmic. On
+these networks, our algorithms bypass the $\tilde\Omega(\sqrt n+D)$ lower bound of Das Sarma et
+al.\ [STOC'11], which applies for worst-case graphs and applies to all of the above optimization
+problems. For all of the problems except MST, this is the first distributed algorithm which takes
+$o(\sqrt n)$ rounds on a (nontrivial) restricted class of network graphs. Towards deriving these
+improved distributed algorithms, our main contribution is a general transformation that simulates
+any work-efficient PRAM algorithm running in $T$ parallel rounds via a distributed algorithm running
+in $T\cdot \tmix(G)\cdot 2^{O(\sqrt{\log n})}$ rounds. Work- and time-efficient parallel algorithms
+for all of the aforementioned problems follow by combining the work of Sherman [FOCS'13, SODA'17]
+and Peng and Spielman [STOC'14]. Thus, simulating these parallel algorithms using our transformation
+framework produces the desired distributed algorithms. The core technical component of our transformation
+is the algorithmic problem of solving \emph{multi-commodity routing}---that is, roughly, routing
+$n$ packets each from a given source to a given destination---in random graphs. For this problem,
+we obtain a... 

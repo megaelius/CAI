@@ -1,0 +1,19 @@
+In this paper, we utilize structured learning to simultaneously address two intertwined problems:
+human pose estimation (HPE) and garment attribute classification (GAC), which are valuable for
+a variety of computer vision and multimedia applications. Unlike previous works that usually handle
+the two problems separately, our approach aims to produce a jointly optimal estimation for both
+HPE and GAC via a unified inference procedure. To this end, we adopt a preprocessing step to detect
+potential human parts from each image (i.e., a set of "candidates") that allows us to have a manageable
+input space. In this way, the simultaneous inference of HPE and GAC is converted to a structured learning
+problem, where the inputs are the collections of candidate ensembles, the outputs are the joint
+labels of human parts and garment attributes, and the joint feature representation involves various
+cues such as pose-specific features, garment-specific features, and cross-task features that
+encode correlations between human parts and garment attributes. Furthermore, we explore the "strong
+edge" evidence around the potential human parts so as to derive more powerful representations for
+oriented human parts. Such evidences can be seamlessly integrated into our structured learning
+model as a kind of energy function, and the learning process could be performed by standard structured
+Support Vector Machines (SVM) algorithm. However, the joint structure of the two problems is a cyclic
+graph, which hinders efficient inference. To resolve this issue, we compute instead approximate
+optima by using an iterative procedure, where in each iteration the variables of one problem are
+fixed. In this way, satisfactory solutions can be efficiently computed by dynamic programming.
+Experimental results on two benchmark datasets show the state-of-the-art performance of our approach.

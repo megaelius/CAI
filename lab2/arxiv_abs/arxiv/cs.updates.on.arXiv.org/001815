@@ -1,0 +1,17 @@
+Weak memory models trade programmability for performance, while transactional memory (TM) aims
+for ease of programming, sometimes at a performance cost. The semantics of both have been studied
+in detail, but their combined semantics is not well understood. This is problematic because TM is
+currently available, either natively or via extensions, in widely-used architectures and languages
+such as x86, Power, and C++, all of which have weak memory models. Our work aims to provide an formal
+understanding of the interplay between weak memory and TM, without which, programmers cannot robustly
+reason about programs that use both of these important concurrent programming constructs. Our
+first research contribution is the definition of axiomatic models that capture the combination
+of TM and weak memory as it exists in x86, Power, and C++, and one way that the ARMv8 memory model could
+be extended to support TM. Our second contribution is the systematic methodology we use to validate
+our models. This methodology is based around a new tool that is able to synthesise - automatically
+and exhaustively - exactly the minimal test programs that distinguish any two axiomatic models.
+This enables us to validate our models by comparing them against both an upper-bound model (transactional
+sequential consistency) and a lower-bound model (the non-transactional version of each model),
+and then checking that the outcomes of all the generated programs on existing hardware (where available)
+are consistent with our models. We further validate our models by checking compilation schemes
+from C++ transactions to hardware transactions. 

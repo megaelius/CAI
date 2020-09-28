@@ -1,0 +1,18 @@
+The log Euclidean polyrigid registration framework provides a way to smoothly estimate and interpolate
+poly-rigid/affine transformations for which the invertibility is guaranteed. This powerful
+and flexible mathematical framework is currently being used to track the human joint dynamics by
+first imposing bone rigidity constraints in order to synthetize the spatio-temporal joint deformations
+later. However, since no closed-form exists, then a computationally expensive integration of
+ordinary differential equations (ODEs) is required to perform image registration using this framework.
+To tackle this problem, the exponential map for solving these ODEs is computed using the scaling
+and squaring method in the literature. In this paper, we propose an algorithm using a matrix diagonalization
+based method for smooth interpolation of homogeneous polyrigid transformations of human joints
+during motion. The use of this alternative computational approach to integrate ODEs is well motivated
+by the fact that bone rigid transformations satisfy the mechanical constraints of human joint motion,
+which provide conditions that guarantee the diagonalizability of local bone transformations
+and consequently of the resulting joint transformations. In a comparison with the scaling and squaring
+method, we discuss the usefulness of the matrix eigendecomposition technique which reduces significantly
+the computational burden associated with the computation of matrix exponential over a dense regular
+grid. Finally, we have applied the method to enhance the temporal resolution of dynamic MRI sequences
+of the ankle joint. To conclude, numerical experiments show that the eigendecomposition method
+is more capable of balancing the trade-off between accuracy, computation time, and memory requirements.

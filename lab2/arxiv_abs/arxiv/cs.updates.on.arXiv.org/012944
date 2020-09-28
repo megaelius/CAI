@@ -1,0 +1,19 @@
+Safe trajectory planning for high-performance automated vehicles in an environment with both
+static and moving obstacles is a challenging problem. Part of the challenge is developing a formulation
+that can be solved in real-time while including the following set of specifications: minimum time-to-goal,
+a dynamic vehicle model, minimum control effort, both static and moving obstacle avoidance, simultaneous
+optimization of speed and steering, and a short execution horizon. This paper presents a nonlinear
+model predictive control-based trajectory planning formulation, tailored for a large, high-speed
+unmanned ground vehicle, that includes the above set of specifications. This paper also evaluates
+NLOptControl's ability to solve this formulation in real-time in conjunction with the KNITRO nonlinear
+programming problem solver; NLOptControl is our open-source, direct-collocation based, optimal
+control problem solver. This formulation is tested with various sets of the specifications. In
+particular, a parametric study relating execution horizon and obstacle speed, indicates that
+the moving obstacle avoidance specification is not needed for safety when the planner has a small
+execution horizon ($\leq0.375\;s$) and the obstacles are moving slowly ($\leq2.11\frac{m}{s}$).
+However, a moving obstacle avoidance specification is needed when the obstacles are moving faster,
+and this specification improves the overall safety by a factor of $6.73$ ($p=2.2\times10^{-16}$)
+without, in most cases, increasing the solve-times. Overall, the results indicate that (1) safe
+trajectory planners for high-performance automated vehicles should include the entire set of
+specifications mentioned above, unless a static or low-speed environment permits a less comprehensive
+planner; and (2) NLOptControl can solve the formulation in real-time. 

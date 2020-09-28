@@ -1,0 +1,18 @@
+Estimation of patient-specific model parameters is important for personalized modeling, although
+sparse and noisy clinical data can introduce significant uncertainty in the estimated parameter
+values. This importance source of uncertainty, if left unquantified, will lead to unknown variability
+in model outputs that hinder their reliable adoptions. Probabilistic estimation model parameters,
+however, remains an unresolved challenge because standard Markov Chain Monte Carlo sampling requires
+repeated model simulations that are computationally infeasible. A common solution is to replace
+the simulation model with a computationally-efficient surrogate for a faster sampling. However,
+by sampling from an approximation of the exact posterior probability density function (pdf) of
+the parameters, the efficiency is gained at the expense of sampling accuracy. In this paper, we address
+this issue by integrating surrogate modeling into Metropolis Hasting (MH) sampling of the exact
+posterior pdfs to improve its acceptance rate. It is done by first quickly constructing a Gaussian
+process (GP) surrogate of the exact posterior pdfs using deterministic optimization. This efficient
+surrogate is then used to modify commonly-used proposal distributions in MH sampling such that
+only proposals accepted by the surrogate will be tested by the exact posterior pdf for acceptance/rejection,
+reducing unnecessary model simulations at unlikely candidates. Synthetic and real-data experiments
+using the presented method show a significant gain in computational efficiency without compromising
+the accuracy. In addition, insights into the non-identifiability and heterogeneity of tissue
+properties can be gained from the obtained posterior distributions. 

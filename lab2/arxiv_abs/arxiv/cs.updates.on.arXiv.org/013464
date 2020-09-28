@@ -1,0 +1,18 @@
+FPGAs provide a flexible and efficient platform to accelerate rapidly-changing algorithms for
+computer vision. The majority of existing work focuses on accelerating image classification,
+while other fundamental vision problems, including object detection and instance segmentation,
+have not been adequately addressed. Compared with image classification, detection problems are
+more sensitive to the spatial variance of objects, and therefore, require specialized convolutions
+to aggregate spatial information. To address this, recent work proposes dynamic deformable convolution
+to augment regular convolutions. Regular convolutions process a fixed grid of pixels across all
+the spatial locations in an image, while dynamic deformable convolutions may access arbitrary
+pixels in the image and the access pattern is input-dependent and varies per spatial location. These
+properties lead to inefficient memory accesses of inputs with existing hardware. In this work,
+we first investigate the overhead of the deformable convolution on embedded FPGA SoCs, and then
+show the accuracy-latency tradeoffs for a set of algorithm modifications including full versus
+depthwise, fixed-shape, and limited-range. These modifications benefit the energy efficiency
+for embedded devices in general as they reduce the compute complexity. We then build an efficient
+object detection network with modified deformable convolutions and quantize the network using
+state-of-the-art quantization methods. We implement a unified hardware engine on FPGA to support
+all the operations in the network. Preliminary experiments show that little accuracy is compromised
+and speedup can be achieved with our co-design optimization for the deformable convolution. 

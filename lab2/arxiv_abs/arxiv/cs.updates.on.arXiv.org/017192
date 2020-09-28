@@ -1,0 +1,19 @@
+Most existing text-to-image synthesis tasks are static single-turn generation, based on pre-defined
+textual descriptions of images. To explore more practical and interactive real-life applications,
+we introduce a new task - Interactive Image Editing, where users can guide an agent to edit images
+via multi-turn textual commands on-the-fly. In each session, the agent takes a natural language
+description from the user as the input and modifies the image generated in the previous turn to a new
+design, following the user description. The main challenges in this sequential and interactive
+image generation task are two-fold: 1) contextual consistency between a generated image and the
+provided textual description; 2) step-by-step region-level modification to maintain visual
+consistency across the generated image sequence in each session. To address these challenges,
+we propose a novel Sequential Attention Generative Adversarial Net-work (SeqAttnGAN), which
+applies a neural state tracker to encode the previous image and the textual description in each turn
+of the sequence, and uses a GAN framework to generate a modified version of the image that is consistent
+with the preceding images and coherent with the description. To achieve better region-specific
+refinement, we also introduce a sequential attention mechanism into the model. To benchmark on
+the new task, we introduce two new datasets, Zap-Seq and DeepFashion-Seq, which contain multi-turn
+sessions with image-description sequences in the fashion domain. Experiments on both datasets
+show that the proposed SeqAttnGANmodel outperforms state-of-the-art approaches on the interactive
+image editing task across all evaluation metrics including visual quality, image sequence coherence,
+and text-image consistency. 

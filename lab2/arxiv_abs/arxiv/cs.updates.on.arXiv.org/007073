@@ -1,0 +1,20 @@
+Smooth convex minimization over the unit trace-norm ball is an important optimization problem
+in machine learning, signal processing, statistics and other fields, that underlies many tasks
+in which one wishes to recover a low-rank matrix given certain measurements. While first-order
+methods for convex optimization enjoy optimal convergence rates, they require in worst-case to
+compute a full-rank SVD on each iteration, in order to compute the projection onto the trace-norm
+ball. These full-rank SVD computations however prohibit the application of such methods to large
+problems. A simple and natural heuristic to reduce the computational cost is to approximate the
+projection using only a low-rank SVD. This raises the question if, and under what conditions, this
+simple heuristic can indeed result in provable convergence to the optimal solution. In this paper
+we show that any optimal solution is a center of a Euclid. ball inside-which the projected-gradient
+mapping admits rank that is at most the multiplicity of the largest singular value of the gradient
+vector. Moreover, the radius of the ball scales with the spectral gap of this gradient vector. We
+show how this readily implies the local convergence (i.e., from a "warm-start" initialization)
+of standard first-order methods, using only low-rank SVD computations. We also quantify the effect
+of "over-parameterization", i.e., using SVD computations with higher rank, on the radius of this
+ball, showing it can increase dramatically with moderately larger rank. We extend our results also
+to the setting of optimization with trace-norm regularization and optimization over bounded-trace
+positive semidefinite matrices. Our theoretical investigation is supported by concrete empirical
+evidence that demonstrates the \textit{correct} convergence of first-order methods with low-rank
+projections on real-world datasets. 

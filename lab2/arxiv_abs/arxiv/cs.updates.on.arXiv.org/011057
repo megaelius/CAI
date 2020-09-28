@@ -1,0 +1,20 @@
+Energy proportionality is the key design goal followed by architects of modern multicore CPUs.
+One of its implications is that optimization of an application for performance will also optimize
+it for energy. In this work, we show that energy proportionality does not hold true for multicore
+CPUs. This finding creates the opportunity for bi-objective optimization of applications for
+performance and energy. We propose and study the first application-level method for bi-objective
+optimization of multithreaded data-parallel applications for performance and energy. The method
+uses two decision variables, the number of identical multithreaded kernels (threadgroups) executing
+the application and the number of threads in each threadgroup, with the workload always partitioned
+equally between the threadgroups. We experimentally demonstrate the efficiency of the method
+using four highly optimized multithreaded data-parallel applications, 2D fast Fourier transform
+based on FFTW and Intel MKL, and dense matrix-matrix multiplication using OpenBLAS and Intel MKL.
+Four modern multicore CPUs are used in the experiments. The experiments show that optimization
+for performance alone results in the increase in dynamic energy consumption by up to 89% and optimization
+for dynamic energy alone degrades the performance by up to 49%. By solving the bi-objective optimization
+problem, the method determines up to 11 globally Pareto-optimal solutions. Finally, we propose
+a qualitative dynamic energy model employing performance monitoring counters as parameters,
+which we use to explain the discovered energy nonproportionality and the Pareto-optimal solutions
+determined by our method. The model shows that the energy nonproportionality in our case is due to
+the activity of the data translation lookaside buffer (dTLB), which is disproportionately energy
+expensive. 

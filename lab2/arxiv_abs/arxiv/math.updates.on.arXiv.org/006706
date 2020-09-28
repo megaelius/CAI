@@ -1,0 +1,19 @@
+Markov Decision Processes (MDPs) are a widely used model for dynamic decision-making problems.
+However, MDPs require precise specification of model parameters, and often the cost of a policy
+can be highly sensitive to the estimated parameters. Robust MDPs ameliorate this issue by allowing
+one to specify uncertainty sets around the parameters, which leads to a non-convex optimization
+problem. This non-convex problem can be solved via the Value Iteration algorithm, but Value Iteration
+requires repeatedly solving convex programs that become prohibitively expensive as MDPs grow
+larger. We propose an algorithmic framework based on first-order methods, where we interleave
+approximate value iteration updates with a first-order-based computation of the robust Bellman
+update. Our algorithm relies on having a proximal setup for the uncertainty sets. We go on to instantiate
+this proximal setup for $s$-rectangular ellipsoidal uncertainty sets and Kullback-Leibler uncertainty
+sets. By carefully controlling the warm-starts of our first-order method and the increasing approximation
+rate at each Value Iteration update, our algorithm achieves a convergence rate of $O \left( A^{2}
+S^{3}\log(S)\log(\epsilon^{-1}) \epsilon^{-1} \right)$ for the best choice of parameters,
+where $S,A$ are the numbers of states and actions. Our dependence on the number of states and actions
+is significantly better than that of Value Iteration algorithms. In numerical experiments on ellipsoidal
+uncertainty sets, we show that our algorithm is significantly more scalable than state-of-the-art
+approaches. In the class of $s$-rectangular robust MDPs, to the best of our knowledge, our algorithm
+is the first to address Kullback-Leibler uncertainty sets. It is also the only one to solve ellipsoidal
+uncertainty sets to optimality when the state and action spaces become on the order of several hundreds.

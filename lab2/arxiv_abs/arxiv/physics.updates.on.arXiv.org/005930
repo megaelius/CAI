@@ -1,0 +1,19 @@
+Despite their well-known limitations, RANS models remain the most commonly employed tool for modeling
+turbulent flows in engineering practice. RANS models are predicated on the solution of the RANS
+equations, but these equations involve an unclosed term, the Reynolds stress tensor, which must
+be modeled. The Reynolds stress tensor is often modeled as an algebraic function of mean flow field
+variables and turbulence variables. This introduces a discrepancy between the Reynolds stress
+tensor predicted by the model and the exact Reynolds stress tensor. This discrepancy can result
+in inaccurate mean flow field predictions. In this paper, we introduce a data-informed approach
+for arriving at Reynolds stress models with improved predictive performance. Our approach relies
+on learning the components of the Reynolds stress discrepancy tensor associated with a given Reynolds
+stress model in the mean strain-rate tensor eigenframe. These components are typically smooth
+and hence simple to learn using state-of-the-art machine learning strategies and regression techniques.
+Our approach automatically yields Reynolds stress models that are symmetric, and it yields Reynolds
+stress models that are both Galilean and frame invariant provided the inputs are themselves Galilean
+and frame invariant. To arrive at computable models of the discrepancy tensor, we employ feed-forward
+neural networks and an input space spanning the integrity basis of the mean strain-rate tensor,
+the mean rotation-rate tensor, the mean pressure gradient, and the turbulent kinetic energy gradient,
+and we introduce a framework for dimensional reduction of the input space to further reduce computational
+cost. Numerical results illustrate the effectiveness of the proposed approach for data-informed
+Reynolds stress closure for a suite of turbulent flow problems of increasing complexity. 

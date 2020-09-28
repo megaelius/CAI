@@ -1,0 +1,18 @@
+Payment channel networks (PCN) are used in cryptocurrencies to enhance the performance and scalability
+of off-chain transactions. Except for opening and closing of a payment channel, no other transaction
+requests accepted by a PCN are recorded in the Blockchain. Only the parties which have opened the
+channel will know the exact amount of fund left at a given instant. In real scenarios, there might
+not exist a single path which can enable transfer of high value payments. For such cases, splitting
+up the transaction value across multiple paths is a better approach. While there exists several
+approaches which route transactions via several paths, such techniques are quite inefficient,
+as the decision on the number of splits must be taken at the initial phase of the routing algorithm
+(e.g., SpeedyMurmur [42]). Algorithms which do not consider the residual capacity of each channel
+in the network are susceptible to failure. Other approaches leak sensitive information, and are
+quite computationally expensive [28]. To the best of our knowledge, our proposed scheme HushRelay
+is an efficient privacy preserving routing algorithm, taking into account the funds left in each
+channel, while splitting the transaction value across several paths. Comparing the performance
+of our algorithm with existing routing schemes on real instances (e.g., Ripple Network), we observed
+that HushRelay attains a success ratio of 1, with an execution time of 2.4 sec. However, SpeedyMurmur
+[42] attains a success ratio of 0.98 and takes 4.74 sec when the number of landmarks is 6. On testing
+our proposed routing algorithm on the Lightning Network, a success ratio of 0.99 is observed, having
+an execution time of 0.15 sec, which is 12 times smaller than the time taken by SpeedyMurmur. 

@@ -1,0 +1,18 @@
+Understanding micro-architectural behavior is profound in efficiently using hardware resources.
+Recent work has shown that, despite being aggressively optimized for modern hardware, in-memory
+online transaction processing (OLTP) systems severely underutilize their core micro-architecture
+resources [25]. Online analytical processing (OLAP) workloads, on the other hand, exhibit a completely
+different computing pattern. OLAP workloads are read-only, bandwidth-intensive and include
+various data access patterns including both sequential and random data accesses. In addition,
+with the rise of column-stores, they run on high performance engines that are tightly optimized
+for the efficient use of modern hardware. Hence, the micro-architectural behavior of modern OLAP
+systems remains unclear. This work presents the micro-architectural analysis of a breadth of OLAP
+systems. We examine CPU cycles and memory bandwidth utilization. The results show that, unlike
+the traditional, commercial OLTP systems, traditional, commercial OLAP systems do not suffer
+from instruction cache misses. Nevertheless, they suffer from their large instruction footprint
+resulting in slow response times. High performance OLAP engines execute tight instruction streams;
+however, they spend 25 to 82% of the CPU cycles on stalls regardless of the workload being sequential-
+or random-access-heavy. In addition, high performance OLAP engines underutilize the multi-core
+CPU or memory bandwidth resources due to their disproportional compute and memory demands. Hence,
+analytical processing engines should carefully assign their compute and memory resources for
+efficient multi-core micro-architectural utilization. 

@@ -1,0 +1,17 @@
+The present work proposes an inflow turbulence generation strategy using deep learning methods.
+This is achieved with the help of an autoencoder architecture with two different types of operational
+layers in the latent-space: a fully connected multi-layer perceptron and convolutional long short-term
+memory layers. A wall-resolved large eddy simulation of a turbulent channel flow at a high Reynolds
+number is performed to create a large database of instantaneous snapshots of turbulent flow-fields
+used to train neural networks. The training is performed with sequences of instantaneous snapshots
+so as to learn a snapshot at the next time instant. For the present work, velocity and pressure fluctuations
+are used for training to produce the same parameters at the next time instant. Within the autoencoders,
+different types of methods like average pooling and strided convolutions are tested for the reduction
+of spatial dimensions. For convolutional neural networks, the physical boundary conditions are
+implemented in the form of symmetric as well as periodic paddings. A priori simulations are performed
+with the trained deep learning models to check the accuracy of turbulence statistics produced.
+It is found that the use of convolutional long short-term memory layers in the latent space improved
+the quality of statistics, although issues related to stability for longer times are observed.
+Though instantaneous snapshots of the target flow are required for training, these a priori simulations
+suggest that the deep learning methods for generating inflow turbulence are one of the possible
+alternatives to existing methods. 

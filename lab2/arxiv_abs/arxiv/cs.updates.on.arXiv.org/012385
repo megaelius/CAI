@@ -1,0 +1,18 @@
+Open-access neuroimaging datasets have reached petabyte scale, and continue to grow. The ability
+to leverage the entirety of these datasets is limited to a restricted number of labs with both the
+capacity and infrastructure to process the data. Whereas Big Data engines have significantly reduced
+application performance penalties with respect to data movement, their applied strategies (e.g.
+data locality, in-memory computing and lazy evaluation) are not necessarily practical within
+neuroimaging workflows where intermediary results may need to be materialized to shared storage
+for post-processing analysis. In this paper we evaluate the performance advantage brought by Intel(R)
+OptaneTM DC persistent memory for the processing of large neuroimaging datasets using the two available
+configurations modes: Memory mode and App Direct mode. We employ a synthetic algorithm on the 76
+GiB and 603 GiB BigBrain, as well as apply a standard neuroimaging application on the Consortium
+for Reliability and Reproducibility (CoRR) dataset using 25 and 96 parallel processes in both cases.
+Our results show that the performance of applications leveraging persistent memory is superior
+to that of other storage devices,with the exception of DRAM. This is the case in both Memory and App
+Direct mode and irrespective of the amount of data and parallelism. Furthermore, persistent memory
+in App Direct mode is believed to benefit from the use of DRAM as a cache for writing when output data
+is significantly smaller than available memory. We believe the use of persistent memory will be
+beneficial to both neuroimaging applications running on HPC or visualization of large, high-resolution
+images. 

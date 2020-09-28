@@ -1,0 +1,20 @@
+In this paper, we study the task of detecting semantic parts of an object. This is very important in
+computer vision, as it provides the possibility to parse an object as human do, and helps us better
+understand object detection algorithms. Also, detecting semantic parts is very challenging especially
+when the parts are partially or fully occluded. In this scenario, the popular proposal-based methods
+like Faster-RCNN often produce unsatisfactory results, because both the proposal extraction
+and classification stages may be confused by the irrelevant occluders. To this end, we propose a
+novel detection framework, named DeepVoting, which accumulates local visual cues, called visual
+concepts (VC), to locate the semantic parts. Our approach involves adding two layers after the intermediate
+outputs of a deep neural network. The first layer is used to extract VC responses, and the second layer
+performs a voting mechanism to capture the spatial relationship between VC's and semantic parts.
+The benefit is that each semantic part is supported by multiple VC's. Even if some of the supporting
+VC's are missing due to occlusion, we can still infer the presence of the target semantic part using
+the remaining ones. To avoid generating an exponentially large training set to cover all occlusion
+cases, we train our model without seeing occlusion and transfer the learned knowledge to deal with
+occlusions. This setting favors learning the models which are naturally robust and adaptive to
+occlusions instead of over-fitting the occlusion patterns in the training data. In experiments,
+DeepVoting shows significantly better performance on semantic part detection in occlusion scenarios,
+compared with Faster-RCNN, with one order of magnitude fewer parameters and 2.5x testing speed.
+In addition, DeepVoting is explainable as the detection result can be diagnosed via looking up the
+voted VC's. 

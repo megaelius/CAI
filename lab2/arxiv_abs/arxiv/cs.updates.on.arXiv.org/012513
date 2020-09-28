@@ -1,0 +1,18 @@
+Recurrent neural networks (RNNs) are commonly applied to clinical time-series data with the goal
+of learning patient risk stratification models. Their effectiveness is due, in part, to their use
+of parameter sharing over time (i.e., cells are repeated hence the name recurrent). We hypothesize,
+however, that this trait also contributes to the increased difficulty such models have with learning
+relationships that change over time. Conditional shift, i.e., changes in the relationship between
+the input X and the output y, arises when risk factors associated with the event of interest change
+over the course of a patient admission. While in theory, RNNs and gated RNNs (e.g., LSTMs) in particular
+should be capable of learning time-varying relationships, when training data are limited, such
+models often fail to accurately capture these dynamics. We illustrate the advantages and disadvantages
+of complete parameter sharing (RNNs) by comparing an LSTM with shared parameters to a sequential
+architecture with time-varying parameters on prediction tasks involving three clinically-relevant
+outcomes: acute respiratory failure (ARF), shock, and in-hospital mortality. In experiments
+using synthetic data, we demonstrate how parameter sharing in LSTMs leads to worse performance
+in the presence of conditional shift. To improve upon the dichotomy between complete parameter
+sharing and no parameter sharing, we propose a novel RNN formulation based on a mixture model in which
+we relax parameter sharing over time. The proposed method outperforms standard LSTMs and other
+state-of-the-art baselines across all tasks. In settings with limited data, relaxed parameter
+sharing can lead to improved patient risk stratification performance. 

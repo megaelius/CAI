@@ -1,0 +1,19 @@
+Convolutional neural networks have achieved excellent results in automatic medical image segmentation.
+In this study, we proposed a novel 3D multi-path DenseNet for generating the accurate glioblastoma
+(GBM) tumor contour from four multi-modal pre-operative MR images. We hypothesized that the multi-path
+architecture could achieve more accurate segmentation than a single-path architecture. 258 GBM
+patients were included in this study. Each patient had four MR images (T1-weighted, contrast-enhanced
+T1-weighted, T2-weighted, and FLAIR) and the manually segmented tumor contour. We built a 3D multi-path
+DenseNet that could be trained to generate the corresponding GBM tumor contour from the four MR images.
+A 3D single-path DenseNet was also built for comparison. Both DenseNets were based on the encoder-decoder
+architecture. All four images were concatenated and fed into a single encoder path in the single-path
+DenseNet, while each input image had its own encoder path in the multi-path DenseNet. The patient
+cohort was randomly split into a training set of 180 patients, a validation set of 39 patients, and
+a testing set of 39 patients. Model performance was evaluated using the Dice similarity coefficient
+(DSC), average surface distance (ASD), and 95% Hausdorff distance (HD95%). Wilcoxon signed-rank
+tests were conducted to examine the model differences. The single-path DenseNet achieved a DSC
+of 0.911$\pm$0.060, ASD of 1.3$\pm$0.7 mm, and HD95% of 5.2$\pm$7.1 mm, while the multi-path DenseNet
+achieved a DSC of 0.922$\pm$0.041, ASD of 1.1$\pm$0.5 mm, and HD95% of 3.9$\pm$3.3 mm. The p-values
+of all Wilcoxon signed-rank tests were less than 0.05. Both 3D DenseNets generated GBM tumor contours
+in good agreement with the manually segmented contours from multi-modal MR images. The multi-path
+DenseNet achieved more accurate tumor segmentation than the single-path DenseNet. 

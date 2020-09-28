@@ -1,0 +1,20 @@
+In the classical vertex-weighted Steiner tree problem (VST), one is given an undirected graph $G
+= (V,E)$ with nonnegative vertex weights, and a set $T \subseteq V$ of terminals. The objective is
+to compute a minimum-weight tree that spans $T$. The VST problem is NP-hard and it is NP-hard to approximate
+VST to within factor $(1-\varepsilon)\ln |T|$, but nearly-best approximation algorithms exist
+including the $2\ln |T|-$approximation algorithm of [Klein\& Ravi, 1995]. Steiner tree problems
+and their variants have many applications, from combinatorial optimization and network routing
+to geometry and visualization. In some applications, the terminals may have different levels,
+priorities, or rate-of-service requirements. For problems of this type, we study a natural generalization
+of the VST problem to multiple levels, referred to as the vertex-weighted, multi-level Steiner
+tree (V-MLST) problem: given a vertex-weighted graph $G = (V,E)$ and $\ell \ge 2$ nested terminal
+sets $T_{\ell} \subset T_{\ell-1} \subset \cdots \subset T_{1}\subseteq V$, compute a nested
+set of trees $G_\ell \subseteq G_{\ell-1} \subseteq \cdots \subseteq G_1$ where each tree $G_i$
+spans its corresponding terminal set $T_i$, with minimum total weight. We introduce a simple heuristic
+with approximation ratio $O(\ell \ln |T_1|)$, which runs in a top-down manner using a single-level
+VST subroutine. We then show that the V-MLST problem can be approximated to within $2 \ln|T_1|$ of
+the optimum with a greedy algorithm that connects "level-respecting trees" at each iteration with
+a minimum cost-to-connectivity ratio. This result is counterintuitive as it suggests that the
+seemingly harder multi-level version is not indeed harder than the single-level VST problem to
+approximate. The key tool in the analysis of our greedy approximation algorithm is a new "tailed
+spider decomposition." 

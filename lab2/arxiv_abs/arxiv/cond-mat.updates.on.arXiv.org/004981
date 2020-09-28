@@ -1,0 +1,17 @@
+Numerical routines for Fock states indexing and to handle creation and annihilation operators
+in the spanned multiconfigurational space are developed. From the combinatorial problem of fitting
+particles in a truncated basis of individual particle states, which defines the spanned multiconfigurational
+space, a hashing function is provided based on a metric to sort all possible configurations, which
+refers to sets of occupation numbers required in the definition of Fock states. Despite the hashing
+function unambiguously relates the configuration to the coefficient index of the many-particle
+state expansion in the Fock basis, averages of creation and annihilation operators can be a highly
+demanding computation, especially when they are embedded in a time-dependent problem. Therefore,
+improvements in the conversion between configurations after the action of creation and annihilation
+operators are thoroughly inspected, highlighting the advantages and additional memory consumption.
+We also exploit massive parallel processors from graphics processor units with CUDA to improve
+a routine to act with the many-body Hamiltonian matrix on the spanned multiconfigurational space,
+which demonstrated quantitatively the scalability of the problem. The improvements shown here
+seem promising especially for calculations involving a large number of particles, in which case,
+the optimized CUDA code provided a drastic performance gain of roughly fifty times faster than a
+single core processor. The codes were consistently tested with an application to the Lieb-Liniger
+gas, evaluating the ground state and comparing with the analytical solution. 

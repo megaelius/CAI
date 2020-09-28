@@ -1,0 +1,17 @@
+Real-world image noise removal is a long-standing yet very challenging task in computer vision.
+The success of deep neural network in denoising stimulates the research of noise generation, aiming
+at synthesizing more clean-noisy image pairs to facilitate the training of deep denoisers. In this
+work, we propose a novel unified framework to simultaneously deal with the noise removal and noise
+generation tasks. Instead of only inferring the posteriori distribution of the latent clean image
+conditioned on the observed noisy image in traditional MAP framework, our proposed method learns
+the joint distribution of the clean-noisy image pairs. Specifically, we approximate the joint
+distribution with two different factorized forms, which can be formulated as a denoiser mapping
+the noisy image to the clean one and a generator mapping the clean image to the noisy one. The learned
+joint distribution implicitly contains all the information between the noisy and clean images,
+avoiding the necessity of manually designing the image priors and noise assumptions as traditional.
+Besides, the performance of our denoiser can be further improved by augmenting the original training
+dataset with the learned generator. Moreover, we propose two metrics to assess the quality of the
+generated noisy image, for which, to the best of our knowledge, such metrics are firstly proposed
+along this research line. Extensive experiments have been conducted to demonstrate the superiority
+of our method over the state-of-the-arts both in the real noise removal and generation tasks. The
+training and testing code is available at https://github.com/zsyOAOA/DANet. 

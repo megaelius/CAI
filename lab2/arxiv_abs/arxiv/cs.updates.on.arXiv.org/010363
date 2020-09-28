@@ -1,0 +1,20 @@
+Visualizing the trajectory of multiple runners with videos collected at different points in a race
+could be useful for sports performance analysis. The videos and the trajectories can also aid in
+athlete health monitoring. While the runners unique ID and their appearance are distinct, the task
+is not straightforward because the video data does not contain explicit information as to which
+runners appear in each of the videos. There is no direct supervision of the model in tracking athletes,
+only filtering steps to remove irrelevant detections. Other factors of concern include occlusion
+of runners and harsh illumination. To this end, we identify two methods for runner identification
+at different points of the event, for determining their trajectory. One is scene text detection
+which recognizes the runners by detecting a unique 'bib number' attached to their clothes and the
+other is person re-identification which detects the runners based on their appearance. We train
+our method without ground truth but to evaluate the proposed methods, we create a ground truth database
+which consists of video and frame interval information where the runners appear. The videos in the
+dataset was recorded by nine cameras at different locations during the a marathon event. This data
+is annotated with bib numbers of runners appearing in each video. The bib numbers of runners known
+to occur in the frame are used to filter irrelevant text and numbers detected. Except for this filtering
+step, no supervisory signal is used. The experimental evidence shows that the scene text recognition
+method achieves an F1-score of 74. Combining the two methods, that is - using samples collected by
+text spotter to train the re-identification model yields a higher F1-score of 85.8. Re-training
+the person re-identification model with identified inliers yields a slight improvement in performance(F1
+score of 87.8). 

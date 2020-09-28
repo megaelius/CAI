@@ -1,0 +1,20 @@
+Determining the space complexity of $x$-obstruction-free $k$-set agreement for $x\leq k$ is an
+open problem. In $x$-obstruction-free protocols, processes are required to return in executions
+where at most $x$ processes take steps. The best known upper bound on the number of registers needed
+to solve this problem among $n>k$ processes is $n-k+x$ registers. No general lower bound better
+than $2$ was known. We prove that any $x$-obstruction-free protocol solving $k$-set agreement
+among $n>k$ processes uses at least $\lfloor(n-x)/(k+1-x)\rfloor+1$ registers. Our main tool
+is a simulation that serves as a reduction from the impossibility of deterministic wait-free $k$-set
+agreement: if a protocol uses fewer registers, then it is possible for $k+1$ processes to simulate
+the protocol and deterministically solve $k$-set agreement in a wait-free manner, which is impossible.
+A critical component of the simulation is the ability of simulating processes to revise the past
+of simulated processes. We introduce a new augmented snapshot object, which facilitates this.
+We also prove that any space lower bound on the number of registers used by obstruction-free protocols
+applies to protocols that satisfy nondeterministic solo termination. Hence, our lower bound of
+$\lfloor(n-1)/k\rfloor+1$ for the obstruction-free ($x=1$) case also holds for randomized wait-free
+free protocols. In particular, this gives a tight lower bound of exactly $n$ registers for solving
+obstruction-free and randomized wait-free consensus. Finally, our new techniques can be applied
+to get a space lower of $\lfloor n/2\rfloor+1$ for $\epsilon$-approximate agreement, for sufficiently
+small $\epsilon$. It requires participating processes to return values within $\epsilon$ of each
+other. The best known upper bounds are $\lceil\log(1/\epsilon)\rceil$ and $n$, while no general
+lower bounds were known. 

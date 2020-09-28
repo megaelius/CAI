@@ -1,0 +1,19 @@
+We report the first implementation of the Lattice Boltzmann method (LBM) to integrate the Bloch-Torrey
+equation, which describes the evolution of the transverse magnetization vector and the fate of
+the signal of diffusion magnetic resonance imaging (dMRI). Motivated by the need to interpret dMRI
+experiments on skeletal muscle, and to offset the small time step limitation of classical LBM, a
+hybrid LBM scheme is introduced and implemented to solve the Bloch-Torrey equation in a tissue model
+consisting of cylindrical inclusions (representing bundles of parallel myocytes), delineated
+by thin permeable membranes (sarcolemma) and surrounded by an extracellular domain (endomysium).
+As implemented, the hybrid LBM scheme accommodates piece-wise uniform transport, dMRI parameters,
+periodic outer boundary conditions, and finite membrane permeabilities on non-boundary-conforming
+inner boundaries. The geometry is discretized in uniform 2D or 3D lattices by locating the curved
+cylindrical boundaries halfway between lattice nodes. By comparing with analytical solutions
+of limiting cases, we demonstrate that the hybrid LBM scheme is more accurate than the classical
+LBM scheme. The proposed explicit LBM scheme maintains second-order spatial accuracy, stability,
+and first-order temporal accuracy for a wide range of parameters. The parallel implementation
+of the hybrid LBM code in a multi-CPU computer system with MPI is straightforward. For a domain decomposition
+algorithm on one million lattice nodes, the speedup is linear up to 168 MPI processes. While offering
+certain advantages over finite element or Monte Carlo schemes, the proposed hybrid LBM constitutes
+a sui generis scheme that can be easily adapted to model more complex interfacial conditions and
+physics in heterogeneous multiphase tissue models and to accommodate sophisticated dMRI sequences.

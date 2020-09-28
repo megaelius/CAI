@@ -1,0 +1,19 @@
+We study the problem of distributed task allocation inspired by the behavior of social insects,
+which perform task allocation in a setting of limited capabilities and noisy environment feedback.
+We assume that each task has a demand that should be satisfied but not exceeded, i.e., there is an optimal
+number of ants that should be working on this task at a given time. The goal is to assign a near-optimal
+number of workers to each task in a distributed manner and without explicit access to the values of
+the demands nor the number of ants working on the task. We seek to answer the question of how the quality
+of task allocation depends on the accuracy of assessing whether too many (overload) or not enough
+(lack) ants are currently working on a given task. Concretely, we address the open question of solving
+task allocation in the model where each ant receives feedback that depends on the deficit defined
+as the (possibly negative) difference between the optimal demand and the current number of workers
+in the task. The feedback is modeled as a random variable that takes value lack or overload with probability
+given by a sigmoid of the deficit. Each ants receives the feedback independently, but the higher
+the overload or lack of workers for a task, the more likely it is that all the ants will receive the same,
+correct feedback from this task; the closer the deficit is to zero, the less reliable the feedback
+becomes. We measure the performance of task allocation algorithms using the notion of regret, defined
+as the absolute value of the deficit summed over all tasks and summed over time. We propose a simple,
+constant-memory, self-stabilizing, distributed algorithm that quickly converges from any initial
+distribution to a near-optimal assignment. We also show that our algorithm works not only under
+stochastic noise but also in an adversarial noise setting. 

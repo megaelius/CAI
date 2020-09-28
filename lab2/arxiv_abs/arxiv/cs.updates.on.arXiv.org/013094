@@ -1,0 +1,19 @@
+A common assumption in semi-supervised learning with graph models is that the class label function
+varies smoothly on the data graph, resulting in the rather strict prior that the label function has
+low-frequency content. Meanwhile, in many classification problems, the label function may vary
+abruptly in certain graph regions, resulting in high-frequency components. Although the semi-supervised
+estimation of class labels is an ill-posed problem in general, in several applications it is possible
+to find a source graph on which the label function has similar frequency content to that on the target
+graph where the actual classification problem is defined. In this paper, we propose a method for
+domain adaptation on graphs motivated by these observations. Our algorithm is based on learning
+the spectrum of the label function in a source graph with many labeled nodes, and transferring the
+information of the spectrum to the target graph with fewer labeled nodes. While the frequency content
+of the class label function can be identified through the graph Fourier transform, it is not easy
+to transfer the Fourier coefficients directly between the two graphs, since no one-to-one match
+exists between the Fourier basis vectors of independently constructed graphs in the domain adaptation
+setting. We solve this problem by learning a transformation between the Fourier bases of the two
+graphs that flexibly ``aligns'' them. The unknown class label function on the target graph is then
+reconstructed such that its spectrum matches that on the source graph while also ensuring the consistency
+with the available labels. The proposed method is tested in the classification of image, online
+product review, and social network data sets. Comparative experiments suggest that the proposed
+algorithm performs better than recent domain adaptation methods in the literature in most settings.

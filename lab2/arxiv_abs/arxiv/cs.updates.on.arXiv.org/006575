@@ -1,0 +1,19 @@
+Set cover is a classic problem in combinatorial optimization where a set of $n$ elements have to be
+covered by a minimum number of subsets from a given collection of size $m$. The two traditional lines
+of inquiry for this problem are via greedy and primal dual algorithms, and respectively yield (tight)
+approximation factors of $\ln n$, where $n$ is the total number of elements, and $f$, where every
+element belongs to at most $f$ sets. Recent research has focused on the dynamic setting, where the
+set of elements changes over time. Using the same lines of inquiry, this has led to the following results:
+(a) an $O(\log n)$-approximation in $O(f \log n)$ (amortized) update time (Gupta {\em et al.}, STOC
+2017), and (b) an $O(f^2)$-approximation in $O(f \log (m+n))$ (amortized) update time (Bhattacharya
+{\em et al.}, ICALP 2015). While the former result matches the offline approximation within a constant
+factor, the latter does not; indeed, the only $O(f)$-approximation known in the dynamic setting
+is by re-solving the problem after every update. In this paper, we show that it is possible to maintain
+efficiently a solution (almost) as good as the primal-dual offline one: we give a $(1+\epsilon)
+f$-approximation for set cover in $O(f^2\log n/\epsilon)$ (amortized) update time. If we are in
+a decremental setting, i.e., there are element deletions but no insertions, the update time can
+be improved to $O(f^2/\epsilon)$, while still obtaining an $(1+\epsilon) f$-approximation.
+Finally, we study the dependence of the update time on $f$. Using the recent distributed PCP-framework,
+we show that any dynamic algorithm for set cover that has an amortized update time of $O(f^{1-\epsilon})$
+must have an approximation factor that is $\Omega(n^\delta)$ for some $\delta>0$ under the Strong
+Exponential Time Hypothesis. 

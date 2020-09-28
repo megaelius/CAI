@@ -1,0 +1,17 @@
+Modern navigation services often provide multiple paths connecting the same source and destination
+for users to select. Hence, ranking such paths becomes increasingly important, which directly
+affects the service quality. We present PathRank, a data-driven framework for ranking paths based
+on historical trajectories using multi-task learning. If a trajectory used path P from source s
+to destination d, PathRank considers this as an evidence that P is preferred over all other paths
+from s to d. Thus, a path that is similar to P should have a larger ranking score than a path that is dissimilar
+to P. Based on this intuition, PathRank models path ranking as a regression problem, where each path
+is associated with a ranking score. To enable PathRank, we first propose an effective method to generate
+a compact set of training data: for each trajectory, we generate a small set of diversified paths.
+Next, we propose a multi-task learning framework to solve the regression problem. In particular,
+a spatial network embedding is proposed to embed each vertex to a feature vector by considering both
+road network topology and spatial properties, such as distances and travel times. Since a path is
+represented by a sequence of vertices, which is now a sequence of feature vectors after embedding,
+recurrent neural network is applied to model the sequence. The objective function is designed to
+consider errors on both ranking scores and spatial properties, making the framework a multi-task
+learning framework. Empirical studies on a substantial trajectory data set offer insight into
+the designed properties of the proposed framework and indicating that it is effective and practical.

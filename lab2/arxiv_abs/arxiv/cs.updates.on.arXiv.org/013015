@@ -1,0 +1,19 @@
+Neural networks (NN) have been recently applied together with evolutionary algorithms (EAs) to
+solve dynamic optimization problems. The applied NN estimates the position of the next optimum
+based on the previous time best solutions. After detecting a change, the predicted solution can
+be employed to move the EA's population to a promising region of the solution space in order to accelerate
+convergence and improve accuracy in tracking the optimum. While previous works show improvement
+of the results, they neglect the overhead created by NN. In this work, we reflect the time spent on
+training NN in the optimization time and compare the results with a baseline EA. We explore if by considering
+the generated overhead, NN is still able to improve the results, and under which condition is able
+to do so. The main difficulties to train the NN are: 1) to get enough samples to generalize predictions
+for new data, and 2) to obtain reliable samples. As NN needs to collect data at each time step, if the
+time horizon is short, we will not be able to collect enough samples to train the NN. To alleviate this,
+we propose to consider more individuals on each change to speed up sample collection in shorter time
+steps. In environments with a high frequency of changes, the solutions produced by EA are likely
+to be far from the real optimum. Using unreliable train data for the NN will, in consequence, produce
+unreliable predictions. Also, as the time spent for NN stays fixed regardless of the frequency,
+a higher frequency of change will mean a higher produced overhead by the NN in proportion to the EA.
+In general, after considering the generated overhead, we conclude that NN is not suitable in environments
+with a high frequency of changes and/or short time horizons. However, it can be promising for the
+low frequency of changes, and especially for the environments that changes have a pattern. 

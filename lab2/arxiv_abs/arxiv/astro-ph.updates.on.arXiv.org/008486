@@ -1,0 +1,17 @@
+A direct detection of gravitational waves is one of the most exciting frontiers for modern astronomy
+and astrophysics. Gravitational wave signals combined with classical electro-magnetic observations,
+known as multi-messenger astronomy, promise newer and deeper insights about the cosmic evolution
+of astrophysical objects such as neutron starts and black holes. To this end, we have been developing
+an original data processing pipeline for KAGRA, a Japanese gravitational wave telescope, for optimal
+detections of supernova events. As a part of our project, we released a web application named SuperNova
+Event Gravitational-wave-display in Fukuoka (SNEGRAF) in autumn 2018. SNEGRAF accepts the users'
+theoretical waveforms as a plain text file consisting of a time series of $h_{+}$ and $h_{\times}$
+(the plus and cross mode of gravitational waves, respectively), then displays the input, a corresponding
+spectrogram, and power spectrum together with KAGRA sensitivity curve and the signal-to-noise
+ratio; we adopt Google Visualization API for the interactive visualization of the input waveforms.
+However, it is a time-consuming task to draw more than $\sim 10^{5}$ data points directly with JavaScript,
+although the number can be typical for a supernova hunt by assuming a typical duration of the event
+and sampling rate of the detectors; a combination of recursive decimations of the original in the
+server-side program and an appropriate selection of them depending on the time duration requested
+by the user in a web browser achieves an acceptable latency. In this paper, we present the current
+design, implementation and optimization algorithms of SNEGRAF, and its future perspectives.

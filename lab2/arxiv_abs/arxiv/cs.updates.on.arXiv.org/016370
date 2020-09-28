@@ -1,0 +1,18 @@
+Graph Convolutional Network (GCN) has experienced great success in graph analysis tasks. It works
+by smoothing the node features across the graph. The current GCN models overwhelmingly assume that
+node feature information is complete. However, real-world graph data are often incomplete and
+containing missing features. Traditionally, people have to estimate and fill in the unknown features
+based on imputation techniques and then apply GCN. However, the process of feature filling and graph
+learning are separated, resulting in degraded and unstable performance. This problem becomes
+more serious when a large number of features are missing. We propose an approach that adapts GCN to
+graphs containing missing features. In contrast to traditional strategy, our approach integrates
+the processing of missing features and graph learning within the same neural network architecture.
+Our idea is to represent the missing data by Gaussian Mixture Model (GMM) and calculate the expected
+activation of neurons in the first hidden layer of GCN, while keeping the other layers of the network
+unchanged. This enables us to learn the GMM parameters and network weight parameters in an end-to-end
+manner. Notably, our approach does not increase the computational complexity of GCN and it is consistent
+with GCN when the features are complete. We conduct experiments on the node label classification
+task and demonstrate that our approach significantly outperforms the best imputation based methods
+by up to 99.43%, 102.96%, 6.97%, 35.36% in four benchmark graphs when a large portion of features
+are missing. The performance of our approach for the case with a low level of missing features is even
+superior to GCN for the case with complete features. 

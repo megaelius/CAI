@@ -1,0 +1,20 @@
+Network-based approaches to modeling and simulating biochemical reaction systems, such as ordinary
+differential equations, require enumerating all possible species and reactions that can potentially
+exist in a system. The applicability of these approaches is limited, however, by the problem of combinatorial
+complexity, an explosion in the number of species and reactions due to protein-protein interactions
+prevalent in biochemical systems. Rule-based modeling is an approach that avoids this problem
+by representing molecules as structured objects and encoding their interactions as pattern-based
+rules. Rule-based models can, on the one hand, be used to generate fully enumerated reaction networks
+or, alternatively, simulated directly using particle-based kinetic Monte Carlo methods. The
+latter "network-free" approach produces exact stochastic trajectories with a computational
+cost that is independent of network size. However, memory and run time costs increase linearly (at
+best) with the number of particles, limiting the size of system that can be feasibly simulated. Here,
+we present a hybrid particle/population simulation method that combines the best attributes of
+both the network-based and network-free approaches. The method takes as input a rule-based model
+augmented with a user-specified subset of species to treat as population variables rather than
+as particles. The model is then transformed by a process of partial network expansion into a form
+that can be simulated using a population-adapted network-free simulator. We have implemented
+the transformation method within the open-source rule-based modeling platform BioNetGen and
+the resulting hybrid model can be simulated using the particle-based simulator NFsim. Benchmark
+tests show that significant memory savings can be achieved using the new approach and a monetary
+cost analysis provides a practical measure of its utility. 

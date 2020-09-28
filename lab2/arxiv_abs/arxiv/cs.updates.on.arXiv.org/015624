@@ -1,0 +1,20 @@
+We present a new deterministic algorithm for distributed weighted all pairs shortest paths (APSP)
+in both undirected and directed graphs. Our algorithm runs in $\tilde{O}(n^{4/3})$ rounds in the
+Congest models on graphs with arbitrary edge weights, and it improves on the previous $\tilde{O}(n^{3/2})$
+bound of Agarwal et al. [ARKP18]. The main components of our new algorithm are a new faster technique
+for constructing blocker set deterministically and a new pipelined method for deterministically
+propagating distance values from source nodes to the blocker set nodes in the network. Both of these
+techniques have potential applications to other distributed algorithms. Our new deterministic
+algorithm for computing blocker set adapts the NC approximate hypergraph set cover algorithm in
+[BRS94] to the distributed construction of a blocker set. It follows the two-step process of first
+designing a randomized algorithm that uses only pairwise independence, and then derandomizes
+this algorithm using a sample space of linear size. This algorithm runs in almost the same number
+of rounds as the initial step in our APSP algorithm that computes $h$-hops shortest paths, and significantly
+improves on the deterministic blocker set algorithms in [ARKP18, AR19] by removing an additional
+$n\cdot |Q|$ term in the round bound, where Q is the blocker set. The other new component in our APSP
+algorithm is a deterministic pipelined approach to propagate distance values from source nodes
+to blocker nodes. We use a simple natural round-robin method for this step, and we show using a suitable
+progress measure that it achieve the $\tilde{O}(n^{4/3})$ bound on the number of rounds. It appears
+that the standard deterministic methods for efficiently broadcasting multiple values, and for
+sending or receiving messages using the routing schedule in [HPDG+19,LSP19] do not apply to this
+setting. 

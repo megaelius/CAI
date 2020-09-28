@@ -1,0 +1,20 @@
+Modeling a sequence of interactions between users and items (e.g., products, posts, or courses)
+is crucial in domains such as e-commerce, social networking, and education to predict future interactions.
+Representation learning presents an attractive solution to model the dynamic evolution of user
+and item properties, where each user/item can be embedded in a euclidean space and its evolution
+can be modeled by dynamic changes in embedding. However, existing embedding methods either generate
+static embeddings, treat users and items independently, or are not scalable. Here we present JODIE,
+a coupled recurrent model to jointly learn the dynamic embeddings of users and items from a sequence
+of user-item interactions. JODIE has three components. First, the update component updates the
+user and item embedding from each interaction using their previous embeddings with the two mutually-recursive
+Recurrent Neural Networks. Second, a novel projection component is trained to forecast the embedding
+of users at any future time. Finally, the prediction component directly predicts the embedding
+of the item in a future interaction. For models that learn from a sequence of interactions, traditional
+training data batching cannot be done due to complex user-user dependencies. Therefore, we present
+a novel batching algorithm called t-Batch that generates time-consistent batches of training
+data that can run in parallel, giving massive speed-up. We conduct six experiments on two prediction
+tasks---future interaction prediction and state change prediction---using four real-world
+datasets. We show that JODIE outperforms six state-of-the-art algorithms in these tasks by up to
+22.4%. Moreover, we show that JODIE is highly scalable and up to 9.2x faster than comparable models.
+As an additional experiment, we illustrate that JODIE can predict student drop-out from courses
+five interactions in advance. 

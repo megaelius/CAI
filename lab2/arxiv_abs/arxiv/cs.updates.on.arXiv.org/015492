@@ -1,0 +1,17 @@
+This paper describes a statistically-principled semi-supervised method of automatic chord estimation
+(ACE) that can make effective use of any music signals regardless of the availability of chord annotations.
+The typical approach to ACE is to train a deep classification model (neural chord estimator) in a
+supervised manner by using only a limited amount of annotated music signals. In this discriminative
+approach, prior knowledge about chord label sequences (characteristics of model output) has scarcely
+been taken into account. In contract, we propose a unified generative and discriminative approach
+in the framework of amortized variational inference. More specifically, we formulate a deep generative
+model that represents the complex generative process of chroma vectors (observed variables) from
+the discrete labels and continuous textures of chords (latent variables). Chord labels and textures
+are assumed to follow a Markov model favoring self-transitions and a standard Gaussian distribution,
+respectively. Given chroma vectors as observed data, the posterior distributions of latent chord
+labels and textures are computed approximately by using deep classification and recognition models,
+respectively. These three models are combined to form a variational autoencoder and trained jointly
+in a semi-supervised manner. The experimental results show that the performance of the classification
+model can be improved by additionally using non-annotated music signals and/or by regularizing
+the classification model with the Markov model of chord labels and the generative model of chroma
+vectors even in the fully-supervised condition. 

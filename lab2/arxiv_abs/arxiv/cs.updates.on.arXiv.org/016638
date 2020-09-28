@@ -1,0 +1,18 @@
+Delineation of cancerous regions in gigapixel whole slide images (WSIs) is a crucial diagnostic
+procedure in digital pathology. This process is time-consuming because of the large search space
+in the gigapixel WSIs, causing chances of omission and misinterpretation at indistinct tumor lesions.
+To tackle this, the development of an automated cancerous region segmentation method is imperative.
+We frame this issue as a modeling problem with partial label WSIs, where some cancerous regions may
+be misclassified as benign and vice versa, producing patches with noisy labels. To learn from these
+patches, we propose Self-similarity Student, combining teacher-student model paradigm with
+similarity learning. Specifically, for each patch, we first sample its similar and dissimilar
+patches according to spatial distance. A teacher-student model is then introduced, featuring
+the exponential moving average on both student model weights and teacher predictions ensemble.
+While our student model takes patches, teacher model takes all their corresponding similar and
+dissimilar patches for learning robust representation against noisy label patches. Following
+this similarity learning, our similarity ensemble merges similar patches' ensembled predictions
+as the pseudo-label of a given patch to counteract its noisy label. On the CAMELYON16 dataset, our
+method substantially outperforms state-of-the-art noise-aware learning methods by 5$\%$ and
+the supervised-trained baseline by 10$\%$ in various degrees of noise. Moreover, our method is
+superior to the baseline on our TVGH TURP dataset with 2$\%$ improvement, demonstrating the generalizability
+to more clinical histopathology segmentation tasks. 

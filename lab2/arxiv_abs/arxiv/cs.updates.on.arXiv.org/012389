@@ -1,0 +1,20 @@
+The purpose was to assess the clinical value of a novel DropOut model for detecting and segmenting
+brain metastases, in which a neural network is trained on four distinct MRI sequences using an input
+dropout layer, thus simulating the scenario of missing MRI data by training on the full set and all
+possible subsets of the input data. This retrospective, multi-center study, evaluated 165 patients
+with brain metastases. A deep learning based segmentation model for automatic segmentation of
+brain metastases, named DropOut, was trained on multi-sequence MRI from 100 patients, and validated/tested
+on 10/55 patients. The segmentation results were compared with the performance of a state-of-the-art
+DeepLabV3 model. The MR sequences in the training set included pre- and post-gadolinium (Gd) T1-weighted
+3D fast spin echo, post-Gd T1-weighted inversion recovery (IR) prepped fast spoiled gradient echo,
+and 3D fluid attenuated inversion recovery (FLAIR), whereas the test set did not include the IR prepped
+image-series. The ground truth were established by experienced neuroradiologists. The results
+were evaluated using precision, recall, Dice score, and receiver operating characteristics (ROC)
+curve statistics, while the Wilcoxon rank sum test was used to compare the performance of the two
+neural networks. The area under the ROC curve (AUC), averaged across all test cases, was 0.989+-0.029
+for the DropOut model and 0.989+-0.023 for the DeepLabV3 model (p=0.62). The DropOut model showed
+a significantly higher Dice score compared to the DeepLabV3 model (0.795+-0.105 vs. 0.774+-0.104,
+p=0.017), and a significantly lower average false positive rate of 3.6/patient vs. 7.0/patient
+(p<0.001) using a 10mm3 lesion-size limit. The DropOut model may facilitate accurate detection
+and segmentation of brain metastases on a multi-center basis, even when the test cohort is missing
+MRI input data. 

@@ -1,0 +1,17 @@
+Algorithms with low computational intensity show interesting performance and power consumption
+behavior on multicore processors. We choose the lattice-Boltzmann method (LBM) as a prototype
+for this scenario in order to show if and how single-chip performance and power characteristics
+can be generalized to the highly parallel case. LBM is an algorithm for CFD simulations that has gained
+popularity due to its ease of implementation and suitability for complex geometries. In this paper
+we perform a thorough analysis of a sparse-lattice LBM implementation on the Intel Sandy Bridge
+processor. Starting from a single-core performance model we can describe the intra-chip saturation
+characteristics of the code and its optimal operating point in terms of energy to solution as a function
+of the propagation method, the clock frequency, and the SIMD vectorization. We then show how these
+findings may be extrapolated to the massively parallel level on a petascale-class machine, and
+quantify the energy-saving potential of various optimizations. We find that high single-core
+performance and a correct choice of the number of cores used on the chip are the essential factors
+for lowest energy to solution with minimal loss of performance. In the highly parallel case, these
+guidelines are found to be even more important for fixing the optimal performance-energy operating
+point, especially when taking the system's baseline power consumption and the MPI communication
+characteristics into account. Simplistic measures often applied by users and computing centers,
+such as setting a low clock speed for memory-bound applications, have limited impact. 

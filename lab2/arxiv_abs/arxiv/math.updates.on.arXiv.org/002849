@@ -1,0 +1,18 @@
+Reduced-basis methods (RB methods or RBMs) form one of the most promising techniques to deliver
+numerical solutions of parametrized PDEs in real-time performance with reasonable accuracy.
+For incompressible flow problems, RBMs based on LBB stable velocity-pressure spaces do not generally
+inherit the stability of the underlying high-fidelity model and, instead, additional stabilization
+techniques must be introduced. One way of bypassing the loss of LBB stability in the RBM is to inflate
+the velocity space with supremizer modes. This however deteriorates the performance of the RBM
+in the performance-critical online stage, as additional DOFs must be introduced to retain stability,
+while these DOFs do not effectively contribute to accuracy of the RB approximation. In this work
+we consider a velocity-only RB approximation, exploiting a solenoidal velocity basis. The solenoidal
+reduced basis emerges directly from the high-fidelity velocity solutions in the offline stage.
+By means of Piola transforms, the solenoidality of the velocity space is retained under geometric
+transformations, making the proposed RB method suitable also for the investigation of geometric
+parameters. To ensure exact solenoidality of the high-fidelity velocity solutions that constitute
+the RB, we consider approximations based on divergence-conforming compatible B-splines. We show
+that the velocity-only RB method leads to a significant improvement in computational efficiency
+in the online stage, and that the pressure solution can be recovered a posteriori at negligible extra
+cost. We illustrate the solenoidal RB approach by modeling steady two-dimensional Navier-Stokes
+flow around a NACA0015 airfoil at various angles of attack. 

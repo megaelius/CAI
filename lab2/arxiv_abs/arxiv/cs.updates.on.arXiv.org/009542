@@ -1,0 +1,18 @@
+Learning to estimate 3D geometry in a single frame and optical flow from consecutive frames by watching
+unlabeled videos via deep convolutional network has made significant progress recently. Current
+state-of-the-art (SoTA) methods treat the two tasks independently. One typical assumption of
+the existing depth estimation methods is that the scenes contain no independent moving objects.
+while object moving could be easily modeled using optical flow. In this paper, we propose to address
+the two tasks as a whole, i.e. to jointly understand per-pixel 3D geometry and motion. This eliminates
+the need of static scene assumption and enforces the inherent geometrical consistency during the
+learning process, yielding significantly improved results for both tasks. We call our method as
+"Every Pixel Counts++" or "EPC++". Specifically, during training, given two consecutive frames
+from a video, we adopt three parallel networks to predict the camera motion (MotionNet), dense depth
+map (DepthNet), and per-pixel optical flow between two frames (OptFlowNet) respectively. The
+three types of information are fed into a holistic 3D motion parser (HMP), and per-pixel 3D motion
+of both rigid background and moving objects are disentangled and recovered. Comprehensive experiments
+were conducted on datasets with different scenes, including driving scenario (KITTI 2012 and KITTI
+2015 datasets), mixed outdoor/indoor scenes (Make3D) and synthetic animation (MPI Sintel dataset).
+Performance on the five tasks of depth estimation, optical flow estimation, odometry, moving object
+segmentation and scene flow estimation shows that our approach outperforms other SoTA methods.
+Code will be available at: https://github.com/chenxuluo/EPC. 

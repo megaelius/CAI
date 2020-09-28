@@ -1,0 +1,18 @@
+We introduce a new coordination problem in distributed computing that we call the population stability
+problem. A system of agents each with limited memory and communication, as well as the ability to
+replicate and self-destruct, is subjected to attacks by a worst-case adversary that can at a bounded
+rate (1) delete agents chosen arbitrarily and (2) insert additional agents with arbitrary initial
+state into the system. The goal is perpetually to maintain a population whose size is within a constant
+factor of the target size $N$. The problem is inspired by the ability of complex biological systems
+composed of a multitude of memory-limited individual cells to maintain a stable population size
+in an adverse environment. Such biological mechanisms allow organisms to heal after trauma or to
+recover from excessive cell proliferation caused by inflammation, disease, or normal development.
+We present a population stability protocol in a communication model that is a synchronous variant
+of the population model of Angluin et al. In each round, pairs of agents selected at random meet and
+exchange messages, where at least a constant fraction of agents is matched in each round. Our protocol
+uses three-bit messages and $\omega(\log^2 N)$ states per agent. We emphasize that our protocol
+can handle an adversary that can both insert and delete agents, a setting in which existing approximate
+counting techniques do not seem to apply. The protocol relies on a novel coloring strategy in which
+the population size is encoded in the variance of the distribution of colors. Individual agents
+can locally obtain a weak estimate of the population size by sampling from the distribution, and
+make individual decisions that robustly maintain a stable global population size. 

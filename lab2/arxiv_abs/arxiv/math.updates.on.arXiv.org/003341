@@ -1,0 +1,19 @@
+We introduce an automatic variationally stable analysis (AVS) for finite element (FE) computations
+of scalar-valued convection-diffusion equations with non-constant and highly oscillatory coefficients.
+In the spirit of least squares FE methods, the AVS-FE method recasts the governing second order partial
+differential equation (PDE) into a system of first-order PDEs. However, in the subsequent derivation
+of the equivalent weak formulation, a Petrov-Galerkin technique is applied by using different
+regularities for the trial and test function spaces. We use standard FE approximation spaces for
+the trial spaces, which are C0, and broken Hilbert spaces for the test functions. Thus, we seek to
+compute pointwise continuous solutions for both the primal variable and its flux (as in least squares
+FE methods), while the test functions are piecewise discontinuous. To ensure the numerical stability
+of the subsequent FE discretizations, we apply the philosophy of the discontinuous Petrov-Galerkin
+(DPG) method by Demkowicz and Gopalakrishnan, by invoking test functions that lead to unconditionally
+stable numerical systems (if the kernel of the underlying differential operator is trivial). In
+the AVS-FE method, the discontinuous test functions are ascertained per the DPG approach from local,
+decoupled, and well-posed variational problems, which lead to best approximation properties
+in terms of the energy norm. We present various 2D numerical verifications, including convection-diffusion
+problems with highly oscillatory coefficients and extremely high Peclet numbers, up to a billion.
+These show the unconditional stability without the need for any upwind schemes nor any other artificial
+numerical stabilization. The results are not highly diffused for convection-dominated problems
+... 

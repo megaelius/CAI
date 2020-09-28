@@ -1,0 +1,19 @@
+In paravirtualization, the page table management components of the guest operating systems are
+properly patched for the security guarantees of the hypervisor. However, none of them pay enough
+attentions to the performance improvements, which results in two noticeable performance issues.
+First, such security patches exacerbate the problem that the execution paths of the guest page table
+(de)allocations become extremely long, which would consequently increase the latencies of process
+creations and exits. Second, the patches introduce many additional IOTLB flushes, leading to extra
+IOTLB misses, and the misses would have negative impacts on I/O performance of all peripheral devices.
+In this paper, we propose PiBooster, a novel lightweight approach for improving the performance
+in page table management. First, PiBooster shortens the execution paths of the page table (de)allocations
+by the PiBooster cache, which maintains dedicated buffers for serving page table (de)allocations.
+Second, PiBooster eliminates the additional IOTLB misses with a fine-grained validation scheme,
+which performs page table and DMA validations separately, instead of doing both together. We implement
+a prototype on Xen with Linux as the guest kernel. We do small modifications on Xen (166 SLoC) and Linux
+kernel (350 SLoC). We evaluate the I/O performance in both micro and macro ways. The micro experiment
+results indicate that PiBooster is able to completely eliminate the additional IOTLB flushes in
+the workload-stable environments, and effectively reduces (de)allocation time of the page table
+by 47% on average. The macro benchmarks show that the latencies of the process creations and exits
+are expectedly reduced by 16% on average. Moreover, the SPECINT,lmbench and netperf results indicate
+that PiBooster has no negative performance impacts on CPU computation, network I/O, and disk I/O.

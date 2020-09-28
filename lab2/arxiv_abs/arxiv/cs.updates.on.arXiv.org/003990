@@ -1,0 +1,18 @@
+Network embeddings map the nodes of a given network into $d$-dimensional Euclidean space $\mathbb{R}^d$.
+Ideally, this mapping is such that `similar' nodes are mapped onto nearby points, such that the embedding
+can be used for purposes such as link prediction (if `similar' means being `more likely to be connected')
+or classification (if `similar' means `being more likely to have the same label'). In recent years
+various methods for network embedding have been introduced. These methods all follow a similar
+strategy, defining a notion of similarity between nodes (typically deeming nodes more similar
+if they are nearby in the network in some metric), a distance measure in the embedding space, and minimizing
+a loss function that penalizes large distances for similar nodes or small distances for dissimilar
+nodes. A difficulty faced by existing methods is that certain networks are fundamentally hard to
+embed due to their structural properties, such as (approximate) multipartiteness, certain degree
+distributions, or certain kinds of assortativity. Overcoming this difficulty, we introduce a
+conceptual innovation to the literature on network embedding, proposing to create embeddings
+that maximally add information with respect to such structural properties (e.g. node degrees,
+block densities, etc.). We use a simple Bayesian approach to achieve this, and propose a block stochastic
+gradient descent algorithm for fitting it efficiently. Finally, we demonstrate that the combination
+of information such structural properties and a Euclidean embedding provides superior performance
+across a range of link prediction tasks. Moreover, we demonstrate the potential of our approach
+for network visualization. 

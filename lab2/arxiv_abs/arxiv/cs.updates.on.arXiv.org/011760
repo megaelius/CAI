@@ -1,0 +1,17 @@
+With the emergence of cross-organization attack-prone byzantine fault-tolerant (BFT) systems,
+so-called Blockchains, providing asynchronous state machine replication (SMR) solutions is
+no longer a theoretical concern. This paper introduces ACE: a general framework for the software
+design of fault-tolerant SMR systems. We first propose a new leader-based-view (LBV) abstraction
+that encapsulates the core properties provided by each view in a partially synchronous consensus
+algorithm, designed according to the leader-based view-by-view paradigm (e.g., PBFT and Paxos).
+Then, we compose several LBV instances in a non-trivial way in order to boost asynchronous liveness
+of existing SMR solutions. ACE is model agnostic - it abstracts away any model assumptions that consensus
+protocols may have, e.g., the ratio and types of faulty parties. For example, when the LBV abstraction
+is instantiated with a partially synchronous consensus algorithm designed to tolerate crash failures,
+e.g., Paxos or Raft, ACE yields an asynchronous SMR for $n = 2f+1$ parties. However, if the LBV abstraction
+is instantiated with a byzantine protocol like PBFT or HotStuff, then ACE yields an asynchronous
+byzantine SMR for $n = 3f+1$ parties. To demonstrate the power of ACE, we implement it in C++, instantiate
+the LBV abstraction with a view implementation of HotStuff -- a state of the art partially synchronous
+byzantine agreement protocol -- and compare it with the base HotStuff implementation under different
+adversarial scenarios. Our evaluation shows that while ACE is outperformed by HotStuff in the optimistic,
+synchronous, failure-free case, ACE has absolute superiority during network asynchrony and attacks.

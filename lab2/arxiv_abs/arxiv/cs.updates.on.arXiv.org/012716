@@ -1,0 +1,19 @@
+In the Lattice Agreement (LA) problem, originally proposed by Attiya et al. \cite{Attiya:1995},
+a set of processes has to decide on a chain of a lattice. More precisely, each correct process proposes
+an element $e$ of a certain join-semi lattice $L$ and it has to decide on a value that contains $e$.
+Moreover, any pair $p_i,p_j$ of correct processes has to decide two values $dec_i$ and $dec_j$ that
+are comparable (e.g., $dec_i \leq dec_j$ or $dec_j < dec_i$). LA has been studied for its practical
+applications, as example it can be used to implement a snapshot objects \cite{Attiya:1995} or a
+replicated state machine with commutative operations \cite{Faleiro:2012}. Interestingly,
+the study of the Byzantine Lattice Agreement started only recently, and it has been mainly devoted
+to asynchronous systems. The synchronous case has been object of a recent pre-print \cite{Zheng:aa}
+where Zheng et al. propose an algorithm terminating in ${\cal O}(\sqrt f)$ rounds and tolerating
+$f < \lceil n/3 \rceil$ Byzantine processes. In this paper we present new contributions for the synchronous
+case. We investigate the problem in the usual message passing model for a system of $n$ processes
+with distinct unique IDs. We first prove that, when only authenticated channels are available,
+the problem cannot be solved if $f=n/3$ or more processes are Byzantine. We then propose a novel algorithm
+that works in a synchronous system model with signatures (i.e., the {\em authenticated message}
+model), tolerates up to $f$ byzantine failures (where $f<n/3$) and that terminates in ${\cal O}(\log
+f)$ rounds. We discuss how to remove authenticated messages at the price of algorithm resiliency
+($f < n/4$). Finally, we present a transformer that converts any synchronous LA algorithm to an algorithm
+for synchronous Generalised Lattice Agreement. 

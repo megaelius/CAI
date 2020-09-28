@@ -1,0 +1,20 @@
+This work introduces a novel discontinuity-tracking framework for resolving discontinuous solutions
+of conservation laws with high-order numerical discretizations that support inter-element solution
+discontinuities, such as discontinuous Galerkin methods. The proposed method aims to align inter-element
+boundaries with discontinuities in the solution by deforming the computational mesh. A discontinuity-aligned
+mesh ensures the discontinuity is represented through inter-element jumps while smooth basis
+functions interior to elements are only used to approximate smooth regions of the solution, thereby
+avoiding Gibbs' phenomena that create well-known stability issues. Therefore, very coarse high-order
+discretizations accurately resolve the piecewise smooth solution throughout the domain, provided
+the discontinuity is tracked. Central to the proposed discontinuity-tracking framework is a discrete
+PDE-constrained optimization formulation that simultaneously aligns the computational mesh
+with discontinuities in the solution and solves the discretized conservation law on this mesh.
+The optimization objective is taken as a combination of the the deviation of the finite-dimensional
+solution from its element-wise average and a mesh distortion metric to simultaneously penalize
+Gibbs' phenomena and distorted meshes. We advocate a gradient-based, full space solver where the
+mesh and conservation law solution converge to their optimal values simultaneously and therefore
+never require the solution of the discrete conservation law on a non-aligned mesh. The merit of the
+proposed method is demonstrated on a number of one- and two-dimensional model problems including
+2D supersonic flow around a bluff body. We demonstrate optimal $\mathcal{O}(h^{p+1})$ convergence
+rates in the $L^1$ norm for up to polynomial order $p=6$ and show that accurate solutions can be obtained
+on extremely coarse meshes. 

@@ -1,0 +1,17 @@
+The focus of this paper is on differential privacy of streaming data using sketch-based algorithms.
+Previous works, like Dwork {\it et al.} (ICS 2010, STOC 2010), explored random sampling based streaming
+algorithms. We work in the well studied streaming model of computation, where the database is stored
+in the form of a matrix and a curator can access the database row-wise or column-wise. Dwork {\it et
+al.} (STOC 2010) gave impossibility result for any non-trivial query on a streamed data with respect
+to the user level privacy. Therefore, in this paper, we restrict our attention to the event level
+privacy. {We provide optimal, up to logarithmic factor, space differentially private mechanism
+in the streaming model for three basic linear algebraic tasks: matrix multiplication, linear regression,
+and low rank approximation, while incurring significantly less additive error}. Our approach
+for matrix multiplication and linear regression has some similarities with Blocki {\it et al.}
+(FOCS 2012) and Upadhyay (ASIACRYPT 2013) on the superficial level, but there are some subtle differences.
+For example, they perform an affine transformation to convert the private matrix in to a set of $\{\sqrt{w/n},1\}^n$
+vectors for some appropriate $w$, while we perform an input perturbation that raises the singular
+value of the private matrix. %On a high level, the mechanism for linear regression and matrix multiplication
+can be seen as a private analogue of the known streaming algorithms. In order to get a streaming algorithm
+for low rank approximation, we have to reuse the random Gaussian matrix in a specific way. We prove
+that the resulting distribution also preserve differential privacy. 

@@ -1,0 +1,17 @@
+We present Anadroid, a static malware analysis framework for Android apps. Anadroid exploits two
+techniques to soundly raise precision: (1) it uses a pushdown system to precisely model dynamically
+dispatched interprocedural and exception-driven control-flow; (2) it uses Entry-Point Saturation
+(EPS) to soundly approximate all possible interleavings of asynchronous entry points in Android
+applications. (It also integrates static taint-flow analysis and least permissions analysis
+to expand the class of malicious behaviors which it can catch.) Anadroid provides rich user interface
+support for human analysts which must ultimately rule on the "maliciousness" of a behavior. To demonstrate
+the effectiveness of Anadroid's malware analysis, we had teams of analysts analyze a challenge
+suite of 52 Android applications released as part of the Auto- mated Program Analysis for Cybersecurity
+(APAC) DARPA program. The first team analyzed the apps using a ver- sion of Anadroid that uses traditional
+(finite-state-machine-based) control-flow-analysis found in existing malware analysis tools;
+the second team analyzed the apps using a version of Anadroid that uses our enhanced pushdown-based
+control-flow-analysis. We measured machine analysis time, human analyst time, and their accuracy
+in flagging malicious applications. With pushdown analysis, we found statistically significant
+(p < 0.05) decreases in time: from 85 minutes per app to 35 minutes per app in human plus machine
+analysis time; and statistically significant (p < 0.05) increases in accuracy with the pushdown-driven
+analyzer: from 71% correct identification to 95% correct identification. 

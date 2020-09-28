@@ -1,0 +1,20 @@
+This paper presents a new approach for Gaussian process (GP) regression for large datasets. The
+approach involves partitioning the regression input domain into multiple local regions with a
+different local GP model fitted in each region. Unlike existing local partitioned GP approaches,
+we introduce a technique for patching together the local GP models nearly seamlessly to ensure that
+the local GP models for two neighboring regions produce nearly the same response prediction and
+prediction error variance on the boundary between the two regions. This effectively solves the
+well-known discontinuity problem that degrades the boundary accuracy of existing local partitioned
+GP methods. Our main innovation is to represent the continuity conditions as additional pseudo-observations
+that the differences between neighboring GP responses are identically zero at an appropriately
+chosen set of boundary input locations. To predict the response at any input location, we simply
+augment the actual response observations with the pseudo-observations and apply standard GP prediction
+methods to the augmented data. In contrast to heuristic continuity adjustments, this has an advantage
+of working within a formal GP framework, so that the GP-based predictive uncertainty quantification
+remains valid. Our approach also inherits a sparse block-like structure for the sample covariance
+matrix, which results in computationally efficient closed-form expressions for the predictive
+mean and variance. In addition, we provide a new spatial partitioning scheme based on a recursive
+space partitioning along local principal component directions, which makes the proposed approach
+applicable for regression domains having more than two dimensions. Using three spatial datasets
+and three higher dimensional datasets, we investigate the numerical performance of the approach
+and compare it to several state-of-the-art approaches. 

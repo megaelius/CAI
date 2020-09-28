@@ -1,0 +1,19 @@
+Graph pattern matching (e.g., finding all cycles and cliques) has become an important component
+in many critical domains such as social networks, biology, and cyber-security. This development
+motivated research to develop faster algorithms that target graph pattern matching. In recent
+years, the database community has shown that mapping graph pattern matching problems to a new class
+of relational join algorithms provides an efficient framework for computing these problems. In
+this paper, we argue that this new class of relational join algorithms is highly amenable to specialized
+hardware acceleration thanks to two fundamental properties: improved locality and inherent concurrency.
+The improved locality is a result of the provably bound number of intermediate results these algorithms
+generate, which results in smaller working sets. In addition, their inherent concurrency can be
+leveraged for effective hardware acceleration and hiding memory latency. We demonstrate the hardware
+amenability of this new class of algorithms by introducing TrieJax, a hardware accelerator for
+graph pattern matching. The TrieJax design leverages the improved locality and high concurrency
+properties to dramatically accelerate graph pattern matching, and can be tightly integrated into
+existing manycore processors. We evaluate TrieJax on a set standard graph pattern matching queries
+and datasets. Our evaluation shows that TrieJax outperforms recently proposed hardware accelerators
+for graph and database processing that do not employ the new class of algorithms by 7-63x on average
+(up to 539x), while consuming 15-179x less energy (up to 1750x). systems that do incorporate modern
+relational join algorithms by 9-20x on average (up to 45x), while consuming 59-110x less energy
+(up to 372x). 

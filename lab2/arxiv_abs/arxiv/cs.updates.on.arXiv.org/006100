@@ -1,0 +1,18 @@
+Web applications routinely access sensitive and confidential data of users through remote APIs,
+the privacy of which is governed by different policies specified by the application developer and
+implemented as checks across application code and database queries. Given the complexity of the
+code, it is often the case that missing policy checks cause unauthorized information leaks. To address
+this issue of policy compliance, we present ESTRELA, a framework that allows specification of privacy
+policies separately from the code and enforces it on the interfaces that access the sensitive data.
+One of the major concerns that this work addresses is the specification of rich and expressive stateful
+policies that allow applications to function seamlessly while preventing unauthorized leaks
+of data. At the same time, ESTRELA applies only selected policies based on the usage of sensitive
+data, limiting the number of policies being applied. The idea is to associate policies, written
+in a higher-order language, with different remote interfaces that are enforced on their outputs
+instead of having a fixed set of policies for different database fields, leveraging the features
+of the widely-used REST architectural style. ESTRELA is database-agnostic and does not require
+any modification to the database. We implement ESTRELA in Python, on top of Django, and evaluate
+its performance and effectiveness by showing its application to a social-networking application,
+a healthcare system and a conference management system. ESTRELA adds reasonably low overhead to
+existing applications that run without any policy checks, and almost negligible overheads to applications
+running with policy checks as part of the API code. 

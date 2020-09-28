@@ -1,0 +1,20 @@
+Fully convolutional networks (FCNs), including UNet and VNet, are widely-used network architectures
+for semantic segmentation in recent studies. However, conventional FCN is typically trained by
+the cross-entropy or Dice loss, which only calculates the error between predictions and ground-truth
+labels for pixels individually. This often results in non-smooth neighborhoods in the predicted
+segmentation. To address this problem, we propose a two-stage framework, with the first stage to
+quickly localize the prostate region, and the second stage to precisely segment the prostate by
+a multi-task UNet architecture. We introduce a novel online metric learning module through voxel-wise
+sampling in the multi-task network. Therefore, the proposed network has a dual-branch architecture
+that tackles two tasks: 1) a segmentation sub-network aiming to generate the prostate segmentation,
+and 2) a voxel-metric learning sub-network aiming to improve the quality of the learned feature
+space supervised by a combination of triplet and contrast loss function. Specifically, the voxel-metric
+learning sub-network sampled tuples (including triplets and pairs) in voxel-level through the
+intermediate feature maps. Unlike conventional deep metric learning methods that generate triplets
+or pairs in image-level before the training phase, our proposed voxel-wise tuples are sampled in
+an online manner and operated in an end-to-end fashion via multi-task learning. To evaluate the
+proposed method, we implement extensive experiments on a real CT image dataset consisting 339 patients.
+The ablation studies show that our method can effectively learn more representative voxel-level
+features compared with the conventional learning methods with cross-entropy or Dice loss. And
+the comparisons show that the proposed method outperforms the state-of-the-art methods by a reasonable
+margin. 

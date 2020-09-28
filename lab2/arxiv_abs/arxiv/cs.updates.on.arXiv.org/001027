@@ -1,0 +1,19 @@
+Similarity group-by (SGB, for short) has been proposed as a relational database operator to match
+the needs of emerging database applications. Many SGB operators that extend SQL have been proposed
+in the literature, e.g., similarity operators in the one-dimensional space. These operators have
+various semantics. Depending on how these operators are implemented, some of the implementations
+may lead to different groupings of the data. Hence, if SQL code is ported from one database system
+to another, it is not guaranteed that the code will produce the same results. In this paper, we investigate
+the various semantics for the relational similarity group-by operators in the multi-dimensional
+space. We define the class of order-independent SGB operators that produce the same results regardless
+of the order in which the input data is presented to them. Using the notion of interval graphs borrowed
+from graph theory, we prove that, for certain SGB operators, there exist order-independent implementations.
+For each of these operators, we provide a sample algorithm that is order-independent. Also, we prove
+that for other SGB operators, there does not exist an order-independent implementation for them,
+and hence these SGB operators are ill-defined and should not be adopted in extensions to SQL to realize
+similarity group-by. In this paper, we introduce an SGB operator, namely SGB-All, for grouping
+multi-dimensional data using similarity. SGB-All forms groups such that a data item, say O, belongs
+to a group, say G, if and only if O is within a user-defined threshold from all other data items in G.
+In other words, each group in SGB-All forms a clique of nearby data items in the multi-dimensional
+space. We prove that SGB-All are order-independent, i.e., there is at least one algorithm for each
+option that is independent of the presentation order of the input data. 

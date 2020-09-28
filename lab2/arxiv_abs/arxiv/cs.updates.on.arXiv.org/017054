@@ -1,0 +1,20 @@
+Matrix multiplications between asymmetric bit-width operands, especially between 8- and 4-bit
+operands are likely to become a fundamental kernel of many important workloads including neural
+networks and machine learning. While existing SIMD matrix multiplication instructions for symmetric
+bit-width operands can support operands of mixed precision by zero- or sign-extending the narrow
+operand to match the size of the other operands, they cannot exploit the benefit of narrow bit-width
+of one of the operands. We propose a new SIMD matrix multiplication instruction that uses mixed precision
+on its inputs (8- and 4-bit operands) and accumulates product values into narrower 16-bit output
+accumulators, in turn allowing the SIMD operation at 128-bit vector width to process a greater number
+of data elements per instruction to improve processing throughput and memory bandwidth utilization
+without increasing the register read- and write-port bandwidth in CPUs. The proposed asymmetric-operand-size
+SIMD instruction offers 2x improvement in throughput of matrix multiplication in comparison to
+throughput obtained using existing symmetric-operand-size instructions while causing negligible
+(0.05%) overflow from 16-bit accumulators for representative machine learning workloads. The
+asymmetric-operand-size instruction not only can improve matrix multiplication throughput
+in CPUs, but also can be effective to support multiply-and-accumulate (MAC) operation between
+8- and 4-bit operands in state-of-the-art DNN hardware accelerators (e.g., systolic array microarchitecture
+in Google TPU, etc.) and offer similar improvement in matrix multiply performance seamlessly without
+violating the various implementation constraints. We demonstrate how a systolic array architecture
+designed for symmetric-operand-size instructions could be modified to support an asymmetric-operand-sized
+instruction. 

@@ -1,0 +1,19 @@
+For a full rank $n\times d$ matrix $X$ with $n\ge d$, consider the task of solving the linear least
+squares problem, where we try to predict a response value for each of the $n$ rows of $X$. Assume that
+obtaining the responses is expensive and we can only afford to attain the responses for a small subset
+of rows. We show that a good approximate solution to this least squares problem can be obtained from
+just dimension $d$ many responses. Concretely, if the rows are in general position and if a subset
+of $d$ rows is chosen proportional to the squared volume spanned by those rows, then the expected
+total square loss (on all $n$ rows) of the least squares solution found for the subset is exactly $d+1$
+times the minimum achievable total loss. We provide lower bounds showing that the factor of $d+1$
+is optimal, and any iid row sampling procedure requires $\Omega(d\log d)$ responses to achieve
+a finite factor guarantee. Moreover, the least squares solution obtained for the volume sampled
+subproblem is an unbiased estimator of optimal solution based on all $n$ responses. Our methods
+lead to general matrix expectation formulas for volume sampling which go beyond linear regression.
+In particular, we propose a matrix estimator for the pseudoinverse $X^+$, computed from a small
+subset of rows of the matrix $X$. The estimator is unbiased and surprisingly its covariance also
+has a closed form: It equals a specific factor times $X^{+}X^{+\top}$. We believe that these new
+formulas establish a fundamental connection between linear least squares and volume sampling.
+Our analysis for computing matrix expectations is based on reverse iterative volume sampling,
+a technique which also leads to a new algorithm for volume sampling that is by a factor of $n^2$ faster
+than the state-of-the-art. 

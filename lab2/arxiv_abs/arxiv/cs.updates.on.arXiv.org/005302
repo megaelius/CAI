@@ -1,0 +1,18 @@
+We present a novel solution to the problem of simulation-to-real transfer, which builds on recent
+advances in robot skill decomposition. Rather than focusing on minimizing the simulation-reality
+gap, we learn a set of diverse policies that are parameterized in a way that makes them easily reusable.
+This diversity and parameterization of low-level skills allows us to find a transferable policy
+that is able to use combinations and variations of different skills to solve more complex, high-level
+tasks. In particular, we first use simulation to jointly learn a policy for a set of low-level skills,
+and a "skill embedding" parameterization which can be used to compose them. Later, we learn high-level
+policies which actuate the low-level policies via this skill embedding parameterization. The
+high-level policies encode how and when to reuse the low-level skills together to achieve specific
+high-level tasks. Importantly, our method learns to control a real robot in joint-space to achieve
+these high-level tasks with little or no on-robot time, despite the fact that the low-level policies
+may not be perfectly transferable from simulation to real, and that the low-level skills were not
+trained on any examples of high-level tasks. We illustrate the principles of our method using informative
+simulation experiments. We then verify its usefulness for real robotics problems by learning,
+transferring, and composing free-space and contact motion skills on a Sawyer robot using only joint-space
+control. We experiment with several techniques for composing pre-learned skills, and find that
+our method allows us to use both learning-based approaches and efficient search-based planning
+to achieve high-level tasks using only pre-learned skills. 

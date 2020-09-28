@@ -1,0 +1,17 @@
+Unmanned aerial vehicles (UAVs) suffer from sensor drifts in GPS denied environments, which can
+lead to potentially dangerous situations. To avoid intolerable sensor drifts in the presence of
+GPS spoofing attacks, we propose a safety constrained control framework that adapts the UAV at a
+path re-planning level to support resilient state estimation against GPS spoofing attacks. The
+proposed framework includes an attack detector, a resilient state estimator, a robust controller,
+an attacker location tracker (ALT), and an escape controller (ESC). The attack detector is used
+to detect GPS spoofing attacks based on the resilient state estimation and provides a switching
+criterion between the robust control mode and emergency control mode. The robust control mode is
+on when the GPS is free of attacks. When the GPS spoofing attack is detected, the state estimator only
+utilizes IMU signals since GPS signals do not contain legitimate information. To quantify the sensor
+drift due to limited sensor availability, we use the escape time which is defined as a safe time under
+which the state estimation error remains within a tolerable error with designated confidence.
+ALT is developed to track the location of the attacker and estimate the output power of the spoofing
+device by the unscented Kalman filter (UKF) with sliding window outputs. Using the estimates from
+ALT, ESC is designed based on the constrained model predictive controller (MPC) such that the UAV
+escapes from the effective range of the spoofing device within the escape time. The numerical simulations
+demonstrate the effectiveness of the proposed resilient safety constrained control framework.

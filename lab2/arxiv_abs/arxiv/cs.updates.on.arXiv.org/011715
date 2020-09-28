@@ -1,0 +1,19 @@
+In recent years, large amount of high spatial-resolution remote sensing (HRRS) images are available
+for land-cover mapping. However, due to the complex information brought by the increased spatial
+resolution and the data disturbances caused by different conditions of image acquisition, it is
+often difficult to find an efficient method for achieving accurate land-cover classification
+with high-resolution and heterogeneous remote sensing images. In this paper, we propose a scheme
+to apply deep model obtained from labeled land-cover dataset to classify unlabeled HRRS images.
+The main idea is to rely on deep neural networks for presenting the contextual information contained
+in different types of land-covers and propose a pseudo-labeling and sample selection scheme for
+improving the transferability of deep models. More precisely, a deep Convolutional Neural Networks
+is first pre-trained with a well-annotated land-cover dataset, referred to as the source data.
+Then, given a target image with no labels, the pre-trained CNN model is utilized to classify the image
+in a patch-wise manner. The patches with high confidence are assigned with pseudo-labels and employed
+as the queries to retrieve related samples from the source data. The pseudo-labels confirmed with
+the retrieved results are regarded as supervised information for fine-tuning the pre-trained
+deep model. To obtain a pixel-wise land-cover classification with the target image, we rely on the
+fine-tuned CNN and develop a hybrid classification by combining patch-wise classification and
+hierarchical segmentation. In addition, we create a large-scale land-cover dataset containing
+150 Gaofen-2 satellite images for CNN pre-training. Experiments on multi-source HRRS images show
+encouraging results and demonstrate the applicability of the proposed scheme to land-cover classification.

@@ -1,0 +1,19 @@
+We present a distributed algorithm to solve a multi-agent optimization problem, where the global
+objective function is the sum $\tilde{f}(x) = \sum_{i=1}^n \tilde{f}_i(x)$ of $n$ functions,
+with $\tilde{f}_i$ being a convex objective known only to agent $i$. Our focus is on constrained
+problems where the agents' estimates are restricted to be in different convex sets. The interconnection
+topology among the $n$ agents has directed links and each agent $i$ can only communicate with agents
+in its neighborhood determined by a directed graph. In this article, we propose an algorithm called
+\underline{D}irected-\underline{Dist}ributed \underline{A}lternating \underline{D}irection
+\underline{M}ethod of \underline{M}ultipliers (D-DistADMM) to solve the above multi-agent
+convex optimization problem. During every iteration of the D-DistADMM algorithm, each agent solves
+a local convex optimization problem and utilizes a finite-time "approximate" consensus protocol
+to update its local estimate of the optimal solution. To the best of our knowledge, the proposed algorithm
+is the first ADMM based algorithm to solve distributed multi-agent optimization problems in directed
+interconnection topologies with convergence guarantees. We show that in case of individual functions
+being convex and not-necessarily differentiable the proposed D-DistADMM algorithm converges
+at a rate of $O(1/k)$. We numerically evaluate our proposed algorithm by solving a constrained distributed
+$\ell_1$-regularized logistic regression problem. Additionally, we provide a numerical comparison
+of the proposed D-DistADMM algorithm with the other state-of-the-art algorithms in solving a distributed
+least-squares problem to show the efficacy of the D-DistADMM algorithm over the existing methods
+in the literature. 

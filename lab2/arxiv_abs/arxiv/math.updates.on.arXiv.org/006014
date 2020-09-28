@@ -1,0 +1,20 @@
+The travelling thief problem (TTP) is a representative of multi-component optimisation problems
+with interacting components. TTP combines the knapsack problem (KP) and the travelling salesman
+problem (TSP). A thief performs a cyclic tour through a set of cities, and pursuant to a collection
+plan, collects a subset of items into a rented knapsack with finite capacity. The aim is to maximise
+profit while minimising renting cost. Existing TTP solvers typically solve the KP and TSP components
+in an interleaved manner: the solution of one component is kept fixed while the solution of the other
+component is modified. This suggests low coordination between solving the two components, possibly
+leading to low quality TTP solutions. The 2-OPT heuristic is often used for solving the TSP component,
+which reverses a segment in the tour. Within TTP, 2-OPT does not take into account the collection
+plan, which can result in a lower objective value. This in turn can result in the tour modification
+to be rejected by a solver. We propose an expanded form of 2-OPT to change the collection plan in coordination
+with tour modification. Items regarded as less profitable and collected in cities located earlier
+in the reversed segment are substituted by items that tend to be more profitable and not collected
+in cities located later in the reversed segment. The collection plan is further changed through
+a modified form of the hill-climbing bit-flip search, where changes in the collection state are
+only permitted for boundary items, which are defined as lowest profitable collected items or highest
+profitable uncollected items. This restriction reduces the time spent on the KP component, allowing
+more tours to be evaluated by the TSP component within a time budget. The proposed approaches form
+the basis of a new cooperative coordination solver, which is shown to outperform several state-of-the-art
+TTP solvers. 

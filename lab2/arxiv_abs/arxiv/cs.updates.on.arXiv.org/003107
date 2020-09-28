@@ -1,0 +1,18 @@
+Many applications require the immutable and consistent sharing of data across organizational
+boundaries. Because conventional datastores cannot provide this functionality, blockchains
+have been proposed as one possible solution. Yet public blockchains are energy inefficient, hard
+to scale and suffer from limited throughput and high latencies, while permissioned blockchains
+depend on specially designated nodes, potentially leak meta-information, and also suffer from
+scale and performance bottlenecks. This paper presents CreDB, a datastore that provides blockchain-like
+guarantees of integrity using trusted execution environments. CreDB employs four novel mechanisms
+to support a new class of applications. First, it creates a permanent record of every transaction,
+known as a witness, that clients can then use not only to audit the database but to prove to third parties
+that desired actions took place. Second, it associates with every object an inseparable and inviolable
+policy, which not only performs access control but enables the datastore to implement state machines
+whose behavior is amenable to analysis. Third, timeline inspection allows authorized parties
+to inspect and reason about the history of changes made to the data. Finally, CreDB provides a protected
+function evaluation mechanism that allows integrity-protected computation over private data.
+The paper describes these mechanisms, and the applications they collectively enable, in detail.
+We have fully implemented a prototype of CreDB on Intel SGX. Evaluation shows that CreDB can serve
+as a drop-in replacement for other NoSQL stores, such as MongoDB while providing stronger integrity
+guarantees. 

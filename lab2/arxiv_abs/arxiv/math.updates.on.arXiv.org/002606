@@ -1,0 +1,17 @@
+Nonlinear hyperbolic conservation laws admit singular solutions such as shockwaves (discontinuities
+in conserved variables), rarefaction waves (discontinuities in derivatives), and vacuum states
+(loss of strong hyperbolicity). When ostensibly high-order numerical methods are applied in such
+solution regimes, unphysical oscillations present themselves that can lead to large errors and
+a breakdown of the numerical simulation. In this work we develop a new Lax-Wendroff discontinuous
+Galerkin (LxW-DG) method with a limiting strategy that keeps the solution non-oscillatory and
+positivity-preserving for relevant variables, such as height in the shallow water equations and
+density and pressure in the compressible Euler equations. The proposed LxW-DG scheme updates the
+solution over each time-step with a locally-implicit predictor followed by an explicit corrector.
+The locally-implicit prediction phase is formulated in terms of primitive variables, which greatly
+simplifies the solver. The resulting system of nonlinear algebraic equations are approximately
+solved via a Picard iteration, where the number of iterations is equal to the order of accuracy of
+the method. The correction phase is an explicit evaluation formulated in terms of conservative
+variables in order to guarantee numerical conservation. In order to achieve full positivity-preservation,
+limiting is required in both the prediction and correction steps. The resulting scheme is applied
+to several standard test cases for the shallow water and compressible Euler equations. All of the
+presented examples are written in a freely available open-source Python code. 

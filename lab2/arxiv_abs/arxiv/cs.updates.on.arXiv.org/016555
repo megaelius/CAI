@@ -1,0 +1,20 @@
+Shannon's entropy is a definitive lower bound for statistical compression. Unfortunately, no
+such clear measure exists for the compressibility of repetitive strings. Thus, ad-hoc measures
+are employed to estimate the repetitiveness of strings, e.g., the size $z$ of the Lempel-Ziv parse
+or the number $r$ of equal-letter runs of the Burrows-Wheeler transform. A more recent one is the
+size $\gamma$ of a smallest string attractor. Unfortunately, Kempa and Prezza [STOC 2018] showed
+that computing $\gamma$ is NP-hard. Kociumaka et al. [LATIN 2020] considered a new measure that
+is based on the function $S_T$ counting the cardinalities of the sets of substrings of each length
+of $T$, also known as the substring complexity. This new measure is defined as $\delta= \sup\{S_T(k)/k,
+k\geq 1\}$ and lower bounds all the measures previously considered. In particular, $\delta\leq
+\gamma$ always holds and $\delta$ can be computed in $\mathcal{O}(n)$ time using $\Omega(n)$ working
+space. Kociumaka et al. showed that if $\delta$ is given, one can construct an $\mathcal{O}(\delta
+\log \frac{n}{\delta})$-sized representation of $T$ supporting efficient direct access and
+efficient pattern matching queries on $T$. Given that for highly compressible strings, $\delta$
+is significantly smaller than $n$, it is natural to pose the following question: Can we compute $\delta$
+efficiently using sublinear working space? It is straightforward to show that any algorithm computing
+$\delta$ using $\mathcal{O}(b)$ space requires $\Omega(n^{2-o(1)}/b)$ time through a reduction
+from the element distinctness problem [Yao, SIAM J. Comput. 1994]. We present the following results:
+an $\mathcal{O}(n^3/b^2)$-time and $\mathcal{O}(b)$-space algorithm to compute $\delta$,
+for any $b\in[1,n]$; and an $\tilde{\mathcal{O}}(n^2/b)$-time and $\mathcal{O}(b)$-space
+algorithm to compute $\delta$, for any $b\in[n^{2/3},n]$. 

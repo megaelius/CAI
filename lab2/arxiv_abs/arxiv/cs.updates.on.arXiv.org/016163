@@ -1,0 +1,18 @@
+We consider a deep ReLU / Leaky ReLU student network trained from the output of a fixed teacher network
+of the same depth, with Stochastic Gradient Descent (SGD). The student network is \emph{over-realized}:
+at each layer $l$, the number $n_l$ of student nodes is more than that ($m_l$) of teacher. Under mild
+conditions on dataset and teacher network, we prove that when the gradient is small at every data
+sample, each teacher node is \emph{specialized} by at least one student node \emph{at the lowest
+layer}. For two-layer network, such specialization can be achieved by training on any dataset of
+\emph{polynomial} size $\mathcal{O}( K^{5/2} d^3 \epsilon^{-1})$. until the gradient magnitude
+drops to $\mathcal{O}(\epsilon/K^{3/2}\sqrt{d})$. Here $d$ is the input dimension, $K = m_1 +
+n_1$ is the total number of neurons in the lowest layer of teacher and student. Note that we require
+a specific form of data augmentation and the sample complexity includes the additional data generated
+from augmentation. To our best knowledge, we are the first to give polynomial sample complexity
+for student specialization of training two-layer (Leaky) ReLU networks with finite depth and width
+in teacher-student setting, and finite complexity for the lowest layer specialization in multi-layer
+case, without parametric assumption of the input (like Gaussian). Our theory suggests that teacher
+nodes with large fan-out weights get specialized first when the gradient is still large, while others
+are specialized with small gradient, which suggests inductive bias in training. This shapes the
+stage of training as empirically observed in multiple previous works. Experiments on synthetic
+and CIFAR10 verify our findings. The code is released in https://github.com/facebookresearch/luckmatters.

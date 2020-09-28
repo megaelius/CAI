@@ -1,0 +1,19 @@
+Backpropagation (BP) is the cornerstone of today's deep learning algorithms, but it is inefficient
+partially because of backward locking, which means updating the weights of one layer locks the weight
+updates in the other layers. Consequently, it is challenging to apply parallel computing or a pipeline
+structure to update the weights in different layers simultaneously. In this paper, we introduce
+a novel learning structure called associated learning (AL), which modularizes the network into
+smaller components, each of which has a local objective. Because the objectives are mutually independent,
+AL can learn the parameters in different layers independently and simultaneously, so it is feasible
+to apply a pipeline structure to improve the training throughput. Specifically, this pipeline
+structure improves the complexity of the training time from O(nl), which is the time complexity
+when using BP and stochastic gradient descent (SGD) for training, to O(n + l), where n is the number
+of training instances and l is the number of hidden layers. Surprisingly, even though most of the
+parameters in AL do not directly interact with the target variable, training deep models by this
+method yields accuracies comparable to those from models trained using typical BP methods, in which
+all parameters are used to predict the target variable. Consequently, because of the scalability
+and the predictive power demonstrated in the experiments, AL deserves further study to determine
+the better hyperparameter settings, such as activation function selection, learning rate scheduling,
+and weight initialization, to accumulate experience, as we have done over the years with the typical
+BP method. Additionally, perhaps our design can also inspire new network designs for deep learning.
+Our implementation is available at https://github.com/SamYWK/Associated_Learning. 

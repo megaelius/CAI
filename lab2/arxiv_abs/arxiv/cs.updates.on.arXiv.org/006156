@@ -1,0 +1,18 @@
+In this paper we are interested in the prediction of preterm birth based on diagnosis codes from longitudinal
+EHR. We formulate the prediction problem as a supervised classification with noisy labels. Our
+base classifier is a Recurrent Neural Network with an attention mechanism. We assume the availability
+of a data subset with both noisy and clean labels. For the cohort definition, most of the diagnosis
+codes on mothers' records related to pregnancy are ambiguous for the definition of full-term and
+preterm classes. On the other hand, diagnosis codes on babies' records provide fine-grained information
+on prematurity. Due to data de-identification, the links between mothers and babies are not available.
+We developed a heuristic based on admission and discharge times to match babies to their mothers
+and hence enrich mothers' records with additional information on delivery status. The obtained
+additional dataset from the matching heuristic has noisy labels and was used to leverage the training
+of the deep learning model. We propose an Alternating Loss Correction (ALC) method to train deep
+models with both clean and noisy labels. First, the label corruption matrix is estimated using the
+data subset with both noisy and clean labels. Then it is used in the model as a dense output layer to
+correct for the label noise. The network is alternately trained on epochs with the clean dataset
+with a simple cross-entropy loss and on next epoch with the noisy dataset and a loss corrected with
+the estimated corruption matrix. The experiments for the prediction of preterm birth at 90 days
+before delivery showed an improvement in performance compared with baseline and state of-the-art
+methods. 

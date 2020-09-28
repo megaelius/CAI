@@ -1,0 +1,17 @@
+We propose a novel application of coded computing to the problem of the nearest neighbor estimation
+using MatDot Codes [Fahim. et.al. 2017], that are known to be optimal for matrix multiplication
+in terms of recovery threshold under storage constraints. In approximate nearest neighbor algorithms,
+it is common to construct efficient in-memory indexes to improve query response time. One such strategy
+is Multiple Random Projection Trees (MRPT), which reduces the set of candidate points over which
+Euclidean distance calculations are performed. However, this may result in a high memory footprint
+and possibly paging penalties for large or high-dimensional data. Here we propose two techniques
+to parallelize MRPT, that exploit data and model parallelism respectively, by dividing both the
+data storage and the computation efforts among different nodes in a distributed computing cluster.
+This is especially critical when a single compute node cannot hold the complete dataset in memory.
+We also propose a novel coded computation strategy based on MatDot codes for the model-parallel
+architecture that, in a straggler-prone environment, achieves the storage-optimal recovery
+threshold, i.e., the number of nodes that are required to serve a query. We experimentally demonstrate
+that, in the absence of straggling, our distributed approaches require less query time than execution
+on a single processing node, providing near-linear speedups with respect to the number of worker
+nodes. Through our experiments on real systems with simulated straggling, we also show that our
+strategy achieves a faster query execution than the uncoded strategy in a straggler-prone environment.

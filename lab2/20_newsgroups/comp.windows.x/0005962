@@ -1,0 +1,6 @@
+Well, I'm glad that there's plenty of NT stuff at Xhibition.
+Not because I want to use it instead of X, but because I want to 
+find out what the chances are that some time in the future I may 
+not have any choice.
+This is news.  This is your       |    Peter Scott, NASA/JPL/Caltech
+brain on news.  Any questions?    |    (pjs@euclid.jpl.nasa.gov)

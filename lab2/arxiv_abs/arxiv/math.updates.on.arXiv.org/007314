@@ -1,0 +1,17 @@
+We describe an optimization-based tax-aware portfolio construction method that adds tax liability
+to a standard Markowitz-based portfolio construction approach that models expected return, risk,
+and transaction costs. Our method produces a trade list that specifies the number of shares to buy
+of each asset and the number of shares to sell from each tax lot held. To avoid wash sales (in which some
+realized capital losses are disallowed), we assume that we trade monthly, and cannot simultaneously
+buy and sell the same asset. The tax-aware portfolio construction problem is not convex, but it becomes
+convex when we specify, for each asset, whether we buy or sell it. It can be solved using standard mixed-integer
+convex optimization methods at the cost of very long solve times for some problem instances. We present
+a custom convex relaxation of the problem that borrows curvature from the risk model. This relaxation
+can provide a good approximation of the true tax liability, while greatly enhancing computational
+tractability. This method requires the solution of only two convex optimization problems: the
+first determines whether we buy or sell each asset, and the second generates the final trade list.
+This method is therefore extremely fast even in the worst case. In our numerical experiments, which
+are based on a realistic tax-loss harvesting scenario, our method almost always solves the nonconvex
+problem to optimality, and when in does not, it produces a trade list very close to optimal. Backtests
+show that the performance of our method is indistinguishable from that obtained using a globally
+optimal solution, but with significantly reduced computational effort. 

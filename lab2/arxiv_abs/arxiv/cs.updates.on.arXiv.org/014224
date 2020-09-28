@@ -1,0 +1,19 @@
+To better retain the deep features of an image and solve the sparsity problem of the end-to-end segmentation
+model, we propose a new deep convolutional network model for medical image pixel segmentation,
+called MC-Net. The core of this network model consists of four parts, namely, an encoder network,
+a multiple max-pooling integration module, a cross multiscale deconvolution decoder network
+and a pixel-level classification layer. In the network structure of the encoder, we use multiscale
+convolution instead of the traditional single-channel convolution. The multiple max-pooling
+integration module first integrates the output features of each submodule of the encoder network
+and reduces the number of parameters by convolution using a kernel size of 1. At the same time, each
+max-pooling layer (the pooling size of each layer is different) is spliced after each convolution
+to achieve the translation invariance of the feature maps of each submodule. We use the output feature
+maps from the multiple max-pooling integration module as the input of the decoder network; the multiscale
+convolution of each submodule in the decoder network is cross-fused with the feature maps generated
+by the corresponding multiscale convolution in the encoder network. Using the above feature map
+processing methods solves the sparsity problem after the max-pooling layer-generating matrix
+and enhances the robustness of the classification. We compare our proposed model with the well-known
+Fully Convolutional Networks for Semantic Segmentation (FCNs), DecovNet, PSPNet, U-net, SgeNet
+and other state-of-the-art segmentation networks such as HyperDenseNet, MS-Dual, Espnetv2,
+Denseaspp using one binary Kaggle 2018 data science bowl dataset and two multiclass dataset and
+obtain encouraging experimental results. 

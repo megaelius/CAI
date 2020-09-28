@@ -1,0 +1,17 @@
+Hardware-enclaves that target complex CPU designs compromise both security and performance.
+Programs have little control over micro-architecture, which leads to side-channel leaks, and
+then have to be transformed to have worst-case control- and data-flow behaviors and thus incur considerable
+slowdown. We propose to address these security and performance problems by bringing enclaves into
+the realm of accelerator-rich architectures. The key idea is to construct software-defined enclaves
+(SDEs) where the protections and slowdown are tied to an application-defined threat model and tuned
+by a compiler for the accelerator's specific domain. This vertically integrated approach requires
+new hardware data-structures to partition, clear, and shape the utilization of hardware resources;
+and a compiler that instantiates and schedules these data-structures to create multi-tenant enclaves
+on accelerators. We demonstrate our ideas with a comprehensive prototype -- Sesame -- that includes
+modifications to compiler, ISA, and microarchitecture to a decoupled access execute (DAE) accelerator
+framework for deep learning models. Our security evaluation shows that classifiers that could
+distinguish different layers in VGG, ResNet, and AlexNet, fail to do so when run using Sesame. Our
+synthesizable hardware prototype (on a Xilinx Pynq board) demonstrates how the compiler and micro-architecture
+enables threat-model-specific trade-offs in code size increase ranging from 3-7 $\%$ and run-time
+performance overhead for specific defenses ranging from 3.96$\%$ to 34.87$\%$ (across confidential
+inputs and models and single vs. multi-tenant systems). 

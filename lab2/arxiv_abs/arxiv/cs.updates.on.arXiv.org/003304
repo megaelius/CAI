@@ -1,0 +1,18 @@
+Learning from human demonstrations can facilitate automation but is risky because the execution
+of the learned policy might lead to collisions and other failures. Adding explicit constraints
+to avoid unsafe states is generally not possible when the state representations are complex. Furthermore,
+enforcing these constraints during execution of the learned policy can be challenging in environments
+where dynamics are difficult to model such as push mechanics in grasping. In this paper, we propose
+a two-phase method for generating robust policies from demonstrations in robotic manipulation
+tasks. In the first phase, we use support estimation of supervisor demonstrations and treat the
+support as implicit constraints on states in addition to learning a policy directly from the observed
+controls. We also propose a time-variant modification to the support estimation problem allowing
+for accurate estimation on sequential tasks. In the second phase, we use a switching policy to steer
+the robot from leaving safe regions of the state space during run time using the decision function
+of the estimated support. The policy switches between the robot's learned policy and a novel recovery
+policy depending on the distance to the boundary of the support. We present additional conditions,
+which linearly bound the difference in state at each time step by the magnitude of control, allowing
+us to prove that the robot will not violate the constraints using the recovery policy. A simulated
+pushing task suggests that support estimation and recovery control can reduce collisions by 83%.
+On a physical line tracking task using a da Vinci Surgical Robot, recovery control reduced collisions
+by 84%. 

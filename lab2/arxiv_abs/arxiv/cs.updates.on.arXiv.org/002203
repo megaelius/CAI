@@ -1,0 +1,17 @@
+Mobile manipulation problems involving many objects are challenging to solve due to the high dimensionality
+and multi-modality of their hybrid configuration spaces. Planners that perform a purely geometric
+search are prohibitively slow for solving these problems because they are unable to factor the configuration
+space. Symbolic task planners can efficiently construct plans involving many variables but cannot
+represent the geometric and kinematic constraints required in manipulation. We present the FFRob
+algorithm for solving task and motion planning problems. First, we introduce Extended Action Specification
+(EAS) as a general purpose planning representation that supports arbitrary predicates as conditions.
+We adapt existing heuristic search ideas for solving \proc{strips} planning problems, particularly
+delete-relaxations, to solve EAS problem instances. We then apply the EAS representation and planners
+to manipulation problems resulting in FFRob. FFRob iteratively discretizes task and motion planning
+problems using batch sampling of manipulation primitives and a multi-query roadmap structure
+that can be conditionalized to evaluate reachability under different placements of movable objects.
+This structure enables the EAS planner to efficiently compute heuristics that incorporate geometric
+and kinematic planning constraints to give a tight estimate of the distance to the goal. Additionally,
+we show FFRob is probabilistically complete and has finite expected runtime. Finally, we empirically
+demonstrate FFRob's effectiveness on complex and diverse task and motion planning tasks including
+rearrangement planning and navigation among movable objects. 

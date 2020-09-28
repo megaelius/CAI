@@ -1,0 +1,17 @@
+Datacenter systems require efficient troubleshooting and effective resource scheduling so as
+to minimize downtimes and to efficiently utilize limited resources. In doing so, datacenter operators
+employ streaming analytics for collecting and processing datacenter telemetry over a temporal
+window. The quantile operator is key in these systems as it can summarize the typical and abnormal
+behavior of the monitored system. Computing quantiles in real-time is resource-intensive as it
+requires processing hundreds of millions of events in seconds while providing high quantile accuracy.
+We overcome these challenges through workload-driven approximation. Our study uncovers three
+insights: (i) values are dominated by a set of recurring small values, (ii) distribution of small
+values is consistent across different time scales, and (iii) tail values are dominated by a small
+set of large values.We propose QLOVE, an efficient and accurate quantile approximation algorithm
+that capitalizes on these insights. QLOVE minimizes memory footprint of the quantile operator
+via compression and frequency-based summarization of small values. While these summaries are
+stored and processed at sub-window granularity for memory efficiency, they can extend to compute
+quantiles on user-defined temporal windows. Low value error for tail quantiles is achieved by retaining
+a few tail values per sub-window. QLOVE estimates quantiles with high throughput and less than 5%
+relative value error across a wide range of use cases while state-of-the-art algorithms either
+have a high relative value error (13-35%) or deliver lower throughput (15-92%). 

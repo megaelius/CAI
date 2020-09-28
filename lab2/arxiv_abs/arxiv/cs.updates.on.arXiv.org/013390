@@ -1,0 +1,19 @@
+Many sequence-to-sequence generation tasks, including machine translation and text-to-speech,
+can be posed as estimating the density of the output y given the input x: p(y|x). Given this interpretation,
+it is natural to evaluate sequence-to-sequence models using conditional log-likelihood on a test
+set. However, the goal of sequence-to-sequence generation (or structured prediction) is to find
+the best output y^ given an input x, and each task has its own downstream metric R that scores a model
+output by comparing against a set of references y*: R(y^, y* | x). While we hope that a model that excels
+in density estimation also performs well on the downstream metric, the exact correlation has not
+been studied for sequence generation tasks. In this paper, by comparing several density estimators
+on five machine translation tasks, we find that the correlation between rankings of models based
+on log-likelihood and BLEU varies significantly depending on the range of the model families being
+compared. First, log-likelihood is highly correlated with BLEU when we consider models within
+the same family (e.g. autoregressive models, or latent variable models with the same parameterization
+of the prior). However, we observe no correlation between rankings of models across different families:
+(1) among non-autoregressive latent variable models, a flexible prior distribution is better
+at density estimation but gives worse generation quality than a simple prior, and (2) autoregressive
+models offer the best translation performance overall, while latent variable models with a normalizing
+flow prior give the highest held-out log-likelihood across all datasets. Therefore, we recommend
+using a simple prior for the latent variable non-autoregressive model when fast generation speed
+is desired. 

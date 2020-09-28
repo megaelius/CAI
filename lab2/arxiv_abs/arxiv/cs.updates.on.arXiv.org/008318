@@ -1,0 +1,17 @@
+Contemporary person re-identification (Re-ID) methods usually require access to data from the
+deployment camera network during training in order to perform well. This is because contemporary
+Re-ID models trained on one dataset do not generalise to other camera networks due to the domain-shift
+between datasets. This requirement is often the bottleneck for deploying Re-ID systems in practical
+security or commercial applications as it may be impossible to collect this data in advance or prohibitively
+costly to annotate it. This paper alleviates this issue by proposing a simple baseline for domain
+generalizable~(DG) person re-identification. That is, to learn a Re-ID model from a set of source
+domains that is suitable for application to unseen datasets out-of-the-box, without any model
+updating. Specifically, we observe that the domain discrepancy in Re-ID is due to style and content
+variance across datasets and demonstrate appropriate Instance and Feature Normalization alleviates
+much of the resulting domain-shift in Deep Re-ID models. Instance Normalization~(IN) in early
+layers filters out style statistic variations and Feature Normalization~(FN) in deep layers is
+able to further eliminate disparity in content statistics. Compared to contemporary alternatives,
+this approach is extremely simple to implement, while being faster to train and test, thus making
+it an extremely valuable baseline for implementing Re-ID in practice. With a few lines of code, it
+increases the rank 1 Re-ID accuracy by 11.7\%, 28.9\%, 10.1\% and 6.3\% on the VIPeR, PRID, GRID,
+and i-LIDS benchmarks respectively. Source code will be made available. 

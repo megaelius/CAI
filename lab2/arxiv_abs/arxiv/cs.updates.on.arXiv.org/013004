@@ -1,0 +1,20 @@
+In this article we present a novel staggered semi-implicit hybrid finite-volume/finite-element
+(FV/FE) method for the resolution of weakly compressible flows in two and three space dimensions.
+The pressure-based methodology introduced in Berm\'udez et al. 2014 and Busto et al. 2018 for viscous
+incompressible flows is extended here to solve the compressible Navier-Stokes equations. Instead
+of considering the classical system including the energy conservation equation, we replace it
+by the pressure evolution equation written in non-conservative form. To ease the discretization
+of complex spatial domains, face-type unstructured staggered meshes are considered. A projection
+method allows the decoupling of the computation of the density and linear momentum variables from
+the pressure. Then, an explicit finite volume scheme is used for the resolution of the transport
+diffusion equations on the dual mesh, whereas the pressure system is solved implicitly by using
+continuous finite elements defined on the primal simplex mesh. Consequently, the CFL stability
+condition depends only on the flow velocity, avoiding the severe time restrictions that might be
+imposed by the sound velocity in the weakly compressible regime. High order of accuracy in space
+and time of the transport diffusion stage is attained using a local ADER (LADER) methodology. Moreover,
+also the CVC Kolgan-type second order in space and first order in time scheme is considered. To prevent
+spurious oscillations in the presence of shocks, an ENO-based reconstruction, the minmod limiter
+or the Barth-Jespersen limiter are employed. To show the validity and robustness of our novel staggered
+semi-implicit hybrid FV/FE scheme, several benchmarks are analysed, showing a good agreement
+with available exact solutions and numerical reference data from low Mach numbers, up to Mach numbers
+of the order of unity. 

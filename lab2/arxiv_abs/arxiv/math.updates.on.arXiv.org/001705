@@ -1,0 +1,17 @@
+We present a novel approach to hybrid RANS/LES wall modeling based on function enrichment, which
+overcomes the common problem of the RANS-LES transition and enables coarse meshes near the boundary.
+While the concept of function enrichment as an efficient discretization technique for turbulent
+boundary layers has been proposed in an earlier article by Krank & Wall (J. Comput. Phys. 316 (2016)
+94-116), the contribution of this work is a rigorous derivation of a new multiscale turbulence modeling
+approach and a corresponding discontinuous Galerkin discretization scheme. In the near-wall
+area, the Navier-Stokes equations are explicitly solved for an LES and a RANS component in one single
+equation. This is done by providing the Galerkin method with an independent set of shape functions
+for each of these two methods; the standard high-order polynomial basis resolves turbulent eddies
+where the mesh is sufficiently fine and the enrichment automatically computes the ensemble-averaged
+flow if the LES mesh is too coarse. As a result of the derivation, the RANS model is consistently applied
+solely to the RANS degrees of freedom, which effectively prevents the typical issue of a log-layer
+mismatch in attached boundary layers. As the full Navier-Stokes equations are solved in the boundary
+layer, spatial refinement gradually yields wall-resolved LES with exact boundary conditions.
+Numerical tests show the outstanding characteristics of the wall model regarding grid independence,
+superiority compared to equilibrium wall models in separated flows, and achieve a speed-up by two
+orders of magnitude compared to wall-resolved LES. 

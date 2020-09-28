@@ -1,0 +1,20 @@
+Bayesian optimization has become a fundamental global optimization algorithm in many problems
+where sample efficiency is of paramount importance. Recently, there has been proposed a large number
+of new applications in fields such as robotics, machine learning, experimental design, simulation,
+etc. In this paper, we focus on several problems that appear in robotics and autonomous systems:
+algorithm tuning, automatic control and intelligent design. All those problems can be mapped to
+global optimization problems. However, they become hard optimization problems. Bayesian optimization
+internally uses a probabilistic surrogate model (e.g.: Gaussian process) to learn from the process
+and reduce the number of samples required. In order to generalize to unknown functions in a black-box
+fashion, the common assumption is that the underlying function can be modeled with a stationary
+process. Nonstationary Gaussian process regression cannot generalize easily and it typically
+requires prior knowledge of the function. Some works have designed techniques to generalize Bayesian
+optimization to nonstationary functions in an indirect way, but using techniques originally designed
+for regression, where the objective is to improve the quality of the surrogate model everywhere.
+Instead optimization should focus on improving the surrogate model near the optimum. In this paper,
+we present a novel kernel function specially designed for Bayesian optimization, that allows nonstationary
+behavior of the surrogate model in an adaptive local region. In our experiments, we found that this
+new kernel results in an improved local search (exploitation), without penalizing the global search
+(exploration). We provide results in well-known benchmarks and real applications. The new method
+outperforms the state of the art in Bayesian optimization both in stationary and nonstationary
+problems. 

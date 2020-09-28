@@ -1,0 +1,18 @@
+A recent line of research proposed (either implicitly or explicitly) gradient-masking preprocessing
+techniques to improve adversarial robustness. However, as shown by Athaley-Carlini-Wagner,
+essentially all these defenses can be circumvented if an attacker leverages approximate gradient
+information with respect to the preprocessing. This thus raises a natural question of whether there
+is a useful preprocessing technique in the context of white-box attacks, even just for only mildly
+complex datasets such as MNIST. In this paper we provide an affirmative answer to this question.
+Our key observation is that for several popular datasets, one can approximately encode entire dataset
+using a small set of separable codewords derived from the training set, while retaining high accuracy
+on natural images. The separability of the codewords in turn prevents small perturbations as in
+$\ell_\infty$ attacks from changing feature encoding, leading to adversarial robustness. For
+example, for MNIST our code consists of only two codewords, $0$ and $1$, and the encoding of any pixel
+is simply $\mathbb{1}[x > 0.5]$ (i.e., whether a pixel $x$ is at least $0.5$). Applying this code
+to a naturally trained model already gives high adversarial robustness even under strong white-box
+attacks based on Backward Pass Differentiable Approximation (BPDA) method of Athaley-Carlini-Wagner
+that takes the codes into account. We give density-estimation based algorithms to construct such
+codes, and provide theoretical analysis and certificates of when our method can be effective. Systematic
+evaluation demonstrates that our method is effective in improving adversarial robustness on MNIST,
+CIFAR-10, and ImageNet, for either naturally or adversarially trained models. 

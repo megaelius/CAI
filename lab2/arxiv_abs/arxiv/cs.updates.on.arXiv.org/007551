@@ -1,0 +1,18 @@
+All the state-of-the-art rowhammer attacks can break the MMU-enforced inter-domain isolation
+because the physical memory owned by each domain is adjacent to each other. To mitigate these attacks,
+CATT [6], as the first generic and practical technique, physically separates each domain: it divides
+the physical memory into multiple partitions and keeps each partition occupied by only one domain.
+In this paper, we develop a novel exploit that could effectively defeat CATT and gain both root and
+kernel privileges. Our exploit can work without exhausting the page cache or the system memory,
+or relying on the information of the virtual-to-physical address mapping. The exploit is motivated
+by our key observation that the modern OSes have double-owned kernel buffers (e.g., video buffer
+and SCSI generic buffer) owned concurrently by the kernel and user domains. The existence of such
+buffers invalidates the physical separation enforced by CATT and makes the rowhammer-based attack
+possible again. In contrast to all existing conspicuous rowhammer attacks that exhaust the page
+cache or even the whole system memory, we propose a new technique, named memory ambush. It is able
+to place the hammerable double-owned kernel buffers physically adjacent to the target objects
+(e.g., page tables) with only a small amount of memory. As a result, our exploit is stealthier and
+has fewer memory footprints. We also replace the inefficient rowhammer algorithm that blindly
+picks up addresses to hammer with an efficient one. Our algorithm selects suitable addresses using
+a timing channel. We implement our exploit on the Linux kernel version 4.10.0. Our experiment results
+indicate that a successful exploit could be done in 1 minute. The occupied memory is as low as 88MB.

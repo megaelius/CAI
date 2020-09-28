@@ -1,0 +1,20 @@
+To keep pace with Moore's law, chip designers have focused on increasing the number of cores per chip
+rather than single core performance. In turn, modern jobs are often designed to run on any number
+of cores. However, to effectively leverage these multi-core chips, one must address the question
+of how many cores to assign to each job. Given that jobs receive sublinear speedups from additional
+cores, there is an obvious tradeoff: allocating more cores to an individual job reduces the job's
+runtime, but in turn decreases the efficiency of the overall system. We ask how the system should
+schedule jobs across cores so as to minimize the mean response time over a stream of incoming jobs.
+To answer this question, we develop an analytical model of jobs running on a multi-core machine.
+We prove that EQUI, a policy which continuously divides cores evenly across jobs, is optimal when
+all jobs follow a single speedup curve and have exponentially distributed sizes. EQUI requires
+jobs to change their level of parallelization while they run. Since this is not possible for all workloads,
+we consider a class of "fixed-width" policies, which choose a single level of parallelization,
+k, to use for all jobs. We prove that, surprisingly, it is possible to achieve EQUI's performance
+without requiring jobs to change their levels of parallelization by using the optimal fixed level
+of parallelization, k*. We also show how to analytically derive the optimal k* as a function of the
+system load, the speedup curve, and the job size distribution. In the case where jobs may follow different
+speedup curves, finding a good scheduling policy is even more challenging. We find that policies
+like EQUI which performed well in the case of a single speedup function now perform poorly. We propose
+a very simple policy, GREEDY*, which performs near-optimally when compared to the numerically-derived
+optimal policy. 

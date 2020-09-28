@@ -1,0 +1,18 @@
+The dynamic trees problem is to maintain a forest undergoing edge insertions and deletions while
+supporting queries for information such as connectivity. There are many existing data structures
+for this problem, but few of them are capable of exploiting parallelism in the batch-setting, in
+which large batches of edges are inserted or deleted from the forest at once. In this paper, we demonstrate
+that the Euler tour tree, an existing sequential dynamic trees data structure, can be parallelized
+in the batch setting. For a batch of $k$ updates over a forest of $n$ vertices, our parallel Euler tour
+trees perform $O(k \log (1 + n/k))$ expected work with $O(\log n)$ depth with high probability. Our
+work bound is asymptotically optimal, and we improve on the depth bound achieved by Acar et al. for
+the batch-parallel dynamic trees problem. The main building block for parallelizing Euler tour
+trees is a batch-parallel skip list data structure, which we believe may be of independent interest.
+Euler tour trees require a sequence data structure capable of joins and splits. Sequentially, balanced
+binary trees are used, but they are difficult to join or split in parallel. We show that skip lists,
+on the other hand, support batches of joins or splits of size $k$ over $n$ elements with $O(k \log (1
++ n/k))$ work in expectation and $O(\log n)$ depth with high probability. We also achieve the same
+efficiency bounds for augmented skip lists, which allows us to augment our Euler tour trees to support
+subtree queries. Our data structures achieve between 67--96x self-relative speedup on 72 cores
+with hyper-threading on large batch sizes. Our data structures also outperform the fastest existing
+sequential dynamic trees data structures empirically. 

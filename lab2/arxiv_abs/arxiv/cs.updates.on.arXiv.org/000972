@@ -1,0 +1,19 @@
+Motivated by the increasing need for fast distributed processing of large-scale graphs such as
+the Web graph and various social networks, we study a message-passing distributed computing model
+for graph processing and present lower bounds and algorithms for several graph problems. This work
+is inspired by recent large-scale graph processing systems (e.g., Pregel and Giraph) which are
+designed based on the message-passing model of distributed computing. Our model consists of a point-to-point
+communication network of $k$ machines interconnected by bandwidth-restricted links. Communicating
+data between the machines is the costly operation (as opposed to local computation). The network
+is used to process an arbitrary $n$-node input graph (typically $n \gg k > 1$) that is randomly
+partitioned among the $k$ machines (a common implementation in many real world systems). Our goal
+is to study fundamental complexity bounds for solving graph problems in this model. We present techniques
+for obtaining lower bounds on the distributed time complexity. Our lower bounds develop and use
+new bounds in random-partition communication complexity. We first show a lower bound of $\Omega(n/k)$
+rounds for computing a spanning tree (ST) of the input graph. This result also implies the same bound
+for other fundamental problems such as computing a minimum spanning tree (MST). We also show an $\Omega(n/k^2)$
+lower bound for connectivity, ST verification and other related problems. We give algorithms for
+various fundamental graph problems in our model. We show that problems such as PageRank, MST, connectivity,
+and graph covering can be solved in $\tilde{O}(n/k)$ time, whereas for shortest paths, we present
+algorithms that run in $\tilde{O}(n/\sqrt{k})$ time (for $(1+\epsilon)$-factor approx.) and
+in $\tilde{O}(n/k)$ time (for $O(\log n)$-factor approx.) respectively. 

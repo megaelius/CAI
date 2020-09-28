@@ -1,0 +1,18 @@
+The performance of most speaker diarization systems with x-vector embeddings is both vulnerable
+to noisy environments and lacks domain robustness. Earlier work on speaker diarization using generative
+adversarial network (GAN) with an encoder network (ClusterGAN) to project input x-vectors into
+a latent space has shown promising performance on meeting data. In this paper, we extend the ClusterGAN
+network to improve diarization robustness and enable rapid generalization across various challenging
+domains. To this end, we fetch the pre-trained encoder from the ClusterGAN and fine-tune it by using
+prototypical loss (meta-ClusterGAN or MCGAN) under the meta-learning paradigm. Experiments
+are conducted on CALLHOME telephonic conversations, AMI meeting data, DIHARD II (dev set) which
+includes challenging multi-domain corpus, and two child-clinician interaction corpora (ADOS,
+BOSCC) related to the autism spectrum disorder domain. Extensive analyses of the experimental
+data are done to investigate the effectiveness of the proposed ClusterGAN and MCGAN embeddings
+over x-vectors. The results show that the proposed embeddings with normalized maximum eigengap
+spectral clustering (NME-SC) back-end consistently outperform Kaldi state-of-the-art z-vector
+diarization system. Finally, we employ embedding fusion with x-vectors to provide further improvement
+in diarization performance. We achieve a relative diarization error rate (DER) improvement of
+6.67% to 53.93% on the aforementioned datasets using the proposed fused embeddings over x-vectors.
+Besides, the MCGAN embeddings provide better performance in the number of speakers estimation
+and short speech segment diarization as compared to x-vectors and ClusterGAN in telephonic data.

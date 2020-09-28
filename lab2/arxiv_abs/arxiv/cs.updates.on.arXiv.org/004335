@@ -1,0 +1,20 @@
+Speculative execution which is used pervasively in modern CPUs can leave side effects in the processor
+caches and other structures even when the speculated instructions do not commit and their direct
+effect is not visible. The recent Meltdown and Spectre attacks have shown that this behavior can
+be exploited to expose privileged information to an unprivileged attacker. In particular, the
+attack forces the speculative execution of a code gadget that will carry out the illegal read, which
+eventually gets squashed, but which leaves a side-channel trail that can be used by the attacker
+to infer the value. Several attack variations are possible, allowing arbitrary exposure of the
+full kernel memory to an unprivileged attacker. In this paper, we introduce a new model (SafeSpec)
+for supporting speculation in a way that is immune to side-channel leakage necessary for attacks
+such as Meltdown and Spectre. In particular, SafeSpec stores side effects of speculation in a way
+that is not visible to the attacker while the instructions are speculative. The speculative state
+is then either committed to the main CPU structures if the branch commits, or squashed if it does not,
+making all direct side effects of speculative code invisible. The solution must also address the
+possibility of a covert channel from speculative instructions to committed instructions before
+these instructions are committed. We show that SafeSpec prevents all three variants of Spectre
+and Meltdown, as well as new variants that we introduce. We also develop a cycle accurate model of
+modified design of an x86-64 processor and show that the performance impact is negligible. We build
+prototypes of the hardware support in a hardware description language to show that the additional
+overhead is small. We believe that SafeSpec completely closes this class of attacks, and that it
+is practical to implement. 

@@ -1,0 +1,17 @@
+As online tracking continues to grow, existing anti-tracking and fingerprinting detection techniques
+that require significant manual input must be augmented. Heuristic approaches to fingerprinting
+detection are precise but must be carefully curated. Supervised machine learning techniques proposed
+for detecting tracking require manually generated label-sets. Seeking to overcome these challenges,
+we present a semi-supervised machine learning approach for detecting fingerprinting scripts.
+Our approach is based on the core insight that fingerprinting scripts have similar patterns of API
+access when generating their fingerprints, even though their access patterns may not match exactly.
+Using this insight, we group scripts by their JavaScript (JS) execution traces and apply a semi-supervised
+approach to detect new fingerprinting scripts. We detail our methodology and demonstrate its ability
+to identify the majority of scripts ($\geqslant$94.9%) identified by existing heuristic techniques.
+We also show that the approach expands beyond detecting known scripts by surfacing candidate scripts
+that are likely to include fingerprinting. Through an analysis of these candidate scripts we discovered
+fingerprinting scripts that were missed by heuristics and for which there are no heuristics. In
+particular, we identified over one hundred device-class fingerprinting scripts present on hundreds
+of domains. To the best of our knowledge, this is the first time device-class fingerprinting has
+been measured in the wild. These successes illustrate the power of a sparse vector representation
+and semi-supervised learning to complement and extend existing tracking detection techniques.

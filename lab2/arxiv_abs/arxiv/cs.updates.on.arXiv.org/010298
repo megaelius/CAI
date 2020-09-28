@@ -1,0 +1,18 @@
+We describe the first self-indexes able to count and locate pattern occurrences in optimal time
+within a space bounded by the size of the most popular dictionary compressors. To achieve this result
+we combine several recent findings, including \emph{string attractors} --- new combinatorial
+objects encompassing most known compressibility measures for highly repetitive texts ---, and
+grammars based on \emph{locally-consistent parsing}. More in detail, let $\gamma$ be the size
+of the smallest attractor for a text $T$ of length $n$. The measure $\gamma$ is an (asymptotic) lower
+bound to the size of dictionary compressors based on Lempel--Ziv, context-free grammars, and many
+others. The smallest known text representations in terms of attractors use space $O(\gamma\log(n/\gamma))$,
+and our lightest indexes work within the same asymptotic space. Let $\epsilon>0$ be a suitably small
+constant fixed at construction time, $m$ be the pattern length, and $occ$ be the number of its text
+occurrences. Our index counts pattern occurrences in $O(m+\log^{2+\epsilon}n)$ time, and locates
+them in $O(m+(occ+1)\log^\epsilon n)$ time. These times already outperform those of most dictionary-compressed
+indexes, while obtaining the least asymptotic space for any index searching within $O((m+occ)\,\textrm{polylog}\,n)$
+time. Further, by increasing the space to $O(\gamma\log(n/\gamma)\log^\epsilon n)$, we reduce
+the locating time to the optimal $O(m+occ)$, and within $O(\gamma\log(n/\gamma)\log n)$ space
+we can also count in optimal $O(m)$ time. No dictionary-compressed index had obtained this time
+before. All our indexes can be constructed in $O(n)$ space and $O(n\log n)$ expected time. As a byproduct
+of independent interest... 

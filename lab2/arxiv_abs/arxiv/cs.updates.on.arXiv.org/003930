@@ -1,0 +1,17 @@
+Recently, studying fundamental graph problems in the \emph{Massively Parallel Computation (MPC)}
+framework, inspired by the \emph{MapReduce} paradigm, has gained a lot of attention. A standard
+assumption, common to most traditional approaches, is to allow $\widetilde{\Omega}(n)$ memory
+per machine, where $n$ is the number of nodes in the graph and $\widetilde{\Omega}$ hides polylogarithmic
+factors. However, as pointed out by Karloff et al. [SODA'10] and Czumaj et al. [arXiv:1707.03478],
+it might be unrealistic for a single machine to have linear or only slightly sublinear memory. In
+this paper, we propose the study of a more practical variant of the MPC model which only requires substantially
+sublinear or even subpolynomial memory per machine. In contrast to the standard MPC model and also
+streaming, in this low-memory MPC setting, a single machine will only see a small number of nodes
+in the graph. We introduce a new technique to cope with this imposed locality. In particular, we show
+that the \emph{Maximal Independent Set (MIS)} problem can be solved efficiently, that is, in $O(\log^3
+\log n)$ rounds, when the input graph is a tree. This substantially reduces the local memory from
+$\frac{n}{\text{poly}\log n}$ required by the recent $O(\log \log n)$-round MIS algorithm of
+Ghaffari et al. [PODC'18] to $n^{\varepsilon}$, without incurring a significant loss in the round
+complexity. Moreover, it demonstrates how to make use of the all-to-all communication in the MPC
+model to exponentially improve on the corresponding bound in the $\mathsf{LOCAL}$/$\mathsf{PRAM}$
+models by Lenzen and Wattenhofer [PODC'11]. 

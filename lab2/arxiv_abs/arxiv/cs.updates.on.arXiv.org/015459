@@ -1,0 +1,17 @@
+We study the problem of testing whether a matrix $A \in \mathbb{R}^{n \times n}$ with bounded entries
+($\|A\|_\infty \leq 1$) is positive semi-definite (PSD), or $\epsilon$-far in $\ell_2^2$-distance
+from the PSD cone, i.e. $\min_{ B \succeq 0} \| A - B\|_F^2 = \sum_{i : \lambda_i(A) < 0} \lambda_i^2(A)
+> \epsilon n^2$. Our main algorithmic contribution is a non-adaptive tester which distinguishes
+between these cases using only $\tilde{O}(1/\epsilon^4)$ queries to the entries of $A$. For the
+related "$\ell_\infty$-gap problem", where $A$ is either PSD or has an eigenvalue satisfying $\lambda_i(A)
+< - \epsilon n$, our algorithm only requires $\tilde{O}(1/\epsilon^2)$ queries, which is optimal
+up to $\log(1/\epsilon)$ factors. Our testers randomly sample a collection of principle sub-matrices
+and check whether these sub-matrices are PSD. Consequentially, our algorithms achieve one-sided
+error: whenever they output that $A$ is not PSD, they return a certificate that $A$ has negative eigenvalues.
+We complement our upper bound for PSD testing with $\ell_2^2$-gap by giving a $\tilde{\Omega}(1/\epsilon^2)$
+lower bound for any non-adaptive algorithm. Our lower bound construction is general, and can be
+used to derive lower bounds for a number of spectral testing problems. As an example of the applicability
+of our construction, we obtain a new $\tilde{\Omega}(1/\epsilon^4)$ sampling lower bound for
+testing the Schatten-$1$ norm with a $\epsilon^{1.5}$ gap, extending a result of Balcan, Li, Woodruff,
+and Zhang [SODA'19]. In addition, our hard instance results in new sampling lower bounds for estimating
+the Ky-Fan Norm, and the cost of rank-$k$ approximations, i.e. $\|A - A_k\|_F^2 = \sum_{i > k} \sigma_i^2(A)$.

@@ -1,0 +1,19 @@
+While multi-GPU (MGPU) systems are extremely popular for compute-intensive workloads, several
+inefficiencies in the memory hierarchy and data movement result in a waste of GPU resources and difficulties
+in programming MGPU systems. First, due to the lack of hardware-level coherence, the MGPU programming
+model requires the programmer to replicate and repeatedly transfer data between the GPUs' memory.
+This leads to inefficient use of precious GPU memory. Second, to maintain coherency across an MGPU
+system, transferring data using low-bandwidth and high-latency off-chip links leads to degradation
+in system performance. Third, since the programmer needs to manually maintain data coherence,
+the programming of an MGPU system to maximize its throughput is extremely challenging. To address
+the above issues, we propose a novel lightweight timestamp-based coherence protocol, HALCONE,
+for MGPU systems and modify the memory hierarchy of the GPUs to support physically shared memory.
+HALCONE replaces the Compute Unit (CU) level logical time counters with cache level logical time
+counters to reduce coherence traffic. Furthermore, HALCONE introduces a novel timestamp storage
+unit (TSU) with no additional performance overhead in the main memory to perform coherence actions.
+Our proposed HALCONE protocol maintains the data coherence in the memory hierarchy of the MGPU with
+minimal performance overhead (less than 1\%). Using a set of standard MGPU benchmarks, we observe
+that a 4-GPU MGPU system with shared memory and HALCONE performs, on average, 4.6$\times$ and 3$\times$
+better than a 4-GPU MGPU system with existing RDMA and with the recently proposed HMG coherence protocol,
+respectively. We demonstrate the scalability of HALCONE using different GPU counts (2, 4, 8, and
+16) and different CU counts (32, 48, and 64 CUs per GPU) for 11 standard benchmarks. 

@@ -1,0 +1,18 @@
+Given a large graph, how can we determine similarity between nodes in a fast and accurate way? Random
+walk with restart (RWR) is a popular measure for this purpose and has been exploited in numerous data
+mining applications including ranking, anomaly detection, link prediction, and community detection.
+However, previous methods for computing exact RWR require prohibitive storage sizes and computational
+costs, and alternative methods which avoid such costs by computing approximate RWR have limited
+accuracy, especially in ranking. In this paper, we propose TPA, a fast, scalable, and highly accurate
+method for computing approximate RWR on large graphs. TPA exploits two important properties in
+RWR: 1) Nodes close to a seed node are likely to be revisited in following steps due to block-wise structure
+of many real graphs, and 2) RWR scores of nodes which reside far from the seed node are proportional
+to their PageRank scores. Based on these two properties, TPA divides approximate RWR problem into
+two subproblems called neighbor approximation and stranger approximation. In the neighbor approximation,
+TPA estimates RWR scores of nodes close to the seed based on scores of few early steps from the seed.
+In the stranger approximation, TPA estimates RWR scores for nodes far from the seed using their PageRank.
+The stranger and neighbor approximations are conducted in the preprocessing phase and the online
+phase, respectively. Through extensive experiments, we show that TPA requires 1140 times less
+time with 20 times less memory space than other state-of-the-art methods for the preprocessing
+phase. In the online phase, TPA computes approximate RWR up to 150 times faster than existing methods
+with 6 times lower L1 norm error and 3.5 times lower rank error. 

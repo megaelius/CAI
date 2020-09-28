@@ -1,0 +1,17 @@
+Good temporal representations are crucial for video understanding, and the state-of-the-art
+video recognition framework is based on two-stream networks. In such framework, besides the regular
+ConvNets responsible for RGB frame inputs, a second network is introduced to handle the temporal
+representation, usually the optical flow (OF). However, OF or other task-oriented flow is computationally
+costly, and is thus typically pre-computed. Critically, this prevents the two-stream approach
+from being applied to reinforcement learning (RL) applications such as video game playing, where
+the next state depends on current state and action choices. Inspired by the early vision systems
+of mammals and insects, we propose a fast event-driven representation (EDR) that models several
+major properties of early retinal circuits: (1) logarithmic input response, (2) multi-timescale
+temporal smoothing to filter noise, and (3) bipolar (ON/OFF) pathways for primitive event detection[12].
+Trading off the directional information for fast speed (> 9000 fps), EDR en-ables fast real-time
+inference/learning in video applications that require interaction between an agent and the world
+such as game-playing, virtual robotics, and domain adaptation. In this vein, we use EDR to demonstrate
+performance improvements over state-of-the-art reinforcement learning algorithms for Atari
+games, something that has not been possible with pre-computed OF. Moreover, with UCF-101 video
+action recognition experiments, we show that EDR performs near state-of-the-art in accuracy while
+achieving a 1,500x speedup in input representation processing, as compared to optical flow. 

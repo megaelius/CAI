@@ -1,0 +1,17 @@
+Modern GPUs face a trade-off on how the page size used for memory management affects address translation
+and demand paging. Support for multiple page sizes can help relax the page size trade-off so that
+address translation and demand paging optimizations work together synergistically. However,
+existing page coalescing and splintering policies require costly base page migrations that undermine
+the benefits multiple page sizes provide. In this paper, we observe that GPGPU applications present
+an opportunity to support multiple page sizes without costly data migration, as the applications
+perform most of their memory allocation en masse (i.e., they allocate a large number of base pages
+at once). We show that this en masse allocation allows us to create intelligent memory allocation
+policies which ensure that base pages that are contiguous in virtual memory are allocated to contiguous
+physical memory pages. As a result, coalescing and splintering operations no longer need to migrate
+base pages. We introduce Mosaic, a GPU memory manager that provides application-transparent support
+for multiple page sizes. Mosaic uses base pages to transfer data over the system I/O bus, and allocates
+physical memory in a way that (1) preserves base page contiguity and (2) ensures that a large page
+frame contains pages from only a single memory protection domain. This mechanism allows the TLB
+to use large pages, reducing address translation overhead. During data transfer, this mechanism
+enables the GPU to transfer only the base pages that are needed by the application over the system
+I/O bus, keeping demand paging overhead low. 

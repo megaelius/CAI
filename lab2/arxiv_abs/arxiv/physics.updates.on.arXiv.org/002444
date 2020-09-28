@@ -1,0 +1,18 @@
+As an extension of previous fourth-order compact gas kinetic scheme (GKS) on structured meshes
+(Ji et al. 2018), this work is about the development of a third-order compact GKS on unstructured
+meshes for the compressible Euler and Navier-Stokes solutions. Based on the time accurate high-order
+gas-kinetic evolution solution at a cell interface, the time dependent gas distribution function
+in GKS provides not only the flux function and its time derivative at a cell interface, but also the
+time accurate flow variables there at next time level. As a result, besides updating the conservative
+flow variables inside each control volume through the interface fluxes, the cell averaged first-order
+spatial derivatives of flow variables in the cell can be also obtained using the updated flow variables
+at the cell interfaces around that cell through the divergence theorem. Therefore, with the flow
+variables and their first-order spatial derivatives inside each cell, the Hermite WENO (HWENO)
+techniques can be naturally implemented for the compact high-order reconstruction at the beginning
+of a new time step. Following the reconstruction method in (Zhu et al. 2018), a new HWENO reconstruction
+on triangular meshes is designed in the current scheme. Combined with a two-stage temporal discretization
+and second-order gas-kinetic flux function, a third-order spatial and temporal accuracy in the
+current compact scheme can be achieved. Accurate solutions can be obtained for both inviscid and
+viscous flows without sensitive dependence on the quality of triangular meshes. The robustness
+of the scheme has been validated as well through the cases with strong shocks in the hypersonic viscous
+flow simulations. 

@@ -1,0 +1,19 @@
+We present a new Python library called vaex, to handle extremely large tabular datasets, such as
+astronomical catalogues like the Gaia catalogue, N-body simulations or any other regular datasets
+which can be structured in rows and columns. Fast computations of statistics on regular N-dimensional
+grids allows analysis and visualization in the order of a billion rows per second. We use streaming
+algorithms, memory mapped files and a zero memory copy policy to allow exploration of datasets larger
+than memory, e.g. out-of-core algorithms. Vaex allows arbitrary (mathematical) transformations
+using normal Python expressions and (a subset of) numpy functions which are lazily evaluated and
+computed when needed in small chunks, which avoids wasting of RAM. Boolean expressions (which are
+also lazily evaluated) can be used to explore subsets of the data, which we call selections. Vaex
+uses a similar DataFrame API as Pandas, a very popular library, which helps migration from Pandas.
+Visualization is one of the key points of vaex, and is done using binned statistics in 1d (e.g. histogram),
+in 2d (e.g. 2d histograms with colormapping) and 3d (using volume rendering). Vaex is split in in
+several packages: vaex-core for the computational part, vaex-viz for visualization mostly based
+on matplotlib, vaex-jupyter for visualization in the Jupyter notebook/lab based in IPyWidgets,
+vaex-server for the (optional) client-server communication, vaex-ui for the Qt based interface,
+vaex-hdf5 for hdf5 based memory mapped storage, vaex-astro for astronomy related selections,
+transformations and memory mapped (column based) fits storage. Vaex is open source and available
+under MIT license on github, documentation and other information can be found on the main website:
+https://vaex.io, https://docs.vaex.io or https://github.com/maartenbreddels/vaex 

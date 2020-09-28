@@ -1,0 +1,20 @@
+We give two quantum algorithms for solving semidefinite programs (SDPs) providing quantum speed-ups.
+We consider SDP instances with $m$ constraint matrices, each of dimension $n$, rank at most $r$,
+and sparsity $s$. The first algorithm assumes access to an oracle to the matrices at unit cost. We
+show that it has run time $\tilde{O}(s^2(\sqrt{m}\epsilon^{-10}+\sqrt{n}\epsilon^{-12}))$,
+with $\epsilon$ the error of the solution. This gives an optimal dependence in terms of $m, n$ and
+quadratic improvement over previous quantum algorithms when $m\approx n$. The second algorithm
+assumes a fully quantum input model in which the matrices are given as quantum states. We show that
+its run time is $\tilde{O}(\sqrt{m}+\text{poly}(r))\cdot\text{poly}(\log m,\log n,B,\epsilon^{-1})$,
+with $B$ an upper bound on the trace-norm of all input matrices. In particular the complexity depends
+only poly-logarithmically in $n$ and polynomially in $r$. We apply the second SDP solver to learn
+a good description of a quantum state with respect to a set of measurements: Given $m$ measurements
+and a supply of copies of an unknown state $\rho$ with rank at most $r$, we show we can find in time $\sqrt{m}\cdot\text{poly}(\log
+m,\log n,r,\epsilon^{-1})$ a description of the state as a quantum circuit preparing a density
+matrix which has the same expectation values as $\rho$ on the $m$ measurements, up to error $\epsilon$.
+The density matrix obtained is an approximation to the maximum entropy state consistent with the
+measurement data considered in Jaynes' principle from statistical mechanics. As in previous work,
+we obtain our algorithm by "quantizing" classical SDP solvers based on the matrix multiplicative
+weight method. One of our main technical contributions is a quantum Gibbs state sampler for low-rank
+Hamiltonians with a poly-logarithmic dependence on its dimension, which could be of independent
+interest. 

@@ -1,0 +1,18 @@
+We introduce the concept of design continuums for the data layout of key-value stores. A design continuum
+unifies major distinct data structure designs under the same model. The critical insight and potential
+long-term impact is that such unifying models 1) render what we consider up to now as fundamentally
+different data structures to be seen as views of the very same overall design space, and 2) allow seeing
+new data structure designs with performance properties that are not feasible by existing designs.
+The core intuition behind the construction of design continuums is that all data structures arise
+from the very same set of fundamental design principles, i.e., a small set of data layout design concepts
+out of which we can synthesize any design that exists in the literature as well as new ones. We show
+how to construct, evaluate, and expand, design continuums and we also present the first continuum
+that unifies major data structure designs, i.e., B+tree, B-epsilon-tree, LSM-tree, and LSH-table.
+The practical benefit of a design continuum is that it creates a fast inference engine for the design
+of data structures. For example, we can predict near instantly how a specific design change in the
+underlying storage of a data system would affect performance, or reversely what would be the optimal
+data structure (from a given set of designs) given workload characteristics and a memory budget.
+In turn, these properties allow us to envision a new class of self-designing key-value stores with
+a substantially improved ability to adapt to workload and hardware changes by transitioning between
+drastically different data structure designs to assume a diverse set of performance properties
+at will. 

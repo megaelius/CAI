@@ -1,0 +1,18 @@
+Recent work has introduced attacks that extract the architecture information of deep neural networks
+(DNN), as this knowledge enhances an adversary's capability to conduct black-box attacks against
+the model. This paper presents the first in-depth security analysis of DNN fingerprinting attacks
+that exploit cache side-channels. First, we define the threat model for these attacks: our adversary
+does not need the ability to query the victim model; instead, she runs a co-located process on the
+host machine victim's deep learning (DL) system is running and passively monitors the accesses
+of the target functions in the shared framework. Second, we introduce DeepRecon, an attack that
+reconstructs the architecture of the victim network by using the internal information extracted
+via Flush+Reload, a cache side-channel technique. Once the attacker observes function invocations
+that map directly to architecture attributes of the victim network, the attacker can reconstruct
+the victim's entire network architecture. In our evaluation, we demonstrate that an attacker can
+accurately reconstruct two complex networks (VGG19 and ResNet50) having observed only one forward
+propagation. Based on the extracted architecture attributes, we also demonstrate that an attacker
+can build a meta-model that accurately fingerprints the architecture and family of the pre-trained
+model in a transfer learning setting. From this meta-model, we evaluate the importance of the observed
+attributes in the fingerprinting process. Third, we propose and evaluate new framework-level
+defense techniques that obfuscate our attacker's observations. Our empirical security analysis
+represents a step toward understanding the DNNs' vulnerability to cache side-channel attacks.

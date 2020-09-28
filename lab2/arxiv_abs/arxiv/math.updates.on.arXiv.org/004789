@@ -1,0 +1,18 @@
+A communication network can be modeled as a directed connected graph with edge weights that characterize
+performance metrics such as loss and delay. Network tomography aims to infer these edge weights
+from their pathwise versions measured on a set of intersecting paths between a subset of boundary
+vertices, and even the underlying graph when this is not known. Recent work has established conditions
+under which the underlying directed graph can be recovered exactly the pairwise Path Correlation
+Data, namely, the set of weights of intersection of each pair of directed paths to and from each endpoint.
+Algorithmically, this enables us to consistently fused tree-based view of the set of network paths
+to and from each endpoint to reconstruct the underlying network. However, in practice the PCD is
+not consistently determined by path measurements. Statistical fluctuations give rise to inconsistent
+inferred weight of edges from measurement based on different endpoints, as do operational constraints
+on synchronization, and deviations from the underlying packet transmission model. Furthermore,
+ad hoc solutions to eliminate noise, such as pruning small weight inferred links, are hard to apply
+in a consistent manner that preserves known end-to-end metric values. This paper takes a unified
+approach to the problem of inconsistent weight estimation. We formulate two type of inconsistency:
+\textsl{intrinsic}, when the weight set is internally inconsistent, and \textsl{extrinsic},
+when they are inconsistent with a set of known end-to-end path metrics. In both cases we map inconsistent
+weight to consistent PCD within a least-squares framework. We evaluate the performance of this
+mapping in composition with tree-based inference algorithms. 

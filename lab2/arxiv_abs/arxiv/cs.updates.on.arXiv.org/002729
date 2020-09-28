@@ -1,0 +1,18 @@
+Learning to accomplish tasks such as driving, grasping or surgery from supervisor demonstrations
+can be risky when the execution of the learned policy leads to col- lisions and other costly failures.
+Adding explicit constraints to stay within safe zones is often not possible when the state representations
+are complex. Furthermore, enforcing these constraints during execution of the learned policy
+can be difficult in environments where dynamics are not known. In this paper, we propose a two-phase
+method for safe control from demonstrations in robotic manipulation tasks where changes in state
+are limited by the magnitude of control applied. In the first phase, we use support estimation of
+supervisor demonstrations to infer implicit constraints on states in addition to learning a policy
+directly from the observed controls. We also propose a time-varying modification to the support
+estimation problem allowing for accurate estimation on sequential tasks. In the second phase,
+we present a switching policy to prevent the robot from leaving safe regions of the state space during
+run time using the decision function of the estimated support. The policy switches between the robot's
+learned policy and a novel failure avoidance policy depending on the distance to the boundary of
+the support. We prove that inferred constraints are guaranteed to be enforced using this failure
+avoidance policy if the support is well-estimated. A simulated pushing task suggests that support
+estimation and failure avoidance control can reduce failures by 87% while sacrificing only 40%
+of performance. On a line tracking task using a da Vinci Surgical Robot, failure avoidance control
+reduced failures by 84%. 

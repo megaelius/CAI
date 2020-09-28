@@ -1,0 +1,19 @@
+Lenses are programs that can be run both "front to back" and "back to front," allowing data and updates
+to be transformed in two directions. Since their introduction, lenses have been extensively studied
+and applied. Recent work has also demonstrated how techniques from type-directed program synthesis
+can be used to efficiently synthesize a very simple class of lenses --- so-called bijective lenses
+over string data --- given a pair of types (regular expressions) and a small number of examples. We
+show how to extend this synthesis algorithm to a much wider class of lenses, which we call simple symmetric
+lenses, including both bijective lenses and the more widely used "asymmetric" lenses, as well as
+a rich subset of the full-blown "symmetric lenses". Simple symmetric lenses are of independent
+theoretical interest, being the largest class of symmetric lenses that do not rely on persistent
+internal state. Synthesizing simple symmetric lenses is substantially more challenging that
+synthesizing bijective lenses: Since some of the information on each side can be "disconnected"
+from the other side, there will in general be many lenses that agree with a given example. To guide
+the search process, we use stochastic regular expressions and ideas from information theory to
+estimate the amount of information propagated by a candidate lens. We describe an implementation
+of simple symmetric lenses and our synthesis procedure as extensions to the Boomerang language.
+We evaluate its performance on 48 benchmark examples drawn from Flash Fill, Augeus, the bidirectional
+programming literature, and electronic file format synchronization tasks. After modest tuning,
+which is encouraged by the interactive nature of the tool, our implementation can synthesize all
+these lenses in under 30 seconds. 

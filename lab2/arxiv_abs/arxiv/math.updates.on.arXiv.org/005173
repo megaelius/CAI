@@ -1,0 +1,18 @@
+We design a classifier for transactional datasets with application in malware detection. We build
+the classifier based on the minimum description length (MDL) principle. This involves selecting
+a model that best compresses the training dataset for each class considering the MDL criterion.
+To select a model for a dataset, we first use clustering followed by closed frequent pattern mining
+to extract a subset of closed frequent patterns (CFPs). We show that this method acts as a pattern
+summarization method to avoid pattern explosion; this is done by giving priority to longer CFPs,
+and without requiring to extract all CFPs. We then use the MDL criterion to further summarize extracted
+patterns, and construct a code table of patterns. This code table is considered as the selected model
+for the compression of the dataset. We evaluate our classifier for the problem of static malware
+detection in portable executable (PE) files. We consider API calls of PE files as their distinguishing
+features. The presence-absence of API calls forms a transactional dataset. Using our proposed
+method, we construct two code tables, one for the benign training dataset, and one for the malware
+training dataset. Our dataset consists of 19696 benign, and 19696 malware samples, each a binary
+sequence of size 22761. We compare our classifier with deep neural networks providing us with the
+state-of-the-art performance. The comparison shows that our classifier performs very close to
+deep neural networks. We also discuss that our classifier is an interpretable classifier. This
+provides the motivation to use this type of classifiers where some degree of explanation is required
+as to why a sample is classified under one class rather than the other class. 

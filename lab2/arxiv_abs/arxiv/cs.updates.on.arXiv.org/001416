@@ -1,0 +1,19 @@
+In today's cyber-enabled smart grids, high penetration of uncertain renewables, purposeful manipulation
+of meter readings, and the need for wide-area situational awareness, call for fast, accurate, and
+robust power system state estimation. The least-absolute-value (LAV) estimator is known for its
+robustness relative to the weighted least-squares (WLS) one. However, due to nonconvexity and
+nonsmoothness, existing LAV solvers based on linear programming are typically slow, hence inadequate
+for real-time system monitoring. This paper develops two novel algorithms for efficient LAV estimation,
+which draw from recent advances in composite optimization. The first is a deterministic linear
+proximal scheme that handles a sequence of convex quadratic problems, each efficiently solvable
+either via off-the-shelf algorithms or through the alternating direction method of multipliers.
+Leveraging the sparse connectivity inherent to power networks, the second scheme is stochastic,
+and updates only \emph{a few} entries of the complex voltage state vector per iteration. In particular,
+when voltage magnitude and (re)active power flow measurements are used only, this number reduces
+to one or two, \emph{regardless of} the number of buses in the network. This computational complexity
+evidently scales well to large-size power systems. Furthermore, by carefully \emph{mini-batching}
+the voltage and power flow measurements, accelerated implementation of the stochastic iterations
+becomes possible. The developed algorithms are numerically evaluated using a variety of benchmark
+power networks. Simulated tests corroborate that improved robustness can be attained at comparable
+or markedly reduced computation times for medium- or large-size networks relative to the "workhorse"
+WLS-based Gauss-Newton iterations. 

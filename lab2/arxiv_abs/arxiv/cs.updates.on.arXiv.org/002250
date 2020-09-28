@@ -1,0 +1,19 @@
+The motivation of the current study was to design an algorithm that can speed up the processing of
+a query. The important feature is generating code dynamically for a specific query. We present the
+technique of code generation that is applied to query processing on a raw file. The idea was to customize
+a query program with a given query and generate a machine- and query-specific source code. The generated
+code is compiled by GCC, Clang or any other C/C++ compiler, and the compiled file is dynamically linked
+to the main program for further processing. Code generation reduces the cost of generalizing query
+processing. It also avoids the overhead of the conventional interpretation during achieve high
+performance. Database Management Systems (DBMSs) perform excellent jobs in many aspects of big
+data, such as storage, indexing, and analysis. DBMSs typically format entire data and load them
+into their storage layer. They increase data-to-query time, which is the cost time it takes to convert
+data into a specific schema and persist them in a disk. Ideally, DBMSs should adapt to the input data
+and extract one/some of columns, not the entire data, that is/are associated with a given query.
+Therefore, the query engine on a raw file can reduce the cost of conventional general operators and
+avoid some unnecessary procedures, such as fully scanning, tokenizing and paring the whole data.
+In the current study, we introduce our code-generation approach for in-situ processing of raw files,
+which is based on the template approach and the hype approach. The approach minimizes the data-to-query
+time and achieves a high performance for query processing. There are some benefits from our work:
+reducing branches and instructions, unrolling loops, eliminating unnecessary data type checks
+and optimizing the binary code with a compiler on a local machine. 

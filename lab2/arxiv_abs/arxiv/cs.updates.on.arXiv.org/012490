@@ -1,0 +1,19 @@
+In recent years, plenty of metrics have been proposed to identify networks that are free of gradient
+explosion and vanishing. However, due to the diversity of network components and complex serial-parallel
+hybrid connections in modern DNNs, the evaluation of existing metrics usually requires strong
+assumptions, complex statistical analysis, or has limited application fields, which constraints
+their spread in the community. In this paper, inspired by the Gradient Norm Equality and dynamical
+isometry, we first propose a novel metric called Block Dynamical Isometry, which measures the change
+of gradient norm in individual block. Because our Block Dynamical Isometry is norm-based, its evaluation
+needs weaker assumptions compared with the original dynamical isometry. To mitigate the challenging
+derivation, we propose a highly modularized statistical framework based on free probability.
+Our framework includes several key theorems to handle complex serial-parallel hybrid connections
+and a library to cover the diversity of network components. Besides, several sufficient prerequisites
+are provided. Powered by our metric and framework, we analyze extensive initialization, normalization,
+and network structures. We find that Gradient Norm Equality is a universal philosophy behind them.
+Then, we improve some existing methods based on our analysis, including an activation function
+selection strategy for initialization techniques, a new configuration for weight normalization,
+and a depth-aware way to derive coefficients in SeLU. Moreover, we propose a novel normalization
+technique named second moment normalization, which is theoretically 30% faster than batch normalization
+without accuracy loss. Last but not least, our conclusions and methods are evidenced by extensive
+experiments on multiple models over CIFAR10 and ImageNet. 

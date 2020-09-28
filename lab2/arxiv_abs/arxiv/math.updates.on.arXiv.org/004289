@@ -1,0 +1,20 @@
+Full waveform inversion (FWI) is a nonlinear waveform matching procedure, which suffers from cycle
+skipping when the initial model is not kinematically-accurate enough. To mitigate cycle skipping,
+wavefield reconstruction inversion (WRI) extends the inversion search space by computing wavefields
+with a relaxation of the wave equation in order to fit the data from the first iteration. Then, the
+subsurface parameters are updated by minimizing the source residuals the relaxation generated.
+Capitalizing on the wave-equation bilinearity, performing wavefield reconstruction and parameter
+estimation in alternating mode decomposes WRI into two linear subproblems, which can solved efficiently
+with the alternating-direction method of multiplier (ADMM), leading to the so-called IR-WRI.
+Moreover, ADMM provides a suitable framework to implement bound constraints and different types
+of regularizations and their mixture in IR-WRI. Here, IR-WRI is extended to multiparameter reconstruction
+for VTI acoustic media. To achieve this goal, we first propose different forms of bilinear VTI acoustic
+wave equation. We develop more specifically IR-WRI for the one that relies on a parametrisation
+involving vertical wavespeed and Thomsen's parameters delta and epsilon. With a toy numerical
+example, we first show that the radiation patterns of the virtual sources generate similar wavenumber
+filtering and parameter cross-talks in classical FWI and IR-WRI. Bound constraints and TV regularization
+in IR-WRI fully remove these undesired effects for an idealized piecewise constant target. We show
+with a more realistic long-offset case study representative of the North Sea that anisotropic IR-WRI
+successfully reconstruct the vertical wavespeed starting from a laterally homogeneous model
+and update the long-wavelengths of the starting epsilon model, while a smooth delta model is used
+as a passive background model. 

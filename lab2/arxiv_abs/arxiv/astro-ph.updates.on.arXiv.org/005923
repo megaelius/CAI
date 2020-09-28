@@ -1,0 +1,19 @@
+The Italian center for Astronomical Archives tries to provide astronomical data resources as interoperable
+services based on IVOA standards. Its VO expertise and knowledge comes from active participation
+within IVOA and VO at European and international level, with a double-fold goal: learn from the collaboration
+and provide inputs to the community. The first solution to build an easy to configure and maintain
+resource publisher conformant to VO standards proved to be too optimistic. For this reason it has
+been necessary to re-think the architecture with a modular system built around the messaging concept,
+where each modular component speaks to the other interested parties through a system of broker-managed
+queues. The first implemented protocol, the Simple Cone Search, shows the messaging task architecture
+connecting the parametric HTTP interface to the database backend access module, the logging module,
+and allows multiple cone search resources to be managed together through a configuration manager
+module. Even if relatively young, it already proved the flexibility required by the overall system
+when the database backend changed from MySQL to PostgreSQL+PgSphere. Another implementation
+test has been made to leverage task distribution over multiple servers to serve simultaneously:
+FITS cubes direct linking, cubes cutout and cubes positional merging. Currently the implementation
+of the SIA-2.0 standard protocol is ongoing while for TAP we will be adapting the TAPlib library.
+Alongside these tools a first administration tool (TASMAN) has been developed to ease the build
+up and maintenance of TAP_SCHEMA-ta including also ObsCore maintenance capability. Future work
+will be devoted at widening the range of VO protocols covered by the set of available modules, improve
+the configuration management and develop specific purpose modules common to all the service components.

@@ -1,0 +1,19 @@
+Since its introduction to recognize chordal graphs by Rose, Tarjan, and Lueker, Lexicographic
+Breadth First Search (LexBFS) has been used to come up with simple, often linear time, algorithms
+on various classes of graphs. These algorithms, called multi-sweep algorithms, compute a number
+of LexBFS orderings {\sigma}1, . . . , {\sigma}k, where {\sigma}i is used to break ties for {\sigma}i+1,
+we write LexBFS+({\sigma}i) = {\sigma}i+1. For instance, Corneil et al. gave a linear time multi-sweep
+algorithm to recognize interval graphs [SODA 1998], Kratsch et al. gave a certifying recognition
+algorithm for interval and permutation graphs [SODA 2003]. Since the number of LexBFS orderings
+for a graph is finite, after some fixed number of + sweeps, we will eventually loop in a sequence of
+{\sigma}1, . . . , {\sigma}k vertex orderings such that {\sigma}i+1 = LexBFS+({\sigma}i) mod k.
+We study this new graph invariant, LexCycle(G), defined as the maximum length of a cycle of vertex
+orderings obtained via a sequence of LexBFS+. In this work, we focus on graph classes with small LexCycle.
+We give evidence that a small LexCycle often leads to linear structure that has been exploited algorithmically
+on a number of graph classes. In particular, we show that for proper interval, interval, co-bipartite,
+domino-free cocomparability graphs, as well as trees, there exists two orderings {\sigma} and
+{\tau} such that {\sigma} = LexBFS+({\tau}) and {\tau} = LexBFS+({\sigma}). One of the consequences
+of these results is the simplest algorithm to compute a transitive orientation for these graph classes.
+It was conjectured by Stacho [2015] that LexCycle is at most the asteroidal number of the graph class,
+we disprove this conjecture by giving a construction for which LexCycle(G)> an(G), the asteroidal
+number of G. 

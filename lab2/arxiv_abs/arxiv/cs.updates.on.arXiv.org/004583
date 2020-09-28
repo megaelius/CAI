@@ -1,0 +1,18 @@
+Recent fast image style transferring methods use feed-forward neural networks to generate an output
+image of desired style strength from the input pair of a content and a target style image. In the existing
+methods, the image of intermediate style between the content and the target style is obtained by
+decoding a linearly interpolated feature in encoded feature space. However, there has been no work
+on analyzing the effectiveness of this kind of style strength interpolation so far. In this paper,
+we tackle the missing work on the in-depth analysis of style interpolation and propose a method that
+is more effective in controlling style strength. We interpret the training task of a style transfer
+network as a regression learning between the control parameter and output style strength. In this
+understanding, the existing methods are biased due to the fact that training is performed with one-sided
+data of full style strength (alpha = 1.0). Thus, this biased learning does not guarantee the generation
+of a desired intermediate style corresponding to the style control parameter between 0.0 and 1.0.
+To solve this problem of the biased network, we propose an unbiased learning technique which uses
+unbiased training data and corresponding unbiased loss for alpha = 0.0 to make the feed-forward
+networks to generate a zero-style image, i.e., content image when alpha = 0.0. Our experimental
+results verified that our unbiased learning method achieved the reconstruction of a content image
+with zero style strength, better regression specification between style control parameter and
+output style, and more stable style transfer that is insensitive to the weight of style loss without
+additive complexity in image generating process. 

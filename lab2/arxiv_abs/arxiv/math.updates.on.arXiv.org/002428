@@ -1,0 +1,17 @@
+Forward Automatic Differentiation (AD) is a technique for augmenting programs to compute derivatives.
+The essence of Forward AD is to attach perturbations to each number, and propagate these through
+the computation. When derivatives are nested, the distinct derivative calculations, and their
+associated perturbations, must be distinguished. This is typically accomplished by creating
+a unique tag for each derivative calculation, tagging the perturbations, and overloading the arithmetic
+operators. We exhibit a subtle bug, present in fielded implementations, in which perturbations
+are confused despite the tagging machinery. The essence of the bug is this: each invocation of a derivative
+creates a unique tag but a unique tag is needed for each derivative calculation. When taking derivatives
+of higher-order functions, these need not correspond! The derivative of a higher-order function
+$f$ that returns a function $g$ will be a function $f'$ that returns a function $\bar{g}$ that performs
+a derivative calculation. A single invocation of $f'$ will create a single fresh tag but that same
+tag will be used for each derivative calculation resulting from an invocation of $\bar{g}$. This
+situation arises when taking derivatives of curried functions. Two potential solutions are presented,
+and their serious deficiencies discussed. One requires eta expansion to delay the creation of fresh
+tags from the invocation of $f'$ to the invocation of $\bar{g}$, which can be difficult or even impossible
+in some circumstances. The other requires $f'$ to wrap $\bar{g}$ with tag renaming, which is difficult
+to implement without violating the desirable complexity properties of forward AD. 

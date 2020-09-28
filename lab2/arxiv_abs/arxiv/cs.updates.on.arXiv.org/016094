@@ -1,0 +1,18 @@
+Graph representation learning is gaining popularity in a wide range of applications, such as social
+networks analysis, computational biology, and recommender systems. However, different with
+positive results from many academic studies, applying graph neural networks (GNNs) in a real-world
+application is still challenging due to non-stationary environments. The underlying distribution
+of streaming data changes unexpectedly, resulting in different graph structures (a.k.a., concept
+drift). Therefore, it is essential to devise a robust graph learning technique so that the model
+does not overfit to the training graphs. In this work, we present Hop Sampling, a straightforward
+regularization method that can effectively prevent GNNs from overfishing. The hop sampling randomly
+selects the number of propagation steps rather than fixing it, and by doing so, it encourages the
+model to learn meaningful node representation for all intermediate propagation layers and to experience
+a variety of plausible graphs that are not in the training set. Particularly, we describe the use
+case of our method in recommender systems, a representative example of the real-world non-stationary
+case. We evaluated hop sampling on a large-scale real-world LINE dataset and conducted an online
+A/B/n test in LINE Coupon recommender systems of LINE Wallet Tab. Experimental results demonstrate
+that the proposed scheme improves the prediction accuracy of GNNs. We observed hop sampling provides
+7.97% and 16.93% improvements for NDCG and MAP compared to non-regularized GNN models in our online
+service. Furthermore, models using hop sampling alleviate the oversmoothing issue in GNNs enabling
+a deeper model as well as more diversified representation. 

@@ -1,0 +1,19 @@
+Benefitting from large-scale training datasets and the complex training network, Convolutional
+Neural Networks (CNNs) are widely applied in various fields with high accuracy. However, the training
+process of CNNs is very time-consuming, where large amounts of training samples and iterative operations
+are required to obtain high-quality weight parameters. In this paper, we focus on the time-consuming
+training process of large-scale CNNs and propose a Bi-layered Parallel Training (BPT-CNN) architecture
+in distributed computing environments. BPT-CNN consists of two main components: (a) an outer-layer
+parallel training for multiple CNN subnetworks on separate data subsets, and (b) an inner-layer
+parallel training for each subnetwork. In the outer-layer parallelism, we address critical issues
+of distributed and parallel computing, including data communication, synchronization, and workload
+balance. A heterogeneous-aware Incremental Data Partitioning and Allocation (IDPA) strategy
+is proposed, where large-scale training datasets are partitioned and allocated to the computing
+nodes in batches according to their computing power. To minimize the synchronization waiting during
+the global weight update process, an Asynchronous Global Weight Update (AGWU) strategy is proposed.
+In the inner-layer parallelism, we further accelerate the training process for each CNN subnetwork
+on each computer, where computation steps of convolutional layer and the local weight training
+are parallelized based on task-parallelism. We introduce task decomposition and scheduling strategies
+with the objectives of thread-level load balancing and minimum waiting time for critical paths.
+Extensive experimental results indicate that the proposed BPT-CNN effectively improves the training
+performance of CNNs while maintaining the accuracy. 

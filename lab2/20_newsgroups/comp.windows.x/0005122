@@ -1,0 +1,4 @@
+Will there be any support for round or circular widgets in Motif's next
+release?. I'd love to have a circular knob widget which could be used
+instead of a slider.
+Cheers!

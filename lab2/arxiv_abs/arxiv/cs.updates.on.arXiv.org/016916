@@ -1,0 +1,19 @@
+Over the past decade there has been a growing interest in the development of parallel hardware systems
+for simulating large-scale networks of spiking neurons. Compared to other highly-parallel systems,
+GPU-accelerated solutions have the advantage of a relatively low cost and a great versatility,
+thanks also to the possibility of using the CUDA-C/C++ programming languages. NeuronGPU is a GPU
+library for large-scale simulations of spiking neural network models, written in the C++ and CUDA-C++
+programming languages, based on a novel spike-delivery algorithm. This library includes simple
+LIF (leaky-integrate-and-fire) neuron models as well as several multisynapse AdEx (adaptive-exponential-integrate-and-fire)
+neuron models with current or conductance based synapses, user definable models and different
+devices. The numerical solution of the differential equations of the dynamics of the AdEx models
+is performed through a parallel implementation, written in CUDA-C++, of the fifth-order Runge-Kutta
+method with adaptive step-size control. In this work we evaluate the performance of this library
+on the simulation of a well-known cortical microcircuit model, based on LIF neurons and current-based
+synapses, and on a balanced networks of excitatory and inhibitory neurons, using AdEx neurons and
+conductance-based synapses. On these models, we will show that the proposed library achieves state-of-the-art
+performance in terms of simulation time per second of biological activity. In particular, using
+a single NVIDIA GeForce RTX 2080 Ti GPU board, the full-scale cortical-microcircuit model, which
+includes about 77,000 neurons and $3 \cdot 10^8$ connections, can be simulated at a speed very close
+to real time, while the simulation time of a balanced network of 1,000,000 AdEx neurons with 1,000
+connections per neuron was about 70 s per second of biological activity. 

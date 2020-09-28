@@ -1,0 +1,18 @@
+It is challenging to design a high speed tracking approach using l1-norm due to its non-differentiability.
+In this paper, a new kernelized correlation filter is introduced by leveraging the sparsity attribute
+of l1-norm based regularization to design a high speed tracker. We combine the l1-norm and l2-norm
+based regularizations in one Huber-type loss function, and then formulate an optimization problem
+in the Fourier Domain for fast computation, which enables the tracker to adaptively ignore the noisy
+features produced from occlusion and illumination variation, while keep the advantages of l2-norm
+based regression. This is achieved due to the attribute of Convolution Theorem that the correlation
+in spatial domain corresponds to an element-wise product in the Fourier domain, resulting in that
+the l1-norm optimization problem could be decomposed into multiple sub-optimization spaces in
+the Fourier domain. But the optimized variables in the Fourier domain are complex, which makes using
+the l1-norm impossible if the real and imaginary parts of the variables cannot be separated. However,
+our proposed optimization problem is formulated in such a way that their real part and imaginary
+parts are indeed well separated. As such, the proposed optimization problem can be solved efficiently
+to obtain their optimal values independently with closed-form solutions. Extensive experiments
+on two large benchmark datasets demonstrate that the proposed tracking algorithm significantly
+improves the tracking accuracy of the original kernelized correlation filter (KCF) while with
+little sacrifice on tracking speed. Moreover, it outperforms the state-of-the-art approaches
+in terms of accuracy, efficiency, and robustness. 

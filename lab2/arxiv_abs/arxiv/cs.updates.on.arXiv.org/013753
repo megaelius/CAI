@@ -1,0 +1,19 @@
+The Visual SLAM method is widely used in self localization and mapping in complex environments.
+Visual-Inertia SLAM which combines camera with IMU can significantly improve the robustness and
+make scale week-visible while Monocular Visual SLAM is scale-invisible. For the ground mobile
+robot, the introduction of the wheel speed sensor can solve the scale weak-visible problem and improve
+the robustness under abnormal conditions. In this thesis, a multi-sensor fusion SLAM algorithm
+using monocular vision, inertial and wheel speed measurement is proposed. The sensor measurements
+are combined in a tightly-coupled manner, and the nonlinear optimization method is used to maximize
+the posterior probability to solve the optimal state estimation. Loop detection and back-end optimization
+are added to help reduce or even eliminate the cumulative error of estimated poses, ensuring global
+consistency of trajectory and map. The main research results include: wheel odometer pre-integration
+algorithm which combines chassis speed and IMU angular speed can avoid repeated integration caused
+by linearization point changes during iterative optimization; the state initialization based
+on the wheel odometer and IMU makes it possible to quickly and reliably calculate the initial state
+values required by the state estimator in both stationary and moving states. Comparative experiments
+were carried out in room scale scenes, building scale scenes, and visual loss. The results show that
+proposed algorithm has high accuracy, 2.2 m of cumulative error after the motion of 812 meters (0.28%,
+loopback optimization disabled); strong robustness, effectively localization even in the case
+of sensor loss such as visual loss, etc. Accuracy and robustness of proposed method are superior
+to Monocular Visual Inertia SLAM and traditional wheel odometer. 

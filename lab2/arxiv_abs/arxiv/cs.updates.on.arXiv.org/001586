@@ -1,0 +1,20 @@
+The skyline of a set $P$ of points ($SKY(P)$) consists of the "best" points with respect to minimization
+or maximization of the attribute values. A point $p$ dominates another point $q$ if $p$ is as good
+as $q$ in all dimensions and it is strictly better than $q$ in at least one dimension. In this work,
+we focus on the static $2$-d space and provide expected performance guarantees for $3$-sided Range
+Skyline Queries on the Grid, where $N$ is the cardinality of $P$, $B$ the size of a disk block, and $R$
+the capacity of main memory. We present the MLR-tree, which offers optimal expected cost for finding
+planar skyline points in a $3$-sided query rectangle, $q=[a,b]\times(-\infty,d]$, in both RAM
+and I/O model on the grid $[1,M]\times [1,M]$, by single scanning only the points contained in $SKY(P)$.
+In particular, it supports skyline queries in a $3$-sided range in $O(t\cdot t_{PAM}(N))$ time
+($O((t/B)\cdot t_{PAM}(N))$ I/Os), where $t$ is the answer size and $t_{PAM}(N)$ the time required
+for answering predecessor queries for $d$ in a PAM (Predecessor Access Method) structure, which
+is a special component of MLR-tree and stores efficiently root-to-leaf paths or sub-paths. By choosing
+PAM structures with $O(1)$ expected time for predecessor queries under discrete $\mu$-random
+distributions of the $x$ and $y$ coordinates, MLR-tree supports skyline queries in optimal $O(t)$
+expected time ($O(t/B)$ expected number of I/Os) with high probability. The space cost becomes
+superlinear and can be reduced to linear for many special practical cases. If we choose a PAM structure
+with $O(1)$ amortized time for batched predecessor queries (under no assumption on distributions
+of the $x$ and $y$ coordinates), MLR-tree supports batched skyline queries in optimal $O(t)$ amortized
+time, however the space becomes exponential. In dynamic case, the update time complexity is affected
+by a $O(log^{2}N)$ factor. 

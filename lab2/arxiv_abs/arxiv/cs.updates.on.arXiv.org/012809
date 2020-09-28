@@ -1,0 +1,20 @@
+Change detection is one of the fundamental applications of synthetic aperture radar (SAR) images.
+However, speckle noise presented in SAR images has a much negative effect on change detection. In
+this research, a novel two-phase object-based deep learning approach is proposed for multi-temporal
+SAR image change detection. Compared with traditional methods, the proposed approach brings two
+main innovations. One is to classify all pixels into three categories rather than two categories:
+unchanged pixels, changed pixels caused by strong speckle (false changes), and changed pixels
+formed by real terrain variation (real changes). The other is to group neighboring pixels into segmented
+into superpixel objects (from pixels) such as to exploit local spatial context. Two phases are designed
+in the methodology: 1) Generate objects based on the simple linear iterative clustering algorithm,
+and discriminate these objects into changed and unchanged classes using fuzzy c-means (FCM) clustering
+and a deep PCANet. The prediction of this Phase is the set of changed and unchanged superpixels. 2)
+Deep learning on the pixel sets over the changed superpixels only, obtained in the first phase, to
+discriminate real changes from false changes. SLIC is employed again to achieve new superpixels
+in the second phase. Low rank and sparse decomposition are applied to these new superpixels to suppress
+speckle noise significantly. A further clustering step is applied to these new superpixels via
+FCM. A new PCANet is then trained to classify two kinds of changed superpixels to achieve the final
+change maps. Numerical experiments demonstrate that, compared with benchmark methods, the proposed
+approach can distinguish real changes from false changes effectively with significantly reduced
+false alarm rates, and achieve up to 99.71% change detection accuracy using multi-temporal SAR
+imagery. 

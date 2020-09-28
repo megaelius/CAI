@@ -1,0 +1,18 @@
+Many graph problems are locally checkable: a solution is globally feasible if it looks valid in all
+constant-radius neighborhoods. This idea is formalized in the concept of locally checkable labelings
+(LCLs), introduced by Naor and Stockmeyer (1995). Recently, Chang et al. (2016) showed that in bounded-degree
+graphs, every LCL problem belongs to one of the following classes: - "Easy": solvable in $O(\log^*
+n)$ rounds with both deterministic and randomized distributed algorithms. - "Hard": requires
+at least $\Omega(\log n)$ rounds with deterministic and $\Omega(\log \log n)$ rounds with randomized
+distributed algorithms. Hence for any parameterized LCL problem, when we move from local problems
+towards global problems, there is some point at which complexity suddenly jumps from easy to hard.
+For example, for vertex coloring in $d$-regular graphs it is now known that this jump is at precisely
+$d$ colors: coloring with $d+1$ colors is easy, while coloring with $d$ colors is hard. However,
+it is currently poorly understood where this jump takes place when one looks at defective colorings.
+To study this question, we define $k$-partial $c$-coloring as follows: nodes are labeled with numbers
+between $1$ and $c$, and every node is incident to at least $k$ properly colored edges. It is known
+that $1$-partial $2$-coloring (a.k.a. weak $2$-coloring) is easy for any $d \ge 1$. As our main result,
+we show that $k$-partial $2$-coloring becomes hard as soon as $k \ge 2$, no matter how large a $d$ we
+have. We also show that this is fundamentally different from $k$-partial $3$-coloring: no matter
+which $k \ge 3$ we choose, the problem is always hard for $d = k$ but it becomes easy when $d \gg k$. The
+same was known previously for partial $c$-coloring with $c \ge 4$, but the case of $c < 4$ was open.

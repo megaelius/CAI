@@ -1,0 +1,20 @@
+A prominent characteristic of write operation in Phase-Change Memory (PCM) is that its latency
+and energy are sensitive to the data to be written as well as the content that is overwritten. We observe
+that overwriting unknown memory content can incur significantly higher latency and energy compared
+to overwriting known all-zeros or all-ones content. This is because all-zeros or all-ones content
+is overwritten by programming the PCM cells only in one direction, i.e., using either SET or RESET
+operations, not both. In this paper, we propose data content aware PCM writes (DATACON), a new mechanism
+that reduces the latency and energy of PCM writes by redirecting these requests to overwrite memory
+locations containing all-zeros or all-ones. DATACON operates in three steps. First, it estimates
+how much a PCM write access would benefit from overwriting known content (e.g., all-zeros, or all-ones)
+by comprehensively considering the number of set bits in the data to be written, and the energy-latency
+trade-offs for SET and RESET operations in PCM. Second, it translates the write address to a physical
+address within memory that contains the best type of content to overwrite, and records this translation
+in a table for future accesses. We exploit data access locality in workloads to minimize the address
+translation overhead. Third, it re-initializes unused memory locations with known all-zeros
+or all-ones content in a manner that does not interfere with regular read and write accesses. DATACON
+overwrites unknown content only when it is absolutely necessary to do so. We evaluate DATACON with
+workloads from state-of-the-art machine learning applications, SPEC CPU2017, and NAS Parallel
+Benchmarks. Results demonstrate that DATACON significantly improves system performance and
+memory system energy consumption compared to the best of performance-oriented state-of-the-art
+techniques. 

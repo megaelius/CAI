@@ -1,0 +1,18 @@
+Causally consistent distributed storage systems have received significant attention recently
+due to the potential for providing high throughput and causality guarantees. {\em Global stabilization}
+is a technique established for achieving causal consistency in distributed multi-version key-value
+store systems, adopted by the previous work such as GentleRain \cite{Du2014GentleRainCA} and
+Cure \cite{akkoorath2016cure}. Intuitively, this approach serializes all updates by their physical
+time and computes the ``Global Stable Time'' which is a time point $t$ such that versions with timestamp
+$\leq t$ can be returned to the client without violating causality. However, all previous designs
+with global stabilization assume {\em full replication}, where each data center stores a full copy
+of data, and each client is restricted to access servers within one data center. In this paper, we
+propose a theoretical framework to support {\em general partial replication} with causal consistency
+via global stabilization, where each server can store an arbitrary subset of the data, and each client
+is allowed to communicate with any subset of the servers and migrate among them without extra delays.
+We propose an algorithm that implements causal consistency for distributed multi-version key-value
+stores with general partially replication. We prove the optimality of the Global Stable Time computation
+in our algorithm regarding the remote update visibility latency, i.e. how fast update from a remote
+server is visible to the client, under general partial replication. We also provide trade-offs
+to further optimize the remote update visibility by introducing extra delays during client's migration.
+Simulation results on the performance of our algorithm compared to the previous work are also provided.

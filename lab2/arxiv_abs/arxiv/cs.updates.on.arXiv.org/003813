@@ -1,0 +1,18 @@
+We study graph connectivity problem in MPC model. On an undirected graph with $n$ nodes and $m$ edges,
+$O(\log n)$ round connectivity algorithms have been known for over 35 years. However, no algorithms
+with better complexity bounds were known. In this work, we give fully scalable, faster algorithms
+for the connectivity problem, by parameterizing the time complexity as a function of the diameter
+of the graph. Our main result is a $O(\log D \log\log_{m/n} n)$ time connectivity algorithm for diameter-$D$
+graphs, using $\Theta(m)$ total memory. If our algorithm can use more memory, it can terminate in
+fewer rounds, and there is no lower bound on the memory per processor. We extend our results to related
+graph problems such as spanning forest, finding a DFS sequence, exact/approximate minimum spanning
+forest, and bottleneck spanning forest. We also show that achieving similar bounds for reachability
+in directed graphs would imply faster boolean matrix multiplication algorithms. We introduce
+several new algorithmic ideas. We describe a general technique called double exponential speed
+problem size reduction which roughly means that if we can use total memory $N$ to reduce a problem
+from size $n$ to $n/k$, for $k=(N/n)^{\Theta(1)}$ in one phase, then we can solve the problem in $O(\log\log_{N/n}
+n)$ phases. In order to achieve this fast reduction for graph connectivity, we use a multistep algorithm.
+One key step is a carefully constructed truncated broadcasting scheme where each node broadcasts
+neighbor sets to its neighbors in a way that limits the size of the resulting neighbor sets. Another
+key step is random leader contraction, where we choose a smaller set of leaders than many previous
+works do. 

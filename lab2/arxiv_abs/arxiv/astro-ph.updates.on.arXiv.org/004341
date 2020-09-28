@@ -1,0 +1,18 @@
+Numerical solutions of the cosmic-ray (CR) magneto-hydrodynamic equations are dogged by a powerful
+numerical instability, which arises from the constraint that CRs can only stream down their gradient.
+The standard cure is to regularize by adding artificial diffusion. Besides introducing ad-hoc
+smoothing, this has a significant negative impact on either computational cost or complexity and
+parallel scalings. We describe a new numerical algorithm for CR transport, with close parallels
+to two moment methods for radiative transfer under the reduced speed of light approximation. It
+stably and robustly handles CR streaming without any artificial diffusion. It allows for both isotropic
+and field-aligned CR streaming and diffusion, with arbitrary streaming and diffusion coefficients.
+CR transport is handled explicitly, while source terms are handled implicitly. The overall time-step
+scales linearly with resolution (even when computing CR diffusion), and has a perfect parallel
+scaling. It is given by the standard Courant condition with respect to a constant maximum velocity
+over the entire simulation domain. The computational cost is comparable to that of solving the ideal
+MHD equation. We demonstrate the accuracy and stability of this new scheme with a wide variety of
+tests, including anisotropic streaming and diffusion tests, CR modified shocks, CR driven blast
+waves, and CR transport in multi-phase media. The new algorithm opens doors to much more ambitious
+and hitherto intractable calculations of CR physics in galaxies and galaxy clusters. It can also
+be applied to other physical processes with similar mathematical structure, such as saturated,
+anisotropic heat conduction. 

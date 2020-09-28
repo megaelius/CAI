@@ -1,0 +1,18 @@
+We study smoothed analysis of distributed graph algorithms, focusing on the fundamental minimum
+spanning tree (MST) problem. With the goal of studying the time complexity of distributed MST as
+a function of the "perturbation" of the input graph, we posit a {\em smoothing model} that is parameterized
+by a smoothing parameter $0 \leq \epsilon(n) \leq 1$ which controls the amount of {\em random} edges
+that can be added to an input graph $G$ per round. Informally, $\epsilon(n)$ is the probability (typically
+a small function of $n$, e.g., $n^{-\frac{1}{4}}$) that a random edge can be added to a node per round.
+The added random edges, once they are added, can be used (only) for communication. We show upper and
+lower bounds on the time complexity of distributed MST in the above smoothing model. We present a
+distributed algorithm that, with high probability,\footnote{Throughout, with high probability
+(whp) means with probability at least $1 - n^{-c}$, for some fixed, positive constant $c$.} computes
+an MST and runs in $\tilde{O}(\min\{\frac{1}{\sqrt{\epsilon(n)}} 2^{O(\sqrt{\log n})}, D +
+\sqrt{n}\})$ rounds\footnote{The notation $\tilde{O}$ hides a $\polylog(n)$ factor and $\tilde{\Omega}$
+hides a $\frac{1}{\polylog{(n)}}$ factor, where $n$ is the number of nodes of the graph.} where
+$\epsilon$ is the smoothing parameter, $D$ is the network diameter and $n$ is the network size. To
+complement our upper bound, we also show a lower bound of $\tilde{\Omega}(\min\{\frac{1}{\sqrt{\epsilon(n)}},
+D+\sqrt{n}\})$. We note that the upper and lower bounds essentially match except for a multiplicative
+$2^{O(\sqrt{\log n})} \polylog(n)$ factor. Our work can be considered as a first step in understanding
+the smoothed complexity of distributed graph algorithms. 

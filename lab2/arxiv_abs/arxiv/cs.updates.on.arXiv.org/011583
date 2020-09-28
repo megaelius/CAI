@@ -1,0 +1,19 @@
+Probably the most important problem in machine learning is the preliminary biasing of a learner's
+hypothesis space so that it is small enough to ensure good generalisation from reasonable training
+sets, yet large enough that it contains a good solution to the problem being learnt. In this paper
+a mechanism for {\em automatically} learning or biasing the learner's hypothesis space is introduced.
+It works by first learning an appropriate {\em internal representation} for a learning environment
+and then using that representation to bias the learner's hypothesis space for the learning of future
+tasks drawn from the same environment. An internal representation must be learnt by sampling from
+{\em many similar tasks}, not just a single task as occurs in ordinary machine learning. It is proved
+that the number of examples $m$ {\em per task} required to ensure good generalisation from a representation
+learner obeys $m = O(a+b/n)$ where $n$ is the number of tasks being learnt and $a$ and $b$ are constants.
+If the tasks are learnt independently ({\em i.e.} without a common representation) then $m=O(a+b)$.
+It is argued that for learning environments such as speech and character recognition $b\gg a$ and
+hence representation learning in these environments can potentially yield a drastic reduction
+in the number of examples required per task. It is also proved that if $n = O(b)$ (with $m=O(a+b/n)$)
+then the representation learnt will be good for learning novel tasks from the same environment,
+and that the number of examples required to generalise well on a novel task will be reduced to $O(a)$
+(as opposed to $O(a+b)$ if no representation is used). It is shown that gradient descent can be used
+to train neural network representations and experiment results are reported providing strong
+qualitative support for the theoretical results. 

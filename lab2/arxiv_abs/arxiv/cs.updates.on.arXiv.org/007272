@@ -1,0 +1,19 @@
+We study the problem of counting subgraphs in a graph $G$ of degeneracy $d$, a good sparsity measure
+for many real-world graphs. Our main tool is a decomposition for directed acyclic graphs, which
+we call DAG tree decomposition. This decomposition induces a width measure $s(H)$ on every undirected
+pattern $H$, and leads to a dynamic programming to count the copies of $H$ in $G$ in time $f(d,k) \cdot
+\tilde{O}(n^{s(H)})$. This is tight in the following sense: if any algorithm solves the problem
+in time $f(d,k) \cdot n^{o(s(H)/\ln s(H))}$ for all patterns $H$, then ETH (the Exponential Time
+Hypothesis) fails. This result has multiple consequences. First, the induced or non-induced copies
+of any pattern $H$ on $k$ nodes (even disconnected ones) can be counted in time $f(d,k) \cdot n^{O(\alpha(H))}$
+where $\alpha(H)$ is the independence number of $H$, and no algorithm can do so in $f(d,k) \cdot n^{o(\alpha(H)/\ln
+\alpha(H))}$ unless ETH fails. Second, by bounding $s(H)$ we rediscover and enrich classic results.
+For cliques minus $\epsilon$ edges we give a time bound of $f(d,k) \cdot \tilde{O}(n^{\lceil \frac{1}{2}
++ \sqrt{\frac{\epsilon}{2}} \, \rceil})$, which extends the classic $f(d,k) \cdot O(n)$ bound
+for cliques by Chiba and Nishizeki [9]. For complete multipartite graphs, we can count non-induced
+copies in $f(d,k) \cdot \tilde{O}(n)$ (essentially matching an $f(d,k) \cdot O(n)$ bound by Eppstein
+[13]), which becomes $f(d,k) \cdot \tilde{O}(n^{\lfloor\frac{\epsilon}{4}\rfloor+2})$ for
+complete multipartite graphs plus $\epsilon$ edges. Third, we can count the induced or non-induced
+copies of any $H$ in $f(d,k) \cdot\tilde{O}(n^{\frac{k}{4} + 2})$, beating the decades-old state-of-the-art
+$O(n^{\frac{\omega k}{3}+2})$ algorithm of Ne\v{s}et\v{r}il and Poljak [28] for $d < n^{0.721}$
+($\omega$ is the matrix multiplication exponent). 

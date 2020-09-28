@@ -1,0 +1,17 @@
+The Congested Clique model of distributed computing, which was introduced by Lotker, Patt-Shamir,
+Pavlov, and Peleg [SPAA'03, SICOMP'05] and was motivated as "a simple model for overlay networks",
+has received extensive attention over the past few years. In this model, nodes of the system are connected
+as a clique and can communicate in synchronous rounds, where per round each node can send $O(\log
+n)$ bits to each other node, all the same time. The fact that this model allows each node to send and
+receive a linear number of messages at the same time seems to limit the relevance of the model for overlay
+networks. Towards addressing this issue, in this paper, we introduce the Node-Congested Clique
+as a general communication network model. Similarly to the Congested Clique model, the nodes are
+connected as a clique and messages are sent in synchronous communication rounds. However, here,
+per round, every node can send and receive only $O(\log n)$ many messages of size $O(\log n)$. To initiate
+research on our network model, we present distributed algorithms for the Minimum Spanning Tree,
+BFS Tree, Maximal Independent Set, Maximal Matching, and Coloring problem for an input graph $G=(V,E)$,
+where each clique node initially only knows a single node of $G$ and its incident edges. For the Minimum
+Spanning Tree problem, our runtime is polylogarithmic. In all other cases the runtime of our algorithms
+mainly depends on the arboricity $a$ of $G$, which is a constant for many important graph families
+such as planar graphs. At the core of these algorithms is a distributed algorithm that assigns directions
+to the edges of $G$ so that at the end, every node is incident to at most $O(a)$ outgoing edges. 

@@ -1,0 +1,19 @@
+The aggressive scaling of technology may have helped to meet the growing demand for higher memory
+capacity and density, but has also made DRAM cells more prone to errors. Such a reality triggered
+a lot of interest in modeling DRAM behavior for either predicting the errors in advance or for adjusting
+DRAM circuit parameters to achieve a better trade-off between energy efficiency and reliability.
+Existing modeling efforts may have studied the impact of few operating parameters and temperature
+on DRAM reliability using custom FPGAs setups, however they neglected the combined effect of workload-specific
+features that can be systematically investigated only on a real system. In this paper, we present
+the results of our study on workload-dependent DRAM error behavior within a real server considering
+various operating parameters, such as the refresh rate, voltage and temperature. We show that the
+rate of single- and multi-bit errors may vary across workloads by 8x, indicating that program inherent
+features can affect DRAM reliability significantly. Based on this observation, we extract 249
+features, such as the memory access rate, the rate of cache misses, the memory reuse time and data
+entropy, from various compute-intensive, caching and analytics benchmarks. We apply several
+supervised learning methods to construct the DRAM error behavior model for 72 server-grade DRAM
+chips using the memory operating parameters and extracted program inherent features. Our results
+show that, with an appropriate choice of program features and supervised learning method, the rate
+of single- and multi-bit errors can be predicted for a specific DRAM module with an average error
+of less than 10.5 %, as opposed to the 2.9x estimation error obtained for a conventional workload-unaware
+error model. 

@@ -1,0 +1,17 @@
+Quantum algorithm design usually assumes access to a perfect quantum computer with ideal properties
+like full connectivity, noise-freedom and arbitrarily long coherence time. In Noisy Intermediate-Scale
+Quantum (NISQ) devices, however, the number of qubits is highly limited and quantum operation error
+and qubit coherence are not negligible. Besides, the connectivity of physical qubits in a quantum
+processing unit (QPU) is also strictly constrained. Thereby, additional operations like SWAP
+gates have to be inserted to satisfy this constraint while preserving the functionality of the original
+circuit. This process is known as quantum circuit transformation. Adding additional gates will
+increase both the size and depth of a quantum circuit and therefore cause further decay of the performance
+of a quantum circuit. Thus it is crucial to minimize the number of added gates. In this paper, we propose
+an efficient method to solve this problem. We first choose by using simulated annealing an initial
+mapping which fits well with the input circuit and then, with the help of a heuristic cost function,
+stepwise apply the best selected SWAP gates until all quantum gates in the circuit can be executed.
+Our algorithm runs in time polynomial in all parameters including the size and the qubit number of
+the input circuit, and the qubit number in the QPU. Its space complexity is quadratic to the number
+of edges in the QPU. Experimental results on extensive realistic circuits confirm that the proposed
+method is efficient and can reduce by 57% on average the size of the output circuits when compared
+with the state-of-the-art algorithm on the most recent IBM quantum device viz. IBM Q20 (Tokyo).

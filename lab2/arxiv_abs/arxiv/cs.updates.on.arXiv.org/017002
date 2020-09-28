@@ -1,0 +1,20 @@
+The increased availability of observation data from engineering systems in operation poses the
+question of how to incorporate this data into finite element models. To this end, we propose a novel
+statistical construction of the finite element method that provides the means of synthesising
+measurement data and finite element models. The Bayesian statistical framework is adopted to treat
+all the uncertainties present in the data, the mathematical model and its finite element discretisation.
+From the outset, we postulate a data-generating model which additively decomposes data into a finite
+element, a model misspecification and a noise component. Each of the components may be uncertain
+and is considered as a random variable with a respective prior probability density. The prior of
+the finite element component is given by a conventional stochastic forward problem. The prior probabilities
+of the model misspecification and measurement noise, without loss of generality, are assumed to
+have zero-mean and known covariance structure. Our proposed statistical model is hierarchical
+in the sense that each of the three random components may depend on non-observable random hyperparameters.
+Because of the hierarchical structure of the statistical model, Bayes rule is applied on three different
+levels in turn to infer the posterior densities of the three random components and hyperparameters.
+On level one, we determine the posterior densities of the finite element component and the true system
+response using the prior finite element density given by the forward problem and the data likelihood.
+On the next level, we infer the hyperparameter posterior densities from their respective priors
+and the marginal likelihood of the first inference problem. Finally, on level three we use Bayes
+rule to choose the most suitable finite element model in light of the observed data by computing the
+model posteriors. 

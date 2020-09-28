@@ -1,0 +1,19 @@
+Making learners robust to adversarial perturbation at test time (i.e., evasion attacks) or training
+time (i.e., poisoning attacks) has emerged as a challenging task in machine learning. It was recently
+shown that for many natural settings, there exist sublinear perturbations that can drastically
+decrease the performance in both training and testing phase. These barriers, however, are information
+theoretic and only prove the existence of such successful adversarial perturbations. A natural
+question is whether or not we can make classifiers computationally robust to polynomial-time adversaries.
+In this work, we prove strong barriers against achieving such envisioned computational robustness
+both for evasion and poisoning attacks. In particular, we show that if the test instances come from
+a product distribution (e.g., uniform over $\{0,1\}^n$ or $[0,1]^n$, or isotropic Gaussian of
+dimension $n$) and that there is an initial constant error, then there always exists a polynomial-time
+attack that finds adversarial examples of Hamming distance $O(\sqrt n)$. For poisoning attacks,
+we prove that for any learning algorithm with sample complexity $m$, there always exist polynomial-time
+online poisoning attacks that tamper with $O (\sqrt m)$ many examples, replace them with other correctly
+labeled examples, and decrease the confidence of the learner (in finding a low risk hypothesis)
+from $\approx 1$ to $\approx 0$, or alternatively increase the error for any chosen target instance
+$x$ from $\approx 0$ to $\approx 1$. Our poisoning and evasion attacks are black-box in how they access
+their corresponding components of the system (i.e., the hypothesis, the concept, and the learning
+algorithm), and they do not make any assumptions about the classifier or the learning algorithm
+producing the classifier. 

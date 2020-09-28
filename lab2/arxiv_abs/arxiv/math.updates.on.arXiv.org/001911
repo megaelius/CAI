@@ -1,0 +1,19 @@
+The Push, the Pull and the Push&Pull algorithms are well-studied rumor spreading protocols. In
+all three, in the beginning one node of a graph is informed. In the Push setting, every round every
+informed node chooses a neighbor uniformly at random and, if it is not already informed anyway, informs
+it. In the Pull setting, each round each uninformed node chooses a neighbor uniformly at random and
+asks it for the rumor; if the asked neighbor is informed, now also the asking node is informed. Push&Pull
+is a combination of Push and Pull: In each round, each node picks a neighbor uniformly at random. If
+at least one of both knows the rumor, after this round, both know the rumor. Clementi et al. have considered
+Push in settings where the underlying graph changes each round. In one setting they investigated,
+in each round the underlying graph is a newly sampled Erd\H{o}s-R\'enyi random graph $G(n,p)$.
+They show that if $p\geq 1/n$ then with probability $1-o(1)$ (as $n\rightarrow \infty$) the number
+of rounds needed until all nodes are informed is $\mathcal{O}(\ln(n))$. Doerr and Kostrygin introduced
+a general framework to analyze rumor spreading algorithms; using this framework, for $a>0$ and
+$p=a/n$ they improved the previous results in the described setting: The expected number of rounds
+needed by Push was determined to be $\log_{2-e^{-a}}(n)+1/(1-e^{-a})\ln(n)+\mathcal{O}(1)$;
+also large deviation bounds were obtained. Using their framework, we investigate Pull and Push&Pull
+in that setting: We prove that the expected number of rounds needed by Pull to inform all nodes is $\log_{2-e^{-a}}(n)+1/a
+\ln(n)+\mathcal{O}(1)$. Let $\gamma := 2(1-e^{-a})-(1-e^{-a})^2/a$; we prove that the expected
+number of rounds needed by Push&Pull is $\log_{1+\gamma}(n)+1/a\ln(n)+\mathcal{O}(1)$; as
+a byproduct, we obtain large deviation bounds, too. 

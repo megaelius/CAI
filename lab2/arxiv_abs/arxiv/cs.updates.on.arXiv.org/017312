@@ -1,0 +1,17 @@
+Work-stealing is a popular technique to implement dynamic load balancing in a distributed manner.
+In this approach, each process owns a set of tasks that have to be executed. The owner of the set can
+put tasks in it and can take tasks from it to execute them. When a process runs out of tasks, instead
+of being idle, it becomes a thief to steal tasks from a victim. Thus, a work-stealing algorithm provides
+three high-level operations: Put and Take, which can be invoked only by the owner, and Steal, which
+can be invoked by a thief. One of the main targets when designing work-stealing algorithms is to make
+Put and Take as simple and efficient as possible. Unfortunately, it has been shown that any work-stealing
+algorithm in the standard asynchronous model must use expensive Read-After-Write synchronization
+patterns or atomic Read-Modify-Write instructions (e.g. Compare&Swap or Test&Set), which may
+be costly in practice. Thus, prior research has proposed idempotent work-stealing, a relaxation
+for which there are algorithms with Put and Take devoid of Read-Modify-Write atomic instructions
+and Read-After- Write synchronization patterns; however, Put uses fences among Write instructions,
+and Steal uses Compare&Swap and fences among Read instructions. This paper considers work-stealing
+with multiplicity, a relaxation in which every task is taken by at least one operation, with the requirement
+that any process can extract a task at most once. Three versions of the relaxation are considered
+and fully Read/Write algorithms are presented in the standard asynchronous model, all of them devoid
+of Read-After-Write synchronization patterns; the last algorithm is also fully fence-free. 

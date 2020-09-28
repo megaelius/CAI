@@ -1,0 +1,20 @@
+This paper proposes Fulcrum network codes, a network coding framework that achieves three seemingly
+conflicting objectives: a) to reduce the overhead per coded packet to almost 1 bit per original packet;
+b) to operate the network using only GF(2) operations at intermediate nodes if necessary, dramatically
+reducing complexity in the network; c) to deliver an end-to-end performance that is close to that
+of a large field size network coding system for high-end receivers while simultaneously catering
+to low-end ones that can only decode in GF(2). As a consequence of (b) and (c), Fulcrum codes have a
+unique trait missing so far in the network coding literature: they provide the network with the flexibility
+to spread computational complexity over different devices depending on their current load, network
+conditions, or even energy targets in a simple and decentralized way. At the core of our framework
+lies the idea of precoding at the sources using an expansion field GF(2^h) to increase the number
+of dimensions seen by the network using a linear mapping. Fulcrum network codes can use any high-field
+size linear code for precoding, e.g., Reed-Solomon, random linear coding, but we show that systematic
+codes provide the ability to manage heterogeneous receivers while using the same data stream. Our
+analysis shows that the number of additional dimensions created during precoding allows us to control
+the tradeoff between delay performance, overhead, and complexity. Beyond improving the mean delay
+performance, we show that increasing dimensions reduces the variance of this delay. Our approach
+is also useful for sparse coding techniques and even for settings not typically implementing network
+coding. Our implementation and benchmarking results show that Fulcrum can achieve similar decoding
+performance as high field RLNC approaches but with encoders and decoders that are an order of magnitude
+faster. 

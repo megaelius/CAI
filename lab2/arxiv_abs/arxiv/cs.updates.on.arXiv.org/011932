@@ -1,0 +1,17 @@
+We provide efficient support for applications that aim to continuously find pairs of similar sets
+in rapid streams of sets. A prototypical example setting is that of tweets. A tweet is a set of words,
+and Twitter emits about half a billion tweets per day. Our solution makes it possible to efficiently
+maintain the top-$k$ most similar tweets from a pair of rapid Twitter streams, e.g., to discover
+similar trends in two cities if the streams concern cities. Using a sliding window model, the top-$k$
+result changes as new sets in the stream enter the window or existing ones leave the window. Maintaining
+the top-$k$ result under rapid streams is challenging. First, when a set arrives, it may form a new
+pair for the top-$k$ result with any set already in the window. Second, when a set leaves the window,
+all its pairings in the top-$k$ are invalidated and must be replaced. It is not enough to maintain
+the $k$ most similar pairs, as less similar pairs may eventually be promoted to the top-$k$ result.
+A straightforward solution that pairs every new set with all sets in the window and keeps all pairs
+for maintaining the top-$k$ result is memory intensive and too slow. We propose SWOOP, a highly scalable
+stream join algorithm that solves these issues. Novel indexing techniques and sophisticated filters
+efficiently prune useless pairs as new sets enter the window. SWOOP incrementally maintains a stock
+of similar pairs to update the top-$k$ result at any time, and the stock is shown to be minimal. Our
+experiments confirm that SWOOP can deal with stream rates that are orders of magnitude faster than
+the rates of existing approaches. 

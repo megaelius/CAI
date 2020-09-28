@@ -1,0 +1,20 @@
+Content blocking is an important part of a performant, user-serving, privacy respecting web. Most
+content blockers build trust labels over URLs. While useful, this approach has well understood
+shortcomings. Attackers may avoid detection by changing URLs or domains, bundling unwanted code
+with benign code, or inlining code in pages. The common flaw in existing approaches is that they evaluate
+code based on its delivery mechanism, not its behavior. In this work we address this problem with
+a system for generating signatures of the privacy-and-security relevant behavior of executed
+JavaScript. Our system considers script behavior during each turn on the JavaScript event loop.
+Focusing on event loop turns allows us to build signatures that are robust against code obfuscation,
+code bundling, URL modification, and other common evasions, as well as handle unique aspects of
+web applications. This work makes the following contributions to improving content blocking:
+First, implement a novel system to build per-event-loop-turn signatures of JavaScript code by
+instrumenting the Blink and V8 runtimes. Second, we apply these signatures to measure filter list
+evasion, by using EasyList and EasyPrivacy as ground truth and finding other code that behaves identically.
+We build ~2m signatures of privacy-and-security behaviors from 11,212 unique scripts blocked
+by filter lists, and find 3,589 more unique scripts including the same harmful code, affecting 12.48%
+of websites measured. Third, we taxonomize common filter list evasion techniques. Finally, we
+present defenses; filter list additions where possible, and a proposed, signature based system
+in other cases. We share the implementation of our signature-generation system, the dataset from
+applying our system to the Alexa 100K, and 586 AdBlock Plus compatible filter list rules to block
+instances of currently blocked code being moved to new URLs. 

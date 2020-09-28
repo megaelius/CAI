@@ -1,0 +1,18 @@
+Contemporary benchmark methods for image inpainting are based on deep generative models and specifically
+leverage adversarial loss for yielding realistic reconstructions. However, these models cannot
+be directly applied on image/video sequences because of an intrinsic drawback- the reconstructions
+might be independently realistic, but, when visualized as a sequence, often lacks fidelity to the
+original uncorrupted sequence. The fundamental reason is that these methods try to find the best
+matching latent space representation near to natural image manifold without any explicit distance
+based loss. In this paper, we present a semantically conditioned Generative Adversarial Network
+(GAN) for sequence inpainting. The conditional information constrains the GAN to map a latent representation
+to a point in image manifold respecting the underlying pose and semantics of the scene. To the best
+of our knowledge, this is the first work which simultaneously addresses consistency and correctness
+of generative model based inpainting. We show that our generative model learns to disentangle pose
+and appearance information; this independence is exploited by our model to generate highly consistent
+reconstructions. The conditional information also aids the generator network in GAN to produce
+sharper images compared to the original GAN formulation. This helps in achieving more appealing
+inpainting performance. Though generic, our algorithm was targeted for inpainting on faces. When
+applied on CelebA and Youtube Faces datasets, the proposed method results in a significant improvement
+over the current benchmark, both in terms of quantitative evaluation (Peak Signal to Noise Ratio)
+and human visual scoring over diversified combinations of resolutions and deformations. 

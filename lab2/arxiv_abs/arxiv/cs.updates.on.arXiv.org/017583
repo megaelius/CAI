@@ -1,0 +1,18 @@
+We define a pseudorandom function (PRF) $F: \mathcal{K} \times \mathcal{X} \rightarrow \mathcal{Y}$
+to be bi-homomorphic when it is fully Key homomorphic and partially Input Homomorphic (KIH), i.e.,
+given $F(k_1, x_1)$ and $F(k_2, x_2)$, there is an efficient algorithm to compute $F(k_1 \oplus
+k_2, x_1 \ominus x_2)$, where $\oplus$ and $\ominus$ are (binary) group operations. The homomorphism
+on the input is restricted to a fixed subset of the input bits, i.e., $\ominus$ operates on some pre-decided
+$m$-out-of-$n$ bits, where $|x_1| = |x_2| = n$, and the remaining $n-m$ bits are identical in both
+inputs. In addition, the output length, $\ell$, of the operator $\ominus$ is not fixed and is defined
+as $n \leq \ell \leq 2n$, hence leading to Homomorphically induced Variable input Length (HVL) as
+$n \leq |x_1 \ominus x_2| \leq 2n$. We present a learning with errors (LWE) based construction for
+a HVL-KIH-PRF family. Our construction is inspired by the key homomorphic PRF construction due
+to Banerjee and Peikert (Crypto 2014). An updatable encryption scheme allows rotations of the encryption
+key, i.e., moving existing ciphertexts from old to new key. These updates are carried out via \emph{update
+tokens}, which can be used by an untrusted party since the update procedure does not involve decryption
+of the ciphertext. We use our novel PRF family to construct an updatable encryption scheme, named
+QPC-UE-UU, which is quantum-safe, post-compromise secure and supports unidirectional ciphertext
+updates, i.e., the update tokens can be used to perform ciphertext updates but they cannot be used
+to undo already completed updates. Our PRF family also leads to the first left/right key homomorphic
+constrained-PRF family with HVL. 

@@ -1,0 +1,18 @@
+Among the various generative adversarial network (GAN)-based image inpainting methods, a coarse-to-fine
+network with a contextual attention module (CAM) has shown remarkable performance. However, owing
+to two stacked generative networks, the coarse-to-fine network needs numerous computational
+resources such as convolution operations and network parameters, which result in low speed. To
+address this problem, we propose a novel network architecture called PEPSI: parallel extended-decoder
+path for semantic inpainting network, which aims at reducing the hardware costs and improving the
+inpainting performance. PEPSI consists of a single shared encoding network and parallel decoding
+networks called coarse and inpainting paths. The coarse path produces a preliminary inpainting
+result to train the encoding network for the prediction of features for the CAM. Simultaneously,
+the inpainting path generates higher inpainting quality using the refined features reconstructed
+via the CAM. In addition, we propose Diet-PEPSI that significantly reduces the network parameters
+while maintaining the performance. In Diet-PEPSI, to capture the global contextual information
+with low hardware costs, we propose novel rate-adaptive dilated convolutional layers, which employ
+the common weights but produce dynamic features depending on the given dilation rates. Extensive
+experiments comparing the performance with state-of-the-art image inpainting methods demonstrate
+that both PEPSI and Diet-PEPSI improve the qualitative scores, i.e. the peak signal-to-noise ratio
+(PSNR) and structural similarity (SSIM), as well as significantly reduce hardware costs such as
+computational time and the number of network parameters. 

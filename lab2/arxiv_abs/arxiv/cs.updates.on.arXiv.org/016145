@@ -1,0 +1,17 @@
+As cameras and inertial sensors are becoming ubiquitous in mobile devices and robots, it holds great
+potential to design visual-inertial navigation systems (VINS) for efficient versatile 3D motion
+tracking which utilize any (multiple) available cameras and inertial measurement units (IMUs)
+and are resilient to sensor failures or measurement depletion. To this end, rather than the standard
+VINS paradigm using a minimal sensing suite of a single camera and IMU, in this paper we design a real-time
+consistent multi-IMU multi-camera (MIMC)-VINS estimator that is able to seamlessly fuse multi-modal
+information from an arbitrary number of uncalibrated cameras and IMUs. Within an efficient multi-state
+constraint Kalman filter (MSCKF) framework, the proposed MIMC-VINS algorithm optimally fuses
+asynchronous measurements from all sensors, while providing smooth, uninterrupted, and accurate
+3D motion tracking even if some sensors fail. The key idea of the proposed MIMC-VINS is to perform
+high-order on-manifold state interpolation to efficiently process all available visual measurements
+without increasing the computational burden due to estimating additional sensors' poses at asynchronous
+imaging times. In order to fuse the information from multiple IMUs, we propagate a joint system consisting
+of all IMU states while enforcing rigid-body constraints between the IMUs during the filter update
+stage. Lastly, we estimate online both spatiotemporal extrinsic and visual intrinsic parameters
+to make our system robust to errors in prior sensor calibration. The proposed system is extensively
+validated in both Monte-Carlo simulations and real-world experiments. 

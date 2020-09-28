@@ -1,0 +1,18 @@
+This paper investigates the multi-GPU performance of a 3D buoyancy driven cavity solver using MPI
+and OpenACC directives on different platforms. The paper shows that decomposing the total problem
+in different dimensions affects the strong scaling performance significantly for the GPU. Without
+proper performance optimizations, it is shown that 1D domain decomposition scales poorly on multiple
+GPUs due to the noncontiguous memory access. The performance using whatever decompositions can
+be benefited from a series of performance optimizations in the paper. Since the buoyancy driven
+cavity code is latency-bounded on the clusters examined, a series of optimizations both agnostic
+and tailored to the platforms are designed to reduce the latency cost and improve memory throughput
+between hosts and devices efficiently. First, the parallel message packing/unpacking strategy
+developed for noncontiguous data movement between hosts and devices improves the overall performance
+by about a factor of 2. Second, transferring different data based on the stencil sizes for different
+variables further reduces the communication overhead. These two optimizations are general enough
+to be beneficial to stencil computations having ghost changes on all of the clusters tested. Third,
+GPUDirect is used to improve the communication on clusters which have the hardware and software
+support for direct communication between GPUs without staging CPU's memory. Finally, overlapping
+the communication and computations is shown to be not efficient on multi-GPUs if only using MPI or
+MPI+OpenACC. Although we believe our implementation has revealed enough overlap, the actual running
+does not utilize the overlap well due to a lack of asynchronous progression. 

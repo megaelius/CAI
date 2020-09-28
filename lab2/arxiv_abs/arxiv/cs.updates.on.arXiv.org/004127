@@ -1,0 +1,20 @@
+Maximum likelihood estimation is an important statistical technique for estimating missing data,
+for example in climate and environmental applications, which are usually large and feature data
+points that are irregularly spaced. In particular, the Gaussian log-likelihood function is the
+\emph{de facto} model, which operates on the resulting sizable dense covariance matrix. The advent
+of high performance systems with advanced computing power and memory capacity have enabled full
+simulations only for rather small dimensional climate problems, solved at the machine precision
+accuracy. The challenge for high dimensional problems lies in the computation requirements of
+the log-likelihood function, which necessitates ${\mathcal O}(n^2)$ storage and ${\mathcal
+O}(n^3)$ operations, where $n$ represents the number of given spatial locations. This prohibitive
+computational cost may be reduced by using approximation techniques that not only enable large-scale
+simulations otherwise intractable but also maintain the accuracy and the fidelity of the spatial
+statistics model. In this paper, we extend the Exascale GeoStatistics software framework (i.e.,
+ExaGeoStat) to support the Tile Low-Rank (TLR) approximation technique, which exploits the data
+sparsity of the dense covariance matrix by compressing the off-diagonal tiles up to a user-defined
+accuracy threshold. The underlying linear algebra operations may then be carried out on this data
+compression format, which may ultimately reduce the arithmetic complexity of the maximum likelihood
+estimation and the corresponding memory footprint. Performance results of TLR-based computations
+on shared and distributed-memory systems attain up to 13X and 5X speedups, respectively, compared
+to full accuracy simulations using synthetic and real datasets (up to 2M), while ensuring adequate
+prediction accuracy. 

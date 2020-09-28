@@ -1,0 +1,211 @@
+I got a number of requests for code.
+So, here it is.
+Its written in 80x86 ASM. 
+Borland TASM will do.
+The code:
+; LGA ncryption
+; (C) by Nick Nassuphis
+Start:
+	JMP	Begin
+; Gas particle assigment:
+; BIT 0    particle moving EAST
+; BIT 1    particle moving WEST
+; BIT 2    particle moving NORTH
+; BIT 3    particle moving SOUTH
+; BIT 4    particle moving EAST
+; BIT 5    particle moving WEST
+; BIT 6    particle moving NORTH
+; BIT 7    particle moving SOUTH
+; Collisiong Rules:
+; 1. Gas Rules
+; for nibbles:
+; and for bytes:
+; 2. Reflection Rules
+; just swap bits along directions
+; This look-up table implements two particle collisions
+; for the HPP lattice gas
+HPPRule:
+; This rule implements the velocity-reversal needed to
+; run the gas evolution in reverse. Its called a WallRule
+; because its the same as is all particles hit a wall
+; head on.
+WallRule:
+SrcPtr	DW	OFFSET Buffer1
+DesPtr	DW	OFFSET Buffer2
+SaveBuff:
+Buffer1:
+Buffer2:
+Data:
+DB	" This is a test for a Lattice Gas based encryption     "
+DB	" algorithm. The data is encoded as particles of a      "
+DB	" digital gas, whose time evolution is then simulated   "
+DB	" with a cellular-automaton type algorithm. Decryption  "
+DB	" can be achieved by running the simulation in reverse. "
+DB	" A thermodynamic argument ensures that even if a single"
+DB	" bit is flipped, no decryption of the data is possible "
+DB	" After the gas is let to evolve for 256 timesteps,     "
+DB	" one can either run the reverse evolution by pressing  "
+DB	" space, or flip a bit and then run by pressing '0'     "
+DB	" For a cryptographic application, the key would consist"
+DB	" of the number of time steps and the time and location "
+DB	" of specific bit inversions.                           "
+; Fill the gas with a piece of code
+InitGas:
+	MOV	SI,OFFSET Data
+	MOV	DI,OFFSET InitGas
+; Display gas molecules bouncing around
+ShowGas:
+; CS:SI 	->	Sourse of Data
+; CS:DI		->	Destination of Data
+ScanOneMiddleLine:
+; first byte is a special case because of warparound
+	MOV	BL,0			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]	; NORTH is one line "up" (lower)
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]	; SOUTH is one line "down" (higher)
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI+(MAXBYTE-1)]	; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI+1]		; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; middle bytes can be handled in a loop 
+	MOV	BL,0			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]	; NORTH is one line "up" (lower)
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]	; SOUTH is one line "down" (higher)
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-1]		; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI+1]		; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; last byte is also special
+	MOV	BL,0			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]	; NORTH is one line "up" (lower)
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]	; SOUTH is one line "down" (higher)
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-1]		; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI-(MAXBYTE-1)]	; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; CS:SI 	->	Sourse of Data
+; CS:DI		->	Destination of Data
+ScanFirstLine:
+; first byte is a special case because of warparound
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI+MAXBYTE-1]	; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI+1]		; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; middle bytes can be handled in a loop 
+	MOV	BL,0			; AL is the "assembled" byte.
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-1]		; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI+1]		; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; last byte is also special
+	MOV	BL,0			; AL is the "assembled" byte.
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-1]		; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI-(MAXBYTE-1)]	; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; CS:SI 	->	Sourse of Data
+; CS:DI		->	Destination of Data
+ScanLastLine:
+; first byte is a special case because of warparound
+	MOV	BL,0			; AL is the "assembled" byte.
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI+(MAXBYTE-1)]	; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI+1]		; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; middle bytes can be handled in a loop 
+	MOV	BL,0			; AL is the "assembled" byte.
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-1]		; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI+1]		; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; last byte is also special
+	MOV	BL,0			; AL is the "assembled" byte.
+	AND	BH,10001000B		; and at bits 7 and 3
+	OR	BL,BH			; OR them into the assembled byte
+	AND	BH,01000100B		; and at bits 6 and 2
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-1]		; WEST is one byte "left" (lower)
+	AND	BH,00100010B		; and at bits 5 and 1
+	MOV	BH,CS:[SI-(MAXBYTE-1)]	; EAST is one byte "right" (higher)
+	AND	BH,00010001B		; and at bits 4 and 0
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+; Invert all velocities in the gas
+InvertAll:
+	MOV	AL,BYTE PTR CS:[BX + (OFFSET WallRule)]
+IterateOnce:
+	MOV	DI,CS:DesPtr
+	MOV	CS:DesPtr,SI
+	CALL	ScanFirstLine
+	MOV	CX,LINENO-2		; dont scan first and last
+	CALL	ScanOneMiddleLine
+	CALL	ScanLastLine
+; Iterate HPP rule CX times
+Iterate:
+	CALL	IterateOnce
+	CALL	ShowGas
+	LOOP	Iterate
+; Iterate HPP rule CX times
+IterateUntil:	
+	CALL	IterateOnce
+	CALL	ShowGas
+	MOV	DL,BYTE PTR CS:[BX+WallRule]
+Msg	DB	"This message is printed out by",10,13
+	DB	"code decrypted using data from the lattice",10,13
+	DB	"which was applied to the decoding routine",10,13
+	DB	"after every time step",10,13
+	DB	"The decoding function left the code unchanged",10,13
+	DB	"except after the gas evolution had completelly",10,13
+	DB	"reversed the thermalization",10,13,"$"
+TIMES	EQU	16		; 256 repetitions are enough to
+				; "equilibrate" the gas
+Begin:
+	CALL	InitGas
+	CALL	ShowGas
+	CALL	Iterate
+	CALL	InvertAll
+	CALL	ShowGas
+	JNE	Begin0
+Begin0:
+	CALL	IterateUntil
+	CALL	InvertAll
+	CALL	ShowGas
+	END	Start

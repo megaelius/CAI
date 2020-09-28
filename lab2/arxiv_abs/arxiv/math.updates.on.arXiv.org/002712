@@ -1,0 +1,19 @@
+In cloud storage systems with a large number of servers, files are typically not stored in single
+servers. Instead, they are split, replicated (to ensure reliability in case of server malfunction)
+and stored in different servers. We analyze the mean latency of such a split-and-replicate cloud
+storage system under general sub-exponential service time. We present a novel scheduling scheme
+that utilizes the load-balancing policy of the \textit{power of $d$ $(\geq 2)$} choices. An alternative
+to split-and-replicate is to use erasure-codes, and recently, it has been observed that they can
+reduce latency in data access (see \cite{longbo_delay} for details). We argue that under high redundancy
+(integer redundancy factor strictly greater than or equal to 2) regime, the mean latency of a coded
+system is upper bounded by that of a split-and-replicate system (with same replication factor)
+and the gap between these two is small. We validate this claim numerically under different service
+distributions such as exponential, shift plus exponential and the heavy-tailed Weibull distribution
+and compare the mean latency to that of an unsplit-replicated system. We observe that the coded system
+outperforms the unsplit-replication system by at least $20\%$. Furthermore, we consider the mean
+latency for an erasure coded system with low redundancy (fractional redundancy factor between
+1 and 2), a scenario which is more pragmatic, given the storage constraints (\cite{rashmi_thesis}).
+However under this regime, we restrict ourselves to the special case of exponential service time
+distribution and use the randomized load balancing policy namely \textit{batch-sampling}. We
+obtain an upper bound on mean delay that depends on the order statistics of the queue lengths, which,
+we further smooth out via a discrete to continuous approximation. 

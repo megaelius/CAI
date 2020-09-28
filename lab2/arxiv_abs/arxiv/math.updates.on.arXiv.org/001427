@@ -1,0 +1,19 @@
+We consider the problem of efficiently learning mixtures of a large number of spherical Gaussians,
+when the components of the mixture are well separated. In the most basic form of this problem, we are
+given samples from a uniform mixture of $k$ standard spherical Gaussians, and the goal is to estimate
+the means up to accuracy $\delta$ using $poly(k,d, 1/\delta)$ samples. In this work, we study the
+following question: what is the minimum separation needed between the means for solving this task?
+The best known algorithm due to Vempala and Wang [JCSS 2004] requires a separation of roughly $\min\{k,d\}^{1/4}$.
+On the other hand, Moitra and Valiant [FOCS 2010] showed that with separation $o(1)$, exponentially
+many samples are required. We address the significant gap between these two bounds, by showing the
+following results. 1. We show that with separation $o(\sqrt{\log k})$, super-polynomially many
+samples are required. In fact, this holds even when the $k$ means of the Gaussians are picked at random
+in $d=O(\log k)$ dimensions. 2. We show that with separation $\Omega(\sqrt{\log k})$, $poly(k,d,1/\delta)$
+samples suffice. Note that the bound on the separation is independent of $\delta$. This result is
+based on a new and efficient "accuracy boosting" algorithm that takes as input coarse estimates
+of the true means and in time $poly(k,d, 1/\delta)$ outputs estimates of the means up to arbitrary
+accuracy $\delta$ assuming the separation between the means is $\Omega(\min\{\sqrt{\log k},\sqrt{d}\})$
+(independently of $\delta$). We also present a computationally efficient algorithm in $d=O(1)$
+dimensions with only $\Omega(\sqrt{d})$ separation. These results together essentially characterize
+the optimal order of separation between components that is needed to learn a mixture of $k$ spherical
+Gaussians with polynomial samples. 

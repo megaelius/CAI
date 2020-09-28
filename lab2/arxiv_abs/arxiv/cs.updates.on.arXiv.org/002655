@@ -1,0 +1,20 @@
+This paper investigates estimating the variance of a temporal-difference learning agent's update
+target. Most reinforcement learning methods use an estimate of the value function, which captures
+how good it is for the agent to be in a particular state and is mathematically expressed as the expected
+sum of discounted future rewards (called the return). These values can be straightforwardly estimated
+by averaging batches of returns using Monte Carlo methods. However, if we wish to update the agent's
+value estimates during learning--before terminal outcomes are observed--we must use a different
+estimation target called the {\lambda}-return, which truncates the return with the agent's own
+estimate of the value function. Temporal difference learning methods estimate the expected {\lambda}-return
+for each state, allowing these methods to update online and incrementally, and in most cases achieve
+better generalization error and faster learning than Monte Carlo methods. Naturally one could
+attempt to estimate higher-order moments of the {\lambda}-return. This paper is about estimating
+the variance of the {\lambda}-return. Prior work has shown that given estimates of the variance
+of the {\lambda}-return, learning systems can be constructed to (1) mitigate risk in action selection,
+and (2) automatically adapt the parameters of the learning process itself to improve performance.
+Unfortunately, existing methods for estimating the variance of the {\lambda}-return are complex
+and not well understood empirically. We contribute a method for estimating the variance of the {\lambda}-return
+directly using policy evaluation methods from reinforcement learning. Our approach is significantly
+simpler than prior methods that independently estimate the second moment of the {\lambda}-return.
+Empirically our new approach behaves at least as well as existing approaches, but is generally more
+robust. 

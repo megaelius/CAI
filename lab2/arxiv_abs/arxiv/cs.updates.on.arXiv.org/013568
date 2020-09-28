@@ -1,0 +1,17 @@
+MB-DPOP is an important complete algorithm for solving Distributed Constraint Optimization Problems
+(DCOPs) by exploiting a cycle-cut idea to implement memory-bounded inference. However, each cluster
+root in the algorithm is responsible for enumerating all the instantiations of its cycle-cut nodes,
+which would cause redundant inferences when its branches do not have the same cycle-cut nodes. Additionally,
+a large number of cycle-cut nodes and the iterative nature of MB-DPOP further exacerbate the pathology.
+As a result, MB-DPOP could suffer from huge coordination overheads and cannot scale up well. Therefore,
+we present RMB-DPOP which incorporates several novel mechanisms to reduce redundant inferences
+and improve the scalability of MB-DPOP. First, using the independence among the cycle-cut nodes
+in different branches, we distribute the enumeration of instantiations into different branches
+whereby the number of nonconcurrent instantiations reduces significantly and each branch can
+perform memory bounded inference asynchronously. Then, taking the topology into the consideration,
+we propose an iterative allocation mechanism to choose the cycle-cut nodes that cover a maximum
+of active nodes in a cluster and break ties according to their relative positions in a pseudo-tree.
+Finally, a caching mechanism is proposed to further reduce unnecessary inferences when the historical
+results are compatible with the current instantiations. We theoretically show that with the same
+number of cycle-cut nodes RMB-DPOP requires as many messages as MB-DPOP in the worst case and the
+experimental results show our superiorities over the state-of-the-art. 

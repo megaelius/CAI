@@ -1,0 +1,19 @@
+With input sizes becoming massive, coresets -- small yet representative summary of the input --
+are relevant more than ever. A weighted set $C_w$ that is a subset of the input is an $\varepsilon$-coreset
+if the cost of any feasible solution $S$ with respect to $C_w$ is within $[1 {\pm} \varepsilon]$ of
+the cost of $S$ with respect to the original input. We give a very general technique to compute coresets
+in the fully-dynamic setting where input points can be added or deleted. Given a static $\varepsilon$-coreset
+algorithm that runs in time $t(n, \varepsilon, \lambda)$ and computes a coreset of size $s(n, \varepsilon,
+\lambda)$, where $n$ is the number of input points and $1 {-}\lambda$ is the success probability,
+we give a fully-dynamic algorithm that computes an $\varepsilon$-coreset with worst-case update
+time $O((\log n) \cdot t(s(n, \varepsilon/\log n, \lambda/n), \varepsilon/\log n, \lambda/n)
+)$ (this bound is stated informally), where the success probability is $1{-}\lambda$. Our technique
+is a fully-dynamic analog of the merge-and-reduce technique that applies to insertion-only setting.
+Although our space usage is $O(n)$, we work in the presence of an adaptive adversary, and we show that
+$\Omega(n)$ space is required when adversary is adaptive. As a consequence, we get fully-dynamic
+$\varepsilon$-coreset algorithms for $k$-median and $k$-means with worst-case update time $O(\varepsilon^{-2}k^2\log^5
+n \log^3 k)$ and coreset size $O(\varepsilon^{-2}k\log n \log^2 k)$ ignoring $\log \log n$ and $\log(1/\varepsilon)$
+factors and assuming that $\varepsilon, \lambda = \Omega(1/$poly$(n))$. These are the first fully-dynamic
+algorithms for $k$-median and $k$-means with worst-case update times $O($poly$(k, \log n, \varepsilon^{-1}))$.
+We also give conditional lower bound on update/query time for any fully-dynamic $(4 - \delta)$-approximation
+algorithm for $k$-means. 

@@ -1,0 +1,19 @@
+In recent years, enterprise Solid-State Drives (SSDs) are used in the caching layer of high-performance
+servers to close the growing performance gap between processing units and storage subsystem. SSD-based
+I/O caching is typically not effective in workloads with burst accesses in which the caching layer
+itself becomes the performance bottleneck because of the large number of accesses. Existing I/O
+cache architectures mainly focus on maximizing the cache hit ratio while they neglect the average
+queue time of accesses. Previous studies suggested bypassing the cache when burst accesses are
+identified. These schemes, however, are not applicable to a general cache configuration and also
+result in significant performance degradation on burst accesses. In this paper, we propose a novel
+I/O cache load balancing scheme (LBICA) with adaptive write policy management to prevent the I/O
+cache from becoming performance bottleneck in burst accesses. Our proposal, unlike previous schemes,
+which disable the I/O cache or bypass the requests into the disk subsystem in burst accesses, selectively
+reduces the number of waiting accesses in the SSD queue and balances the load between the I/O cache
+and the disk subsystem while providing the maximum performance. The proposed scheme characterizes
+the workload based on the type of in-queue requests and assigns an effective cache write policy.
+We aim to bypass the accesses which 1) are served faster by the disk subsystem or 2) cannot be merged
+with other accesses in the I/O cache queue. Doing so, the selected requests are responded by the disk
+layer, preventing from overloading the I/O cache. Our evaluations on a physical system shows that
+LBICA reduces the load on the I/O cache by 48% and improves the performance of burst workloads by 30%
+compared to the latest state-of-the-art load balancing scheme. 

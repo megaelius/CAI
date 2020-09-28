@@ -1,0 +1,20 @@
+Graph partitioning is one of an important set of well-known compute-intense (NP-hard) graph problems
+that devolve to discrete constrained optimization. We sampled solutions to the problem via two
+different quantum-ready methods to understand the pros and cons of each method. First we formulated
+and sampled the problem as a quadratic unconstrained binary optimization (QUBO) problem, via the
+best known QUBO formulation, using a best-in-class QUBO sampler running purely classically. Second,
+we formulated the problem at a higher level, as a set of constraints and an objective function, and
+sampled it with a constrained-optimization sampler (which internally samples the problem via
+QUBOs also sampled classically). We find that both approaches often deliver better partitions
+than the purpose-built classical graph partitioners. Further, we find that the constrained-optimization
+approach is often able to deliver better partitions in less time than the bespoke-QUBO approach,
+without knowledge of the graph-partitioning problem. Stepping back from graph partitioning itself,
+one key controversial question is whether bespoke algorithms or general tools are more likely to
+deliver the power of QCs to real-world users. These results bear on that question, though they require
+confirmation on other problems and instances as well as replacement of the low-level sampler by
+a QC. Still, this early evidence supports the proposition that general tools will contribute significantly
+to a range of problems, expanding the impact of QCs. This benefit is independent of the low-level
+sampler employed, whether software or QC, so reinforces the need for more work on high-level optimization.
+An early version of such software is commercially available in the cloud today, delivering superior
+classical performance for some problems, enables quantum-forward organizations to migrate to
+quantum-ready methods now. 

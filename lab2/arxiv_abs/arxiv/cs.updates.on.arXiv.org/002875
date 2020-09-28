@@ -1,0 +1,18 @@
+Model-based methods for recommender systems have been studied to provide more precise results.
+In systems with large corpus, the amount of calculation for learnt model to predict all user-item
+pairs' preferences is tremendous, which makes the model difficult to be directly employed in recommendation
+candidate generation stage. To overcome the calculation barrier, models like matrix factorization
+can resort to inner product form (i.e., use the inner product of user and item's latent factors as
+the preference) and index like hashing to perform efficient approximate k-nearest neighbor search.
+However, other more expressive interaction forms between user and item features, e.g., interactions
+through advanced deep neural networks, are still prevented from large corpus recommendation because
+of the amount of calculation. In this paper, we focus on the problem how arbitrary advanced models
+can be introduced to generate recommendations from large corpus. We propose a novel tree-based
+method which can provide logarithmic complexity prediction w.r.t. corpus size with more expressive
+deep neural networks. The main idea of tree-based model is to predict user interests coarse-to-fine,
+by traversing tree nodes top-down and making decisions whether to pick up each node to user. Furthermore,
+we show that the tree structure can also be jointly learnt towards better compatible with user interests'
+distribution, to facilitate both training and prediction. Experiments in two large-scale real-world
+datasets indicate that the proposed model significantly outperforms traditional methods. And
+online A/B test results in Taobao display advertising platform prove the effectiveness of the tree-based
+deep model in production. 

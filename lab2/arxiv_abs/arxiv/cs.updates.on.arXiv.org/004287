@@ -1,0 +1,17 @@
+Event cameras are bio-inspired vision sensors that output pixel-level brightness changes instead
+of standard intensity frames. They offer significant advantages over standard cameras, namely
+a very high dynamic range, no motion blur, and a latency in the order of microseconds. However, due
+to the fundamentally different structure of the sensor's output, new algorithms that exploit the
+high temporal resolution and the asynchronous nature of the sensor are required. Recent work has
+shown that a continuous-time representation of the event camera pose can deal with the high temporal
+resolution and asynchronous nature of this sensor in a principled way. In this paper, we leverage
+such a continuous-time representation to perform visual-inertial odometry with an event camera.
+This representation allows direct integration of the asynchronous events with micro-second accuracy
+and the inertial measurements at high frequency. The event camera trajectory is approximated by
+a smooth curve in the space of rigid-body motions using cubic splines. This formulation significantly
+reduces the number of variables in trajectory estimation problems. We evaluate our method on real
+data from several scenes and compare the results against ground truth from a motion-capture system.
+We show that our method provides improved accuracy over the result of a state-of-the-art visual
+odometry method for event cameras. We also show that both the map orientation and scale can be recovered
+accurately by fusing events and inertial data. To the best of our knowledge, this is the first work
+on visual-inertial fusion with event cameras using a continuous-time framework. 

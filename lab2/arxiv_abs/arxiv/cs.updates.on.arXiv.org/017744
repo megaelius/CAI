@@ -1,0 +1,18 @@
+As a vital topic in media content interpretation, video anomaly detection (VAD) has made fruitful
+progress via deep neural network (DNN). However, existing methods usually follow a reconstruction
+or frame prediction routine. They suffer from two gaps: (1) They cannot localize video activities
+in a both precise and comprehensive manner. (2) They lack sufficient abilities to utilize high-level
+semantics and temporal context information. Inspired by frequently-used cloze test in language
+study, we propose a brand-new VAD solution named Video Event Completion (VEC) to bridge gaps above:
+First, we propose a novel pipeline to achieve both precise and comprehensive enclosure of video
+activities. Appearance and motion are exploited as mutually complimentary cues to localize regions
+of interest (RoIs). A normalized spatio-temporal cube (STC) is built from each RoI as a video event,
+which lays the foundation of VEC and serves as a basic processing unit. Second, we encourage DNN to
+capture high-level semantics by solving a visual cloze test. To build such a visual cloze test, a
+certain patch of STC is erased to yield an incomplete event (IE). The DNN learns to restore the original
+video event from the IE by inferring the missing patch. Third, to incorporate richer motion dynamics,
+another DNN is trained to infer erased patches' optical flow. Finally, two ensemble strategies
+using different types of IE and modalities are proposed to boost VAD performance, so as to fully exploit
+the temporal context and modality information for VAD. VEC can consistently outperform state-of-the-art
+methods by a notable margin (typically 1.5%-5% AUROC) on commonly-used VAD benchmarks. Our codes
+and results can be verified at github.com/yuguangnudt/VEC_VAD. 

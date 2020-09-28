@@ -1,0 +1,20 @@
+A clinician desires to use a risk-stratification method that achieves confident risk-stratification
+- the risk estimates of the different patients reflect the true risks with a high probability. This
+allows him/her to use these risks to make accurate predictions about prognosis and decisions about
+screening, treatments for the current patient. We develop Risk-stratify - a two phase algorithm
+that is designed to achieve confident risk-stratification. In the first phase, we grow a tree to
+partition the covariate space. Each node in the tree is split using statistical tests that determine
+if the risks of the child nodes are different or not. The choice of the statistical tests depends on
+whether the data is censored (Log-rank test) or not (U-test). The set of the leaves of the tree form
+a partition. The risk distribution of patients that belong to a leaf is different from the sibling
+leaf but not the rest of the leaves. Therefore, some of the leaves that have similar underlying risks
+are incorrectly specified to have different risks. In the second phase, we develop a novel recursive
+graph decomposition approach to address this problem. We merge the leaves of the tree that have similar
+risks to form new leaves that form the final output. We apply Risk-stratify on a cohort of patients
+(with no history of cardiovascular disease) from UK Biobank and assess their risk for cardiovascular
+disease. Risk-stratify significantly improves risk-stratification, i.e., a lower fraction
+of the groups have over/under estimated risks (measured in terms of false discovery rate; 33% reduction)
+in comparison to state-of-the-art methods for cardiovascular prediction (Random forests, Cox
+model, etc.). We find that the Cox model significantly over estimates the risk of 21,621 patients
+out of 216,211 patients. Risk-stratify can accurately categorize 2,987 of these 21,621 patients
+as low-risk individuals. 

@@ -1,0 +1,18 @@
+In this work we analyze the convergence properties of the Spectral Deferred Correction (SDC) method
+originally proposed by Dutt et al. [BIT, 40 (2000), pp. 241--266]. The framework for this high-order
+ordinary differential equation (ODE) solver is typically described wherein a low-order approximation
+(such as forward or backward Euler) is lifted to higher order accuracy by applying the same low-order
+method to an error equation and then adding in the resulting defect to correct the solution. Our focus
+is not on solving the error equation to increase the order of accuracy, but on rewriting the solver
+as an iterative Picard integral equation solver. In doing so, our chief finding is that it is not the
+low-order solver that picks up the order of accuracy with each correction, but it is the underlying
+quadrature rule of the right hand side function that is solely responsible for picking up additional
+orders of accuracy. Our proofs point to a total of three sources of errors that SDC methods carry:
+the error at the current time point, the error from the previous iterate, and the numerical integration
+error that comes from the total number of quadrature nodes used for integration. The second of these
+two sources of errors is what separates SDC methods from Picard integral equation methods; our findings
+indicate that as long as difference between the current and previous iterate always gets multiplied
+by at least a constant multiple of the time step size, then high-order accuracy can be found even if
+the underlying "solver" is inconsistent the underlying ODE. From this vantage, we solidify the
+prospects of extending spectral deferred correction methods to a larger class of solvers to which
+we present some examples. 

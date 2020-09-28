@@ -1,0 +1,17 @@
+Ultrasound imaging makes use of backscattering of waves during their interaction with scatterers
+present in biological tissues. Simulation of synthetic ultrasound images is a challenging problem
+on account of inability to completely model various factors of which some include intra-/inter
+scanline interference, transducer to surface coupling, artifacts on transducer elements, inhomogeneous
+shadowing and nonlinear attenuation. While various approaches to ultrasound simulation has been
+developed, approaches that produce patho-realistic images typically solve wave space equations
+making it computationally expensive and slow to operate. We propose a generative adversarial network
+(GAN) inspired approach for fast simulation of patho-realistic ultrasound images. We apply the
+framework to intravascular ultrasound (IVUS) simulation. A stage 0 simulation is done from the
+echogenicity map of the tissue obtained from the ground truth label of ultrasound image using an
+off the shelf pseudo B-mode ultrasound image simulator . The images obtained are adversarially
+refined using stacked GAN. The stage I GAN generates low resolution images from the images generated
+by the initial simulation. The stage II GAN further refines the output of the stage I GAN and generates
+high resolution images which are patho-realistic. We demonstrate that the network generates realistic
+appearing images evaluated with a visual Turing test indicating an equivocal confusion in discriminating
+simulated from real. We also quantify the shift in tissue specific intensity distributions of the
+real and simulated images to prove their similarity. 

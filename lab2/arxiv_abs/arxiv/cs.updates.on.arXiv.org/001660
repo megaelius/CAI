@@ -1,0 +1,20 @@
+The Internet infrastructure relies entirely on open standards for its routing protocols. However,
+the majority of routers on the Internet are closed-source. Hence, there is no straightforward way
+to analyze them. Specifically, one cannot easily identify deviations of a router's routing functionality
+from the routing protocol's standard. Such deviations (either deliberate or inadvertent) are
+particularly important to identify since they may degrade the security or resiliency of the network.
+A model-based testing procedure is a technique that allows to systematically generate tests based
+on a model of the system to be tested; thereby finding deviations in the system compared to the model.
+However, applying such an approach to a complex multi-party routing protocol requires a prohibitively
+high number of tests to cover the desired functionality. We propose efficient and practical optimizations
+to the model-based testing procedure that are tailored to the analysis of routing protocols. These
+optimizations allow to devise a formal black-box method to unearth deviations in closed-source
+routing protocols' implementations. The method relies only on the ability to test the targeted
+protocol implementation and observe its output. Identification of the deviations is fully automatic.
+We evaluate our method against one of the complex and widely used routing protocols on the Internet
+-- OSPF. We search for deviations in the OSPF implementation of Cisco. Our evaluation identified
+numerous significant deviations that can be abused to compromise the security of a network. The
+deviations were confirmed by Cisco. We further employed our method to analyze the OSPF implementation
+of the Quagga Routing Suite. The analysis revealed one significant deviation. Subsequent to the
+disclosure of the deviations some of them were also identified by IBM, Lenovo and Huawei in their
+own products. 

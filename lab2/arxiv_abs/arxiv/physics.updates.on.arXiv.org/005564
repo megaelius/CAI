@@ -1,0 +1,20 @@
+To make weather/climate modeling computationally affordable, small-scale processes are usually
+represented in terms of the large-scale, explicitly-resolved processes using physics-based
+or semi-empirical parameterization schemes. Another approach, computationally more demanding
+but often more accurate, is super-parameterization (SP), which involves integrating the equations
+of small-scale processes on high-resolution grids embedded within the low-resolution grids of
+large-scale processes. Recently, studies have used machine learning (ML) to develop data-driven
+parameterization (DD-P) schemes. Here, we propose a new approach, data-driven SP (DD-SP), in which
+the equations of the small-scale processes are integrated data-drivenly using ML methods such
+as recurrent neural networks. Employing multi-scale Lorenz 96 systems as testbed, we compare the
+cost and accuracy (in terms of both short-term prediction and long-term statistics) of parameterized
+low-resolution (LR), SP, DD-P, and DD-SP models. We show that with the same computational cost,
+DD-SP substantially outperforms LR, and is better than DD-P, particularly when scale separation
+is lacking. DD-SP is much cheaper than SP, yet its accuracy is the same in reproducing long-term statistics
+and often comparable in short-term forecasting. We also investigate generalization, finding
+that when models trained on data from one system are applied to a system with different forcing (e.g.,
+more chaotic), the models often do not generalize, particularly when the short-term prediction
+accuracy is examined. But we show that transfer-learning, which involves re-training the data-driven
+model with a small amount of data from the new system, significantly improves generalization. Potential
+applications of DD-SP and transfer-learning in climate/weather modeling and the expected challenges
+are discussed. 

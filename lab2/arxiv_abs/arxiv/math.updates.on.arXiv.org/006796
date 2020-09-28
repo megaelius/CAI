@@ -1,0 +1,17 @@
+We present PNKH-B, a projected Newton-Krylov method with a low-rank approximated Hessian metric
+for approximately solving large-scale optimization problems with bound constraints. PNKH-B
+is geared toward situations in which function and gradient evaluations are expensive, and the (approximate)
+Hessian is only available through matrix-vector products. This is commonly the case in large-scale
+parameter estimation, machine learning, and image processing. In each iteration, PNKH-B generates
+a low-rank approximation of the (approximate) Hessian using Lanczos tridiagonalization and then
+solves a quadratic projection problem to update the iterate. The key idea is to compute the projection
+with respect to the norm defined by the low-rank approximation. Hence, PNKH-B can be viewed as a projected
+variable metric method. We present an interior point method to solve the quadratic projection problem
+efficiently. Since the interior point method effectively exploits the low-rank structure, its
+computational cost only scales linearly with respect to the number of variables, and it only adds
+negligible computational time. We also experiment with variants of PNKH-B that incorporate estimates
+of the active set into the Hessian approximation. We prove the global convergence to a stationary
+point under standard assumptions. Using three numerical experiments motivated by parameter estimation,
+machine learning, and image reconstruction, we show that the consistent use of the Hessian metric
+in PNKH-B leads to fast convergence, particularly in the first few iterations. We provide our MATLAB
+implementation at https://github.com/EmoryMLIP/PNKH-B. 

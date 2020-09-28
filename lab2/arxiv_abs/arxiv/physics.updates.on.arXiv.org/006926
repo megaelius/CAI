@@ -1,0 +1,18 @@
+Optimization problems, particularly NP-Hard Combinatorial Optimization problems, are some
+of the hardest computing problems with no known polynomial time algorithm existing. Recently there
+has been interest in using dedicated hardware to accelerate the solution to these problems, with
+physical annealers and quantum adiabatic computers being some of the state of the art. In this work
+we demonstrate usage of the Restricted Boltzmann Machine (RBM) as a stochastic neural network capable
+of solving these problems efficiently. We show that by mapping the RBM onto a reconfigurable Field
+Programmable Gate Array (FPGA), we can effectively hardware accelerate the RBM's stochastic sampling
+algorithm. We benchmark the RBM against the DWave 2000Q Quantum Adiabatic Computer and the Optical
+Coherent Ising Machine on two such optimization problems: the MAX-CUT problem and finding the ground
+state of a Sherrington-Kirkpatrick (SK) spin glass. On these problems, the hardware accelerated
+RBM shows best in class performance compared to these other accelerators, with an empirical scaling
+performance of $\mathcal{O}(e^{-N})$ for probability of reaching the ground state compared to
+a similar empirical $\mathcal{O}(e^{-N})$ for the CIM (with the RBM showing a constant factor of
+improvement over the CIM) and empirical $\mathcal{O}(e^{-N^2})$ for the DWave Annealer. The results
+show up to $10^7$x and $10^5$x time to solution improvement compared to the DWave 2000Q on the MAX-CUT
+and SK problems respectively, along with a $150$x and $1000$x performance increase compared to
+the Coherent Ising Machine annealer on those problems. By using commodity hardware running at room
+temperature for acceleration, the RBM also has greater potential for immediate and scalable use.

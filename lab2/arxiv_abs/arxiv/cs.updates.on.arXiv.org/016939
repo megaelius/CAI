@@ -1,0 +1,18 @@
+Many visual simultaneous localization and mapping (SLAM) systems have been shown to be accurate
+and robust, and have real-time performance capabilities on both indoor and ground datasets. However,
+these methods can be problematic when dealing with aerial frames captured by a camera mounted on
+an unmanned aerial vehicle (UAV) because the flight height of the UAV can be difficult to control
+and is easily affected by the environment.To cope with the case of lost tracking, many visual SLAM
+systems employ a relocalization strategy. This involves the tracking thread continuing the online
+working by inspecting the connections between the subsequent new frames and the generated map before
+the tracking was lost. To solve the missing map problem, which is an issue in many applications , after
+the tracking is lost, based on monocular visual SLAM, we present a method of reconstructing a complete
+global map of UAV datasets by sequentially merging the submaps via the corresponding undirected
+connected graph. Specifically, submaps are repeatedly generated, from the initialization process
+to the place where the tracking is lost, and a corresponding undirected connected graph is built
+by considering these submaps as nodes and the common map points within two submaps as edges. The common
+map points are then determined by the bag-of-words (BoW) method, and the submaps are merged if they
+are found to be connected with the online map in the undirect connected graph. To demonstrate the
+performance of the proposed method, we first investigated the performance on a UAV dataset, and
+the experimental results showed that, in the case of several tracking failures, the integrity of
+the mapping was significantly better than that of the current mainstream SLAM method. 

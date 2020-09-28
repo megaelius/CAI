@@ -1,0 +1,19 @@
+Despite numerous state-of-the-art applications of Deep Neural Networks (DNNs) in a wide range
+of real-world tasks, two major challenges hinder further advances in DNNs: hyperparameter optimization
+and lack of computing power. Recent efforts show that quantizing the weights and activations of
+DNN layers to lower bitwidths takes a significant step toward reducing memory bandwidth and power
+consumption by using limited computing resources. This paper builds upon the algorithmic insight
+that the bitwidth of operations in DNNs can be reduced without compromising their classification
+accuracy. While the use of eight-bit weights and activations during inference maintains the accuracy
+in most cases, lower bitwidths can achieve the same accuracy while utilizing less power. However,
+deep quantization (quantizing bitwidths below eight) while maintaining accuracy requires a great
+deal of trial-and-error, fine-tuning as well as re-training. By formulating quantization bitwidth
+as a hyperparameter in the optimization problem of selecting the bitwidth, we tackle this issue
+by leveraging a state-of-the-art policy gradient based Reinforcement Learning (RL) algorithm
+called Proximal Policy Optimization [10] (PPO), to efficiently explore a large design space of
+DNN quantization. The proposed technique also opens up the possibility of performing heterogeneous
+quantization of the network (e.g., quantizing each layer to different bitwidth) as the RL agent
+learns the sensitivity of each layer with respect to accuracy in order to perform quantization of
+the entire network. We evaluated our method on several neural networks including MNIST, CIFAR10,
+SVHN and the RL agent quantizes these networks to average bitwidths of 2.25, 5 and 4 respectively
+with less than 0.3% accuracy loss in all cases. 

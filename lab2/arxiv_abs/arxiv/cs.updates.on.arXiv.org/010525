@@ -1,0 +1,20 @@
+Hardware architectures composed of resistive cross-point device arrays can provide significant
+power and speed benefits for deep neural network training workloads using stochastic gradient
+descent (SGD) and backpropagation (BP) algorithm. The training accuracy on this imminent analog
+hardware however strongly depends on the switching characteristics of the cross-point elements.
+One of the key requirements is that these resistive devices must change conductance in a symmetrical
+fashion when subjected to positive or negative pulse stimuli. Here, we present a new training algorithm,
+so-called the "Tiki-Taka" algorithm, that eliminates this stringent symmetry requirement. We
+show that device asymmetry introduces an unintentional implicit cost term into the SGD algorithm,
+whereas in the "Tiki-Taka" algorithm a coupled dynamical system simultaneously minimizes the
+original objective function of the neural network and the unintentional cost term due to device
+asymmetry in a self-consistent fashion. We tested the validity of this new algorithm on a range of
+network architectures such as fully connected, convolutional and LSTM networks. Simulation results
+on these various networks show that whatever accuracy is achieved using the conventional SGD algorithm
+with symmetric (ideal) device switching characteristics the same accuracy is also achieved using
+the "Tiki-Taka" algorithm with non-symmetric (non-ideal) device switching characteristics.
+Moreover, all the operations performed on the arrays are still parallel and therefore the implementation
+cost of this new algorithm on array architectures is minimal; and it maintains the aforementioned
+power and speed benefits. These algorithmic improvements are crucial to relax the material specification
+and to realize technologically viable resistive crossbar arrays that outperform digital accelerators
+for similar training tasks. 

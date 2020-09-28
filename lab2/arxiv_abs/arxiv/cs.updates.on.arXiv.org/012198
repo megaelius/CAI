@@ -1,0 +1,20 @@
+Several groups are currently investigating how deep learning may advance the state-of-the-art
+in image and video coding. An open question is how to make deep neural networks work in conjunction
+with existing (and upcoming) video codecs, such as MPEG AVC, HEVC, VVC, Google VP9 and AOM AV1, as
+well as existing container and transport formats, without imposing any changes at the client side.
+Such compatibility is a crucial aspect when it comes to practical deployment, especially due to
+the fact that the video content industry and hardware manufacturers are expected to remain committed
+to these standards for the foreseeable future. We propose to use deep neural networks as precoders
+for current and future video codecs and adaptive video streaming systems. In our current design,
+the core precoding component comprises a cascaded structure of downscaling neural networks that
+operates during video encoding, prior to transmission. This is coupled with a precoding mode selection
+algorithm for each independently-decodable stream segment, which adjusts the downscaling factor
+according to scene characteristics, the utilized encoder, and the desired bitrate and encoding
+configuration. Our framework is compatible with all current and future codec and transport standards,
+as our deep precoding network structure is trained in conjunction with linear upscaling filters
+(e.g., the bilinear filter), which are supported by all web video players. Results with FHD and UHD
+content and widely-used AVC, HEVC and VP9 encoders show that coupling such standards with the proposed
+deep video precoding allows for 15% to 45% rate reduction under encoding configurations and bitrates
+suitable for video-on-demand adaptive streaming systems. The use of precoding can also lead to
+encoding complexity reduction, which is essential for cost-effective cloud deployment of complex
+encoders like H.265/HEVC and VP9. 

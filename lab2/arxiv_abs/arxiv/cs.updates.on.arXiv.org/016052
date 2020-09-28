@@ -1,0 +1,19 @@
+Recent studies show that 20.4% of the internet traffic originates from automated agents. To identify
+and block such ill-intentioned traffic, mechanisms that verify the humanness of the user are widely
+deployed across the internet. CAPTCHA is the most popular among such mechanisms. Original CAPTCHAs
+require extra user effort (e.g., solving mathematical or image-based puzzles), which severely
+harms user's experience, especially on mobile, and provide only sporadic verification of their
+humanness. More recent solutions like Google's reCAPTCHA v3 leverage attestation data (e.g.,
+user behavioral data, device fingerprints) shared with a remote server, thus raising significant
+privacy concerns. To address all of the above, we present ZKSENSE: the first zero knowledge proof-based
+humanness attestation system designed for mobile devices. Contrary to state-of-the-art systems,
+ZKSENSE assesses humanness continuously on the background in a privacy preserving way. ZKSENSE
+achieves that by classifying the motion sensor outputs of the mobile device based on a model trained
+by using both publicly available sensor data and data collected from a small group of volunteers.
+The classification result is enclosed in a zero knowledge proof of humanness that can be safely shared
+with an attestation service such as Privacy Pass. We implement ZKSENSE as an Android service to demonstrate
+its effectiveness and practicability. In our evaluation, we show that ZKSENSE verifies the humanness
+of the users asynchronously, on the background, without degrading their experience or jeopardizing
+user privacy, while it achieves 91% accuracy across a variety of attack scenarios. On a two years
+old Samsung S9, each attestation takes around 3 seconds in total (when visual CAPTCHAs need 9.8 seconds)
+and consumes a negligible amount of battery. 

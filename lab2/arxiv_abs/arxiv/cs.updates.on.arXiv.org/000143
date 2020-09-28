@@ -1,0 +1,18 @@
+We introduce a new approach to the maximum flow problem in undirected, capacitated graphs using
+$\alpha$-\emph{congestion-approximators}: easy-to-compute functions that approximate the
+congestion required to route single-commodity demands in a graph to within a factor of $\alpha$.
+Our algorithm maintains an arbitrary flow that may have some residual excess and deficits, while
+taking steps to minimize a potential function measuring the congestion of the current flow plus
+an over-estimate of the congestion required to route the residual demand. Since the residual term
+over-estimates, the descent process gradually moves the contribution to our potential function
+from the residual term to the congestion term, eventually achieving a flow routing the desired demands
+with nearly minimal congestion after $\tilde{O}(\alpha\eps^{-2}\log^2 n)$ iterations. Our
+approach is similar in spirit to that used by Spielman and Teng (STOC 2004) for solving Laplacian
+systems, and we summarize our approach as trying to do for $\ell_\infty$-flows what they do for $\ell_2$-flows.
+Together with a nearly linear time construction of a $n^{o(1)}$-congestion-approximator, we
+obtain $1+\eps$-optimal single-commodity flows undirected graphs in time $m^{1+o(1)}\eps^{-2}$,
+yielding the fastest known algorithm for that problem. Our requirements of a congestion-approximator
+are quite low, suggesting even faster and simpler algorithms for certain classes of graphs. For
+example, an $\alpha$-competitive oblivious routing tree meets our definition, \emph{even without
+knowing how to route the tree back in the graph}. For graphs of conductance $\phi$, a trivial $\phi^{-1}$-congestion-approximator
+gives an extremely simple algorithm for finding $1+\eps$-optimal-flows in time $\tilde{O}(m\phi^{-1})$.

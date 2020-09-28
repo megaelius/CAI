@@ -1,0 +1,19 @@
+Light field (LF) representations aim to provide photo-realistic, free-viewpoint viewing experiences.
+However, the most popular LF representations are images from multiple views. Multi-view image-based
+representations generally need to restrict the range or degrees of freedom of the viewing experience
+to what can be interpolated in the image domain, essentially because they lack explicit geometry
+information. We present a new surface light field (SLF) representation based on explicit geometry,
+and a method for SLF compression. First, we map the multi-view images of a scene onto a 3D geometric
+point cloud. The color of each point in the point cloud is a function of viewing direction known as
+a view map. We represent each view map efficiently in a B-Spline wavelet basis. This representation
+is capable of modeling diverse surface materials and complex lighting conditions in a highly scalable
+and adaptive manner. The coefficients of the B-Spline wavelet representation are then compressed
+spatially. To increase the spatial correlation and thus improve compression efficiency, we introduce
+a smoothing term to make the coefficients more similar across the 3D space. We compress the coefficients
+spatially using existing point cloud compression (PCC) methods. On the decoder side, the scene
+is rendered efficiently from any viewing direction by reconstructing the view map at each point.
+In contrast to multi-view image-based LF approaches, our method supports photo-realistic rendering
+of real-world scenes from arbitrary viewpoints, i.e., with an unlimited six degrees of freedom
+(6DOF). In terms of rate and distortion, experimental results show that our method achieves superior
+performance with lighter decoder complexity compared with a reference image-plus-geometry compression
+(IGC) scheme, indicating its potential in practical virtual and augmented reality applications.

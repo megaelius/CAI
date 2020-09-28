@@ -1,0 +1,19 @@
+Machine learning models leak information about the datasets on which they are trained. An adversary
+can build an algorithm to trace the individual members of a model's training dataset. As a fundamental
+inference attack, he aims to distinguish between data points that were part of the model's training
+set and any other data points from the same distribution. This is known as the tracing (and also membership
+inference) attack. In this paper, we focus on such attacks against black-box models, where the adversary
+can only observe the output of the model, but not its parameters. This is the current setting of machine
+learning as a service in the Internet. We introduce a privacy mechanism to train machine learning
+models that provably achieve membership privacy: the model's predictions on its training data
+are indistinguishable from its predictions on other data points from the same distribution. We
+design a strategic mechanism where the privacy mechanism anticipates the membership inference
+attacks. The objective is to train a model such that not only does it have the minimum prediction error
+(high utility), but also it is the most robust model against its corresponding strongest inference
+attack (high privacy). We formalize this as a min-max game optimization problem, and design an adversarial
+training algorithm that minimizes the classification loss of the model as well as the maximum gain
+of the membership inference attack against it. This strategy, which guarantees membership privacy
+(as prediction indistinguishability), acts also as a strong regularizer and significantly generalizes
+the model. We evaluate our privacy mechanism on deep neural networks using different benchmark
+datasets. We show that our min-max strategy can mitigate the risk of membership inference attacks
+(close to the random guess) with a negligible cost in terms of the classification error. 

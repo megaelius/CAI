@@ -1,0 +1,18 @@
+We present Cholla (Computational Hydrodynamics On ParaLLel Architectures), a new three-dimensional
+hydrodynamics code that harnesses the power of graphics processing units (GPUs) to accelerate
+astrophysical simulations. Cholla models the Euler equations on a static mesh using state-of-the-art
+techniques, including the unsplit Corner Transport Upwind (CTU) algorithm, a variety of exact
+and approximate Riemann solvers, and multiple spatial reconstruction techniques including the
+piecewise parabolic method (PPM). Cholla performs all hydrodynamical calculations in a massively-parallel
+manner, using GPUs to evolve the fluid properties of thousands of cells simultaneously while leaving
+the power of central processing units (CPUs) available for modeling additional physics. On current
+hardware, Cholla can update more than ten million cells per GPU-second while using an exact Riemann
+solver and PPM reconstruction with the CTU algorithm. Owing to the massively-parallel architecture
+of GPUs and the design of the Cholla code, astrophysical simulations with physically interesting
+grid resolutions (> 256^3) can easily be computed on a single device. Cholla utilizes the Message
+Passing Interface library to extend calculations onto multiple devices, and exhibits nearly ideal
+scaling beyond 100,000 GPU cores. The excellent performance of Cholla is demonstrated on a suite
+of test problems that highlights the physical accuracy of our modeling and provides a useful comparison
+to other codes. We also provide a set of Appendices that uniformly documents all of the reconstruction
+methods and Riemann solvers implemented in Cholla, and discusses strengths and weakness of the
+various methods. 

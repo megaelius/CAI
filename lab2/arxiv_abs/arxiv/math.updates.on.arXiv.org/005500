@@ -1,0 +1,20 @@
+We consider the problem of learning shallow neural networks with quadratic activation function
+and planted weights $W^*\in\mathbb{R}^{m\times d}$, where $m$ is the width of the hidden layer
+and $d\leqslant m$ is the data dimension. We establish that the landscape of the population risk
+$\mathcal{L}(W)$ admits an energy barrier separating rank-deficient solutions: if $W\in\mathbb{R}^{m\times
+d}$ with ${\rm rank}(W)<d$, then $\mathcal{L}(W)\geqslant 2\sigma_{\min}(W^*)^4$, where $\sigma_{\min}(W^*)$
+is the smallest singular value of $W^*$. We then establish that all full-rank stationary points
+of $\mathcal{L}(\cdot)$ are necessarily global optimum. These two results propose a simple explanation
+for the success of gradient descent in training such networks, when properly initialized: gradient
+descent algorithm finds global optimum due to absence of spurious stationary points within the
+set of full-rank matrices. We then show if the planted weight matrix $W^*\in\mathbb{R}^{m\times
+d}$ has iid Gaussian entries, and is sufficiently wide, that is $m>Cd^2$ for a large $C$, then it is
+easy to construct a full rank matrix $W$ with population risk below the energy barrier, starting
+from which gradient descent is guaranteed to converge to a global optimum. Our final focus is on sample
+complexity: we identify a simple necessary and sufficient geometric condition on the training
+data under which any minimizer of the empirical loss has necessarily small generalization error.
+We show that as soon as $n\geqslant n^*=d(d+1)/2$, random data enjoys this geometric condition
+almost surely, and in fact the generalization error is zero. At the same time we show that if $n<n^*$,
+then when the data is i.i.d. Gaussian, there always exists a matrix $W$ with zero empirical risk,
+but with population risk bounded away from zero by the same amount as rank deficient matrices, namely
+by $2\sigma_{\min}(W^*)^4$. 

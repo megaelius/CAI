@@ -1,0 +1,19 @@
+The incremental gradient method is a prominent algorithm for minimizing a finite sum of smooth convex
+functions, used in many contexts including large-scale data processing applications and distributed
+optimization over networks. It is a first-order method that processes the functions one at a time
+based on their gradient information. The incremental Newton method, on the other hand, is a second-order
+variant which exploits additionally the curvature information of the underlying functions and
+can therefore be faster. In this paper, we focus on the case when the objective function is strongly
+convex and present fast convergence results for the incremental gradient and incremental Newton
+methods under the constant and diminishing stepsizes. For a decaying stepsize rule $\alpha_k =
+\Theta(1/k^s)$ with $s \in (0,1]$, we show that the distance of the IG iterates to the optimal solution
+converges at rate ${\cal O}(1/k^{s})$ (which translates into ${\cal O}(1/k^{2s})$ rate in the
+suboptimality of the objective value). For $s>1/2$, this improves the previous ${\cal O}(1/\sqrt{k})$
+results in distances obtained for the case when functions are non-smooth. We show that to achieve
+the fastest ${\cal O}(1/k)$ rate, incremental gradient needs a stepsize that requires tuning to
+the strong convexity parameter whereas the incremental Newton method does not. The results are
+based on viewing the incremental gradient method as a gradient descent method with gradient errors,
+devising efficient upper bounds for the gradient error to derive inequalities that relate distances
+of the consecutive iterates to the optimal solution and finally applying Chung's lemmas from the
+stochastic approximation literature to these inequalities to determine their asymptotic behavior.
+In addition, we construct examples to show tightness of our rate results. 

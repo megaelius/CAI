@@ -1,0 +1,19 @@
+Individual pig detection and tracking is an important requirement in many video-based pig monitoring
+applications. However, it still remains a challenging task in complex scenes, due to problems of
+light fluctuation, similar appearances of pigs, shape deformations and occlusions. To tackle
+these problems, we propose a robust real time multiple pig detection and tracking method which does
+not require manual marking or physical identification of the pigs, and works under both daylight
+and infrared light conditions. Our method couples a CNN-based detector and a correlation filter-based
+tracker via a novel hierarchical data association algorithm. The detector gains the best accuracy/speed
+trade-off by using the features derived from multiple layers at different scales in a one-stage
+prediction network. We define a tag-box for each pig as the tracking target, and the multiple object
+tracking is conducted in a key-points tracking manner using learned correlation filters. Under
+challenging conditions, the tracking failures are modelled based on the relations between responses
+of detector and tracker, and the data association algorithm allows the detection hypotheses to
+be refined, meanwhile the drifted tracks can be corrected by probing the tracking failures followed
+by the re-initialization of tracking. As a result, the optimal tracklets can sequentially grow
+with on-line refined detections, and tracking fragments are correctly integrated into respective
+tracks while keeping the original identifications. Experiments with a dataset captured from a
+commercial farm show that our method can robustly detect and track multiple pigs under challenging
+conditions. The promising performance of the proposed method also demonstrates a feasibility
+of long-term individual pig tracking in a complex environment and thus promises a commercial potential.

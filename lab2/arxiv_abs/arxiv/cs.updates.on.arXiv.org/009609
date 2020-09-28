@@ -1,0 +1,19 @@
+Flooding is among the simplest and most fundamental of all distributed network algorithms. A node
+begins the process by sending a message to all its neighbours and the neighbours, in the next round
+forward the message to all the neighbours they did not receive the message from and so on. We assume
+that the nodes do not keep a record of the flooding event. We call this amnesiac flooding (AF). Since
+the node forgets, if the message is received again in subsequent rounds, it will be forwarded again
+raising the possibility that the message may be circulated infinitely even on a finite graph. As
+far as we know, the question of termination for such a flooding process has not been settled - rather,
+non-termination is implicitly assumed. In this paper, we show that synchronous AF always terminates
+on any arbitrary finite graph and derive exact termination times which differ sharply in bipartite
+and non-bipartite graphs. Let $G$ be a finite connected graph. We show that synchronous AF from a
+single source node terminates on $G$ in $e$ rounds, where $e$ is the eccentricity of the source node,
+if and only if $G$ is bipartite. For non-bipartite $G$, synchronous AF from a single source terminates
+in $j$ rounds where $e < j \leq e+d+1$ and $d$ is the diameter of $G$. This limits termination time to
+at most $d$ and at most $2d + 1$ for bipartite and non-bipartite graphs respectively. If communication/broadcast
+to all nodes is the motivation, our results show that AF is asymptotically time optimal and obviates
+the need for construction and maintenance of spanning structures like spanning trees. The clear
+separation in the termination times of bipartite and non-bipartite graphs also suggests mechanisms
+for distributed discovery of the topology/distances in arbitrary graphs. For comparison, we show
+that, in asynchronous networks, an adaptive adversary can force AF to be non-terminating. 

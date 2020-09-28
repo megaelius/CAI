@@ -1,0 +1,5 @@
+I'm trying to create a button that has both a label and a bitmap using
+the MenuButton widget.  Is this possible?  Right now, all I get is the
+bitmap -- no sign of the label.
+Any help would be appreciated.
+scott

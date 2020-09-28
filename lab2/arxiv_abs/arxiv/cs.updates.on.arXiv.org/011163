@@ -1,0 +1,17 @@
+Many-core systems require inter-core communication, and network-on-chips (NoCs) have been demonstrated
+to provide good scalability. However, not only the distributed structure but also the link switching
+on the NoCs have imposed a great challenge in the design and analysis for real-time systems. With
+scalability and flexibility in mind, the existing link switching protocols usually consider each
+single link to be scheduled independently, e.g., the worm-hole switching protocol. The flexibility
+of such link-based arbitrations allows each packet to be distributed over multiple routers but
+also increases the number of possible link states (the number of flits in a buffer) that have to be
+considered in the worst-case timing analysis. For achieving timing predictability, we propose
+less flexible switching protocols, called \emph{\Simultaneous Progressing Switching Protocols}
+(SP$^2$), in which the links used by a flow \emph{either} all simultaneously transmit one flit (if
+it exists) of this flow \emph{or} none of them transmits any flit of this flow. Such an \emph{all-or-nothing}
+property of the SP$^2$ relates the scheduling behavior on the network to the uniprocessor self-suspension
+scheduling problem. We provide rigorous proofs which confirm the equivalence of these two problems.
+Moreover, our approaches are not limited to any specific underlying routing protocols, which are
+usually constructed for deadlock avoidance instead of timing predictability. We demonstrate
+the analytical dominance of the fixed-priority $SP^2$ over some of the existing sufficient schedulability
+analysis for fixed-priority wormhole switched network-on-chips. 

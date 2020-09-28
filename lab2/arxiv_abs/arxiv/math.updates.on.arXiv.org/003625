@@ -1,0 +1,20 @@
+Semidefinite programming (SDP) is a central topic in mathematical optimization with extensive
+studies on its efficient solvers. Recently, quantum algorithms with superpolynomial speedups
+for solving SDPs have been proposed assuming access to its constraint matrices in quantum superposition.
+Mutually inspired by both classical and quantum SDP solvers, in this paper we present a sublinear
+classical algorithm for solving low-rank SDPs which is asymptotically as good as existing quantum
+algorithms. Specifically, given an SDP with $m$ constraint matrices, each of dimension $n$ and
+rank $\mathrm{poly}(\log n)$, our algorithm gives a succinct description and any entry of the solution
+matrix in time $O(m\cdot\mathrm{poly}(\log n,1/\varepsilon))$ given access to a sample-based
+low-overhead data structure of the constraint matrices, where $\varepsilon$ is the precision
+of the solution. In addition, we apply our algorithm to a quantum state learning task as an application.
+Technically, our approach aligns with both the SDP solvers based on the matrix multiplicative weight
+(MMW) framework and the recent studies of quantum-inspired machine learning algorithms. The cost
+of solving SDPs by MMW mainly comes from the exponentiation of Hermitian matrices, and we propose
+two new technical ingredients (compared to previous sample-based algorithms) for this task that
+may be of independent interest: $\bullet$ Weighted sampling: assuming sampling access to each
+individual constraint matrix $A_{1},\ldots,A_{\tau}$, we propose a procedure that gives a good
+approximation of $A=A_{1}+\cdots+A_{\tau}$. $\bullet$ Symmetric approximation: we propose
+a sampling procedure that gives low-rank spectral decomposition of a Hermitian matrix $A$. This
+improves upon previous sampling procedures that only give low-rank singular value decompositions,
+losing the signs of eigenvalues. 

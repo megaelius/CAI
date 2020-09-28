@@ -1,0 +1,18 @@
+Transferring the motion style from one animation clip to another, while preserving the motion content
+of the latter, has been a long-standing problem in character animation. Most existing data-driven
+approaches are supervised and rely on paired data, where motions with the same content are performed
+in different styles. In addition, these approaches are limited to transfer of styles that were seen
+during training. In this paper, we present a novel data-driven framework for motion style transfer,
+which learns from an unpaired collection of motions with style labels, and enables transferring
+motion styles not observed during training. Furthermore, our framework is able to extract motion
+styles directly from videos, bypassing 3D reconstruction, and apply them to the 3D input motion.
+Our style transfer network encodes motions into two latent codes, for content and for style, each
+of which plays a different role in the decoding (synthesis) process. While the content code is decoded
+into the output motion by several temporal convolutional layers, the style code modifies deep features
+via temporally invariant adaptive instance normalization (AdaIN). Moreover, while the content
+code is encoded from 3D joint rotations, we learn a common embedding for style from either 3D or 2D
+joint positions, enabling style extraction from videos. Our results are comparable to the state-of-the-art,
+despite not requiring paired training data, and outperform other methods when transferring previously
+unseen styles. To our knowledge, we are the first to demonstrate style transfer directly from videos
+to 3D animations - an ability which enables one to extend the set of style examples far beyond motions
+captured by MoCap systems. 

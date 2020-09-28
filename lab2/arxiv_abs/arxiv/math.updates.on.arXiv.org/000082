@@ -1,0 +1,17 @@
+This paper considers the problem of recovering an unknown sparse p\times p matrix X from an m\times
+m matrix Y=AXB^T, where A and B are known m \times p matrices with m << p. The main result shows
+that there exist constructions of the "sketching" matrices A and B so that even if X has O(p) non-zeros,
+it can be recovered exactly and efficiently using a convex program as long as these non-zeros are
+not concentrated in any single row/column of X. Furthermore, it suffices for the size of Y (the sketch
+dimension) to scale as m = O(\sqrt{# nonzeros in X} \times log p). The results also show that the recovery
+is robust and stable in the sense that if X is equal to a sparse matrix plus a perturbation, then the
+convex program we propose produces an approximation with accuracy proportional to the size of the
+perturbation. Unlike traditional results on sparse recovery, where the sensing matrix produces
+independent measurements, our sensing operator is highly constrained (it assumes a tensor product
+structure). Therefore, proving recovery guarantees require non-standard techniques. Indeed
+our approach relies on a novel result concerning tensor products of bipartite graphs, which may
+be of independent interest. This problem is motivated by the following application, among others.
+Consider a p\times n data matrix D, consisting of n observations of p variables. Assume that the correlation
+matrix X:=DD^{T} is (approximately) sparse in the sense that each of the p variables is significantly
+correlated with only a few others. Our results show that these significant correlations can be detected
+even if we have access to only a sketch of the data S=AD with A \in R^{m\times p}. 

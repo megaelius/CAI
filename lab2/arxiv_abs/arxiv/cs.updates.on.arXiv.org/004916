@@ -1,0 +1,18 @@
+Medical image processing is often limited by the computational cost of the involved algorithms.
+Whereas dedicated computing devices (GPUs in particular) exist and do provide significant efficiency
+boosts, they have an extra cost of use in terms of housekeeping tasks (device selection and initialization,
+data streaming, synchronization with the CPU and others), which may hinder developers from using
+them. This paper describes an OpenCL-based framework that is capable of handling dedicated computing
+devices seamlessly and that allows the developer to concentrate on image processing tasks. The
+framework handles automatically device discovery and initialization, data transfers to and from
+the device and the file system and kernel loading and compiling. Data structures need to be defined
+only once independently of the computing device; code is unique, consequently, for every device,
+including the host CPU. Pinned memory/buffer mapping is used to achieve maximum performance in
+data transfers. Code fragments included in the paper show how the computing device is almost immediately
+and effortlessly available to the users algorithms, so they can focus on productive work. Code required
+for device selection and initialization, data loading and streaming and kernel compilation is
+minimal and systematic. Algorithms can be thought of as mathematical operators (called processes),
+with input, output and parameters, and they may be chained one after another easily and efficiently.
+Also for efficiency, processes can have their initialization work split from their core workload,
+so process chains and loops do not incur in performance penalties. Algorithm code is independent
+of the device type targeted. 

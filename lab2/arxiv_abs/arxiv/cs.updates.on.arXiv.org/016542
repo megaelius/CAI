@@ -1,0 +1,17 @@
+Defocus Blur Detection(DBD) aims to separate in-focus and out-of-focus regions from a single image
+pixel-wisely. This task has been paid much attention since bokeh effects are widely used in digital
+cameras and smartphone photography. However, identifying obscure homogeneous regions and borderline
+transitions in partially defocus images is still challenging. To solve these problems, we introduce
+depth information into DBD for the first time. When the camera parameters are fixed, we argue that
+the accuracy of DBD is highly related to scene depth. Hence, we consider the depth information as
+the approximate soft label of DBD and propose a joint learning framework inspired by knowledge distillation.
+In detail, we learn the defocus blur from ground truth and the depth distilled from a well-trained
+depth estimation network at the same time. Thus, the sharp region will provide a strong prior for
+depth estimation while the blur detection also gains benefits from the distilled depth. Besides,
+we propose a novel decoder in the fully convolutional network(FCN) as our network structure. In
+each level of the decoder, we design the Selective Reception Field Block(SRFB) for merging multi-scale
+features efficiently and reuse the side outputs as Supervision-guided Attention Block(SAB).
+Unlike previous methods, the proposed decoder builds reception field pyramids and emphasizes
+salient regions simply and efficiently. Experiments show that our approach outperforms 11 other
+state-of-the-art methods on two popular datasets. Our method also runs at over 30 fps on a single
+GPU, which is 2x faster than previous works. The code is available at: https://github.com/vinthony/depth-distillation

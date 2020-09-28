@@ -1,0 +1,20 @@
+Private learning algorithms have been proposed that ensure strong differential-privacy (DP)
+guarantees, however they often come at a cost to utility. Meanwhile, stochastic gradient descent
+(SGD) contains intrinsic randomness which has not been leveraged for privacy. In this work, we take
+the first step towards analysing the intrinsic privacy properties of SGD. Our primary contribution
+is a large-scale empirical analysis of SGD on convex and non-convex objectives. We evaluate the
+inherent variability in SGD on 4 datasets and calculate the intrinsic $\epsilon_i$ values due to
+the inherent noise. First, we show that the variability in model parameters due to the random sampling
+almost always exceeds that due to changes in the data. We observe that SGD provides intrinsic $\epsilon_i$
+values of 2.8, 6.9, 13.01 and 17.99 on Forest Covertype, Adult, and MNIST-binary, CIFAR2 datasets
+respectively. Next, we propose a method to augment the intrinsic noise of SGD to achieve the desired
+target $\epsilon$. Our augmented SGD outputs models that outperform existing approaches with
+the same privacy guarantee, closing the gap to noiseless utility between 0.19% and 10.07%. Finally,
+we show that the existing theoretical bound on the sensitivity of SGD is not tight. By estimating
+the tightest bound empirically, we achieve near-noiseless performance at $\epsilon=1$, closing
+the utility gap to the noiseless model between 3.13% and 100%. Our experiments provide concrete
+evidence that changing the seed in SGD has far greater impact on the model than excluding any given
+training example. By accounting for this intrinsic randomness, higher utility is achievable without
+sacrificing further privacy. With these results, we hope to inspire the research community to further
+characterise the randomness in SGD, its impact on privacy, and the parallels with generalisation
+in machine learning. 

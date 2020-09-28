@@ -1,0 +1,18 @@
+This paper studies the lattice agreement problem and the generalized lattice agreement problem
+in distributed message passing systems. In the lattice agreement problem, given input values from
+a lattice, processes have to non-trivially decide output values that lie on a chain. We consider
+the lattice agreement problem in both synchronous and asynchronous systems. For synchronous lattice
+agreement, we present two algorithms which run in $\log f$ and $\min \{O(\log^2 h(L)), O(\log^2
+f)\}$ rounds, respectively, where $h(L)$ denotes the height of the {\em input sublattice} $L$,
+$f < n$ is the number of crash failures the system can tolerate, and $n$ is the number of processes in
+the system. These algorithms have significant better round complexity than previously known algorithms.
+The algorithm by Attiya et al. \cite{attiya1995atomic} takes $\log n$ synchronous rounds, and
+the algorithm by Mavronicolasa \cite{mavronicolasabound} takes $\min \{O(h(L)), O(\sqrt{f})\}$
+rounds. For asynchronous lattice agreement, we propose an algorithm which has time complexity
+of $2 \cdot \min \{h(L), f + 1\}$ message delays which improves on the previously known time complexity
+of $O(n)$ message delays. The generalized lattice agreement problem defined by Faleiro et al in
+\cite{faleiro2012generalized} is a generalization of the lattice agreement problem where it
+is applied for the replicated state machine. We propose an algorithm which guarantees liveness
+when a majority of the processes are correct in asynchronous systems. Our algorithm requires $\min
+\{O(h(L)), O(f)\}$ units of time in the worst case which is better than $O(n)$ units of time required
+by the algorithm of Faleiro et al. \cite{faleiro2012generalized}. 

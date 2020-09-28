@@ -1,0 +1,20 @@
+We present an overview of scalable load balancing algorithms which provide favorable delay performance
+in large-scale systems, and yet only require minimal implementation overhead. Aimed at a broad
+audience, the paper starts with an introduction to the basic load balancing scenario, consisting
+of a single dispatcher where tasks arrive that must immediately be forwarded to one of $N$ single-server
+queues. A popular class of load balancing algorithms are so-called power-of-$d$ or JSQ($d$) policies,
+where an incoming task is assigned to a server with the shortest queue among $d$ servers selected
+uniformly at random. This class includes the Join-the-Shortest-Queue (JSQ) policy as a special
+case ($d = N$), which has strong stochastic optimality properties and yields a mean waiting time
+that vanishes as $N$ grows large for any fixed subcritical load. However, a nominal implementation
+of the JSQ policy involves a prohibitive communication burden in large-scale deployments. In contrast,
+a random assignment policy ($d = 1$) does not entail any communication overhead, but the mean waiting
+time remains constant as $N$ grows large for any fixed positive load. In order to examine the fundamental
+trade-off between performance and implementation overhead, we consider an asymptotic regime
+where $d(N)$ depends on $N$. We investigate what growth rate of $d(N)$ is required to match the performance
+of the JSQ policy on fluid and diffusion scale. The results demonstrate that the asymptotics for
+the JSQ($d(N)$) policy are insensitive to the exact growth rate of $d(N)$, as long as the latter is
+sufficiently fast, implying that the optimality of the JSQ policy can asymptotically be preserved
+while dramatically reducing the communication overhead. We additionally show how the communication
+overhead can be reduced yet further by the so-called Join-the-Idle-Queue scheme, leveraging memory
+at the dispatcher. 

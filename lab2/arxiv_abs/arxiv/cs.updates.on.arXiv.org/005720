@@ -1,0 +1,18 @@
+We consider the problem of probably approximately correct (PAC) ranking $n$ items by adaptively
+eliciting subset-wise preference feedback. At each round, the learner chooses a subset of $k$ items
+and observes stochastic feedback indicating preference information of the winner (most preferred)
+item of the chosen subset drawn according to a Plackett-Luce (PL) subset choice model unknown a priori.
+The objective is to identify an $\epsilon$-optimal ranking of the $n$ items with probability at
+least $1 - \delta$. When the feedback in each subset round is a single Plackett-Luce-sampled item,
+we show $(\epsilon, \delta)$-PAC algorithms with a sample complexity of $O\left(\frac{n}{\epsilon^2}
+\ln \frac{n}{\delta} \right)$ rounds, which we establish as being order-optimal by exhibiting
+a matching sample complexity lower bound of $\Omega\left(\frac{n}{\epsilon^2} \ln \frac{n}{\delta}
+\right)$---this shows that there is essentially no improvement possible from the pairwise comparisons
+setting ($k = 2$). When, however, it is possible to elicit top-$m$ ($\leq k$) ranking feedback according
+to the PL model from each adaptively chosen subset of size $k$, we show that an $(\epsilon, \delta)$-PAC
+ranking sample complexity of $O\left(\frac{n}{m \epsilon^2} \ln \frac{n}{\delta} \right)$
+is achievable with explicit algorithms, which represents an $m$-wise reduction in sample complexity
+compared to the pairwise case. This again turns out to be order-wise unimprovable across the class
+of symmetric ranking algorithms. Our algorithms rely on a novel {pivot trick} to maintain only $n$
+itemwise score estimates, unlike $O(n^2)$ pairwise score estimates that has been used in prior
+work. We report results of numerical experiments that corroborate our findings. 

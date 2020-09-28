@@ -1,0 +1,19 @@
+Inspired by the great success of convolutional neural networks on structural data like videos and
+images, graph neural network (GNN) emerges as a powerful approach to process non-euclidean data
+structures and has been proved powerful in various application domains such as social network,
+e-commerce, and knowledge graph. However, such graph data maintained in IT companies can be extremely
+large and sparse, thus employing GNNs to deal with them requires substantial computational power
+and memory bandwidth, which induces the considerable energy and resources cost spent on general-purpose
+CPUs and GPUs. In addition, GNN operating on irregular graphs can hardly be fitted to the conventional
+neural network accelerators or graph processors, which are not designed to support the computation
+abstraction of GNNs. This work presents a specialized accelerator architecture, EnGN, to enable
+high-throughput and energy-efficient processing of large-scale graph neural networks. The proposed
+EnGN is designed to accelerate the three key stages of GNN propagation, which is abstracted as common
+computing patterns shared by typical GNNs. To support the key stages simultaneously, we propose
+the ring-edge-reduce(RER) dataflow that tames the poor locality of sparsely-and-randomly connected
+vertices, and the RER PE-array to practice RER dataflow. In addition, we utilize a graph tiling strategy
+to fit large graphs into EnGN and make the best use of the hierarchical on-chip buffers through adaptive
+computation reordering and tile scheduling. The experiments on representative GNN models with
+the input of realistic graphs shows that EnGN achieves 303.45x and 4.44x performance speedup while
+consuming 1370.52x and 93.73x less energy on average when compared to the CPU and GPU baselines empowered
+by the state-of-the-art software frameworks, respectively. 

@@ -1,0 +1,18 @@
+We investigate the problem of $L_p$-norm constrained coding, i.e. converting signal into code
+that lies inside the $L_p$-ball and most faithfully reconstructs the signal. While previous works
+known as sparse coding have addressed the cases of $\ell_0$ "norm" and $L_1$-norm, more general
+cases with other $p$ values, especially with unknown $p$, remain a difficulty. We propose the Frank-Wolfe
+Network (F-W Net), whose architecture is inspired by unrolling and truncating the Frank-Wolfe
+algorithm for solving an $L_p$-norm constrained problem. We show that the Frank-Wolfe solver for
+the $L_p$-norm constraint leads to a novel closed-form nonlinear unit, which is parameterized
+by $p$ and termed $pool_p$. The $pool_p$ unit links the conventional pooling, activation, and normalization
+operations, making F-W Net distinct from existing deep models either heuristically designed or
+converted from projection gradient descent or proximal algorithms. We further show that the hyper-parameter
+$p$ can be made learnable instead of pre-chosen in F-W Net, which gracefully solves the $L_p$-norm
+constrained coding problem with unknown $p$. A convolutional extension of F-W Net is then presented.
+We evaluate the performance of F-W Net on an extensive range of simulations to show the strong learning
+capability of F-W Net. We then adopt F-W Net or Convolutional F-W Net on a series of real-data tasks
+that are all formulated as $L_p$-norm constrained coding, including image classification, image
+denoising, and super-resolution, where F-W Net all demonstrates impressive effectiveness, flexibility,
+and robustness. In particular, F-W Net achieves significantly better performance than the state-of-the-art
+convolutional networks on image denoising, leading to more than 2 dB gain on the BSD-68 dataset.

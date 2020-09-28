@@ -1,0 +1,19 @@
+Purpose: To introduce a combined machine learning (ML) and physics-based image reconstruction
+framework that enables navigator-free, highly accelerated multishot echo planar imaging (msEPI),
+and demonstrate its application in high-resolution structural and diffusion imaging. Methods:
+Singleshot EPI is an efficient encoding technique, but does not lend itself well to high-resolution
+imaging due to severe distortion artifacts and blurring. While msEPI can mitigate these artifacts,
+high-quality msEPI has been elusive because of phase mismatch arising from shot-to-shot variations
+which preclude the combination of the multiple-shot data into a single image. We employ deep learning
+to obtain an interim image with minimal artifacts, which permits estimation of image phase variations
+due to shot-to-shot changes. These variations are then included in a Joint Virtual Coil Sensitivity
+Encoding (JVC-SENSE) reconstruction to utilize data from all shots and improve upon the ML solution.
+Results: Our combined ML + physics approach enabled Rinplane x MultiBand (MB) = 8x2-fold acceleration
+using 2 EPI-shots for multi-echo imaging, so that whole-brain T2 and T2* parameter maps could be
+derived from an 8.3 sec acquisition at 1x1x3mm3 resolution. This has also allowed high-resolution
+diffusion imaging with high geometric fidelity using 5-shots at Rinplane x MB = 9x2-fold acceleration.
+To make these possible, we extended the state-of-the-art MUSSELS reconstruction technique to
+Simultaneous MultiSlice (SMS) encoding and used it as an input to our ML network. Conclusion: Combination
+of ML and JVC-SENSE enabled navigator-free msEPI at higher accelerations than previously possible
+while using fewer shots, with reduced vulnerability to poor generalizability and poor acceptance
+of end-to-end ML approaches. 

@@ -1,0 +1,20 @@
+This paper derives and analyzes new diffusion synthetic acceleration (DSA) preconditioners for
+the SN transport equation when discretized with a high-order (HO) discontinuous Galerkin (DG)
+discretization. DSA preconditioners address the need to accelerate solving SN transport when
+the mean free path $\varepsilon$ of particles is small and the condition number of the SN transport
+equation scales like $O(\varepsilon^{-2})$. By expanding the SN transport operator in $\varepsilon$
+and employing a singular matrix perturbation analysis, we derive a DSA matrix that reduces to the
+symmetric interior penalty (SIP) DG discretization of diffusion when the mesh is first-order and
+the total opacity is constant. We prove that preconditioning HO DG SN transport with the SIP DSA matrix
+results in an $O(\varepsilon)$ perturbation of the identity, and fixed-point iteration therefore
+converges rapidly for optically thick problems. However, the SIP DSA matrix is conditioned like
+$O(\varepsilon^{-1})$, making it difficult to invert for small $\varepsilon$. We further derive
+a new two-part, additive DSA preconditioner based on a continuous discretization of diffusion-reaction,
+which has a condition number independent of $\varepsilon$, and prove that this DSA variant has the
+same theoretical efficiency as the SIP DSA preconditioner in the optically thick limit. The analysis
+is extended to the case of HO (curved) meshes, where so-called mesh cycles can result from elements
+both being upwind of each other. In particular, we prove that performing two additional transport
+sweeps between DSA steps yields the same theoretical conditioning of fixed-point iterations as
+in the cycle-free case. Theoretical results are validated by numerical experiments on HO, highly
+curved meshes generated from an ALE hydrodynamics code, where the additional inner sweeps between
+DSA steps offer up to a 4x reduction in total sweeps. 

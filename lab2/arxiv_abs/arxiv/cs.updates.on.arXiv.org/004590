@@ -1,0 +1,16 @@
+In this paper we develop the first algorithms for online submodular minimization that preserve
+differential privacy under full information feedback and bandit feedback. A sequence of $T$ submodular
+functions over a collection of $n$ elements arrive online, and at each timestep the algorithm must
+choose a subset of $[n]$ before seeing the function. The algorithm incurs a cost equal to the function
+evaluated on the chosen set, and seeks to choose a sequence of sets that achieves low expected regret.
+Our first result is in the full information setting, where the algorithm can observe the entire function
+after making its decision at each timestep. We give an algorithm in this setting that is $\epsilon$-differentially
+private and achieves expected regret $\tilde{O}\left(\frac{n^{3/2}\sqrt{T}}{\epsilon}\right)$.
+This algorithm works by relaxing submodular function to a convex function using the Lovasz extension,
+and then simulating an algorithm for differentially private online convex optimization. Our second
+result is in the bandit setting, where the algorithm can only see the cost incurred by its chosen set,
+and does not have access to the entire function. This setting is significantly more challenging
+because the algorithm does not receive enough information to compute the Lovasz extension or its
+subgradients. Instead, we construct an unbiased estimate using a single-point estimation, and
+then simulate private online convex optimization using this estimate. Our algorithm using bandit
+feedback is $\epsilon$-differentially private and achieves expected regret $\tilde{O}\left(\frac{n^{3/2}T^{3/4}}{\epsilon}\right)$.

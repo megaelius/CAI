@@ -1,0 +1,19 @@
+We consider two types of searching models, where the goal is to design an adaptive algorithm that
+locates an unknown vertex in a graph by repeatedly performing queries. In the vertex-query model,
+each query points to a vertex $v$ and the response either admits that $v$ is the target or provides
+a neighbor of $v$ on a shortest path from $v$ to the target. This model has been introduced for trees
+by Onak and Parys [FOCS 2006] and by Emamjomeh-Zadeh et al. [STOC 2016] for arbitrary graphs. In the
+edge-query model, each query chooses an edge and the response reveals which endpoint of the edge
+is closer to the target, breaking ties arbitrarily. Our goal is to analyze solutions to these problems
+assuming that some responses may be erroneous. We develop a scheme for tackling such noisy models
+with the following line of arguments: For each of the two models, we analyze a generic strategy that
+assumes a fixed number of lies and give a precise bound for its length via an amortized analysis. From
+this, we derive bounds for both a linearly bounded error rate, where the number of errors in $T$ queries
+is bounded by $rT$ for some $r<1/2$, and a probabilistic model in which each response is incorrect
+with some probability $p<1/2$. The bounds for adversarial case turn out to be strong enough for non-adversarial
+scenarios as well. We obtain thus a much simpler strategy performing fewer vertex-queries than
+one by Emamjomeh-Zadeh et al. [STOC 2016]. For edge-queries, not studied before for general graphs,
+we obtain bounds that are tight up to $\log \Delta$ factors in all error models. Applying our graph-theoretic
+results to the setting of edge-queries for paths, we obtain a number of improvements over existing
+bounds for searching in a sorted array in the presence of errors, including an exponential improvement
+for the prefix-bounded model in unbounded domains. 

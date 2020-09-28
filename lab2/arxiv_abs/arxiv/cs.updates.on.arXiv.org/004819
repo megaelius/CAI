@@ -1,0 +1,20 @@
+Any graph with maximum degree $\Delta$ admits a proper vertex coloring with $\Delta + 1$ colors that
+can be found via a simple sequential greedy algorithm in linear time and space. But can one find such
+a coloring via a sublinear algorithm? We answer this fundamental question in the affirmative for
+several canonical classes of sublinear algorithms including graph streaming, sublinear time,
+and massively parallel computation (MPC) algorithms. In particular, we design: * A single-pass
+semi-streaming algorithm in dynamic streams using $\tilde{O}(n)$ space. The only known semi-streaming
+algorithm prior to our work was a folklore O(log n)-pass algorithm obtained by simulating classical
+distributed algorithms in the streaming model. * A sublinear-time algorithm in the standard query
+model that allows neighbor queries and pair queries using $\tilde{O}(n\sqrt{n})$ time. We further
+show that any algorithm that outputs a valid coloring with sufficiently large constant probability
+requires $\Omega(n\sqrt{n})$ time. No non-trivial sublinear time algorithms were known prior
+to our work. * A parallel algorithm in the massively parallel computation (MPC) model using $\tilde{O}(n)$
+memory per machine and $O(1)$ MPC rounds. Our number of rounds significantly improves upon the recent
+$O(\log\log{\Delta}\cdot\log^*{(n)})$-round algorithm of Parter [ICALP 2018]. At the core
+of our results is a remarkably simple meta-algorithm for the $(\Delta+1)$ coloring problem: Sample
+$O(\log{n})$ colors for each vertex from the $\Delta+1$ colors; find a proper coloring of the graph
+using only the sampled colors. We prove that the sampled set of colors with high probability contains
+a proper coloring of the input graph. The sublinear algorithms are then obtained by designing efficient
+algorithms for finding a proper coloring of the graph from the sampled colors in the corresponding
+models. 

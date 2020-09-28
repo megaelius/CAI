@@ -1,0 +1,19 @@
+The Bloom filter---or, more generally, an approximate membership query data structure (AMQ)---maintains
+a compact, probabilistic representation of a set S of keys from a universe U . An AMQ supports lookup,
+and possibly insert and delete operations. If x in S, then lookup(x) returns "present." If x not in
+S, then, lookup(x) may return "present" with probability at most epsilon, where epsilon is a tunable
+false-positive probability, and such an x is called a false positive of the AMQ. Otherwise lookup(x)
+returns "absent." AMQs have become widely used to accelerate dictionaries that are stored remotely
+(e.g., on disk or across a network). By using an AMQ, the dictionary needs to access the remote representation
+of S only when the AMQ indicates that the queried item might be present in S. Thus, the primary goal
+of an AMQ is to minimize its false-positive rate, so that the number of unnecessary accesses to the
+remote representation of S can be minimized. However, the false-positive guarantees for AMQs are
+rather weak. The false-positive probability of epsilon holds only for distinct or randomly chosen
+queries, but does not hold for arbitrary sequences of queries. For example, an adversary that chooses
+its queries based on the outcomes of previous queries can easily create a sequence of queries consisting
+almost entirely of false positives. Even simply repeating a randomly chosen query has an epsilon
+chance of producing a sequence entirely of false positives. In this paper, we give adaptive AMQs
+that do have strong false-positive guarantees. In particular, for any fixed epsilon, our AMQs guarantee
+a false-positive rate of epsilon for every query and for every sequence of previously made queries.
+Furthermore, our adaptive AMQ is optimal in terms of space (up to lower order terms) and complexity
+(all operations are constant time). 

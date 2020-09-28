@@ -1,0 +1,19 @@
+In recent years, the use of object proposal as a preprocessing step for target detection to improve
+computational efficiency has become an effective method. Good object proposal methods should
+have high object detection recall rate and low computational cost, as well as good location accuracy
+and repeatability. However, it is difficult for current advanced algorithms to achieve a good balance
+in the above performance. Therefore, it is especially important to ensure that the recall rate and
+location quality are not degraded while accelerating object generation.For this problem, we propose
+a class-independent object proposal algorithm BIHL. It combines the advantages of window scoring
+and superpixel merging. First, a binarized horizontal high frequency component feature and a linear
+classifier are used to learn and generate a set of candidate boxs with a objective score. Then, the
+candidate boxs are merged based on the principle of location and score proximity. Different from
+superpixel merging algorithm, our method does not use pixel level operation to avoid a lot of computation
+without losing performance. Experimental results on the VOC2007 dataset and the VOC2007 synthetic
+interference dataset containing 297,120 test images show that when including difficult-to-identify
+objects with an IOU threshold of 0.5 and 10000 budget proposals, our method achieves a 99.3% detection
+recall and an mean average best overlap of 81.1% . The average processing time of our method for all
+test set images is 0.0015 seconds, which is nearly 3 times faster than the current fastest method.
+In repeatability testing, our method is the method with the highest average repeatability among
+the methods that achieve good repeatability to various disturbances, and the average repeatability
+is 10% higher than RPN. The code will be published in {https://github.com/JiangChao2009/BIHL}

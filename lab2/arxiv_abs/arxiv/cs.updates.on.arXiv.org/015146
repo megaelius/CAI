@@ -1,0 +1,18 @@
+Unsupervised lesion detection is a challenging problem that requires accurately estimating normative
+distributions of healthy anatomy and detecting lesions as outliers without training examples.
+Recently, this problem has received increased attention from the research community following
+the advances in unsupervised learning with deep learning. Such advances allow the estimation of
+high-dimensional distributions, such as normative distributions, with higher accuracy than
+previous methods.The main approach of the recently proposed methods is to learn a latent-variable
+model parameterized with networks to approximate the normative distribution using example images
+showing healthy anatomy, perform prior-projection, i.e. reconstruct the image with lesions using
+the latent-variable model, and determine lesions based on the differences between the reconstructed
+and original images. While being promising, the prior-projection step often leads to a large number
+of false positives. In this work, we approach unsupervised lesion detection as an image restoration
+problem and propose a probabilistic model that uses a network-based prior as the normative distribution
+and detect lesions pixel-wise using MAP estimation. The probabilistic model punishes large deviations
+between restored and original images, reducing false positives in pixel-wise detections. Experiments
+with gliomas and stroke lesions in brain MRI using publicly available datasets show that the proposed
+approach outperforms the state-of-the-art unsupervised methods by a substantial margin, +0.13
+(AUC), for both glioma and stroke detection. Extensive model analysis confirms the effectiveness
+of MAP-based image restoration. 

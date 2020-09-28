@@ -1,0 +1,20 @@
+In the absence of external reference position information (e.g. GNSS) SLAM has proven to be an effective
+method for indoor navigation. The positioning drift can be reduced with regular loop-closures
+and global relaxation as the backend, thus achieving a good balance between exploration and exploitation.
+Although vision-based systems like laser scanners are typically deployed for SLAM, these sensors
+are heavy, energy inefficient, and expensive, making them unattractive for wearables or smartphone
+applications. However, the concept of SLAM can be extended to non-optical systems such as magnetometers.
+Instead of matching features such as walls and furniture using some variation of the ICP algorithm,
+the local magnetic field can be matched to provide loop-closure and global trajectory updates in
+a Gaussian Process (GP) SLAM framework. With a MEMS-based inertial measurement unit providing
+a continuous trajectory, and the matching of locally distinct magnetic field maps, experimental
+results in this paper show that a drift-free navigation solution in an indoor environment with millimetre-level
+accuracy can be achieved. The GP-SLAM approach presented can be formulated as a maximum a posteriori
+estimation problem and it can naturally perform loop-detection, feature-to-feature distance
+minimization, global trajectory optimization, and magnetic field map estimation simultaneously.
+Spatially continuous features (i.e. smooth magnetic field signatures) are used instead of discrete
+feature correspondences (e.g. point-to-point) as in conventional vision-based SLAM. These position
+updates from the ambient magnetic field also provide enough information for calibrating the accelerometer
+and gyroscope bias in-use. The only restriction for this method is the need for magnetic disturbances
+(which is typically not an issue indoors); however, no assumptions are required for the general
+motion of the sensor. 

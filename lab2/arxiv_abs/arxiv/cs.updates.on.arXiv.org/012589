@@ -1,0 +1,18 @@
+This paper compares two basic approaches to solving ordinary differential equations, which form
+the basis for attitude computation in strapdown inertial navigation systems, namely, the Taylor
+series expansion approach that was used in its low-order form for deriving all mainstream algorithms
+and the functional iterative integration approach developed recently. They are respectively
+applied to solve the kinematic equations of major attitude parameters, including the quaternion,
+the Rodrigues vector and the rotation vector. Specifically, the mainstream algorithms, which
+have relied on the simplified rotation vector without exception, are considerably extended by
+the Taylor series expansion approach using the exact rotation vector and recursive calculation
+of high-order derivatives. The functional iterative integration approach is respectively implemented
+on both the normal polynomial and the Chebyshev polynomial. Numerical results under the classical
+coning motion are reported to assess all derived attitude algorithms. It is revealed that in the
+relative frequency range when the coning to sampling frequency ratio is below 0.05-0.1 (depending
+on the chosen polynomial truncation order), all algorithms have the same order of accuracy if the
+same number of samples are used to fit the angular velocity over the iteration interval; in the range
+of higher relative frequency, the group of Quat/Rod/RotFIter algorithms (by the functional iterative
+integration approach combined with the Chebyshev polynomial) perform the best in both accuracy
+and robustness, thanks to the excellent numerical stability and powerful functional representation
+capability of the Chebyshev polynomial. 

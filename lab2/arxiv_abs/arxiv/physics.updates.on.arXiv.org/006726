@@ -1,0 +1,19 @@
+The fMRI community has made great strides in decoupling neuronal activity from other physiologically
+induced T2* changes, using sensors that provide a ground-truth with respect to cardiac, respiratory,
+and head movement dynamics. However, blood oxygenation level-dependent (BOLD) time-series dynamics
+are confounded by scanner artifacts, in complex ways that can vary not only between scanners but
+even, for the same scanner, between sessions. The lack of equivalent ground truth has thus far stymied
+the development of reliable methods for identification and removal of scanner-induced noise.
+To address this problem, we first designed and built a phantom capable of providing dynamic signals
+equivalent to that of the resting-state brain. Using the dynamic phantom, we quantified voxel-wise
+noise by comparing the ground-truth time-series with its measured fMRI data. We derived the following
+data-quality metrics: Standardized Signal-to-Noise Ratio (ST-SNR) and Dynamic Fidelity that
+can be directly compared across scanners. Dynamic phantom data acquired from four scanners showed
+scanner-instability multiplicative noise contributions of about 6-18% of the total noise. We
+further measured strong non-linearity in the fMRI response for all scanners, ranging between 8-19%
+of total voxels. To correct scanner distortion of fMRI time-series dynamics at a single-subject
+level, we trained a convolutional neural network (CNN) on paired sets of measured vs. ground-truth
+data. Tests on dynamic phantom time-series showed a 4- to 7-fold increase in ST-SNR and about 40-70%
+increase in Dynamic Fidelity after denoising. Critically, we observed that the CNN temporal denoising
+pushes ST-SNR > 1. Denoising human-data with ground-truth-trained CNN showed markedly increased
+detection sensitivity of resting-state networks. 

@@ -1,0 +1,19 @@
+For datacenter computing workloads, previous work reports that they have extremely low floating
+point operation intensity. Our experiments also show that the average FLOPS efficiency of the DC
+workloads is only 0.1%. The FLOPS gap is 12X between the two systems equipped with Intel Xeon or Intel
+Atom processors, but the average user-perceived performance gap of the DC workloads is only 7.4X
+between them. These observations imply that FLOPS (Floating-point Operations per Second) is inappropriate
+to evaluate DC computing systems. To address the above issue, we propose BOPS (Basic OPerations
+per Second), which is the average number of BOPs (Basic OPerations) completed per second, as a new
+computation-centric metric. BOPs include the integer and floating point computations of arithmetic,
+logical, comparing and array addressing. The number of BOPs is independent of the underlying system
+and hardware implementation, and can be calculated through automatically analyzing the source
+code of the workload. Based on the BOPS metric, an upper bound performance model, named DC-Roofline,
+is proposed for DC computing. In our experiments, three typical systems equipped with different
+Intel processors are evaluated using 17 typical DC workloads. The bias between the BOPS gap and the
+average user-perceived performance gap is no more than 11%, and the BOPS efficiency of the Sort workload
+achieves 32%. We optimize the typical DC kernel workloads under the guidance of the DC-Roofline
+model, and all workloads have achieved performance improvements ranging from 1.1X to 4.4X. Furthermore,
+as the real DC workload always has million lines of codes and tens of thousands of functions, it is
+not easy to use the DC-Roofline model directly. We propose an optimization methodology for the real-world
+DC workloads. Under the guidance of the proposed methodology, we optimize Redis by 1.2X. 

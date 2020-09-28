@@ -1,0 +1,17 @@
+Semidefinite programming (SDP) is a central topic in mathematical optimization with extensive
+studies on its efficient solvers. In this paper, we present a proof-of-principle sublinear-time
+algorithm for solving SDPs with low-rank constraints; specifically, given an SDP with $m$ constraint
+matrices, each of dimension $n$ and rank $r$, our algorithm can compute any entry and efficient descriptions
+of the spectral decomposition of the solution matrix. The algorithm runs in time $O(m\cdot\mathrm{poly}(\log
+n,r,1/\varepsilon))$ given access to a sampling-based low-overhead data structure for the constraint
+matrices, where $\varepsilon$ is the precision of the solution. In addition, we apply our algorithm
+to a quantum state learning task as an application. Technically, our approach aligns with 1) SDP
+solvers based on the matrix multiplicative weight (MMW) framework by Arora and Kale [TOC '12]; 2)
+sampling-based dequantizing framework pioneered by Tang [STOC '19]. In order to compute the matrix
+exponential required in the MMW framework, we introduce two new techniques that may be of independent
+interest: $\bullet$ Weighted sampling: assuming sampling access to each individual constraint
+matrix $A_{1},\ldots,A_{\tau}$, we propose a procedure that gives a good approximation of $A=A_{1}+\cdots+A_{\tau}$.
+$\bullet$ Symmetric approximation: we propose a sampling procedure that gives the \emph{spectral
+decomposition} of a low-rank Hermitian matrix $A$. To the best of our knowledge, this is the first
+sampling-based algorithm for spectral decomposition, as previous works only give singular values
+and vectors. 

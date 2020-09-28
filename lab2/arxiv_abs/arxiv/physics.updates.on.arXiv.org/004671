@@ -1,0 +1,19 @@
+Stochastic partial differential equations (SPDEs) are ubiquitous in engineering and computational
+sciences. The stochasticity arises as a consequence of uncertainty in input parameters, constitutive
+relations, initial/boundary conditions, etc. Because of these functional uncertainties, the
+stochastic parameter space is often high-dimensional, requiring hundreds, or even thousands,
+of parameters to describe it. This poses an insurmountable challenge to response surface modeling
+since the number of forward model evaluations needed to construct an accurate surrogate grows exponentially
+with the dimension of the uncertain parameter space; a phenomenon referred to as the \textit{curse
+of dimensionality}. State-of-the-art methods for high-dimensional uncertainty propagation
+seek to alleviate the curse of dimensionality by performing dimensionality reduction in the uncertain
+parameter space. However, one still needs to perform forward model evaluations that potentially
+carry a very high computational burden. We propose a novel methodology for high-dimensional uncertainty
+propagation of elliptic SPDEs which lifts the requirement for a deterministic forward solver.
+Our approach is as follows. We parameterize the solution of the elliptic SPDE using a deep residual
+network (ResNet). In a departure from the traditional squared residual (SR) based loss function
+for training the ResNet, we introduce a novel physics-informed loss function derived from variational
+principles. Specifically, our loss function is the expectation of the energy functional of the
+PDE over the stochastic variables. We demonstrate our solver-free approach through various examples
+where the elliptic SPDE is subjected to different types of high-dimensional input uncertainties.
+Also, we solve high-dimensional uncertainty propagation and inverse problems. 

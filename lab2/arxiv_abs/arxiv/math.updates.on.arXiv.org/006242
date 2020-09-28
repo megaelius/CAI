@@ -1,0 +1,18 @@
+Markov decision processes (MDPs) are used to model stochastic systems in many applications. Several
+efficient algorithms to compute optimal policies have been studied in the literature, including
+value iteration (VI), policy iteration and LP-based algorithms. However, these do not scale well
+especially when the discount factor for the infinite horizon discounted reward, $\lambda$, gets
+close to one. In particular, the running time scales as $1/(1-\lambda)$ for these algorithms. Our
+main contribution in this paper is to present algorithms for policy computation that significantly
+outperform the current approaches. In particular, we present a connection between VI and gradient
+descent and adapt the ideas of acceleration and momentum in convex optimization to design faster
+algorithms for MDPs. We prove theoretical guarantees of faster convergence of our algorithms for
+the computation of the value vector of a policy. We show that the running time scales as $1/\sqrt{1-\lambda}$
+for the case of value vector computation, compared to $1/(1-\lambda)$ in the current approaches.
+The improvement is quite analogous to Nesterov's acceleration and momentum in convex optimization.
+While the theoretical guarantees do not extend to the case of optimal policy computation, our algorithms
+exhibit strong empirical performances, providing significant speedups (up to one order of magnitude
+in many cases) for a large testbed of MDP instances. Finally, we provide a lower-bound on the convergence
+properties of any first-order algorithm for solving MDPs, presenting a family of MDPs instances
+for which no algorithm can converge faster than VI when the number of iterations is smaller than the
+number of states. 

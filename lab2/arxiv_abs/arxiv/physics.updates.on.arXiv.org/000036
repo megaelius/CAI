@@ -1,0 +1,19 @@
+In the treatment plan optimization for intensity modulated radiation therapy (IMRT), dose-deposition
+coefficient (DDC) matrix is often pre-computed to parameterize the dose contribution to each voxel
+in the volume of interest from each beamlet of unit intensity. However, due to the limitation of computer
+memory and the requirement on computational efficiency, in practice matrix elements of small values
+are usually truncated, which inevitably compromises the quality of the resulting plan. A fixed-point
+iteration scheme has been applied in IMRT optimization to solve this problem, which has been reported
+to be effective and efficient based on the observations of the numerical experiments. In this paper,
+we aim to point out the mathematics behind this scheme and to answer the following three questions:
+1) whether the fixed-point iteration algorithm converges or not? 2) when it converges, whether
+the fixed point solution is same as the original solution obtained with the complete DDC matrix?
+3) if not the same, whether the fixed point solution is more accurate than the naive solution of the
+truncated problem obtained without the fixed-point iteration? To answer these questions, we first
+performed mathematical analysis and deductions using a simplified fluence map optimization (FMO)
+model. Then we conducted numerical experiments on a head-and-neck patient case using both the simplified
+and the original FMO model. Both our mathematical analysis and numerical experiments demonstrate
+that with proper DDC matrix truncation, the fixed-point iteration can converge. Even though the
+converged solution is not the one that we obtain with the complete DDC matrix, the fixed-point iteration
+scheme could significantly improve the plan accuracy compared with the solution to the truncated
+problem obtained without the fixed-point iteration. 

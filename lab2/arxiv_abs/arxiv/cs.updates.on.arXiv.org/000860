@@ -1,0 +1,20 @@
+We present a fast convolution-based technique for computing an approximate, signed Euclidean
+distance function $S$ on a set of 2D and 3D grid locations. Instead of solving the non-linear, static
+Hamilton-Jacobi equation ($\|\nabla S\|=1$), our solution stems from first solving for a scalar
+field $\phi$ in a linear differential equation and then deriving the solution for $S$ by taking the
+negative logarithm. In other words, when $S$ and $\phi$ are related by $\phi = \exp \left(-\frac{S}{\tau}
+\right)$ and $\phi$ satisfies a specific linear differential equation corresponding to the extremum
+of a variational problem, we obtain the approximate Euclidean distance function $S = -\tau \log(\phi)$
+which converges to the true solution in the limit as $\tau \rightarrow 0$. This is in sharp contrast
+to techniques like the fast marching and fast sweeping methods which directly solve the Hamilton-Jacobi
+equation by the Godunov upwind discretization scheme. Our linear formulation results in a closed-form
+solution to the approximate Euclidean distance function expressible as a discrete convolution,
+and hence efficiently computable using the fast Fourier transform (FFT). Our solution also circumvents
+the need for spatial discretization of the derivative operator. As $\tau\rightarrow0$ we show
+the convergence of our results to the true solution and also bound the error for a given value of $\tau$.
+The differentiability of our solution allows us to compute---using a set of convolutions---the
+first and second derivatives of the approximate distance function. In order to determine the sign
+of the distance function (defined to be positive inside a closed region and negative outside), we
+compute the winding number in 2D and the topological degree in 3D, whose computations can also be
+performed via fast convolutions. We demonstrate the efficacy of our method through a set of experimental
+results. 

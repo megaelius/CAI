@@ -1,0 +1,20 @@
+Today, low-altitude fixed-wing Unmanned Aerial Vehicles (UAVs) are largely limited to primitively
+follow user-defined waypoints. To allow fully-autonomous remote missions in complex environments,
+real-time environment-aware navigation is required both with respect to terrain and strong wind
+drafts. This paper presents two relevant initial contributions: First, the literature's first-ever
+3D wind field prediction method which can run in real time onboard a UAV is presented. The approach
+retrieves low-resolution global weather data, and uses potential flow theory to adjust the wind
+field such that terrain boundaries, mass conservation, and the atmospheric stratification are
+observed. A comparison with 1D LIDAR data shows an overall wind error reduction of 23% with respect
+to the zero-wind assumption that is mostly used for UAV path planning today. However, given that
+the vertical winds are not resolved accurately enough further research is required and identified.
+Second, a sampling-based path planner that considers the aircraft dynamics in non-uniform wind
+iteratively via Dubins airplane paths is presented. Performance optimizations, e.g. obstacle-aware
+sampling and fast 2.5D-map collision checks, render the planner 50% faster than the Open Motion
+Planning Library (OMPL) implementation. Test cases in Alpine terrain show that the wind-aware
+planning performs up to 50x less iterations than shortest-path planning and is thus slower in low
+winds, but that it tends to deliver lower-cost paths in stronger winds. More importantly, in contrast
+to the shortest-path planner, it always delivers collision-free paths. Overall, our initial research
+demonstrates the feasibility of 3D wind field prediction from a UAV and the advantages of wind-aware
+planning. This paves the way for follow-up research on fully-autonomous environment-aware navigation
+of UAVs in real-life missions and complex terrain. 

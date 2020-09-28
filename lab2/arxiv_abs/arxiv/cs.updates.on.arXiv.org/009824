@@ -1,0 +1,19 @@
+We study uniform population protocols: networks of anonymous agents whose pairwise interactions
+are chosen at random, where each agent uses an identical transition algorithm that does not depend
+on the population size $n$. Many existing polylog$(n)$ time protocols for leader election and majority
+computation are nonuniform: to operate correctly, they require all agents to be initialized with
+an approximate estimate of $n$ (specifically, the exact value $\lfloor \log n \rfloor$). Our first
+main result is a uniform protocol for calculating $\log(n) \pm O(1)$ with high probability in $O(\log^2
+n)$ time and $O(\log^4 n)$ states ($O(\log \log n)$ bits of memory). The protocol is converging but
+not terminating: it does not signal when the estimate is close to the true value of $\log n$. If it could
+be made terminating, this would allow composition with protocols, such as those for leader election
+or majority, that require a size estimate initially, to make them uniform (though with a small probability
+of failure). We do show how our main protocol can be indirectly composed with others in a simple and
+elegant way, based on the leaderless phase clock, demonstrating that those protocols can in fact
+be made uniform. However, our second main result implies that the protocol cannot be made terminating,
+a consequence of a much stronger result: a uniform protocol for any task requiring more than constant
+time cannot be terminating even with probability bounded above 0, if infinitely many initial configurations
+are dense: any state present initially occupies $\Omega(n)$ agents. (In particular, no leader
+is allowed.) Crucially, the result holds no matter the memory or time permitted. Finally, we show
+that with an initial leader, our size-estimation protocol can be made terminating with high probability,
+with the same asymptotic time and space bounds. 

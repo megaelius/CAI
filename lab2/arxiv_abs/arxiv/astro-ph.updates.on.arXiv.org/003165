@@ -1,0 +1,20 @@
+We present a strongly hyperbolic first-order formulation of the Einstein equations based on the
+conformal and covariant Z4 system (CCZ4) with constraint-violation damping, which we refer to
+as FO-CCZ4. As CCZ4, this formulation combines the advantages of a conformal and traceless formulation,
+with the suppression of constraint violations given by the damping terms, but being first order
+in time and space, it is particularly suited for a discontinuous Galerkin (DG) implementation.
+The strongly hyperbolic first-order formulation has been obtained by making careful use of first
+and second-order ordering constraints. A proof of strong hyperbolicity is given for a selected
+choice of gauges via an analytical computation of the entire eigenstructure of the FO-CCZ4 system.
+The resulting governing partial differential equations system is written in non-conservative
+form and requires the evolution of 58 unknowns. A key feature of our formulation is that the first-order
+CCZ4 system decouples into a set of pure ordinary differential equations and a reduced hyperbolic
+system of partial differential equations that contains only linearly degenerate fields. We implement
+FO-CCZ4 in a high-order path-conservative arbitrary-high-order-method-using-derivatives
+(ADER)-DG scheme with adaptive mesh refinement and local time-stepping, supplemented with a third-order
+ADER-WENO subcell finite-volume limiter in order to deal with singularities arising with black
+holes. We validate the correctness of the formulation through a series of standard tests in vacuum,
+performed in one, two and three spatial dimensions, and also present preliminary results on the
+evolution of binary black-hole systems. To the best of our knowledge, these are the first successful
+three-dimensional simulations of moving punctures carried out with high-order DG schemes using
+a first-order formulation of the Einstein equations. 

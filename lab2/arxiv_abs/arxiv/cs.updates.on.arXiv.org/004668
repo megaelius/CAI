@@ -1,0 +1,19 @@
+Scripting proofs with tactics has been a tradition in interactive theorem proving for decades.
+For nearly as long, semi-automated program verifiers have used tools like SMT solvers to improve
+proof automation. Despite their strengths, for verification in the large, both approaches also
+have shortcomings: (1) building application-specific tactics requires great effort and automated
+provers are not easily exploitable; (2) SMT solvers only efficiently automate a limited class of
+logics and theories. On the theories that are not efficiently SMT-automatable users must provide
+ad-hoc hints, resulting in brittleness and a waste of human effort. Meta-F* is a new metaprogramming
+framework for F* which permits to profit from the state-of-the-art automation in SMT solvers, while
+using tactics to stay clear of their weaknesses, increasing overall proof robustness. Dually,
+this new style of proof reduces the effort of the tactic writer, as tactics need to automate only those
+parts of a proof that are difficult for an SMT solver. Beyond tactics, Meta-F* programs can construct
+and reflect on the syntax of F* programs, while safely manipulating the internal state of its typechecker.
+This allows scripting the construction of effectful programs along with their proofs of correctness,
+significantly reducing the need for user interaction in some proofs. Meta-F* is not a new language:
+it is embedded into F* simply as a new, custom effect, which readily enables safe interactions between
+programs and metaprograms on equal footing. In support of executing them efficiently, we design
+and implement a new mechanism for extending the F* compiler with binary plugins compiled from verified
+source (meta)programs. Our experimental evaluation shows that with metaprogram plugins, performance
+and stability of hybrid SMT/metaprogramming proofs exceeds that of SMT-only proofs. 

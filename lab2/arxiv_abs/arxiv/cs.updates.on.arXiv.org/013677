@@ -1,0 +1,19 @@
+Reducing communication - either between levels of a memory hierarchy or between processors over
+a network - is a key component of performance optimization (in both time and energy) for many problems,
+including dense linear algebra, particle interactions, and machine learning. For these problems,
+which can be represented as nested-loop computations, previous tiling based approaches have been
+used to find both lower bounds on the communication required to execute them and optimal rearrangements,
+or blockings, to attain such lower bounds. However, such general approaches have typically assumed
+the problem sizes are large, an assumption that is often not met in practice. For instance, the classical
+$(\text{# arithmetic operations})/(\text{cache size})^{1/2}$ lower bound for matrix multiplication
+is not tight for matrix-vector multiplications, which must read in at least $O(\text{# arithmetic
+operations})$ words of memory; similar issues occur for almost all convolutions in machine learning
+applications, which use extremely small filter sizes (and therefore, loop bounds). In this paper,
+we provide an efficient way to both find and obtain, via an appropriate, efficiently constructible
+blocking, communication lower bounds and matching tilings which attain these lower bounds for
+nested loop programs with arbitrary loop bounds that operate on multidimensional arrays in the
+projective case, where the array indices are subsets of the loop indices. Our approach works on all
+such problems, regardless of dimensionality, size, memory access patterns, or number of arrays,
+and directly applies to (among other examples) matrix multiplication and similar dense linear
+algebra operations, tensor contractions, n-body pairwise interactions, pointwise convolutions,
+and fully connected layers. 

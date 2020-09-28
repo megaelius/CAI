@@ -1,0 +1,19 @@
+We empirically evaluate an undervolting technique, i.e., underscaling the circuit supply voltage
+below the nominal level, to improve the power-efficiency of Convolutional Neural Network (CNN)
+accelerators mapped to Field Programmable Gate Arrays (FPGAs). Undervolting below a safe voltage
+level can lead to timing faults due to excessive circuit latency increase. We evaluate the reliability-power
+trade-off for such accelerators. Specifically, we experimentally study the reduced-voltage
+operation of multiple components of real FPGAs, characterize the corresponding reliability behavior
+of CNN accelerators, propose techniques to minimize the drawbacks of reduced-voltage operation,
+and combine undervolting with architectural CNN optimization techniques, i.e., quantization
+and pruning. We investigate the effect of environmental temperature on the reliability-power
+trade-off of such accelerators. We perform experiments on three identical samples of modern Xilinx
+ZCU102 FPGA platforms with five state-of-the-art image classification CNN benchmarks. This approach
+allows us to study the effects of our undervolting technique for both software and hardware variability.
+We achieve more than 3X power-efficiency (GOPs/W) gain via undervolting. 2.6X of this gain is the
+result of eliminating the voltage guardband region, i.e., the safe voltage region below the nominal
+level that is set by FPGA vendor to ensure correct functionality in worst-case environmental and
+circuit conditions. 43% of the power-efficiency gain is due to further undervolting below the guardband,
+which comes at the cost of accuracy loss in the CNN accelerator. We evaluate an effective frequency
+underscaling technique that prevents this accuracy loss, and find that it reduces the power-efficiency
+gain from 43% to 25%. 

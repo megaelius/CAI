@@ -1,0 +1,19 @@
+Modern digital cameras rely on the sequential execution of separate image processing steps to produce
+realistic images. The first two steps are usually related to denoising and demosaicking where the
+former aims to reduce noise from the sensor and the latter converts a series of light intensity readings
+to color images. Modern approaches try to jointly solve these problems, i.e. joint denoising-demosaicking
+which is an inherently ill-posed problem given that two-thirds of the intensity information is
+missing and the rest are perturbed by noise. While there are several machine learning systems that
+have been recently introduced to solve this problem, the majority of them relies on generic network
+architectures which do not explicitly take into account the physical image model. In this work we
+propose a novel algorithm which is inspired by powerful classical image regularization methods,
+large-scale optimization, and deep learning techniques. Consequently, our derived iterative
+optimization algorithm, which involves a trainable denoising network, has a transparent and clear
+interpretation compared to other black-box data driven approaches. Our extensive experimentation
+line demonstrates that our proposed method outperforms any previous approaches for both noisy
+and noise-free data across many different datasets. This improvement in reconstruction quality
+is attributed to the rigorous derivation of an iterative solution and the principled way we design
+our denoising network architecture, which as a result requires fewer trainable parameters than
+the current state-of-the-art solution and furthermore can be efficiently trained by using a significantly
+smaller number of training data than existing deep demosaicking networks. Code and results can
+be found at https://github.com/cig-skoltech/deep_demosaick 

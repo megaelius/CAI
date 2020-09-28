@@ -1,0 +1,20 @@
+We focus on two research issues in entity search: scoring a document or snippet that potentially
+supports a candidate entity, and aggregating scores from different snippets into an entity score.
+Proximity scoring has been studied in IR outside the scope of entity search. However, aggregation
+has been hardwired except in a few cases where probabilistic language models are used. We instead
+explore simple, robust, discriminative ranking algorithms, with informative snippet features
+and broad families of aggregation functions. Our first contribution is a study of proximity-cognizant
+snippet features. In contrast with prior work which uses hardwired "proximity kernels" that implement
+a fixed decay with distance, we present a "universal" feature encoding which jointly expresses
+the perplexity (informativeness) of a query term match and the proximity of the match to the entity
+mention. Our second contribution is a study of aggregation functions. Rather than train the ranking
+algorithm on snippets and then aggregate scores, we directly train on entities such that the ranking
+algorithm takes into account the aggregation function being used. Our third contribution is an
+extensive Web-scale evaluation of the above algorithms on two data sets having quite different
+properties and behavior. The first one is the W3C dataset used in TREC-scale enterprise search,
+with pre-annotated entity mentions. The second is a Web-scale open-domain entity search dataset
+consisting of 500 million Web pages, which contain about 8 billion token spans annotated automatically
+with two million entities from 200,000 entity types in Wikipedia. On the TREC dataset, the performance
+of our system is comparable to the currently prevalent systems. On the much larger and noisier Web
+dataset, our system delivers significantly better performance than all other systems, with 8%
+MAP improvement over the closest competitor. 

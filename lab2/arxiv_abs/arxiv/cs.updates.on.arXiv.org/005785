@@ -1,0 +1,19 @@
+Good quality of medical images is a prerequisite for the success of subsequent image analysis pipelines.
+Quality assessment of medical images is therefore an essential activity and for large population
+studies such as the UK Biobank (UKBB), manual identification of artefacts such as those caused by
+unanticipated motion is tedious and time-consuming. Therefore, there is an urgent need for automatic
+image quality assessment techniques. In this paper, we propose a method to automatically detect
+the presence of motion-related artefacts in cardiac magnetic resonance (CMR) cine images. We compare
+two deep learning architectures to classify poor quality CMR images: 1) 3D spatio-temporal Convolutional
+Neural Networks (3D-CNN), 2) Long-term Recurrent Convolutional Network (LRCN). Though in real
+clinical setup motion artefacts are common, high-quality imaging of UKBB, which comprises cross-sectional
+population data of volunteers who do not necessarily have health problems creates a highly imbalanced
+classification problem. Due to the high number of good quality images compared to the relatively
+low number of images with motion artefacts, we propose a novel data augmentation scheme based on
+synthetic artefact creation in k-space. We also investigate a learning approach using a predetermined
+curriculum based on synthetic artefact severity. We evaluate our pipeline on a subset of the UK Biobank
+data set consisting of 3510 CMR images. The LRCN architecture outperformed the 3D-CNN architecture
+and was able to detect 2D+time short axis images with motion artefacts in less than 1ms with high recall.
+We compare our approach to a range of state-of-the-art quality assessment methods. The novel data
+augmentation and curriculum learning approaches both improved classification performance achieving
+overall area under the ROC curve of 0.89. 

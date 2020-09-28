@@ -1,0 +1,19 @@
+The long-lived renaming problem appears in shared-memory systems where a set of threads need to
+register and deregister frequently from the computation, while concurrent operations scan the
+set of currently registered threads. Instances of this problem show up in concurrent implementations
+of transactional memory, flat combining, thread barriers, and memory reclamation schemes for
+lock-free data structures. In this paper, we analyze a randomized solution for long-lived renaming.
+The algorithmic technique we consider, called the LevelArray, has previously been used for hashing
+and one-shot (single-use) renaming. Our main contribu- tion is to prove that, in long-lived executions,
+where processes may register and deregister polynomially many times, the technique guarantees
+constant steps on average and O(log log n) steps with high probability for registering, unit cost
+for deregistering, and O(n) steps for collect queries, where n is an upper bound on the number of processes
+that may be active at any point in time. We also show that the algorithm has the surprising property
+that it is self-healing: under reasonable assumptions on the schedule, operations running while
+the data structure is in a degraded state implicitly help the data structure re-balance itself.
+This subtle mechanism obviates the need for expensive periodic rebuilding procedures. Our benchmarks
+validate this approach, showing that, for typical use parameters, the average number of steps a
+process takes to register is less than two and the worst-case number of steps is bounded by six, even
+in executions with billions of operations. We contrast this with other randomized implementations,
+whose worst-case behavior we show to be unreliable, and with deterministic implementations, whose
+cost is linear in n. 

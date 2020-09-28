@@ -1,0 +1,19 @@
+We tackle the problem of counting the number of $k$-cliques in large-scale graphs, for any constant
+$k \ge 3$. Clique counting is essential in a variety of applications, among which social network
+analysis. Due to its computationally intensive nature, we settle for parallel solutions in the
+MapReduce framework, which has become in the last few years a {\em de facto} standard for batch processing
+of massive data sets. We give both theoretical and experimental contributions. On the theory side,
+we design the first exact scalable algorithm for counting (and listing) $k$-cliques. Our algorithm
+uses $O(m^{3/2})$ total space and $O(m^{k/2})$ work, where $m$ is the number of graph edges. This
+matches the best-known bounds for triangle listing when $k=3$ and is work-optimal in the worst case
+for any $k$, while keeping the communication cost independent of $k$. We also design a sampling-based
+estimator that can dramatically reduce the running time and space requirements of the exact approach,
+while providing very accurate solutions with high probability. We then assess the effectiveness
+of different clique counting approaches through an extensive experimental analysis over the Amazon
+EC2 platform, considering both our algorithms and their state-of-the-art competitors. The experimental
+results clearly highlight the algorithm of choice in different scenarios and prove our exact approach
+to be the most effective when the number of $k$-cliques is large, gracefully scaling to non-trivial
+values of $k$ even on clusters of small/medium size. Our approximation algorithm achieves extremely
+accurate estimates and large speedups, especially on the toughest instances for the exact algorithms.
+As a side effect, our study also sheds light on the number of $k$-cliques of several real-world graphs,
+mainly social networks, and on its growth rate as a function of $k$. 

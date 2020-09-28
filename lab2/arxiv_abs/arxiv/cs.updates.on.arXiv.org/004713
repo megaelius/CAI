@@ -1,0 +1,17 @@
+The Spectre vulnerability in modern processors has been reported earlier this year (2018). The
+key insight in this vulnerability is that speculative execution in processors can be misused to
+access secrets speculatively. Subsequently even though the speculatively executed states are
+squashed, the secret may linger in micro-architectural data structures such as cache, and hence
+can be potentially accessed by an attacker via side channels. In this report, we propose oo7, a binary
+analysis framework to check and fix code snippets against potential vulnerability to Spectre attacks.
+Our solution employs control flow extraction, taint analysis and address analysis to detect tainted
+conditional branches and their ability to impact memory accesses. Fixing is achieved by selectively
+inserting a small number of fences, instead of inserting fences after every conditional branch.
+Due to the accuracy of our analysis, oo7 suggests inserting less fences, and is shown experimentally
+to impose acceptably low performance overheads; less than 2% performance overhead is observed
+in our experiments on GNU Core utilities. Moreover, the accuracy of the analysis allows oo7 to effectively
+detect fourteen (14) out of the fifteen (15) Spectre vulnerable code patterns proposed by Paul Kocher,
+a feat that could not be achieved by the Spectre mitigation in C/C++ compiler proposed by Microsoft.
+While oo7 is both low-overhead and effective, for large scale deployment of our solution we need
+to investigate and optimize the time taken by our compile-time analysis. Finally, we show that similar
+binary analysis solutions are possible for detecting and fixing Meltdown. 

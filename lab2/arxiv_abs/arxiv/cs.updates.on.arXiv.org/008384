@@ -1,0 +1,17 @@
+Computational color constancy refers to the estimation of the scene illumination and makes the
+perceived color relatively stable under varying illumination. In the past few years, deep Convolutional
+Neural Networks (CNNs) have delivered superior performance in illuminant estimation. Several
+representative methods formulate it as a multi-label prediction problem by learning the local
+appearance of image patches using CNNs. However, these approaches inevitably make incorrect estimations
+for the ambiguous patches affected by their neighborhood contexts. Inaccurate local estimates
+are likely to bring in degraded performance when combining into a global prediction. To address
+the above issues, we propose a contextual deep network for patch-based illuminant estimation equipped
+with refinement. First, the contextual net with a center-surround architecture extracts local
+contextual features from image patches, and generates initial illuminant estimates and the corresponding
+color corrected patches. The patches are sampled based on the observation that pixels with large
+color differences describe the illumination well. Then, the refinement net integrates the input
+patches with the corrected patches in conjunction with the use of intermediate features to improve
+the performance. To train such a network with numerous parameters, we propose a stage-wise training
+strategy, in which the features and the predicted illuminant from previous stages are provided
+to the next learning stage with more finer estimates recovered. Experiments show that our approach
+obtains competitive performance on two illuminant estimation benchmarks. 

@@ -1,0 +1,19 @@
+The Finite Element Method (FEM) is widely used to solve discrete Partial Differential Equations
+(PDEs) and it is a staple in most engineering applications. The popularity of this approach led to
+the development of a large family of variants, and, while their theoretical properties (such as
+convergence rate, stability, etc.) are well studied, their practical performances have never
+been systematically studied over a large collection of 3D models. We introduce a large set of benchmark
+problems, starting from simple cases with an analytical solution, moving to classical experimental
+setups, and finally fabricating solutions for thousands of real-world geometries. For all these
+cases, we use state-of-the-art meshing tools to create both unstructured (tetrahedral) and structured
+(hexahedral) meshes, and compare the performance of different element types for a wide spectrum
+of elliptic PDEs ranging from heat convection to fluid propagation. We observe that, while linear
+tetrahedral elements perform poorly, often leading to locking artefacts, quadratic tetrahedral
+elements outperform hexahedral elements in all the settings we tested. This unexpected result
+suggests that for static structural analysis, thermal analysis, and low reynolds number flows
+it is unnecessary to target automatic hex mesh generation, since superior results can be obtained
+with unstructured meshes, which can be created robustly and automatically with existing meshing
+algorithms. We release the experimental description, meshes, and reference implementation of
+our testing infrastructure, providing a standard benchmark. This enables statistically significant
+comparisons between different FE methods and discretization, which we believe will provide a guide
+in the development of new meshing and FEA techniques. 

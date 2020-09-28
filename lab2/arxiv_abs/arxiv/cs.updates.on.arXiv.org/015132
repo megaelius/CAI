@@ -1,0 +1,17 @@
+Zero-shot learning aims at recognizing unseen classes (no training example) with knowledge transferred
+from seen classes. This is typically achieved by exploiting a semantic feature space shared by both
+seen and unseen classes, i.e., attribute or word vector, as the bridge. One common practice in zero-shot
+learning is to train a projection between the visual and semantic feature spaces with labeled seen
+classes examples. When inferring, this learned projection is applied to unseen classes and recognizes
+the class labels by some metrics. However, the visual and semantic feature spaces are mutually independent
+and have quite different manifold structures. Under such a paradigm, most existing methods easily
+suffer from the domain shift problem and weaken the performance of zero-shot recognition. To address
+this issue, we propose a novel model called AMS-SFE. It considers the alignment of manifold structures
+by semantic feature expansion. Specifically, we build upon an autoencoder-based model to expand
+the semantic features from the visual inputs. Additionally, the expansion is jointly guided by
+an embedded manifold extracted from the visual feature space of the data. Our model is the first attempt
+to align both feature spaces by expanding semantic features and derives two benefits: first, we
+expand some auxiliary features that enhance the semantic feature space; second and more importantly,
+we implicitly align the manifold structures between the visual and semantic feature spaces; thus,
+the projection can be better trained and mitigate the domain shift problem. Extensive experiments
+show significant performance improvement, which verifies the effectiveness of our model. 

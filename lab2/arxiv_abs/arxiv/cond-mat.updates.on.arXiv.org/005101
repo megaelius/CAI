@@ -1,0 +1,18 @@
+Variational quantum eigensolver (VQE) emerged as a first practical algorithm for near-term quantum
+computers. Its success largely relies on the chosen variational ansatz, corresponding to a quantum
+circuit that prepares an approximate ground state of a Hamiltonian. Typically, it either aims to
+achieve high representation accuracy (at the expense of circuit depth), or uses a shallow circuit
+sacrificing the convergence to the exact ground state energy. Here, we propose the approach which
+can combine both low depth and improved precision, capitalizing on a genetically-improved ansatz
+for hardware-efficient VQE. Our solution, the multiobjective genetic variational quantum eigensolver
+(MoG-VQE), relies on multiobjective Pareto optimization, where topology of the variational ansatz
+is optimized using the non-dominated sorting genetic algorithm (NSGA-II). For each circuit topology,
+we optimize angles of single-qubit rotations using covariance matrix adaptation evolution strategy
+(CMA-ES) -- a derivative-free approach known to perform well for noisy black-box optimization.
+Our protocol allows preparing circuits that simultaneously offer high performance in terms of
+obtained energy precision and the number of two-qubit gates, thus trying to reach Pareto-optimal
+solutions. Tested for various molecules (H$_2$, H$_4$, H$_6$, BeH$_2$, LiH), we observe nearly
+ten-fold reduction in the two-qubit gate counts as compared to the standard hardware-efficient
+ansatz. For 12-qubit LiH Hamiltonian this allows reaching chemical precision already at 12 CNOTs.
+Consequently, the algorithm shall lead to significant growth of the ground state fidelity for near-term
+devices. 

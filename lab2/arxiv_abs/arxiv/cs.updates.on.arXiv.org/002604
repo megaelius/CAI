@@ -1,0 +1,18 @@
+Data lineage describes the relationship between individual input and output data items of a workflow,
+and has served as an integral ingredient for both traditional (e.g., debugging, auditing, data
+integration, and security) and emergent (e.g., interactive visualizations, iterative analytics,
+explanations, and cleaning) applications. The core, long-standing problem that lineage systems
+need to address---and the main focus of this paper---is to capture the relationships between input
+and output data items across a workflow with the goal to streamline queries over lineage. Unfortunately,
+current lineage systems either incur high lineage capture overheads, or lineage query processing
+costs, or both. As a result, applications, that in principle can express their logic declaratively
+in lineage terms, resort to hand-tuned implementations. To this end, we introduce Smoke, an in-memory
+database engine that neither lineage capture overhead nor lineage query processing needs to be
+compromised. To do so, Smoke introduces tight integration of the lineage capture logic into physical
+database operators; efficient, write-optimized lineage representations for storage; and optimizations
+when future lineage queries are known up-front. Our experiments on microbenchmarks and realistic
+workloads show that Smoke reduces the lineage capture overhead and streamlines lineage queries
+by multiple orders of magnitude compared to state-of-the-art alternatives. Our experiments on
+real-world applications highlight that Smoke can meet the latency requirements of interactive
+visualizations (e.g., <150ms) and outperform hand-written implementations of data profiling
+primitives. 

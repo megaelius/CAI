@@ -1,0 +1,18 @@
+Scientific workloads are often described as directed acyclic task graphs. In this paper, we focus
+on the multifrontal factorization of sparse matrices, whose task graph is structured as a tree of
+parallel tasks. Among the existing models for parallel tasks, the concept of \emph{malleable}
+tasks is especially powerful as it allows each task to be processed on a time-varying number of processors.
+Following the model advocated by Prasanna and Musicus~\cite{prasmus,prasmus2} for matrix computations,
+we consider malleable tasks whose speedup is $p^\alpha$, where $p$ is the fractional share of processors
+on which a task executes, and $\alpha$ ($0 < \alpha \leq 1$) is a parameter which does not depend
+on the task. We first motivate the relevance of this model for our application with actual experiments
+on multicore platforms. Then, we study the optimal allocation proposed by Prasanna and Musicus
+for makespan minimization using optimal control theory. We largely simplify their proofs by resorting
+only to pure scheduling arguments. Building on the insight gained thanks to these new proofs, we
+extend the study to distributed multicore platforms. There, a task cannot be distributed among
+several distributed nodes. In such a distributed setting (homogeneous or heterogeneous), we prove
+the NP-completeness of the corresponding scheduling problem, and propose some approximation
+algorithms. We finally assess the relevance of our approach by simulations on realistic trees.
+We show that the average performance gain of our allocations with respect to existing solutions
+(that are thus unaware of the actual speedup functions) is up to 16% for $\alpha=0.9$ (the value observed
+in the real experiments). 

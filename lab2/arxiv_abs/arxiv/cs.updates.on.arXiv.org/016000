@@ -1,0 +1,20 @@
+Homogenization in terms of multiscale limits transforms a multiscale problem with $n+1$ asymptotically
+separated microscales posed on a physical domain $D \subset \mathbb{R}^d$ into a one-scale problem
+posed on a product domain of dimension $(n+1)d$ by introducing $n$ so-called "fast variables".
+This procedure allows to convert $n+1$ scales in $d$ physical dimensions into a single-scale structure
+in $(n+1)d$ dimensions. We prove here that both the original, physical multiscale problem and the
+corresponding high-dimensional, one-scale limiting problem can be efficiently treated numerically
+with the recently developed quantized tensor-train finite-element method (QTT-FEM). The method
+is based on restricting computation to sequences of nested subspaces of low dimensions (which are
+called tensor ranks) within a vast but generic "virtual" (background) discretization space. In
+the course of computation, these subspaces are computed iteratively and data-adaptively at runtime,
+bypassing any "offline precomputation". For the purpose of theoretical analysis, such low-dimensional
+subspaces are constructed analytically to bound the tensor ranks vs. error $\tau>0$. We consider
+a model linear elliptic multiscale problem in several physical dimensions and show, theoretically
+and experimentally, that both (i) the solution of the associated high-dimensional one-scale problem
+and (ii) the corresponding approximation to the solution of the multiscale problem admit efficient
+approximation by the QTT-FEM. These problems can therefore be numerically solved in a scale-robust
+fashion by standard (low-order) PDE discretizations combined with state-of-the-art general-purpose
+solvers for tensor-structured linear systems. We prove scale-robust exponential convergence,
+i.e., that QTT-FEM achieves accuracy $\tau$ with the number of effective degrees of freedom scaling
+polynomially in $\log \tau$. 

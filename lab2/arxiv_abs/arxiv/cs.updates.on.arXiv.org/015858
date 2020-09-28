@@ -1,0 +1,18 @@
+We propose a fast and accurate method of 6D object pose estimation for bin-picking of mechanical
+parts by a robot manipulator. We extend the single-shot approach to stereo vision by application
+of attention architecture. Our convolutional neural network model regresses to object locations
+and rotations from either a left image or a right image without depth information. Then, a stereo
+feature matching module, designated as Stereo Grid Attention, generates stereo grid matching
+maps. The important point of our method is only to calculate disparity of the objects found by the
+attention from stereo images, instead of calculating a point cloud over the entire image. The disparity
+value is then used to calculate the depth to the objects by the principle of triangulation. Our method
+also achieves a rapid processing speed of pose estimation by the single-shot architecture and it
+is possible to process a 1024 x 1024 pixels image in 75 milliseconds on the Jetson AGX Xavier implemented
+with half-float model. Weakly textured mechanical parts are used to exemplify the method. First,
+we create original synthetic datasets for training and evaluating of the proposed model. This dataset
+is created by capturing and rendering numerous 3D models of several types of mechanical parts in
+virtual space. Finally, we use a robotic manipulator with an electromagnetic gripper to pick up
+the mechanical parts in a cluttered state to verify the validity of our method in an actual scene.
+When a raw stereo image is used by the proposed method from our stereo camera to detect black steel
+screws, stainless screws, and DC motor parts, i.e., cases, rotor cores and commutator caps, the
+bin-picking tasks are successful with 76.3%, 64.0%, 50.5%, 89.1% and 64.2% probability, respectively.

@@ -1,0 +1,19 @@
+In this paper we present a generalized Deep Learning-based approach for solving ill-posed large-scale
+inverse problems occuring in medical image reconstruction. Recently, Deep Learning methods using
+iterative neural networks and cascaded neural networks have been reported to achieve state-of-the-art
+results with respect to various quantitative quality measures as PSNR, NRMSE and SSIM across different
+imaging modalities. However, the fact that these approaches employ the forward and adjoint operators
+repeatedly in the network architecture requires the network to process the whole images or volumes
+at once, which for some applications is computationally infeasible. In this work, we follow a different
+reconstruction strategy by decoupling the regularization of the solution from ensuring consistency
+with the measured data. The regularization is given in the form of an image prior obtained by the output
+of a previously trained neural network which is used in a Tikhonov regularization framework. By
+doing so, more complex and sophisticated network architectures can be used for the removal of the
+artefacts or noise than it is usually the case in iterative networks. Due to the large scale of the
+considered problems and the resulting computational complexity of the employed networks, the
+priors are obtained by processing the images or volumes as patches or slices. We evaluated the method
+for the cases of 3D cone-beam low dose CT and undersampled 2D radial cine MRI and compared it to a total
+variation-minimization-based reconstruction algorithm as well as to a method with regularization
+based on learned overcomplete dictionaries. The proposed method outperformed all the reported
+methods with respect to all chosen quantitative measures and further accelerates the regularization
+step in the reconstruction by several orders of magnitude. 

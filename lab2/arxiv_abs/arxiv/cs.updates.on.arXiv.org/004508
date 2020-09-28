@@ -1,0 +1,18 @@
+Traditional program analysis analyses a program language, that is, all programs that can be written
+in the language. There is a difference, however, between all possible programs that can be written
+and the corpus of actual programs written in a language. We seek to exploit this difference: for a
+given program, we apply a bespoke program transformation Indexify to convert expressions that
+current SMT solvers do not, in general, handle, such as constraints on strings, into equisatisfiable
+expressions that they do handle. To this end, Indexify replaces operators in hard-to-handle expressions
+with homomorphic versions that behave the same on a finite subset of the domain of the original operator,
+and return bottom denoting unknown outside of that subset. By focusing on what literals and expressions
+are most useful for analysing a given program, Indexify constructs a small, finite theory that extends
+the power of a solver on the expressions a target program builds. Indexify's bespoke nature necessarily
+means that its evaluation must be experimental, resting on a demonstration of its effectiveness
+in practice. We have developed Indexif}, a tool for Indexify. We demonstrate its utility and effectiveness
+by applying it to two real world benchmarks --- string expressions in coreutils and floats in fdlibm53.
+Indexify reduces time-to-completion on coreutils from Klee's 49.5m on average to 6.0m. It increases
+branch coverage on coreutils from 30.10% for Klee and 14.79% for Zesti to 66.83%. When indexifying
+floats in fdlibm53, Indexifyl increases branch coverage from 34.45% to 71.56% over Klee. For a restricted
+class of inputs, Indexify permits the symbolic execution of program paths unreachable with previous
+techniques: it covers more than twice as many branches in coreutils as Klee. 

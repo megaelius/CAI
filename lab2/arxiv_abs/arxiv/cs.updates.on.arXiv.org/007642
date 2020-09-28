@@ -1,0 +1,20 @@
+The ongoing integration of fine-grained power management features already established in CPU-driven
+Systems-on-Chip (SoCs) enables both traditional Field Programmable Gate Arrays (FPGAs) and,
+more recently, hybrid Programmable SoCs (pSoCs) to reach more energy-sensitive application domains
+(such as, e.g., automotive and robotics). By combining a fixed-function multi-core SoC with flexible,
+configurable FPGA fabric, the latter can be used to realize heterogeneous Real-time Systems (RTSs)
+commonly implementing complex application-specific architectures with high computation and
+communication (I/O) densities. Their dynamic changes in workload, currently active power saving
+features and thus power consumption require precise voltage and current sensing on all relevant
+supply rails to enable dependable evaluation of the various power management techniques. In this
+paper, we propose a low-cost 18-channel 16-bit-resolution measurement (sub-)system capable
+of 200 kSPS (kilo-samples per second) for instrumentation of current pSoC development boards.
+To this end, we join simultaneously sampling analog-to-digital converters (ADCs) and analog voltage/current
+sensing circuitry with a Cortex M7 microcontroller using an SD card for storage. In addition, we
+propose to include crucial I/O components such as Ethernet PHYs into the power monitoring to gain
+a holistic view on the RTS's temporal behavior covering not only computation on FPGA and CPUs, but
+also communication in terms of, e.g., reception of sensor values and transmission of actuation
+signals. We present an FMC-sized implementation of our measurement system combined with two Gigabit
+Ethernet PHYs and one HDMI input. Paired with Xilinx' ZC702 development board, we are able to synchronously
+acquire power traces of a Zynq pSoC and the two PHYs precise enough to identify individual Ethernet
+frames. 

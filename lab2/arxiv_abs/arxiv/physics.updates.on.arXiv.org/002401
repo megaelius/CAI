@@ -1,0 +1,19 @@
+Purpose: The presence of respiratory motion during radiation treatment leads to degradation of
+the expected dose distribution, both for target coverage and healthy-tissue sparing, particularly
+for techniques like pencil-beam scanning proton therapy which have dynamic delivery systems.
+While tools exist to estimate this degraded four-dimensional (4D) dose, they typically have one
+or more deficiencies such as ... Methods: To quickly compute the 4D-dose, the three main tasks of
+the calculator were run on graphics processing units (GPUs). These tasks were: simulating the delivery
+of the plan using measured delivery parameters to distribute the plan amongst 4DCT phases characterizing
+the patient breathing, using an in-house Monte Carlo simulation (MC) dose calculator to determine
+the dose delivered to each breathing phase, and accumulating the doses from the various breathing
+phases onto a single phase for evaluation. The accumulation was performed by individually transferring
+the energy and mass of dose-grid subvoxels, a technique models the transfer of dose in a more physically
+realistic manner. The calculator was run ... Results: 4D doses were successfully computed for the
+three test cases with computation times ranging from 4-6 min on a server with eight NVIDIA Titan X
+graphics cards; the most time-consuming component was the MC dose engine. The subvoxel-based dose-accumulation
+technique produced stable 4D-dose distributions at subvoxel scales of 0.5-1.0 mm without impairing
+the total computation time. The uncertainties in the beam-delivery simulation ... Conclusions:
+A MC-based and GPU-accelerated 4D-dose calculator was developed to estimate the effects of respiratory
+motion on pencil-beam scanning proton therapy treatments. The calculator can currently be used
+... 

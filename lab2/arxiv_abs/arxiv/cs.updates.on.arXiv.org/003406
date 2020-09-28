@@ -1,0 +1,19 @@
+Cloud-assisted Cognitive Internet of Things has powerful data analytics abilities based on the
+computing and data storage capabilities of cloud virtual machines, which makes protecting virtual
+machine filesystem very important for the whole system security. Agentless periodic filesystem
+monitors are optimal solutions to protect cloud virtual machines because of the secure and low-overhead
+features. However, most of the periodic monitors usually scan all of the virtual machine filesystem
+or protected files in every scanning poll, so lots of secure files are scanned again and again even
+though they are not corrupted. In this paper, we propose a novel agentless periodic filesystem monitor
+framework for virtual machines with different image formats to improve the performance of agentless
+periodic monitors. Our core idea is to minimize the scope of the scanning files in both file integrity
+checking and virus detection. In our monitor, if a file is considered secure, it will not be scanned
+when it has not been modified. Since our monitor only scans the newly created and modified files,
+it can check fewer files than other filesystem monitors. To that end, we propose two monitor methods
+for different types of virtual machine disks to reduce the number of scanning files. For virtual
+machine with single disk image, we hook the backend driver to capture the disk modification information.
+For virtual machine with multiple copy-onwrite images, we leverage the copy-on-write feature
+of QCOW2 images to achieve the disk modification analysis. In addition, our system can restore and
+remove the corrupted files. The experimental results show that our system is effective for both
+Windows and Linux virtual machines with different image formats and can reduce the number of scanning
+files and scanning time. 

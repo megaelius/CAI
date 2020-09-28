@@ -1,0 +1,19 @@
+The Libor market model is a mainstay term structure model of interest rates for derivatives pricing,
+especially for Bermudan swaptions, and other exotic Libor callable derivatives. For numerical
+implementation the pricing of derivatives with Libor market models is mainly carried out with Monte
+Carlo simulation. The PDE grid approach is not particularly feasible due to Curse of Dimensionality.
+The standard Monte Carlo method for American/Bermudan swaption pricing more or less uses regression
+to estimate expected value as a linear combination of basis functions (Longstaff and Schwartz).
+However, Monte Carlo method only provides the lower bound for American option price. Another complexity
+is the computation of the sensitivities of the option, the so-called Greeks, which are fundamental
+for a trader's hedging activity. Recently, an alternative numerical method based on deep learning
+and backward stochastic differential equations appeared in quite a few researches. For European
+style options the feedforward deep neural networks (DNN) show not only feasibility but also efficiency
+to obtain both prices and numerical Greeks. In this paper, a new backward DNN solver is proposed for
+Bermudan swaptions. Our approach is representing financial pricing problems in the form of high
+dimensional stochastic optimal control problems, FBSDEs, or equivalent PDEs. We demonstrate
+that using backward DNN the high-dimension Bermudan swaption pricing and hedging can be solved
+effectively and efficiently. A comparison between Monte Carlo simulation and the new method for
+pricing vanilla interest rate options manifests the superior performance of the new method. We
+then use this method to calculate prices and Greeks of Bermudan swaptions as a prelude for other Libor
+callable derivatives. 

@@ -1,0 +1,19 @@
+Deep learning is a popular machine learning technique and has been applied to many real-world problems.
+However, training a deep neural network is very time-consuming, especially on big data. It has become
+difficult for a single machine to train a large model over large datasets. A popular solution is to
+distribute and parallelize the training process across multiple machines using the parameter
+server framework. In this paper, we present a distributed paradigm on the parameter server framework
+called Dynamic Stale Synchronous Parallel (DSSP) which improves the state-of-the-art Stale Synchronous
+Parallel (SSP) paradigm by dynamically determining the staleness threshold at the run time. Conventionally
+to run distributed training in SSP, the user needs to specify a particular staleness threshold as
+a hyper-parameter. However, a user does not usually know how to set the threshold and thus often finds
+a threshold value through trial and error, which is time-consuming. Based on workers' recent processing
+time, our approach DSSP adaptively adjusts the threshold per iteration at running time to reduce
+the waiting time of faster workers for synchronization of the globally shared parameters, and consequently
+increases the frequency of parameters updates (increases iteration throughput), which speedups
+the convergence rate. We compare DSSP with other paradigms such as Bulk Synchronous Parallel (BSP),
+Asynchronous Parallel (ASP), and SSP by running deep neural networks (DNN) models over GPU clusters
+in both homogeneous and heterogeneous environments. The results show that in a heterogeneous environment
+where the cluster consists of mixed models of GPUs, DSSP converges to a higher accuracy much earlier
+than SSP and BSP and performs similarly to ASP. In a homogeneous distributed cluster, DSSP has more
+stable and slightly better performance than SSP and ASP, and converges much faster than BSP. 

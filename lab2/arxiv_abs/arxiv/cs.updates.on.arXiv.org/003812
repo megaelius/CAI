@@ -1,0 +1,17 @@
+This paper summarizes the idea of Tiered-Latency DRAM (TL-DRAM), which was published in HPCA 2013,
+and examines the work's significance and future potential. The capacity and cost-per-bit of DRAM
+have historically scaled to satisfy the needs of increasingly large and complex computer systems.
+However, DRAM latency has remained almost constant, making memory latency the performance bottleneck
+in today's systems. We observe that the high access latency is not intrinsic to DRAM, but a trade-off
+is made to decrease the cost per bit. To mitigate the high area overhead of DRAM sensing structures,
+commodity DRAMs connect many DRAM cells to each sense amplifier through a wire called a bitline.
+These bit-lines have a high parasitic capacitance due to their long length, and this bitline capacitance
+is the dominant source of DRAM latency. Specialized low-latency DRAMs use shorter bitlines with
+fewer cells, but have a higher cost-per-bit due to greater sense amplifier area overhead. To achieve
+both low latency and low cost per bit, we introduce Tiered-Latency DRAM (TL-DRAM). In TL-DRAM, each
+long bitline is split into two shorter segments by an isolation transistor, allowing one of the two
+segments to be accessed with the latency of a short-bitline DRAM without incurring a high cost per
+bit. We propose mechanisms that use the low-latency segment as a hardware-managed or software-managed
+cache. Our evaluations show that our proposed mechanisms improve both performance and energy efficiency
+for both single-core and multiprogrammed workloads. Tiered-Latency DRAM has inspired several
+other works on reducing DRAM latency with little to no architectural modification. 

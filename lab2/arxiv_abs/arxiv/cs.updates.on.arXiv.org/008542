@@ -1,0 +1,18 @@
+Apache Mesos, a two-level resource scheduler, provides resource sharing across multiple users
+in a multi-tenant cluster environment. Computational resources (i.e., CPU, memory, disk, etc.
+) are distributed according to the Dominant Resource Fairness (DRF) policy. Mesos frameworks (users)
+receive resources based on their current usage and are responsible for scheduling their tasks within
+the allocation. We have observed that multiple frameworks can cause fairness imbalance in a multiuser
+environment. For example, a greedy framework consuming more than its fair share of resources can
+deny resource fairness to others. The user with the least Dominant Share is considered first by the
+DRF module to get its resource allocation. However, the default DRF implementation, in Apache Mesos'
+Master allocation module, does not consider the overall resource demands of the tasks in the queue
+for each user/framework. This lack of awareness can result in users without any pending task receiving
+more resource offers while users with a queue of pending tasks starve due to their high dominant shares.
+We have developed a policy-driven queue manager, Tromino, for an Apache Mesos cluster where tasks
+for individual frameworks can be scheduled based on each framework's overall resource demands
+and current resource consumption. Dominant Share and demand awareness of Tromino and scheduling
+based on these attributes can reduce (1) the impact of unfairness due to a framework specific configuration,
+and (2) unfair waiting time due to higher resource demand in a pending task queue. In the best case,
+Tromino can significantly reduce the average waiting time of a framework by using the proposed Demand-DRF
+aware policy. 

@@ -1,0 +1,19 @@
+Nowadays, in operating systems, numerous protection mechanisms prevent or limit the user-mode
+applications to access the kernel's internal information. This is regularly carried out by software-based
+defenses such as Address Space Layout Randomization (ASLR) and Kernel ASLR (KASLR). They play pronounced
+roles when the security of sandboxed applications such as Web-browser are considered. Armed with
+arbitrary write access in the kernel memory, if these protections are bypassed, an attacker could
+find a suitable Where to Write in order to get an elevation of privilege or maliciously execute codes
+in ring 0. In this paper, we introduce a reliable method based on Transactional Synchronization
+Extensions (TSX) side-channel attacks to reveal the address of the Global Descriptor Table (GDT)
+and Interrupt Descriptor Table (IDT). We indicate that by detecting these addresses, an attack
+could be executed to sidestep the Intel's User-Mode Instruction Prevention (UMIP) and the Hypervisor-based
+mitigation and, consequently, neutralized them. The introduced attack is successfully performed
+after the most recent patches for Meltdown and Spectre. Moreover, the implementation of the proposed
+attack on different platforms, including the latest releases of Microsoft Windows, Linux, and,
+Mac OSX with the latest $9^{th}$ generation of Intel processors, shows that the attack is independent
+of the Operating System implementation. We demonstrate that a combination of this method with call-gate
+mechanism (available in modern processors) in a chain of attacks will eventually lead to a full system
+compromise despite the limitations of a super-secure sandboxed environment in the presence of
+Windows's proprietary Virtualization Based Security (VBS). Finally, we suggest the software-based
+mitigation to avoid these attacks with an acceptable cost. 

@@ -1,0 +1,18 @@
+The past several years have seen both an explosion in the use of Convolutional Neural Networks (CNNs)
+and the design of accelerators to make CNN inference practical. In the architecture community,
+the lion share of effort has targeted CNN inference for image recognition. The closely related problem
+of video recognition has received far less attention as an accelerator target. This is surprising,
+as video recognition is more computationally intensive than image recognition, and video traffic
+is predicted to be the majority of internet traffic in the coming years. This paper fills the gap between
+algorithmic and hardware advances for video recognition by providing a design space exploration
+and flexible architecture for accelerating 3D Convolutional Neural Networks (3D CNNs) - the core
+kernel in modern video understanding. When compared to (2D) CNNs used for image recognition, efficiently
+accelerating 3D CNNs poses a significant engineering challenge due to their large (and variable
+over time) memory footprint and higher dimensionality. To address these challenges, we design
+a novel accelerator, called Morph, that can adaptively support different spatial and temporal
+tiling strategies depending on the needs of each layer of each target 3D CNN. We codesign a software
+infrastructure alongside the Morph hardware to find good-fit parameters to control the hardware.
+Evaluated on state-of-the-art 3D CNNs, Morph achieves up to 3.4x (2.5x average) reduction in energy
+consumption and improves performance/watt by up to 5.1x (4x average) compared to a baseline 3D CNN
+accelerator, with an area overhead of 5%. Morph further achieves a 15.9x average energy reduction
+on 3D CNNs when compared to Eyeriss. 

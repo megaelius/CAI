@@ -1,0 +1,17 @@
+Random forests have become an important tool for improving accuracy in regression problems since
+their popularization by (Breiman, 2001) and others. In this paper, we revisit a random forest model
+originally proposed by (Breiman, 2004) and later studied by (Biau, 2012), where a feature is selected
+at random and the split occurs at the midpoint of the box containing the chosen feature. If the Lipschitz
+regression function is sparse and depends only on a small, unknown subset of $S$ out of $d$ features,
+we show that given $n$ observations, this random forest model outputs a predictor that has a mean-squared
+prediction error of order $(n(\sqrt{\log n})^{S-1})^{-\frac{1}{S\log2+1}}$. When $S \leq \lfloor
+0.72 d \rfloor$, this rate is better than the minimax optimal rate $n^{-\frac{2}{d+2}}$ for $d$-dimensional,
+Lipschitz function classes. The second part of this article shows that the prediction error for
+this random forest model cannot generally be improved. As a striking consequence of our analysis,
+we show that if $\ell_{avg}$ (resp. $\ell_{max}$) is the average (resp. maximum) number of observations
+per leaf node, then the variance of this forest is $\Theta(\ell^{-1}_{avg}(\sqrt{\log n})^{-(S-1)})$,
+which for the case of $S = d$, is similar in form to the lower bound $\Omega(\ell^{-1}_{max}(\log
+n)^{-(d-1)})$ of (Lin and Jeon, 2006) for any random forest model with a nonadaptive splitting scheme.
+We also show that the bias is tight for any linear model with nonzero parameter vector. Our new analysis
+also implies that better theoretical performance can be achieved if the trees are grown to a shallower
+depth than previous work would otherwise recommend. 

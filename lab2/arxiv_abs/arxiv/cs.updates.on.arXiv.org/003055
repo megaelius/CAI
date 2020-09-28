@@ -1,0 +1,20 @@
+In the Group Steiner Tree problem (GST), we are given a (vertex or edge)-weighted graph $G=(V,E)$
+on $n$ vertices, a root vertex $r$ and a collection of groups $\{S_i\}_{i\in[h]}: S_i\subseteq
+V(G)$. The goal is to find a min-cost subgraph $H$ that connects the root to every group. We consider
+a fault-tolerant variant of GST, which we call Restricted (Rooted) Group SNDP. In this setting,
+each group $S_i$ has a demand $k_i\in[k],k\in\mathbb N$, and we wish to find a min-cost $H\subseteq
+G$ such that, for each group $S_i$, there is a vertex in $S_i$ connected to the root via $k_i$ (vertex
+or edge) disjoint paths. While GST admits $O(\log^2 n\log h)$ approximation, its high connectivity
+variants are Label-Cover hard, and for the vertex-weighted version, the hardness holds even when
+$k=2$. Previously, positive results were known only for the edge-weighted version when $k=2$ [Gupta
+et al., SODA 2010; Khandekar et al., Theor. Comput. Sci., 2012] and for a relaxed variant where the
+disjoint paths may end at different vertices in a group [Chalermsook et al., SODA 2015]. Our main
+result is an $O(\log n\log h)$ approximation for Restricted Group SNDP that runs in time $n^{f(k,
+w)}$, where $w$ is the treewidth of $G$. This nearly matches the lower bound when $k$ and $w$ are constant.
+The key to achieving this result is a non-trivial extension of the framework in [Chalermsook et al.,
+SODA 2017], which embeds all feasible solutions to the problem into a dynamic program (DP) table.
+However, finding the optimal solution in the DP table remains intractable. We formulate a linear
+program relaxation for the DP and obtain an approximate solution via randomized rounding. This
+framework also allows us to systematically construct DP tables for high-connectivity problems.
+As a result, we present new exact algorithms for several variants of survivable network design problems
+in low-treewidth graphs. 

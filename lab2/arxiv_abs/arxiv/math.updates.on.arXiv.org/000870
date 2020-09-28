@@ -1,0 +1,18 @@
+Motivated by robotic trajectory optimization problems we consider the Augmented Lagrangian approach
+to constrained optimization. We first propose an alternative augmentation of the Lagrangian to
+handle the inequality case (not based on slack variables) and a corresponding "central" update
+of the dual parameters. We proove certain properties of this update: roughly, in the case of LPs and
+when the "constraint activity" does not change between iterations, the KKT conditions hold after
+just one iteration. This gives essential insight on when the method is efficient in practise. We
+then present our main contribution, which are consistent any-time (non-central) updates of the
+dual parameters (i.e., updating the dual parameters when we are not currently at an extremum of the
+Lagrangian). Similar to the primal-dual Newton method, this leads to an algorithm that parallely
+updates the primal and dual solutions, not distinguishing between an outer loop to adapt the dual
+parameters and an inner loop to minimize the Lagrangian. We again proof certain properties of this
+anytime update: roughly, in the case of LPs and when constraint activities would not change, the
+dual solution converges after one iteration. Again, this gives essential insight in the caveats
+of the method: if constraint activities change the method may destablize. We propose simple smoothing,
+step-size adaptation and regularization mechanisms to counteract this effect and guarantee monotone
+convergence. Finally, we evaluate the proposed method on random LPs as well as on standard robot
+trajectory optimization problems, confirming our motivation and intuition that our approach
+performs well if the problem structure implies moderate stability of constraint activity. 

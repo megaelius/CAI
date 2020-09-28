@@ -1,0 +1,20 @@
+In many models for large-scale computation, decomposition of the problem is key to efficient algorithms.
+For distance-related graph problems, it is often crucial that such a decomposition results in clusters
+of small diameter, while the probability that an edge is cut by the decomposition scales linearly
+with the length of the edge. There is a large body of literature on low diameter graph decomposition
+with small edge cutting probabilities, with all existing techniques heavily building on single
+source shortest paths (SSSP) computations. Unfortunately, in many theoretical models for large-scale
+computations, the SSSP task constitutes a complexity bottleneck. Therefore, it is desirable to
+replace exact SSSP computations with approximate ones. However this imposes a fundamental challenge
+since the existing constructions of such decompositions inherently rely on the subtractive form
+of the triangle inequality. The current paper overcomes this obstacle by developing a technique
+termed blurry ball growing. By combining this technique with a clever algorithmic idea of Miller
+et al. (SPAA 13), we obtain a construction of low diameter decompositions with small edge cutting
+probabilities which replaces exact SSSP computations by (a small number of) approximate ones.
+The utility of our approach is showcased by deriving efficient algorithms that work in the Congest,
+PRAM, and semi-streaming models of computation. As an application, we obtain metric tree embedding
+algorithms in the vein of Bartal (FOCS 96) whose computational complexities in these models are
+optimal up to polylogarithmic factors. Our embeddings have the additional useful property that
+the tree can be mapped back to the original graph such that each edge is "used" only O(log n) times,
+which is of interest for capacitated problems and simulating Congest algorithms on the tree into
+which the graph is embedded. 

@@ -1,0 +1,19 @@
+In partial differential equations-based inverse problems with many measurements, we have to solve
+many large linear system for each evaluation of the objective function. In the nonlinear case, each
+evaluation of the Jacobian requires solving an additional set of systems. This leads to a tremendous
+computational cost, which is by far the dominant cost for these problems. Several authors have proposed
+to drastically reduce the number of system solves by exploiting stochastic techniques [Haber et
+al., SIAM Optim., 22:739-757] and posing the problem as a stochastic optimization problem [Shapiro
+et al., Lectures on Stochastic Programming, SIAM, 2009]. In this approach, the objective function
+is estimated using only a few random linear combinations of the sources, referred to as simultaneous
+random sources. For the Jacobian, we show that a similar approach can be used to reduce the number
+of additional adjoint solves for the detectors. While others have reported good solution quality
+at a greatly reduced computational cost using these randomized approaches, for our problem of interest,
+diffuse optical tomography, the approach often does not lead to sufficiently accurate solutions.
+Therefore, we replace a few random simultaneous sources and detectors by simultaneous sources
+and detectors that are optimized to maximize the Frobenius norm of the sampled Jacobian after solving
+to a modest tolerance. This choice is inspired by (1) the regularized model problem solves in the
+TREGS nonlinear least squares solver [de Sturler and Kilmer, SIAM Sci. Comput., 33:3057-3086]
+used for minimization in our method and (2) the fact that these optimized directions correspond
+to the most informative data components. Our approach leads to solutions of the same quality as obtained
+using all sources and detectors but at a greatly reduced computational cost. 

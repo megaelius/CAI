@@ -1,0 +1,17 @@
+We present a deep learning strategy that enables, for the first time, contrast-agnostic semantic
+segmentation of completely unpreprocessed brain MRI scans, without requiring additional training
+or fine-tuning for new modalities. Classical Bayesian methods address this segmentation problem
+with unsupervised intensity models, but require significant computational resources. In contrast,
+learning-based methods can be fast at test time, but are sensitive to the data available at training.
+Our proposed learning method, SynthSeg, leverages a set of training segmentations (no intensity
+images required) to generate synthetic sample images of widely varying contrasts on the fly during
+training. These samples are produced using the generative model of the classical Bayesian segmentation
+framework, with randomly sampled parameters for appearance, deformation, noise, and bias field.
+Because each mini-batch has a different synthetic contrast, the final network is not biased towards
+any MRI contrast. We comprehensively evaluate our approach on four datasets comprising over 1,000
+subjects and four types of MR contrast. The results show that our approach successfully segments
+every contrast in the data, performing slightly better than classical Bayesian segmentation,
+and three orders of magnitude faster. Moreover, even within the same type of MRI contrast, our strategy
+generalizes significantly better across datasets, compared to training using real images. Finally,
+we find that synthesizing a broad range of contrasts, even if unrealistic, increases the generalization
+of the neural network. Our code and model are open source at https://github.com/BBillot/SynthSeg.

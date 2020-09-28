@@ -1,0 +1,18 @@
+Skin lesion segmentation is a crucial step in the computer-aided diagnosis of dermoscopic images.
+In the last few years, deep learning based semantic segmentation methods have significantly advanced
+the skin lesion segmentation results. However, the current performance is still unsatisfactory
+due to some challenging factors such as large variety of lesion scale and ambiguous difference between
+lesion region and background. In this paper, we propose a simple yet effective framework, named
+Dual Objective Networks (DONet), to improve the skin lesion segmentation. Our DONet adopts two
+symmetric decoders to produce different predictions for approaching different objectives. Concretely,
+the two objectives are actually defined by different loss functions. In this way, the two decoders
+are encouraged to produce differentiated probability maps to match different optimization targets,
+resulting in complementary predictions accordingly. The complementary information learned
+by these two objectives are further aggregated together to make the final prediction, by which the
+uncertainty existing in segmentation maps can be significantly alleviated. Besides, to address
+the challenge of large variety of lesion scales and shapes in dermoscopic images, we additionally
+propose a recurrent context encoding module (RCEM) to model the complex correlation among skin
+lesions, where the features with different scale contexts are efficiently integrated to form a
+more robust representation. Extensive experiments on two popular benchmarks well demonstrate
+the effectiveness of the proposed DONet. In particular, our DONet achieves 0.881 and 0.931 dice
+score on ISIC 2018 and $\text{PH}^2$, respectively. Code will be made public available. 

@@ -1,0 +1,20 @@
+Parabolic optimal control problems with control constraints are generally challenging, from
+either theoretical analysis or algorithmic design perspectives. Conceptually, the well-known
+alternating direction method of multipliers (ADMM) can be directly applied to such a problem. An
+attractive advantage of this direct ADMM application is that the control constraint can be untied
+from the parabolic PDE constraint; these two inherently different constraints thus can be treated
+individually in iterations. At each iteration of the ADMM, the main computation is for solving an
+unconstrained parabolic optimal control problem. Because of its high dimensionality after discretization,
+the unconstrained parabolic optimal control problem at each iteration can be solved only inexactly
+by implementing certain numerical scheme internally and thus a two-layer nested iterative scheme
+is required. It then becomes important to find an easily implementable and efficient inexactness
+criterion to execute the internal iterations, and to prove the overall convergence rigorously
+for the resulting two-layer nested iterative scheme. To implement the ADMM efficiently, we propose
+an inexactness criterion that is independent of the mesh size of the involved discretization, and
+it can be executed automatically with no need to set empirically perceived constant accuracy a prior.
+The inexactness criterion turns out to allow us to solve the resulting unconstrained optimal control
+problems to medium or even low accuracy and thus saves computation significantly, yet convergence
+of the overall two-layer nested iterative scheme can be still guaranteed rigorously. Efficiency
+of this ADMM implementation is promisingly validated by preliminary numerical results. Our methodology
+can also be extended to a range of optimal control problems constrained by other linear PDEs such
+as elliptic equations and hyperbolic equations. 

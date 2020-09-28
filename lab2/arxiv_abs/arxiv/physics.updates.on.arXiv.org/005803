@@ -1,0 +1,17 @@
+A crucial step in constructing a Lattice Boltzmann model is the definition of a suitable set of lattice
+velocities, and the correct assignment of the associated weights. For high-order models, the solution
+of this problem requires a non-trivial effort. The paper outlines the functioning of a publicly
+available Python script which has been written to assist researchers in that task. The speed of sound
+$c_s$ is considered as a parameter, which can, within limits, be chosen at will. Under this premise,
+the Maxwell-Boltzmann constraint equations are a system of linear equations to determine the weights,
+and hence amenable to numerical solution by standard linear algebra library routines. By suitable
+contractions, the tensor equations are mapped to a set of equivalent scalar equations, which simplifies
+the treatment significantly. For a user-supplied set of velocity shells, the software first checks
+if a solution for the weights exists, and returns it if it also happens to be unique. In such a case,
+the software also calculates the range of $c_s$ values that yield positive weights. Standard models
+like D3Q19 with a well-defined special $c_s$ value then result as limiting cases where one of the
+weights vanishes. In case of an infinite set of solutions, the user may find one particular solution
+by supplying a $c_s$ value, and then minimizing one or several weights within the framework of standard
+linear programming. Some examples illustrate the feasibility and usefulness of the approach.
+A number of models that have been discussed in the literature are nicely reproduced, while the software
+has also been able to find some new models of even higher order. 

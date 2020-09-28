@@ -1,0 +1,20 @@
+Modern deep networks have millions to billions of parameters, which leads to high memory and energy
+requirements during training as well as during inference on resource-constrained edge devices.
+Consequently, pruning techniques have been proposed that remove less significant weights in deep
+networks, thereby reducing their memory and computational requirements. Pruning is usually performed
+after training the original network, and is followed by further retraining to compensate for the
+accuracy loss incurred during pruning. The prune-and-retrain procedure is repeated iteratively
+until an optimum tradeoff between accuracy and efficiency is reached. However, such iterative
+retraining adds to the overall training complexity of the network. In this work, we propose a dynamic
+pruning-while-training procedure, wherein we prune filters of the convolutional layers of a deep
+network during training itself, thereby precluding the need for separate retraining. We evaluate
+our dynamic pruning-while-training approach with three different pre-existing pruning strategies,
+viz. mean activation-based pruning, random pruning, and L1 normalization-based pruning. Our
+results for VGG-16 trained on CIFAR10 shows that L1 normalization provides the best performance
+among all the techniques explored in this work with less than 1% drop in accuracy after pruning 80%
+of the filters compared to the original network. We further evaluated the L1 normalization based
+pruning mechanism on CIFAR100. Results indicate that pruning while training yields a compressed
+network with almost no accuracy loss after pruning 50% of the filters compared to the original network
+and ~5% loss for high pruning rates (>80%). The proposed pruning methodology yields 41% reduction
+in the number of computations and memory accesses during training for CIFAR10, CIFAR100 and ImageNet
+compared to training with retraining for 10 epochs . 

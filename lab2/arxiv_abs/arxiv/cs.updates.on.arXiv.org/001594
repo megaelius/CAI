@@ -1,0 +1,17 @@
+Graphics Processing Units (GPUs) maintain a large register file to increase thread block occupancy,
+hence to improve the thread level parallelism (TLP). However, register files in the GPU dissipate
+a significant portion of the total leakage power. Leakage power of the register file can be reduced
+by putting the registers into low power (SLEEP or OFF) state. However, one challenge in doing so is
+the lack of precise register access information for each instruction at run-time. This paper proposes
+GREENER (GPU REgister file ENErgy Reducer): a tool for minimizing leakage energy of the register
+file of GPUs. GREENER employs a compile-time analysis to estimate the run-time register access
+information. The result of the analysis is used to determine the power state of the registers (ON,
+SLEEP, or OFF) after each instruction. We propose a new power optimized assembly instruction format
+that allows GREENER to encode the power state of the registers with its instruction. Further, GREENER
+transforms a given input assembly language to a power optimized assembly. The optimized assembly,
+along with a run-time optimization to update the power state of a register during execution, results
+in significant power reduction. We implemented GREENER in GPGPU-Sim simulator and used GPUWattch
+framework to measure the leakage power of register file. We evaluated the effectiveness of GREENER
+on 21 kernels from CUDASDK, GPGPU-SIM, Parboil, and Rodinia benchmarks suites. We observe an average
+reduction of register leakage energy by 69.2% and maximum reduction of 88.41% with a negligible
+performance overhead (0.05% slowdown on average). 

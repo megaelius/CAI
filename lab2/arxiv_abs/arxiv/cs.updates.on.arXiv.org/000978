@@ -1,0 +1,17 @@
+The ability to timely process significant amounts of continuously updated spatial data is mandatory
+for an increasing number of applications. Parallelism enables such applications to face this data-intensive
+challenge and allows the devised systems to feature low latency and high scalability. In this paper
+we focus on a specific data-intensive problem, concerning the repeated processing of huge amounts
+of range queries over massive sets of moving objects, where the spatial extents of queries and objects
+are continuously modified over time. To tackle this problem and significantly accelerate query
+processing we devise a hybrid CPU/GPU pipeline that compresses data output and save query processing
+work. The devised system relies on an ad-hoc spatial index leading to a problem decomposition that
+results in a set of independent data-parallel tasks. The index is based on a point-region quadtree
+space decomposition and allows to tackle effectively a broad range of spatial object distributions,
+even those very skewed. Also, to deal with the architectural peculiarities and limitations of the
+GPUs, we adopt non-trivial GPU data structures that avoid the need of locked memory accesses and
+favour coalesced memory accesses, thus enhancing the overall memory throughput. To the best of
+our knowledge this is the first work that exploits GPUs to efficiently solve repeated range queries
+over massive sets of continuously moving objects, characterized by highly skewed spatial distributions.
+In comparison with state-of-the-art CPU-based implementations, our method highlights significant
+speedups in the order of 14x-20x, depending on the datasets, even when considering very cheap GPUs.

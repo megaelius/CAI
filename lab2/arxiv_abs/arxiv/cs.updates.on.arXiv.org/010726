@@ -1,0 +1,19 @@
+Recent work has shown that data augmentation has the potential to significantly improve the generalization
+of deep learning models. Recently, learned augmentation strategies have led to state-of-the-art
+results in image classification and object detection. While these strategies were optimized for
+improving validation accuracy, they also led to state-of-the-art results in semi-supervised
+learning and improved robustness to common corruptions of images. One obstacle to a large-scale
+adoption of these methods is a separate search phase which significantly increases the training
+complexity and may substantially increase the computational cost. Additionally, due to the separate
+search phase, these learned augmentation approaches are unable to adjust the regularization strength
+based on model or dataset size. Learned augmentation policies are often found by training small
+models on small datasets and subsequently applied to train larger models. In this work, we remove
+both of these obstacles. RandAugment may be trained on the model and dataset of interest with no need
+for a separate proxy task. Furthermore, due to the parameterization, the regularization strength
+may be tailored to different model and dataset sizes. RandAugment can be used uniformly across different
+tasks and datasets and works out of the box, matching or surpassing all previous learned augmentation
+approaches on CIFAR-10, CIFAR-100, SVHN, and ImageNet. On the ImageNet dataset we achieve 85.0%
+accuracy, a 0.6% increase over the previous state-of-the-art and 1.0% increase over baseline augmentation.
+On object detection, RandAugment leads to 1.0-1.3% improvement over baseline augmentation, and
+is within 0.3% mAP of AutoAugment on COCO. Finally, due to its interpretable hyperparameter, RandAugment
+may be used to investigate the role of data augmentation with varying model and dataset size. 

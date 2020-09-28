@@ -1,0 +1,19 @@
+Objective: Medical image datasets with pixel-level labels tend to have a limited number of organ
+or tissue label classes annotated, even when the images have wide anatomical coverage. With supervised
+learning, multiple classifiers are usually needed given these partially annotated datasets.
+In this work, we propose a set of strategies to train one single classifier in segmenting all label
+classes that are heterogeneously annotated across multiple datasets without moving into semi-supervised
+learning. Methods: Masks were first created from each label image through a process we termed presence
+masking. Three presence masking modes were evaluated, differing mainly in weightage assigned
+to the annotated and unannotated classes. These masks were then applied to the loss function during
+training to remove the influence of unannotated classes. Results: Evaluation against publicly
+available CT datasets shows that presence masking is a viable method for training class-generic
+classifiers. Our class-generic classifier can perform as well as multiple class-specific classifiers
+combined, while the training duration is similar to that required for one class-specific classifier.
+Furthermore, the class-generic classifier can outperform the class-specific classifiers when
+trained on smaller datasets. Finally, consistent results are observed from evaluations against
+human thigh and calf MRI datasets collected in-house. Conclusion: The evaluation outcomes show
+that presence masking is capable of significantly improving both training and inference efficiency
+across imaging modalities and anatomical regions. Improved performance may even be observed on
+small datasets. Significance: Presence masking strategies can reduce the computational resources
+and costs involved in manual medical image annotations. All codes are publicly available at https://github.com/wong-ck/DeepSegment.

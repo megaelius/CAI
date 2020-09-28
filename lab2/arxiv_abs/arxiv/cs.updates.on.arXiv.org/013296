@@ -1,0 +1,19 @@
+In this paper, we study the problem of sampling from distributions of the form p(x) \propto e^{-\beta
+f(x)} for some function f whose values and gradients we can query. This mode of access to f is natural
+in the scenarios in which such problems arise, for instance sampling from posteriors in parametric
+Bayesian models. Classical results show that a natural random walk, Langevin diffusion, mixes
+rapidly when f is convex. Unfortunately, even in simple examples, the applications listed above
+will entail working with functions f that are nonconvex -- for which sampling from p may in general
+require an exponential number of queries. In this paper, we study one aspect of nonconvexity relevant
+for modern machine learning applications: existence of invariances (symmetries) in the function
+f, as a result of which the distribution p will have manifolds of points with equal probability. We
+give a recipe for proving mixing time bounds of Langevin dynamics in order to sample from manifolds
+of local optima of the function f in settings where the distribution is well-concentrated around
+them. We specialize our arguments to classic matrix factorization-like Bayesian inference problems
+where we get noisy measurements A(XX^T), X \in R^{d \times k} of a low-rank matrix, i.e. f(X) = \|A(XX^T)
+- b\|^2_2, X \in R^{d \times k}, and \beta the inverse of the variance of the noise. Such functions
+f are invariant under orthogonal transformations, and include problems like matrix factorization,
+sensing, completion. Beyond sampling, Langevin dynamics is a popular toy model for studying stochastic
+gradient descent. Along these lines, we believe that our work is an important first step towards
+understanding how SGD behaves when there is a high degree of symmetry in the space of parameters the
+produce the same output. 

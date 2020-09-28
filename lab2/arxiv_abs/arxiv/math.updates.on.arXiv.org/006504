@@ -1,0 +1,18 @@
+With the growing data volume and the increasing concerns of data privacy, Stochastic Gradient Decent
+(SGD) based distributed training of deep neural network has been widely recognized as a promising
+approach. Compared with server-based architecture, serverless architecture with All-Reduce
+(AR) and Gossip paradigms can alleviate network congestion. To further reduce the communication
+overhead, we develop Quantized-PR-SGD, a novel compression approach for serverless learning
+that integrates quantization and parallel restarted (PR) techniques to compress the exchanged
+information and to reduce synchronization frequency respectively. The underlying theoretical
+guarantee for the proposed compression scheme is challenging since the precision loss incurred
+by quantization and the gradient deviation incurred by PR interact with each other. Moreover, the
+accumulated errors that are not strictly controlled make the training not converging in Gossip
+paradigm. Therefore, we establish the bound of accumulative errors according to synchronization
+mode and network topology to analyze the convergence properties of Quantized-PR-SGD. For both
+AR and Gossip paradigms, theoretical results show that Quantized-PR-SGD are at the convergence
+rate of $O(1/\sqrt{NM})$ for non-convex objectives, where $N$ is the total number of iterations
+while $M$ is the number of nodes. This indicates that Quantized-PR-SGD admits the same order of convergence
+rate and achieves linear speedup with respect to the number of nodes. Empirical study on various
+machine learning models demonstrates that communication overhead has reduced by 90\%, and the
+convergence speed has boosted by up to 3.2$\times$ under low bandwidth network compared with PR-SGD.

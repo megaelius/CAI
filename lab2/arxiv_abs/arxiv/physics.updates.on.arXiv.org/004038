@@ -1,0 +1,20 @@
+In this study, a fast and stable machine-learned hybrid algorithm implemented in TensorFlow for
+the integration of stiff chemical kinetics is introduced. Numerical solutions to differential
+equations are at the core of computational fluid dynamics calculations. As the size and complexity
+of the simulations grow, so does the need for computational power and time. Many efforts have been
+made to implement stiff chemistry solvers on GPUs but have not been highly successful because of
+the logical divergence in traditional stiff solver algorithms. Because of these constrains, a
+novel Explicit Stabilized Variable-load (STEV) solver has been developed. Overstepping due to
+the relatively large time steps is prevented by introducing limits to the maximum changes of chemical
+species per time step. To prevent oscillations, a discrete Fourier transform is introduced to dampen
+ringing. In contrast to conventional explicit approaches, a variable-load approach is used where
+each cell in the computational domain is advanced with its unique time step. This approach allows
+cells to be integrated simultaneously while maintaining warp convergence but finish at different
+iterations and be removed from the workload. To improve the computational performance of the introduced
+solver, specific thermodynamic quantities of interest were estimated using shallow neural networks
+in place of polynomial fits, leading to an additional 10% savings in clock time with minimal training
+and implementation requirements. However ML specific hardware could increase the time savings
+to as much as 28%. While the complexity of these particular machine learning models is not high by
+modern standards, the impact on computational efficiency should not be ignored. The results show
+a dramatic decrease in total chemistry solution time (over 200 times) while maintaining a similar
+degree of accuracy. 

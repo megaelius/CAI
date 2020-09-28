@@ -1,0 +1,19 @@
+Although convergence of the Parareal and multigrid-reduction-in-time (MGRIT) parallel-in-time
+algorithms is well studied, results on their optimality is limited. Appealling to recently derived
+tight bounds of two-level Parareal and MGRIT convergence, this paper proves (or disproves) $h_x$-
+and $h_t$-independent convergence of two-level Parareal and MGRIT, for linear problems of the
+form $\mathbf{u}'(t) + \mathcal{L}\mathbf{u}(t) = f(t)$, where $\mathcal{L}$ is symmetric positive
+definite and Runge-Kutta time integration is used. The theory presented in this paper also encompasses
+analysis of some modified Parareal algorithms, such as the $\theta$-Parareal method, and shows
+that not all Runge-Kutta schemes are equal from the perspective of parallel-in-time. Some schemes,
+particularly L-stable methods, offer significantly better convergence than others as they are
+guaranteed to converge rapidly at both limits of small and large $h_t\xi$, where $\xi$ denotes an
+eigenvalue of $\mathcal{L}$ and $h_t$ time-step size. On the other hand, some schemes do not obtain
+$h$-optimal convergence, and two-level convergence is restricted to certain regimes. In certain
+cases, an $\mathcal{O}(1)$ factor change in time step $h_t$ or coarsening factor $k$ can be the difference
+between convergence factors $\rho\approx0.02$ and divergence! The analysis is extended to skew
+symmetric operators as well, which cannot obtain $h$-independent convergence and, in fact, will
+generally not converge for a sufficiently large number of time steps. Numerical results confirm
+the analysis in practice and emphasize the importance of a priori analysis in choosing an effective
+coarse-grid scheme and coarsening factor. A Mathematica notebook to perform a priori two-grid
+analysis is available at https://github.com/XBraid/xbraid-convergence-est. 

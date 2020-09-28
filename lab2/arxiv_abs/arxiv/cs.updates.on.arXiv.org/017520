@@ -1,0 +1,20 @@
+This paper describes a framework for capturing geological structures in a 3D block model and improving
+its spatial fidelity given new mesh surfaces. Using surfaces that represent geological boundaries,
+the objectives are to identify areas where refinement is needed, increase spatial resolution to
+minimize surface approximation error, reduce redundancy to increase the compactness of the model
+and identify the geological domain on a block-by-block basis. These objectives are fulfilled by
+four system components which perform block-surface overlap detection, spatial structure decomposition,
+sub-blocks consolidation and block tagging, respectively. The main contributions are a coordinate-ascent
+merging algorithm and a flexible architecture for updating the spatial structure of a block model
+when given multiple surfaces, which emphasizes the ability to selectively retain or modify previously
+assigned block labels. The techniques employed include block-surface intersection analysis
+based on the separable axis theorem and ray-tracing for establishing the location of blocks relative
+to surfaces. To demonstrate the robustness and applicability of the proposed block merging strategy
+in a more narrow setting, it is used to reduce block fragmentation in an existing model where surfaces
+are not given and the minimum block size is fixed. To obtain further insight, a systematic comparison
+with octree subblocking subsequently illustrates the inherent constraints of dyadic hierarchical
+decomposition and the importance of inter-scale merging. The results show the proposed method
+produces merged blocks with less extreme aspect ratios and is highly amenable to parallel processing.
+The overall framework is applicable to orebody modelling given geological boundaries, and 3D segmentation
+more generally, where there is a need to delineate spatial regions using mesh surfaces within a block
+model. 

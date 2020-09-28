@@ -1,0 +1,18 @@
+Geostatistics represents one of the most challenging classes of scientific applications due to
+the desire to incorporate an ever increasing number of geospatial locations to accurately model
+and predict environmental phenomena. For example, the evaluation of the Gaussian log-likelihood
+function, which constitutes the main computational phase, involves solving systems of linear
+equations with a large dense symmetric and positive definite covariance matrix. Cholesky, the
+standard algorithm, requires O(n^3) floating point operators and has an O(n^2) memory footprint,
+where n is the number of geographical locations. Here, we present a mixed-precision tile algorithm
+to accelerate the Cholesky factorization during the log-likelihood function evaluation. Under
+an appropriate ordering, it operates with double-precision arithmetic on tiles around the diagonal,
+while reducing to single-precision arithmetic for tiles sufficiently far off. This translates
+into an improvement of the performance without any deterioration of the numerical accuracy of the
+application. We rely on the StarPU dynamic runtime system to schedule the tasks and to overlap them
+with data movement. To assess the performance and the accuracy of the proposed mixed-precision
+algorithm, we use synthetic and real datasets on various shared and distributed-memory systems
+possibly equipped with hardware accelerators. We compare our mixed-precision Cholesky factorization
+against the double-precision reference implementation as well as an independent block approximation
+method. We obtain an average of 1.6X performance speedup on massively parallel architectures while
+maintaining the accuracy necessary for modeling and prediction. 

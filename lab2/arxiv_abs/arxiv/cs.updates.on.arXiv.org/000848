@@ -1,0 +1,18 @@
+We propose to exploit {\em reconstruction} as a layer-local training signal for deep learning.
+Reconstructions can be propagated in a form of target propagation playing a role similar to back-propagation
+but helping to reduce the reliance on derivatives in order to perform credit assignment across many
+levels of possibly strong non-linearities (which is difficult for back-propagation). A regularized
+auto-encoder tends produce a reconstruction that is a more likely version of its input, i.e., a small
+move in the direction of higher likelihood. By generalizing gradients, target propagation may
+also allow to train deep networks with discrete hidden units. If the auto-encoder takes both a representation
+of input and target (or of any side information) in input, then its reconstruction of input representation
+provides a target towards a representation that is more likely, conditioned on all the side information.
+A deep auto-encoder decoding path generalizes gradient propagation in a learned way that can could
+thus handle not just infinitesimal changes but larger, discrete changes, hopefully allowing credit
+assignment through a long chain of non-linear operations. In addition to each layer being a good
+auto-encoder, the encoder also learns to please the upper layers by transforming the data into a
+space where it is easier to model by them, flattening manifolds and disentangling factors. The motivations
+and theoretical justifications for this approach are laid down in this paper, along with conjectures
+that will have to be verified either mathematically or experimentally, including a hypothesis
+stating that such auto-encoder mediated target propagation could play in brains the role of credit
+assignment through many non-linear, noisy and discrete transformations. 

@@ -1,0 +1,17 @@
+Stochastic gradient descent (SGD) is one of the most widely used algorithms for large scale optimization
+problems. While classical theoretical analysis of SGD for convex problems studies (suffix) \emph{averages}
+of iterates and obtains information theoretically optimal bounds on suboptimality, the \emph{last
+point} of SGD is, by far, the most preferred choice in practice. The best known results for last point
+of SGD \cite{shamir2013stochastic} however, are suboptimal compared to information theoretic
+lower bounds by a $\log T$ factor, where $T$ is the number of iterations. \cite{harvey2018tight}
+shows that in fact, this additional $\log T$ factor is tight for standard step size sequences of $\OTheta{\frac{1}{\sqrt{t}}}$
+and $\OTheta{\frac{1}{t}}$ for non-strongly convex and strongly convex settings, respectively.
+Similarly, even for subgradient descent (GD) when applied to non-smooth, convex functions, the
+best known step-size sequences still lead to $O(\log T)$-suboptimal convergence rates (on the
+final iterate). The main contribution of this work is to design new step size sequences that enjoy
+information theoretically optimal bounds on the suboptimality of \emph{last point} of SGD as well
+as GD. We achieve this by designing a modification scheme, that converts one sequence of step sizes
+to another so that the last point of SGD/GD with modified sequence has the same suboptimality guarantees
+as the average of SGD/GD with original sequence. We also show that our result holds with high-probability.
+We validate our results through simulations which demonstrate that the new step size sequence indeed
+improves the final iterate significantly compared to the standard step size sequences. 

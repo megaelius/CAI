@@ -1,0 +1,20 @@
+Automatic recognition of the historical letters (XI-XVIII centuries) carved on the stoned walls
+of St.Sophia cathedral in Kyiv (Ukraine) was demonstrated by means of capsule deep learning neural
+network. It was applied to the image dataset of the carved Glagolitic and Cyrillic letters (CGCL),
+which was assembled and pre-processed recently for recognition and prediction by machine learning
+methods (https://www.kaggle.com/yoctoman/graffiti-st-sophia-cathedral-kyiv). CGCL dataset
+contains >4000 images for glyphs of 34 letters which are hardly recognized by experts even in contrast
+to notMNIST dataset with the better images of 10 letters taken from different fonts. Despite the
+much worse quality of CGCL dataset and extremely low number of samples (in comparison to notMNIST
+dataset) the capsule network model demonstrated much better results than the previously used convolutional
+neural network (CNN). The validation accuracy (and validation loss) was higher (lower) for capsule
+network model than for CNN without data augmentation even. The area under curve (AUC) values for
+receiver operating characteristic (ROC) were also higher for the capsule network model than for
+CNN model: 0.88-0.93 (capsule network) and 0.50 (CNN) without data augmentation, 0.91-0.95 (capsule
+network) and 0.51 (CNN) with lossless data augmentation, and similar results of 0.91-0.93 (capsule
+network) and 0.9 (CNN) in the regime of lossless data augmentation only. The confusion matrixes
+were much better for capsule network than for CNN model and gave the much lower type I (false positive)
+and type II (false negative) values in all three regimes of data augmentation. These results supports
+the previous claims that capsule-like networks allow to reduce error rates not only on MNIST digit
+dataset, but on the other notMNIST letter dataset and the more complex CGCL handwriting graffiti
+letter dataset also. 

@@ -1,0 +1,19 @@
+Deep learning with artificial neural networks is increasingly gaining attention, because of its
+potential for data-driven astronomy. However, this methodology usually does not provide uncertainties
+and does not deal with incompleteness and noise in the training data. In this work, we design a neural
+network for high-resolution spectroscopic analysis using APOGEE data that mimics the methodology
+of standard spectroscopic analyses: stellar parameters are determined using the full wavelength
+range, but individual element abundances use censored portions of the spectrum. We train this network
+with a customized objective function that deals with incomplete and noisy training data and apply
+dropout variational inference to derive uncertainties on our predictions. We determine parameters
+and abundances for 18 individual elements at the $\approx 0.03$ dex level, even at low signal-to-noise
+ratio. We demonstrate that the uncertainties returned by our method are a realistic estimate of
+the precision and they automatically blow up when inputs or outputs outside of the training set are
+encountered, thus shielding users from unwanted extrapolation. By using standard deep-learning
+tools for GPU acceleration, our method is extremely fast, allowing analysis of the entire APOGEE
+data set of $\approx250,000$ spectra in ten minutes on a single, low-cost GPU. We release the stellar
+parameters and 18 individual-element abundances with associated uncertainty for the entire APOGEE
+DR14 dataset. Simultaneously, we release astroNN, a well-tested, open-source python package
+developed for this work, but that is also designed to be a general package for deep learning in astronomy.
+astroNN is available at https://github.com/henrysky/astroNN with extensive documentation
+at this http URL 

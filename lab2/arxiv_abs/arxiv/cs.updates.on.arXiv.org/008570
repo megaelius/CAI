@@ -1,0 +1,18 @@
+When concept drift is detected during classification in a data stream, a common remedy is to retrain
+a framework's classifier. However, this loses useful information if the classifier has learnt
+the current concept well, and this concept will recur again in the future. Some frameworks retain
+and reuse classifiers, but it can be time-consuming to select an appropriate classifier to reuse.
+These frameworks rarely match the accuracy of state-of-the-art ensemble approaches. For many
+data stream tasks, speed is important: fast, accurate frameworks are needed for time-dependent
+applications. We propose the Enhanced Concept Profiling Framework (ECPF), which aims to recognise
+recurring concepts and reuse a classifier trained previously, enabling accurate classification
+immediately following a drift. The novelty of ECPF is in how it uses similarity of classifications
+on new data, between a new classifier and existing classifiers, to quickly identify the best classifier
+to reuse. It always trains both a new classifier and a reused classifier, and retains the more accurate
+classifier when concept drift occurs. Finally, it creates a copy of reused classifiers, so a classifier
+well-suited for a recurring concept will not be impacted by being trained on a different concept.
+In our experiments, ECPF classifies significantly more accurately than a state-of-the-art classifier
+reuse framework (Diversity Pool) and a state-of-the-art ensemble technique (Adaptive Random
+Forest) on synthetic datasets with recurring concepts. It classifies real-world datasets five
+times faster than Diversity Pool, and six times faster than Adaptive Random Forest and is not significantly
+less accurate than either. 

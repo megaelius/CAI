@@ -1,0 +1,18 @@
+Recently Ermon et al. (2013) pioneered a way to practically compute approximations to large scale
+counting or discrete integration problems by using random hashes. The hashes are used to reduce
+the counting problem into many separate discrete optimization problems. The optimization problems
+then can be solved by an NP-oracle such as commercial SAT solvers or integer linear programming (ILP)
+solvers. In particular, Ermon et al. showed that if the domain of integration is $\{0,1\}^n$ then
+it is possible to obtain a solution within a factor of $16$ of the optimal (a 16-approximation) by
+this technique. In many crucial counting tasks, such as computation of partition function of ferromagnetic
+Potts model, the domain of integration is naturally $\{0,1,\dots, q-1\}^n, q>2$, the hypergrid.
+The straightforward extension of Ermon et al.'s method allows a $q^2$-approximation for this problem.
+For large values of $q$, this is undesirable. In this paper, we show an improved technique to obtain
+an approximation factor of $4+O(1/q^2)$ to this problem. We are able to achieve this by using an idea
+of optimization over multiple bins of the hash functions, that can be easily implemented by inequality
+constraints, or even in unconstrained way. Also the burden on the NP-oracle is not increased by our
+method (an ILP solver can still be used). Our method extends to the case when the domain of integration
+is the symmetric group, and as a result we can obtain a $(4+o(1))$-approximation of the {\em permanent
+of} a matrix. All these results hold assuming the existence of an NP-oracle. We provide experimental
+simulation results to support the theoretical guarantees of our algorithms, including comparison
+to the popular Markov-Chain-Monte-Carlo (MCMC) methods. 

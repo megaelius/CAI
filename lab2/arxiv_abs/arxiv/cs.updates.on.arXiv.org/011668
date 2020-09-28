@@ -1,0 +1,18 @@
+Separation logics are widely used for verifying programs that manipulate complex heap-based data
+structures. These logics build on so-called separation algebras, which allow expressing properties
+of heap regions such that modifications to a region do not invalidate properties stated about the
+remainder of the heap. This concept is key to enabling modular reasoning and also extends to concurrency.
+While heaps are naturally related to mathematical graphs, many ubiquitous graph properties are
+non-local in character, such as reachability between nodes, path lengths, acyclicity and other
+structural invariants, as well as data invariants which combine with these notions. Reasoning
+modularly about such graph properties remains notoriously difficult, since a local modification
+can have side-effects on a global property that cannot be easily confined to a small region. In this
+paper, we address the question: What separation algebra can be used to avoid proof arguments reverting
+back to tedious global reasoning in such cases? To this end, we consider a general class of global
+graph properties expressed as fixpoints of algebraic equations over graphs. We present mathematical
+foundations for reasoning about this class of properties, imposing minimal requirements on the
+underlying theory that allow us to define a suitable separation algebra. Building on this theory
+we develop a general proof technique for modular reasoning about global graph properties over program
+heaps, in a way which can be integrated with existing separation logics. To demonstrate our approach,
+we present local proofs for two challenging examples: a priority inheritance protocol and the non-blocking
+concurrent Harris list. 

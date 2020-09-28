@@ -1,0 +1,19 @@
+In discrepancy minimization problems, we are given a family of sets $\mathcal{S} = \{S_1,\dots,S_m\}$,
+with each $S_i \in \mathcal{S}$ a subset of some universe $U = \{u_1,\dots,u_n\}$ of $n$ elements.
+The goal is to find a coloring $\chi : U \to \{-1,+1\}$ of the elements of $U$ such that each set $S \in
+\mathcal{S}$ is colored as evenly as possible. Two classic measures of discrepancy are $\ell_\infty$-discrepancy
+defined as $\textrm{disc}_\infty(\mathcal{S},\chi):=\max_{S \in \mathcal{S}} | \sum_{u_i
+\in S} \chi(u_i) |$ and $\ell_2$-discrepancy defined as $\textrm{disc}_2(\mathcal{S},\chi):=\sqrt{(1/|\mathcal{S}|)\sum_{S
+\in \mathcal{S}} \left(\sum_{u_i \in S}\chi(u_i)\right)^2}$. Breakthrough work by Bansal gave
+a polynomial time algorithm, based on rounding an SDP, for finding a coloring $\chi$ such that $\textrm{disc}_\infty(\mathcal{S},\chi)
+= O(\lg n \cdot \textrm{herdisc}_\infty(\mathcal{S}))$ where $\textrm{herdisc}_\infty(\mathcal{S})$
+is the hereditary $\ell_\infty$-discrepancy of $\mathcal{S}$. We complement his work by giving
+a polynomial time algorithm for finding a coloring $\chi$ such $\textrm{disc}_2(\mathcal{S},\chi)
+= O(\sqrt{\lg n} \cdot \textrm{herdisc}_2(\mathcal{S}))$ where $\textrm{herdisc}_2(\mathcal{S})$
+is the hereditary $\ell_2$-discrepancy of $\mathcal{S}$. Interestingly, our algorithm avoids
+solving an SDP and instead relies simply on computing eigendecompositions of matrices. To prove
+that our algorithm has the claimed guarantees, we also prove new inequalities relating both $\textrm{herdisc}_\infty$
+and $\textrm{herdisc}_2$ to the eigenvalues of the incidence matrix corresponding to $\mathcal{S}$.
+Our inequalities improve over previous work by Chazelle and Lvov, and by Matousek, Nikolov and Talwar.
+We believe these inequalities are of independent interest as powerful tools for proving hereditary
+discrepancy lower bounds. 

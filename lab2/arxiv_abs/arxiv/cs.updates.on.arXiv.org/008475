@@ -1,0 +1,19 @@
+In this paper we are interested in bounding the number of instructions taken to process transactions.
+The main result is a multiversion transactional system that supports constant delay (extra instructions
+beyond running in isolation) for all read-only transactions, delay equal to the number of processes
+for writing transactions that are not concurrent with other writers, and lock-freedom for concurrent
+writers. The system supports precise garbage collection in that versions are identified for collection
+as soon as the last transaction releases them. As far as we know these are first results that bound
+delays for multiple readers and even a single writer. The approach is particularly useful in situations
+where read-transactions dominate write transactions, or where write transactions come in as streams
+or batches and can be processed by a single writer (possibly in parallel). The approach is based on
+using functional data structures to support multiple versions, and an efficient solution to the
+Version Maintenance (VM) problem for acquiring, updating and releasing versions. Our solution
+to the VM problem is precise, safe and wait-free (PSWF). We experimentally validate our approach
+by applying it to balanced tree data structures for maintaining ordered maps. We test the transactional
+system using multiple algorithms for the VM problem, including our PSWF VM algorithm, and implementations
+with weaker guarantees based on epochs, hazard pointers, and read-copy-update. To evaluate the
+functional data structure for concurrency and multi-versioning, we implement batched updates
+for functional tree structures and compare the performance with state-of-the-art concurrent
+data structures for balanced trees. The experiments indicate our approach works well in practice
+over a broad set of criteria. 

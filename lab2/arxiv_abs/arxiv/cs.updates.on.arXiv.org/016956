@@ -1,0 +1,19 @@
+There is a recent exciting line of work in distributed graph algorithms in the $\mathsf{CONGEST}$
+model that exploit expanders. All these algorithms so far are based on two tools: expander decomposition
+and expander routing. An $(\epsilon,\phi)$-expander decomposition removes $\epsilon$-fraction
+of the edges so that the remaining connected components have conductance at least $\phi$, i.e.,
+they are $\phi$-expanders, and expander routing allows each vertex $v$ in a $\phi$-expander to
+very quickly exchange $\text{deg}(v)$ messages with any other vertices, not just its local neighbors.
+In this paper, we give the first efficient deterministic distributed algorithms for both tools.
+We show that an $(\epsilon,\phi)$-expander decomposition can be deterministically computed
+in $\text{poly}(\epsilon^{-1}) n^{o(1)}$ rounds for $\phi = \text{poly}(\epsilon) n^{-o(1)}$,
+and that expander routing can be performed deterministically in $\text{poly}(\phi^{-1})n^{o(1)}$
+rounds. Both results match previous bounds of randomized algorithms by [Chang and Saranurak, PODC
+2019] and [Ghaffari, Kuhn, and Su, PODC 2017] up to subpolynomial factors. Consequently, we derandomize
+existing distributed algorithms that exploit expanders. We show that a minimum spanning tree on
+$n^{o(1)}$-expanders can be constructed deterministically in $n^{o(1)}$ rounds, and triangle
+detection and enumeration on general graphs can be solved deterministically in $O(n^{0.58})$
+and $n^{2/3 + o(1)}$ rounds, respectively. We also give the first polylogarithmic-round randomized
+algorithm for constructing an $(\epsilon,\phi)$-expander decomposition in $\text{poly}(\epsilon^{-1},
+\log n)$ rounds for $\phi = 1 / \text{poly}(\epsilon^{-1}, \log n)$. The previous algorithm by [Chang
+and Saranurak, PODC 2019] needs $n^{\Omega(1)}$ rounds for any $\phi\ge 1/\text{poly}\log n$.

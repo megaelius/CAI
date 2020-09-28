@@ -1,0 +1,19 @@
+We show a $2^{n/2+o(n)}$-time algorithm that finds a (non-zero) vector in a lattice $\mathcal{L}
+\subset \mathbb{R}^n$ with norm at most $\tilde{O}(\sqrt{n})\cdot \min\{\lambda_1(\mathcal{L}),
+\det(\mathcal{L})^{1/n}\}$, where $\lambda_1(\mathcal{L})$ is the length of a shortest non-zero
+lattice vector and $\det(\mathcal{L})$ is the lattice determinant. Minkowski showed that $\lambda_1(\mathcal{L})
+\leq \sqrt{n} \det(\mathcal{L})^{1/n}$ and that there exist lattices with $\lambda_1(\mathcal{L})
+\geq \Omega(\sqrt{n}) \cdot \det(\mathcal{L})^{1/n}$, so that our algorithm finds vectors that
+are as short as possible relative to the determinant (up to a polylogarithmic factor). The main technical
+contribution behind this result is new analysis of (a simpler variant of) an algorithm from arXiv:1412.7994,
+which was only previously known to solve less useful problems. To achieve this, we rely crucially
+on the ``reverse Minkowski theorem'' (conjectured by Dadush arXiv:1606.06913 and proven by arXiv:1611.05979),
+which can be thought of as a partial converse to the fact that $\lambda_1(\mathcal{L}) \leq \sqrt{n}
+\det(\mathcal{L})^{1/n}$. Previously, the fastest known algorithm for finding such a vector
+was the $2^{.802n + o(n)}$-time algorithm due to [Liu, Wang, Xu, and Zheng, 2011], which actually
+found a non-zero lattice vector with length $O(1) \cdot \lambda_1(\mathcal{L})$. Though we do
+not show how to find lattice vectors with this length in time $2^{n/2+o(n)}$, we do show that our algorithm
+suffices for the most important application of such algorithms: basis reduction. In particular,
+we show a modified version of Gama and Nguyen's slide-reduction algorithm [Gama and Nguyen, STOC
+2008], which can be combined with the algorithm above to improve the time-length tradeoff for shortest-vector
+algorithms in nearly all regimes, including the regimes relevant to cryptography. 

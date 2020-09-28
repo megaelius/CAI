@@ -1,0 +1,19 @@
+A major bottleneck of pedestrian detection lies on the sharp performance deterioration in the presence
+of small-size pedestrians that are relatively far from the camera. Motivated by the observation
+that pedestrians of disparate spatial scales exhibit distinct visual appearances, we propose
+in this paper an active pedestrian detector that explicitly operates over multiple-layer neuronal
+representations of the input still image. More specifically, convolutional neural nets such as
+ResNet and faster R-CNNs are exploited to provide a rich and discriminative hierarchy of feature
+representations as well as initial pedestrian proposals. Here each pedestrian observation of
+distinct size could be best characterized in terms of the ResNet feature representation at a certain
+layer of the hierarchy; Meanwhile, initial pedestrian proposals are attained by faster R-CNNs
+techniques, i.e. region proposal network and follow-up region of interesting pooling layer employed
+right after the specific ResNet convolutional layer of interest, to produce joint predictions
+on the bounding-box proposals' locations and categories (i.e. pedestrian or not). This is engaged
+as input to our active detector where for each initial pedestrian proposal, a sequence of coordinate
+transformation actions is carried out to determine its proper x-y 2D location and layer of feature
+representation, or eventually terminated as being background. Empirically our approach is demonstrated
+to produce overall lower detection errors on widely-used benchmarks, and it works particularly
+well with far-scale pedestrians. For example, compared with 60.51% log-average miss rate of the
+state-of-the-art MS-CNN for far-scale pedestrians (those below 80 pixels in bounding-box height)
+of the Caltech benchmark, the miss rate of our approach is 41.85%, with a notable reduction of 18.68%.

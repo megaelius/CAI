@@ -1,0 +1,17 @@
+In practical applications of machine learning, it is often desirable to identify and abstain on
+examples where the model's predictions are likely to be incorrect. Much of the prior work on this
+topic focused on out-of-distribution detection or performance metrics such as top-k accuracy.
+Comparatively little attention was given to metrics such as area-under-the-curve or Cohen's Kappa,
+which are extremely relevant for imbalanced datasets. Abstention strategies aimed at top-k accuracy
+can produce poor results on these metrics when applied to imbalanced datasets, even when all examples
+are in-distribution. We propose a framework to address this gap. Our framework leverages the insight
+that calibrated probability estimates can be used as a proxy for the true class labels, thereby allowing
+us to estimate the change in an arbitrary metric if an example were abstained on. Using this framework,
+we derive computationally efficient metric-specific abstention algorithms for optimizing the
+sensitivity at a target specificity level, the area under the ROC, and the weighted Cohen's Kappa.
+Because our method relies only on calibrated probability estimates, we further show that by leveraging
+recent work on domain adaptation under label shift, we can generalize to test-set distributions
+that may have a different class imbalance compared to the training set distribution. On various
+experiments involving medical imaging, natural language processing, computer vision and genomics,
+we demonstrate the effectiveness of our approach. Source code available at https://github.com/blindauth/abstention.
+Colab notebooks reproducing results available at https://github.com/blindauth/abstention_experiments.

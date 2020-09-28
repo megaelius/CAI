@@ -1,0 +1,20 @@
+For the purpose of effective suppression of the cycle-skipping phenomenon in full waveform inversion
+(FWI), we developed a Deep Neural Network (DNN) approach to predict the absent low-frequency components
+by exploiting the implicit relation connecting the low-frequency and high-frequency data through
+the subsurface geological and geophysical properties. In order to solve this challenging nonlinear
+regression problem, two novel strategies were proposed to design the DNN architecture and the learning
+workflow: 1) Dual Data Feed; 2) Progressive Transfer Learning. With the Dual Data Feed structure,
+both the high-frequency data and the corresponding Beat Tone data are fed into the DNN to relieve
+the burden of feature extraction, thus reducing the network complexity and the training cost. The
+second strategy, Progressive Transfer Learning, enables us to unbiasedly train the DNN using a
+single training dataset. Unlike most established deep learning approaches where the training
+datasets are fixed, within the framework of the Progressive Transfer Learning, the training dataset
+evolves in an iterative manner while gradually absorbing the subsurface information retrieved
+by the physics-based inversion module, progressively enhancing the prediction accuracy of the
+DNN and propelling the FWI process out of the local minima. The Progressive Transfer Learning, alternatingly
+updating the training velocity model and the DNN parameters in a complementary fashion toward convergence,
+saves us from being overwhelmed by the otherwise tremendous amount of training data, and avoids
+the underfitting and biased sampling issues. The numerical experiments validated that, without
+any a priori geological information, the low-frequency data predicted by the Progressive Transfer
+Learning are sufficiently accurate for an FWI engine to produce reliable subsurface velocity models
+free of cycle-skipping-induced artifacts. 

@@ -1,0 +1,19 @@
+Code reuse attacks are still big threats to software and system security. Control flow integrity
+is a promising technique to defend against such attacks. However, its effectiveness has been weakened
+due to the inaccurate control flow graph and practical strategy to trade security for performance.
+In recent years, CPU vendors have integrated hardware features as countermeasures. For instance,
+ARM Pointer Authentication (PA in short) was introduced in ARMV8-A architecture. It can efficiently
+generate an authentication code for an address, which is encoded in the unused bits of the address.
+When the address is de-referenced, the authentication code is checked to ensure its integrity.
+Though there exist systems that adopt PA to harden user programs, how to effectively use PA to protect
+OS kernels is still an open research question. In this paper, we shed lights on how to leverage PA to
+protect control flows, including function pointers and return addresses, of Linux kernel. Specifically,
+to protect function pointers, we embed authentication code into them, track their propagation
+and verify their values when loading from memory or branching to targets. To further defend against
+the pointer substitution attack, we use the function pointer address as its context, and take a clean
+design to propagate the address by piggybacking it into the pointer value. We have implemented a
+prototype system with LLVM to identify function pointers, add authentication code and verify function
+pointers by emitting new machine instructions. We applied this system to Linux kernel, and solved
+numerous practical issues, e.g., function pointer comparison and arithmetic operations. The
+security analysis shows that our system can protect all function pointers and return addresses
+in Linux kernel. 

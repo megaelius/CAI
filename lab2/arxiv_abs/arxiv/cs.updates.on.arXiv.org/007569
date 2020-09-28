@@ -1,0 +1,17 @@
+We revisit the range sampling problem: the input is a set of points where each point is associated
+with a real-valued weight. The goal is to store them in a structure such that given a query range and
+an integer $k$, we can extract $k$ independent random samples from the points inside the query range,
+where the probability of sampling a point is proportional to its weight. This line of work was initiated
+in 2014 by Hu, Qiao, and Tao and it was later followed up by Afshani and Wei. The first line of work mostly
+studied unweighted but dynamic version of the problem in one dimension whereas the second result
+considered the static weighted problem in one dimension as well as the unweighted problem in 3D for
+halfspace queries. We offer three main results and some interesting insights that were missed by
+the previous work: We show that it is possible to build efficient data structures for range sampling
+queries if we allow the query time to hold in expectation (the first result), or obtain efficient
+worst-case query bounds by allowing the sampling probability to be approximately proportional
+to the weight (the second result). The third result is a conditional lower bound that shows essentially
+one of the previous two concessions is needed. For instance, for the 3D range sampling queries, the
+first two results give efficient data structures with near-linear space and polylogarithmic query
+time whereas the lower bound shows with near-linear space the worst-case query time must be close
+to $n^{2/3}$, ignoring polylogarithmic factors. Up to our knowledge, this is the first such major
+gap between the expected and worst-case query time of a range searching problem. 

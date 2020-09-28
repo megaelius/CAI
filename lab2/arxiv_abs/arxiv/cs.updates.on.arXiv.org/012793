@@ -1,0 +1,17 @@
+Symmetry breaking is a popular technique to reduce the search space for SAT solving by exploiting
+the underlying symmetry over variables and clauses in a formula. The key idea is to first identify
+sets of assignments which fall in the same symmetry class, and then impose ordering constraints,
+called Symmetry Breaking Predicates (SBPs), such that only one (or a small subset) of these assignments
+is allowed to be a solution of the original SAT formula. While this technique has been exploited extensively
+in the SAT literature, there is little work on using symmetry breaking for SAT Modulo Theories (SMT).
+In SMT, logical constraints in SAT theories are combined with another set of theory operations defined
+over non-Boolean variables such as integers, reals, etc. SMT solvers typically use a combination
+of SAT solving techniques augmented with calls to the theory solver. In this work, we take up the advances
+in SAT symmetry breaking and apply them to the domain of SMT. Our key technical contribution is the
+formulation of symmetry breaking over the Boolean skeleton variables, which are placeholders
+for actual theory operations in SMT solving. These SBPs are then applied over the SAT solving part
+of the SMT solver. We implement our SBP ideas on top of CVC4, which is a state-of-the-art SMT solver.
+Our approach can result in significantly faster solutions on several benchmark problems compared
+to the state-of-the-art. Our final solver is a hybrid of the original CVC4 solver, and an SBP based
+solver, and can solve up to 3.8% and 3.1% more problems in the QF_NIA category of 2018 and 2019 SMT benchmarks,
+respectively, compared to CVC4, the top performer in this category. 

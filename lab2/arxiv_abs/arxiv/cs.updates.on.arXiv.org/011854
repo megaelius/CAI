@@ -1,0 +1,19 @@
+In this study, we present Flatsomatic - a Variational Auto Encoder (VAE) optimized to compress somatic
+mutations that allow for unbiased data compression whilst maintaining the signal. We compared
+two different neural network architectures for the VAE: Multilayer Perceptron (MLP) and bidirectional
+LSTM. The somatic profiles we used to train our models consisted of 8,062 Pan-Cancer patients from
+The Cancer Genome Atlas and 989 cell lines from the COSMIC cell line project. The profiles for each
+patient were represented by the genomic loci where somatic mutations occurred and, to reduce sparsity,
+the locations with a frequency <5 were removed. We enhanced the VAE performance by changing its evidence
+lower bound, and devised an F1-score based loss showing that it helps the VAE learn better than with
+binary cross-entropy. We also employed beta-VAE to weight the variational regularisation term
+in the loss function and showed the best performance through a preliminary function to increase
+the weight of the regularisation term with each epoch. We assessed the reconstruction ability of
+the VAE using the micro F1-score metric and showed that our best performing model was a 2-layer deep
+MLP VAE. Our analysis also showed that the size of the latent space did not have a significant effect
+on the VAE learning ability. We compared the Flatsomatic embeddings created to a lower dimension
+version of the data from principal component analysis, showing superior performance of Flatsomatic,
+and performed K-means clustering on both datasets to draw comparisons to known cancer types of each
+profile. Finally, we present results that confirm that the Flatsomatic representations of 64 dimensions
+maintain the same predictive power as the original 8,298 dimensions vector, through prediction
+of drug response. 

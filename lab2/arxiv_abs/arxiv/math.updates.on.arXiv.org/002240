@@ -1,0 +1,17 @@
+Stochastic differential equations (SDE) often exhibit large random transitions. This property,
+which we denote as pathwise stiffness, causes transient bursts of stiffness which limit the allowed
+step size for common fixed time step explicit and drift-implicit integrators. We present four separate
+methods to efficiently handle this stiffness. First, we utilize a computational technique to derive
+stability-optimized adaptive methods of strong order 1.5 for SDEs. The resulting explicit methods
+are shown to exhibit substantially enlarged stability regions which allows for them to solve pathwise
+stiff biological models orders of magnitude more efficiently than previous methods like SRIW1
+and Euler-Maruyama. Secondly, these integrators include a stiffness estimator which allows for
+automatically switching between implicit and explicit schemes based on the current stiffness.
+In addition, adaptive L-stable strong order 1.5 implicit integrators for SDEs and stochastic differential
+algebraic equations (SDAEs) in mass-matrix form with additive noise are derived and are demonstrated
+as more efficient than the explicit methods on stiff chemical reaction networks by nearly 8x. Lastly,
+we developed an adaptive implicit-explicit (IMEX) integration method based off of a common method
+for diffusion-reaction-convection PDEs and show numerically that it can achieve strong order
+1.5. These methods are benchmarked on a range of problems varying from non-stiff to extreme pathwise
+stiff and demonstrate speedups between 5x-6000x while showing computationally infeasibility
+of fixed time step integrators on many of these test equations. 

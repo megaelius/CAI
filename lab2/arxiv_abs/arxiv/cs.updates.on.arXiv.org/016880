@@ -1,0 +1,20 @@
+The emerging applications of machine learning algorithms on mobile devices motivate us to offload
+the computation tasks of training a model or deploying a trained one to the cloud or at the edge of the
+network. One of the major challenges in this setup is to guarantee the privacy of the client data.
+Various methods have been proposed to protect privacy in the literature. Those include (i) adding
+noise to the client data, which reduces the accuracy of the result, (ii) using secure multiparty
+computation (MPC), which requires significant communication among the computing nodes or with
+the client, (iii) relying on homomorphic encryption (HE) methods, which significantly increases
+computation load at the servers. In this paper, we propose $\textit{Corella}$ as an alternative
+approach to protect the privacy of data. The proposed scheme relies on a cluster of servers, where
+at most $T \in \mathbb{N}$ of them may collude, each running a learning model (e.g., a deep neural
+network). Each server is fed with the client data, added with $\textit{strong}$ noise, independent
+from user data. The variance of the noise is set to be large enough to make the information leakage
+to any subset of up to $T$ servers information-theoretically negligible. On the other hand, the
+added noises for different servers are $\textit{correlated}$. This correlation among the queries
+allows the parameters of the models running on different servers to be $\textit{trained}$ such
+that the client can mitigate the contribution of the noises by combining the outputs of the servers,
+and recover the final result with high accuracy and with a minor computational effort. Simulation
+results for various datasets demonstrate the accuracy of the proposed approach for the classification,
+using deep neural networks, and the autoencoder, as supervised and unsupervised learning tasks,
+respectively. 

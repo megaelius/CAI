@@ -1,0 +1,17 @@
+Rotation measure (RM) synthesis is a widely used polarization processing algorithm for reconstructing
+polarized structures along the line of sight. Performing RM synthesis on large datasets produced
+by telescopes like LOFAR can be computationally intensive as the computational cost is proportional
+to the product of the number of input frequency channels, the number of output Faraday depth values
+to be evaluated and the number of lines of sight present in the data cube. The required computational
+cost is likely to get worse due to the planned large area sky surveys with telescopes like the Low Frequency
+Array (LOFAR), the Murchison Widefield Array (MWA), and eventually the Square Kilometre Array
+(SKA). The massively parallel General Purpose Graphical Processing Units (GPGPUs) can be used
+to execute some of the computationally intensive astronomical image processing algorithms including
+RM synthesis. In this paper, we present a GPU-accelerated code, called cuFFS or CUDA-accelerated
+Fast Faraday Synthesis, to perform Faraday rotation measure synthesis. Compared to a fast single-threaded
+and vectorized CPU implementation, depending on the structure and format of the data cubes, our
+code achieves an increase in speed of up to two orders of magnitude. During testing, we noticed that
+the disk I/O when using the Flexible Image Transport System (FITS) data format is a major bottleneck
+and to reduce the time spent on disk I/O, our code supports the faster HDFITS format in addition to
+the standard FITS format. The code is written in C with GPU-acceleration achieved using Nvidia's
+CUDA parallel computing platform. The code is available at https://github.com/sarrvesh/cuFFS.

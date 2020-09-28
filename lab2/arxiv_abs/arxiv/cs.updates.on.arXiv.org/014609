@@ -1,0 +1,19 @@
+Convolutional Neural Networks (CNNs) have a major impact on our society because of the numerous
+services they provide. On the other hand, they require considerable computing power. To satisfy
+these requirements, it is possible to use graphic processing units (GPUs). However, high power
+consumption and limited external IOs constrain their usability and suitability in industrial
+and mission-critical scenarios. Recently, the number of researches that utilize FPGAs to implement
+CNNs are increasing rapidly. This is due to the lower power consumption and easy reconfigurability
+offered by these platforms. Because of the research efforts put into topics such as architecture,
+synthesis and optimization, some new challenges are arising to integrate such hardware solutions
+to high-level machine learning software libraries. This paper introduces an integrated framework
+(CNN2Gate) that supports compilation of a CNN model for an FPGA target. CNN2Gate exploits the OpenCL
+synthesis workflow for FPGAs offered by commercial vendors. CNN2Gate is capable of parsing CNN
+models from several popular high-level machine learning libraries such as Keras, Pytorch, Caffe2
+etc. CNN2Gate extracts computation flow of layers, in addition to weights and biases and applies
+a "given" fixed-point quantization. Furthermore, it writes this information in the proper format
+for OpenCL synthesis tools that are then used to build and run the project on FPGA. CNN2Gate performs
+design-space exploration using a reinforcement learning agent and fits the design on different
+FPGAs with limited logic resources automatically. This paper reports results of automatic synthesis
+and design-space exploration of AlexNet and VGG-16 on various Intel FPGA platforms. CNN2Gate achieves
+a latency of 205 ms for VGG-16 and 18 ms for AlexNet on the FPGA. 

@@ -1,0 +1,19 @@
+How does a 110-layer ResNet learn a high-complexity classifier using relatively few training examples
+and short training time? We present a theory towards explaining this in terms of $\textit{hierarchical
+learning}$. We refer hierarchical learning as the learner learns to represent a complicated target
+function by decomposing it into a sequence of simpler functions to reduce sample and time complexity.
+This paper formally analyzes how multi-layer neural networks can perform such hierarchical learning
+efficiently and automatically simply by applying stochastic gradient descent (SGD). On the conceptual
+side, we present, to the best of our knowledge, the FIRST theory result indicating how very deep neural
+networks can still be sample and time efficient on certain hierarchical learning tasks, when NO
+KNOWN non-hierarchical algorithms (such as kernel method, linear regression over feature mappings,
+tensor decomposition, sparse coding) are efficient. We establish a new principle called "backward
+feature correction", which we believe is the key to understand the hierarchical learning in multi-layer
+neural networks. On the technical side, we show for regression and even for binary classification,
+for every input dimension $d > 0$, there is a concept class consisting of degree $\omega(1)$ multi-variate
+polynomials so that, using $\omega(1)$-layer neural networks as learners, SGD can learn any target
+function from this class in $\mathsf{poly}(d)$ time using $\mathsf{poly}(d)$ samples to any $\frac{1}{\mathsf{poly}(d)}$
+error, through learning to represent it as a composition of $\omega(1)$ layers of quadratic functions.
+In contrast, we present lower bounds stating that several non-hierarchical learners, including
+any kernel methods, neural tangent kernels, must suffer from $d^{\omega(1)}$ sample or time complexity
+to learn functions in this concept class even to any $d^{-0.01}$ error. 

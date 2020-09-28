@@ -1,0 +1,20 @@
+In this study, we present a non-intrusive reduced order modeling (ROM) framework for large-scale
+quasi-stationary systems. The framework proposed herein exploits the time series prediction
+capability of long short-term memory (LSTM) recurrent neural network such that: (i) in the training
+phase, the LSTM model is trained on the modal coefficients extracted from the high-resolution data
+using proper orthogonal decomposition (POD) transform, and (ii) in the testing phase, the trained
+model predicts the modal coefficients for the total time recursively based on the initial time history.
+To illustrate the predictive performance of the proposed framework, the mean flow fields and time
+series response of the field values are reconstructed from the predicted modal coefficients by
+using an inverse POD transform. As a representative benchmark test case, we consider a two-dimensional
+quasi-geostrophic (QG) ocean circulation model which, in general, displays an enormous range
+of fluctuating spatial and temporal scales. We first illustrate that the conventional Galerkin
+projection based ROM of such systems requires a high number of POD modes to obtain a stable flow physics.
+In addition, ROM-GP does not seem to capture the intermittent bursts appearing in the dynamics of
+the first few most energetic modes. However, the proposed non-intrusive ROM framework based on
+LSTM (ROM-LSTM) yields a stable solution even for a small number of POD modes. We also observe that
+the ROM-LSTM model is able to capture quasi-periodic intermittent bursts accurately, and yields
+a stable and accurate mean flow dynamics using the time history of a few previous time states, denoted
+as the lookback time-window in this paper. Our findings suggest that the proposed ROM framework
+is capable of predicting noisy nonlinear fluid flows in an extremely efficient way compared to the
+conventional projection based ROM. 

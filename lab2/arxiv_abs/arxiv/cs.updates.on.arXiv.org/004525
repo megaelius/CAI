@@ -1,0 +1,20 @@
+Generative models are known to be difficult to assess. Recent works, especially on generative adversarial
+networks (GANs), produce good visual samples of varied categories of images. However, the validation
+of their quality is still difficult to define and there is no existing agreement on the best evaluation
+process. This paper aims at making a step toward an objective evaluation process for generative
+models. It presents a new method to assess a trained generative model by evaluating its capacity
+to teach a classification task to a discriminative model. Our approach evaluates generators on
+a testing set by using, as a proxy, a neural network classifier trained on generated samples. Neural
+networks classifier are known to be difficult to train on an unbalanced or biased dataset. We use
+this weakness as a proxy to evaluate generated data and hence generative models. Our assumption
+is that to train a successful neural network classifier, the training data should contain meaningful
+and varied information, that fit and capture the whole distribution of the testing dataset. By comparing
+results with different generated datasets we can classify generative models. The motivation of
+this approach is also to evaluate if generative models can help discriminative neural networks
+to learn, i.e., measure if training on generated data is able to make a model successful at testing
+on real settings. Our experiments compare different generators from the VAE and GAN framework on
+MNIST and fashion MNIST datasets. The results of our different experiments show that none of the
+generative models are able to replace completely true data to train a discriminative model. It also
+shows that the initial GAN and WGAN are the best choices to generate comparable datasets on MNIST
+and fashion MNIST but suffer from instability. VAE and CVAE are a bit less well-performing but are
+much more stable. 

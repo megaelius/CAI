@@ -1,0 +1,17 @@
+In this paper we overcome a key problem in an otherwise highly potential approach to study turbulent
+flows, ODTLES (One-Dimensional Turbulence Large Eddy Simulation). From a methodological point
+of view, ODTLES is an approach in between Direct Numerical Simulations (DNS) and averaged/filtered
+approaches like RANS (Reynolds Averaged Navier-Stokes) or LES (Large Eddy Simulations). In ODTLES,
+a set of 1D ODT models is embedded in a coarse grained 3D LES. On the ODT scale, the turbulent advection
+is modeled as a sequence of stochastic eddy events, also known as triplet maps, while the other (deterministic)
+terms are fully resolved in space (along the ODT- line) and time. Schmidt et al. first (2008) introduced
+ODTLES and Gonzalez et al. (2011) applied the model for a variety of wall-bounded flow problems.
+Although the results were notable for a first proof of concept, the numerical methods used are subject
+to debate. First of all, an unstable discretization for the large scale 3D advective terms was used
+as shown by Glawe (2013). The scheme can be stabilized by reducing the CFL number for the explicitly
+discretized LES terms to the order of the small scale ODT time step, but this of course reduces the
+advantage of the ODTLES multi-scale approach. The stochastic ODT eddies were also allowed to overlap
+two LES cells introducing an artificial smoothing (stabilizing) effect. Glawe (2013) limited
+the overlap consistently to one LES cell and used a stable Runge Kutta (RK) discretization, however
+maintaining the low CFL number problem. In this paper we adapt a new implicit/explicit (IMEX) time
+scheme to ODTLES in order to remedy the small CFL number issue. 

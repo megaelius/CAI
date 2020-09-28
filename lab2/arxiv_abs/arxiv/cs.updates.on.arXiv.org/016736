@@ -1,0 +1,18 @@
+Observation Resilient Authentication Schemes (ORAS) are a class of shared secret challenge-response
+identification schemes where a user mentally computes the response via a cognitive function to
+authenticate herself such that eavesdroppers cannot readily extract the secret. Security evaluation
+of ORAS generally involves quantifying information leaked via observed challenge-response pairs.
+However, little work has evaluated information leaked via human behavior while interacting with
+these schemes. A common way to achieve observation resilience is by including a modulus operation
+in the cognitive function. This minimizes the information leaked about the secret due to the many-to-one
+map from the set of possible secrets to a given response. In this work, we show that user behavior can
+be used as a side-channel to obtain the secret in such ORAS. Specifically, the user's eye-movement
+patterns and associated timing information can deduce whether a modulus operation was performed
+(a fundamental design element), to leak information about the secret. We further show that the secret
+can still be retrieved if the deduction is erroneous, a more likely case in practice. We treat the
+vulnerability analytically, and propose a generic attack algorithm that iteratively obtains
+the secret despite the "faulty" modulus information. We demonstrate the attack on five ORAS, and
+show that the secret can be retrieved with considerably less challenge-response pairs than non-side-channel
+attacks (e.g., algebraic/statistical attacks). In particular, our attack is applicable on Mod10,
+a one-time-pad based scheme, for which no non-side-channel attack exists. We field test our attack
+with a small-scale eye-tracking user study. 

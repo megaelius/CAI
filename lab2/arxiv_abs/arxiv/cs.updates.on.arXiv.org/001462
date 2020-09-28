@@ -1,0 +1,18 @@
+Convolutional dictionary learning (CDL or sparsifying CDL) has many applications in image processing
+and computer vision. There has been growing interest in developing efficient algorithms for CDL,
+mostly relying on the augmented Lagrangian (AL) method or the variant alternating direction method
+of multipliers (ADMM). When their parameters are properly tuned, AL methods have shown fast convergence
+in CDL. However, the parameter tuning process is not trivial due to its data dependence and, in practice,
+the convergence of AL methods depends on the AL parameters for nonconvex CDL problems. To moderate
+these problems, this paper proposes a new practically feasible and convergent Block Proximal Gradient
+method using a Majorizer (BPG-M) for CDL. The BPG-M-based CDL is investigated with different block
+updating schemes and majorization matrix designs, and further accelerated by incorporating some
+momentum coefficient formulas and restarting techniques. All of the methods investigated incorporate
+a boundary artifacts removal (or, more generally, sampling) operator in the learning model. Numerical
+experiments show that, without needing any parameter tuning process, the proposed BPG-M approach
+converges more stably to desirable solutions of lower objective values than the existing state-of-the-art
+ADMM algorithm and its memory-efficient variant do. Compared to the ADMM approaches, the BPG-M
+method using a multi-block updating scheme is particularly useful in single-threaded CDL algorithm
+handling large datasets, due to its lower memory requirement and no polynomial computational complexity.
+Image denoising experiments show that, for relatively strong additive white Gaussian noise, the
+filters learned by BPG-M-based CDL outperform those trained by the ADMM approach. 

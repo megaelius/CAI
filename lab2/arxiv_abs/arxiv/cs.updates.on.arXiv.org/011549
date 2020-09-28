@@ -1,0 +1,18 @@
+Integral reinforcement learning (IRL) has been proposed to obviate the requirement of drift dynamics
+in adaptive dynamic programming (ADP) framework. Most of the online IRL schemes that have been presented
+in literature require two sets of neural network (NNs), known as actor-critic NN and an initial stabilizing
+controller. In order to obviate the requirement of initial stabilizing controller, a modified
+gradient descent-based update law incorporating stabilizing term was recently proposed for robust
+reinforcement learning (RL) algorithm for continuous time nonlinear systems. However, there
+are no studies where such stabilizing term have been incorporated in IRL algorithm to solve optimal
+trajectory tracking problems for continuous time nonlinear systems with actuator constraints.
+To this end, a novel IRL algorithm leveraging a variable gain gradient descent and incorporating
+the stabilizing term is presented in this paper. With these modifications, the IRL tracking controller
+can be implemented using just a single NN without the need for an initial stabilizing controller.
+The novel features of the update law includes 'variable learning rate' that is a function of instantaneous
+Hamilton-Jacobi-Bellman (HJB) error and rate of variation of Lyapunov along the system trajectories.
+Additionally drift dynamics are also not required for either parameter update law or generation
+of control policy. The update law guarantees the convergence of augmented states and error in NN
+weights to a much tighter set around the origin and uniform ultimate boundedness (UUB) stability
+is proved. The proposed update law is validated on a full 6-DoF UAV model for attitude control thus
+establishing its effectiveness. 

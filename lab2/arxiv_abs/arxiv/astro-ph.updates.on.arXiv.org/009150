@@ -1,0 +1,19 @@
+We present stellar_wind.py, a module that provides multiple methods of simulating stellar winds
+using smoothed particle hydrodynamics codes (SPH) within the astrophysical multipurpose software
+environment (AMUSE) framework. With the simple wind mode, we create SPH wind particles in a spherically
+symmetric shell. We inject the wind particles with a velocity equal to their terminal velocity.
+The accelerating wind mode is similar, but with this method particles can be injected with a lower
+initial velocity than the terminal velocity and they are accelerated away from the star according
+to an acceleration function. With the heating wind mode, SPH particles are created with zero initial
+velocity with respect to the star, but instead wind particles are given an internal energy based
+on the integrated mechanical luminosity of the star. This mode is designed to be used on longer timescales
+and larger spatial scales compared to the other two modes and assumes that the star is embedded in
+a gas cloud. For fast winds, we find that both the simple and accelerating mode can reproduce the desired
+velocity, density and temperature profiles. For slow winds, the simple wind mode is insufficient
+due to dominant hydrodynamical effects that change the wind velocities. The accelerating mode,
+with additional options to account for these hydrodynamical effects, can still reproduce the desired
+wind profiles. We test the heating mode by simulating both a normal wind and a supernova explosion
+of a single star in a uniform density medium. The stellar wind simulation results matches the analytical
+solution for an expanding wind bubble. The supernova simulation gives qualitatively correct results,
+but the simulated bubble expands faster than the analytical solution predicts. We conclude with
+an example of a triple star system which includes the colliding winds of all three stars. 

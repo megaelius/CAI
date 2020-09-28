@@ -1,0 +1,19 @@
+Roles in cryptographic protocols do not always have a linear execution, but may include choice points
+causing the protocol to continue along different paths. In this paper we address the problem of representing
+choice in the strand space model of cryptographic protocols, particularly as it is used in the Maude-NPA
+cryptographic protocol analysis tool. To achieve this goal, we develop and give formal semantics
+to a process algebra for cryptographic protocols that supports a rich taxonomy of choice primitives
+for composing strand spaces. In our taxonomy, deterministic and non-deterministic choices are
+broken down further. Non-deterministic choice can be either explicit, i.e., one of two paths is
+chosen, or implicit, i.e., the value of a variable is chosen non-deterministically. Likewise,
+deterministic choice can be either an explicit if-then-else choice, i.e., one path is chosen if
+a predicate is satisfied, while the other is chosen if it is not, or implicit deterministic choice,
+i.e., execution continues only if a certain pattern is matched. We have identified a class of choices
+which includes finite branching and some cases of infinite branching, which we address in this paper.
+We provide a bisimulation result between the expected forwards execution semantics of the new process
+algebra and the original symbolic backwards semantics of Maude-NPA that preserves attack reachability.
+We have fully integrated the process algebra syntax and its transformation into strands in Maude-NPA.
+We illustrate its expressive power and naturalness with various examples, and show how it can be
+effectively used in formal analysis. This allows users to write protocols from now on using the process
+syntax, which is more convenient for expressing choice than the strand space syntax, in which choice
+can only be specified implicitly, via two or more strands that are identical until the choice point.

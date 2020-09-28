@@ -1,0 +1,18 @@
+There is currently a tremendous interest in developing practical applications of NISQ processors
+without the overhead required by full error correction. Quantum information processing is especially
+challenging within the gate model, as algorithms quickly lose fidelity as the problem size and circuit
+depth grow. This has lead to a number of non-gate-model approaches such as analog quantum simulation
+and quantum annealing. These approaches come with specific hardware requirements that are typically
+different than that of a universal gate-based quantum computer. We have previously proposed a non-gate-model
+approach called the single-excitation subspace (SES) method, which requires a complete graph
+of superconducting qubits. Like any approach lacking error correction, the SES method is not scalable,
+but it often leads to algorithms with constant depth, allowing it to outperform the gate model in
+a wide variety of applications. A challenge of the SES method is that it requires a physical qubit
+for every basis state in the computer's Hilbert space. This imposes large resource costs for algorithms
+using registers of ancillary qubits, as each ancilla would double the required graph size. Here
+we show how to circumvent this doubling by leaving the SES and reintroducing a tensor product structure
+in the computational subspace. Specifically, we implement the tensor product of an SES register
+holding ``data" with one or more ancilla qubits. This enables a hybrid form of quantum computation
+where fast SES operations are performed on the data, traditional logic gates and measurements are
+performed on the ancillas, and controlled-unitaries act between. As an application we give an SES
+implementation of the quantum linear system solver of Harrow, Hassidim, and Lloyd. 

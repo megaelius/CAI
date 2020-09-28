@@ -1,0 +1,17 @@
+CCFE perform Monte-Carlo transport simulations on large and complex tokamak models such as ITER.
+Such simulations are challenging since streaming and deep penetration effects are equally important.
+In order to make such simulations tractable, both variance reduction (VR) techniques and parallel
+computing are used. It has been found that the application of VR techniques in such models significantly
+reduces the efficiency of parallel computation due to 'long histories'. VR in MCNP can be accomplished
+using energy-dependent weight windows. The weight window represents an 'average behaviour' of
+particles, and large deviations in the arriving weight of a particle give rise to extreme amounts
+of splitting being performed and a long history. When running on parallel clusters, a long history
+can have a detrimental effect on the parallel efficiency - if one process is computing the long history,
+the other CPUs complete their batch of histories and wait idle. Furthermore some long histories
+have been found to be effectively intractable. To combat this effect, CCFE has developed an adaptation
+of MCNP which dynamically adjusts the WW where a large weight deviation is encountered. The method
+effectively 'de-optimises' the WW, reducing the VR performance but this is offset by a significant
+increase in parallel efficiency. Testing with a simple geometry has shown the method does not bias
+the result. This 'long history method' has enabled CCFE to significantly improve the performance
+of MCNP calculations for ITER on parallel clusters, and will be beneficial for any geometry combining
+streaming and deep penetration effects. 

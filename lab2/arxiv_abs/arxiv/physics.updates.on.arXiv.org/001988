@@ -1,0 +1,17 @@
+Bernaise (Binary ElectRohydrodyNAmIc SolvEr) is a flexible high-level finite element solver
+of two-phase electrohydrodynamic flow in complex geometries. Two-phase flow with electrolytes
+is relevant across a broad range of systems and scales, from 'lab-on-a-chip' devices for medical
+diagnostics to enhanced oil recovery at the reservoir scale. For the strongly coupled multi-physics
+problem, we employ a recently developed thermodynamically consistent model which combines a generalized
+Nernst-Planck equation for ion transport, the Poisson equation for electrostatics, the Cahn-Hilliard
+equation for the phase field (describing the interface separating the phases), and the Navier-Stokes
+equations for fluid flow. As an efficient alternative to solving the coupled system of partial differential
+equations in a monolithic manner, we present a linear, decoupled numerical scheme which sequentially
+solves the three sets of equations. The scheme is validated by comparison to limiting cases where
+analytical solutions are available, benchmark cases, and by the method of manufactured solution.
+The solver operates on unstructured meshes and is therefore well suited to handle arbitrarily shaped
+domains and problem set-ups where, e.g., very different resolutions are required in different
+parts of the domain. Bernaise is implemented in Python via the FEniCS framework, which effectively
+utilizes MPI and domain decomposition, and should therefore be suitable for large-scale/high-performance
+computing. Further, new solvers and problem set-ups can be specified and added with ease to the Bernaise
+framework by experienced Python users. 

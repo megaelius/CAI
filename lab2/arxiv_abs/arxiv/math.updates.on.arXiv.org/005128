@@ -1,0 +1,19 @@
+We study the interplay of two important issues on Bayesian model selection (BMS): the presence of
+censoring and model misspecification. Misspecification refers to assuming the wrong model or
+functional effect on the response, or not recording truly relevant covariates. We consider additive
+accelerated failure time (AAFT) and additive Cox proportional hazards models. Rather than forcing
+covariate effects to be non-linear, we propose to adaptively learn the model complexity and portray
+the theoretical properties. We also exploit a link between AAFT and additive probit models to extend
+our results and algorithms to binary responses. We consider different priors, including local
+priors and a novel structure that combines local and non-local priors to enforce sparsity. BMS asymptotically
+chooses the smallest model minimizing Kullback-Leibler divergence to the data-generating truth,
+specifically BMS keeps any covariate that has predictive power for either the outcome or censoring
+times, and discards the remaining covariates. Misspecification and censoring do affect performance,
+although both have an asymptotically negligible effect on false positives, their impact on power
+is exponential. We help understand these issues via simple descriptions of early/late censoring
+and the drop in the predictive accuracy provided by covariates. From a methods point of view, we develop
+algorithms to capitalize on the AAFT tractability, approximations to AAFT and probit likelihoods
+giving significant computational gains, a simple augmented Gibbs sampler to hierarchically explore
+the linear and non-linear effects of each covariate, and an implementation in the R package mombf.
+We conduct an extensive simulation study to illustrate the proposed methods and others based on
+likelihood penalties under misspecification and censoring. 

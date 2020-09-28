@@ -1,0 +1,19 @@
+Despite recent advances in rank aggregation and mixture learning, there has been a limited amount
+of success for learning a mixture model for ranking data. Motivated by the problem of learning a mixture
+of ranking models from pair-wise comparisons, we consider mixture learning from partial observations.
+The generic approaches for mixture learning do not generalize to this setting. Matrix estimation,
+however, provides a way to recover a structured underlying matrix from its partial, noisy observations.
+We utilize matrix estimation as a pre-processing step to extend the mixture learning problem to
+allow for partial observations. Instantiating our matrix estimation subroutine with singular
+value thresholding, we provide a bound on the estimation error with respect to $\|\cdot\|_{2,\infty}$-norm.
+In particular, we show that if $p$ (the fraction of observed entries) scales as $\tilde{\Omega}((\frac{r}{d})^{\frac{1}{3}})$,
+then the normalized $\|\cdot\|_{2,\infty}$ error vanishes to $0$ as long as the underlying $N \times
+d$ ($N\geq d$) matrix is rank $r$; this holds true even if the noise is correlated across columns.
+As an application, we argue if $\Gamma p=\tilde{\Omega}(\sqrt{r})$, then the mixture components
+can be correctly identified with $N=poly(d)$ samples; $\Gamma$ is the minimum gap between the mixture
+means. Further, we argue a large class of popular ranking models (e.g., Mallow, Multinomial Logit
+(MNL) Model) satisfy the sub-gaussian property when viewed through a pairwise embedding lens.
+Hence, our method provides a sufficient condition for efficiently recovering the mixture components
+for an important class of models. For example, mixtures of $r$ components can be clustered correctly
+using $\tilde{O}(rn^4)$ pair-wise comparisons when the components are well-separated and distributed
+as per either a Mallows, MNL, or any Random Utility Model over $n$ items. 

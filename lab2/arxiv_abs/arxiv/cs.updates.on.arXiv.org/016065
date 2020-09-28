@@ -1,0 +1,20 @@
+Whole brain extraction, also known as skull stripping, is a process in neuroimaging in which non-brain
+tissue such as skull, eyeballs, skin, etc. are removed from neuroimages. Skull striping is a preliminary
+step in presurgical planning, cortical reconstruction, and automatic tumor segmentation. Despite
+a plethora of skull stripping approaches in the literature, few are sufficiently accurate for processing
+pathology-presenting MRIs, especially MRIs with brain tumors. In this work we propose a deep learning
+approach for skull striping common MRI sequences in oncology such as T1-weighted with gadolinium
+contrast (T1Gd) and T2-weighted fluid attenuated inversion recovery (FLAIR) in patients with
+brain tumors. We automatically created gray matter, white matter, and CSF probability masks using
+SPM12 software and merged the masks into one for a final whole-brain mask for model training. Dice
+agreement, sensitivity, and specificity of the model (referred herein as DeepBrain) was tested
+against manual brain masks. To assess data efficiency, we retrained our models using progressively
+fewer training data examples and calculated average dice scores on the test set for the models trained
+in each round. Further, we tested our model against MRI of healthy brains from the LBP40A dataset.
+Overall, DeepBrain yielded an average dice score of 94.5%, sensitivity of 96.4%, and specificity
+of 98.5% on brain tumor data. For healthy brains, model performance improved to a dice score of 96.2%,
+sensitivity of 96.6% and specificity of 99.2%. The data efficiency experiment showed that, for
+this specific task, comparable levels of accuracy could have been achieved with as few as 50 training
+samples. In conclusion, this study demonstrated that a deep learning model trained on minimally
+processed automatically-generated labels can generate more accurate brain masks on MRI of brain
+tumor patients within seconds. 

@@ -1,0 +1,18 @@
+Using API reference documentation like JavaDoc is an integral part of software development. Previous
+research introduced a grounded taxonomy that organizes API documentation knowledge in 12 types,
+including knowledge about the Functionality, Structure, and Quality of an API. We study how well
+modern text classification approaches can automatically identify documentation containing
+specific knowledge types. We compared conventional machine learning (k-NN and SVM) and deep learning
+approaches trained on manually annotated Java and .NET API documentation (n = 5,574). When classifying
+the knowledge types individually (i.e., multiple binary classifiers) the best AUPRC was up to 87%.
+The deep learning and SVM classifiers seem complementary. For four knowledge types (Concept, Control,
+Pattern, and Non-Information), SVM clearly outperforms deep learning which, on the other hand,
+is more accurate for identifying the remaining types. When considering multiple knowledge types
+at once (i.e., multi-label classification) deep learning outperforms na\"ive baselines and traditional
+machine learning achieving a MacroAUC up to 79%. We also compared classifiers using embeddings
+pre-trained on generic text corpora and StackOverflow but did not observe significant improvements.
+Finally, to assess the generalizability of the classifiers, we re-tested them on a different, unseen
+Python documentation dataset. Classifiers for Functionality, Concept, Purpose, Pattern, and
+Directive seem to generalize from Java and .NET to Python documentation. The accuracy related to
+the remaining types seems API-specific. We discuss our results and how they inform the development
+of tools for supporting developers sharing and accessing API knowledge. Published article: https://doi.org/10.1145/3338906.3338943

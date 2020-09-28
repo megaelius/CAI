@@ -1,0 +1,17 @@
+Intel SGX Guard eXtensions (SGX), a hardware-supported trusted execution environment (TEE),
+is designed to protect security-sensitive applications. However, since enclave applications
+are developed with memory unsafe languages such as C/C++, traditional memory corruption is not
+eliminated in SGX. Rust-SGX is the first toolkit providing enclave developers with a memory-language.
+However, Rust is considered a Systems language and has become the right choice for concurrent applications
+and web browsers. Many application domains such as Big Data, Machine Learning, Robotics, Computer
+Vision are more commonly developed in the python programming language. Therefore, Python application
+developers cannot benefit from secure enclaves like Intel SGX and rust-SGX. To fill this gap, we
+propose Python-SGX, which is a memory-safe SGX SDK providing enclave developers a memory-safe
+Python development environment. The key idea is to enable memory-safe Python language in SGX by
+solving the following key challenges: (1) defining a memory-safe Python interpreter (2)replacing
+unsafe elements of Python interpreter with safe ones,(3) achieving comparable performance to
+non-enclave Python applications, and (4) not introducing any unsafe new code or libraries into
+SGX. We propose to build Python-SGX with PyPy, a Python interpreter written by RPython, which is
+a subset of Python, and tame unsafe parts in PyPy by formal verification, security hardening, and
+memory safe language. We have implemented python-SGX and tested it with a series of benchmarks programs.
+Our evaluation results show that Python-SGX does not cause significant overhead. 

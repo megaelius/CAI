@@ -1,0 +1,20 @@
+Convolutional Neural Networks (CNNs) have shown to be powerful classification tools in tasks that
+range from check reading to medical diagnosis, reaching close to human perception, and in some cases
+surpassing it. However, the problems to solve are becoming larger and more complex, which translates
+to larger CNNs, leading to longer training times that not even the adoption of Graphics Processing
+Units (GPUs) could keep up to. This problem is partially solved by using more processing units and
+distributed training methods that are offered by several frameworks dedicated to neural network
+training. However, these techniques do not take full advantage of the possible parallelization
+offered by CNNs and the cooperative use of heterogeneous devices with different processing capabilities,
+clock speeds, memory size, among others. This paper presents a new method for the parallel training
+of CNNs that can be considered as a particular instantiation of model parallelism, where only the
+convolutional layer is distributed. In fact, the convolutions processed during training (forward
+and backward propagation included) represent from $60$-$90$\% of global processing time. The
+paper analyzes the influence of network size, bandwidth, batch size, number of devices, including
+their processing capabilities, and other parameters. Results show that this technique is capable
+of diminishing the training time without affecting the classification performance for both CPUs
+and GPUs. For the CIFAR-10 dataset, using a CNN with two convolutional layers, and $500$ and $1500$
+kernels, respectively, best speedups achieve $3.28\times$ using four CPUs and $2.45\times$ with
+three GPUs. Modern imaging datasets, larger and more complex than CIFAR-10 will certainly require
+more than $60$-$90$\% of processing time calculating convolutions, and speedups will tend to increase
+accordingly. 

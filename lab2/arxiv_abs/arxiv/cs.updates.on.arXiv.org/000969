@@ -1,0 +1,18 @@
+The kNN query interface is a popular search interface for many real-world web databases. Given a
+user-specified query, the top-k nearest neighboring tuples (ranked by a predetermined ranking
+function) are returned. For example, many websites now provide social network features that recommend
+to a user others who share similar properties, interests, etc. Our studies of real-world websites
+unveil a novel yet serious privacy leakage caused by the design of such interfaces and ranking functions.
+Specifically, we find that many of such websites feature private attributes that are only visible
+to a user him/herself, but not to other users (and therefore will not be visible in the query answer).
+Nonetheless, these websites also take into account such private attributes in the design of the
+ranking function. While the conventional belief might be that tuple ranks alone are not enough to
+reveal the private attribute values, our investigation shows that this is not the case in reality.
+Specifically, we define a novel problem of rank based inference, and introduce a taxonomy of the
+problem space according to two dimensions, (1) the type of query interfaces widely used in practice
+and (2) the capability of adversaries. For each subspace of the prolem, we develop a novel technique
+which either guarantees the successful inference of private attributes, or (when such an inference
+is provably infeasible in the worst-case scenario) accomplishes such an inference attack for a
+significant portion of real-world tuples. We demonstrate the effectiveness and efficiency of
+our techniques through theoretical analysis and extensive experiments over real-world datasets,
+including successful online attacks over popular services such as Amazon Goodreads and Catch22dating.

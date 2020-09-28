@@ -1,0 +1,17 @@
+Heatmap representations have formed the basis of 2D human pose estimation systems for many years,
+but their generalizations for 3D pose have only recently been considered. This includes 2.5D volumetric
+heatmaps, whose X and Y axes correspond to image space and the Z axis to metric depth around the subject.
+To obtain metric-scale predictions, these methods must include a separate, explicit post-processing
+step to resolve scale ambiguity. Further, they cannot encode body joint positions outside of the
+image boundaries, leading to incomplete pose estimates in case of image truncation. We address
+these limitations by proposing metric-scale truncation-robust (MeTRo) volumetric heatmaps,
+whose dimensions are defined in metric 3D space near the subject, instead of being aligned with image
+space. We train a fully-convolutional network to estimate such heatmaps from monocular RGB in an
+end-to-end manner. This reinterpretation of the heatmap dimensions allows us to estimate complete
+metric-scale poses without test-time knowledge of the focal length or person distance and without
+relying on anthropometric heuristics in post-processing. Furthermore, as the image space is decoupled
+from the heatmap space, the network can learn to reason about joints beyond the image boundary. Using
+ResNet-50 without any additional learned layers, we obtain state-of-the-art results on the Human3.6M
+and MPI-INF-3DHP benchmarks. As our method is simple and fast, it can become a useful component for
+real-time top-down multi-person pose estimation systems. We make our code publicly available
+to facilitate further research (see https://vision.rwth-aachen.de/metro-pose3d). 

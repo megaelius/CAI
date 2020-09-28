@@ -1,0 +1,18 @@
+It has been widely observed that many activation functions and pooling methods of neural network
+models have (positive-) rescaling-invariant property, including ReLU, PReLU, max-pooling,
+and average pooling, which makes fully-connected neural networks (FNNs) and convolutional neural
+networks (CNNs) invariant to (positive) rescaling operation across layers. This may cause unneglectable
+problems with their optimization: (1) different NN models could be equivalent, but their gradients
+can be very different from each other; (2) it can be proven that the loss functions may have many spurious
+critical points in the redundant weight space. To tackle these problems, in this paper, we first
+characterize the rescaling-invariant properties of NN models using equivalence classes and prove
+that the dimension of the equivalence class space is significantly smaller than the dimension of
+the original weight space. Then we represent the loss function in the compact equivalence class
+space and develop novel algorithms that conduct optimization of the NN models directly in the equivalence
+class space. We call these algorithms Equivalence Class Optimization (abbreviated as EC-Opt)
+algorithms. Moreover, we design efficient tricks to compute the gradients in the equivalence class,
+which almost have no extra computational complexity as compared to standard back-propagation
+(BP). We conducted experimental study to demonstrate the effectiveness of our proposed new optimization
+algorithms. In particular, we show that by using the idea of EC-Opt, we can significantly improve
+the accuracy of the learned model (for both FNN and CNN), as compared to using conventional stochastic
+gradient descent algorithms. 

@@ -1,0 +1,19 @@
+In many applications, projection-based reduced-order models (ROMs) have demonstrated the ability
+to provide rapid approximate solutions to high-fidelity full-order models (FOMs). However, there
+is no a priori assurance that these approximate solutions are accurate; their accuracy depends
+on the ability of the low-dimensional trial basis to represent the FOM solution. As a result, ROMs
+can generate inaccurate approximate solutions, e.g., when the FOM solution at the online prediction
+point is not well represented by training data used to construct the trial basis. To address this
+fundamental deficiency of standard model-reduction approaches, this work proposes a novel online-adaptive
+mechanism for efficiently enriching the trial basis in a manner that ensures convergence of the
+ROM to the FOM, yet does not incur any FOM solves. The mechanism is based on the previously proposed
+adaptive $h$-refinement method for ROMs [12], but improves upon this work in two crucial ways. First,
+the proposed method enables basis refinement with respect to any orthogonal basis (not just the
+Kronecker basis), thereby generalizing the refinement mechanism and enabling it to be tailored
+to the physics characterizing the problem at hand. Second, the proposed method provides a fast online
+algorithm for periodically compressing the enriched basis via an efficient proper orthogonal
+decomposition (POD) method, which does not incur any operations that scale with the FOM dimension.
+These two features allow the proposed method to serve as (1) a failsafe mechanism for ROMs, as the
+method enables the ROM to satisfy any prescribed error tolerance online (even in the case of inadequate
+training), and (2) an efficient online basis-adaptation mechanism, as the combination of basis
+enrichment and compression enables the basis to adapt online while controlling its dimension.

@@ -1,0 +1,19 @@
+This work proposes the first strategy to make distributed training of neural networks resilient
+to computing errors, a problem that has remained unsolved despite being first posed in 1956 by von
+Neumann. He also speculated that the efficiency and reliability of the human brain is obtained by
+allowing for low power but error-prone components with redundancy for error-resilience. It is
+surprising that this problem remains open, even as massive artificial neural networks are being
+trained on increasingly low-cost and unreliable processing units. Our coding-theory-inspired
+strategy, "CodeNet," solves this problem by addressing three challenges in the science of reliable
+computing: (i) Providing the first strategy for error-resilient neural network training by encoding
+each layer separately; (ii) Keeping the overheads of coding (encoding/error-detection/decoding)
+low by obviating the need to re-encode the updated parameter matrices after each iteration from
+scratch. (iii) Providing a completely decentralized implementation with no central node (which
+is a single point of failure), allowing all primary computational steps to be error-prone. We theoretically
+demonstrate that CodeNet has higher error tolerance than replication, which we leverage to speed
+up computation time. Simultaneously, CodeNet requires lower redundancy than replication, and
+equal computational and communication costs in scaling sense. We first demonstrate the benefits
+of CodeNet in reducing expected computation time over replication when accounting for checkpointing.
+Our experiments show that CodeNet achieves the best accuracy-runtime tradeoff compared to both
+replication and uncoded strategies. CodeNet is a significant step towards biologically plausible
+neural network training, that could hold the key to orders of magnitude efficiency improvements.

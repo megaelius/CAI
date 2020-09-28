@@ -1,0 +1,17 @@
+The ability to classify objects is fundamental for robots. Besides knowledge about their visual
+appearance, captured by the RGB channel, robots heavily need also depth information to make sense
+of the world. While the use of deep networks on RGB robot images has benefited from the plethora of
+results obtained on databases like ImageNet, using convnets on depth images requires mapping them
+into three dimensional channels. This transfer learning procedure makes them processable by pre-trained
+deep architectures. Current mappings are based on heuristic assumptions over preprocessing steps
+and on what depth properties should be most preserved, resulting often in cumbersome data visualizations,
+and in sub-optimal performance in terms of generality and recognition results. Here we take an alternative
+route and we attempt instead to learn an optimal colorization mapping for any given pre-trained
+architecture, using as training data a reference RGB-D database. We propose a deep network architecture,
+exploiting the residual paradigm, that learns how to map depth data to three channel images. A qualitative
+analysis of the images obtained with this approach clearly indicates that learning the optimal
+mapping preserves the richness of depth information better than current hand-crafted approaches.
+Experiments on the Washington, JHUIT-50 and BigBIRD public benchmark databases, using CaffeNet,
+VGG16, GoogleNet, and ResNet50 clearly showcase the power of our approach, with gains in performance
+of up to 16% compared to state of the art competitors on the depth channel only, leading to top performances
+when dealing with RGB-D data 

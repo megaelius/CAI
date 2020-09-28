@@ -1,0 +1,19 @@
+In this paper we study the classical problem of throughput maximization. In this problem we have
+a collection $J$ of $n$ jobs, each having a release time $r_j$, deadline $d_j$, and processing time
+$p_j$. They have to be scheduled non-preemptively on $m$ identical parallel machines. The goal
+is to find a schedule which maximizes the number of jobs scheduled entirely in their $[r_j,d_j]$
+window. This problem has been studied extensively (even for the case of $m=1$). Several special
+cases of the problem remain open. For $m=1$, Chuzhoy-Ostrovsky-Rabani [FOCS2001] presented an
+algorithm with approximation with ratio $1-\frac{1}{e}-\varepsilon$ (for any $\varepsilon>0$).
+Recently Im-Li-Moseley [IPCO2017] presented an algorithm with ratio $1-1/e-\varepsilon_0$
+for some absolute constant $\varepsilon_0>0$ for any fixed $m$. They also presented an algorithm
+with ratio $1-O(\sqrt{\log m/m})-\varepsilon$ for general $m$ which approaches 1 as $m$ grows.
+The approximability of the problem for $m=O(1)$ remains a major open question. In this paper we show
+that if there are $c$ distinct processing times, i.e. $p_j$'s come from a set of size $c$, then there
+is a $(1-\varepsilon)$-approximation that runs in time $O(n^{mc^7\varepsilon^{-6}}\log T)$,
+where $T$ is the largest deadline. For constant $m$ and constant $c$ this yields a PTAS. As a corollary,
+we obtain a QPTAS for when $p_j$'s come from a set of size ${\rm Poly}(n)$ and $m={\rm Poly}(\log n)$
+with $(1+\varepsilon)$-speed up of machines. More specifically, if each value $p_j$ is bounded
+by ${\rm Poly}(n)$ (but no bound on the number of $p_j$'s) for any $\varepsilon>0$, there is an algorithm
+that finds a $(1-\varepsilon)$-approximate solution on $(1+\varepsilon)$-speed machines;
+the algorithm runs in time $O(n^{\varepsilon^{-13}m\log^7 n})$. 

@@ -1,0 +1,19 @@
+Originated from distributed learning, federated learning enables privacy-preserved collaboration
+on a new abstracted level by sharing the model parameters only. While the current research mainly
+focuses on optimizing learning algorithms and minimizing communication overhead left by distributed
+learning, there is still a considerable gap when it comes to the real implementation on mobile devices.
+In this paper, we start with an empirical experiment to demonstrate computation heterogeneity
+is a more pronounced bottleneck than communication on the current generation of battery-powered
+mobile devices, and the existing methods are haunted by mobile stragglers. Further, non-identically
+distributed data across the mobile users makes the selection of participants critical to the accuracy
+and convergence. To tackle the computational and statistical heterogeneity, we utilize data as
+a tunable knob and propose two efficient polynomial-time algorithms to schedule different workloads
+on various mobile devices, when data is identically or non-identically distributed. For identically
+distributed data, we combine partitioning and linear bottleneck assignment to achieve near-optimal
+training time without accuracy loss. For non-identically distributed data, we convert it into
+an average cost minimization problem and propose a greedy algorithm to find a reasonable balance
+between computation time and accuracy. We also establish an offline profiler to quantify the runtime
+behavior of different devices, which serves as the input to the scheduling algorithms. We conduct
+extensive experiments on a mobile testbed with two datasets and up to 20 devices. Compared with the
+common benchmarks, the proposed algorithms achieve 2-100x speedup epoch-wise, 2-7% accuracy
+gain and boost the convergence rate by more than 100% on CIFAR10. 

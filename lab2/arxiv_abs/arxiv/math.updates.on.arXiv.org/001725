@@ -1,0 +1,19 @@
+Data shuffling between distributed cluster of nodes is one of the critical steps in implementing
+large-scale learning algorithms. Randomly shuffling the data-set among a cluster of workers allows
+different nodes to obtain fresh data assignments at each learning epoch. This process has been shown
+to provide improvements in the learning process. However, the statistical benefits of distributed
+data shuffling come at the cost of extra communication overhead from the master node to worker nodes,
+and can act as one of the major bottlenecks in the overall time for computation. There has been significant
+recent interest in devising approaches to minimize this communication overhead. One approach
+is to provision for extra storage at the computing nodes. The other emerging approach is to leverage
+coded communication to minimize the overall communication overhead. The focus of this work is to
+understand the fundamental trade-off between the amount of storage and the communication overhead
+for distributed data shuffling. In this work, we first present an information theoretic formulation
+for the data shuffling problem, accounting for the underlying problem parameters (number of workers,
+$K$, number of data points, $N$, and the available storage, $S$ per node). We then present an information
+theoretic lower bound on the communication overhead for data shuffling as a function of these parameters.
+We next present a novel coded communication scheme and show that the resulting communication overhead
+of the proposed scheme is within a multiplicative factor of at most $\frac{K}{K-1}$ from the information-theoretic
+lower bound. Furthermore, we present the aligned coded shuffling scheme for some storage values,
+which achieves the optimal storage vs communication trade-off for $K<5$, and further reduces the
+maximum multiplicative gap down to $\frac{K-\frac{1}{3}}{K-1}$, for $K\geq 5$. 

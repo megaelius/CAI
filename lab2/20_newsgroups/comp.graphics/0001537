@@ -1,0 +1,46 @@
+I'm working upon a game using an isometric perspective, similar to
+that used in Populous.  Basically, you look into a room that looks
+similar to the following:
+             x   xxxx             o      xxxx   x
+The good thing about this perspective is that you can look and move
+around in three dimensions and still maintain your peripheral vision. [*]
+Since your viewpoint is always the same, the routines can be hard-coded
+for a particular vantage.  In my case, wall two's rising edge has a slope
+of 1/4. (I'm also using Mode X, 320x240).
+I've run into two problems; I'm sure that other readers have tried this
+before, and have perhaps formulated their own opinions:
+1) The routines for drawing walls 1 & 2 were trivial, but when I ran a
+packed->planar image through them, I was dismayed by the "jaggies."  I'm
+now considered some anti-aliasing routines (speed is not really necessary).
+Is it worth the effort to have the artist draw the wall already skewed,
+thus being assured of nice image, or is this too much of a burden?
+2) Wall 3 presents a problem; the algorithm I used tends to overly distort
+the original.  I tried to decide on paper what pixels go where, and failed.
+Has anyone come up with method for mapping a planar to crosswise sheared
+shape?
+Currently I take:
+and produce:
+Line 1 follows the slope.  Line 2 is directly under line 1.
+Line 3 moves up a line and left 4 pixels.  Line 4 is under line 3.
+This fills the shape exactly without any unfilled pixels.  But
+it causes distortions.  Has anyone come up with a better way?
+Perhaps it is necessary to simply draw the original bitmap
+already skewed?
+Are there any other particularly sticky problems with this perspective?
+I was planning on having hidden plane removal by using z-buffering.
+Locations are stored in (x,y,z) form.
+[*] For those of you who noticed, the top lines of wall 2 (and wall 1)
+*are* parallel with its bottom lines.  This is why there appears to
+be an optical illusion (ie. it appears to be either the inside or outside
+of a cube, depending on your mood).  There are no vanishing points.
+This simplifies the drawing code for objects (which don't have to
+change size as they move about in the room).  I've decided that this
+approximation is alright, since small displacements at a large enough
+distance cause very little change in the apparent size of an object in
+a real perspective drawing.
+Hopefully the "context" of the picture (ie. chairs on the floor, torches
+hanging on the walls) will dispell any visual ambiguity.
+Thanks in advance for any help.
+Till next time,                \o/   \o/
+                                V \o/ V     email:pinky@tamu.edu
+<>  Sam  Inala  <>                 V

@@ -1,0 +1,18 @@
+Average precision (AP), the area under the recall-precision (RP) curve, is the standard performance
+measure for object detection. Despite its wide acceptance, it has a number of shortcomings, the
+most important of which are (i) the inability to distinguish very different RP curves, and (ii) the
+lack of directly measuring bounding box localization accuracy. In this paper, we propose 'Localization
+Recall Precision (LRP) Error', a new metric which we specifically designed for object detection.
+LRP Error is composed of three components related to localization, false negative (FN) rate and
+false positive (FP) rate. Based on LRP, we introduce the 'Optimal LRP', the minimum achievable LRP
+error representing the best achievable configuration of the detector in terms of recall-precision
+and the tightness of the boxes. In contrast to AP, which considers precisions over the entire recall
+domain, Optimal LRP determines the 'best' confidence score threshold for a class, which balances
+the trade-off between localization and recall-precision. In our experiments, we show that, for
+state-of-the-art object (SOTA) detectors, Optimal LRP provides richer and more discriminative
+information than AP. We also demonstrate that the best confidence score thresholds vary significantly
+among classes and detectors. Moreover, we present LRP results of a simple online video object detector
+which uses a SOTA still image object detector and show that the class-specific optimized thresholds
+increase the accuracy against the common approach of using a general threshold for all classes.
+At https://github.com/cancam/LRP we provide the source code that can compute LRP for the PASCAL
+VOC and MSCOCO datasets. Our source code can easily be adapted to other datasets as well. 

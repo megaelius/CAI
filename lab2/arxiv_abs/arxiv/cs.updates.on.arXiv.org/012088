@@ -1,0 +1,18 @@
+The approximate single-source shortest-path problem is as follows: given a graph with nonnegative
+edge weights and a designated source vertex $s$, return estimates of the distances from~$s$ to each
+other vertex such that the estimate falls between the true distance and $(1+\epsilon)$ times the
+distance. This paper provides the first nearly work-efficient parallel algorithm with sublinear
+span (also called depth) for the approximate shortest-path problem on \emph{directed} graphs.
+Specifically, for constant $\epsilon$ and polynomially-bounded edge weights, our algorithm
+has work $\tilde{O}(m)$ and span $n^{1/2+o(1)}$. Several algorithms were previously known for
+the case of \emph{undirected} graphs, but none of the techniques seem to translate to the directed
+setting. The main technical contribution is the first nearly linear-work algorithm for constructing
+hopsets on directed graphs. A $(\beta,\epsilon)$-hopset is a set of weighted edges (sometimes
+called shortcuts) which, when added to the graph, admit $\beta$-hop paths with weight no more than
+$(1+\epsilon)$ times the true shortest-path distances. There is a simple sequential algorithm
+that takes as input a directed graph and produces a linear-cardinality hopset with $\beta=O(\sqrt{n})$,
+but its running time is quite high---specifically $\tilde{O}(m\sqrt{n})$. Our algorithm is the
+first more efficient algorithm that produces a directed hopset with similar characteristics.
+Specifically, our sequential algorithm runs in $\tilde{O}(m)$ time and constructs a hopset with
+$\tilde{O}(n)$ edges and $\beta = n^{1/2+o(1)}$. A parallel version of the algorithm has work $\tilde{O}(m)$
+and span $n^{1/2+o(1)}$. 

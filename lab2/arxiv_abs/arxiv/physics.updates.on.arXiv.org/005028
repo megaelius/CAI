@@ -1,0 +1,18 @@
+We report the application of machine learning methods for predicting the effective diffusivity
+(De) of two-dimensional porous media from images of their structures. Pore structures are built
+using reconstruction methods and represented as images, and their effective diffusivity is computed
+by lattice Boltzmann (LBM) simulations. The datasets thus generated are used to train convolutional
+neural network (CNN) models and evaluate their performance. The trained model predicts the effective
+diffusivity of porous structures with computational cost orders of magnitude lower than LBM simulations.
+The optimized model performs well on porous media with realistic topology, large variation of porosity
+(0.28-0.98), and effective diffusivity spanning more than one order of magnitude (), e.g., >95%
+of predicted De have truncated relative error of <10% when the true De is larger than 0.2. The CNN model
+provides better prediction than the empirical Bruggeman equation, especially for porous structure
+with small diffusivity. The relative error of CNN predictions, however, is rather high for structures
+with De < 0.1. To address this issue, the porosity of porous structures is encoded directly into the
+neural network but the performance is enhanced marginally. Further improvement, i.e., 70% of the
+CNN predictions for structures with true De < 0.1 have relative error <30%, is achieved by removing
+trapped regions and dead-end pathways using a simple algorithm. These results suggest that deep
+learning augmented by field knowledge can be a powerful technique for predicting the transport
+properties of porous media. Directions for future research of machine learning in porous media
+are discussed based on detailed analysis of the performance of CNN models in the present work. 

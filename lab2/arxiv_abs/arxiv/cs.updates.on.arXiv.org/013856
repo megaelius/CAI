@@ -1,0 +1,19 @@
+Self-supervised learning methods are attractive candidates for automatic object picking. However,
+the trial samples lack the complete ground truth because the observable parts of the agent are limited.
+That is, the information contained in the trial samples is often insufficient to learn the specific
+grasping position of each object. Consequently, the training falls into a local solution, and the
+grasp positions learned by the robot are independent of the state of the object. In this study, the
+optimal grasping position of an individual object is determined from the grasping score, defined
+as the distance in the feature space obtained using metric learning. The closeness of the solution
+to the pre-designed optimal grasping position was evaluated in trials. The proposed method incorporates
+two types of feedback control: one feedback enlarges the grasping score when the grasping position
+approaches the optimum; the other reduces the negative feedback of the potential grasping positions
+among the grasping candidates. The proposed online self-supervised learning method employs two
+deep neural networks. : SSD that detects the grasping position of an object, and Siamese networks
+(SNs) that evaluate the trial sample using the similarity of two input data in the feature space.
+Our method embeds the relation of each grasping position as feature vectors by training the trial
+samples and a few pre-samples indicating the optimum grasping position. By incorporating the grasping
+score based on the feature space of SNs into the SSD training process, the method preferentially
+trains the optimum grasping position. In the experiment, the proposed method achieved a higher
+success rate than the baseline method using simple teaching signals. And the grasping scores in
+the feature space of the SNs accurately represented the grasping positions of the objects. 

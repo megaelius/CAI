@@ -1,0 +1,17 @@
+Many systems have to be maintained while the underlying constraints, costs and/or profits change
+over time. Although the state of a system may evolve during time, a non-negligible transition cost
+is incured for transitioning from one state to another. In order to model such situations, Gupta
+et al. (ICALP 2014) and Eisenstat et al. (ICALP 2014) introduced a multistage model where the input
+is a sequence of instances (one for each time step), and the goal is to find a sequence of solutions
+(one for each time step) that are both (i) near optimal for each time step and (ii) as stable as possible.
+We focus on the multistage version of the Knapsack problem where we are given a time horizon t=1,2,...,T,
+and a sequence of knapsack instances I_1,I_2,...,I_T, one for each time step, defined on a set of
+n objects. In every time step t we have to choose a feasible knapsack S_t of I_t, which gives a knapsack
+profit. To measure the stability/similarity of two consecutive solutions S_t and S_{t+1}, we identify
+the objects for which the decision, to be picked or not, remains the same in S_t and S_{t+1}, giving
+a transition profit. We are asked to produce a sequence of solutions S_1,S_2,...,S_T so that the
+total knapsack profit plus the overall transition profit is maximized. We propose a PTAS for the
+Multistage Knapsack problem. Then, we prove that there is no FPTAS for the problem even in the case
+where T=2, unless P=NP. Furthermore, we give a pseudopolynomial time algorithm for the case where
+the number of steps is bounded by a fixed constant and we show that otherwise the problem remains NP-hard
+even in the case where all the weights, profits and capacities are 0 or 1. 

@@ -1,0 +1,19 @@
+We investigate the SPAI and PSAI preconditioning procedures and shed light on two important features
+of them: (i) For the large linear system $Ax=b$ with $A$ irregular sparse, i.e., with $A$ having $s$
+relatively dense columns, SPAI may be very costly to implement, and the resulting sparse approximate
+inverses may be ineffective for preconditioning. PSAI can be effective for preconditioning but
+may require excessive storage and be unacceptably time consuming; (ii) the situation is improved
+drastically when $A$ is regular sparse, that is, all of its columns are sparse. In this case, both
+SPAI and PSAI are efficient. Moreover, SPAI and, especially, PSAI are more likely to construct effective
+preconditioners. Motivated by these features, we propose an approach to making SPAI and PSAI more
+practical for $Ax=b$ with $A$ irregular sparse. We first split $A$ into a regular sparse $\tilde
+A$ and a matrix of low rank $s$. Then exploiting the Sherman--Morrison--Woodbury formula, we transform
+$Ax=b$ into $s+1$ new linear systems with the same coefficient matrix $\tilde A$, use SPAI and PSAI
+to compute sparse approximate inverses of $\tilde A$ efficiently and apply Krylov iterative methods
+to solve the preconditioned linear systems. Theoretically, we consider the non-singularity and
+conditioning of $\tilde A$ obtained from some important classes of matrices. We show how to recover
+an approximate solution of $Ax=b$ from those of the $s+1$ new systems and how to design reliable stopping
+criteria for the $s+1$ systems to guarantee that the approximate solution of $Ax=b$ satisfies a
+desired accuracy. Given the fact that irregular sparse linear systems are common in applications,
+this approach widely extends the practicability of SPAI and PSAI. Numerical results demonstrate
+the considerable superiority of our approach to the direct application of SPAI and PSAI to $Ax=b$.

@@ -1,0 +1,19 @@
+Model Stealing (MS) attacks allow an adversary with black-box access to a Machine Learning model
+to replicate its functionality, compromising the confidentiality of the model. Such attacks train
+a clone model by using the predictions of the target model for different inputs. The effectiveness
+of such attacks relies heavily on the availability of data necessary to query the target model. Existing
+attacks either assume partial access to the dataset of the target model or availability of an alternate
+dataset with semantic similarities. This paper proposes MAZE -- a data-free model stealing attack
+using zeroth-order gradient estimation. In contrast to prior works, MAZE does not require any data
+and instead creates synthetic data using a generative model. Inspired by recent works in data-free
+Knowledge Distillation (KD), we train the generative model using a disagreement objective to produce
+inputs that maximize disagreement between the clone and the target model. However, unlike the white-box
+setting of KD, where the gradient information is available, training a generator for model stealing
+requires performing black-box optimization, as it involves accessing the target model under attack.
+MAZE relies on zeroth-order gradient estimation to perform this optimization and enables a highly
+accurate MS attack. Our evaluation with four datasets shows that MAZE provides a normalized clone
+accuracy in the range of 0.91x to 0.99x, and outperforms even the recent attacks that rely on partial
+data (JBDA, clone accuracy 0.13x to 0.69x) and surrogate data (KnockoffNets, clone accuracy 0.52x
+to 0.97x). We also study an extension of MAZE in the partial-data setting and develop MAZE-PD, which
+generates synthetic data closer to the target distribution. MAZE-PD further improves the clone
+accuracy (0.97x to 1.0x) and reduces the query required for the attack by 2x-24x. 

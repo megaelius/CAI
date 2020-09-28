@@ -1,0 +1,19 @@
+This paper investigates hardware-based memory compression designs to increase the memory bandwidth.
+When lines are compressible, the hardware can store multiple lines in a single memory location,
+and retrieve all these lines in a single access, thereby increasing the effective memory bandwidth.
+However, relocating and packing multiple lines together depending on the compressibility causes
+a line to have multiple possible locations. Therefore, memory compression designs typically require
+metadata to specify the compressibility of the line. Unfortunately, even in the presence of dedicated
+metadata caches, maintaining and accessing this metadata incurs significant bandwidth overheads
+and can degrade performance by as much as 40%. Ideally, we want to implement memory compression while
+eliminating the bandwidth overheads of metadata accesses. This paper proposes CRAM, a bandwidth-efficient
+design for memory compression that is entirely hardware based and does not require any OS support
+or changes to the memory modules or interfaces. CRAM uses a novel implicit-metadata mechanism,
+whereby the compressibility of the line can be determined by scanning the line for a special marker
+word, eliminating the overheads of metadata access. CRAM is equipped with a low-cost Line Location
+Predictor (LLP) that can determine the location of the line with 98% accuracy. Furthermore, we also
+develop a scheme that can dynamically enable or disable compression based on the bandwidth cost
+of storing compressed lines and the bandwidth benefits of obtaining compressed lines, ensuring
+no degradation for workloads that do not benefit from compression. Our evaluations, over a diverse
+set of 27 workloads, show that CRAM provides a speedup of up to 73% (average 6%) without causing slowdown
+for any of the workloads, and consuming a storage overhead of less than 300 bytes at the memory controller.

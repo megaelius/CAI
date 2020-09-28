@@ -1,0 +1,18 @@
+It is common to prove by reasoning over source code that programs do not leak sensitive data. But doing
+so leaves a gap between reasoning and reality that can only be filled by accounting for the behaviour
+of the compiler. This task is complicated when programs enforce value-dependent information-flow
+security properties (in which classification of locations can vary depending on values in other
+locations) and complicated further when programs exploit shared-variable concurrency. Prior
+work has formally defined a notion of concurrency-aware refinement for preserving value-dependent
+security properties. However, that notion is considerably more complex than standard refinement
+definitions typically applied in the verification of semantics preservation by compilers. To
+date it remains unclear whether it can be applied to a realistic compiler, because there exist no
+general decomposition principles for separating it into smaller, more familiar, proof obligations.
+In this work, we provide such a decomposition principle, which we show can almost halve the complexity
+of proving secure refinement. Further, we demonstrate its applicability to secure compilation,
+by proving in Isabelle/HOL the preservation of value-dependent security by a proof-of-concept
+compiler from an imperative While language to a generic RISC-style assembly language, for programs
+with shared-memory concurrency mediated by locking primitives. Finally, we execute our compiler
+in Isabelle on a While language model of the Cross Domain Desktop Compositor, demonstrating to our
+knowledge the first use of a compiler verification result to carry an information-flow security
+property down to the assembly-level model of a non-trivial concurrent program. 

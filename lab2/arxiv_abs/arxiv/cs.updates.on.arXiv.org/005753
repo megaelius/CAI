@@ -1,0 +1,19 @@
+Experience shows that on today's high performance systems the utilization of different acceleration
+cards in conjunction with a high utilization of all other parts of the system is difficult. Future
+architectures, like exascale clusters, are expected to aggravate this issue as the number of cores
+are expected to increase and memory hierarchies are expected to become deeper. One big aspect for
+distributed applications is to guarantee high utilization of all available resources, including
+local or remote acceleration cards on a cluster while fully using all the available CPU resources
+and the integration of the GPU work into the overall programming model. For the integration of CUDA
+code we extended HPX, a general purpose C++ run time system for parallel and distributed applications
+of any scale, and enabled asynchronous data transfers from and to the GPU device and the asynchronous
+invocation of CUDA kernels on this data. Both operations are well integrated into the general programming
+model of HPX which allows to seamlessly overlap any GPU operation with work on the main cores. Any
+user defined CUDA kernel can be launched on any (local or remote) GPU device available to the distributed
+application. We present asynchronous implementations for the data transfers and kernel launches
+for CUDA code as part of a HPX asynchronous execution graph. Using this approach we can combine all
+remotely and locally available acceleration cards on a cluster to utilize its full performance
+capabilities. Overhead measurements show, that the integration of the asynchronous operations
+(data transfer + launches of the kernels) as part of the HPX execution graph imposes no additional
+computational overhead and significantly eases orchestrating coordinated and concurrent work
+on the main cores and the used GPU devices. 

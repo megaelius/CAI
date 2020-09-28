@@ -1,0 +1,19 @@
+The Square Kilometre Array (SKA), which will be the world's largest radio telescope, will enhance
+and boost a large number of science projects, including the search for pulsars. The frequency domain
+acceleration search is an efficient approach to search for binary pulsars. A significant part of
+it is the harmonic-summing module, which is the research subject of this paper. Most of the operations
+in the harmonic-summing module are relatively cheap operations for FPGAs. The main challenge is
+the large number of point accesses to off-chip memory which are not consecutive but irregular. Although
+harmonic-summing alone might not be targeted for FPGA acceleration, it is a part of the pulsar search
+pipeline that contains many other compute-intensive modules, which are efficiently executed
+on FPGA. Hence having the harmonic-summing also on the FPGA will avoid off-board communication,
+which could destroy other acceleration benefits. Two types of harmonic-summing approaches are
+investigated in this paper: 1) storing intermediate data in off-chip memory and 2) processing the
+input signals directly without storing. For the second type, two approaches of caching data are
+proposed and evaluated: 1) preloading points that are frequently touched 2) preloading all necessary
+points that are used to generate a chunk of output points. OpenCL is adopted to implement the proposed
+approaches. In an extensive experimental evaluation, the same OpenCL kernel codes are evaluated
+on FPGA boards and GPU cards. Regarding the proposed preloading methods, preloading all necessary
+points method while reordering the input signals is faster than all the other methods. While in raw
+performance a single FPGA board cannot compete with a GPU, in terms of energy dissipation, GPU costs
+up to 2.6x times more energy than that of FPGAs in executing the same NDRange kernels. 

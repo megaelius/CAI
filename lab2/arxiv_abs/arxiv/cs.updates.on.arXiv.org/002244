@@ -1,0 +1,17 @@
+Limited capture range and the requirement to provide high quality initialisation for optimisation-based
+2D/3D image registration methods can significantly degrade the performance of 3D image reconstruction
+and motion compensation pipelines. Challenging clinical imaging scenarios, which contain significant
+subject motion such as fetal in-utero imaging, complicate the 3D image and volume reconstruction
+process. In this paper we present a learning based image registration method capable of predicting
+3D rigid transformations of arbitrarily oriented 2D image slices, with respect to a learned canonical
+atlas co-ordinate system. Only image slice intensity information is used to perform registration
+and canonical alignment, no spatial transform initialisation is required. To find image transformations
+we utilise a Convolutional Neural Network (CNN) architecture to learn the regression function
+capable of mapping 2D image slices to a 3D canonical atlas space. We extensively evaluate the effectiveness
+of our approach quantitatively on simulated Magnetic Resonance Imaging (MRI), fetal brain imagery
+with synthetic motion and further demonstrate qualitative results on real fetal MRI data where
+our method is integrated into a full reconstruction and motion compensation pipeline. Our learning
+based registration achieves an average spatial prediction error of 7 mm on simulated data and produces
+qualitatively improved reconstructions for heavily moving fetuses with gestational ages of approximately
+20 weeks. Our model provides a general and computationally efficient solution to the 2D/3D registration
+initialisation problem and is suitable for real-time scenarios. 

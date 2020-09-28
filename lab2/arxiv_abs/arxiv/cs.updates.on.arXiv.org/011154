@@ -1,0 +1,19 @@
+All the state-of-the-art rowhammer attacks can break the MMU-enforced inter-domain isolation
+because the physical memory owned by each domain is adjacent to each other. To mitigate these attacks,
+physical domain isolation, introduced by CATT, physically separates each domain by dividing the
+physical memory into multiple partitions and keeping each partition occupied by only one domain.
+CATT implemented physical kernel isolation as the first generic and practical software-only defense
+to protect kernel from being rowhammered as kernel is one of the most appealing targets. In this paper,
+we develop a novel exploit that could effectively defeat the physical kernel isolation and gain
+both root and kernel privileges. Our exploit can work without exhausting the page cache or the system
+memory, or relying on the information of the virtual-to-physical address mapping. The exploit
+is motivated by our key observation that the modern OSes have double-owned kernel buffers (e.g.,
+video buffers and SCSI Generic buffers) owned concurrently by the kernel and user domains. The existence
+of such buffers invalidates the physical kernel isolation and makes the rowhammer-based attack
+possible again. Existing conspicuous rowhammer attacks achieving the root/kernel privilege
+escalation exhaust the page cache or even the whole system memory. Instead, we propose a new technique,
+named memory ambush. It is able to place the hammerable double-owned kernel buffers physically
+adjacent to the target objects (e.g., page tables) with only a small amount of memory. As a result,
+our exploit is stealthier and has fewer memory footprints. We also replace the inefficient rowhammer
+algorithm that blindly picks up addresses to hammer with an efficient one. Our algorithm selects
+suitable addresses based on an existing timing channel. 

@@ -1,0 +1,18 @@
+An evolution strategy (ES) variant recently attracted significant attention due to its surprisingly
+good performance at optimizing neural networks in challenging deep reinforcement learning domains.
+It searches directly in the parameter space of neural networks by generating perturbations to the
+current set of parameters, checking their performance, and moving in the direction of higher reward.
+The resemblance of this algorithm to a traditional finite-difference approximation of the reward
+gradient in parameter space naturally leads to the assumption that it is just that. However, this
+assumption is incorrect. The aim of this paper is to definitively demonstrate this point empirically.
+ES is a gradient approximator, but optimizes for a different gradient than just reward (especially
+when the magnitude of candidate perturbations is high). Instead, it optimizes for the average reward
+of the entire population, often also promoting parameters that are robust to perturbation. This
+difference can channel ES into significantly different areas of the search space than gradient
+descent in parameter space, and also consequently to networks with significantly different properties.
+This unique robustness-seeking property, and its consequences for optimization, are demonstrated
+in several domains. They include humanoid locomotion, where networks from policy gradient-based
+reinforcement learning are far less robust to parameter perturbation than ES-based policies that
+solve the same task. While the implications of such robustness and robustness-seeking remain open
+to further study, the main contribution of this work is to highlight that such differences indeed
+exist and deserve attention. 

@@ -1,0 +1,20 @@
+Recently, $\alpha$-Rank, a graph-based algorithm, has been proposed as a solution to ranking joint
+policy profiles in large scale multi-agent systems. $\alpha$-Rank claimed tractability through
+a polynomial time implementation with respect to the total number of pure strategy profiles. Here,
+we note that inputs to the algorithm were not clearly specified in the original presentation; as
+such, we deem complexity claims as not grounded, and conjecture solving $\alpha$-Rank is NP-hard.
+The authors of $\alpha$-Rank suggested that the input to $\alpha$-Rank can be an exponentially-sized
+payoff matrix; a claim promised to be clarified in subsequent manuscripts. Even though $\alpha$-Rank
+exhibits a polynomial-time solution with respect to such an input, we further reflect additional
+critical problems. We demonstrate that due to the need of constructing an exponentially large Markov
+chain, $\alpha$-Rank is infeasible beyond a small finite number of agents. We ground these claims
+by adopting amount of dollars spent as a non-refutable evaluation metric. Realising such scalability
+issue, we present a stochastic implementation of $\alpha$-Rank with a double oracle mechanism
+allowing for reductions in joint strategy spaces. Our method, $\alpha^\alpha$-Rank, does not
+need to save exponentially-large transition matrix, and can terminate early under required precision.
+Although theoretically our method exhibits similar worst-case complexity guarantees compared
+to $\alpha$-Rank, it allows us, for the first time, to practically conduct large-scale multi-agent
+evaluations. On $10^4 \times 10^4$ random matrices, we achieve $1000x$ speed reduction. Furthermore,
+we also show successful results on large joint strategy profiles with a maximum size in the order
+of $\mathcal{O}(2^{25})$ ($\approx 33$ million joint strategies) -- a setting not evaluable using
+$\alpha$-Rank with reasonable computational budget. 

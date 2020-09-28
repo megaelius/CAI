@@ -1,0 +1,19 @@
+This study solves the problem of accurate detection of internal faults and classification of transients
+in a 5-bus interconnected system for Phase Angle Regulators (PAR) and Power Transformers. The analysis
+prevents mal-operation of differential relays in case of transients other than faults which include
+magnetizing inrush, sympathetic inrush, external faults with CT saturation, capacitor switching,
+non-linear load switching, and ferroresonance. A gradient boosting classifier (GBC) is used to
+distinguish the internal faults from the transient disturbances based on 1.5 cycles of 3-phase
+differential currents registered by a change detector. After the detection of an internal fault,
+GBCs are used to locate the faulty unit (Power Transformer, PAR series, or exciting unit) and identify
+the type of fault. In case a transient disturbance is detected, another GBC classifies them into
+the six transient disturbances. Five most relevant frequency and time domain features obtained
+using Information Gain are used to train and test the classifiers. The proposed algorithm distinguishes
+the internal faults from the other transients with a balanced accuracy of 99.95%. The faulty transformer
+unit is located with a balanced accuracy of 99.5% and the different transient disturbances are identified
+with a balanced accuracy of 99.3%. Moreover, the reliability of the scheme is verified for different
+rating and connection of the transformers involved, CT saturation, and noise levels in the signals.
+These GBC classifiers can work together with a conventional differential relay and offer a supervisory
+control over its operation. PSCAD/EMTDC software is used for simulation of the transients and to
+develop the two and three-winding transformer models for creating the internal faults including
+inter-turn and inter-winding faults. 

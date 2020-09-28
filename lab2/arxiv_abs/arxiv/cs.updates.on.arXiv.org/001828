@@ -1,0 +1,18 @@
+Blockchain systems are designed to produce blocks at a constant average rate. The most popular systems
+currently employ a Proof of Work (PoW) algorithm as a means of creating these blocks. Bitcoin produces,
+on average, one block every 10 minutes. An unfortunate limitation of all deployed PoW blockchain
+systems is that the time between blocks has high variance. For example, 5% of the time, Bitcoin's
+inter-block time is at least 40 minutes. This variance impedes the consistent flow of validated
+transactions through the system. We propose an alternative process for PoW-based block discovery
+that results in an inter-block time with significantly lower variance. Our algorithm, called Bobtail,
+generalizes the current algorithm by comparing the mean of the k lowest order statistics to a target.
+We show that the variance of inter-block times decreases as k increases. If our approach were applied
+to Bitcoin, about 80% of blocks would be found within 7 to 12 minutes, and nearly every block would
+be found within 5 to 18 minutes; the average inter-block time would remain at 10 minutes. Further,
+we show that low-variance mining significantly thwarts doublespend and selfish mining attacks.
+For Bitcoin and Ethereum currently (k=1), an attacker with 40% of the mining power will succeed with
+30% probability when the merchant sets up an embargo of 8 blocks; however, when k>=20, the probability
+of success falls to less than 1%. Similarly, for Bitcoin and Ethereum currently, a selfish miner
+with 40% of the mining power will claim about 66% of blocks; however, when k>=5, the same miner will
+find that selfish mining is less successful than honest mining. The cost of our approach is a larger
+block header. 

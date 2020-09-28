@@ -1,0 +1,20 @@
+Use-After-Free vulnerabilities, allowing the attacker to access unintended memory via dangling
+pointers, are more threatening. However, most detection schemes can only detect dangling pointers
+and invalid them, but not provide a tolerance mechanism to repair the errors at runtime. Also, these
+techniques obtain and manage the metadata inefficiently with complex structures and too much scan
+(sweep). The goal of this paper is to use compiler instrumentation to eliminate dangling pointers
+automatically and efficiently. In this paper, we observe that most techniques lack accurate efficient
+pointer graph metadata maintaining methods, so they need to scan the log to reduce the redundancy
+and sweep the whole address space to find dangling pointers. Also, they lack a direct, efficiently
+obtaining metadata approach. The key insight of this paper is that a unique identifier can be used
+as a key to a hash or direct-map algorithm. Thus, this paper maintains the same implicit identifier
+with each memory object and its corresponding referent. Associating the unique ID with metadata
+for memory objects, obtaining and managing the pointer graph metadata can be efficiently. Therefore,
+with the delayed free technique adopted into C/C++, we present the DangKiller as a novel and lightweight
+dangling pointer elimination solution. We first demonstrate the MinFat Pointer, which can calculate
+unique implicit ID for each object and pointer quickly, and use hash algorithm to obtain metadata.
+Secondly, we propose the Log Cache and Log Compression mechanism based on the ID to decrease the redundancy
+of dangling pointer candidates. Coupled with the Address Tagging architecture on an ARM64 system,
+our experiments show that the DangKiller can eliminate use-after-free vulnerabilities at only
+11% and 3% runtime overheads for the SPEC CPU2006 and 2017 benchmarks respectively, except for unique
+cases. 

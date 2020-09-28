@@ -1,0 +1,18 @@
+We introduce the use of autoregressive normalizing flows for rapid likelihood-free inference
+of binary black hole system parameters from gravitational-wave data with deep neural networks.
+A normalizing flow is an invertible mapping on a sample space that can be used to induce a transformation
+from a simple probability distribution to a more complex one: if the simple distribution can be rapidly
+sampled and its density evaluated, then so can the complex distribution. Our first application
+to gravitational waves uses an autoregressive flow, conditioned on detector strain data, to map
+a multivariate standard normal distribution into the posterior distribution over system parameters.
+We train the model on artificial strain data consisting of IMRPhenomPv2 waveforms drawn from a five-parameter
+$(m_1, m_2, \phi_0, t_c, d_L)$ prior and stationary Gaussian noise realizations with a fixed power
+spectral density. This gives performance comparable to current best deep-learning approaches
+to gravitational-wave parameter estimation. We then build a more powerful latent variable model
+by incorporating autoregressive flows within the variational autoencoder framework. This model
+has performance comparable to Markov chain Monte Carlo and, in particular, successfully models
+the multimodal $\phi_0$ posterior. Finally, we train the autoregressive latent variable model
+on an expanded parameter space, including also aligned spins $(\chi_{1z}, \chi_{2z})$ and binary
+inclination $\theta_{JN}$, and show that all parameters and degeneracies are well-recovered.
+In all cases, sampling is extremely fast, requiring less than two seconds to draw $10^4$ posterior
+samples. 

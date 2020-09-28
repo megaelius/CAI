@@ -1,0 +1,17 @@
+The Moore-Lewis method of "intelligent selection of language model training data" is very effective,
+cheap, efficient... and also has structural problems. (1) The method defines relevance by playing
+language models trained on the in-domain and the out-of-domain (or data pool) corpora against each
+other. This powerful idea-- which we set out to preserve-- treats the two corpora as the opposing
+ends of a single spectrum. This lack of nuance does not allow for the two corpora to be very similar.
+In the extreme case where the come from the same distribution, all of the sentences have a Moore-Lewis
+score of zero, so there is no resulting ranking. (2) The selected sentences are not guaranteed to
+be able to model the in-domain data, nor to even cover the in-domain data. They are simply well-liked
+by the in-domain model; this is necessary, but not sufficient. (3) There is no way to tell what is the
+optimal number of sentences to select, short of picking various thresholds and building the systems.
+We present a greedy, lazy, approximate, and generally efficient information-theoretic method
+of accomplishing the same goal using only vocabulary counts. The method has the following properties:
+(1) Is responsive to the extent to which two corpora differ. (2) Quickly reaches near-optimal vocabulary
+coverage. (3) Takes into account what has already been selected. (4) Does not involve defining any
+kind of domain, nor any kind of classifier. (6) Knows approximately when to stop. This method can
+be used as an inherently-meaningful measure of similarity, as it measures the bits of information
+to be gained by adding one text to another. 

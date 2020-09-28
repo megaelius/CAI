@@ -1,0 +1,19 @@
+We develop a new family of variance reduced stochastic gradient descent methods for minimizing
+the average of a very large number of smooth functions. Our method --JacSketch-- is motivated by
+novel developments in randomized numerical linear algebra, and operates by maintaining a stochastic
+estimate of a Jacobian matrix composed of the gradients of individual functions. In each iteration,
+JacSketch efficiently updates the Jacobian matrix by first obtaining a random linear measurement
+of the true Jacobian through (cheap) sketching, and then projecting the previous estimate onto
+the solution space of a linear matrix equation whose solutions are consistent with the measurement.
+The Jacobian estimate is then used to compute a variance-reduced unbiased estimator of the gradient.
+Our strategy is analogous to the way quasi-Newton methods maintain an estimate of the Hessian, and
+hence our method can be seen as a stochastic quasi-gradient method. We prove that for smooth and strongly
+convex functions, JacSketch converges linearly with a meaningful rate dictated by a single convergence
+theorem which applies to general sketches. We also provide a refined convergence theorem which
+applies to a smaller class of sketches. This enables us to obtain sharper complexity results for
+variants of JacSketch with importance sampling. By specializing our general approach to specific
+sketching strategies, JacSketch reduces to the stochastic average gradient (SAGA) method, and
+several of its existing and many new minibatch, reduced memory, and importance sampling variants.
+Our rate for SAGA with importance sampling is the current best-known rate for this method, resolving
+a conjecture by Schmidt et al (2015). The rates we obtain for minibatch SAGA are also superior to existing
+rates. 

@@ -1,0 +1,19 @@
+Convolutional Neural Networks (CNN) have recently seen tremendous success in various computer
+vision tasks. However, their application to problems with high dimensional input and output has
+been limited by two factors. First, in the training stage, it is necessary to store network activations
+for back propagation. Second, in the inference stage, a few copies of the image are typically stored
+to be concatenated to other network states deeper in the network. In these settings, the memory requirements
+associated with storing activations can exceed what is feasible with current hardware. For the
+problem of image classification, reversible architectures have been proposed that allow one to
+recalculate activations in the backwards pass instead of storing them, however, such networks
+do not perform well for problems such as segmentation. Furthermore, currently only block reversible
+networks have been possible because pooling operations are not reversible. Motivated by the propagation
+of signals over physical networks, that are governed by the hyperbolic Telegraph equation, in this
+work we introduce a fully conservative hyperbolic network for problems with high dimensional input
+and output. We introduce a coarsening operation that allows completely reversible CNNs by using
+the Discrete Wavelet Transform and its inverse to both coarsen and interpolate the network state
+and change the number of channels. This means that during training we do not need to store the activations
+from the forward pass, and can train arbitrarily deep or wide networks. Furthermore, our network
+has a much lower memory footprint for inference. We show that we are able to achieve results comparable
+to the state of the art in image classification, depth estimation, and semantic segmentation, with
+a much lower memory footprint. 

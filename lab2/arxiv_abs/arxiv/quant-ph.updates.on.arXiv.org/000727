@@ -1,0 +1,17 @@
+The variational quantum eigensolver (VQE) is an attracting possible application of near-term
+quantum computers. Originally, the aim of the VQE is to find a ground state for a given specific Hamiltonian.
+It is achieved by minimizing the expectation value of the Hamiltonian with respect to an ansatz state
+by tuning parameters \(\bm{\theta}\) on a quantum circuit which constructs the ansatz. Here we
+consider an extended problem of the VQE, namely, our objective in this work is to "generalize" the
+optimized output of the VQE just like machine learning. We aim to find ground states for a given set
+of Hamiltonians \(\{H(\bm{x})\}\), where \(\bm{x}\) is a parameter which specifies the quantum
+system under consideration, such as geometries of atoms of a molecule. Our approach is to train the
+circuit on the small number of \(\bm{x}\)'s. Specifically, we employ the interpolation of the optimal
+circuit parameter determined at different \(\bm{x}\)'s, assuming that the circuit parameter
+\(\bm{\theta}\) has simple dependency on a hidden parameter \(\bm{x}\) as \(\bm{\theta}(\bm{x})\).
+We show by numerical simulations that, using an ansatz which we call the Hamiltonian-alternating
+ansatz, the optimal circuit parameters can be interpolated to give near-optimal ground states
+in between the trained \(\bm{x}\)'s. The proposed method can greatly reduce, on a rough estimation
+by a few orders of magnitude, the time required to obtain ground states for different Hamiltonians
+by the VQE. Once generalized, the ansatz circuit can predict the ground state without optimizing
+the circuit parameter \(\bm{\theta}\) in a certain range of \(\bm{x}\). 

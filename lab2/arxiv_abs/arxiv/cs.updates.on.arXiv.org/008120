@@ -1,0 +1,20 @@
+Popular Virtual Reality (VR) tools allow users to draw varying-width, ribbon-like 3D brush strokes
+by moving a hand-held controller in 3D space. Artists frequently use dense collections of such strokes
+to draw virtual 3D shapes. We propose SurfaceBrush, a surfacing method that converts such VR drawings
+into user-intended manifold free-form 3D surfaces, providing a novel approach for modeling 3D
+shapes. The inputs to our method consist of dense collections of artist-drawn stroke ribbons described
+by the positions and normals of their central polylines, and ribbon widths. These inputs are highly
+distinct from those handled by existing surfacing frameworks and exhibit different sparsity and
+error patterns, necessitating a novel surfacing approach. We surface the input stroke drawings
+by identifying and leveraging local coherence between nearby artist strokes. In particular, we
+observe that strokes intended to be adjacent on the artist imagined surface often have similar tangent
+directions along their respective polylines. We leverage this local stroke direction consistency
+by casting the computation of the user-intended manifold surface as a constrained matching problem
+on stroke polyline vertices and edges. We first detect and smoothly connect adjacent similarly-directed
+sequences of stroke edges producing one or more manifold partial surfaces. We then complete the
+surfacing process by identifying and connecting adjacent similarly directed edges along the borders
+of these partial surfaces. We confirm the usability of the SurfaceBrush interface and the validity
+of our drawing analysis via an observational study. We validate our stroke surfacing algorithm
+by demonstrating an array of manifold surfaces computed by our framework starting from a range of
+inputs of varying complexity, and by comparing our outputs to reconstructions computed using alternative
+means. 

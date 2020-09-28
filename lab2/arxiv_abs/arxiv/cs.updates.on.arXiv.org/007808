@@ -1,0 +1,20 @@
+Deep learning models have been used to support analytics beyond simple aggregation, where deeper
+and wider models have been shown to yield great results. These models consume a huge amount of memory
+and computational operations. However, most of the large-scale industrial applications are often
+computational budget constrained. Current solutions are mainly based on model compression --
+deploying a smaller model to save the computational resources. Meanwhile, the peak workload of
+inference service could be 10x higher than the average cases, with even unpredictable extreme cases.
+Lots of computational resources could be wasted during off-peak hours. On the other hand, the system
+may crash when the workload exceeds system design. Supporting such deep learning service with dynamic
+workload cost-efficiently remains to be a challenging problem. We address this conflict with a
+general and novel training scheme called model slicing, which enables deep learning models to provide
+predictions within prescribed computational resource budget dynamically. Model slicing could
+be viewed as an elastic computation solution without requiring more computation resources, but
+by slightly sacrificing prediction accuracy. In a nutshell, partially ordered relation is introduced
+to the basic components of each layer in the model, namely neurons in dense layers and channels in
+convolutional layers. Specifically, if one component participates in the forward pass, then all
+of its preceding components are also activated. Dynamically trained under such structural constraint,
+we can slice a narrower sub-model during inference whose run-time memory and computational operation
+consumption is roughly quadratic to the width controlled by a single parameter slice rate. Extensive
+experiments show that models trained with model slicing can support elastic inference cost effectively
+with minimum performance loss. 

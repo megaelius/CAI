@@ -1,0 +1,19 @@
+We develop an algorithm for the asymptotically fast evaluation of layer potentials close to and
+on the source geometry, combining Geometric Global Accelerated QBX (`GIGAQBX') and target-specific
+expansions. GIGAQBX is a fast high-order scheme for evaluation of layer potentials based on Quadrature
+by Expansion (`QBX') using local expansions formed by Fast Multipole Method (FMM) for accurate
+near or on-surface evaluation. Target-specific expansions serve to lower the cost of local expansion
+evaluation, reducing the computational effort from $O((p + 1)^2)$ to $O(p + 1)$ in three dimensions,
+without any accuracy loss compared with conventional expansions, but with the loss of source/target
+separation in the expansion coefficients. GIGAQBX is a `global' QBX scheme, meaning that the potential
+is mediated entirely through expansions for points close to or on the boundary. In our scheme, this
+single global expansion is decomposed into two parts that are evaluated separately: one incorporating
+near-field contributions using target-specific expansions, and one conventionally using spherical
+harmonic expansions of far-field contributions, noting that convergence guarantees only exist
+for the sum of the two sub-expansions. By contrast, target-specific expansions were originally
+introduced as an acceleration mechanism for the `local' QBX schemes, in which the far-field does
+not contribute to the QBX expansion. Compared with the unmodified GIGAQBX algorithm, we show through
+a reproducible, time-calibrated cost model that the combined scheme yields a considerable cost
+reduction for the near-field evaluation part of the computation. We support the effectiveness
+of our scheme through numerical results demonstrating performance improvements for Laplace and
+Helmholtz kernels. 

@@ -1,0 +1,17 @@
+The Domain Name System (DNS) infrastructure, a most critical system the Internet depends on, has
+recently been the target for different DDoS and other cyber-attacks, e.g., the notorious Mirai
+botnet. While these attacks can be destructive to both recursive and authoritative DNS servers,
+little is known about how recursive resolvers operate under such attacks (e.g., NXDomain, water-torture).
+In this paper, we point out a new vulnerability and show an attack, the NXNSAttack, that exploits
+the way DNS recursive resolvers operate when receiving NS referral response that contains name-servers
+but without their corresponding IP addresses (i.e., missing glue-records). We show that the number
+of DNS messages exchanged in a typical resolution process might be much higher in practice than what
+is expected in theory, mainly due to a proactive resolution of name-servers' IP addresses. We show
+how this inefficiency becomes a bottleneck and might be used to mount a devastating attack against
+either or both, recursive resolvers and authoritative servers. The NXNSAttack is more effective
+than the NXDomain attack: i) It reaches an amplification factor of more than 1620x on the number of
+packets exchanged by the recursive resolver. ii) Besides the negative cache, the attack also saturates
+the `NS' resolver caches. In an attempt to mitigate the attack impact, we propose enhancements to
+the recursive resolvers algorithm to prevent unnecessary proactive fetches. Finally, we implement
+our Max1Fetch enhancement on the BIND resolver and show that Max1Fetch does not degrade the recursive
+resolvers performance, throughput and latency, by testing it on real-world traffic data-sets.

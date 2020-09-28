@@ -1,0 +1,20 @@
+Most modern learning problems are highly overparameterized, meaning that there are many more parameters
+than the number of training data points, and as a result, the training loss may have infinitely many
+global minima (parameter vectors that perfectly interpolate the training data). Therefore, it
+is important to understand which interpolating solutions we converge to, how they depend on the
+initialization point and the learning algorithm, and whether they lead to different generalization
+performances. In this paper, we study these questions for the family of stochastic mirror descent
+(SMD) algorithms, of which the popular stochastic gradient descent (SGD) is a special case. Our
+contributions are both theoretical and experimental. On the theory side, we show that in the overparameterized
+nonlinear setting, if the initialization is close enough to the manifold of global minima (something
+that comes for free in the highly overparameterized case), SMD with sufficiently small step size
+converges to a global minimum that is approximately the closest one in Bregman divergence. On the
+experimental side, our extensive experiments on standard datasets and models, using various initializations,
+various mirror descents, and various Bregman divergences, consistently confirms that this phenomenon
+happens in deep learning. Our experiments further indicate that there is a clear difference in the
+generalization performance of the solutions obtained by different SMD algorithms. Experimenting
+on a standard image dataset and network architecture with SMD with different kinds of implicit regularization,
+$\ell_1$ to encourage sparsity, $\ell_2$ yielding SGD, and $\ell_{10}$ to discourage large components
+in the parameter vector, consistently and definitively shows that $\ell_{10}$-SMD has better
+generalization performance than SGD, which in turn has better generalization performance than
+$\ell_1$-SMD. 

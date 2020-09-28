@@ -1,0 +1,20 @@
+SSDs are emerging storage devices which unlike HDDs, do not have mechanical parts and therefore,
+have superior performance compared to HDDs. Due to the high cost of SSDs, entirely replacing HDDs
+with SSDs is not economically justified. Additionally, SSDs can endure a limited number of writes
+before failing. To mitigate the shortcomings of SSDs while taking advantage of their high performance,
+SSD caching is practiced in both academia and industry. Previously proposed caching architectures
+have only focused on either performance or endurance and neglected to address both parameters in
+suggested architectures. Moreover, the cost, reliability, and power consumption of such architectures
+is not evaluated. This paper proposes a hybrid I/O caching architecture that while offers higher
+performance than previous studies, it also improves power consumption with a similar budget. The
+proposed architecture uses DRAM, Read-Optimized SSD, and Write-Optimized SSD in a three-level
+cache hierarchy and tries to efficiently redirect read requests to either DRAM or RO-SSD while sending
+writes to WO-SSD. To provide high reliability, dirty pages are written to at least two devices which
+removes any single point of failure. The power consumption is also managed by reducing the number
+of accesses issued to SSDs. The proposed architecture reconfigures itself between performance-
+and endurance-optimized policies based on the workload characteristics to maintain an effective
+tradeoff between performance and endurance. We have implemented the proposed architecture on
+a server equipped with industrial SSDs and HDDs. The experimental results show that as compared
+to state-of-the-art studies, the proposed architecture improves performance and power consumption
+by an average of 8% and 28%, respectively, and reduces the cost by 5% while increasing the endurance
+cost by 4.7% and negligible reliability penalty. 

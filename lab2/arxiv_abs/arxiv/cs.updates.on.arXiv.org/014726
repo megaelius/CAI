@@ -1,0 +1,20 @@
+Extensive-form games (EFGs) model finite sequential interactions between players. The amount
+of memory required to represent these games is the main bottleneck of algorithms for computing optimal
+strategies and the size of these strategies is often impractical for real-world applications.
+A common approach to tackle the memory bottleneck is to use information abstraction that removes
+parts of information available to players thus reducing the number of decision points in the game.
+However, existing information-abstraction techniques are either specific for a particular domain,
+they do not provide any quality guarantees, or they are applicable to very small subclasses of EFGs.
+We present domain-independent abstraction methods for creating imperfect recall abstractions
+in extensive-form games that allow computing strategies that are (near) optimal in the original
+game. To this end, we introduce two novel algorithms, FPIRA and CFR+IRA, based on fictitious play
+and counterfactual regret minimization. These algorithms can start with an arbitrary domain specific,
+or the coarsest possible, abstraction of the original game. The algorithms iteratively detect
+the missing information they require for computing a strategy for the abstract game that is (near)
+optimal in the original game. This information is then included back into the abstract game. Moreover,
+our algorithms are able to exploit imperfect-recall abstractions that allow players to forget
+even history of their own actions. However, the algorithms require traversing the complete unabstracted
+game tree. We experimentally show that our algorithms can closely approximate Nash equilibrium
+of large games using abstraction with as little as 0.9% of information sets of the original game.
+Moreover, the results suggest that memory savings increase with the increasing size of the original
+games. 

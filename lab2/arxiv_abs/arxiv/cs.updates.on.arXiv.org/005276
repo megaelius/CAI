@@ -1,0 +1,19 @@
+Simultaneous segmentation of multiple organs from different medical imaging modalities is a crucial
+task as it can be utilized for computer-aided diagnosis, computer-assisted surgery, and therapy
+planning. Thanks to the recent advances in deep learning, several deep neural networks for medical
+image segmentation have been introduced successfully for this purpose. In this paper, we focus
+on learning a deep multi-organ segmentation network that labels voxels. In particular, we examine
+the critical choice of a loss function in order to handle the notorious imbalance problem that plagues
+both the input and output of a learning model. The input imbalance refers to the class-imbalance
+in the input training samples (i.e., small foreground objects embedded in an abundance of background
+voxels, as well as organs of varying sizes). The output imbalance refers to the imbalance between
+the false positives and false negatives of the inference model. In order to tackle both types of imbalance
+during training and inference, we introduce a new curriculum learning based loss function. Specifically,
+we leverage Dice similarity coefficient to deter model parameters from being held at bad local minima
+and at the same time gradually learn better model parameters by penalizing for false positives/negatives
+using a cross entropy term. We evaluated the proposed loss function on three datasets: whole body
+positron emission tomography (PET) scans with 5 target organs, magnetic resonance imaging (MRI)
+prostate scans, and ultrasound echocardigraphy images with a single target organ i.e., left ventricular.
+We show that a simple network architecture with the proposed integrative loss function can outperform
+state-of-the-art methods and results of the competing methods can be improved when our proposed
+loss is used. 

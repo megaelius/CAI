@@ -1,0 +1,19 @@
+We investigate learning algorithms that use similarity queries to approximately solve correlation
+clustering problems. The input consists of $n$ objects; each pair of objects has a hidden binary
+similarity score that we can learn through a query. The goal is to use as few queries as possible to
+partition the objects into clusters so to achieve the optimal number OPT of disagreements with the
+scores. Our first set of contributions is algorithmic: we introduce ACC, a simple query-aware variant
+of an existing algorithm (KwikCluster, with expected error 3OPT but a vacuous $\mathcal{O}(n^2)$
+worst-case bound on the number of queries) for which we prove several desirable properties. First,
+ACC has expected error 3OPT$ + \mathcal{O}(n^3/Q)$ when using $Q < \binom{n}{2}$ queries, and recovers
+KwikCluster's bound of 3OPT for $Q=\binom{n}{2}$. Second, ACC accurately recovers every adversarially
+perturbed latent cluster $C$. Under stronger conditions on $C$, ACC can even be used to recover exactly
+all clusters with high probability. Third, we show an efficient variant, \aggress, with the same
+expected error as ACC but using significantly less queries on some graphs. We empirically test our
+algorithms on real-world and synthetic datasets. Our second set of contributions is a nearly complete
+information-theoretic characterization of the query vs.\ error trade-off. First, using VC theory,
+for all $Q = \Omega(n)$ we prove the existence of algorithms with expected error at most OPT$+ n^{5/2}/\sqrt{Q}$,
+and at most $\widetilde{\mathcal{O}}\big(n^3/Q\big)$ if OPT=0. We then show that any randomized
+algorithm, when using at most $Q$ queries, must output a clustering with expected cost OPT$+ \Omega\big(n^3/Q\big)$,
+which matches the upper bound for $Q=\Theta(n)$. For the special case of OPT=0 we prove a weaker lower
+bound of $\Omega\big(n^2/\sqrt{Q}\big)$. 

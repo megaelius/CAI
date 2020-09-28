@@ -1,0 +1,18 @@
+Time series classification (TSC) is the area of machine learning interested in learning how to assign
+labels to time series. The last few decades of work in this area have led to significant progress in
+the accuracy of classifiers, with the state of the art now represented by the HIVE-COTE algorithm.
+While extremely accurate, HIVE-COTE is infeasible to use in many applications because of its very
+high training time complexity in O(N^2*T^4) for a dataset with N time series of length T. For example,
+it takes HIVE-COTE more than 72,000s to learn from a small dataset with N=700 time series of short
+length T=46. Deep learning, on the other hand, has now received enormous attention because of its
+high scalability and state-of-the-art accuracy in computer vision and natural language processing
+tasks. Deep learning for TSC has only very recently started to be explored, with the first few architectures
+developed over the last 3 years only. The accuracy of deep learning for TSC has been raised to a competitive
+level, but has not quite reached the level of HIVE-COTE. This is what this paper achieves: outperforming
+HIVE-COTE's accuracy together with scalability. We take an important step towards finding the
+AlexNet network for TSC by presenting InceptionTime---an ensemble of deep Convolutional Neural
+Network (CNN) models, inspired by the Inception-v4 architecture. Our experiments show that InceptionTime
+slightly outperforms HIVE-COTE with a win/draw/loss on the UCR archive of 40/6/39. Not only is InceptionTime
+more accurate, but it is much faster: InceptionTime learns from that same dataset with 700 time series
+in 2,300s but can also learn from a dataset with 8M time series in 13 hours, a quantity of data that is
+fully out of reach of HIVE-COTE. 

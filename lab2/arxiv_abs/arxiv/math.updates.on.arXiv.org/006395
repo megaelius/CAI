@@ -1,0 +1,19 @@
+We revisit Matrix Balancing, a pre-conditioning task used ubiquitously for computing eigenvalues
+and matrix exponentials. Since 1960, Osborne's algorithm has been the practitioners' algorithm
+of choice, and is now implemented in most numerical software packages. However, the theoretical
+properties of Osborne's algorithm are not well understood. Here, we show that a simple random variant
+of Osborne's algorithm converges in near-linear time in the input sparsity. Specifically, it balances
+$K\in\mathbb{R}_{\geq 0}^{n\times n}$ after $O(m\epsilon^{-2}\log\kappa)$ arithmetic operations,
+where $m$ is the number of nonzeros in $K$, $\epsilon$ is the $\ell_1$ accuracy, and $\kappa=\sum_{ij}K_{ij}/(\min_{ij:K_{ij}\neq
+0}K_{ij})$ measures the conditioning of $K$. Previous work had established near-linear runtimes
+either only for $\ell_2$ accuracy (a weaker criterion which is less relevant for applications),
+or through an entirely different algorithm based on (currently) impractical Laplacian solvers.
+We further show that if the graph with adjacency matrix $K$ is moderately connected--e.g., if $K$
+has at least one positive row/column pair--then Osborne's algorithm initially converges exponentially
+fast, yielding an improved runtime $O(m\epsilon^{-1}\log\kappa)$. We also address numerical
+precision issues by showing that these runtime bounds still hold when using $O(\log(n\kappa/\epsilon))$-bit
+numbers. Our results are established through a potential argument that leverages a convex optimization
+perspective of Osborne's algorithm, and relates the per-iteration progress to the current imbalance
+as measured in Hellinger distance. Unlike previous analyses, we critically exploit log-convexity
+of the potential. Our analysis extends to other variants of Osborne's algorithm: along the way,
+we establish significantly improved runtime bounds for cyclic, greedy, and parallelized variants.

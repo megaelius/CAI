@@ -1,0 +1,20 @@
+One of the most computationally challenging problems expected for the High-Luminosity Large Hadron
+Collider (HL-LHC) is finding and fitting particle tracks during event reconstruction. Algorithms
+used at the LHC today rely on Kalman filtering, which builds physical trajectories incrementally
+while incorporating material effects and error estimation. Recognizing the need for faster computational
+throughput, we have adapted Kalman-filter-based methods for highly parallel, many-core SIMD
+and SIMT architectures that are now prevalent in high-performance hardware. Previously we observed
+significant parallel speedups, with physics performance comparable to CMS standard tracking,
+on Intel Xeon, Intel Xeon Phi, and (to a limited extent) NVIDIA GPUs. While early tests were based
+on artificial events occurring inside an idealized barrel detector, we showed subsequently that
+our mkFit software builds tracks successfully from complex simulated events (including detector
+pileup) occurring inside a geometrically accurate representation of the CMS-2017 tracker. Here,
+we report on advances in both the computational and physics performance of mkFit, as well as progress
+toward integration with CMS production software. Recently we have improved the overall efficiency
+of the algorithm by preserving short track candidates at a relatively early stage rather than attempting
+to extend them over many layers. Moreover, mkFit formerly produced an excess of duplicate tracks;
+these are now explicitly removed in an additional processing step. We demonstrate that with these
+enhancements, mkFit becomes a suitable choice for the first iteration of CMS tracking, and eventually
+for later iterations as well. We plan to test this capability in the CMS High Level Trigger during
+Run 3 of the LHC, with an ultimate goal of using it in both the CMS HLT and offline reconstruction for
+the HL-LHC CMS tracker. 

@@ -1,0 +1,18 @@
+Convection is an important physical process in astrophysics well-studied using numerical simulations
+under the Boussinesq and/or anelastic approximations. However these approaches reach their limits
+when compressible effects are important in the high Mach flow regime, e.g. in stellar atmospheres
+or in the presence of accretion shocks. In order to tackle these issues, we propose a new high performance
+and portable code, called "ARK" with a numerical solver well-suited for the stratified compressible
+Navier-Stokes equations. We take a finite volume approach with machine precision conservation
+of mass, transverse momentum and total energy. Based on previous works in applied mathematics we
+propose the use of a low Mach correction to achieve a good precision in both low and high Mach regimes.
+The gravity source term is discretized using a well-balanced scheme in order to reach machine precision
+hydrostatic balance. This new solver is implemented using the Kokkos library in order to achieve
+high performance computing and portability across different architectures (e.g. multi-core,
+many-core, and GP-GPU). We show that the low-Mach correction allows to reach the low-Mach regime
+with a much better accuracy than a standard Godunov-type approach. The combined well-balanced
+property and the low-Mach correction allowed us to trigger Rayleigh-B\'enard convective modes
+close to the critical Rayleigh number. Furthermore we present 3D turbulent Rayleigh-B\'enard
+convection with low diffusion using the low-Mach correction leading to a higher kinetic energy
+power spectrum. These results are very promising for future studies of high Mach and highly stratified
+convective problems in astrophysics. 

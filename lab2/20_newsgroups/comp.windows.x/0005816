@@ -1,0 +1,7 @@
+Hey guys!
+I run twm and would like to execute some program before leaving twm. In other
+words I would like to run some program before I do f.quit. Is it possible
+to make a menu section which would contain these two parts?
+Thanks in advance,
+	Serge
+	serge@gluttony.astro.unc.edu

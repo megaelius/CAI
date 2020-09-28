@@ -1,0 +1,20 @@
+Bayesian inverse reinforcement learning (IRL) methods are ideal for safe imitation learning,
+as they allow a learning agent to reason about reward uncertainty and the safety of a learned policy.
+However, Bayesian IRL is computationally intractable for high-dimensional problems because
+each sample from the posterior requires solving an entire Markov Decision Process (MDP). While
+there exist non-Bayesian deep IRL methods, these methods typically infer point estimates of reward
+functions, precluding rigorous safety and uncertainty analysis. We propose Bayesian Reward Extrapolation
+(B-REX), a highly efficient, preference-based Bayesian reward learning algorithm that scales
+to high-dimensional, visual control tasks. Our approach uses successor feature representations
+and preferences over demonstrations to efficiently generate samples from the posterior distribution
+over the demonstrator's reward function without requiring an MDP solver. Using samples from the
+posterior, we demonstrate how to calculate high-confidence bounds on policy performance in the
+imitation learning setting, in which the ground-truth reward function is unknown. We evaluate
+our proposed approach on the task of learning to play Atari games via imitation learning from pixel
+inputs, with no access to the game score. We demonstrate that B-REX learns imitation policies that
+are competitive with a state-of-the-art deep imitation learning method that only learns a point
+estimate of the reward function. Furthermore, we demonstrate that samples from the posterior generated
+via B-REX can be used to compute high-confidence performance bounds for a variety of evaluation
+policies. We show that high-confidence performance bounds are useful for accurately ranking different
+evaluation policies when the reward function is unknown. We also demonstrate that high-confidence
+performance bounds may be useful for detecting reward hacking. 

@@ -1,0 +1,18 @@
+The recent rising popularity of ultra-fast delivery services on retail platforms fuels the increasing
+use of urban warehouses, whose proximity to customers makes fast deliveries viable. The space limit
+in urban warehouses poses a problem for the online retailers: the number of products (SKUs) they
+carry is no longer "the more, the better", yet it can still be significantly large, reaching hundreds
+or thousands in a product category. In this paper, we study algorithms for dynamically identifying
+a large number of products (i.e., SKUs) with top customer purchase probabilities on the fly, from
+an ocean of potential products to offer on retailers' ultra-fast delivery platforms. We distill
+the product selection problem into a semi-bandit model with linear generalization. There are in
+total $N$ different arms, each with a feature vector of dimension $d$. The player pulls $K$ arms in
+each period and observes the bandit feedback from each of the pulled arms. We focus on the setting
+where $K$ is much greater than the number of total time periods $T$ or the dimension of product features
+$d$. We first analyze a standard UCB algorithm and show its regret bound can be expressed as the sum
+of a $T$-independent part $\tilde O(K d^{3/2})$ and a $T$-dependent part $\tilde O(d\sqrt{KT})$,
+which we refer to as "fixed cost" and "variable cost" respectively. To reduce the fixed cost for large
+$K$ values, we propose a novel online learning algorithm, with more conservative exploration steps,
+and show its fixed cost is reduced by a factor of $d$ to $\tilde O(K \sqrt{d})$. Moreover, we test the
+algorithms on an industrial dataset from Alibaba Group. Experimental results show that our new
+algorithm reduces the total regret of the standard UCB algorithm by at least 10%. 

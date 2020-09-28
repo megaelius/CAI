@@ -1,0 +1,12 @@
+Hello,
+does somebody know the functions  XtShellStrings and XtStrings?
+I haven't found them in any librarys not Xm, Xt, nor X11, and I need
+them to install a tool.
+Any hints greatly appreciated! Please reply via e-mail.
+Thanks in advance!
+christian wilk			 I've seen things you people wouldn't believe.
+technical university of munich	 Attack ships on fire off the shoulder of Orion.
+munich, germany			 I watched C-beams glitter in the dark near the
+				 Tannhauser gate. All those moments will be lost
+wilk@informatik.tu-muenchen.de   in time - like tears in rain. Time to die.
+								-- Roy Batty

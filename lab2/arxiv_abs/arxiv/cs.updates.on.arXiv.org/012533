@@ -1,0 +1,20 @@
+In the matroid secretary problem, the elements of a matroid $\mathcal{M}$ arrive in random order.
+Once we observe an item we need to irrevocably decide whether or not to accept it. The set of selected
+elements should form an independent set of the matroid. The goal is to maximize the total sum of the
+values assigned to these elements. We introduce a version of this problem motivated by the shortlist
+model in [Agrawal et al.]. In this setting, the algorithm is allowed to choose a subset of items as
+part of a shortlist, possibly more than $k=rk(\mathcal{M})$ items. Then, after seeing the entire
+input, the algorithm can choose an independent subset from the shortlist. Furthermore we generalize
+the objective function to any monotone submodular function. Is there an online algorithm achieve
+a constant competitive ratio using a shortlist of size $O(k)$? We design an algorithm that achieves
+a $\frac{1}{2}(1-1/e^2-\epsilon-O(1/k))$ competitive ratio for any constant $\epsilon>0$,
+using a shortlist of size $O(k)$. This is especially surprising considering that the best known
+competitive ratio for the matroid secretary problem is $O(\log \log k)$. An important application
+of our algorithm is for the random order streaming of submodular functions. We show that our algorithm
+can be implemented in the streaming setting using $O(k)$ memory. It achieves a $\frac{1}{2}(1-1/e^2-\epsilon-O(1/k))$
+approximation. The previously best known approximation ratio for streaming submodular maximization
+under matroid constraint is 0.25 (adversarial order) due to [Feldman et al.], [Chekuri et al.],
+and [Chakrabarti et al.]. Moreover, we generalize our results to the case of p-matchoid constraints
+and give a $\frac{1}{p+1}(1-1/e^{p+1}-\epsilon-O(1/k))$ approximation using $O(k)$ memory,
+which asymptotically approaches the best known offline guarantee $\frac{1}{p+1}$ [Nemhauser
+et al.] 

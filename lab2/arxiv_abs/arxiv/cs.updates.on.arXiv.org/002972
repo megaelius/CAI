@@ -1,0 +1,18 @@
+The unsupervised image-to-image translation aims at finding a mapping between the source ($A$)
+and target ($B$) image domains, where in many applications aligned image pairs are not available
+at training. This is an ill-posed learning problem since it requires inferring the joint probability
+distribution from marginals. Joint learning of coupled mappings $F_{AB}: A \rightarrow B$ and
+$F_{BA}: B \rightarrow A$ is commonly used by the state-of-the-art methods, like CycleGAN [Zhu
+et al., 2017], to learn this translation by introducing cycle consistency requirement to the learning
+problem, i.e. $F_{AB}(F_{BA}(B)) \approx B$ and $F_{BA}(F_{AB}(A)) \approx A$. Cycle consistency
+enforces the preservation of the mutual information between input and translated images. However,
+it does not explicitly enforce $F_{BA}$ to be an inverse operation to $F_{AB}$. We propose a new deep
+architecture that we call invertible autoencoder (InvAuto) to explicitly enforce this relation.
+This is done by forcing an encoder to be an inverted version of the decoder, where corresponding layers
+perform opposite mappings and share parameters. The mappings are constrained to be orthonormal.
+The resulting architecture leads to the reduction of the number of trainable parameters (up to $2$
+times). We present image translation results on benchmark data sets and demonstrate state-of-the
+art performance of our approach. Finally, we test the proposed domain adaptation method on the task
+of road video conversion. We demonstrate that the videos converted with InvAuto have high quality
+and show that the NVIDIA neural-network-based end-to-end learning system for autonomous driving,
+known as PilotNet, trained on real road videos performs well when tested on the converted ones. 

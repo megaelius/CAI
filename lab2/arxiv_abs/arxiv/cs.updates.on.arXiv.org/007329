@@ -1,0 +1,20 @@
+Given parameters $\alpha\geq 1,\beta\geq 0$, a subgraph $G'=(V,H)$ of an $n$-vertex unweighted
+undirected graph $G=(V,E)$ is called an $(\alpha,\beta)$-spanner if for every pair $u,v\in V$
+of vertices, $d_{G'}(u,v)\leq \alpha d_{G}(u,v)+\beta$. If $\beta=0$ the spanner is called a
+multiplicative $\alpha$-spanner, and if $\alpha = 1+\epsilon$, for an arbitrarily small $\epsilon>0$,
+the spanner is said to be a near-additive one. Graph spanners are a fundamental and extremely well-studied
+combinatorial construct, with a multitude of applications in distributed computing and in other
+areas. Near-additive spanners, introduced in [EP01], preserve large distances much more faithfully
+than multiplicative spanners. Also, recent lower bounds [AB15] ruled out the existence of arbitrarily
+sparse purely additive spanners (i.e., spanners with $\alpha=1$), and therefore near-additive
+spanners provide the best approximation of distances that one can hope for. Numerous distributed
+algorithms for constructing sparse near-additive spanners exist. In particular, there are now
+known efficient randomized algorithms in the CONGEST model that construct such spanners [EN17],
+and also there are efficient deterministic algorithms in the LOCAL model [DGPV09]. The only known
+deterministic CONGEST-model algorithm for the problem [Elk01] requires superlinear time in $n$.
+We remedy the situation and devise an efficient deterministic CONGEST-model algorithm for constructing
+arbitrarily sparse near-additive spanners. The running time of our algorithm is low polynomial,
+i.e., roughly $O(\beta \cdot n^\rho)$, where $\rho > 0$ is an arbitrarily small positive constant
+that affects the additive term $\beta$. In general, the parameters of our algorithm and of the resulting
+spanner are at the same ballpark as the respective parameters of the state-of-the-art randomized
+algorithm for the problem due to [EN17]. 

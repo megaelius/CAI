@@ -1,0 +1,20 @@
+When handling large datasets that exceed the capacity of the main memory, movement of data between
+main memory and external memory (disk), rather than actual (CPU) computation time, is often the
+bottleneck in the computation. Since data is moved between disk and main memory in large contiguous
+blocks, this has led to the development of a large number of I/O-efficient algorithms that minimize
+the number of such block movements. TPIE is one of two major libraries that have been developed to
+support I/O-efficient algorithm implementations. TPIE provides an interface where list stream
+processing and sorting can be implemented in a simple and modular way without having to worry about
+memory management or block movement. However, if care is not taken, such streaming-based implementations
+can lead to practically inefficient algorithms since lists of data items are typically written
+to (and read from) disk between components. In this paper we present a major extension of the TPIE
+library that includes a pipelining framework that allows for practically efficient streaming-based
+implementations while minimizing I/O-overhead between streaming components. The framework
+pipelines streaming components to avoid I/Os between components, that is, it processes several
+components simultaneously while passing output from one component directly to the input of the
+next component in main memory. TPIE automatically determines which components to pipeline and
+performs the required main memory management, and the extension also includes support for parallelization
+of internal memory computation and progress tracking across an entire application. The extended
+library has already been used to evaluate I/O-efficient algorithms in the research literature
+and is heavily used in I/O-efficient commercial terrain processing applications by the Danish
+startup SCALGO. 

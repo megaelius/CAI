@@ -1,0 +1,20 @@
+Scientific applications in HPC environment are more com-plex and more data-intensive nowadays.
+Scientists usually rely on workflow system to manage the complexity: simply define multiple processing
+steps into a single script and let the work-flow systems compile it and schedule all tasks accordingly.
+Numerous workflow systems have been proposed and widely used, like Galaxy, Pegasus, Taverna, Kepler,
+Swift, AWE, etc., to name a few examples. Traditionally, scientific workflow systems work with
+parallel file systems, like Lustre, PVFS, Ceph, or other forms of remote shared storage systems.
+As such, the data (including the intermediate data generated during workflow execution) need to
+be transferred back and forth between compute nodes and storage systems, which introduces a significant
+performance bottleneck on I/O operations. Along with the enlarging perfor-mance gap between CPU
+and storage devices, this bottleneck is expected to be worse. Recently, we have introduced a new
+concept of Compute-on-Data-Path to allow tasks and data binding to be more efficient to reduce the
+data movement cost. To workflow systems, the key is to exploit the data locality in HPC storage hierarchy:
+if the datasets are stored in compute nodes, near the workflow tasks, then the task can directly access
+them with better performance with less network usage. Several recent studies have been done regarding
+building such a shared storage system, utilizing compute node resources, to serve HPC workflows
+with locality, such as Hercules [1] and WOSS [2] etc. In this research, we further argue that providing
+a compute-node side storage system is not sufficient to fully exploit data locality. A cross-layer
+solution combining storage system, compiler, and runtime is necessary. We take Swift/T [3], a workflow
+system for data-intensive applications, as a prototype platform to demonstrate such a cross-layer
+solution 

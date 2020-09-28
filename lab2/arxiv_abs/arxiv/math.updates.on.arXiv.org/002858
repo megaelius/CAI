@@ -1,0 +1,19 @@
+In this paper, we consider the mixture of sparse linear regressions model. Let ${\beta}^{(1)},\ldots,{\beta}^{(L)}\in\mathbb{C}^n$
+be $ L $ unknown sparse parameter vectors with a total of $ K $ non-zero coefficients. Noisy linear
+measurements are obtained in the form $y_i={x}_i^H {\beta}^{(\ell_i)} + w_i$, each of which is
+generated randomly from one of the sparse vectors with the label $ \ell_i $ unknown. The goal is to
+estimate the parameter vectors efficiently with low sample and computational costs. This problem
+presents significant challenges as one needs to simultaneously solve the demixing problem of recovering
+the labels $ \ell_i $ as well as the estimation problem of recovering the sparse vectors $ {\beta}^{(\ell)}
+$. Our solution to the problem leverages the connection between modern coding theory and statistical
+inference. We introduce a new algorithm, Mixed-Coloring, which samples the mixture strategically
+using query vectors $ {x}_i $ constructed based on ideas from sparse graph codes. Our novel code design
+allows for both efficient demixing and parameter estimation. In the noiseless setting, for a constant
+number of sparse parameter vectors, our algorithm achieves the order-optimal sample and time complexities
+of $\Theta(K)$. In the presence of Gaussian noise, for the problem with two parameter vectors (i.e.,
+$L=2$), we show that the Robust Mixed-Coloring algorithm achieves near-optimal $\Theta(K polylog(n))$
+sample and time complexities. When $K=O(n^{\alpha})$ for some constant $\alpha\in(0,1)$ (i.e.,
+$K$ is sublinear in $n$), we can achieve sample and time complexities both sublinear in the ambient
+dimension. In one of our experiments, to recover a mixture of two regressions with dimension $n=500$
+and sparsity $K=50$, our algorithm is more than $300$ times faster than EM algorithm, with about
+one third of its sample cost. 

@@ -1,0 +1,17 @@
+The X-ray transform models a forward projection operator of image formation, which has been widely
+used for tomographic image reconstruction. We propose a new algorithm to compute that transform
+of an image represented by unit (pixel/voxel) basis functions, for various two-dimensional (2D)/three-dimensional
+(3D) scanning geometries, such as 2D/3D parallel beam, 2D fan beam, 3D circular/helical cone beam,
+etc. Since the transform is acting as a line integral, the fundamental task is to calculate this integral
+of the unit basis functions, which is equivalently the intersection length of the ray with the associated
+unit. For a given ray, using the support of unit basis function, we derive the sufficient and necessary
+condition of non-vanishing intersectability, and obtain the analytic formula for the intersection
+length, which can be used to distinguish the units that produce valid intersections with the given
+ray, and then perform simple calculations only for those units. The algorithm is easy to be implemented,
+and the computational cost is optimal. Moreover, we discuss the intrinsic ambiguities of the problem
+itself that perhaps happen, and present a solution. The algorithm not only possesses the adaptability
+with regard to the center position, scale and size of the image, and the scanning geometry as well,
+but also is quite suited to parallelize with optimality. The resulting projection matrix can be
+sparsely stored and output if needed, and the adjoint of X-ray transform can be also computed by the
+algorithm. Finally, we validate the correctness of the algorithm by the aforementioned scanning
+geometries. 

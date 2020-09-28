@@ -1,0 +1,19 @@
+This paper presents a deep-learning-based method for iris presentation attack detection (PAD)
+when iris images are obtained from deceased people. Our approach is based on the VGG-16 architecture
+fine-tuned with a database of 574 post-mortem, near-infrared iris images from the Warsaw-BioBase-PostMortem-Iris-v1
+database, complemented by a dataset of 256 images of live irises, collected within the scope of this
+study. Experiments described in this paper show that our approach is able to correctly classify
+iris images as either representing a live or a dead eye in almost 99% of the trials, averaged over 20
+subject-disjoint, train/test splits. We also show that the post-mortem iris detection accuracy
+increases as time since death elapses, and that we are able to construct a classification system
+with APCER=0%@BPCER=1% (Attack Presentation and Bona Fide Presentation Classification Error
+Rates, respectively) when only post-mortem samples collected at least 16 hours post-mortem are
+considered. Since acquisitions of ante- and post-mortem samples differ significantly, we applied
+countermeasures to minimize bias in our classification methodology caused by image properties
+that are not related to the PAD. This included using the same iris sensor in collection of ante- and
+post-mortem samples, and analysis of class activation maps to ensure that discriminant iris regions
+utilized by our classifier are related to properties of the eye, and not to those of the acquisition
+protocol. This paper offers the first known to us PAD method in a post-mortem setting, together with
+an explanation of the decisions made by the convolutional neural network. Along with the paper we
+offer source codes, weights of the trained network, and a dataset of live iris images to facilitate
+reproducibility and further research. 

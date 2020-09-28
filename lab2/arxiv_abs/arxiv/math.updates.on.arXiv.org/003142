@@ -1,0 +1,20 @@
+We present Nesterov-type acceleration techniques for Alternating Least Squares (ALS) methods
+applied to canonical tensor decomposition. While Nesterov acceleration turns gradient descent
+into an optimal first-order method for convex problems by adding a momentum term with a specific
+weight sequence, a direct application of this method and weight sequence to ALS results in erratic
+convergence behaviour or divergence. This is so because the tensor decomposition problem is non-convex
+and ALS is accelerated instead of gradient descent. We investigate how line search or restart mechanisms
+can be used to obtain effective acceleration. We first consider a cubic line search (LS) strategy
+for determining the momentum weight, showing numerically that the combined Nesterov-ALS-LS approach
+is competitive with or superior to other recently developed nonlinear acceleration techniques
+for ALS, including acceleration by nonlinear conjugate gradients (NCG) and LBFGS. As an alternative,
+we consider various restarting techniques, some of which are inspired by previously proposed restarting
+mechanisms for Nesterov's accelerated gradient method. We study how two key parameters, the momentum
+weight and the restart condition, should be set. Our extensive empirical results show that the Nesterov-accelerated
+ALS methods with restart can be dramatically more efficient than the stand-alone ALS or Nesterov
+accelerated gradient method, when problems are ill-conditioned or accurate solutions are required.
+The resulting methods perform competitively with or superior to existing acceleration methods
+for ALS, and additionally enjoy the benefit of being much simpler and easier to implement. On a large
+and ill-conditioned 71 x 1000 x 900 tensor consisting of readings from chemical sensors used for
+tracking hazardous gases, the restarted Nesterov-ALS method outperforms any of the existing methods
+by a large factor. 

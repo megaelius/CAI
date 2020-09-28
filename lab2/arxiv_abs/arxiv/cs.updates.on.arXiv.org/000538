@@ -1,0 +1,17 @@
+The existing combinatorial methods for iso-surface computation are efficient for pure visualization
+purposes, but it is known that the resulting iso-surfaces can have holes, and topological problems
+like missing or wrong connectivity can appear. To avoid such problems, we introduce a graph-theoretical
+method for the computation of iso-surfaces on cuboid meshes in $\mathbb{R}^3$. The method for the
+generation of iso-surfaces employs labeled cuboid graphs $G(V,E,\mathcal{F})$ such that $V$
+is the set of vertices of a cuboid $C\subset\mathbb{R}^3$, $E$ is the set of edges of $C$ and $\mathcal{F}\,:\,V\rightarrow
+[0,1]$. The nodes of $G$ are weighted by the values of $\mathcal{F}$ which represents the volumetric
+information, e.g.\ from a Volume of Fluid method. Using a given iso-level $c\in (0,1)$, we first
+obtain all iso-points, i.e.\ points where the value $c$ is attained by the edge-interpolated $\mathcal{F}$-field.
+The iso-surface is then built from iso-elements which are composed of triangles and are such that
+their polygonal boundary has only iso-points as vertices. All vertices lie on the faces of a single
+mesh cell. We give a proof that the generated iso-surface is connected up to the boundary of the domain
+and it can be decomposed into different oriented components. Two different components may have
+discrete points or line segments in common. The graph-theoretical method for the computation of
+iso-surfaces developed in this paper enables to recover local information of the iso-surface that
+can be used e.g.\ to compute discrete mean curvature and to solve surface PDEs. Concerning the computational
+effort, the resulting algorithm is as efficient as existing combinatorial methods. 

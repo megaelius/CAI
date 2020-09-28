@@ -1,0 +1,17 @@
+Using FPGAs to accelerate ConvNets has attracted significant attention in recent years. However,
+FPGA accelerator design has not leveraged the latest progress of ConvNets. As a result, the key application
+characteristics such as frames-per-second (FPS) are ignored in favor of simply counting GOPs,
+and results on accuracy, which is critical to application success, are often not even reported.
+In this work, we adopt an algorithm-hardware co-design approach to develop a ConvNet accelerator
+called Synetgy and a novel ConvNet model called DiracDeltaNet. Both the accelerator and ConvNet
+are tailored to FPGA requirements. DiracDeltaNet, as the name suggests, is a ConvNet with only 1$\times$1
+convolutions while spatial convolutions are replaced by more efficient shift operations. DiracDeltaNet
+achieves competitive accuracy on ImageNet (88.7% top-5), but with 42$\times$ fewer parameters
+and 48$\times$ fewer OPs than VGG16. We further quantize DiracDeltaNet's weights to 4-bit and activations
+to 4-bits, with less than 1% accuracy loss. These quantizations exploit well the nature of FPGA hardware.
+In short, DiracDeltaNet's small model size, low computational OP count, low precision and simplified
+operators allow us to co-design a highly customized computing unit for an FPGA. We implement the
+computing units for DiracDeltaNet on an Ultra96 SoC system through high-level synthesis. Our accelerator's
+final top-5 accuracy of 88.1% on ImageNet, is higher than all the previously reported embedded FPGA
+accelerators. In addition, the accelerator reaches an inference speed of 96.5 FPS on the ImageNet
+classification task, surpassing prior works with similar accuracy by at least 16.9$\times$. 

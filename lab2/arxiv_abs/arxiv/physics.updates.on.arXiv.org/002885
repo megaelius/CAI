@@ -1,0 +1,19 @@
+The speed of sound in two-phase pipe flow systems is often several orders of magnitude greater than
+the travelling speed of hydraulic information (volume fractions.) Dynamically simulating such
+flows requires resolution of acoustic and hydraulic waves existing at vastly different spatial
+and temporal scales. If simulated on the same numerical grid, the need for accuracy in hydraulic
+waves will necessitate an exaggerated resolution of acoustic waves. Likewise, time steps restricted
+by the speed of sound are small compared to the time scales active in hydraulic waves. This constitutes
+a waste of computational potential. The method proposed herein decouples the hydraulic and acoustic
+scales, greatly improving computational efficiency. The proposed dual grid method solves a four-equation
+compressible two-fluid model on a principal grid which robustly accounts for the pressure evolution
+and conserves mass and momentum. An incompressible two-equation model is at the same time solved
+on a finer grid, resolving the details of the hydraulic evolution. Information from both model formulations
+is coupled through the terms of the governing transport equations, providing consistency between
+the grids. Accurate and finely resolved schemes can then be employed for the incompressible two-fluid
+model without suffering from the time and stability restrictions otherwise enforced by acoustic
+waves. At the same time, the Hybrid Central-Upwind flux splitting scheme of Evje and Fl{\aa}tten
+(2005a) allows for an explicit and numerically robust treatment of the acoustic waves without losing
+hydraulic accuracy. The dual grid method is tested against four dissimilar problems. In all problems,
+the proposed scheme provided significant increases in computational efficiency and accuracy
+as compared with a single grid arrangement. 

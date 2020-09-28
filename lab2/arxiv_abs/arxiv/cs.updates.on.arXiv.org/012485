@@ -1,0 +1,17 @@
+Distributed Stream Processing Systems (DSPSs) are among the currently most emerging topics in
+data management, with applications ranging from real-time event monitoring to processing complex
+dataflow programs and big data analytics. The major market players in this domain are clearly represented
+by Apache Spark and Flink, which provide a variety of frontend APIs for SQL, statistical inference,
+machine learning, stream processing, and many others. Yet rather few details are reported on the
+integration of these engines into the underlying High-Performance Computing (HPC) infrastructure
+and the communication protocols they use. Spark and Flink, for example, are implemented in Java
+and still rely on a dedicated master node for managing their control flow among the worker nodes in
+a compute cluster. In this paper, we describe the architecture of our AIR engine, which is designed
+from scratch in C++ using the Message Passing Interface (MPI), pthreads for multithreading, and
+is directly deployed on top of a common HPC workload manager such as SLURM. AIR implements a light-weight,
+dynamic sharding protocol (referred to as "Asynchronous Iterative Routing"), which facilitates
+a direct and asynchronous communication among all client nodes and thereby completely avoids the
+overhead induced by the control flow with a master node that may otherwise form a performance bottleneck.
+Our experiments over a variety of benchmark settings confirm that AIR outperforms Spark and Flink
+in terms of latency and throughput by a factor of up to 15; moreover, we demonstrate that AIR scales
+out much better than existing DSPSs to clusters consisting of up to 8 nodes and 224 cores. 

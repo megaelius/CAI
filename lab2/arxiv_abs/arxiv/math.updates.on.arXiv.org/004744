@@ -1,0 +1,19 @@
+Extended formulation of Full Waveform Inversion (FWI), called Wavefield Reconstruction Inversion
+(WRI), offers potential benefits of decreasing the nonlinearity of the inverse problem by replacing
+the explicit inverse of the ill-conditioned wave-equation operator of classical FWI (the oscillating
+Green functions) with a suitably defined data-driven regularized inverse. This regularization
+relaxes the wave-equation constraint to reconstruct wavefields that match the data, hence mitigating
+the risk of cycle skipping. The subsurface model parameters are then updated in a direction which
+reduces these constraint violations. However, in the case of a rough initial model, the phase errors
+in the reconstructed wavefields may trap the waveform inversion in a local minimum leading to inaccurate
+subsurface models. In this paper, in order to avoid matching such incorrect phase information during
+the early WRI iterations, we design a new cost function based upon phase retrieval, namely a process
+which seeks to reconstruct a signal from the amplitude of linear measurements. This new formulation,
+called Wavefield Inversion with Phase Retrieval (WIPR), further improves the robustness of the
+parameter estimation subproblem by a suitable phase correction. We implement the resulting WIPR
+problem with an alternating-direction approach, which combines the Majorization-Minimization
+(MM) algorithm to linearize the phase-retrieval term and a variable splitting technique based
+upon the alternating direction method of multipliers (ADMM). This new workflow equipped with TT
+regularization, which is the combination of total-variation and second-order Tikhonov regularizations,
+and bound constraints successfully reconstructs the BP salt model from a sparse fixed-spread acquisition
+using a 3 Hz starting frequency and a homogeneous initial velocity model. 

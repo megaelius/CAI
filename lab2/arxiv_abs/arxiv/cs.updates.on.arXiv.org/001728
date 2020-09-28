@@ -1,0 +1,20 @@
+Data analytic applications built upon big data processing frameworks such as Apache Spark are an
+important class of applications. Many of these applications are not latency-sensitive and thus
+can run as batch jobs in data centers. By running multiple applications on a computing host, task
+co-location can significantly improve the server utilization and system throughput. However,
+effective task co-location is a non-trivial task, as it requires an understanding of the computing
+resource requirement of the co-running applications, in order to determine what tasks, and how
+many of them, can be co-located. In this paper, we present a mixture-of-experts approach to model
+the memory behavior of Spark applications. We achieve this by learning, off-line, a range of specialized
+memory models on a range of typical applications; we then determine at runtime which of the memory
+models, or experts, best describes the memory behavior of the target application. We show that by
+accurately estimating the resource level that is needed, a co-location scheme can effectively
+determine how many applications can be co-located on the same host to improve the system throughput,
+by taking into consideration the memory and CPU requirements of co-running application tasks.
+Our technique is applied to a set of representative data analytic applications built upon the Apache
+Spark framework. We evaluated our approach for system throughput and average normalized turnaround
+time on a multi-core cluster. Our approach achieves over 83.9% of the performance delivered using
+an ideal memory predictor. We obtain, on average, 8.69x improvement on system throughput and a 49%
+reduction on turnaround time over executing application tasks in isolation, which translates
+to a 1.28x and 1.68x improvement over a state-of-the-art co-location scheme for system throughput
+and turnaround time respectively. 

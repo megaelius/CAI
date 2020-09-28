@@ -1,0 +1,19 @@
+We present a machine learning pipeline and model that uses the entire uncurated EHR for prediction
+of in-hospital mortality at arbitrary time intervals, using all available chart, lab and output
+events, without the need for pre-processing or feature engineering. Data for more than 45,000 American
+ICU patients from the MIMIC-III database were used to develop an ICU mortality prediction model.
+All chart, lab and output events were treated by the model in the same manner inspired by Natural Language
+Processing (NLP). Patient events were discretized by percentile and mapped to learnt embeddings
+before being passed to a Recurrent Neural Network (RNN) to provide early prediction of in-patient
+mortality risk. We compared mortality predictions with the Simplified Acute Physiology Score
+II (SAPS II) and the Oxford Acute Severity of Illness Score (OASIS). Data were split into an independent
+test set (10%) and a ten-fold cross-validation was carried out during training to avoid overfitting.
+13,233 distinct variables with heterogeneous data types were included without manual selection
+or pre-processing. Recordings in the first few hours of a patient's stay were found to be strongly
+predictive of mortality, outperforming models using SAPS II and OASIS scores within just 2 hours
+and achieving a state of the art Area Under the Receiver Operating Characteristic (AUROC) value
+of 0.80 (95% CI 0.79-0.80) at 12 hours vs 0.70 and 0.66 for SAPS II and OASIS at 24 hours respectively.
+Our model achieves a very strong performance of AUROC 0.86 (95% CI 0.85-0.86) for in-patient mortality
+prediction after 48 hours on the MIMIC-III dataset. Predictive performance increases over the
+first 48 hours of the ICU stay, but suffers from diminishing returns, providing rationale for time-limited
+trials of critical care and suggesting that the timing of decision making can be optimised and individualised.

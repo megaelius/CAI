@@ -1,0 +1,18 @@
+We study a general online linear optimization problem(OLO). At each round, a subset of objects from
+a fixed universe of $n$ objects is chosen, and a linear cost associated with the chosen subset is incurred.
+We use \textit{regret} as a measure of performance of our algorithms. Regret is the difference between
+the total cost incurred over all iterations and the cost of the best fixed subset in hindsight. We
+consider \textit{Full Information}, \textit{Semi-Bandit} and \textit{Bandit} feedback for
+this problem. Using characteristic vectors of the subsets, this problem reduces to OLO on the $\{0,1\}^n$
+hypercube. The Exp2 algorithm and its bandit variants are commonly used strategies for this problem.
+It was previously unknown if it is possible to run Exp2 on the hypercube in polynomial time. In this
+paper, we present a polynomial time algorithm called \textit{PolyExp} for OLO on the hypercube.
+We show that our algorithm is equivalent to both Exp2 on $\{0,1\}^n$ as well as Online Mirror Descent(OMD)
+with Entropic regularization on $[0,1]^n$ and Bernoulli Sampling. Under $L_\infty$ adversarial
+losses, in the Full Information case and Semi-Bandit case, analyzing Exp2 directly, gives an expected
+regret bound of $O(n^{3/2}\sqrt{T})$, whereas PolyExp yields a regret of $O(n\sqrt{T})$. In the
+Bandit case, analyzing Exp2 directly, gives an expected regret bound of $O(n^{2}\sqrt{T})$, whereas
+PolyExp yields a regret of $O(n^{3/2}\sqrt{T})$. This implies an improvement on Exp2's regret
+bound for these settings because of the equivalence. Moreover, PolyExp is minimax optimal in all
+the three settings as its regret bounds match the $L_\infty$ lowerbounds in \cite{audibert2011minimax}.
+Finally, we show how to use PolyExp on the $\{-1,+1\}^n$ hypercube, solving an open problem in \cite{bubeck2012towards}.

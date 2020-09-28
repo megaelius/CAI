@@ -1,0 +1,20 @@
+We propose a new family of high order staggered semi-implicit discontinuous Galerkin (DG) methods
+for the simulation of natural convection problems. Assuming small temperature fluctuations,
+the Boussinesq approximation is valid and the flow can simply be modeled by the incompressible Navier-Stokes
+equations coupled with a transport equation for the temperature and a buoyancy source term in the
+momentum equation. Our numerical scheme is developed starting from the work presented in [TD14],
+in which the spatial domain is discretized using a face-based staggered unstructured mesh. For
+the computation of the advection and diffusion terms, two different algorithms are presented:
+i) a purely Eulerian explicit upwind-type scheme and ii) a semi-Lagrangian approach. The first
+methodology leads to a conservative scheme whose major drawback is the time step restriction imposed
+by the CFL stability condition. On the contrary, computational efficiency can be notably improved
+relying on a semi-Lagrangian approach. This method leads to an unconditionally stable scheme if
+the diffusive terms are discretized implicitly. Once the advection and diffusion contributions
+have been computed, the pressure Poisson equation is solved and the velocity is updated. As a second
+model for the computation of buoyancy-driven flows, we also consider the full compressible Navier-Stokes
+equations. The staggered semi-implicit DG method first proposed in [TD17] for all Mach number flows
+is properly extended to account for the gravity source terms arising in the momentum and energy conservation
+laws. The validity and the robustness of our novel class of staggered semi-implicit DG schemes is
+assessed at the aid of several classical benchmark problems, showing in all cases a good agreement
+with available numerical reference data. Finally, a detailed comparison between the incompressible
+and the compressible solver is presented. 

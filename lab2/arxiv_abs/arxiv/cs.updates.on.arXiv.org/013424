@@ -1,0 +1,17 @@
+Byzantine reliable broadcast is a powerful primitive that allows a set of processes to agree on a
+message from a designated sender, even if some processes (including the sender) are Byzantine.
+Existing broadcast protocols for this setting scale poorly, as they typically build on quorum systems
+with strong intersection guarantees, which results in linear per-process communication and computation
+complexity. We generalize the Byzantine reliable broadcast abstraction to the probabilistic
+setting, allowing each of its properties to be violated with a fixed, arbitrarily small probability.
+We leverage these relaxed guarantees in a protocol where we replace quorums with stochastic samples.
+Compared to quorums, samples are significantly smaller in size, leading to a more scalable design.
+We obtain the first Byzantine reliable broadcast protocol with logarithmic per-process communication
+and computation complexity. We conduct a complete and thorough analysis of our protocol, deriving
+bounds on the probability of each of its properties being compromised. During our analysis, we introduce
+a novel general technique we call adversary decorators. Adversary decorators allow us to make claims
+about the optimal strategy of the Byzantine adversary without having to make any additional assumptions.
+We also introduce Threshold Contagion, a model of message propagation through a system with Byzantine
+processes. To the best of our knowledge, this is the first formal analysis of a probabilistic broadcast
+protocol in the Byzantine fault model. We show numerically that practically negligible failure
+probabilities can be achieved with realistic security parameters. 

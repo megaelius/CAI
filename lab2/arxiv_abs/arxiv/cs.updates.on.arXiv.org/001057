@@ -1,0 +1,19 @@
+Reasoning about the pose, i.e. position and orientation of objects is one of the cornerstones of
+robotic manipulation under uncertainty. In a number of joint research projects our group is developing
+a robotic perception system that perceives and models an unprepared kitchen scenario with many
+objects. Since no single sensor or measurement provides sufficient information, a technique is
+needed to fuse a number of uncertain estimates of the pose, i.e. estimates with a widely stretched
+probability density function ($pdf$). The most frequently used approaches to describe the $pdfs$
+are sample based description and multivariate normal (Gaussian) distributions. Sample based
+descriptions in 6D can describe basically any type of $pdfs$, but they require a large number of samples
+and there are no analytic formulae to fuse several $pdfs$. For Gaussian distributions these formulae
+exist, but the Gaussian distributions are unimodal and don't model widely spread distributions
+well. In this paper we present a framework for probabilistic modeling of 6D poses that combines the
+expressive power of the sample based description with the conciseness and algorithmic power of
+the Gaussian models. As parameterization of the 6D poses we select the dual quaternions, i.e. any
+pose is represented by two quaternions. The orientation part of a pose is described by a unit quaternion.
+The translation part is described by a purely imaginary quaternion. A basic probability density
+function over the poses is constructed by selecting a tangent point on the 3D sphere representing
+unit quaternions and taking the Cartesian set product of the tangent space with the 3D space of translations.
+In this 6D Euclidean space a 6D Gaussian distribution is defined. Projecting this Gaussian back
+to the unit sphere and renormalizing induces a distribution over 6D poses, called a Projected Gaussian.

@@ -1,0 +1,20 @@
+Detecting when the underlying distribution changes from the observed time series is a fundamental
+problem arising in a broad spectrum of applications. Change point localization is particularly
+challenging when we only observe low-dimensional projections of high-dimensional random variables.
+Specifically, we assume we observe $\{ x_t, y_t\}_{t=1}^n$ where $ \{ x_t\}_{t=1}^n$ are $p$-dimensional
+covariates, $\{y_t\}_{t=1}^n $ are the univariate responses satisfying $E(y_t)=x_t^\top \beta_t^*\text{
+for all }1\let\le n$ and that $\{\beta_t^*\}_{t=1}^n $ are the unobserved regression parameters
+that change over time in a piecewise constant manner. We first propose a novel algorithm called Binary
+Segmentation through Estimated CUSUM statistics (BSE), which computes the change points through
+direct estimates of the CUSUM statistics of $\{\beta_t^*\}_{t=1}^n $. We show that BSE can consistently
+estimate the unknown location of the change points, achieving error bounds of order $O (\log(p)/n)
+$. To the best of our knowledge, this is a significant improvement, as the state-of-the-art methods
+are only shown to achieve error bounds of order $O(\log(p)/\sqrt n)$ in the multiple change point
+setting. However, BSE can be computationally costly. To overcome this limitation, we introduce
+another algorithm called Binary Segmentation through Lasso Estimators (BSLE). We show that BSLE
+can consistently localize change points with a slightly worse localization error rate compared
+to BSE, but BSLE is much more computationally efficient. Finally, we leverage the insights gained
+from BSE to develop a novel "local screening" algorithm that can input a coarse estimate of change
+point locations together with the observed data and efficiently refine that estimate, allowing
+us to improve the practical performance of past estimators. We also justify our theoretical finding
+in simulated experiments. 

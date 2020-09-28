@@ -1,0 +1,20 @@
+Collaborative (federated) learning enables multiple parties to train a model without sharing
+their private data, but through repeated sharing of the parameters of their local models. Despite
+its advantages, this approach has many known privacy and security weaknesses and performance overhead,
+in addition to being limited only to models with homogeneous architectures. Shared parameters
+leak a significant amount of information about the local (and supposedly private) datasets. Besides,
+federated learning is severely vulnerable to poisoning attacks, where some participants can adversarially
+influence the aggregate parameters. Large models, with high dimensional parameter vectors, are
+in particular highly susceptible to privacy and security attacks: curse of dimensionality in federated
+learning. We argue that sharing parameters is the most naive way of information exchange in collaborative
+learning, as they open all the internal state of the model to inference attacks, and maximize the
+model's malleability by stealthy poisoning attacks. We propose Cronus, a robust collaborative
+machine learning framework. The simple yet effective idea behind designing Cronus is to control,
+unify, and significantly reduce the dimensions of the exchanged information between parties,
+through robust knowledge transfer between their black-box local models. We evaluate all existing
+federated learning algorithms against poisoning attacks, and we show that Cronus is the only secure
+method, due to its tight robustness guarantee. Treating local models as black-box, reduces the
+information leakage through models, and enables us using existing privacy-preserving algorithms
+that mitigate the risk of information leakage through the model's output (predictions). Cronus
+also has a significantly lower sample complexity, compared to federated learning, which does not
+bind its security to the number of participants. 

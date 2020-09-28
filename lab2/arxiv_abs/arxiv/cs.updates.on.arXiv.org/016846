@@ -1,0 +1,20 @@
+In this paper, we propose a novel method named GP-Aligner to deal with the problem of non-rigid groupwise
+point set registration. Compared to previous non-learning approaches, our proposed method gains
+competitive advantages by leveraging the power of deep neural networks to effectively and efficiently
+learn to align a large number of highly deformed 3D shapes with superior performance. Unlike most
+learning-based methods that use an explicit feature encoding network to extract the per-shape
+features and their correlations, our model leverages a model-free learnable latent descriptor
+to characterize the group relationship. More specifically, for a given group we first define an
+optimizable Group Latent Descriptor (GLD) to characterize the gruopwise relationship among a
+group of point sets. Each GLD is randomly initialized from a Gaussian distribution and then concatenated
+with the coordinates of each point of the associated point sets in the group. A neural network-based
+decoder is further constructed to predict the coherent drifts as the desired transformation from
+input groups of shapes to aligned groups of shapes. During the optimization process, GP-Aligner
+jointly updates all GLDs and weight parameters of the decoder network towards the minimization
+of an unsupervised groupwise alignment loss. After optimization, for each group our model coherently
+drives each point set towards a middle, common position (shape) without specifying one as the target.
+GP-Aligner does not require large-scale training data for network training and it can directly
+align groups of point sets in a one-stage optimization process. GP-Aligner shows both accuracy
+and computational efficiency improvement in comparison with state-of-the-art methods for groupwise
+point set registration. Moreover, GP-Aligner is shown great efficiency in aligning a large number
+of groups of real-world 3D shapes. 

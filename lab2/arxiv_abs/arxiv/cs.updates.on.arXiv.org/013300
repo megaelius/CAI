@@ -1,0 +1,19 @@
+Widely popular transformer-based NLP models such as BERT and GPT have enormous capacity trending
+to billions of parameters. Current execution methods demand brute-force resources such as HBM
+devices and high speed interconnectivity for data parallelism. In this paper, we introduce a new
+relay-style execution technique called L2L (layer-to-layer) where at any given moment, the device
+memory is primarily populated only with the executing layer(s)'s footprint. The model resides
+in the DRAM memory attached to either a CPU or an FPGA as an entity we call eager param-server (EPS).
+Unlike a traditional param-server, EPS transmits the model piecemeal to the devices thereby allowing
+it to perform other tasks in the background such as reduction and distributed optimization. To overcome
+the bandwidth issues of shuttling parameters to and from EPS, the model is executed a layer at a time
+across many micro-batches instead of the conventional method of minibatches over whole model.
+In this paper, we explore a conservative version of L2L that is implemented on a modest Azure instance
+for BERT-Large running it with a batch size of 32 on a single V100 GPU using less than 8GB memory. Our
+results show a more stable learning curve, faster convergence, better accuracy and 35% reduction
+in memory compared to the state-of-the-art baseline. Our method reproduces BERT results on any
+mid-level GPU that was hitherto not feasible. L2L scales to arbitrary depth without impacting memory
+or devices allowing researchers to develop affordable devices. It also enables dynamic approaches
+such as neural architecture search. This work has been performed on GPUs first but also targeted
+towards high TFLOPS/Watt accelerators such as Graphcore IPUs. The code will soon be available on
+github. 

@@ -1,0 +1,19 @@
+Cortical synapse organization supports a range of dynamic states on multiple spatial and temporal
+scales, from synchronous slow wave activity (SWA), characteristic of deep sleep or anesthesia,
+to fluctuating, asynchronous activity during wakefulness (AW). Such dynamic diversity poses
+a challenge for producing efficient large-scale simulations that embody realistic metaphors
+of short- and long-range synaptic connectivity. In fact, during SWA and AW different spatial extents
+of the cortical tissue are active in a given timespan and at different levels, which implies a wide
+variety of loads of local computation and communication. A balanced evaluation of simulation performance
+and robustness should therefore include tests of a variety of cortical dynamic states. Here, we
+demonstrate performance scaling of our proprietary Distributed and Plastic Spiking Neural Networks
+(DPSNN) simulation engine in both SWA and AW for bidimensional grids of neural populations, which
+reflects the modular organization of the cortex. We explored networks up to 192x192 modules, each
+composed of 1250 integrate-and-fire neurons with spike-frequency adaptation, and exponentially
+decaying inter-modular synaptic connectivity with varying spatial decay constant. For the largest
+networks the total number of synapses was over 70 billion. The execution platform included up to
+64 dual-socket nodes, each socket mounting 8 Intel Xeon Haswell processor cores @ 2.40GHz clock.
+Network initialization time, memory usage, and execution time showed good scaling performances
+from 1 to 1024 processes, implemented using the standard Message Passing Interface (MPI) protocol.
+We achieved simulation speeds of between 2.3x10^9 and 4.1x10^9 synaptic events per second for both
+cortical states in the explored range of inter-modular interconnections. 

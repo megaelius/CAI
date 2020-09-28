@@ -1,0 +1,18 @@
+Radiotherapy treatment planning currently requires many trail-and-error iterations between
+the planner and treatment planning system, as well as be-tween the planner and physician for discussion/consultation.
+The physician's preferences for a particular patient cannot be easily quantified and precisely
+conveyed to the planner. In this study we present a real-time volumetric Pareto surface dose generation
+deep learning neural network that can be used after segmentation by the physician, adding a tangible
+and quantifiable end-point to portray to the planner. From 70 prostate patients, we first generated
+84,000 intensity modulated radiation therapy plans (1,200 plans per patient) sampling the Pareto
+surface, representing various tradeoffs between the planning target volume (PTV) and the organs-at-risk
+(OAR), including bladder, rectum, left femur, right femur, and body. We divided the data to 10 test
+patients and 60 training/validation patients. We then trained a hierarchically densely connected
+convolutional U-net (HD U-net), to take the PTV and avoidance map representing OARs masks and weights,
+and predict the optimized plan. The HD U-net is capable of accurately predicting the 3D Pareto optimal
+dose distributions, with average [mean, max] dose errors of [3.4%, 7.7%](PTV), [1.6%, 5.6%](bladder),
+[3.7%, 4.2%](rectum), [3.2%, 8.0%](left femur), [2.9%, 7.7%](right femur), and [0.04%, 5.4%](body)
+of the prescription dose. The PTV dose coverage prediction was also very similar, with errors of
+1.3% (D98) and 2.0% (D99). Homogeneity was also similar, differing by 0.06 on average. The neural
+network can predict the dose within 1.7 seconds. Clinically, the optimization and dose calculation
+is much slower, taking 5-10 minutes. 

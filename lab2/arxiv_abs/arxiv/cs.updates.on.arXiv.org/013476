@@ -1,0 +1,20 @@
+Herb recommendation plays a crucial role in the therapeutic process of Traditional Chinese Medicine(TCM),
+which aims to recommend a set of herbs to treat the symptoms of a patient. While several machine learning
+methods have been developed for herb recommendation, they are limited in modeling only the interactions
+between herbs and symptoms, and ignoring the intermediate process of syndrome induction. When
+performing TCM diagnostics, an experienced doctor typically induces syndromes from the patient's
+symptoms and then suggests herbs based on the induced syndromes. As such, we believe the induction
+of syndromes, an overall description of the symptoms, is important for herb recommendation and
+should be properly handled. However, due to the ambiguity and complexity of syndrome induction,
+most prescriptions lack the explicit ground truth of syndromes. In this paper, we propose a new method
+that takes the implicit syndrome induction process into account for herb recommendation. Given
+a set of symptoms to treat, we aim to generate an overall syndrome representation by effectively
+fusing the embeddings of all the symptoms in the set, to mimic how a doctor induces the syndromes.
+Towards symptom embedding learning, we additionally construct a symptom-symptom graph from the
+input prescriptions for capturing the relations between symptoms; we then build graph convolution
+networks(GCNs) on both symptom-symptom and symptom-herb graphs to learn symptom embedding. Similarly,
+we construct a herb-herb graph and build GCNs on both herb-herb and symptom-herb graphs to learn
+herb embedding, which is finally interacted with the syndrome representation to predict the scores
+of herbs. In this way, more comprehensive representations can be obtained. We conduct extensive
+experiments on a public TCM dataset, showing significant improvements over state-of-the-art
+herb recommendation methods. 

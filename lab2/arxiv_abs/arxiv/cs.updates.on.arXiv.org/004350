@@ -1,0 +1,18 @@
+We analyze algorithms for approximating a function $f(x) = \Phi x$ mapping $\Re^d$ to $\Re^d$ using
+deep linear neural networks, i.e. that learn a function $h$ parameterized by matrices $\Theta_1,...,\Theta_L$
+and defined by $h(x) = \Theta_L \Theta_{L-1} ... \Theta_1 x$. We focus on algorithms that learn through
+gradient descent on the population quadratic loss in the case that the distribution over the inputs
+is isotropic. We provide polynomial bounds on the number of iterations for gradient descent to approximate
+the least squares matrix $\Phi$, in the case where the initial hypothesis $\Theta_1 = ... = \Theta_L
+= I$ has excess loss bounded by a small enough constant. On the other hand, we show that gradient descent
+fails to converge for $\Phi$ whose distance from the identity is a larger constant, and we show that
+some forms of regularization toward the identity in each layer do not help. If $\Phi$ is symmetric
+positive definite, we show that an algorithm that initializes $\Theta_i = I$ learns an $\epsilon$-approximation
+of $f$ using a number of updates polynomial in $L$, the condition number of $\Phi$, and $\log(d/\epsilon)$.
+In contrast, we show that if the least squares matrix $\Phi$ is symmetric and has a negative eigenvalue,
+then all members of a class of algorithms that perform gradient descent with identity initialization,
+and optionally regularize toward the identity in each layer, fail to converge. We analyze an algorithm
+for the case that $\Phi$ satisfies $u^{\top} \Phi u > 0$ for all $u$, but may not be symmetric. This
+algorithm uses two regularizers: one that maintains the invariant $u^{\top} \Theta_L \Theta_{L-1}
+... \Theta_1 u > 0$ for all $u$, and another that "balances" $\Theta_1, ..., \Theta_L$ so that they
+have the same singular values. 

@@ -1,0 +1,19 @@
+Texture, highlights, and shading are some of many visual cues that allow humans to perceive material
+appearance in single pictures. Yet, recovering spatially-varying bi-directional reflectance
+distribution functions (SVBRDFs) from a single image based on such cues has challenged researchers
+in computer graphics for decades. We tackle lightweight appearance capture by training a deep neural
+network to automatically extract and make sense of these visual cues. Once trained, our network
+is capable of recovering per-pixel normal, diffuse albedo, specular albedo and specular roughness
+from a single picture of a flat surface lit by a hand-held flash. We achieve this goal by introducing
+several innovations on training data acquisition and network design. For training, we leverage
+a large dataset of artist-created, procedural SVBRDFs which we sample and render under multiple
+lighting directions. We further amplify the data by material mixing to cover a wide diversity of
+shading effects, which allows our network to work across many material classes. Motivated by the
+observation that distant regions of a material sample often offer complementary visual cues, we
+design a network that combines an encoder-decoder convolutional track for local feature extraction
+with a fully-connected track for global feature extraction and propagation. Many important material
+effects are view-dependent, and as such ambiguous when observed in a single image. We tackle this
+challenge by defining the loss as a differentiable SVBRDF similarity metric that compares the renderings
+of the predicted maps against renderings of the ground truth from several lighting and viewing directions.
+Combined together, these novel ingredients bring clear improvement over state of the art methods
+for single-shot capture of spatially varying BRDFs. 

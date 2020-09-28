@@ -1,0 +1,19 @@
+We present a framework for deformable object manipulation that interleaves planning and control,
+enabling complex manipulation tasks without relying on high-fidelity modeling or simulation.
+The key question we address is when should we use planning and when should we use control to achieve
+the task? Planners are designed to find paths through complex configuration spaces, but for highly
+underactuated systems, such as deformable objects, achieving a specific configuration is very
+difficult even with high-fidelity models. Conversely, controllers can be designed to achieve
+specific configurations, but they can be trapped in undesirable local minima due to obstacles.
+Our approach consists of three components: (1) A global motion planner to generate gross motion
+of the deformable object; (2) A local controller for refinement of the configuration of the deformable
+object; and (3) A novel deadlock prediction algorithm to determine when to use planning versus control.
+By separating planning from control we are able to use different representations of the deformable
+object, reducing overall complexity and enabling efficient computation of motion. We provide
+a detailed proof of probabilistic completeness for our planner, which is valid despite the fact
+that our system is underactuated and we do not have a steering function. We then demonstrate that
+our framework is able to successfully perform several manipulation tasks with rope and cloth in
+simulation which cannot be performed using either our controller or planner alone. These experiments
+suggest that our planner can generate paths efficiently, taking under a second on average to find
+a feasible path in three out of four scenarios. We also show that our framework is effective on a 16
+DoF physical robot, where reachability and dual-arm constraints make the planning more difficult.

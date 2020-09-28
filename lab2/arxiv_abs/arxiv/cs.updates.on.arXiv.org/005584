@@ -1,0 +1,19 @@
+Delineating infarcted tissue in ischemic stroke lesions is crucial to determine the extend of damage
+and optimal treatment for this life-threatening condition. However, this problem remains challenging
+due to high variability of ischemic strokes' location and shape. Recently, fully-convolutional
+neural networks (CNN), in particular those based on U-Net, have led to improved performances for
+this task. In this work, we propose a novel architecture that improves standard U-Net based methods
+in three important ways. First, instead of combining the available image modalities at the input,
+each of them is processed in a different path to better exploit their unique information. Moreover,
+the network is densely-connected (i.e., each layer is connected to all following layers), both
+within each path and across different paths, similar to HyperDenseNet. This gives our model the
+freedom to learn the scale at which modalities should be processed and combined. Finally, inspired
+by the Inception architecture, we improve standard U-Net modules by extending inception modules
+with two convolutional blocks with dilated convolutions of different scale. This helps handling
+the variability in lesion sizes. We split the 93 stroke datasets into training and validation sets
+containing 83 and 9 examples respectively. Our network was trained on a NVidia TITAN XP GPU with 16
+GBs RAM, using ADAM as optimizer and a learning rate of 1$\times$10$^{-5}$ during 200 epochs. Training
+took around 5 hours and segmentation of a whole volume took between 0.2 and 2 seconds, as average.
+The performance on the test set obtained by our method is compared to several baselines, to demonstrate
+the effectiveness of our architecture, and to a state-of-art architecture that employs factorized
+dilated convolutions, i.e., ERFNet. 

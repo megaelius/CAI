@@ -1,0 +1,20 @@
+Consider a graph where each of the $n$ nodes is in one of two possible states. Herein, we analyze the
+synchronous $k$-Majority dynamics, where nodes sample $k$ neighbors uniformly at random with
+replacement and adopt the majority state among the nodes in the sample (potential ties are broken
+uniformly at random). This class of dynamics generalizes other well-known dynamics, e.g., Voter
+and $3$-Majority, which have been studied in the literature as distributed algorithms for consensus.
+We consider a biased communication model: whenever nodes sample a neighbor they see state $\sigma$
+with some probability $p$, regardless of the state of the sampled node, and its true state with probability
+$1-p$. Differently from previous works where specific graph topologies are considered, our analysis
+only requires the graphs to be sufficiently dense, i.e., to have minimum degree $\omega(\log n)$,
+without any further topological assumption. In this setting we prove two phase transition phenomena,
+both occurring with high probability, depending on the bias $p$ and on the initial unbalance toward
+state $\sigma$. More in detail, we prove that for every $k\geq 3$ there exists a $p_k^\star$ such
+that if $p>p_k^\star$ the process reaches in $O(1)$ rounds a $\sigma$-almost-consensus, i.e.,
+a configuration where a fraction $1-o(1)$ of the volume is in state $\sigma$. On the other hand, if
+$p<p_k^\star$, we look at random initial configurations in which every node is in state $\sigma$
+with probability $1-q$ independently of the others. We prove that there exists a constant $q_{p,k}^\star$
+such that if $q < q_{p,k}^\star$ then a $\sigma$-almost-consensus is still reached in $O(1)$ rounds,
+while, if $q > q_{p,k}^\star$, the process spends $n^{\omega(1)}$ rounds in a metastable phase
+where the fraction of volume in state $\sigma$ is around a constant value depending only on $p$ and
+$k$. 

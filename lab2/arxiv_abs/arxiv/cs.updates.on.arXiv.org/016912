@@ -1,0 +1,19 @@
+We recently introduced the graph invariant twin-width, and showed that first-order model checking
+can be solved in time $f(d,k)n$ for $n$-vertex graphs given with a witness that the twin-width is
+at most $d$, called $d$-contraction sequence or $d$-sequence, and formulas of size $k$ [Bonnet
+et al., FOCS '20]. The inevitable price to pay for such a general result is that $f$ is a tower of exponentials
+of height roughly $k$. In this paper, we show that algorithms based on twin-width need not be impractical.
+We present $2^{O(k)}n$-time algorithms for $k$-Independent Set, $r$-Scattered Set, $k$-Clique,
+and $k$-Dominating Set when an $O(1)$-sequence is provided. We further show how to solve weighted
+$k$-Independent Set, Subgraph Isomorphism, and Induced Subgraph Isomorphism, in time $2^{O(k
+\log k)}n$. These algorithms are based on a dynamic programming scheme following the sequence of
+contractions forward. We then show a second algorithmic use of the contraction sequence, by starting
+at its end and rewinding it. As an example of this reverse scheme, we present a polynomial-time algorithm
+that properly colors the vertices of a graph with relatively few colors, establishing that bounded
+twin-width classes are $\chi$-bounded. This significantly extends the $\chi$-boundedness of
+bounded rank-width classes, and does so with a very concise proof. The third algorithmic use of twin-width
+builds on the second one. Playing the contraction sequence backward, we show that bounded twin-width
+graphs can be edge-partitioned into a linear number of bicliques, such that both sides of the bicliques
+are on consecutive vertices, in a fixed vertex ordering. Given that biclique edge-partition, we
+show how to solve the unweighted Single-Source Shortest Paths and hence All-Pairs Shortest Paths
+in sublinear time $O(n \log n)$ and time $O(n^2 \log n)$, respectively. 

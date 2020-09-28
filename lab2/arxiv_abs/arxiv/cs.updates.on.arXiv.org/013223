@@ -1,0 +1,18 @@
+Abdominal multi-organ segmentation of computed tomography (CT) images has been the subject of
+extensive research interest. It presents a substantial challenge in medical image processing,
+as the shape and distribution of abdominal organs can vary greatly among the population and within
+an individual over time. While continuous integration of novel datasets into the training set provides
+potential for better segmentation performance, collection of data at scale is not only costly,
+but also impractical in some contexts. Moreover, it remains unclear what marginal value additional
+data have to offer. Herein, we propose a single-pass active learning method through human quality
+assurance (QA). We built on a pre-trained 3D U-Net model for abdominal multi-organ segmentation
+and augmented the dataset either with outlier data (e.g., exemplars for which the baseline algorithm
+failed) or inliers (e.g., exemplars for which the baseline algorithm worked). The new models were
+trained using the augmented datasets with 5-fold cross-validation (for outlier data) and withheld
+outlier samples (for inlier data). Manual labeling of outliers increased Dice scores with outliers
+by 0.130, compared to an increase of 0.067 with inliers (p<0.001, two-tailed paired t-test). By
+adding 5 to 37 inliers or outliers to training, we find that the marginal value of adding outliers
+is higher than that of adding inliers. In summary, improvement on single-organ performance was
+obtained without diminishing multi-organ performance or significantly increasing training
+time. Hence, identification and correction of baseline failure cases present an effective and
+efficient method of selecting training data to improve algorithm performance. 

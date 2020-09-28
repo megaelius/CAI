@@ -1,0 +1,19 @@
+Lexicographical sorting is a fundamental problem with applications to contingency tables, databases,
+Bayesian networks, and more. A standard method to lexicographically sort general data is to iteratively
+use a stable sort -- a sort which preserves existing orders. Here we present a new method of lexicographical
+sorting called QuickLexSort. Whereas a stable sort based lexicographical sorting algorithm operates
+from the least important to most important features, in contrast, QuickLexSort sorts from the most
+important to least important features, refining the sort as it goes. QuickLexSort first requires
+a one-time modest pre-processing step where each feature of the data set is sorted independently.
+When lexicographically sorting a database, QuickLexSort (including pre-processing) has comparable
+running time to using a stable sort based approach. For a data base with $m$ rows and $n$ columns, and
+a sorting algorithm running in time $O(mlog(m))$, a stable sort based lexicographical sort and
+QuickLexSort will both take time $O(nmlog(m))$. However in many applications one has the need to
+lexicographically sort nested data, e.g.\ all possible sub-matrices up to a certain cardinality
+of columns. In such cases we show QuickLexSort gives a performance improvement of a log factor of
+the database length (rows in matrix) over using a standard stable sort based approach. E.g.\ to sort
+all sub-matrices up to cardinality $k$, QuickLexSort has running time $O(mn^k)$ whereas a stable
+sort based lexicographical sort will take time $O(mlog(m)n^k)$. After the pre-processing step
+that is run only once for the entire matrix, QuickLexSort has a running time linear in the number of
+nested sub-matrices to sort. We conclude with an application to Bayesian network scoring to detect
+epistasis using SNP marker data. 

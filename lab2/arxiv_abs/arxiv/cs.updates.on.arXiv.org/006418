@@ -1,0 +1,18 @@
+The heat method is a popular approach to computing geodesic distances on discrete domains. It first
+performs short-time heat diffusion to approximate the gradient direction of the geodesic distance
+function, followed by least-squares recovery of the actual distance. It only requires solving
+two sparse linear systems, which can be done efficiently using matrix prefactorization. However,
+it does no scale well to large models, due to the large memory consumption for matrix factorization
+and the difficulty in its parallelization. In this paper, we propose an improved version of the heat
+method which overcomes its limitation in scalability. Our key observation is that the recovery
+of geodesic distance from approximate gradient directions can be reformulated as gradient optimization
+problem that enforces integrability, which can be solved using a parallel fixed-order method that
+requires no linear system solving and converges quickly. Afterwards, the geodesic distance are
+efficiently recovered by parallel integration of the optimized gradients in breadth-first order.
+Moreover, a similar breadth-first strategy is developed for a parallel Gauss-Seidel solver for
+heat diffusion. Our approach is trivially parallelizable, with a low memory footprint that grows
+linearly with respect to the model size. This makes it particularly suitable for handling large
+models. Experimental results show that our method can efficiently compute geodesic distance on
+meshes with up to 99 million vertices on a workstation with a workstation with an octa-core CPU and
+128GB RAM, outperforming the original heat method and other state-of-the-art geodesic distance
+solvers. 

@@ -1,0 +1,18 @@
+Early detection of breast cancer through screening mammography yields a 20-35% increase in survival
+rate; however, there are not enough radiologists to serve the growing population of women seeking
+screening mammography. Although commercial computer aided detection (CADe) software has been
+available to radiologists for decades, it has failed to improve the interpretation of full-field
+digital mammography (FFDM) images due to its low sensitivity over the spectrum of findings. In this
+work, we leverage a large set of FFDM images with loose bounding boxes of mammographically significant
+findings to train a deep learning detector with extreme sensitivity. Building upon work from the
+Hourglass architecture, we train a model that produces segmentation-like images with high spatial
+resolution, with the aim of producing 2D Gaussian blobs centered on ground-truth boxes. We replace
+the pixel-wise $L_2$ norm with a weak-supervision loss designed to achieve high sensitivity, asymmetrically
+penalizing false positives and false negatives while softening the noise of the loose bounding
+boxes by permitting a tolerance in misaligned predictions. The resulting system achieves a sensitivity
+for malignant findings of 0.99 with only 4.8 false positive markers per image. When utilized in a
+CADe system, this model could enable a novel workflow where radiologists can focus their attention
+with trust on only the locations proposed by the model, expediting the interpretation process and
+bringing attention to potential findings that could otherwise have been missed. Due to its nearly
+perfect sensitivity, the proposed detector can also be used as a high-performance proposal generator
+in two-stage detection systems. 

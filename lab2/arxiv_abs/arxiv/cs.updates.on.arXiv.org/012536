@@ -1,0 +1,18 @@
+Several reduced order models have been developed for nonlinear dynamical systems. To achieve a
+considerable speed-up, a hyper-reduction step is needed to reduce the computational complexity
+due to nonlinear terms. Many hyper-reduction techniques require the construction of nonlinear
+term basis, which introduces a computationally expensive offline phase. A novel way of constructing
+nonlinear term basis within the hyper-reduction process is introduced. In contrast to the traditional
+hyper-reduction techniques where the collection of nonlinear term snapshots is required, the
+SNS method avoids collecting the nonlinear term snapshots. Instead, it uses the solution snapshots
+that are used for building a solution basis, which enables avoiding an extra data compression of
+nonlinear term snapshots. As a result, the SNS method provides a more efficient offline strategy
+than the traditional model order reduction techniques, such as the DEIM, GNAT, and ST-GNAT methods.
+The SNS method is theoretically justified by the conforming subspace condition and the subspace
+inclusion relation. It is useful for model order reduction of large-scale nonlinear dynamical
+problems to reduce the offline cost. It is especially useful for ST-GNAT that has shown promising
+results, such as a good accuracy with a considerable online speed-up for hyperbolic problems in
+a recent paper by Choi and Carlberg in SISC 2019, because ST-GNAT involves an expensive offline cost
+related to collecting nonlinear term snapshots. Numerical results support that the accuracy of
+the solution from the SNS method is comparable to the traditional methods and a considerable speed-up
+(i.e., a factor of two to a hundred) is achieved in the offline phase. 

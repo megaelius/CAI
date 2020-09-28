@@ -1,0 +1,18 @@
+Weight pruning methods for deep neural networks (DNNs) have been investigated recently, but prior
+work in this area is mainly heuristic, iterative pruning, thereby lacking guarantees on the weight
+reduction ratio and convergence time. To mitigate these limitations, we present a systematic weight
+pruning framework of DNNs using the alternating direction method of multipliers (ADMM). We first
+formulate the weight pruning problem of DNNs as a nonconvex optimization problem with combinatorial
+constraints specifying the sparsity requirements, and then adopt the ADMM framework for systematic
+weight pruning. By using ADMM, the original nonconvex optimization problem is decomposed into
+two subproblems that are solved iteratively. One of these subproblems can be solved using stochastic
+gradient descent, while the other can be solved analytically. The proposed ADMM weight pruning
+method incurs no additional suboptimality besides that resulting from the nonconvex nature of
+the original optimization problem. Furthermore, our approach achieves a fast convergence rate.
+The weight pruning results are very promising and consistently outperform prior work. On the LeNet-5
+model for the MNIST data set, we achieve 40.2 times weight reduction without accuracy loss. On the
+AlexNet model for the ImageNet data set, we achieve 20 times weight reduction without accuracy loss.
+When we focus on the convolutional layer pruning for computation reductions, we can reduce the total
+computation by five times compared with prior work (achieving a total of 13.4 times weight reduction
+in convolutional layers). A significant acceleration for DNN training is observed as well, in that
+we can finish the whole training process on AlexNet around 80 hours. Our models are released at https://github.com/KaiqiZhang/admm-pruning

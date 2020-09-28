@@ -1,0 +1,17 @@
+Low rank matrix factorisation is often used in recommender systems as a way of extracting latent
+features. When dealing with large and sparse datasets, traditional recommendation algorithms
+face the problem of acquiring large, unrestrained, fluctuating values over predictions especially
+for users/items with very few corresponding observations. Although the problem has been somewhat
+solved by imposing bounding constraints over its objectives, and/or over all entries to be within
+a fixed range, in terms of gaining better recommendations, these approaches have two major shortcomings
+that we aim to mitigate in this work: one is they can only deal with one pair of fixed bounds for all entries,
+and the other one is they are very time-consuming when applied on large scale recommender systems.
+In this paper, we propose a novel algorithm named Magnitude Bounded Matrix Factorisation (MBMF),
+which allows different bounds for individual users/items and performs very fast on large scale
+datasets. The key idea of our algorithm is to construct a model by constraining the magnitudes of
+each individual user/item feature vector. We achieve this by converting from the Cartesian to Spherical
+coordinate system with radii set as the corresponding magnitudes, which allows the above constrained
+optimisation problem to become an unconstrained one. The Stochastic Gradient Descent (SGD) method
+is then applied to solve the unconstrained task efficiently. Experiments on synthetic and real
+datasets demonstrate that in most cases the proposed MBMF is superior over all existing algorithms
+in terms of accuracy and time complexity. 

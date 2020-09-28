@@ -1,0 +1,20 @@
+Deep learning inference that needs to largely take place on the 'edge' is a highly computational
+and memory intensive workload, making it intractable for low-power, embedded platforms such as
+mobile nodes and remote security applications. To address this challenge, this paper proposes
+a real-time, hybrid neuromorphic framework for object tracking and classification using event-based
+cameras that possess properties such as low-power consumption (5-14 mW) and high dynamic range
+(120 dB). Nonetheless, unlike traditional approaches of using event-by-event processing, this
+work uses a mixed frame and event approach to get energy savings with high performance. Using a frame-based
+region proposal method based on the density of foreground events, a hardware-friendly object tracking
+scheme is implemented using the apparent object velocity while tackling occlusion scenarios.
+The object track input is converted back to spikes for TrueNorth classification via the energy-efficient
+deep network (EEDN) pipeline. Using originally collected datasets, we train the TrueNorth model
+on the hardware track outputs, instead of using ground truth object locations as commonly done,
+and demonstrate the ability of our system to handle practical surveillance scenarios. As an optional
+paradigm, to exploit the low latency and asynchronous nature of neuromorphic vision sensors (NVS),
+we also propose a continuous-time tracker with C++ implementation where each event is processed
+individually. Thereby, we extensively compare the proposed methodologies to state-of-the-art
+event-based and frame-based methods for object tracking and classification, and demonstrate
+the use case of our neuromorphic approach for real-time and embedded applications without sacrificing
+performance. Finally, we also showcase the efficacy of the proposed system to a standard RGB camera
+setup when evaluated over several hours of traffic recordings. 

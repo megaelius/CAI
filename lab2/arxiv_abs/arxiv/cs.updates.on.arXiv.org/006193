@@ -1,0 +1,18 @@
+We introduce the batched set cover problem, which is a generalization of the online set cover problem.
+In this problem, the elements of the ground set that need to be covered arrive in batches. Our main
+technical contribution is a tight $\Omega(H_{m - 2^z + 1})$ lower bound on the competitive ratio
+of any fractional batched algorithm given an adversary that is required to produce batches of VC-dimension
+at least $z$, for some $z \in \mathbb{N}^0$. This restriction on the adversary is motivated by the
+fact that, in some real world applications, decisions are made after collecting batches of data
+of non-trivial VC-dimension. In particular, ridesharing systems rely on the batch assignment
+of trip requests to vehicles, and some related problems such as that of optimal congregation points
+for passenger pickups and dropoffs can be modeled as a batched set cover problem with VC-dimension
+greater than or equal to two. Furthermore, we note that while any online algorithm may be used to solve
+the batched set cover problem by artificially sequencing the elements in a batch, this procedure
+may neglect the rich information encoded in the complex interactions between the elements of a batch
+and the sets that contain them. Therefore, we propose a minor modification to an online algorithm
+found in [8] to obtain an algorithm that attempts to exploit such information. Unfortunately, we
+are unable to improve its analysis in a way that reflects this intuition. However, we present computational
+experiments that provide empirical evidence of a constant factor improvement in the competitive
+ratio. To the best of our knowledge, we are the first to use the VC-dimension in the context of online
+(batched) covering problems. 

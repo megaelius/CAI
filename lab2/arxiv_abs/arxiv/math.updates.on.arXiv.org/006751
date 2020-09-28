@@ -1,0 +1,18 @@
+We consider minimizing $f(x) = \mathbb{E}[f(x,\omega)]$ when $f(x,\omega)$ is possibly nonsmooth
+and either strongly convex or convex in $x$. (I) Strongly convex. When $f(x,\omega)$ is $\mu-$strongly
+convex in $x$, we propose a variable sample-size accelerated proximal scheme (VS-APM) and apply
+it on $f_{\eta}(x)$, the ($\eta$-)Moreau smoothed variant of $\mathbb{E}[f(x,\omega)]$; we
+term such a scheme as (m-VS-APM). We consider three settings. (a) Bounded domains. In this setting,
+VS-APM displays linear convergence in inexact gradient steps, each of which requires utilizing
+an inner (SSG) scheme. Specifically, mVS-APM achieves an optimal oracle complexity in SSG steps;
+(b) Unbounded domains. In this regime, under a weaker assumption of suitable state-dependent bounds
+on subgradients, an unaccelerated variant mVS-PM is linearly convergent; (c) Smooth ill-conditioned
+$f$. When $f$ is $L$-smooth and $\kappa = L/\mu \ggg 1$, we employ mVS-APM where increasingly accurate
+gradients $\nabla_x f_{\eta}(x)$ are obtained by VS-APM. Notably, mVS-APM displays linear convergence
+and near-optimal complexity in inner proximal evaluations (upto a log factor) compared to VS-APM.
+But, unlike a direct application of VS-APM, this scheme is characterized by larger steplengths
+and better empirical behavior; (II) Convex. When $f(x,\omega)$ is merely convex but smoothable,
+by suitable choices of the smoothing, steplength, and batch-size sequences, smoothed VS-APM (or
+sVS-APM) produces sequences for which expected sub-optimality diminishes at the rate of $\mathcal{O}(1/k)$
+with an optimal oracle complexity of $\mathcal{O}(1/\epsilon^2)$. Finally, sVS-APM and VS-APM
+produce sequences that converge almost surely to a solution of the original problem. 

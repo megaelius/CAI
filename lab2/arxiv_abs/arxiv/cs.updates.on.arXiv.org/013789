@@ -1,0 +1,19 @@
+Elderly fall prevention and detection is extremely crucial especially with the fast aging society.
+In this paper, we propose mmFall, a novel system for fall detection. In terms of sensing modality,
+we adopt the emerging millimeter-wave (mmWave) radar sensor to collect the point cloud of a moving
+human body along with its estimated centroid. In terms of detection methodology, we propose a variational
+recurrent autoencoder (VRAE) model to monitor the motion anomaly level, and claim a fall detection
+when two conditions meet simultaneously, viz. (i) a anomaly level spike and (ii) a sudden drop of
+body's centroid height. The mmWave radar sensor provides advantages, such as privacy-compliance
+and high sensitivity to motion, over the traditional sensing modalities. To overcome the difficulties
+in machine learning using radar due to the data randomness, the VRAE uses variational inference,
+a probabilistic approach rather than deterministic approach, to infer the posterior probability
+of latent motion state at every frame, followed by a recurrent neural network (RNN) to learn the temporal
+features of the motion over multiple frames. Moreover, to circumvent the difficulties in fall data
+collection and labeling in the traditional fall detection research, the VRAE is built upon an autoencoder
+architecture, a semisupervised approach, and trained with only normal activities of daily living
+(ADL) such that in the inference stage the VRAE will generate a spike in the anomaly level once an abnormal
+motion, such as fall, occurs. During the experiment, we implemented the VRAE along with two other
+baselines, and tested on the dataset collected in an apartment. The receiver operating characteristic
+(ROC) curve indicates that our proposed model outperforms the other two baselines, and achieves
+98% detection out of 50 falls at expense of just 2 false alarms. 

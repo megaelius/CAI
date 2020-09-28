@@ -1,0 +1,20 @@
+Physics-informed neural networks (PINNs) encode physical conservation laws and prior physical
+knowledge into the neural networks, ensuring the correct physics is represented accurately while
+alleviating the need for supervised learning to a great degree. While effective for relatively
+short-term time integration, when long time integration of the time-dependent PDEs is sought,
+the time-space domain may become arbitrarily large and hence training of the neural network may
+become prohibitively expensive. To this end, we develop a parareal physics-informed neural network
+(PPINN), hence decomposing a long-time problem into many independent short-time problems supervised
+by an inexpensive/fast coarse-grained (CG) solver. In particular, the serial CG solver is designed
+to provide approximate predictions of the solution at discrete times, while initiate many fine
+PINNs simultaneously to correct the solution iteratively. There is a two-fold benefit from training
+PINNs with small-data sets rather than working on a large-data set directly, i.e., training of individual
+PINNs with small-data is much faster, while training the fine PINNs can be readily parallelized.
+Consequently, compared to the original PINN approach, the proposed PPINN approach may achieve
+a significant speedup for long-time integration of PDEs, assuming that the CG solver is fast and
+can provide reasonable predictions of the solution, hence aiding the PPINN solution to converge
+in just a few iterations. To investigate the PPINN performance on solving time-dependent PDEs,
+we first apply the PPINN to solve the Burgers equation, and subsequently we apply the PPINN to solve
+a two-dimensional nonlinear diffusion-reaction equation. Our results demonstrate that PPINNs
+converge in a couple of iterations with significant speed-ups proportional to the number of time-subdomains
+employed. 

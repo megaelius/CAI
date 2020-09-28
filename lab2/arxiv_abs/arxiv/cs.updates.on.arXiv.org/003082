@@ -1,0 +1,18 @@
+Convolutional neural networks have many hyperparameters such as the filter size, number of filters,
+and pooling size, which require manual tuning. Though deep stacked structures are able to create
+multi-scale and hierarchical representations, manually fixed filter sizes limit the scale of
+representations that can be learned in a single convolutional layer. This paper introduces a new
+adaptive filter model that allows variable scale and orientation. The scale and orientation parameters
+of filters can be learned using back propagation. Therefore, in a single convolution layer, we can
+create filters of different scale and orientation that can adapt to small or large features and objects.
+The proposed model uses a relatively large base size (grid) for filters. In the grid, a differentiable
+function acts as an envelope for the filters. The envelope function guides effective filter scale
+and shape/orientation by masking the filter weights before the convolution. Therefore, only the
+weights in the envelope are updated during training. In this work, we employed a multivariate (2D)
+Gaussian as the envelope function and showed that it can grow, shrink, or rotate by updating its covariance
+matrix during back propagation training . We tested the new filter model on MNIST, MNIST-cluttered,
+and CIFAR-10 and compared the results with the networks that used conventional convolution layers.
+The results demonstrate that the new model can effectively learn and produce filters of different
+scales and orientations in a single layer. Moreover, the experiments show that the adaptive convolution
+layers perform equally; or better, especially when data includes objects of varying scale and noisy
+backgrounds. 

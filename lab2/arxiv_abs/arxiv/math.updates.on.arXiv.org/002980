@@ -1,0 +1,20 @@
+Physics-informed neural networks (PINNs) have recently emerged as an alternative way of solving
+partial differential equations (PDEs) without the need of building elaborate grids, instead,
+using a straightforward implementation. In particular, in addition to the deep neural network
+(DNN) for the solution, a second DNN is considered that represents the residual of the PDE. The residual
+is then combined with the mismatch in the given data of the solution in order to formulate the loss
+function. This framework is effective but is lacking uncertainty quantification of the solution
+due to the inherent randomness in the data or due to the approximation limitations of the DNN architecture.
+Here, we propose a new method with the objective of endowing the DNN with uncertainty quantification
+for both sources of uncertainty, i.e., the parametric uncertainty and the approximation uncertainty.
+We first account for the parametric uncertainty when the parameter in the differential equation
+is represented as a stochastic process. Multiple DNNs are designed to learn the modal functions
+of the arbitrary polynomial chaos (aPC) expansion of its solution by using stochastic data from
+sparse sensors. We can then make predictions from new sensor measurements very efficiently with
+the trained DNNs. Moreover, we employ dropout to correct the over-fitting and also to quantify the
+uncertainty of DNNs in approximating the modal functions. We then design an active learning strategy
+based on the dropout uncertainty to place new sensors in the domain to improve the predictions of
+DNNs. Several numerical tests are conducted for both the forward and the inverse problems to quantify
+the effectiveness of PINNs combined with uncertainty quantification. This NN-aPC new paradigm
+of physics-informed deep learning with uncertainty quantification can be readily applied to other
+types of stochastic PDEs in multi-dimensions. 

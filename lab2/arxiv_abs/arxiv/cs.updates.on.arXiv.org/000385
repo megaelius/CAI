@@ -1,0 +1,17 @@
+We study the problem of learning a distribution from samples, when the underlying distribution
+is a mixture of product distributions over discrete domains. This problem is motivated by several
+practical applications such as crowd-sourcing, recommendation systems, and learning Boolean
+functions. The existing solutions either heavily rely on the fact that the number of components
+in the mixtures is finite or have sample/time complexity that is exponential in the number of components.
+In this paper, we introduce a polynomial time/sample complexity method for learning a mixture of
+$r$ discrete product distributions over $\{1, 2, \dots, \ell\}^n$, for general $\ell$ and $r$.
+We show that our approach is statistically consistent and further provide finite sample guarantees.
+We use techniques from the recent work on tensor decompositions for higher-order moment matching.
+A crucial step in these moment matching methods is to construct a certain matrix and a certain tensor
+with low-rank spectral decompositions. These tensors are typically estimated directly from the
+samples. The main challenge in learning mixtures of discrete product distributions is that these
+low-rank tensors cannot be obtained directly from the sample moments. Instead, we reduce the tensor
+estimation problem to: $a$) estimating a low-rank matrix using only off-diagonal block elements;
+and $b$) estimating a tensor using a small number of linear measurements. Leveraging on recent developments
+in matrix completion, we give an alternating minimization based method to estimate the low-rank
+matrix, and formulate the tensor completion problem as a least-squares problem. 

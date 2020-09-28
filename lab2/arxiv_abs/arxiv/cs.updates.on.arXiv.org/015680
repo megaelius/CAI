@@ -1,0 +1,17 @@
+This article introduces an approach to facilitate cooperative exploration and mapping of large-scale,
+near-ground, underground, or indoor spaces via a novel integration framework for locally-dense
+agent map data. The effort targets limited Size, Weight, and Power (SWaP) agents with an emphasis
+on limiting required communications and redundant processing. The approach uses a unique organization
+of batch optimization engines to enable a highly efficient two-tier optimization structure. Tier
+I consist of agents that create and potentially share local maplets (local maps, limited in size)
+which are generated using Simultaneous Localization and Mapping (SLAM) map-building software
+and then marginalized to a more compact parameterization. Maplets are generated in an overlapping
+manner and used to estimate the transform and uncertainty between those overlapping maplets, providing
+accurate and compact odometry or delta-pose representation between maplet's local frames. The
+delta poses can be shared between agents, and in cases where maplets have salient features (for loop
+closures), the compact representation of the maplet can also be shared. The second optimization
+tier consists of a global optimizer that seeks to optimize those maplet-to-maplet transformations,
+including any loop closures identified. This can provide an accurate global "skeleton"' of the
+traversed space without operating on the high-density point cloud. This compact version of the
+map data allows for scalable, cooperative exploration with limited communication requirements
+where most of the individual maplets, or low fidelity renderings, are only shared if desired. 

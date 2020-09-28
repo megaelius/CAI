@@ -1,0 +1,17 @@
+Path planning is an important problem in robotics. One way to plan a path between two points $x,y$
+within a (not necessarily simply-connected) planar domain $\Omega$, is to define a non-negative
+distance function $d(x,y)$ on $\Omega\times\Omega$ such that following the (descending) gradient
+of this distance function traces such a path. This presents two equally important challenges: A
+mathematical challenge -- to define $d$ such that $d(x,y)$ has a single minimum for any fixed $y$
+(and this is when $x=y$), since a local minimum is in effect a "dead end", A computational challenge
+-- to define $d$ such that it may be computed efficiently. In this paper, given a description of $\Omega$,
+we show how to assign coordinates to each point of $\Omega$ and define a family of distance functions
+between points using these coordinates, such that both the mathematical and the computational
+challenges are met. This is done using the concepts of \emph{harmonic measure} and \emph{$f$-divergences}.
+In practice, path planning is done on a discrete network defined on a finite set of \emph{sites} sampled
+from $\Omega$, so any method that works well on the continuous domain must be adapted so that it still
+works well on the discrete domain. Given a set of sites sampled from $\Omega$, we show how to define
+a network connecting these sites such that a \emph{greedy routing} algorithm (which is the discrete
+equivalent of continuous gradient descent) based on the distance function mentioned above is guaranteed
+to generate a path in the network between any two such sites. In many cases, this network is close to
+a (desirable) planar graph, especially if the set of sites is dense. 

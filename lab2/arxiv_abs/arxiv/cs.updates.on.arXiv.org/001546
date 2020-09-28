@@ -1,0 +1,19 @@
+For even $k$, the matchings connectivity matrix $M_k$ is a binary matrix indexed by perfect matchings
+of the complete $k$-vertex graph; the entry at a pair of matchings is $1$ iff their union forms a single
+cycle. Previous work has found connections between the asymptotic rank of $M_k$ and the complexity
+of the Hamiltonian Cycle problem: Cygan et al. (STOC 2013) showed that the rank of $M_k$ over $\mathbb
+Z_2$ is $\Theta(\sqrt 2^k)$ and used this to give an $O^*((2+\sqrt{2})^{\mathsf{pw}})$ time algorithm
+for counting Hamiltonian cycles modulo $2$ on graphs of pathwidth $\mathsf{pw}$. The same authors
+complemented their algorithm by an essentially tight lower bound under SETH. This bound crucially
+relied on a large permutation submatrix within $M_k$, which enabled a "pattern propagation" technique.
+We present a new technique to simulate a similar "pattern propagation" when only a black-box lower
+bound on the asymptotic rank of $M_k$ is given. Given appropriate rank bounds, our technique yields
+lower bounds for counting Hamiltonian cycles (also modulo fixed primes $p$) parameterized by pathwidth.
+To apply this technique, we prove that the rank of $M_k$ over $\mathbb Q$ is $4^k / \mathrm{poly}(k)$,
+using the representation theory of the symmetric group and insights from algebraic combinatorics.
+We also show that the rank of $M_k$ over $\mathbb Z_p$ is $\Omega(1.56^k)$ for any prime $p\neq 2$.
+As a consequence, we obtain that Hamiltonian cycles cannot be counted in time $O^*((6-\epsilon)^{\mathsf{pw}})$
+for any $\epsilon>0$ unless SETH fails, which is tight due to an algorithm by Bodlaender et al. (ICALP
+2013). We also obtain that Hamiltonian cycles cannot be counted modulo primes $p\neq 2$ in time $O^*(3.56^\mathsf{pw})$,
+in contrast to the $O^*((2+\sqrt{2})^{\mathsf{pw}})=O^*(3.42^{\mathsf{pw}})$ time algorithm
+for counting mod $2$ by Cygan et al. (STOC 2013). 

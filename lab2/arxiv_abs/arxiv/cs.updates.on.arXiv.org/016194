@@ -1,0 +1,20 @@
+Microcontroller-based embedded devices are at the core of Internet-of-Things and Cyber-Physical
+Systems. The security of these devices is of paramount importance. Among the approaches to securing
+embedded devices, dynamic firmware analysis gained great attention lately, thanks to its offline
+nature and low false-positive rates. However, regardless of the analysis and emulation techniques
+used, existing dynamic firmware analyzers share a major limitation, namely the inability to handle
+firmware using DMA. It severely limits the types of devices supported and firmware code coverage.
+We present DICE, a drop-in solution for firmware analyzers to emulate DMA input channels and generate
+or manipulate DMA inputs. DICE is designed to be hardware-independent, and compatible with common
+MCU firmware and embedded architectures. DICE identifies DMA input channels as the firmware writes
+the source and destination DMA transfer pointers into the DMA controller. Then DICE manipulates
+the input transferred through DMA on behalf of the firmware analyzer. We integrated DICE to the firmware
+analyzer P2IM (Cortex-M architecture) and a PIC32 emulator (MIPS M4K/M-Class architecture).
+We evaluated it on 83 benchmarks and sample firmware, representing 9 different DMA controllers
+from 5 different vendors. DICE detected 33 out of 37 DMA input channels, with 0 false positives. It
+correctly supplied DMA inputs to 21 out of 22 DMA buffers, which previous firmware analyzers cannot
+achieve due to the lack of DMA emulation. DICE's overhead is fairly low, it adds 3.4% on average to
+P2IM execution time. We also fuzz-tested 7 real-world firmware using DICE and compared the results
+with the original P2IM. DICE uncovered tremendously more execution paths (as much as 79X) and found
+5 unique previously-unknown bugs that are unreachable without DMA emulation. All our source code
+and dataset are publicly available. 

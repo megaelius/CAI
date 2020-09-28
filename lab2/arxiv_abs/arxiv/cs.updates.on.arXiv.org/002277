@@ -1,0 +1,19 @@
+This paper presents a discrete-time option pricing model that is rooted in Reinforcement Learning
+(RL), and more specifically in the famous Q-Learning method of RL. We construct a risk-adjusted
+Markov Decision Process for a discrete-time version of the classical Black-Scholes-Merton (BSM)
+model, where the option price is an optimal Q-function. Pricing is done by learning to dynamically
+optimize risk-adjusted returns for an option replicating portfolio, as in the Markowitz portfolio
+theory. Using Q-Learning and related methods, once created in a parametric setting, the model is
+able to go model-free and learn to price and hedge an option directly from data generated from a dynamic
+replicating portfolio which is rebalanced at discrete times. If the world is according to BSM, our
+risk-averse Q-Learner converges, given enough training data, to the true BSM price and hedge ratio
+of the option in the continuous time limit, even if hedges applied at the stage of data generation
+are completely random (i.e. it can learn the BSM model itself, too!), because Q-Learning is an off-policy
+algorithm. If the world is different from a BSM world, the Q-Learner will find it out as well, because
+Q-Learning is a model-free algorithm. For finite time steps, the Q-Learner is able to efficiently
+calculate both the optimal hedge and optimal price for the option directly from trading data, and
+without an explicit model of the world. This suggests that RL may provide efficient data-driven
+and model-free methods for optimal pricing and hedging of options, once we depart from the academic
+continuous-time limit, and vice versa, option pricing methods developed in Mathematical Finance
+may be viewed as special cases of model-based Reinforcement Learning. Our model only needs basic
+linear algebra (plus Monte Carlo simulation, if we work with synthetic data). 

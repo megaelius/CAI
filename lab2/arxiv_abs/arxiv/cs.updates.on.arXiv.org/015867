@@ -1,0 +1,18 @@
+Automated compilation error repair, the problem of suggesting fixes to buggy programs that fail
+to compile, has generated significant interest in recent years. Apart from being a tool of general
+convenience, automated code repair has significant pedagogical applications for novice programmers
+who find compiler error messages cryptic and unhelpful. Existing approaches largely solve this
+problem using a blackbox-application of a heavy-duty generative learning technique, such as sequence-to-sequence
+prediction (TRACER) or reinforcement learning (RLAssist). Although convenient, such black-box
+application of learning techniques makes existing approaches bulky in terms of training time,
+as well as inefficient at targeting specific error types. We present MACER, a novel technique for
+accelerated error repair based on a modular segregation of the repair process into repair identification
+and repair application. MACER uses powerful yet inexpensive discriminative learning techniques
+such as multi-label classifiers and rankers to first identify the type of repair required and then
+apply the suggested repair. Experiments indicate that the fine-grained approach adopted by MACER
+offers not only superior error correction, but also much faster training and prediction. On a benchmark
+dataset of 4K buggy programs collected from actual student submissions, MACER outperforms existing
+methods by 20% at suggesting fixes for popular errors that exactly match the fix desired by the student.
+MACER is also competitive or better than existing methods at all error types -- whether popular or
+rare. MACER offers a training time speedup of 2x over TRACER and 800x over RLAssist, and a test time
+speedup of 2-4x over both. 

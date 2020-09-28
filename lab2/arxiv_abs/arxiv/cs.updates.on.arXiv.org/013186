@@ -1,0 +1,20 @@
+The 01 loss is robust to outliers and tolerant to noisy data compared to convex loss functions. We
+conjecture that the 01 loss may also be more robust to adversarial attacks. To study this empirically
+we have developed a stochastic coordinate descent algorithm for a linear 01 loss classifier and
+a single hidden layer 01 loss neural network. Due to the absence of the gradient we iteratively update
+coordinates on random subsets of the data for fixed epochs. We show our algorithms to be fast and comparable
+in accuracy to the linear support vector machine and logistic loss single hidden layer network for
+binary classification on several image benchmarks, thus establishing that our method is on-par
+in test accuracy with convex losses. We then subject them to accurately trained substitute model
+black box attacks on the same image benchmarks and find them to be more robust than convex counterparts.
+On CIFAR10 binary classification task between classes 0 and 1 with adversarial perturbation of
+0.0625 we see that the MLP01 network loses 27\% in accuracy whereas the MLP-logistic counterpart
+loses 83\%. Similarly on STL10 and ImageNet binary classification between classes 0 and 1 the MLP01
+network loses 21\% and 20\% while MLP-logistic loses 67\% and 45\% respectively. On MNIST that is
+a well-separable dataset we find MLP01 comparable to MLP-logistic and show under simulation how
+and why our 01 loss solver is less robust there. We then propose adversarial training for our linear
+01 loss solver that significantly improves its robustness on MNIST and all other datasets and retains
+clean test accuracy. Finally we show practical applications of our method to deter traffic sign
+and facial recognition adversarial attacks. We discuss attacks with 01 loss, substitute model
+accuracy, and several future avenues like multiclass, 01 loss convolutions, and further adversarial
+training. 

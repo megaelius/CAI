@@ -1,0 +1,18 @@
+The present paper addresses the numerical solution of turbulent flows with high-order discontinuous
+Galerkin methods for discretizing the incompressible Navier-Stokes equations. The efficiency
+of high-order methods when applied to under-resolved problems is an open issue in literature. This
+topic is carefully investigated in the present work by the example of the 3D Taylor-Green vortex
+problem. Our implementation is based on a generic high-performance framework for matrix-free
+evaluation of finite element operators with one of the best realizations currently known. We present
+a methodology to systematically analyze the efficiency of the incompressible Navier-Stokes solver
+for high polynomial degrees. Due to the absence of optimal rates of convergence in the under-resolved
+regime, our results reveal that demonstrating improved efficiency of high-order methods is a challenging
+task and that optimal computational complexity of solvers, preconditioners, and matrix-free
+implementations are necessary ingredients to achieve the goal of better solution quality at the
+same computational costs already for a geometrically simple problem such as the Taylor-Green vortex.
+Although the analysis is performed for a Cartesian geometry, our approach is generic and can be applied
+to arbitrary geometries. We present excellent performance numbers on modern, cache-based computer
+architectures achieving a throughput for operator evaluation of 3e8 up to 1e9 DoFs/sec on one Intel
+Haswell node with 28 cores. Compared to performance results published within the last 5 years for
+high-order DG discretizations of the compressible Navier-Stokes equations, our approach reduces
+computational costs by more than one order of magnitude for the same setup. 

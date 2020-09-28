@@ -1,0 +1,18 @@
+We develop provably efficient reinforcement learning algorithms for two-player zero-sum Markov
+games in which the two players simultaneously take actions. To incorporate function approximation,
+we consider a family of Markov games where the reward function and transition kernel possess a linear
+structure. Both the offline and online settings of the problems are considered. In the offline setting,
+we control both players and the goal is to find the Nash Equilibrium efficiently by minimizing the
+worst-case duality gap. In the online setting, we control a single player to play against an arbitrary
+opponent and the goal is to minimize the regret. For both settings, we propose an optimistic variant
+of the least-squares minimax value iteration algorithm. We show that our algorithm is computationally
+efficient and provably achieves an $\tilde O(\sqrt{d^3 H^3 T})$ upper bound on the duality gap and
+regret, without requiring additional assumptions on the sampling model. We highlight that our
+setting requires overcoming several new challenges that are absent in Markov decision processes
+or turn-based Markov games. In particular, to achieve optimism in simultaneous-move Marko games,
+we construct both upper and lower confidence bounds of the value function, and then compute the optimistic
+policy by solving a general-sum matrix game with these bounds as the payoff matrices. As finding
+the Nash Equilibrium of such a general-sum game is computationally hard, our algorithm instead
+solves for a Coarse Correlated Equilibrium (CCE), which can be obtained efficiently via linear
+programming. To our best knowledge, such a CCE-based scheme for implementing optimism has not appeared
+in the literature and might be of interest in its own right. 

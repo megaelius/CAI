@@ -1,0 +1,18 @@
+An integer adder for integers in the binary representation is one of the basic operations of any digital
+processor. For adding two integers of N bits each, the serial adder takes as many clock ticks. For
+achieving higher speeds, parallel circuits are discussed in the literature, and these circuits
+usually operate in two levels. At the lower level, integers represented by blocks of smaller number
+of bits are added, and in a cascade of stages in the next level, the carries produced in previous addition
+operations are summed to the augends. In this paper, we describe a fast method and an improvement
+of it. The first attempt resembles the operation method of the merge sort algorithm, from which some
+important properties of carries produced in each stage are analysed and assimilated, resulting
+in a parallel adder that runs in time comparable to the existing methods. After that, the crucial
+insights are brought to fruition in an improved design, which takes 2 clock ticks to perform the addition
+operation requiring only O(square(N)) space. The number of bits N is chosen usually to be a positive
+integer power of 2. The speedup is achieved by special purpose circuits for increment operations
+by i-th power of 2 , for i = 0, 1, ..., N-1, each operation taking only a single clock tick to complete.
+The usefulness of this adder for multiplication operation is discussed. The standard multiplication
+method utilizes quantizer and 3-bit to 2-bit consolidation circuits to produce an integer that
+represents in binary the number of 1s in a column corresponding to a place (weighted coefficient)
+of nonnegative integer power of 2. The last two consolidated integers are added by an adder in the
+end. 

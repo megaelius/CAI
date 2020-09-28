@@ -1,0 +1,17 @@
+The number of groups ($g$) in group convolution (GConv) is selected to boost the predictive performance
+of deep neural networks (DNNs) in a compute and parameter efficient manner. However, we show that
+naive selection of $g$ in GConv creates an imbalance between the computational complexity and degree
+of data reuse, which leads to suboptimal energy efficiency in DNNs. We devise an optimum group size
+model, which enables a balance between computational cost and data movement cost, thus, optimize
+the energy-efficiency of DNNs. Based on the insights from this model, we propose an "energy-efficient
+group convolution" (E2GC) module where, unlike the previous implementations of GConv, the group
+size ($G$) remains constant. Further, to demonstrate the efficacy of the E2GC module, we incorporate
+this module in the design of MobileNet-V1 and ResNeXt-50 and perform experiments on two GPUs, P100
+and P4000. We show that, at comparable computational complexity, DNNs with constant group size
+(E2GC) are more energy-efficient than DNNs with a fixed number of groups (F$g$GC). For example,
+on P100 GPU, the energy-efficiency of MobileNet-V1 and ResNeXt-50 is increased by 10.8% and 4.73%
+(respectively) when E2GC modules substitute the F$g$GC modules in both the DNNs. Furthermore,
+through our extensive experimentation with ImageNet-1K and Food-101 image classification datasets,
+we show that the E2GC module enables a trade-off between generalization ability and representational
+power of DNN. Thus, the predictive performance of DNNs can be optimized by selecting an appropriate
+$G$. The code and trained models are available at https://github.com/iithcandle/E2GC-release.

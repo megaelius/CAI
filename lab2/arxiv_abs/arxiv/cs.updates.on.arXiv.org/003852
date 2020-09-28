@@ -1,0 +1,17 @@
+Can a robot grasp an unknown object without seeing it? In this paper, we present a tactile-sensing
+based approach to this challenging problem of grasping novel objects without prior knowledge of
+their location or physical properties. Our key idea is to combine touch based object localization
+with tactile based re-grasping. To train our learning models, we created a large-scale grasping
+dataset, including more than 30 RGB frames and over 2.8 million tactile samples from 7800 grasp interactions
+of 52 objects. To learn a representation of tactile signals, we propose an unsupervised auto-encoding
+scheme, which shows a significant improvement of 4-9% over prior methods on a variety of tactile
+perception tasks. Our system consists of two steps. First, our touch localization model sequentially
+'touch-scans' the workspace and uses a particle filter to aggregate beliefs from multiple hits
+of the target. It outputs an estimate of the object's location, from which an initial grasp is established.
+Next, our re-grasping model learns to progressively improve grasps with tactile feedback based
+on the learned features. This network learns to estimate grasp stability and predict adjustment
+for the next grasp. Re-grasping thus is performed iteratively until our model identifies a stable
+grasp. Finally, we demonstrate extensive experimental results on grasping a large set of novel
+objects using tactile sensing alone. Furthermore, when applied on top of a vision-based policy,
+our re-grasping model significantly boosts the overall accuracy by 10.6%. We believe this is the
+first attempt at learning to grasp with only tactile sensing and without any prior object knowledge.

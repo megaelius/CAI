@@ -1,0 +1,18 @@
+We use Dataflow Engines (DFE) to construct an efficient Wiener filter of noisy and incomplete image
+data, and to quickly draw probabilistic samples of the compatible true underlying images from the
+Wiener posterior. Dataflow computing is a powerful approach using reconfigurable hardware, which
+can be deeply pipelined and is intrinsically parallel. The unique Wiener-filtered image is the
+minimum-variance linear estimate of the true image (if the signal and noise covariances are known)
+and the most probable true image (if the signal and noise are Gaussian distributed). However, many
+images are compatible with the data with different probabilities, given by the analytic posterior
+probability distribution referred to as the Wiener posterior. The DFE code also draws large numbers
+of samples of true images from this posterior, which allows for further statistical analysis. Naive
+computation of the Wiener-filtered image is impractical for large datasets, as it scales as $n^3$,
+where $n$ is the number of pixels. We use a messenger field algorithm, which is well suited to a DFE
+implementation, to draw samples from the Wiener posterior, that is, with the correct probability
+we draw samples of noiseless images that are compatible with the observed noisy image. The Wiener-filtered
+image can be obtained by a trivial modification of the algorithm. We demonstrate a lower bound on
+the speed-up, from drawing 10$^5$ samples of a 128$^2$ image, of 11.3 ${\pm}$ 0.8 with 8 DFEs in a 1U
+MPC-X box when compared with a 1U server presenting 32 CPU threads. We also discuss a potential application
+in astronomy, to provide better dark matter maps and improved determination of the parameters of
+the Universe. 

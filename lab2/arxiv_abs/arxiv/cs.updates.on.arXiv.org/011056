@@ -1,0 +1,19 @@
+Recently, many studies proposed CNN accelerator architectures with custom computation units
+that try to improve energy-efficiency and performance of CNN by minimizing data transfers from
+DRAM-based main memory. However, in these architectures, DRAM still contributes half of the overall
+energy consumption of the system, on average. A key factor of the high energy consumption of DRAM
+is the refresh overhead, which is estimated to consume 40% of the total DRAM energy. We propose a new
+mechanism, Refresh Triggered Computation (RTC), that exploits the memory access patterns of CNN
+applications to reduce the number of refresh operations. RTC mainly uses two techniques to mitigate
+the refresh overhead. First, Refresh Triggered Transfer (RTT) is based on our new observation that
+a CNN application accesses a large portion of the DRAM in a predictable and recurring manner. Thus,
+the read/write accesses inherently refresh the DRAM, and therefore a significant fraction of refresh
+operations can be skipped. Second, Partial Array Auto-Refresh (PAAR) eliminates the refresh operations
+to DRAM regions that do not store any data. We propose three RTC designs, each of which requires a different
+level of aggressiveness in terms of customization to the DRAM subsystem. All of our designs have
+small overhead. Even the most aggressive design of RTC imposes an area overhead of only 0.18% in a
+2Gb DRAM chip and can have less overhead for denser chips. Our experimental evaluation on three well-known
+CNNs (i.e., AlexNet, LeNet, and GoogleNet) show that RTC can reduce the DRAM refresh energy from
+25% to 96%, for the least aggressive and the most aggressive designs, respectively. Although we
+mainly use CNNs in our evaluations, we believe RTC can be applied to a wide range of applications,
+whose memory access patterns remain predictable for sufficiently long time. 

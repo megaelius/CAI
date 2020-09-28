@@ -1,0 +1,18 @@
+Various kinetic Monte Carlo algorithms become inefficient when some of the population sizes in
+a system are large, which gives rise to a large number of reaction events per unit time. Here, we present
+a new acceleration algorithm based on adaptive and heterogeneous scaling of reaction rates and
+stoichiometric coefficients. The algorithm is conceptually related to the commonly used idea
+of accelerating a stochastic simulation by considering a sub-volume $\lambda \Omega$ ($0<\lambda<1$)
+within a system of interest, which reduces the number of reaction events per unit time occurring
+in a simulation by a factor $1/\lambda$ at the cost of greater error in unbiased estimates of first
+moments and biased overestimates of second moments. Our new approach offers two unique benefits.
+First, scaling is adaptive and heterogeneous, which eliminates the pitfall of overaggressive
+scaling. Second, there is no need for an \emph{a priori} classification of populations as discrete
+or continuous (as in a hybrid method), which is problematic when discreteness of a chemical species
+changes during a simulation. The method requires specification of only a single algorithmic parameter,
+$N_c$, a global critical population size above which populations are effectively scaled down to
+increase simulation efficiency. The method, which we term partial scaling, is implemented in the
+open-source BioNetGen software package. We demonstrate that partial scaling can significantly
+accelerate simulations without significant loss of accuracy for several published models of biological
+systems. These models characterize activation of the mitogen-activated protein kinase ERK, prion
+protein aggregation, and T-cell receptor signaling. 

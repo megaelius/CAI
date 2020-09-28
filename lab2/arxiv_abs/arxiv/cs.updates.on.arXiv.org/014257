@@ -1,0 +1,18 @@
+This paper introduces a surrogate modeling scheme based on Grassmannian manifold learning to be
+used for cost-efficient predictions of high-dimensional stochastic systems. The method exploits
+subspace-structured features of each solution by projecting it onto a Grassmann manifold. The
+method utilizes a solution clustering approach in order to identify regions of the parameter space
+over which solutions are sufficiently similarly such that they can be interpolated on the Grassmannian.
+In this clustering, the reduced-order solutions are partitioned into disjoint clusters on the
+Grassmann manifold using the eigen-structure of properly defined Grassmannian kernels and, the
+Karcher mean of each cluster is estimated. Then, the points in each cluster are projected onto the
+tangent space with origin at the corresponding Karcher mean using the exponential mapping. For
+each cluster, a Gaussian process regression model is trained that maps the input parameters of the
+system to the reduced solution points of the corresponding cluster projected onto the tangent space.
+Using this Gaussian process model, the full-field solution can be efficiently predicted at any
+new point in the parameter space. In certain cases, the solution clusters will span disjoint regions
+of the parameter space. In such cases, for each of the solution clusters we utilize a second, density-based
+spatial clustering to group their corresponding input parameter points in the Euclidean space.
+The proposed method is applied to two numerical examples. The first is a nonlinear stochastic ordinary
+differential equation with uncertain initial conditions. The second involves modeling of plastic
+deformation in a model amorphous solid using the Shear Transformation Zone theory of plasticity.

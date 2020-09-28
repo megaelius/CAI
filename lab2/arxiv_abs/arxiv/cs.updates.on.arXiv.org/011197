@@ -1,0 +1,20 @@
+We consider the primitive relay channel, where the source sends a message to the relay and to the destination,
+and the relay helps the communication by transmitting an additional message to the destination
+via a separate channel. Two well-known coding techniques have been introduced for this setting:
+decode-and-forward and compress-and-forward. In decode-and-forward, the relay completely
+decodes the message and sends some information to the destination; in compress-and-forward, the
+relay does not decode, and it sends a compressed version of the received signal to the destination
+using Wyner-Ziv coding. In this paper, we present a novel coding paradigm that provides an improved
+achievable rate for the primitive relay channel. The idea is to combine compress-and-forward and
+decode-and-forward via a chaining construction. We transmit over pairs of blocks: in the first
+block, we use compress-and-forward; and in the second block, we use decode-and-forward. More specifically,
+in the first block, the relay does not decode, it compresses the received signal via Wyner-Ziv, and
+it sends only part of the compression to the destination. In the second block, the relay completely
+decodes the message, it sends some information to the destination, and it also sends the remaining
+part of the compression coming from the first block. By doing so, we are able to strictly outperform
+both compress-and-forward and decode-and-forward. Note that the proposed coding scheme can be
+implemented with polar codes. As such, it has the typical attractive properties of polar coding
+schemes, namely, quasi-linear encoding and decoding complexity, and error probability that decays
+at super-polynomial speed. As a running example, we take into account the special case of the erasure
+relay channel, and we provide a comparison between the rates achievable by our proposed scheme and
+the existing upper and lower bounds. 

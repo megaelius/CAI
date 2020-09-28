@@ -1,0 +1,18 @@
+In sequence learning tasks such as language modelling, Recurrent Neural Networks must learn relationships
+between input features separated by time. State of the art models such as LSTM and Transformer are
+trained by backpropagation of losses into prior hidden states and inputs held in memory. This allows
+gradients to flow from present to past and effectively learn with perfect hindsight, but at a significant
+memory cost. In this paper we show that it is possible to train high performance recurrent networks
+using information that is local in time, and thereby achieve a significantly reduced memory footprint.
+We describe a predictive autoencoder called bRSM featuring recurrent connections, sparse activations,
+and a boosting rule for improved cell utilization. The architecture demonstrates near optimal
+performance on a non-deterministic (stochastic) partially-observable sequence learning task
+consisting of high-Markov-order sequences of MNIST digits. We find that this model learns these
+sequences faster and more completely than an LSTM, and offer several possible explanations why
+the LSTM architecture might struggle with the partially observable sequence structure in this
+task. We also apply our model to a next word prediction task on the Penn Treebank (PTB) dataset. We
+show that a 'flattened' RSM network, when paired with a modern semantic word embedding and the addition
+of boosting, achieves 103.5 PPL (a 20-point improvement over the best N-gram models), beating ordinary
+RNNs trained with BPTT and approaching the scores of early LSTM implementations. This work provides
+encouraging evidence that strong results on challenging tasks such as language modelling may be
+possible using less memory intensive, biologically-plausible training regimes. 

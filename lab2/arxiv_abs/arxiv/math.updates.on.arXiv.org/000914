@@ -1,0 +1,18 @@
+In recent years, stochastic gradient descent (SGD) methods and randomized linear algebra (RLA)
+algorithms have been applied to many large-scale problems in machine learning and data analysis.
+We aim to bridge the gap between these two methods in solving constrained overdetermined linear
+regression problems---e.g., $\ell_2$ and $\ell_1$ regression problems. We propose a hybrid algorithm
+named pwSGD that uses RLA techniques for preconditioning and constructing an importance sampling
+distribution, and then performs an SGD-like iterative process with weighted sampling on the preconditioned
+system. We prove that pwSGD inherits faster convergence rates that only depend on the lower dimension
+of the linear system, while maintaining low computation complexity. Particularly, when solving
+$\ell_1$ regression with size $n$ by $d$, pwSGD returns an approximate solution with $\epsilon$
+relative error in the objective value in $\mathcal{O}(\log n \cdot \text{nnz}(A) + \text{poly}(d)/\epsilon^2)$
+time. This complexity is uniformly better than that of RLA methods in terms of both $\epsilon$ and
+$d$ when the problem is unconstrained. For $\ell_2$ regression, pwSGD returns an approximate solution
+with $\epsilon$ relative error in the objective value and the solution vector measured in prediction
+norm in $\mathcal{O}(\log n \cdot \text{nnz}(A) + \text{poly}(d) \log(1/\epsilon) /\epsilon)$
+time. We also provide lower bounds on the coreset complexity for more general regression problems,
+indicating that still new ideas will be needed to extend similar RLA preconditioning ideas to weighted
+SGD algorithms for more general regression problems. Finally, the effectiveness of such algorithms
+is illustrated numerically on both synthetic and real datasets. 

@@ -1,0 +1,20 @@
+In this paper we propose an efficient second order well balanced finite volume method for modeling
+complex free surface flows at the aid of a simple diffuse interface method. The employed physical
+model is a two-phase model derived from the Baer-Nunziato system for compressible multi-phase
+flows. In particular, as proposed for the first time in Dumbser (2011), the number of equations is
+reduced from seven to three by assuming that the relative pressure of the gas with respect to the atmospheric
+reference pressure is zero, and that the gas momentum is negligible compared to the one of the liquid.
+The two-phase model does not make any of the classical assumptions of shallow water type systems,
+hence it does not neglect vertical accelerations and the free surface is not constraint to be a single-valued
+function, so even complex shapes as those of breaking waves can be properly captured. The resulting
+PDE system is solved by a novel well balanced path-conservative finite volume method on structured
+Cartesian grids, which is able to preserve exactly the equilibrium states even in the presence of
+obstacles. It furthermore automatically computes the location of the water-air interfaces, and
+assures low numerical dissipation at the free surface thanks to a novel Osher-Romberg-type Riemann
+solver. Finally, high computational performance is guaranteed by an efficient parallel implementation
+on a GPU-based platform that reaches the efficiency of twenty million of volumes processed per seconds
+and makes it possible to employ even very fine meshes. The validation of our new well balanced scheme
+is carried out by comparing the obtained numerical results against existing analytical, numerical
+and experimental reference solutions for a large number of test cases, among which oscillating
+elliptical drops, dambreak problems, breaking waves, over topping weir flows, and wave impact
+problems. 

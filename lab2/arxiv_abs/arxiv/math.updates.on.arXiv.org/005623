@@ -1,0 +1,19 @@
+Compressed sensing (CS) is about recovering a structured signal from its under-determined linear
+measurements. Starting from sparsity, recovery methods have steadily moved towards more complex
+structures. Emerging machine learning tools such as generative functions that are based on neural
+networks are able to learn general complex structures from training data. This makes them potentially
+powerful tools for designing CS algorithms. Consider a desired class of signals $\cal Q$, ${\cal
+Q}\subset{R}^n$, and a corresponding generative function $g:{\cal U}^k\rightarrow {R}^n$,
+${\cal U}\subset {R}$, such that $\sup_{{\bf x}\in {\cal Q}}\min_{{\bf u}\in{\cal U}^k}{1\over
+\sqrt{n}}\|g({\bf u})-{\bf x}\|\leq \delta$. A recovery method based on $g$ seeks $g({\bf u})$
+with minimum measurement error. In this paper, the performance of such a recovery method is studied,
+under both noisy and noiseless measurements. In the noiseless case, roughly speaking, it is proven
+that, as $k$ and $n$ grow without bound and $\delta$ converges to zero, if the number of measurements
+($m$) is larger than the input dimension of the generative model ($k$), then asymptotically, almost
+lossless recovery is possible. Furthermore, the performance of an efficient iterative algorithm
+based on projected gradient descent is studied. In this case, an auto-encoder is used to define and
+enforce the source structure at the projection step. The auto-encoder is defined by encoder and
+decoder (generative) functions $f:{R}^n\to{\cal U}^k$ and $g:{\cal U}^k\to{R}^n$, respectively.
+We theoretically prove that, roughly, given $m>40k\log{1\over \delta}$ measurements, such an
+algorithm converges to the vicinity of the desired result, even in the presence of additive white
+Gaussian noise. Numerical results exploring the effectiveness of the proposed method are presented.

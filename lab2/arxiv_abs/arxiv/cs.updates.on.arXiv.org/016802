@@ -1,0 +1,17 @@
+Generative adversarial networks (GANs) have been recently adopted for super-resolution, an application
+closely related to what is referred to as "downscaling" in the atmospheric sciences: improving
+the spatial resolution of low-resolution images. The ability of conditional GANs to generate an
+ensemble of solutions for a given input lends itself naturally to stochastic downscaling, but the
+stochastic nature of GANs is not usually considered in super-resolution applications. Here, we
+introduce a recurrent, stochastic super-resolution GAN that can generate ensembles of time-evolving
+high-resolution atmospheric fields for an input consisting of a low-resolution sequence of images
+of the same field. We test the GAN using two datasets, one consisting of radar-measured precipitation
+from Switzerland, the other of cloud optical thickness derived from the Geostationary Earth Observing
+Satellite 16 (GOES-16). We find that the GAN can generate realistic, temporally consistent super-resolution
+sequences for both datasets. The statistical properties of the generated ensemble are analyzed
+using rank statistics, a method adapted from ensemble weather forecasting; these analyses indicate
+that the GAN produces close to the correct amount of variability in its outputs. As the GAN generator
+is fully convolutional, it can be applied after training to input images larger than the images used
+to train it. It is also able to generate time series much longer than the training sequences, as demonstrated
+by applying the generator to a three-month dataset of the precipitation radar data. The source code
+to our GAN is available at https://github.com/jleinonen/downscaling-rnn-gan. 

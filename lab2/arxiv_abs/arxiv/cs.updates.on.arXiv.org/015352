@@ -1,0 +1,18 @@
+We consider the problem of reward learning for temporally extended tasks. For reward learning,
+inverse reinforcement learning (IRL) is a widely used paradigm. Given a Markov decision process
+(MDP) and a set of demonstrations for a task, IRL learns a reward function that assigns a real-valued
+reward to each state of the MDP. However, for temporally extended tasks, the underlying reward function
+may not be expressible as a function of individual states of the MDP. Instead, the history of visited
+states may need to be considered to determine the reward at the current state. To address this issue,
+we propose an iterative algorithm to learn a reward function for temporally extended tasks. At each
+iteration, the algorithm alternates between two modules, a task inference module that infers the
+underlying task structure and a reward learning module that uses the inferred task structure to
+learn a reward function. The task inference module produces a series of queries, where each query
+is a sequence of subgoals. The demonstrator provides a binary response to each query by attempting
+to execute it in the environment and observing the environment's feedback. After the queries are
+answered, the task inference module returns an automaton encoding its current hypothesis of the
+task structure. The reward learning module augments the state space of the MDP with the states of
+the automaton. The module then proceeds to learn a reward function over the augmented state space
+using a novel deep maximum entropy IRL algorithm. This iterative process continues until it learns
+a reward function with satisfactory performance. The experiments show that the proposed algorithm
+significantly outperforms several IRL baselines on temporally extended tasks. 

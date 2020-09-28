@@ -1,0 +1,19 @@
+The response time of jobs with multiple parallel tasks is a critical performance metric in many systems,
+including MapReduce systems, coded data storage systems, etc. However, tight analytical characterizations
+of the response time of such jobs are largely unknown except for highly degenerate cases. The difficulty
+is rooted in the fact that a job with multiple tasks is considered complete only when all of its tasks
+complete processing; i.e., the job response time is the maximum of the response times of its tasks,
+which is hard to analyze since these task response times are generally not independent. In this paper,
+we approach this problem by studying when the response times of a job's tasks are close to being independent.
+We consider a limited fork-join model with $n$ servers, where each job consists of $k^{(n)}\le n$
+tasks. Upon arrival, each job chooses $k^{(n)}$ distinct servers uniformly at random and sends
+one task to each server. We assume Poisson job arrivals and generally distributed task service times.
+We establish that under the condition $k^{(n)} = o(n^{1/4})$, the steady state response times at
+any $k^{(n)}$ servers are asymptotically independent, as $n$ grows large. This result greatly
+generalizes the asymptotic-independence type of results in the literature where asymptotic independence
+is shown only for a fixed constant number of queues. We then further show that the job response time
+converges to the maximum of independent task response times, in a proper sense. This gives the first
+asymptotically tight analytical characterization of the response time of a multi-task parallel
+job. To complement the asymptotic independence result, we also show that when $k^{(n)}=\Theta(n)$,
+any number of multiple queues are not asymptotically independent. Analysis for the regime of $k^{(n)}$
+between $o(n^{1/4})$ and $\Theta(n)$ remains open. 

@@ -1,0 +1,17 @@
+A discontinuous Galerkin (DG) method suitable for large-scale astrophysical simulations on Cartesian
+meshes as well as arbitrary static and moving Voronoi meshes is presented. Most major astrophysical
+fluid dynamics codes use a finite volume (FV) approach. We demonstrate that the DG technique offers
+distinct advantages over FV formulations on both static and moving meshes. The DG method is also
+easily generalized to higher than second-order accuracy without requiring the use of extended
+stencils to estimate derivatives (thereby making the scheme highly parallelizable). We implement
+the technique in the AREPO code for solving the fluid and the magnetohydrodynamic (MHD) equations.
+By examining various test problems, we show that our new formulation provides improved accuracy
+over FV approaches of the same order, and reduces post-shock oscillations and artificial diffusion
+of angular momentum. In addition, the DG method makes it possible to represent magnetic fields in
+a locally divergence-free way, improving the stability of MHD simulations and moderating global
+divergence errors, and is a viable alternative for solving the MHD equations on meshes where Constrained-Transport
+(CT) cannot be applied. We find that the DG procedure on a moving mesh is more sensitive to the choice
+of slope limiter than is its FV method counterpart. Therefore, future work to improve the performance
+of the DG scheme even further will likely involve the design of optimal slope limiters. As presently
+constructed, our technique offers the potential of improved accuracy in astrophysical simulations
+using the moving mesh AREPO code as well as those employing adaptive mesh refinement (AMR). 

@@ -1,0 +1,20 @@
+We present priority queues in the external memory model with block size $B$ and main memory size $M$
+that support on $N$ elements, operation Update (a combination of operations Insert and Decrease-Key)
+in $O\left( \frac{1}{B}\log_{\frac{M}{B}} \frac{N}{B}\right)$ amortized I/Os and operations
+Extract-Min and Delete in $O\left( \lceil \frac{M^{\varepsilon}}{B} \log_{\frac{M}{B}} \frac{N}{B}
+\rceil \log_{\frac{M}{B}} \frac{N}{B}\right)$ amortized I/Os, for any real $\varepsilon \in
+\left(0,1\right)$, using $O\left( \frac{N}{B}\log_{\frac{M}{B}} \frac{N}{B}\right)$ blocks.
+Previous I/O-efficient priority queues either support these operations in $O\left(\frac{1}{B}\log_2
+\frac{N}{B}\right)$ amortized I/Os [Kumar and Schwabe, SPDP '96] or support only operations Insert,
+Delete and Extract-Min in optimal $O\left( \frac{1}{B}\log_{\frac{M}{B}} \frac{N}{B}\right)
+$ amortized I/Os, however without supporting Decrease-Key [Fadel et al., TCS '99]. We also present
+buffered repository trees that support on a multi-set of $N$ elements, operation Insert in $O\left(\frac{1}{B}\log_{\frac{M}{B}}
+\frac{N}{B}\right)$ I/Os and operation Extract on $K$ extracted elements in $O\left( M^{\varepsilon}\log_{\frac{M}{B}}
+\frac{N}{B} + K/B\right)$ amortized I/Os, using $O \left(\frac{N}{B}\right)$ blocks. Previous
+results achieve $O\left(\frac{1}{B}\log_2 \frac{N}{B}\right)$ I/Os and $O\left( \log_2 \frac{N}{B}
++ \frac{K}{B}\right)$ I/Os, respectively [Buchsbaum et al., SODA '00]. Our results imply improved
+$O\left(\frac{E}{B}\log_{\frac{M}{B}} \frac{E}{B}\right)$ I/Os for single-source shortest
+paths, depth-first search and breadth-first search algorithms on massive directed dense graphs
+$\left(V,E\right)$ with $E = \Omega \left( V^{1+\varepsilon}\right), \varepsilon > 0$ and $V
+= \Omega \left( M \right)$, which is equal to the I/O-optimal bound for sorting $E$ values in external
+memory. 

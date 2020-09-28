@@ -1,0 +1,18 @@
+Hyperbolic random graphs (HRG) and geometric inhomogeneous random graphs (GIRG) are two similar
+generative network models that were designed to resemble complex real world networks. In particular,
+they have a power-law degree distribution with controllable exponent $\beta$, and high clustering
+that can be controlled via the temperature $T$. We present the first implementation of an efficient
+GIRG generator running in expected linear time. Besides varying temperatures, it also supports
+underlying geometries of higher dimensions. It is capable of generating graphs with ten million
+edges in under a second on commodity hardware. The algorithm can be adapted to HRGs. Our resulting
+implementation is the fastest sequential HRG generator, despite the fact that we support non-zero
+temperatures. Though non-zero temperatures are crucial for many applications, most existing
+generators are restricted to $T = 0$. Our generators support parallelization, although this is
+not the focus of this paper. We note that our generators draw from the correct probability distribution,
+i.e., they involve no approximation. Besides the generators themselves, we also provide an efficient
+algorithm to determine the non-trivial dependency between the average degree of the resulting
+graph and the input parameters of the GIRG model. This makes it possible to specify the expected average
+degree as input. Moreover, we investigate the differences between HRGs and GIRGs, shedding new
+light on the nature of the relation between the two models. Although HRGs represent, in a certain
+sense, a special case of the GIRG model, we find that a straight-forward inclusion does not hold in
+practice. However, the difference is negligible for most use cases. 

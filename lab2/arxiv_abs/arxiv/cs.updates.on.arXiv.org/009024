@@ -1,0 +1,19 @@
+Developing interactive applications (apps) against event-driven software frameworks such as
+Android is notoriously difficult. To create apps that behave as expected, developers must follow
+complex and often implicit asynchronous programming protocols. Such protocols intertwine the
+proper registering of callbacks to receive control from the framework with appropriate application-programming
+interface (API) calls that in turn affect the set of possible future callbacks. An app violates the
+protocol when, for example, it calls a particular API method in a state of the framework where such
+a call is invalid. What makes automated reasoning hard in this domain is largely what makes programming
+apps against such frameworks hard: the specification of the protocol is unclear, and the control
+flow is complex, asynchronous, and higher-order. In this paper, we tackle the problem of specifying
+and modeling event-driven application-programming protocols. In particular, we formalize a
+core meta-model that captures the dialogue between event-driven frameworks and application callbacks.
+Based on this meta-model, we define a language called lifestate that permits precise and formal
+descriptions of application-programming protocols and the callback control flow imposed by the
+event-driven framework. Lifestate unifies modeling what app callbacks can expect of the framework
+with specifying rules the app must respect when calling into the framework. In this way, we effectively
+combine lifecycle constraints and typestate rules. To evaluate the effectiveness of lifestate
+modeling, we provide a dynamic verification algorithm that takes as input a trace of execution of
+an app and a lifestate protocol specification to either produce a trace witnessing a protocol violation
+or a proof that no such trace is realizable. 

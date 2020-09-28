@@ -1,0 +1,18 @@
+In this paper, we are motivated by two important applications: entropy-regularized optimal transport
+problem and road or IP traffic demand matrix estimation by entropy model. Both of them include solving
+a special type of optimization problem with linear equality constraints and objective given as
+a sum of an entropy regularizer and a linear function. It is known that the state-of-the-art solvers
+for this problem, which are based on Sinkhorn's method (also known as RSA or balancing method), can
+fail to work, when the entropy-regularization parameter is small. We consider the above optimization
+problem as a particular instance of a general strongly convex optimization problem with linear
+constraints. We propose a new algorithm to solve this general class of problems. Our approach is
+based on the transition to the dual problem. First, we introduce a new accelerated gradient method
+with adaptive choice of gradient's Lipschitz constant. Then, we apply this method to the dual problem
+and show, how to reconstruct an approximate solution to the primal problem with provable convergence
+rate. We prove the rate $O(1/k^2)$, $k$ being the iteration counter, both for the absolute value
+of the primal objective residual and constraints infeasibility. Our method has similar to Sinkhorn's
+method complexity of each iteration, but is faster and more stable numerically, when the regularization
+parameter is small. We illustrate the advantage of our method by numerical experiments for the two
+mentioned applications. We show that there exists a threshold, such that, when the regularization
+parameter is smaller than this threshold, our method outperforms the Sinkhorn's method in terms
+of computation time. 

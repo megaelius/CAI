@@ -1,0 +1,20 @@
+This paper investigates lung nodule classification by using deep neural networks (DNNs). Hyperparameter
+optimization in DNNs is a computationally expensive problem, where evaluating a hyperparameter
+configuration may take several hours or even days. Bayesian optimization has been recently introduced
+for the automatically searching of optimal hyperparameter configurations of DNNs. It applies
+probabilistic surrogate models to approximate the validation error function of hyperparameter
+configurations, such as Gaussian processes, and reduce the computational complexity to a large
+extent. However, most existing surrogate models adopt stationary covariance functions to measure
+the difference between hyperparameter points based on spatial distance without considering its
+spatial locations. This distance-based assumption together with the condition of constant smoothness
+throughout the whole hyperparameter search space clearly violates the property that the points
+far away from optimal points usually get similarly poor performance even though each two of them
+have huge spatial distance between them. In this paper, a non-stationary kernel is proposed which
+allows the surrogate model to adapt to functions whose smoothness varies with the spatial location
+of inputs, and a multi-level convolutional neural network (ML-CNN) is built for lung nodule classification
+whose hyperparameter configuration is optimized by using the proposed non-stationary kernel
+based Gaussian surrogate model. Our algorithm searches the surrogate for optimal setting via hyperparameter
+importance based evolutionary strategy, and the experiments demonstrate our algorithm outperforms
+manual tuning and well-established hyperparameter optimization methods such as Random search,
+Gaussian processes with stationary kernels, and recently proposed Hyperparameter Optimization
+via RBF and Dynamic coordinate search. 

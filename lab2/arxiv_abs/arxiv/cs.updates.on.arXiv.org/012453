@@ -1,0 +1,19 @@
+One of the recent approaches to explain good performance of neural networks has focused on their
+ability to fit training data perfectly (interpolate) without overfitting. It has been shown that
+this is not unique to neural nets, and that it happens with simpler models such as kernel regression,
+too Belkin et al. (2018b); Tengyuan Liang (2018). Consequently, there has been quite a few works
+that give conditions for low risk or optimality of interpolating models, see for example Belkin
+et al. (2018a, 2019b). One of the simpler models where interpolation has been studied recently is
+least squares solution for linear regression. In this case, interpolation is only guaranteed to
+happen in high dimensional setting where the number of parameters exceeds number of samples; therefore,
+least squares solution is not necessarily unique. However, minimum norm solution is unique, can
+be written in closed form, and gradient descent starting at the origin converges to it (Hastie et
+al., 2019). This has, at least partially, motivated several works that study risk of minimum norm
+least squares estimator for linear regression. Continuing in a similar vein, we study the asymptotic
+risk of minimum norm least squares estimator when number of parameters $d$ depends on $n$, and $\frac{d}{n}
+\rightarrow \infty$. In this high dimensional setting, to make inference feasible, it is usually
+assumed that true parameters or data have some underlying low dimensional structure such as sparsity,
+or vanishing eigenvalues of population covariance matrix. Here, we restrict ourselves to spike
+covariance matrices, where a fixed finite number of eigenvalues grow with $n$ and are much larger
+than the rest of the eigenvalues, which are (asymptotically) in the same order. We show that in this
+setting the risk can vanish. 

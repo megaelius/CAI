@@ -1,0 +1,18 @@
+Formal verification provides strong safety guarantees but only for models of cyber-physical systems.
+Hybrid system models describe the required interplay of computation and physical dynamics, which
+is crucial to guarantee what computations lead to safe physical behavior (e.g., cars should not
+collide). Control computations that affect physical dynamics must act in advance to avoid possibly
+unsafe future circumstances. Formal verification then ensures that the controllers correctly
+identify and provably avoid unsafe future situations under a certain model of physics. But any model
+of physics necessarily deviates from reality and, moreover, any observation with real sensors
+and manipulation with real actuators is subject to uncertainty. This makes runtime validation
+a crucial step to monitor whether the model assumptions hold for the real system implementation.
+The key question is what property needs to be runtime-monitored and what a satisfied runtime monitor
+entails about the safety of the system: the observations of a runtime monitor only relate back to
+the safety of the system if they are themselves accompanied by a proof of correctness! For an unbroken
+chain of correctness guarantees, we, thus, synthesize runtime monitors in a provably correct way
+from provably safe hybrid system models. This paper addresses the inevitable challenge of making
+the synthesized monitoring conditions robust to partial observability of sensor uncertainty
+and partial controllability due to actuator disturbance. We show that the monitoring conditions
+result in provable safety guarantees with fallback controllers that react to monitor violation
+at runtime. 

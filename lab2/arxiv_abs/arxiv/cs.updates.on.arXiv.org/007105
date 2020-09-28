@@ -1,0 +1,19 @@
+Model-based design offers a promising approach for assisting developers to build reliable and
+secure cyber-physical systems (CPSs) in a systematic manner. In this methodology, a designer first
+constructs a model, with mathematically precise semantics, of the system under design, and performs
+extensive analysis with respect to correctness requirements before generating the implementation
+from the model. However, as new vulnerabilities are discovered, requirements evolve aimed at ensuring
+resiliency. There is currently a shortage of an inexpensive, automated mechanism that can effectively
+repair the initial design, and a model-based system developer regularly needs to redesign and reimplement
+the system from scratch. In this paper, we propose a new methodology along with a Matlab toolkit called
+REAFFIRM to facilitate the model-based repair for improving the resiliency of CPSs. REAFFIRM takes
+the inputs including 1) an original hybrid system modeled as a Simulink/Stateflow diagram, 2) a
+given resiliency pattern specified as a model transformation script, and 3) a safety requirement
+expressed as a Signal Temporal Logic formula, and then outputs a repaired model which satisfies
+the requirement. The overall structure of REAFFIRM contains two main modules, a model transformation,
+and a model synthesizer built on top of the falsification tool Breach. We introduce a new model transformation
+language for hybrid systems, which we call HATL to allow a designer to specify resiliency patterns.
+To evaluate the proposed approach, we use REAFFIRM to automatically synthesize repaired models
+for an adaptive cruise control (ACC) system under a GPS sensor spoofing attack, for a single-machine
+infinite-bus (SMIB) system under a sliding-mode switching attack, and for a missile guidance system
+under gyroscopes sensor attack. 

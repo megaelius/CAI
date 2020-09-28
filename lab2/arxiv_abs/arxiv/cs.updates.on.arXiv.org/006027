@@ -1,0 +1,17 @@
+Modern mobile and embedded platforms see a large number of ephemeral tasks driven by background
+activities. In order to execute such a task, the OS kernel wakes up the platform beforehand and puts
+it back to sleep afterwards. In doing so, the kernel operates various IO devices and orchestrates
+their power state transitions. Such kernel execution phases are lengthy, having high energy cost,
+and yet difficult to optimize. We advocate for relieving the CPU from these kernel phases by executing
+them on a low-power, microcontroller-like core, dubbed peripheral core, hence leaving the CPU
+off. Yet, for a peripheral core to execute phases in a complex commodity kernel (e.g. Linux), existing
+approaches either incur high engineering effort or high runtime overhead. We take a radical approach
+with a new executor model called transkernel. Running on a peripheral core, a transkernel executes
+the binary of the commodity kernel through cross-ISA, dynamic binary translation (DBT). The transkernel
+translates stateful kernel code while emulating a small set of stateless kernel services; it sets
+a narrow, stable binary interface for emulated services; it specializes for kernel's beaten paths;
+it exploits ISA similarities for low DBT cost. With a concrete implementation on a heterogeneous
+ARM SoC, we demonstrate the feasibility and benefit of transkernel. Our result contributes a new
+OS structure that combines cross-ISA DBT and emulation for harnessing a heterogeneous SoC. Our
+result demonstrates that while cross-ISA DBT is typically used under the assumption of efficiency
+loss, it can be used for efficiency gain, even atop off-the-shelf hardware. 

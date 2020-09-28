@@ -1,0 +1,20 @@
+This thesis investigates effectful declarative programming with an emphasis on non-determinism
+as an effect. On the one hand, we are interested in developing applications using non-determinism
+as underlying implementation idea. We discuss two applications using the functional logic programming
+language Curry. The key idea of these implementations is to exploit the interplay of non-determinism
+and non-strictness that Curry employs. The first application investigates sorting algorithms
+parametrised over a comparison function. By applying a non-deterministic predicate to these sorting
+functions, we gain a permutation enumeration function. We compare the implementation in Curry
+with an implementation in Haskell that uses a monadic interface to model non-determinism. The other
+application that we discuss in this work is a library for probabilistic programming. Instead of
+modelling distributions as list of event and probability pairs, we model distributions using Curry's
+built-in non-determinism. In both cases we observe that the combination of non-determinism and
+non-strictness has advantages over an implementation using lists to model non-determinism. On
+the other hand, we present an idea to apply formal reasoning on effectful declarative programming
+languages. In order to start with simple effects, we focus on modelling a functional subset first.
+That is, the effects of interest are totality and partiality. We then observe that the general scheme
+to model these two effects can be generalised to capture a wide range of effects. Obviously, the next
+step is to apply the idea to model non-determinism. More precisely, we implement a model for the non-determinism
+of Curry: non-strict non-determinism with call-time choice. Therefore, we finally discuss why
+the current representation models call-by-name rather than Curry's call-by-need semantics and
+give an outlook on ideas to tackle this problem. 

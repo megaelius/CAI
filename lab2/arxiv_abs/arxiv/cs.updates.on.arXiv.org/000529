@@ -1,0 +1,20 @@
+Gossip algorithms spread information by having nodes repeatedly forward information to a few random
+contacts. By their very nature, gossip algorithms tend to be distributed and fault tolerant. If
+done right, they can also be fast and message-efficient. A common model for gossip communication
+is the random phone call model, in which in each synchronous round each node can PUSH or PULL information
+to or from a random other node. For example, Karp et al. [FOCS 2000] gave algorithms in this model that
+spread a message to all nodes in $\Theta(\log n)$ rounds while sending only $O(\log \log n)$ messages
+per node on average. Recently, Avin and Els\"asser [DISC 2013], studied the random phone call model
+with the natural and commonly used assumption of direct addressing. Direct addressing allows nodes
+to directly contact nodes whose ID (e.g., IP address) was learned before. They show that in this setting,
+one can "break the $\log n$ barrier" and achieve a gossip algorithm running in $O(\sqrt{\log n})$
+rounds, albeit while using $O(\sqrt{\log n})$ messages per node. We study the same model and give
+a simple gossip algorithm which spreads a message in only $O(\log \log n)$ rounds. We also prove a
+matching $\Omega(\log \log n)$ lower bound which shows that this running time is best possible.
+In particular we show that any gossip algorithm takes with high probability at least $0.99 \log \log
+n$ rounds to terminate. Lastly, our algorithm can be tweaked to send only $O(1)$ messages per node
+on average with only $O(\log n)$ bits per message. Our algorithm therefore simultaneously achieves
+the optimal round-, message-, and bit-complexity for this setting. As all prior gossip algorithms,
+our algorithm is also robust against failures. In particular, if in the beginning an oblivious adversary
+fails any $F$ nodes our algorithm still, with high probability, informs all but $o(F)$ surviving
+nodes. 

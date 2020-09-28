@@ -1,0 +1,5 @@
+I would be grateful to anyone who knows about an X-windows application
+that would emulate HP 2623A graphics in a manner similar to
+the way TEK graphics windows are implemented in xterm.
+Thanks for you help.
+-- Oleg Roytburd (oleg@sdd.comsat.com)

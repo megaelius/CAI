@@ -1,0 +1,18 @@
+Predicting the future is a crucial first step to effective control, since systems that can predict
+the future can select plans that lead to desired outcomes. In this work, we study the problem of future
+prediction at the level of 3D scenes, represented by point clouds captured by a LiDAR sensor, i.e.,
+directly learning to forecast the evolution of >100,000 points that comprise a complete scene.
+We term this Scene Point Cloud Sequence Forecasting (SPCSF). By directly predicting the densest-possible
+3D representation of the future, the output contains richer information than other representations
+such as future object trajectories. We design a method, SPCSFNet, evaluate it on the KITTI and nuScenes
+datasets, and find that it demonstrates excellent performance on the SPCSF task. To show that SPCSF
+can benefit downstream tasks such as object trajectory forecasting, we present a new object trajectory
+forecasting pipeline leveraging SPCSFNet. Specifically, instead of forecasting at the object
+level as in conventional trajectory forecasting, we propose to forecast at the sensor level and
+then apply detection and tracking on the predicted sensor data. As a result, our new pipeline can
+remove the need of object trajectory labels and enable large-scale training with unlabeled sensor
+data. Surprisingly, we found our new pipeline based on SPCSFNet was able to outperform the conventional
+pipeline using state-of-the-art trajectory forecasting methods, all of which require future
+object trajectory labels. Finally, we propose a new evaluation procedure and two new metrics to
+measure the end-to-end performance of the trajectory forecasting pipeline. Our code will be made
+publicly available at https://github.com/xinshuoweng/SPCSF. 

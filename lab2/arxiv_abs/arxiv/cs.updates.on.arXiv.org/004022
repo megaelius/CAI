@@ -1,0 +1,19 @@
+As the cost-per-byte of storage systems dramatically decreases, SSDs are finding their ways in
+emerging cloud infrastructure. Similar trend is happening for main memory subsystem, as advanced
+DRAM technologies with higher capacity, frequency and number of channels are deploying for cloud-scale
+solutions specially for non-virtualized environment where cloud subscribers can exactly specify
+the configuration of underling hardware. Given the performance sensitivity of standard workloads
+to the memory hierarchy parameters, it is important to understand the role of memory and storage
+for data intensive workloads. In this paper, we investigate how the choice of DRAM (high-end vs low-end)
+impacts the performance of Hadoop, Spark, and MPI based Big Data workloads in the presence of different
+storage types on bare metal cloud. Through a methodical experimental setup, we have analyzed the
+impact of DRAM capacity, operating frequency, the number of channels, storage type, and scale-out
+factors on the performance of these popular frameworks. Based on micro-architectural analysis,
+we classified data-intensive workloads into three groups namely I/O bound, compute bound, and
+memory bound. The characterization results show that neither DRAM capacity, frequency, nor the
+number of channels play a significant role on the performance of all studied Hadoop workloads as
+they are mostly I/O bound. On the other hand, our results reveal that iterative tasks (e.g. machine
+learning) in Spark and MPI are benefiting from a high-end DRAM in particular high frequency and large
+number of channels, as they are memory or compute bound. Our results show that using SSD PCIe cannot
+shift the bottleneck from storage to memory, while it can change the workload behavior from I/O bound
+to compute bound. 

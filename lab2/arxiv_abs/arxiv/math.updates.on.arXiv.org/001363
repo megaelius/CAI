@@ -1,0 +1,19 @@
+We present the SIBIA (Scalable Integrated Biophysics-based Image Analysis) framework for joint
+image registration and biophysical inversion and we apply it to analyse MR images of glioblastomas
+(primary brain tumors). In particular, we consider the following problem. Given the segmentation
+of a normal brain MRI and the segmentation of a cancer patient MRI, we wish to determine tumor growth
+parameters and a registration map so that if we "grow a tumor" (using our tumor model) in the normal
+segmented image and then register it to the patient segmented image, then the registration mismatch
+is as small as possible. We call this "the coupled problem" because it two-way couples the biophysical
+inversion and registration problems. In the image registration step we solve a large-deformation
+diffeomorphic registration problem parameterized by an Eulerian velocity field. In the biophysical
+inversion step we estimate parameters in a reaction-diffusion tumor growth model that is formulated
+as a partial differential equation. In this paper, our contributions are the introduction of a PDE-constrained
+optimization formulation of the coupled problem, the derivation of the optimality conditions,
+and the derivation of a Picard iterative scheme for the solution of the coupled problem. In addition,
+we perform several tests to experimentally assess the performance of our method on synthetic and
+clinical datasets. We demonstrate the convergence of the SIBIA optimization solver in different
+usage scenarios. We demonstrate that we can accurately solve the coupled problem in three dimensions
+($256^3$ resolution) in a few minutes using 11 dual-x86 nodes. Also, we demonstrate that, with our
+coupled approach, we can successfully register normal MRI to tumor-bearing MRI while obtaining
+Dice coefficients that match those achieved when registering of normal-to-normal MRI. 

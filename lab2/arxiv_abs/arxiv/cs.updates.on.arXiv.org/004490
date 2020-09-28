@@ -1,0 +1,19 @@
+This paper investigates the message complexity of distributed information spreading (a.k.a gossip
+or token dissemination) in adversarial dynamic networks, where the goal is to spread $k$ tokens
+of information to every node on an $n$-node network. We consider the amortized (average) message
+complexity of spreading a token, assuming that the number of tokens is large. Our focus is on token-forwarding
+algorithms, which do not manipulate tokens in any way other than storing, copying, and forwarding
+them. We consider two types of adversaries that arbitrarily rewire the network while keeping it
+connected: the adaptive adversary that is aware of the status of all the nodes and the algorithm (including
+the current random choices), and the oblivious adversary that is oblivious to the random choices
+made by the algorithm. The central question that motivates our work is whether one can achieve subquadratic
+amortized message complexity for information spreading. We present two sets of results depending
+on how nodes send messages to their neighbors: (1) Local broadcast: We show a tight lower bound of
+$\Omega(n^2)$ on the number of amortized local broadcasts, which is matched by the naive flooding
+algorithm, (2) Unicast: We study the message complexity as a function of the number of dynamic changes
+in the network. To facilitate this, we introduce a natural complexity measure for analyzing dynamic
+networks called adversary-competitive message complexity where the adversary pays a unit cost
+for every topological change. Under this model, it is shown that if $k$ is sufficiently large, we
+can obtain an optimal amortized message complexity of $O(n)$. We also present a randomized algorithm
+that achieves subquadratic amortized message complexity when the number of tokens is not large
+under an oblivious adversary. 

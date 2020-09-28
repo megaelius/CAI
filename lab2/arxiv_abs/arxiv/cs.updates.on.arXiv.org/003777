@@ -1,0 +1,17 @@
+In-memory data management systems, such as key-value store, have become an essential infrastructure
+in today's big-data processing and cloud computing. They rely on efficient index data structures
+to access data. While unordered indexes, such as hash tables, can perform point search in the O(1)
+time, they cannot be used in many scenarios where range operations are required. Many ordered indexes,
+such as B+ tree and skip list, have a O(log N) lookup cost, where N is the number of keys in the index.
+For an ordered index hosting billions of keys, it may take more than 30 key-comparisons for one lookup,
+which is an order of magnitude more expensive than that in a hash table. With large memory and fast
+network in today's data centers, this O(log N) time is taking a big toll on applications that rely
+on ordered indexes. In this paper we introduce a new ordered index data structure, named Wormhole,
+that takes O(log L) worst-case time for looking up a key with a length of L. The low cost is achieved
+by simultaneously leveraging strengths of three data structures, namely hash table, prefix tree,
+and B+ tree, to orchestrate a single fast ordered index. Wormhole's range operations can be performed
+by linear scanning on a list after an initial lookup. This improvement of access efficiency does
+not come at a price of compromised space efficiency. Instead, Wormhole's index space is comparable
+to those of B+ tree and skip list. Experiment results show that Wormhole outperforms skip list and
+B+ tree by up to 8.4x and 4.9x in terms of key lookup throughput, respectively. Its lookup throughput
+is 1.6x to 6.6x as high as that of Masstree, a highly optimized key-value index. 

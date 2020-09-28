@@ -1,0 +1,18 @@
+File system checking and recovery (C/R) tools play a pivotal role in increasing the reliability
+of storage software, identifying and correcting file system inconsistencies. However, with increasing
+disk capacity and data content, file system C/R tools notoriously suffer from long runtimes. We
+posit that current file system checkers fail to exploit CPU parallelism and high throughput offered
+by modern storage devices. To overcome these challenges, we propose pFSCK, a tool that redesigns
+C/R to enable fine-grained parallelism at the granularity of inodes without impacting the correctness
+of C/R's functionality. To accelerate C/R, pFSCK first employs data parallelism by identifying
+functional operations in each stage of the checker and isolating dependent operation and their
+shared data structures. However, fully isolating shared structures is infeasible, consequently
+requiring serialization that limits scalability. To reduce the impact of synchronization bottlenecks
+and exploit CPU parallelism, pFSCK designs pipeline parallelism allowing multiple stages of C/R
+to run simultaneously without impacting correctness. To realize efficient pipeline parallelism
+for different file system data configurations, pFSCK provides techniques for ordering updates
+to global data structures, efficient per-thread I/O cache management, and dynamic thread placement
+across different passes of a C/R. Finally, pFSCK designs a resource-aware scheduler aimed towards
+reducing the impact of C/R on other applications sharing CPUs and the file system. Evaluation of
+pFSCK shows more than 2.6x gains of e2fsck and more than 1.8x over XFS's checker that provides coarse-grained
+parallelism. 

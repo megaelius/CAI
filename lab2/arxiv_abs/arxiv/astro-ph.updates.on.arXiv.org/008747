@@ -1,0 +1,18 @@
+We present a new pseudo-spectral open-source code nicknamed pizza. It is dedicated to the study
+of rapidly-rotating Boussinesq convection under the 2-D spherical quasi-geostrophic approximation,
+a physical hypothesis that is appropriate to model the turbulent convection that develops in planetary
+interiors. The code uses a Fourier decomposition in the azimuthal direction and supports both a
+Chebyshev collocation method and a sparse Chebyshev integration formulation in the cylindrically-radial
+direction. It supports several temporal discretisation schemes encompassing multi-step time
+steppers as well as diagonally-implicit Runge-Kutta schemes. The code has been tested and validated
+by comparing weakly-nonlinear convection with the eigenmodes from a linear solver. The comparison
+of the two radial discretisation schemes has revealed the superiority of the Chebyshev integration
+method over the classical collocation approach both in terms of memory requirements and operation
+counts. The good parallelisation efficiency enables the computation of large problem sizes with
+$\mathcal{O}(10^4\times 10^4)$ grid points using several thousands of ranks. This allows the
+computation of numerical models in the turbulent regime of quasi-geostrophic convection characterised
+by large Reynolds $Re$ and yet small Rossby numbers $Ro$. A preliminary result obtained for a strongly
+supercritical numerical model with a small Ekman number of $10^{-9}$ and a Prandtl number of unity
+yields $Re\simeq 10^5$ and $Ro \simeq 10^{-4}$. pizza is hence an efficient tool to study spherical
+quasi-geostrophic convection in a parameter regime inaccessible to current global 3-D spherical
+shell models. 

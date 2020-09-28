@@ -1,0 +1,18 @@
+This paper focuses on vision-based pose estimation for multiple rigid objects placed in clutter,
+especially in cases involving occlusions and objects resting on each other. Progress has been achieved
+recently in object recognition given advancements in deep learning. Nevertheless, such tools
+typically require a large amount of training data and significant manual effort to label objects.
+This limits their applicability in robotics, where solutions must scale to a large number of objects
+and variety of conditions. Moreover, the combinatorial nature of the scenes that could arise from
+the placement of multiple objects is hard to capture in the training dataset. Thus, the learned models
+might not produce the desired level of precision required for tasks, such as robotic manipulation.
+This work proposes an autonomous process for pose estimation that spans from data generation to
+scene-level reasoning and lifelong self-learning. In particular, the proposed framework first
+generates a labeled dataset for training a Convolutional Neural Network (CNN) for object detection
+in clutter. These detections are used to guide a scene-level optimization process, which considers
+the interactions between the different objects present in the clutter to output pose estimates
+of high precision. Furthermore, confident estimates are used to label online real images from multiple
+views and re-train the process in a lifelong self-learning pipeline. Experimental results indicate
+that this process is quickly able to identify in cluttered scenes physically-consistent object
+poses that are more precise than the ones found by reasoning over individual instances of objects.
+Furthermore, the quality of pose estimates increases over time given the self-learning process.

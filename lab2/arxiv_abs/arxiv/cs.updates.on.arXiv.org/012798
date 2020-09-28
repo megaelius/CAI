@@ -1,0 +1,19 @@
+Methods for quantifying the effects of uncertainties in hyperbolic problems can be divided into
+intrusive and non-intrusive techniques. Non-intrusive methods allow the usage of a given deterministic
+solver in a black-box manner, while being embarrassingly parallel. However, avoiding intrusive
+modifications of a given solver takes away the ability to use several inherently intrusive numerical
+acceleration tools. Moreover, intrusive methods are expected to reach a given accuracy with a smaller
+number of unknowns compared to non-intrusive techniques. This effect is amplified in settings
+with high dimensional uncertainty. A downside of intrusive methods is however the need to guarantee
+hyperbolicity of the resulting moment system. In contrast to stochastic-Galerkin (SG), the Intrusive
+Polynomial Moment (IPM) method is able to maintain hyperbolicity at the cost of solving an optimization
+problem in every spatial cell and every time step. In this work, we propose several acceleration
+techniques for intrusive methods and study their advantages and shortcomings compared to the non-intrusive
+Stochastic Collocation method. When solving steady problems with IPM, the numerical costs arising
+from repeatedly solving the IPM optimization problem can be reduced by using concepts from PDE-constrained
+optimization. Additionally, we propose an adaptive implementation and efficient parallelization
+strategy of the IPM method. The effectiveness of the proposed adaptations is demonstrated for multi-dimensional
+uncertainties in fluid dynamics applications, resulting in the observation of requiring a smaller
+number of unknowns to achieve a given accuracy when using intrusive methods. Furthermore, using
+the proposed acceleration techniques, our implementation reaches a given accuracy faster than
+Stochastic Collocation. 

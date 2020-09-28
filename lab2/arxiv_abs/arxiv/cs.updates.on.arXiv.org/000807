@@ -1,0 +1,17 @@
+MPJ Express is a messaging system that allows computational scientists to write and execute parallel
+Java applications on High Performance Computing (HPC) hardware. Despite its successful adoption
+in the Java HPC community, the MPJ Express software currently does not provide any support for debugging
+and profiling parallel applications and hence forces its users to rely on manual and tedious debugging/profiling
+methods. Support for such tools is essential to help application developers increase their overall
+productivity. To address this we have developed debugging and profiling tools for MPJ Express,
+which are the main topic of this paper. Key design goals for these tools include: 1) maintain compatibility
+with existing logging, debugging, and visualizing tools, 2) build these tools by extending existing
+debugging/profiling tools instead of reinventing the wheel. The first tool, named MPJDebug, builds
+on the open-source Eclipse Integrated Development Environment (IDE). It provides an Eclipse-based
+plugin developed using the Eclipse Plugin Development Environment (PDE). The default Eclipse
+debugger currently does not support debugging parallel applications running on a compute cluster.
+The second tool, named MPJProf, is a utility based on Tuning and Analysis Utility (TAU)-an open-source
+performance evaluation tool. Our goal here is to exploit TAU to profile Java applications parallelized
+using MPJ Express by generating profiles and traces, which can later be visualized using existing
+tools like paraprof and Jumpshot. Towards the end of the paper, we quantify the overhead of using
+MPJProf, which we found to be negligible in the profiling stage of parallel application development.

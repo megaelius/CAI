@@ -1,0 +1,18 @@
+The stable and accurate approximation of discontinuities such as shocks on a finite computational
+mesh is a challenging task. Detection of shocks or strong discontinuities in the flow solution is
+typically achieved through a priori troubled cell indicators, which guide the subsequent action
+of an appropriate shock capturing mechanism. Arriving at a stable and accurate solution often requires
+empirically based parameter tuning and adjustments of the indicator settings to the discretization
+and solution at hand. In this work, we propose to separate the task of shock detection and shock capturing
+more strongly and aim to develop a shock indicator that is robust, accurate, requires minimal user
+input and is suitable for high order element-based methods like discontinuous Galerkin and flux
+reconstruction methods. The novel indicator is learned from analytical data through a supervised
+learning strategy; its input is given by the high order solution field, its output is an element-local
+map of the shock position. We use state of the art methods from edge detection in image analysis based
+on deep convolutional multiscale networks and deep supervision to train the indicators. The resulting
+networks are then used as black box indicators, showing their robustness and accuracy on well established
+canonical testcases. All simulations are run ab initio using the developed indicators, showing
+that they provide also stability during the strongly transient phases. In particular for high order
+schemes with large cells and considerable inner-cell resolution capabilities, we demonstrate
+how the additional accurate prediction of the position of the shock front can be exploited to guide
+inner-element shock capturing strategies. 

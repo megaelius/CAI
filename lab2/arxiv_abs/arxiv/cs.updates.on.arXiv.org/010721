@@ -1,0 +1,19 @@
+We present a numerical scheme for the computation of Artificial Neural Networks' weights, without
+a laborious iterative procedure. The proposed algorithm adheres to the underlying theory, is highly
+fast, and results in remarkably low errors when applied for regression and classification of complex
+data-sets, such as the Griewank function of multiple variables $\mathbf{x} \in \mathbb{R}^{100}$
+with random noise addition, and MNIST database for handwritten digits recognition, with $7\times10^4$
+images. Interestingly, the same mathematical formulation found capable of approximating highly
+nonlinear functions in multiple dimensions, with low errors (e.g. $10^{-10}$) for the test set
+of the unknown functions, their higher-order partial derivatives, as well as numerically solving
+Partial Differential Equations. The method is based on the calculation of the weights of each neuron,
+in small neighborhoods of data, such that the corresponding local approximation matrix is invertible.
+Accordingly, the hyperparameters optimization is not necessary, as the neurons' number stems
+directly from the dimensions of the data, further improving the algorithmic speed. The overfitting
+is inherently eliminated, and the results are interpretable and reproducible. The complexity
+of the proposed algorithm is of class P with $\mathcal{O}(mn^3)$ computing time, that is linear
+for the observations and cubic for the features, in contrast with the NP-Complete class of standard
+algorithms for training ANNs. The performance of the method is high, for small as well as big datasets,
+and the test-set errors are similar or smaller than the train errors indicating the generalization
+efficiency. The supplementary computer code in Julia Language, may reproduce the validation examples,
+and run for other data-sets. 

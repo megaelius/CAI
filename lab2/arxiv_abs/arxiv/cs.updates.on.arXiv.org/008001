@@ -1,0 +1,20 @@
+Inspired by the success of AlphaGo Zero (AGZ) which utilizes Monte Carlo Tree Search (MCTS) with
+Supervised Learning via Neural Network to learn the optimal policy and value function, we focus
+on establishing formally that such an approach indeed finds the optimal solution asymptotically,
+as well as establishing non-asymptotic guarantees. We shall focus on infinite-horizon discounted
+Markov Decision Process (MDP) to establish the results. To start with, this requires establishing
+that for any given query state, MCTS provides an approximate value function for the state with enough
+simulation steps of MDP. This property of MCTS was claimed in the literature, but the proof in the
+seminal works is incomplete. As an important contribution of this work, we establish the correctness
+of MCTS with appropriate polynomial bonus term in UCB. In the process, we establish polynomial concentration
+properties of regret for non-stationary Multi-Arm Bandits (MAB), which might be of interest in
+its own right. Interestingly enough, AGZ utilizes a polynomial form of MCTS as suggested by our result.
+Using the above result, we argue that MCTS, combined with expressive enough supervised learning
+techniques, finds the optimal value at nearly minimax optimal rate. Specifically, when using the
+nearest neighbor supervised learning, we show that MCTS acts as a "policy improvement" operator:
+it has a natural "bootstrapping" property to improve value function approximation for all states,
+due to combining with supervised learning, despite evaluating at only finitely many states. To
+learn an $\epsilon$ approximation of the value function with respect to $\ell_\infty$ norm, MCTS
+combined with nearest neighbor requires a sample size scaling as $\tilde{O}(\epsilon^{-(d+4)})$,
+where $d$ is the dimension of the state space. This is nearly optimal due to a minimax lower bound of
+$\tilde{\Omega} (\epsilon^{-(d+2)}).$ 

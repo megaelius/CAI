@@ -1,0 +1,19 @@
+We construct a matrix $M\in R^{m\otimes d^c}$ with just $m=O(c\,\lambda\,\varepsilon^{-2}\text{poly}\log1/\varepsilon\delta)$
+rows, which preserves the norm $\|Mx\|_2=(1\pm\varepsilon)\|x\|_2$ of all $x$ in any given $\lambda$
+dimensional subspace of $ R^d$ with probability at least $1-\delta$. This matrix can be applied
+to tensors $x^{(1)}\otimes\dots\otimes x^{(c)}\in R^{d^c}$ in $O(c\, m \min\{d,m\})$ time --
+hence the name "Tensor Sketch". (Here $x\otimes y = \text{asvec}(xy^T) = [x_1y_1, x_1y_2,\dots,x_1y_m,x_2y_1,\dots,x_ny_m]\in
+R^{nm}$.) This improves upon earlier Tensor Sketch constructions by Pagh and Pham~[TOCT 2013,
+SIGKDD 2013] and Avron et al.~[NIPS 2014] which require $m=\Omega(3^c\lambda^2\delta^{-1})$
+rows for the same guarantees. The factors of $\lambda$, $\varepsilon^{-2}$ and $\log1/\delta$
+can all be shown to be necessary making our sketch optimal up to log factors. With another construction
+we get $\lambda$ times more rows $m=\tilde O(c\,\lambda^2\,\varepsilon^{-2}(\log1/\delta)^3)$,
+but the matrix can be applied to any vector $x^{(1)}\otimes\dots\otimes x^{(c)}\in R^{d^c}$ in
+just $\tilde O(c\, (d+m))$ time. This matches the application time of Tensor Sketch while still
+improving the exponential dependencies in $c$ and $\log1/\delta$. Technically, we show two main
+lemmas: (1) For many Johnson Lindenstrauss (JL) constructions, if $Q,Q'\in R^{m\times d}$ are
+independent JL matrices, the element-wise product $Qx \circ Q'y$ equals $M(x\otimes y)$ for some
+$M\in R^{m\times d^2}$ which is itself a JL matrix. (2) If $M^{(i)}\in R^{m\times md}$ are independent
+JL matrices, then $M^{(1)}(x \otimes (M^{(2)}y \otimes \dots)) = M(x\otimes y\otimes \dots)$
+for some $M\in R^{m\times d^c}$ which is itself a JL matrix. Combining these two results give an efficient
+sketch for tensors of any size. 

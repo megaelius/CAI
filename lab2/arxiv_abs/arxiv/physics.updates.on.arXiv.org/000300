@@ -1,0 +1,20 @@
+Predicting protein 3D structure from amino acid sequence remains as a challenge in the field of computational
+biology. If protein structure homologues are not found, one has to construct 3D structural conformations
+from the very beginning by the so-called ab initio approach, using some empirical energy functions.
+A successful algorithm in this category, Rosetta, creates an ensemble of decoy conformations by
+assembling selected best short fragments of known protein structures and then recognizes the native
+state as the highly populated one with a very low energy. Typically, an energy function is a combination
+of a variety of terms characterizing different structural features, say hydrophobic interactions,
+van der Waals force, hydrogen bonding, etc. It is critical for an energy function to be capable to
+distinguish native-like conformations from non-native ones and to drive most initial conformations
+assembled from fragments to a native-like one in a conformation search process. In this paper we
+propose a linear programming algorithm to optimize weighting of a total of 14 energy terms used in
+Rosetta. We reverse the Monte Carlo process of Rosetta to approach native-like conformations to
+a process generating from the native state an ensemble of initial conformations most relevant to
+the native state. Intuitively, an ideal weighting scheme would result in a large "basin of attraction"
+of the native structure, which leads to an objective function for the linear programming. We have
+examined the proposal on several benchmark proteins, and the experimental results suggest that
+the optimized weights enlarge the attraction basin of the native state and improve the quality of
+the predicted native states as well. In addition, a comparison of optimal weighting schema for proteins
+of different classes indicates that in different protein classes energy terms may have different
+effects. 

@@ -1,0 +1,20 @@
+Where data is available, it is desirable in geostatistical modelling to make use of additional covariates,
+for example terrain data, in order to improve prediction accuracy in the modelling task. While elevation
+itself may be important, additional explanatory power for any given problem can be sought (but not
+necessarily found) by filtering digital elevation models to extact higher-order derivatives
+such as slope angles, curvatures, and roughness. In essence, it would be beneficial to extract as
+much task-relevant information as possible from the elevation grid. However, given the complexities
+of the natural world, chance dictates that the use of 'off-the-shelf' filters is unlikely to derive
+covariates that provide strong explanatory power to the target variable at hand, and any attempt
+to manually design informative covariates is likely to be a trial-and-error process -- not optimal.
+In this paper we present a solution to this problem in the form of a deep learning approach to automatically
+deriving optimal task-specific terrain texture covariates from a standard SRTM 90m gridded digital
+elevation model (DEM). For our target variables we use point-sampled geochemical data from the
+British Geological Survey: concentrations of potassium, calcium and arsenic in stream sediments.
+We find that our deep learning approach produces covariates for geostatistical modelling that
+have surprisingly strong explanatory power on their own, with R-squared values around 0.6 for all
+three elements (with arsenic on the log scale). These results are achieved without the neural network
+being provided with easting, northing, or absolute elevation as inputs, and purely reflect the
+capacity of our deep neural network to extract task-specific information from terrain texture.
+We hope that these results will inspire further investigation into the capabilities of deep learning
+within geostatistical applications. 

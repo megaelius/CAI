@@ -1,0 +1,20 @@
+Stochastic Gradient Descent (SGD) with small mini-batch is a key component in modern large-scale
+learning. However, its efficiency has not been easy to analyze as most theoretical results require
+adaptive rates and show convergence rates far slower than that for gradient descent, making computational
+comparisons difficult. In this paper we aim to clarify the issue of fast SGD convergence. The key
+observation is that most modern architectures are over-parametrized and are trained to interpolate
+the data by driving the empirical loss close to zero. While it is still unclear why these interpolated
+solutions perform well on test data, we show that these regimes allow for very fast convergence of
+SGD, comparable in the number of iterations to full gradient descent. Specifically, consider the
+setting with a quadratic objective function, or a general objective function in the proximity of
+a minimum, where the quadratic term is dominant. First, we obtain the optimal convergence rate for
+any mini-batch SGD and derive the optimal step size as a function of the batch size $m$. Second, we
+show: (1) $m=1$ is optimal in terms of number of computations required to achieve any desired accuracy.
+(2) There is a critical mini-batch size $m^*$ such that: (2a) SGD iteration with batch size $m\leq
+m^*$ is nearly equivalent to $m$ iterations of batch size $1$. (2b) SGD iteration with mini-batch
+$m> m^*$ is nearly equivalent to a full gradient descent iteration. The critical mini-batch size
+can be viewed as the limit for effective mini-batch parallelization. It is also nearly independent
+of the data size, implying $O(n)$ acceleration over GD per unit of computation. These theoretical
+analyses are verified by experimental results. Finally, we show how the interpolation perspective
+and our results fit in the deep neural networks and discuss connections to adaptive rates for SGD
+and variance reduction. 

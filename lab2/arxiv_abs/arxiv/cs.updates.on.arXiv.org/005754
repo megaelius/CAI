@@ -1,0 +1,18 @@
+This paper presents a new technique for training networks for low-precision communication. Targeting
+minimal communication between nodes not only enables the use of emerging spiking neuromorphic
+platforms, but may additionally streamline processing conventionally. Low-power and embedded
+neuromorphic processors potentially offer dramatic performance-per-Watt improvements over
+traditional von Neumann processors, however programming these brain-inspired platforms generally
+requires platform-specific expertise which limits their applicability. To date, the majority
+of artificial neural networks have not operated using discrete spike-like communication. We present
+a method for training deep spiking neural networks using an iterative modification of the backpropagation
+optimization algorithm. This method, which we call Whetstone, effectively and reliably configures
+a network for a spiking hardware target with little, if any, loss in performance. Whetstone networks
+use single time step binary communication and do not require a rate code or other spike-based coding
+scheme, thus producing networks comparable in timing and size to conventional ANNs, albeit with
+binarized communication. We demonstrate Whetstone on a number of image classification networks,
+describing how the sharpening process interacts with different training optimizers and changes
+the distribution of activity within the network. We further note that Whetstone is compatible with
+several non-classification neural network applications, such as autoencoders and semantic segmentation.
+Whetstone is widely extendable and currently implemented using custom activation functions within
+the Keras wrapper to the popular TensorFlow machine learning framework. 

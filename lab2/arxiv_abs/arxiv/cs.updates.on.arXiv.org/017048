@@ -1,0 +1,18 @@
+Knowledge distillation has become increasingly important in model compression. It boosts the
+performance of a miniaturized student network with the supervision of the output distribution
+and feature maps from a sophisticated teacher network. Some recent works introduce multi-teacher
+distillation to provide more supervision to the student network. However, the effectiveness of
+multi-teacher distillation methods are accompanied by costly computation resources. To tackle
+with both the efficiency and the effectiveness of knowledge distillation, we introduce the feature
+aggregation to imitate the multi-teacher distillation in the single-teacher distillation framework
+by extracting informative supervision from multiple teacher feature maps. Specifically, we introduce
+DFA, a two-stage Differentiable Feature Aggregation search method that motivated by DARTS in neural
+architecture search, to efficiently find the aggregations. In the first stage, DFA formulates
+the searching problem as a bi-level optimization and leverages a novel bridge loss, which consists
+of a student-to-teacher path and a teacher-to-student path, to find appropriate feature aggregations.
+The two paths act as two players against each other, trying to optimize the unified architecture
+parameters to the opposite directions while guaranteeing both expressivity and learnability
+of the feature aggregation simultaneously. In the second stage, DFA performs knowledge distillation
+with the derived feature aggregation. Experimental results show that DFA outperforms existing
+methods on CIFAR-100 and CINIC-10 datasets under various teacher-student settings, verifying
+the effectiveness and robustness of the design. 

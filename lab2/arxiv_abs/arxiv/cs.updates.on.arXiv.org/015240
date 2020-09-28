@@ -1,0 +1,18 @@
+We introduce learning programs by learning from failures. In this approach, an inductive logic
+programming (ILP) system (the learner) decomposes the learning problem into three separate stages:
+generate, test, and constrain. In the generate stage, the learner generates a hypothesis (a logic
+program) that satisfies a set of hypothesis constraints (constraints on the syntactic form of hypotheses).
+In the test stage, the learner tests the hypothesis against training examples. A hypothesis fails
+when it does not entail all the positive examples or entails a negative example. If a hypothesis fails,
+then, in the constrain stage, the learner learns constraints from the failed hypothesis to prune
+the hypothesis space, i.e. to constrain subsequent hypothesis generation. For instance, if a hypothesis
+is too general (entails a negative example), the constraints prune generalisations of the hypothesis.
+If a hypothesis is too specific (does not entail all the positive examples), the constraints prune
+specialisations of the hypothesis. This loop repeats until (1) the learner finds a hypothesis that
+entails all the positive and none of the negative examples, or (2) there are no more hypotheses to
+test. We implement our idea in Popper, an ILP system which combines answer set programming and Prolog.
+Popper supports infinite domains, reasoning about lists and numbers, learning optimal (textually
+minimal) programs, and learning recursive programs. Our experimental results on three diverse
+domains (number theory problems, robot strategies, and list transformations) show that (1) constraints
+drastically improve learning performance, and (2) Popper can substantially outperform state-of-the-art
+ILP systems, both in terms of predictive accuracies and learning times. 

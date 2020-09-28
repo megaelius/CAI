@@ -1,0 +1,18 @@
+Memory consistency models are notorious for being difficult to define precisely, to reason about,
+and to verify. More than a decade of effort has gone into nailing down the definitions of the ARM and
+IBM Power memory models, and yet there still remain aspects of those models which (perhaps surprisingly)
+remain unresolved to this day. In response to these complexities, there has been somewhat of a recent
+trend in the (general-purpose) architecture community to limit new memory models to being (multicopy)
+atomic: where store values can be read by the issuing processor before being advertised to other
+processors. TSO is the most notable example, used in the past by IBM 370 and SPARC-TSO, and currently
+used in x86. Recently (in March 2017) ARM has also switched to a multicopy atomic memory model, and
+the new RISC-V ISA and recent academic proposals such as WMM are pushing to do the same. In this paper,
+we show that when memory models are atomic, it becomes much easier to produce axiomatic definitions,
+operational definitions, and proofs of equivalence than doing the same under non-atomic models.
+The increased ease with which these definitions can be produced in turn allows architects to build
+processors much more confidently, and yet the relaxed nature of the models we propose still allows
+most or all of the performance of non-atomic models to be retained. In fact, in this paper, we show
+that atomic memory models can be defined in a way that is parametrized by basic instruction and fence
+orderings. Our operational vs. axiomatic equivalence proofs, which are likewise parameterized,
+show that the operational model is sound with respect to the axioms and that the operational model
+is complete: that it can show any behavior permitted by axiomatic model. 

@@ -1,0 +1,17 @@
+Alternative expressions for calculating the oblate spheroidal radial functions of both kinds
+R1ml and R2ml are shown to provide accurate values over very large parameter ranges using 64 bit arithmetic,
+even where the traditional expressions fail. First is the expansion of the product of a radial function
+and the angular function of the first kind in a series of products of the corresponding spherical
+functions, with the angular coordinate being a free parameter. Setting the angular coordinate
+equal to zero leads to accurate values for R2ml when the radial coordinate xi is larger than 0.01 and
+l is somewhat larger than m. Allowing it to vary with increasing l leads to highly accurate values
+for R1ml over all parameter ranges. Next is the calculation of R2ml as an integral of the product of
+S1ml and a spherical Neumann function kernel. This is useful for smaller values of xi. Also used is
+the near equality of pairs of low order eigenvalues when the size parameter c is large that leads to
+accurate values for R2ml using neighboring accurate values for R1ml. A modified method is described
+that provides accurate values for the necessary expansion coefficients when c is large and l is near
+m and traditional methods fail. A resulting Fortran computer program Oblfcn almost always provides
+radial function values with at least 8 accurate decimal digits using 64 bit arithmetic for m up to
+at least 1000 with c up to at least 2000 when xi is greater than 0.000001 and c up to at least 5000 when
+xi is greater than 0.01. Use of 128 bit arithmetic extends the accuracy to 15 or more digits and extends
+xi to all values other than zero. Oblfcn is freely available. 

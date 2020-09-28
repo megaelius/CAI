@@ -1,0 +1,20 @@
+There is a huge demand for on-device execution of deep learning algorithms on mobile and embedded
+platforms. These devices present constraints on the application due to limited resources and power.
+Hence, developing energy-efficient solutions to address this issue will require innovation in
+algorithmic design, software and hardware. Such innovation requires benchmarking and characterization
+of Deep Neural Networks based on performance and energy-consumption alongside accuracy. However,
+current benchmarks studies in existing deep learning frameworks (for example, Caffe, Tensorflow,
+Torch and others) are based on performance of these applications on high-end CPUs and GPUs. In this
+work, we introduce a benchmarking framework called "SyNERGY" to measure the energy and time of 11
+representative Deep Convolutional Neural Networks on embedded platforms such as NVidia Jetson
+TX1. We integrate ARM's Streamline Performance Analyser with standard deep learning frameworks
+such as Caffe and CuDNNv5, to study the execution behaviour of current deep learning models at a fine-grained
+level (or specific layers) on image processing tasks. In addition, we build an initial multi-variable
+linear regression model to predict energy consumption of unseen neural network models based on
+the number of SIMD instructions executed and main memory accesses of the CPU cores of the TX1 with
+an average relative test error rate of 8.04 +/- 5.96 %. Surprisingly, we find that it is possible to
+refine the model to predict the number of SIMD instructions and main memory accesses solely from
+the application's Multiply-Accumulate (MAC) counts, hence, eliminating the need for actual measurements.
+Our predicted results demonstrate 7.08 +/- 6.0 % average relative error over actual energy measurements
+of all 11 networks tested, except MobileNet. By including MobileNet the average relative test error
+increases to 17.33 +/- 12.2 %. 

@@ -1,0 +1,18 @@
+Byte-addressable non-volatile memory (NVM) features high density, DRAM comparable performance,
+and persistence. These characteristics position NVM as a promising new tier in the memory hierarchy.
+Nevertheless, NVM has asymmetric read and write performance, and considerably higher write energy
+than DRAM. Our work provides an in-depth evaluation of the first commercially available byte-addressable
+NVM -- the Intel Optane DC persistent memory. The first part of our study quantifies the latency,
+bandwidth, power efficiency, and energy consumption under eight memory configurations. We also
+evaluate the real impact on in-memory graph processing workloads. Our results show that augmenting
+NVM with DRAM is essential, and the combination can effectively bridge the performance gap and provide
+reasonable performance with higher capacity. We also identify NUMA-related performance characteristics
+for accesses to memory on a remote socket. In the second part, we employ two fine-grained allocation
+policies to control traffic distribution between DRAM and NVM. Our results show that bandwidth
+spilling between DRAM and NVM could provide 2.0x bandwidth and enable $20\%$ larger problems than
+using DRAM as a cache. Also, write isolation between DRAM and NVM could save up to 3.9x energy and improves
+bandwidth by 3.1x compared to DRAM-cached NVM. We establish a roofline model to explore power and
+energy efficiency at various distributions of read-only traffic. Our results show that NVM requires
+1.8x lower power than DRAM for data-intensive workloads. Overall, applications can significantly
+optimize performance and power efficiency by adapting traffic distribution to NVM and DRAM through
+memory configurations and fine-grained policies to fully exploit the new memory device. 

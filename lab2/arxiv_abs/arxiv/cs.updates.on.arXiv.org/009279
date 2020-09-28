@@ -1,0 +1,20 @@
+The area of parameterized approximation seeks to combine approximation and parameterized algorithms
+to obtain, e.g., (1+eps)-approximations in f(k,eps)n^{O(1)} time where k is some parameter of
+the input. We obtain the following results on parameterized approximability: 1) In the maximum
+independent set of rectangles problem (MISR) we are given a collection of n axis parallel rectangles
+in the plane. Our goal is to select a maximum-cardinality subset of pairwise non-overlapping rectangles.
+This problem is NP-hard and also W[1]-hard [Marx, ESA'05]. The best-known polynomial-time approximation
+factor is O(loglog n) [Chalermsook and Chuzhoy, SODA'09] and it admits a QPTAS [Adamaszek and Wiese,
+FOCS'13; Chuzhoy and Ene, FOCS'16]. Here we present a parameterized approximation scheme (PAS)
+for MISR, i.e. an algorithm that, for any given constant eps>0 and integer k>0, in time f(k,eps)n^{g(eps)},
+either outputs a solution of size at least k/(1+eps), or declares that the optimum solution has size
+less than k. 2) In the (2-dimensional) geometric knapsack problem (TDK) we are given an axis-aligned
+square knapsack and a collection of axis-aligned rectangles in the plane (items). Our goal is to
+translate a maximum cardinality subset of items into the knapsack so that the selected items do not
+overlap. In the version of TDK with rotations (TDKR), we are allowed to rotate items by 90 degrees.
+Both variants are NP-hard, and the best-known polynomial-time approximation factors are 558/325+eps
+and 4/3+eps, resp. [Galvez et al., FOCS'17]. These problems admit a QPTAS for polynomially bounded
+item sizes [Adamaszek and Wiese, SODA'15]. We show that both variants are W[1]-hard. Furthermore,
+we present a PAS for TDKR. For all considered problems, getting time f(k,eps)n^{O(1)}, rather than
+f(k,eps)n^{g(eps)}, would give FPT time f'(k)n^{O(1)} exact algorithms using eps=1/(k+1), contradicting
+W[1]-hardness. 

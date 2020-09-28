@@ -1,0 +1,18 @@
+User Datagram Protocol (UDP) is a commonly used protocol for data transmission in small embedded
+systems. UDP as such is unreliable and packet losses can occur. The achievable data rates can suffer
+if optimal packet sizes are not used. The alternative, Transmission Control Protocol (TCP) guarantees
+the ordered delivery of data and automatically adjusts transmission to match the capability of
+the transmission link. Nevertheless UDP is often favored over TCP due to its simplicity, small memory
+and instruction footprints. Both UDP and TCP are implemented in all larger operating systems and
+commercial embedded frameworks. In addition UDP also supported on a variety of small hardware platforms
+such as Digital Signal Processors (DSP) Field Programmable Gate Arrays (FPGA). This is not so common
+for TCP. This paper describes how high speed UDP based data transmission with very low packet error
+ratios was achieved. The near-reliable communications link is used in a data acquisition (DAQ)
+system for the next generation of extremely intense neutron source, European Spallation Source.
+This paper presents measurements of UDP performance and reliability as achieved by employing several
+optimizations. The measurements were performed on Xeon E5 based CentOS (Linux) servers. The measured
+data rates are very close to the 10 Gb/s line rate, and zero packet loss was achieved. The performance
+was obtained utilizing a single processor core as transmitter and a single core as receiver. The
+results show that support for transmitting large data packets is a key parameter for good performance.
+Optimizations for throughput are: MTU, packet sizes, tuning Linux kernel parameters, thread affinity,
+core locality and efficient timers. 

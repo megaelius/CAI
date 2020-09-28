@@ -1,0 +1,19 @@
+Semi-supervised clustering seeks to augment traditional clustering methods by incorporating
+side information provided via human expertise in order to increase the semantic meaningfulness
+of the resulting clusters. However, most current methods are \emph{passive} in the sense that the
+side information is provided beforehand and selected randomly. This may require a large number
+of constraints, some of which could be redundant, unnecessary, or even detrimental to the clustering
+results. Thus in order to scale such semi-supervised algorithms to larger problems it is desirable
+to pursue an \emph{active} clustering method---i.e. an algorithm that maximizes the effectiveness
+of the available human labor by only requesting human input where it will have the greatest impact.
+Here, we propose a novel online framework for active semi-supervised spectral clustering that
+selects pairwise constraints as clustering proceeds, based on the principle of uncertainty reduction.
+Using a first-order Taylor expansion, we decompose the expected uncertainty reduction problem
+into a gradient and a step-scale, computed via an application of matrix perturbation theory and
+cluster-assignment entropy, respectively. The resulting model is used to estimate the uncertainty
+reduction potential of each sample in the dataset. We then present the human user with pairwise queries
+with respect to only the best candidate sample. We evaluate our method using three different image
+datasets (faces, leaves and dogs), a set of common UCI machine learning datasets and a gene dataset.
+The results validate our decomposition formulation and show that our method is consistently superior
+to existing state-of-the-art techniques, as well as being robust to noise and to unknown numbers
+of clusters. 

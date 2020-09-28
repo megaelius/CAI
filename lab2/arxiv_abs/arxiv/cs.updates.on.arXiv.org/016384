@@ -1,0 +1,17 @@
+Data sparsity and cold-start issues emerge as two major bottlenecks for matrix completion in the
+context of user-item interaction matrix. We propose a novel method that can fundamentally address
+these issues. The main idea is to partition users into support users, which have many observed interactions
+(i.e., non-zero entries in the matrix), and query users, which have few observed entries. For support
+users, we learn their transductive preference embeddings using matrix factorization over their
+interactions (a relatively dense sub-matrix). For query users, we devise an inductive relational
+model that learns to estimate the underlying relations between the two groups of users. This allows
+us to attentively aggregate the preference embeddings of support users in order to compute inductive
+embeddings for query users. This new method can address the data sparsity issue by generalizing
+the behavior patterns of warm-start users to others and thus enables the model to also work effectively
+for cold-start users with no historical interaction. As theoretical insights, we show that a general
+version of our model does not sacrifice any expressive power on query users compared with transductive
+matrix factorization under mild conditions. Also, the generalization error on query users is bounded
+by the numbers of support users and query users' observed interactions. Moreover, extensive experiments
+on real-world datasets demonstrate that our model outperforms several state-of-the-art methods
+by achieving significant improvements on MAE and AUC for warm-start, few-shot (sparsity) and zero-shot
+(cold-start) recommendation. 

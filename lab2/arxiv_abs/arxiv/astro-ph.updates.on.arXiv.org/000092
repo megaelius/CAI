@@ -1,0 +1,20 @@
+When Charge Coupled Devices are used for scientific observations, their dark signal is a hindrance.
+In their pristine state, most CCD pixels are `cool'; they exhibit low, quasi uniform dark current,
+which can be estimated and corrected for. In space, after having been hit by an energetic particle,
+pixels can turn `hot'. They start delivering excessive, less predictable, dark current. The hot
+pixels need therefore to be flagged so that subsequent analysis may ignore them. The image data of
+the PICARD SODISM solar telescope (Meftah et al. 2013) require dark signal correction and hot pixel
+identification. Its frame transfer E2V 42-80 CCD operates at -7{\deg}C. Both image and memory zones
+thus accumulate dark current during, respectively, integration and readout time. These two components
+must be separated to estimate the dark signal for any observation. This is the purpose of the Dark
+Signal Model presented in this paper. The dark signal time series of every pixel is processed by the
+Unbalanced Haar Technique (Fryzlewicz 2007) in order to timestamp when its dark signal is expected
+to change. In-between those instants, both components are assumed constant and a robust linear
+regression vs. integration time provides first estimates and a quality coefficient. The latter
+serves to assign definitive estimates. Our model is part of the SODISM Level 1 data production scheme.
+To check its reliability, we verify on dark frames that it leaves a negligible residual bias (5 e-),
+and generates a small RMS error (25 e- rms). The cool pixel level is found to be 4 e-/pxl/s, in agreement
+with the predicted value. The emergence rate of hot pixels is investigated too. It legitimates a
+threshold criterion at 50 e-/pxl/s. The growth rate is found to be 4% of the frame area per year. Aspects
+of the method (adaptation of the Unbalanced Haar Technique, dedicated robust linear regression)
+have a generic interest. 

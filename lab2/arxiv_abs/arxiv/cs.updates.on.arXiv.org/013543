@@ -1,0 +1,20 @@
+Dense subgraphs capture strong communities in social networks and entities possessing strong
+interactions in biological networks. In particular, $k$-clique counting and listing have applications
+in identifying important actors in a graph. However, finding $k$-cliques is computationally expensive,
+and thus it is important to have fast parallel algorithms. We present a new parallel algorithm for
+$k$-clique counting that has polylogarithmic span and is work-efficient with respect to the well-known
+sequential algorithm for $k$-clique listing by Chiba and Nishizeki. Our algorithm can be extended
+to support listing and enumeration, and is based on computing low out-degree orientations. We present
+a new linear-work and polylogarithmic span algorithm for computing such orientations, and new
+parallel algorithms for producing unbiased estimations of clique counts. Finally, we design new
+parallel work-efficient algorithms for approximating the $k$-clique densest subgraph. Our first
+algorithm gives a $1/k$-approximation and is based on iteratively peeling vertices with the lowest
+clique counts; our algorithm is work-efficient, but we prove that this process is P-complete and
+hence does not have polylogarithmic span. Our second algorithm gives a $1/(k(1+\epsilon))$-approximation,
+is work-efficient, and has polylogarithmic span. In addition, we implement these algorithms and
+propose optimizations. On a 60-core machine, we achieve 13.23-38.99x and 1.19-13.76x self-relative
+parallel speedup for $k$-clique counting and $k$-clique densest subgraph, respectively. Compared
+to the state-of-the-art parallel $k$-clique counting algorithms, we achieve a 1.31-9.88x speedup,
+and compared to existing implementations of $k$-clique densest subgraph, we achieve a 1.01-11.83x
+speedup. We are able to compute the $4$-clique counts on the largest publicly-available graph with
+over two hundred billion edges. 

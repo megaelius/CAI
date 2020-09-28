@@ -1,0 +1,19 @@
+ALICE (A Large Ion Collider Experiment) is one of four major experiments at the Large Hadron Collider
+(LHC) at CERN. The High Level Trigger (HLT) is a compute cluster, which reconstructs collisions
+as recorded by the ALICE detector in real-time. It employs a custom online data-transport framework
+to distribute data and workload among the compute nodes. ALICE employs subdetectors sensitive
+to environmental conditions such as pressure and temperature, e.g. the Time Projection Chamber
+(TPC). A precise reconstruction of particle trajectories requires the calibration of these detectors.
+Performing the calibration in real time in the HLT improves the online reconstructions and renders
+certain offline calibration steps obsolete speeding up offline physics analysis. For LHC Run 3,
+starting in 2020 when data reduction will rely on reconstructed data, online calibration becomes
+a necessity. Reconstructed particle trajectories build the basis for the calibration making a
+fast online-tracking mandatory. The main detectors used for this purpose are the TPC and ITS (Inner
+Tracking System). Reconstructing the trajectories in the TPC is the most compute-intense step.
+We present several improvements to the ALICE High Level Trigger developed to facilitate online
+calibration. The main new development for online calibration is a wrapper that can run ALICE offline
+analysis and calibration tasks inside the HLT. On top of that, we have added asynchronous processing
+capabilities to support long-running calibration tasks in the HLT framework, which runs event-synchronously
+otherwise. In order to improve the resiliency, an isolated process performs the asynchronous operations
+such that even a fatal error does not disturb data taking. We have complemented the original loop-free
+HLT chain with ZeroMQ data-transfer components. [...] 

@@ -1,0 +1,19 @@
+A fundamental problem arising in many applications in Web science and social network analysis is,
+given an arbitrary approximation factor $c>1$, to output a set $S$ of nodes that with high probability
+contains all nodes of PageRank at least $\Delta$, and no node of PageRank smaller than $\Delta/c$.
+We call this problem {\sc SignificantPageRanks}. We develop a nearly optimal, local algorithm
+for the problem with runtime complexity $\tilde{O}(n/\Delta)$ on networks with $n$ nodes. We show
+that any algorithm for solving this problem must have runtime of ${\Omega}(n/\Delta)$, rendering
+our algorithm optimal up to logarithmic factors. Our algorithm comes with two main technical contributions.
+The first is a multi-scale sampling scheme for a basic matrix problem that could be of interest on
+its own. In the abstract matrix problem it is assumed that one can access an unknown {\em right-stochastic
+matrix} by querying its rows, where the cost of a query and the accuracy of the answers depend on a precision
+parameter $\epsilon$. At a cost propositional to $1/\epsilon$, the query will return a list of $O(1/\epsilon)$
+entries and their indices that provide an $\epsilon$-precision approximation of the row. Our task
+is to find a set that contains all columns whose sum is at least $\Delta$, and omits any column whose
+sum is less than $\Delta/c$. Our multi-scale sampling scheme solves this problem with cost $\tilde{O}(n/\Delta)$,
+while traditional sampling algorithms would take time $\Theta((n/\Delta)^2)$. Our second main
+technical contribution is a new local algorithm for approximating personalized PageRank, which
+is more robust than the earlier ones developed in \cite{JehW03,AndersenCL06} and is highly efficient
+particularly for networks with large in-degrees or out-degrees. Together with our multiscale
+sampling scheme we are able to optimally solve the {\sc SignificantPageRanks} problem. 

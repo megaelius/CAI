@@ -1,0 +1,18 @@
+A novel framework for resolving discontinuous solutions of conservation laws, e.g., contact lines,
+shock waves, and interfaces, using implicit tracking and a high-order discontinuous Galerkin
+(DG) discretization was introduced in [38]. Central to the framework is an optimization problem
+whose solution is a discontinuity-aligned mesh and the corresponding high-order approximation
+to the flow that does not require explicit meshing of the unknown discontinuity surface. The method
+was shown to deliver highly accurate solutions on coarse, high-order discretizations without
+nonlinear stabilization and recover optimal convergence rates even for problems with discontinuous
+solutions. This work extends the implicit tracking framework such that robustness is improved
+and convergence accelerated. In particular, we introduce an improved formulation of the central
+optimization problem and an associated sequential quadratic programming (SQP) solver. The new
+error-based objective function penalizes violation of the DG residual in an enriched test space
+and is shown to have excellent tracking properties. The SQP solver simultaneously converges the
+nodal coordinates of the mesh and DG solution to their optimal values and is equipped with a number
+of features to ensure robust, fast convergence: Levenberg-Marquardt approximation of the Hessian
+with weighted elliptic regularization, backtracking line search, and rigorous convergence criteria.
+We use the proposed method to solve a range of inviscid conservation laws of varying difficulty.
+We show the method is able to deliver accurate solutions on coarse, high-order meshes and the SQP
+solver is robust and usually able to drive the first-order optimality system to tight tolerances.

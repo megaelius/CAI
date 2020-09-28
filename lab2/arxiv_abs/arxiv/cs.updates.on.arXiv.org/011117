@@ -1,0 +1,19 @@
+In this paper, we propose a normal estimation method for unstructured 3D point clouds. In this method,
+a feature constraint mechanism called Local Plane Features Constraint (LPFC) is used and then a
+multi-scale selection strategy is introduced. The LPEC can be used in a single-scale point network
+architecture for a more stable normal estimation of the unstructured 3D point clouds. In particular,
+it can partly overcome the influence of noise on a large sampling scale compared to the other methods
+which only use regression loss for normal estimation. For more details, a subnetwork is built after
+point-wise features extracted layers of the network and it gives more constraints to each point
+of the local patch via a binary classifier in the end. Then we use multi-task optimization to train
+the normal estimation and local plane classification tasks simultaneously.Also, to integrate
+the advantages of multi-scale results, a scale selection strategy is adopted, which is a data-driven
+approach for selecting the optimal scale around each point and encourages subnetwork specialization.
+Specifically, we employed a subnetwork called Scale Estimation Network to extract scale weight
+information from multi-scale features. More analysis is given about the relations between noise
+levels, local boundary, and scales in the experiment. These relationships can be a better guide
+to choosing particular scales for a particular model. Besides, the experimental result shows that
+our network can distinguish the points on the fitting plane accurately and this can be used to guide
+the normal estimation and our multi-scale method can improve the results well. Compared to some
+state-of-the-art surface normal estimators, our method is robust to noise and can achieve competitive
+results. 

@@ -1,0 +1,19 @@
+Parallel computing is the fundamental base for MapReduce framework in Hadoop. Each data chunk is
+replicated over 3 servers for increasing availability of data and decreasing probability of data
+loss. Hence, the 3 servers that have Map task stored on their disk are fastest servers to process them,
+which are called local servers. All servers in the same rack as local servers are called rack-local
+servers that are slower than local servers since data chunk associated with Map task should be fetched
+through top of the rack switch. All other servers are called remote servers that are slowest servers
+since they need to fetch data from a local server in another rack, so data should be transmitted through
+at least 2 top of rack switches and a core switch. Note that number of switches in path of data transfer
+depends on internal network structure of data centers. The First-In-First-Out (FIFO) and Hadoop
+Fair Scheduler (HFS) algorithms do not take rack structure of data centers into account, so they
+are known to not be heavy-traffic delay optimal or even throughput optimal. The recent advances
+on scheduling for data centers considering rack structure of them and heterogeneity of servers
+resulted in state-of-the-art Balanced-PANDAS algorithm that outperforms classic MaxWeight
+algorithm. In both Balanced-PANDAS and MaxWeight algorithms, processing rate of local, rack-local,
+and remote servers are assumed to be known. However, with the change of traffic over time in addition
+to estimation errors of processing rates, it is not realistic to consider processing rates to be
+known. In this work, we study robustness of Balanced-PANDAS and MaxWeight algorithms in terms of
+inaccurate estimations of processing rates. We observe that Balanced-PANDAS is not as sensitive
+as MaxWeight on the accuracy of processing rates, making it more appealing to use in data centers.

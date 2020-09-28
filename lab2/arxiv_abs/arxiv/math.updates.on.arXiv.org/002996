@@ -1,0 +1,18 @@
+Accelerated coordinate descent is a widely popular optimization algorithm due to its efficiency
+on large-dimensional problems. It achieves state-of-the-art complexity on an important class
+of empirical risk minimization problems. In this paper we design and analyze an accelerated coordinate
+descent (ACD) method which in each iteration updates a random subset of coordinates according to
+an arbitrary but fixed probability law, which is a parameter of the method. If all coordinates are
+updated in each iteration, our method reduces to the classical accelerated gradient descent method
+AGD of Nesterov. If a single coordinate is updated in each iteration, and we pick probabilities proportional
+to the square roots of the coordinate-wise Lipschitz constants, our method reduces to the currently
+fastest coordinate descent method NUACDM of Allen-Zhu, Qu, Richt\'{a}rik and Yuan. While mini-batch
+variants of ACD are more popular and relevant in practice, there is no importance sampling for ACD
+that outperforms the standard uniform mini-batch sampling. Through insights enabled by our general
+analysis, we design new importance sampling for mini-batch ACD which significantly outperforms
+previous state-of-the-art minibatch ACD in practice. We prove a rate that is at most ${\cal O}(\sqrt{\tau})$
+times worse than the rate of minibatch ACD with uniform sampling, but can be ${\cal O}(n/\tau)$ times
+better, where $\tau$ is the minibatch size. Since in modern supervised learning training systems
+it is standard practice to choose $\tau \ll n$, and often $\tau={\cal O}(1)$, our method can lead
+to dramatic speedups. Lastly, we obtain similar results for minibatch nonaccelerated CD as well,
+achieving improvements on previous best rates. 

@@ -1,0 +1,18 @@
+We present a novel method for learning from demonstration 6-D tasks that can be modeled as a sequence
+of linear motions and compliances. The focus of this paper is the learning of a single linear primitive,
+many of which can be sequenced to perform more complex tasks. The presented method learns from demonstrations
+only, without any prior information, how to take advantage of mechanical gradients in in-contact
+tasks, such as assembly, both for translations and rotations. The method assumes there exists a
+desired linear direction in 6-D which, if followed by the manipulator, leads the robot's end-effector
+to the goal area shown in the demonstration, either in free space or by leveraging contact through
+compliance. First, demonstrations are gathered where the teacher explicitly shows the robot how
+the mechanical gradients can be used as guidance towards the goal. From the demonstrations, a set
+of directions is computed which would result in the observed motion at each timestep during a demonstration
+of a single primitive. By observing which direction is included in all these sets, we find a single
+desired direction which can reproduce the demonstrated motion. Finding the number of compliant
+axes and their directions in both rotation and translation is based on the assumption that in the
+presence of a desired direction of motion, all other observed motion is caused by the contact force
+of the environment, signalling the need for compliance. We evaluate the method on a KUKA LWR4+ robot
+with test setups imitating typical tasks where a human would use compliance to cope with positional
+uncertainty. Results show that the method can successfully learn and reproduce compliant motions
+by taking advantage of the geometry of the task, therefore reducing the need for localization accuracy.

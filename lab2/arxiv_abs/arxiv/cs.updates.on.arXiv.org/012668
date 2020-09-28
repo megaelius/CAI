@@ -1,0 +1,18 @@
+Deep learning models hold state of the art performance in many fields, yet their design is still based
+on heuristics or grid search methods that often result in overparametrized networks. This work
+proposes a method to analyze a trained network and deduce an optimized, compressed architecture
+that preserves accuracy while keeping computational costs tractable. Model compression is an
+active field of research that targets the problem of realizing deep learning models in hardware.
+However, most pruning methodologies tend to be experimental, requiring large compute and time
+intensive iterations of retraining the entire network. We introduce structure into model design
+by proposing a single shot analysis of a trained network that serves as a first order, low effort approach
+to dimensionality reduction, by using PCA (Principal Component Analysis). The proposed method
+simultaneously analyzes the activations of each layer and considers the dimensionality of the
+space described by the filters generating these activations. It optimizes the architecture in
+terms of number of layers, and number of filters per layer without any iterative retraining procedures,
+making it a viable, low effort technique to design efficient networks. We demonstrate the proposed
+methodology on AlexNet and VGG style networks on the CIFAR-10, CIFAR-100 and ImageNet datasets,
+and successfully achieve an optimized architecture with a reduction of up to 3.8X and 9X in the number
+of operations and parameters respectively, while trading off less than 1% accuracy. We also apply
+the method to MobileNet, and achieve 1.7X and 3.9X reduction in the number of operations and parameters
+respectively, while improving accuracy by almost one percentage point. 

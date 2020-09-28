@@ -1,0 +1,20 @@
+Standard approaches for uncertainty quantification (UQ) in cardiovascular modeling pose challenges
+due to the large number of uncertain inputs and the significant computational cost of realistic
+3D simulations. We propose an efficient UQ framework utilizing a multilevel multifidelity Monte
+Carlo (MLMF) estimator to improve the accuracy of hemodynamic quantities of interest while maintaining
+reasonable computational cost. This is achieved by leveraging three cardiovascular model fidelities,
+each with varying spatial resolution to rigorously quantify the variability in hemodynamic outputs.
+Our goal is to investigate and compare the efficiency of estimators built from two low-fidelity
+model alternatives and our high-fidelity 3D models. We demonstrate this framework on healthy and
+diseased models of aortic and coronary anatomy, including uncertainties in material property
+and boundary condition parameters. Our goal is to demonstrate that for this application it is possible
+to accelerate the convergence of the estimators by utilizing a MLMF paradigm. Therefore, we compare
+our approach to single fidelity Monte Carlo estimators and to a multilevel Monte Carlo approach
+based only on 3D simulations, but leveraging multiple spatial resolutions. We demonstrate significant,
+on the order of 10 to 100 times, reduction in total computational cost with the MLMF estimators. We
+also examine the differing properties of the MLMF estimators in healthy versus diseased models,
+as well as global versus local quantities of interest. As expected, healthy models and global quantities
+show larger reductions than diseased models and local quantities as the latter rely more heavily
+on the highest fidelity model evaluations. In all cases, our workflow coupling Dakota MLMF estimators
+with the SimVascular cardiovascular workflow make UQ feasible for constrained computational
+budgets. 

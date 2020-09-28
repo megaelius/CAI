@@ -1,0 +1,18 @@
+Discontinuous Galerkin (DG) methods for hyperbolic partial differential equations (PDEs) with
+explicit time-stepping schemes, such as strong stability-preserving Runge-Kutta (SSP-RK),
+suffer from time-step restrictions that are significantly worse than what a simple Courant-Friedrichs-Lewy
+(CFL) argument requires. In particular, the maximum stable time-step scales inversely with the
+highest degree in the DG polynomial approximation space and becomes progressively smaller with
+each added spatial dimension. In this work we introduce a novel approach that we have dubbed the regionally
+implicit discontinuous Galerkin (RIDG) method to overcome these small time-step restrictions.
+The RIDG method is based on an extension of the Lax-Wendroff DG (LxW-DG) method, which previously
+had been shown to be equivalent to a predictor-corrector approach, where the predictor is a locally
+implicit spacetime method (i.e., the predictor is something like a block-Jacobi update for a fully
+implicit spacetime DG method). The corrector is an explicit method that uses the spacetime reconstructed
+solution from the predictor step. In this work we modify the predictor to include not just local information,
+but also neighboring information. With this modification we show that the stability is greatly
+enhanced; in particular, we show that we are able to remove the polynomial degree dependence of the
+maximum time-step and show how this extends to multiple spatial dimensions. A semi-analytic von
+Neumann analysis is presented to theoretically justify the stability claims. Convergence and
+efficiency studies for linear and nonlinear problems in multiple dimensions are accomplished
+using a MATLAB code that can be freely downloaded. 

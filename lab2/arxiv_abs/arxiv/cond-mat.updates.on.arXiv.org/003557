@@ -1,0 +1,17 @@
+We present an algorithm to efficiently sample first-passage times for fractional Brownian motion.
+To increase the resolution, an initial coarse lattice is successively refined close to the target,
+by adding exactly sampled midpoints, where the probability that they reach the target is non-negligible.
+Compared to a path of $N$ equally spaced points, the algorithm achieves the same numerical accuracy
+$N_{\rm eff}$, while sampling only a small fraction of all points. Though this induces a statistical
+error, the latter is bounded for each bridge, allowing us to bound the total error rate by a number
+of our choice, say $P_{\rm error}^{\rm tot}=10^{-6}$. This leads to significant improvements
+in both memory and speed. For $H=0.33$ and $N_{\rm eff}=2^{32}$, we need $5\,000$ times less CPU
+time and $10\, 000$ times less memory than the classical Davies Harte algorithm. The gain grows for
+$H=0.25$ and $N_{\rm eff} = 2^{42}$ to $3\cdot 10^{5}$ for CPU and $10^6$ for memory. We estimate
+our algorithmic complexity as ${\cal C}^{\rm ABSec}(N_{\rm eff}) = {\cal O}\left(\left( \ln N_{\rm
+eff}\right)^{3}\right)$, to be compared to Davies Harte which has complexity ${\cal C}^{\rm DH}(N)
+= {\cal O}\left(N \ln N \right)$. Decreasing $P_{\rm error}^{\rm tot}$ results in a small increase
+in complexity, proportional to $\ln (1/P_{\rm error}^{\rm tot})$. Our current implementation
+is limited to the values of $N_{\rm eff}$ given above, due to a loss of floating-point precision.
+The algorithm can be adapted to other extreme events and arbitrary Gaussian processes. It enables
+one to numerically validate theoretical predictions that were hitherto inaccessible. 

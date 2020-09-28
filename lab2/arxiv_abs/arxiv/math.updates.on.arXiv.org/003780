@@ -1,0 +1,17 @@
+Many modern neural network architectures are trained in an overparameterized regime where the
+parameters of the model exceed the size of the training dataset. Sufficiently overparameterized
+neural network architectures in principle have the capacity to fit any set of labels including random
+noise. However, given the highly nonconvex nature of the training landscape it is not clear what
+level and kind of overparameterization is required for first order methods to converge to a global
+optima that perfectly interpolate any labels. A number of recent theoretical works have shown that
+for very wide neural networks where the number of hidden units is polynomially large in the size of
+the training data gradient descent starting from a random initialization does indeed converge
+to a global optima. However, in practice much more moderate levels of overparameterization seems
+to be sufficient and in many cases overparameterized models seem to perfectly interpolate the training
+data as soon as the number of parameters exceed the size of the training data by a constant factor.
+Thus there is a huge gap between the existing theoretical literature and practical experiments.
+In this paper we take a step towards closing this gap. Focusing on shallow neural nets and smooth activations,
+we show that (stochastic) gradient descent when initialized at random converges at a geometric
+rate to a nearby global optima as soon as the square-root of the number of network parameters exceeds
+the size of the training data. Our results also benefit from a fast convergence rate and continue
+to hold for non-differentiable activations such as Rectified Linear Units (ReLUs). 

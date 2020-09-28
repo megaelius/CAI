@@ -1,0 +1,19 @@
+We propose gradient adversarial training, an auxiliary deep learning framework applicable to
+different machine learning problems. In gradient adversarial training, we leverage a prior belief
+that in many contexts, simultaneous gradient updates should be statistically indistinguishable
+from each other. We enforce this consistency using an auxiliary network that classifies the origin
+of the gradient tensor, and the main network serves as an adversary to the auxiliary network in addition
+to performing standard task-based training. We demonstrate gradient adversarial training for
+three different scenarios: (1) as a defense to adversarial examples we classify gradient tensors
+and tune them to be agnostic to the class of their corresponding example, (2) for knowledge distillation,
+we do binary classification of gradient tensors derived from the student or teacher network and
+tune the student gradient tensor to mimic the teacher's gradient tensor; and (3) for multi-task
+learning we classify the gradient tensors derived from different task loss functions and tune them
+to be statistically indistinguishable. For each of the three scenarios we show the potential of
+gradient adversarial training procedure. Specifically, gradient adversarial training increases
+the robustness of a network to adversarial attacks, is able to better distill the knowledge from
+a teacher network to a student network compared to soft targets, and boosts multi-task learning
+by aligning the gradient tensors derived from the task specific loss functions. Overall, our experiments
+demonstrate that gradient tensors contain latent information about whatever tasks are being trained,
+and can support diverse machine learning problems when intelligently guided through adversarialization
+using a auxiliary network. 

@@ -1,0 +1,19 @@
+Since the introduction of retroactive data structures at SODA 2004, a major unsolved problem has
+been to bound the gap between the best partially retroactive data structure (where changes can be
+made to the past, but only the present can be queried) and the best fully retroactive data structure
+(where the past can also be queried) for any problem. It was proved in 2004 that any partially retroactive
+data structure with operation time $T(n,m)$ can be transformed into a fully retroactive data structure
+with operation time $O(\sqrt{m} \cdot T(n,m))$, where $n$ is the size of the data structure and $m$
+is the number of operations in the timeline [Demaine 2004], but it has been open for 14 years whether
+such a gap is necessary. In this paper, we prove nearly matching upper and lower bounds on this gap
+for all $n$ and $m$. We improve the upper bound for $n \ll \sqrt m$ by showing a new transformation with
+multiplicative overhead $n \log m$. We then prove a lower bound of $\min\{n \log m, \sqrt m\}^{1-o(1)}$
+assuming any of the following conjectures: - Conjecture I: Circuit SAT requires $2^{n - o(n)}$ time
+on $n$-input circuits of size $2^{o(n)}$. (Far weaker than the well-believed SETH conjecture,
+which asserts that CNF SAT with $n$ variables and $O(n)$ clauses already requires $2^{n-o(n)}$
+time.) - Conjecture II: Online $(\min,+)$ product between an integer $n\times n$ matrix and $n$
+vectors requires $n^{3 - o(1)}$ time. - Conjecture III (3-SUM Conjecture): Given three sets $A,B,C$
+of integers, each of size $n$, deciding whether there exist $a \in A, b \in B, c \in C$ such that $a + b
++ c = 0$ requires $n^{2 - o(1)}$ time. Our lower bound construction illustrates an interesting power
+of fully retroactive queries: they can be used to quickly solve batched pair evaluation. We believe
+this technique can prove useful for other data structure lower bounds, especially dynamic ones.

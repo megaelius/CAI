@@ -1,0 +1,20 @@
+In this paper we combine concepts from Riemannian Optimization and the theory of Sobolev gradients
+to derive a new conjugate gradient method for direct minimization of the Gross-Pitaevskii energy
+functional with rotation. The conservation of the number of particles constrains the minimizers
+to lie on a manifold corresponding to the unit $L^2$ norm. The idea developed here is to transform
+the original constrained optimization problem to an unconstrained problem on this (spherical)
+Riemannian manifold, so that fast minimization algorithms can be applied as alternatives to more
+standard constrained formulations. First, we obtain Sobolev gradients using an equivalent definition
+of an $H^1$ inner product which takes into account rotation. Then, the Riemannian gradient (RG)
+steepest descent method is derived based on projected gradients and retraction of an intermediate
+solution back to the constraint manifold. Finally, we use the concept of the Riemannian vector transport
+to propose a Riemannian conjugate gradient (RCG) method for this problem. It is derived at the continuous
+level based on the "optimize-then-discretize" paradigm instead of the usual "discretize-then-optimize"
+approach, as this ensures robustness of the method when adaptive mesh refinement is performed in
+computations. We evaluate various design choices inherent in the formulation of the method and
+conclude with recommendations concerning selection of the best options. Numerical tests demonstrate
+that the proposed RCG method outperforms the simple gradient descent (RG) method in terms of rate
+of convergence. While on simple problems a Newton-type method implemented in the {\tt Ipopt} library
+exhibits a faster convergence than the (RCG) approach, the two methods perform similarly on more
+complex problems requiring the use of mesh adaptation. At the same time the (RCG) approach has far
+fewer tunable parameters. 

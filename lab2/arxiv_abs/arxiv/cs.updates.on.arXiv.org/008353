@@ -1,0 +1,20 @@
+Training deep neural networks with the error backpropagation algorithm is considered implausible
+from a biological perspective. Numerous recent publications suggest elaborate models for biologically
+plausible variants of deep learning, typically defining success as reaching around 98% test accuracy
+on the MNIST data set. Here, we investigate how far we can go on digit (MNIST) and object (CIFAR10)
+classification with biologically plausible, local learning rules in a network with one hidden
+layer and a single readout layer. The hidden layer weights are either fixed (random or random Gabor
+filters) or trained with unsupervised methods (PCA, ICA or Sparse Coding) that can be implemented
+by local learning rules. The readout layer is trained with a supervised, local learning rule. We
+first implement these models with rate neurons. This comparison reveals, first, that unsupervised
+learning does not lead to better performance than fixed random projections or Gabor filters for
+large hidden layers. Second, networks with localized receptive fields perform significantly
+better than networks with all-to-all connectivity and can reach backpropagation performance
+on MNIST. We then implement two of the networks - fixed, localized, random & random Gabor filters
+in the hidden layer - with spiking leaky integrate-and-fire neurons and spike timing dependent
+plasticity to train the readout layer. These spiking models achieve > 98.2% test accuracy on MNIST,
+which is close to the performance of rate networks with one hidden layer trained with backpropagation.
+The performance of our shallow network models is comparable to most current biologically plausible
+models of deep learning. Furthermore, our results with a shallow spiking network provide an important
+reference and suggest the use of datasets other than MNIST for testing the performance of future
+models of biologically plausible deep learning. 

@@ -1,0 +1,17 @@
+We introduce a high-performance simulation framework that permits the semi-independent, task-based
+solution of sets of partial differential equations, typically manifesting as updates to a collection
+of `patches' in space-time. A hybrid MPI/OpenMP execution model is adopted, where work tasks are
+controlled by a rank-local `dispatcher' which selects, from a set of tasks generally much larger
+than the number of physical cores (or hardware threads), tasks that are ready for updating. The definition
+of a task can vary, for example, with some solving the equations of ideal magnetohydrodynamics (MHD),
+others non-ideal MHD, radiative transfer, or particle motion, and yet others applying particle-in-cell
+(PIC) methods. Tasks do not have to be grid-based, while tasks that are, may use either Cartesian
+or orthogonal curvilinear meshes. Patches may be stationary or moving. Mesh refinement can be static
+or dynamic. A feature of decisive importance for the overall performance of the framework is that
+time steps are determined and applied locally; this allows potentially large reductions in the
+total number of updates required in cases when the signal speed varies greatly across the computational
+domain, and therefore a corresponding reduction in computing time. Another feature is a load balancing
+algorithm that operates `locally' and aims to simultaneously minimise load and communication
+imbalance. The framework generally relies on already existing solvers, whose performance is augmented
+when run under the framework, due to more efficient cache usage, vectorisation, local time-stepping,
+plus near-linear and, in principle, unlimited OpenMP and MPI scaling. 

@@ -1,0 +1,19 @@
+As evidenced in visual results in \cite{attenUnet}\cite{AttenUnet2018}\cite{InterSeg}\cite{UnetFrontNeuro}\cite{LearnActiveContour},
+the periphery of foreground regions representing malignant tissues may be disproportionately
+assigned as belonging to the background class of healthy tissues in medical image segmentation.
+This leads to high false negative detection rates. In this paper, we propose a novel attention mechanism
+to directly address such high false negative rates, called Paying Attention to Mistakes. Our attention
+mechanism steers the models towards false positive identification, which counters the existing
+bias towards false negatives. The proposed mechanism has two complementary implementations:
+(a) "explicit" steering of the model to attend to a larger Effective Receptive Field on the foreground
+areas; (b) "implicit" steering towards false positives, by attending to a smaller Effective Receptive
+Field on the background areas. We validated our methods on three tasks: 1) binary dense prediction
+between vehicles and the background using CityScapes; 2) Enhanced Tumour Core segmentation with
+multi-modal MRI scans in BRATS2018; 3) segmenting stroke lesions using ultrasound images in ISLES2018.
+We compared our methods with state-of-the-art attention mechanisms in medical imaging, including
+self-attention, spatial-attention and spatial-channel mixed attention. Across all of the three
+different tasks, our models consistently outperform the baseline models in Intersection over
+Union (IoU) and/or Hausdorff Distance (HD). For instance, in the second task, the "explicit" implementation
+of our mechanism reduces the HD of the best baseline by more than $26\%$, whilst improving the IoU
+by more than $3\%$. We believe our proposed attention mechanism can benefit a wide range of medical
+and computer vision tasks, which suffer from over-detection of background. 

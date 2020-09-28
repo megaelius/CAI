@@ -1,0 +1,18 @@
+In industrial product quality assessment, it is essential to determine whether a product is defect-free
+and further analyze the severity of anomality. To this end, accurate defect segmentation on images
+of products provides an important functionality. In industrial inspection tasks, it is common
+to capture abundant defect-free image samples but very limited anomalous ones. Therefore, it is
+critical to develop automatic and accurate defect segmentation systems using only a small number
+of annotated anomalous training images. This paper tackles the challenging few-shot defect segmentation
+task with sufficient normal (defect-free) training images but very few anomalous ones. We present
+two effective regularization techniques via incorporating abundant defect-free images into
+the training of a UNet-like encoder-decoder defect segmentation network. We first propose a Normal
+Background Regularization (NBR) loss which is jointly minimized with the segmentation loss, enhancing
+the encoder network to produce distinctive representations for normal regions. Secondly, we crop/paste
+defective regions to the randomly selected normal images for data augmentation and propose a weighted
+binary cross-entropy loss to enhance the training by emphasizing more realistic crop-and-pasted
+augmented images based on feature-level similarity comparison. Both techniques are implemented
+on an encoder-decoder segmentation network backboned by ResNet-34 for few-shot defect segmentation.
+Extensive experiments are conducted on the recently released MVTec Anomaly Detection dataset
+with high-resolution industrial images. Under both 1-shot and 5-shot defect segmentation settings,
+the proposed method significantly outperforms several benchmarking methods. 

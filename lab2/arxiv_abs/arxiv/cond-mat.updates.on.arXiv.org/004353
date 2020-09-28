@@ -1,0 +1,17 @@
+The autoregressive neural networks are emerging as a powerful computational tool to solve relevant
+problems in classical and quantum mechanics. One of their appealing functionalities is that, after
+they have learned a probability distribution from a dataset, they allow exact and efficient sampling
+of typical system configurations. Here we employ a neural autoregressive distribution estimator
+(NADE) to boost Markov chain Monte Carlo (MCMC) simulations of a paradigmatic classical model of
+spin-glass theory, namely the two-dimensional Edwards-Anderson Hamiltonian. We show that a NADE
+can be trained to accurately mimic the Boltzmann distribution using unsupervised learning from
+system configurations generated using standard MCMC algorithms. The trained NADE is then employed
+as smart proposal distribution for the Metropolis-Hastings algorithm. This allows us to perform
+efficient MCMC simulations, which provide unbiased results even if the expectation value corresponding
+to the probability distribution learned by the NADE is not exact. Notably, we implement a sequential
+tempering procedure, whereby a NADE trained at a higher temperature is iteratively employed as
+proposal distribution in a MCMC simulation run at a slightly lower temperature. This allows one
+to efficiently simulate the spin-glass model even in the low-temperature regime, avoiding the
+divergent correlation times that plague MCMC simulations driven by local-update algorithms.
+Furthermore, we show that the NADE-driven simulations quickly sample ground-state configurations,
+paving the way to their future utilization to tackle binary optimization problems. 

@@ -1,0 +1,17 @@
+Model compression has emerged as an important area of research for deploying deep learning models
+on Internet-of-Things (IoT). However, for extremely memory-constrained scenarios, even the
+compressed models cannot fit within the memory of a single device and, as a result, must be distributed
+across multiple devices. This leads to a distributed inference paradigm in which memory and communication
+costs represent a major bottleneck. Yet, existing model compression techniques are not communication-aware.
+Therefore, we propose Network of Neural Networks (NoNN), a new distributed IoT learning paradigm
+that compresses a large pretrained 'teacher' deep network into several disjoint and highly-compressed
+'student' modules, without loss of accuracy. Moreover, we propose a network science-based knowledge
+partitioning algorithm for the teacher model, and then train individual students on the resulting
+disjoint partitions. Extensive experimentation on five image classification datasets, for user-defined
+memory/performance budgets, show that NoNN achieves higher accuracy than several baselines and
+similar accuracy as the teacher model, while using minimal communication among students. Finally,
+as a case study, we deploy the proposed model for CIFAR-10 dataset on edge devices and demonstrate
+significant improvements in memory footprint (up to 24x), performance (up to 12x), and energy per
+node (up to 14x) compared to the large teacher model. We further show that for distributed inference
+on multiple edge devices, our proposed NoNN model results in up to 33x reduction in total latency
+w.r.t. a state-of-the-art model compression baseline. 

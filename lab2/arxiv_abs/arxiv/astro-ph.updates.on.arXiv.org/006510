@@ -1,0 +1,17 @@
+Kliko is a Docker-based container specification for running one or multiple related compute jobs.
+The key concepts of Kliko are the encapsulation of data processing software into a container and
+the formalization of the input, output and task parameters. By formalizing the parameters, the
+software is represented as abstract building blocks with a uniform and consistent interface. The
+main advantage is enhanced scriptability and empowering pipeline composition. Formalization
+is realized by bundling a container with a Kliko file, which describes the IO and task parameters.
+This Kliko container can then be opened and run by a Kliko runner. The Kliko runner will parse the Kliko
+definition and gather the values for these parameters, for example by requesting user input or retrieving
+pre-defined values from disk. Parameters can be various primitive types, for example: float, int
+or the path to a file. This paper will also discuss the implementation of a support library named Kliko
+which can be used to create Kliko containers, parse Kliko definitions, chain Kliko containers in
+workflows using a workflow manager library such as Luigi. The Kliko library can be used inside the
+container to interact with the Kliko runner. Finally, to illustrate the applicability of the Kliko
+definition, this paper will discuss two reference implementations based on the Kliko library:
+RODRIGUES, a web-based Kliko container scheduler, and output visualizer specifically for astronomical
+data, and VerMeerKAT, a multi-container workflow data reduction pipeline which is being used as
+a prototype pipeline for the commissioning of the MeerKAT radio telescope. 

@@ -1,0 +1,20 @@
+The standard approach to densely reconstruct the motion in a volume of fluid is to inject high-contrast
+tracer particles and record their motion with multiple high-speed cameras. Almost all existing
+work processes the acquired multi-view video in two separate steps, utilizing either a pure Eulerian
+or pure Lagrangian approach. Eulerian methods perform a voxel-based reconstruction of particles
+per time step, followed by 3D motion estimation, with some form of dense matching between the precomputed
+voxel grids from different time steps. In this sequential procedure, the first step cannot use temporal
+consistency considerations to support the reconstruction, while the second step has no access
+to the original, high-resolution image data. Alternatively, Lagrangian methods reconstruct
+an explicit, sparse set of particles and track the individual particles over time. Physical constraints
+can only be incorporated in a post-processing step when interpolating the particle tracks to a dense
+motion field. We show, for the first time, how to jointly reconstruct both the individual tracer
+particles and a dense 3D fluid motion field from the image data, using an integrated energy minimization.
+Our hybrid Lagrangian/Eulerian model reconstructs individual particles, and at the same time
+recovers a dense 3D motion field in the entire domain. Making particles explicit greatly reduces
+the memory consumption and allows one to use the high-res input images for matching. Whereas the
+dense motion field makes it possible to include physical a-priori constraints and account for the
+incompressibility and viscosity of the fluid. The method exhibits greatly (~70%) improved results
+over our recently published baseline with two separate steps for 3D reconstruction and motion estimation.
+Our results with only two time steps are comparable to those of sota tracking-based methods that
+require much longer sequences. 

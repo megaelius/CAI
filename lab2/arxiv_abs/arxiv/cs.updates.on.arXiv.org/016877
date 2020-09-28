@@ -1,0 +1,20 @@
+Local discriminators have been employed in deep generative models, in image-to-image translation
+methods, in analyzing time-series data, etc. The approach is to apply local discriminators to different
+patches of an image or subsequences of time-series data, resulting in improved generation quality,
+reduced discriminator size, and faster and more stable training dynamics. These empirical successes,
+however, are based on heuristics; it is not clear what subset of features each local discriminator
+should be applied to, and there are no theoretical guarantees about the effect of the discriminator
+localization on estimating the distance between the generated and target distributions. In this
+paper, we provide theoretical foundations to answer these questions for high-dimensional distributions
+with conditional independence structure captured by either a Bayesian network or a Markov Random
+Field (MRF). Our results are based on subadditivity properties of probability divergences, which
+establish upper bounds on the distance between two high-dimensional distributions by the sum of
+distances between their marginals over (local) neighborhoods of the graphical structure of the
+Bayes-net or the MRF. We prove that several popular probability divergences, including Jensen-Shannon,
+Total Variation, Wasserstein, Integral Probability Metrics (IPMs), and nearly all f-divergences,
+satisfy some notion of subadditivity under mild conditions. Thus, given an underlying feature
+dependency graph and using our theoretical results, one can use, in a principled way, a set of simple
+local discriminators, rather than a giant discriminator on the entire graph, providing significant
+statistical and computational benefits. Our experiments on synthetic as well as real-world datasets
+demonstrate the benefits of using our principled design of local discriminators in generative
+models. 

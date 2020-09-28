@@ -1,0 +1,20 @@
+Krylov subspace methods are widely known as efficient algebraic methods for solving linear systems.
+However, on massively parallel hardware their performance is typically limited by communication
+latency rather than floating point performance. With HPC hardware advancing towards the exascale
+regime the gap between computation (i.e. flops) and communication (i.e. internode communication,
+as well as data movement within the memory hierarchy) keeps steadily increasing, imposing the need
+for scalable alternatives to traditional Krylov subspace methods. One such approach are pipelined
+Krylov subspace methods, which reduce the number of global synchronization points and overlap
+global communication latency with local arithmetic operations, thus `hiding' the global reduction
+phases behind useful computations. To obtain this overlap the algorithm is reformulated by introducing
+a number of auxiliary vector quantities, which are computed using additional recurrence relations.
+Although pipelined Krylov subspace methods are equivalent to traditional Krylov subspace methods
+in exact arithmetic, the behavior of local rounding errors induced by the multi-term recurrence
+relations in finite precision may in practice affect convergence significantly. This numerical
+stability study aims to characterize the effect of local rounding errors in various pipelined versions
+of the popular Conjugate Gradient method. We derive expressions for the gaps between the true and
+(recursively) computed variables that are used to update the search directions in the different
+CG variants. Furthermore, we show how these results can be used to analyze and correct the effect
+of local rounding error propagation on the maximal attainable accuracy of pipelined CG methods.
+The analysis in this work is supplemented by various numerical experiments that demonstrate the
+numerical stability of the pipelined CG methods. 

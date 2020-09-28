@@ -1,0 +1,18 @@
+PURPOSE: To apply deep convolutional neural networks (CNN) to the left ventricular segmentation
+task in myocardial arterial spin labeled (ASL) perfusion imaging. To develop methods that measure
+uncertainty and that adapt segmentation based on a specific false positive vs. false negative tradeoff.
+METHODS: We utilized a modified UNET architecture with Monte Carlo (MC) dropout. The model was trained
+on data from 22 subjects and tested on data from 6 heart transplant recipients. Manual segmentation
+and quantitative myocardial blood flow (MBF) maps were available for comparison. We consider two
+global scores of segmentation uncertainty, "Dice Uncertainty" and "MC Uncertainty", which were
+calculated with and without the use of manual segmentation, respectively. Tversky loss function
+with a hyperparameter $\beta$ was used to adapt the model to a specific false positive vs. false negative
+tradeoff. RESULTS: The modified UNET model achieved Dice coefficient of mean(std) = $0.91(0.04)$
+on the test set. MBF measured using automatic segmentation was highly correlated to that measured
+using the manual segmentation ($R^2 = 0.96$). Dice Uncertainty and MC Uncertainty were in good agreement
+($R^2 = 0.64$). As $\beta$ increased, the false positive rate systematically decreased and false
+negative rate systematically increased. CONCLUSION: We demonstrate the feasibility of using
+CNN for automatic segmentation of the left ventricle in myocardial ASL data. This is a particularly
+challenging application because of low and inconsistent blood-myocardium contrast-to-noise
+ratio. We also demonstrate novel methods that measure uncertainty and adapt to a desired tradeoff
+between false positive and false negative rates. 

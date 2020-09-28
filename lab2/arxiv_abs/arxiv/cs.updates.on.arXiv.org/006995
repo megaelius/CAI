@@ -1,0 +1,19 @@
+In this paper, a novel derivative-free pattern search based algorithm for Black-box optimization
+is proposed over a simplex constrained parameter space. At each iteration, starting from the current
+solution, new possible set of solutions are found by adding a set of derived step-size vectors to
+the initial starting point. While deriving these step-size vectors, precautions and adjustments
+are considered so that the set of new possible solution points still remain within the simplex constrained
+space. Thus, no extra time is spent in evaluating the (possibly expensive) objective function at
+infeasible points (points outside the unit-simplex space). While minimizing any objective function
+of m parameters, within each iteration, the objective function is evaluated at 2m new possible solution
+points. So, upto 2m parallel threads can be incorporated which makes the computation even faster
+while optimizing expensive objective functions over high-dimensional parameter space. Once
+a local minimum is discovered, in order to find a better solution, a novel `re-start' strategy is
+considered to increase the likelihood of finding a better solution. Unlike existing pattern search
+based methods, a sparsity control parameter is introduced which can be used to induce sparsity in
+the solution in case the solution is expected to be sparse in prior. A comparative study of the performances
+of the proposed algorithm and other existing algorithms are shown for a few low, moderate and high-dimensional
+optimization problems. Upto 338 folds improvement in computation time is achieved using the proposed
+algorithm over Genetic algorithm along with better solution. The proposed algorithm is used to
+estimate the simultaneous quantiles of North Atlantic Hurricane velocities during 1981-2006
+by maximizing a non-closed form likelihood function with (possibly) multiple maximums. 

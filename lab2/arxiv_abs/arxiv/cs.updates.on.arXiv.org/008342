@@ -1,0 +1,18 @@
+We present Charlotte, a framework for composable, authenticated distributed data structures.
+Charlotte data is stored in blocks that reference each other by hash. Together, all Charlotte blocks
+form a directed acyclic graph, the blockweb; all observers and applications use subgraphs of the
+blockweb for their own data structures. Unlike prior systems, Charlotte data structures are composable:
+applications and data structures can operate fully independently when possible, and share blocks
+when desired. To support this composability, we define a language-independent format for Charlotte
+blocks and a network API for Charlotte servers. An authenticated distributed data structure guarantees
+that data is immutable and self-authenticating: data referenced will be unchanged when it is retrieved.
+Charlotte extends these guarantees by allowing applications to plug in their own mechanisms for
+ensuring availability and integrity of data structures. Unlike most traditional distributed
+systems, including distributed databases, blockchains, and distributed hash tables, Charlotte
+supports heterogeneous trust: different observers may have their own beliefs about who might fail,
+and how. Despite heterogeneity of trust, Charlotte presents each observer with a consistent, available
+view of data. We demonstrate the flexibility of Charlotte by implementing a variety of integrity
+mechanisms, including consensus and proof of work. We study the power of disentangling availability
+and integrity mechanisms by building a variety of applications. The results from these examples
+suggest that developers can use Charlotte to build flexible, fast, composable applications with
+strong guarantees. 

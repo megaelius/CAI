@@ -1,0 +1,18 @@
+In this paper we present the Task-Aware MPI library (TAMPI) that integrates both blocking and non-blocking
+MPI primitives with task-based programming models. The TAMPI library leverages two new runtime
+APIs to improve both programmability and performance of hybrid applications. The first API allows
+to pause and resume the execution of a task depending on external events. This API is used to improve
+the interoperability between blocking MPI communication primitives and tasks. When an MPI operation
+executed inside a task blocks, the task running is paused so that the runtime system can schedule
+a new task on the core that became idle. Once the blocked MPI operation is completed, the paused task
+is put again on the runtime system's ready queue, so eventually it will be scheduled again and its
+execution will be resumed. The second API defers the release of dependencies associated with a task
+completion until some external events are fulfilled. This API is composed only of two functions,
+one to bind external events to a running task and another function to notify about the completion
+of external events previously bound. TAMPI leverages this API to bind non-blocking MPI operations
+with tasks, deferring the release of their task dependencies until both task execution and all its
+bound MPI operations are completed. Our experiments reveal that the enhanced features of TAMPI
+not only simplify the development of hybrid MPI+OpenMP applications that use blocking or non-blocking
+MPI primitives but they also naturally overlap computation and communication phases, which improves
+application performance and scalability by removing artificial dependencies across communication
+tasks. 

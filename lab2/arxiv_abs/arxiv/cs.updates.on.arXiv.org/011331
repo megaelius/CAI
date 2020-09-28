@@ -1,0 +1,18 @@
+In secure distributed matrix multiplication (SDMM) the multiplication $\mathbf{A}\mathbf{B}$
+from two private matrices $\mathbf{A}$ and $\mathbf{B}$ is outsourced by a user to $N$ distributed
+servers. In $\ell$-SDMM, the goal is to a design a joint communication-computation procedure that
+optimally balances conflicting communication and computation metrics without leaking any information
+on both $\mathbf{A}$ and $\mathbf{B}$ to any set of $\ell\leq N$ servers. To this end, the user applies
+coding with $\tilde{\mathbf{A}}_i$ and $\tilde{\mathbf{B}}_i$ representing encoded versions
+of $\mathbf{A}$ and $\mathbf{B}$ destined to the $i$-th server. Now, SDMM involves multiple tradeoffs.
+One such tradeoff is the tradeoff between uplink (UL) and downlink (DL) costs. To find a good balance
+between these two metrics, we propose two schemes which we term USCSA and GSCSA that are based on secure
+cross subspace alignment (SCSA). We show that there are various scenarios where they outperform
+existing SDMM schemes from the literature with respect to the UL-DL efficiency. Next, we implement
+schemes from the literature, including USCSA and GSCSA, and test their performance on Amazon EC2.
+Our numerical results show that USCSA and GSCSA establish a good balance between the time spend on
+the communication and computation in SDMMs. This is because they combine advantages of polynomial
+codes, namely low time for the upload of $\left(\tilde{\mathbf{A}}_i,\tilde{\mathbf{B}}_i\right)_{i=1}^{N}$
+and the computation of $\mathbf{O}_i=\tilde{\mathbf{A}}_i\tilde{\mathbf{B}}_i$, with those
+of SCSA, being a low timing overhead for the download of $\left(\mathbf{O}_i\right)_{i=1}^{N}$
+and the decoding of $\mathbf{A}\mathbf{B}$. 

@@ -1,0 +1,18 @@
+Modern high-resolution images obtained with space observatories display extremely strong intensity
+variations across images on all spatial scales. Source extraction in such images with methods based
+on global thresholding may bring unacceptably large numbers of spurious sources in bright areas
+while failing to detect sources in low-background or low-noise areas. It would be highly beneficial
+to subtract background and equalize the levels of small-scale fluctuations in the images before
+extracting sources or filaments. This paper describes $getimages$, a new method of background
+derivation and image flattening. It is based on median filtering with sliding windows that correspond
+to a range of spatial scales from the observational beam size up to a maximum structure width $X_{\lambda}$.
+The latter is a single free parameter of $getimages$ that can be evaluated manually from the observed
+image $\mathcal{I}_{\lambda}$. The median filtering algorithm provides a background image $\tilde{\mathcal{B}}_{\lambda}$
+for structures of all widths below $X_{\lambda}$. The same median filtering procedure applied
+to an image of standard deviations $\mathcal{D}_{\lambda}$ derived from a background-subtracted
+image $\tilde{\mathcal{S}}_{\lambda}$ results in a flattening image $\tilde{\mathcal{F}}_{\lambda}$.
+Finally, a flattened detection image $\mathcal{I}_{{\lambda}\mathrm{D}}{\,=\,}\tilde{\mathcal{S}}_{\lambda}{/}\tilde{\mathcal{F}}_{\lambda}$
+is computed, whose standard deviations are uniform outside sources and filaments. Detecting sources
+in such greatly simplified images results in much cleaner extractions that are more complete and
+reliable. As a bonus, $getimages$ reduces various observational and map-making artifacts and
+equalizes noise levels between independent tiles of mosaicked images. 

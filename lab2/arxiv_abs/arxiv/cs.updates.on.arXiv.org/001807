@@ -1,0 +1,18 @@
+We address the problem of weakly supervised object localization where only image-level annotations
+are available for training object detectors. Numerous methods have been proposed to tackle this
+problem through mining object proposals. However, a substantial amount of noise in object proposals
+causes ambiguities for learning discriminative object models. Such approaches are sensitive
+to model initialization and often converge to undesirable local minimum solutions. In this paper,
+we propose to overcome these drawbacks by progressive representation adaptation with two main
+steps: 1) classification adaptation and 2) detection adaptation. In classification adaptation,
+we transfer a pre-trained network to a multi-label classification task for recognizing the presence
+of a certain object in an image. Through the classification adaptation step, the network learns
+discriminative representations that are specific to object categories of interest. In detection
+adaptation, we mine class-specific object proposals by exploiting two scoring strategies based
+on the adapted classification network. Class-specific proposal mining helps remove substantial
+noise from the background clutter and potential confusion from similar objects. We further refine
+these proposals using multiple instance learning and segmentation cues. Using these refined object
+bounding boxes, we fine-tune all the layer of the classification network and obtain a fully adapted
+detection network. We present detailed experimental validation on the PASCAL VOC and ILSVRC datasets.
+Experimental results demonstrate that our progressive representation adaptation algorithm
+performs favorably against the state-of-the-art methods. 

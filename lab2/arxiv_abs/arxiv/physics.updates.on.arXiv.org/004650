@@ -1,0 +1,18 @@
+Helical CT has been widely used in clinical diagnosis. Sparsely spaced multidetector in z direction
+can increase the coverage of the detector provided limited detector rows. It can speed up volumetric
+CT scan, lower the radiation dose and reduce motion artifacts. However, it leads to insufficient
+data for reconstruction. That means reconstructions from general analytical methods will have
+severe artifacts. Iterative reconstruction methods might be able to deal with this situation but
+with the cost of huge computational load. In this work, we propose a cascaded dual-domain deep learning
+method that completes both data transformation in projection domain and error reduction in image
+domain. First, a convolutional neural network (CNN) in projection domain is constructed to estimate
+missing helical projection data and converting helical projection data to 2D fan-beam projection
+data. This step is to suppress helical artifacts and reduce the following computational cost. Then,
+an analytical linear operator is followed to transfer the data from projection domain to image domain.
+Finally, an image domain CNN is added to improve image quality further. These three steps work as
+an entirety and can be trained end to end. The overall network is trained using a simulated lung CT
+dataset with Poisson noise from 25 patients. We evaluate the trained network on another three patients
+and obtain very encouraging results with both visual examination and quantitative comparison.
+The resulting RRMSE is 6.56% and the SSIM is 99.60%. In addition, we test the trained network on the
+lung CT dataset with different noise level and a new dental CT dataset to demonstrate the generalization
+and robustness of our method. 

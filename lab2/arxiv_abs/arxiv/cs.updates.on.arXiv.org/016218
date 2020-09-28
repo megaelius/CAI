@@ -1,0 +1,17 @@
+Several applications of Internet of Things (IoT) technology involve capturing data from multiple
+sensors resulting in multi-sensor time series. Existing neural networks based approaches for
+such multi-sensor or multivariate time series modeling assume fixed input dimension or number
+of sensors. Such approaches can struggle in the practical setting where different instances of
+the same device or equipment such as mobiles, wearables, engines, etc. come with different combinations
+of installed sensors. We consider training neural network models from such multi-sensor time series,
+where the time series have varying input dimensionality owing to availability or installation
+of a different subset of sensors at each source of time series. We propose a novel neural network architecture
+suitable for zero-shot transfer learning allowing robust inference for multivariate time series
+with previously unseen combination of available dimensions or sensors at test time. Such a combinatorial
+generalization is achieved by conditioning the layers of a core neural network-based time series
+model with a "conditioning vector" that carries information of the available combination of sensors
+for each time series. This conditioning vector is obtained by summarizing the set of learned "sensor
+embedding vectors" corresponding to the available sensors in a time series via a graph neural network.
+We evaluate the proposed approach on publicly available activity recognition and equipment prognostics
+datasets, and show that the proposed approach allows for better generalization in comparison to
+a deep gated recurrent neural network baseline. 

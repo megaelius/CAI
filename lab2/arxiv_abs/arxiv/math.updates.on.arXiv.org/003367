@@ -1,0 +1,20 @@
+This paper has two contributions. First, we propose a novel coded matrix multiplication technique
+called Generalized PolyDot codes that advances on existing methods for coded matrix multiplication
+under storage and communication constraints. This technique uses "garbage alignment," i.e.,
+aligning computations in coded computing that are not a part of the desired output. Generalized
+PolyDot codes bridge between Polynomial codes and MatDot codes, trading off between recovery threshold
+and communication costs. Second, we demonstrate that Generalized PolyDot can be used for training
+large Deep Neural Networks (DNNs) on unreliable nodes prone to soft-errors. This requires us to
+address three additional challenges: (i) prohibitively large overhead of coding the weight matrices
+in each layer of the DNN at each iteration; (ii) nonlinear operations during training, which are
+incompatible with linear coding; and (iii) not assuming presence of an error-free master node,
+requiring us to architect a fully decentralized implementation without any "single point of failure."
+We allow all primary DNN training steps, namely, matrix multiplication, nonlinear activation,
+Hadamard product, and update steps as well as the encoding/decoding to be error-prone. We consider
+the case of mini-batch size $B=1$, as well as $B>1$, leveraging coded matrix-vector products, and
+matrix-matrix products respectively. The problem of DNN training under soft-errors also motivates
+an interesting, probabilistic error model under which a real number $(P,Q)$ MDS code is shown to
+correct $P-Q-1$ errors with probability $1$ as compared to $\lfloor \frac{P-Q}{2} \rfloor$ for
+the more conventional, adversarial error model. We also demonstrate that our proposed strategy
+can provide unbounded gains in error tolerance over a competing replication strategy and a preliminary
+MDS-code-based strategy for both these error models. 

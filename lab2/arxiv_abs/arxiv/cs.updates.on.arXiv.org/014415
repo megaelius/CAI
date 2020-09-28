@@ -1,0 +1,19 @@
+A compressed index is a data structure representing a text within compressed space and supporting
+fast indexing queries: given a pattern, count/return all positions where the pattern occurs. In
+recent years, powerful compressed indexes have emerged. These are based on Entropy, the Lempel-Ziv
+factorization, the run-length Burrows-Wheeler Transform (BWT), context-free grammars and,
+more recently, string attractors. Trees add a whole new dimension to the problem: one needs not only
+to compress the labels, but also the tree's topology. On this side, less is known. Jacobson showed
+how to represent the topology of a tree with $n$ nodes in $2n+o(n)$ bits of space (succinct) while
+also supporting constant-time navigation queries. Ferragina et al. presented the first entropy-compressed
+labeled tree representation (the XBWT) able to count, but not locate, paths labeled with a given
+pattern. Grammars and the Lempel-Ziv factorization have been extended to trees, but those representations
+do not support indexing queries. In this paper, we extend to cardinal trees (i.e. tries) the most
+powerful string compression and indexing tools known to date. We start by proposing suitable generalizations
+of run-length BWT, high-order entropy, and string attractors to cardinal trees. We show that the
+number $r\leq n$ of XBWT-runs upper-bounds the size of the smallest tree attractor and lower-bounds
+the trie's high-order worst-case entropy $\mathcal H^{wc}_k$. The main result of this paper is
+the first tree index able to \emph{locate} in pre-order nodes reached by a path labeled with a given
+pattern. Our index locates path occurrences in constant time each and takes $2n + o(n) + O(r\log n)
+\leq 2n + o(n) + O(\mathcal H^{wc}_k\log n)$ bits of space: the reporting time is optimal and the locate
+machinery fits within compressed space on top of the tree's topology. 

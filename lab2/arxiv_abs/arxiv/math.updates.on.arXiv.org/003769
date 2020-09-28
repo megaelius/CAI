@@ -1,0 +1,18 @@
+In numerical time-integration with implicit-explicit (IMEX) methods, a within-step adaptable
+decomposition called residual balanced decomposition is introduced. With this decomposition,
+the requirement of a small enough residual in the iterative solver can be removed, consequently,
+this allows to exchange stability for efficiency. This decomposition transfers any residual occurring
+in the implicit equation of the implicit-step into the explicit part of the decomposition. By balancing
+the residual, the accuracy of the local truncation error of the time-stepping method becomes independent
+from the accuracy by which the implicit equation is solved. In order to balance the residual, the
+original IMEX decomposition is adjusted after the iterative solver has been stopped. For this to
+work, the traditional IMEX time-stepping algorithm needs to be changed. We call this new method
+the shortcut-IMEX (SIMEX). SIMEX can gain computational efficiency by exploring the trade-off
+between the computational effort placed in solving the implicit equation and the size of the numerically
+stable time-step. Typically, increasing the number of solver iterations increases the largest
+stable step-size. Both multi-step and Runge-Kutta (RK) methods are suitable for use with SIMEX.
+Here, we show the efficiency of a SIMEX-RK method in overcoming parabolic stiffness by applying
+it to a nonlinear reaction-advection-diffusion equation. In order to define a stability region
+for SIMEX, a region in the complex plane is depicted by applying SIMEX to a suitable PDE model containing
+diffusion and dispersion. A myriad of stability regions can be reached by changing the RK tableau
+and the solver. 

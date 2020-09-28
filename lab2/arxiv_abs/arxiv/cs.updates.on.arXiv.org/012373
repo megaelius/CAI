@@ -1,0 +1,17 @@
+We develop a new approach for distributed distance computation in planar graphs that is based on
+a variant of the metric compression problem recently introduced by Abboud et al. [SODA'18]. One
+of our key technical contributions is in providing a compression scheme that encodes all $S \times
+T$ distances using $\widetilde{O}(|S|\cdot poly(D)+|T|)$ bits for unweighted graphs with diameter
+$D$. This significantly improves the state of the art of $\widetilde{O}(|S|\cdot 2^{D}+|T| \cdot
+D)$ bits. We also consider an approximate version of the problem for \emph{weighted} graphs, where
+the goal is to encode $(1+\epsilon)$ approximation of the $S \times T$ distances. At the heart of
+this compact compression scheme lies a VC-dimension type argument on planar graphs. This efficient
+compression scheme leads to several improvements and simplifications in the setting of diameter
+computation, most notably in the distributed setting: - There is an $\widetilde{O}(D^5)$-round
+randomized distributed algorithm for computing the diameter in planar graphs, w.h.p. - There is
+an $\widetilde{O}(D^3)+ poly(\log n/\epsilon)\cdot D^2$-round randomized distributed algorithm
+for computing an $(1+\epsilon)$ approximation of the diameter in weighted graphs with polynomially
+bounded weights, w.h.p. No sublinear round algorithms were known for these problems before. These
+distributed constructions are based on a new recursive graph decomposition that preserves the
+(unweighted) diameter of each of the subgraphs up to a logarithmic term. Using this decomposition,
+we also get an \emph{exact} SSSP tree computation within $\widetilde{O}(D^2)$ rounds. 

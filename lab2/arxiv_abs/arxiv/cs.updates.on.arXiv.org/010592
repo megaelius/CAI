@@ -1,0 +1,18 @@
+Convolutional Neural Networks (CNNs) achieve excellent computer-assisted diagnosis with sufficient
+annotated training data. However, most medical imaging datasets are small and fragmented. In this
+context, Generative Adversarial Networks (GANs) can synthesize realistic/diverse additional
+training images to fill the data lack in the real image distribution; researchers have improved
+classification by augmenting data with noise-to-image (e.g., random noise samples to diverse
+pathological images) or image-to-image GANs (e.g., a benign image to a malignant one). Yet, no research
+has reported results combining noise-to-image and image-to-image GANs for further performance
+boost. Therefore, to maximize the DA effect with the GAN combinations, we propose a two-step GAN-based
+DA that generates and refines brain Magnetic Resonance (MR) images with/without tumors separately:
+(i) Progressive Growing of GANs (PGGANs), multi-stage noise-to-image GAN for high-resolution
+MR image generation, first generates realistic/diverse 256 X 256 images; (ii) Multimodal UNsupervised
+Image-to-image Translation (MUNIT) that combines GANs/Variational AutoEncoders or SimGAN that
+uses a DA-focused GAN loss, further refines the texture/shape of the PGGAN-generated images similarly
+to the real ones. We thoroughly investigate CNN-based tumor classification results, also considering
+the influence of pre-training on ImageNet and discarding weird-looking GAN-generated images.
+The results show that, when combined with classic DA, our two-step GAN-based DA can significantly
+outperform the classic DA alone, in tumor detection (i.e., boosting sensitivity 93.67% to 97.48%)
+and also in other medical imaging tasks. 

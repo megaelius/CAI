@@ -1,0 +1,20 @@
+Satellites enable widespread, regional or global surveillance of volcanoes and can provide the
+first indication of volcanic unrest or eruption. Here we consider Interferometric Synthetic Aperture
+Radar (InSAR), which can be employed to detect surface deformation with a strong statistical link
+to eruption. The ability of machine learning to automatically identify signals of interest in these
+large InSAR datasets has already been demonstrated, but data-driven techniques, such as convolutional
+neutral networks (CNN) require balanced training datasets of positive and negative signals to
+effectively differentiate between real deformation and noise. As only a small proportion of volcanoes
+are deforming and atmospheric noise is ubiquitous, the use of machine learning for detecting volcanic
+unrest is more challenging. In this paper, we address this problem using synthetic interferograms
+to train the AlexNet. The synthetic interferograms are composed of 3 parts: 1) deformation patterns
+based on a Monte Carlo selection of parameters for analytic forward models, 2) stratified atmospheric
+effects derived from weather models and 3) turbulent atmospheric effects based on statistical
+simulations of correlated noise. The AlexNet architecture trained with synthetic data outperforms
+that trained using real interferograms alone, based on classification accuracy and positive predictive
+value (PPV). However, the models used to generate the synthetic signals are a simplification of
+the natural processes, so we retrain the CNN with a combined dataset consisting of synthetic models
+and selected real examples, achieving a final PPV of 82%. Although applying atmospheric corrections
+to the entire dataset is computationally expensive, it is relatively simple to apply them to the
+small subset of positive results. This further improves the detection performance without a significant
+increase in computational burden. 

@@ -1,0 +1,17 @@
+The Direct Product encoding of a string $a\in \{0,1\}^n$ on an underlying domain $V\subseteq \binom{n}{k}$,
+is a function DP$_V(a)$ which gets as input a set $S\in V$ and outputs $a$ restricted to $S$. In the
+Direct Product Testing Problem, we are given a function $F:V\to \{0,1\}^k$, and our goal is to test
+whether $F$ is close to a direct product encoding, i.e., whether there exists some $a\in \{0,1\}^n$
+such that on most sets $S$, we have $F(S)=$DP$_V(a)(S)$. A natural test is as follows: select a pair
+$(S,S')\in V$ according to some underlying distribution over $V\times V$, query $F$ on this pair,
+and check for consistency on their intersection. Note that the above distribution may be viewed
+as a weighted graph over the vertex set $V$ and is referred to as a test graph. The testability of direct
+products was studied over various specific domains and test graphs (for example see Dinur-Steurer
+[CCC'14]; Dinur-Kaufman [FOCS'17]). In this paper, we study the testability of direct products
+in a general setting, addressing the question: what properties of the domain and the test graph allow
+one to prove a direct product testing theorem? Towards this goal we introduce the notion of coordinate
+expansion of a test graph. Roughly speaking a test graph is a coordinate expander if it has global
+and local expansion, and has certain nice intersection properties on sampling. We show that whenever
+the test graph has coordinate expansion then it admits a direct product testing theorem. Additionally,
+for every $k$ and $n$ we provide a direct product domain $V\subseteq \binom{n}{k}$ of size $n$, called
+the Sliding Window domain for which we prove direct product testability. 

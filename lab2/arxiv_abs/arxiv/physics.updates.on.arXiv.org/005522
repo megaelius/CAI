@@ -1,0 +1,20 @@
+The 3D quasi-static particle-in-cell (PIC) algorithm is a very efficient method for modeling short-pulse
+laser or relativistic charged particle beam-plasma interactions. In this algorithm, the plasma
+response to a non-evolving laser or particle beam is calculated using Maxwell's equations based
+on the quasi-static approximate equations that exclude radiation. The plasma fields are then used
+to advance the laser or beam forward using a large time step. The algorithm is many orders of magnitude
+faster than a 3D fully explicit relativistic electromagnetic PIC algorithm. It has been shown to
+be capable to accurately model the evolution of lasers and particle beams in a variety of scenarios.
+At the same time, an algorithm in which the fields, currents and Maxwell equations are decomposed
+into azimuthal harmonics has been shown to reduce the complexity of a 3D explicit PIC algorithm to
+that of a 2D algorithm when the expansion is truncated while maintaining accuracy for problems with
+near azimuthal symmetry. This hybrid algorithm uses a PIC description in r-z and a gridless description
+in $\phi$. We describe a novel method that combines the quasi-static and hybrid PIC methods. This
+algorithm expands the fields, charge and current density into azimuthal harmonics. A set of the
+quasi-static field equations are derived for each harmonic. The complex amplitudes of the fields
+are then solved using the finite difference method. The beam and plasma particles are advanced in
+Cartesian coordinates using the total fields. Details on how this algorithm was implemented using
+a similar workflow to an existing quasi-static code, QuickPIC, are presented. The new code is called
+QPAD for QuickPIC with Azimuthal Decomposition. Benchmarks and comparisons between a fully 3D
+explicit PIC code, a full 3D quasi-static code, and the new quasi-static PIC code with azimuthal
+decomposition are also presented. 

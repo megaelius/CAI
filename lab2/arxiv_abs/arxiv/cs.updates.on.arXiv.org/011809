@@ -1,0 +1,18 @@
+Federated machine learning systems have been widely used to facilitate the joint data analytics
+across the distributed datasets owned by the different parties that do not trust each others. In
+this paper, we proposed a novel Gradient Boosting Machines (GBM) framework SecureGBM built-up
+with a multi-party computation model based on semi-homomorphic encryption, where every involved
+party can jointly obtain a shared Gradient Boosting machines model while protecting their own data
+from the potential privacy leakage and inferential identification. More specific, our work focused
+on a specific "dual--party" secure learning scenario based on two parties -- both party own an unique
+view (i.e., attributes or features) to the sample group of samples while only one party owns the labels.
+In such scenario, feature and label data are not allowed to share with others. To achieve the above
+goal, we firstly extent -- LightGBM -- a well known implementation of tree-based GBM through covering
+its key operations for training and inference with SEAL homomorphic encryption schemes. However,
+the performance of such re-implementation is significantly bottle-necked by the explosive inflation
+of the communication payloads, based on ciphertexts subject to the increasing length of plaintexts.
+In this way, we then proposed to use stochastic approximation techniques to reduced the communication
+payloads while accelerating the overall training procedure in a statistical manner. Our experiments
+using the real-world data showed that SecureGBM can well secure the communication and computation
+of LightGBM training and inference procedures for the both parties while only losing less than 3%
+AUC, using the same number of iterations for gradient boosting, on a wide range of benchmark datasets.

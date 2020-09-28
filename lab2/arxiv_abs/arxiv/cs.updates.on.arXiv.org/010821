@@ -1,0 +1,20 @@
+Finding automatically multiple lesions in large images is a common problem in medical image analysis.
+Solving this problem can be challenging if, during optimization, the automated method cannot access
+information about the location of the lesions nor is given single examples of the lesions. We propose
+a new weakly supervised detection method using neural networks, that computes attention maps revealing
+the locations of brain lesions. These attention maps are computed using the last feature maps of
+a segmentation network optimized only with global image-level labels. The proposed method can
+generate attention maps at full input resolution without need for interpolation during preprocessing,
+which allows small lesions to appear in attention maps. For comparison, we modify state-of-the-art
+methods to compute attention maps for weakly supervised object detection, by using a global regression
+objective instead of the more conventional classification objective. This regression objective
+optimizes the number of occurrences of the target object in an image, e.g. the number of brain lesions
+in a scan, or the number of digits in an image. We study the behavior of the proposed method in MNIST-based
+detection datasets, and evaluate it for the challenging detection of enlarged perivascular spaces
+- a type of brain lesion - in a dataset of 2202 3D scans with point-wise annotations in the center of
+all lesions in four brain regions. In the brain dataset, the weakly supervised detection methods
+come close to the human intrarater agreement in each region. The proposed method reaches the best
+area under the curve in two out of four regions, and has the lowest number of false positive detections
+in all regions, while its average sensitivity over all regions is similar to that of the other best
+methods. The proposed method can facilitate epidemiological and clinical studies of enlarged
+perivascular spaces. 

@@ -1,0 +1,19 @@
+Deep neural networks are usually trained with stochastic gradient descent (SGD), which optimizes
+$\theta\in\mathbb{R}^D$ parameters to minimize objective function using very rough approximations
+of gradient, only averaging to the real gradient. Standard approaches like momentum or ADAM only
+consider single direction, and do not try to model distance from extremum - neglecting valuable
+information from calculated gradients. It can be improved by second order methods, but they are
+costly, need inverse of Hessian - problematic especially in the stochastic setting. Proposed general
+framework should overcome these difficulties by directly evolving local second order parametrization
+in $d\ll D$ directions: as $\sum_{i=1}^d \lambda_{i}(\theta\cdot v_{i}-p_{i})^2$ modelling
+local information we are interested in, and relatively simple to update for better agreement with
+calculated gradients. It allows for $\theta$ update by simultaneously attracting toward modelled
+directional minima $(\lambda_i>0)$, and repulsing from maxima $(\lambda_i<0)$, correspondingly
+to distances from $p_i$ (and uncertainty), what allows to also handle problematic saddles. Calculated
+gradients can be used to slowly evolve this parametrization to improve agreement with local behavior
+of objective function, accumulating their statistical trends: 1) update $\lambda, p$ parameters
+for more accurate description of parabola in corresponding directions (also uncertainty), 2)
+rotate considered subspace toward recently statistically significant directions (replacing
+the less frequent ones), and 3) rotate $(v_i)$ inside the subspace to improve diagonal form of Hessian
+in this basis. Presented general framework leaves many customization options for optimizations
+to specific tasks. 

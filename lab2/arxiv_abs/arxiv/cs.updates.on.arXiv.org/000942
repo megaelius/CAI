@@ -1,0 +1,18 @@
+Environmental noise (e.g.heat, ionized particles, etc.) causes transient faults in hardware,
+which lead to corruption of stored values. Mission-critical devices require such faults to be mitigated
+by fault-tolerance --- a combination of techniques that aim at preserving the functional behaviour
+of a system despite the disruptive effects of transient faults. Fault-tolerance typically has
+a high deployment cost -- special hardware might be required to implement it -- and provides weak
+statistical guarantees. It is also based on the assumption that faults are rare. In this paper, we
+consider scenarios where security, rather than functional correctness, is the main asset to be
+protected. Our contribution is twofold. Firstly, we develop a theory for expressing confidentiality
+of data in the presence of transient faults. We show that the natural probabilistic definition of
+security in the presence of faults can be captured by a possibilistic definition. Furthermore,
+the possibilistic definition is implied by a known bisimulation-based property, called Strong
+Security. Secondly, we illustrate the utility of these results for a simple RISC architecture for
+which only the code memory and program counter are assumed fault-tolerant. We present a type-directed
+compilation scheme that produces RISC code from a higher-level language for which Strong Security
+holds --- i.e. well-typed programs compile to RISC code which is secure despite transient faults.
+In contrast with fault-tolerance solutions, our technique assumes relatively little special
+hardware, gives formal guarantees, and works in the presence of an active attacker who aggressively
+targets parts of a system and induces faults precisely. 

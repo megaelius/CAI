@@ -1,0 +1,18 @@
+In the finite difference method which is commonly used in computational micromagnetics, the demagnetizing
+field is usually computed as a convolution of the magnetization vector field with the demagnetizing
+tensor that describes the magnetostatic field of a cuboidal cell with constant magnetization.
+An analytical expression for the demagnetizing tensor is available, however at distances far from
+the cuboidal cell, the numerical evaluation of the analytical expression can be very inaccurate.
+Due to this large-distance inaccuracy numerical packages such as OOMMF compute the demagnetizing
+tensor using the explicit formula at distances close to the originating cell, but at distances far
+from the originating cell a formula based on an asymptotic expansion has to be used. In this work,
+we describe a method to calculate the demagnetizing field by numerical evaluation of the multidimensional
+integral in the demagnetization tensor terms using a sparse grid integration scheme. This method
+improves the accuracy of computation at intermediate distances from the origin. We compute and
+report the accuracy of (i) the numerical evaluation of the exact tensor expression which is best
+for short distances, (ii) the asymptotic expansion best suited for large distances, and (iii) the
+new method based on numerical integration, which is superior to methods (i) and (ii) for intermediate
+distances. For all three methods, we show the measurements of accuracy and execution time as a function
+of distance, for calculations using single precision (4-byte) and double precision (8-byte) floating
+point arithmetic. We make recommendations for the choice of scheme order and integrating coefficients
+for the numerical integration method (iii). 

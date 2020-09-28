@@ -1,0 +1,17 @@
+Purpose: CT image reconstruction techniques have two major categories: analytical reconstruction
+(AR) method and iterative reconstruction (IR) method. AR reconstructs images through analytical
+formulas, such as filtered backprojection (FBP) in 2D and Feldkamp-Davis-Kress (FDK) method in
+3D, which can be either mathematically exact or approximate. On the other hand, IR is often based
+on the discrete forward model of X-ray transform and formulated as a minimization problem with some
+appropriate image regularization method, so that the reconstructed image corresponds to the minimizer
+of the optimization problem. This work is to investigate the fused analytical and iterative reconstruction
+(AIR) method. Methods: Based on IR with L1-type image regularization, AIR is formulated with a AR-specific
+preconditioner in the data fidelity term, which results in the minimal change of the solution algorithm
+that replaces the adjoint X-ray transform by the filtered X-ray transform. As a proof-of-concept
+2D example of AIR, FBP is incorporated into tensor framelet (TF) regularization based IR, and the
+formulated AIR minimization problem is then solved through split Bregman method with GPU-accelerated
+X-ray transform and filtered adjoint X-ray transform. Conclusion: AIR, the fused Analytical and
+Iterative Reconstruction method, is proposed with a proof-of-concept 2D example to synergize
+FBP and TF-regularized IR, with improved image resolution and contrast for experimental data.
+The potential impact of AIR is that it offers a general framework to develop various AR enhanced IR
+methods, when neither AR nor IR alone is sufficient. 

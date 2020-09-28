@@ -1,0 +1,18 @@
+We propose a new aggregation framework for approximate dynamic programming, which provides a connection
+with rollout algorithms, approximate policy iteration, and other single and multistep lookahead
+methods. The central novel characteristic is the use of a bias function $V$ of the state, which biases
+the values of the aggregate cost function towards their correct levels. The classical aggregation
+framework is obtained when $V\equiv0$, but our scheme works best when $V$ is a known reasonably good
+approximation to the optimal cost function $J^*$. When $V$ is equal to the cost function $J_{\mu}$
+of some known policy $\mu$ and there is only one aggregate state, our scheme is equivalent to the rollout
+algorithm based on $\mu$ (i.e., the result of a single policy improvement starting with the policy
+$\mu$). When $V=J_{\mu}$ and there are multiple aggregate states, our aggregation approach can
+be used as a more powerful form of improvement of $\mu$. Thus, when combined with an approximate policy
+evaluation scheme, our approach can form the basis for a new and enhanced form of approximate policy
+iteration. When $V$ is a generic bias function, our scheme is equivalent to approximation in value
+space with lookahead function equal to $V$ plus a local correction within each aggregate state.
+The local correction levels are obtained by solving a low-dimensional aggregate DP problem, yielding
+an arbitrarily close approximation to $J^*$, when the number of aggregate states is sufficiently
+large. Except for the bias function, the aggregate DP problem is similar to the one of the classical
+aggregation framework, and its algorithmic solution by simulation or other methods is nearly identical
+to one for classical aggregation, assuming values of $V$ are available when needed. 

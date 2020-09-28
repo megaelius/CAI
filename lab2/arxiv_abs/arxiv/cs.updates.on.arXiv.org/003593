@@ -1,0 +1,19 @@
+Visual localization is one of the fundamental enablers of robot autonomy which has been mostly tackled
+using local feature-based pipelines that efficiently encode knowledge about the environment
+and the underlying geometrical constraints. Although deep learning based approaches have shown
+considerable robustness in the context of significant perceptual changes, repeating structures
+and textureless regions, their performance has been subpar in comparison to local feature-based
+pipelines. In this paper, we propose the novel VLocNet++ architecture that attempts to overcome
+this limitation by simultaneously embedding geometric and semantic knowledge of the world into
+the pose regression network. We adopt a multitask learning approach that exploits the inter-task
+relationship between learning semantics, regressing 6-DoF global pose and odometry, for the mutual
+benefit of each of these tasks. VLocNet++ incorporates the Geometric Consistency Loss function
+that utilizes the predicted motion from the odometry stream to enforce global consistency during
+pose regression. Furthermore, we propose a self-supervised warping technique that uses the relative
+motion to warp intermediate network representations in the segmentation stream for learning consistent
+semantics. In addition, we propose a novel adaptive weighted fusion layer to leverage inter and
+intra task dependencies based on region activations. Finally, we introduce a first-of-a-kind
+urban outdoor localization dataset with pixel-level semantic labels and multiple loops for training
+deep networks. Extensive experiments on the challenging indoor Microsoft 7-Scenes benchmark
+and our outdoor DeepLoc dataset demonstrate that our approach exceeds the state-of-the-art, outperforming
+local feature-based methods while exhibiting substantial robustness in challenging scenarios.

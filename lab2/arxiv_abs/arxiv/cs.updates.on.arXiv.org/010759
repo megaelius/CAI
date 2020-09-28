@@ -1,0 +1,17 @@
+In this paper, we study the problem of estimating smooth Generalized Linear Models (GLM) in the Non-interactive
+Local Differential Privacy (NLDP) model. Different from its classical setting, our model allows
+the server to access some additional public but unlabeled data. By using Stein's lemma and its variants,
+we first show that there is an $(\epsilon, \delta)$-NLDP algorithm for GLM (under some mild assumptions),
+if each data record is i.i.d sampled from some sub-Gaussian distribution with bounded $\ell_1$-norm.
+Then with high probability, the sample complexity of the public and private data, for the algorithm
+to achieve an $\alpha$ estimation error (in $\ell_\infty$-norm), is $O(p^2\alpha^{-2})$ and
+${O}(p^2\alpha^{-2}\epsilon^{-2})$, respectively, if $\alpha$ is not too small ({\em i.e.,}
+$\alpha\geq \Omega(\frac{1}{\sqrt{p}})$), where $p$ is the dimensionality of the data. This
+is a significant improvement over the previously known quasi-polynomial (in $\alpha$) or exponential
+(in $p$) complexity of GLM with no public data. Also, our algorithm can answer multiple (at most $\exp(O(p))$)
+GLM queries with the same sample complexities as in the one GLM query case with at least constant probability.
+We then extend our idea to the non-linear regression problem and show a similar phenomenon for it.
+Finally, we demonstrate the effectiveness of our algorithms through experiments on both synthetic
+and real world datasets. To our best knowledge, this is the first paper showing the existence of efficient
+and effective algorithms for GLM and non-linear regression in the NLDP model with public unlabeled
+data. 

@@ -1,0 +1,19 @@
+A commonly occurring computation idiom in neural networks is to perform some pointwise operations
+on the result of a matrix multiplication. Such a sequence of operations is typically represented
+as a computation graph in deep learning compilers. When compiling to a GPU target, these computations
+can be individually mapped to manually tuned implementations provided by libraries such as cuBLAS
+and cuDNN. These libraries also provide off-the-shelf support for targeting tensor cores in NVIDIA
+GPUs, which can lead to huge performance boosts through their specialized support for mixed-precision
+matrix math. Alternatively, tensor cores can be programmed directly using CUDA APIs or inline assembly
+instructions, which opens up the possibility of generating efficient CUDA kernels automatically
+for such computations. Automatic kernel generation is particularly crucial when it is beneficial
+to generate efficient code for an entire computation graph by fusing several operations into a single
+device function instead of invoking a separate kernel for each of them. Polyhedral compilation
+techniques provide a systematic approach for the analysis and transformation of a sequence of affine
+loop-nests. In this paper, we describe a polyhedral approach to generate efficient CUDA kernels
+for matrix multiplication using inline assembly instructions for programming tensor cores on
+NVIDIA Volta GPUs. Furthermore, we build on this approach to generate fused kernels for computation
+sequences involving matrix multiplication and pointwise operations such as bias addition, ReLU
+activation etc. Experimental evaluation of these techniques show that automatically generated
+kernels can provide significantly better performance than manually tuned library implementations,
+with speedups ranging up to 2.55X. 

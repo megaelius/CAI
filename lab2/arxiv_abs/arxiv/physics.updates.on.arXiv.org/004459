@@ -1,0 +1,19 @@
+A common strategy in the numerical solution of partial differential equations is to define a uniform
+discretization of a tensor-product multi-dimensional logical domain, which is mapped to a physical
+domain through a given coordinate transformation. By extending this concept to a multi-patch setting,
+simple and efficient numerical algorithms can be employed on relatively complex geometries. The
+main drawback of such an approach is the inherent difficulty in dealing with singularities of the
+coordinate transformation. This work suggests a comprehensive numerical strategy for the common
+situation of disk-like domains with a singularity at a unique pole, where one edge of the rectangular
+logical domain collapses to one point of the physical domain (for example, a circle). We present
+robust numerical methods for the solution of Vlasov-like hyperbolic equations coupled to Poisson-like
+elliptic equations in such geometries. We describe a semi-Lagrangian advection solver that employs
+a novel set of coordinates, named pseudo-Cartesian coordinates, to integrate the characteristic
+equations in the whole domain, including the pole, and a finite element elliptic solver based on
+globally $C^1$ smooth splines (Toshniwal et al., 2017). The two solvers are tested both independently
+and on a coupled model, namely the 2D guiding-center model for magnetized plasmas, equivalent to
+a vorticity model for incompressible inviscid Euler fluids. The numerical methods presented show
+high-order convergence in the space discretization parameters, uniformly across the computational
+domain, without effects of order reduction due to the singularity. Dedicated tests show that the
+numerical techniques described can be applied straightforwardly also in the presence of point
+charges (equivalently, point-like vortices), within the context of particle-in-cell methods.

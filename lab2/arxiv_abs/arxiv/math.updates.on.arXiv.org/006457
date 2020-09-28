@@ -1,0 +1,19 @@
+We consider the least squares regression problem, penalized with a combination of the $\ell_{0}$
+and $\ell_{2}$ norms (a.k.a. $\ell_0 \ell_2$ regularization). Recent work presents strong evidence
+that the resulting $\ell_0$-based estimators can outperform popular sparse learning methods,
+under many important high-dimensional settings. However, exact computation of $\ell_0$-based
+estimators remains a major challenge. Indeed, state-of-the-art mixed integer programming (MIP)
+methods for $\ell_0 \ell_2$-regularized regression face difficulties in solving many statistically
+interesting instances when the number of features $p \sim 10^4$. In this work, we present a new exact
+MIP framework for $\ell_0\ell_2$-regularized regression that can scale to $p \sim 10^7$, achieving
+over $3600$x speed-ups compared to the fastest exact methods. Unlike recent work, which relies
+on modern MIP solvers, we design a specialized nonlinear BnB framework, by critically exploiting
+the problem structure. A key distinguishing component in our algorithm lies in efficiently solving
+the node relaxations using specialized first-order methods, based on coordinate descent (CD).
+Our CD-based method effectively leverages information across the BnB nodes, through using warm
+starts, active sets, and gradient screening. In addition, we design a novel method for obtaining
+dual bounds from primal solutions, which certifiably works in high dimensions. Experiments on
+synthetic and real high-dimensional datasets demonstrate that our method is not only significantly
+faster than the state of the art, but can also deliver certifiably optimal solutions to statistically
+challenging instances that cannot be handled with existing methods. We open source the implementation
+through our toolkit L0BnB. 

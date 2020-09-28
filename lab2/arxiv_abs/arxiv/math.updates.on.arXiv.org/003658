@@ -1,0 +1,18 @@
+In many engineered systems, optimization is used for decision making at time-scales ranging from
+real-time operation to long-term planning. This process often involves solving similar optimization
+problems over and over again with slightly modified input parameters, often under tight latency
+requirements. We consider the problem of using the information available through this repeated
+solution process to directly learn a model of the optimal solution as a function of the input parameters,
+thus reducing the need to solve computationally expensive large-scale parametric programs in
+real time. Our proposed method is based on learning relevant sets of active constraints, from which
+the optimal solution can be obtained efficiently. Using active sets as features preserves information
+about the physics of the system, enables interpretable models, accounts for relevant safety constraints,
+and is easy to represent and encode. However, the total number of active sets is also very large, as
+it grows exponentially with system size. The key contribution of this paper is a streaming algorithm
+that learns the relevant active sets from training samples consisting of the input parameters and
+the corresponding optimal solution, without any assumptions on the problem structure. The algorithm
+comes with theoretical performance guarantees, and is known to converge fast for problem instances
+with a small number of relevant active sets. It can thus be used to establish the practicability of
+the learning method. Through extensive experiments on the Optimal Power Flow problem, we observe
+that often only a few active sets are relevant in practice, suggesting that the active sets is the
+appropriate level of abstraction for a learning algorithm to target. 

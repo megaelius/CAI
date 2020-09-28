@@ -1,0 +1,20 @@
+Many problems in geophysical and atmospheric modelling require the fast solution of elliptic partial
+differential equations (PDEs) in "flat" three dimensional geometries. In particular, an anisotropic
+elliptic PDE for the pressure correction has to be solved at every time step in the dynamical core
+of many numerical weather prediction models, and equations of a very similar structure arise in
+global ocean models, subsurface flow simulations and gas and oil reservoir modelling. The elliptic
+solve is often the bottleneck of the forecast, and an algorithmically optimal method has to be used
+and implemented efficiently. Graphics Processing Units have been shown to be highly efficient
+for a wide range of applications in scientific computing, and recently iterative solvers have been
+parallelised on these architectures. We describe the GPU implementation and optimisation of a
+Preconditioned Conjugate Gradient (PCG) algorithm for the solution of a three dimensional anisotropic
+elliptic PDE for the pressure correction in NWP. Our implementation exploits the strong vertical
+anisotropy of the elliptic operator in the construction of a suitable preconditioner. As the algorithm
+is memory bound, performance can be improved significantly by reducing the amount of global memory
+access. We achieve this by using a matrix-free implementation which does not require explicit storage
+of the matrix and instead recalculates the local stencil. Global memory access can also be reduced
+by rewriting the algorithm using loop fusion and we show that this further reduces the runtime on
+the GPU. We demonstrate the performance of our matrix-free GPU code by comparing it to a sequential
+CPU implementation and to a matrix-explicit GPU code which uses existing libraries. The absolute
+performance of the algorithm for different problem sizes is quantified in terms of floating point
+throughput and global memory bandwidth. 

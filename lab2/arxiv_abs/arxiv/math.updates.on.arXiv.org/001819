@@ -1,0 +1,19 @@
+In this paper we present a novel pressure-based semi-implicit finite volume solver for the equations
+of compressible ideal, viscous and resistive magnetohydrodynamics (MHD). The new method is conservative
+for mass, momentum and total energy and in multiple space dimensions it is constructed in such a way
+as to respect the divergence-free condition of the magnetic field exactly, also in the presence
+of resistive effects. This is possible via the use of multi-dimensional Riemann solvers on an appropriately
+staggered grid for the time evolution of the magnetic field and a double curl formulation of the resistive
+terms. The new semi-implicit method for the MHD equations proposed here discretizes all terms related
+to the pressure in the momentum equation and the total energy equation implicitly, making again
+use of a properly staggered grid for pressure and velocity. The time step of the scheme is restricted
+by a CFL condition based only on the fluid velocity and the Alfv\'en wave speed and is not based on the
+speed of the magnetosonic waves. Our new method is particularly well-suited for low Mach number
+flows and for the incompressible limit of the MHD equations, for which it is well-known that explicit
+density-based Godunov-type finite volume solvers become increasingly inefficient and inaccurate
+due to the increasingly stringent CFL condition and the wrong scaling of the numerical viscosity
+in the incompressible limit. We show a relevant MHD test problem in the low Mach number regime where
+the new semi-implicit algorithm is a factor of 50 faster than a traditional explicit finite volume
+method, which is a very significant gain in terms of computational efficiency. However, our numerical
+results confirm that our new method performs well also for classical MHD test cases with strong shocks.
+In this sense our new scheme is a true all Mach number flow solver. 

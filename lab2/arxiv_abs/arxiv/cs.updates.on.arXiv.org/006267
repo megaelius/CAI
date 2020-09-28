@@ -1,0 +1,19 @@
+TensorFlow is a popular deep learning framework used by data scientists to solve a wide-range of
+machine learning and deep learning problems such as image classification and speech recognition.
+It also operates at a large scale and in heterogeneous environments --- it allows users to train neural
+network models or deploy them for inference using GPUs, CPUs and deep learning specific custom-designed
+hardware such as TPUs. Even though TensorFlow supports a variety of optimized backends, realizing
+the best performance using a backend may require additional efforts. For instance, getting the
+best performance from a CPU backend requires careful tuning of its threading model. Unfortunately,
+the best tuning approach used today is manual, tedious, time-consuming, and, more importantly,
+may not guarantee the best performance. In this paper, we develop an automatic approach, called
+TensorTuner, to search for optimal parameter settings of TensorFlow's threading model for CPU
+backends. We evaluate TensorTuner on both Eigen and Intel's MKL CPU backends using a set of neural
+networks from TensorFlow's benchmarking suite. Our evaluation results demonstrate that the parameter
+settings found by TensorTuner produce 2% to 123% performance improvement for the Eigen CPU backend
+and 1.5% to 28% performance improvement for the MKL CPU backend over the performance obtained using
+their best-known parameter settings. This highlights the fact that the default parameter settings
+in Eigen CPU backend are not the ideal settings; and even for a carefully hand-tuned MKL backend,
+the settings may be sub-optimal. Our evaluations also revealed that TensorTuner is efficient at
+finding the optimal settings --- it is able to converge to the optimal settings quickly by pruning
+more than 90% of the parameter search space. 

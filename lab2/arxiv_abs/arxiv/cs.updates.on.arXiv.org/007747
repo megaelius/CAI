@@ -1,0 +1,18 @@
+Automatic methods for generating state-of-the-art neural network architectures without human
+experts have generated significant attention recently. This is because of the potential to remove
+human experts from the design loop which can reduce costs and decrease time to model deployment.
+Neural architecture search (NAS) techniques have improved significantly in their computational
+efficiency since the original NAS was proposed. This reduction in computation is enabled via weight
+sharing such as in Efficient Neural Architecture Search (ENAS). However, recently a body of work
+confirms our discovery that ENAS does not do significantly better than random search with weight
+sharing, contradicting the initial claims of the authors. We provide an explanation for this phenomenon
+by investigating the interpretability of the ENAS controller's hidden state. We are interested
+in seeing if the controller embeddings are predictive of any properties of the final architecture
+- for example, graph properties like the number of connections, or validation performance. We find
+models sampled from identical controller hidden states have no correlation in various graph similarity
+metrics. This failure mode implies the RNN controller does not condition on past architecture choices.
+Importantly, we may need to condition on past choices if certain connection patterns prevent vanishing
+or exploding gradients. Lastly, we propose a solution to this failure mode by forcing the controller's
+hidden state to encode pasts decisions by training it with a memory buffer of previously sampled
+architectures. Doing this improves hidden state interpretability by increasing the correlation
+controller hidden states and graph similarity metrics. 

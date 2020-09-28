@@ -1,0 +1,18 @@
+Ising computing provides a new computing paradigm for many hard combinatorial optimization problems.
+Ising computing essentially tries to solve the quadratic unconstrained binary optimization problem,
+which is also described by the Ising spin glass model and is also the basis for so-called Quantum Annealing
+computers. In this work, we propose a novel General Purpose Graphics Processing Unit (GPGPU) solver
+for the balanced min-cut graph partitioning problem, which has many applications in the area of
+design automation and others. Ising model solvers for the balanced min-cut partitioning problem
+have been proposed in the past. However, they have rarely been demonstrated in existing quantum
+computers for many meaningful problem sizes. One difficulty is the fact that the balancing constraint
+in the balanced min-cut problem can result in a complete graph in the Ising model, which makes each
+local update a global update. Such global update from each GPU thread will diminish the efficiency
+of GPU computing, which favors many localized memory accesses for each thread. To mitigate this
+problem, we propose an novel Global Decoupled Ising (GDI) model and the corresponding annealing
+algorithm, in which the local update is still preserved to maintain the efficiency. As a result,
+the new Ising solver essentially eliminates the need for the fully connected graph and will use a
+more efficient method to track and update global balance without sacrificing cut quality. Experimental
+results show that the proposed Ising-based min-cut partitioning method outperforms the state
+of art partitioning tool, METIS, on G-set graph benchmarks in terms of partitioning quality with
+similar CPU/GPU times. 

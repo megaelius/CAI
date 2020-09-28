@@ -1,0 +1,18 @@
+Random walk based distance measures for graphs such as commute-time distance are useful in a variety
+of graph algorithms, such as clustering, anomaly detection, and creating low dimensional embeddings.
+Since such measures hinge on the spectral decomposition of the graph, the computation becomes a
+bottleneck for large graphs and do not scale easily to graphs that cannot be loaded in memory. Most
+existing graph mining libraries for large graphs either resort to sampling or exploit the sparsity
+structure of such graphs for spectral analysis. However, such methods do not work for dense graphs
+constructed for studying pairwise relationships among entities in a data set. Examples of such
+studies include analyzing pairwise locations in gridded climate data for discovering long distance
+climate phenomena. These graphs representations are fully connected by construction and cannot
+be sparsified without loss of meaningful information. In this paper we describe CADDeLaG, a framework
+for scalable computation of commute-time distance based anomaly detection in large dense graphs
+without the need to load the entire graph in memory. The framework relies on Apache Spark's memory-centric
+cluster-computing infrastructure and consists of two building blocks: a decomposable algorithm
+for commute time distance computation and a distributed linear system solver. We illustrate the
+scalability of CADDeLaG and its dependency on various factors using both synthetic and real world
+data sets. We demonstrate the usefulness of CADDeLaG in identifying anomalies in a climate graph
+sequence, that have been historically missed due to ad hoc graph sparsification and on an election
+donation data set. 

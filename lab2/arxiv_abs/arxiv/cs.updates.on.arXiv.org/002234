@@ -1,0 +1,18 @@
+We develop a parameterized Primal-Dual $\pi$ Learning method based on deep neural networks for
+Markov decision process with large state space and off-policy reinforcement learning. In contrast
+to the popular Q-learning and actor-critic methods that are based on successive approximations
+to the nonlinear Bellman equation, our method makes primal-dual updates to the policy and value
+functions utilizing the fundamental linear Bellman duality. Naive parametrization of the primal-dual
+$\pi$ learning method using deep neural networks would encounter two major challenges: (1) each
+update requires computing a probability distribution over the state space and is intractable;
+(2) the iterates are unstable since the parameterized Lagrangian function is no longer linear.
+We address these challenges by proposing a relaxed Lagrangian formulation with a regularization
+penalty using the advantage function. We show that the dual policy update step in our method is equivalent
+to the policy gradient update in the actor-critic method in some special case, while the value updates
+differ substantially. The main advantage of the primal-dual $\pi$ learning method lies in that
+the value and policy updates are closely coupled together using the Bellman duality and therefore
+more informative. Experiments on a simple cart-pole problem show that the algorithm significantly
+outperforms the one-step temporal-difference actor-critic method, which is the most relevant
+benchmark method to compare with. We believe that the primal-dual updates to the value and policy
+functions would expedite the learning process. The proposed methods might open a door to more efficient
+algorithms and sharper theoretical analysis. 

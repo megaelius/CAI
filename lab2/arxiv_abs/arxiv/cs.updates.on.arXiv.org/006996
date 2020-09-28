@@ -1,0 +1,18 @@
+This paper presents simpler specifications of more complex variants of the Paxos algorithm for
+distributed consensus, as case studies of high-level executable specification of distributed
+algorithms. The key to the development of the specifications is the use of a method and language for
+expressing complex control flows and synchronization conditions precisely at a high level, using
+nondeterministic waits and message-history queries. We show that (1) English and pseudocode descriptions
+of algorithms can be captured completely and precisely at a high level, without adding, removing,
+or reformulating algorithm details to fit lower-level, more abstract, or less direct languages,
+(2) we created higher-level control flows and synchronization conditions than all previous specifications,
+and obtained specifications that are significantly simpler and smaller, even matching or smaller
+than abstract specifications that omit many algorithm details, (3) the resulting specifications
+led us to easily discover useless replies, unnecessary delays, and liveness violations (if messages
+can be lost) in a previous published specification, and (4) the resulting specifications can be
+executed directly, and we can express optimizations cleanly, yielding drastic performance improvement
+over naive execution and facilitating a general method for merging processes. We systematically
+translated the resulting specifications into TLA+ and developed machine-checked safety proofs,
+which also allowed us to detect and fix a subtle safety violation in an earlier specification. We
+also show the basic concepts in Paxos that are fundamental in many distributed algorithms and show
+that they are captured concisely in our specifications. 

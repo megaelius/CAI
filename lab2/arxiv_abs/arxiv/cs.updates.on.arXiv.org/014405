@@ -1,0 +1,20 @@
+Learning segmentation from synthetic data and adapting to real data can significantly relieve
+human efforts in labelling pixel-level masks. A key challenge of this task is how to alleviate the
+data distribution discrepancy between the source and target domains, i.e. reducing domain shift.
+The common approach to this problem is to minimize the discrepancy between feature distributions
+from different domains through adversarial training. However, directly aligning the feature
+distribution globally cannot guarantee consistency from a local view (i.e. semantic-level),
+which prevents certain semantic knowledge learned on the source domain from being applied to the
+target domain. To tackle this issue, we propose a semi-supervised approach named Alleviating Semantic-level
+Shift (ASS), which can successfully promote the distribution consistency from both global and
+local views. Specifically, leveraging a small number of labeled data from the target domain, we
+directly extract semantic-level feature representations from both the source and the target domains
+by averaging the features corresponding to same categories advised by pixel-level masks. We then
+feed the produced features to the discriminator to conduct semantic-level adversarial learning,
+which collaborates with the adversarial learning from the global view to better alleviate the domain
+shift. We apply our ASS to two domain adaptation tasks, from GTA5 to Cityscapes and from Synthia to
+Cityscapes. Extensive experiments demonstrate that: (1) ASS can significantly outperform the
+current unsupervised state-of-the-arts by employing a small number of annotated samples from
+the target domain; (2) ASS can beat the oracle model trained on the whole target dataset by over 3 points
+by augmenting the synthetic source data with annotated samples from the target domain without suffering
+from the prevalent problem of overfitting to the source domain. 

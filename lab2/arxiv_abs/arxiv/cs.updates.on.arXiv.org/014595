@@ -1,0 +1,18 @@
+A grouping-circular-based (GCB) greedy algorithm is proposed to promote the efficiency of mesh
+deformation. By incorporating the multigrid concept that the computational errors on the fine
+mesh can be approximated with those on the coarse mesh, this algorithm stochastically divides all
+boundary nodes into $m$ groups and uses the locally maximum radial basis functions (RBF) interpolation
+error of each group as an approximation to the globally maximum one of all boundary nodes in each iterative
+procedure for reducing the RBF support nodes. For this reason, it avoids the interpolation conducted
+at all boundary nodes and thus reduces the corresponding computational complexity from $O\left({N_c^2{N_b}}
+\right)$ to $O\left( {N_c^3} \right)$. Besides, after $m$ iterations, the interpolation errors
+of all boundary nodes are computed once, thus allowing all boundary nodes can contribute to error
+control. Two canonical deformation problems of the ONERA M6 wing and the DLR-F6 Wing-Body-Nacelle-Pylon
+configuration are computed to validate the GCB greedy algorithm. The computational results show
+that the GCB greedy algorithm is able to remarkably promote the efficiency of computing the interpolation
+errors in the data reducing procedure by dozens of times. Because an increase of $m$ results in an
+increase of $N_c$, an appropriate range of $\left[ {{N_b}/{N_c},{\rm{ }}2{N_b}/{N_c}}\right]$
+for $m$ is suggested to prevent too much additional computations for solving the linear algebraic
+system and computing the displacements of volume nodes induced by the increase of $N_c $. The results
+also show that the GCB greedy algorithm tends to generate a more significant efficiency improvement
+for mesh deformation when a larger-scale mesh is applied. 

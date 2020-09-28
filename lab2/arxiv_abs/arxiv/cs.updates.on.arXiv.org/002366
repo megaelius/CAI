@@ -1,0 +1,20 @@
+When processing large medical imaging studies, adopting high performance grid computing resources
+rapidly becomes important. We recently presented a "medical image processing-as-a-service"
+grid framework that offers promise in utilizing the Apache Hadoop ecosystem and HBase for data colocation
+by moving computation close to medical image storage. However, the framework has not yet proven
+to be easy to use in a heterogeneous hardware environment. Furthermore, the system has not yet validated
+when considering variety of multi-level analysis in medical imaging. Our target criteria are (1)
+improving the framework's performance in a heterogeneous cluster, (2) performing population
+based summary statistics on large datasets, and (3) introducing a table design scheme for rapid
+NoSQL query. In this paper, we present a backend interface application program interface design
+for Hadoop & HBase for Medical Image Processing. The API includes: Upload, Retrieve, Remove, Load
+balancer and MapReduce templates. A dataset summary statistic model is discussed and implemented
+by MapReduce paradigm. We introduce a HBase table scheme for fast data query to better utilize the
+MapReduce model. Briefly, 5153 T1 images were retrieved from a university secure database and used
+to empirically access an in-house grid with 224 heterogeneous CPU cores. Three empirical experiments
+results are presented and discussed: (1) load balancer wall-time improvement of 1.5-fold compared
+with a framework with built-in data allocation strategy, (2) a summary statistic model is empirically
+verified on grid framework and is compared with the cluster when deployed with a standard Sun Grid
+Engine, which reduces 8-fold of wall clock time and 14-fold of resource time, and (3) the proposed
+HBase table scheme improves MapReduce computation with 7 fold reduction of wall time compare with
+a na\"ive scheme when datasets are relative small. 

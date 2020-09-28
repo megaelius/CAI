@@ -1,0 +1,20 @@
+Loss of thrust emergencies-e.g., induced by bird/drone strikes or fuel exhaustion-create the
+need for dynamic data-driven flight trajectory planning to advise pilots or control UAVs. While
+total loss of thrust trajectories to nearby airports can be pre-computed for all initial points
+in a 3D flight plan, dynamic aspects such as partial power and airplane surface damage must be considered
+for accuracy. In this paper, we propose a new Dynamic Data-Driven Avionics Software (DDDAS) approach
+which during flight updates a damaged aircraft performance model, used in turn to generate plausible
+flight trajectories to a safe landing site. Our damaged aircraft model is parameterized on a baseline
+glide ratio for a clean aircraft configuration assuming best gliding airspeed on straight flight.
+The model predicts purely geometric criteria for flight trajectory generation, namely, glide
+ratio and turn radius for different bank angles and drag configurations. Given actual aircraft
+performance data, we dynamically infer the baseline glide ratio to update the damaged aircraft
+model. Our new flight trajectory generation algorithm thus can significantly improve upon prior
+Dubins based trajectory generation work by considering these data-driven geometric criteria.
+We further introduce a trajectory utility function to rank trajectories for safety. As a use case,
+we consider the Hudson River ditching of US Airways 1549 in January 2009 using a flight simulator
+to evaluate our trajectories and to get sensor data. In this case, a baseline glide ratio of 17.25:1
+enabled us to generate trajectories up to 28 seconds after the birds strike, whereas, a 19:1 baseline
+glide ratio enabled us to generate trajectories up to 36 seconds after the birds strike. DDDAS can
+significantly improve the accuracy of generated flight trajectories thereby enabling better
+decision support systems for pilots in emergency conditions. 

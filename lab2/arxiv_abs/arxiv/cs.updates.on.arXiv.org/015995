@@ -1,0 +1,19 @@
+We propose an interpretable graph neural network framework to denoise single or multiple noisy
+graph signals. The proposed graph unrolling networks expand algorithm unrolling to the graph domain
+and provide an interpretation of the architecture design from a signal processing perspective.
+We unroll an iterative denoising algorithm by mapping each iteration into a single network layer
+where the feed-forward process is equivalent to iteratively denoising graph signals. We train
+the graph unrolling networks through unsupervised learning, where the input noisy graph signals
+are used to supervise the networks. By leveraging the learning ability of neural networks, we adaptively
+capture appropriate priors from input noisy graph signals, instead of manually choosing signal
+priors. A core component of graph unrolling networks is the edge-weight-sharing graph convolution
+operation, which parameterizes each edge weight by a trainable kernel function where the trainable
+parameters are shared by all the edges. The proposed convolution is permutation-equivariant and
+can flexibly adjust the edge weights to various graph signals. We then consider two special cases
+of this class of networks, graph unrolling sparse coding (GUSC) and graph unrolling trend filtering
+(GUTF), by unrolling sparse coding and trend filtering, respectively. To validate the proposed
+methods, we conduct extensive experiments on both real-world datasets and simulated datasets,
+and demonstrate that our methods have smaller denoising errors than conventional denoising algorithms
+and state-of-the-art graph neural networks. For denoising a single smooth graph signal, the normalized
+mean square error of the proposed networks is around 40% and 60% lower than that of graph Laplacian
+denoising and graph wavelets, respectively. 

@@ -1,0 +1,20 @@
+This paper looks at the question of designing distributed algorithms for the setting of compact
+memory i.e. sublinear (in $n$ - the number of nodes) bits for connected networks of arbitrary topologies.
+The nodes in our networks may have much lower internal memory (say, $O(poly\log n)$) as compared
+to the number of their possible neighbours. This implies that a node needs to run the algorithm and
+do computations without being even able to store the states or IDs of all its neighbours. Towards
+this end, we introduce the Compact Memory Passing model (CMP)- the standard message passing model
+at a finer granularity where a node can interleave reads and writes with internal computations.
+This is required for meaningful computations due to the low memory requirement and is somewhat akin
+to a distributed network with nodes executing streaming algorithms. We believe this model captures
+features of large networks of small memory devices (e.g. the Internet of Things (IOT)) and initiates
+research into theoretical foundations in this area. Compact Routing Messages in Self-Healing
+Trees (Distributed Computing 2017) introduced the compact self-healing routing algorithm CompactFTZ
+assuming `regular' memory for preprocessing and posed the problem of its compact preprocessing.
+We solve this problem and, hence, introduce the first fully compact self-healing routing algorithm.
+In the process, we also give independent fully compact algorithms for the Forgiving Tree [PODC 2008]
+Thorup-Zwick's tree based compact routing [SPAA 2001], and fundamental problems of leader election,
+tree constructions and traversals (BFS, DFS, spanning trees and convergecast). Our nodes have
+only $O(\log^2 n)$ local memory but the preprocessing can be accomplished using $O(\log n)$ bits
+sized messages (as in the CONGEST model). We also give a faster solution for $O(\log n)$ bits sized
+messages. 

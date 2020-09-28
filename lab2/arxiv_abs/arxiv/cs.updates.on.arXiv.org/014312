@@ -1,0 +1,17 @@
+This paper investigates Byzantine broadcast (BB) protocols with optimal good-case latency under
+synchrony and weaker variants of synchrony. One of them most important applications of BB is to implement
+Byzantine fault-tolerant (BFT) state machine replication (SMR), also known as blockchains recently.
+The traditional latency metric of BB focuses on the number of lock-step rounds needed in the worst
+case or expected case. We observe that the traditional latency metric fails to capture what's important
+in practice for two reasons. First, practical synchronous BFT SMR do not run in lock-step rounds.
+Second, practical SMR protocols make progress only when an honest leader is in charge. Thus, motivated
+by recent progress in synchronous BFT SMR, we study the \emph{good-case latency} of BB, i.e., the
+precise latency to commit measured in time (as opposed rounds) when the sender is honest. We propose
+the first synchronous BB protocol with optimal good-case latency. This closes the gap between the
+upper/lower bounds on good-case latency left open in the previous work by Abraham et al. \cite{synchotstuff}.
+To make the synchronous model more practical, we extend our protocol to handle two weaker network
+models, named mobile link failures and mobile sluggish faults. By providing a new lower bound in
+the mobile link failure model, we show that our protocols in these weak models also achieve optimal
+good-case latency. Finally, to demonstrate the applicability to the target application, we turn
+all our BB protocols into BFT SMR protocols with minimum modifications and guarantee the same good-case
+latency and tolerance to weaker synchrony variants. 

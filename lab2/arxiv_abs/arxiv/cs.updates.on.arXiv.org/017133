@@ -1,0 +1,19 @@
+We present a simple syndrome-based fast Chase decoding algorithm for Reed--Solomon (RS) codes.
+Such an algorithm was initially presented by Wu (IEEE Trans. IT, Jan. 2012), cleverly building on
+properties of the Berlekamp-Massey (BM) algorithm. Wu devised a fast polynomial-update algorithm
+to construct the error-locator polynomial (ELP) as the solution of a certain linear-feedback shift
+register (LFSR) synthesis problem. This results in a conceptually complicated algorithm, divided
+into $8$ subtly different cases. Moreover, Wu's polynomial-update algorithm is not immediately
+suitable for working with vectors of evaluations. Therefore, complicated modifications were
+required in order to achieve a true "one-pass" Chase decoding algorithm, that is, a Chase decoding
+algorithm requiring $O(n)$ operations per modified coordinate, where $n$ is the RS code length.
+The main result of the current paper is a conceptually simple syndrome-based fast Chase decoding
+of RS codes. Instead of developing a theory from scratch, we use the well-established theory of Groebner
+bases for modules over $\mathbb{F}_q[X]$ (where $\mathbb{F}_q$ is the finite field of $q$ elements,
+for $q$ a prime power). The basic observation is that instead of Wu's LFSR synthesis problem, it is
+much simpler to consider "the right" module minimization problem. The solution to this minimization
+problem is a simple polynomial-update algorithm that avoids syndrome updates and works seamlessly
+with vectors of evaluations. As a result, we obtain a conceptually simple algorithm for one-pass
+Chase decoding of RS codes. Our algorithm is general enough to work with any algorithm that finds
+a Groebner basis for the solution module of the key equation as the initial algorithm, and it is not
+tied only to the BM algorithm. 

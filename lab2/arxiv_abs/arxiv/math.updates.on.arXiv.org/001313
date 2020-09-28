@@ -1,0 +1,20 @@
+Methods for distributed optimization have received significant attention in recent years owing
+to their wide applicability in various domains. A distributed optimization method typically consists
+of two key components: communication and computation. More specifically, at every iteration (or
+every several iterations) of a distributed algorithm, each node in the network requires some form
+of information exchange with its neighboring nodes (communication) and the computation step related
+to a (sub)-gradient (computation). The standard way of judging an algorithm via only the number
+of iterations overlooks the complexity associated with each iteration. Moreover, various applications
+deploying distributed methods may prefer a different composition of communication and computation.
+Motivated by this discrepancy, in this work we propose an adaptive cost framework which adjusts
+the cost measure depending on the features of various applications. We present a flexible algorithmic
+framework, where communication and computation steps are explicitly decomposed to enable algorithm
+customization for various applications. We apply this framework to the well-known distributed
+gradient descent (DGD) method, and show that the customized algorithms, which we call DGD$^t$,
+NEAR-DGD$^t$ and NEAR-DGD$^+$, compare favorably to their base algorithms, both theoretically
+and empirically. The proposed NEAR-DGD$^+$ algorithm is an exact first-order method where the
+communication and computation steps are nested, and when the number of communication steps is adaptively
+increased, the method converges to the optimal solution. We test the performance and illustrate
+the flexibility of the methods, as well as practical variants, on quadratic functions and classification
+problems that arise in machine learning, in terms of iterations, gradient evaluations, communications
+and the proposed cost framework. 

@@ -1,0 +1,20 @@
+For evolving datasets with continual reports, the composition rule for differential privacy (DP)
+dictates that the scale of DP noise must grow linearly with the number of the queries, or that the privacy
+budget must be split equally between all the queries, so that the privacy budget across all the queries
+remains bounded and consistent with the privacy guarantees. To avoid this drawback of DP, we consider
+datasets containing almost periodic time series, composed of periodic components and noisy variations
+on top that are independent across periods. Our interest in these datasets is motivated by that,
+for reporting on private periodic time series, we do not need to divide the privacy budget across
+the entire, possibly infinite, horizon. Instead, for periodic time series, we generate DP reports
+for the first period and report the same DP reports periodically. In practice, however, exactly
+periodic time series do not exist as the data always contains small variations due to random or uncertain
+events. For instance, the energy consumption of a household may repeat the same daily pattern with
+slight variations due to minor changes to the habits of the individuals. The underlying periodic
+pattern is a function of the private information of the households. It might be desired to protect
+the privacy of households by not leaking information about the recurring patterns while the individual
+daily variations are almost noise-like with little to no privacy concerns (depending on the situation).
+Motivated by this, we define DP for almost periodic datasets and develop a Laplace mechanism for
+responding to linear queries. We provide statistical tools for testing the validity of almost periodicity
+assumption. We use multiple energy datasets containing smart-meter measurements of households
+to validate almost periodicity assumption. We generate DP aggregate reports and investigate their
+utility. 

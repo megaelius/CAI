@@ -1,0 +1,20 @@
+We interpret uncertainty in the parameters of a model for seismic wave propagation by treating the
+parameters as random variables, and we apply the Multilevel Monte Carlo (MLMC) method to reduce
+the cost of approximating expected values of selected, physically relevant, quantities of interest
+(QoI) with respect to the random variables. Aiming to solve source inversion problems, where we
+seek to infer the source of an earthquake from ground motion recordings on the Earth's surface, we
+consider two QoI which measure the discrepancy between computed seismic signals and given reference
+signals: one QoI is defined in terms of the L2-misfit, which is directly related to maximum likelihood
+estimates of the source parameters; the other is based on the quadratic Wasserstein distance between
+probability distributions, and represents one possible choice in a class of such misfit functions
+which have become increasingly popular for seismic inversion. We use a publicly available code
+in widespread use, based on the spectral element method, to approximate seismic wave propagation,
+including seismic attenuation. With this code, using random coefficients and deterministic initial
+and boundary data, we have performed benchmark numerical experiments with synthetic data in a two-dimensional
+physical domain with a one-dimensional velocity model where the assumed parameter uncertainty
+is motivated by realistic Earth models. In this test case, the MLMC method reduced the computational
+cost of the standard Monte Carlo (MC) method by up to 97% for the L2-based QoI and up to 78% for the QoI
+based on the quadratic Wasserstein distance, for a relevant range of tolerances. Extending the
+method to three-dimensional domains is straight-forward and will further increase the relative
+computational work reduction, allowing the solution of source inversion problems which would
+be infeasible using standard MC. 

@@ -1,0 +1,19 @@
+We study the Safe Reinforcement Learning (SRL) problem using the Constrained Markov Decision Process
+(CMDP) formulation in which an agent aims to maximize the expected total reward subject to a safety
+constraint on the expected total value of a criterion function (e.g., utility). We focus on an episodic
+setting with the function approximation where the reward and criterion functions and the Markov
+transition kernels all have a linear structure but do not impose any additional assumptions on the
+sampling model. Designing SRL algorithms with provable computational and statistical efficiency
+is particularly challenging under this setting because of the need to incorporate both the safety
+constraint and the function approximation into the fundamental exploitation/exploration tradeoff.
+To this end, we present an {O}ptimistic {P}rimal-{D}ual Proximal Policy {OP}timization (OPDOP)
+algorithm where the value function is estimated by combining the least-squares policy evaluation
+and an additional bonus term for safe exploration. We prove that the proposed algorithm achieves
+an O(d^{1.5}H^{3.5}\sqrt{T}) regret and an O(d^{1.5}H^{3.5}\sqrt{T}) constraint violation,
+where d is the dimension of the feature mapping, H is the horizon of each episode, and T is the total
+number of steps. We establish these bounds under the following two settings: (i) Both the reward
+and criterion functions can change adversarially but are revealed entirely after each episode.
+(ii) The reward/criterion functions are fixed but the feedback after each episode is bandit. Our
+bounds depend on the capacity of the state space only through the dimension of the feature mapping
+and thus our results hold even when the number of states goes to infinity. To the best of our knowledge,
+we provide the first provably efficient policy optimization algorithm for CMDPs with safe exploration.

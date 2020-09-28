@@ -1,0 +1,18 @@
+Principal component analysis (PCA) is one of the most widely used dimensionality reduction tools
+in scientific data analysis. The PCA direction, given by the leading eigenvector of a covariance
+matrix, is a linear combination of all features with nonzero loadings---this impedes interpretability.
+Sparse principal component analysis (SPCA) is a framework that enhances interpretability by incorporating
+an additional sparsity requirement in the feature weights (factor loadings) while finding a direction
+that explains the maximal variation in the data. However, unlike PCA, the optimization problem
+associated with the SPCA problem is NP-hard. While many heuristic algorithms based on variants
+of the power method are used to obtain good solutions, they do not provide certificates of optimality
+on the solution-quality via associated dual bounds. Dual bounds are available via standard semidefinite
+programming (SDP) based relaxations, which may not be tight and the SDPs are difficult to scale using
+off-the-shelf solvers. In this paper, we present a convex integer programming (IP) framework to
+solve the SPCA problem to near-optimality, with an emphasis on deriving associated dual bounds.
+We present worst-case results on the quality of the dual bound provided by the convex IP. We empirically
+observe that the dual bounds are significantly better than worst-case performance, and are superior
+to the SDP bounds on some real-life instances. Moreover, solving the convex IP model using commercial
+IP solvers appears to scale much better that solving the SDP-relaxation using commercial solvers.
+To the best of our knowledge, we obtain the best dual bounds for real and artificial instances for
+SPCA problems involving covariance matrices of size up to $2000\times 2000$. 

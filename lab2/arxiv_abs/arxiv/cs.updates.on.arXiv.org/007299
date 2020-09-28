@@ -1,0 +1,19 @@
+With decentralized cryptocurrencies, an increasingly important problem is how to design communication-efficient
+Byzantine Agreement (BA) protocols: in this paper, communication efficiency means that the number
+of pairwise messages necessary for reaching agreement is subquadratic in the total number of players
+$n$ (or alternatively, only sublinear number of nodes need to multicast messages to all other nodes).
+A few existing works have shown how to achieve subquadratic BA under an {\it adaptive} adversary,
+including the breakthrough result by King and Saia (PODC'10), the celebrated Nakamoto consensus
+protocol, and a few proof-of-stake protocols such as Algorand. Intriguingly, all these subquadratic
+protocols coincidentally make a common relaxation about the adaptivity of the attacker, that is,
+if an honest node sends a message $\msg$ in some round $r$, the attacker may adaptively corrupt the
+node and make the now-corrupt node send additional messages in the same round, but it {\it cannot
+erase the message $\msg$ that was already sent} --- henceforth we say that such an adversary cannot
+perform ``after-the-fact removal''. By contrast, most natural (super-)quadratic BA protocols
+in the literature can be proven secure under a strongly adaptive adversary capable of after-the-fact
+removal. Besides the above relaxation, all known subquadratic protocols make additional strong
+assumptions such as plain or proof-of-work random oracles and/or the ability of honest nodes to
+erase secrets from memory (henceforth called the ``memory-erasure'' model). In this paper, we
+first prove that in fact, disallowing after-the-fact removal is necessary for achieving subquadratic-communication
+BA. Moreover, this lower bound holds in a very strong sense, even when allowing setup assumptions
+such as PKI, random oracles, or memory-erasures. 

@@ -1,0 +1,17 @@
+Task-oriented dialog presents a difficult challenge encompassing multiple problems including
+multi-turn language understanding and generation, knowledge retrieval and reasoning, and action
+prediction. Modern dialog systems typically begin by converting conversation history to a symbolic
+object referred to as belief state by using supervised learning. The belief state is then used to
+reason on an external knowledge source whose result along with the conversation history is used
+in action prediction and response generation tasks independently. Such a pipeline of individually
+optimized components not only makes the development process cumbersome but also makes it non-trivial
+to leverage session-level user reinforcement signals. In this paper, we develop Neural Assistant:
+a single neural network model that takes conversation history and an external knowledge source
+as input and jointly produces both text response and action to be taken by the system as output. The
+model learns to reason on the provided knowledge source with weak supervision signal coming from
+the text generation and the action prediction tasks, hence removing the need for belief state annotations.
+In the MultiWOZ dataset, we study the effect of distant supervision, and the size of knowledge base
+on model performance. We find that the Neural Assistant without belief states is able to incorporate
+external knowledge information achieving higher factual accuracy scores compared to Transformer.
+In settings comparable to reported baseline systems, Neural Assistant when provided with oracle
+belief state significantly improves language generation performance. 

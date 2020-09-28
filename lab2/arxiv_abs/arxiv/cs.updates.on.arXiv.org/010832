@@ -1,0 +1,19 @@
+We introduce a method for training neural networks to perform image or volume segmentation in which
+prior knowledge about the topology of the segmented object can be explicitly provided and then incorporated
+into the training process. By using the differentiable properties of persistent homology, a concept
+used in topological data analysis, we can specify the desired topology of segmented objects in terms
+of their Betti numbers and then drive the proposed segmentations to contain the specified topological
+features. Importantly this process does not require any ground-truth labels, just prior knowledge
+of the topology of the structure being segmented. We demonstrate our approach in three experiments.
+Firstly we create a synthetic task in which handwritten MNIST digits are de-noised, and show that
+using this kind of topological prior knowledge in the training of the network significantly improves
+the quality of the de-noised digits. Secondly we perform an experiment in which the task is segmenting
+the myocardium of the left ventricle from cardiac magnetic resonance images. We show that the incorporation
+of the prior knowledge of the topology of this anatomy improves the resulting segmentations in terms
+of both the topological accuracy and the Dice coefficient. Thirdly, we extend the method to 3D volumes
+and demonstrate its performance on the task of segmenting the placenta from ultrasound data, again
+showing that incorporating topological priors improves performance on this challenging task.
+We find that embedding explicit prior knowledge in neural network segmentation tasks is most beneficial
+when the segmentation task is especially challenging and that it can be used in either a semi-supervised
+or post-processing context to extract a useful training gradient from images without pixelwise
+labels. 

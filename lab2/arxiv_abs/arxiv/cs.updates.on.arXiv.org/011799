@@ -1,0 +1,20 @@
+This paper describes the process of conceptualization, design, and testing of the Onboard Computer
+(OBC) Software for a 3U nanosatellite. The on-board computer of the satellite is responsible for
+initiating dataflow between onboard hardware, performing image compression, and run control
+algorithms like fine pointing, sun pointing, ground pointing for payload operation and idle state
+detumbling. The actuation is carried out by interfacing magnetorquers and reaction wheels with
+the OBC. The software of the onboard computer is implemented on a Linux based operating system run
+on the ARM Cortex A9 processor which is part of the Zynq-7000 SoC. A Field Programmable Gate Array
+(FPGA) is used specifically for image compression. The compressed image is stored in a serial flash
+memory shared between the camera and the FPGA. The architecture comprises of a system-wide I2C bus
+to which the sensors interfaced. The collected data is used for logging followed by downlink and
+as input to algorithms used for pointing and detumbling. An SPI interface is used between the Power
+Subsystem microcontroller and the On-Board Computer since a large amount of housekeeping data
+will have to be exchanged at high rates. Reaction wheels and magnetorquers are actuated by current
+driver circuits which get the control signals from the OBC. The satellite is modelled as a Finite
+State Machine for software development. The states broadly fall under two categories, Normal and
+Emergency. Each state has a predetermined set of logical tasks to be run, which are abstracted as
+separate processes in the memory. State transitions take place by polling the health metrics of
+the satellite. However, hardware interrupts are implemented on selected peripherals which ensure
+an asynchronous switching to the Emergency States for safety. A review of some common fault detection,
+isolation and removal methods used shall conclude the paper. 

@@ -1,0 +1,19 @@
+Adversarial examples in recent works target at closed set recognition systems, in which the training
+and testing classes are identical. In real-world scenarios, however, the testing classes may have
+limited, if any, overlap with the training classes, a problem named open set recognition. To our
+knowledge, the community does not have a specific design of adversarial examples targeting at this
+practical setting. Arguably, the new setting compromises traditional closed set attack methods
+in two aspects. First, closed set attack methods are based on classification and target at classification
+as well, but the open set problem suggests a different task, \emph{i.e.,} retrieval. It is undesirable
+that the generation mechanism of closed set recognition is different from the aim of open set recognition.
+Second, given that the query image is usually of an unseen class, predicting its category from the
+training classes is not reasonable, which leads to an inferior adversarial gradient. In this work,
+we view open set recognition as a retrieval task and propose a new approach, Opposite-Direction
+Feature Attack (ODFA), to generate adversarial examples / queries. When using an attacked example
+as query, we aim that the true matches be ranked as low as possible. In addressing the two limitations
+of closed set attack methods, ODFA directly works on the features for retrieval. The idea is to push
+away the feature of the adversarial query in the opposite direction of the original feature. Albeit
+simple, ODFA leads to a larger drop in Recall@K and mAP than the close-set attack methods on two open
+set recognition datasets, \emph{i.e.,} Market-1501 and CUB-200-2011. We also demonstrate that
+the attack performance of ODFA is not evidently superior to the state-of-the-art methods under
+closed set recognition (Cifar-10), suggesting its specificity for open set problems. 

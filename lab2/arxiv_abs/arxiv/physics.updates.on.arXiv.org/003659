@@ -1,0 +1,18 @@
+Presented is an algorithm based on dynamic mode decomposition (DMD) for acceleration of the power
+method (PM). The power method is a simple technique for determining the dominant eigenmode of an
+operator $\mathbf{A}$, and variants of the power method are widely used in reactor analysis. Dynamic
+mode decomposition is an algorithm for decomposing a time-series of spatially-dependent data
+and producing an explicit-in-time reconstruction for that data. By viewing successive power-method
+iterates as snapshots of a time-varying system tending toward a steady state, DMD can be used to predict
+that steady state using (a sometime surprisingly small) $n$ iterates. The process of generating
+snapshots with the power method and extrapolating forward with DMD can be repeated. The resulting
+restarted, DMD-accelerated power method (or DMD-PM($n$)) was applied to the two-dimensional
+IAEA diffusion benchmark and compared to the unaccelerated power method and Arnoldi's method.
+Results indicate that DMD-PM($n$) can reduce the number of power iterations required by approximately
+a factor of 5. However, Arnoldi's method always outperformed DMD-PM($n$) for an equivalent number
+of matrix-vector products $\mathbf{Av}$. In other words, DMD-PM($n$) cannot compete with leading
+eigensolvers if one is not limited to snapshots produced by the power method. Contrarily, DMD-PM($n$)
+can be readily applied as a post process to existing power-method applications for which Arnoldi
+and similar methods are not directly applicable. A slight variation of the method was also found
+to produce reasonable approximations to the first and second harmonics without substantially
+affecting convergence of the dominant mode. 

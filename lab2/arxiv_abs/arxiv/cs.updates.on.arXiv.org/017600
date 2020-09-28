@@ -1,0 +1,18 @@
+Tree-structured LSTM is promising way to consider long-distance interaction over hierarchies.
+However, there have been few research efforts on the hyperparameter tuning of the construction
+and traversal of tree-structured LSTM. To name a few, hyperparamters such as the interval of state
+initialization, the number of batches for normalization have been left unexplored specifically
+in applying batch normalization for reducing training cost and parallelization. In this paper,
+we propose a novel recursive algorithm for traversing batch normalized tree-structured LSTM.
+In proposal method, we impose the constraint on the recursion algorithm for the depth-first search
+of binary tree representation of LSTM for which batch normalization is applied. With our constrained
+recursion, we can control the hyperparameter in the traversal of several tree-structured LSTMs
+which is generated in the process of batch normalization. The tree traversal is divided into two
+steps. At first stage, the width-first search over models is applied for discover the start point
+of the latest tree-structured LSTM block. Then, the depth-first search is run to traverse tree-structured
+LSTM. Proposed method enables us to explore the optimized selection of hyperparameters of recursive
+neural network implementation by changing the constraints of our recursion algorithm. In experiment,
+we measure and plot the validation loss and computing time with changing the length of internal of
+state initialization of tree-structured LSTM. It has been turned out that proposal method is effective
+for hyperparameter tuning such as the number of batches and length of interval of state initialization
+of tree-structured LSTM. 

@@ -1,0 +1,17 @@
+We propose a greedy variational method for decomposing a non-negative multivariate signal as a
+weighted sum of Gaussians which, borrowing the terminology from statistics, we refer to as a Gaussian
+mixture model (GMM). Mixture components are added one at the time in two steps. In the first step,
+a new Gaussian atom and an amplitude are chosen based on a heuristic that aims to minimize the 2-norm
+of the residual. In the second step the 2-norm of the residual is further decreased by simultaneously
+adjusting all current Gaussians. Notably, our method has the following features: (1) It accepts
+multivariate signals, i.e. sampled multivariate function, histograms, time series, images,
+etc. as input. (2) The method can handle general (i.e. ellipsoidal) Gaussians. (3) No prior assumption
+on the number of mixture components is needed. To the best of our knowledge, no previous method for
+GMM decomposition simultaneously enjoys all these features. Since finding the optimal atom is
+a non-convex problem, an important point is how to initialize each new atom. We initialize the mean
+at the maximum of the residual. As a motivation for this initialization procedure, we prove an upper
+bound, which cannot be improved by a global constant, for the distance from any mode of a GMM to the
+set of corresponding means. For mixtures of spherical Gaussians with common variance $\sigma^2$,
+the bound takes the simple form $\sqrt{n}\sigma$. We evaluate our method on one- and two-dimensional
+signals. We also discuss the relation between clustering and signal decomposition, and compare
+our method to the baseline expectation maximization algorithm. 

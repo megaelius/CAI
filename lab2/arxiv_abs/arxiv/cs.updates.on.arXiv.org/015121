@@ -1,0 +1,17 @@
+We propose to compute a sparse approximate inverse Cholesky factor $L$ of a dense covariance matrix
+$\Theta$ by minimizing the Kullback-Leibler divergence between the Gaussian distributions $\mathcal{N}(0,
+\Theta)$ and $\mathcal{N}(0, L^{-\top} L^{-1})$, subject to a sparsity constraint. Surprisingly,
+this problem has a closed-form solution that can be computed efficiently, recovering the popular
+Vecchia approximation in spatial statistics. Based on recent results on the approximate sparsity
+of inverse Cholesky factors of $\Theta$ obtained from pairwise evaluation of Green's functions
+of elliptic boundary-value problems at points $\{x_{i}\}_{1 \leq i \leq N} \subset \mathbb{R}^{d}$,
+we propose an elimination ordering and sparsity pattern that allows us to compute $\epsilon$-approximate
+inverse Cholesky factors of such $\Theta$ in computational complexity $\mathcal{O}(N \log(N/\epsilon)^d)$
+in space and $\mathcal{O}(N \log(N/\epsilon)^{2d})$ in time. To the best of our knowledge, this
+is the best asymptotic complexity for this class of problems. Furthermore, our method is embarrassingly
+parallel, automatically exploits low-dimensional structure in the data, and can perform Gaussian-process
+regression in linear (in $N$) space complexity. Motivated by the optimality properties of our methods,
+we propose methods for applying it to the joint covariance of training and prediction points in Gaussian-process
+regression, greatly improving stability and computational cost. Finally, we show how to apply
+our method to the important setting of Gaussian processes with additive noise, sacrificing neither
+accuracy nor computational complexity. 

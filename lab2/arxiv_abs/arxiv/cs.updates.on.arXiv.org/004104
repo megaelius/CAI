@@ -1,0 +1,19 @@
+Dot product operations between matrices are at the heart of almost any field in science and technology.
+In many cases, they are the component that requires the highest computational resources during
+execution. For instance, deep neural networks such as VGG-16 require up to 15 giga-operations in
+order to perform the dot products present in a single forward pass, which results in significant
+energy consumption and thus limits their use in resource-limited environments, e.g., on embedded
+devices or smartphones. One common approach to reduce the complexity of the inference is to prune
+and quantize the weight matrices of the neural network and to efficiently represent them using sparse
+matrix data structures. However, since there is no guarantee that the weight matrices exhibit significant
+sparsity after quantization, the sparse format may be suboptimal. In this paper we present new efficient
+data structures for representing matrices with low entropy statistics and show that these formats
+are especially suitable for representing neural networks. Alike sparse matrix data structures,
+these formats exploit the statistical properties of the data in order to reduce the size and execution
+complexity. Moreover, we show that the proposed data structures can not only be regarded as a generalization
+of sparse formats, but are also more energy and time efficient under practically relevant assumptions.
+Finally, we test the storage requirements and execution performance of the proposed formats on
+compressed neural networks and compare them to dense and sparse representations. We experimentally
+show that we are able to attain up to x15 compression ratios, x1.7 speed ups and x20 energy savings
+when we lossless convert state-of-the-art networks such as AlexNet, VGG-16, ResNet152 and DenseNet
+into the new data structures. 

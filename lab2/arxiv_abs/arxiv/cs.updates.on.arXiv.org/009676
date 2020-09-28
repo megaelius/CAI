@@ -1,0 +1,17 @@
+Contemporary person re-identification (\reid) methods usually require access to data from the
+deployment camera network during training in order to perform well. This is because contemporary
+\reid{} models trained on one dataset do not generalise to other camera networks due to the domain-shift
+between datasets. This requirement is often the bottleneck for deploying \reid{} systems in practical
+security or commercial applications, as it may be impossible to collect this data in advance or prohibitively
+costly to annotate it. This paper alleviates this issue by proposing a simple baseline for domain
+generalizable~(DG) person re-identification. That is, to learn a \reid{} model from a set of source
+domains that is suitable for application to unseen datasets out-of-the-box, without any model
+updating. Specifically, we observe that the domain discrepancy in \reid{} is due to style and content
+variance across datasets and demonstrate appropriate Instance and Feature Normalization alleviates
+much of the resulting domain-shift in Deep \reid{} models. Instance Normalization~(IN) in early
+layers filters out style statistic variations and Feature Normalization~(FN) in deep layers is
+able to further eliminate disparity in content statistics. Compared to contemporary alternatives,
+this approach is extremely simple to implement, while being faster to train and test, thus making
+it an extremely valuable baseline for implementing \reid{} in practice. With a few lines of code,
+it increases the rank 1 \reid{} accuracy by {11.8\%, 33.2\%, 12.8\% and 8.5\%} on the VIPeR, PRID,
+GRID, and i-LIDS benchmarks respectively. Source codes are available at \url{https://github.com/BJTUJia/person_reID_DualNorm}.

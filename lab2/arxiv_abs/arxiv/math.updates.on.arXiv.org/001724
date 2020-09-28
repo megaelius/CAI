@@ -1,0 +1,19 @@
+The Goldbach conjecture states that every even number can be decomposed as the sum of two primes.
+Let $D(N)$ denote the number of such prime decompositions for an even $N$. It is known that $D(N)$
+can be bounded above by $$ D(N) \leq C^* \Theta(N), \quad \Theta(N):= \frac{N}{\log^2 N}\prod_{\substack{p|N
+p>2}} \left( 1 + \frac{1}{p-2}\right)\prod_{p>2}\left(1-\frac{1}{(p-1)^2}\right) $$ where
+$C^*$ denotes Chen's constant. It is conjectured that $C^*=2$. In 2004, Wu showed that $C^* \leq
+7.8209$. We attempted to replicate his work in computing Chen's constant, and in doing so we provide
+an improved approximation of the Buchstab function $\omega(u)$, \begin{align*} \omega(u)=1/u,
+& \quad (1\leq u\leq 2), (u \omega(u))'=\omega(u-1), & \quad (u\geq 2). \end{align*} based on work
+done by Cheer and Goldston. For each interval $[j,j+1]$, they expressed $\omega(u)$ as a Taylor
+expansion about $u=j+1$. We expanded about the point $u=j+0.5$, so $\omega(u)$ was never evaluated
+more than $0.5$ away from the center of the Taylor expansion, which gave much stronger error bounds.
+Issues arose while using this Taylor expansion to compute the required integrals for Chen's constant,
+so we proceeded with solving the above differential equation to obtain $\omega(u)$, and then integrating
+the result. Although the values that were obtained undershot Wu's results, we pressed on and refined
+Wu's work by discretising his integrals with finer granularity. The improvements to Chen's constant
+were negligible (as predicted by Wu). This provides experimental evidence, but not a proof, that
+were Wu's integrals computed on smaller intervals in exact form, the improvement to Chen's constant
+would be negligible. Thus, any substantial improvement on Chen's constant likely requires a radically
+different method to what Wu provided. 

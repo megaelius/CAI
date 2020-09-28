@@ -1,0 +1,19 @@
+Resective surgery may be curative for drug-resistant focal epilepsy, but only 40% to 70% of patients
+achieve seizure freedom after surgery. Retrospective quantitative analysis could elucidate
+patterns in resected structures and patient outcomes to improve resective surgery. However, the
+resection cavity must first be segmented on the postoperative MR image. Convolutional neural networks
+(CNNs) are the state-of-the-art image segmentation technique, but require large amounts of annotated
+data for training. Annotation of medical images is a time-consuming process requiring highly-trained
+raters, and often suffering from high inter-rater variability. Self-supervised learning can
+be used to generate training instances from unlabeled data. We developed an algorithm to simulate
+resections on preoperative MR images. We curated a new dataset, EPISURG, comprising 431 postoperative
+and 269 preoperative MR images from 431 patients who underwent resective surgery. In addition to
+EPISURG, we used three public datasets comprising 1813 preoperative MR images for training. We
+trained a 3D CNN on artificially resected images created on the fly during training, using images
+from 1) EPISURG, 2) public datasets and 3) both. To evaluate trained models, we calculate Dice score
+(DSC) between model segmentations and 200 manual annotations performed by three human raters.
+The model trained on data with manual annotations obtained a median (interquartile range) DSC of
+65.3 (30.6). The DSC of our best-performing model, trained with no manual annotations, is 81.7 (14.2).
+For comparison, inter-rater agreement between human annotators was 84.0 (9.9). We demonstrate
+a training method for CNNs using simulated resection cavities that can accurately segment real
+resection cavities, without manual annotations. 

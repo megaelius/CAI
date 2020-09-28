@@ -1,0 +1,18 @@
+When classifying point clouds, a large amount of time is devoted to the process of engineering a reliable
+set of features which are then passed to a classifier of choice. Generally, such features - usually
+derived from the 3D-covariance matrix - are computed using the surrounding neighborhood of points.
+While these features capture local information, the process is usually time-consuming, and requires
+the application at multiple scales combined with contextual methods in order to adequately describe
+the diversity of objects within a scene. In this paper we present a 1D-fully convolutional network
+that consumes terrain-normalized points directly with the corresponding spectral data,if available,
+to generate point-wise labeling while implicitly learning contextual features in an end-to-end
+fashion. Our method uses only the 3D-coordinates and three corresponding spectral features for
+each point. Spectral features may either be extracted from 2D-georeferenced images, as shown here
+for Light Detection and Ranging (LiDAR) point clouds, or extracted directly for passive-derived
+point clouds,i.e. from muliple-view imagery. We train our network by splitting the data into square
+regions, and use a pooling layer that respects the permutation-invariance of the input points.
+Evaluated using the ISPRS 3D Semantic Labeling Contest, our method scored second place with an overall
+accuracy of 81.6%. We ranked third place with a mean F1-score of 63.32%, surpassing the F1-score
+of the method with highest accuracy by 1.69%. In addition to labeling 3D-point clouds, we also show
+that our method can be easily extended to 2D-semantic segmentation tasks, with promising initial
+results. 

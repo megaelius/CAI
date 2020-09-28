@@ -1,0 +1,20 @@
+We consider the problem of sorting $n$ elements in the case of \emph{persistent} comparison errors.
+In this model (Braverman and Mossel, SODA'08), each comparison between two elements can be wrong
+with some fixed (small) probability $p$, and \emph{comparisons cannot be repeated}. Sorting perfectly
+in this model is impossible, and the objective is to minimize the \emph{dislocation} of each element
+in the output sequence, that is, the difference between its true rank and its position. Existing
+lower bounds for this problem show that no algorithm can guarantee, with high probability, \emph{maximum
+dislocation} and \emph{total dislocation} better than $\Omega(\log n)$ and $\Omega(n)$, respectively,
+regardless of its running time. In this paper, we present the first \emph{$O(n\log n)$-time} sorting
+algorithm that guarantees both \emph{$O(\log n)$ maximum dislocation} and \emph{$O(n)$ total
+dislocation} with high probability. Besides improving over the previous state-of-the art algorithms
+-- the best known algorithm had running time $\tilde{O}(n^{3/2})$ -- our result indicates that
+comparison errors do not make the problem computationally more difficult: a sequence with the best
+possible dislocation can be obtained in $O(n\log n)$ time and, even without comparison errors,
+$\Omega(n\log n)$ time is necessary to guarantee such dislocation bounds. In order to achieve this
+optimal result, we solve two sub-problems, and the respective methods have their own merits for
+further application. One is how to locate a position in which to insert an element in an almost-sorted
+sequence having $O(\log n)$ maximum dislocation in such a way that the dislocation of the resulting
+sequence will still be $O(\log n)$. The other is how to simultaneously insert $m$ elements into an
+almost sorted sequence of $m$ different elements, such that the resulting sequence of $2m$ elements
+remains almost sorted. 

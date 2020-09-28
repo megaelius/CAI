@@ -1,0 +1,17 @@
+Standard probabilistic linear discriminant analysis (PLDA) for speaker recognition assumes
+that the sample's features (usually, i-vectors) are given by a sum of three terms: a term that depends
+on the speaker identity, a term that models the within-speaker variability and is assumed independent
+across samples, and a final term that models any remaining variability and is also independent across
+samples. In this work, we propose a generalization of this model where the within-speaker variability
+is not necessarily assumed independent across samples but dependent on another discrete variable.
+This variable, which we call the channel variable as in the standard PLDA approach, could be, for
+example, a discrete category for the channel characteristics, the language spoken by the speaker,
+the type of speech in the sample (conversational, monologue, read), etc. The value of this variable
+is assumed to be known during training but not during testing. Scoring is performed, as in standard
+PLDA, by computing a likelihood ratio between the null hypothesis that the two sides of a trial belong
+to the same speaker versus the alternative hypothesis that the two sides belong to different speakers.
+The two likelihoods are computed by marginalizing over two hypothesis about the channels in both
+sides of a trial: that they are the same and that they are different. This way, we expect that the new
+model will be better at coping with same-channel versus different-channel trials than standard
+PLDA, since knowledge about the channel (or language, or speech style) is used during training and
+implicitly considered during scoring. 

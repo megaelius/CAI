@@ -1,0 +1,17 @@
+Graph Convolution Network (GCN) has attracted significant attention and become the most popular
+method for learning graph representations. In recent years, many efforts have been focused on integrating
+GCN into the recommender tasks and have made remarkable progress. At its core is to explicitly capture
+high-order connectivities between the nodes in user-item bipartite graph. However, we theoretically
+and empirically find an inherent drawback existed in these GCN-based recommendation methods,
+where GCN is directly applied to aggregate neighboring nodes will introduce noise and information
+redundancy. Consequently, the these models' capability of capturing high-order connectivities
+among different nodes is limited, leading to suboptimal performance of the recommender tasks.
+The main reason is that the the nonlinear network layer inside GCN structure is not suitable for extracting
+non-sematic features(such as one-hot ID feature) in the collaborative filtering scenarios. In
+this work, we develop a new GCN-based Collaborative Filtering model, named Refined Graph convolution
+Collaborative Filtering(RGCF), where the construction of the embeddings of users (items) are
+delicately redesigned from several aspects during the aggregation on the graph. Compared to the
+state-of-the-art GCN-based recommendation, RGCF is more capable for capturing the implicit high-order
+connectivities inside the graph and the resultant vector representations are more expressive.
+We conduct extensive experiments on three public million-size datasets, demonstrating that our
+RGCF significantly outperforms state-of-the-art models. We release our code at https://github.com/hfutmars/RGCF.

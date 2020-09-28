@@ -1,0 +1,18 @@
+Geo-replicated systems provide a number of desirable properties such as globally low latency,
+high availability, scalability, and built-in fault tolerance. Unfortunately, programming correct
+applications on top of such systems has proven to be very challenging, in large part because of the
+weak consistency guarantees they offer. These complexities are exacerbated when we try to adapt
+existing highly-performant concurrent libraries developed for shared-memory environments
+to this setting. The use of these libraries, developed with performance and scalability in mind,
+is highly desirable. But, identifying a suitable notion of correctness to check their validity
+under a weakly consistent execution model has not been well-studied, in large part because it is
+problematic to naively transplant criteria such as linearizability that has a useful interpretation
+in a shared-memory context to a distributed one where the cost of imposing a (logical) global ordering
+on all actions is prohibitive. In this paper, we tackle these issues by proposing appropriate semantics
+and specifications for highly-concurrent libraries in a weakly-consistent, replicated setting.
+We use these specifications to develop a static analysis framework that can automatically detect
+correctness violations of library implementations parameterized with respect to the different
+consistency policies provided by the underlying system. We use our framework to analyze the behavior
+of a number of highly non-trivial library implementations of stacks, queues, and exchangers. Our
+results provide the first demonstration that automated correctness checking of concurrent libraries
+in a weakly geo-replicated setting is both feasible and practical. 

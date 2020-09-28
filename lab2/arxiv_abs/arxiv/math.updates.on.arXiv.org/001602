@@ -1,0 +1,17 @@
+For uncertainty propagation of highly complex and/or nonlinear problems, one must resort to sample-based
+non-intrusive approaches [1]. In such cases, minimizing the number of function evaluations required
+to evaluate the response surface is of paramount importance. Sparse grid approaches have proven
+effective in reducing the number of sample evaluations. For example, the discrete projection collocation
+method has the notable feature of exhibiting fast convergence rates when approximating smooth
+functions; however, it lacks the ability to accurately and efficiently track response functions
+that exhibit fluctuations, abrupt changes or discontinuities in very localized regions of the
+input domain. On the other hand, the piecewise linear collocation interpolation approach can track
+these localized variations in the response surface efficiently, but it converges slowly in the
+smooth regions. The proposed methodology, building on an existing work on adaptive hierarchical
+sparse grid collocation algorithm [2], is able to track localized behavior while also avoiding
+unnecessary function evaluations in smoother regions of the stochastic space by using a finite
+difference based one-dimensional derivative evaluation technique in all the dimensions. This
+derivative evaluation technique leads to faster convergence in the smoother regions than what
+is achieved in the existing collocation interpolation approaches. Illustrative examples show
+that this method is well suited to high-dimensional stochastic problems, and that stochastic elliptic
+problems with stochastic dimension as high as 100 can be dealt with effectively. 

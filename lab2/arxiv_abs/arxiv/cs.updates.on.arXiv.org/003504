@@ -1,0 +1,18 @@
+Modern vehicle fleets, e.g., for ridesharing platforms and taxi companies, can reduce passengers'
+waiting times by proactively dispatching vehicles to locations where pickup requests are anticipated
+in the future. Yet it is unclear how to best do this: optimal dispatching requires optimizing over
+several sources of uncertainty, including vehicles' travel times to their dispatched locations,
+as well as coordinating between vehicles so that they do not attempt to pick up the same passenger.
+While prior works have developed models for this uncertainty and used them to optimize dispatch
+policies, in this work we introduce a model-free approach. Specifically, we propose MOVI, a Deep
+Q-network (DQN)-based framework that directly learns the optimal vehicle dispatch policy. Since
+DQNs scale poorly with a large number of possible dispatches, we streamline our DQN training and
+suppose that each individual vehicle independently learns its own optimal policy, ensuring scalability
+at the cost of less coordination between vehicles. We then formulate a centralized receding-horizon
+control (RHC) policy to compare with our DQN policies. To compare these policies, we design and build
+MOVI as a large-scale realistic simulator based on 15 million taxi trip records that simulates policy-agnostic
+responses to dispatch decisions. We show that the DQN dispatch policy reduces the number of unserviced
+requests by 76% compared to without dispatch and 20% compared to the RHC approach, emphasizing the
+benefits of a model-free approach and suggesting that there is limited value to coordinating vehicle
+actions. This finding may help to explain the success of ridesharing platforms, for which drivers
+make individual decisions. 

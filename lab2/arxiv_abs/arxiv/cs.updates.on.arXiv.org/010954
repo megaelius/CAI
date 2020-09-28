@@ -1,0 +1,19 @@
+Machine learning models, especially neural networks (NNs), have achieved outstanding performance
+on diverse and complex applications. However, recent work has found that they are vulnerable to
+Trojan attacks where an adversary trains a corrupted model with poisoned data or directly manipulates
+its parameters in a stealthy way. Such Trojaned models can obtain good performance on normal data
+during test time while predicting incorrectly on the adversarially manipulated data samples.
+This paper aims to develop ways to detect Trojaned models. We mainly explore the idea of meta neural
+analysis, a technique involving training a meta NN model that can be used to predict whether or not
+a target NN model has certain properties. We develop a novel pipeline Meta Neural Trojaned model
+Detection (MNTD) system to predict if a given NN is Trojaned via meta neural analysis on a set of trained
+shadow models. We propose two ways to train the meta-classifier without knowing the Trojan attacker's
+strategies. The first one, one-class learning, will fit a novel detection meta-classifier using
+only benign neural networks. The second one, called jumbo learning, will approximate a general
+distribution of Trojaned models and sample a "jumbo" set of Trojaned models to train the meta-classifier
+and evaluate on the unseen Trojan strategies. Extensive experiments demonstrate the effectiveness
+of MNTD in detecting different Trojan attacks in diverse areas such as vision, speech, tabular data,
+and natural language processing. We show that MNTD reaches an average of 97% detection AUC (Area
+Under the ROC Curve) score and outperforms existing approaches. Furthermore, we design and evaluate
+MNTD system to defend against strong adaptive attackers who have exactly the knowledge of the detection,
+which demonstrates the robustness of MNTD. 

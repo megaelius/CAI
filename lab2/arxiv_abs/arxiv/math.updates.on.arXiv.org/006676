@@ -1,0 +1,20 @@
+We aim to optimize a black-box function $f:\mathcal{X} \mapsto \mathbb{R}$ under the assumption
+that $f$ is H\"older smooth and has bounded norm in the RKHS associated with a given kernel $K$. This
+problem is known to have an agnostic Gaussian Process (GP) bandit interpretation in which an appropriately
+constructed GP surrogate model with kernel $K$ is used to obtain an upper confidence bound (UCB)
+algorithm. In this paper, we propose a new algorithm (\texttt{LP-GP-UCB}) where the usual GP surrogate
+model is augmented with Local Polynomial (LP) estimators of the H\"older smooth function $f$ to
+construct a multi-scale UCB guiding the search for the optimizer. We analyze this algorithm and
+derive high probability bounds on its simple and cumulative regret. We then prove that the elements
+of many common RKHS are H\"older smooth and obtain the corresponding H\"older smoothness parameters,
+and hence, specialize our regret bounds for several commonly used kernels. When specialized to
+the Squared Exponential (SE) kernel, \texttt{LP-GP-UCB} matches the optimal performance, while
+for the case of Mat\'ern kernels $(K_{\nu})_{\nu>0}$, it results in uniformly tighter regret bounds
+for all values of the smoothness parameter $\nu>0$. Most notably, for certain ranges of $\nu$, the
+algorithm achieves near-optimal bounds on simple and cumulative regrets, matching the algorithm-independent
+lower bounds up to polylog factors, and thus closing the large gap between the existing upper and
+lower bounds for these values of $\nu$. Additionally, our analysis provides the first explicit
+regret bounds, in terms of the budget $n$, for the Rational-Quadratic (RQ) and Gamma-Exponential
+(GE). Finally, experiments with synthetic functions as well as a CNN hyperparameter tuning task
+demonstrate the practical benefits of our multi-scale partitioning approach over some existing
+algorithms numerically. 

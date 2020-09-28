@@ -1,0 +1,20 @@
+Behavioral malware detectors promise to expose previously unknown malware and are an important
+security primitive. However, even the best behavioral detectors suffer from high false positives
+and negatives. In this paper, we address the challenge of aggregating weak per-device behavioral
+detectors in noisy communities (i.e., ones that produce alerts at unpredictable rates) into an
+accurate and robust global anomaly detector (GD). Our system - Shape GD - combines two insights:
+Structural: actions such as visiting a website (waterhole attack) or membership in a shared email
+thread (phishing attack) by nodes correlate well with malware spread, and create dynamic neighborhoods
+of nodes that were exposed to the same attack vector; and Statistical: feature vectors corresponding
+to true and false positives of local detectors have markedly different conditional distributions.
+We use neighborhoods to amplify the transient low-dimensional structure that is latent in high-dimensional
+feature vectors - but neighborhoods vary unpredictably, and we use shape to extract robust neighborhood-level
+features that identify infected neighborhoods. Unlike prior works that aggregate local detectors'
+alert bitstreams or cluster the feature vectors, Shape GD analyzes the feature vectors that led
+to local alerts (alert-FVs) to separate true and false positives. Shape GD first filters these alert-FVs
+into neighborhoods and efficiently maps a neighborhood's alert-FVs' statistical shapes into
+a scalar score. Shape GD then acts as a neighborhood level anomaly detector - training on benign program
+traces to learn the ShapeScore of false positive neighborhoods, and classifying neighborhoods
+with anomalous ShapeScores as malicious. Shape GD detects malware early (~100 infected nodes in
+a ~100K node system for waterhole and ~10 of 1000 for phishing) and robustly (with ~100% global TP
+and ~1% global FP rates). 

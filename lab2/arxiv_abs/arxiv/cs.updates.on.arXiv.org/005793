@@ -1,0 +1,17 @@
+We analyze stochastic gradient algorithms for optimizing nonconvex, nonsmooth finite-sum problems.
+In particular, the objective function is given by the summation of a differentiable (possibly nonconvex)
+component, together with a possibly non-differentiable but convex component. We propose a proximal
+stochastic gradient algorithm based on variance reduction, called ProxSVRG+. Our main contribution
+lies in the analysis of ProxSVRG+. It recovers several existing convergence results and improves/generalizes
+them (in terms of the number of stochastic gradient oracle calls and proximal oracle calls). In particular,
+ProxSVRG+ generalizes the best results given by the SCSG algorithm, recently proposed by [Lei et
+al., NIPS'17] for the smooth nonconvex case. ProxSVRG+ is also more straightforward than SCSG and
+yields simpler analysis. Moreover, ProxSVRG+ outperforms the deterministic proximal gradient
+descent (ProxGD) for a wide range of minibatch sizes, which partially solves an open problem proposed
+in [Reddi et al., NIPS'16]. Also, ProxSVRG+ uses much less proximal oracle calls than ProxSVRG [Reddi
+et al., NIPS'16]. Moreover, for nonconvex functions satisfied Polyak-\L{}ojasiewicz condition,
+we prove that ProxSVRG+ achieves a global linear convergence rate without restart unlike ProxSVRG.
+Thus, it can \emph{automatically} switch to the faster linear convergence in some regions as long
+as the objective function satisfies the PL condition locally in these regions. ProxSVRG+ also improves
+ProxGD and ProxSVRG/SAGA, and generalizes the results of SCSG in this case. Finally, we conduct
+several experiments and the experimental results are consistent with the theoretical results.

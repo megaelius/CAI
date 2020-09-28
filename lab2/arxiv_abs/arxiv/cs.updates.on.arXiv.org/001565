@@ -1,0 +1,17 @@
+This paper makes two contributions to Bayesian machine learning algorithms. Firstly, we propose
+stochastic natural gradient expectation propagation (SNEP), a novel alternative to expectation
+propagation (EP), a popular variational inference algorithm. SNEP is a black box variational algorithm,
+in that it does not require any simplifying assumptions on the distribution of interest, beyond
+the existence of some Monte Carlo sampler for estimating the moments of the EP tilted distributions.
+Further, as opposed to EP which has no guarantee of convergence, SNEP can be shown to be convergent,
+even when using Monte Carlo moment estimates. Secondly, we propose a novel architecture for distributed
+Bayesian learning which we call the posterior server. The posterior server allows scalable and
+robust Bayesian learning in cases where a data set is stored in a distributed manner across a cluster,
+with each compute node containing a disjoint subset of data. An independent Monte Carlo sampler
+is run on each compute node, with direct access only to the local data subset, but which targets an
+approximation to the global posterior distribution given all data across the whole cluster. This
+is achieved by using a distributed asynchronous implementation of SNEP to pass messages across
+the cluster. We demonstrate SNEP and the posterior server on distributed Bayesian learning of logistic
+regression and neural networks. Keywords: Distributed Learning, Large Scale Learning, Deep Learning,
+Bayesian Learn- ing, Variational Inference, Expectation Propagation, Stochastic Approximation,
+Natural Gradient, Markov chain Monte Carlo, Parameter Server, Posterior Server. 

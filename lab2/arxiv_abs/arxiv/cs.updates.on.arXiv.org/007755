@@ -1,0 +1,19 @@
+We consider the dynamic graph coloring problem restricted to the class of interval graphs. At each
+update step the algorithm is presented with an interval to be colored, or a previously colored interval
+to delete. The goal of the algorithm is to efficiently maintain a proper coloring of the intervals
+with as few colors as possible by an online algorithm. In the incremental model, each update step
+presents the algorithm with an interval to be colored. The problem is closely connected to the online
+vertex coloring problem of interval graphs for which the Kierstead-Trotter (KT) algorithm achieves
+the best possible competitive ratio. We first show that a sub-quadratic time direct implementation
+of the KT-algorithm is unlikely to exist conditioned on the correctness of the Online Boolean Matrix
+Vector multiplication conjecture due to Henzinger et al. \cite{DBLP:conf/stoc/HenzingerKNS15}.
+We then design an incremental algorithm that is subtly different from the KT-algorithm and uses
+at most $3 \omega - 2$ colors, where $\omega$ is the maximum clique in the interval graph associated
+with the set of intervals. Our incremental data structure maintains a proper coloring in amortized
+$O(\log n + \Delta)$ update time where $n$ is the total number of intervals inserted and $\Delta$
+is the maximum degree of a vertex in the interval graph. We then consider the fully dynamic framework
+involving insertions and deletions. On each update, our aim is to maintain a $3 \omega - 2$ coloring
+of the remaining set of intervals, where $\omega$ is the maximum clique in the interval graph associated
+with the remaining set of intervals. Our fully dynamic algorithm supports insertion of an interval
+in $O(\log n + \Delta \log \omega)$ worst case update time and deletion of an interval in $O(\Delta^2
+\log n)$ worst case update time. 

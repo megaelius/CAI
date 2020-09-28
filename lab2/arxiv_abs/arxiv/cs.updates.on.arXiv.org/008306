@@ -1,0 +1,18 @@
+Message logging protocols are enablers of local rollback, a more efficient alternative to global
+rollback, for fault tolerant MPI applications. Until now, message logging MPI implementations
+have incurred the overheads of a redesign and redeployment of an MPI library, as well as continued
+performance penalties across various kernels. Successful research efforts for message logging
+implementations do exist, but not a single one of them can be easily deployed today by more than a few
+experts. In contrast, in this work we build efficient message logging capabilities on top of an MPI
+library with no message logging capabilities; we do so for two different HPC kernels, one with a global
+exchange pattern (CG), and one with a neighbourhood exchange pattern (LULESH). While our library
+of choice ULFM detects failure and recovers MPI communicators, we build on that to then restore the
+intra- and inter-process data consistency of both applications. This task turns out to be challenging,
+and we present the methodology for doing so in this work. In the end, we achieve message logging capabilities
+for each kernel, without the need for an actual message logging runtime underneath. On the performance
+side, we match state-of-the-art solutions and (a) eliminate event logging and the event logger
+component altogether, and (b) design a hybrid protocol, which gracefully shifts between global
+and local rollback, depending on the available payload logging memory. Such a hybrid protocol between
+local and global rollback has not been previously proposed to our knowledge. Our extensions span
+a few hundred lines of code for each kernel, are open-sourced, and enable local and global rollback
+after process failure. 

@@ -1,0 +1,17 @@
+In a low-rank linear bandit problem, the reward of an action (represented by a matrix of size $d_1
+\times d_2$) is the inner product between the action and an unknown low-rank matrix $\Theta^*$.
+We propose an algorithm based on a novel combination of online-to-confidence-set conversion~\citep{abbasi2012online}
+and the exponentially weighted average forecaster constructed by a covering of low-rank matrices.
+In $T$ rounds, our algorithm achieves $\widetilde{O}((d_1+d_2)^{3/2}\sqrt{rT})$ regret that
+improves upon the standard linear bandit regret bound of $\widetilde{O}(d_1d_2\sqrt{T})$ when
+the rank of $\Theta^*$: $r \ll \min\{d_1,d_2\}$. We also extend our algorithmic approach to the
+generalized linear setting to get an algorithm which enjoys a similar bound under regularity conditions
+on the link function. To get around the computational intractability of covering based approaches,
+we propose an efficient algorithm by extending the "Explore-Subspace-Then-Refine" algorithm
+of~\citet{jun2019bilinear}. Our efficient algorithm achieves $\widetilde{O}((d_1+d_2)^{3/2}\sqrt{rT})$
+regret under a mild condition on the action set $\mathcal{X}$ and the $r$-th singular value of $\Theta^*$.
+Our upper bounds match the conjectured lower bound of \cite{jun2019bilinear} for a subclass of
+low-rank linear bandit problems. Further, we show that existing lower bounds for the sparse linear
+bandit problem strongly suggest that our regret bounds are unimprovable. To complement our theoretical
+contributions, we also conduct experiments to demonstrate that our algorithm can greatly outperform
+the performance of the standard linear bandit approach when $\Theta^*$ is low-rank. 

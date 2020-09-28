@@ -1,0 +1,18 @@
+Simulating quantum circuits with classical computers requires resources growing exponentially
+in terms of system size. Real quantum computer with noise, however, may be simulated polynomially
+with various methods considering different noise models. In this work, we simulate random quantum
+circuits in 1D with Matrix Product Density Operators (MPDO), for different noise models such as
+dephasing, depolarizing, and amplitude damping. We show that the method based on Matrix Product
+States (MPS) fails to approximate the noisy output quantum states for any of the noise models considered,
+while the MPDO method approximates them well. Compared with the method of Matrix Product Operators
+(MPO), the MPDO method reflects a clear physical picture of noise (with inner indices taking care
+of the noise simulation) and quantum entanglement (with bond indices taking care of two-qubit gate
+simulation). Consequently, in case of weak system noise, the resource cost of MPDO will be significantly
+less than that of the MPO due to a relatively small inner dimension needed for the simulation. In case
+of strong system noise, a relatively small bond dimension may be sufficient to simulate the noisy
+circuits, indicating a regime that the noise is large enough for an `easy' classical simulation.
+Moreover, we propose a more effective tensor updates scheme with optimal truncations for both the
+inner and the bond dimensions, performed after each layer of the circuit, which enjoys a canonical
+form of the MPDO for improving simulation accuracy. With truncated inner dimension to a maximum
+value $\kappa$ and bond dimension to a maximum value $\chi$, the cost of our simulation scales as
+$\sim ND\kappa^3\chi^3$, for an $N$-qubit circuit with depth $D$. 

@@ -1,0 +1,20 @@
+Objective: To evaluate the feasibility of using an attention-based neural network for predicting
+the risk of readmission within 30 days of discharge from the intensive care unit (ICU) based on longitudinal
+electronic medical record (EMR) data and to leverage the interpretability of the model to describe
+patients-at-risk. Methods: A "time-aware attention" model was trained using publicly available
+EMR data (MIMIC-III) associated with 45,298 ICU stays for 33,150 patients. The analysed EMR data
+included static (patient demographics) and timestamped variables (diagnoses, procedures, medications,
+and vital signs). Bayesian inference was used to compute the posterior distribution of network
+weights. The prediction accuracy of the proposed model was compared with several baseline models
+and evaluated based on average precision, AUROC, and F1-Score. Odds ratios (ORs) associated with
+an increased risk of readmission were computed for static variables. Diagnoses, procedures, and
+medications were ranked according to the associated risk of readmission. The model was also used
+to generate reports with predicted risk (and associated uncertainty) justified by specific diagnoses,
+procedures, medications, and vital signs. Results: A Bayesian ensemble of 10 time-aware attention
+models led to the highest predictive accuracy (average precision: 0.282, AUROC: 0.738, F1-Score:
+0.353). Male gender, number of recent admissions, age, admission location, insurance type, and
+ethnicity were all associated with risk of readmission. A longer length of stay in the ICU was found
+to reduce the risk of readmission (OR: 0.909, 95% credible interval: 0.902, 0.916). Groups of patients
+at risk included those requiring cardiovascular or ventilatory support, those with poor nutritional
+state, and those for whom standard medical care was not suitable, e.g. due to contraindications
+to surgery or medications. 

@@ -1,0 +1,18 @@
+This paper focuses on the unsupervised domain adaptation of transferring the knowledge from the
+source domain to the target domain in the context of semantic segmentation. Existing approaches
+usually regard the pseudo label as the ground truth to fully exploit the unlabeled target-domain
+data. Yet the pseudo labels of the target-domain data are usually predicted by the model trained
+on the source domain. Thus, the generated labels inevitably contain the incorrect prediction due
+to the discrepancy between the training domain and the test domain, which could be transferred to
+the final adapted model and largely compromises the training process. To overcome the problem,
+this paper proposes to explicitly estimate the prediction uncertainty during training to rectify
+the pseudo label learning for unsupervised semantic segmentation adaptation. Given the input
+image, the model outputs the semantic segmentation prediction as well as the uncertainty of the
+prediction. Specifically, we model the uncertainty via the prediction variance and involve the
+uncertainty into the optimization objective. To verify the effectiveness of the proposed method,
+we evaluate the proposed method on two prevalent synthetic-to-real semantic segmentation benchmarks,
+i.e., GTA5 -> Cityscapes and SYNTHIA -> Cityscapes, as well as one cross-city benchmark, i.e., Cityscapes
+-> Oxford RobotCar. We demonstrate through extensive experiments that the proposed approach (1)
+dynamically sets different confidence thresholds according to the prediction variance, (2) rectifies
+the learning from noisy pseudo labels, and (3) achieves significant improvements over the conventional
+pseudo label learning and yields competitive performance on all three benchmarks. 

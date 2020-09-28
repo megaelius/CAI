@@ -1,0 +1,18 @@
+The two-point correlation function (2PCF) is the most widely used tool for quantifying the spatial
+distribution of galaxies. Since the distribution of galaxies is determined by galaxy formation
+physics as well as the underlying cosmology, fitting an observed correlation function yields valuable
+insights into both. The calculation for a 2PCF involves computing pair-wise separations and consequently,
+the computing time scales quadratically with the number of galaxies. The next-generation galaxy
+surveys are slated to observe many millions of galaxies, and computing the 2PCF for such surveys
+would be prohibitively time-consuming. Additionally, modern modelling techniques require the
+2PCF to be calculated thousands of times on simulated galaxy catalogues of {\em at least} equal size
+to the data and would be completely unfeasible for the next generation surveys. Thus, calculating
+the 2PCF forms a substantial bottleneck in improving our understanding of the fundamental physics
+of the universe, and we need high-performance software to compute the correlation function. In
+this paper, we present Corrfunc --- a suite of highly optimised, OpenMP parallel clustering codes.
+The improved performance of Corrfunc arises from both efficient algorithms as well as software
+design that suits the underlying hardware of modern CPUs. Corrfunc can compute a wide range of 2-D
+and 3-D correlation functions in either simulation (Cartesian) space or on-sky coordinates. Corrfunc
+runs efficiently in both single- and multi-threaded modes and can compute a typical 2-point projected
+correlation function ($w_p(r_p)$) for ~1 million galaxies within a few seconds on a single thread.
+Corrfunc is designed to be both user-friendly and fast and is publicly available at https://github.com/manodeep/Corrfunc.

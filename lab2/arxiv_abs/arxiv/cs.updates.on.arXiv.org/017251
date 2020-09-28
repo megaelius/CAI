@@ -1,0 +1,18 @@
+Anomaly detection in retinal image refers to the identification of abnormality caused by various
+retinal diseases/lesions, by only leveraging normal images in training phase. Normal images from
+healthy subjects often have regular structures (e.g., the structured blood vessels in the fundus
+image, or structured anatomy in optical coherence tomography image). On the contrary, the diseases
+and lesions often destroy these structures. Motivated by this, we propose to leverage the relation
+between the image texture and structure to design a deep neural network for anomaly detection. Specifically,
+we first extract the structure of the retinal images, then we combine both the structure features
+and the last layer features extracted from original health image to reconstruct the original input
+healthy image. The image feature provides the texture information and guarantees the uniqueness
+of the image recovered from the structure. In the end, we further utilize the reconstructed image
+to extract the structure and measure the difference between structure extracted from original
+and the reconstructed image. On the one hand, minimizing the reconstruction difference behaves
+like a regularizer to guarantee that the image is corrected reconstructed. On the other hand, such
+structure difference can also be used as a metric for normality measurement. The whole network is
+termed as P-Net because it has a ``P'' shape. Extensive experiments on RESC dataset and iSee dataset
+validate the effectiveness of our approach for anomaly detection in retinal images. Further, our
+method also generalizes well to novel class discovery in retinal images and anomaly detection in
+real-world images. 

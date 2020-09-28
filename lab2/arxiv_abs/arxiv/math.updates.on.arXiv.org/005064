@@ -1,0 +1,18 @@
+Solving multi-objective optimization problems is important in various applications where users
+are interested in obtaining optimal policies subject to multiple, yet often conflicting objectives.
+A typical approach to obtain optimal policies is to first construct a loss function that is based
+on the scalarization of individual objectives, and then find the optimal policy that minimizes
+the loss. However, optimizing the scalarized (and weighted) loss does not necessarily provide
+guarantee of high performance on each possibly conflicting objective because it is challenging
+to assign the right weights without knowing the relationship among these objectives. Moreover,
+the effectiveness of these gradient descent algorithms is limited by the agent's ability to explain
+their decisions and actions to human users. The purpose of this study is two-fold. First, we propose
+a vector value function based multi-objective reinforcement learning (V2f-MORL) approach that
+seeks to quantify the inter-objective relationship via reinforcement learning (RL) when the impact
+of one objective on others is unknown a prior. In particular, we construct one actor and multiple
+critics that can co-learn the policy and inter-objective relationship matrix (IORM), quantifying
+the impact of objectives on each other, in an iterative way. Second, we provide a semantic representation
+that can uncover the trade-off of decision policies made by users to reconcile conflicting objectives
+based on the proposed V2f-MORL approach for the explainability of the generated behaviors subject
+to given optimization objectives. We demonstrate the effectiveness of the proposed approach via
+a MuJoCo based robotics case study. 

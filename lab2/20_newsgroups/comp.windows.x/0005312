@@ -1,0 +1,7 @@
+If anyone has any information about the existence or location of a
+dedicated X server kernel for the Sun3, please send email.  I am
+trying to put some neglected Sun3s to good use but they don't have
+enough memory for SunOS 4.1.1.  Thanks in advance for any help.
+ /\  /\/  Max Bell                    | I used to think I'd emmigrate to escape
+/  \/ /\  mbell@techbook.com          | the tyrants, but now I think I'll stay
+~~~~~~~~~ mbell@cie.uoregon.edu	      | and make them leave instead.

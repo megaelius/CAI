@@ -1,0 +1,19 @@
+We revisit a classical scheduling model to incorporate modern trends in data center networks and
+cloud services. Addressing some key challenges in the allocation of shared resources to user requests
+(jobs) in such settings, we consider the following variants of the classic {\em resource allocation
+problem} (\textsf{RAP}). The input to our problems is a set $J$ of jobs and a set $M$ of homogeneous
+hosts, each has an available amount of some resource. A job is associated with a release time, a due
+date, a weight, and a given length, as well as its resource requirement. A \emph{feasible} schedule
+is an allocation of the resource to a subset of the jobs, satisfying the job release times/due dates
+as well as the resource constraints. A crucial distinction between classic {\textsf{RAP}} and
+our problems is that we allow preemption and migration of jobs, motivated by virtualization techniques.
+We consider two natural objectives: {\em throughput maximization} (\textsf{MaxT}), which seeks
+a maximum weight subset of the jobs that can be feasibly scheduled on the hosts in $M$, and {\em resource
+minimization} (\textsf{MinR}), that is finding the minimum number of (homogeneous) hosts needed
+to feasibly schedule all jobs. Both problems are known to be NP-hard. We first present a $\Omega(1)$-approximation
+algorithm for \textsf{MaxT} instances where time-windows form a laminar family of intervals.
+We then extend the algorithm to handle instances with arbitrary time-windows, assuming there is
+sufficient slack for each job to be completed. For \textsf{MinR} we study a more general setting
+with $d$ resources and derive an $O(\log d)$-approximation for any fixed $d \geq 1$, under the assumption
+that time-windows are not too small. This assumption can be removed leading to a slightly worse ratio
+of $O(\log d\log^* T)$, where $T$ is the maximum due date of any job. 

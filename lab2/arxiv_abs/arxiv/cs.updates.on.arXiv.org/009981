@@ -1,0 +1,20 @@
+We propose a novel domain specific loss, which is a differentiable loss function based on the dose
+volume histogram, and combine it with an adversarial loss for the training of deep neural networks
+to generate Pareto optimal dose distributions. The mean squared error (MSE) loss, dose volume histogram
+(DVH) loss, and adversarial (ADV) loss were used to train 4 instances of the neural network model:
+1) MSE, 2) MSE+ADV, 3) MSE+DVH, and 4) MSE+DVH+ADV. 70 prostate patients were acquired, and the dose
+influence arrays were calculated for each patient. 1200 Pareto surface plans per patient were generated
+by pseudo-randomizing the tradeoff weights (84,000 plans total). We divided the data into 54 training,
+6 validation, and 10 testing patients. Each model was trained for 100,000 iterations, with a batch
+size of 2. The prediction time of each model is 0.052 seconds. Quantitatively, the MSE+DVH+ADV model
+had the lowest prediction error of 0.038 (conformation), 0.026 (homogeneity), 0.298 (R50), 1.65%
+(D95), 2.14% (D98), 2.43% (D99). The MSE model had the worst prediction error of 0.134 (conformation),
+0.041 (homogeneity), 0.520 (R50), 3.91% (D95), 4.33% (D98), 4.60% (D99). For both the mean dose
+PTV error and the max dose PTV, Body, Bladder and rectum error, the MSE+DVH+ADV outperformed all
+other models. All model's predictions have an average mean and max dose error less than 2.8% and 4.2%,
+respectively. Expert human domain specific knowledge can be the largest driver in the performance
+improvement, and adversarial learning can be used to further capture nuanced features. The real-time
+prediction capabilities allow for a physician to quickly navigate the tradeoff space, and produce
+a dose distribution as a tangible endpoint for the dosimetrist to use for planning. This can considerably
+reduce the treatment planning time, allowing for clinicians to focus their efforts on challenging
+cases. 

@@ -1,0 +1,20 @@
+In this work we propose to improve text recognition from a new perspective by separating text content
+from complex backgrounds. We exploit the generative adversarial networks (GANs) for removing
+backgrounds while retaining the text content. As vanilla GANs are not sufficiently robust to generate
+sequence-like characters in natural images, we propose an adversarial learning framework for
+the generation and recognition of multiple characters in an image. The proposed framework consists
+of an attention-based recognizer and a generative adversarial architecture. Furthermore, to
+tackle the lack of paired training samples, we design an interactive joint training scheme, which
+shares attention masks from the recognizer to the discriminator, and enables the discriminator
+to extract the features of every character for further adversarial training. Benefiting from the
+character-level adversarial training, our framework requires only unpaired simple data for style
+supervision. Every target style sample containing only one randomly chosen character can be simply
+synthesized online during the training. This is significant as the training does not require costly
+paired samples or character-level annotations. Thus, only the input images and corresponding
+text labels are needed. In addition to the style transfer of the backgrounds, we refine character
+patterns to ease the recognition task. A feedback mechanism is proposed to bridge the gap between
+the discriminator and the recognizer. Therefore, the discriminator can guide the generator according
+to the confusion of the recognizer. The generated patterns are thus clearer for recognition. Experiments
+on various benchmarks, including both regular and irregular text, demonstrate that our method
+significantly reduces the difficulty of recognition. Our framework can be integrated with recent
+recognition methods to achieve new state-of-the-art performance. 

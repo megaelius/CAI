@@ -1,0 +1,19 @@
+A variety of problems in distributed control involve a networked system of autonomous agents cooperating
+to carry out some complex task in a decentralized fashion, e.g., orienting a flock of drones, or aggregating
+data from a network of sensors. Many of these complex tasks reduce to the computation of a global function
+of values privately held by the agents, such as the maximum or the average. Distributed algorithms
+implementing these functions should rely on limited assumptions on the topology of the network
+or the information available to the agents, reflecting the decentralized nature of the problem.
+We present a randomized algorithm for computing the average in networks with directed, time-varying
+communication topologies. With high probability, the system converges to an estimate of the average
+in linear time in the number of agents, provided that the communication topology remains strongly
+connected over time. This algorithm leverages properties of exponential random variables, which
+allows for approximating sums by computing minima. It is completely decentralized, in the sense
+that it does not rely on agent identifiers, or global information of any kind. Besides, the agents
+do not need to know their out-degree; hence, our algorithm demonstrates how randomization can be
+used to circumvent the impossibility result established in [1]. Using a logarithmic rounding rule,
+we show that this algorithm can be used under the additional constraints of finite memory and channel
+capacity. We furthermore extend the algorithm with a termination test, by which the agents can decide
+irrevocably in finite time - rather than simply converge - on an estimate of the average. This terminating
+variant works under asynchronous starts and yields linear decision times while still using quantized
+- albeit larger - values. 

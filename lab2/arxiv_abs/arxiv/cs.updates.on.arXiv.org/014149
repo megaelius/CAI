@@ -1,0 +1,19 @@
+High-fidelity complex engineering simulations are highly predictive, but also computationally
+expensive and often require substantial computational efforts. The mitigation of computational
+burden is usually enabled through parallelism in high-performance cluster (HPC) architecture.
+In this paper, an asynchronous constrained batch-parallel Bayesian optimization method is proposed
+to efficiently solve the computationally-expensive simulation-based optimization problems
+on the HPC platform, with a budgeted computational resource, where the maximum number of simulations
+is a constant. The advantages of this method are three-fold. First, the efficiency of the Bayesian
+optimization is improved, where multiple input locations are evaluated massively parallel in
+an asynchronous manner to accelerate the optimization convergence with respect to physical runtime.
+This efficiency feature is further improved so that when each of the inputs is finished, another
+input is queried without waiting for the whole batch to complete. Second, the method can handle both
+known and unknown constraints. Third, the proposed method considers several acquisition functions
+at the same time and sample based on an evolving probability mass distribution function using GP-Hedge
+scheme, where parameters are corresponding to the performance of each acquisition function. The
+proposed framework is termed aphBO-2GP-3B, which corresponds to asynchronous parallel hedge
+Bayesian optimization with two Gaussian processes and three batches. The aphBO-2GP-3B framework
+is demonstrated using two high-fidelity expensive industrial applications, where the first one
+is based on finite element analysis (FEA) and the second one is based on computational fluid dynamics
+(CFD) simulations. 

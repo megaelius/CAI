@@ -1,0 +1,18 @@
+In this paper, we propose an empirical method for evaluating the performance of parallel code. Our
+method is based on a simple idea that is surprisingly effective in helping to identify causes of poor
+performance, such as high parallelization overheads, lack of adequate parallelism, and memory
+effects. Our method relies on only the measurement of the run time of a baseline sequential program,
+the run time of the parallel program, the single-processor run time of the parallel program, and
+the total amount of time processors spend idle, waiting for work. In our proposed approach, we establish
+an equality between the observed parallel speedups and three terms that we call parallel work, idle
+time, and work-inflation, where all terms except work inflation can be measured empirically, with
+precision. We then use the equality to calculate the difficult-to-measure work-inflation term,
+which includes increased communication costs and memory effects due to parallel execution. By
+isolating the main factors of poor performance, our method enables the programmer to assign blame
+to certain properties of the code, such as parallel grain size, amount of parallelism, and memory
+usage. We present a mathematical model, inspired by the work-span model, that enables us to justify
+the interpretation of our measurements. We also introduce a method to help the programmer to visualize
+both the relative impact of the various causes of poor performance and the scaling trends in the causes
+of poor performance. Our method fits in a sweet spot in between state-of-the-art profiling and visualization
+tools. We illustrate our method by several empirical studies and we describe a few experiments that
+emphasize the care that is required to accurately interpret speedup plots. 

@@ -1,0 +1,19 @@
+Anomaly detection is typically posited as an unsupervised learning task in the literature due to
+the prohibitive cost and difficulty to obtain large-scale labeled anomaly data, but this ignores
+the fact that a very small number (e.g.,, a few dozens) of labeled anomalies can often be made available
+with small/trivial cost in many real-world anomaly detection applications. To leverage such labeled
+anomaly data, we study an important anomaly detection problem termed weakly-supervised anomaly
+detection, in which, in addition to a large amount of unlabeled data, a limited number of labeled
+anomalies are available during modeling. Learning with the small labeled anomaly data enables
+anomaly-informed modeling, which helps identify anomalies of interest and address the notorious
+high false positives in unsupervised anomaly detection. However, the problem is especially challenging,
+since (i) the limited amount of labeled anomaly data often, if not always, cannot cover all types
+of anomalies and (ii) the unlabeled data is often dominated by normal instances but has anomaly contamination.
+We address the problem by formulating it as a pairwise relation prediction task. Particularly,
+our approach defines a two-stream ordinal regression neural network to learn the relation of randomly
+sampled instance pairs, i.e., whether the instance pair contains two labeled anomalies, one labeled
+anomaly, or just unlabeled data instances. The resulting model effectively leverages both the
+labeled and unlabeled data to substantially augment the training data and learn well-generalized
+representations of normality and abnormality. Comprehensive empirical results on 40 real-world
+datasets show that our approach (i) significantly outperforms four state-of-the-art methods
+in detecting both of the known and previously unseen anomalies and (ii) is substantially more data-efficient.

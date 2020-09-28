@@ -1,0 +1,19 @@
+We study the problem of approximating and learning coverage functions. A function $c: 2^{[n]} \rightarrow
+\R^{+}$ is a coverage function, if there exists a universe $U$ with non-negative weights $w(u)$
+for each $u \in U$ and subsets $A_1, A_2,..., A_n$ of $U$ such that $c(S) = \sum_{u \in \cup_{i \in S}
+A_i} w(u)$. Alternatively, coverage functions can be described as non-negative linear combinations
+of monotone disjunctions. They are a natural subclass of submodular functions and arise in a number
+of applications. We show that over the uniform distribution coverage functions with range [0,1]
+are PAC learnable to $\ell_1$-error of $\eps$ in $poly(n,1/\eps)$ time and using $poly(\log n,1/\eps)$
+random examples. We also show a proper learning algorithm for coverage functions whose running
+time is polynomial in the size of the universe over which the coverage function is defined. Our algorithm
+is based on several new structural properties of the Fourier spectrum of coverage functions and,
+in particular, we prove that any coverage function can be $\eps$-approximated in $\ell_1$ by a coverage
+function that depends only on $1/\eps^2$ variables. In contrast, we show that, without assumptions
+on the distribution, learning coverage is at least as hard as learning polynomial-size disjoint
+DNF formulas. Our PAC learning algorithm on the uniform distribution implies the first polynomial-time
+differentially private algorithm for releasing monotone disjunction queries with low average
+error over the uniform distribution on disjunctions. This problem was first considered by Gupta
+et al. (2011) and the best previous algorithm runs in time $n^{O(\log(1/\alpha))}$, where $\alpha$
+is the accuracy of release (Cheraghchi et al., 2012). Further, our proper learning algorithm implies
+that the queries can be released using a synthetic database in time $poly(n) \log(1/\alpha)^{O(\log(1/\alpha))}$.

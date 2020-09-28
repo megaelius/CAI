@@ -1,0 +1,17 @@
+Telescope scheduling is the task of determining the best sequence of observations (pointings and
+filter choices) for a survey system. Because it is computationally intractable to optimize over
+all possible multi-year sequences of observations, schedulers use heuristics to pick the best
+observation at a given time. A greedy scheduler selects the next observation by choosing whichever
+one maximizes a scalar merit function, which serves as a proxy for the scientific goals of the telescope.
+This sort of bottom-up approach for scheduling is not guaranteed to produce a schedule for which
+the sum of merit over all observations is maximized. As an alternative to greedy schedulers, we introduce
+ALTSched, which takes a top-down approach to scheduling. Instead of considering only the next observation,
+ALTSched makes global decisions about which area of sky and which filter to observe in, and then refines
+these decisions into a sequence of observations taken along the meridian to maximize SNR. We implement
+ALTSched for the Large Synoptic Survey Telescope (LSST), and show that it equals or outperforms
+the baseline greedy scheduler in essentially all quantitative performance metrics. Due to its
+simplicity, our implementation is considerably faster than OpSim, the simulated greedy scheduler
+currently used by the LSST Project: a full ten year survey can be simulated in 4 minutes, as opposed
+to tens of hours for OpSim. LSST's hardware is fixed, so improving the scheduling algorithm is one
+of the only remaining ways to optimize LSST's performance. We see ALTSched as a prototype scheduler
+that gives a lower bound on the performance achievable by LSST. 

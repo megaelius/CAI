@@ -1,0 +1,18 @@
+We propose a method to infer domain-specific models such as classifiers for unseen domains, from
+which no data are given in the training phase, without domain semantic descriptors. When training
+and test distributions are different, standard supervised learning methods perform poorly. Zero-shot
+domain adaptation attempts to alleviate this problem by inferring models that generalize well
+to unseen domains by using training data in multiple source domains. Existing methods use observed
+semantic descriptors characterizing domains such as time information to infer the domain-specific
+models for the unseen domains. However, it cannot always be assumed that such metadata can be used
+in real-world applications. The proposed method can infer appropriate domain-specific models
+without any semantic descriptors by introducing the concept of latent domain vectors, which are
+latent representations for the domains and are used for inferring the models. The latent domain
+vector for the unseen domain is inferred from the set of the feature vectors in the corresponding
+domain, which is given in the testing phase. The domain-specific models consist of two components:
+the first is for extracting a representation of a feature vector to be predicted, and the second is
+for inferring model parameters given the latent domain vector. The posterior distributions of
+the latent domain vectors and the domain-specific models are parametrized by neural networks,
+and are optimized by maximizing the variational lower bound using stochastic gradient descent.
+The effectiveness of the proposed method was demonstrated through experiments using one regression
+and two classification tasks. 

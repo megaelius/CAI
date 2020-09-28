@@ -1,0 +1,19 @@
+The UPC programming language offers parallelism via logically partitioned shared memory, which
+typically spans physically disjoint memory sub-systems. One convenient feature of UPC is its ability
+to automatically execute between-thread data movement, such that the entire content of a shared
+data array appears to be freely accessible by all the threads. The programmer friendliness, however,
+can come at the cost of substantial performance penalties. This is especially true when indirectly
+indexing the elements of a shared array, for which the induced between-thread data communication
+can be irregular and have a fine-grained pattern. In this paper we study performance enhancement
+strategies specifically targeting such fine-grained irregular communication in UPC. Starting
+from explicit thread privatization, continuing with block-wise communication, and arriving
+at message condensing and consolidation, we obtained considerable performance improvement of
+UPC programs that originally require fine-grained irregular communication. Besides the performance
+enhancement strategies, the main contribution of the present paper is to propose performance models
+for the different scenarios, in form of quantifiable formulas that hinge on the actual volumes of
+various data movements plus a small number of easily obtainable hardware characteristic parameters.
+These performance models help to verify the enhancements obtained, while also providing insightful
+predictions of similar parallel implementations, not limited to UPC, that also involve between-thread
+or between-process irregular communication. As a further validation, we also apply our performance
+modeling methodology and hardware characteristic parameters to an existing UPC code for solving
+a 2D heat equation on a uniform mesh. 

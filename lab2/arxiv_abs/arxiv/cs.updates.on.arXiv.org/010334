@@ -1,0 +1,19 @@
+A delegation scheme allows a computationally weak client to use a server's resources to help it evaluate
+a complex circuit without leaking any information about the input (other than its length) to the
+server. In this paper, we consider delegation schemes for quantum circuits, where we try to minimize
+the quantum operations needed by the client. We construct a new scheme for delegating a large circuit
+family, which we call "C+P circuits". "C+P" circuits are the circuits composed of Toffoli gates
+and diagonal gates. Our scheme is non-interactive, requires very little quantum computation from
+the client (proportional to input length but independent of the circuit size), and can be proved
+secure in the quantum random oracle model, without relying on additional assumptions, such as the
+existence of fully homomorphic encryption. In practice the random oracle can be replaced by an appropriate
+hash function or block cipher, for example, SHA-3, AES. This protocol allows a client to delegate
+the most expensive part of some quantum algorithms, for example, Shor's algorithm. The previous
+protocols that are powerful enough to delegate Shor's algorithm require either many rounds of interactions
+or the existence of FHE. The protocol requires asymptotically fewer quantum gates on the client
+side compared to running Shor's algorithm locally. To hide the inputs, our scheme uses an encoding
+that maps one input qubit to multiple qubits. We then provide a novel generalization of classical
+garbled circuits ("reversible garbled circuits") to allow the computation of Toffoli circuits
+on this encoding. We also give a technique that can support the computation of phase gates on this
+encoding. To prove the security of this protocol, we study key dependent message(KDM) security
+in the quantum random oracle model. KDM security was not previously studied in quantum settings.

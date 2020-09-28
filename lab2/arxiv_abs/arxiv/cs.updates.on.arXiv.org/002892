@@ -1,0 +1,19 @@
+Graph convolutional network (GCN) is generalization of convolutional neural network (CNN) to
+work with arbitrarily structured graphs. A binary adjacency matrix is commonly used in training
+a GCN. Recently, the attention mechanism allows the network to learn a dynamic and adaptive aggregation
+of the neighborhood. We propose a new GCN model on the graphs where edges are characterized in multiple
+views or precisely in terms of multiple relationships. For instance, in chemical graph theory,
+compound structures are often represented by the hydrogen-depleted molecular graph where nodes
+correspond to atoms and edges correspond to chemical bonds. Multiple attributes can be important
+to characterize chemical bonds, such as atom pair (the types of atoms that a bond connects), aromaticity,
+and whether a bond is in a ring. The different attributes lead to different graph representations
+for the same molecule. There is growing interests in both chemistry and machine learning fields
+to directly learn molecular properties of compounds from the molecular graph, instead of from fingerprints
+predefined by chemists. The proposed GCN model, which we call edge attention-based multi-relational
+GCN (EAGCN), jointly learns attention weights and node features in graph convolution. For each
+bond attribute, a real-valued attention matrix is used to replace the binary adjacency matrix.
+By designing a dictionary for the edge attention, and forming the attention matrix of each molecule
+by looking up the dictionary, the EAGCN exploits correspondence between bonds in different molecules.
+The prediction of compound properties is based on the aggregated node features, which is independent
+of the varying molecule (graph) size. We demonstrate the efficacy of the EAGCN on multiple chemical
+datasets: Tox21, HIV, Freesolv, and Lipophilicity, and interpret the resultant attention weights.

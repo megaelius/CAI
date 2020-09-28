@@ -1,0 +1,18 @@
+Convolutional Neural Networks (CNNs) have shown impressive performance in computer vision tasks
+such as image classification and segmentation. One factor for the success of CNNs is that they have
+an inductive bias that assumes a certain type of spatial structure is present in the data. Recent
+work by Geirhos et al. (2018) shows how learning in CNNs causes the learned CNN models to be biased
+towards high-frequency textural information, compared to low-frequency shape information in
+images. Many tasks generally requires both shape and textural information. Hence, we propose a
+simple curriculum based scheme which improves the ability of CNNs to be less biased towards textural
+information, and at the same time, being able to represent both the shape and textural information.
+We propose to augment the training of CNNs by controlling the amount of textural information that
+is available to the CNNs during the training process, by convolving the output of a CNN layer with
+a low-pass filter, or simply a Gaussian kernel. By reducing the standard deviation of the Gaussian
+kernel, we are able to gradually increase the amount of textural information available as training
+progresses, and hence reduce the texture bias. Such an augmented training scheme significantly
+improves the performance of CNNs on various image classification tasks, while adding no additional
+trainable parameters or auxiliary regularization objectives. We also observe significant improvements
+when using the trained CNNs to perform transfer learning on a different dataset, and transferring
+to a different task which shows how the learned CNNs using the proposed method act as better feature
+extractors. 

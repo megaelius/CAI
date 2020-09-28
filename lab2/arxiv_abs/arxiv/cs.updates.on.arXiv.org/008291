@@ -1,0 +1,19 @@
+The Unbiased Learning-to-Rank framework has been recently proposed as a general approach to systematically
+remove biases, such as position bias, from learning-to-rank models. The method takes two steps
+- estimating click propensities and using them to train unbiased models. Most common methods proposed
+in the literature for estimating propensities involve some degree of intervention in the live search
+engine. An alternative approach proposed recently uses an Expectation Maximization (EM) algorithm
+to estimate propensities by using ranking features for estimating relevances. In this work we propose
+a novel method to directly estimate propensities which does not use any intervention in live search
+or rely on modeling relevance. Rather, we take advantage of the fact that the same query-document
+pair may naturally change ranks over time. This typically occurs for eCommerce search because of
+change of popularity of items over time, existence of time dependent ranking features, or addition
+or removal of items to the index (an item getting sold or a new item being listed). However, our method
+is general and can be applied to any search engine for which the rank of the same document may naturally
+change over time for the same query. We derive a simple likelihood function that depends on propensities
+only, and by maximizing the likelihood we are able to get estimates of the propensities. We apply
+this method to eBay search data to estimate click propensities for web and mobile search and compare
+these with estimates using the EM method. We also use simulated data to show that the method gives
+reliable estimates of the "true" simulated propensities. Finally, we train an unbiased learning-to-rank
+model for eBay search using the estimated propensities and show that it outperforms both baselines
+- one without position bias correction and one with position bias correction using the EM method.

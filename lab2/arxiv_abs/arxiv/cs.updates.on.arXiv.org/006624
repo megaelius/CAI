@@ -1,0 +1,17 @@
+In this paper, we look at the problem of randomized leader election in synchronous distributed networks
+with a special focus on the message complexity. We provide an algorithm that solves the implicit
+version of leader election (where non-leader nodes need not be aware of the identity of the leader)
+in any general network with $O(\sqrt{n} \log^{7/2} n \cdot t_{mix})$ messages and in $O(t_{mix}\log^2
+n)$ time, where $n$ is the number of nodes and $t_{mix}$ refers to the mixing time of a random walk in
+the network graph $G$. For several classes of well-connected networks (that have a large conductance
+or alternatively small mixing times e.g. expanders, hypercubes, etc), the above result implies
+extremely efficient (sublinear running time and messages) leader election algorithms. Correspondingly,
+we show that any substantial improvement is not possible over our algorithm, by presenting an almost
+matching lower bound for randomized leader election. We show that $\Omega(\sqrt{n}/\phi^{3/4})$
+messages are needed for any leader election algorithm that succeeds with probability at least $1-o(1)$,
+where $\phi$ refers to the conductance of a graph. To the best of our knowledge, this is the first work
+that shows a dependence between the time and message complexity to solve leader election and the
+connectivity of the graph $G$, which is often characterized by the graph's conductance $\phi$.
+Apart from the $\Omega(m)$ bound in [Kutten et al., J.ACM 2015] (where $m$ denotes the number of edges
+of the graph), this work also provides one of the first non-trivial lower bounds for leader election
+in general networks. 

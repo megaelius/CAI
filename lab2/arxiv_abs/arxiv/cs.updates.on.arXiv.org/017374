@@ -1,0 +1,18 @@
+Despite the previous success of object analysis, detecting and segmenting a large number of object
+categories with a long-tailed data distribution remains a challenging problem and is less investigated.
+For a large-vocabulary classifier, the chance of obtaining noisy logits is much higher, which can
+easily lead to a wrong recognition. In this paper, we exploit prior knowledge of the relations among
+object categories to cluster fine-grained classes into coarser parent classes, and construct
+a classification tree that is responsible for parsing an object instance into a fine-grained category
+via its parent class. In the classification tree, as the number of parent class nodes are significantly
+less, their logits are less noisy and can be utilized to suppress the wrong/noisy logits existed
+in the fine-grained class nodes. As the way to construct the parent class is not unique, we further
+build multiple trees to form a classification forest where each tree contributes its vote to the
+fine-grained classification. To alleviate the imbalanced learning caused by the long-tail phenomena,
+we propose a simple yet effective resampling method, NMS Resampling, to re-balance the data distribution.
+Our method, termed as Forest R-CNN, can serve as a plug-and-play module being applied to most object
+recognition models for recognizing more than 1000 categories. Extensive experiments are performed
+on the large vocabulary dataset LVIS. Compared with the Mask R-CNN baseline, the Forest R-CNN significantly
+boosts the performance with 11.5% and 3.9% AP improvements on the rare categories and overall categories,
+respectively. Moreover, we achieve state-of-the-art results on the LVIS dataset. Code is available
+at https://github.com/JialianW/Forest_RCNN. 

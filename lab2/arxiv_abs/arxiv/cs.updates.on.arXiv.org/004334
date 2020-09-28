@@ -1,0 +1,18 @@
+Image style transfer has drawn broad attention in recent years. However, most existing methods
+aim to explicitly model the transformation between different styles, and the learned model is thus
+not generalizable to new styles. We here propose a unified style transfer framework for both character
+typeface transfer and neural style transfer tasks leveraging style and content separation. A key
+merit of such framework is its generalizability to new styles and contents. The overall framework
+consists of style encoder, content encoder, mixer and decoder. The style encoder and content encoder
+are used to extract the style and content representations from the corresponding reference images.
+The mixer integrates the above two representations and feeds it into the decoder to generate images
+with the target style and content. During training, the encoder networks learn to extract styles
+and contents from limited size of style/content reference images. This learning framework allows
+simultaneous style transfer among multiple styles and can be deemed as a special `multi-task' learning
+scenario. The encoders are expected to capture the underlying features for different styles and
+contents which is generalizable to new styles and contents. Under this framework, we design two
+individual networks for character typeface transfer and neural style transfer, respectively.
+For character typeface transfer, to separate the style features and content features, we leverage
+the conditional dependence of styles and contents given an image. For neural style transfer, we
+leverage the statistical information of feature maps in certain layers to represent style. Extensive
+experimental results have demonstrated the effectiveness and robustness of the proposed methods.

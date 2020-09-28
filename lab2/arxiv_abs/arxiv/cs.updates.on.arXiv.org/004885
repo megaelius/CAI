@@ -1,0 +1,19 @@
+Crossbar architecture based devices have been widely adopted in neural network accelerators by
+taking advantage of the high efficiency on vector-matrix multiplication (VMM) operations. However,
+in the case of convolutional neural networks (CNNs), the efficiency is compromised dramatically
+due to the large amounts of data reuse. Although some mapping methods have been designed to achieve
+a balance between the execution throughput and resource overhead, the resource consumption cost
+is still huge while maintaining the throughput. Network pruning is a promising and widely studied
+leverage to shrink the model size. Whereas, previous work didn`t consider the crossbar architecture
+and the corresponding mapping method, which cannot be directly utilized by crossbar-based neural
+network accelerators. Tightly combining the crossbar structure and its mapping, this paper proposes
+a crossbar-aware pruning framework based on a formulated L0-norm constrained optimization problem.
+Specifically, we design an L0-norm constrained gradient descent (LGD) with relaxant probabilistic
+projection (RPP) to solve this problem. Two grains of sparsity are successfully achieved: i) intuitive
+crossbar-grain sparsity and ii) column-grain sparsity with output recombination, based on which
+we further propose an input feature maps (FMs) reorder method to improve the model accuracy. We evaluate
+our crossbar-aware pruning framework on median-scale CIFAR10 dataset and large-scale ImageNet
+dataset with VGG and ResNet models. Our method is able to reduce the crossbar overhead by 44%-72%
+with little accuracy degradation. This work greatly saves the resource and the related energy cost,
+which provides a new co-design solution for mapping CNNs onto various crossbar devices with significantly
+higher efficiency. 

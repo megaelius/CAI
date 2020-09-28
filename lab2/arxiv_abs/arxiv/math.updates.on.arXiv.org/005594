@@ -1,0 +1,19 @@
+In distributed computing systems slow working nodes, known as stragglers, can greatly extend finishing
+times. Coded computing is a technique that enables straggler-resistant computation. Most coded
+computing techniques presented to date provide robustness by ensuring that the time to finish depends
+only on a set of the fastest nodes. However, while stragglers do compute less work than non-stragglers,
+in real-world commercial cloud computing systems (e.g., Amazon's Elastic Compute Cloud (EC2))
+the distinction is often a soft one. In this paper, we develop hierarchical coded computing that
+exploits the work completed by all nodes, both fast and slow, automatically integrating the potential
+contribution of each. We first present a conceptual framework to represent the division of work
+amongst nodes in coded matrix multiplication as a cuboid partitioning problem. This framework
+allows us to unify existing methods and motivates new techniques. We then develop three methods
+of hierarchical coded computing that we term bit-interleaved coded computation (BICC), multilevel
+coded computation (MLCC), and hybrid hierarchical coded computation (HHCC). In this paradigm,
+each worker is tasked with completing a sequence (a hierarchy) of ordered subtasks. The sequence
+of subtasks, and the complexity of each, is designed so that partial work completed by stragglers
+can be used in, rather than ignored. We note that our methods can be used in conjunction with any coded
+computing method. We illustrate this showing how we can use our methods to accelerate all previously
+developed coded computing technique by enabling them to exploit stragglers. Under a widely studied
+statistical model of completion time, our approach realizes a $66\%$ improvement in expected finishing
+time. On Amazon EC2, the gain was $28\%$ when stragglers are simulated. 

@@ -1,0 +1,19 @@
+(Abridged) We describe a new algorithm for solving the coupled frequency-integrated transfer
+equation and the equations of magnetohydrodynamics when the light-crossing time is only marginally
+shorter than dynamical timescales. The transfer equation is solved in the mixed frame, including
+velocity dependent source terms accurate to O(v/c). An operator split approach is used to compute
+the specific intensity along discrete rays, with upwind monotonic interpolation used along each
+ray to update the transport terms, and implicit methods used to compute the scattering and absorption
+source terms. Conservative differencing is used for the transport terms, which ensures the specific
+intensity (as well as energy and momentum) are conserved along each ray to round-off error. The use
+of implicit methods for the source terms ensures the method is stable even if the source terms are
+very stiff. To couple the solution of the transfer equation to the MHD algorithms in the Athena code,
+we perform direct quadrature of the specific intensity over angles to compute the energy and momentum
+source terms. We present the results of a variety of tests of the method, such as calculating the structure
+of a non-LTE atmosphere, an advective diffusion test, linear wave convergence tests, and the well-known
+shadow test. We use new semi-analytic solutions for radiation modified shocks to demonstrate the
+ability of our algorithm to capture the effects of an anisotropic radiation field accurately. Since
+the method uses explicit differencing of the spatial operators, it shows excellent weak scaling
+on parallel computers. The method is ideally suited for problems in which characteristic velocities
+are non-relativistic, but still within a few percent or more of the speed of light. The method is an
+intermediate step towards algorithms for fully relativistic flows. 

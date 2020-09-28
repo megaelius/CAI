@@ -1,0 +1,17 @@
+Retinopathy of Prematurity (ROP) is an eye disorder primarily affecting premature infants with
+lower weights. It causes proliferation of vessels in the retina and could result in vision loss and,
+eventually, retinal detachment, leading to blindness. While human experts can easily identify
+severe stages of ROP, the diagnosis of earlier stages, which are the most relevant to determining
+treatment choice, are much more affected by variability in subjective interpretations of human
+experts. In recent years, there has been a significant effort to automate the diagnosis using deep
+learning. This paper builds upon the success of previous models and develops a novel architecture,
+which combines object segmentation and convolutional neural networks (CNN) to construct an effective
+classifier of ROP stages 1-3 based on neonatal retinal images. Motivated by the fact that the formation
+and shape of a demarcation line in the retina is the distinguishing feature between earlier ROP stages,
+our proposed system first trains an object segmentation model to identify the demarcation line
+at a pixel level and adds the resulting mask as an additional "color" channel in the original image.
+Then, the system trains a CNN classifier based on the processed images to leverage information from
+both the original image and the mask, which helps direct the model's attention to the demarcation
+line. In a number of careful experiments comparing its performance to previous object segmentation
+systems and CNN-only systems trained on our dataset, our novel architecture significantly outperforms
+previous systems in accuracy, demonstrating the effectiveness of our proposed pipeline. 

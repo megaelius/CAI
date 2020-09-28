@@ -1,0 +1,19 @@
+Model-based deep reinforcement learning (DRL) algorithm utilizes the cyber data sampled from
+a cyber mirror of the target physical system to accelerate the training process and reduce real sampling
+cost. As a potential solution to the high sampling cost problem caused by the large amount of data
+required by DRL, it is yet not applicable in practice due to issues such as the accuracy of the approximate
+model maybe not sufficient, the tuning process of sampling and training strategy from the real and
+cyber environment may incur high sampling cost. To address these issues, we propose an intelligent
+trainer framework to properly utilize the approximate model and do online tuning of the control
+parameters in the sampling and training procedure in model-based DRL. More specifically, we package
+the training process of a model-based DRL as a standard RL environment to decouple the onward optimization
+from the training algorithm of the target controller. Three control actions for this training process
+environment (TPE): the first action determines how many cyber data should be sampled and used to
+train the target controller; the second and third actions control where to sample in the cyber and
+real environment respectively. On top of the designed TPE, we develop various RL trainers to optimize
+the training inside TPE in an online manner, and develop an ensemble trainer that can train multiple
+target controllers without incurring additional sampling cost. The proposed framework is evaluated
+on five different tasks of OpenAI gym. Results show that the proposed trainer framework we can achieve
+better performance than a fixed parameter baseline algorithm in most cases. The ensemble trainer
+can perform almost as good as a manually optimized algorithm without incurring additional sampling
+cost. 

@@ -1,0 +1,20 @@
+In this study, a fast multipole method (FMM) is used to decrease the computational time of a fully-coupled
+poroelastic hydraulic fracture model with a controllable effect on its accuracy. The hydraulic
+fracture model is based on the poroelastic formulation of the displacement discontinuity method
+(DDM) which is a special formulation of the boundary element method (BEM). DDM is a powerful and efficient
+method for problems involving fractures. However, this method becomes slow as the number of temporal,
+or spatial elements increases, or necessary details such as poroelasticity, that makes the solution
+history-dependent, are added to the model. FMM is a technique to expedite matrix-vector multiplications
+within a controllable error without forming the matrix explicitly. Fully-coupled poroelastic
+formulation of DDM involves the multiplication of a dense matrix with a vector in several places.
+A crucial modification to DDM is suggested in two places in the algorithm to leverage the speed efficiency
+of FMM for carrying out these multiplications. The first modification is in the time-marching scheme,
+which accounts for the solution of previous time steps to compute the current time step. The second
+modification is in the generalized minimal residual method (GMRES) to iteratively solve for the
+problem unknowns. Several examples are provided to show the efficiency of the proposed approach
+in problems with large degrees of freedom (in time and space). Examples include hydraulic fracturing
+of a horizontal well and randomly distributed pressurized fractures at different orientations
+with respect to horizontal stresses. The results are compared to the conventional DDM in terms of
+computational processing time and accuracy. Accordingly, the proposed algorithm may be used for
+fracture propagation studies while substantially reducing the processing time with a controllable
+error. 

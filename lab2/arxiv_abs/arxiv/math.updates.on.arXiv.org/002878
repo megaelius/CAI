@@ -1,0 +1,19 @@
+Full waveform inversion (FWI) is an iterative nonlinear waveform matching procedure subject to
+wave-equation constraint. FWI is highly nonlinear when the wave-equation constraint is enforced
+at each iteration. To mitigate nonlinearity, wavefield-reconstruction inversion (WRI) expands
+the search space by relaxing the wave-equation constraint with a penalty method. The pitfall of
+this approach resides in the tuning of the penalty parameter because increasing values should be
+used to foster data fitting during early iterations while progressively enforcing the wave-equation
+constraint during late iterations. However, large values of penalty parameter lead to ill-conditioned
+problems. Here, this tuning issue is solved by replacing the penalty method by an augmented Lagrangian
+method equipped with operator splitting (IR-WRI as iteratively-refined WRI). It is shown that
+IR-WRI is similar to a penalty method in which data and sources are updated at each iteration by the
+running sum of the data and source residuals of previous iterations. Moreover, the alternating
+direction strategy exploits the bilinearity of the wave equation constraint to linearize the subsurface
+model estimation around the reconstructed wavefield. Accordingly, the original nonlinear FWI
+is decomposed into a sequence of two linear subproblems, the optimization variable of one subproblem
+being passed as a passive variable for the next subproblem. The convergence of WRI and IR-WRI are
+first compared with a simple transmission experiment, which lies in the linear regime of FWI. Under
+the same conditions, IR-WRI converges to a more accurate minimizer with a smaller number of iterations
+than WRI. More realistic case studies performed with the Marmousi II and the BP salt models show the
+resilience of IR-WRI to cycle skipping and noise. 

@@ -1,0 +1,17 @@
+A recent line of work has sought to build a parallel between deep neural network architectures and
+sparse coding/recovery and estimation. Said line of work suggests, as pointed out by Papyan et al.,
+that a deep neural network architecture with ReLu nonlinearities arises from a finite sequence
+of cascaded sparse coding models, the outputs of which, except for the last element in the cascade,
+are sparse and unobservable. That is, intermediate outputs deep in the cascade are sparse, hence
+the title of this manuscript. We show here, using techniques from the dictionary learning/sparse
+coding literature, that if the measurement matrices in the cascaded sparse coding model (a) satisfy
+RIP and (b) all have sparse columns except for the last, they can be recovered with high probability
+in the absence of noise using an optimization algorithm that, beginning with the last element of
+the cascade, alternates between estimating the dictionary and the sparse code and then, at convergence,
+proceeds to the preceding element in the cascade. The method of choice in deep learning to solve this
+problem is by training an auto-encoder whose architecture we specify. Our algorithm provides a
+sound alternative, derived from the perspective of sparse coding, and with theoretical guarantees,
+as well as sample complexity assessments. In particular, the learning complexity depends on the
+maximum, across layers, of the product of the number of active neurons and the embedding dimension.
+Our proof relies on a certain type of sparse random matrix satisfying the RIP property. We use non-asymptotic
+random matrix theory to prove this. We demonstrate the deep dictionary learning algorithm via simulation.

@@ -1,0 +1,17 @@
+An adversary who aims to steal a black-box model repeatedly queries the model via a prediction API
+to learn a function that approximates its decision boundary. Adversarial approximation is non-trivial
+because of the enormous combinations of model architectures, parameters, and features to explore.
+In this context, the adversary resorts to a best-effort strategy that yields the closest approximation.
+This paper explores best-effort adversarial approximation of a black-box malware classifier
+in the most challenging setting, where the adversary's knowledge is limited to a prediction label
+for a given input. Beginning with a limited input set for the black-box classifier, we leverage feature
+representation mapping and cross-domain transferability to approximate a black-box malware
+classifier by locally training a substitute. Our approach approximates the target model with different
+feature types for the target and the substitute model while also using non-overlapping data for
+training the target, training the substitute, and the comparison of the two. We evaluate the effectiveness
+of our approach against two black-box classifiers trained on Windows Portable Executables (PEs).
+Against a Convolutional Neural Network (CNN) trained on raw byte sequences of PEs, our approach
+achieves a 92% accurate substitute (trained on pixel representations of PEs), and nearly 90% prediction
+agreement between the target and the substitute model. Against a 97.8% accurate gradient boosted
+decision tree trained on static PE features, our 91% accurate substitute agrees with the black-box
+on 90% of predictions, suggesting the strength of our purely black-box approximation. 

@@ -1,0 +1,19 @@
+Existing guarantees in terms of rigorous upper bounds on the generalization error for the original
+random forest algorithm, one of the most frequently used machine learning methods, are unsatisfying.
+We discuss and evaluate various PAC-Bayesian approaches to derive such bounds. The bounds do not
+require additional hold-out data, because the out-of-bag samples from the bagging in the training
+process can be exploited. A random forest predicts by taking a majority vote of an ensemble of decision
+trees. The first approach is to bound the error of the vote by twice the error of the corresponding
+Gibbs classifier (classifying with a single member of the ensemble selected at random). However,
+this approach does not take into account the effect of averaging out of errors of individual classifiers
+when taking the majority vote. This effect provides a significant boost in performance when the
+errors are independent or negatively correlated, but when the correlations are strong the advantage
+from taking the majority vote is small. The second approach based on PAC-Bayesian C-bounds takes
+dependencies between ensemble members into account, but it requires estimating correlations
+between the errors of the individual classifiers. When the correlations are high or the estimation
+is poor, the bounds degrade. In our experiments, we compute generalization bounds for random forests
+on various benchmark data sets. Because the individual decision trees already perform well, their
+predictions are highly correlated and the C-bounds do not lead to satisfactory results. For the
+same reason, the bounds based on the analysis of Gibbs classifiers are typically superior and often
+reasonably tight. Bounds based on a validation set coming at the cost of a smaller training set gave
+better performance guarantees, but worse performance in most experiments. 

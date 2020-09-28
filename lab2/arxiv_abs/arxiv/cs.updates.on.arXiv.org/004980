@@ -1,0 +1,20 @@
+Program termination is an undecidable, yet important, property relevant to program verification,
+optimization, debugging, partial evaluation, and dependently-typed programming, among many
+other topics. This has given rise to a large body of work on static methods for conservatively predicting
+or enforcing termination. A simple effective approach is the size-change termination (SCT) method,
+which operates in two-phases: (1) abstract programs into "size-change graphs," and (2) check these
+graphs for the size-change property: the existence of paths that lead to infinitely decreasing
+value sequences. This paper explores the termination problem starting from a different vantage
+point: we propose transposing the two phases of the SCT analysis by developing an operational semantics
+that accounts for the run time checking of the size-change property, postponing program abstraction
+or avoiding it entirely. This choice has two important consequences: SCT can be monitored and enforced
+at run-time and termination analysis can be rephrased as a traditional safety property and computed
+using existing abstract interpretation methods. We formulate this run-time size-change check
+as a contract. This contributes the first run-time mechanism for checking termination in a general-purporse
+programming language. The result nicely compliments existing contracts that enforce partial
+correctness to obtain the first contracts for total correctness. Our approach combines the robustness
+of SCT with precise information available at run-time. To obtain a sound and computable analysis,
+it is possible to apply existing abstract interpretation techniques directly to the operational
+semantics; there is no need for an abstraction tailored to size-change graphs. We apply higher-order
+symbolic execution to obtain a novel termination analysis that is competitive with existing, purpose-built
+termination analyzers. 

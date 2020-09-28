@@ -1,0 +1,17 @@
+Nonequispaced discrete Fourier transformation (NDFT) is widely applied in all aspects of computational
+science and engineering. The computational efficiency and accuracy of NDFT has always been a critical
+issue in hindering its comprehensive applications both in intensive and in extensive aspects of
+scientific computing. In our previous work (2018, S.-C. Yang et al., Appl. Comput. Harmon. Anal.
+44, 273), a CUNFFT method was proposed and it shown outstanding performance in handling NDFT at intermediate
+scale based on CUDA (Compute Unified Device Architecture) technology. In the current work, we further
+improved the computational efficiency of the CUNTTF method using an efficient MPI-CUDA hybrid
+parallelization (HP) scheme of NFFT to achieve a cutting-edge treatment of NDFT at super extended
+scale. Within this HP-NFFT method, the spatial domain of NDFT is decomposed into several parts according
+to the accumulative feature of NDFT and the detailed number of CPU and GPU nodes. These decomposed
+NDFT subcells are independently calculated on different CPU nodes using a MPI process-level parallelization
+mode, and on different GPU nodes using a CUDA threadlevel parallelization mode and CUNFFT algorithm.
+A massive benchmarking of the HP-NFFT method indicates that this method exhibit a dramatic improvement
+in computational efficiency for handling NDFT at super extended scale without loss of computational
+precision. Furthermore, the HP-NFFT method is validated via the calculation of Madelung constant
+of fluorite crystal structure, and thereafter verified that this method is robust for the calculation
+of electrostatic interactions between charged ions in molecular dynamics simulation systems.

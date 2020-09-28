@@ -1,0 +1,17 @@
+Regularized least-squares approaches have been successfully applied to linear system identification.
+Recent approaches use quadratic penalty terms on the unknown impulse response defined by stable
+spline kernels, which control model space complexity by leveraging regularity and bounded-input
+bounded-output stability. This paper extends linear system identification to a wide class of nonsmooth
+stable spline estimators, where regularization functionals and data misfits can be selected from
+a rich set of piecewise linear-quadratic (PLQ) penalties. This class includes the 1-norm, Huber,
+and Vapnik, in addition to the least-squares penalty. By representing penalties through their
+conjugates, the modeler can specify any piecewise linear-quadratic penalty for misfit and regularizer,
+as well as inequality constraints on the response. The interior-point solver we implement (IPsolve)
+is locally quadratically convergent, with $O(\min(m,n)^2(m+n))$ arithmetic operations per
+iteration, where $n$ the number of unknown impulse response coefficients and $m$ the number of observed
+output measurements. IPsolve is competitive with available alternatives for system identification.
+This is shown by a comparison with TFOCS, libSVM, and the FISTA algorithm. The code is open source
+(https://github.com/saravkin/IPsolve). The impact of the approach for system identification
+is illustrated with numerical experiments featuring robust formulations for contaminated data,
+relaxation systems, nonnegativity and unimodality constraints on the impulse response, and sparsity
+promoting regularization. Incorporating constraints yields particularly significant improvements.

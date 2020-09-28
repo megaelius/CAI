@@ -1,0 +1,17 @@
+Deep convolutional neural networks (CNNs) are appealing for the purpose of classification of hand
+movements from surface electromyography (sEMG) data because they have the ability to perform automated
+person-specific feature extraction from raw data. In this paper, we make the novel contribution
+of proposing and evaluating a design for the early processing layers in the deep CNN for multichannel
+sEMG. Specifically, we propose a novel temporal-to-spatial (TtS) CNN architecture, where the
+first layer performs convolution separately on each sEMG channel to extract temporal features.
+This is motivated by the idea that sEMG signals in each channel are mediated by one or a small subset
+of muscles, whose temporal activation patterns are associated with the signature features of a
+gesture. The temporal layer captures these signature features for each channel separately, which
+are then spatially mixed in successive layers to recognise a specific gesture. A practical advantage
+is that this approach also makes the CNN simple to design for different sample rates. We use NinaPro
+database 1 (27 subjects and 52 movements + rest), sampled at 100 Hz, and database 2 (40 subjects and
+40 movements + rest), sampled at 2 kHz, to evaluate our proposed CNN design. We benchmark against
+a feature-based support vector machine (SVM) classifier, two CNNs from the literature, and an additional
+standard design of CNN. We find that our novel TtS CNN design achieves 66.6% per-class accuracy on
+database 1, and 67.8% on database 2, and that the TtS CNN outperforms all other compared classifiers
+using a statistical hypothesis test at the 2% significance level. 

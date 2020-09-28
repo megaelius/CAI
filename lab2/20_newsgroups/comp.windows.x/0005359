@@ -1,0 +1,10 @@
+In article <Yfo=qfe00WB2QzZ7EZ@andrew.cmu.edu> Wilson Swee <ws8n+@andrew.cmu.edu> writes:
+>_sin
+>_cos
+>_pow
+>_floor
+Link with '-lm' (math library).
+>_get_wmShellWidgetClass
+>_get_applicationShellWidgetClass
+This is a bug in Sun's shared libraries. Linking with
+'-assert nodefinitions' should do the trick.

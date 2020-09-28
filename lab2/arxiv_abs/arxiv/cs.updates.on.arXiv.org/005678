@@ -1,0 +1,20 @@
+Deep neural networks are a biologically-inspired class of algorithms that have recently demonstrated
+state-of-the-art accuracies involving large-scale classification and recognition tasks. Indeed,
+a major landmark that enables efficient hardware accelerators for deep networks is the recent advances
+from the machine learning community that have demonstrated aggressively scaled deep binary networks
+with state-of-the-art accuracies. In this paper, we demonstrate how deep binary networks can be
+accelerated in modified von-Neumann machines by enabling binary convolutions within the SRAM
+array. In general, binary convolutions consist of bit-wise XNOR followed by a population-count
+(popcount). We present a charge sharing XNOR and popcount operation in 10 transistor SRAM cells.
+We have employed multiple circuit techniques including dual-read-worldines (Dual-RWL) along
+with a dual-stage ADC that overcomes the inaccuracies of a low precision ADC, to achieve a fairly
+accurate popcount. In addition, a key highlight of the present work is the fact that we propose sectioning
+of the SRAM array by adding switches onto the read-bitlines, thereby achieving improved parallelism.
+This is beneficial for deep networks, where the kernel size grows and requires to be stored in multiple
+sub-banks. As such, one needs to evaluate the partial popcount from multiple sub-banks and sum them
+up for achieving the final popcount. For n-sections per sub-array, we can perform n convolutions
+within one particular sub-bank, thereby improving overall system throughput as well as the energy
+efficiency. Our results at the array level show that the energy consumption and delay per-operation
+was 1.914pJ and 45ns, respectively. Moreover, an energy improvement of 2.5x, and a performance
+improvement of 4x was achieved by using the proposed sectioned-SRAM, compared to a non-sectioned
+SRAM design. 

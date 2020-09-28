@@ -1,0 +1,19 @@
+Current solutions mostly focus on how to predict traffic, rather than observing traffic characteristics
+in a specific NFV scenario. So, most of them use a uniform threshold to scale in/out. In real NFV scenario,
+each VNF may serve the one or more flows, and the characteristics of these flows are completely different,
+a uniform threshold used in this scenario is not suitable, because each VNF has a distinct processing
+logic depending on incident network traffic and events. Even if certain VNFs share packet processing
+functionality such as packet header analysis, the differences in upper-layer processing and implementation
+can exhibit unique resource usage patterns. We proposes a dynamic threshold scaling mechanism
+that can tailor thresholds according to each VNF's characteristic. As setting thresholds is a per-VNF
+task, and requires a deep understanding of workload trends and the diversity of each VNF, so we have
+added tailor-made features to the traditional dynamic mechanism. Besides, we also reserve resources
+by predicting workload and add an emergency module to cope with anomaly traffic, that is to say we
+develop a hybrid scaling policy combining proactive and reactive scaling together. Moreover,
+the sharp rise of network traffic not only can be caused by large amount of new incoming flows, but
+also can be induced by the growing of existing flows. If the traffic arises mainly due to the growing
+of existing flows, then only rerouting new flows can not alleviate the overload quickly and SLAs
+may be violated \cite{zhang2016co}. The only method to avoid SLA violations is to migrate flows
+and associated NF internal states quickly and safely from existing instances to new scaled instances,
+so state migration is an important part of the scaling procedure. We achieved the flow migration
+in scaling process on openNF to guarantee the accuracy and timeline of scaling. 

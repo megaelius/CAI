@@ -1,0 +1,17 @@
+In the year of 2017, the capital expenditure of Flash-based Solid State Drivers (SSDs) keeps declining
+and the storage capacity of SSDs keeps increasing. As a result, the "selling point" of traditional
+spinning Hard Disk Drives (HDDs) as a backend storage - low cost and large capacity - is no longer unique,
+and eventually they will be replaced by low-end SSDs which have large capacity but perform orders
+of magnitude better than HDDs. Thus, it is widely believed that all-flash multi-tier storage systems
+will be adopted in the enterprise datacenters in the near future. However, existing caching or tiering
+solutions for SSD-HDD hybrid storage systems are not suitable for all-flash storage systems. This
+is because that all-flash storage systems do not have a large speed difference (e.g., 10x) among
+each tier. Instead, different specialties (such as high performance, high capacity, etc.) of each
+tier should be taken into consideration. Motivated by this, we develop an automatic data placement
+manager called "AutoTiering" to handle virtual machine disk files (VMDK) allocation and migration
+in an all-flash multi-tier datacenter to best utilize the storage resource, optimize the performance,
+and reduce the migration overhead. AutoTiering is based on an optimization framework, whose core
+technique is to predict VM's performance change on different tiers with different specialties
+without conducting real migration. As far as we know, AutoTiering is the first optimization solution
+designed for all-flash multi-tier datacenters. We implement AutoTiering on VMware ESXi, and experimental
+results show that it can significantly improve the I/O performance compared to existing solutions.

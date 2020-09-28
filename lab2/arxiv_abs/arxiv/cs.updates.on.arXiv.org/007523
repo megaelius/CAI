@@ -1,0 +1,20 @@
+A family $\mathcal{R}$ of ranges and a set $X$ of points together define a range space $(X, \mathcal{R}|_X)$,
+where $\mathcal{R}|_X = \{X \cap h \mid h \in \mathcal{R}\}$. We want to find a structure to estimate
+the quantity $|X \cap h|/|X|$ for any range $h \in \mathcal{R}$ with the $(\rho, \epsilon)$-guarantee:
+(i) if $|X \cap h|/|X| > \rho$, the estimate must have a relative error $\epsilon$; (ii) otherwise,
+the estimate must have an absolute error $\rho \epsilon$. The objective is to minimize the size of
+the structure. Currently, the dominant solution is to compute a relative $(\rho, \epsilon)$-approximation,
+which is a subset of $X$ with $\tilde{O}(\lambda/(\rho \epsilon^2))$ points, where $\lambda$
+is the VC-dimension of $(X, \mathcal{R}|_X)$, and $\tilde{O}$ hides polylog factors. This paper
+shows a more general bound sensitive to the content of $X$. We give a structure that stores $O(\log
+(1/\rho))$ integers plus $\tilde{O}(\theta \cdot (\lambda/\epsilon^2))$ points of $X$, where
+$\theta$ - called the disagreement coefficient - measures how much the ranges differ from each other
+in their intersections with $X$. The value of $\theta$ is between 1 and $1/\rho$, such that our space
+bound is never worse than that of relative $(\rho, \epsilon)$-approximations, but we improve the
+latter's $1/\rho$ term whenever $\theta = o(\frac{1}{\rho \log (1/\rho)})$. We also prove that,
+in the worst case, summaries with the $(\rho, 1/2)$-guarantee must consume $\Omega(\theta)$ words
+even for $d = 2$ and $\lambda \le 3$. We then constrain $\mathcal{R}$ to be the set of halfspaces in
+$\mathbb{R}^d$ for a constant $d$, and prove the existence of structures with $o(1/(\rho \epsilon^2))$
+size offering $(\rho,\epsilon)$-guarantees, when $X$ is generated from various stochastic distributions.
+This is the first formal justification on why the term $1/\rho$ is not compulsory for "realistic"
+inputs. 

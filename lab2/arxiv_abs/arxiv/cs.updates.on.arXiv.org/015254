@@ -1,0 +1,19 @@
+Recent observations with varied schedules and types (moving average, snapshot, or regularly spaced)
+can help to improve streamflow forecasts, but it is challenging to integrate them effectively.
+Based on a long short-term memory (LSTM) streamflow model, we tested multiple versions of a flexible
+procedure we call data integration (DI) to leverage recent discharge measurements to improve forecasts.
+DI accepts lagged inputs either directly or through a convolutional neural network (CNN) unit.
+DI ubiquitously elevated streamflow forecast performance to unseen levels, reaching a record
+continental-scale median Nash-Sutcliffe Efficiency coefficient value of 0.86. Integrating
+moving-average discharge, discharge from the last few days, or even average discharge from the
+previous calendar month could all improve daily forecasts. Directly using lagged observations
+as inputs was comparable in performance to using the CNN unit. Importantly, we obtained valuable
+insights regarding hydrologic processes impacting LSTM and DI performance. Before applying DI,
+the base LSTM model worked well in mountainous or snow-dominated regions, but less well in regions
+with low discharge volumes (due to either low precipitation or high precipitation-energy synchronicity)
+and large inter-annual storage variability. DI was most beneficial in regions with high flow autocorrelation:
+it greatly reduced baseflow bias in groundwater-dominated western basins and also improved peak
+prediction for basins with dynamical surface water storage, such as the Prairie Potholes or Great
+Lakes regions. However, even DI cannot elevate high-aridity basins with one-day flash peaks. Despite
+this limitation, there is much promise for a deep-learning-based forecast paradigm due to its performance,
+automation, efficiency, and flexibility. 

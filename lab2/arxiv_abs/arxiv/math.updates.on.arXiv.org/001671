@@ -1,0 +1,20 @@
+Many settings involve sequential decision-making where a set of actions can be chosen at each time
+step, each action provides a stochastic reward, and the distribution for the reward of each action
+is initially unknown. However, frequent selection of a specific action may reduce its expected
+reward, while abstaining from choosing an action may cause its expected reward to increase. Such
+non-stationary phenomena are observed in many real world settings such as personalized healthcare-adherence
+improving interventions and targeted online advertising. Though finding an optimal policy for
+general models with non-stationarity is PSPACE-complete, we propose and analyze a new class of
+models called ROGUE (Reducing or Gaining Unknown Efficacy) bandits, which we show in this paper
+can capture these phenomena and are amenable to the design of effective policies. We first present
+a consistent maximum likelihood estimator for the parameters of these models. Next, we construct
+finite sample concentration bounds that lead to an upper confidence bound policy called the ROGUE
+Upper Confidence Bound (ROGUE-UCB) algorithm. We prove that under proper conditions the ROGUE-UCB
+algorithm achieves logarithmic in time regret, unlike existing algorithms which result in linear
+regret. We conclude with a numerical experiment using real data from a personalized healthcare-adherence
+improving intervention to increase physical activity. In this intervention, the goal is to optimize
+the selection of messages (e.g., confidence increasing vs. knowledge increasing) to send to each
+individual each day to increase adherence and physical activity. Our results show that ROGUE-UCB
+performs better in terms of regret and average reward as compared to state of the art algorithms,
+and the use of ROGUE-UCB increases daily step counts by roughly 1,000 steps a day (about a half-mile
+more of walking) as compared to other algorithms. 

@@ -1,0 +1,20 @@
+Statistical shape modeling is an important tool to characterize variation in anatomical morphology.
+Typical shapes of interest are measured using 3D imaging and a subsequent pipeline of registration,
+segmentation, and some extraction of shape features or projections onto some lower-dimensional
+shape space, which facilitates subsequent statistical analysis. Many methods for constructing
+compact shape representations have been proposed, but are often impractical due to the sequence
+of image preprocessing operations, which involve significant parameter tuning, manual delineation,
+and/or quality control by the users. We propose DeepSSM: a deep learning approach to extract a low-dimensional
+shape representation directly from 3D images, requiring virtually no parameter tuning or user
+assistance. DeepSSM uses a convolutional neural network (CNN) that simultaneously localizes
+the biological structure of interest, establishes correspondences, and projects these points
+onto a low-dimensional shape representation in the form of PCA loadings within a point distribution
+model. To overcome the challenge of the limited availability of training images, we present a novel
+data augmentation procedure that uses existing correspondences on a relatively small set of processed
+images with shape statistics to create plausible training samples with known shape parameters.
+Hence, we leverage the limited CT/MRI scans (40-50) into thousands of images needed to train a CNN.
+After the training, the CNN automatically produces accurate low-dimensional shape representations
+for unseen images. We validate DeepSSM for three different applications pertaining to modeling
+pediatric cranial CT for characterization of metopic craniosynostosis, femur CT scans identifying
+morphologic deformities of the hip due to femoroacetabular impingement, and left atrium MRI scans
+for atrial fibrillation recurrence prediction. 

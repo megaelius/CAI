@@ -1,0 +1,16 @@
+Recently \cite{Ramos2017a} presented a subspace system identification algorithm for 2-D purely
+stochastic state space models in the general Roesser form. However, since the exact problem requires
+an oblique projection of $Y_f^h$ projected onto $W_p^h$ along $\widehat{X}_f^{vh}$, where $W_p^h=
+\begin{bmatrix}\widehat{X}_p^{vh} \\ Y_p^h \end{bmatrix}$, this presents a problem since $\{\widehat{X}_p^{vh},\widehat{X}_f^{vh}\}$
+are unknown. In the above mentioned paper, the authors found that by doing an orthogonal projection
+$Y_f^h/Y_p^h$, one can identify the future horizontal state matrix $\widehat{X}_f^{h}$ with
+a small bias due to the initial conditions that depend on $\{\widehat{X}_p^{vh},\widehat{X}_f^{vh}\}$.
+Nevertheless, the results on modeling 2-D images were very good despite lack of knowledge of $\{\widehat{X}_p^{vh},\widehat{X}_f^{vh}\}$.
+In this note we delve into the bias term and prove that it is insignificant, provided $i$ is chosen
+large enough and the vertical and horizontal states are uncorrelated. That is, the cross covariance
+of the state estimates $x_{r,s}^{h}$ and $x_{r,s}^{v}$ is zero, or $P_{hv}=0_{n_x\times n_x}$
+and $P_{vh}=0_{n_x\times n_x}$. Our simulations use $i=30$. We also present a second iteration
+to improve the state estimates by including the vertical states computed from a vertical data processing
+step, i.e., by doing an orthogonal projection $Y_f^v/Y_p^v$. In this revised algorithm we include
+a step to compute the initial states. This new portion, in addition to the algorithm presented in
+\cite{Ramos2017a}, forms a complete 2-D stochastic subspace system identification algorithm.

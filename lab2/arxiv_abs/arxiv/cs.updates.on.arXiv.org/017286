@@ -1,0 +1,19 @@
+Online ranker evaluation is one of the key challenges in information retrieval. While the preferences
+of rankers can be inferred by interleaving methods, the problem of how to effectively choose the
+ranker pair that generates the interleaved list without degrading the user experience too much
+is still challenging. On the one hand, if two rankers have not been compared enough, the inferred
+preference can be noisy and inaccurate. On the other, if two rankers are compared too many times,
+the interleaving process inevitably hurts the user experience too much. This dilemma is known as
+the exploration versus exploitation tradeoff. It is captured by the $K$-armed dueling bandit problem,
+which is a variant of the $K$-armed bandit problem, where the feedback comes in the form of pairwise
+preferences. Today's deployed search systems can evaluate a large number of rankers concurrently,
+and scaling effectively in the presence of numerous rankers is a critical aspect of $K$-armed dueling
+bandit problems. In this paper, we focus on solving the large-scale online ranker evaluation problem
+under the so-called Condorcet assumption, where there exists an optimal ranker that is preferred
+to all other rankers. We propose Merge Double Thompson Sampling (MergeDTS), which first utilizes
+a divide-and-conquer strategy that localizes the comparisons carried out by the algorithm to small
+batches of rankers, and then employs Thompson Sampling (TS) to reduce the comparisons between suboptimal
+rankers inside these small batches. The effectiveness (regret) and efficiency (time complexity)
+of MergeDTS are extensively evaluated using examples from the domain of online evaluation for web
+search. Our main finding is that for large-scale Condorcet ranker evaluation problems, MergeDTS
+outperforms the state-of-the-art dueling bandit algorithms. 

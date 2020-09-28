@@ -1,0 +1,18 @@
+A standard approach to compute the roots of a univariate polynomial is to compute the eigenvalues
+of an associated confederate matrix instead, such as, for instance the companion or comrade matrix.
+The eigenvalues of the confederate matrix can be computed by Francis's QR algorithm. Unfortunately,
+even though the QR algorithm is provably backward stable, mapping the errors back to the original
+polynomial coefficients can still lead to huge errors. However, the latter statement assumes the
+use of a non-structure exploiting QR algorithm. In [J. Aurentz et al., Fast and backward stable computation
+of roots of polynomials, SIAM J. Matrix Anal. Appl., 36(3), 2015] it was shown that a structure exploiting
+QR algorithm for companion matrices leads to a structured backward error on the companion matrix.
+The proof relied on decomposing the error into two parts: a part related to the recurrence coefficients
+of the basis (monomial basis in that case) and a part linked to the coefficients of the original polynomial.
+In this article we prove that the analysis can be extended to other classes of comrade matrices. We
+first provide an alternative backward stability proof in the monomial basis using structured QR
+algorithms; our new point of view shows more explicitly how a structured, decoupled error on the
+confederate matrix gets mapped to the associated polynomial coefficients. This insight reveals
+which properties must be preserved by a structure exploiting QR algorithm to end up with a backward
+stable algorithm. We will show that the previously formulated companion analysis fits in this framework
+and we will analyze in more detail Jacobi polynomials (Comrade matrices) and Chebyshev polynomials
+(Colleague matrices). 

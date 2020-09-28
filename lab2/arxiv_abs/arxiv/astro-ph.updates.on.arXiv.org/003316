@@ -1,0 +1,18 @@
+We describe an OctTree algorithm for the MPI-parallel, adaptive mesh-refinement code {\sc FLASH},
+which can be used to calculate the gas self-gravity, and also the angle-averaged local optical depth,
+for treating ambient diffuse radiation. The algorithm communicates to the different processors
+only those parts of the tree that are needed to perform the tree walk locally. The advantage of this
+approach is a relatively low memory requirement, important in particular for the optical depth
+calculation, which needs to process information from many different directions. This feature
+also enables a general tree-based radiation transport algorithm that will be described in a subsequent
+paper, and delivers excellent scaling up to at least 1500 cores. Boundary conditions for gravity
+can be either isolated or periodic, and they can be specified in each direction independently, using
+a newly developed generalisation of the Ewald method. The gravity calculation can be accelerated
+with the {\em adaptive block update} technique by partially re-using the solution from the previous
+time-step. Comparison with the {\sc Flash} internal multi-grid gravity solver shows that tree
+based methods provide a competitive alternative, particularly for problems with isolated or mixed
+boundary conditions. We evaluate several multipole acceptance criteria (MACs) and identify a
+relatively simple APE MAC which provides high accuracy at low computational cost. The optical depth
+estimates are found to agree very well with those of the {\sc RADMC-3D} radiation transport code,
+with the tree solver being much faster. Our algorithm is available in the standard release of the
+{\sc FLASH} code in version 4.0 and later. 

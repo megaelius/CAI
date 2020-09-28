@@ -1,0 +1,20 @@
+The success of convolutional neural networks (CNNs) in computer vision applications has been accompanied
+by a significant increase of computation and memory costs, which prohibits its usage on resource-limited
+environments such as mobile or embedded devices. To this end, the research of CNN compression has
+recently become emerging. In this paper, we propose a novel filter pruning scheme, termed structured
+sparsity regularization (SSR), to simultaneously speedup the computation and reduce the memory
+overhead of CNNs, which can be well supported by various off-the-shelf deep learning libraries.
+Concretely, the proposed scheme incorporates two different regularizers of structured sparsity
+into the original objective function of filter pruning, which fully coordinates the global outputs
+and local pruning operations to adaptively prune filters. We further propose an Alternative Updating
+with Lagrange Multipliers (AULM) scheme to efficiently solve its optimization. AULM follows the
+principle of ADMM and alternates between promoting the structured sparsity of CNNs and optimizing
+the recognition loss, which leads to a very efficient solver (2.5x to the most recent work that directly
+solves the group sparsity-based regularization). Moreover, by imposing the structured sparsity,
+the online inference is extremely memory-light, since the number of filters and the output feature
+maps are simultaneously reduced. The proposed scheme has been deployed to a variety of state-of-the-art
+CNN structures including LeNet, AlexNet, VGG, ResNet and GoogLeNet over different datasets. Quantitative
+results demonstrate that the proposed scheme achieves superior performance over the state-of-the-art
+methods. We further demonstrate the proposed compression scheme for the task of transfer learning,
+including domain adaptation and object detection, which also show exciting performance gains
+over the state-of-the-arts. 

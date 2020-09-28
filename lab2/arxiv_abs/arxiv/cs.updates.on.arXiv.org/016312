@@ -1,0 +1,19 @@
+A recursive descent parser is built from a set of mutually-recursive functions, where each function
+directly implements one of the nonterminals of a grammar. A packrat parser uses memoization to reduce
+the time complexity for recursive descent parsing from exponential to linear in the length of the
+input. Recursive descent parsers are extremely simple to write, but suffer from two significant
+problems: (i) left-recursive grammars cause the parser to get stuck in infinite recursion, and
+(ii) it can be difficult or impossible to optimally recover the parse state and continue parsing
+after a syntax error. Both problems are solved by the pika parser, a novel reformulation of packrat
+parsing as a dynamic programming algorithm, which requires parsing the input in reverse: bottom-up
+and right to left, rather than top-down and left to right. This reversed parsing order enables pika
+parsers to handle grammars that use either direct or indirect left recursion to achieve left associativity,
+simplifying grammar writing, and also enables optimal recovery from syntax errors, which is a crucial
+property for IDEs and compilers. Pika parsing maintains the linear-time performance characteristics
+of packrat parsing as a function of input length. The pika parser was benchmarked against the widely-used
+Parboiled2 and ANTLR4 parsing libraries. The pika parser performed significantly better than
+the other parsers for an expression grammar, although for a complex grammar implementing the Java
+language specification, a large constant performance impact was incurred per input character.
+Therefore, if performance is important, pika parsing is best applied to simple to moderate-sized
+grammars, or to very large inputs, if other parsing alternatives do not scale linearly in the length
+of the input. Several new insights into precedence, associativity, and left recursion are presented.

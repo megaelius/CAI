@@ -1,0 +1,19 @@
+We develop techniques to prove lower bounds for the BCAST(log n) Broadcast Congested Clique model
+(a distributed message passing model where in each round, each processor can broadcast an O(log
+n)-sized message to all other processors). Our techniques are built to prove bounds for natural
+input distributions. So far, all lower bounds for problems in the model relied on constructing specifically
+tailored graph families for the specific problem at hand, resulting in lower bounds for artificially
+constructed inputs, instead of natural input distributions. One of our results is a lower bound
+for the directed planted clique problem. In this problem, an input graph is either a random directed
+graph (each directed edge is included with probability 1/2), or a random graph with a planted clique
+of size k. That is, k randomly chosen vertices have all of the edges between them included, and all
+other edges in the graph appear with probability 1/2. The goal is to determine whether a clique exists.
+We show that when k = n^(1/4 - eps), this problem requires a number of rounds polynomial in n. Additionally,
+we construct a pseudo-random generator which fools the Broadcast Congested Clique. This allows
+us to show that every k round randomized algorithm in which each processor uses up to n random bits
+can be efficiently transformed into an O(k)-round randomized algorithm in which each processor
+uses only up to O(k log n) random bits, while maintaining a high success probability. The pseudo-random
+generator is simple to describe, computationally very cheap, and its seed size is optimal up to constant
+factors. However, the analysis is quite involved, and is based on the new technique for proving lower
+bounds in the model. The technique also allows us to prove the first average case lower bound for the
+Broadcast Congested Clique, as well as an average-case time hierarchy. 

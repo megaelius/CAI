@@ -1,0 +1,18 @@
+As Personally Identifiable Information (PII) data sharing among multiple parties becomes increasingly
+common, so does the potential for data leakage. As required by new data protection regulations and
+laws, when PII leakage occurs, one must be able to reliably identify the leaking sources. Existing
+solutions utilize watermark technologies or data object allocation strategies to differentiate
+the data shared with different parties to identify potential leakers. However, these solutions
+lose their effectiveness under several attack scenarios, e.g., a data sender may leak the data and
+a receiver may deny the reception of certain shared data. Worse yet, multiple receivers might collude
+and apply a set of operations such as intersection, complement, and union to their received datasets
+before leaking them, making the task of leaker identification even more difficult. In this paper,
+we propose AuditShare, a PII dataset sharing system with reliable leaking source identification.
+Firstly, taking advantage of the intrinsic properties of PII data, AuditShare allocates data objects
+to individual sharing parties by PII attributes. Secondly, AuditShare obliviously transfers
+data between the sender and each receiver and uses a Merkle Tree as an immutable record of the sharing.
+Thirdly, a knowledge-based identification algorithm is proposed to identify a guilty sender or
+colluding/non-colluding receivers. Through our evaluation, we show that: (i) With a modest amount
+of leaked data, AuditShare can accurately (accuracy>99.99%) and undeniably identify all the guilty
+parties in different cases; (ii) It only takes 0.5 second to share 100,000 data objects in AuditShare,
+which is practical in real-world deployment. 

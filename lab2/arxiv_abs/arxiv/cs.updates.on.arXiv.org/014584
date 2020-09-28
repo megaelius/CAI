@@ -1,0 +1,18 @@
+The prevalence of accessible depth sensing and 3D laser scanning techniques has enabled the convenient
+acquisition of 3D dynamic point clouds, which provide efficient representation of arbitrarily-shaped
+objects in motion. Nevertheless, dynamic point clouds are often perturbed by noise due to hardware,
+software or other causes. While a plethora of methods have been proposed for static point cloud denoising,
+few efforts are made for the denoising of dynamic point clouds with varying number of irregularly-sampled
+points in each frame. In this paper, we represent dynamic point clouds naturally on graphs and address
+the denoising problem by inferring the underlying graph via spatio-temporal graph learning, exploiting
+both the intra-frame similarity and inter-frame consistency. Firstly, assuming the availability
+of a relevant feature vector per node, we pose spatial-temporal graph learning as optimizing a Mahalanobis
+distance metric $\mathbf{M}$, which is formulated as the minimization of graph Laplacian regularizer.
+Secondly, to ease the optimization of the symmetric and positive definite metric matrix $\mathbf{M}$,
+we decompose it into $\mathbf{M}=\mathbf{R}^{\top}\mathbf{R}$ and solve $\mathbf{R}$ instead
+via proximal gradient. Finally, based on the spatial-temporal graph learning, we formulate dynamic
+point cloud denoising as the joint optimization of the desired point cloud and underlying spatio-temporal
+graph, which leverages both intra-frame affinities and inter-frame consistency and is solved
+via alternating minimization. Experimental results show that the proposed method significantly
+outperforms independent denoising of each frame from state-of-the-art static point cloud denoising
+approaches. 

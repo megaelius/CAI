@@ -1,0 +1,18 @@
+Bitcoin, Ethereum and other blockchain-based cryptocurrencies, as deployed today, cannot scale
+for wide-spread use. A leading approach for cryptocurrency scaling is a smart contract mechanism
+called a payment channel which enables two mutually distrustful parties to transact efficiently
+(and only requires a single transaction in the blockchain to set-up). Payment channels can be linked
+together to form a payment network, such that payments between any two parties can (usually) be routed
+through the network along a path that connects them. Crucially, both parties can transact without
+trusting hops along the route. In this paper, we propose a novel variant of payment channels, called
+Sprites, that reduces the worst-case "collateral cost" that each hop along the route may incur.
+The benefits of Sprites are two-fold. 1) In Lightning Network, a payment across a path of $\ell$ channels
+requires locking up collateral for $\Theta(\ell\Delta)$ time, where $\Delta$ is the time to commit
+an on-chain transaction. Sprites reduces this cost to $O(\ell + \Delta)$. 2) Unlike prior work,
+Sprites supports partial withdrawals and deposits, during which the channel can continue to operate
+without interruption. In evaluating Sprites we make several additional contributions. First,
+our simulation-based security model is the first formalism to model timing guarantees in payment
+channels. Our construction is also modular, making use of a generic abstraction from folklore,
+called the "state channel," which we are the first to formalize. We also provide a simulation framework
+for payment network protocols, which we use to confirm that the Sprites construction mitigates
+against throughput-reducing attacks. 

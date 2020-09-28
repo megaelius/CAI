@@ -1,0 +1,18 @@
+Building on the framework of Zhang \& Shu \cite{zhangShu_2010a,zhangShu_2010b}, we develop a
+realizability-preserving method to simulate the transport of particles (fermions) through a
+background material using a two-moment model that evolves the angular moments of a phase space distribution
+function $f$. The two-moment model is closed using algebraic moment closures; e.g., as proposed
+by Cernohorsky \& Bludman \cite{cernohorskyBludman_1994} and Banach \& Larecki \cite{banachLarecki_2017a}.
+Variations of this model have recently been used to simulate neutrino transport in nuclear astrophysics
+applications, including core-collapse supernovae and compact binary mergers. We employ the discontinuous
+Galerkin (DG) method for spatial discretization (in part to capture the asymptotic diffusion limit
+of the model) combined with implicit-explicit (IMEX) time integration to stably bypass short timescales
+induced by frequent interactions between particles and the background. Appropriate care is taken
+to ensure the method preserves strict algebraic bounds on the evolved moments (particle density
+and flux) as dictated by Pauli's exclusion principle, which demands a bounded distribution function
+(i.e., $f\in[0,1]$). This realizability-preserving scheme combines a suitable CFL condition,
+a realizability-enforcing limiter, a closure procedure based on Fermi-Dirac statistics, and
+an IMEX scheme whose stages can be written as a convex combination of forward Euler steps combined
+with a backward Euler step. Numerical results demonstrate the realizability-preserving properties
+of the scheme. We also demonstrate that the use of algebraic moment closures not based on Fermi-Dirac
+statistics can lead to unphysical moments in the context of fermion transport. 

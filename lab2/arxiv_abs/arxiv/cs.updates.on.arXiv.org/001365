@@ -1,0 +1,19 @@
+Field-Programmable Gate Arrays (FPGAs) are integrated circuits that implement reconfigurable
+hardware. They are used in modern systems as they are well-suited for creating specialized, highly-optimized
+integrated circuits without the need to design and manufacture dedicated chips. As the capacity
+of FPGAs grows, it is increasingly common for designers to incorporate implementations of algorithms
+and protocols from a range of third-party sources. The monolithic nature of FPGAs means that all
+on-chip circuits, including third party black-box designs, must share common on-chip infrastructure,
+such as routing resources. In this paper, we present a covert channel based on a previously unexplored
+source of information leakage that occurs between adjacent but unconnected, so called "long wires",
+on the FPGA chip. We observe that a long wire carrying a logical 1 reduces the delay of nearby wires
+and that the delay decreases linearly with the length of wires used. This effect leads to a covert
+channel that can be used for both covert communication between circuits, and for exfiltration of
+secrets from the chip. We show that the effect is measurable for both static and dynamic signals,
+and that it can be detected using very small on-board circuits. In our prototype, we are able to correctly
+infer the logical state of an adjacent long wire over 99% of the time, even without error correction,
+and for signals that are maintained for as little as $82\mu s$. Using a simple encoding scheme, our
+covert channel bandwidth is as high as 6kbps. We characterize the covert channel in detail and show
+that it can be replicated on different generations and families of devices (Virtex 5, Virtex 6, and
+Artix 7), with different configurations, and is measurable even when multiple competing circuits
+are present. 

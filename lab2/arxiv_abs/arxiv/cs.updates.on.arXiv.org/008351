@@ -1,0 +1,18 @@
+Byzantine Fault Tolerance (BFT) enables correct operation of distributed, i.e., replicated applications
+in the face of malicious take-over and faulty/buggy individual instances. Recently, BFT designs
+have gained traction in the context of Software Defined Networking (SDN). In SDN, controller replicas
+are distributed and their state replicated for high availability purposes. Malicious controller
+replicas, however, may destabilize the control plane and manipulate the data plane, thus motivating
+the BFT requirement. Nonetheless, deploying BFT in practice comes at a disadvantage of increased
+traffic load stemming from replicated controllers, as well as a requirement for proprietary switch
+functionalities, thus putting strain on switches' control plane where particular BFT actions
+must be executed in software. P4BFT leverages an optimal strategy to decrease the total amount of
+messages transmitted to switches that are the configuration targets of SDN controllers. It does
+so by means of message comparison and deduction of correct messages in the determined optimal locations
+in the data plane. In terms of the incurred control plane load, our P4-based data plane extensions
+outperform the existing solutions by ~33.2% and ~40.2% on average, in random 128-switch and Fat-Tree/Internet2
+topologies, respectively. To validate the correctness and performance gains of P4BFT, we deploy
+bmv2 and Netronome Agilio SmartNIC-based topologies. The advantages of P4BFT can thus be reproduced
+both with software switches and "commodity" P4-enabled hardware. A hardware-accelerated controller
+packet comparison procedure results in an average ~96.4% decrease in processing delay per request
+compared to existing software approaches. 

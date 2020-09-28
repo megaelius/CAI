@@ -1,0 +1,18 @@
+We study the Low Rank Phase Retrieval (LRPR) problem defined as follows: recover an $n \times q$ matrix
+$X^*$ of rank $r$ from a different and independent set of $m$ phaseless (magnitude-only) linear
+projections of each of its columns. To be precise, we need to recover $X^*$ from $y_k := |A_k{}' x^*_k|,
+k=1,2,\dots, q$ when the measurement matrices $A_k$ are mutually independent. Here $y_k$ is an
+$m$ length vector, $A_k$ is an $n \times m$ matrix, and $'$ denotes matrix transpose. The question
+is when can we solve LRPR with $m \ll n$? A reliable solution can enable fast and low-cost phaseless
+dynamic imaging, e.g., Fourier ptychographic imaging of live biological specimens. In this work,
+we develop the first provably correct approach for solving this LRPR problem. Our proposed algorithm,
+Alternating Minimization for Low-Rank Phase Retrieval (AltMinLowRaP), is an AltMin based solution
+and hence is also provably fast (converges geometrically). Our guarantee shows that AltMinLowRaP
+solves LRPR to $\epsilon$ accuracy, with high probability, as long as $m q \ge C n r^4 \log(1/\epsilon)$,
+the matrices $A_k$ contain i.i.d. standard Gaussian entries, and the right singular vectors of
+$X^*$ satisfy the incoherence assumption from matrix completion literature. Here $C$ is a numerical
+constant that only depends on the condition number of $X^*$ and on its incoherence parameter. Its
+time complexity is only $ C mq nr \log^2(1/\epsilon)$. Since even the linear (with phase) version
+of the above problem is not fully solved, the above result is also the first complete solution and
+guarantee for the linear case. Finally, we also develop a simple extension of our results for the
+dynamic LRPR setting. 

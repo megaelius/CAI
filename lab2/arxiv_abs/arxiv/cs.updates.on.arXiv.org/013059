@@ -1,0 +1,20 @@
+Social recommendation has emerged to leverage social connections among users for predicting users'
+unknown preferences, which could alleviate the data sparsity issue in collaborative filtering
+based recommendation. Early approaches relied on utilizing each user's first-order social neighbors'
+interests for better user modeling, and failed to model the social influence diffusion process
+from the global social network structure. Recently, we propose a preliminary work of a neural influence
+diffusion network~(i.e., DiffNet) for social recommendation~(Diffnet), which models the recursive
+social diffusion process to capture the higher-order relationships for each user. However, we
+argue that, as users play a central role in both user-user social network and user-item interest
+network, only modeling the influence diffusion process in the social network would neglect the
+users' latent collaborative interests in the user-item interest network. In this paper, we propose
+DiffNet++, an improved algorithm of DiffNet that models the neural influence diffusion and interest
+diffusion in a unified framework. By reformulating the social recommendation as a heterogeneous
+graph with social network and interest network as input, DiffNet++ advances DiffNet by injecting
+these two network information for user embedding learning at the same time. This is achieved by iteratively
+aggregating each user's embedding from three aspects: the user's previous embedding, the influence
+aggregation of social neighbors from the social network, and the interest aggregation of item neighbors
+from the user-item interest network. Furthermore, we design a multi-level attention network that
+learns how to attentively aggregate user embeddings from these three aspects. Finally, extensive
+experimental results on two real-world datasets clearly show the effectiveness of our proposed
+model. 

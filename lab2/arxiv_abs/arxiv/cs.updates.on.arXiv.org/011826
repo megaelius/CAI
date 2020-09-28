@@ -1,0 +1,19 @@
+In this paper we present a new framework for time-series modeling that combines the best of traditional
+statistical models and neural networks. We focus on time-series with long-range dependencies,
+needed for monitoring fine granularity data (e.g. minutes, seconds, milliseconds), prevalent
+in operational use-cases. Traditional models, such as auto-regression fitted with least squares
+(Classic-AR) can model time-series with a concise and interpretable model. When dealing with long-range
+dependencies, Classic-AR models can become intractably slow to fit for large data. Recently, sequence-to-sequence
+models, such as Recurrent Neural Networks, which were originally intended for natural language
+processing, have become popular for time-series. However, they can be overly complex for typical
+time-series data and lack interpretability. A scalable and interpretable model is needed to bridge
+the statistical and deep learning-based approaches. As a first step towards this goal, we propose
+modelling AR-process dynamics using a feed-forward neural network approach, termed AR-Net. We
+show that AR-Net is as interpretable as Classic-AR but also scales to long-range dependencies.
+Our results lead to three major conclusions: First, AR-Net learns identical AR-coefficients as
+Classic-AR, thus being equally interpretable. Second, the computational complexity with respect
+to the order of the AR process, is linear for AR-Net as compared to a quadratic for Classic-AR. This
+makes it possible to model long-range dependencies within fine granularity data. Third, by introducing
+regularization, AR-Net automatically selects and learns sparse AR-coefficients. This eliminates
+the need to know the exact order of the AR-process and allows to learn sparse weights for a model with
+long-range dependencies. 

@@ -1,0 +1,19 @@
+The Massively Parallel Computation (MPC) model is an emerging model which distills core aspects
+of distributed and parallel computation. It has been developed as a tool to solve (typically graph)
+problems in systems where the input is distributed over many machines with limited space. Recent
+work has focused on the regime in which machines have sublinear (in $n$, the number of nodes in the
+input graph) memory, with randomized algorithms presented for fundamental graph problems of Maximal
+Matching and Maximal Independent Set. However, there have been no prior corresponding \emph{deterministic}
+algorithms. A major challenge underlying the sublinear space setting is that the local space of
+each machine might be too small to store all the edges incident to a single node. This poses a considerable
+obstacle compared to the classical models in which each node is assumed to know and have easy access
+to its incident edges. To overcome this barrier we introduce a new \emph{graph sparsification technique}
+that \emph{deterministically} computes a low-degree subgraph with additional desired properties.
+Using this framework to derandomize the well-known randomized algorithm of Luby [SICOMP'86],
+we obtain $O(\log \Delta+\log\log n)$-round \emph{deterministic} MPC algorithms for solving
+the fundamental problems of \emph{Maximal Matching} and \emph{Maximal Independent Set} with
+$O(n^{\epsilon})$ space on each machine for any constant $\epsilon > 0$. Based on the recent work
+of Ghaffari et al. [FOCS'18], this additive $O(\log\log n)$ factor is \emph{conditionally} essential.
+These algorithms can also be shown to run in $O(\log \Delta)$ rounds in the closely related model
+of \congc, improving upon the state-of-the-art bound of $O(\log^2 \Delta)$ rounds by Censor-Hillel
+et al. [DISC'17]. 

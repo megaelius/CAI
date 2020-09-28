@@ -1,0 +1,19 @@
+In binary classification framework, we are interested in making cost sensitive label predictions
+in the presence of uniform/symmetric label noise. We first observe that $0$-$1$ Bayes classifiers
+are not (uniform) noise robust in cost sensitive setting. To circumvent this impossibility result,
+we present two schemes; unlike the existing methods, our schemes do not require noise rate. The first
+one uses $\alpha$-weighted $\gamma$-uneven margin squared loss function, $l_{\alpha, usq}$,
+which can handle cost sensitivity arising due to domain requirement (using user given $\alpha$)
+or class imbalance (by tuning $\gamma$) or both. However, we observe that $l_{\alpha, usq}$ Bayes
+classifiers are also not cost sensitive and noise robust. We show that regularized ERM of this loss
+function over the class of linear classifiers yields a cost sensitive uniform noise robust classifier
+as a solution of a system of linear equations. We also provide a performance bound for this classifier.
+The second scheme that we propose is a re-sampling based scheme that exploits the special structure
+of the uniform noise models and uses in-class probability $\eta$ estimates. Our computational
+experiments on some UCI datasets with class imbalance show that classifiers of our two schemes are
+on par with the existing methods and in fact better in some cases w.r.t. Accuracy and Arithmetic Mean,
+without using/tuning noise rate. We also consider other cost sensitive performance measures viz.,
+F measure and Weighted Cost for evaluation. As our re-sampling scheme requires estimates of $\eta$,
+we provide a detailed comparative study of various $\eta$ estimation methods on synthetic datasets,
+w.r.t. half a dozen evaluation criterion. Also, we provide understanding on the interpretation
+of cost parameters $\alpha$ and $\gamma$ using different synthetic data experiments. 

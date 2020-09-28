@@ -1,0 +1,19 @@
+Depth first search (DFS) tree is a fundamental data structure for solving various graph problems.
+The classical DFS algorithm requires $O(m+n)$ time for a graph having $n$ vertices and $m$ edges.
+In the streaming model, an algorithm is allowed several passes (preferably single) over the input
+graph having a restriction on the size of local space used. Trivially, a DFS tree can be computed using
+a single pass using $O(m)$ space. In the semi-streaming model allowing $O(n)$ space, it can be computed
+in $O(n)$ passes, where each pass adds one vertex to the DFS tree. However, it remains an open problem
+to compute a DFS tree using $o(n)$ passes using $o(m)$ space even in any relaxed streaming environment.
+We present the first semi-streaming algorithms that compute a DFS tree of an undirected graph in
+$o(n)$ passes using $o(m)$ space. We first describe an extremely simple algorithm that requires
+at most $\lceil n/k\rceil$ passes using $O(nk)$ space, where $k$ is any positive integer. We then
+improve this algorithm by using more involved techniques to reduce the number of passes to $\lceil
+h/k\rceil$ under similar space constraints, where $h$ is the height of the computed DFS tree. In
+particular, this algorithm improves the bounds for the case where the computed DFS tree is shallow
+(having $o(n)$ height). Moreover, this algorithm is presented as a framework that allows the flexibility
+of using any algorithm to maintain a DFS tree of a stored sparser subgraph as a black box, which may
+be of independent interest. Both these algorithms essentially demonstrate the existence of a trade-off
+between the space and number of passes required for computing a DFS tree. Furthermore, we evaluate
+these algorithms experimentally which reveals their exceptional performance in practice. For
+both random and real graphs, they require merely a few passes even when allowed just $O(n)$ space.

@@ -1,0 +1,19 @@
+The design complexity of CNNs has been steadily increasing to improve accuracy. To cope with the
+massive amount of computation needed for such complex CNNs, the latest solutions utilize blocking
+of an image over the available dimensions and batching of multiple input images to improve data reuse
+in the memory hierarchy. While there has been numerous works on maximizing data reuse, only a few
+studies have focused on the memory bottleneck caused by limited bandwidth. Bandwidth bottleneck
+can easily occur in CNN acceleration as CNN layers have different sizes with varying computation
+needs and as batching is typically performed over each CNN layer for an ideal data reuse. In this case,
+the data transfer demand for a layer can be relatively low or high compared to the computation requirement
+of the layer, and hence temporal fluctuations in memory access can be induced eventually causing
+bandwidth problems. In this paper, we first show that there exists a high degree of fluctuation in
+memory access to computation ratio depending on CNN layers and functions in the layer being processed
+by the compute units (cores), where the units are tightly synchronized to maximize data reuse. Then
+we propose a strategy of partitioning the compute units where the cores within each partition process
+a batch of input data synchronously to maximize data reuse but different partitions run asynchronously.
+As the partitions stay asynchronous and typically process different CNN layers at any given moment,
+the memory access traffic sizes of the partitions become statistically shuffled. Thus, the partitioning
+of compute units and asynchronous use of them make the total memory access traffic size be smoothened
+over time. We call this smoothing statistical memory traffic shaping, and we show that it can lead
+to 8.0 percent of performance gain on a commercial 64-core processor when running ResNet-50. 

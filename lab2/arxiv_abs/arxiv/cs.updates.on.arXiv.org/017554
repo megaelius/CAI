@@ -1,0 +1,19 @@
+Fetal brain magnetic resonance imaging (MRI) offers exquisite images of the developing brain but
+is not suitable for second-trimester anomaly screening, for which ultrasound (US) is employed.
+Although expert sonographers are adept at reading US images, MR images which closely resemble anatomical
+images are much easier for non-experts to interpret. Thus in this paper we propose to generate MR-like
+images directly from clinical US images. In medical image analysis such a capability is potentially
+useful as well, for instance for automatic US-MRI registration and fusion. The proposed model is
+end-to-end trainable and self-supervised without any external annotations. Specifically, based
+on an assumption that the US and MRI data share a similar anatomical latent space, we first utilise
+a network to extract the shared latent features, which are then used for MRI synthesis. Since paired
+data is unavailable for our study (and rare in practice), pixel-level constraints are infeasible
+to apply. We instead propose to enforce the distributions to be statistically indistinguishable,
+by adversarial learning in both the image domain and feature space. To regularise the anatomical
+structures between US and MRI during synthesis, we further propose an adversarial structural constraint.
+A new cross-modal attention technique is proposed to utilise non-local spatial information, by
+encouraging multi-modal knowledge fusion and propagation. We extend the approach to consider
+the case where 3D auxiliary information (e.g., 3D neighbours and a 3D location index) from volumetric
+data is also available, and show that this improves image synthesis. The proposed approach is evaluated
+quantitatively and qualitatively with comparison to real fetal MR images and other approaches
+to synthesis, demonstrating its feasibility of synthesising realistic MR images. 

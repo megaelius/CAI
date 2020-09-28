@@ -1,0 +1,19 @@
+Low latency services such as credit-card fraud detection and website targeted advertisement rely
+on Big Data platforms (e.g., Lucene, Graphchi, Cassandra) which run on top of memory managed runtimes,
+such as the JVM. These platforms, however, suffer from unpredictable and unacceptably high pause
+times due to inadequate memory management decisions (e.g., allocating objects with very different
+lifetimes next to each other, resulting in memory fragmentation). This leads to long and frequent
+application pause times, breaking Service Level Agreements (SLAs). This problem has been previously
+identified and results show that current memory management techniques are ill-suited for applications
+that hold in memory massive amounts of middle to long-lived objects (which is the case for a wide spectrum
+of Big Data applications). Previous works try to reduce such application pauses by allocating objects
+off-heap or in special allocation regions/generations, thus alleviating the pressure on memory
+management. However, all these solutions require a combination of programmer effort and knowledge,
+source code access, or off-line profiling, with clear negative impact on programmer productivity
+and/or application performance. This paper presents ROLP, a runtime object lifetime profiling
+system. ROLP profiles application code at runtime in order to identify which allocation contexts
+create objects with middle to long lifetimes, given that such objects need to be handled differently
+(regarding short-lived ones). This profiling information greatly improves memory management
+decisions, leading to long tail latencies reduction of up to 51% for Lucene, 85% for GraphChi, and
+60% for Cassandra, with negligible throughput and memory overhead. ROLP is implemented for the
+OpenJDK 8 HotSpot JVM and it does not require any programmer effort or source code access. 

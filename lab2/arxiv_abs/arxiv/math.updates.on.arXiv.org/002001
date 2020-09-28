@@ -1,0 +1,19 @@
+In multi-server distributed queueing systems, the access of stochastically arriving jobs to resources
+is often regulated by a dispatcher, also known as load balancer. A fundamental problem consists
+in designing a load balancing algorithm that minimizes the delays experienced by jobs. During the
+last two decades, the power-of-$d$-choice algorithm, based on the idea of dispatching each job
+to the least loaded server out of $d$ servers randomly sampled at the arrival of the job itself, has
+emerged as a breakthrough in the foundations of this area due to its versatility and appealing asymptotic
+properties. In this paper, we consider the power-of-$d$-choice algorithm with the addition of
+a local memory that keeps track of the latest observations collected over time on the sampled servers.
+Then, each job is sent to a server with the lowest observation. We show that this algorithm is asymptotically
+optimal in the sense that the load balancer can always assign each job to an idle server in the large-server
+limit. This holds true if and only if the system load $\lambda$ is less than $1-\frac{1}{d}$. If this
+condition is not satisfied, we show that queue lengths are bounded by $j^\star+1$, where $j^\star\in\mathbb{N}$
+is given by the solution of a polynomial equation. This is in contrast with the classic version of
+the power-of-$d$-choice algorithm, where queue lengths are unbounded. Our upper bound on the size
+of the most loaded server, $j^*+1$, is tight and increases slowly when $\lambda$ approaches its
+critical value from below. For instance, when $\lambda= 0.995$ and $d=2$ (respectively, $d=3$),
+we find that no server will contain more than just $5$ ($3$) jobs in equilibrium. Our results quantify
+and highlight the importance of using memory as a means to enhance performance in randomized load
+balancing. 

@@ -1,0 +1,18 @@
+We propose a stochastic approximation (SA) based method with randomization of samples for policy
+evaluation using the least squares temporal difference (LSTD) algorithm. Our proposed scheme
+is equivalent to running regular temporal difference learning with linear function approximation,
+albeit with samples picked uniformly from a given dataset. Our method results in an $O(d)$ improvement
+in complexity in comparison to LSTD, where $d$ is the dimension of the data. We provide non-asymptotic
+bounds for our proposed method, both in high probability and in expectation, under the assumption
+that the matrix underlying the LSTD solution is positive definite. The latter assumption can be
+easily satisfied for the pathwise LSTD variant proposed in [23]. Moreover, we also establish that
+using our method in place of LSTD does not impact the rate of convergence of the approximate value
+function to the true value function. These rate results coupled with the low computational complexity
+of our method make it attractive for implementation in big data settings, where $d$ is large. A similar
+low-complexity alternative for least squares regression is well-known as the stochastic gradient
+descent (SGD) algorithm. We provide finite-time bounds for SGD. We demonstrate the practicality
+of our method as an efficient alternative for pathwise LSTD empirically by combining it with the
+least squares policy iteration (LSPI) algorithm in a traffic signal control application. We also
+conduct another set of experiments that combines the SA based low-complexity variant for least
+squares regression with the LinUCB algorithm for contextual bandits, using the large scale news
+recommendation dataset from Yahoo. 

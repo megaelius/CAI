@@ -1,0 +1,19 @@
+In classical secretary problems, a sequence of $n$ elements arrive in a uniformly random order,
+and we want to choose a single item, or a set of size $K$. The random order model allows us to escape from
+the strong lower bounds for the adversarial order setting, and excellent algorithms are known in
+this setting. However, one worrying aspect of these results is that the algorithms overfit to the
+model: they are not very robust. Indeed, if a few "outlier" arrivals are adversarially placed in
+the arrival sequence, the algorithms perform poorly. E.g., Dynkin's popular $1/e$-secretary
+algorithm fails with even a single adversarial arrival. We investigate a robust version of the secretary
+problem. In the Byzantine Secretary model, we have two kinds of elements: green (good) and red (rogue).
+The values of all elements are chosen by the adversary. The green elements arrive at times uniformly
+randomly drawn from $[0,1]$. The red elements, however, arrive at adversarially chosen times.
+Naturally, the algorithm does not see these colors: how well can it solve secretary problems? We
+give algorithms which get value comparable to the value of the optimal green set minus the largest
+green item. Specifically, we give an algorithm to pick $K$ elements that gets within $(1-\varepsilon)$
+factor of the above benchmark, as long as $K \geq \mathrm{poly}(\varepsilon^{-1} \log n)$. We extend
+this to the knapsack secretary problem, for large knapsack size $K$. For the single-item case, an
+analogous benchmark is the value of the second-largest green item. For value-maximization, we
+give a $\mathrm{poly} \log^* n$-competitive algorithm, using a multi-layered bucketing scheme
+that adaptively refines our estimates of second-max over time. For probability-maximization,
+we show the existence of a good randomized algorithm, using the minimax principle. 

@@ -1,0 +1,19 @@
+The performance bottlenecks of graph applications depend not only on the algorithm and the underlying
+hardware, but also on the size and structure of the input graph. Programmers must try different combinations
+of a large set of techniques to develop the best implementation for a specific algorithm and type
+of graph. Existing graph frameworks and domain specific languages (DSLs) lack flexibility, supporting
+only a limited set of optimizations. This paper introduces GraphIt, a new DSL for graph computations
+that generates fast implementations for algorithms with different performance characteristics
+running on graphs with different sizes and structures. GraphIt separates what is computed (algorithm)
+from how it is computed (schedule). Programmers specify the algorithm using an algorithm language,
+and performance optimizations are specified using a separate scheduling language. The algorithm
+language simplifies the expression of the algorithms, while exposing opportunities for optimizations.
+We formulate graph optimizations as tradeoffs among locality, parallelism, and work-efficiency.
+The scheduling language enables programmers to easily search through this complicated tradeoff
+space by composing together a large set of optimizations. The compiler uses a new scheduling representation,
+the graph iteration space, to model, compose, and ensure the validity of the optimizations. We evaluate
+GraphIt's performance with six algorithms on graphs with different structures and sizes. GraphIt
+outperforms the next fastest of six state-of-the-art shared-memory frameworks (Ligra, Green-Marl,
+GraphMat, Galois, Gemini, and Grazelle) on 22 out of 27 experiments by up to 4.8$\times$, and is never
+more than 43% slower than the fastest framework. GraphIt also reduces the lines of code by up to an
+order of magnitude compared to the next fastest framework. 

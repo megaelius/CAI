@@ -1,0 +1,20 @@
+Tabulated flamelet models are limited, in that the computational cost and memory requirements
+rise exponentially as the number of independent variables is increased. One promising technique
+to mitigate this problem is the use of deep neural networks (DNNs) to assimilate the functional information
+contained in the flamelet tables so that the trained networks can be used to approximate the mass
+fractions of the chemical species during computational fluid dynamics (CFD) simulations. In a
+previous study, it was discovered that dividing the flamelet table into two based on the scalar dissipation
+rate, and fitting different artificial neural networks (ANNs) for each division, was able to reduce
+error and improve the ANN fits. The exact point of splitting was acquired using a trial-and-error
+formulation. In this work, we present a framework for automatically bifurcating manifolds to improve
+accuracy and enable the use of smaller networks. This approach relies on a mixture of experts (MoEs)
+framework, where each neural network is trained to be specialized in a given portion of the input
+space. The assignment of different input regions to the experts is determined by a gating network,
+which is a neural network classifier. The proposed concept is demonstrated using a 4-dimensional
+flamelet table, showing that the errors obtained with a given network size, or conversely, the network
+size required to achieve a given accuracy is significantly reduced. The effect of the number of experts
+on the speed of inference is also investigated, showing that by using a mixture of 8 experts, the inference
+time can be cut in almost half. Finally, we include discussions indicating that the MoEs approach
+divides the input manifold in a physically intuitive manner, suggesting that the MoEs framework
+may be a promising method for elucidating the behavior of high-dimensional manifolds in a physically
+meaningful way. 

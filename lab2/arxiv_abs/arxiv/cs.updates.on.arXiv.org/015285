@@ -1,0 +1,20 @@
+In Domain Adaptation (DA), the category-relevant losses usually occupy a dominant position, while
+they are usually built with hard or soft labels in existing models. We observed that hard labels are
+overconfident due to hard samples existed, and soft labels are ambiguous as too many small noisy
+probabilities involved, and both of them are easily to cause negative transfer. Besides, the category-irrelevant
+losses in Closed-Set DA (CSDA) paradigm fail to work in Open-Set DA (OSDA), and they also have to be
+in a category-relevant form, since target data samples are split into shared and private classes.
+To this end, we propose a newly-unified DA framework (i.e., Importance Filtered Cross-Domain Adaptation,
+IFCDA). Firstly, an importance filtered mechanism is devised to generate filtered soft labels
+to mitigate negative transfer desirably. Specifically, the soft labels are divided into confident
+and ambiguous ones. Then, only the maximum probability in each confident label is retained, and
+a threshold value is set to truncate each ambiguous label so that only prominent probabilities are
+reserved. Moreover, a general graph-based label propagation is contrived to attain soft labels
+in both CSDA and OSDA, where an extra component is embedded into label vector, so that it could detect
+target novel classes. Finally, the category-relevant losses in both scenarios are reformulated
+using filtered soft labels, while the category-irrelevant MMD loss in CSDA is reformulated as a
+form like class-wise MMD using newly-designed importance filtered soft labels. Notably, CSDA
+paradigm is a special case when all extra components are set to 0, thus the proposed approach is geared
+to both CSDA and OSDA. Comprehensive experiments on benchmark cross-domain object recognition
+datasets verify that the proposed approach outperforms several state-of-the-art methods in both
+scenarios. 

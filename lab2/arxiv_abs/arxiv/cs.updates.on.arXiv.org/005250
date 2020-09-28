@@ -1,0 +1,19 @@
+Robust speech processing in multitalker acoustic environments requires automatic speech separation.
+While single-channel, speaker-independent speech separation methods have recently seen great
+progress, the accuracy, latency, and computational cost of speech separation remain insufficient.
+The majority of the previous methods have formulated the separation problem through the time-frequency
+representation of the mixed signal, which has several drawbacks, including the decoupling of the
+phase and magnitude of the signal, the suboptimality of spectrogram representations for speech
+separation, and the long latency in calculating the spectrogram. To address these shortcomings,
+we propose the time-domain audio separation network (TasNet), which is a deep learning autoencoder
+framework for time-domain speech separation. TasNet uses a convolutional encoder to create a representation
+of the signal that is optimized for extracting individual speakers. Speaker extraction is achieved
+by applying a weighting function (mask) to the encoder output. The modified encoder representation
+is then inverted to the sound waveform using a linear decoder. The masks are found using a temporal
+convolutional network consisting of dilated convolutions, which allow the network to model the
+long-term dependencies of the speech signal. This end-to-end speech separation algorithm significantly
+outperforms previous time-frequency methods in terms of separating speakers in mixed audio, even
+when compared to the separation accuracy achieved with the ideal time-frequency mask of the speakers.
+In addition, TasNet has a smaller model size and a shorter minimum latency, making it a suitable solution
+for both offline and real-time speech separation applications. This study therefore represents
+a major step toward actualizing speech separation for real-world speech processing technologies.

@@ -1,0 +1,18 @@
+In the classic maximum coverage problem, we are given subsets $T_1, \dots, T_m$ of a universe $[n]$
+along with an integer $k$ and the objective is to find a subset $S \subseteq [m]$ of size $k$ that maximizes
+$C(S) := |\cup_{i \in S} T_i|$. It is well-known that the greedy algorithm for this problem achieves
+an approximation ratio of $(1-e^{-1})$ and there is a matching inapproximability result. We note
+that in the maximum coverage problem if an element $e \in [n]$ is covered by several sets, it is still
+counted only once. By contrast, if we change the problem and count each element $e$ as many times as
+it is covered, then we obtain a linear objective function, $C^{(\infty)}(S) = \sum_{i \in S} |T_i|$,
+which can be easily maximized under a cardinality constraint. We study the maximum $\ell$-multi-coverage
+problem which naturally interpolates between these two extremes. In this problem, an element can
+be counted up to $\ell$ times but no more; hence, we consider maximizing the function $C^{(\ell)}(S)
+= \sum_{e \in [n]} \min\{\ell, |\{i \in S : e \in T_i\}| \}$, subject to the constraint $|S| \leq k$.
+Note that the case of $\ell = 1$ corresponds to the standard maximum coverage setting and $\ell = \infty$
+gives us a linear objective. We develop an efficient approximation algorithm that achieves an approximation
+ratio of $1 - \frac{\ell^{\ell}e^{-\ell}}{\ell!}$ for the $\ell$-multi-coverage problem. In
+particular, when $\ell = 2$, this factor is $1-2e^{-2} \approx 0.73$ and as $\ell$ grows the approximation
+ratio behaves as $1 - \frac{1}{\sqrt{2\pi \ell}}$. We also prove that this approximation ratio
+is tight, i.e., establish a matching hardness-of-approximation result, under the Unique Games
+Conjecture. 

@@ -1,0 +1,19 @@
+A novel approach to building explicit stencil computation schemes for the transient 2D scalar wave
+equation is proposed and implemented. It is based on using the integral representation formula
+(Poisson's formula) that provides the exact solution $u({\bf x},t)$ (where ${\bf x} \in \mathbb{R}^2$,
+$t$ is time) of the initial-value problem for the transient 2D scalar wave equation at $t>0$ through
+the initial conditions for both $u$ and $v=\partial u/\partial t$. For the purpose of constructing
+a two-step time-marching algorithm, an additional integral representation formula for the sum
+$u({\bf x},t_*+\tau)+ u({\bf x},t_*-\tau)$ is provided, with $\tau$ being a time step and $t_*
+\ge \tau$. It is shown that integrals in the two representation formulas are easily calculated if
+the initial conditions and $u({\bf x},t_*)$ as functions of spatial coordinates are approximated
+by stencil interpolation polynomials in the neighborhood of any point ${\bf x }_{ij}$ in a 2D Cartesian
+grid $\{(ih,jh),(i,j) \in \mathbb{Z}^2\}$ where $h$ is a grid spacing. As a result, if a uniform
+time grid $\{t_k=k\tau, k \in \mathbb{N}\}$ is chosen, the proposed time-marching algorithm consists
+of two numerical procedures: (a1) the calculation of $u({\bf x}_{ij},t_1)$, at the very first time-step,
+through the initial values of both $u$ and $v$ at stencil nodes; (a2) the calculation of $u({\bf x}_{ij},t_{n+1}),n
+\ge 1$, at the second and next time-steps, through a generated two-step scheme. Three computational
+stencils (with 5, 9 and 13 space points) are built using the proposed approach. Their stability is
+discussed. It is demonstrated by simulation that utilizing both procedures (a1) and (a2) are important
+for the accuracy of stencil computations, and that using the conventional first time-step calculation
+procedure instead of (a1) can lead to a significant loss of accuracy even for later time-steps. 

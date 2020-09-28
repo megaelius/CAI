@@ -1,0 +1,20 @@
+We present a novel method of compression of deep Convolutional Neural Networks (CNNs). Our method
+reduces the number of parameters of each convolutional layer by learning a 3D tensor termed Filter
+Summary (FS). The convolutional filters are extracted from FS as overlapping 3D blocks, and nearby
+filters in FS share weights in their overlapping regions in a natural way. The resultant neural network
+based on such weight sharing scheme, termed Filter Summary CNNs or FSNet, has a FS in each convolution
+layer instead of a set of independent filters in the conventional convolution layer. FSNet has the
+same architecture as that of the baseline CNN to be compressed, and each convolution layer of FSNet
+generates the same number of filters from FS as that of the basline CNN in the forward process. Without
+hurting the inference speed, the parameter space of FSNet is much smaller than that of the baseline
+CNN. In addition, FSNet is compatible with weight quantization, leading to even higher compression
+ratio when combined with weight quantization. Experiments demonstrate the effectiveness of FSNet
+in compression of CNNs for computer vision tasks including image classification and object detection.
+For classification task, FSNet of 0.22M effective parameters has prediction accuracy of 93.91%
+on the CIFAR-10 dataset with less than 0.3% accuracy drop, using ResNet-18 of 11.18M parameters
+as baseline. Furthermore, FSNet version of ResNet-50 with 2.75M effective parameters achieves
+the top-1 and top-5 accuracy of 63.80% and 85.72% respectively on ILSVRC-12 benchmark. For object
+detection task, FSNet is used to compress the Single Shot MultiBox Detector (SSD300) of 26.32M parameters.
+FSNet of 0.45M effective parameters achieves mAP of 67.63% on the VOC2007 test data with weight quantization,
+and FSNet of 0.68M effective parameters achieves mAP of 70.00% with weight quantization on the same
+test data. 

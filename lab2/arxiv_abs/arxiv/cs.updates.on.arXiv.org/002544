@@ -1,0 +1,20 @@
+The segmentation of satellite images is a necessary step to perform object-oriented image classification,
+which has become relevant due to its applicability on images with a high spatial resolution. To perform
+object-oriented image classification, the studied image must first be segmented in uniform regions.
+This segmentation requires manual work by an expert user, who must exhaustively explore the image
+to establish thresholds that generate useful and representative segments without oversegmenting
+and without discarding representative segments. We propose a technique that automatically segments
+the multispectral image while facing these issues. We identify in the image homogenous zones according
+to their spectral signatures through the use of morphological filters. These homogenous zones
+are representatives of different types of land coverings in the image and are used as seeds for the
+GrowCut multispectral segmentation algorithm. GrowCut is a cellular automaton with competitive
+region growth, its cells are linked to every pixel in the image through three parameters: the pixel's
+spectral signature, a label, and a strength factor that represents the strength with which a cell
+defends its label. The seed cells possess maximum strength and maintain their state throughout
+the automaton's evolution. Starting from seed cells, each cell in the image is iteratively attacked
+by its neighboring cells. When the automaton stops updating its states, we obtain a segmented image
+where each pixel has taken the label of one of its cells. In this paper the algorithm was applied in
+an image acquired by Landsat8 on agricultural land of Calabozo, Guarico, Venezuela where there
+are different types of land coverings: agriculture, urban regions, water bodies, and savannas
+with different degrees of human intervention. The segmentation obtained is presented as irregular
+polygons enclosing geographical objects. 

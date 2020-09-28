@@ -1,0 +1,17 @@
+PHASECam is the fringe tracker for the Large Binocular Telescope Interferometer (LBTI). It is a
+near-infrared camera which is used to measure both tip/tilt and fringe phase variations between
+the two adaptive optics (AO) corrected apertures of the Large Binocular Telescope (LBT). Tip/tilt
+and phase sensing are currently performed in the $H$ (1.65 $\mu$m) and $K$ (2.2 $\mu$m) bands at 1
+kHz, but only the $K$-band phase telemetry is used to send corrections to the system in order to maintain
+fringe coherence and visibility. However, due to the cyclic nature of the fringe phase, only the
+phase, modulo 360 deg, can be measured. PHASECam's phase unwrapping algorithm, which attempts
+to mitigate this issue, occasionally fails in the case of fast, large phase variations or low signal-to-noise
+ratio. This can cause a fringe jump, in which case the OPD correction will be incorrect by a wavelength.
+This can currently be manually corrected by the operator. However, as the LBTI commissions further
+modes which require robust, active phase control and for which fringe jumps are harder to detect,
+including multi-axial (Fizeau) interferometry and dual-aperture non-redundant aperture masking
+interferometry, a more reliable and automated solution is desired. We present a multi-wavelength
+method of fringe jump capture and correction which involves direct comparison between the $K$-band
+and $H$-band phase telemetry. We demonstrate the method utilizing archival PHASECam telemetry,
+showing it provides a robust, reliable way of detecting fringe jumps which can potentially recover
+a significant fraction of the data lost to them. 

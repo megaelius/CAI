@@ -1,0 +1,18 @@
+Spherical Harmonic Transforms (SHT) are at the heart of many scientific and practical applications
+ranging from climate modelling to cosmological observations. In many of these areas new, cutting-edge
+science goals have been recently proposed requiring simulations and analyses of experimental
+or observational data at very high resolutions and of unprecedented volumes. Both these aspects
+pose formidable challenge for the currently existing implementations of the transforms. This
+paper describes parallel algorithms for computing SHT with two variants of intra-node parallelism
+appropriate for novel supercomputer architectures, multi-core processors and Graphic Processing
+Units (GPU). It also discusses their performance, alone and embedded within a top-level, MPI-based
+parallelisation layer ported from the S2HAT library, in terms of their accuracy, overall efficiency
+and scalability. We show that our inverse SHT run on GeForce 400 Series GPUs equipped with latest
+CUDA architecture ("Fermi") outperforms the state of the art implementation for a multi-core processor
+executed on a current Intel Core i7-2600K. Furthermore, we show that an MPI/CUDA version of the inverse
+transform run on a cluster of 128 Nvidia Tesla S1070 is as much as 3 times faster than the hybrid MPI/OpenMP
+version executed on the same number of quad-core processors Intel Nahalem for problem sizes motivated
+by our target applications. Performance of the direct transforms is however found to be at the best
+comparable in these cases. We discuss in detail the algorithmic solutions devised for major steps
+involved in the transforms calculation, emphasising those with a major impact on their overall
+performance, and elucidates the sources of the dichotomy between the direct and the inverse operations.

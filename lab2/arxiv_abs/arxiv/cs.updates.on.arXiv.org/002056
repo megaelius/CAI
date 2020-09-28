@@ -1,0 +1,19 @@
+We study the properties of the endpoint of stochastic gradient descent (SGD). By approximating
+SGD as a stochastic differential equation (SDE) we consider the Boltzmann-Gibbs equilibrium distribution
+of that SDE under the assumption of isotropic variance in loss gradients. Through this analysis,
+we find that three factors - learning rate, batch size and the variance of the loss gradients - control
+the trade-off between the depth and width of the minima found by SGD, with wider minima favoured by
+a higher ratio of learning rate to batch size. We have direct control over the learning rate and batch
+size, while the variance is determined by the choice of model architecture, model parameterization
+and dataset. In the equilibrium distribution only the ratio of learning rate to batch size appears,
+implying that the equilibrium distribution is invariant under a simultaneous rescaling of learning
+rate and batch size by the same amount. We then explore experimentally how learning rate and batch
+size affect SGD from two perspectives: the endpoint of SGD and the dynamics that lead up to it. For
+the endpoint, the experiments suggest the endpoint of SGD is invariant under simultaneous rescaling
+of batch size and learning rate, and also that a higher ratio leads to flatter minima, both findings
+are consistent with our theoretical analysis. We note experimentally that the dynamics also seem
+to be invariant under the same rescaling of learning rate and batch size, which we explore showing
+that one can exchange batch size and learning rate for cyclical learning rate schedule. Next, we
+illustrate how noise affects memorization, showing that high noise levels lead to better generalization.
+Finally, we find experimentally that the invariance under simultaneous rescaling of learning
+rate and batch size breaks down if the learning rate gets too large or the batch size gets too small.

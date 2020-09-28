@@ -1,0 +1,18 @@
+Any closed manifold of genus g can be cut open to form a topological disk and then mapped to a regular
+polygon with 4g sides. This construction is called the canonical polygonal schema of the manifold,
+and is a key ingredient for many applications in graphics and engineering, where a parameterization
+between two shapes with same topology is often needed. The sides of the 4g-gon define on the manifold
+a system of loops, which all intersect at a single point and are disjoint elsewhere. Computing a shortest
+system of loops of this kind is NP-hard. A computationally tractable alternative consists in computing
+a set of shortest loops that are not fully disjoint in polynomial time, using the greedy homotopy
+basis algorithm proposed by Erickson and Whittlesey, and then detach them in post processing via
+mesh refinement. Despite this operation is conceptually simple, known refinement strategies
+do not scale well for high genus shapes, triggering a mesh growth that may exceed the amount of memory
+available in modern computers, leading to failures. In this paper we study various local refinement
+operators to detach cycles in a system of loops, and show that there are important differences between
+them, both in terms of mesh complexity and preservation of the original surface. We ultimately propose
+two novel refinement approaches: the former minimizes the number of new elements in the mesh, possibly
+at the cost of a deviation from the input geometry. The latter allows to trade mesh complexity for
+geometric accuracy, bounding deviation from the input surface. Both strategies are trivial to
+implement, and experiments confirm that they allow to realize canonical polygonal schemas even
+for extremely high genus shapes where previous methods fail. 

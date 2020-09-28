@@ -1,0 +1,19 @@
+In this paper the physics-integrated (or PDE-integrated) machine learning (ML) framework is investigated.
+The Navier-Stokes equations are solved using the Tensorflow ML library for Python programming
+language via the Chorins projection method. The methodology for the solution is provided, which
+is compared with a classical solution implemented in Fortran. This solution is integrated with
+a deep feedforward neural network (DFNN). Such integration allows one to train a DFNN embedded in
+the Navier-Stokes equations without having the target (labeled training) data for the direct outputs
+from the DFNN; instead, the DFNN is trained on the field data (quantities of interest), which are
+the solutions for the Navier-Stokes equations. To demonstrate the performance of the framework,
+a case study is formulated: the 2D lid-driven cavity with non-constant velocity-dependent dynamic
+viscosity is considered. A DFNN is trained to predict the dynamic viscosity from the velocity fields.
+The performance of the physics-integrated ML is compared with classical ML framework, when a DFNN
+is directly trained on the available data (fields of the dynamic viscosity). Both frameworks showed
+similar accuracy; however, despite its complexity and computational cost, the physics-integrated
+ML offers some advantages, such as: (i) the target outputs (labeled training data) for a DFNN might
+be unknown and can be recovered using the knowledge base (PDEs); (ii) it is not necessary to extract
+and preprocess information (training targets) from big data, instead it can be extracted by PDEs;
+(iii) there is no need to employ a physics- or scale-separation assumptions to build a closure model
+for PDEs. The advantage (i) is demonstrated in this paper, while the advantages (ii) and (iii) are
+the subjects for future work. 

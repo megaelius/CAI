@@ -1,0 +1,17 @@
+End-to-end Speech Translation (ST) models have several advantages such as lower latency, smaller
+model size, and less error compounding over conventional pipelines that combine Automatic Speech
+Recognition (ASR) and text Machine Translation (MT) models. However, collecting large amounts
+of parallel data for ST task is more difficult compared to the ASR and MT tasks. Previous studies have
+proposed the use of transfer learning approaches to overcome the above difficulty. These approaches
+benefit from weakly supervised training data, such as ASR speech-to-transcript or MT text-to-text
+translation pairs. However, the parameters in these models are updated independently of each task,
+which may lead to sub-optimal solutions. In this work, we adopt a meta-learning algorithm to train
+a modality agnostic multi-task model that transfers knowledge from source tasks=ASR+MT to target
+task=ST where ST task severely lacks data. In the meta-learning phase, the parameters of the model
+are exposed to vast amounts of speech transcripts (e.g., English ASR) and text translations (e.g.,
+English-German MT). During this phase, parameters are updated in such a way to understand speech,
+text representations, the relation between them, as well as act as a good initialization point for
+the target ST task. We evaluate the proposed meta-learning approach for ST tasks on English-German
+(En-De) and English-French (En-Fr) language pairs from the Multilingual Speech Translation Corpus
+(MuST-C). Our method outperforms the previous transfer learning approaches and sets new state-of-the-art
+results for En-De and En-Fr ST tasks by obtaining 9.18, and 11.76 BLEU point improvements, respectively.

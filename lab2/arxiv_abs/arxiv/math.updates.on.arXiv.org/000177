@@ -1,0 +1,20 @@
+We consider the denoising problem where we wish to estimate a structured signal x_0 from the corrupted
+observations y=x_0+z. We use a structure inducing convex function f and solve min_x 0.5||y-x||^2+lambda
+f(x) to estimate x_0. For example, f is the L1 norm for sparse vectors and it is the nuclear norm for
+low rank matrices. When the noise vector z is i.i.d. Gaussian, we show that the normalized estimation
+error (MSE) of the optimally tuned problem coincides with the compressed sensing phase transitions,
+i.e., the number D(x_0,f) so that one needs m>D(x_0,f) observations Ax_0 to recover x_0 by solving
+min_{Ax=Ax_0} f(x). We then connect our results to the generalized LASSO problem in which we have
+m noisy compressed observations y=Ax_0+z and solve min ||y-Ax||^2 subject to f(x)\leq f(x_0).
+Under certain assumptions, we show that, certain properties of the LASSO problem is closely related
+to the same quantity D(x_0,f) and the normalized LASSO objective is around max{m-D(x_0,f),0} with
+high probability. This illustrates a phase transition behavior for the LASSO problem. Finally,
+we generalize our results to the estimation of signals which are mixture of two structures, i.e.,
+we assume x_0=a_0+b_0 where a_0 and b_0 are themselves structured with functions f_a and f_b. We
+consider estimation of x_0,a_0,b_0 from the noisy mixture x_0+z via f_a and f_b. Under a certain
+incoherence assumption, we sharply characterize the mixture MSE's solely based on the individual
+quantities D(a_0,f_a) and D(b_0,f_b). In summary, our results provide exact analysis of several
+aspects of the denoising problem and show a close connection between two apparently unrelated problems
+in a general setup: The estimation of a signal from noisy observations and the recovery of the same
+signal from compressed observations. A single number D(x_0,f) is able to capture some of the critical
+aspects of both problems. 

@@ -1,0 +1,17 @@
+In this paper we present a numerical approach to solve the Navier-Stokes equations on moving domains
+with second-order accuracy. The space discretization is based on the ghost-point method, which
+falls under the category of unfitted boundary methods, since the mesh does not adapt to the moving
+boundary. The equations are advanced in time by using Crank-Nicholson. The momentum and continuity
+equations are solved simultaneously for the velocity and the pressure by adopting a proper multigrid
+approach. To avoid the checkerboard instability for the pressure, a staggered grid is adopted,
+where velocities are defined at the sides of the cell and the pressure is defined at the centre. The
+lack of uniqueness for the pressure is circumvented by the inclusion of an additional scalar unknown,
+representing the average divergence of the velocity, and an additional equation to set the average
+pressure to zero. Several tests are performed to simulate the motion of an incompressible fluid
+around a moving object, as well as the lid-driven cavity tests around steady objects. The object
+is implicitly defined by a level-set approach, that allows a natural computation of geometrical
+properties such as distance from the boundary, normal directions and curvature. Different shapes
+are tested: circle, ellipse and flower. Numerical results show the second order accuracy for the
+velocity and the divergence (that decays to zero with second order) and the efficiency of the multigrid,
+that is comparable with the tests available in literature for rectangular domains without objects,
+showing that the presence of a complex-shaped object does not degrade the performance. 

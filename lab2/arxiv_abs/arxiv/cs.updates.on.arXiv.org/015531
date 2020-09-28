@@ -1,0 +1,17 @@
+We study the multi-level Steiner tree problem: a generalization of the Steiner tree problem in graphs
+where terminals $T$ require varying priority, level, or quality of service. In this problem, we
+seek to find a minimum cost tree containing edges of varying rates such that any two terminals $u$,
+$v$ with priorities $P(u)$, $P(v)$ are connected using edges of rate $\min\{P(u),P(v)\}$ or better.
+The case where edge costs are proportional to their rate is approximable to within a constant factor
+of the optimal solution. For the more general case of non-proportional costs, this problem is hard
+to approximate with ratio $c \log \log n$, where $n$ is the number of vertices in the graph. A simple
+greedy algorithm by Charikar et al., however, provides a $\min\{2(\ln |T|+1), \ell \rho\}$-approximation
+in this setting, where $\rho$ is an approximation ratio for a heuristic solver for the Steiner tree
+problem and $\ell$ is the number of priorities or levels (Byrka et al. give a Steiner tree algorithm
+with $\rho\approx 1.39$, for example). In this paper, we describe a natural generalization to the
+multi-level case of the classical (single-level) Steiner tree approximation algorithm based
+on Kruskal's minimum spanning tree algorithm. We prove that this algorithm achieves an approximation
+ratio at least as good as Charikar et al., and experimentally performs better with respect to the
+optimum solution. We develop an integer linear programming formulation to compute an exact solution
+for the multi-level Steiner tree problem with non-proportional edge costs and use it to evaluate
+the performance of our algorithm on both random graphs and multi-level instances derived from SteinLib.

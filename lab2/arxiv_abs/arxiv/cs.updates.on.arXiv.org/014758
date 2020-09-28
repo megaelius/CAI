@@ -1,0 +1,17 @@
+Objective measures of image quality generally operate by making local comparisons of pixels of
+a "degraded" image to those of the original. Relative to human observers, these measures are overly
+sensitive to resampling of texture regions (e.g., replacing one patch of grass with another). Here
+we develop the first full-reference image quality model with explicit tolerance to texture resampling.
+Using a convolutional neural network, we construct an injective and differentiable function that
+transforms images to a multi-scale overcomplete representation. We empirically show that the
+spatial averages of the feature maps in this representation capture texture appearance, in that
+they provide a set of sufficient statistical constraints to synthesize a wide variety of texture
+patterns. We then describe an image quality method that combines correlation of these spatial averages
+("texture similarity") with correlation of the feature maps ("structure similarity"). The parameters
+of the proposed measure are jointly optimized to match human ratings of image quality, while minimizing
+the reported distances between subimages cropped from the same texture images. Experiments show
+that the optimized method explains human perceptual scores, both on conventional image quality
+databases, as well as on texture databases. The measure also offers competitive performance on
+related tasks such as texture classification and retrieval. Finally, we show that our method is
+relatively insensitive to geometric transformations (e.g., translation and dilation), without
+use of any specialized training or data augmentation. Code is available at https://github.com/dingkeyan93/DISTS.

@@ -1,0 +1,18 @@
+We present a new method for automatically generating the implementation of state-estimation algorithms
+from a machine-readable specification of the physics of a sensing system and physics of its signals
+and signal constraints. We implement the new state-estimator code generation method as a backend
+for a physics specification language and we apply the backend to generate complete C code implementations
+of state estimators for both linear systems (Kalman filters) and non-linear systems (extended
+Kalman filters). The state estimator code generation from physics specification is completely
+automated and requires no manual intervention. The generated filters can incorporate an Automatic
+Differentiation technique which combines function evaluation and differentiation in a single
+process. Using the description of physical system of a range of complexities, we generate extended
+Kalman filters, which we evaluate in terms of prediction accuracy using simulation traces. The
+results show that our automatically-generated sensor fusion and state estimation implementations
+provide state estimation within the same error bound as the human-written hand-optimized counterparts.
+We additionally quantify the code size and dynamic instruction count requirements of the generated
+state estimator implementations on the RISC-V architecture. The results show that our synthesized
+state estimation implementation employing Automatic Differentiation leads to an average improvement
+in the dynamic instruction count of the generated Kalman filter of 7%-16% compared to the standard
+differentiation technique. This is improvement comes at the limited cost of an average 4.5% increase
+in the code size of the generated filters. 

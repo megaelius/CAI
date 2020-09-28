@@ -1,0 +1,20 @@
+In most of the modern day blockchain, transactions are executed serially by both miners and validators;
+also, PoW is determined serially. The serial execution limits the system throughput and increases
+transaction acceptance latency, even unable to exploit the modern multi-core resources efficiently.
+We propose a framework $DiPETrans$ for parallel execution of block transactions. In $DiPETrans$,
+trusted peers in the blockchain network form a community to execute transactions and to find PoW
+parallelly. The community follows a master-slave approach for parallel execution. The master
+analyzes transactions using a static analysis based technique, creates different shards of non-conflicting
+transactions, and distribute shards to community members for parallel execution. After transaction
+execution, find PoW parallelly. On successful creation of a block, the master broadcasts proposed
+block to other peers in the network for validation. On receiving a block, validators re-executes
+the block transactions, either parallelly (community) or serially (solo validators). If they
+reach the same state as shared by the miner, then accept the block otherwise reject. We proposed two
+different approaches for the validator. In first $Sharing\ Validator--$ miner shares the dependency
+information (shard) in the block to help validators to execute the transaction parallelly, while
+in another $Default\ Validator--$ no dependency information is shared with validators. We report
+experiments using 5,170,597 transactions from the Ethereum blockchain and execute them using
+our $DiPETrans$ framework to empirically validate the benefits of our techniques over traditional
+sequential execution. We achieved a maximum speedup of $2.18\times$ for the miner, $2.02\times$
+for the $Default\ Validator$, and $2.04\times$ for $Sharing\ Validator$ for 100 to 500 transactions
+per block, when using 6 workers in the community. 

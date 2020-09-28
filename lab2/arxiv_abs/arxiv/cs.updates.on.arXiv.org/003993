@@ -1,0 +1,19 @@
+Syndromic surveillance detects and monitors individual and population health indicators through
+sources such as emergency department records. Automated classification of these records can improve
+outbreak detection speed and diagnosis accuracy. Current syndromic systems rely on hand-coded
+keyword-based methods to parse written fields and may benefit from the use of modern supervised-learning
+classifier models. In this paper we implement two recurrent neural network models based on long
+short-term memory (LSTM) and gated recurrent unit (GRU) cells and compare them to two traditional
+bag-of-words classifiers: multinomial naive Bayes (MNB) and a support vector machine (SVM). All
+four models are trained to predict diagnostic code groups as defined by Clinical Classification
+Software, first to predict from discharge diagnosis, then from chief complaint fields. The classifiers
+are trained on 3.6 million de-identified emergency department records from a single United States
+jurisdiction. We compare performance of these models primarily using the F1 score. We measure absolute
+model performance to determine which conditions are the most amenable to surveillance based on
+chief complaint alone. Using discharge diagnoses, the LSTM classifier performs best, though all
+models exhibit an F1 score above 0.96. GRU performs best on chief complaints (F1=0.4859) and MNB
+with bigrams performs worst (F1=0.3998). Certain syndrome types are easier to detect than others.
+For examples, the GRU predicts alcohol-related disorders well (F1=0.8084) but predicts influenza
+poorly (F1=0.1363). In all instances the RNN models outperformed the bag-of-word classifiers,
+suggesting deep learning models could substantially improve the automatic classification of
+unstructured text for syndromic surveillance. 

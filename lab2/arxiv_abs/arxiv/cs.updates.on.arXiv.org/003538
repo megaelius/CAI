@@ -1,0 +1,18 @@
+A population protocol describes a set of state change rules for a population of $n$ indistinguishable
+finite-state agents (automata), undergoing random pairwise interactions. Within this very basic
+framework, it is possible to resolve a number of fundamental tasks in distributed computing, including:
+leader election, aggregate and threshold functions on the population, such as majority computation,
+and plurality consensus. For the first time, we show that solutions to all of these problems can be
+obtained \emph{quickly} using finite-state protocols. For any input, the designed finite-state
+protocols converge under a fair random scheduler to an output which is correct with high probability
+in expected $O(\mathrm{poly} \log n)$ parallel time. In the same setting, we also show protocols
+which always reach a valid solution, in expected parallel time $O(n^\varepsilon)$, where the number
+of states of the interacting automata depends only on the choice of $\varepsilon>0$. The stated
+time bounds hold for \emph{any} semi-linear predicate computable in the population protocol framework.
+The key ingredient of our result is the decentralized design of a hierarchy of phase-clocks, which
+tick at different rates, with the rates of adjacent clocks separated by a factor of $\Theta(\log
+n)$. The construction of this clock hierarchy relies on a new protocol composition technique, combined
+with an adapted analysis of a self-organizing process of oscillatory dynamics. This clock hierarchy
+is used to provide nested synchronization primitives, which allow us to view the population in a
+global manner and design protocols using a high-level imperative programming language with a (limited)
+capacity for loops and branching instructions. 

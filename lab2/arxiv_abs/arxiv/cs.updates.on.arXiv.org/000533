@@ -1,0 +1,20 @@
+A discounted-sum automaton (NDA) is a nondeterministic finite automaton with edge weights, valuing
+a run by the discounted sum of visited edge weights. More precisely, the weight in the i-th position
+of the run is divided by $\lambda^i$, where the discount factor $\lambda$ is a fixed rational number
+greater than 1. The value of a word is the minimal value of the automaton runs on it. Discounted summation
+is a common and useful measuring scheme, especially for infinite sequences, reflecting the assumption
+that earlier weights are more important than later weights. Unfortunately, determinization of
+NDAs, which is often essential in formal verification, is, in general, not possible. We provide
+positive news, showing that every NDA with an integral discount factor is determinizable. We complete
+the picture by proving that the integers characterize exactly the discount factors that guarantee
+determinizability: for every nonintegral rational discount factor $\lambda$, there is a nondeterminizable
+$\lambda$-NDA. We also prove that the class of NDAs with integral discount factors enjoys closure
+under the algebraic operations min, max, addition, and subtraction, which is not the case for general
+NDAs nor for deterministic NDAs. For general NDAs, we look into approximate determinization, which
+is always possible as the influence of a word's suffix decays. We show that the naive approach, of
+unfolding the automaton computations up to a sufficient level, is doubly exponential in the discount
+factor. We provide an alternative construction for approximate determinization, which is singly
+exponential in the discount factor, in the precision, and in the number of states. We also prove matching
+lower bounds, showing that the exponential dependency on each of these three parameters cannot
+be avoided. All our results hold equally for automata over finite words and for automata over infinite
+words. 

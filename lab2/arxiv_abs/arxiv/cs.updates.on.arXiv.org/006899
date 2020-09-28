@@ -1,0 +1,19 @@
+In a network, a tunnel is a part of a path where a protocol is encapsulated in another one. A tunnel starts
+with an encapsulation and ends with the corresponding decapsulation. Several tunnels can be nested
+at some stage, forming a protocol stack. Tunneling is very important nowadays and it is involved
+in several tasks: IPv4/IPv6 transition, VPNs, security (IPsec, onion routing), etc. However,
+tunnel establishment is mainly performed manually or by script, which present obvious scalability
+issues. Some works attempt to automate a part of the process (e.g., TSP, ISATAP, etc.). However,
+the determination of the tunnel(s) endpoints is not fully automated, especially in the case of an
+arbitrary number of nested tunnels. The lack of routing protocols performing automatic tunneling
+is due to the unavailability of path computation algorithms taking into account encapsulations
+and decapsulations. There is a polynomial centralized algorithm to perform the task. However,
+to the best of our knowledge, no fully distributed path computation algorithm is known. Here, we
+propose the first fully distributed algorithm for path computation with automatic tunneling,
+i.e., taking into account encapsulation, decapsulation and conversion of protocols. Our algorithm
+is a generalization of the distributed Bellman-Ford algorithm, where the distance vector is replaced
+by a protocol stack vector. This allows to know how to route a packet with some protocol stack. We prove
+that the messages size of our algorithm is polynomial, even if the shortest path can be of exponential
+length. We also prove that the algorithm converges after a polynomial number of steps in a synchronized
+setting. We adapt our algorithm into a proto-protocol for routing with automatic tunneling and
+we show its efficiency through simulations. 

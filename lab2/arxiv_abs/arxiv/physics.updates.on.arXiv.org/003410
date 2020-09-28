@@ -1,0 +1,20 @@
+We present the implementation of a variational finite element solver in the HelFEM program for benchmark
+calculations on diatomic systems. A basis set of the form $\chi_{nlm}(\mu,\nu,\phi)=B_{n}(\mu)Y_{l}^{m}(\nu,\phi)$
+is used, where $(\mu,\nu,\phi)$ are transformed prolate spheroidal coordinates, $B_{n}(\mu)$
+are finite element shape functions, and $Y_{l}^{m}$ are spherical harmonics. The basis set allows
+for an arbitrary level of accuracy in calculations on diatomic molecules, which can be performed
+at present with either nonrelativistic Hartree--Fock (HF) or density functional (DF) theory.
+Hundreds of DFs at the local spin-density approximation (LDA), generalized gradient approximation
+(GGA) and the meta-GGA level can be used through an interface with the Libxc library; meta-GGA and
+hybrid DFs aren't available in other fully numerical diatomic program packages. Finite electric
+fields are also supported in HelFEM, enabling access to electric properties. We introduce a powerful
+tool for adaptively choosing the basis set by using the core Hamiltonian as a proxy for its completeness.
+HelFEM and the novel basis set procedure are demonstrated by reproducing the restricted open-shell
+HF limit energies of 68 diatomic molecules from the $1^{\text{st}}$ to the $4^{\text{th}}$ period
+with excellent agreement with literature values, despite requiring \emph{orders of magnitude}
+fewer parameters for the wave function. Then, the electric properties of the BH and N2 molecules
+under finite field are studied, again yielding excellent agreement with previous HF limit values
+for energies, dipole moments, and dipole polarizabilities, again with much more compact wave functions
+than what were needed in the literature references. Finally, HF, LDA, GGA, and meta-GGA calculations
+of the atomization energy of N2 are performed, demonstrating the superb accuracy of the present
+approach. 

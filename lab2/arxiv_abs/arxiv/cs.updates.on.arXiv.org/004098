@@ -1,0 +1,19 @@
+The goal of a recommendation system is to predict the interest of a user in a given item by exploiting
+the existing set of ratings as well as certain user/item features. A standard approach to modeling
+this problem is Inductive Matrix Completion where the predicted rating is modeled as an inner product
+of the user and the item features projected onto a latent space. In order to learn the parameters effectively
+from a small number of observed ratings, the latent space is constrained to be low-dimensional which
+implies that the parameter matrix is constrained to be low-rank. However, such bilinear modeling
+of the ratings can be limiting in practice and non-linear prediction functions can lead to significant
+improvements. A natural approach to introducing non-linearity in the prediction function is to
+apply a non-linear activation function on top of the projected user/item features. Imposition
+of non-linearities further complicates an already challenging problem that has two sources of
+non-convexity: a) low-rank structure of the parameter matrix, and b) non-linear activation function.
+We show that one can still solve the non-linear Inductive Matrix Completion problem using gradient
+descent type methods as long as the solution is initialized well. That is, close to the optima, the
+optimization function is strongly convex and hence admits standard optimization techniques,
+at least for certain activation functions, such as Sigmoid and tanh. We also highlight the importance
+of the activation function and show how ReLU can behave significantly differently than say a sigmoid
+function. Finally, we apply our proposed technique to recommendation systems and semi-supervised
+clustering, and show that our method can lead to much better performance than standard linear Inductive
+Matrix Completion methods. 

@@ -1,0 +1,17 @@
+A new deep-learning-based reduced-order modeling (ROM) framework is proposed for application
+in subsurface flow simulation. The reduced-order model is based on an existing embed-to-control
+(E2C) framework and includes an auto-encoder, which projects the system to a low-dimensional subspace,
+and a linear transition model, which approximates the evolution of the system states in low dimension.
+In addition to the loss function for data mismatch considered in the original E2C framework, we introduce
+a physics-based loss function that penalizes predictions that are inconsistent with the governing
+flow equations. The loss function is also modified to emphasize accuracy in key well quantities
+of interest (e.g., fluid production rates). The E2C ROM is shown to be very analogous to an existing
+ROM, POD-TPWL, which has been extensively developed for subsurface flow simulation. The new ROM
+is applied to oil-water flow in a heterogeneous reservoir, with flow driven by nine wells operating
+under time-varying control specifications. A total of 300 high-fidelity training simulations
+are performed in the offline stage, and the network training requires 10-12~minutes on a Tesla V100
+GPU node. Online (runtime) computations achieve speedups of $\mathcal{O}$(1000) relative to
+full-order simulations. Extensive test case results, with well controls varied over large ranges,
+are presented. Accurate ROM predictions are achieved for global saturation and pressure fields
+at particular times, and for injection and production well responses as a function of time. Error
+is shown to increase when 100 or 200 (rather than 300) training runs are used to construct the E2C ROM.

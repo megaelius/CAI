@@ -1,0 +1,17 @@
+This work addresses the unsupervised domain adaptation problem, especially in the case of class
+labels in the target domain being only a subset of those in the source domain. Such a partial transfer
+setting is realistic but challenging and existing methods always suffer from two key problems,
+negative transfer and uncertainty propagation. In this paper, we build on domain adversarial learning
+and propose a novel domain adaptation method BA$^3$US with two new techniques termed Balanced Adversarial
+Alignment (BAA) and Adaptive Uncertainty Suppression (AUS), respectively. On one hand, negative
+transfer results in misclassification of target samples to the classes only present in the source
+domain. To address this issue, BAA pursues the balance between label distributions across domains
+in a fairly simple manner. Specifically, it randomly leverages a few source samples to augment the
+smaller target domain during domain alignment so that classes in different domains are symmetric.
+On the other hand, a source sample would be denoted as uncertain if there is an incorrect class that
+has a relatively high prediction score, and such uncertainty easily propagates to unlabeled target
+data around it during alignment, which severely deteriorates adaptation performance. Thus we
+present AUS that emphasizes uncertain samples and exploits an adaptive weighted complement entropy
+objective to encourage incorrect classes to have uniform and low prediction scores. Experimental
+results on multiple benchmarks demonstrate our BA$^3$US surpasses state-of-the-arts for partial
+domain adaptation tasks. Code is available at \url{https://github.com/tim-learn/BA3US}. 

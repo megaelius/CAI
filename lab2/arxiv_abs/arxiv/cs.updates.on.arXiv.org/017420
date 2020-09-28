@@ -1,0 +1,19 @@
+Neural architecture search (NAS) is a promising method for automatically design neural architectures.
+NAS adopts a search strategy to effectively explore predefined search space to find architecture
+in search space with outstanding performance with minimum searching cost. Bayesian optimization
+and evolutionary algorithms are two commonly used search strategies, but they suffer from computationally
+expensive, challenge to implement, and inefficient exploration ability. In this paper, we propose
+to combine evolutionary algorithm with a neural predictor that can significantly improve the exploration
+ability of evolutionary algorithms for NAS. We designed a graph-based neural predictor with uncertainty
+estimation and adopted an acquisition function defined from this neural predictor to guide the
+evolutionary algorithm to efficiently explore the search space. We further designed a graph-based
+neural predictor to guide evolutionary algorithm to find potentially superior offspring and speed
+up the evolutionary procedure. The above two algorithms are denoted as NPENAS-BO and NPENAS-NP,
+respectively. Experiments illustrate our proposed algorithms outperform many recently proposed
+NAS algorithms on closed and open-domain search spaces with both search speed and searched architecture's
+performance. On closed domain search space NAS-Bench-101, with only 150 evaluated architectures,
+NPENAS-BO achieves a mean test error 5.9%, and NPENAS-NP reaches 5.86%, which is close to the best
+performance of 5.77% in the ORACLE setting. On the open domain search space DARTS, with only 2.5 GPU
+days, NPENAS-BO found an architecture that achieves the best test error 2.52% on CIFAR-10. With
+only 1.8 GPU days, NPENAS-NP finds an architecture that achieves state-of-the-art performance
+2.44%. The code is publicly available at \url{https://github.com/auroua/NPENASv1}. 

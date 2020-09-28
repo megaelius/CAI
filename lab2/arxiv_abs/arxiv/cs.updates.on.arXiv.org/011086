@@ -1,0 +1,17 @@
+We study deterministic algorithms for computing graph cuts, with focus on two fundamental problems:
+balanced sparse cut and $k$-vertex connectivity for small $k$ ($k=O(\polylog n)$). Both problems
+can be solved in near-linear time with randomized algorithms, but their previous deterministic
+counterparts take at least quadratic time. In this paper, we break this bound for both problems.
+Interestingly, achieving this for one problem crucially relies on doing so for the other. In particular,
+via a divide-and-conquer argument, a variant of the cut-matching game by [Khandekar et al.`07],
+and the local vertex connectivity algorithm of [Nanongkai et al. STOC'19], we give a subquadratic
+time algorithm for $k$-vertex connectivity using a subquadratic time algorithm for computing
+balanced sparse cuts on sparse graphs. To achieve the latter, we improve the previously best $mn$
+bound for approximating balanced sparse cut for the whole range of $m$. This starts from (1) breaking
+the $n^3$ barrier on dense graphs to $n^{\omega + o(1)}$ (where $\omega < 2.372$) using the the PageRank
+matrix, but without explicitly sweeping to find sparse cuts; to (2) getting the $\tilde O(m^{1.58})$
+bound by combining the $J$-trees by [Madry FOCS `10] with the $n^{\omega + o(1)}$ bound above, and
+finally; to (3) getting the $m^{1.5 + o(1)}$ bound by recursively invoking the second bound in conjunction
+with expander-based graph sparsification. Interestingly, our final $m^{1.5 + o(1)}$ bound lands
+at a natural stopping point in the sense that polynomially breaking it would lead to a breakthrough
+for the dynamic connectivity problem. 

@@ -1,0 +1,18 @@
+The performance of land surface models (LSMs) significantly affects the understanding of atmospheric
+and related processes. Many of the LSMs' soil and vegetation parameters were unknown so that it is
+crucially important to efficiently optimize them. Here I present a globally applicable and computationally
+efficient method for parameter optimization and uncertainty assessment of the LSM by combining
+Markov Chain Monte Carlo (MCMC) with machine learning. First, I performed the long-term (decadal
+scales) ensemble simulation of the LSM, in which each ensemble member has different parameters'
+values, and calculated the gap between simulation and observation, or the cost function, for each
+ensemble member. Second, I developed the statistical machine learning based surrogate model,
+which is computationally cheap but accurately mimics the relationship between parameters and
+the cost function, by applying the Gaussian process regression to learn the model simulation. Third,
+we applied MCMC by repeatedly driving the surrogate model to get the posterior probabilistic distribution
+of parameters. Using satellite passive microwave brightness temperature observations, both
+synthetic and real-data experiments in the Sahel region of west Africa were performed to optimize
+unknown soil and vegetation parameters of the LSM. The primary findings are (1) the proposed method
+is 50,000 times as fast as the direct application of MCMC to the full LSM; (2) the skill of the LSM to
+simulate both soil moisture and vegetation dynamics can be improved; (3) I successfully quantify
+the characteristics of equifinality by obtaining the full non-parametric probabilistic distribution
+of parameters. 

@@ -1,0 +1,19 @@
+We consider the problem of encoding a string of length $n$ from an integer alphabet of size $\sigma$
+so that access and substring equality queries (that is, determining the equality of any two substrings)
+can be answered efficiently. Any uniquely-decodable encoding supporting access must take $n\log\sigma
++ \Theta(\log (n\log\sigma))$ bits. We describe a new data structure matching this lower bound
+when $\sigma\leq n^{O(1)}$ while supporting both queries in optimal $O(1)$ time. Furthermore,
+we show that the string can be overwritten in-place with this structure. The redundancy of $\Theta(\log
+n)$ bits and the constant query time break exponentially a lower bound that is known to hold in the
+read-only model. Using our new string representation, we obtain the first in-place subquadratic
+(indeed, even sublinear in some cases) algorithms for several string-processing problems in the
+restore model: the input string is rewritable and must be restored before the computation terminates.
+In particular, we describe the first in-place subquadratic Monte Carlo solutions to the sparse
+suffix sorting, sparse LCP array construction, and suffix selection problems. With the sole exception
+of suffix selection, our algorithms are also the first running in sublinear time for small enough
+sets of input suffixes. Combining these solutions, we obtain the first sublinear-time Monte Carlo
+algorithm for building the sparse suffix tree in compact space. We also show how to derandomize our
+algorithms using small space. This leads to the first Las Vegas in-place algorithm computing the
+full LCP array in $O(n\log n)$ time and to the first Las Vegas in-place algorithms solving the sparse
+suffix sorting and sparse LCP array construction problems in $O(n^{1.5}\sqrt{\log \sigma})$
+time. Running times of these Las Vegas algorithms hold in the worst case with high probability. 

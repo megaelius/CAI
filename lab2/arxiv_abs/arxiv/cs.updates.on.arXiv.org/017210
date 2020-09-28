@@ -1,0 +1,20 @@
+In time-sensitive networks (as in the context of IEEE TSN and IETF DetNet), some limited amount of
+packet reordering may be acceptable. Re-sequencing buffers are then used to provide in-order delivery
+of packets; they depend on critical parameters (timeout value and buffer size) and may affect the
+worst-case delay and delay jitter. However, there is no precise understanding of per-flow reordering
+metrics nor of the dimensioning of re-sequencing buffers in order to provide worst-case guarantees,
+as required in time-sensitive networks. We close this gap as follows. First, we show that a previously
+proposed per-flow reordering metric, namely, reordering late time offset (RTO) determines the
+timeout value. If the network can be assumed to be lossless, another previously defined metric,
+the reordering byte offset (RBO), determines the required buffer size. However, if packet losses
+cannot be ignored, the required buffer may be larger than the RBO, and the exact value depends on a
+combination of the delay jitter between the source and the re-sequencing buffer, an arrival curve
+of the flow at its source, and the timeout. Then we develop a method to compute the RTO for a flow path;
+the method uses a novel relation with delay jitter and arrival curve, together with a decomposition
+of the path into non order-preserving and order-preserving elements. We also analyze the effect
+of re-sequencing buffers on worst-case delay, delay jitter and arrival curve propagation. We show
+in particular that, in a lossless (but non order-preserving) network, re-sequencing is "for free",
+in the sense that it does not increase worst-case delay nor delay jitter, whereas in a lossy network,
+re-sequencing increases the worst-case delay and delay jitter. We apply the analysis to evaluate
+the performance impact of placing re-sequencing buffers at intermediate points and illustrate
+the results on two industrial test cases. 

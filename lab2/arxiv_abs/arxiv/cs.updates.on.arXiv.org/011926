@@ -1,0 +1,17 @@
+Binary analysis is traditionally used in the realm of malware detection. However, the same technique
+may be employed by an attacker to analyze the original binaries in order to reverse engineer them
+and extract exploitable weaknesses. When a binary is distributed to end users, it becomes a common
+remotely exploitable attack point. Code obfuscation is used to hinder reverse engineering of executable
+programs. In this paper, we focus on securing binary distribution, where attackers gain access
+to binaries distributed to end devices, in order to reverse engineer them and find potential vulnerabilities.
+Attackers do not however have means to monitor the execution of said devices. In particular, we focus
+on the control flow obfuscation --- a technique that prevents an attacker from restoring the correct
+reachability conditions for the basic blocks of a program. By doing so, we thwart attackers in their
+effort to infer the inputs that cause the program to enter a vulnerable state (e.g., buffer overrun).
+We propose a compiler extension for obfuscation and a minimal hardware modification for dynamic
+deobfuscation that takes advantage of a secret key stored in hardware. We evaluate our experiments
+on the LLVM compiler toolchain and the BRISC-V open source processor. On PARSEC benchmarks, our
+deobfuscation technique incurs only a 5\% runtime overhead. We evaluate the security of Drndalo
+by training classifiers on pairs of obfuscated and unobfuscated binaries. Our results shine light
+on the difficulty of producing obfuscated binaries of arbitrary programs in such a way that they
+are statistically indistinguishable from plain binaries. 

@@ -1,0 +1,20 @@
+We propose an efficient algorithm for the generalized sparse coding (SC) inference problem. The
+proposed framework applies to both the single dictionary setting, where each data point is represented
+as a sparse combination of the columns of one dictionary matrix, as well as the multiple dictionary
+setting as given in morphological component analysis (MCA), where the goal is to separate a signal
+into additive parts such that each part has distinct sparse representation within a corresponding
+dictionary. Both the SC task and its generalization via MCA have been cast as $\ell_1$-regularized
+least-squares optimization problems. To accelerate traditional acquisition of sparse codes,
+we propose a deep learning architecture that constitutes a trainable time-unfolded version of
+the Split Augmented Lagrangian Shrinkage Algorithm (SALSA), a special case of the Alternating
+Direction Method of Multipliers (ADMM). We empirically validate both variants of the algorithm,
+that we refer to as LSALSA (learned-SALSA), on image vision tasks and demonstrate that at inference
+our networks achieve vast improvements in terms of the running time, the quality of estimated sparse
+codes, and visual clarity on both classic SC and MCA problems. Finally, we present a theoretical
+framework for analyzing LSALSA network: we show that the proposed approach exactly implements
+a truncated ADMM applied to a new, learned cost function with curvature modified by one of the learned
+parameterized matrices. We extend a very recent Stochastic Alternating Optimization analysis
+framework to show that a gradient descent step along this learned loss landscape is equivalent to
+a modified gradient descent step along the original loss landscape. In this framework, the acceleration
+achieved by LSALSA could potentially be explained by the network's ability to learn a correction
+to the gradient direction of steeper descent. 

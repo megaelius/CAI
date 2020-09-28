@@ -1,0 +1,18 @@
+We investigate the problem of stochastic network optimization in the presence of imperfect state
+prediction and non-stationarity. Based on a novel distribution-accuracy curve prediction model,
+we develop the predictive learning-aided control (PLC) algorithm, which jointly utilizes historic
+and predicted network state information for decision making. PLC is an online algorithm that requires
+zero a-prior system statistical information, and consists of three key components, namely sequential
+distribution estimation and change detection, dual learning, and online queue-based control.
+Specifically, we show that PLC simultaneously achieves good long-term performance, short-term
+queue size reduction, accurate change detection, and fast algorithm convergence. In particular,
+for stationary networks, PLC achieves a near-optimal $[O(\epsilon)$, $O(\log(1/\epsilon)^2)]$
+utility-delay tradeoff. For non-stationary networks, \plc{} obtains an $[O(\epsilon), O(\log^2(1/\epsilon)$
+$+ \min(\epsilon^{c/2-1}, e_w/\epsilon))]$ utility-backlog tradeoff for distributions that
+last $\Theta(\frac{\max(\epsilon^{-c}, e_w^{-2})}{\epsilon^{1+a}})$ time, where $e_w$ is
+the prediction accuracy and $a=\Theta(1)>0$ is a constant (the Backpressue algorithm \cite{neelynowbook}
+requires an $O(\epsilon^{-2})$ length for the same utility performance with a larger backlog).
+Moreover, PLC detects distribution change $O(w)$ slots faster with high probability ($w$ is the
+prediction size) and achieves an $O(\min(\epsilon^{-1+c/2}, e_w/\epsilon)+\log^2(1/\epsilon))$
+convergence time. Our results demonstrate that state prediction (even imperfect) can help (i)
+achieve faster detection and convergence, and (ii) obtain better utility-delay tradeoffs. 

@@ -1,0 +1,17 @@
+The sparse-views x-ray computed tomography (CT) is essential for medical diagnosis and industrial
+nondestructive testing. However, in particular, the reconstructed image usually suffers from
+complex artifacts and noise, when the sampling is insufficient. In order to deal such issue, a full-automatic
+reconstruction (FAR) net is proposed for sparse-views CT reconstruction via deep learning technique.
+Different with the usual network in deep learning reconstruction, the proposed neural network
+is an End-to-End network by which the image is predicted directly from projection data. The main
+challenge for such a FAR net is the space complexity of the CT reconstruction in full-connected (FC)
+network. For a CT image with the size $N \times N$ , a typical requirement of memory space for the image
+reconstruction is $O(N^{4})$, for which is unacceptable by conventional calculation device,
+e.g. GPU workstation. In this paper, we utilize a series of smaller FC layers to replace the huge based
+on the sparse nonnegative matrix factorization (SNMF) theory. By applying such an approach, the
+FAR net is able to reconstruct sparse-views CT images with the size $512\times 512$ on only one workstation.
+Furthermore, a Res-Unet structure is composed in the FAR net for suppressing the artifacts and noise
+caused by under-sampling data. The results of numerical experiments show that the projection matrix
+and the FAR net is able to reconstruct the CT image from sparse-views projection data with a superior
+quality than conventional method such as FBP and optimization based approach. Meanwhile, the factorization
+for the inverse projection matrix is validated in numerical. 

@@ -1,0 +1,19 @@
+This paper introduces a combinatorial optimization approach to register allocation and instruction
+scheduling, two central compiler problems. Combinatorial optimization has the potential to solve
+these problems optimally and to exploit processor-specific features readily. Our approach is
+the first to leverage this potential in practice: it captures the complete set of program transformations
+used in state-of-the-art compilers, scales to medium-sized functions of up to 1000 instructions,
+and generates executable code. This level of practicality is reached by using constraint programming,
+a particularly suitable combinatorial optimization technique. Unison, the implementation of
+our approach, is open source, used in industry, and integrated with the LLVM toolchain. An extensive
+evaluation confirms that Unison generates better code than LLVM while scaling to medium-sized
+functions. The evaluation uses systematically selected benchmarks from MediaBench and SPEC CPU2006
+and different processor architectures (Hexagon, ARM, MIPS). Mean estimated speedup ranges from
+1.1% to 10% and mean code size reduction ranges from 1.3% to 3.8% for the different architectures.
+A significant part of this improvement is due to the integrated nature of the approach. Executing
+the generated code on Hexagon confirms that the estimated speedup results in actual speedup. Given
+a fixed time limit, Unison solves optimally functions of up to 946 instructions, nearly an order
+of magnitude larger than previous approaches. The results show that our combinatorial approach
+can be applied in practice to trade compilation time for code quality beyond the usual compiler optimization
+levels, identify improvement opportunities in heuristic algorithms, and fully exploit processor-specific
+features. 

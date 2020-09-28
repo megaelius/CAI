@@ -1,0 +1,18 @@
+We explore in this paper the use of neural networks designed for point-clouds and sets on a new meta-learning
+task. We present experiments on the astronomical challenge of characterizing the stellar population
+of stellar streams. Stellar streams are elongated structures of stars in the outskirts of the Milky
+Way that form when a (small) galaxy breaks up under the Milky Way's gravitational force. We consider
+that we obtain, for each stream, a small 'support set' of stars that belongs to this stream. We aim
+to predict if the other stars in that region of the sky are from that stream or not, similar to one-class
+classification. Each "stream task" could also be transformed into a binary classification problem
+in a highly imbalanced regime (or supervised anomaly detection) by using the much bigger set of "other"
+stars and considering them as noisy negative examples. We propose to study the problem in the meta-learning
+regime: we expect that we can learn general information on characterizing a stream's stellar population
+by meta-learning across several streams in a fully supervised regime, and transfer it to new streams
+using only positive supervision. We present a novel use of Deep Sets, a model developed for point-cloud
+and sets, trained in a meta-learning fully supervised regime, and evaluated in a one-class classification
+setting. We compare it against Random Forests (with and without self-labeling) in the classic setting
+of binary classification, retrained for each task. We show that our method outperforms the Random-Forests
+even though the Deep Sets is not retrained on the new tasks, and accesses only a small part of the data
+compared to the Random Forest. We also show that the model performs well on a real-life stream when
+including additional fine-tuning. 

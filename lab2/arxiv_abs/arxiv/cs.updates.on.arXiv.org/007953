@@ -1,0 +1,19 @@
+Multiplex networks have become increasingly more prevalent in many fields, and have emerged as
+a powerful tool for modeling the complexity of real networks. There is a critical need for developing
+inference models for multiplex networks that can take into account potential dependencies across
+different layers, particularly when the aim is community detection. We add to a limited literature
+by proposing a novel and efficient Bayesian model for community detection in multiplex networks.
+A key feature of our approach is the ability to model varying communities at different network layers.
+In contrast, many existing models assume the same communities for all layers. Moreover, our model
+automatically picks up the necessary number of communities at each layer (as validated by real data
+examples). This is appealing, since deciding the number of communities is a challenging aspect
+of community detection, and especially so in the multiplex setting, if one allows the communities
+to change across layers. Borrowing ideas from hierarchical Bayesian modeling, we use a hierarchical
+Dirichlet prior to model community labels across layers, allowing dependency in their structure.
+Given the community labels, a stochastic block model (SBM) is assumed for each layer. We develop
+an efficient slice sampler for sampling the posterior distribution of the community labels as well
+as the link probabilities between communities. In doing so, we address some unique challenges posed
+by coupling the complex likelihood of SBM with the hierarchical nature of the prior on the labels.
+An extensive empirical validation is performed on simulated and real data, demonstrating the superior
+performance of the model over single-layer alternatives, as well as the ability to uncover interesting
+structures in real networks. 

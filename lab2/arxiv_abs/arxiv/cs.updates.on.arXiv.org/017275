@@ -1,0 +1,17 @@
+This work adds on to the on-going efforts to provide more autonomy to space robots. Here the concept
+of programming by demonstration or imitation learning is used for trajectory planning of manipulators
+mounted on small spacecraft. For greater autonomy in future space missions and minimal human intervention
+through ground control, a robot arm having 7-Degrees of Freedom (DoF) is envisaged for carrying
+out multiple tasks like debris removal, on-orbit servicing and assembly. Since actual hardware
+implementation of microgravity environment is extremely expensive, the demonstration data for
+trajectory learning is generated using a model predictive controller (MPC) in a physics based simulator.
+The data is then encoded compactly by Probabilistic Movement Primitives (ProMPs). This offline
+trajectory learning allows faster reproductions and also avoids any computationally expensive
+optimizations after deployment in a space environment. It is shown that the probabilistic distribution
+can be used to generate trajectories to previously unseen situations by conditioning the distribution.
+The motion of the robot (or manipulator) arm induces reaction forces on the spacecraft hub and hence
+its attitude changes prompting the Attitude Determination and Control System (ADCS) to take large
+corrective action that drains energy out of the system. By having a robot arm with redundant DoF helps
+in finding several possible trajectories from the same start to the same target. This allows the
+ProMP trajectory generator to sample out the trajectory which is obstacle free as well as having
+minimal attitudinal disturbances thereby reducing the load on ADCS. 

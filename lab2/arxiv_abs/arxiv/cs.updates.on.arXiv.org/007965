@@ -1,0 +1,18 @@
+Most real-world datasets, and particularly those collected from physical systems, are full of
+noise, packet loss, and other imperfections. However, most specification mining, anomaly detection
+and other such algorithms assume, or even require, perfect data quality to function properly. Such
+algorithms may work in lab conditions when given clean, controlled data, but will fail in the field
+when given imperfect data. We propose a method for accurately reconstructing discrete temporal
+or sequential system traces affected by data loss, using Long Short-Term Memory Networks (LSTMs).
+The model works by learning to predict the next event in a sequence of events, and uses its own output
+as an input to continue predicting future events. As a result, this method can be used for data restoration
+even with streamed data. Such a method can reconstruct even long sequence of missing events, and
+can also help validate and improve data quality for noisy data. The output of the model will be a close
+reconstruction of the true data, and can be fed to algorithms that rely on clean data. We demonstrate
+our method by reconstructing automotive CAN traces consisting of long sequences of discrete events.
+We show that given even small parts of a CAN trace, our LSTM model can predict future events with an
+accuracy of almost 90%, and can successfully reconstruct large portions of the original trace,
+greatly outperforming a Markov Model benchmark. We separately feed the original, lossy, and reconstructed
+traces into a specification mining framework to perform downstream analysis of the effect of our
+method on state-of-the-art models that use these traces for understanding the behavior of complex
+systems. 

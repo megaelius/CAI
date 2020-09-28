@@ -1,0 +1,19 @@
+We introduce a procedure for predictive conditional density estimation under logarithmic loss,
+which we call SMP (Sample Minmax Predictor). This predictor minimizes a new general excess risk
+bound, which critically remains valid under model misspecification. On standard examples, this
+bound scales as $d/n$ where $d$ is the dimension of the model and $n$ the sample size, regardless of
+the true distribution. The SMP, which is an improper (out-of-model) procedure, improves over proper
+(within-model) estimators (such as the maximum likelihood estimator), whose excess risk can degrade
+arbitrarily in the misspecified case. For density estimation, our bounds improve over approaches
+based on online-to-batch conversion, by removing suboptimal $\log n$ factors, addressing an open
+problem from Gr{\"u}nwald and Kot{\l}owski (2011) for the considered models. For the Gaussian
+linear model, the SMP admits an explicit expression, and its expected excess risk in the general
+misspecified case is at most twice the minimax excess risk in the \emph{well-specified case}, but
+without any condition on the noise variance or approximation error of the linear model. For logistic
+regression, a penalized SMP can be computed efficiently by training two logistic regressions,
+and achieves a non-asymptotic excess risk of $O((d + B^2R^2)/n)$, where $R$ is a bound on the norm
+of the features and $B$ the norm of the comparison linear predictor. This improves the rates of proper
+(within-model) estimators, since such procedures can achieve no better rate than $\min(BR/\sqrt{n},de^{BR}/n)$
+in general. This also provides a computationally more efficient alternative to approaches based
+on online-to-batch conversion of Bayesian mixture procedures, which require approximate posterior
+sampling, thereby partly answering a question by Foster et al. (2018). 

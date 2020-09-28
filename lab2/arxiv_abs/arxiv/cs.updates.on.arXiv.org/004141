@@ -1,0 +1,19 @@
+Spectral-spatial classification of remotely sensed hyperspectral images has been the subject
+of many studies in recent years. Current methods achieve excellent performance on benchmark hyperspectral
+image labeling tasks when a sufficient number of labeled pixels is available. However, in the presence
+of only very few labeled pixels, such classification becomes a challenging problem. In this paper
+we propose to tackle this problem using convolutional neural networks (CNNs) and data augmentation.
+Our newly developed method relies on the assumption of spectral-spatial locality: nearby pixels
+in a hyperspectral image are related, in the sense that their spectra and their labels are likely
+to be similar. We exploit this assumption to develop 1) a new data augmentation procedure which adds
+new samples to the train set and 2) a tailored loss function which penalize differences among weights
+of the network corresponding to nearby wavelengths of the spectra. We train a simple single layer
+convolutional neural network with this loss function and augmented train set and use it to classify
+all unlabeled pixels of the given image. To assess the efficacy of our method, we used five publicly
+available hyperspectral images: Pavia Center, Pavia University, KSC, Indian Pines and Salina.
+On these images our method significantly outperforms other baselines. Notably, with just 1% of
+labeled pixels per class, on these dataset our method achieves an accuracy of 99.5%, etc. Furthermore
+we show that our method improves over other baselines also in a supervised setting, when no overlap
+between train and test pixels is allowed. Overall our investigation demonstrates that spectral-spatial
+locality can be easily embedded in a simple convolutional neural network through data augmentation
+and a tailored loss function. 

@@ -1,0 +1,18 @@
+WebAssembly is the new low-level language for the web and has now been implemented in all major browsers
+since over a year. To ensure the security, performance, and correctness of future web applications,
+there is a strong need for dynamic analysis tools for WebAssembly. Unfortunately, building such
+tools from scratch requires knowledge of low-level details of the language, and perhaps even its
+runtime environment. This paper presents Wasabi, the first general-purpose framework for dynamically
+analyzing WebAssembly. Wasabi provides an easy-to-use, high-level API that allows implementing
+heavyweight dynamic analyses that can monitor all low-level behavior. The approach is based on
+binary instrumentation, which inserts calls to analysis functions written in JavaScript into
+a WebAssembly binary. Wasabi addresses several unique challenges not present for other binary
+instrumentation tools, such as the problem of tracing type-polymorphic instructions with analysis
+functions that have a fixed type, which we address through an on-demand monomorphization of analysis
+calls. To control the overhead imposed by an analysis, Wasabi selectively instruments only those
+instructions relevant for the analysis. Our evaluation on compute-intensive benchmarks and real-world
+applications shows that Wasabi (i) faithfully preserves the original program behavior, (ii) imposes
+an overhead that is reasonable for heavyweight dynamic analysis (depending on the program and the
+analyzed instructions, between 1.02x and 163x), and (iii) makes it straightforward to implement
+various dynamic analyses, including instruction counting, call graph extraction, memory access
+tracing, and taint analysis. 

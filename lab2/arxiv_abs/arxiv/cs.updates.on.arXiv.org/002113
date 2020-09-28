@@ -1,0 +1,19 @@
+We study the problem of executing an application represented by a precedence task graph on a parallel
+machine composed of standard computing cores and accelerators. Contrary to most existing approaches,
+we distinguish the allocation and the scheduling phases and we mainly focus on the allocation part
+of the problem: choose the most appropriate type of computing unit for each task. We address both
+off-line and on-line settings and design generic scheduling approaches. In the first case, we establish
+strong lower bounds on the worst-case performance of a known approach based on Linear Programming
+for solving the allocation problem. Then, we refine the scheduling phase and we replace the greedy
+List Scheduling policy used in this approach by a better ordering of the tasks. Although this modification
+leads to the same approximability guarantees, it performs much better in practice. We also extend
+this algorithm to more types of computing units, achieving an approximation ratio which depends
+on the number of different types. In the on-line case, we assume that the tasks arrive in any, not known
+in advance, order which respects the precedence relations and the scheduler has to take irrevocable
+decisions about their allocation and execution. In this setting, we propose the first on-line scheduling
+algorithm which takes into account precedences. Our algorithm is based on adequate rules for selecting
+the type of processor where to allocate the tasks and it achieves a constant factor approximation
+guarantee if the ratio of the number of CPUs over the number of GPUs is bounded. Finally, all the previous
+algorithms for hybrid architectures have been experimented on a large number of simulations built
+on actual libraries. These simulations assess the good practical behavior of the algorithms with
+respect to the state-of-the-art solutions, whenever these exist, or baseline algorithms. 

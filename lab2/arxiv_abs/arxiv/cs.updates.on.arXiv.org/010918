@@ -1,0 +1,20 @@
+Despite the significant improvement in the performance of monocular pose estimation approaches
+and their ability to generalize to unseen environments, multi-view (MV) approaches are often lagging
+behind in terms of accuracy and are specific to certain datasets. This is mainly due to the fact that
+(1) contrary to real world single-view (SV) datasets, MV datasets are often captured in controlled
+environments to collect precise 3D annotations, which do not cover all real world challenges, and
+(2) the model parameters are learned for specific camera setups. To alleviate these problems, we
+propose a two-stage approach to detect and estimate 3D human poses, which separates SV pose detection
+from MV 3D pose estimation. This separation enables us to utilize each dataset for the right task,
+i.e. SV datasets for constructing robust pose detection models and MV datasets for constructing
+precise MV 3D regression models. In addition, our 3D regression approach only requires 3D pose data
+and its projections to the views for building the model, hence removing the need for collecting annotated
+data from the test setup. Our approach can therefore be easily generalized to a new environment by
+simply projecting 3D poses into 2D during training according to the camera setup used at test time.
+As 2D poses are collected at test time using a SV pose detector, which might generate inaccurate detections,
+we model its characteristics and incorporate this information during training. We demonstrate
+that incorporating the detector's characteristics is important to build a robust 3D regression
+model and that the resulting regression model generalizes well to new MV environments. Our evaluation
+results show that our approach achieves competitive results on the Human3.6M dataset and significantly
+improves results on a MV clinical dataset that is the first MV dataset generated from live surgery
+recordings. 

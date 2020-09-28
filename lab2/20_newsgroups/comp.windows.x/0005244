@@ -1,0 +1,5 @@
+I am working on a problem of scheduling classroom, and I will like to know if
+you have some software, papers or articles about it. If you have something
+relate it,  please let me know.
+		thanks
+		Lorenza Illanes

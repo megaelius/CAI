@@ -1,0 +1,19 @@
+This paper introduces new solvers for the computation of low-rank approximate solutions to large-scale
+linear problems, with a particular focus on the regularization of linear inverse problems. Although
+Krylov methods incorporating explicit projections onto low-rank subspaces are already used for
+well-posed systems that arise from discretizing stochastic or time-dependent PDEs, we are mainly
+concerned with algorithms that solve the so-called nuclear norm regularized problem, where a suitable
+nuclear norm penalization on the solution is imposed alongside a fit-to-data term expressed in
+the 2-norm: this has the effect of implicitly enforcing low-rank solutions. By adopting an iteratively
+reweighted norm approach, the nuclear norm regularized problem is reformulated as a sequence of
+quadratic problems, which can then be efficiently solved using Krylov methods, giving rise to an
+inner-outer iteration scheme. Our approach differs from the other solvers available in the literature
+in that: (a) Kronecker product properties are exploited to define the reweighted 2-norm penalization
+terms; (b) efficient preconditioned Krylov methods replace gradient (projection) methods; (c)
+the regularization parameter can be efficiently and adaptively set along the iterations. Furthermore,
+we reformulate within the framework of flexible Krylov methods both the new inner-outer methods
+for nuclear norm regularization and some of the existing Krylov methods incorporating low-rank
+projections. This results in an even more computationally efficient (but heuristic) strategy,
+that does not rely on an inner-outer iteration scheme. Numerical experiments show that our new solvers
+are competitive with other state-of-the-art solvers for low-rank problems, and deliver reconstructions
+of increased quality with respect to other classical Krylov methods. 

@@ -1,0 +1,17 @@
+Detecting, constraining, manipulating, and reasoning over features in the high-dimensional
+space that is language is the primary concern of modern computational linguistics, and a key focus
+of AI, more generally. We propose a general framework for addressing the first two of these four facets,
+coupling sharp feature detection with a matching method for introspecting inference. Specifically,
+we present and analyze binary labeling via a convolutional decomposition (BLADE), a sequence labeling
+approach based on a decomposition of the filter-ngram interactions of a convolutional neural network
+and a linear layer. BLADE can be viewed as a maxpool attention-style mechanism on the final layer
+of a network, and it enables flexibility in producing predictions at -- and defining loss functions
+for -- varying label granularities, from the fully-supervised sequence labeling setting to the
+challenging zero-shot sequence labeling setting, in which we seek token-level predictions but
+only have access to labels at the document- or sentence-level for training. Importantly, BLADE
+enables a matching method, exemplar auditing, useful for analyzing the model and data, and empirically,
+as part of an inference-time decision rule. This introspection method provides a means, in some
+settings, of updating the model (via a database) without explicit re-training, opening the possibility
+for end-users to make local updates, or for annotators to progressively add fine-grained labels
+(or other meta-data). We assess this framework -- and suitability limitations -- on a series of binary
+classification tasks and at varying label resolutions. 

@@ -1,0 +1,18 @@
+The operational space of an autonomous vehicle (AV) can be diverse and vary significantly. This
+may lead to a scenario that was not postulated in the design phase. Due to this, formulating a rule
+based decision maker for selecting maneuvers may not be ideal. Similarly, it may not be effective
+to design an a-priori cost function and then solve the optimal control problem in real-time. In order
+to address these issues and to avoid peculiar behaviors when encountering unforeseen scenario,
+we propose a reinforcement learning (RL) based method, where the ego car, i.e., an autonomous vehicle,
+learns to make decisions by directly interacting with simulated traffic. The decision maker for
+AV is implemented as a deep neural network providing an action choice for a given system state. In
+a critical application such as driving, an RL agent without explicit notion of safety may not converge
+or it may need extremely large number of samples before finding a reliable policy. To best address
+the issue, this paper incorporates reinforcement learning with an additional short horizon safety
+check (SC). In a critical scenario, the safety check will also provide an alternate safe action to
+the agent provided if it exists. This leads to two novel contributions. First, it generalizes the
+states that could lead to undesirable "near-misses" or "collisions ". Second, inclusion of safety
+check can provide a safe and stable training environment. This significantly enhances learning
+efficiency without inhibiting meaningful exploration to ensure safe and optimal learned behavior.
+We demonstrate the performance of the developed algorithm in highway driving scenario where the
+trained AV encounters varying traffic density in a highway setting. 

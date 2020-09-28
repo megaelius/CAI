@@ -1,0 +1,17 @@
+The standard approach to rank the performance of several classifiers for a given classification
+problem is via an independent labeled validation dataset. However, in various applications only
+unlabeled data and several pre-constructed classifiers are provided, without access to labeled
+training or validation data. This begs the following questions: given only the predictions of several
+classifiers over a large set of unlabeled test data, is it possible to a) reliably rank their expected
+performances? and b) construct a meta-classifier more accurate than any individual classifier
+in the ensemble? Here we present a spectral approach to address these questions. First, assuming
+errors of different classifiers are statistically independent, we show that the off-diagonal
+terms of their covariance matrix correspond to a rank-one matrix. Moreover, the entries of its leading
+eigenvector are proportional to the (balanced) accuracies of the classifiers. Second, using this
+eigenvector and without labeled data, we construct a novel spectral meta-learner (SML), which
+is a weighted linear combination of the classifiers in the ensemble. We interpret our SML as an approximation
+of the maximum likelihood estimator (MLE). Not only does SML typically achieve a higher accuracy
+than most classifiers in the ensemble, it also provides a better starting point for iterative estimation
+of the MLE than majority voting. Further, we show that SML is robust to the presence of small malicious
+groups of classifiers designed to veer the ensemble prediction away from the (unknown) ground truth.
+We demonstrate our unsupervised methods on several simulated and real datasets. 

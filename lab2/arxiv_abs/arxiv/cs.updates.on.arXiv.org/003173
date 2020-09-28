@@ -1,0 +1,18 @@
+Causal consistency is an attractive consistency model for replicated data stores. It is provably
+the strongest model that tolerates partitions, it avoids the long latencies associated with strong
+consistency, and, especially when using read-only transactions, it prevents many of the anomalies
+of weaker consistency models. Recent work has shown that causal consistency allows "latency-optimal"
+read-only transactions, that are nonblocking, single-version and single-round in terms of communication.
+On the surface, this latency optimality is very appealing, as the vast majority of applications
+are assumed to have read-dominated workloads. In this paper, we show that such "latency-optimal"
+read-only transactions induce an extra overhead on writes, the extra overhead is so high that performance
+is actually jeopardized, even in read-dominated workloads. We show this result from a practical
+and a theoretical angle. First, we present a protocol that implements "almost laten- cy-optimal"
+ROTs but does not impose on the writes any of the overhead of latency-optimal protocols. In this protocol,
+ROTs are nonblocking, one version and can be configured to use either two or one and a half rounds of
+client-server communication. We experimentally show that this protocol not only provides better
+throughput, as expected, but also surprisingly better latencies for all but the lowest loads and
+most read-heavy workloads. Then, we prove that the extra overhead imposed on writes by latency-optimal
+read-only transactions is inherent, i.e., it is not an artifact of the design we consider, and cannot
+be avoided by any implementation of latency-optimal read-only transactions. We show in particular
+that this overhead grows linearly with the number of clients. 

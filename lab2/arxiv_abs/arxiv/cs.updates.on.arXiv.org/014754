@@ -1,0 +1,17 @@
+Lane detection is an essential part of the perception module of any automated driving (AD) or advanced
+driver assistance system (ADAS). So far, model-driven approaches for the detection of lane markings
+proved sufficient. More recently, however data-driven approaches have been proposed that show
+superior results. These deep learning approaches typically propose a classification of the free-space
+using for example semantic segmentation. While these examples focus and optimize on unmarked inner-city
+roads, we believe that mapless driving in complex highway scenarios is still not handled with sufficient
+robustness and availability. Especially in challenging weather situations such as heavy rain,
+fog at night or reflections in puddles, the reliable detection of lane markings will decrease significantly
+or completely fail with low-cost video-only AD systems. Therefore, we propose to specifically
+classify a drivable corridor in the ego-lane on a pixel level with a deep learning approach. Our approach
+is intentionally kept simple with only 660k parameters. Thus, we were able to easily integrate our
+algorithm into an online AD system of a test vehicle. We demonstrate the performance of our approach
+under challenging conditions qualitatively and quantitatively in comparison to a state-of-the-art
+model-driven approach. We see the current approach as a fallback method whenever a model-driven
+approach cannot cope with a specific scenario. Due to this, a fallback method does not have to fulfill
+the same requirements on comfort in lateral control as the primary algorithm: Its task is to catch
+the temporal shortcomings of the main perception task. 

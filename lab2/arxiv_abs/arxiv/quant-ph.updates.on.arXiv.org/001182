@@ -1,0 +1,17 @@
+We introduce a new quantum optimization algorithm for dense Linear Programming problems, which
+can be seen as the quantization of the Interior Point Predictor-Corrector algorithm \cite{Predictor-Corrector}
+using a Quantum Linear System Algorithm \cite{DenseHHL}. The (worst case) work complexity of our
+method is, up to polylogarithmic factors, $O(L\sqrt{n}(n+m)\bar{||M||_F}\bar{\kappa}^2\epsilon^{-2})$
+for $n$ the number of variables in the cost function, $m$ the number of constraints, $\epsilon^{-1}$
+the target precision, $L$ the bit length of the input data, $\bar{||M||_F}$ an upper bound to the
+Frobenius norm of the linear systems of equations that appear, $||M||_F$, and $\bar{\kappa}$ an
+upper bound to the condition number $\kappa$ of those systems of equations. This represents a quantum
+speed-up in the number $n$ of variables in the cost function with respect to the comparable classical
+Interior Point algorithms when the initial matrix of the problem $A$ is dense and we substitute the
+quantum part of the algorithm by classical algorithms such as Conjugate Gradient Descent, what
+would mean the whole algorithm has complexity $O(L\sqrt{n}(n+m)^2\bar{\kappa} \log(\epsilon^{-1}))$,
+or with exact methods, at least $O(L\sqrt{n}(n+m)^{2.373})$. Also, in contrast with any Quantum
+Linear System Algorithm, the algorithm described in this article outputs a classical description
+of the solution vector, and the value of the optimal solution. Finally, the dependence on the target
+precision can be lowered to $\text{poly}\log(\epsilon^{-1})$, if the last (constant number of)
+iterations are performed classically. 

@@ -1,0 +1,18 @@
+Random sampling has been widely used in approximate query processing on large databases, due to
+its potential to significantly reduce resource usage and response times, at the cost of a small approximation
+error. We consider random sampling for answering the ubiquitous class of group-by queries, which
+first group data according to one or more attributes, and then aggregate within each group after
+filtering through a predicate. The challenge with group-by queries is that a sampling method cannot
+focus on optimizing the quality of a single answer (e.g. the mean of selected data), but must simultaneously
+optimize the quality of a set of answers (one per group). We present CVOPT, a query- and data-driven
+sampling framework for a set of queries that return multiple answers, e.g. group-by queries. To
+evaluate the quality of a sample, CVOPT defines a metric based on the norm of the coefficients of variation
+(CVs) of different answers, and constructs a stratified sample that provably optimizes the metric.
+CVOPT can handle group-by queries on data where groups have vastly different statistical characteristics,
+such as frequencies, means, or variances. CVOPT jointly optimizes for multiple aggregations and
+multiple group-by clauses, and provides a way to prioritize specific groups or aggregates. It can
+be tuned to cases when partial information about a query workload is known, such as a data warehouse
+where queries are scheduled to run periodically. Our experimental results show that CVOPT outperforms
+current state-of-the-art on sample quality and estimation accuracy for group-by queries. On a
+set of queries on two real-world data sets, CVOPT yields relative errors that are 5 times smaller
+than competing approaches, under the same budget. 

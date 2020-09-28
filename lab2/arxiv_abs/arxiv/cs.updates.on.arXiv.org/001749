@@ -1,0 +1,19 @@
+Deep learning (DL) training-as-a-service (TaaS) is an important emerging industrial workload.
+The unique challenge of TaaS is that it must satisfy a wide range of customers who have no experience
+and resources to tune DL hyper-parameters, and meticulous tuning for each user's dataset is prohibitively
+expensive. Therefore, TaaS hyper-parameters must be fixed with values that are applicable to all
+users. IBM Watson Natural Language Classifier (NLC) service, the most popular IBM cognitive service
+used by thousands of enterprise-level clients around the globe, is a typical TaaS service. By evaluating
+the NLC workloads, we show that only the conservative hyper-parameter setup (e.g., small mini-batch
+size and small learning rate) can guarantee acceptable model accuracy for a wide range of customers.
+We further justify theoretically why such a setup guarantees better model convergence in general.
+Unfortunately, the small mini-batch size causes a high volume of communication traffic in a parameter-server
+based system. We characterize the high communication bandwidth requirement of TaaS using representative
+industrial deep learning workloads and demonstrate that none of the state-of-the-art scale-up
+or scale-out solutions can satisfy such a requirement. We then present GaDei, an optimized shared-memory
+based scale-up parameter server design. We prove that the designed protocol is deadlock-free and
+it processes each gradient exactly once. Our implementation is evaluated on both commercial benchmarks
+and public benchmarks to demonstrate that it significantly outperforms the state-of-the-art
+parameter-server based implementation while maintaining the required accuracy and our implementation
+reaches near the best possible runtime performance, constrained only by the hardware limitation.
+Furthermore, to the best of our knowledge, GaDei is the only scale-up DL system that provides fault-tolerance.

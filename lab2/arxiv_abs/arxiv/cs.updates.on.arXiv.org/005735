@@ -1,0 +1,19 @@
+Work Stealing has been a very successful algorithm for scheduling parallel computations, and is
+known to achieve high performances even for computations exhibiting fine-grained parallelism.
+In Work Stealing, each processor owns a deque that uses to keep track of its assigned work. To ensure
+proper load balancing, each processor's deque is accessible not only to its owner but also to other
+processors that may be searching for work. However, due to the concurrent nature of deques, it has
+been proven that even when processors operate locally on their deque, synchronization is required.
+Moreover, many studies have found that synchronization related overheads often account for a significant
+portion of the total execution time. For that reason, many efforts have been carried out to reduce
+the synchronization overheads incurred by traditional schedulers. In this paper we present and
+analyze a variant of Work Stealing that avoids most synchronization overheads by keeping processors'
+deques entirely private by default, and only exposing work when requested by thieves. Consider
+any computation with work $T_{1}$ and critical-path length $T_{\infty}$ executed by $P$ processors
+using our scheduler. Our analysis shows that the expected execution time is $O\left(\frac{T_{1}}{P}
++ T_{\infty}\right)$, and the expected synchronization overheads incurred during the execution
+are at most $O\left(\left(C_{Compare-And-Swap} + C_{Memory Fence}\right)PT_{\infty}\right)$,
+where $C_{Compare-And-Swap}$ and $C_{Memory Fence}$ respectively denote the maximum cost of
+executing a Compare-And-Swap instruction and a Memory Fence instruction. The second bound corresponds
+to an order of magnitude improvement over state-of-the-art Work Stealing algorithms that use concurrent
+deques. 

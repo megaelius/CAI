@@ -1,0 +1,19 @@
+The discretization of surface intrinsic elliptic partial differential equations (PDEs) pose
+interesting challenges not seen in flat space. The discretization of these PDEs typically proceeds
+by either parametrizing the surface, triangulating the surface, or embedding the surface in a higher
+dimensional flat space. The closest point method (CPM) is an embedding method that represents surfaces
+using a function that maps points in the embedding space to their closest points on the surface. In
+the CPM, this mapping also serves as an extension operator that brings surface intrinsic data onto
+the embedding space, allowing PDEs to be numerically approximated by standard methods in a narrow
+tubular neighborhood of the surface. We focus here on numerically approximating the positive Helmholtz
+equation, $\left(c-\Delta_{\mathcal{S}}\right)u=f,~c\in\mathbb{R}^+$ by the CPM. This yields
+a large, sparse, and nonsymmetric system to solve. Herein, we develop restricted additive Schwarz
+(RAS) and optimized restricted additive Schwarz (ORAS) solvers and preconditioners for this discrete
+system. In particular, we develop a general strategy for computing overlapping partitions of the
+computational domain, as well as defining the corresponding Dirichlet and Robin transmission
+conditions. We demonstrate that the convergence of the ORAS solvers and preconditioners can be
+improved by using a modified transmission condition where more than two overlapping subdomains
+meet. Numerical experiments are provided for a variety of analytical and triangulated surfaces.
+We find that ORAS solvers and preconditioners outperform their RAS counterparts, and that using
+domain decomposition as a preconditioner gives faster convergence over using it as a solver. The
+methods exhibit good parallel scalability over the range of process counts tested. 

@@ -1,0 +1,19 @@
+Proving the linearizability of highly concurrent data structures, such as those using optimistic
+concurrency control, is a challenging task. The main difficulty is in reasoning about the view of
+the memory obtained by the threads, because as they execute, threads observe different fragments
+of the data structure from different points in time. Until today, every linearizability proof has
+tackled this challenge from scratch. We present a unifying proof argument capable of proving the
+linearizability of several highly concurrent data structures, including an optimistic self-balancing
+binary search tree and the Lazy List algorithm. Our framework facilitates {\em sequential reasoning}
+about the view of a thread, as if it traverses the data structure without interference from other
+operations. Our key contribution is showing that properties of reachability along search paths
+can be deduced for concurrent traversals from interference-free traversals. This greatly simplifies
+linearizability proofs. At the heart of our proof method lies a notion of \emph{order on the memory},
+corresponding to the order in which locations in memory are read by the threads, which guarantees
+a certain notion of consistency between the view of the thread and the actual memory. To apply our
+framework, the user proves that the data structure satisfies certain conditions, relating to acyclicity
+of the data structure and the preservation of search paths to locations affected by interfering
+writes. Establishing the conditions, as well as the full linearizability proof, reduces to simple
+concurrent reasoning. The result is a clear and comprehensible correctness proof. Our framework
+elucidates common patterns underlying several existing data structures, and could pave the way
+to design new data structures based on these principles. 

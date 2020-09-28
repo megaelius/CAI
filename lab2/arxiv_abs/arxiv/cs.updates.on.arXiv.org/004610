@@ -1,0 +1,20 @@
+Region-based convolutional neural networks (R-CNN)~\cite{fast_rcnn,faster_rcnn,mask_rcnn}
+have largely dominated object detection. Operators defined on RoIs (Region of Interests) play
+an important role in R-CNNs such as RoIPooling~\cite{fast_rcnn} and RoIAlign~\cite{mask_rcnn}.
+They all only utilize information inside RoIs for RoI prediction, even with their recent deformable
+extensions~\cite{deformable_cnn}. Although surrounding context is well-known for its importance
+in object detection, it has yet been integrated in R-CNNs in a flexible and effective way. Inspired
+by the auto-context work~\cite{auto_context} and the multi-class object layout work~\cite{nms_context},
+this paper presents a generic context-mining RoI operator (i.e., \textit{RoICtxMining}) seamlessly
+integrated in R-CNNs, and the resulting object detection system is termed \textbf{Auto-Context
+R-CNN} which is trained end-to-end. The proposed RoICtxMining operator is a simple yet effective
+two-layer extension of the RoIPooling or RoIAlign operator. Centered at an object-RoI, it creates
+a $3\times 3$ layout to mine contextual information adaptively in the $8$ surrounding context regions
+on-the-fly. Within each of the $8$ context regions, a context-RoI is mined in term of discriminative
+power and its RoIPooling / RoIAlign features are concatenated with the object-RoI for final prediction.
+\textit{The proposed Auto-Context R-CNN is robust to occlusion and small objects, and shows promising
+vulnerability for adversarial attacks without being adversarially-trained.} In experiments,
+it is evaluated using RoIPooling as the backbone and shows competitive results on Pascal VOC, Microsoft
+COCO, and KITTI datasets (including $6.9\%$ mAP improvements over the R-FCN~\cite{rfcn} method
+on COCO \textit{test-dev} dataset and the first place on both KITTI pedestrian and cyclist detection
+as of this submission). 

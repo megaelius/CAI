@@ -1,0 +1,17 @@
+We formulate the abnormal event detection problem as an outlier detection task and we propose a two-stage
+algorithm based on k-means clustering and one-class Support Vector Machines (SVM) to eliminate
+outliers. After extracting motion features from the training video containing only normal events,
+we apply k-means clustering to find clusters representing different types of motion. In the first
+stage, we consider that clusters with fewer samples (with respect to a given threshold) contain
+only outliers and we eliminate these clusters altogether. In the second stage, we shrink the borders
+of the remaining clusters by training a one-class SVM model on each cluster. To detected abnormal
+events in the test video, we analyze each test sample and consider its maximum normality score provided
+by the trained one-class SVM models, based on the intuition that a test sample can belong to only one
+cluster of normal motion. If the test sample does not fit well in any narrowed cluster, than it is labeled
+as abnormal. We also combine our approach based on motion features with a recent approach based on
+deep appearance features extracted with pre-trained convolutional neural networks (CNN). We
+combine our two-stage algorithm with the deep framework using a late fusion strategy, keeping the
+pipelines of the two approaches independent. We compare our method with several state-of-the-art
+supervised and unsupervised methods on four benchmark data sets. The empirical results indicate
+that our abnormal event detection framework can achieve better results in most cases, while processing
+the test video in real-time at 30 frames per second on CPU. 

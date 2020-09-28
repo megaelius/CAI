@@ -1,0 +1,20 @@
+There has recently been a surge of interest in the computational and complexity properties of the
+population model, which assumes $n$ anonymous, computationally-bounded nodes, interacting
+at random, and attempting to jointly compute global predicates. In particular, a significant amount
+of work, has gone towards investigating majority and consensus dynamics in this model: assuming
+that each node is initially in one of two states $X$ or $Y$, determine which state had higher initial
+count. In this paper, we consider a natural generalization of majority/consensus, which we call
+comparison. We are given two baseline states, $X_0$ and $Y_0$, present in any initial configuration
+in fixed, possibly small counts. Importantly, one of these states has higher count than the other:
+we will assume $|X_0| \ge C |Y_0|$ for some constant $C$. The challenge is to design a protocol which
+can quickly and reliably decide on which of the baseline states $X_0$ and $Y_0$ has higher initial
+count. We propose a simple algorithm solving comparison: the baseline algorithm uses $O(\log n)$
+states per node, and converges in $O(\log n)$ (parallel) time, with high probability, to a state
+where whole population votes on opinions $X$ or $Y$ at rates proportional to initial $|X_0|$ vs.
+$|Y_0|$ concentrations. We then describe how such output can be then used to solve comparison. The
+algorithm is self-stabilizing, in the sense that it converges to the correct decision even if the
+relative counts of baseline states $X_0$ and $Y_0$ change dynamically during the execution, and
+leak-robust, in the sense that it can withstand spurious faulty reactions. Our analysis relies
+on a new martingale concentration result which relates the evolution of a population protocol to
+its expected (steady-state) analysis, which should be broadly applicable in the context of population
+protocols and opinion dynamics. 

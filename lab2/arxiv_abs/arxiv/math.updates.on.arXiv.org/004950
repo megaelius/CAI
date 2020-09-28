@@ -1,0 +1,18 @@
+Finding the best setup for experiments is the main concern of Optimal Experimental Design (OED).
+We focus on the Bayesian experimental design problem of finding the setup that maximizes the Shannon
+expected information gain. We use the stochastic gradient descent and its accelerated counterpart,
+which employs Nesterov's method, to solve the optimization problem in OED. We adapt a restart technique
+to accelerated gradient-based algorithms, originally proposed for deterministic optimization
+problems, to improve the acceleration of the stochastic optimization. We combine these optimization
+methods with three estimators of the objective function: the double-loop Monte Carlo estimator
+(DLMC), the Monte Carlo estimator using the Laplace approximation for the posterior distribution
+(MCLA) and the double-loop Monte Carlo estimator with Laplace-based importance sampling (DLMCIS).
+Using stochastic gradient methods and Laplace-based estimators together allows us to use expensive
+and complex models, such as those that require solving a partial differential equation (PDE). From
+a theoretical viewpoint, we derive an explicit formula to compute the gradient estimator of the
+Monte Carlo methods including MCLA and the DLMCIS. From a computational standpoint, we study four
+examples: three based on analytical functions and one using on the finite element method. The last
+example is an electrical impedance tomography experiment based on the complete electrode model.
+In these examples, the accelerated stochastic gradient descent method using MCLA converges to
+local maxima in fewer model evaluations by up to five orders of magnitude than gradient descent with
+DLMC. 

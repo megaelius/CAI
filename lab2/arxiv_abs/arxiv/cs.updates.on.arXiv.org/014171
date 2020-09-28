@@ -1,0 +1,19 @@
+Smart contracts have enabled blockchain systems to evolve from simple cryptocurrency platforms,
+such as Bitcoin, to general transactional systems, such as Ethereum. Catering for emerging business
+requirements, a new architecture called execute-order-validate has been proposed in Hyperledger
+Fabric to support parallel transactions and improve the blockchain's throughput. However, this
+new architecture might render many invalid transactions when serializing them. This problem is
+further exaggerated as the block formation rate is inherently limited due to other factors beside
+data processing, such as cryptography and consensus. In this work, we propose a novel method to enhance
+the execute-order-validate architecture, by reducing invalid transactions to improve the throughput
+of blockchains. Our method is inspired by state-of-the-art optimistic concurrency control techniques
+in modern database systems. In contrast to existing blockchains that adopt database's preventive
+approaches which might abort serializable transactions, our method is theoretically more fine-grained.
+Specifically, unserializable transactions are aborted before ordering and the remaining transactions
+are guaranteed to be serializable. For evaluation, we implement our method in two blockchains respectively,
+FabricSharp on top of Hyperledger Fabric, and FastFabricSharp on top of FastFabric. We compare
+the performance of FabricSharp with vanilla Fabric and three related systems, two of which are respectively
+implemented with one standard and one state-of-the-art concurrency control techniques from databases.
+The results demonstrate that FabricSharp achieves 25% higher throughput compared to the other
+systems in nearly all experimental scenarios. Moreover, the FastFabricSharp's improvement over
+FastFabric is up to 66%. 

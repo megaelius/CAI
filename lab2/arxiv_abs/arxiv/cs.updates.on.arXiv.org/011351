@@ -1,0 +1,19 @@
+In this paper, we study the Byzantine lattice agreement problem in synchronous systems. The lattice
+agreement problem in crash failure model has been studied both in synchronous and asynchronous
+systems, which leads to the current best upper bound of $O(\log f)$ rounds in both systems. However,
+very few algorithmic results are known for the lattice agreement problem in Byzantine failure model.
+The paper [Nowak et al., DISC, 2019] first gives an algorithm for a variant of the lattice agreement
+problem on cycle-free lattices that tolerates up to $f < n/(h(X) + 1)$ Byzantine faults, where $n$
+is the number of processes and $h(X)$ is the height of the input lattice $X$. The recent preprint by
+Di et al. studies this problem with a slightly modified validity condition in asynchronous systems.
+They present a $O(f)$ rounds algorithm by using the reliable broadcast primitive as a first step
+and following the similar algorithmic framework as the algorithms in crash failure model. In this
+paper, we propose the first algorithm for the Byzantine lattice agreement problem in synchronous
+systems, which runs in $\min \{3h(X) + 6,6\sqrt{f} + 6\})$ rounds and takes $O(n^2 \min\{h(X), \sqrt{f}\})$
+messages, where $h(X)$ is the height of the input lattice $X$, $n$ is the total number of processes
+in the system and $f$ is the maximum number of Byzantine processes such that $n \geq 3f + 1$. In our algorithm,
+each process keeps track of a safe lattice and use this lattice to filter out invalid values from Byzantine
+processes. To get our desired $O(\sqrt{f})$ round guarantee, we apply a slightly modified version
+of the Gradecast algorithm [Feldman et al. ACM, 1988] to detect Byzantine processes at each round
+and ignore their messages in future rounds. As far as we know, this is the first algorithm which applies
+the Gradecast primitive to solve the lattice agreement problem. 

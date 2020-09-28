@@ -1,0 +1,19 @@
+In numerical magnetohydrodynamics (MHD), a major challenge is maintaining zero magnetic field-divergence
+(div-B). Constrained transport (CT) schemes can achieve this at high accuracy, but have generally
+been restricted to very specific methods. For more general (meshless, moving-mesh, or ALE) methods,
+'divergence-cleaning' schemes reduce the div-B errors, however they can still be significant,
+especially at discontinuities, and can lead to systematic deviations from correct solutions which
+converge away very slowly. Here we propose a new constrained gradient (CG) scheme which augments
+these with a hybrid projection step, and can be applied to any numerical scheme with a reconstruction.
+This iteratively approximates the least-squares minimizing, globally divergence-free reconstruction
+of the fluid. We emphasize that, unlike 'locally divergence free' methods, this actually minimizes
+the numerically unstable div-B terms, without affecting the convergence order of the method. We
+implement this in the mesh-free code GIZMO and compare a wide range of test problems. Compared to
+state-of-the-art cleaning schemes, our CG method reduces the maximum div-B errors in each problem
+by 1-3 orders of magnitude (2-5 dex below the typical errors if no div-B cleaning is used). By preventing
+large div-B even at unresolved discontinuities, the method eliminates systematic errors at jumps.
+In every problem, the accuracy of our CG results is comparable to CT methods. The cost is modest, ~30%
+of the hydro algorithm, and the CG correction can be easily implemented in a wide range of different
+numerical MHD methods. While for many problems, we find Dedner-type cleaning schemes are sufficient
+for good results, we identify a wide range of problems where using only the simplest Powell or '8-wave'
+cleaning can produce systematic, order-of-magnitude errors. 

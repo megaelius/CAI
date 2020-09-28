@@ -1,0 +1,19 @@
+We consider Gibbs distributions, which are families of probability distributions over a discrete
+space $\Omega$ with probability mass function given by $\mu^\Omega_\beta(x) = \frac{e^{\beta
+H(x)}}{Z(\beta)}$. Here $H:\Omega\rightarrow\{0,..,n\}$ is a fixed function (called a Hamiltonian),
+$\beta$ is the parameter of the distribution, and the normalization factor $Z(\beta)=\sum_{x\in\Omega}e^{\beta
+H(x)}=\sum_{k=0}^nc_ke^{\beta k}$ is called the partition function. We study how function $Z$
+can be estimated using an oracle that produces samples $x\sim\mu^\Omega_\beta(.)$ for a value
+$\beta$ in a given interval $[\beta_{min},\beta_{max}]$. We consider the problem of estimating
+the normalized coefficients $c_k$ for indices $k\in\cal K$ satisfying $\max_\beta\mu^\Omega_\beta(\{x|H(x)=k\})\ge\mu_*$,
+where $\mu_*\in(0,1)$ is a given parameter and $\cal K$ is a given subset of $\cal H$. We solve this
+using $\tilde O(\frac{\min\{q,n^2\}+\frac{\min\{\sqrt q,|\cal K|\}}{\mu_*}}{\epsilon^2})$
+samples where $q=\log\frac{Z(\beta_{max})}{Z(\beta_{min})}$, and we show this is optimal up
+to logarithmic factors. We also improve the sample complexity to roughly $\tilde O(\frac{1/\mu_*+\min\{q+n,n^2\}}{\epsilon^2})$
+for applications where the coefficients are log-concave (e.g. counting connected subgraphs of
+a given graph). As a key subroutine, we show how to estimate $q$ using $\tilde O(\frac{\min\{q,n^2\}}{\epsilon^2})$
+samples. This improves over a prior algorithm of Kolmogorov (2018) that uses $\tilde O(\frac q{\epsilon^2})$
+samples. We also show a "batched" version of this algorithm which simultaneously estimates $\frac{Z(\beta)}{Z(\beta_{min})}$
+for many values of $\beta$, at essentially the same cost as for estimating just $\frac{Z(\beta_{max})}{Z(\beta_{min})}$
+alone. We show matching lower bounds, demonstrating that this complexity is optimal as a function
+of $n,q$ up to logarithmic terms. 

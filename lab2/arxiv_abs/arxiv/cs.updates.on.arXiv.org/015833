@@ -1,0 +1,19 @@
+Parallelization schemes are essential in order to exploit the full benefits of multi-core architectures.
+In said architectures, the most comprehensive parallelization API is OpenMP. However, the introduction
+of correct and optimal OpenMP parallelization to applications is not always a simple task, due to
+common parallel management pitfalls, architecture heterogeneity and the current necessity for
+human expertise in order to comprehend many fine details and abstract correlations. To ease this
+process, many automatic parallelization compilers were created over the last decade. Harel et
+al. [2020] tested several source-to-source compilers and concluded that each has its advantages
+and disadvantages and no compiler is superior to all other compilers in all tests. This indicates
+that a fusion of the compilers' best outputs under the best hyper-parameters for the current hardware
+setups can yield greater speedups. To create such a fusion, one should execute a computationally
+intensive hyper-parameter sweep, in which the performance of each option is estimated and the best
+option is chosen. We created a novel parallelization source-to-source multi-compiler named ComPar,
+which uses code segmentation-and-fusion with hyper-parameters tuning to achieve the best parallel
+code possible without any human intervention while maintaining the program's validity. In this
+paper we present ComPar and analyze its results on NAS and PolyBench benchmarks. We conclude that
+although the resources ComPar requires to produce parallel code are greater than other source-to-source
+parallelization compilers - as it depends on the number of parameters the user wishes to consider,
+and their combinations - ComPar achieves superior performance overall compared to the serial code
+version and other tested parallelization compilers. ComPar is publicly available at: https://github.com/Scientific-Computing-Lab-NRCN/compar.

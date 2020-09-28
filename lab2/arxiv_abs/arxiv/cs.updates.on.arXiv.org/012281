@@ -1,0 +1,18 @@
+In recent years, Graph Convolutional Networks (GCNs) and their variants have been widely utilized
+in learning tasks that involve graphs. These tasks include recommendation systems, node classification,
+among many others. In node classification problem, the input is a graph in which the edges represent
+the association between pairs of nodes, multi-dimensional feature vectors are associated with
+the nodes, and some of the nodes in the graph have known labels. The objective is to predict the labels
+of the nodes that are not labeled, using the nodes features, in conjunction with graph topology.
+While GCNs have been successfully applied to this problem, the caveats that they inherit from traditional
+deep learning models pose significant challenges to broad utilization of GCNs in node classification.
+One such caveat is that training a GCN requires a large number of labeled training instances, which
+is often not the case in realistic settings. To remedy this requirement, state-of-the-art methods
+leverage network diffusion-based approaches to propagate labels across the network before training
+GCNs. However, these approaches ignore the tendency of the network diffusion methods in biasing
+proximity with centrality, resulting in the propagation of labels to the nodes that are well-connected
+in the graph. To address this problem, here we present an alternate approach to extrapolating node
+labels in GCNs in the following three steps: (i) clustering of the network to identify communities,
+(ii) use of network diffusion algorithms to quantify the proximity of each node to the communities,
+thereby obtaining a low-dimensional topological profile for each node, (iii) comparing these
+topological profiles to identify nodes that are most similar to the labeled nodes. 

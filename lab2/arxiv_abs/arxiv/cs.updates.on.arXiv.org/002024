@@ -1,0 +1,20 @@
+We consider the problem of predicting the next observation given a sequence of past observations,
+and consider the extent to which accurate prediction requires complex algorithms that explicitly
+leverage long-range dependencies. Perhaps surprisingly, our positive results show that for a
+broad class of sequences, there is an algorithm that predicts well on average, and bases its predictions
+only on the most recent few observation together with a set of simple summary statistics of the past
+observations. Specifically, we show that for any distribution over observations, if the mutual
+information between past observations and future observations is upper bounded by $I$, then a simple
+Markov model over the most recent $I/\epsilon$ observations obtains expected KL error $\epsilon$---and
+hence $\ell_1$ error $\sqrt{\epsilon}$---with respect to the optimal predictor that has access
+to the entire past and knows the data generating distribution. For a Hidden Markov Model with $n$
+hidden states, $I$ is bounded by $\log n$, a quantity that does not depend on the mixing time, and we
+show that the trivial prediction algorithm based on the empirical frequencies of length $O(\log
+n/\epsilon)$ windows of observations achieves this error, provided the length of the sequence
+is $d^{\Omega(\log n/\epsilon)}$, where $d$ is the size of the observation alphabet. We also establish
+that this result cannot be improved upon, even for the class of HMMs, in the following two senses:
+First, for HMMs with $n$ hidden states, a window length of $\log n/\epsilon$ is information-theoretically
+necessary to achieve expected $\ell_1$ error $\sqrt{\epsilon}$. Second, the $d^{\Theta(\log
+n/\epsilon)}$ samples required to estimate the Markov model for an observation alphabet of size
+$d$ is necessary for any computationally tractable learning algorithm, assuming the hardness
+of strongly refuting a certain class of CSPs. 

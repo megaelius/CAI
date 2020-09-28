@@ -1,0 +1,19 @@
+We present an algorithm for approximating the edit distance $\operatorname{ed}(x, y)$ between
+two strings $x$ and $y$ in time parameterized by the degree to which one of the strings $x$ satisfies
+a natural pseudorandomness property. The pseudorandomness model is asymmetric in that no requirements
+are placed on the second string $y$, which may be constructed by an adversary with full knowledge
+of $x$. We say that $x$ is \emph{$(p, B)$-pseudorandom} if all pairs $a$ and $b$ of disjoint $B$-letter
+substrings of $x$ satisfy $\operatorname{ed}(a, b) \ge pB$. Given parameters $p$ and $B$, our algorithm
+computes the edit distance between a $(p, B)$-pseudorandom string $x$ and an arbitrary string $y$
+within a factor of $O(1/p)$ in time $\tilde{O}(nB)$, with high probability. Our algorithm is robust
+in the sense that it can handle a small portion of $x$ being adversarial (i.e., not satisfying the
+pseudorandomness property). In this case, the algorithm incurs an additive approximation error
+proportional to the fraction of $x$ which behaves maliciously. The asymmetry of our pseudorandomness
+model has particular appeal for the case where $x$ is a \emph{source string}, meaning that $\operatorname{ed}(x,
+y)$ will be computed for many strings $y$. Suppose that one wishes to achieve an $O(\alpha)$-approximation
+for each $\operatorname{ed}(x, y)$ computation, and that $B$ is the smallest block-size for which
+the string $x$ is $(1/\alpha, B)$-pseudorandom. We show that without knowing $B$ beforehand, $x$
+may be preprocessed in time $\tilde{O}(n^{1.5}\sqrt{B})$, so that all future computations of
+the form $\operatorname{ed}(x, y)$ may be $O(\alpha)$-approximated in time $\tilde{O}(nB)$.
+Furthermore, for the special case where only a single $\operatorname{ed}(x, y)$ computation will
+be performed, we show how to achieve an $O(\alpha)$-approximation in time $\tilde{O}(n^{4/3}B^{2/3})$.

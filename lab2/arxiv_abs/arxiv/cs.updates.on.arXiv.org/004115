@@ -1,0 +1,18 @@
+Each training step for a variational autoencoder (VAE) requires us to sample from the approximate
+posterior, so we usually choose simple (e.g. factorised) approximate posteriors in which sampling
+is an efficient computation that fully exploits GPU parallelism. However, such simple approximate
+posteriors are often insufficient, as they eliminate statistical dependencies in the posterior.
+While it is possible to use normalizing flow approximate posteriors for continuous latents, some
+problems have discrete latents and strong statistical dependencies. The most natural approach
+to model these dependencies is an autoregressive distribution, but sampling from such distributions
+is inherently sequential and thus slow. We develop a fast, parallel sampling procedure for autoregressive
+distributions based on fixed-point iterations which enables efficient and accurate variational
+inference in discrete state-space latent variable dynamical systems. To optimize the variational
+bound, we considered two ways to evaluate probabilities: inserting the relaxed samples directly
+into the pmf for the discrete distribution, or converting to continuous logistic latent variables
+and interpreting the K-step fixed-point iterations as a normalizing flow. We found that converting
+to continuous latent variables gave considerable additional scope for mismatch between the true
+and approximate posteriors, which resulted in biased inferences, we thus used the former approach.
+Using our fast sampling procedure, we were able to realize the benefits of correlated posteriors,
+including accurate uncertainty estimates for one cell, and accurate connectivity estimates for
+multiple cells, in an order of magnitude less time. 

@@ -1,0 +1,18 @@
+We work on dynamic problems with collected data $\{\mathsf{x}_i\}$ that distributed on a manifold
+$\mathcal{M}\subset\mathbb{R}^p$. Through the diffusion map, we first learn the reaction coordinates
+$\{\mathsf{y}_i\}\subset \mathcal{N}$ where $\mathcal{N}$ is a manifold isometrically embedded
+into an Euclidean space $\mathbb{R}^\ell$ for $\ell \ll p$. The reaction coordinates enable us
+to obtain an efficient approximation for the dynamics described by a Fokker-Planck equation on
+the manifold $\mathcal{N}$. By using the reaction coordinates, we propose an implementable, unconditionally
+stable, data-driven upwind scheme which automatically incorporates the manifold structure of
+$\mathcal{N}$. Furthermore, we provide a weighted $L^2$ convergence analysis of the upwind scheme
+to the Fokker-Planck equation. The proposed upwind scheme leads to a Markov chain with transition
+probability between the nearest neighbor points. We can benefit from such property to directly
+conduct manifold-related computations such as finding the optimal coarse-grained network and
+the minimal energy path that represents chemical reactions or conformational changes. To establish
+the Fokker-Planck equation, we need to acquire information about the equilibrium potential of
+the physical system on $\mathcal{N}$. Hence, we apply a Gaussian Process regression algorithm
+to generate equilibrium potential for a new physical system with new parameters. Combining with
+the proposed upwind scheme, we can calculate the trajectory of the Fokker-Planck equation on $\mathcal{N}$
+based on the generated equilibrium potential. Finally, we develop an algorithm to pullback the
+trajectory to the original high dimensional space as a generative data for the new physical system.

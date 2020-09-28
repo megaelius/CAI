@@ -1,0 +1,19 @@
+Exploratory cancer drug studies test multiple tumor cell lines against multiple candidate drugs.
+The goal in each paired (cell line, drug) experiment is to map out the dose-response curve of the cell
+line as the dose level of the drug increases. The level of natural variation and technical noise in
+these experiments is high, even when multiple replicates are run. Further, running all possible
+combinations of cell lines and drugs may be prohibitively expensive, leading to missing data. Thus,
+estimating the dose-response curve is a denoising and imputation task. We cast this task as a functional
+matrix factorization problem: finding low-dimensional structure in a matrix where every entry
+is a noisy function evaluated at a set of discrete points. We propose Bayesian Tensor Filtering (BTF),
+a hierarchical Bayesian model of matrices of functions. BTF captures the smoothness in each individual
+function while also being locally adaptive to sharp discontinuities. The BTF model can incorporate
+many types of likelihoods, making it flexible enough to handle a wide variety of data. We derive efficient
+Gibbs samplers for three classes of likelihoods: (i) Gaussian, for which updates are fully conjugate;
+(ii) binomial and related likelihoods, for which updates are conditionally conjugate through
+Polya-Gamma augmentation; and (iii) non-conjugate likelihoods, for which we develop an analytic
+truncated elliptical slice sampling routine. We compare BTF against a state-of-the-art method
+for dynamic Poisson matrix factorization, showing BTF better reconstructs held out data in synthetic
+experiments. Finally, we build a dose-response model around BTF and apply it to real data from two
+multi-sample, multi-drug cancer studies. We show that the BTF-based dose-response model outperforms
+the current standard approach in biology. Code is available at https://github.com/tansey/functionalmf.

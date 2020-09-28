@@ -1,0 +1,17 @@
+There exists an increasing interest for using immersed boundary methods (IBMs) (Peskin 2000) to
+model moving objects in computational fluid dynamics. Indeed, this approach is particularly efficient,
+because the fluid mesh does not require to be body-fitted or to adjust dynamically to the motion of
+the body. Frequently, IBMs are implemented in combination with the lattice Boltzmann methods (LBM)
+(Kr\"uger 2016). They fit elegantly into the framework of this method, and yield impressive parallel
+performances. It has also become quite common to accelerate LBM simulations with the use of Graphics
+Processing Units (GPUs) (T\"olke 2010), as the underlying algorithm adjusts naturally to the architecture
+of such platforms. It is not uncommon that speedups of an order of magnitude, or more, at equal financial
+cost or energy consumption are observed, as compared to classical CPUs. IBM algorithms are however
+more difficult to adapt to GPUs, because their complex memory access pattern conflicts with a GPU's
+strategy of broadcasting data to a large number of GPU cores in single memory accesses. In the existing
+literature, GPU implementations of LBM-IBM codes are therefore restricted to situations in which
+the immersed surfaces are very small compared to the total number of fluid cells (Valero-Lara 2014),
+as is often the case in exterior flow simulations around an obstacle. This assumption is however
+not valid in many other cases of interest. We propose a new method for the implementation of a LBM-IBM
+on GPUs in the CUDA language, which allows to handle a substantially larger immersed surfaces with
+acceptable performance than previous implementations. 

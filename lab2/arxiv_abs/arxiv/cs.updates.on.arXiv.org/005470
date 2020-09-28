@@ -1,0 +1,18 @@
+We consider the approximate pattern matching problem under edit distance. In this problem we are
+given a pattern $P$ of length $w$ and a text $T$ of length $n$ over some alphabet $\Sigma$, and a positive
+integer $k$. The goal is to find all the positions $j$ in $T$ such that there is a substring of $T$ ending
+at $j$ which has edit distance at most $k$ from the pattern $P$. Recall, the edit distance between
+two strings is the minimum number of character insertions, deletions, and substitutions required
+to transform one string into the other. For a position $t$ in $\{1,...,n\}$, let $k_t$ be the smallest
+edit distance between $P$ and any substring of $T$ ending at $t$. In this paper we give a constant factor
+approximation to the sequence $k_1,k_2,...,k_{n}$. We consider both offline and online settings.
+In the offline setting, where both $P$ and $T$ are available, we present an algorithm that for all
+$t$ in $\{1,...,n\}$, computes the value of $k_t$ approximately within a constant factor. The worst
+case running time of our algorithm is $O(n w^{3/4})$. As a consequence we break the $O(nw)$-time
+barrier for this problem. In the online setting, we are given $P$ and then $T$ arrives one symbol at
+a time. We design an algorithm that upon arrival of the $t$-th symbol of $T$ computes $k_t$ approximately
+within $O(1)$-multiplicative factor and $w^{8/9}$-additive error. Our algorithm takes $O(w^{1-(7/54)})$
+amortized time per symbol arrival and takes $O(w^{1-(1/54)})$ additional space apart from storing
+the pattern $P$. Both of our algorithms are randomized and produce correct answer with high probability.
+To the best of our knowledge this is the first worst-case sub-linear (in the length of the pattern)
+time and sub-linear succinct space algorithm for online approximate pattern matching problem.

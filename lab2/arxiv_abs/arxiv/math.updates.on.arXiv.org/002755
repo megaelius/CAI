@@ -1,0 +1,19 @@
+Quadratic programming (QP) is a well-studied fundamental NP-hard optimization problem which
+optimizes a quadratic objective over a set of linear constraints. In this paper, we reformulate
+QPs as a mixed-integer linear problem (MILP). This is done via the reformulation of QP as a linear
+complementary problem, and the use of binary variables and big-M constraints, to model the complementary
+constraints. To obtain such reformulation, we show how to impose bounds on the dual variables without
+eliminating all the (globally) optimal primal solutions; using some fundamental results on the
+solution of perturbed linear systems. Reformulating non-convex QPs as MILPs provides an advantageous
+way to obtain global solutions as it allows the use of current state-of-the-art MILP solvers. To
+illustrate this, we compare the performance of our solution approach, labeled quadprogIP, with
+the current benchmark global QP solver quadprogBB, as well as with BARON, one of the leading non-linear
+programming (NLP) solvers, and CPLEX's non-convex QP solver, on a large variety of QP test instances.
+In practice, quadprogIP is shown to typically outperform by orders of magnitude quadprogBB, BARON,
+and CPLEX on standard QPs. For general QPs, quadprogIP outperforms quadprogBB, outperforms BARON
+in most instances, while CPLEX performs the best on these instances. For box-constrained QPs, quadprogIP
+has a comparable performance to quadprogBB and BARON in small- to medium-scale instances, but is
+outperformed by these solvers on large-scale instances; while CPLEX performs the best on box-constrained
+QP instances. Also, unlike quadprogBB, the solution approach proposed here is able to solve QP instances
+whose dual feasible set is unbounded. The MATLAB code, called quadprogIP, and the instances used
+to perform these numerical experiments are publicly available at https://github.com/xiawei918/quadprogIP.

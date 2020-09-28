@@ -1,0 +1,17 @@
+We propose RUDDER, a novel reinforcement learning approach for delayed rewards in finite Markov
+decision processes (MDPs). RUDDER is based on two main ideas: (i) a backward view approach and (ii)
+the concept of return-equivalent MDPs. Forward view approaches, like deep Q-networks (DQNs) or
+Monte Carlo tree search (MCTS), have to average over a large number of probabilistic future state-action
+paths that increases exponentially with the delay of the reward. Backward view approaches, in contrast,
+identify actions and states that cause a delayed reward by analyzing already chosen paths. RUDDER's
+backward view transforms tasks of estimating future returns into regression tasks at which deep
+learning excels. RUDDER decomposes the return into new, non-delayed rewards by redistributing
+the original reward across the episode, thereby creating a new MDP that is return-equivalent to
+the original MDP. "Return-equivalent MDPs" is a new concept ensuring that both MDPs have the same
+optimal policies. If the return decomposition is optimal, then the new MDP will be stripped of any
+delayed rewards. In this case, action-value estimates are unbiased and the future expected return
+is always zero. On several artificial tasks with delayed rewards RUDDER significantly outperforms
+Monte Carlo, MCTS, temporal difference, TD({\lambda}), and reward shaping approaches. RUDDER
+is even exponentially faster than the last three. RUDDER on top of a Proximal Policy Optimization
+(PPO) baseline improves the scores on Atari games and excels for delayed rewards. For long delayed
+rewards as in Bowling, Frostbite, PrivateEye and Venture RUDDER yields exceptional results. 

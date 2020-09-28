@@ -1,0 +1,20 @@
+A well-known fact in the field of lossless text compression is that high-order entropy is a weak model
+when the input contains long repetitions. Motivated by this fact, decades of research have generated
+myriads of so-called dictionary compressors: algorithms able to reduce the text's size by exploiting
+its repetitiveness. Lempel-Ziv 77 is probably one of the most successful and known tools of this
+kind, followed by straight-line programs, run-length Burrows-Wheeler transform, macro schemes,
+collage systems, and the compact directed acyclic word graph. In this paper, we show that these techniques
+are only different solutions to the same, elegant, combinatorial problem: to find a small set of
+positions capturing all distinct text's substrings. We call \emph{string attractor} such a set.
+We first show reductions between dictionary compressors and string attractors. This gives us the
+approximation ratios of dictionary compressors with respect to the smallest string attractor
+and allows us to solve several open problems related to the asymptotic relations between the output
+sizes of different dictionary compressors. We then show that $k$-attractor problem --- that is,
+deciding whether a text has a size-$t$ set of positions capturing all substrings of length at most
+$k$ --- is NP-complete for $k\geq 3$. This, in particular, implies the NP-completeness of the full
+string attractor problem. We provide several approximation techniques for the smallest $k$-attractor,
+show that the problem is APX-complete for constant $k$, and give strong inapproximability results.
+To conclude, we provide matching lower- and upper- bounds for the random access problem on string
+attractors. Our data structure matching the lower bound is optimal also for LZ77, straight-line
+programs, collage systems, and macro schemes, and therefore essentially closes the random access
+problem for all these compressors. 

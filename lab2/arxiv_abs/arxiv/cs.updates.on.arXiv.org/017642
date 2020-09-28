@@ -1,0 +1,18 @@
+Deep reinforcement learning (DRL) is one of the promising approaches to make robots accomplish
+complicated tasks. In the robotic problems with time-varying environment, online DRL is required
+since the methods that directly reuse the stored experience data cannot follow the change of the
+environment. Eligibility traces method is well known as an online learning technique to improve
+sample efficiency in the traditional reinforcement learning with linear regressors, not DRL.
+The one reason why the eligibility traces are not integrated with DRL is because dependencies between
+parameters of deep neural networks would destroy the eligibility traces. To mitigate this problem,
+this study proposes a new eligibility traces method that makes it possible to be applied even into
+DRL. The eligibility traces in DRL accumulate gradients computed based on the past parameters,
+which are different from that computed based on the latest parameters. Hence, the proposed method
+considers the divergence between the past and latest parameters to adaptively decay the eligibility
+traces. Instead of that divergence directly, Bregman divergences between outputs computed by
+the past and latest parameters, which are computationally feasible, are exploited. In addition,
+inspired by the replacing eligibility traces, a generalized method with multiple time-scale traces
+are newly designed. In benchmark tasks on a dynamic robotic simulator, the proposed method outperformed
+the conventional methods in terms of the learning speed and the quality of the tasks by the learned
+policy. A real-robot demonstration verified the importance of online DRL and the adaptability
+of the proposed method to the time-varying environment. 

@@ -1,0 +1,19 @@
+Let $V$ be a set of $n$ points in $\mathbb{R}^d$, called voters. A point $p\in \mathbb{R}^d$ is a plurality
+point for $V$ when the following holds: for every $q\in\mathbb{R}^d$ the number of voters closer
+to $p$ than to $q$ is at least the number of voters closer to $q$ than to $p$. Thus, in a vote where each
+$v\in V$ votes for the nearest proposal (and voters for which the proposals are at equal distance
+abstain), proposal $p$ will not lose against any alternative proposal $q$. For most voter sets a
+plurality point does not exist. We therefore introduce the concept of $\beta$-plurality points,
+which are defined similarly to regular plurality points except that the distance of each voter to
+$p$ (but not to $q$) is scaled by a factor $\beta$, for some constant $0<\beta\leq 1$. We investigate
+the existence and computation of $\beta$-plurality points, and obtain the following. * Define
+$\beta^*_d := \sup \{ \beta : \text{any finite multiset $V$ in $\mathbb{R}^d$ admits a $\beta$-plurality
+point} \}$. We prove that $\beta^*_2 = \sqrt{3}/2$, and that $1/\sqrt{d} \leq \beta^*_d \leq \sqrt{3}/2$
+for all $d\geq 3$. * Define $\beta(p, V) := \sup \{ \beta : \text{$p$ is a $\beta$-plurality point
+for $V$}\}$. Given a voter set $V \in \mathbb{R}^2$, we provide an algorithm that runs in $O(n \log
+n)$ time and computes a point $p$ such that $\beta(p, V) \geq \beta^*_2$. Moreover, for $d\geq 2$
+we can compute a point $p$ with $\beta(p,V) \geq 1/\sqrt{d}$ in $O(n)$ time. * Define $\beta(V) :=
+\sup \{ \beta : \text{$V$ admits a $\beta$-plurality point}\}$. We present an algorithm that, given
+a voter set $V$ in $\mathbb{R}^d$, computes an $(1-\varepsilon)\cdot \beta(V)$ plurality point
+in time $O(\frac{n^2}{\varepsilon^{3d-2}} \cdot \log \frac{n}{\varepsilon^{d-1}} \cdot \log^2
+\frac {1}{\varepsilon})$. 

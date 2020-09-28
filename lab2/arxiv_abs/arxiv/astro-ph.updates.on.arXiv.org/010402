@@ -1,0 +1,18 @@
+Current practice for asteroid close proximity maneuvers requires extremely accurate characterization
+of the environmental dynamics and precise spacecraft positioning prior to the maneuver. This creates
+a delay of several months between the spacecraft's arrival and the ability to safely complete close
+proximity maneuvers. In this work we develop an adaptive integrated guidance, navigation, and
+control system that can complete these maneuvers in environments with unknown dynamics, with initial
+conditions spanning a large deployment region, and without a shape model of the asteroid. The system
+is implemented as a policy optimized using reinforcement meta-learning. The spacecraft is equipped
+with an optical seeker that locks to either a terrain feature, back-scattered light from a targeting
+laser, or an active beacon, and the policy maps observations consisting of seeker angles and LIDAR
+range readings directly to engine thrust commands. The policy implements a recurrent network layer
+that allows the deployed policy to adapt real time to both environmental forces acting on the agent
+and internal disturbances such as actuator failure and center of mass variation. We validate the
+guidance system through simulated landing maneuvers in a six degrees-of-freedom simulator. The
+simulator randomizes the asteroid's characteristics such as solar radiation pressure, density,
+spin rate, and nutation angle, requiring the guidance and control system to adapt to the environment.
+We also demonstrate robustness to actuator failure, sensor bias, and changes in the spacecraft's
+center of mass and inertia tensor. Finally, we suggest a concept of operations for asteroid close
+proximity maneuvers that is compatible with the guidance system. 

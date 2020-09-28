@@ -1,0 +1,18 @@
+Iverson's APL and its descendants (such as J, K and FISh) are examples of the family of "rank-polymorphic"
+programming languages. The principal control mechanism of such languages is the general lifting
+of functions that operate on arrays of rank (or dimension) $r$ to operate on arrays of any higher rank
+$r' > r$. We present a core, functional language, Remora, that captures this mechanism, and develop
+both a formal, dynamic semantics for the language, and an accompanying static, rank-polymorphic
+type system for the language. Critically, the static semantics captures the shape-based lifting
+mechanism of the language. We establish the usual progress and preservation properties for the
+type system, showing that it is sound, which means that "array shape" errors cannot occur at run time
+in a well-typed program. Our type system uses dependent types, including an existential type abstraction
+which permits programs to operate on arrays whose shape or rank is computed dynamically; however,
+it is restricted enough to permit static type checking. The rank-polymorphic computational paradigm
+is unusual in that the types of arguments affect the dynamic execution of the program -- they are what
+drive the rank-polymorphic distribution of a function across arrays of higher rank. To highlight
+this property, we additionally present a dynamic semantics for a partially erased variant of the
+fully-typed language and show that a computation performed with a fully-typed term stays in lock
+step with the computation performed with its partially erased term. The residual types thus precisely
+characterise the type information that is needed by the dynamic semantics, a property useful for
+the (eventual) construction of efficient compilers for rank-polymorphic languages. 

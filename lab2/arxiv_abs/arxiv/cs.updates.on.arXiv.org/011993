@@ -1,0 +1,19 @@
+Rowhammer exploits frequently access specific DRAM rows (i.e., hammer rows) to induce bit flips
+in their adjacent rows (i.e., victim rows), thus allowing an attacker to gain the privilege escalation
+or steal the private data. A key requirement of all such attacks is that an attacker must have access
+to at least part of a hammer row adjacent to sensitive victim rows. We refer to these rowhammer attacks
+as PeriHammer. The state-of-the-art software-only defences against PeriHammer attacks is to
+make such hammer rows inaccessible to the attacker. In this paper, we question the necessity of the
+above requirement and propose a new class of rowhammer attacks, termed as TeleHammer. It is a paradigm
+shift in rowhammer attacks since it crosses memory boundary to stealthily rowhammer an inaccessible
+row by virtue of freeloading inherent features of modern hardware and/or software. We propose a
+generic model to rigorously formalize the necessary conditions to initiate TeleHammer and PeriHammer,
+respectively. Compared to PeriHammer, TeleHammer can defeat the advanced software-only defenses,
+stealthy in hiding itself and hard to mitigate. To demonstrate the practicality of TeleHammer and
+its advantages, we have created a TeleHammer's instance, called PThammer, which leverages the
+address-translation feature of modern processors. We observe that a memory access can induce a
+fetch of a Level-1 page-table entry (PTE) from memory and thus cause hammering the PTE once. To achieve
+a high hammer-frequency, we flush relevant TLB and cache effectively and efficiently. To this end,
+PThammer can cross user-kernel boundary to rowhammer rows occupied by Level-1 PTEs and induce bit
+flips in adjacent victim rows that also host Level-1 PTEs. We have exploited PThammer to defeat advanced
+software-only defenses in bare-metal systems. 

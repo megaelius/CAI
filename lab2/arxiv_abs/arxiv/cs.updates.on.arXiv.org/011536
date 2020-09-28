@@ -1,0 +1,20 @@
+Advances in deep generative and density models have shown impressive capacity to model complex
+probability density functions in lower-dimensional space. Also, applying such models to high-dimensional
+image data to model the PDF has shown poor generalization, with out-of-distribution data being
+assigned equal or higher likelihood than in-sample data. Methods to deal with this have been proposed
+that deviate from a fully unsupervised approach, requiring large ensembles or additional knowledge
+about the data, not commonly available in the real-world. In this work, the previously offered reasoning
+behind these issues is challenged empirically, and it is shown that data-sets such as MNIST fashion/digits
+and CIFAR10/SVHN are trivially separable and have no overlap on their respective data manifolds
+that explains the higher OoD likelihood. Models like masked autoregressive flows and block neural
+autoregressive flows are shown to not suffer from OoD likelihood issues to the extent of GLOW, PixelCNN++,
+and real NVP. A new avenue is also explored which involves a change of basis to a new space of the same
+dimension with an orthonormal unitary basis of eigenvectors before modeling. In the test data-sets
+and models, this aids in pushing down the relative likelihood of the contrastive OoD data set and
+improve discrimination results. The significance of the density of the original space is maintained,
+while invertibility remains tractable. Finally, a look to the previous generation of generative
+models in the form of probabilistic principal component analysis is inspired, and revisited for
+the same data-sets and shown to work really well for discriminating anomalies based on likelihood
+in a fully unsupervised fashion compared with pixelCNN++, GLOW, and real NVP with less complexity
+and faster training. Also, dimensionality reduction using PCA is shown to improve anomaly detection
+in generative models. 

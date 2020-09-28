@@ -1,0 +1,17 @@
+Given a dataset $V$ of points from some metric space, the popular $k$-center problem requires to
+identify a subset of $k$ points (centers) in $V$ minimizing the maximum distance of any point of $V$
+from its closest center. The \emph{robust} formulation of the problem features a further parameter
+$z$ and allows up to $z$ points of $V$ (outliers) to be disregarded when computing the maximum distance
+from the centers. In this paper, we focus on two important constrained variants of the robust $k$-center
+problem, namely, the Robust Matroid Center (RMC) problem, where the set of returned centers are
+constrained to be an independent set of a matroid of rank $k$ built on $V$, and the Robust Knapsack
+Center (RKC) problem, where each element $i\in V$ is given a positive weight $w_i<1$ and the aggregate
+weight of the returned centers must be at most 1. We devise coreset-based strategies for the two problems
+which yield efficient sequential, MapReduce, and Streaming algorithms. More specifically, for
+any fixed $\epsilon>0$, the algorithms return solutions featuring a $(3+\epsilon)$-approximation
+ratio, which is a mere additive term $\epsilon$ away from the 3-approximations achievable by the
+best known polynomial-time sequential algorithms for the two problems. Moreover, the algorithms
+obliviously adapt to the intrinsic complexity of the dataset, captured by its doubling dimension
+$D$. For wide ranges of the parameters $k,z,\epsilon, D$, we obtain a sequential algorithm with
+running time linear in $|V|$, and MapReduce/Streaming algorithms with few rounds/passes and substantially
+sublinear local/working memory. 

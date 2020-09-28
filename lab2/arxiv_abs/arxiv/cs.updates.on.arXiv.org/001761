@@ -1,0 +1,20 @@
+In the Number On the Forehead (NOF) multiparty communication model, $k$ players want to evaluate
+a function $F : X_1 \times \cdots \times X_k \rightarrow Y$ on some input $(x_1,\dots,x_k)$ by broadcasting
+bits according to a predetermined protocol. The input is distributed in such a way that each player
+$i$ sees all of it except $x_i$. In the simultaneous setting, the players cannot speak to each other
+but instead send information to a referee. The referee does not know the players' input, and cannot
+give any information back. At the end, the referee must be able to recover $F(x_1,\dots,x_k)$ from
+what she obtained. A central open question, called the $\log n$ barrier, is to find a function which
+is hard to compute for $polylog(n)$ or more players (where the $x_i$'s have size $poly(n)$) in the
+simultaneous NOF model. This has important applications in circuit complexity, as it could help
+to separate $ACC^0$ from other complexity classes. One of the candidates belongs to the family of
+composed functions. The input to these functions is represented by a $k \times (t \cdot n)$ boolean
+matrix $M$, whose row $i$ is the input $x_i$ and $t$ is a block-width parameter. A symmetric composed
+function acting on $M$ is specified by two symmetric $n$- and $kt$-variate functions $f$ and $g$,
+that output $f \circ g(M) = f(g(B_1),\dots,g(B_n))$ where $B_j$ is the $j$-th block of width $t$
+of $M$. As the majority function $MAJ$ is conjectured to be outside of $ACC^0$, Babai et. al. suggested
+to study $MAJ \circ MAJ_t$, with $t$ large enough. In this paper, we give the first efficient deterministic
+simultaneous protocol for symmetric composed functions $f \circ g$ of constant block-width $t$
+and $polylog(n)$ or more players. This proves that $MAJ \circ MAJ_t$ cannot break the $\log n$ barrier
+(in the simultaneous model) when $t$ is constant. Before, this result was only known for $MAJ \circ
+MAJ_1$. 

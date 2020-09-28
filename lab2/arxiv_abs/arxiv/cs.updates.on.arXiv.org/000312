@@ -1,0 +1,19 @@
+In the classical experimental design setting, an experimenter E has access to a population of $n$
+potential experiment subjects $i\in \{1,...,n\}$, each associated with a vector of features $x_i\in
+R^d$. Conducting an experiment with subject $i$ reveals an unknown value $y_i\in R$ to E. E typically
+assumes some hypothetical relationship between $x_i$'s and $y_i$'s, e.g., $y_i \approx \beta
+x_i$, and estimates $\beta$ from experiments, e.g., through linear regression. As a proxy for various
+practical constraints, E may select only a subset of subjects on which to conduct the experiment.
+We initiate the study of budgeted mechanisms for experimental design. In this setting, E has a budget
+$B$. Each subject $i$ declares an associated cost $c_i >0$ to be part of the experiment, and must
+be paid at least her cost. In particular, the Experimental Design Problem (EDP) is to find a set $S$
+of subjects for the experiment that maximizes $V(S) = \log\det(I_d+\sum_{i\in S}x_i\T{x_i})$
+under the constraint $\sum_{i\in S}c_i\leq B$; our objective function corresponds to the information
+gain in parameter $\beta$ that is learned through linear regression methods, and is related to the
+so-called $D$-optimality criterion. Further, the subjects are strategic and may lie about their
+costs. We present a deterministic, polynomial time, budget feasible mechanism scheme, that is
+approximately truthful and yields a constant factor approximation to EDP. In particular, for any
+small $\delta > 0$ and $\epsilon > 0$, we can construct a (12.98, $\epsilon$)-approximate
+mechanism that is $\delta$-truthful and runs in polynomial time in both $n$ and $\log\log\frac{B}{\epsilon\delta}$.
+We also establish that no truthful, budget-feasible algorithms is possible within a factor 2 approximation,
+and show how to generalize our approach to a wide class of learning problems, beyond linear regression.

@@ -1,0 +1,19 @@
+We introduce the Tucker tensor method for the grid-based assembled summation of long-range interaction
+potentials over large 3D lattices in a box. This method is a generalization of our previous approach
+on the low-rank canonical tensor summation of electrostatic potentials on a rectangular 3D lattice.
+In the new technique we first approximate (with a guaranteed precision) the single kernel function
+represented on large $N\times N \times N$ 3D grid in a bounding box by a low-rank reference Tucker
+tensor. Then each 3D singular kernel function involved in the summation is approximated on the same
+grid by the shift of the reference Tucker tensor. Directional vectors of the Tucker tensor representing
+a full lattice sum are assembled by the 1D summation of the corresponding Tucker vectors for shifted
+potentials, while the core tensor remains unchanged. The Tucker ranks of the resultant tensor sum
+on the 3D rectangular $L\times L \times L$ lattice are proven to be the same as for the single kernel
+function. The required storage scales linearly in the 1D grid-size, $O(N)$, while the numerical
+cost is estimated by $O(N L)$. With the slight modifications our approach applies in the presence
+of defects, such as vacancies, impurities and non-rectangular geometries of a set of active lattice
+points, as well as for the case of hexagonal lattices. We prove the error bounds and stability for
+the HOSVD Tucker approximation to a sum of canonical/Tucker tensors. Numerical tests confirm the
+efficiency of the presented tensor summation method. In particular, we show that a sum of millions
+of Newton kernels on a 3D lattice with defects/impurities can be computed in about a minute in Matlab
+implementation. The approach is beneficial for functional calculus with the lattice potential
+sum represented on large 3D grids in the Tucker/canonical formats. 

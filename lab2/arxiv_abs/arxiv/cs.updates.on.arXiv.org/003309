@@ -1,0 +1,19 @@
+Given multiple rigid-body obstacles that have known stochastic dynamics and a desired probabilistic
+safety guarantee, we discuss theory and algorithms for the computation of the associated probability-weighted
+keep-out sets. Using these sets, dynamically-feasible robot trajectories that have a probability
+of collision below a desired threshold may be generated using existing motion planners that can
+handle non-stochastic dynamic obstacles. We define a probabilistic occupancy function that provides
+the probabilility of collision of the robot with an obstacle when the robot is at a given state and
+time of interest. The desired keep-out sets are the appropriate super-level sets of the occupancy
+function. We compute this function using forward stochastic reachability which characterizes
+the stochasticity of the state of the obstacle at a future time of interest given its initial state.
+We focus on discrete-time Markovian switched systems with affine parameter-varying stochastic
+subsystems (DMSP), which includes Markov jump affine systems and discrete-time affine parameter-varying
+stochastic systems (DPV), and show that forward stochastic reachability for this model can be performed,
+grid-free and recursion-free, using Fourier transforms and computational geometry. We also provide
+sufficient conditions that ensure convex and compact keep-out sets for DPV obstacle dynamics.
+Using these results, we propose two computationally efficient algorithms that provide approximations
+of these sets --- a tight polytopic representation using projections, and an overapproximation
+using Minkowski sum. For DMSP obstacle dynamics, we compute a union of convex and compact sets that
+covers the potentially non-convex keep-out set. Numerical simulations show the efficacy of the
+proposed algorithms for a modified version of the classical unicycle dynamics, modeled as a DMSP.

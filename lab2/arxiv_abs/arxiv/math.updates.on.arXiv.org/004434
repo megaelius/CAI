@@ -1,0 +1,18 @@
+This paper studies the problem of estimating the differential entropy $h(S+Z)$, where $S$ and $Z$
+are independent $d$-dimensional random variables with $Z\sim\mathcal{N}(0,\sigma^2 \mathrm{I}_d)$.
+The distribution of $S$ is unknown, but $n$ independently and identically distributed (i.i.d)
+samples from it are available. The question is whether having access to samples of $S$ as opposed
+to samples of $S+Z$ can improve estimation performance. We show that the answer is positive. More
+concretely, we first show that despite the regularizing effect of noise, the number of required
+samples still needs to scale exponentially in $d$. This result is proven via a random-coding argument
+that reduces the question to estimating the Shannon entropy on a $2^{O(d)}$-sized alphabet. Next,
+for a fixed $d$ and $n$ large enough, it is shown that a simple plugin estimator, given by the differential
+entropy of the empirical distribution from $S$ convolved with the Gaussian density, achieves the
+loss of $O\left((\log n)^{d/4}/\sqrt{n}\right)$. Note that the plugin estimator amounts here
+to the differential entropy of a $d$-dimensional Gaussian mixture, for which we propose an efficient
+Monte Carlo computation algorithm. At the same time, estimating $h(S+Z)$ via popular differential
+entropy estimators (based on kernel density estimation (KDE) or k nearest neighbors (kNN) techniques)
+applied to samples from $S+Z$ would only attain much slower rates of order $O(n^{-1/d})$, despite
+the smoothness of $P_{S+Z}$. As an application, which was in fact our original motivation for the
+problem, we estimate information flows in deep neural networks and discuss Tishby's Information
+Bottleneck and the compression conjecture, among others. 

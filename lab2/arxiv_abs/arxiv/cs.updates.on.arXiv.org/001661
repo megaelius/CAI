@@ -1,0 +1,20 @@
+Dynamic affinity scheduling has been an open problem for nearly three decades. The problem is to
+dynamically schedule multi-type tasks to multi-skilled servers such that the resulting queueing
+system is both stable in the capacity region (throughput optimality) and the mean delay of tasks
+is minimized at high loads near the boundary of the capacity region (heavy-traffic optimality).
+As for applications, data-intensive analytics like MapReduce, Hadoop, and Dryad fit into this
+setting, where the set of servers is heterogeneous for different task types, so the pair of task type
+and server determines the processing rate of the task. The load balancing algorithm used in such
+frameworks is an example of affinity scheduling which is desired to be both robust and delay optimal
+at high loads when hot-spots occur. Fluid model planning, the MaxWeight algorithm, and the generalized
+$c\mu$-rule are among the first algorithms proposed for affinity scheduling that have theoretical
+guarantees on being optimal in different senses, which will be discussed in the related work section.
+All these algorithms are not practical for use in data center applications because of their non-realistic
+assumptions. The join-the-shortest-queue-MaxWeight (JSQ-MaxWeight), JSQ-Priority, and weighted-workload
+algorithms are examples of load balancing policies for systems with two and three levels of data
+locality with a rack structure. In this work, we propose the Generalized-Balanced-Pandas algorithm
+(GB-PANDAS) for a system with multiple levels of data locality and prove its throughput optimality.
+We prove this result under an arbitrary distribution for service times, whereas most previous theoretical
+work assumes geometric distribution for service times. The extensive simulation results show
+that the GB-PANDAS algorithm alleviates the mean delay and has a better performance than the JSQ-MaxWeight
+algorithm by twofold 

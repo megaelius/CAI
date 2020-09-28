@@ -1,0 +1,17 @@
+We consider the problem of maximum likelihood classification of a high dimensional data point y
+to billions of classes $x_1,...,x_N$, where the conditional probability p(y|x) is known. In the
+most general case, the complexity of the brute-force method for this classification grows linearly,
+O(N), with the number of classes N. Efficient multiclass classification methods have been introduced
+to solve this problem with logarithmic complexity. However, these methods suffer from the curse
+of dimensionality, i.e., in large dimensions their complexity approaches $O(N)$ per query data
+point. In the special case where the conditional probability distribution $p(y|x)$ is a Gaussian
+centered at x, i.e., $p(y|x) \propto N (x,\sigma)$, the maximum likelihood classification reduces
+to the nearest neighbor search with the Euclidean norm. Sublinear methods based on locality sensitive
+hashing (LSH) have been introduced to solve an approximate version of the nearest neighbor search
+for high dimensional data. Inspired by these advances, here we introduce distribution sensitive
+hashing (DSH) to solve an approximate version of the maximum likelihood classification problem
+through joint dimensionality reduction. In the case of discrete probability distributions, we
+design TreeDSH, a universal family of distribution sensitive hashes based on the decision trees,
+and show that their complexity grow sub-linearly. Theory and simulation presented in this paper
+demonstrate that TreeDSH is more efficient than LSH-hamming and Min-Hashing schemes. Finally,
+we apply TreeDSH to the problem of peptide identification from mass spectrometry data. 

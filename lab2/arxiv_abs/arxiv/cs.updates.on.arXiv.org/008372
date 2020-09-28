@@ -1,0 +1,18 @@
+Online image hashing has received increasing research attention recently, which receives large-scale
+data in a streaming manner to update the hash functions on-the-fly. Its key challenge lies in the
+difficulty in balancing the learning timeliness and model accuracy. To this end, most works exploit
+a supervised setting, i.e., using class labels to boost the hashing performance, which defects
+in two aspects: First, large amount of training batches are required to learn up-to-date hash functions,
+which however largely increase the learning complexity. Second, strong constraints, e.g., orthogonal
+or similarity preserving, are used, which are however typically relaxed and lead to large accuracy
+drop. To handle the above challenges, in this paper, a novel supervised online hashing scheme termed
+Hadamard Matrix Guided Online Hashing (HMOH) is proposed. Our key innovation lies in the construction
+and usage of Hadamard matrix, which is an orthogonal binary matrix and is built via Sylvester method.
+To release the need of strong constraints, we regard each column of Hadamard matrix as the target
+code for each class label, which by nature satisfies several desired properties of hashing codes.
+To accelerate the online training, the LSH is first adopted to align the length of target code and
+the to-be-learned binary code. And then, we treat the learning of hash functions as a set of binary
+classification problems to fit the assigned target code. Finally, we propose to ensemble the learned
+models in all rounds to maximally preserve the information of past streaming data. The superior
+accuracy and efficiency of the proposed method are demonstrated through extensive experiments
+on three widely-used datasets comparing to various state-of-the-art methods. 

@@ -1,0 +1,20 @@
+Blind deconvolution involves the estimation of a sharp signal or image given only a blurry observation.
+Because this problem is fundamentally ill-posed, strong priors on both the sharp image and blur
+kernel are required to regularize the solution space. While this naturally leads to a standard MAP
+estimation framework, performance is compromised by unknown trade-off parameter settings, optimization
+heuristics, and convergence issues stemming from non-convexity and/or poor prior selections.
+To mitigate some of these problems, a number of authors have recently proposed substituting a variational
+Bayesian (VB) strategy that marginalizes over the high-dimensional image space leading to better
+estimates of the blur kernel. However, the underlying cost function now involves both integrals
+with no closed-form solution and complex, function-valued arguments, thus losing the transparency
+of MAP. Beyond standard Bayesian-inspired intuitions, it thus remains unclear by exactly what
+mechanism these methods are able to operate, rendering understanding, improvements and extensions
+more difficult. To elucidate these issues, we demonstrate that the VB methodology can be recast
+as an unconventional MAP problem with a very particular penalty/prior that couples the image, blur
+kernel, and noise level in a principled way. This unique penalty has a number of useful characteristics
+pertaining to relative concavity, local minima avoidance, and scale-invariance that allow us
+to rigorously explain the success of VB including its existing implementational heuristics and
+approximations. It also provides strict criteria for choosing the optimal image prior that, perhaps
+counter-intuitively, need not reflect the statistics of natural scenes. In so doing we challenge
+the prevailing notion of why VB is successful for blind deconvolution while providing a transparent
+platform for introducing enhancements. 

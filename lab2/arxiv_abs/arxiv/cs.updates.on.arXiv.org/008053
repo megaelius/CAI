@@ -1,0 +1,17 @@
+Interactions in many real-world phenomena can be explained by a strong hierarchical structure.
+Typically, this structure or ranking is not known; instead we only have observed outcomes of the
+interactions, and the goal is to infer the hierarchy from these observations. Discovering a hierarchy
+in the context of directed networks can be formulated as follows: given a graph, partition vertices
+into levels such that, ideally, there are only edges from upper levels to lower levels. The ideal
+case can only happen if the graph is acyclic. Consequently, in practice we have to introduce a penalty
+function that penalizes edges violating the hierarchy. A practical variant for such penalty is
+agony, where each violating edge is penalized based on the severity of the violation. Hierarchy
+minimizing agony can be discovered in $O(m^2)$ time, and much faster in practice. In this paper we
+introduce several extensions to agony. We extend the definition for weighted graphs and allow a
+cardinality constraint that limits the number of levels. While, these are conceptually trivial
+extensions, current algorithms cannot handle them, nor they can be easily extended. We solve the
+problem by showing the connection to the capacitated circulation problem, and we demonstrate that
+we can compute the exact solution fast in practice for large datasets. We also introduce a provably
+fast heuristic algorithm that produces rankings with competitive scores. In addition, we show
+that we can compute agony in polynomial time for any convex penalty, and, to complete the picture,
+we show that minimizing hierarchy with any concave penalty is an NP-hard problem. 

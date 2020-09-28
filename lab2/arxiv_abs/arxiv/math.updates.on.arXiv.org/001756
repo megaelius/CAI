@@ -1,0 +1,19 @@
+This paper proposes $\mathbf{C}$ommunication efficient $\mathbf{RE}$cursive $\mathbf{D}$istributed
+estimati$\mathbf{O}$n algorithm, $\mathcal{CREDO}$, for networked multi-worker setups without
+a central master node. $\mathcal{CREDO}$ is designed for scenarios in which the worker nodes aim
+to collaboratively estimate a vector parameter of interest using distributed online time-series
+data at the individual worker nodes. The individual worker nodes iteratively update their estimate
+of the parameter by assimilating latest locally sensed information and estimates from neighboring
+worker nodes exchanged over a (possibly sparse) time-varying communication graph. The underlying
+inter-worker communication protocol is adaptive, making communications increasingly (probabilistically)
+sparse as time progresses. Under minimal conditions on the inter-worker information exchange
+network and the sensing models, almost sure convergence of the estimate sequences at the worker
+nodes to the true parameter is established. Further, the paper characterizes the performance of
+$\mathcal{CREDO}$ in terms of asymptotic covariance of the estimate sequences and specifically
+establishes the achievability of optimal asymptotic covariance. The analysis reveals an interesting
+interplay between the algorithm's communication cost~$\mathcal{C}_{t}$ (over $t$ time-steps)
+and the asymptotic covariance. Most notably, it is shown that $\mathcal{CREDO}$ may be designed
+to achieve a $\Theta\left(\mathcal{C}_{t}^{-2+\zeta}\right)$ decay of the mean square error~($\zeta>0$,
+arbitrarily small) at each worker node, which significantly improves over the existing $ \Theta\left(\mathcal{C}_{t}^{-1}\right)$
+rates. Simulation examples on both synthetic and real data sets demonstrate $\mathcal{CREDO}$'s
+communication efficiency. 

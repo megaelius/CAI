@@ -1,0 +1,19 @@
+We present a numerical scheme for computation of Artificial Neural Networks (ANN) weights, which
+stems from the Universal Approximation Theorem, avoiding laborious iterations. The proposed
+algorithm adheres to the underlying theory, is highly fast, and results in remarkably low errors
+when applied for regression and classification of complex data-sets, such as the Griewank function
+of multiple variables $\mathbf{x} \in \mathbb{R}^{100}$ with random noise addition, and MNIST
+database for handwritten digits recognition, with $7\times10^4$ images. The same mathematical
+formulation is found capable of approximating highly nonlinear functions in multiple dimensions,
+with low errors (e.g. $10^{-10}$) for the test-set of the unknown functions, their higher-order
+partial derivatives, as well as numerically solving Partial Differential Equations. The method
+is based on the calculation of the weights of each neuron in small neighborhoods of the data, such
+that the corresponding local approximation matrix is invertible. Accordingly, optimization
+of hyperparameters is not necessary, as the number of neurons stems directly from the dimensionality
+of the data, further improving the algorithmic speed. Under this setting, overfitting is inherently
+avoided, and the results are interpretable and reproducible. The complexity of the proposed algorithm
+is of class P with $\mathcal{O}(mn^2)+\mathcal{O}(\frac{m^3}{n^2})-\mathcal{O}(\log(n+1))$
+computing time, with respect to the observations $m$ and features $n$, in contrast with the NP-Complete
+class of standard algorithms for ANN training. The performance of the method is high, irrespective
+of the size of the dataset, and the test-set errors are similar or smaller than the training errors,
+indicating the generalization efficiency of the algorithm. 

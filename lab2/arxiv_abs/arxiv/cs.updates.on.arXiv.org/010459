@@ -1,0 +1,20 @@
+Throughput limitations of existing blockchain architectures are one of the most significant hurdles
+for their wide-spread adoption. Attempts to address this challenge include layer-2 solutions,
+such as Bitcoin's Lightning or Ethereum's Plasma network, that move work off the main chain. Another
+prominent technique is sharding, i.e., breaking the network into many interconnected networks.
+However, these scaling approaches significantly increase the complexity of the programming model
+by breaking ACID guarantees increasing the cost and time for application development. In this paper,
+we describe a novel approach where we split the work traditionally assigned to cryptocurrency miners
+into two different node roles. Specifically, the selection and ordering of transactions are performed
+independently from their execution. The focus of this paper is to formalize the split of consensus
+and computation, and prove that this approach increases throughput without compromising security.
+In contrast to most existing proposals, our approach achieves scaling via separation of concerns,
+i.e., better utilization of network resources, rather than sharding. This approach allows established
+programming paradigms for smart contracts (which generally assume transactional atomicity)
+to persist without introducing additional complexity. We present simulations on a proof-of-concept
+network of 32 globally distributed nodes. While the consensus algorithm was identical in all simulations
+(a 2-step-commit protocol with rotating block proposer), block computation was either included
+in a consensus nodes' regular operations (conventional architecture) or delegated to specialized
+execution nodes (separation of concerns). Separation of concerns enables our system to achieve
+a throughput increase by a factor of 56 compared to conventional architectures without loss of safety
+or decentralization. 

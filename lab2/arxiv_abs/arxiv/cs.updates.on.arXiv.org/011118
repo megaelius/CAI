@@ -1,0 +1,17 @@
+Blockchain is maintained as a global log between a network of nodes and uses cryptographic distributed
+protocols to synchronize the updates. As adopted by Bitcoin and Ethereum these update operations
+to the ledger are serialized, and executed in batches. To safeguard the system against the generation
+of conflicting sets of updates and maintain the consistency of the ledger, the frequency of the updates
+is controlled, which severely affects the performance of the system. This paper presents Converging
+Directed Acyclic Graph (CDAG), as a substitute for the chain and DAG structures used in other blockchain
+protocols. CDAG allows multiple parallel updates to the ledger and converges them at the next step
+providing finality to the blocks. It partitions the updates into non-intersecting buckets of transactions
+to prevent the generation of conflicting blocks and divide the time into slots to provide enough
+time for them to propagate in the network. Multiple simultaneous updates improve the throughput
+of CDAG, and the converging step helps to finalize them faster, even in the presence of conflicts.
+Moreover, CDAG provides a total order among the blocks of the ledger to support smart contracts,
+unlike some of the other blockDAG protocols. We evaluate the performance of CDAG on Google Cloud
+Platform using Google Kubernetes Engine, simulating a real-time network. Experimental results
+show that CDAG achieves a throughput of more than 2000 transactions per second and confirms them
+well in under 2 minutes. Also, the protocol scales well in comparison to other permissioned protocols,
+and the capacity of the network only limits the performance. 

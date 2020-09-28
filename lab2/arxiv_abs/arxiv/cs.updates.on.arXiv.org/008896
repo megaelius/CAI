@@ -1,0 +1,18 @@
+Fast covariance calculation is required both for SLAM (e.g.~in order to solve data association)
+and for evaluating the information-theoretic term for different candidate actions in belief space
+planning (BSP). In this paper we make two primary contributions. First, we develop a novel general-purpose
+incremental covariance update technique, which efficiently recovers specific covariance entries
+after any change in the inference problem, such as introduction of new observations/variables
+or re-linearization of the state vector. Our approach is shown to recover them faster than other
+state-of-the-art methods. Second, we present a computationally efficient approach for BSP in
+high-dimensional state spaces, leveraging our incremental covariance update method. State of
+the art BSP approaches perform belief propagation for each candidate action and then evaluate an
+objective function that typically includes an information-theoretic term, such as entropy or
+information gain. Yet, candidate actions often have similar parts (e.g. common trajectory parts),
+which are however evaluated separately for each candidate. Moreover, calculating the information-theoretic
+term involves a costly determinant computation of the entire information (covariance) matrix
+which is O(n^3) with n being dimension of the state or costly Schur complement operations if only
+marginal posterior covariance of certain variables is of interest. Our approach, rAMDL-Tree,
+extends our previous BSP method rAMDL, by exploiting incremental covariance calculation and performing
+calculation re-use between common parts of non-myopic candidate actions, such that these parts
+are evaluated only once, in contrast to existing approaches. 

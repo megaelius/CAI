@@ -1,0 +1,17 @@
+We reflect on programming with complicated effects, recalling an undeservingly forgotten alternative
+to monadic programming and checking to see how well it can actually work in modern functional languages.
+We adopt and argue the position of factoring an effectful program into a first-order effectful DSL
+with a rich, higher-order 'macro' system. Not all programs can be thus factored. Although the approach
+is not general-purpose, it does admit interesting programs. The effectful DSL is likewise rather
+problem-specific and lacks general-purpose monadic composition, or even functions. On the upside,
+it expresses the problem elegantly, is simple to implement and reason about, and lends itself to
+non-standard interpretations such as code generation (compilation) and abstract interpretation.
+A specialized DSL is liable to be frequently extended; the experience with the tagless-final style
+of DSL embedding shown that the DSL evolution can be made painless, with the maximum code reuse. We
+illustrate the argument on a simple but representative example of a rather complicated effect --
+non-determinism, including committed choice. Unexpectedly, it turns out we can write interesting
+non-deterministic programs in an ML-like language just as naturally and elegantly as in the functional-logic
+language Curry -- and not only run them but also statically analyze, optimize and compile. The richness
+of the Meta Language does, in reality, compensate for the simplicity of the effectful DSL. The key
+idea goes back to the origins of ML as the Meta Language for the Edinburgh LCF theorem prover. Instead
+of using ML to build theorems, we now build (DSL) programs. 

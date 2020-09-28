@@ -1,0 +1,19 @@
+We envision a mobile edge computing (MEC) framework for machine learning (ML) technologies, which
+leverages distributed client data and computation resources for training high-performance ML
+models while preserving a client privacy. Toward this future goal, this work aims to extend Federated
+Learning (FL), which enables privacy-preserving training of models, to work with heterogeneous
+clients in a practical cellular network. The FL protocol iteratively asks random clients to download
+a trainable model from a server, update it with own data, and upload the updated model to the server,
+while asking the server to aggregate multiple client updates to further improve the model. While
+clients in this protocol are free from disclosing own private data, the overall training process
+can become inefficient when some clients are with limited computational resources (i.e., requiring
+longer update time) or under poor wireless channel conditions (longer upload time). Our new FL protocol,
+which we refer to as FedCS, mitigates this problem and performs FL efficiently while actively managing
+clients based on their resource conditions. Specifically, FedCS solves a client selection problem
+with resource constraints, which selects the maximum possible number of clients who can complete
+the FL's download, update, and upload steps within a certain deadline. This selection strategy
+results in the server aggregating as many client updates as possible and accelerating performance
+improvement in ML models (e.g., classification accuracy.) We conducted an experimental evaluation
+using publicly-available large-scale image datasets to train deep neural networks on MEC environment
+simulations. The experimental results show that FedCS is able to complete its training process
+in a significantly shorter time compared to the original FL protocol. 

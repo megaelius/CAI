@@ -1,0 +1,18 @@
+Lempel-Ziv (LZ77 or, briefly, LZ) is one of the most effective and widely-used compressors for repetitive
+texts. However, the existing efficient methods computing the exact LZ parsing have to use linear
+or close to linear space to index the input text during the construction of the parsing, which is prohibitive
+for long inputs. An alternative is Relative Lempel-Ziv (RLZ), which indexes only a fixed reference
+sequence, whose size can be controlled. Deriving the reference sequence by sampling the text yields
+reasonable compression ratios for RLZ, but performance is not always competitive with that of LZ
+and depends heavily on the similarity of the reference to the text. In this paper we introduce ReLZ,
+a technique that uses RLZ as a preprocessor to approximate the LZ parsing using little memory. RLZ
+is first used to produce a sequence of phrases, and these are regarded as metasymbols that are input
+to LZ for a second-level parsing on a (most often) drastically shorter sequence. This parsing is
+finally translated into one on the original sequence. We analyze the new scheme and prove that, like
+LZ, it achieves the $k$th order empirical entropy compression $n H_k + o(n\log\sigma)$ with $k =
+o(\log_\sigma n)$, where $n$ is the input length and $\sigma$ is the alphabet size. In fact, we prove
+this entropy bound not only for ReLZ but for a wide class of LZ-like encodings. Then, we establish
+a lower bound on ReLZ approximation ratio showing that the number of phrases in it can be $\Omega(\log
+n)$ times larger than the number of phrases in LZ. Our experiments show that ReLZ is faster than existing
+alternatives to compute the (exact or approximate) LZ parsing, at the reasonable price of an approximation
+factor below $2.0$ in all tested scenarios, and sometimes below $1.05$, to the size of LZ. 

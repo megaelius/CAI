@@ -1,0 +1,19 @@
+Performance in heterogeneous service-based systems shows non-determistic trends. Even for the
+same request type, latency may vary from one request to another. These variations can occur due to
+several reasons on different levels of the software stack: operating system, network, software
+libraries, application code or others. Furthermore, a request may involve several Remote Procedure
+Calls (RPC), where each call can be subject to performance variation. Performance analysts inspect
+distributed traces and seek for recurrent patterns in trace attributes, such as RPCs execution
+time, in order to cluster traces in which variations may be induced by the same cause. Clustering
+"similar" traces is a prerequisite for effective performance debugging. Given the scale of the
+problem, such activity can be tedious and expensive. In this paper, we present an automated approach
+that detects relevant RPCs execution time patterns associated to request latency degradation,
+i.e. latency degradation patterns. The presented approach is based on a genetic search algorithm
+driven by an information retrieval relevance metric and an optimized fitness evaluation. Each
+latency degradation pattern identifies a cluster of requests subject to latency degradation with
+similar patterns in RPCs execution time. We show on a microservice-based application case study
+that the proposed approach can effectively detect clusters identified by artificially injected
+latency degradation patterns. Experimental results show that our approach outperforms in terms
+of F-score a state-of-art approach for latency profile analysis and widely popular machine learning
+clustering algorithms. We also show how our approach can be easily extended to trace attributes
+other than RPC execution time (e.g. HTTP headers, execution node, etc.). 

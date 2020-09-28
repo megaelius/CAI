@@ -1,0 +1,20 @@
+This paper reports on WaterGAN, a generative adversarial network (GAN) for generating realistic
+underwater images from in-air image and depth pairings in an unsupervised pipeline used for color
+correction of monocular underwater images. Cameras onboard autonomous and remotely operated
+vehicles can capture high resolution images to map the seafloor, however, underwater image formation
+is subject to the complex process of light propagation through the water column. The raw images retrieved
+are characteristically different than images taken in air due to effects such as absorption and
+scattering, which cause attenuation of light at different rates for different wavelengths. While
+this physical process is well described theoretically, the model depends on many parameters intrinsic
+to the water column as well as the objects in the scene. These factors make recovery of these parameters
+difficult without simplifying assumptions or field calibration, hence, restoration of underwater
+images is a non-trivial problem. Deep learning has demonstrated great success in modeling complex
+nonlinear systems but requires a large amount of training data, which is difficult to compile in
+deep sea environments. Using WaterGAN, we generate a large training dataset of paired imagery,
+both raw underwater and true color in-air, as well as depth data. This data serves as input to a novel
+end-to-end network for color correction of monocular underwater images. Due to the depth-dependent
+water column effects inherent to underwater environments, we show that our end-to-end network
+implicitly learns a coarse depth estimate of the underwater scene from monocular underwater images.
+Our proposed pipeline is validated with testing on real data collected from both a pure water tank
+and from underwater surveys in field testing. Source code is made publicly available with sample
+datasets and pretrained models. 

@@ -1,0 +1,19 @@
+We present a single-chain parallelization strategy for Gibbs sampling of probabilistic Directed
+Acyclic Graphs, where contributions from child nodes to the conditional posterior distribution
+of a given node are calculated concurrently. For statistical models with many independent observations,
+such parallelism takes a Single-Instruction-Multiple-Data form, and can be efficiently implemented
+using multicore parallelization and vector instructions on x86 processors. Since all tasks have
+near-identical durations in SIMD parallelism, multicore parallelization benefits from static
+scheduling to minimize thread synchronization overhead. For multi-socket servers, a compact
+processor affinity minimizes cross-chip communication during the reduction phase, leading to
+better scaling of performance with number of cores. Effective vectorization requires coherent
+memory access patterns, perhaps by converting an array of node structures into a structure of arrays.
+When calculating each child node's contribution involves a loop, e.g. to calculate the inner product
+of the covariate and coefficient vectors, manual unrolling of this inner loop is necessary to facilitate
+vectorization of the outer loop. After these optimizations, we achieve nearly 10x speedup using
+only 4 cores of an Intel x86-64 processor with Advanced Vector Extensions, even for datasets of modest
+size. SIMD parallel Gibbs can be combined with parallel sampling of conditionally-independent
+nodes for nested parallel Gibbs sampling of Hierarchical Bayesian models. Our optimization techniques
+improve the scaling of performance with number of cores and width of vector units; thus paving the
+way for further speedup on highly-parallel, SIMD-oriented coprocessors such as Intel Xeon Phi
+and Graphic Processing Units. 

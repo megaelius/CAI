@@ -1,0 +1,20 @@
+To extract information at scale, researchers increasingly apply semantic segmentation techniques
+to remotely-sensed imagery. While fully-supervised learning enables accurate pixel-wise segmentation,
+compiling the exhaustive datasets required is often prohibitively expensive. As a result, many
+non-urban settings lack the ground-truth needed for accurate segmentation. Existing open source
+infrastructure data for these regions can be inexact and non-exhaustive. Open source infrastructure
+annotations like OpenStreetMaps (OSM) are representative of this issue: while OSM labels provide
+global insights to road and building footprints, noisy and partial annotations limit the performance
+of segmentation algorithms that learn from them. In this paper, we present a novel and generalizable
+two-stage framework that enables improved pixel-wise image segmentation given misaligned and
+missing annotations. First, we introduce the Alignment Correction Network to rectify incorrectly
+registered open source labels. Next, we demonstrate a segmentation model -- the Pointer Segmentation
+Network -- that uses corrected labels to predict infrastructure footprints despite missing annotations.
+We test sequential performance on the AIRS dataset, achieving a mean intersection-over-union
+score of 0.79; more importantly, model performance remains stable as we decrease the fraction of
+annotations present. We demonstrate the transferability of our method to lower quality data, by
+applying the Alignment Correction Network to OSM labels to correct building footprints; we also
+demonstrate the accuracy of the Pointer Segmentation Network in predicting cropland boundaries
+in California from medium resolution data. Overall, our methodology is robust for multiple applications
+with varied amounts of training data present, thus offering a method to extract reliable information
+from noisy, partial data. 

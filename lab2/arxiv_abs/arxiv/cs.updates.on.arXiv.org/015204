@@ -1,0 +1,20 @@
+Heterogeneous Face Recognition (HFR) is a task that matches faces across two different domains
+such as visible light (VIS), near-infrared (NIR), or the sketch domain. Due to the lack of databases,
+HFR methods usually exploit the features pre-trained on the large-scale visual database. However,
+this can cause performance degradations because of the large domain discrepancy between modalities.
+Therefore, it is necessary to reduce the domain gap from the pre-trained features. From this motivation,
+we propose a graph-structured module called Relational Graph Module (RGM) that focuses on the high-level
+relational information between facial components. Since pre-trained features contains low-level
+information, using relation of features rather than feature itself can reduce the low-level information
+in each domain. For example, when matching between the VIS and non-VIS identity, it is more useful
+to consider the part relations, distances, or ratio (high-level information) than texture, color
+or shape (low-level information). Regardless of domain, our RGM embeds spatially correlated feature
+vectors into graph node vectors and performs relation modeling between them. Relation propagation
+from the graph helps to focus on the interdependent relational features. In addition, we propose
+a Node Attention Unit (NAU) that performs node-wise recalibration to concentrate on the more informative
+nodes arising from the relation-based propagation. Furthermore, we suggest a novel conditional-margin
+loss function (C-softmax) for efficient projection learning of the embedding vector in HFR. The
+proposed method outperforms other state-of-the-art methods on five different HFR databases.
+Furthermore, we show performance improvement on three different backbones since our module can
+be plugged into any pre-trained face recognition backbone to help overcome the limitations of a
+small HFR database. 

@@ -1,0 +1,20 @@
+Consider a network where the nodes split into $K$ different communities. The community labels for
+the nodes are unknown and it is of major interest to estimate them (i.e., community detection). Degree
+Corrected Block Model (DCBM) is a popular network model. How to detect communities with the DCBM
+is an interesting problem, where the main challenge lies in the degree heterogeneity. We propose
+a new approach to community detection which we call the Spectral Clustering On Ratios-of-Eigenvectors
+(SCORE). Compared to classical spectral methods, the main innovation is to use the entry-wise ratios
+between the first leading eigenvector and each of the other leading eigenvectors for clustering.
+Let $A$ be the adjacency matrix of the network. We first obtain the $K$ leading eigenvectors of $A$,
+say, $\hat{\eta}_1,\ldots,\hat{\eta}_K$, and let $\hat{R}$ be the $n\times (K-1)$ matrix such
+that $\hat{R}(i,k)=\hat{\eta}_{k+1}(i)/\hat{\eta}_1(i)$, $1\leq i\leq n$, $1\leq k\leq K-1$.
+We then use $\hat{R}$ for clustering by applying the $k$-means method. The central surprise is,
+the effect of degree heterogeneity is largely ancillary, and can be effectively removed by taking
+entry-wise ratios between $\hat{\eta}_{k+1}$ and $\hat{\eta}_1$, $1\leq k\leq K-1$. The method
+is successfully applied to the web blogs data and the karate club data, with error rates of $58/1222$
+and $1/34$, respectively. These results are more satisfactory than those by the classical spectral
+methods. Additionally, compared to modularity methods, SCORE is easier to implement, computationally
+faster, and also has smaller error rates. We develop a theoretic framework where we show that under
+mild conditions, the SCORE stably yields consistent community detection. In the core of the analysis
+is the recent development on Random Matrix Theory (RMT), where the matrix-form Bernstein inequality
+is especially helpful. 

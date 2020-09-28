@@ -1,0 +1,20 @@
+Polynomial chaos expansions (PCE) are well-suited to quantifying uncertainty in models parameterized
+by independent random variables. The assumption of independence leads to simple strategies for
+evaluating PCE coefficients. In contrast, the application of PCE to models of dependent variables
+is much more challenging. Three approaches can be used. The first approach uses mapping methods
+where measure transformations, such as the Nataf and Rosenblatt transformation, can be used to
+map dependent random variables to independent ones; however we show that this can significantly
+degrade performance since the Jacobian of the map must be approximated. A second strategy is the
+class of dominating support methods which build PCE using independent random variables whose distributional
+support dominates the support of the true dependent joint density; we provide evidence that this
+approach appears to produce approximations with suboptimal accuracy. A third approach, the novel
+method proposed here, uses Gram-Schmidt orthogonalization (GSO) to numerically compute orthonormal
+polynomials for the dependent random variables. This approach has been used successfully when
+solving differential equations using the intrusive stochastic Galerkin method, and in this paper
+we use GSO to build PCE using a non-intrusive stochastic collocation method. The stochastic collocation
+method treats the model as a black box and builds approximations of model output from a set of samples.
+Building PCE from samples can introduce ill-conditioning which does not plague stochastic Galerkin
+methods. To mitigate this ill-conditioning we generate weighted Leja sequences, which are nested
+sample sets, to build accurate polynomial interpolants. We show that our proposed approach produces
+PCE which are orders of magnitude more accurate than PCE constructed using mapping or dominating
+support methods. 

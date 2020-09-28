@@ -1,0 +1,19 @@
+Industrial dynamical systems often exhibit multi-scale response due to material heterogeneities,
+operation conditions and complex environmental loadings. In such problems, it is the case that
+the smallest length-scale of the systems dynamics controls the numerical resolution required
+to effectively resolve the embedded physics. In practice however, high numerical resolutions
+is only required in a confined region of the system where fast dynamics or localized material variability
+are exhibited, whereas a coarser discretization can be sufficient in the rest majority of the system.
+To this end, a unified computational scheme with uniform spatio-temporal resolutions for uncertainty
+quantification can be very computationally demanding. Partitioning the complex dynamical system
+into smaller easier-to-solve problems based of the localized dynamics and material variability
+can reduce the overall computational cost. However, identifying the region of interest for high-resolution
+and intensive uncertainty quantification can be a problem dependent. The region of interest can
+be specified based on the localization features of the solution, user interest, and correlation
+length of the random material properties. For problems where a region of interest is not evident,
+Bayesian inference can provide a feasible solution. In this work, we employ a Bayesian framework
+to update our prior knowledge on the localized region of interest using measurements and system
+response. To address the computational cost of the Bayesian inference, we construct a Gaussian
+process surrogate for the forward model. Once, the localized region of interest is identified,
+we use polynomial chaos expansion to propagate the localization uncertainty. We demonstrate our
+framework through numerical experiments on a three-dimensional elastodynamic problem. 

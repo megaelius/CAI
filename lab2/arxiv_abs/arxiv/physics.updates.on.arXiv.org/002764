@@ -1,0 +1,20 @@
+Feltor is a modular and free scientific software package. It allows developing platform independent
+code that runs on a variety of parallel computer architectures ranging from laptop CPUs to multi-GPU
+distributed memory systems. Feltor consists of both a numerical library and a collection of application
+codes built on top of the library. Its main target are two- and three-dimensional drift- and gyro-fluid
+simulations with discontinuous Galerkin methods as the main numerical discretization technique.
+We observe that numerical simulations of a recently developed gyro-fluid model produce non-deterministic
+results in parallel computations. First, we show how we restore accuracy and bitwise reproducibility
+algorithmically and programmatically. In particular, we adopt an implementation of the exactly
+rounded dot product based on long accumulators, which avoids accuracy losses especially in parallel
+applications. However, reproducibility and accuracy alone fail to indicate correct simulation
+behaviour. In fact, in the physical model slightly different initial conditions lead to vastly
+different end states. This behaviour translates to its numerical representation. Pointwise convergence,
+even in principle, becomes impossible for long simulation times. In a second part, we explore important
+performance tuning considerations. We identify latency and memory bandwidth as the main performance
+indicators of our routines. Based on these, we propose a parallel performance model that predicts
+the execution time of algorithms implemented in Feltor and test our model on a selection of parallel
+hardware architectures. We are able to predict the execution time with a relative error of less than
+25% for problem sizes between 0.1 and 1000 MB. Finally, we find that the product of latency and bandwidth
+gives a minimum array size per compute node to achieve a scaling efficiency above 50% (both strong
+and weak). 

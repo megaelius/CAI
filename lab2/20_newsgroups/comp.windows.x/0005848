@@ -1,0 +1,9 @@
+I'm quite familiar with a variety of window title *setting* methods.
+My question is...  Is there any way (via Resources, etc) to stop an
+application's ability to re-name it's own Name / IconName properties?
+...who cares if it's not 'nice' to the application -
+-Mike
+Mike Hoswell - hoswell@ncar.ucar.edu |   Never Stop! / toasted - Bagels    |
+Climate and Global Dynamics          | Disclaimer: I represent myself only |
+NCAR, PO Box 3000, Boulder CO, 80307 +----------------+--------------------+
+  ...So I've got that going for me --- Which is nice. |   Think Clearly.   |

@@ -1,0 +1,18 @@
+Benson's outer approximation algorithm and its variants are the most frequently used methods for
+solving linear multiobjective optimization problems. These algorithms have two intertwined
+components: one-dimensional linear optimization one one hand, and a combinatorial part closely
+related to vertex numeration on the other. Their separation provides a deeper insight into Benson's
+algorithm, and points toward a dual approach. Two skeletal algorithms are defined which focus on
+the combinatorial part. Using different single-objective optimization problems - called oracle
+calls - yield different algorithms, such as a sequential convex hull algorithm, another version
+of Benson's algorithm with the theoretically best possible iteration count, the dual algorithm
+of Ehrgott, L\"ohne and Shao, and the new algorithm. The new algorithm has several advantages. First,
+the corresponding one-dimensional optimization problem uses the original constraints without
+adding any extra variables or constraints. Second, its iteration count meets the theoretically
+best possible one. As a dual algorithm, it is sequential: in each iteration it produces an extremal
+solution, thus can be aborted when a satisfactory solution is found. The Pareto front can be "probed"
+or "scanned" from several directions at any moment without adversely affecting the efficiency.
+Finally, it is well suited to handle highly degenerate problems where there are many linear dependencies
+among the constraints. On problems with ten or more objectives the implementation shows a significant
+increase in efficiency compared to Bensolve - due to the reduced number of iterations and the improved
+combinatorial handling. 

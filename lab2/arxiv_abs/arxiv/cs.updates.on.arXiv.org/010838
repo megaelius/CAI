@@ -1,0 +1,20 @@
+Criminals use malware to disrupt cyber-systems. The number of these malware-vulnerable systems
+is increasing quickly as common systems, such as vehicles, routers, and lightbulbs, become increasingly
+interconnected cyber-systems. To address the scale of this problem, analysts divide malware into
+classes and develop, for each class, a specialized defense. In this project we classified malware
+with machine learning. In particular, we used a supervised multi-class long short term memory (LSTM)
+model. We trained the algorithm with thousands of malware files annotated with class labels (the
+training set), and the algorithm learned patterns indicative of each class. We used disassembled
+malware files (provided by Microsoft) and separated the constituent data into parsed instructions,
+which look like human-readable machine code text, and raw bytes, which are hexadecimal values.
+We are interested in which format, text or hex, is more valuable as input for classification. To solve
+this, we investigated four cases: a text-only model, a hexadecimal-only model, a multi-input model
+using both text and hexadecimal inputs, and a model based on combining the individual results. We
+performed this investigation using the machine learning Python package Keras, which allows easily
+configurable deep learning architectures and training. We hoped to understand the trade-offs
+between the different formats. Due to the class imbalance in the data, we used multiple methods to
+compare the formats, using test accuracies, balanced accuracies (taking into account weights
+of classes), and an accuracy derived from tables of confusion. We found that the multi-input model,
+which allows learning on both input types simultaneously, resulted in the best performance. Our
+finding expedites malware classification research by providing researchers a suitable deep learning
+architecture to train a tailored version to their malware. 

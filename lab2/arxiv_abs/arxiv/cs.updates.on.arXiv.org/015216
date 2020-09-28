@@ -1,0 +1,20 @@
+Autonomous vehicles operate in a dynamic environment, where the speed with which a vehicle can perceive
+and react impacts the safety and efficacy of the system. LiDAR provides a prominent sensory modality
+that informs many existing perceptual systems including object detection, segmentation, motion
+estimation, and action recognition. The latency for perceptual systems based on point cloud data
+can be dominated by the amount of time for a complete rotational scan (e.g. 100 ms). This built-in
+data capture latency is artificial, and based on treating the point cloud as a camera image in order
+to leverage camera-inspired architectures. However, unlike camera sensors, most LiDAR point
+cloud data is natively a streaming data source in which laser reflections are sequentially recorded
+based on the precession of the laser beam. In this work, we explore how to build an object detector
+that removes this artificial latency constraint, and instead operates on native streaming data
+in order to significantly reduce latency. This approach has the added benefit of reducing the peak
+computational burden on inference hardware by spreading the computation over the acquisition
+time for a scan. We demonstrate a family of streaming detection systems based on sequential modeling
+through a series of modifications to the traditional detection meta-architecture. We highlight
+how this model may achieve competitive if not superior predictive performance with state-of-the-art,
+traditional non-streaming detection systems while achieving significant latency gains (e.g.
+1/15'th - 1/3'rd of peak latency). Our results show that operating on LiDAR data in its native streaming
+formulation offers several advantages for self driving object detection -- advantages that we
+hope will be useful for any LiDAR perception system where minimizing latency is critical for safe
+and efficient operation. 

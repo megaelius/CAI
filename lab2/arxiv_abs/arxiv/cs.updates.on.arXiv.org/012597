@@ -1,0 +1,20 @@
+Paths in a given network are a generalised form of time-serial chains in many real-world applications,
+such as trajectories and Internet flows. Differentially private trajectory publishing concerns
+publishing path information that is usable to the genuine users yet secure against adversaries
+to reconstruct the path with maximum background knowledge. The exiting studies all assume this
+knowledge to be all but one vertex on the path. To prevent the adversaries recovering the missing
+information, they publish a perturbed path where each vertex is sampled from a pre-defined set with
+differential privacy (DP) to replace the corresponding vertex in the original path. In this paper,
+we relax this assumption to be all but one edge on the path, and hence consider the scenario of more
+powerful adversaries with the maximum background knowledge of the entire network topology and
+the path (including all the vertices) except one (arbitrary) missing edge. Under such an assumption,
+the perturbed path produced by the existing work is vulnerable, because the adversary can reconstruct
+the missing edge from the existence of an edge in the perturbed path. To address this vulnerability
+and effectively protect edge privacy, instead of publishing a perturbed path, we propose a novel
+scheme of graph-based path publishing to protect the original path by embedding the path in a graph
+that contains fake edges and replicated vertices applying the differential privacy technique,
+such that only the legitimate users who have the full knowledge of the network topology are able to
+recover the exact vertices and edges of the original path with high probability. We theoretically
+analyse the performance of our algorithm in differential privacy, utility, and execution efficiency.
+We also conduct extensive experimental evaluations on a high-performance cluster system to validate
+our analytical results. 

@@ -1,0 +1,20 @@
+Distributed representation of words has improved the performance for many natural language tasks.
+In many methods, however, only one meaning is considered for one label of a word, and multiple meanings
+of polysemous words depending on the context are rarely handled. Although research works have dealt
+with polysemous words, they determine the meanings of such words according to a batch of large documents.
+Hence, there are two problems with applying these methods to sequential sentences, as in a conversation
+that contains ambiguous expressions. The first problem is that the methods cannot sequentially
+deal with the interdependence between context and word interpretation, in which context is decided
+by word interpretations and the word interpretations are decided by the context. Context estimation
+must thus be performed in parallel to pursue multiple interpretations. The second problem is that
+the previous methods use large-scale sets of sentences for offline learning of new interpretations,
+and the steps of learning and inference are clearly separated. Such methods using offline learning
+cannot obtain new interpretations during a conversation. Hence, to dynamically estimate the conversation
+context and interpretations of polysemous words in sequential sentences, we propose a method of
+Simultaneous Contextualization And INterpreting (SCAIN) based on the traditional Simultaneous
+Localization And Mapping (SLAM) algorithm. By using the SCAIN algorithm, we can sequentially optimize
+the interdependence between context and word interpretation while obtaining new interpretations
+online. For experimental evaluation, we created two datasets: one from Wikipedia's disambiguation
+pages and the other from real conversations. For both datasets, the results confirmed that SCAIN
+could effectively achieve sequential optimization of the interdependence and acquisition of
+new interpretations. 

@@ -1,0 +1,19 @@
+Given one sample $X \in \{\pm 1\}^n$ from an Ising model $\Pr[X=x]\propto \exp(x^\top J x/2)$, whose
+interaction matrix satisfies $J:= \sum_{i=1}^k \beta_i J_i$ for some known matrices $J_i$ and
+some unknown parameters $\beta_i$, we study whether $J$ can be estimated to high accuracy. Assuming
+that each node of the Ising model has bounded total interaction with the other nodes, i.e. $\|J\|_{\infty}
+\le O(1)$, we provide a computationally efficient estimator $\hat{J}$ with the high probability
+guarantee $\|\hat{J} -J\|_F \le \widetilde O(\sqrt{k})$, where $\|J\|_F$ can be as high as $\Omega(\sqrt{n})$.
+Our guarantee is tight when the interaction strengths are sufficiently low. An example application
+of our result is in social networks, wherein nodes make binary choices, $x_1,\ldots,x_n$, which
+may be influenced at varying strengths $\beta_i$ by different networks $J_i$ in which these nodes
+belong. By observing a single snapshot of the nodes' behaviors the goal is to learn the combined correlation
+structure. When $k=1$ and a single parameter is to be inferred, we further show $|\hat{\beta}_1
+- \beta_1| \le \widetilde O(F(\beta_1J_1)^{-1/2})$, where $F(\beta_1J_1)$ is the log-partition
+function of the model. This was proved in prior work under additional assumptions. We generalize
+these results to any setting. While our guarantees aim both high and low temperature regimes, our
+proof relies on sparsifying the correlation network by conditioning on subsets of the variables,
+such that the unconditioned variables satisfy Dobrushin's condition, i.e. a high temperature
+condition which allows us to apply stronger concentration inequalities. We use this to prove concentration
+and anti-concentration properties of the Ising model, and we believe this sparsification result
+has applications beyond the scope of this paper as well. 

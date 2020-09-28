@@ -1,0 +1,17 @@
+In this paper we make two contributions to unsupervised domain adaptation in the convolutional
+neural network. First, our approach transfers knowledge in the deep side of neural networks for
+all convolutional layers. Previous methods usually do so by directly aligning higher-level representations,
+e.g., aligning the activations of fully-connected layers. In this case, although the convolutional
+layers can be modified through gradient back-propagation, but not significantly. Our approach
+takes advantage of the natural image correspondence built by CycleGAN. Departing from previous
+methods, we use every convolutional layer of the target network to uncover the knowledge shared
+by the source domain through an attention alignment mechanism. The discriminative part of an image
+is relatively insensitive to the change of image style, ensuring our attention alignment particularly
+suitable for robust knowledge adaptation. Second, we estimate the posterior label distribution
+of the unlabeled data to train the target network. Previous methods, which iteratively update the
+pseudo labels by the target network and refine the target network by the updated pseudo labels, are
+straightforward but vulnerable to noisy labels. Instead, our approach uses category distribution
+to calculate the cross-entropy loss for training, thereby ameliorating deviation accumulation.
+The two contributions make our approach outperform the state-of-theart methods by +2.6% in all
+the six transfer tasks on Office- 31 on average. Notably, our approach yields +5.1% improvement
+for the challenging $\textbf{D}$ ${\rightarrow}$ $\textbf{A}$ task. 

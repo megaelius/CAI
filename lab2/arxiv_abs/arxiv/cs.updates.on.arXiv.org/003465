@@ -1,0 +1,19 @@
+The invention of the FM-index [FOCS 2000] and the compressed suffix array [STOC 2000] have revolutionized
+the field of string algorithms for nearly two decades. These indexes are now mature and widespread,
+both in theory where they provide an off-the-shelf small space indexing structures, and in practice
+(particularly bioinformatics) where they achieved massive success. Their time-and-space optimal
+construction, however, still remains an open problem. The currently fastest algorithms, due to
+Belazzougui [STOC 2014] and Munro et al. [SODA 2017], operate in $O(n)$ time and optimal space of
+$O(n \log \sigma)$ bits, where $n$ is the text length and $\sigma$ is the alphabet size. Thus, they
+are optimal only for large alphabets $\sigma=\Omega(n^{\epsilon})$. In this paper we propose
+algorithms constructing the Burrows-Wheeler transform (BWT), the permuted longest-common-prefix
+(PLCP) array, and the LZ77 parsing of the input text in $O(n/\log_{\sigma}n+r\,{\rm polylog}\,n)$
+time and space, where $r$ is the number of runs in the Burrows-Wheeler of the input text. These are
+the essential components of nearly every index developed in the last two decades (in particular,
+the CSA and the FM-index, but also grammar and LZ77-based indexes). Thus, we obtain a time-and-space
+optimal construction algorithms for inputs satisfying a weak assumption $n/r\in\Omega({\rm
+polylog}\,n)$ on the repetitiveness. Our result has a particularly important implications for
+bioinformatics, where most of the data is highly-repetitive and over small (DNA) alphabet. Furthermore,
+our techniques imply a time-and-space optimal solutions on highly repetitive data for a range of
+fundamental problems arising in sequence analysis and data compression such as: Lyndon factorization,
+construction of run-length compressed suffix arrays, and a number of simple "textbook" problems.

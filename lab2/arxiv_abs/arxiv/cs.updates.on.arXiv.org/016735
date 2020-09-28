@@ -1,0 +1,18 @@
+A Reduction -- an accumulation over a set of values, using an associative and commutative operator
+-- is a common computation in many numerical computations, including scientific computations,
+machine learning, computer vision, and financial analytics. Contemporary polyhedral-based
+compilation techniques make it possible to optimize reductions, such as prefix sum, in which each
+component of the reduction's output potentially shares computation with another component in
+the reduction. Therefore an optimizing compiler can identify the computation shared between multiple
+components and generate code that computes the shared computation only once. These techniques,
+however, do not support reductions that -- when phrased in the language of the polyhedral model --
+span multiple statements. In such cases, existing approaches can generate incorrect code that
+violates the data dependencies of the original, unoptimized program. In this work, we identify
+and formalize the multiple\-/statement reduction problem as a bilinear optimization problem.
+We present a heuristic optimization algorithm for these reductions, and we demonstrate that the
+algorithm provides optimal complexity for a set of benchmark programs from the literature on probabilistic
+inference algorithms, whose performance critically relies on simplifying these reductions.
+Specifically, the complexities for 10 of the 11 programs improve siginifcantly by factors at least
+of the sizes of the input data, which are in the range of $10^4$ to $10^6$ for typical real application
+inputs. We also confirm the significance of the improvement by showing that the speedups in wall-clock
+time range from $1.1\text{x}$ to over $10^7\text{x}$. 

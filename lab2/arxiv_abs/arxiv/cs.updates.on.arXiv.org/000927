@@ -1,0 +1,19 @@
+Size-based schedulers have very desirable performance properties: optimal or near-optimal response
+time can be coupled with strong fairness guarantees. Despite this, such systems are very rarely
+implemented in practical settings, because they require knowing a priori the amount of work needed
+to complete jobs: this assumption is very difficult to satisfy in concrete systems. It is definitely
+more likely to inform the system with an estimate of the job sizes, but existing studies point to somewhat
+pessimistic results if existing scheduler policies are used based on imprecise job size estimations.
+We take the goal of designing scheduling policies that are explicitly designed to deal with inexact
+job sizes: first, we show that existing size-based schedulers can have bad performance with inexact
+job size information when job sizes are heavily skewed; we show that this issue, and the pessimistic
+results shown in the literature, are due to problematic behavior when large jobs are underestimated.
+Once the problem is identified, it is possible to amend existing size-based schedulers to solve
+the issue. We generalize FSP -- a fair and efficient size-based scheduling policy -- in order to solve
+the problem highlighted above; in addition, our solution deals with different job weights (that
+can be assigned to a job independently from its size). We provide an efficient implementation of
+the resulting protocol, which we call Practical Size-Based Scheduler (PSBS). Through simulations
+evaluated on synthetic and real workloads, we show that PSBS has near-optimal performance in a large
+variety of cases with inaccurate size information, that it performs fairly and it handles correctly
+job weights. We believe that this work shows that PSBS is indeed pratical, and we maintain that it
+could inspire the design of schedulers in a wide array of real-world use cases. 

@@ -1,0 +1,18 @@
+A probability density function (pdf) encodes the entire stochastic knowledge about data distribution,
+where data may represent stochastic observations in robotics, transition state pairs in reinforcement
+learning or any other empirically acquired modality. Inferring data pdf is of prime importance,
+allowing to analyze various model hypotheses and perform smart decision making. However, most
+density estimation techniques are limited in their representation expressiveness to specific
+kernel type or predetermined distribution family, and have other restrictions. For example, kernel
+density estimation (KDE) methods require meticulous parameter search and are extremely slow at
+querying new points. In this paper we present a novel non-parametric density estimation approach,
+DeepPDF, that uses a neural network to approximate a target pdf given samples from thereof. Such
+a representation provides high inference accuracy for a wide range of target pdfs using a relatively
+simple network structure, making our method highly statistically robust. This is done via a new
+stochastic optimization algorithm, \emph{Probabilistic Surface Optimization} (PSO), that
+turns to advantage the stochastic nature of sample points in order to force network output to be identical
+to the output of a target pdf. Once trained, query point evaluation can be efficiently done in DeepPDF
+by a simple network forward pass, with linear complexity in the number of query points. Moreover,
+the PSO algorithm is capable of inferring the frequency of data samples and may also be used in other
+statistical tasks such as conditional estimation and distribution transformation. We compare
+the derived approach with KDE methods showing its superior performance and accuracy. 

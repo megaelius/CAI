@@ -1,0 +1,18 @@
+In heap-based languages, knowing that a variable x points to an acyclic data structure is useful
+for analyzing termination: this information guarantees that the depth of the data structure to
+which x points is greater than the depth of the structure pointed to by x.fld, and allows bounding
+the number of iterations of a loop which traverses the data structure on fld. In general, proving
+termination needs acyclicity, unless program-specific or non-automated reasoning is performed.
+However, recent work could prove that certain loops terminate even without inferring acyclicity,
+because they traverse data structures "acyclically". Consider a double-linked list: if it is possible
+to demonstrate that every cycle involves both the "next" and the "prev" field, then a traversal on
+"next" terminates since no cycle will be traversed completely. This paper develops a static analysis
+inferring field-sensitive reachability and cyclicity information, which is more general than
+existing approaches. Propositional formulae are computed, which describe which fields may or
+may not be traversed by paths in the heap. Consider a tree with edges "left" and "right" to the left
+and right sub-trees, and "parent" to the parent node: termination of a loop traversing leaf-up cannot
+be guaranteed by state-of-the-art analyses. Instead, propositional formulae computed by this
+analysis indicate that cycles must traverse "parent" and at least one between "left" and "right":
+termination is guaranteed as no cycle is traversed completely. This paper defines the necessary
+abstract domains and builds an abstract semantics on them. A prototypical implementation provides
+the expected result on relevant examples. 

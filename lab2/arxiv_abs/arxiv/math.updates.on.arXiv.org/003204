@@ -1,0 +1,19 @@
+We study the scheduling of computation tasks across $n$ workers in a large scale distributed learning
+problem. Computation speeds of the workers are assumed to be heterogeneous and unknown to the master,
+and redundant computations are assigned to workers in order to tolerate straggling workers. We
+consider sequential computation and instantaneous communication from each worker to the master,
+and each computation round, which can model a single iteration of the stochastic gradient descent
+algorithm, is completed once the master receives $k$ distinct computations from the workers. Our
+goal is to characterize the average completion time as a function of the computation load, which
+denotes the portion of the dataset available at each worker. We propose two computation scheduling
+schemes that specify the computation tasks assigned to each worker, as well as their computation
+schedule, i.e., the order of execution, and derive the corresponding average completion time in
+closed-form. We also establish a lower bound on the minimum average completion time. Numerical
+results show a significant reduction in the average completion time over existing coded computing
+schemes, which are designed to mitigate straggling servers, but often ignore computations of non-persistent
+stragglers, as well as uncoded computing schemes. Furthermore, it is shown numerically that when
+the speeds of different workers are relatively skewed, the gap between the upper and lower bounds
+is relatively small. The reduction in the average completion time is obtained at the expense of increased
+communication from the workers to the master. We have studied the resulting trade-off by comparing
+the average number of distinct computations sent from the workers to the master for each scheme,
+defined as the communication load. 

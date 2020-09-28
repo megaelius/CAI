@@ -1,0 +1,19 @@
+Bug tracking enables the monitoring and resolution of issues and bugs within organizations. Bug
+triaging, or assigning bugs to the owner(s) who will resolve them, is a critical component of this
+process because there are many incorrect assignments that waste developer time and reduce bug resolution
+throughput. In this work, we explore the use of a novel two-output deep neural network architecture
+(Dual DNN) for triaging a bug to both an individual team and developer, simultaneously. Dual DNN
+leverages this simultaneous prediction by exploiting its own guess of the team classes to aid in
+developer assignment. A multi-label classification approach is used for each of the two outputs
+to learn from all interim owners, not just the last one who closed the bug. We make use of a heuristic
+combination of the interim owners (owner-importance-weighted labeling) which is converted into
+a probability mass function (pmf). We employ a two-stage learning scheme, whereby the team portion
+of the model is trained first and then held static to train the team--developer and bug--developer
+relationships. The scheme employed to encode the team--developer relationships is based on an
+organizational chart (org chart), which renders the model robust to organizational changes as
+it can adapt to role changes within an organization. There is an observed average lift (with respect
+to both team and developer assignment) of 13%-points in 11-fold incremental-learning cross-validation
+(IL-CV) accuracy for Dual DNN utilizing owner-weighted labels compared with the traditional multi-class
+classification approach. Furthermore, Dual DNN with owner-weighted labels achieves average
+11-fold IL-CV accuracies of 76% (team assignment) and 55% (developer assignment), outperforming
+reference models by 14%- and 25%-points, respectively, on a proprietary dataset with 236,865 entries.

@@ -1,0 +1,20 @@
+Sparse dictionary learning is a popular method for representing signals as linear combinations
+of a few elements from a dictionary that is learned from the data. In the classical setting, signals
+are represented as vectors and the dictionary learning problem is posed as a matrix factorization
+problem where the data matrix is approximately factorized into a dictionary matrix and a sparse
+matrix of coefficients. However, in many applications in computer vision and medical imaging,
+signals are better represented as matrices or tensors (e.g. images or videos), where it may be beneficial
+to exploit the multi-dimensional structure of the data to learn a more compact representation.
+One such approach is separable dictionary learning, where one learns separate dictionaries for
+different dimensions of the data. However, typical formulations involve solving a non-convex
+optimization problem; thus guaranteeing global optimality remains a challenge. In this work,
+we propose a framework that builds upon recent developments in matrix factorization to provide
+theoretical and numerical guarantees of global optimality for separable dictionary learning.
+We propose an algorithm to find such a globally optimal solution, which alternates between following
+local descent steps and checking a certificate for global optimality. We illustrate our approach
+on diffusion magnetic resonance imaging (dMRI) data, a medical imaging modality that measures
+water diffusion along multiple angular directions in every voxel of an MRI volume. State-of-the-art
+methods in dMRI either learn dictionaries only for the angular domain of the signals or in some cases
+learn spatial and angular dictionaries independently. In this work, we apply the proposed separable
+dictionary learning framework to learn spatial and angular dMRI dictionaries jointly and provide
+preliminary validation on denoising phantom and real dMRI brain data. 

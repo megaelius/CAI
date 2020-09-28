@@ -1,0 +1,18 @@
+The capability to incorporate moving geometric features within models for complex simulations
+is a common requirement in many fields. The fluid mechanics within aeronautical applications,
+for example, routinely feature rotating (e.g. turbines, wheels and fan blades) or sliding components
+(e.g. in compressor or turbine cascade simulations). With an increasing trend towards the high-fidelity
+modelling of these cases, in particular combined with the use of high-order discontinuous Galerkin
+methods, there is therefore a requirement to understand how different numerical treatments of
+the interfaces between the static mesh and the sliding/rotating part impact on overall solution
+quality. In this article, we compare two different approaches to handle this non-conformal interface.
+The first is the so-called mortar approach, where flux integrals along edges are split according
+to the positioning of the non-conformal grid. The second is a lesser-documented point-to-point
+interpolation method, where the interior and exterior quantities for flux evaluations are interpolated
+from elements lying on the opposing side of the interface. Although the mortar approach has advantages
+in terms of its numerical properties, in that it preserves the local conservation properties of
+DG methods, in the context of complex 3D meshes it poses significant implementation difficulties
+which the point-to-point method handles more readily. In this article we examine the numerical
+properties of each method, focusing not only on observing convergence orders for smooth solutions,
+but also how each method performs in under-resolved simulations of linear and nonlinear hyperbolic
+problems, to inform the use of these methods in implicit large-eddy simulations. 

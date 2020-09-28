@@ -1,0 +1,18 @@
+We consider the family of \emph{Gibbs distributions}, which are probability distributions over
+a discrete space $\Omega$ given by $\mu^\Omega_\beta(x)=\frac{e^{\beta H(x)}}{Z(\beta)}$.
+Here $H:\Omega\rightarrow \{0,1,\ldots,n\}$ is a fixed function (called a {\em Hamiltonian}),
+$\beta$ is the parameter of the distribution, and $Z(\beta)=\sum_{x\in\Omega}e^{\beta H(x)}
+= \sum_{k=0}^n c_k e^{\beta k}$ is the normalization factor called the {\em partition function}.
+We study how function $Z(\cdot)$ can be estimated using an oracle that produces samples $x\sim \mu_\beta(\cdot)$
+for a value $\beta$ in a given interval $[\beta_{\min}, \beta_{\max}]$. Recently, it has been shown
+how to estimate quantity $q=\log\frac{Z(\beta_{\max})}{Z(\beta_{\min})}$ with additive error~$\varepsilon$
+using $\tilde O(\frac{q}{\varepsilon^2})$ samples in expectation. We improve this result to
+$\tilde O(\frac {\min\{q,n^2\}}{\varepsilon^2})$, matching a lower bound of Kolmogorov (2018)
+up to logarithmic factors. We also consider the problem of estimating the normalized coefficients
+$c_k$ for indices $k\in\{0,1,\ldots,n\}$ that satisfy $\max_{\beta} \mu_\beta^\Omega(\{x\:|\:H(x)=k\})
+\ge\mu_\ast$, where $\mu_\ast\in(0,1)$ is a given parameter. We solve this problem using $\tilde
+O(\frac{\min\{ q + \frac{ \sqrt{q}}{\mu_{\ast}}, n^2 + \frac{ n}{\mu_{\ast}} \}}{\varepsilon^2})$
+expected samples, and we show that this complexity is optimal up to logarithmic factors. This is
+improved to roughly $\tilde O( \frac{1/\mu_{\ast}+\min\{q + n,n^2\}}{\varepsilon^2})$ for
+applications in which the coefficients are known to be log-concave (e.g.\ for connected subgraphs
+of a given graph). 

@@ -1,0 +1,18 @@
+Purpose: The research is to develop a novel CNN-based adversarial deep learning method to improve
+and expedite the multi-organ semantic segmentation of CT images, and to generate accurate contours
+on pelvic CT images. Methods: Planning CT and structure datasets for 110 patients with intact prostate
+cancer were retrospectively selected and divided for 10-fold cross-validation. The proposed
+adversarial multi-residual multi-scale pooling Markov Random Field (MRF) enhanced network (ARPM-net)
+implements an adversarial training scheme. A segmentation network and a discriminator network
+were trained jointly, and only the segmentation network was used for prediction. The segmentation
+network integrates a newly designed MRF block into a variation of multi-residual U-net. The discriminator
+takes the product of the original CT and the prediction/ground-truth as input and classifies the
+input into fake/real. The segmentation network and discriminator network can be trained jointly
+as a whole, or the discriminator can be used for fine-tuning after the segmentation network is coarsely
+trained. Multi-scale pooling layers were introduced to preserve spatial resolution during pooling
+using less memory compared to atrous convolution layers. An adaptive loss function was proposed
+to enhance the training on small or low contrast organs. The accuracy of modeled contours was measured
+with the Dice similarity coefficient (DSC), Average Hausdorff Distance (AHD), Average Surface
+Hausdorff Distance (ASHD), and relative Volume Difference (VD) using clinical contours as references
+to the ground-truth. The proposed ARPM-net method was compared to several stateof-the-art deep
+learning methods. 

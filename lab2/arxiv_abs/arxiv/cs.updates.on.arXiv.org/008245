@@ -1,0 +1,18 @@
+Most of the existing recognition algorithms are proposed for closed set scenarios, where all categories
+are known beforehand. However, in practice, recognition is essentially an open set problem. There
+are categories we know called "knowns", and there are more we do not know called "unknowns". Enumerating
+all categories beforehand is never possible, consequently it is infeasible to prepare sufficient
+training samples for those unknowns. Applying closed set recognition methods will naturally lead
+to unseen-category errors. To address this problem, we propose the prototype based Open Deep Network
+(P-ODN) for open set recognition tasks. Specifically, we introduce prototype learning into open
+set recognition. Prototypes and prototype radiuses are trained jointly to guide a CNN network to
+derive more discriminative features. Then P-ODN detects the unknowns by applying a multi-class
+triplet thresholding method based on the distance metric between features and prototypes. Manual
+labeling the unknowns which are detected in the previous process as new categories. Predictors
+for new categories are added to the classification layer to "open" the deep neural networks to incorporate
+new categories dynamically. The weights of new predictors are initialized exquisitely by applying
+a distances based algorithm to transfer the learned knowledge. Consequently, this initialization
+method speed up the fine-tuning process and reduce the samples needed to train new predictors. Extensive
+experiments show that P-ODN can effectively detect unknowns and needs only few samples with human
+intervention to recognize a new category. In the real world scenarios, our method achieves state-of-the-art
+performance on the UCF11, UCF50, UCF101 and HMDB51 datasets. 

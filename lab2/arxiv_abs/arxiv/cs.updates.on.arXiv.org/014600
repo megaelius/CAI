@@ -1,0 +1,17 @@
+In this work, we consider the problem of secure multi-party computation (MPC), consisting of $\Gamma$
+sources, each has access to a large private matrix, $N$ processing nodes or workers, and one data
+collector or master. The master is interested in the result of a polynomial function of the input
+matrices. Each source sends a randomized functions of its matrix, called as its share, to each worker.
+The workers process their shares in interaction with each other, and send some results to the master
+such that it can derive the final result. There are several constraints: (1) each worker can store
+a function of each input matrix, with the size of $\frac{1}{m}$ fraction of that input matrix, (2)
+up to $t$ of the workers, for some integer $t$, are adversary and may collude to gain information about
+the private inputs or can do malicious actions to make the final result incorrect. The objective
+is to design an MPC scheme with the minimum number the workers, called the recovery threshold, such
+that the final result is correct, workers learn no information about the input matrices, and the
+master learns nothing beyond the final result. In this paper, we propose an MPC scheme that achieves
+the recovery threshold of $3t+2m-1$ workers, which is order-wise less than the recovery threshold
+of the conventional methods. The challenge in dealing with this set up is that when nodes interact
+with each other, the malicious messages that adversarial nodes generate propagate through the
+system, and can mislead the honest nodes. To deal with this challenge, we design some subroutines
+that can detect erroneous messages, and correct or drop them. 

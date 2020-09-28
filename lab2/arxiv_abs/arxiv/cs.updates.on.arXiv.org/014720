@@ -1,0 +1,20 @@
+SQL queries, with the AND, OR, and NOT operators, constitute a broad class of highly used queries.
+Thus, their cardinality estimation is important for query optimization. In addition, a query planner
+requires the set-theoretic cardinality (i.e., without duplicates) for queries with DISTINCT
+as well as in planning; for example, when considering sorting options. Yet, despite the importance
+of estimating query cardinalities in the presence of DISTINCT, AND, OR, and NOT, many cardinality
+estimation methods are limited to estimating cardinalities of only conjunctive queries with duplicates
+counted. The focus of this work is on two methods for handling this deficiency that can be applied
+to any limited cardinality estimation model. First, we describe a specialized deep learning scheme,
+PUNQ, which is tailored to representing conjunctive SQL queries and predicting the percentage
+of unique rows in the query's result with duplicate rows. Using the predicted percentages obtained
+via PUNQ, we are able to transform any cardinality estimation method that only estimates for conjunctive
+queries, and which estimates cardinalities with duplicates (e.g., MSCN), to a method that estimates
+queries cardinalities without duplicates. This enables estimating cardinalities of queries
+with the DISTINCT keyword. In addition, we describe a recursive algorithm, GenCrd, for extending
+any cardinality estimation method M that only handles conjunctive queries to one that estimates
+cardinalities for more general queries (that include AND, OR, and NOT), without changing the method
+M itself. Our evaluation is carried out on a challenging, real-world database with general queries
+that include either the DISTINCT keyword or the AND, OR, and NOT operators. Experimentally, we show
+that the proposed methods obtain accurate cardinality estimates with the same level of accuracy
+as that of the original transformed methods. 

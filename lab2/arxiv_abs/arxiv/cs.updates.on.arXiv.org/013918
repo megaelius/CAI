@@ -1,0 +1,19 @@
+Recent advancements in attention mechanisms have replaced recurrent neural networks and its variants
+for machine translation tasks. Transformer using attention mechanism solely achieved state-of-the-art
+results in sequence modeling. Neural machine translation based on the attention mechanism is parallelizable
+and addresses the problem of handling long-range dependencies among words in sentences more effectively
+than recurrent neural networks. One of the key concepts in attention is to learn three matrices,
+query, key, and value, where global dependencies among words are learned through linearly projecting
+word embeddings through these matrices. Multiple query, key, value matrices can be learned simultaneously
+focusing on a different subspace of the embedded dimension, which is called multi-head in Transformer.
+We argue that certain dependencies among words could be learned better through an intermediate
+context than directly modeling word-word dependencies. This could happen due to the nature of certain
+dependencies or lack of patterns that lend them difficult to be modeled globally using multi-head
+self-attention. In this work, we propose a new way of learning dependencies through a context in
+multi-head using convolution. This new form of multi-head attention along with the traditional
+form achieves better results than Transformer on the WMT 2014 English-to-German and English-to-French
+translation tasks. We also introduce a framework to learn POS tagging and NER information during
+the training of encoder which further improves results achieving a new state-of-the-art of 32.1
+BLEU, better than existing best by 1.4 BLEU, on the WMT 2014 English-to-German and 44.6 BLEU, better
+than existing best by 1.1 BLEU, on the WMT 2014 English-to-French translation tasks. We call this
+Transformer++. 

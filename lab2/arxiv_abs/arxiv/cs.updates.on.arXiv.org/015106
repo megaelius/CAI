@@ -1,0 +1,18 @@
+The problem of population recovery refers to estimating a distribution based on incomplete or corrupted
+samples. Consider a random poll of sample size $n$ conducted on a population of individuals, where
+each pollee is asked to answer $d$ binary questions. We consider one of the two polling impediments:
+(a) in lossy population recovery, a pollee may skip each question with probability $\epsilon$,
+(b) in noisy population recovery, a pollee may lie on each question with probability $\epsilon$.
+Given $n$ lossy or noisy samples, the goal is to estimate the probabilities of all $2^d$ binary vectors
+simultaneously within accuracy $\delta$ with high probability. This paper settles the sample
+complexity of population recovery. For lossy model, the optimal sample complexity is $\tilde\Theta(\delta^{-2\max\{\frac{\epsilon}{1-\epsilon},1\}})$,
+improving the state of the art by Moitra and Saks in several ways: a lower bound is established, the
+upper bound is improved and the result depends at most on the logarithm of the dimension. Surprisingly,
+the sample complexity undergoes a phase transition from parametric to nonparametric rate when
+$\epsilon$ exceeds $1/2$. For noisy population recovery, the sharp sample complexity turns out
+to be more sensitive to dimension and scales as $\exp(\Theta(d^{1/3} \log^{2/3}(1/\delta)))$
+except for the trivial cases of $\epsilon=0,1/2$ or $1$. For both models, our estimators simply
+compute the empirical mean of a certain function, which is found by pre-solving a linear program
+(LP). Curiously, the dual LP can be understood as Le Cam's method for lower-bounding the minimax
+risk, thus establishing the statistical optimality of the proposed estimators. The value of the
+LP is determined by complex-analytic methods. 

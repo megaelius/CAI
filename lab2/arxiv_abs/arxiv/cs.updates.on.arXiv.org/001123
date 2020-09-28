@@ -1,0 +1,18 @@
+We present an efficient solver for diffeomorphic image registration problems in the framework
+of Large Deformations Diffeomorphic Metric Mappings (LDDMM). We use an optimal control formulation,
+in which the velocity field of a hyperbolic PDE needs to be found such that the distance between the
+final state of the system (the transformed/transported template image) and the observation (the
+reference image) is minimized. Our solver supports both stationary and non-stationary (i.e.,
+transient or time-dependent) velocity fields. As transformation models, we consider both the
+transport equation (assuming intensities are preserved during the deformation) and the continuity
+equation (assuming mass-preservation). We consider the reduced form of the optimal control problem
+and solve the resulting unconstrained optimization problem using a discretize-then-optimize
+approach. A key contribution is the elimination of the PDE constraint using a Lagrangian hyperbolic
+PDE solver. Lagrangian methods rely on the concept of characteristic curves that we approximate
+here using a fourth-order Runge-Kutta method. We also present an efficient algorithm for computing
+the derivatives of final state of the system with respect to the velocity field. This allows us to
+use fast Gauss-Newton based methods. We present quickly converging iterative linear solvers using
+spectral preconditioners that render the overall optimization efficient and scalable. Our method
+is embedded into the image registration framework FAIR and, thus, supports the most commonly used
+similarity measures and regularization functionals. We demonstrate the potential of our new approach
+using several synthetic and real world test problems with up to 14.7 million degrees of freedom.

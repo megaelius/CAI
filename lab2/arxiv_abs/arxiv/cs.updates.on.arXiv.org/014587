@@ -1,0 +1,18 @@
+The recent trend in industry-setting Natural Language Processing (NLP) research has been to operate
+large scale pretrained language models like BERT under strict computational limits. While most
+model compression work has focused on "distilling" a general-purpose language representation
+using expensive pretraining distillation, much less attention has been paid to creating smaller
+task-specific language representations which, arguably, are more useful in an industry setting.
+In this paper, we investigate compressing BERT- and RoBERTa-based question answering systems
+by structured pruning of parameters from the underlying trained transformer model. We find that
+an inexpensive combination of task-specific structured pruning and task-specific distillation,
+without the expense of pretraining distillation, yields highly-performing models across a range
+of speed/accuracy tradeoff operating points. We start from full-size models trained for SQuAD
+2.0 or Natural Questions and introduce gates that allow selected parts of transformers to be individually
+eliminated. Specifically, we investigate (1) structured pruning to reduce the number of parameters
+in each transformer layer, (2) applicability to both BERT- and RoBERTa-based models, (3) applicability
+to both SQuAD 2.0 and Natural Questions, and (4) combining structured pruning with distillation.
+We find that pruning a combination of attention heads and the feed-forward layer yields a near-doubling
+of inference speed on SQuAD 2.0, with less than a 1.5 F1-point loss in accuracy. Furthermore, we find
+that a combination of distillation and structured pruning almost doubles the inference speed of
+RoBERTa-large based model for Natural Questions, while losing less than 0.5 F1-point on short answers.

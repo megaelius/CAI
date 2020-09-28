@@ -1,0 +1,18 @@
+There is a recent trend in handwritten text recognition with deep neural networks to replace 2D recurrent
+layers with 1D, and in some cases even completely remove the recurrent layers, relying on simple
+feed-forward convolutional only architectures. The most used type of recurrent layer is the Long-Short
+Term Memory (LSTM). The motivations to do so are many: there are few open-source implementations
+of 2D-LSTM, even fewer supporting GPU implementations (currently cuDNN only implements 1D-LSTM);
+2D recurrences reduce the amount of computations that can be parallelized, and thus possibly increase
+the training/inference time; recurrences create global dependencies with respect to the input,
+and sometimes this may not be desirable. Many recent competitions were won by systems that employed
+networks that use 2D-LSTM layers. Most previous work that compared 1D or pure feed-forward architectures
+to 2D recurrent models have done so on simple datasets or did not fully optimize the "baseline" 2D
+model compared to the challenger model, which was dully optimized. In this work, we aim at a fair comparison
+between 2D and competing models and also extensively evaluate them on more complex datasets that
+are more representative of challenging "real-world" data, compared to "academic" datasets that
+are more restricted in their complexity. We aim at determining when and why the 1D and 2D recurrent
+models have different results. We also compare the results with a language model to assess if linguistic
+constraints do level the performance of the different networks. Our results show that for challenging
+datasets, 2D-LSTM networks still seem to provide the highest performances and we propose a visualization
+strategy to explain it. 

@@ -1,0 +1,19 @@
+Few-shot or one-shot learning of classifiers for images or videos is an important next frontier
+in computer vision. The extreme paucity of training data means that the learning must start with
+a significant inductive bias towards the type of task to be learned. One way to acquire this is by meta-learning
+on tasks similar to the target task. However, if the meta-learning phase requires labeled data for
+a large number of tasks closely related to the target task, it not only increases the difficulty and
+cost, but also conceptually limits the approach to variations of well-understood domains. In this
+paper, we propose UMTRA, an algorithm that performs meta-learning on an unlabeled dataset in an
+unsupervised fashion, without putting any constraint on the classifier network architecture.
+The only requirements towards the dataset are: sufficient size, diversity and number of classes,
+and relevance of the domain to the one in the target task. Exploiting this information, UMTRA generates
+synthetic training tasks for the meta-learning phase. We evaluate UMTRA on few-shot and one-shot
+learning on both image and video domains. To the best of our knowledge, we are the first to evaluate
+meta-learning approaches on UCF-101. On the Omniglot and Mini-Imagenet few-shot learning benchmarks,
+UMTRA outperforms every tested approach based on unsupervised learning of representations, while
+alternating for the best performance with the recent CACTUs algorithm. Compared to supervised
+model-agnostic meta-learning approaches, UMTRA trades off some classification accuracy for
+a vast decrease in the number of labeled data needed. For instance, on the five-way one-shot classification
+on the Omniglot, we retain 85% of the accuracy of MAML, a recently proposed supervised meta-learning
+algorithm, while reducing the number of required labels from 24005 to 5. 

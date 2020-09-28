@@ -1,0 +1,19 @@
+We study a process of \emph{averaging} in a distributed system with \emph{noisy communication}.
+Each of the agents in the system starts with some value and the goal of each agent is to compute the average
+of all the initial values. In each round, one pair of agents is drawn uniformly at random from the whole
+population, communicates with each other and each of these two agents updates their local value
+based on their own value and the received message. The communication is noisy and whenever an agent
+sends any value $v$, the receiving agent receives $v+N$, where $N$ is a zero-mean Gaussian random
+variable. The two quality measures of interest are (i) the total sum of squares $TSS(t)$, which measures
+the sum of square distances from the average load to the \emph{initial average} and (ii) $\bar{\phi}(t)$,
+measures the sum of square distances from the average load to the \emph{running average} (average
+at time $t$). It is known that the simple averaging protocol---in which an agent sends its current
+value and sets its new value to the average of the received value and its current value---converges
+eventually to a state where $\bar{\phi}(t)$ is small. It has been observed that $TSS(t)$, due to
+the noise, eventually diverges and previous research---mostly in control theory---has focused
+on showing eventual convergence w.r.t. the running average. We obtain the first probabilistic
+bounds on the convergence time of $\bar{\phi}(t)$ and precise bounds on the drift of $TSS(t)$ that
+show that albeit $TSS(t)$ eventually diverges, for a wide and interesting range of parameters,
+$TSS(t)$ stays small for a number of rounds that is polynomial in the number of agents. Our results
+extend to the synchronous setting and settings where the agents are restricted to discrete values
+and perform rounding. 

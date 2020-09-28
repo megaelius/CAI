@@ -1,0 +1,17 @@
+In this paper, we study the Minimum Weight Pairwise Distance Preservers (MWPDP) problem. Consider
+a positively weighted undirected/directed connected graph $G = (V, E, c)$ and a subset $P$ of pairs
+of vertices, also called demand pairs. A subgraph $G'$ is a distance preserver with respect to $P$
+if and only if every pair $(u, w) \in P$ satisfies $dist_{G'} (u, w) = dist_{G}(u, w)$. In MWPDP problem,
+we aim to find the minimum-weight subgraph $G^*$ that is a distance preserver with respect to $P$.
+Taking a shortest path between each pair in $P$ gives us a trivial solution with the weight of at most
+$U=\sum_{(u,v) \in P} dist_{G} (u, w)$. Subsequently, we ask how much improvement we can make upon
+$U$. In other words, we opt to find a distance preserver $G^*$ that maximizes $U-c(G^*)$. Denote
+this problem as Cost Sharing Pairwise Distance Preservers (CSPDP), which has several applications
+in the planning and operations of transportation systems. The only known work that can provide a
+nontrivial solution for CSPDP is that of Chlamt\'a\v{c} et al. (SODA, 2017). This algorithm works
+for unweighted graphs and guarantees a non-zero objective only if the optimal solution is extremely
+sparse with respect to the trivial solution. We address this issue by proposing an $O(|E|^{1/2+\epsilon})$-approximation
+algorithm for CSPDP in weighted graphs that runs in $O((|P||E|)^{2.38} (1/\epsilon))$ time. Moreover,
+we prove CSPDP is at least as hard as $\text{LABEL-COVER}_{\max}$. This implies that CSPDP cannot
+be approximated within $O(|E|^{1/6-\epsilon})$ factor in polynomial time, unless there is an
+improvement in the notoriously difficult $\text{LABEL-COVER}_{\max}$. 

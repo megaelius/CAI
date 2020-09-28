@@ -1,0 +1,17 @@
+Applied Data Scientists throughout various industries are commonly faced with the challenging
+task of encoding high-cardinality categorical features into digestible inputs for machine learning
+algorithms. This paper describes a Bayesian encoding technique developed for WeWork's lead scoring
+engine which outputs the probability of a person touring one of our office spaces based on interaction,
+enrichment, and geospatial data. We present a paradigm for ensemble modeling which mitigates the
+need to build complicated preprocessing and encoding schemes for categorical variables. In particular,
+domain-specific conjugate Bayesian models are employed as base learners for features in a stacked
+ensemble model. For each column of a categorical feature matrix we fit a problem-specific prior
+distribution, for example, the Beta distribution for a binary classification problem. In order
+to analytically derive the moments of the posterior distribution, we update the prior with the conjugate
+likelihood of the corresponding target variable for each unique value of the given categorical
+feature. This function of column and value encodes the categorical feature matrix so that the final
+learner in the ensemble model ingests low-dimensional numerical input. Experimental results
+on both curated and real world datasets demonstrate impressive accuracy and computational efficiency
+on a variety of problem archetypes. Particularly, for the lead scoring engine at WeWork -- where
+some categorical features have as many as 300,000 levels -- we have seen an AUC improvement from 0.87
+to 0.97 through implementing conjugate Bayesian model encoding. 

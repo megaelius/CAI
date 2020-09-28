@@ -1,0 +1,20 @@
+MapReduce framework is the de facto in big data and its applications where a big data-set is split
+into small data chunks that are replicated on different servers among thousands of servers. The
+heterogeneous server structure of the system makes the scheduling much harder than scheduling
+for systems with homogeneous servers. Throughput optimality of the system on one hand and delay
+optimality on the other hand creates a dilemma for assigning tasks to servers. The JSQ-MaxWeight
+and Balanced-Pandas algorithms are the states of the arts algorithms with theoretical guarantees
+on throughput and delay optimality for systems with two and three levels of data locality. However,
+the scheduling complexity of these two algorithms are way too much. Hence, we use the power of $d$
+choices algorithm combined with the Balanced-Pandas algorithm and the JSQ-MaxWeight algorithm,
+and compare the complexity of the simple algorithms and the power of $d$ choices versions of them.
+We will further show that the Balanced-Pandas algorithm combined with the power of the $d$ choices,
+Balanced-Pandas-Pod, not only performs better than simple Balanced-Pandas, but also is less sensitive
+to the parameter $d$ than the combination of the JSQ-MaxWeight algorithm and the power of the $d$
+choices, JSQ-MaxWeight-Pod. In fact in our extensive simulation results, the Balanced-Pandas-Pod
+algorithm is performing better than the simple Balanced-Pandas algorithm in low and medium loads,
+where data centers are usually performing at, and performs almost the same as the Balanced-Pandas
+algorithm at high loads. Note that the load balancing complexity of Balanced-Pandas and JSQ-MaxWeight
+algorithms are $O(M)$, where $M$ is the number of servers in the system which is in the order of thousands
+servers, whereas the complexity of Balanced-Pandas-Pod and JSQ-MaxWeight-Pod are $O(1)$, that
+makes the central scheduler faster and saves energy. 

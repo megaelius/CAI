@@ -1,0 +1,17 @@
+In this paper we demonstrate a new technique for deriving discrete adjoint and tangent linear models
+of finite element models. The technique is significantly more efficient and automatic than standard
+algorithmic differentiation techniques. The approach relies on a high-level symbolic representation
+of the forward problem. In contrast to developing a model directly in Fortran or C++, high-level
+systems allow the developer to express the variational problems to be solved in near-mathematical
+notation. As such, these systems have a key advantage: since the mathematical structure of the problem
+is preserved, they are more amenable to automated analysis and manipulation. The framework introduced
+here is implemented in a freely available software package named dolfin-adjoint, based on the FEniCS
+Project. Our approach to automated adjoint derivation relies on run-time annotation of the temporal
+structure of the model, and employs the FEniCS finite element form compiler to automatically generate
+the low-level code for the derived models. The approach requires only trivial changes to a large
+class of forward models, including complicated time-dependent nonlinear models. The adjoint
+model automatically employs optimal checkpointing schemes to mitigate storage requirements
+for nonlinear models, without any user management or intervention. Furthermore, both the tangent
+linear and adjoint models naturally work in parallel, without any need to differentiate through
+calls to MPI or to parse OpenMP directives. The generality, applicability and efficiency of the
+approach are demonstrated with examples from a wide range of scientific applications. 

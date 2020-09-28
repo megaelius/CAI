@@ -1,0 +1,21 @@
+Statistical analysis usually requires a vector representation of categorical variables, using
+for instance \emph{one-hot encoding}. This encoding strategy is not practical when the number
+of different categories grows, as it creates high-dimensional feature vectors. Additionally,
+the corresponding entries in the raw data are often represented as strings, that have additional
+information not captured by one-hot encoding. Here, we seek low-dimensional vectorial encoding
+of string categorical variables with high-cardinality. Ideally, these should (i) be scalable
+to a very large number of categories, (ii) be interpretable to the end user, and (iii) facilitate
+statistical analysis. We introduce two new encoding approaches for string categories: a Gamma-Poisson
+matrix factorization on character-level substring counts, and a min-hash encoder, based on min-wise
+random permutations for fast approximation of the Jaccard similarity between strings. Beyond
+the well-known properties of min-hash collisions, we establish properties of these representations
+showing that they are useful to capture inclusions. Both approaches are scalable and are suitable
+for streaming settings. Extensive experiments on real and simulated data show that these encoding
+methods improve prediction performance for real-life supervised-learning problems with high-cardinality
+string categorical variables and works as well as standard approaches with clean, low-cardinality
+ones. We recommend the following: (i) if scalability is the main concern, the min-hash encoder is
+the best option as it does not require any fitting to the data; (ii) if interpretability is important,
+the Gamma-Poisson factorization is a good alternative, as it can be interpreted as one-hot encoding,
+giving each encoding dimension a feature name that summarizes the substrings captured. Both models
+remove the need for hand-crafting features and data cleaning of string columns in databases and
+can be used for feature engineering in online autoML settings. 

@@ -1,0 +1,20 @@
+Understanding the singular value spectrum of a matrix $A \in \mathbb{R}^{n \times n}$ is a fundamental
+task in countless applications. In matrix multiplication time, it is possible to perform a full
+SVD and directly compute the singular values $\sigma_1,...,\sigma_n$. However, little is known
+about algorithms that break this runtime barrier. Using tools from stochastic trace estimation,
+polynomial approximation, and fast system solvers, we show how to efficiently isolate different
+ranges of $A$'s spectrum and approximate the number of singular values in these ranges. We thus effectively
+compute a histogram of the spectrum, which can stand in for the true singular values in many applications.
+We use this primitive to give the first algorithms for approximating a wide class of symmetric matrix
+norms in faster than matrix multiplication time. For example, we give a $(1 + \epsilon)$ approximation
+algorithm for the Schatten-$1$ norm (the nuclear norm) running in just $\tilde O((nnz(A)n^{1/3}
++ n^2)\epsilon^{-3})$ time for $A$ with uniform row sparsity or $\tilde O(n^{2.18} \epsilon^{-3})$
+time for dense matrices. The runtime scales smoothly for general Schatten-$p$ norms, notably becoming
+$\tilde O (p \cdot nnz(A) \epsilon^{-3})$ for any $p \ge 2$. At the same time, we show that the complexity
+of spectrum approximation is inherently tied to fast matrix multiplication in the small $\epsilon$
+regime. We prove that achieving milder $\epsilon$ dependencies in our algorithms would imply faster
+than matrix multiplication time triangle detection for general graphs. This further implies that
+highly accurate algorithms running in subcubic time yield subcubic time matrix multiplication.
+As an application of our bounds, we show that precisely computing all effective resistances in a
+graph in less than matrix multiplication time is likely difficult, barring a major algorithmic
+breakthrough. 

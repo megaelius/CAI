@@ -1,0 +1,18 @@
+Generative Adversarial Networks (GANs) have shown impressive performance in generating photo-realistic
+images. They fit generative models by minimizing certain distance measure between the real image
+distribution and the generated data distribution. Several distance measures have been used, such
+as Jensen-Shannon divergence, $f$-divergence, and Wasserstein distance, and choosing an appropriate
+distance measure is very important for training the generative network. In this paper, we choose
+to use the maximum mean discrepancy (MMD) as the distance metric, which has several nice theoretical
+guarantees. In fact, generative moment matching network (GMMN) (Li, Swersky, and Zemel 2015) is
+such a generative model which contains only one generator network $G$ trained by directly minimizing
+MMD between the real and generated distributions. However, it fails to generate meaningful samples
+on challenging benchmark datasets, such as CIFAR-10 and LSUN. To improve on GMMN, we propose to add
+an extra network $F$, called mapper. $F$ maps both real data distribution and generated data distribution
+from the original data space to a feature representation space $\mathcal{R}$, and it is trained
+to maximize MMD between the two mapped distributions in $\mathcal{R}$, while the generator $G$
+tries to minimize the MMD. We call the new model generative adversarial mapping networks (GAMNs).
+We demonstrate that the adversarial mapper $F$ can help $G$ to better capture the underlying data
+distribution. We also show that GAMN significantly outperforms GMMN, and is also superior to or
+comparable with other state-of-the-art GAN based methods on MNIST, CIFAR-10 and LSUN-Bedrooms
+datasets. 

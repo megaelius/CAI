@@ -1,0 +1,20 @@
+Many open problems in the Earth sciences can only be understood by modelling the porous flow of melt
+through a viscously deforming solid rock matrix. However, the system of equations describing this
+process becomes mathematically degenerate in the limit of vanishing melt fraction. Numerical
+methods that do not consider this degeneracy or avoid it solely by regularising specific material
+properties generally become computationally expensive as soon as the melt fraction approaches
+zero in some part of the domain. Here, we present a new formulation of the equations for coupled magma/mantle
+dynamics that addresses this problem, and allows it to accurately compute large-scale 3-D magma/mantle
+dynamics simulations with extensive regions of zero melt fraction. We achieve this by rescaling
+one of the solution variables, the compaction pressure, which ensures that for vanishing melt fraction,
+the equation causing the degeneracy becomes an identity and the other two equations revert to the
+Stokes system. This allows us to split the domain into two parts, and to solve the coupled magma/mantle
+dynamics system only in cells where melt is present. We have implemented this formulation in the
+open source geodynamic modelling code ASPECT and illustrate the improved performance compared
+to the previous three-field formulation, showing numerically that the new formulation is optimal
+in terms of problem size and only minimally sensitive to model parameters. Beyond that, we demonstrate
+the applicability to realistic problems by showing large-scale 2-D and 3-D models of mid-ocean
+ridges with complex rheology. Hence, we believe that our new formulation and its implementation
+in ASPECT will prove a valuable tool for studying the interaction of melt segregating through and
+interacting with a solid host rock in the Earth and other planetary bodies using high-resolution,
+three-dimensional simulations. 

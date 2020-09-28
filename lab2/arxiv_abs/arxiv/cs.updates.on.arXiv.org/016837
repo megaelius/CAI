@@ -1,0 +1,17 @@
+Bundle adjustment jointly optimizes camera intrinsics and extrinsics and 3D point triangulation
+to reconstruct a static scene. The triangulation constraint, however, is invalid for moving points
+captured in multiple unsynchronized videos and bundle adjustment is not designed to estimate the
+temporal alignment between cameras. We present a spatiotemporal bundle adjustment framework
+that jointly optimizes four coupled sub-problems: estimating camera intrinsics and extrinsics,
+triangulating static 3D points, as well as sub-frame temporal alignment between cameras and computing
+3D trajectories of dynamic points. Key to our joint optimization is the careful integration of physics-based
+motion priors within the reconstruction pipeline, validated on a large motion capture corpus of
+human subjects. We devise an incremental reconstruction and alignment algorithm to strictly enforce
+the motion prior during the spatiotemporal bundle adjustment. This algorithm is further made more
+efficient by a divide and conquer scheme while still maintaining high accuracy. We apply this algorithm
+to reconstruct 3D motion trajectories of human bodies in dynamic events captured by multiple uncalibrated
+and unsynchronized video cameras in the wild. To make the reconstruction visually more interpretable,
+we fit a statistical 3D human body model to the asynchronous video streams.Compared to the baseline,
+the fitting significantly benefits from the proposed spatiotemporal bundle adjustment procedure.
+Because the videos are aligned with sub-frame precision, we reconstruct 3D motion at much higher
+temporal resolution than the input videos. 

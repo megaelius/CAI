@@ -1,0 +1,19 @@
+Consider the consensus problem of minimizing $f(x)=\sum_{i=1}^n f_i(x)$ where each $f_i$ is only
+known to one individual agent $i$ out of a connected network of $n$ agents. All the agents shall collaboratively
+solve this problem and obtain the solution subject to data exchanges restricted to between neighboring
+agents. Such algorithms avoid the need of a fusion center, offer better network load balance, and
+improve data privacy. We study the decentralized gradient descent method in which each agent $i$
+updates its variable $x_{(i)}$, which is a local approximate to the unknown variable $x$, by combining
+the average of its neighbors' with the negative gradient step $-\alpha \nabla f_i(x_{(i)})$. The
+iteration is $$x_{(i)}(k+1) \gets \sum_{\text{neighbor} j \text{of} i} w_{ij} x_{(j)}(k) - \alpha
+\nabla f_i(x_{(i)}(k)),\quad\text{for each agent} i,$$ where the averaging coefficients form
+a symmetric doubly stochastic matrix $W=[w_{ij}] \in \mathbb{R}^{n \times n}$. We analyze the
+convergence of this iteration and derive its converge rate, assuming that each $f_i$ is proper closed
+convex and lower bounded, $\nabla f_i$ is Lipschitz continuous with constant $L_{f_i}$, and stepsize
+$\alpha$ is fixed. Provided that $\alpha < O(1/L_h)$ where $L_h=\max_i\{L_{f_i}\}$, the objective
+error at the averaged solution, $f(\frac{1}{n}\sum_i x_{(i)}(k))-f^*$, reduces at a speed of
+$O(1/k)$ until it reaches $O(\alpha)$. If $f_i$ are further (restricted) strongly convex, then
+both $\frac{1}{n}\sum_i x_{(i)}(k)$ and each $x_{(i)}(k)$ converge to the global minimizer $x^*$
+at a linear rate until reaching an $O(\alpha)$-neighborhood of $x^*$. We also develop an iteration
+for decentralized basis pursuit and establish its linear convergence to an $O(\alpha)$-neighborhood
+of the true unknown sparse signal. 

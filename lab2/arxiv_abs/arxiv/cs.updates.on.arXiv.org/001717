@@ -1,0 +1,17 @@
+The successive projection algorithm (SPA) can quickly solve a nonnegative matrix factorization
+problem under a separability assumption. Even if noise is added to the problem, SPA is robust as long
+as the perturbations caused by the noise are small. In particular, robustness against noise should
+be high when handling the problems arising from real applications. The preconditioner proposed
+by Gillis and Vavasis (2015) makes it possible to enhance the noise robustness of SPA. Meanwhile,
+an additional computational cost is required. The construction of the preconditioner contains
+a step to compute the top-$k$ truncated singular value decomposition of an input matrix. It is known
+that the decomposition provides the best rank-$k$ approximation to the input matrix; in other words,
+a matrix with the smallest approximation error among all matrices of rank less than $k$. This step
+is an obstacle to an efficient implementation of the preconditioned SPA. To address the cost issue,
+we propose a modification of the algorithm for constructing the preconditioner. Although the original
+algorithm uses the best rank-$k$ approximation, instead of it, our modification uses an alternative.
+Ideally, this alternative should have high approximation accuracy and low computational cost.
+To ensure this, our modification employs a rank-$k$ approximation produced by an SPA based algorithm.
+We analyze the accuracy of the approximation and evaluate the computational cost of the algorithm.
+We then present an empirical study revealing the actual performance of the SPA based rank-$k$ approximation
+algorithm and the modified preconditioned SPA. 

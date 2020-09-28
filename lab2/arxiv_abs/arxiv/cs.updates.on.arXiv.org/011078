@@ -1,0 +1,18 @@
+Public key cryptography protocols, such as RSA and elliptic curve cryptography, will be rendered
+insecure by Shor's algorithm when large-scale quantum computers are built. Cryptographers are
+working on quantum-resistant algorithms, and lattice-based cryptography has emerged as a prime
+candidate. However, high computational complexity of these algorithms makes it challenging to
+implement lattice-based protocols on low-power embedded devices. To address this challenge,
+we present Sapphire - a lattice cryptography processor with configurable parameters. Efficient
+sampling, with a SHA-3-based PRNG, provides two orders of magnitude energy savings; a single-port
+RAM-based number theoretic transform memory architecture is proposed, which provides 124k-gate
+area savings; while a low-power modular arithmetic unit accelerates polynomial computations.
+Our test chip was fabricated in TSMC 40nm low-power CMOS process, with the Sapphire cryptographic
+core occupying 0.28 mm2 area consisting of 106k logic gates and 40.25 KB SRAM. Sapphire can be programmed
+with custom instructions for polynomial arithmetic and sampling, and it is coupled with a low-power
+RISC-V micro-processor to demonstrate NIST Round 2 lattice-based CCA-secure key encapsulation
+and signature protocols Frodo, NewHope, qTESLA, CRYSTALS-Kyber and CRYSTALS-Dilithium, achieving
+up to an order of magnitude improvement in performance and energy-efficiency compared to state-of-the-art
+hardware implementations. All key building blocks of Sapphire are constant-time and secure against
+timing and simple power analysis side-channel attacks. We also discuss how masking-based DPA countermeasures
+can be implemented on the Sapphire core without any changes to the hardware. 

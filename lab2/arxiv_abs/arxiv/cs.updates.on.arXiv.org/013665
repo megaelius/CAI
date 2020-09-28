@@ -1,0 +1,19 @@
+Linear relaxation based perturbation analysis for neural networks, which aims to compute tight
+linear bounds of output neurons given a certain amount of input perturbation, has become a core component
+in robustness verification and certified defense. However, the majority of linear relaxation
+based methods only consider feed-forward ReLU networks. While several works extended them to relatively
+complicated networks, they often need tedious manual derivations and implementation which are
+arduous and error-prone. Their limited flexibility makes it difficult to handle more complicated
+tasks. In this paper, we take a significant leap by developing an automatic perturbation analysis
+algorithm to enable perturbation analysis on any neural network structure, and its computation
+can be done automatically in a similar manner as the back-propagation algorithm for gradient computation.
+The main idea is to express a network as a computational graph and then generalize linear relaxation
+algorithms such as CROWN as a graph algorithm. Our algorithm itself is differentiable and integrated
+with PyTorch, which allows to optimize network parameters to reshape bounds into desired specifications,
+enabling automatic robustness verification and certified defense. In particular, we demonstrate
+a few tasks that are not easily achievable without an automatic framework. We first perform certified
+robust training and robustness verification for complex natural language models which could be
+challenging with manual derivation and implementation. We further show that our algorithm can
+be used for tasks beyond certified defense - we create a neural network with a provably flat optimization
+landscape and study its generalization capability, and we show that this network can preserve accuracy
+better after aggressive weight quantization. Code is available at https://github.com/KaidiXu/auto_LiRPA.

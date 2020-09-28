@@ -1,0 +1,19 @@
+Minimax linkage was first introduced by Ao et al. [3] in 2004, as an alternative to standard linkage
+methods used in hierarchical clustering. Minimax linkage relies on distances to a prototype for
+each cluster; this prototype can be thought of as a representative object in the cluster, hence improving
+the interpretability of clustering results. Bien and Tibshirani analyzed properties of this method
+in 2011 [2], popularizing the method within the statistics community. Additionally, they performed
+comparisons of minimax linkage to standard linkage methods, making use of five data sets and two
+different evaluation metrics (distance to prototype and misclassification rate). In an effort
+to expand upon their work and evaluate minimax linkage more comprehensively, our benchmark study
+focuses on thorough method evaluation via multiple performance metrics on several well-described
+data sets. We also make all code and data publicly available through an R package, for full reproducibility.
+Similarly to [2], we find that minimax linkage often produces the smallest maximum minimax radius
+of all linkage methods, meaning that minimax linkage produces clusters where objects in a cluster
+are tightly clustered around their prototype. This is true across a range of values for the total
+number of clusters (k). However, this is not always the case, and special attention should be paid
+to the case when k is the true known value. For true k, minimax linkage does not always perform the best
+in terms of all the evaluation metrics studied, including maximum minimax radius. This paper was
+motivated by the IFCS Cluster Benchmarking Task Force's call for clustering benchmark studies
+and the white paper [5], which put forth guidelines and principles for comprehensive benchmarking
+in clustering. Our work is designed to be a neutral benchmark study of minimax linkage. 

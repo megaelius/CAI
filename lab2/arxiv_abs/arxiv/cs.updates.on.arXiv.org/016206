@@ -1,0 +1,18 @@
+We present a new algorithm to solve the supervisory control problem over non-terminating processes
+modeled as $\omega$-regular automata. A solution to the problem was obtained by Thistle in 1995
+which uses complex manipulations of automata. This algorithm is notoriously hard to understand
+and, to the best of our knowledge, has never been implemented. We show a new solution to the problem
+through a reduction to reactive synthesis. A naive, and incorrect, approach reduces the supervisory
+control problem to a reactive synthesis problem that asks for a control strategy which ensures the
+given specification if the plant behaves in accordance to its liveness properties. This is insufficient.
+A correct control strategy might not fulfill the specification but force the plant to invalidate
+its liveness property. To prevent such solutions, supervisory control additionally requires
+that the controlled system is non-conflicting: any finite word compliant with the supervisor should
+be extendable to a word satisfying the plants' liveness properties. To capture this additional
+requirement, our solution goes through obliging games instead. An obliging game has two requirements:
+a strong winning condition as in reactive synthesis and a weak winning condition. A strategy is winning
+if it satisfies the strong condition and additionally, every partial play can be extended to satisfy
+the weak condition. Obliging games can be reduced to $\omega$-regular reactive synthesis, for
+which symbolic algorithms exist. We reduce supervisor synthesis to obliging games. The strong
+condition is an implication: if the plant behaves in accordance with its liveness properties, the
+specification should also hold. The weak condition is the plants' liveness property. 

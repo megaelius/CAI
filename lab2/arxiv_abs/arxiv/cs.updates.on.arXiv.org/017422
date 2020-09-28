@@ -1,0 +1,18 @@
+Zero queueing delay is highly desirable in large-scale computing systems. Existing work has shown
+that it can be asymptotically achieved by using the celebrated Power-of-$d$-choices (pod) policy
+with a probe overhead $d = \omega\left(\frac{\log N}{1-\lambda}\right)$, and it is impossible
+when $d = O\left(\frac{1}{1-\lambda}\right)$, where $N$ is the number of servers and $\lambda$
+is the load of the system. However, these results are based on the model where each job is an indivisible
+unit, which does not capture the parallel structure of jobs in today's predominant parallel computing
+paradigm. This paper thus considers a model where each job consists of a batch of parallel tasks.
+Under this model, we propose a new notion of zero (asymptotic) queueing delay that requires the job
+delay under a policy to approach the job delay given by the max of its tasks' service times, i.e., the
+job delay assuming its tasks entered service right upon arrival. This notion quantifies the effect
+of queueing on a job level for jobs consisting of multiple tasks, and thus deviates from the conventional
+zero queueing delay for single-task jobs in the literature. We show that zero queueing delay for
+parallel jobs can be achieved using the batch-filling policy (a variant of the celebrated pod policy)
+with a probe overhead $d = \omega\left(\frac{1}{(1-\lambda)\log k}\right)$ in the sub-Halfin-Whitt
+heavy-traffic regime, where $k$ is the number of tasks in each job and $k$ properly scales with $N$
+(the number of servers). This result demonstrates that for parallel jobs, zero queueing delay can
+be achieved with a smaller probe overhead. We also establish an impossibility result: we show that
+zero queueing delay cannot be achieved if $d = e^{o\left(\frac{\log N}{\log k}\right)}$. 

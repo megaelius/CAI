@@ -1,0 +1,18 @@
+Despite extensive testing and correctness certification of their functional semantics, a number
+of compiler optimizations have been shown to violate security guarantees implemented in source
+code. While prior work has shed light on how such optimizations may introduce semantic security
+weaknesses into programs, there remains a significant knowledge gap concerning the impacts of
+compiler optimizations on non-semantic properties with security implications. In particular,
+little is currently known about how code generation and optimization decisions made by the compiler
+affect the availability and utility of reusable code segments (called gadgets) required to mount
+code reuse attack methods such as return-oriented programming. In this paper, we bridge this gap
+through a study of the impacts of compiler optimization on code reuse gadget populations. We analyze
+and compare 1,000 different variants of 17 different benchmark programs built with two production
+compilers (GCC and Clang) to determine how compiler optimization affects code reuse gadget sets
+available in program binaries. Our results expose an important and unexpected problem; compiler
+optimizations introduce new gadgets at a high rate and produce code containing gadgets that are
+generally more useful to an attacker crafting a code reuse exploit than those in unoptimized code.
+Using differential binary analysis, we identify several compiler behaviors at the root of this
+phenomenon. In turn, we show that these impacts can be significantly mitigated through security-focused
+post-production software transformation passes. Finally, we provide an analysis of the performance
+impacts of our proposed mitigations to demonstrate that they are negligible. 

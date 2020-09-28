@@ -1,0 +1,19 @@
+Several recent works focus on leveraging the Hessian-vector product to find a second-order stationary
+solution with strong complexity guarantee (e.g., almost linear time complexity in the problem's
+dimensionality), which avoids computing the Hessian matrix in conventional algorithms (e.g.,
+cubic regularization). In this paper, we propose to further reduce the number of Hessian-vector
+products for faster non-convex optimization. In particular, we employ the Hessian-vector product
+to compute the negative curvature direction (i.e., the eigen-vector corresponding to the smallest
+eigen-value of the Hessian) for decreasing the objective value similar in spirit to many previous
+papers. However, previous works need to approximate the smallest eigen-value with a sufficient
+precision (e.g., $\epsilon_2\ll 1$) in order to achieve a sufficiently accurate second-order
+stationary solution (i.e., $\lambda_{\min}(\nabla^2 f(\x))\geq -\epsilon_2)$. In contrast,
+the proposed algorithms only need to compute the smallest eigen-vector approximating the corresponding
+eigen-value up to a small power of current gradient's norm. As a result, it can dramatically reduce
+the number of Hessian-vector products during the course of optimization before reaching first-order
+stationary points (e.g., saddle points). We show that in the worst-case the proposed algorithms
+with their favorable prescribed accuracy requirements can match the best time complexity in literature
+for achieving a second-order stationary point but with an arguably smaller per-iteration cost.
+We also show that the proposed algorithms can benefit from inexact Hessian (e.g., the sub-sampled
+Hessian for a finite-sum problem) by developing their variants accepting inexact Hessian under
+a mild condition for achieving the same goal. 

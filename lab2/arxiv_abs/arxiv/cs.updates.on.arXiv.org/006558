@@ -1,0 +1,19 @@
+Deep learning provides a powerful tool for machine perception when the observations resemble the
+training data. However, real-world robotic systems must react intelligently to their observations
+even in unexpected circumstances. This requires a system to reason about its own uncertainty given
+unfamiliar, out-of-distribution observations. Approximate Bayesian approaches are commonly
+used to estimate uncertainty for neural network predictions, but can struggle with out-of-distribution
+observations. Generative models can in principle detect out-of-distribution observations as
+those with a low estimated density. However, the mere presence of an out-of-distribution input
+does not by itself indicate an unsafe situation. In this paper, we present a method for uncertainty-aware
+robotic perception that combines generative modeling and model uncertainty to cope with uncertainty
+stemming from out-of-distribution states. Our method estimates an uncertainty measure about
+the model's prediction, taking into account an explicit (generative) model of the observation
+distribution to handle out-of-distribution inputs. This is accomplished by probabilistically
+projecting observations onto the training distribution, such that out-of-distribution inputs
+map to uncertain in-distribution observations, which in turn produce uncertain task-related
+predictions, but only if task-relevant parts of the image change. We evaluate our method on an action-conditioned
+collision prediction task with both simulated and real data, and demonstrate that our method of
+projecting out-of-distribution observations improves the performance of four standard Bayesian
+and non-Bayesian neural network approaches, offering more favorable trade-offs between the proportion
+of time a robot can remain autonomous and the proportion of impending crashes successfully avoided.

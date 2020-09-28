@@ -1,0 +1,19 @@
+A trusted execution environment (TEE) such as Intel Software Guard Extension (SGX) runs a remote
+attestation to prove to a data owner the integrity of the initial state of an enclave, including the
+program to operate on her data. For this purpose, the data-processing program is supposed to be open
+to the owner, so its functionality can be evaluated before trust can be established. However, increasingly
+there are application scenarios in which the program itself needs to be protected. So its compliance
+with privacy policies as expected by the data owner should be verified without exposing its code.
+To this end, this paper presents CAT, a new model for TEE-based confidential attestation. Our model
+is inspired by Proof-Carrying Code, where a code generator produces proof together with the code
+and a code consumer verifies the proof against the code on its compliance with security policies.
+Given that the conventional solutions do not work well under the resource-limited and TCB-frugal
+TEE, we propose a new design that allows an untrusted out-enclave generator to analyze the source
+code of a program when compiling it into binary and a trusted in-enclave consumer efficiently verifies
+the correctness of the instrumentation and the presence of other protection before running the
+binary. Our design strategically moves most of the workload to the code generator, which is responsible
+for producing well-formatted and easy-to-check code, while keeping the consumer simple. Also,
+the whole consumer can be made public and verified through a conventional attestation. We implemented
+this model on Intel SGX and demonstrate that it introduces a very small part of TCB. We also thoroughly
+evaluated its performance on micro- and macro- benchmarks and real-world applications, showing
+that the new design only incurs a small overhead when enforcing several categories of security policies.

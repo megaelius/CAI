@@ -1,0 +1,19 @@
+A novel phase-space source implementation has been designed for GPU-based Monte Carlo dose calculation
+engines. Due to the parallelized nature of GPU hardware, it is essential to simultaneously transport
+particles of the same type and similar energies but separated spatially to yield a high efficiency.
+We present three methods for phase-space implementation that have been integrated into the most
+recent version of the GPU-based Monte Carlo radiotherapy dose calculation package gDPM v3.0. The
+first method is to sequentially read particles from a patient-dependent phase-space and sort them
+on-the-fly based on particle type and energy. The second method supplements this with a simple secondary
+collimator model and fluence map implementation so that patient-independent phase-space sources
+can be used. Finally, as the third method (called the phase-space-let, or PSL, method) we introduce
+a novel strategy to pre-process patient-independent phase-spaces and bin particles by type, energy
+and position. Position bins located outside a rectangular region of interest enclosing the treatment
+field are ignored, substantially decreasing simulation time. The three methods were validated
+in absolute dose against BEAMnrc/DOSXYZnrc and compared using gamma-index tests (2%/2mm above
+the 10% isodose). It was found that the PSL method has the optimal balance between accuracy and efficiency
+and thus is used as the default method in gDPM v3.0. Using the PSL method, open fields of 4x4, 10x10
+and 30x30 cm2 in water resulted in gamma passing rates of 99.96%, 99.92% and 98.66%, respectively.
+Relative output factors agreed within 1%. An IMRT patient plan using the PSL method resulted in a
+passing rate of 97%, and was calculated in 50 seconds using a single GPU compared to 8.4 hours (per
+CPU) for BEAMnrc/DOSXYZnrc. 

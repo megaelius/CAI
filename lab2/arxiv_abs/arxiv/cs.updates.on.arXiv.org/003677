@@ -1,0 +1,17 @@
+We consider the problem of duplicate detection in noisy and incomplete data: given a large data set
+in which each record has multiple entries (attributes), detect which distinct records refer to
+the same real world entity. This task is complicated by noise (such as misspellings) and missing
+data, which can lead to records being different, despite referring to the same entity. Our method
+consists of three main steps: creating a similarity score between records, grouping records together
+into "unique entities", and refining the groups. We compare various methods for creating similarity
+scores between noisy records, considering different combinations of string matching, term frequency-inverse
+document frequency methods, and n-gram techniques. In particular, we introduce a vectorized soft
+term frequency-inverse document frequency method, with an optional refinement step. We also discuss
+two methods to deal with missing data in computing similarity scores. We test our method on the Los
+Angeles Police Department Field Interview Card data set, the Cora Citation Matching data set, and
+two sets of restaurant review data. The results show that the methods that use words as the basic units
+are preferable to those that use 3-grams. Moreover, in some (but certainly not all) parameter ranges
+soft term frequency-inverse document frequency methods can outperform the standard term frequency-inverse
+document frequency method. The results also confirm that our method for automatically determining
+the number of groups typically works well in many cases and allows for accurate results in the absence
+of a priori knowledge of the number of unique entities in the data set. 

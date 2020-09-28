@@ -1,0 +1,18 @@
+In this paper we propose a new method to enhance a mapping $\mu(\cdot)$ of a parallel application's
+computational tasks to the processing elements (PEs) of a parallel computer. The idea behind our
+method \mswap is to enhance such a mapping by drawing on the observation that many topologies take
+the form of a partial cube. This class of graphs includes all rectangular and cubic meshes, any such
+torus with even extensions in each dimension, all hypercubes, and all trees. Following previous
+work, we represent the parallel application and the parallel computer by graphs $G_a = (V_a, E_a)$
+and $G_p = (V_p, E_p)$. $G_p$ being a partial cube allows us to label its vertices, the PEs, by bitvectors
+such that the cost of exchanging one unit of information between two vertices $u_p$ and $v_p$ of $G_p$
+amounts to the Hamming distance between the labels of $u_p$ and $v_p$. By transferring these bitvectors
+from $V_p$ to $V_a$ via $\mu^{-1}(\cdot)$ and extending them to be unique on $V_a$, we can enhance
+$\mu(\cdot)$ by swapping labels of $V_a$ in a new way. Pairs of swapped labels are local \wrt the PEs,
+but not \wrt $G_a$. Moreover, permutations of the bitvectors' entries give rise to a plethora of
+hierarchies on the PEs. Through these hierarchies we turn \mswap into a hierarchical method for
+improving $\mu(\cdot)$ that is complementary to state-of-the-art methods for computing $\mu(\cdot)$
+in the first place. In our experiments we use \mswap to enhance mappings of complex networks onto
+rectangular meshes and tori with 256 and 512 nodes, as well as hypercubes with 256 nodes. It turns
+out that common quality measures of mappings derived from state-of-the-art algorithms can be improved
+considerably. 

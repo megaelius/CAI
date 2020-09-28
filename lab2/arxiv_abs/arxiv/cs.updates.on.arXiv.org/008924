@@ -1,0 +1,20 @@
+When reverse engineering a binary, the analyst must first understand the semantics of the binary's
+functions through either manual or automatic analysis. Manual semantic analysis is time-consuming,
+because abstractions provided by high level languages, such as type information, variable scope,
+or comments are lost, and past analyses cannot apply to the current analysis task. Existing automated
+binary analysis tools currently suffer from low accuracy in determining semantic function identification
+in the presence of diverse compilation environments. We introduce Software Ethology, a binary
+analysis approach for determining the semantic similarity of functions. Software Ethology abstracts
+semantic behavior as classification vectors of program state changes resulting from a function
+executing with a specified input state, and uses these vectors as a unique fingerprint for identification.
+All existing semantic identifiers determine function similarity via code measurements, and suffer
+from high inaccuracy when classifying functions from compilation environments different from
+their ground truth source. Since Software Ethology does not rely on code measurements, its accuracy
+is resilient to changes in compiler, compiler version, optimization level, or even different source
+implementing equivalent functionality. Tinbergen, our prototype Software Ethology implementation,
+leverages a virtual execution environment and a fuzzer to generate the classification vectors.
+In evaluating Tinbergen's feasibility as a semantic function identifier by identifying functions
+in coreutils-8.30, we achieve a high .805 average accuracy. Compared to the state-of-the-art,
+Tinbergen is 1.5 orders of magnitude faster when training, 50% faster in answering queries, and,
+when identifying functions in binaries generated from differing compilation environments, is
+30%-61% more accurate. 

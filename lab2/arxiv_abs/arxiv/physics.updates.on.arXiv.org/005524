@@ -1,0 +1,17 @@
+Immersed boundary-lattice Boltzmann method (IB-LBM) has been widely used for simulation of particle-laden
+flows recently. However, it was limited to small-scale simulations with no more than O(103) particles.
+Here, we expand IB-LBM for massive particle-laden flows with more than O(104) particles by two sequential
+works. First is the Part I: serial computing on a single CPU core and following the Part II: parallel
+computing on many CPU cores. In this Part I paper, a highly efficient and localized implementation
+of IB-LBM is proposed for serial computing. We optimize in three main aspects: swap algorithm for
+incompressible LBM, local grid-to-point algorithm for IBM and improved grid search algorithm
+for particle pair short-range interaction. In addition, symmetry algorithm is proposed for the
+half-calculation of LB collision and external force term. The computational performance on a single
+CPU core is analyzed. Different scales of two dimensional (2D) and three-dimensional (3D) particles
+settling in closed cavities are used for testing. The solid volume fraction is varied from 0 to 0.40.
+Simulation results demonstrate that all calculation parts are dramatically decreased by the improved
+algorithm. For the particle-free flows, the Mega Lattice Site Update per Second (MLUPS) can be achieved
+up to 36 (2D) and 12 (3D) using the improved algorithm. For the particle-laden flows, MLUPS can be
+achieved no lower than 15 (2D) and 7 (3D) in the simulations of dense flows. At last, we discuss the
+potential of the new algorithms for the high-performance computation of the large-scale systems
+of particle-laden flows with MPI parallel technique. 

@@ -1,0 +1,17 @@
+Task-motion planning (TMP) addresses the problem of efficiently generating executable and low-cost
+task plans in a discrete space such that the (initially unknown) action costs are determined by motion
+plans in a corresponding continuous space. However, a task-motion plan can be sensitive to unexpected
+domain uncertainty and changes, leading to suboptimal behaviors or execution failures. In this
+paper, we propose a novel framework, TMP-RL, which is an integration of TMP and reinforcement learning
+(RL) from the execution experience, to solve the problem of robust task-motion planning in dynamic
+and uncertain domains. TMP-RL features two nested planning-learning loops. In the inner TMP loop,
+the robot generates a low-cost, feasible task-motion plan by iteratively planning in the discrete
+space and updating relevant action costs evaluated by the motion planner in continuous space. In
+the outer loop, the plan is executed, and the robot learns from the execution experience via model-free
+RL, to further improve its task-motion plans. RL in the outer loop is more accurate to the current
+domain but also more expensive, and using less costly task and motion planning leads to a jump-start
+for learning in the real world. Our approach is evaluated on a mobile service robot conducting navigation
+tasks in an office area. Results show that TMP-RL approach significantly improves adaptability
+and robustness (in comparison to TMP methods) and leads to rapid convergence (in comparison to task
+planning (TP)-RL methods). We also show that TMP-RL can reuse learned values to smoothly adapt to
+new scenarios during long-term deployments. 

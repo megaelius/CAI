@@ -1,0 +1,18 @@
+While Standard gradient descent is one very popular optimisation method, its convergence cannot
+be proven beyond the class of functions whose gradient is globally Lipschitz continuous. As such,
+it is not actually applicable to realistic applications such as Deep Neural Networks. In this paper,
+we prove that its backtracking variant behaves very nicely, in particular convergence can be shown
+for all Morse functions. The main theoretical result of this paper is as follows. Theorem. Let $f:\mathbb{R}^k\rightarrow
+\mathbb{R}$ be a $C^1$ function, and $\{z_n\}$ a sequence constructed from the Backtracking gradient
+descent algorithm. (1) Either $\lim _{n\rightarrow\infty}||z_n||=\infty$ or $\lim _{n\rightarrow\infty}||z_{n+1}-z_n||=0$.
+(2) Assume that $f$ has at most countably many critical points. Then either $\lim _{n\rightarrow\infty}||z_n||=\infty$
+or $\{z_n\}$ converges to a critical point of $f$. (3) More generally, assume that all connected
+components of the set of critical points of $f$ are compact. Then either $\lim _{n\rightarrow\infty}||z_n||=\infty$
+or $\{z_n\}$ is bounded. Moreover, in the latter case the set of cluster points of $\{z_n\}$ is connected.
+Some generalised versions of this result, including an inexact version, are included. Another
+result in this paper concerns the problem of saddle points. We then present a heuristic argument
+to explain why Standard gradient descent method works so well, and modifications of the backtracking
+versions of GD, MMT and NAG. Experiments with datasets CIFAR10 and CIFAR100 on various popular architectures
+verify the heuristic argument also for the mini-batch practice and show that our new algorithms,
+while automatically fine tuning learning rates, perform better than current state-of-the-art
+methods such as MMT, NAG, Adagrad, Adadelta, RMSProp, Adam and Adamax. 

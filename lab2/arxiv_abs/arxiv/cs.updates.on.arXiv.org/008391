@@ -1,0 +1,18 @@
+We present a distributed solver for a large and important class of Laplacian systems that we call
+"one-sink" Laplacian systems. Specifically, our solver can produce solutions for systems of the
+form $L\mathbf{x} = \mathbf{b}$ where exactly one of the coordinates of $\mathbf{b}$ is negative.
+Our solver is an organically distributed algorithm that takes $\widetilde{O}(n/\lambda_2^L)$
+rounds for bounded degree graphs to produce an approximate solution where $\lambda_2^L$ is the
+second smallest eigenvalue of the Laplacian matrix of graph, also known as the Fiedler value or algebraic
+connectivity of graph. The class of one-sink Laplacians includes the important voltage computation
+problem and allows us to compute the effective resistance between nodes in a distributed manner.
+As a result, our Laplacian solver can be used to adapt the approach by Kelner and M\k{a}dry (2009)
+to give the first distributed algorithm to compute approximate random spanning trees efficiently.
+Our solver, which we call "Distributed Random Walk-based Laplacian Solver" (DRW-LSolve) works
+by approximating the stationary distribution of a multi-dimensional Markov chain. This chain
+describes the evolution of a "data collection" process where each node $v$ for which $\mathbf{b}_v
+> 0$ generates data packets with a rate proportional to $\mathbf{b}_v$ and the node for which $\mathbf{b}_v
+< 0$ acts as a sink. The nodes of the graph relay the packets, staging them in their queues and transmitting
+one at a time. We show that when this multidimensional chain is ergodic the vector whose $v$th coordinate
+is proportional to the probability at stationarity of the queue at $v$ being non-empty is a solution
+to $L\mathbf{x} = \mathbf{b}$. 

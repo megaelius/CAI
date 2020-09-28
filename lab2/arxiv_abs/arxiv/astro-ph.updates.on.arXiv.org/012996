@@ -1,0 +1,19 @@
+Hierarchical code coupling strategies make it possible to combine the results of individual numerical
+solvers into a self-consistent symplectic solution. We explore the possibility of allowing such
+a coupling strategy to be non-intrusive. In that case, the underlying numerical implementation
+is not affected by the coupling itself, but its functionality is carried over in the interface. This
+method is efficient for solving the equations of motion for a self-gravitating system over a wide
+range of scales. We adopt a dedicated integrator for solving each particular part of the problem
+and combine the results to a self-consistent solution. In particular, we explore the possibilities
+of combining the evolution of one or more microscopic systems that are embedded in a macroscopic
+system. The here presented generalizations of Bridge include higher-order coupling strategies
+(from the classic 2nd order up to 10th-order), but we also demonstrate how multiple bridges can be
+nested and how additional processes can be introduced at the bridge time-step to enrich the physics,
+for example by incorporating dissipative processes. Such augmentation allows for including additional
+processes in a classic Newtonian N-body integrator without alterations to the underlying code.
+These additional processes include for example the Yarkovsky effect, dynamical friction or relativistic
+dynamics. Some of these processes operate on all particles whereas others apply only to a subset.
+The presented method is non-intrusive in the sense that the underlying methods remain operational
+without changes to the code (apart from adding the get- and set-functions to enable the bridge operator).
+As a result, the fundamental integrators continue to operate with their internal time step and preserve
+their local optimizations and parallelism. ... abridged ... 

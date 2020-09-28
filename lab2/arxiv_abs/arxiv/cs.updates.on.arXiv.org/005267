@@ -1,0 +1,19 @@
+In this paper, we describe a new software package for sparse tensor decompositions that targets
+emerging parallel computing architectures. We are focused on the canonical polyadic tensor decomposition
+of sparse tensors, whose key kernel is the matricized tensor times Khatri-Rao product (MTTKRP).
+Our goal is to develop software that is portable to a variety of multicore and manycore computing
+architectures, such as multicore CPUs, the Intel Xeon Phi, and NVIDIA GPUs. To do this, we use the
+Kokkos framework, which is designed to enable high performance across multiple architectures
+with a single code even though these architectures handle fine-grained parallelism in varying
+ways. Not only are the specifics of the implementation interesting to persons tuning tensor computations,
+but also potentially to other high-performance software developers looking to understand ways
+to make their codes portable across architectures without supporting multiple code bases. Kokkos
+is an evolving but extensible system, and we explain one problem we had in achieving performance
+and how we surmounted it by encapsulating fine-grained parallelism through the use of a special
+compile-time polymorphic array type. We also introduce a new sparse tensor format based on a variation
+of the traditional coordinate storage format. This format reorders the traversal of tensor nonzeros
+in the MTTKRP to reduce atomic-write contention; this new format leads to significantly improved
+performance on all architectures with minimal increase in memory footprint. Performance of our
+software is measured on several computing platforms, including the Xeon Phi and NVIDIA GPUs. We
+show that we are competitive with state-of-the-art approaches available in the literature while
+having the advantage of being able to run on a wider of variety of architectures with a single code.

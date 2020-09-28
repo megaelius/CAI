@@ -1,0 +1,18 @@
+Ground penetrating radar (GPR) target detection and classification is a challenging task. Here,
+we consider various online dictionary learning (DL) methods to obtain sparse representation (SR)
+of the GPR data to enhance feature extraction for target classification via support vector machine.
+Online methods are preferred because traditional batch DL like K-SVD is not scalable to high-dimensional
+training sets and infeasible for real-time operation. We also develop Drop-Off MINi-batch Online
+Dictionary Learning (DOMINODL) which exploits the fact that a lot of the training data may be correlated.
+The DOMINODL algorithm iteratively considers elements of the training set in small batches and
+drops off samples which become less relevant. For the case of abandoned anti-personnel landmines
+classification, we compare the performance of K-SVD with three online algorithms: classical Online
+Dictionary Learning, its correlation-based variant and DOMINODL. Our experiments with real data
+from L-band GPR show that online DL methods reduce learning time by 36-93% and increase mine detection
+by 4-28% over K-SVD. Our DOMINODL is the fastest and retains similar classification performance
+as the other two online DL approaches. We use a Kolmogorov-Smirnoff test distance and the Dvoretzky-Kiefer-Wolfowitz
+inequality for the selection of DL input parameters leading to enhanced classification results.
+To further compare with state-of-the art classification approaches, we evaluate a convolutional
+neural network (CNN) classifier which performs worse than the proposed approach. Moreover, when
+the acquired samples are randomly reduced by 25%, 50% and 75%, sparse decomposition based classification
+with DL remains robust while the CNN accuracy is drastically compromised. 

@@ -1,0 +1,17 @@
+Though action recognition in videos has achieved great success recently, it remains a challenging
+task due to the massive computational cost. Designing lightweight networks is a possible solution,
+but it may degrade the recognition performance. In this paper, we innovatively propose a general
+dynamic inference idea to improve inference efficiency by leveraging the variation in the distinguishability
+of different videos. The dynamic inference approach can be achieved from aspects of the network
+depth and the number of input video frames, or even in a joint input-wise and network depth-wise manner.
+In a nutshell, we treat input frames and network depth of the computational graph as a 2-dimensional
+grid, and several checkpoints are placed on this grid in advance with a prediction module. The inference
+is carried out progressively on the grid by following some predefined route, whenever the inference
+process comes across a checkpoint, an early prediction can be made depending on whether the early
+stop criteria meets. For the proof-of-concept purpose, we instantiate three dynamic inference
+frameworks using two well-known backbone CNNs. In these instances, we overcome the drawback of
+limited temporal coverage resulted from an early prediction by a novel frame permutation scheme,
+and alleviate the conflict between progressive computation and video temporal relation modeling
+by introducing an online temporal shift module. Extensive experiments are conducted to thoroughly
+analyze the effectiveness of our ideas and to inspire future research efforts. Results on various
+datasets also evident the superiority of our approach. 

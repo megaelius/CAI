@@ -1,0 +1,17 @@
+The recently developed bag-of-paths (BoP) framework consists in setting a Gibbs-Boltzmann distribution
+on all feasible paths of a graph. This probability distribution favors short paths over long ones,
+with a free parameter (the temperature $T$) controlling the entropic level of the distribution.
+This formalism enables the computation of new distances or dissimilarities, interpolating between
+the shortest-path and the resistance distance, which have been shown to perform well in clustering
+and classification tasks. In this work, the bag-of-paths formalism is extended by adding two independent
+equality constraints fixing starting and ending nodes distributions of paths (margins). When
+the temperature is low, this formalism is shown to be equivalent to a relaxation of the optimal transport
+problem on a network where paths carry a flow between two discrete distributions on nodes. The randomization
+is achieved by considering free energy minimization instead of traditional cost minimization.
+Algorithms computing the optimal free energy solution are developed for two types of paths: hitting
+(or absorbing) paths and non-hitting, regular, paths, and require the inversion of an $n \times
+n$ matrix with $n$ being the number of nodes. Interestingly, for regular paths on an undirected graph,
+the resulting optimal policy interpolates between the deterministic optimal transport policy
+($T \rightarrow 0^{+}$) and the solution to the corresponding electrical circuit ($T \rightarrow
+\infty$). Two distance measures between nodes and a dissimilarity between groups of nodes, both
+integrating weights on nodes, are derived from this framework. 

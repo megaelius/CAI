@@ -1,0 +1,17 @@
+Independently developed codebases typically contain many segments of code that perform same or
+closely related operations (semantic clones). Finding functionally equivalent segments enables
+applications like replacing a segment by a more efficient or more secure alternative. Such related
+segments often have different interfaces, so some glue code (an adapter) is needed to replace one
+with the other. We present an algorithm that searches for replaceable code segments at the function
+level by attempting to synthesize an adapter between them from some family of adapters; it terminates
+if it finds no possible adapter. We implement our technique using (1) concrete adapter enumeration
+based on Intel's Pin framework (2) binary symbolic execution, and explore the relation between
+size of adapter search space and total search time. We present examples of applying adapter synthesis
+for improving security and efficiency of binary functions, deobfuscating binary functions, and
+switching between binary implementations of RC4. We present two large-scale evaluations, (1)
+we run adapter synthesis on more than 13,000 function pairs from the Linux C library, (2) using more
+than 61,000 fragments of binary code extracted from a ARM image built for the iPod Nano 2g device and
+known functions from the VLC media player, we evaluate our adapter synthesis implementation on
+more than a million synthesis tasks . Our results confirm that several instances of adaptably equivalent
+binary functions exist in real-world code, and suggest that adapter synthesis can be applied for
+reverse engineering and for constructing cleaner, less buggy, more efficient programs. 

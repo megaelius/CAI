@@ -1,0 +1,20 @@
+Nonlinear registration of 2D histological sections with corresponding slices of MRI data is a critical
+step of 3D histology reconstruction. This task is difficult due to the large differences in image
+contrast and resolution, as well as the complex nonrigid distortions produced when sectioning
+the sample and mounting it on the glass slide. It has been shown in brain MRI registration that better
+spatial alignment across modalities can be obtained by synthesizing one modality from the other
+and then using intra-modality registration metrics, rather than by using mutual information (MI)
+as metric. However, such an approach typically requires a database of aligned images from the two
+modalities, which is very difficult to obtain for histology/MRI. Here, we overcome this limitation
+with a probabilistic method that simultaneously solves for registration and synthesis directly
+on the target images, without any training data. In our model, the MRI slice is assumed to be a contrast-warped,
+spatially deformed version of the histological section. We use approximate Bayesian inference
+to iteratively refine the probabilistic estimate of the synthesis and the registration, while
+accounting for each other's uncertainty. Moreover, manually placed landmarks can be seamlessly
+integrated in the framework for increased performance. Experiments on a synthetic dataset show
+that, compared with MI, the proposed method makes it possible to use a much more flexible deformation
+model in the registration to improve its accuracy, without compromising robustness. Moreover,
+our framework also exploits information in manually placed landmarks more efficiently than MI,
+since landmarks inform both synthesis and registration - as opposed to registration alone. Finally,
+we show qualitative results on the public Allen atlas, in which the proposed method provides a clear
+improvement over MI based registration. 

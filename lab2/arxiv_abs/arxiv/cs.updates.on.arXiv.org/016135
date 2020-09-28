@@ -1,0 +1,19 @@
+We study many-class few-shot (MCFS) problem in both supervised learning and meta-learning settings.
+Compared to the well-studied many-class many-shot and few-class few-shot problems, the MCFS problem
+commonly occurs in practical applications but has been rarely studied in previous literature.
+It brings new challenges of distinguishing between many classes given only a few training samples
+per class. In this paper, we leverage the class hierarchy as a prior knowledge to train a coarse-to-fine
+classifier that can produce accurate predictions for MCFS problem in both settings. The propose
+model, "memory-augmented hierarchical-classification network (MahiNet)", performs coarse-to-fine
+classification where each coarse class can cover multiple fine classes. Since it is challenging
+to directly distinguish a variety of fine classes given few-shot data per class, MahiNet starts
+from learning a classifier over coarse-classes with more training data whose labels are much cheaper
+to obtain. The coarse classifier reduces the searching range over the fine classes and thus alleviates
+the challenges from "many classes". On architecture, MahiNet firstly deploys a convolutional
+neural network (CNN) to extract features. It then integrates a memory-augmented attention module
+and a multi-layer perceptron (MLP) together to produce the probabilities over coarse and fine classes.
+While the MLP extends the linear classifier, the attention module extends the KNN classifier, both
+together targeting the "few-shot" problem. We design several training strategies of MahiNet for
+supervised learning and meta-learning. In addition, we propose two novel benchmark datasets "mcfsImageNet"
+and "mcfsOmniglot" specially designed for MCFS problem. In experiments, we show that MahiNet outperforms
+several state-of-the-art models on MCFS problems in both supervised learning and meta-learning.

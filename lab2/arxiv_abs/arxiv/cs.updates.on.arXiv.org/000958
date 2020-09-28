@@ -1,0 +1,19 @@
+The asynchronous push&pull protocol, a randomized distributed algorithm for spreading a
+rumour in a graph $G$, works as follows. Independent Poisson clocks of rate 1 are associated with
+the vertices of $G$. Initially, one vertex of $G$ knows the rumour. Whenever the clock of a vertex
+$x$ rings, it calls a random neighbour $y$: if $x$ knows the rumour and $y$ does not, then $x$ tells
+$y$ the rumour (a push operation), and if $x$ does not know the rumour and $y$ knows it, $y$ tells $x$
+the rumour (a pull operation). The average spread time of $G$ is the expected time it takes for all
+vertices to know the rumour, and the guaranteed spread time of $G$ is the smallest time $t$ such that
+with probability at least $1-1/n$, after time $t$ all vertices know the rumour. The synchronous
+variant of this protocol, in which each clock rings precisely at times $1,2,\dots$, has been studied
+extensively. We prove the following results for any $n$-vertex graph: In either version, the average
+spread time is at most linear even if only the pull operation is used, and the guaranteed spread time
+is within a logarithmic factor of the average spread time, so it is $O(n\log n)$. In the asynchronous
+version, both the average and guaranteed spread times are $\Omega(\log n)$. We give examples of
+graphs illustrating that these bounds are best possible up to constant factors. We also prove theoretical
+relationships between the guaranteed spread times in the two versions. Firstly, in all graphs the
+guaranteed spread time in the asynchronous version is within an $O(\log n)$ factor of that in the
+synchronous version, and this is tight. Next, we find examples of graphs whose asynchronous spread
+times are logarithmic, but the synchronous versions are polynomially large. Finally, we show for
+any graph that the ratio of the synchronous spread time to the asynchronous spread time is $O(n^{2/3})$.

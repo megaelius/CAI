@@ -1,0 +1,18 @@
+Data-parallel problems, commonly found in data analytics, machine learning, and scientific computing
+demand ever growing floating-point operations per second under tight area- and energy-efficiency
+constraints. Application-specific architectures and accelerators, while efficient at a given
+task, are hard to adjust to algorithmic changes. In this work, we present Manticore, a general-purpose,
+ultra-efficient, RISC-V, chiplet-based architecture for data-parallel floating-point workloads.
+We have manufactured a 9$\text{mm}^2$ prototype of the chiplet's computational core in Globalfoundries
+22nm FD-SOI process and demonstrate more than 2.5$\times$ improvement in energy efficiency on
+floating-point intensive workloads compared to high performance compute engines (CPUs and GPUs),
+despite their more advanced FinFET process. The prototype contains two 64-bit, application-class
+RISC-V Ariane management cores that run a full-fledged Linux OS. The compute capability at high
+energy and area efficiency is provided by Snitch clusters. Each cluster contains eight small (20kGE)
+32-bit integer RISC-V cores, each controlling a large double-precision floating-point unit (120kGE).
+Each core supports two custom RISC-V ISA extensions: FREP and SSR. The SSR extension elides explicit
+load and store instructions by encoding them as register reads and writes. The FREP extension mostly
+decouples the integer core from the FPU by allowing a sequence buffer to issue instructions to the
+FPU independently. Both extensions allow the tiny, single-issue, integer core to saturate the
+instruction bandwidth of the FPU and achieve FPU utilization above 90%, with more than 80% of core
+area dedicated to the FPU. 

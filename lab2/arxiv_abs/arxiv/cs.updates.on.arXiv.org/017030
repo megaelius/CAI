@@ -1,0 +1,19 @@
+In real-world single image super-resolution (SISR) task, the low-resolution image suffers more
+complicated degradations, not only downsampled by unknown kernels. However, existing SISR methods
+are generally studied with the synthetic low-resolution generation such as bicubic interpolation
+(BI), which greatly limits their performance. Recently, some researchers investigate real-world
+SISR from the perspective of the camera and smartphone. However, except the acquisition equipment,
+the display device also involves more complicated degradations. In this paper, we focus on the camera-screen
+degradation and build a real-world dataset (Cam-ScreenSR), where HR images are original ground
+truths from the previous DIV2K dataset and corresponding LR images are camera-captured versions
+of HRs displayed on the screen. We conduct extensive experiments to demonstrate that involving
+more real degradations is positive to improve the generalization of SISR models. Moreover, we propose
+a joint two-stage model. Firstly, the downsampling degradation GAN(DD-GAN) is trained to model
+the degradation and produces more various of LR images, which is validated to be efficient for data
+augmentation. Then the dual residual channel attention network (DuRCAN) learns to recover the
+SR image. The weighted combination of L1 loss and proposed Laplacian loss are applied to sharpen
+the high-frequency edges. Extensive experimental results in both typical synthetic and complicated
+real-world degradations validate the proposed method outperforms than existing SOTA models with
+less parameters, faster speed and better visual results. Moreover, in real captured photographs,
+our model also delivers best visual quality with sharper edge, less artifacts, especially appropriate
+color enhancement, which has not been accomplished by previous methods. 

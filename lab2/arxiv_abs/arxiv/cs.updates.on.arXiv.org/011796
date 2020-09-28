@@ -1,0 +1,19 @@
+Serverless computing is an approach to cloud computing that allows programmers to run serverless
+functions in response to short-lived events. Cloud providers bill functions at sub-second granularity,
+provide transparent elasticity, and completely manage operating system resources. Unfortunately,
+today's serverless platforms exhibit high tail latency, because it is difficult to maximize resource
+utilization while minimizing operating costs. We present Containerless, which is a serverless
+function accelerator that lowers the latency and resource utilization of typical serverless functions
+written in JavaScript. In Containerless, a serverless function starts execution in a container,
+and is instrumented to build an execution trace tree (similar to a tracing JIT compiler). After the
+function processes a number of events, Containerless extracts the trace tree, compiles it to safe
+subset of Rust, and then processes subsequent events more efficiently in Rust, using language-based
+sandboxing instead of the container sandbox. If the Rust code receives an event that triggers an
+unknown or unsupported execution path, Containerless aborts the language-based sandbox and restarts
+execution in the container. This approach works because serverless platforms already require
+functions to tolerate re-execution for fault tolerance. To a serverless function, a re-execution
+caused by Containerless is observationally equivalent to a re-execution caused by a fault. Our
+evaluation shows that Containerless can significantly decrease the latency and resource utilization
+usage of serverless functions, e.g., increasing throughput of I/O bound functions by 3.4x (geometric
+mean speedup). We also show that the impact of tracing is negligible and that Containerless seamlessly
+switches between its two modes of sandboxing. 

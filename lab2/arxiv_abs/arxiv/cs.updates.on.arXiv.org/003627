@@ -1,0 +1,18 @@
+Suppose that we are to place $m$ balls into $n$ bins sequentially using the $d$-choice paradigm:
+For each ball we are given a choice of $d$ bins, according to $d$ hash functions $h_1,\dots,h_d$ and
+we place the ball in the least loaded of these bins breaking ties arbitrarily. Our interest is in the
+number of balls in the fullest bin after all $m$ balls have been placed. Azar et al. [STOC'94] proved
+that when $m=O(n)$ and when the hash functions are fully random the maximum load is at most $\frac{\lg
+\lg n }{\lg d}+O(1)$ whp (i.e. with probability $1-O(n^{-\gamma})$ for any choice of $\gamma$).
+In this paper we suppose that the $h_1,\dots,h_d$ are simple tabulation hash functions. Generalising
+a result by Dahlgaard et al [SODA'16] we show that for an arbitrary constant $d\geq 2$ the maximum
+load is $O(\lg \lg n)$ whp, and that expected maximum load is at most $\frac{\lg \lg n}{\lg d}+O(1)$.
+We further show that by using a simple tie-breaking algorithm introduced by V\"ocking [J.ACM'03]
+the expected maximum load drops to $\frac{\lg \lg n}{d\lg \varphi_d}+O(1)$ where $\varphi_d$
+is the rate of growth of the $d$-ary Fibonacci numbers. Both of these expected bounds match those
+of the fully random setting. The analysis by Dahlgaard et al. relies on a proof by P\u{a}tra\c{s}cu
+and Thorup [J.ACM'11] concerning the use of simple tabulation for cuckoo hashing. We need here a
+generalisation to $d>2$ hash functions, but the original proof is an 8-page tour de force of ad-hoc
+arguments that do not appear to generalise. Our main technical contribution is a shorter, simpler
+and more accessible proof of the result by P\u{a}tra\c{s}cu and Thorup, where the relevant parts
+generalise nicely to the analysis of $d$ choices. 

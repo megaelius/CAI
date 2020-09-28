@@ -1,0 +1,19 @@
+The high-order gas-kinetic scheme (HGKS) has achieved success in simulating compressible flow
+in Cartesian mesh. To study the flow problem in general geometry, such as the flow over a wing-body
+configuration, the development of a three-dimensional HGKS in general curvilinear coordinates
+becomes necessary. In this paper, a two-stage fourth-order gas-kinetic scheme is developed for
+the Euler and Navier-Stokes solutions in the curvilinear coordinates. Based on the coordinate
+transformation, the kinetic equation is transformed first to the computational space, and the
+flux function in the gas-kinetic scheme is obtained there and is transformed back to the physical
+domain for the update of conservative flow variables inside each control volume. To achieve the
+expected order of accuracy, the dimension-by-dimension reconstruction based on the WENO scheme
+is adopted in the computational domain, where the reconstructed variables are the cell averaged
+Jacobian and the Jacobian-weighted conservative variables, and the conservative variables are
+obtained by ratio of the above reconstructed data at Gaussian quadrature points of each cell interface.
+In the two-stage fourth-order gas kinetic scheme (GKS), similar to the generalized Riemann solver
+(GRP), the initial spatial derivatives of conservative variables have to be used in the evaluation
+of the time dependent flux function in GKS, which are reconstructed as well through orthogonalization
+in physical space and chain rule. A variety of numerical examples from the order tests to the solutions
+with strong discontinuities are presented to validate the accuracy and robustness of the current
+scheme. The precise satisfaction of the geometrical conservation law in non-orthogonal mesh is
+also demonstrated through the numerical example. 

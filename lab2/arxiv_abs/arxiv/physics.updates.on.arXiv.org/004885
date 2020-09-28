@@ -1,0 +1,17 @@
+Accurate representation of vertical turbulent fluxes is crucial for numerical ocean modelling,
+both in global and coastal applications. The state-of-the-art approach is to use two-equation
+turbulence closure models which introduces two dynamic equations to the system. Solving these
+equations numerically, however, is challenging due to the strict requirement of positivity of
+the turbulent quantities (e.g. turbulence kinetic energy and its dissipation rate), and the non-linear
+source terms that may render the numerical system unstable. In this paper, we present a Discontinuous
+Galerkin (DG) finite element discretization of the Generic Length Scale (GLS) equations designed
+to be incorporated in a DG coastal ocean model, Thetis. To ensure numerical stability, the function
+space for turbulent quantities must be chosen carefully. In this work, we propose to use zeroth degree
+elements for the turbulent quantities and linear discontinuous elements for the tracers and velocity.
+The spatial discretization is completed with a positivity preserving semi-implicit time integration
+scheme. We validate the implementation with standard turbulence closure model benchmarks and
+an idealized estuary simulation. Finally, we use the full three-dimensional model to simulate
+the Columbia River plume. The results confirm that the coupled model generates realistic vertical
+mixing, and remains stable under strongly stratified conditions and strong tidal forcing. Estuarine
+circulation and river plume characteristics are well captured. Overall, numerical mixing of the
+model is found to be small resulting in a highly dynamic river plume. 

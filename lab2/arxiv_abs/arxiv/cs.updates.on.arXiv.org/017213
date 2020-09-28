@@ -1,0 +1,19 @@
+Cross-domain few-shot learning (FSL) is proposed recently to transfer knowledge from general-domain
+known classes (e.g., ImageNet) to novel classes in other domains, and recognize novel classes with
+only few training samples. In this paper, we go further to define a more challenging scenario that
+transfers knowledge from general-domain known classes to novel classes in distant domains which
+are significantly different from the general domain, e.g., medical data. To solve this challenging
+problem, we propose to exploit mid-level features, which are more transferable, yet under-explored
+in recent main-stream FSL works. To boost the discriminability of mid-level features, we propose
+a residual-prediction task for the training on known classes. In this task, we view the current training
+sample as a sample from a pseudo-novel class, so as to provide simulated novel-class data. However,
+this simulated data is from the same domain as known classes, and shares high-level patterns with
+other known classes. Therefore, we then use high-level patterns from other known classes to represent
+it and remove this high-level representation from the simulated data, outputting a residual term
+containing discriminative information of it that could not be represented by high-level patterns
+from other known classes. Then, mid-level features from multiple mid-layers are dynamically weighted
+to predict this residual term, which encourages the mid-level features to be discriminative. Notably,
+our method can be applied to both the regular in-domain FSL setting by emphasizing high-level & transformed
+mid-level features and the distant-domain FSL setting by emphasizing mid-level features. Experiments
+under both settings on six public datasets (including two challenging medical datasets) validate
+the rationale of the proposed method, demonstrating state-of-the-art performance on both settings.

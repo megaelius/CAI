@@ -1,0 +1,8 @@
+Hi,
+I'm looking for a X-Windows tool that can display data (in a
+2D plot) in real time with a couple different signals.  
+Anybody know of such a gem?  Please Email me as I do not read
+this group often.
+Thanks much!
+Eric Slimko
+theslim@caen.engin.umich.edu

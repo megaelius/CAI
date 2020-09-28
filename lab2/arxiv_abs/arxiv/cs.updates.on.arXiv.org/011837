@@ -1,0 +1,18 @@
+In the classical Online Metric Matching problem, we are given a metric space with $k$ servers. A collection
+of clients arrive in an online fashion, and upon arrival, a client should irrevocably be matched
+to an as-yet-unmatched server. The goal is to find an online matching which minimizes the total cost,
+i.e., the sum of distances between each client and the server it is matched to. We know deterministic
+algorithms~\cite{KP93,khuller1994line} that achieve a competitive ratio of $2k-1$, and this
+bound is tight for deterministic algorithms. The problem has also long been considered in specialized
+metrics such as the line metric or metrics of bounded doubling dimension, with the current best result
+on a line metric being a deterministic $O(\log k)$ competitive algorithm~\cite{raghvendra2018optimal}.
+Obtaining (or refuting) $O(\log k)$-competitive algorithms in general metrics and constant-competitive
+algorithms on the line metric have been long-standing open questions in this area. In this paper,
+we investigate the robustness of these lower bounds by considering the Online Metric Matching with
+Recourse problem where we are allowed to change a small number of previous assignments upon arrival
+of a new client. Indeed, we show that a small logarithmic amount of recourse can significantly improve
+the quality of matchings we can maintain. For general metrics, we show a simple \emph{deterministic}
+$O(\log k)$-competitive algorithm with $O(\log k)$-amortized recourse, an exponential improvement
+over the $2k-1$ lower bound when no recourse is allowed. We next consider the line metric, and present
+a deterministic algorithm which is $3$-competitive and has $O(\log k)$-recourse, again a substantial
+improvement over the best known $O(\log k)$-competitive algorithm when no recourse is allowed.

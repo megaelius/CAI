@@ -1,0 +1,18 @@
+The aggregated unfitted finite element method (AgFEM) is a methodology recently introduced in
+order to address conditioning and stability problems associated with embedded, unfitted, or extended
+finite element methods. The method is based on removal of basis functions associated with badly
+cut cells by introducing carefully designed constraints, which results in well-posed systems
+of linear algebraic equations, while preserving the optimal approximation order of the underlying
+finite element spaces. The specific goal of this work is to present the implementation and performance
+of the method on distributed-memory platforms aiming at the efficient solution of large-scale
+problems. In particular, we show that, by considering AgFEM, the resulting systems of linear algebraic
+equations can be effectively solved using standard algebraic multigrid preconditioners. This
+is in contrast with previous works that consider highly customized preconditioners in order to
+allow one the usage of iterative solvers in combination with unfitted techniques. Another novelty
+with respect to the methods available in the literature is the problem sizes that can be handled with
+the proposed approach. While most of previous references discussing linear solvers for unfitted
+methods are based on serial non-scalable algorithms, we propose a parallel distributed-memory
+method able to efficiently solve problems at large scales. This is demonstrated by means of a weak
+scaling test defined on complex 3D domains up to 300M degrees of freedom and one billion cells on 16K
+CPU cores in the Marenostrum-IV platform. The parallel implementation of the AgFEM method is available
+in the large-scale finite element package FEMPAR. 

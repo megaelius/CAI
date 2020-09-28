@@ -1,0 +1,19 @@
+ARINC 429 is the most common data bus in use today in civil avionics. However, the protocol lacks any
+form of source authentication. A technician with physical access to the bus is able to replace a transmitter
+by a rogue device, and the receivers will accept its malicious data as they have no method of verifying
+the authenticity of messages. Updating the protocol would close off security loopholes in new aircraft
+but would require thousands of airplanes to be modified. For the interim, until the protocol is replaced,
+we propose the first intrusion detection system that utilizes a hardware fingerprinting approach
+for sender identification for the ARINC 429 data bus. Our approach relies on the observation that
+changes in hardware, such as replacing a transmitter or a receiver with a rogue one, modify the electric
+signal of the transmission. Because we rely on the analog properties, and not on the digital content
+of the transmissions, we are able to detect a hardware switch as soon as it occurs, even if the data
+that is being transmitted is completely normal. Thus, we are able to preempt the attack before any
+damage is caused. In this paper we describe the design of our intrusion detection system and evaluate
+its performance against different adversary models. Our analysis includes both a theoretical
+Markov-chain model and an extensive empirical evaluation. For this purpose, we collected a data
+corpus of ARINC 429 data traces, which may be of independent interest since, to the best of our knowledge,
+no public corpus is available. We find that our intrusion detection system is quite realistic: e.g.,
+it achieves near-zero false alarms per second, while detecting a rogue transmitter in under 50ms,
+and detecting a rogue receiver in under 3 seconds. In other words, technician attacks can be reliably
+detected during the pre-flight checks, well before the aircraft takes off. 

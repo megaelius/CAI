@@ -1,0 +1,20 @@
+Code comprehension is critical in software maintenance. Towards providing tools and approaches
+to support maintenance tasks, researchers have investigated various research lines related to
+how software code can be described in an abstract form. So far, studies on change pattern mining,
+code clone detection, or semantic patch inference have mainly adopted text-, token- and tree-based
+representations as the basis for computing similarity among code fragments. Although, in general,
+existing techniques form clusters of "similar" code, our experience in patch mining has revealed
+that clusters of patches formed by such techniques do not usually carry explainable semantics that
+can be associated to bug-fixing patterns. In this paper, we propose a novel, automated approach
+for mining semantically-relevant fix patterns based on an iterative, three-fold, clustering
+strategy. Our technique, FixMiner, leverages different tree representations for each round of
+clustering: the Abstract syntax tree, the edit actions tree, and the code context tree. We have evaluated
+FixMiner on thousands of software patches collected from open source projects. Preliminary results
+show that we are able to mine accurate patterns, efficiently exploiting change information in AST
+diff trees. Eventually, FixMiner yields patterns which can be associated to the semantics of the
+bugs that the associated patches address. We further leverage the mined patterns to implement an
+automated program repair pipeline with which we are able to correctly fix 25 bugs from the Defects4J
+benchmark. Beyond this quantitative performance, we show that the mined fix patterns are sufficiently
+relevant to produce patches with a high probability of correctness: 80% of FixMiner's generated
+plausible patches are correct, while the closest related works, namely HDRepair and SimFix, achieve
+respectively 26% and 70% of correctness. 

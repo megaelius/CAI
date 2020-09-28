@@ -1,0 +1,17 @@
+Chemical autoencoders are attractive models as they combine chemical space navigation with possibilities
+for de-novo molecule generation in areas of interest. This enables them to produce focused chemical
+libraries around a single lead compound for employment early in a drug discovery project. Here it
+is shown that the choice of chemical representation, such as SMILES strings, has a large influence
+on the properties of the latent space. It is further explored to what extent translating between
+different chemical representations influences the latent space similarity to the SMILES strings
+or circular fingerprints. By employing SMILES enumeration for either the encoder or decoder, it
+is found that the decoder has the largest influence on the properties of the latent space. Training
+a sequence to sequence heteroencoder based on recurrent neural networks(RNNs) with long short-term
+memory cells (LSTM) to predict different enumerated SMILES strings from the same canonical SMILES
+string gives the largest similarity between latent space distance and molecular similarity measured
+as circular fingerprints similarity. Using the output from the bottleneck in QSAR modelling of
+five molecular datasets shows that heteroencoder derived vectors markedly outperforms autoencoder
+derived vectors as well as models built using ECFP4 fingerprints, underlining the increased chemical
+relevance of the latent space. However, the use of enumeration during training of the decoder leads
+to a markedly increase in the rate of decoding to a different molecules than encoded, a tendency that
+can be counteracted with more complex network architectures. 

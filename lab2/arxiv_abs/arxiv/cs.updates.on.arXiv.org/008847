@@ -1,0 +1,19 @@
+The problem of estimating Wasserstein distances in high-dimensional spaces suffers from the curse
+of dimensionality: One needs an exponential (w.r.t. dimension) number of samples for the distance
+between two measures to be comparable to that evaluated using i.i.d samples. Therefore, using the
+optimal transport (OT) geometry in machine learning involves regularizing it, one way or another.
+One of the greatest achievements of the OT literature in recent years lies in regularity theory:
+one can prove under suitable hypothesis that the OT map between two measures is Lipschitz, or, equivalently
+when studying 2-Wasserstein distances, that the Brenier convex potential (whose gradient yields
+an optimal map) is a smooth function. We propose in this work to go backwards, and adopt instead regularity
+as a regularization tool. We propose algorithms working on discrete measures that can recover nearly
+optimal transport maps that have small distortion, or, equivalently, nearly optimal Brenier potential
+that are strongly convex and smooth. For univariate measures, we show that computing these potentials
+is equivalent to solving an isotonic regression problem under Lipschitz and strong monotonicity
+constraints. For multivariate measures the problem boils down to a non-convex QCQP problem, which
+can be relaxed to a semidefinite program. Most importantly, we recover as the result of this optimization
+the values and gradients of the Brenier potential on sampled points, but show how that they can be
+more generally evaluated on any new point, at the cost of solving a QP for each new evaluation. Building
+on these two formulations we propose practical algorithms to estimate and evaluate transport maps
+with desired smoothness/strong convexity properties, illustrate their statistical performance
+and visualize maps on a color transfer task. 

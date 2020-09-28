@@ -1,0 +1,17 @@
+To the best of our knowledge, the existing deep-learning-based Video Super-Resolution (VSR) methods
+exclusively make use of videos produced by the Image Signal Processor (ISP) of the camera system
+as inputs. Such methods are 1) inherently suboptimal due to information loss incurred by non-invertible
+operations in ISP, and 2) inconsistent with the real imaging pipeline where VSR in fact serves as
+a pre-processing unit of ISP. To address this issue, we propose a new VSR method that can directly
+exploit camera sensor data, accompanied by a carefully built Raw Video Dataset (RawVD) for training,
+validation, and testing. This method consists of a Successive Deep Inference (SDI) module and a
+reconstruction module, among others. The SDI module is designed according to the architectural
+principle suggested by a canonical decomposition result for Hidden Markov Model (HMM) inference;
+it estimates the target high-resolution frame by repeatedly performing pairwise feature fusion
+using deformable convolutions. The reconstruction module, built with elaborately designed Attention-based
+Residual Dense Blocks (ARDBs), serves the purpose of 1) refining the fused feature and 2) learning
+the color information needed to generate a spatial-specific transformation for accurate color
+correction. Extensive experiments demonstrate that owing to the informativeness of the camera
+raw data, the effectiveness of the network architecture, and the separation of super-resolution
+and color correction processes, the proposed method achieves superior VSR results compared to
+the state-of-the-art and can be adapted to any specific camera-ISP. 

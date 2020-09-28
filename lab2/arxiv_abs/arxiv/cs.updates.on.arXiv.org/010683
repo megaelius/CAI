@@ -1,0 +1,20 @@
+The last level cache is vulnerable to timing based side channel attacks because it is shared by the
+attacker and the victim processes even if they are located on different cores. These timing attacks
+evict the victim cache lines using small conflict groups(SCG), and monitor the cache to observe
+when the victim uses these cache lines again. A conflict group is a collection of cache lines which
+will evict the target cache line. Randomization is often used by defenses to prevent creation of
+SCGs. We introduce new attacks to demonstrate that the current randomization schemes require an
+extremely high refresh rate to be secure, on average a 15\% performance overhead, and upto 50\% in
+the worst case. Next, we propose a new randomization strategy using an indirection table, which
+mitigates this issue. Addresses of cache lines are encrypted and used to lookup the indirection
+table entry. Each indirection table entry stores a mapping to a randomly chosen cache set. The cache
+line is placed into this randomly chosen set. The encryption key changes upto 50x faster than CEASER's
+default rate, by using evictions to trigger the re-randomization. Instead of moving cache lines,
+this mechanism re-randomizes one iTable entry at a time, whenever the cache lines corresponding
+to the iTable entry are naturally evicted. Thus, the miss rate is not much worse than the baseline.
+We quantitatively show that our scheme does almost as well as a fully associative cache to defend
+against these attacks. We also demonstrate new attacks that target the iTable by oversubscribing
+its entries, and quantitatively show that our scheme is resilient against new attacks for trillions
+of years. We estimate low area ( < 7\%) and power overhead compared to a baseline inclusive last-level
+cache. Lastly, we evaluate a low performance overhead (<4%) using the SPECrate 2017 and PARSEC 3.0
+benchmarks. 

@@ -1,0 +1,20 @@
+Humans can easily detect a defect (anomaly) because it is different or salient when compared to the
+surface it resides on. Today, manual human visual inspection is still the norm because it is difficult
+to automate anomaly detection. Neural networks are a useful tool that can teach a machine to find
+defects. However, they require a lot of training examples to learn what a defect is and it is tedious
+and expensive to get these samples. We tackle the problem of teaching a network with a low number of
+training samples with a system we call AnoNet. AnoNet's architecture is similar to CompactCNN with
+the exceptions that (1) it is a fully convolutional network and does not use strided convolution;
+(2) it is shallow and compact which minimizes over-fitting by design; (3) the compact design constrains
+the size of intermediate features which allows training to be done without image downsizing; (4)
+the model footprint is low making it suitable for edge computation; and (5) the anomaly can be detected
+and localized despite the weak labelling. AnoNet learns to detect the underlying shape of the anomalies
+despite the weak annotation as well as preserves the spatial localization of the anomaly. Pre-seeding
+AnoNet with an engineered filter bank initialization technique reduces the total samples required
+for training and also achieves state-of-the-art performance. Compared to the CompactCNN, AnoNet
+achieved a massive 94% reduction of network parameters from 1.13 million to 64 thousand parameters.
+Experiments were conducted on four data-sets and results were compared against CompactCNN and
+DeepLabv3. AnoNet improved the performance on an average across all data-sets by 106% to an F1 score
+of 0.98 and by 13% to an AUROC value of 0.942. AnoNet can learn from a limited number of images. For one
+of the data-sets, AnoNet learnt to detect anomalies after a single pass through just 53 training
+images. 

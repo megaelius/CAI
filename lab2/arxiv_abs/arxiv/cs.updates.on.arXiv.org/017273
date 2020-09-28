@@ -1,0 +1,19 @@
+Unsupervised deep-learning (DL) models were recently proposed for deformable image registration
+tasks. In such models, a neural-network is trained to predict the best deformation field by minimizing
+some dissimilarity function between the moving and the target images. After training on a dataset
+without reference deformation fields available, such a model can be used to rapidly predict the
+deformation field between newly seen moving and target images. Currently, the training process
+effectively provides a point-estimate of the network weights rather than characterizing their
+entire posterior distribution. This may result in a potential over-fitting which may yield sub-optimal
+results at inference phase, especially for small-size datasets, frequently present in the medical
+imaging domain. We introduce a fully Bayesian framework for unsupervised DL-based deformable
+image registration. Our method provides a principled way to characterize the true posterior distribution,
+thus, avoiding potential over-fitting. We used stochastic gradient Langevin dynamics (SGLD)
+to conduct the posterior sampling, which is both theoretically well-founded and computationally
+efficient. We demonstrated the added-value of our Basyesian unsupervised DL-based registration
+framework on the MNIST and brain MRI (MGH10) datasets in comparison to the VoxelMorph unsupervised
+DL-based image registration framework. Our experiments show that our approach provided better
+estimates of the deformation field by means of improved mean-squared-error ($0.0063$ vs. $0.0065$)
+and Dice coefficient ($0.73$ vs. $0.71$) for the MNIST and the MGH10 datasets respectively. Further,
+our approach provides an estimate of the uncertainty in the deformation-field by characterizing
+the true posterior distribution. 

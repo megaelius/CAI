@@ -1,0 +1,18 @@
+We consider a search problem on trees in which the goal is to find an adversarially placed treasure,
+while relying on local, partial information. Specifically, each node in the tree holds a pointer
+to one of its neighbors, termed \emph{advice}. A node is faulty with probability $q$. The advice
+at a non-faulty node points to the neighbor that is closer to the treasure, and the advice at a faulty
+node points to a uniformly random neighbor. Crucially, the advice is {\em permanent}, in the sense
+that querying the same node again would yield the same answer. Let $\Delta$ denote the maximal degree.
+Roughly speaking, when considering the expected number of {\em moves}, i.e., edge traversals,
+we show that a phase transition occurs when the {\em noise parameter} $q$ is about $1/\sqrt{\Delta}$.
+Below the threshold, there exists an algorithm with expected move complexity $O(D\sqrt{\Delta})$,
+where $D$ is the depth of the treasure, whereas above the threshold, every search algorithm has expected
+number of moves which is both exponential in $D$ and polynomial in the number of nodes~$n$. In contrast,
+if we require to find the treasure with probability at least $1-\delta$, then for every fixed $\varepsilon
+> 0$, if $q<1/\Delta^{\varepsilon}$ then there exists a search strategy that with probability
+$1-\delta$ finds the treasure using $(\delta^{-1}D)^{O(\frac 1 \varepsilon)}$ moves. Moreover,
+we show that $(\delta^{-1}D)^{\Omega(\frac 1 \varepsilon)}$ moves are necessary. Besides the
+number of moves, we also study the number of advice {\em queries} required to find the treasure. Roughly
+speaking, for this complexity, we show similar threshold results to those previously stated, where
+the parameter $D$ is replaced by $\log n$. 

@@ -1,0 +1,17 @@
+In state-of-the-art deep neural networks, both feature normalization and feature attention have
+become ubiquitous with significant performance improvement shown in a vast amount of tasks. They
+are usually studied as separate modules, however. In this paper, we propose a light-weight integration
+between, and thus harness the best of, the two schema. We present Attentive Normalization (AN) which
+generalizes the common affine transformation component in the vanilla feature normalization.
+Instead of learning a single affine transformation, AN learns a mixture of affine transformations
+and utilizes their weighted-sum as the final affine transformation applied to re-calibrate features
+in an instance-specific way. The weights are learned by leveraging feature attention. AN introduces
+negligible extra parameters and computational cost (i.e., light-weight). AN can be used as a drop-in
+replacement for any feature normalization technique which includes the affine transformation
+component. In experiments, we test the proposed AN using three representative neural architectures
+(ResNets, MobileNets-v2 and AOGNets) in the ImageNet-1000 classification benchmark and the MS-COCO
+2107 object detection and instance segmentation benchmark. AN obtains consistent performance
+improvement for different neural architectures in both benchmarks with absolute increase of top-1
+accuracy in ImageNet-1000 between 0.5% and 2.0%, and absolute increase up to 1.8% and 2.2% for bounding
+box and mask AP in MS-COCO respectively. The source codes are publicly available(Classification
+in ImageNet: \url{https://github.com/iVMCL/AOGNets-v2} and Detection in MS-COCO: \url{https://github.com/iVMCL/AttentiveNorm\_Detection}}).

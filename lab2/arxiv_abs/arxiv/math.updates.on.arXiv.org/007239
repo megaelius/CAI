@@ -1,0 +1,20 @@
+Deepcode (H. Kim et al. 2018) is a recently suggested Deep Learning-based scheme for communication
+over the AWGN channel with noisy feedback, claimed to be superior to all previous schemes in the literature.
+Deepcode's use of nonlinear coding (via Deep Learning) has been inspired by known shortcomings
+(Y.-H. Kim et al. 2007) of linear feedback schemes. In 2014, we presented a nonlinear feedback coding
+scheme based on a combination of the classical Schalwijk-Kailath (SK) scheme and modulo-arithmetic
+. This Modulo-SK scheme, which uses a small number of elementary operations and does employ any type
+of neural network, has been omitted from the performance comparisons made in the Deepcode paper,
+due to its use of common randomness (dither). However, the dither in the Modulo-SK scheme was used
+only for the standard purpose of tractable performance analysis, and is not required in practice.
+In this short note, we show that a fully-deterministic Modulo-SK (without any dithering) can outperform
+Deepcode. For example, to attain an error probability of 10^(-4) at rate 1/3 and feedforward SNR
+of 0dB, Modulo-SK requires 3dB less feedback SNR than Deepcode. To attain an error probability of
+10^(-6) in the same setup but with noiseless feedback, Deepcode requires 150 rounds of communication,
+whereas Modulo-SK requires only 15, even if the feedback is noisy (with 27dB SNR). We further address
+the numerical stability issues of the original SK scheme reported in the Deepcode paper, and explain
+how they can be avoided. We augment this report with an online-available, fully-functional Matlab
+simulation for both the classical and Modulo-SK schemes. Finally, note that Modulo-SK is by no means
+claimed to be the best possible solution; in particular, using deep learning in conjunction with
+modulo-arithmetic might lead to better designs, and remains a fascinating direction for future
+research. 

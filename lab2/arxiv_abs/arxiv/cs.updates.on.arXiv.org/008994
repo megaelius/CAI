@@ -1,0 +1,17 @@
+Motivated by the necessity for parameter efficiency in distributed machine learning and AI-enabled
+edge devices, we provide a general and easy to implement method for significantly reducing the number
+of parameters of Convolutional Neural Networks (CNNs), during both the training and inference
+phases. We introduce a simple auxiliary neural network which can generate the convolutional filters
+of any CNN architecture from a low dimensional latent space. This auxiliary neural network, which
+we call "Convolutional Slice Generator" (CSG), is unique to the network and provides the association
+between its convolutional layers. During the training of the CNN, instead of training the filters
+of the convolutional layers, only the parameters of the CSG and their corresponding `code vectors'
+are trained. This results in a significant reduction of the number of parameters due to the fact that
+the CNN can be fully represented using only the parameters of the CSG, the code vectors, the fully
+connected layers, and the architecture of the CNN. To show the capability of our method, we apply
+it to ResNet and DenseNet architectures, using the CIFAR-10 dataset without any hyper-parameter
+tuning. Experiments show that our approach, even when applied to already compressed and efficient
+CNNs such as DenseNet-BC, significantly reduces the number of network parameters. In two models
+based on DenseNet-BC with $\approx 2\times$ reduction in one of them we had a slight improvement
+in accuracy and in another one, with $\approx 2\times$ reduction the change in accuracy is negligible.
+In case of ResNet-56, $\approx 2.5\times$ reduction leads to an accuracy loss within $1\%$. 

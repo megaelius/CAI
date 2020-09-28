@@ -1,0 +1,18 @@
+Sampling logconcave functions arising in statistics and machine learning has been a subject of
+intensive study. Recent developments include analyses for Langevin dynamics and Hamiltonian
+Monte Carlo (HMC). While both approaches have dimension-independent bounds for the underlying
+$\mathit{continuous}$ processes under sufficiently strong smoothness conditions, the resulting
+discrete algorithms have complexity and number of function evaluations growing with the dimension.
+Motivated by this problem, in this paper, we give a general algorithm for solving multivariate ordinary
+differential equations whose solution is close to the span of a known basis of functions (e.g., polynomials
+or piecewise polynomials). The resulting algorithm has polylogarithmic depth and essentially
+tight runtime - it is nearly linear in the size of the representation of the solution. We apply this
+to the sampling problem to obtain a nearly linear implementation of HMC for a broad class of smooth,
+strongly logconcave densities, with the number of iterations (parallel depth) and gradient evaluations
+being $\mathit{polylogarithmic}$ in the dimension (rather than polynomial as in previous work).
+This class includes the widely-used loss function for logistic regression with incoherent weight
+matrices and has been subject of much study recently. We also give a faster algorithm with $ \mathit{polylogarithmic~depth}$
+for the more general and standard class of strongly convex functions with Lipschitz gradient. These
+results are based on (1) an improved contraction bound for the exact HMC process and (2) logarithmic
+bounds on the degree of polynomials that approximate solutions of the differential equations arising
+in implementing HMC. 

@@ -1,0 +1,17 @@
+We introduce an adversarial learning framework, which we named KBGAN, to improve the performances
+of a wide range of existing knowledge graph embedding models. Because knowledge graph datasets
+typically only contain positive facts, sampling useful negative training examples is a non-trivial
+task. Replacing the head or tail entity of a fact with a uniformly randomly selected entity is a conventional
+method for generating negative facts used by many previous works, but the majority of negative facts
+generated in this way can be easily discriminated from positive facts, and will contribute little
+towards the training. Inspired by generative adversarial networks (GANs), we use one knowledge
+graph embedding model as a negative sample generator to assist the training of our desired model,
+which acts as the discriminator in GANs. The objective of the generator is to generate difficult
+negative samples that can maximize their likeliness determined by the discriminator, while the
+discriminator minimizes its training loss. This framework is independent of the concrete form
+of generator and discriminator, and therefore can utilize a wide variety of knowledge graph embedding
+models as its building blocks. In experiments, we adversarially train two translation-based models,
+TransE and TransD, each with assistance from one of the two probability-based models, DistMult
+and ComplEx. We evaluate the performances of KBGAN on the link prediction task, using three knowledge
+base completion datasets: FB15k-237, WN18 and WN18RR. Experimental results show that adversarial
+training substantially improves the performances of target embedding models under various settings.

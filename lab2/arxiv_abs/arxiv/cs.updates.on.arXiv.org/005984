@@ -1,0 +1,19 @@
+Anomalies and outliers are common in real-world data, and they can arise from many sources, such
+as sensor faults. Accordingly, anomaly detection is important both for analyzing the anomalies
+themselves and for cleaning the data for further analysis of its ambient structure. Nonetheless,
+a precise definition of anomalies is important for automated detection and herein we approach such
+problems from the perspective of detecting sparse latent effects embedded in large collections
+of noisy data. Standard Graphical Lasso-based techniques can identify the conditional dependency
+structure of a collection of random variables based on their sample covariance matrix. However,
+classic Graphical Lasso is sensitive to outliers in the sample covariance matrix. In particular,
+several outliers in a sample covariance matrix can destroy the sparsity of its inverse. Accordingly,
+we propose a novel optimization problem that is similar in spirit to Robust Principal Component
+Analysis (RPCA) and splits the sample covariance matrix $M$ into two parts, $M=F+S$, where $F$ is
+the cleaned sample covariance whose inverse is sparse and computable by Graphical Lasso, and $S$
+contains the outliers in $M$. We accomplish this decomposition by adding an additional $ \ell_1$
+penalty to classic Graphical Lasso, and name it "Robust Graphical Lasso (Rglasso)". Moreover,
+we propose an Alternating Direction Method of Multipliers (ADMM) solution to the optimization
+problem which scales to large numbers of unknowns. We evaluate our algorithm on both real and synthetic
+datasets, obtaining interpretable results and outperforming the standard robust Minimum Covariance
+Determinant (MCD) method and Robust Principal Component Analysis (RPCA) regarding both accuracy
+and speed. 

@@ -1,0 +1,19 @@
+Interference among concurrent transmissions in a wireless network is a key factor limiting the
+system performance. One way to alleviate this problem is to manage the radio resources in order to
+maximize either the average or the worst-case performance. However, joint consideration of both
+metrics is often neglected as they are competing in nature. In this article, a mechanism for radio
+resource management using multi-agent deep reinforcement learning (RL) is proposed, which strikes
+the right trade-off between maximizing the average and the $5^{th}$ percentile user throughput.
+Each transmitter in the network is equipped with a deep RL agent, receiving partial observations
+from the network (e.g., channel quality, interference level, etc.) and deciding whether to be active
+or inactive at each scheduling interval for given radio resources, a process referred to as link
+scheduling. Based on the actions of all agents, the network emits a reward to the agents, indicating
+how good their joint decisions were. The proposed framework enables the agents to make decisions
+in a distributed manner, and the reward is designed in such a way that the agents strive to guarantee
+a minimum performance, leading to a fair resource allocation among all users across the network.
+Simulation results demonstrate the superiority of our approach compared to decentralized baselines
+in terms of average and $5^{th}$ percentile user throughput, while achieving performance close
+to that of a centralized exhaustive search approach. Moreover, the proposed framework is robust
+to mismatches between training and testing scenarios. In particular, it is shown that an agent trained
+on a network with low transmitter density maintains its performance and outperforms the baselines
+when deployed in a network with a higher transmitter density. 

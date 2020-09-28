@@ -1,0 +1,19 @@
+In this paper, we focus on semi-supervised object detection to boost performance of proposal-based
+object detectors (a.k.a. two-stage object detectors) by training on both labeled and unlabeled
+data. However, it is non-trivial to train object detectors on unlabeled data due to the unavailability
+of ground truth labels. To address this problem, we present a proposal learning approach to learn
+proposal features and predictions from both labeled and unlabeled data. The approach consists
+of a self-supervised proposal learning module and a consistency-based proposal learning module.
+In the self-supervised proposal learning module, we present a proposal location loss and a contrastive
+loss to learn context-aware and noise-robust proposal features respectively. In the consistency-based
+proposal learning module, we apply consistency losses to both bounding box classification and
+regression predictions of proposals to learn noise-robust proposal features and predictions.
+Our approach enjoys the following benefits: 1) encouraging more context information to delivered
+in the proposals learning procedure; 2) noisy proposal features and enforcing consistency to allow
+noise-robust object detection; 3) building a general and high-performance semi-supervised object
+detection framework, which can be easily adapted to proposal-based object detectors with different
+backbone architectures. Experiments are conducted on the COCO dataset with all available labeled
+and unlabeled data. Results demonstrate that our approach consistently improves the performance
+of fully-supervised baselines. In particular, after combining with data distillation, our approach
+improves AP by about 2.0% and 0.9% on average compared to fully-supervised baselines and data distillation
+baselines respectively. 

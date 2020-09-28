@@ -1,0 +1,19 @@
+We consider one-level additive Schwarz preconditioners for a family of Helmholtz problems with
+increasing wavenumber $k$. These problems are discretized using nodal conforming finite elements
+of any (fixed) order on meshes chosen to maintain accuracy as $k$ increases. The action of the preconditioner
+requires solution of independent (parallel) subproblems (with impedance boundary conditions)
+on overlapping subdomains of diameter $H$ and overlap $\delta\leq H$. The solutions of these subproblems
+are linked together using prolongation/restriction operators defined using a partition of unity;
+this formulation was previously proposed in [J.H. Kimn and M. Sarkis, {\em Comp. Meth. Appl. Mech.
+Engrg.}~196, 1507-1514, 2007]. In numerical experiments (with $\delta \sim H$) we observe robust
+(i.e.~$k-$independent) GMRES convergence as $k$ increases, with $H$ decreasing moderately as
+$k$ increases. This provides a highly-parallel, $k-$robust one-level domain-decomposition
+method. We provide supporting theory by studying the preconditioner applied to a range of absorptive
+problems, $k^2\mapsto k^2+ \mathrm{i} \epsilon$, with absorption parameter $\epsilon$. Working
+in the Helmholtz "energy" inner product, and using the underlying theory of Helmholtz boundary-value
+problems, we prove a $k-$independent upper bound on the norm of the preconditioned matrix, valid
+for all $\vert \epsilon\vert \lesssim k^2$. We also prove a strictly-positive lower bound on the
+distance of the field of values of the preconditioned matrix from the origin which holds when $\epsilon/k$
+is constant or growing arbitrarily slowly with $k$. These results imply robustness of the preconditioner
+for the corresponding absorptive problem as $k$ increases and give theoretical support for the
+observed robustness of the preconditioner for the pure Helmholtz problem. 

@@ -1,0 +1,20 @@
+Applications of digital agricultural services often require either farmers or their advisers
+to provide digital records of their field boundaries. Automatic extraction of field boundaries
+from satellite imagery would reduce the reliance on manual input of these records which is time consuming
+and error-prone, and would underpin the provision of remote products and services. The lack of current
+field boundary data sets seems to indicate low uptake of existing methods,presumably because of
+expensive image preprocessing requirements and local, often arbitrary, tuning. In this paper,
+we address the problem of field boundary extraction from satellite images as a multitask semantic
+segmentation problem. We used ResUNet-a, a deep convolutional neural network with a fully connected
+UNet backbone that features dilated convolutions and conditioned inference, to assign three labels
+to each pixel: 1) the probability of belonging to a field; 2) the probability of being part of a boundary;
+and 3) the distance to the closest boundary. These labels can then be combined to obtain closed field
+boundaries. Using a single composite image from Sentinel-2, the model was highly accurate in mapping
+field extent, field boundaries, and, consequently, individual fields. Replacing the monthly
+composite with a single-date image close to the compositing period only marginally decreased accuracy.
+We then showed in a series of experiments that our model generalised well across resolutions, sensors,
+space and time without recalibration. Building consensus by averaging model predictions from
+at least four images acquired across the season is the key to coping with the temporal variations
+of accuracy. By minimising image preprocessing requirements and replacing local arbitrary decisions
+by data-driven ones, our approach is expected to facilitate the extraction of individual crop fields
+at scale. 

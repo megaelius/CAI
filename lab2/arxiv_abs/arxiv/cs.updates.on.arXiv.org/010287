@@ -1,0 +1,18 @@
+The increase in HPC systems size and complexity, together with increasing on-chip transistor density,
+power limitations, and number of components, render modern HPC systems subject to soft errors.
+Silent data corruptions (SDCs) are typically caused by such soft errors in the form of bit-flips
+in the memory subsystem and hinder the correctness of scientific applications. This work addresses
+the problem of protecting a class of iterative computational kernels, called stencils, against
+SDCs when executing on parallel HPC systems. Existing SDC detection and correction methods are
+in general either inaccurate, inefficient, or targeting specific application classes that do
+not include stencils. This work proposes a novel algorithm-based fault tolerance (ABFT) method
+to protect scientific applications that contain arbitrary stencil computations against SDCs.
+The ABFT method can be applied both online and offline to accurately detect and correct SDCs in 2D
+and 3D parallel stencil computations. We present a formal model for the proposed method including
+theorems and proofs for the computation of the associated checksums as well as error detection and
+correction. We experimentally evaluate the use of the proposed ABFT method on a real 3D stencil-based
+application (HotSpot3D) via a fault-injection, detection, and correction campaign. Results
+show that the proposed ABFT method achieves less than 8% overhead compared to the performance of
+the unprotected stencil application. Moreover, it accurately detects and corrects SDCs. While
+the offline ABFT version corrects errors more accurately, it may incur a small additional overhead
+than its online counterpart. 

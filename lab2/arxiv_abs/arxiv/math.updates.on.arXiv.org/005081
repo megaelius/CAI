@@ -1,0 +1,17 @@
+This work studies the problem of maximizing a higher degree real homogeneous multivariate polynomial
+over the unit sphere. This problem is equivalent to finding the leading eigenvalue of the associated
+symmetric tensor of higher order, which is nonconvex and NP-hard. Recent advances show that semidefinite
+relaxation is quite effective to find a global solution. However, the solution methods involve
+full/partial eigenvalue decomposition during the iterates, which heavily limits its efficiency
+and scalability. On the other hand, for odd degree (odd order) cases, the order has to be increased
+to even, which potentially reduces the efficiency. To find the global solutions, instead of convexifying
+the problem, we equivalently reformulate the problem as a nonconvex matrix program based on an equivalence
+property between symmetric rank-1 tensors and matrices of any order, which is a generalization
+of the existing results. The program is directly solved by a vanilla alternating direction method,
+which only involves the computation of leading eigenvalue/singular value of certain matrices,
+benefiting from the special structure of the program. Although being nonconvex, under certain
+hypotheses, it is proved that the algorithm converges to a leading eigenvalue of the associated
+tensor. Numerical experiments on different classes of tensors demonstrate that the proposed approach
+has a significant improvement in efficiency and scalability, while it can keep the effectiveness
+of semidefinite relaxation as much as possible. For instance, the proposed method finds the leading
+eigenpair of a third-order 500 dimensional Hilbert tensor in a personal computer within 100 seconds.

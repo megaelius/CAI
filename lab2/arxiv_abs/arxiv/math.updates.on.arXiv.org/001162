@@ -1,0 +1,19 @@
+We investigate a new sampling scheme to improve the performance of particle filters in scenarios
+where either (a) there is a significant mismatch between the assumed model dynamics and the actual
+system producing the available observations, or (b) the system of interest is high dimensional
+and the posterior probability tends to concentrate in relatively small regions of the state space.
+The proposed scheme generates nudged particles, i.e., subsets of particles which are deterministically
+pushed towards specific areas of the state space where the likelihood is expected to be high, an operation
+known as nudging in the geophysics literature. This is a device that can be plugged into any particle
+filtering scheme, as it does not involve modifications in the classical algorithmic steps of sampling,
+computation of weights, and resampling. Since the particles are modified, but the importance weights
+do not account for this modification, the use of nudging leads to additional bias in the resulting
+estimators. However, we prove analytically that particle filters equipped with the proposed device
+still attain asymptotic convergence (with the same error rates as conventional particle methods)
+as long as the nudged particles are generated according to simple and easy-to-implement rules.
+Finally, we show numerical results that illustrate the improvement in performance and robustness
+that can be attained using the proposed scheme. In particular, we show the results of computer experiments
+involving misspecified Lorenz 63 model, object tracking with misspecified models, and a large
+dimensional Lorenz 96 chaotic model. For the examples we have investigated, the new particle filter
+outperforms conventional algorithms empirically, while it has only negligible computational
+overhead. 

@@ -1,0 +1,18 @@
+Deep Neural Networks have created a paradigm shift in our ability to comprehend raw data in various
+important fields ranging from computer vision and natural language processing to intelligence
+warfare and healthcare. While DNNs are increasingly deployed either in a white-box setting where
+the model internal is publicly known, or a black-box setting where only the model outputs are known,
+a practical concern is protecting the models against Intellectual Property (IP) infringement.
+We propose BlackMarks, the first end-to-end multi-bit watermarking framework that is applicable
+in the black-box scenario. BlackMarks takes the pre-trained unmarked model and the owner's binary
+signature as inputs and outputs the corresponding marked model with a set of watermark keys. To do
+so, BlackMarks first designs a model-dependent encoding scheme that maps all possible classes
+in the task to bit '0' and bit '1' by clustering the output activations into two groups. Given the owner's
+watermark signature (a binary string), a set of key image and label pairs are designed using targeted
+adversarial attacks. The watermark (WM) is then embedded in the prediction behavior of the target
+DNN by fine-tuning the model with generated WM key set. To extract the WM, the remote model is queried
+by the WM key images and the owner's signature is decoded from the corresponding predictions according
+to the designed encoding scheme. We perform a comprehensive evaluation of BlackMarks's performance
+on MNIST, CIFAR10, ImageNet datasets and corroborate its effectiveness and robustness. BlackMarks
+preserves the functionality of the original DNN and incurs negligible WM embedding runtime overhead
+as low as 2.054%. 

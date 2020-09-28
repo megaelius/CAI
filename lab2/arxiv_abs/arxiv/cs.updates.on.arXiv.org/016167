@@ -1,0 +1,19 @@
+Convolutional neural network is a machine-learning model widely applied in various prediction
+tasks, such as computer vision and medical image analysis. Their great predictive power requires
+extensive computation, which encourages model owners to host the prediction service in a cloud
+platform. Recent researches focus on the privacy of the query and results, but they do not provide
+model privacy against the model-hosting server and may leak partial information about the results.
+Some of them further require frequent interactions with the querier or heavy computation overheads,
+which discourages querier from using the prediction service. This paper proposes a new scheme for
+privacy-preserving neural network prediction in the outsourced setting, i.e., the server cannot
+learn the query, (intermediate) results, and the model. Similar to SecureML (S&P'17), a representative
+work that provides model privacy, we leverage two non-colluding servers with secret sharing and
+triplet generation to minimize the usage of heavyweight cryptography. Further, we adopt asynchronous
+computation to improve the throughput, and design garbled circuits for the non-polynomial activation
+function to keep the same accuracy as the underlying network (instead of approximating it). Our
+experiments on MNIST dataset show that our scheme achieves an average of 122x, 14.63x, and 36.69x
+reduction in latency compared to SecureML, MiniONN (CCS'17), and EzPC (EuroS&P'19), respectively.
+For the communication costs, our scheme outperforms SecureML by 1.09x, MiniONN by 36.69x, and EzPC
+by 31.32x on average. On the CIFAR dataset, our scheme achieves a lower latency by a factor of 7.14x
+and 3.48x compared to MiniONN and EzPC, respectively. Our scheme also provides 13.88x and 77.46x
+lower communication costs than MiniONN and EzPC on the CIFAR dataset. 

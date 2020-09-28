@@ -1,0 +1,20 @@
+The Boltzmann equation, an integro-differential equation for the molecular distribution function
+in the physical and velocity phase space, governs the fluid flow behavior at a wide range of physical
+conditions, including compressible, turbulent, as well as flows involving further physics such
+as non-equilibrium internal energy exchange and chemical reactions. Despite its wide applicability,
+deterministic solution of the Boltzmann equation presents a huge computational challenge, and
+often the collision operator is simplified for practical reasons. In this work, we introduce a highly
+accurate deterministic method for the full Boltzmann equation which couples the Runge-Kutta discontinuous
+Galerkin (RKDG) discretization in time and physical space (Su et al., Comp. Fluids, 109 pp. 123-136,
+2015) and the recently developed fast Fourier spectral method in velocity space (Gamba et al., SIAM
+J. Sci. Comput., 39 pp.~B658--B674, 2017). The novelty of this approach encompasses three aspects:
+first, the fast spectral method for the collision operator applies to general collision kernels
+with little or no practical limitations, and in order to adapt to the spatial discretization, we
+propose here a singular-value-decomposition based algorithm to further reduce the cost in evaluating
+the collision term; second, the DG formulation employed has high order of accuracy at element-level,
+and has shown to be more efficient than the finite volume method; thirdly, the element-local compact
+nature of DG as well as our collision algorithm is amenable to effective parallelization on massively
+parallel architectures. The solver has been verified against analytical Bobylev-Krook-Wu solution.
+Further, the standard benchmark test cases of rarefied Fourier heat transfer, Couette flow, oscillatory
+Couette flow, normal shock wave, lid-driven cavity flow, and thermally driven cavity flow have
+been studied. 

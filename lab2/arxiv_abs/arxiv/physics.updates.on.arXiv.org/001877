@@ -1,0 +1,18 @@
+In this article we present a method by which we can reduce a time series into a single point in $\mathbb{R}^{13}$.
+We have chosen 13 dimensions so as to prevent too many points from being labeled as "noise." When using
+a Euclidean (or Mahalanobis) metric, a simple clustering algorithm will with near certainty label
+the majority of points as "noise." On pure physical considerations, this is not possible. Included
+in our 13 dimensions are four parameters which describe the coefficients of a cubic polynomial attached
+to a Gaussian picking up a general trend, four parameters picking up periodicity in a time series,
+two each for amplitude of a wave and period of a wave, and the final five report the "leftover" noise
+of the detrended and aperiodic time series. Of the final five parameters, four are the centralized
+probabilistic moments, and the final for the relative size of the series. The first main contribution
+of this work is to apply a theorem of quantum mechanics about the completeness of the solutions to
+the quantum harmonic oscillator on $L^2(\mathbb{R})$ to estimating trends in time series. The
+second main contribution is the method of fitting parameters. After many numerical trials, we realized
+that methods such a Newton-Rhaphson and Levenberg-Marquardt converge extremely fast if the initial
+guess is good. Thus we guessed many initial points in our parameter space and computed only a few iterations,
+a technique common in Keogh's work on time series clustering. Finally, we have produced a model which
+gives incredibly accurate results quickly. We ackowledge that there are faster methods as well
+of more accurate methods, but this work shows that we can still increase computation speed with little,
+if any, cost to accuracy in the sense of data clustering. 

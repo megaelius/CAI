@@ -1,0 +1,18 @@
+We study the fine-grained complexity of Leader Contributor Reachability (LCR) and Bounded-Stage
+Reachability (BSR), two variants of the safety verification problem for shared memory concurrent
+programs. For both problems, the memory is a single variable over a finite data domain. Our contributions
+are new verification algorithms and lower bounds. The latter are based on the Exponential Time Hypothesis
+(ETH), the problem Set Cover, and cross-compositions. LCR is the question whether a designated
+leader thread can reach an unsafe state when interacting with a certain number of equal contributor
+threads. We suggest two parameterizations: (1) By the size of the data domain D and the size of the
+leader L, and (2) by the size of the contributors C. We present algorithms for both cases. The key techniques
+are compact witnesses and dynamic programming. The algorithms run in O*((L(D+1))^(LD) * D^D) and
+O*(2^C) time, showing that both parameterizations are fixed-parameter tractable. We complement
+the upper bounds by (matching) lower bounds based on ETH and Set Cover. Moreover, we prove the absence
+of polynomial kernels. For BSR, we consider programs involving t different threads. We restrict
+the analysis to computations where the write permission changes s times between the threads. BSR
+asks whether a given configuration is reachable via such an s-stage computation. When parameterized
+by P, the maximum size of a thread, and t, the interesting observation is that the problem has a large
+number of difficult instances. Formally, we show that there is no polynomial kernel, no compression
+algorithm that reduces the size of the data domain D or the number of stages s to a polynomial dependence
+on P and t. This indicates that symbolic methods may be harder to find for this problem. 

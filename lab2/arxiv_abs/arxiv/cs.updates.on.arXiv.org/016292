@@ -1,0 +1,20 @@
+In this thesis, I propose a family of fully decentralized deep multi-agent reinforcement learning
+(MARL) algorithms to achieve high, real-time performance in network-level traffic signal control.
+In this approach, each intersection is modeled as an agent that plays a Markovian Game against the
+other intersection nodes in a traffic signal network modeled as an undirected graph, to approach
+the optimal reduction in delay. Following Partially Observable Markov Decision Processes (POMDPs),
+there are 3 levels of communication schemes between adjacent learning agents: independent deep
+Q-leaning (IDQL), shared states reinforcement learning (S2RL) and a shared states & rewards version
+of S2RL--S2R2L. In these 3 variants of decentralized MARL schemes, individual agent trains its
+local deep Q network (DQN) separately, enhanced by convergence-guaranteed techniques like double
+DQN, prioritized experience replay, multi-step bootstrapping, etc. To test the performance of
+the proposed three MARL algorithms, a SUMO-based simulation platform is developed to mimic the
+traffic evolution of the real world. Fed with random traffic demand between permitted OD pairs,
+a 4x4 Manhattan-style grid network is set up as the testbed, two different vehicle arrival rates
+are generated for model training and testing. The experiment results show that S2R2L has a quicker
+convergence rate and better convergent performance than IDQL and S2RL in the training process.
+Moreover, three MARL schemes all reveal exceptional generalization abilities. Their testing
+results surpass the benchmark Max Pressure (MP) algorithm, under the criteria of average vehicle
+delay, network-level queue length and fuel consumption rate. Notably, S2R2L has the best testing
+performance of reducing 34.55% traffic delay and dissipating 10.91% queue length compared with
+MP. 

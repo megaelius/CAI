@@ -1,0 +1,19 @@
+Many FPGAs vendors have recently included embedded processors in their devices, like Xilinx with
+ARM-Cortex A cores, together with programmable logic cells. These devices are known as Programmable
+System on Chip (PSoC). Their ARM cores (embedded in the processing system or PS) communicates with
+the programmable logic cells (PL) using ARM-standard AXI buses. In this paper we analyses the performance
+of exhaustive data transfers between PS and PL for a Xilinx Zynq FPGA in a co-design real scenario
+for Convolutional Neural Networks (CNN) accelerator, which processes, in dedicated hardware,
+a stream of visual information from a neuromorphic visual sensor for classification. In the PS side,
+a Linux operating system is running, which recollects visual events from the neuromorphic sensor
+into a normalized frame, and then it transfers these frames to the accelerator of multi-layered
+CNNs, and read results, using an AXI-DMA bus in a per-layer way. As these kind of accelerators try
+to process information as quick as possible, data bandwidth becomes critical and maintaining a
+good balanced data throughput rate requires some considerations. We present and evaluate several
+data partitioning techniques to improve the balance between RX and TX transfer and two different
+ways of transfers management: through a polling routine at the userlevel of the OS, and through a
+dedicated interrupt-based kernellevel driver. We demonstrate that for longer enough packets,
+the kernel-level driver solution gets better timing in computing a CNN classification example.
+Main advantage of using kernel-level driver is to have safer solutions and to have tasks scheduling
+in the OS to manage other important processes for our application, like frames collection from sensors
+and their normalization. 

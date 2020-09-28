@@ -1,0 +1,17 @@
+This article presents a novel transmission scheme for the unsourced, uncoordinated Gaussian multiple
+access problem. The proposed scheme leverages notions from single-user coding, random spreading,
+minimum-mean squared error (MMSE) estimation, and successive interference cancellation. Specifically,
+every message is split into two parts: the first fragment serves as the argument to an injective function
+that determines which spreading sequence should be employed, whereas the second component of the
+message is encoded using a polar code. The latter coded bits are then spread using the sequence determined
+during the first step. The ensuing signal is transmitted through a Gaussian multiple-access channel
+(GMAC). On the receiver side, active sequences are detected using a correlation-based energy detector,
+thereby simultaneously recovering individual signature sequences and their generating information
+bits in the form of preimages of the sequence selection function. Using the set of detected active
+spreading sequences, an MMSE estimator is employed to produce log-likelihood ratios (LLRs) for
+the second part of the messages corresponding to these detected users. The LLRs associated with
+each detected user are then passed to a list decoder of the polar code, which performs single-user
+decoding to decode the second portion of the message. This decoding operation proceeds iteratively
+by subtracting the interference due to the successfully decoded messages from the received signal,
+and repeating the above steps on the residual signal. At this stage, the proposed algorithm outperforms
+alternate existing low-complexity schemes when the number of active uses is below 225. 

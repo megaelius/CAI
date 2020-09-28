@@ -1,0 +1,18 @@
+We present a unified framework tackling two problems: class-specific 3D reconstruction from a
+single image, and generation of new 3D shape samples. These tasks have received considerable attention
+recently; however, most existing approaches rely on 3D supervision, annotation of 2D images with
+keypoints or poses, and/or training with multiple views of each object instance. Our framework
+is very general: it can be trained in similar settings to existing approaches, while also supporting
+weaker supervision. Importantly, it can be trained purely from 2D images, without pose annotations,
+and with only a single view per instance. We employ meshes as an output representation, instead of
+voxels used in most prior work. This allows us to reason over lighting parameters and exploit shading
+information during training, which previous 2D-supervised methods cannot. Thus, our method can
+learn to generate and reconstruct concave object classes. We evaluate our approach in various settings,
+showing that: (i) it learns to disentangle shape from pose and lighting; (ii) using shading in the
+loss improves performance compared to just silhouettes; (iii) when using a standard single white
+light, our model outperforms state-of-the-art 2D-supervised methods, both with and without pose
+supervision, thanks to exploiting shading cues; (iv) performance improves further when using
+multiple coloured lights, even approaching that of state-of-the-art 3D-supervised methods;
+(v) shapes produced by our model capture smooth surfaces and fine details better than voxel-based
+approaches; and (vi) our approach supports concave classes such as bathtubs and sofas, which methods
+based on silhouettes cannot learn. 

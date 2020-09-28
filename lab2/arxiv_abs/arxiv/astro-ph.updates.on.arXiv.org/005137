@@ -1,0 +1,19 @@
+Upcoming Fast Radio Burst (FRB) surveys will search $\sim$10\,$^3$ beams on sky with very high duty
+cycle, generating large numbers of single-pulse candidates. The abundance of false positives
+presents an intractable problem if candidates are to be inspected by eye, making it a good application
+for artificial intelligence (AI). We apply deep learning to single pulse classification and develop
+a hierarchical framework for ranking events by their probability of being true astrophysical transients.
+We construct a tree-like deep neural network (DNN) that takes multiple or individual data products
+as input (e.g. dynamic spectra and multi-beam detection information) and trains on them simultaneously.
+We have built training and test sets using false-positive triggers from real telescopes, along
+with simulated FRBs, and single pulses from pulsars. Training of the DNN was independently done
+for two radio telescopes: the CHIME Pathfinder, and Apertif on Westerbork. High accuracy and recall
+can be achieved with a labelled training set of a few thousand events. Even with high triggering rates,
+classification can be done very quickly on Graphical Processing Units (GPUs). That speed is essential
+for selective voltage dumps or issuing real-time VOEvents. Next, we investigate whether dedispersion
+back-ends could be completely replaced by a real-time DNN classifier. It is shown that a single forward
+propagation through a moderate convolutional network could be faster than brute-force dedispersion;
+but the low signal-to-noise per pixel makes such a classifier sub-optimal for this problem. Real-time
+automated classification may prove useful for bright, unexpected signals, both now and in the era
+of radio astronomy when data volumes and the searchable parameter spaces further outgrow our ability
+to manually inspect the data, such as for SKA and ngVLA. 

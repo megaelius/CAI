@@ -1,0 +1,17 @@
+The Rank metric decoding problem is the main problem considered in cryptography based on codes in
+the rank metric. Very efficient schemes based on this problem or quasi-cyclic versions of it have
+been proposed recently, such as those in the submissions ROLLO and RQC currently at the second round
+of the NIST Post-Quantum Cryptography Standardization Process. While combinatorial attacks
+on this problem have been extensively studied and seem now well understood, the situation is not
+as satisfactory for algebraic attacks, for which previous work essentially suggested that they
+were ineffective for cryptographic parameters. In this paper, starting from Ourivski and Johansson's
+algebraic modelling of the problem into a system of polynomial equations, we show how to augment
+this system with easily computed equations so that the augmented system is solved much faster via
+Groebner bases. This happens because the augmented system has solving degree $r$, $r+1$ or $r+2$
+depending on the parameters, where $r$ is the rank weight, which we show by extending results from
+Verbel et al. (PQCrypto 2019) on systems arising from the MinRank problem; with target rank $r$,
+Verbel et al. lower the solving degree to $r+2$, and even less for some favorable instances that they
+call superdetermined. We give complexity bounds for this approach as well as practical timings
+of an implementation using Magma. This improves upon the previously known complexity estimates
+for both Groebner basis and (non-quantum) combinatorial approaches, and for example leads to an
+attack in 200 bits on ROLLO-I-256 whose claimed security was 256 bits. 

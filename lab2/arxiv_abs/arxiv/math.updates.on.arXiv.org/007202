@@ -1,0 +1,18 @@
+Full waveform inversion (FWI) is a nonlinear PDE constrained optimization problem, which seeks
+to estimate constitutive parameters of a medium such as phase velocity, density, and anisotropy,
+by fitting waveforms. Attenuation is an additional parameter that needs to be taken into account
+in viscous media to exploit the full potential of FWI. Attenuation is more easily implemented in
+the frequency domain by using complex-valued velocities in the time-harmonic wave equation. These
+complex velocities are frequency-dependent to guarantee causality and account for dispersion.
+Since estimating a complex frequency-dependent velocity at each grid point in space is not realistic,
+the optimization is generally performed in the real domain by processing the phase velocity (or
+slowness) at a reference frequency and attenuation (or quality factor) as separate real parameters.
+This real parametrization requires an a priori empirical relation (such as the nonlinear Kolsky-Futterman
+(KF) or standard linear solid (SLS) attenuation models) between the complex velocity and the two
+real quantities, which is prone to generate modeling errors if it does not represent accurately
+the attenuation behavior of the subsurface. Moreover, it leads to a multivariate inverse problem,
+which is twice larger than the actual size of the medium and ill-posed due to the cross-talk between
+the two classes of real parameters. To alleviate these issues, we present a mono-variate algorithm
+that solves directly the optimization problem in the complex domain by processing in sequence narrow
+bands of frequencies under the assumption of band-wise frequency dependence of the sought complex
+velocities. 

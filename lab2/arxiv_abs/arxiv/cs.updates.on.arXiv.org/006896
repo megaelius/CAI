@@ -1,0 +1,17 @@
+Statistical body shape models are widely used in 3D pose estimation due to their low-dimensional
+parameters representation. However, it is difficult to avoid self-intersection between body
+parts accurately. Motivated by this fact, we proposed a novel self-intersection penalty term for
+statistical body shape models applied in 3D pose estimation. To avoid the trouble of computing self-intersection
+for complex surfaces like the body meshes, the gradient of our proposed self-intersection penalty
+term is manually derived from the perspective of geometry. First, the self-intersection penalty
+term is defined as the volume of the self-intersection region. To calculate the partial derivatives
+with respect to the coordinates of the vertices, we employed detection rays to divide vertices of
+statistical body shape models into different groups depending on whether the vertex is in the region
+of self-intersection. Second, the partial derivatives could be easily derived by the normal vectors
+of neighboring triangles of the vertices. Finally, this penalty term could be applied in gradient-based
+optimization algorithms to remove the self-intersection of triangular meshes without using any
+approximation. Qualitative and quantitative evaluations were conducted to demonstrate the effectiveness
+and generality of our proposed method compared with previous approaches. The experimental results
+show that our proposed penalty term can avoid self-intersection to exclude unreasonable predictions
+and improves the accuracy of 3D pose estimation indirectly. Further more, the proposed method could
+be employed universally in triangular mesh based 3D reconstruction. 

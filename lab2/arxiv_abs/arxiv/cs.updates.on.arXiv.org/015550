@@ -1,0 +1,19 @@
+Predictive modelling using machine learning has become very popular for spatial mapping of the
+environment. Models are often applied to make predictions far beyond sampling locations where
+new geographic locations might considerably differ from the training data in their environmental
+properties. However, areas in the predictor space without support of training data are problematic.
+Since the model has no knowledge about these environments, predictions have to be considered uncertain.
+Estimating the area to which a prediction model can be reliably applied is required. Here, we suggest
+a methodology that delineates the "area of applicability" (AOA) that we define as the area, for which
+the cross-validation error of the model applies. We first propose a "dissimilarity index" (DI)
+that is based on the minimum distance to the training data in the predictor space, with predictors
+being weighted by their respective importance in the model. The AOA is then derived by applying a
+threshold based on the DI of the training data where the DI is calculated with respect to the cross-validation
+strategy used for model training. We test for the ideal threshold by using simulated data and compare
+the prediction error within the AOA with the cross-validation error of the model. We illustrate
+the approach using a simulated case study. Our simulation study suggests a threshold on DI to define
+the AOA at the .95 quantile of the DI in the training data. Using this threshold, the prediction error
+within the AOA is comparable to the cross-validation RMSE of the model, while the cross-validation
+error does not apply outside the AOA. This applies to models being trained with randomly distributed
+training data, as well as when training data are clustered in space and where spatial cross-validation
+is applied. We suggest to report the AOA alongside predictions, complementary to validation measures.

@@ -1,0 +1,19 @@
+We present an energy-stable scheme for numerically approximating the governing equations for
+incompressible two-phase flows with different densities and dynamic viscosities for the two fluids.
+The proposed scheme employs a scalar-valued auxiliary energy variable in its formulation, and
+it satisfies a discrete energy stability property. More importantly, the scheme is computationally
+efficient. Within each time step, it computes two copies of the flow variables (velocity, pressure,
+phase field function) by solving individually a linear algebraic system involving a constant and
+time-independent coefficient matrix for each of these field variables. The coefficient matrices
+involved in these linear systems only need to be computed once and can be pre-computed. Additionally,
+within each time step the scheme requires the solution of a nonlinear algebraic equation about a
+{\em scalar-valued number} using the Newton's method. The cost for this nonlinear solver is very
+low, accounting for only a few percent of the total computation time per time step, because this nonlinear
+equation is about a scalar number, not a field function. Extensive numerical experiments have been
+presented for several two-phase flow problems involving large density ratios and large viscosity
+ratios. Comparisons with theory show that the proposed method produces physically accurate results.
+Simulations with large time step sizes demonstrate the stability of computations and verify the
+robustness of the proposed method. An implication of this work is that energy-stable schemes for
+two-phase problems can also become computationally efficient and competitive, eliminating the
+need for expensive re-computations of coefficient matrices, even at large density ratios and viscosity
+ratios. 

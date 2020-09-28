@@ -1,0 +1,17 @@
+Neural architecture search (NAS) relies on a good controller to generate better architectures
+or predict the accuracy of given architectures. However, training the controller requires both
+abundant and high-quality pairs of architectures and their accuracy, while it is costly to evaluate
+an architecture and obtain its accuracy. In this paper, we propose SemiNAS, a semi-supervised NAS
+approach that leverages numerous unlabeled architectures (without evaluation and thus nearly
+no cost) to improve the controller. Specifically, SemiNAS 1) trains an initial controller with
+a small set of architecture-accuracy data pairs; 2) uses the trained controller to predict the accuracy
+of large amount of architectures~(without evaluation); and 3) adds the generated data pairs to
+the original data to further improve the controller. SemiNAS has two advantages: 1) It reduces the
+computational cost under the same accuracy guarantee. 2) It achieves higher accuracy under the
+same computational cost. On NASBench-101 benchmark dataset, it discovers a top 0.01% architecture
+after evaluating roughly 300 architectures, with only 1/7 computational cost compared with regularized
+evolution and gradient-based methods. On ImageNet, it achieves a state-of-the-art top-1 error
+rate of $23.5\%$ (under the mobile setting) using 4 GPU-days for search. We further apply it to LJSpeech
+text to speech task and it achieves 97% intelligibility rate in the low-resource setting and 15%
+test error rate in the robustness setting, with 9%, 7% improvements over the baseline respectively.
+Our code is available at https://github.com/renqianluo/SemiNAS. 

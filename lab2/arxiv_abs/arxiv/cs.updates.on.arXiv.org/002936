@@ -1,0 +1,17 @@
+Gradual typing combines static and dynamic typing in the same program. One would hope that the performance
+in a gradually typed language would range between that of a dynamically typed language and a statically
+typed language. Existing implementations of gradually typed languages have not achieved this
+goal due to overheads associated with runtime casts. Takikawa et al. (2016) report up to 100$\times$
+slowdowns for partially typed programs. In this paper we present a compiler, named Grift, for evaluating
+implementation techniques for gradual typing. We take a straightforward but surprisingly unexplored
+implementation approach for gradual typing, that is, ahead-of-time compilation to native assembly
+code with carefully chosen runtime representations and space-efficient coercions. Our experiments
+show that this approach achieves performance on par with OCaml on statically typed programs and
+performance between that of Gambit and Racket on untyped programs. On partially typed code, the
+geometric mean ranges from 0.42$\times$ to 2.36$\times$ that of (untyped) Racket across the benchmarks.
+We implement casts using the coercions of Siek, Thiemann, and Wadler (2015). This technique eliminates
+all catastrophic slowdowns without introducing significant overhead. Across the benchmarks,
+coercions range from 15% slower (fft) to almost 2$\times$ faster (matmult) than regular casts.
+We also implement the monotonic references of Siek et al. (2015). Monotonic references eliminate
+all overhead in statically typed code, and for partially typed code, they are faster than proxied
+references, sometimes up to 1.48$\times$. 

@@ -1,0 +1,17 @@
+The widely deployed Least-Recently Used (LRU) cache replacement policy and its variants are an
+essential component of modern processors. However, we show for the first time in detail that the
+LRU states of caches can be used to leak information. The LRU states are shared among all the software
+that accesses the cache and we show that timing-based channels are possible: any access to a cache
+by a sender will modify the LRU states, and the receiver is able to observe this through a timing measurement.
+This paper presents LRU timing-based channels both when the sender and the receiver have shared
+memory, e.g., shared library data pages, and when they are fully separate processes without shared
+memory. In addition, the new LRU timing-based channels are demonstrated on both Intel and AMD processors
+in scenarios where the sender and the receiver are sharing the cache in both hyper-threaded setting
+and time-sliced setting. The transmission rate of the new LRU channel can be up to 600Kbits/s per
+cache set in the hyper-threaded setting. Different from the existing cache channels which require
+the sender to have cache misses, the new LRU channels work with cache hits, making the channel faster
+and more stealthy as no cache misses are required for the sender. This paper also demonstrates that
+the new LRU channels can be used in transient execution attacks, e.g., Spectre, to retrieve the victim's
+secret. Further, this paper presents evaluation showing that the LRU channels also pose threats
+to existing secure cache designs. Possible defenses against the LRU timing-based channels are
+discussed and evaluated in simulation, with defense features added to protect the LRU states. 

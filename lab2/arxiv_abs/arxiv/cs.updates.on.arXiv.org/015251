@@ -1,0 +1,20 @@
+The use of lower precision has emerged as a popular technique to optimize the compute and storage
+requirements of complex Deep Neural Networks (DNNs). In the quest for lower precision, recent studies
+have shown that ternary DNNs (which represent weights and activations by signed ternary values)
+represent a promising sweet spot, achieving accuracy close to full-precision networks on complex
+tasks. We propose TiM-DNN, a programmable in-memory accelerator that is specifically designed
+to execute ternary DNNs. TiM-DNN supports various ternary representations including unweighted
+{-1,0,1}, symmetric weighted {-a,0,a}, and asymmetric weighted {-a,0,b} ternary systems. The
+building blocks of TiM-DNN are TiM tiles -- specialized memory arrays that perform massively parallel
+signed ternary vector-matrix multiplications with a single access. TiM tiles are in turn composed
+of Ternary Processing Cells (TPCs), bit-cells that function as both ternary storage units and signed
+ternary multiplication units. We evaluate an implementation of TiM-DNN in 32nm technology using
+an architectural simulator calibrated with SPICE simulations and RTL synthesis. We evaluate TiM-DNN
+across a suite of state-of-the-art DNN benchmarks including both deep convolutional and recurrent
+neural networks. A 32-tile instance of TiM-DNN achieves a peak performance of 114 TOPs/s, consumes
+0.9W power, and occupies 1.96mm2 chip area, representing a 300X and 388X improvement in TOPS/W and
+TOPS/mm2, respectively, compared to an NVIDIA Tesla V100 GPU. In comparison to specialized DNN
+accelerators, TiM-DNN achieves 55X-240X and 160X-291X improvement in TOPS/W and TOPS/mm2, respectively.
+Finally, when compared to a well-optimized near-memory accelerator for ternary DNNs, TiM-DNN
+demonstrates 3.9x-4.7x improvement in system-level energy and 3.2x-4.2x speedup, underscoring
+the potential of in-memory computing for ternary DNNs. 

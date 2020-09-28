@@ -1,0 +1,17 @@
+Occlusion-aware instance-sensitive segmentation is a complex task generally split into region-based
+segmentations, by approximating instances as their bounding box. We address the showcase scenario
+of dense homogeneous layouts in which this approximation does not hold. In this scenario, outlining
+unoccluded instances by decoding a deep encoder becomes difficult, due to the translation invariance
+of convolutional layers and the lack of complexity in the decoder. We therefore propose a multicameral
+design composed of subtask-specific lightweight decoder and encoder-decoder units, coupled
+in cascade to encourage subtask-specific feature reuse and enforce a learning path within the decoding
+process. Furthermore, the state-of-the-art datasets for occlusion-aware instance segmentation
+contain real images with few instances and occlusions mostly due to objects occluding the background,
+unlike dense object layouts. We thus also introduce a synthetic dataset of dense homogeneous object
+layouts, namely Mikado, which extensibly contains more instances and inter-instance occlusions
+per image than these public datasets. Our extensive experiments on Mikado and public datasets show
+that ordinal multiscale units within the decoding process prove more effective than state-of-the-art
+design patterns for capturing position-sensitive representations. We also show that Mikado is
+plausible with respect to real-world problems, in the sense that it enables the learning of performance-enhancing
+representations transferable to real images, while drastically reducing the need of hand-made
+annotations for finetuning. The proposed dataset will be made publicly available. 

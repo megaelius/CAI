@@ -1,0 +1,19 @@
+Collision checking is a well known bottleneck in sampling-based motion planning due to its computational
+expense and the large number of checks required. To alleviate this bottleneck, we present a fast
+neural network collision checking heuristic, ClearanceNet, and incorporate it within a planning
+algorithm, ClearanceNet-RRT (CN-RRT). ClearanceNet takes as input a robot pose and the location
+of all obstacles in the workspace and learns to predict the clearance, i.e., distance to nearest
+obstacle. CN-RRT then efficiently computes a motion plan by leveraging three key features of ClearanceNet.
+First, as neural network inference is massively parallel, CN-RRT explores the space via a parallel
+RRT, which expands nodes in parallel, allowing for thousands of collision checks at once. Second,
+CN-RRT adaptively relaxes its clearance threshold for more difficult problems. Third, to repair
+errors, CN-RRT shifts states towards higher clearance through a gradient-based approach that
+uses the analytic gradient of ClearanceNet. Once a path is found, any errors are repaired via RRT
+over the misclassified sections, thus maintaining the theoretical guarantees of sampling-based
+motion planning. We evaluate the collision checking speed, planning speed, and motion plan efficiency
+in configuration spaces with up to 30 degrees of freedom. The collision checking achieves speedups
+of more than two orders of magnitude over traditional collision detection methods. Sampling-based
+planning over multiple robotic arms in new environment configurations achieves speedups of up
+to 51% over a baseline, with paths up to 25% more efficient. Experiments on a physical Fetch robot
+reaching into shelves in a cluttered environment confirm the feasibility of this method on real
+robots. 

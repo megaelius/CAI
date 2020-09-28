@@ -1,0 +1,18 @@
+The SecularMultiple code, presented in two previous papers of this series, integrates the long-term
+dynamical evolution of multiple systems with any number of bodies and hierarchical structure,
+provided that the system is composed of nested binaries. In the formalism underlying SecularMultiple,
+we previously averaged over all orbits in the system. This approximation significantly speeds
+up numerical integration of the equations of motion, making large population synthesis studies
+possible. However, the orbit averaging approximation can break down when the secular evolution
+timescale of the system is comparable to or shorter than any of the orbital periods in the system.
+Here, we present an update to SecularMultiple in which we incorporate hybrid integration techniques,
+and orbit-averaging corrections. With this update, the user can specify which orbits should be
+integrated directly (without averaging), or assuming averaged orbits. For orbits that are integrated
+directly, we implemented two integration techniques, one which is based on the regularised Kustaanheimo-Stiefel
+equations of motion in element form. We also implemented analytical orbit-averaging corrections
+for pairwise interactions to quadrupole order. The updates presented here provide more flexibility
+for integrating the long-term dynamical evolution of hierarchical multiple systems. By effectively
+combining direct integration and orbit averaging the long-term evolution can be accurately computed,
+but with significantly lower computational cost compared to existing direct N-body codes. We give
+a number of examples in which the new features are beneficial. Our updated code, which is written
+in C++ supplemented with a user-friendly interface in Python, is freely available. 

@@ -1,0 +1,18 @@
+We propose an efficient algorithm for finding first-order Nash equilibria in min-max problems
+of the form $\min_{x \in X}\max_{y \in Y} F(x,y)$, where the objective function is smooth in both
+variables and concave with respect to $y$; the sets $X$ and $Y$ are convex and "projection-friendly",
+and $Y$ is compact. Our goal is to find an $(\varepsilon_x,\varepsilon_y)$-accurate first-order
+Nash equilibrium with respect to a stationarity criterion that is stronger than the commonly used
+proximal gradient norm. The proposed approach is fairly simple: we perform approximate proximal-point
+iterations on the primal function, with inexact oracle provided by Nesterov's algorithm run on
+the regularized function $F(x_t,\cdot)$ with $O(\varepsilon_y)$ regularization term, $x_t$
+being the current primal iterate. The resulting iteration complexity is $O({\varepsilon_x}^{-2}
+\, {\varepsilon_y}^{-1/2})$ up to a logarithmic factor. As a byproduct, in the regime $\varepsilon_y
+= O(\varepsilon_x^2)$ our algorithm gives $O({\varepsilon_x}^{-3})$ complexity for finding
+$\varepsilon_x$-stationary point of the natural Moreau envelope of the primal function. Moreover,
+when $F(x,\cdot)$ is strongly concave, the complexity bound improves to $O({\varepsilon_x}^{-2}{\kappa_y}^{1/2})$
+up to a logarithmic factor, where $\kappa_y$ is the appropriate condition number. In both scenarios,
+our algorithm outperforms or matches the performance (in terms of convergence rate) of several
+recently proposed schemes while, arguably, being more transparent, easier to implement, and converging
+with respect to a stronger criterion. Finally, we extend the approach to non-Euclidean proximal
+geometries. 

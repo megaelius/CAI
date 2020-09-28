@@ -1,0 +1,20 @@
+Routine applications of electronic structure theory to molecules and periodic systems need to
+compute the electron density from given Hamiltonian and, in case of non-orthogonal basis sets,
+overlap matrices. System sizes can range from few to thousands or, in some examples, millions of
+atoms. Different discretization schemes (basis sets) and different system geometries (finite
+non-periodic vs. infinite periodic boundary conditions) yield matrices with different structures.
+The ELectronic Structure Infrastructure (ELSI) project provides an open-source software interface
+to facilitate the implementation and optimal use of high-performance solver libraries covering
+cubic scaling eigensolvers, linear scaling density-matrix-based algorithms, and other reduced
+scaling methods in between. In this paper, we present recent improvements and developments inside
+ELSI, mainly covering (1) new solvers connected to the interface, (2) matrix layout and communication
+adapted for parallel calculations of periodic and/or spin-polarized systems, (3) routines for
+density matrix extrapolation in geometry optimization and molecular dynamics calculations,
+and (4) general utilities such as parallel matrix I/O and JSON output. The ELSI interface has been
+integrated into four electronic structure code projects (DFTB+, DGDFT, FHI-aims, SIESTA), allowing
+us to rigorously benchmark the performance of the solvers on an equal footing. Based on results of
+a systematic set of large-scale benchmarks performed with Kohn-Sham density-functional theory
+and density-functional tight-binding theory, we identify factors that strongly affect the efficiency
+of the solvers, and propose a decision layer that assists with the solver selection process. Finally,
+we describe a reverse communication interface encoding matrix-free iterative solver strategies
+that are amenable, e.g., for use with planewave basis sets. 

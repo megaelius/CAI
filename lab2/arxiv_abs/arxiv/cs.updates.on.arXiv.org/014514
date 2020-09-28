@@ -1,0 +1,18 @@
+A major challenge in the Deep RL (DRL) community is to train agents able to generalize over unseen
+situations, which is often approached by training them on a diversity of tasks (or environments).
+A powerful method to foster diversity is to procedurally generate tasks by sampling their parameters
+from a multi-dimensional distribution, enabling in particular to propose a different task for
+each training episode. In practice, to get the high diversity of training tasks necessary for generalization,
+one has to use complex procedural generation systems. With such generators, it is hard to get prior
+knowledge on the subset of tasks that are actually learnable at all (many generated tasks may be unlearnable),
+what is their relative difficulty and what is the most efficient task distribution ordering for
+training. A typical solution in such cases is to rely on some form of Automated Curriculum Learning
+(ACL) to adapt the sampling distribution. One limit of current approaches is their need to explore
+the task space to detect progress niches over time, which leads to a loss of time. Additionally, we
+hypothesize that the induced noise in the training data may impair the performances of brittle DRL
+learners. We address this problem by proposing a two stage ACL approach where 1) a teacher algorithm
+first learns to train a DRL agent with a high-exploration curriculum, and then 2) distills learned
+priors from the first run to generate an "expert curriculum" to re-train the same agent from scratch.
+Besides demonstrating 50% improvements on average over the current state of the art, the objective
+of this work is to give a first example of a new research direction oriented towards refining ACL techniques
+over multiple learners, which we call Classroom Teaching. 

@@ -1,0 +1,19 @@
+In this work we show the superiority, in terms of computational efficiency, of the high-degree $k$-method
+with respect to low-degree isogeometric discretizations. The $k$-method is the isogeometric
+method based on splines (or NURBS, etc.) with maximum regularity. When it is used as a classical finite
+element method, increasing the degree becomes soon prohibitive and, in practice, quadratic $C^1$
+approximation is the most efficient choice. Recent works have proposed alternative approaches
+and significant improvements, still without reaching the $k$-method full efficiency. With our
+innovative implementation, increasing the spline degree and regularity (i.e., the $k$-refinement)
+significantly improves not only the accuracy, which is known, but also the accuracy-to-computation-time
+ratio. The novelty is a matrix-free strategy, which is first used in this context but is well-known
+for other high-order methods. Matrix-free implementation speeds up matrix operations, and, perhaps
+even more important, greatly reduces memory consumption. Our strategy employs the recently proposed
+weighted quadrature, which is an ad-hoc strategy to compute the integrals of the Galerkin system.
+The other key ingredient is a preconditioner based on the Fast Diagonalization method, an old idea
+to solve Sylvester-like equations. Our numerical tests show that the new implementation is faster
+than the standard one (where the main cost is the matrix formation by standard Gaussian quadrature)
+even for low degree. But the main point is that, with the new approach, the $k$-method gets orders
+of magnitude faster by increasing the degree, given a target accuracy. What we present is applicable
+to more complex and realistic differential problems, but its effectiveness will depend on the preconditioner
+stage, which is as always problem-dependent. 

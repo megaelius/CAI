@@ -1,0 +1,17 @@
+We consider the information extraction framework known as document spanners, and study the problem
+of efficiently computing the results of the extraction from an input document, where the extraction
+task is described as a sequential variable-set automaton (VA). We pose this problem in the setting
+of enumeration algorithms, where we can first run a preprocessing phase and must then produce the
+results with a small delay between any two consecutive results. Our goal is to have an algorithm which
+is tractable in combined complexity, i.e., in the sizes of the input document and the VA; while ensuring
+the best possible data complexity bounds in the input document size, i.e., constant delay in the
+document size. Several recent works at PODS'18 proposed such algorithms but with linear delay in
+the document size or with an exponential dependency in size of the (generally nondeterministic)
+input VA. In particular, Florenzano et al. suggest that our desired runtime guarantees cannot be
+met for general sequential VAs. We refute this and show that, given a nondeterministic sequential
+VA and an input document, we can enumerate the mappings of the VA on the document with the following
+bounds: the preprocessing is linear in the document size and polynomial in the size of the VA, and
+the delay is independent of the document and polynomial in the size of the VA. The resulting algorithm
+thus achieves tractability in combined complexity and the best possible data complexity bounds.
+Moreover, it is rather easy to describe, in particular for the restricted case of so-called extended
+VAs. Finally, we evaluate our algorithm empirically using a prototype implementation. 

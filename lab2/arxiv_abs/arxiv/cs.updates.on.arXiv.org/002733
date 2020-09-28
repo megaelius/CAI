@@ -1,0 +1,17 @@
+Being intensively studied, visual object tracking has witnessed great advances in either speed
+(e.g., with correlation filters) or accuracy (e.g., with deep features). Real-time and high accuracy
+tracking algorithms, however, remain scarce. In this paper we study the problem from a new perspective
+and present a novel parallel tracking and verifying (PTAV) framework, by taking advantage of the
+ubiquity of multi-thread techniques and borrowing ideas from the success of parallel tracking
+and mapping in visual SLAM. The proposed PTAV framework is typically composed of two components,
+a (base) tracker T and a verifier V, working in parallel on two separate threads. The tracker T aims
+to provide a super real-time tracking inference and is expected to perform well most of the time;
+by contrast, the verifier V validates the tracking results and corrects T when needed. The key innovation
+is that, V does not work on every frame but only upon the requests from T; on the other end, T may adjust
+the tracking according to the feedback from V. With such collaboration, PTAV enjoys both the high
+efficiency provided by T and the strong discriminative power by V. Meanwhile, to adapt V to object
+appearance changes over time, we maintain a dynamic target template pool for adaptive verification,
+resulting in further performance improvements. In our extensive experiments on popular benchmarks
+including OTB2015, TC128, UAV20L and VOT2016, PTAV achieves the best tracking accuracy among all
+real-time trackers, and in fact even outperforms many deep learning based algorithms. Moreover,
+as a general framework, PTAV is very flexible with great potentials for future improvement and generalization.

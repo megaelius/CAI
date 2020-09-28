@@ -1,0 +1,19 @@
+Human-chosen passwords are the a dominant form of authentication systems. Passwords strength
+estimators are used to help users avoid picking weak passwords by predicting how many attempts a
+password cracker would need until it finds a given password. In this paper we propose a novel password
+strength estimator, called PESrank, which accurately models the behavior of a powerful password
+cracker. PESrank calculates the rank of a given password in an optimal descending order of likelihood.
+PESrank estimates a given password's rank in fractions of a second---without actually enumerating
+the passwords---so it is practical for online use. It also has a training time that is drastically
+shorter than previous methods. Moreover, PESrank is efficiently tweakable to allow model personalization
+in fractions of a second, without the need to retrain the model; and it is explainable: it is able to
+provide information on why the password has its calculated rank, and gives the user insight on how
+to pick a better password. Our idea is to cast the question of password rank estimation in a probabilistic
+framework used in side-channel cryptanalysis. We view each password as a point in a $d$-dimensional
+search space, and learn the probability distribution of each dimension separately. The dimensions
+represent the base word, plus a dimension for each possible transformation such as adding a suffix
+or using a capitalization pattern. Using this model, password strength estimation is analogous
+to side-channel rank estimation. We implemented PERrank in Python and conducted an extensive evaluation
+study of it. We also integrated it into the registration page of a course at our university. Even with
+a model based on 905 million passwords, the response time was well under 1 second, with up to a 1-bit
+accuracy margin between the upper bound and the lower bound on the rank. 

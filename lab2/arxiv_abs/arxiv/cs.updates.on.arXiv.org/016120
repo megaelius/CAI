@@ -1,0 +1,20 @@
+It is often infeasible or impossible to obtain ground truth labels for medical data. To circumvent
+this, one may build rule-based or other expert-knowledge driven labelers to ingest data and yield
+silver labels absent any ground-truth training data. One popular such labeler is CheXpert, a labeler
+that produces diagnostic labels for chest X-ray radiology reports. CheXpert is very useful, but
+is relatively computationally slow, especially when integrated with end-to-end neural pipelines,
+is non-differentiable so can't be used in any applications that require gradients to flow through
+the labeler, and does not yield probabilistic outputs, which limits our ability to improve the quality
+of the silver labeler through techniques such as active learning. In this work, we solve all three
+of these problems with $\texttt{CheXpert++}$, a BERT-based, high-fidelity approximation to
+CheXpert. $\texttt{CheXpert++}$ achieves 99.81\% parity with CheXpert, which means it can be
+reliably used as a drop-in replacement for CheXpert, all while being significantly faster, fully
+differentiable, and probabilistic in output. Error analysis of $\texttt{CheXpert++}$ also demonstrates
+that $\texttt{CheXpert++}$ has a tendency to actually correct errors in the CheXpert labels, with
+$\texttt{CheXpert++}$ labels being more often preferred by a clinician over CheXpert labels (when
+they disagree) on all but one disease task. To further demonstrate the utility of these advantages
+in this model, we conduct a proof-of-concept active learning study, demonstrating we can improve
+accuracy on an expert labeled random subset of report sentences by approximately 8\% over raw, unaltered
+CheXpert by using one-iteration of active-learning inspired re-training. These findings suggest
+that simple techniques in co-learning and active learning can yield high-quality labelers under
+minimal, and controllable human labeling demands. 

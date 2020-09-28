@@ -1,0 +1,18 @@
+Static program analysis today takes an analytical approach which is quite suitable for a well-scoped
+system. Data- and control-flow is taken into account. Special cases such as pointers, procedures,
+and undefined behavior must be handled. A program is analyzed precisely on the statement level.
+However, the analytical approach is ill-equiped to handle implementations of complex, large-scale,
+heterogeneous software systems we see in the real world. Existing static analysis techniques that
+scale, trade correctness (i.e., soundness or completeness) for scalability and build on strong
+assumptions (e.g., language-specificity). Scalable static analysis are well-known to report
+errors that do *not* exist (false positives) or fail to report errors that *do* exist (false negatives).
+Then, how do we know the degree to which the analysis outcome is correct? In this paper, we propose
+an approach to scale-oblivious greybox program analysis with bounded error which applies efficient
+approximation schemes (FPRAS) from the foundations of machine learning: PAC learnability. Given
+two parameters $\delta$ and $\epsilon$, with probability at least $(1-\delta)$, our Monte Carlo
+Program Analysis (MCPA) approach produces an outcome that has an average error at most $\epsilon$.
+The parameters $\delta>0$ and $\epsilon>0$ can be chosen arbitrarily close to zero (0) such that
+the program analysis outcome is said to be probably-approximately correct (PAC). We demonstrate
+the pertinent concepts of MCPA using three applications: $(\epsilon,\delta)$-approximate quantitative
+analysis, $(\epsilon,\delta)$-approximate software verification, and $(\epsilon,\delta)$-approximate
+patch verification. 

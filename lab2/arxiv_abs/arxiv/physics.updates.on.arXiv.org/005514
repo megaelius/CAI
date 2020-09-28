@@ -1,0 +1,19 @@
+The objective of this study was to develop a PET tumor-segmentation framework that addresses the
+challenges of limited spatial resolution, high image noise, and lack of clinical training data
+with ground-truth tumor boundaries in PET imaging. We propose a three-module PET-segmentation
+framework in the context of segmenting primary tumors in 3D FDG-PET images of patients with lung
+cancer on a per-slice basis. The first module generates PET images containing highly realistic
+tumors with known ground-truth using a new stochastic and physics-based approach, addressing
+lack of training data. The second module trains a modified U-net using these images, helping it learn
+the tumor-segmentation task. The third module fine-tunes this network using a small-sized clinical
+dataset with radiologist-defined delineations as surrogate ground-truth, helping the framework
+learn features potentially missed in simulated tumors. The framework's accuracy, generalizability
+to different scanners, sensitivity to partial volume effects (PVEs) and efficacy in reducing the
+number of training images were quantitatively evaluated using Dice similarity coefficient (DSC)
+and several other metrics. The framework yielded reliable performance in both simulated (DSC:
+0.87 (95% CI: 0.86, 0.88)) and patient images (DSC: 0.73 (95% CI: 0.71, 0.76)), outperformed several
+widely used semi-automated approaches, accurately segmented relatively small tumors (smallest
+segmented cross-section was 1.83 cm2), generalized across five PET scanners (DSC: 0.74), was relatively
+unaffected by PVEs, and required low training data (training with data from even 30 patients yielded
+DSC of 0.70). In conclusion, the proposed framework demonstrated the ability for reliable automated
+tumor delineation in FDG-PET images of patients with lung cancer. 

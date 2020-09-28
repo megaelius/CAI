@@ -1,0 +1,20 @@
+This paper investigates intelligent replacement policies for improving the hit-rate of gigascale
+DRAM caches. Cache replacement policies are commonly used to improve the hit-rate of on-chip caches.
+The most effective replacement policies often require the cache to track per-line reuse state to
+inform their decision. A fundamental challenge on DRAM caches, however, is that stateful policies
+would require significant bandwidth to maintain per-line DRAM cache state. As such, DRAM cache
+replacement policies have primarily been stateless policies, such as always-install or probabilistic
+bypass. Unfortunately, we find that stateless policies are often too coarse-grain and become ineffective
+at the size and associativity of DRAM caches. Ideally, we want a replacement policy that can obtain
+the hit-rate benefits of stateful replacement policies, but keep the bandwidth-efficiency of
+stateless policies. In our study, we find that tracking per-line reuse state can enable an effective
+replacement policy that can mitigate common thrashing patterns seen in gigascale caches. We propose
+a stateful replacement/bypass policy called RRIP Age-On-Bypass (RRIP-AOB), that tracks reuse
+state for high-reuse lines, protects such lines by bypassing other lines, and Ages the state On cache
+Bypass. Unfortunately, such a stateful technique requires significant bandwidth to update state.
+To this end, we propose Efficient Tracking of Reuse (ETR). ETR makes state tracking efficient by
+accurately tracking the state of only one line from a region, and using the state of that line to guide
+the replacement decisions for other lines in that region. ETR reduces the bandwidth for tracking
+replacement state by 70%, and makes stateful policies practical for DRAM caches. Our evaluations
+with a 2GB DRAM cache, show that our RRIP-AOB and ETR techniques provide 18% speedup while needing
+less than 1KB of SRAM. 

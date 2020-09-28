@@ -1,0 +1,19 @@
+Adaptive data analysis has posed a challenge to science due to its ability to generate false hypotheses
+on moderately large data sets. In general, with non-adaptive data analyses (where queries to the
+data are generated without being influenced by answers to previous queries) a data set containing
+$n$ samples may support exponentially many queries in $n$. This number reduces to linearly many
+under naive adaptive data analysis, and even sophisticated remedies such as the Reusable Holdout
+(Dwork et. al 2015) only allow quadratically many queries in $n$. In this work, we propose a new framework
+for adaptive science which exponentially improves on this number of queries under a restricted
+yet scientifically relevant setting, where the goal of the scientist is to find a single (or a few)
+true hypotheses about the universe based on the samples. Such a setting may describe the search for
+predictive factors of some disease based on medical data, where the analyst may wish to try a number
+of predictive models until a satisfactory one is found. Our solution, the Generic Holdout, involves
+two simple ingredients: (1) a partitioning of the data into a exploration set and a holdout set and
+(2) a limited exposure strategy for the holdout set. An analyst is free to use the exploration set
+arbitrarily, but when testing hypotheses against the holdout set, the analyst only learns the answer
+to the question: "Is the given hypothesis true (empirically) on the holdout set?" -- and no more information,
+such as "how well" the hypothesis fits the holdout set. The resulting scheme is immediate to analyze,
+but despite its simplicity we do not believe our method is obvious, as evidenced by the many violations
+in practice. Our proposal can be seen as an alternative to pre-registration, and allows researchers
+to get the benefits of adaptive data analysis without the problems of adaptivity. 

@@ -1,0 +1,17 @@
+Predicting face attributes from web images is challenging due to background clutters and face variations.
+A novel deep learning framework is proposed for face attribute prediction in the wild. It cascades
+two CNNs (LNet and ANet) for face localization and attribute prediction respectively. These nets
+are trained in a cascade manner with attribute labels, but pre-trained differently. LNet is pre-trained
+with massive general object categories, while ANet is pre-trained with massive face identities.
+This framework not only outperforms state-of-the-art with large margin, but also reveals multiple
+valuable facts on learning face representation as below. (1) It shows how LNet and ANet can be improved
+by different pre-training strategies. (2) It reveals that although filters of LNet are fine-tuned
+by attribute labels, their response maps over the entire image have strong indication of face's
+location. This fact enables training LNet for face localization with only attribute tags, but without
+face bounding boxes (which are required by all detection works). With a novel fast feed-forward
+scheme, the cascade of LNet and ANet can localize faces and recognize attributes in images with arbitrary
+sizes in real time. (3) It also demonstrates that the high-level hidden neurons of ANet automatically
+discover semantic concepts after pre-training, and such concepts are significantly enriched
+after fine-tuning. Each attribute can be well explained by a sparse linear combination of these
+concepts. By analyzing such combinations, attributes show clear grouping patterns, which could
+be well interpreted semantically. 

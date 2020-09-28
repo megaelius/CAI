@@ -1,0 +1,19 @@
+Software engineers designing recursive fork-join programs destined to run on massively parallel
+computing systems must be cognizant of how their program's memory requirements scale in a many-processor
+execution. Although tools exist for measuring memory usage during one particular execution of
+a parallel program, such tools cannot bound the worst-case memory usage over all possible parallel
+executions. This paper introduces Cilkmem, a tool that analyzes the execution of a deterministic
+Cilk program to determine its $p$-processor memory high-water mark (MHWM), which is the worst-case
+memory usage of the program over \emph{all possible} $p$-processor executions. Cilkmem employs
+two new algorithms for computing the $p$-processor MHWM. The first algorithm calculates the exact
+$p$-processor MHWM in $O(T_1 \cdot p)$ time, where $T_1$ is the total work of the program. The second
+algorithm solves, in $O(T_1)$ time, the approximate threshold problem, which asks, for a given
+memory threshold $M$, whether the $p$-processor MHWM exceeds $M/2$ or whether it is guaranteed
+to be less than $M$. Both algorithms are memory efficient, requiring $O(p \cdot D)$ and $O(D)$ space,
+respectively, where $D$ is the maximum call-stack depth of the program's execution on a single thread.
+Our empirical studies show that Cilkmem generally exhibits low overheads. Across ten application
+benchmarks from the Cilkbench suite, the exact algorithm incurs a geometric-mean multiplicative
+overhead of $1.54$ for $p=128$, whereas the approximation-threshold algorithm incurs an overhead
+of $1.36$ independent of $p$. In addition, we use Cilkmem to reveal and diagnose a previously unknown
+issue in a large image-alignment program contributing to unexpectedly high memory usage under
+parallel executions. 

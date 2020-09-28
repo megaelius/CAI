@@ -1,0 +1,18 @@
+When multiple star-forming gas structures overlap along the line-of-sight and emit optically
+thin emission at significantly different radial velocities, the emission can become non-Gaussian
+and often exhibits two distinct peaks. Traditional line-fitting techniques can fail to account
+adequately for these double-peaked profiles, providing inaccurate cloud kinematics measurements.
+We present a new method called Convnet Line-fitting Of Velocities in Emission-line Regions (CLOVER)
+for distinguishing between one-component, two-component, and noise-only emission lines using
+1D convolutional neural networks trained with synthetic spectral cubes. CLOVER utilizes spatial
+information in spectral cubes by predicting on $3\times3$ pixel sub-cubes, using both the central
+pixel's spectrum and the average spectrum over the $3\times3$ grid as input. On an unseen set of 10,000
+synthetic spectral cubes in each predicted class, CLOVER has classification accuracies of $\sim99\%$
+for the one-component class and $\sim97\%$ for the two-component class. For the noise-only class,
+which is analogous to a signal-to-noise cutoff of four for traditional line-fitting methods, CLOVER
+has classification accuracy of $100\%$. CLOVER also has exceptional performance on real observations,
+correctly distinguishing between the three classes across a variety of star-forming regions.
+In addition, CLOVER quickly and accurately extracts kinematics directly from spectra identified
+as two-component class members. Moreover, we show that CLOVER is easily scalable to emission lines
+with hyperfine splitting, making it an attractive tool in the new era of large-scale NH$_3$ and N$_2$H$^+$
+mapping surveys. 

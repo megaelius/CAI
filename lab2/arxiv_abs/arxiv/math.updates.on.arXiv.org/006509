@@ -1,0 +1,17 @@
+Numerical climate- and weather-prediction models require the fast solution of the equations of
+fluid dynamics. Discontinuous Galerkin (DG) discretisations have several advantageous properties.
+They can be used for arbitrary domains and support a structured data layout, which is particularly
+important on modern chip architectures. For smooth solutions, higher order approximations can
+be particularly efficient since errors decrease exponentially in the polynomial degree. Due to
+the wide separation of timescales in atmospheric dynamics, semi-implicit time integrators are
+highly efficient, since the implicit treatment of fast waves avoids tight constraints on the time
+step size, and can therefore improve overall efficiency. However, if implicit-explicit (IMEX)
+integrators are used, a large linear system of equations has to be solved in every time step. A particular
+problem for DG discretisations of velocity-pressure systems is that the normal Schur-complement
+reduction to an elliptic system for the pressure is not possible since the numerical fluxes introduce
+artificial diffusion terms. For the shallow water equations, which form an important model system,
+hybridized DG methods have been shown to overcome this issue. However, no attention has been paid
+to the efficient solution of the resulting linear system of equations. In this paper we show that
+the elliptic system for the flux unknowns can be solved efficiently by using a non-nested multigrid
+algorithm. The method is implemented in the Firedrake library and we demonstrate the superior performance
+of the algorithm for a representative model problem. 

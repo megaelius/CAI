@@ -1,0 +1,17 @@
+Supervised deep learning with pixel-wise training labels has great successes on multi-person
+part segmentation. However, data labeling at pixel-level is very expensive. To solve the problem,
+people have been exploring to use synthetic data to avoid the data labeling. Although it is easy to
+generate labels for synthetic data, the results are much worse compared to those using real data
+and manual labeling. The degradation of the performance is mainly due to the domain gap, i.e., the
+discrepancy of the pixel value statistics between real and synthetic data. In this paper, we observe
+that real and synthetic humans both have a skeleton (pose) representation. We found that the skeletons
+can effectively bridge the synthetic and real domains during the training. Our proposed approach
+takes advantage of the rich and realistic variations of the real data and the easily obtainable labels
+of the synthetic data to learn multi-person part segmentation on real images without any human-annotated
+labels. Through experiments, we show that without any human labeling, our method performs comparably
+to several state-of-the-art approaches which require human labeling on Pascal-Person-Parts
+and COCO-DensePose datasets. On the other hand, if part labels are also available in the real-images
+during training, our method outperforms the supervised state-of-the-art methods by a large margin.
+We further demonstrate the generalizability of our method on predicting novel keypoints in real
+images where no real data labels are available for the novel keypoints detection. Code and pre-trained
+models are available at https://github.com/kevinlin311tw/CDCL-human-part-segmentation

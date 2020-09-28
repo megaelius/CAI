@@ -1,0 +1,17 @@
+In this paper, we propose a novel method for irregularity detection. Previous researches solve
+this problem as a One-Class Classification (OCC) task where they train a reference model on all of
+the available samples. Then, they consider a test sample as an anomaly if it has a diversion from the
+reference model. Generative Adversarial Networks (GANs) have achieved the most promising results
+for OCC while implementing and training such networks, especially for the OCC task, is a cumbersome
+and computationally expensive procedure. To cope with the mentioned challenges, we present a simple
+but effective method to solve the irregularity detection as a binary classification task in order
+to make the implementation easier along with improving the detection performance. We learn two
+deep neural networks (generator and discriminator) in a GAN-style setting on merely the normal
+samples. During training, the generator gradually becomes an expert to generate samples which
+are similar to the normal ones. In the training phase, when the generator fails to produce normal
+data (in the early stages of learning and also prior to the complete convergence), it can be considered
+as an irregularity generator. In this way, we simultaneously generate the irregular samples. Afterward,
+we train a binary classifier on the generated anomalous samples along with the normal instances
+in order to be capable of detecting irregularities. The proposed framework applies to different
+related applications of outlier and anomaly detection in images and videos, respectively. The
+results confirm that our proposed method is superior to the baseline and state-of-the-art solutions.

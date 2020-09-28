@@ -1,0 +1,20 @@
+Given an input graph G and a node v in G, homogeneous network embedding (HNE) aims to map the graph structure
+in the vicinity of v to a fixed-dimensional feature vector. Such feature vectors can then be fed to
+a machine learning pipeline as inputs, e.g., for link prediction. The vast majority of existing
+approaches to HNE are immensely expensive, and, thus, are limited to small graphs. The few that do
+scale to large graphs, on the other hand, are based on quick-and-rough heuristics that fail to fully
+capture the local graph structure, leading to limited effectiveness of the extracted feature vectors.
+Meanwhile, in recent years there have been rapid advancements in scalable algorithms for computing
+approximate personalized PageRank (PPR), which captures rich graph topological information.
+A natural idea is: can we construct an effective embedding of a node v based on its approximate PPR
+values? This turns out to be challenging, due to the fact that PPR was designed for a very different
+purpose, i.e., ranking nodes in the graph based on their relative importance from an individual
+node v's perspective. In contrast, in HNE the goal is to build unified node embeddings for all nodes
+from a global view. Consequently, using PPR values directly as node embeddings leads to sub-optimal
+result effectiveness. Motivated by this, we propose Node-Reweighted PageRank (NRP), a novel solution
+that transforms personalized PageRank values into effective node embeddings, by iteratively
+solving an optimization problem. NRP computation is efficient and scalable: in particular, NRP
+embeddings for a billion-edge graph can be computed in a few hours on a single CPU core. At the same
+time, the quality of NRP embeddings is highly competitive: as our experiments demonstrate, in terms
+of prediction accuracy, NRP consistently outperforms existing HNE methods on 3 graph analysis
+tasks, on both large and small graphs. 

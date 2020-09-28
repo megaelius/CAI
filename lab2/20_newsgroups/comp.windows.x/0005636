@@ -1,0 +1,6 @@
+Hi,  there were a couple of articles posted to this group the other
+day with the above subject heading.  Unfortunately, they expired 
+before I could read them.  I could really use an xterm-like thing    
+on my Amiga 4000; could somwone give me any information.
+Thanks,
+Larry R. Nittler

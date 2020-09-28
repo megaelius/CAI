@@ -1,0 +1,19 @@
+We aim to find a solution $\bm{x}\in\mathbb{R}^n/\mathbb{C}^n$ to a system of quadratic equations
+of the form $b_i=\lvert\langle\bm{a}_i,\bm{x}\rangle\rvert^2$, $i=1,2,\ldots,m$, e.g.,
+the well-known phase retrieval problem, which is generally NP-hard. It has been proved that the
+number $m = 2n-1$ of generic random measurement vectors $\bm{a}_i\in\mathbb{R}^n$ is sufficient
+and necessary for uniquely determining the $n$-length real vector $\bm{x}$ up to a global sign.
+The uniqueness theory, however, does not provide a construction or characterization of this unique
+solution. As opposed to the recent nonconvex state-of-the-art solvers, we revert to the convex
+relaxation semidefinite programming (SDP) approach and propose to indirectly minimize the convex
+objective by successive and incremental nonconvex optimization, termed as \texttt{IncrePR},
+to overcome the excessive computation cost of typical SDP solvers. \texttt{IncrePR} avoids sensitive
+dependence of initialization of nonconvex approaches and achieves global convergence, which
+makes it also promising for more general models and measurements. For real Gaussian model, \texttt{IncrePR}
+achieves perfect recovery from $m=2n-1$ noiseless measurement and the recovery is stable from
+noisy measurement. When applying \texttt{IncrePR} for structured (non-Gaussian) measurements,
+such as transmission matrix and oversampling Fourier measurement, it can also locate a reconstruction
+close to true reconstruction with few measurements. Extensive numerical tests show that \texttt{IncrePR}
+outperforms other state-of-the-art methods in the sharpest phase transition of perfect recovery
+for Gaussian model and the best reconstruction quality for other non-Gaussian models, in particular
+Fourier phase retrieval. 

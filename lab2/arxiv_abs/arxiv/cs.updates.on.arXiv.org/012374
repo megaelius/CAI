@@ -1,0 +1,20 @@
+The wide adoption of deep neural networks has been accompanied by ever-increasing energy and performance
+demands due to the expensive nature of training them. Numerous special-purpose architectures
+have been proposed to accelerate training: both digital and hybrid digital-analog using resistive
+RAM (ReRAM) crossbars. ReRAM-based accelerators have demonstrated the effectiveness of ReRAM
+crossbars at performing matrix-vector multiplication operations that are prevalent in training.
+However, they still suffer from inefficiency due to the use of serial reads and writes for performing
+the weight gradient and update step. A few works have demonstrated the possibility of performing
+outer products in crossbars, which can be used to realize the weight gradient and update step without
+the use of serial reads and writes. However, these works have been limited to low precision operations
+which are not sufficient for typical training workloads. Moreover, they have been confined to a
+limited set of training algorithms for fully-connected layers only. To address these limitations,
+we propose a bit-slicing technique for enhancing the precision of ReRAM-based outer products,
+which is substantially different from bit-slicing for matrix-vector multiplication only. We
+incorporate this technique into a crossbar architecture with three variants catered to different
+training algorithms. To evaluate our design on different types of layers in neural networks (fully-connected,
+convolutional, etc.) and training algorithms, we develop PANTHER, an ISA-programmable training
+accelerator with compiler support. Our evaluation shows that PANTHER achieves up to $8.02\times$,
+$54.21\times$, and $103\times$ energy reductions as well as $7.16\times$, $4.02\times$, and
+$16\times$ execution time reductions compared to digital accelerators, ReRAM-based accelerators,
+and GPUs, respectively. 

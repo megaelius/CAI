@@ -1,0 +1,18 @@
+General-relativistic magnetohydrodynamic (GRMHD) simulations have revolutionized our understanding
+of black-hole accretion. Here, we present a GPU-accelerated GRMHD code H-AMR with multi-faceted
+optimizations that, collectively, accelerate computation by 2-5 orders of magnitude for a wide
+range of applications. Firstly, it involves a novel implementation of a spherical-polar grid with
+3D adaptive mesh refinement that operates in each of the 3 dimensions independently. This allows
+us to circumvent the Courant condition near the polar singularity, which otherwise cripples high-res
+computational performance. Secondly, we demonstrate that local adaptive time-stepping (LAT)
+on a logarithmic spherical-polar grid accelerates computation by a factor of $\lesssim10$ compared
+to traditional hierarchical time-stepping approaches. Jointly, these unique features lead to
+an effective speed of $\sim10^9$ zone-cycles-per-second-per-node on 5,400 NVIDIA V100 GPUs (i.e.,
+900 nodes of the OLCF Summit supercomputer). We demonstrate its computational performance by presenting
+the first GRMHD simulation of a tilted thin accretion disk threaded by a toroidal magnetic field
+around a rapidly spinning black hole. With an effective resolution of $13$,$440\times4$,$608\times8$,$092$
+cells, and a total of $\lesssim22$ billion cells and $\sim0.65\times10^8$ timesteps, it is among
+the largest astrophysical simulations ever performed. We find that frame-dragging by the black
+hole tears up the disk into two independently precessing sub-disks. The innermost sub-disk rotation
+axis intermittently aligns with the black hole spin, demonstrating for the first time that such
+long-sought alignment is possible in the absence of large-scale poloidal magnetic fields. 

@@ -1,0 +1,20 @@
+I examine the COMPAS recidivism risk score and criminal history data collected by ProPublica in
+2016 that fueled intense debate and research in the nascent field of 'algorithmic fairness'. ProPublica's
+COMPAS data is used in an increasing number of studies to test various definitions of algorithmic
+fairness. This paper takes a closer look at the actual datasets put together by ProPublica. In particular,
+the sub-datasets built to study the likelihood of recidivism within two years of a defendant's original
+COMPAS survey screening date. I take a new yet simple approach to visualize these data, by analyzing
+the distribution of defendants across COMPAS screening dates. I find that ProPublica made an important
+data processing error when it created these datasets, failing to implement a two-year sample cutoff
+rule for recidivists in such datasets (whereas it implemented a two-year sample cutoff rule for
+non-recidivists). When I implement a simple two-year COMPAS screen date cutoff rule for recidivists,
+I estimate that in the two-year general recidivism dataset ProPublica kept over 40% more recidivists
+than it should have. This fundamental problem in dataset construction affects some statistics
+more than others. It obviously has a substantial impact on the recidivism rate; artificially inflating
+it. For the two-year general recidivism dataset created by ProPublica, the two-year recidivism
+rate is 45.1%, whereas, with the simple COMPAS screen date cutoff correction I implement, it is 36.2%.
+Thus, the two-year recidivism rate in ProPublica's dataset is inflated by over 24%. This also affects
+the positive and negative predictive values. On the other hand, this data processing error has little
+impact on some of the other key statistical measures, which are less susceptible to changes in the
+relative share of recidivists, such as the false positive and false negative rates, and the overall
+accuracy. 

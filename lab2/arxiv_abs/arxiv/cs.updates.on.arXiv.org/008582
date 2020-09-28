@@ -1,0 +1,17 @@
+Large-scale distributed computing systems often contain thousands of distributed nodes (machines).
+Monitoring the conditions of these nodes is important for system management purposes, which, however,
+can be extremely resource demanding as this requires collecting local measurements of each individual
+node and constantly sending those measurements to a central controller. Meanwhile, it is often
+useful to forecast the future system conditions for various purposes such as resource planning/allocation
+and anomaly detection, but it is usually too resource-consuming to have one forecasting model running
+for each node, which may also neglect correlations in observed metrics across different nodes.
+In this paper, we propose a mechanism for collecting and forecasting the resource utilization of
+machines in a distributed computing system in a scalable manner. We present an algorithm that allows
+each local node to decide when to transmit its most recent measurement to the central node, so that
+the transmission frequency is kept below a given constraint value. Based on the measurements received
+from local nodes, the central node summarizes the received data into a small number of clusters.
+Since the cluster partitioning can change over time, we also present a method to capture the evolution
+of clusters and their centroids. As an effective way to reduce the amount of computation, time-series
+forecasting models are trained on the time-varying centroids of each cluster, to forecast the future
+resource utilizations of a group of local nodes. The effectiveness of our proposed approach is confirmed
+by extensive experiments using multiple real-world datasets. 

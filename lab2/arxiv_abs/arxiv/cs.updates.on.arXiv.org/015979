@@ -1,0 +1,19 @@
+We consider problems of the following type: given a graph $G$, how many edges are needed in the worst
+case for a sparse subgraph $H$ that approximately preserves distances between a given set of node
+pairs $P$? The goal of this note is to address two observed phenomena in the area: - There has been a
+trend of simple constructions based on the hitting set technique, followed by somewhat more complicated
+constructions that improve over the bounds obtained from hitting sets by roughly a $\log$ factor.
+- The bounds for all-pairs spanners of $n$-node graphs are much better than the corresponding bounds
+for pairwise spanners, plugging in $|P| = {n \choose 2}$ demand pairs. It is currently unclear if
+this means one can expect improved pairwise spanners over the current constructions. First, we
+observe that one can generally reduce these problems to a relaxed version where it suffices to satisfy
+any constant fraction of the given demand pairs. With this slack, random sampling constructions
+no longer need their extra $\log$ factor, and thus may be used in place of more involved constructions.
+This simplifies and unifies a few proofs in the area, and it improves the size of the $+4$ pairwise
+spanner from $\widetilde{O}(np^{2/7})$ [Kavitha Th. Comp. Sys. '17] to $O(np^{2/7})$. Second
+point, we observe that for a certain class of ``demand-oblivious'' constructions, the extremal
+bounds to satisfy all $|P| = {n \choose 2}$ possible demand pairs are the same as those at the ``crossing
+point'' where the number of demand pairs $|P|$ eclipses the number of edges in the subgraph. This
+implies conditional lower bounds for the $+4$ and $+6$ pairwise spanners, and (using the above pairwise
+result) it improves the size of the $+4$ all-pairs spanner [Chechik SODA '13] from $\widetilde{O}(n^{7/5})$
+to $O(n^{7/5})$. 

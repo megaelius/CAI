@@ -1,0 +1,20 @@
+This paper presents a detailed comparison between 3 methods for emulating CPU-intensive reactive
+transport models (RTMs): Gaussian processes (GP), polynomial chaos expansion (PCE) and deep neural
+networks (DNNs). Besides direct emulation of the simulated uranium concentration time series,
+replacing the original RTM by its emulator is also investigated for global sensitivity analysis
+(GSA), uncertainty propagation (UP) and probabilistic calibration using Markov chain Monte Carlo
+(MCMC) sampling. The selected DNN is found to be superior to both GP and PCE in reproducing the input
+- output behavior of the considered 8-dimensional and 13-dimensional CPU-intensive RTMs. Furthermore,
+the used two PCE variants: standard PCE and sparse PCE (sPCE) appear to always provide the least accuracy
+while not differing much in performance. As a consequence of its better emulation capabilities,
+the used DNN outperforms the two other methods for UP. As of GSA, DNN and GP offer equally good approximations
+to the true first-order and total-order Sobol sensitivity indices while PCE does somewhat less
+well. Most surprisingly, despite its superior emulation skills the DNN approach leads to the worst
+solution of the considered synthetic inverse problem which involves 1224 measurement data with
+low noise. This apparently contradicting behavior is at least partially due to the small but complicated
+deterministic noise that affects the DNN-based predictions. Indeed, this complex error structure
+can drive the emulated solutions far away from the true posterior distribution. Overall, our findings
+indicate that when the available training set is relatively small (75 - to 500 input - output examples)
+and fixed beforehand, DNNs can well emulate RTMs but are not suited to emulation-based inversion.
+In contrast, GP performs fairly well across all considered tasks: direct emulation, GSA, UP, and
+probabilistic inversion. 

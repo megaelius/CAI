@@ -1,0 +1,20 @@
+Betweenness centrality (BC) is one of the most used centrality measures for network analysis, which
+seeks to describe the importance of nodes in a network in terms of the fraction of shortest paths that
+pass through them. It is key to many valuable applications, including community detection and network
+dismantling. Computing BC scores on large networks is computationally challenging due to high
+time complexity. Many approximation algorithms have been proposed to speed up the estimation of
+BC, which are mainly sampling-based. However, these methods are still prone to considerable execution
+time on large-scale networks, and their results are often exacerbated when small changes happen
+to the network structures. In this paper, we focus on identifying nodes with high BC in a graph, since
+many application scenarios are built upon retrieving nodes with top-k BC. Different from previous
+heuristic methods, we turn this task into a learning problem and design an encoder-decoder based
+framework to resolve the problem. More specifcally, the encoder leverages the network structure
+to encode each node into an embedding vector, which captures the important structural information
+of the node. The decoder transforms the embedding vector for each node into a scalar, which captures
+the relative rank of this node in terms of BC. We use the pairwise ranking loss to train the model to
+identify the orders of nodes regarding their BC. By training on small-scale networks, the learned
+model is capable of assigning relative BC scores to nodes for any unseen networks, and thus identifying
+the highly-ranked nodes. Comprehensive experiments on both synthetic and real-world networks
+demonstrate that, compared to representative baselines, our model drastically speeds up the prediction
+without noticeable sacrifce in accuracy, and outperforms the state-of-the-art by accuracy on
+several large real-world networks. 

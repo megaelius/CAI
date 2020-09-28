@@ -1,0 +1,18 @@
+Synthesizing human's movements such as dancing is a flourishing research field which has several
+applications in computer graphics. Recent studies have demonstrated the advantages of deep neural
+networks (DNNs) for achieving remarkable performance in motion and music tasks with little effort
+for feature pre-processing. However, applying DNNs for generating dance to a piece of music is nevertheless
+challenging, because of 1) DNNs need to generate large sequences while mapping the music input,
+2) the DNN needs to constraint the motion beat to the music, and 3) DNNs require a considerable amount
+of hand-crafted data. In this study, we propose a weakly supervised deep recurrent method for real-time
+basic dance generation with audio power spectrum as input. The proposed model employs convolutional
+layers and a multilayered Long Short-Term memory (LSTM) to process the audio input. Then, another
+deep LSTM layer decodes the target dance sequence. Notably, this end-to-end approach has 1) an auto-conditioned
+decode configuration that reduces accumulation of feedback error of large dance sequence, 2) uses
+a contrastive cost function to regulate the mapping between the music and motion beat, and 3) trains
+with weak labels generated from the motion beat, reducing the amount of hand-crafted data. We evaluate
+the proposed network based on i) the similarities between generated and the baseline dancer motion
+with a cross entropy measure for large dance sequences, and ii) accurate timing between the music
+and motion beat with an F-measure. Experimental results revealed that, after training using a small
+dataset, the model generates basic dance steps with low cross entropy and maintains an F-measure
+score similar to that of a baseline dancer. 

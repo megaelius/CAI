@@ -1,0 +1,17 @@
+Object skeletons are useful for object representation and object detection. They are complementary
+to the object contour, and provide extra information, such as how object scale (thickness) varies
+among object parts. But object skeleton extraction from natural images is very challenging, because
+it requires the extractor to be able to capture both local and non-local image context in order to
+determine the scale of each skeleton pixel. In this paper, we present a novel fully convolutional
+network with multiple scale-associated side outputs to address this problem. By observing the
+relationship between the receptive field sizes of the different layers in the network and the skeleton
+scales they can capture, we introduce two scale-associated side outputs to each stage of the network.
+The network is trained by multi-task learning, where one task is skeleton localization to classify
+whether a pixel is a skeleton pixel or not, and the other is skeleton scale prediction to regress the
+scale of each skeleton pixel. Supervision is imposed at different stages by guiding the scale-associated
+side outputs toward the groundtruth skeletons at the appropriate scales. The responses of the multiple
+scale-associated side outputs are then fused in a scale-specific way to detect skeleton pixels
+using multiple scales effectively. Our method achieves promising results on two skeleton extraction
+datasets, and significantly outperforms other competitors. Additionally, the usefulness of
+the obtained skeletons and scales (thickness) are verified on two object detection applications:
+Foreground object segmentation and object proposal detection. 

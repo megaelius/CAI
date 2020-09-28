@@ -1,0 +1,17 @@
+Knowledge graphs represented as RDF datasets are becoming increasingly popular, and they are an
+integral part of many machine learning applications. A rich ecosystem of data management systems
+and tools that support RDF has evolved over the years to facilitate high performance storage and
+retrieval of RDF data, most notably RDF database management systems that support the SPARQL query
+language. Surprisingly, machine learning tools for knowledge graphs typically do not use SPARQL,
+despite the obvious advantages of using a database system. This is due to the mismatch between SPARQL
+and machine learning tools in terms of the expected data model and the programming style. Machine
+learning tools work on data in tabular format and process it using an imperative programming style,
+while SPARQL is declarative and has as the basic query operation matching graph patterns to RDF triples.
+We posit that a good interface to knowledge graphs from a machine learning software stack should
+use an imperative, navigational programming paradigm based on graph traversal rather than the
+SPARQL query paradigm based on graph patterns. In this paper, we introduce RDFFrames, a framework
+that provides such an interface. RDFFrames enables the user to make a sequence of calls in a programming
+language such as Python to define the data to be extracted from a knowledge graph stored in an RDF database
+system. It then translates these calls into compact SPQARL queries, executes these queries on the
+database system, and returns the results in a standard tabular format. Thus, RDFframes combines
+the usability of a machine learning software stack with the performance of an RDF database system.

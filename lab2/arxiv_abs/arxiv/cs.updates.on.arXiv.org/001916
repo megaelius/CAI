@@ -1,0 +1,17 @@
+We study the problem of response selection for multi-turn conversation in retrieval-based chatbots.
+The task requires matching a response candidate with a conversation context, whose challenges
+include how to recognize important parts of the context, and how to model the relationships among
+utterances in the context. Existing matching methods may lose important information in contexts
+as we can interpret them with a unified framework in which contexts are transformed to fixed-length
+vectors without any interaction with responses before matching. The analysis motivates us to propose
+a new matching framework that can sufficiently carry the important information in contexts to matching
+and model the relationships among utterances at the same time. The new framework, which we call a
+sequential matching framework (SMF), lets each utterance in a context interacts with a response
+candidate at the first step and transforms the pair to a matching vector. The matching vectors are
+then accumulated following the order of the utterances in the context with a recurrent neural network
+(RNN) which models the relationships among the utterances. The context-response matching is finally
+calculated with the hidden states of the RNN. Under SMF, we propose a sequential convolutional network
+and sequential attention network and conduct experiments on two public data sets to test their performance.
+Experimental results show that both models can significantly outperform the state-of-the-art
+matching methods. We also show that the models are interpretable with visualizations that provide
+us insights on how they capture and leverage the important information in contexts for matching.

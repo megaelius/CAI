@@ -1,0 +1,19 @@
+This paper studies schemes to de-bias the Lasso in a linear model $y=X\beta+\epsilon$ where the
+goal is to construct confidence intervals for $a_0^T\beta$ in a direction $a_0$, where $X$ has iid
+$N(0,\Sigma)$ rows. We show that previously analyzed propositions to de-bias the Lasso require
+a modification in order to enjoy efficiency in a full range of sparsity. This modification takes
+the form of a degrees-of-freedom adjustment that accounts for the dimension of the model selected
+by Lasso. Let $s_0$ be the true sparsity. If $\Sigma$ is known and the ideal score vector proportional
+to $X\Sigma^{-1}a_0$ is used, the unadjusted de-biasing schemes proposed previously enjoy efficiency
+if $s_0\lll n^{2/3}$. However, if $s_0\ggg n^{2/3}$, the unadjusted schemes cannot be efficient
+in certain $a_0$: then it is necessary to modify existing procedures by a degrees-of-freedom adjustment.
+This modification grants asymptotic efficiency for any $a_0$ when $s_0/p\to 0$ and $s_0\log(p/s_0)/n
+\to 0$. If $\Sigma$ is unknown, efficiency is granted for general $a_0$ when $$\frac{s_0\log p}{n}+\min\Big\{\frac{s_\Omega\log
+p}{n},\frac{\|\Sigma^{-1}a_0\|_1\sqrt{\log p}}{\|\Sigma^{-1/2}a_0\|_2 \sqrt n}\Big\}+\frac{\min(s_\Omega,s_0)\log
+p}{\sqrt n}\to0$$ where $s_\Omega=\|\Sigma^{-1}a_0\|_0$, provided that the de-biased estimate
+is modified with the degrees-of-freedom adjustment. The dependence in $s_0,s_\Omega$ and $\|\Sigma^{-1}a_0\|_1$
+is optimal. Our estimated score vector provides a novel methodology to handle dense $a_0$. Our analysis
+shows that the degrees-of-freedom adjustment is not needed when the initial bias in direction $a_0$
+is small, which is granted under stringent conditions on $\Sigma^{-1}$. The main proof argument
+is an interpolation path similar to that typically used to derive Slepian's lemma. It yields a new
+$\ell_\infty$ error bound for the Lasso which is of independent interest. 

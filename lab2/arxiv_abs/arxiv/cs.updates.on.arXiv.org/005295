@@ -1,0 +1,18 @@
+We introduce Conflict-Aware Replicated Data Types (CARDs). CARDs are significantly more expressive
+than Conflict-free Replicated Data Types (CRDTs) as they support operations that can conflict
+with each other. Introducing conflicting operations typically brings the need to block an operation
+in at least some executions, leading to difficulties in programming and reasoning about correctness,
+as well as potential inefficiencies in implementation. The salient aspect of CARDs is that they
+allow ease of programming and reasoning about programs comparable to CRDTs, while enabling algorithmic
+inference of conflicts so that an operation is blocked only when necessary. The key idea is to have
+a language that allows associating with each operation a two-state predicate called {\em consistency
+guard} that relates the state of the replica on which the operation is executing to a global state
+(which is never computed). The consistency guards bring three advantages. First, a programmer
+developing an operation needs only to choose a consistency guard that states what the operation
+will rely on. In particular, they do not need to consider the operation conflicts with other operation.
+This allows purely {\em modular reasoning}. Second, we show that consistency guard allow reducing
+the complexity of reasoning needed to prove invariants that hold as CARD operations are executing.
+The reason is that consistency guard allow reducing the reasoning about concurrency among operations
+to purely {\em sequential reasoning}. Third, conflicts among operations can be algorithmically
+inferred by checking whether the effect of one operation preserves the consistency guard of another
+operation. 

@@ -1,0 +1,17 @@
+Deep learning has achieved state-of-the-art accuracies on several computer vision tasks. However,
+the computational and energy requirements associated with training such deep neural networks
+can be quite high. In this paper, we propose a cumulative training strategy with Net2Net transformation
+that achieves training computational efficiency without incurring large accuracy loss, in comparison
+to a model trained from scratch. We achieve this by first training a small network (with lesser parameters)
+on a small subset of the original dataset, and then gradually expanding the network using Net2Net
+transformation to train incrementally on larger subsets of the dataset. This incremental training
+strategy with Net2Net utilizes function-preserving transformations that transfers knowledge
+from each previous small network to the next larger network, thereby, reducing the overall training
+complexity. Our experiments demonstrate that compared with training from scratch, cumulative
+training yields ~2x reduction in computational complexity for training TinyImageNet using VGG19
+at iso-accuracy. Besides training efficiency, a key advantage of our cumulative training strategy
+is that we can perform pruning during Net2Net expansion to obtain a final network with optimal configuration
+(~0.4x lower inference compute complexity) compared to conventional training from scratch. We
+also demonstrate that the final network obtained from cumulative training yields better generalization
+performance and noise robustness. Further, we show that mutual inference from all the networks
+created with cumulative Net2Net expansion enables improved adversarial input detection. 

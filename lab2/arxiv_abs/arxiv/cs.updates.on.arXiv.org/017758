@@ -1,0 +1,17 @@
+3D photography is a new medium that allows viewers to more fully experience a captured moment. In
+this work, we refer to a 3D photo as one that displays parallax induced by moving the viewpoint (as
+opposed to a stereo pair with a fixed viewpoint). 3D photos are static in time, like traditional photos,
+but are displayed with interactive parallax on mobile or desktop screens, as well as on Virtual Reality
+devices, where viewing it also includes stereo. We present an end-to-end system for creating and
+viewing 3D photos, and the algorithmic and design choices therein. Our 3D photos are captured in
+a single shot and processed directly on a mobile device. The method starts by estimating depth from
+the 2D input image using a new monocular depth estimation network that is optimized for mobile devices.
+It performs competitively to the state-of-the-art, but has lower latency and peak memory consumption
+and uses an order of magnitude fewer parameters. The resulting depth is lifted to a layered depth
+image, and new geometry is synthesized in parallax regions. We synthesize color texture and structures
+in the parallax regions as well, using an inpainting network, also optimized for mobile devices,
+on the LDI directly. Finally, we convert the result into a mesh-based representation that can be
+efficiently transmitted and rendered even on low-end devices and over poor network connections.
+Altogether, the processing takes just a few seconds on a mobile device, and the result can be instantly
+viewed and shared. We perform extensive quantitative evaluation to validate our system and compare
+its new components against the current state-of-the-art. 

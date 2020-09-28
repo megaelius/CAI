@@ -1,0 +1,19 @@
+High-performance implementations of graph algorithms are challenging to implement on new parallel
+hardware such as GPUs, because of three challenges: (1) difficulty of coming up with graph building
+blocks, (2) load imbalance on parallel hardware, and (3) graph problems having low arithmetic intensity.
+To address these challenges, GraphBLAS is an innovative, on-going effort by the graph analytics
+community to propose building blocks based in sparse linear algebra, which will allow graph algorithms
+to be expressed in a performant, succinct, composable and portable manner. In this paper, we examine
+the performance challenges of a linear algebra-based approach to building graph frameworks and
+describe new design principles for overcoming these bottlenecks. Among the new design principles
+is exploiting input sparsity, which allows users to write graph algorithms without specifying
+push and pull direction. Exploiting output sparsity allows users to tell the backend which values
+of the output in a single vectorized computation they do not want computed. Load-balancing is an
+important feature for balancing work amongst parallel workers. We describe the important load-balancing
+features for handling graphs with different characteristics. The design principles described
+in this paper have been implemented in "GraphBLAST", the first open-source linear algebra-based
+graph framework on GPU targeting high-performance computing. The results show that on a single
+GPU, GraphBLAST has on average at least an order of magnitude speedup over previous GraphBLAS implementations
+SuiteSparse and GBTL, comparable performance to the fastest GPU hardwired primitives and shared-memory
+graph frameworks Ligra and Gunrock, and better performance than any other GPU graph framework,
+while offering a simpler and more concise programming model. 

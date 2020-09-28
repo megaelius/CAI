@@ -1,0 +1,17 @@
+Local Interpretable Model-Agnostic Explanations (LIME) is a popular technique used to increase
+the interpretability and explainability of black box Machine Learning (ML) algorithms. LIME typically
+generates an explanation for a single prediction by any ML model by learning a simpler interpretable
+model (e.g. linear classifier) around the prediction through generating simulated data around
+the instance by random perturbation, and obtaining feature importance through applying some form
+of feature selection. While LIME and similar local algorithms have gained popularity due to their
+simplicity, the random perturbation and feature selection methods result in "instability" in
+the generated explanations, where for the same prediction, different explanations can be generated.
+This is a critical issue that can prevent deployment of LIME in a Computer-Aided Diagnosis (CAD)
+system, where stability is of utmost importance to earn the trust of medical professionals. In this
+paper, we propose a deterministic version of LIME. Instead of random perturbation, we utilize agglomerative
+Hierarchical Clustering (HC) to group the training data together and K-Nearest Neighbour (KNN)
+to select the relevant cluster of the new instance that is being explained. After finding the relevant
+cluster, a linear model is trained over the selected cluster to generate the explanations. Experimental
+results on three different medical datasets show the superiority for Deterministic Local Interpretable
+Model-Agnostic Explanations (DLIME), where we quantitatively determine the stability of DLIME
+compared to LIME utilizing the Jaccard similarity among multiple generated explanations. 

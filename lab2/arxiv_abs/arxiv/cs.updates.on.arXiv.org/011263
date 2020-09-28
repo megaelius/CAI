@@ -1,0 +1,20 @@
+Model interpretation, or explanation of a machine learning classifier, aims to extract generalizable
+knowledge from a trained classifier into a human-understandable format, for various purposes
+such as model assessment, debugging and trust. From a computaional viewpoint, it is formulated
+as approximating the target classifier using a simpler interpretable model, such as rule models
+like a decision set/list/tree. Often, this approximation is handled as standard supervised learning
+and the only difference is that the labels are provided by the target classifier instead of ground
+truth. This paradigm is particularly popular because there exists a variety of well-studied supervised
+algorithms for learning an interpretable classifier. However, we argue that this paradigm is suboptimal
+for it does not utilize the unique property of the model interpretation problem, that is, the ability
+to generate synthetic instances and query the target classifier for their labels. We call this the
+active-query property, suggesting that we should consider model interpretation from an active
+learning perspective. Following this insight, we argue that the active-query property should
+be employed when designing a model interpretation algorithm, and that the generation of synthetic
+instances should be integrated seamlessly with the algorithm that learns the model interpretation.
+In this paper, we demonstrate that by doing so, it is possible to achieve more faithful interpretation
+with simpler model complexity. As a technical contribution, we present an active algorithm Active
+Decision Set Induction (ADS) to learn a decision set, a set of if-else rules, for model interpretation.
+ADS performs a local search over the space of all decision sets. In every iteration, ADS computes
+confidence intervals for the value of the objective function of all local actions and utilizes active-query
+to determine the best one. 

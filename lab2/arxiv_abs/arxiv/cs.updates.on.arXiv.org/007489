@@ -1,0 +1,19 @@
+Classical dimension reduction problem can be loosely formulated as a problem of finding a $k$-dimensional
+affine subspace of ${\mathbb R}^n$ onto which data points ${\mathbf x}_1,\cdots, {\mathbf x}_N$
+can be projected without loss of valuable information. We reformulate this problem in the language
+of tempered distributions, i.e. as a problem of approximating an empirical probability density
+function $p_{\rm{emp}}({\mathbf x}) = \frac{1}{N} \sum_{i=1}^N \delta^n (\bold{x} - \bold{x}_i)$,
+where $\delta^n$ is an $n$-dimensional Dirac delta function, by another tempered distribution
+$q({\mathbf x})$ whose density is supported in some $k$-dimensional subspace. Thus, our problem
+is reduced to the minimization of a certain loss function $I(q)$ measuring the distance from $q$
+to $p_{\rm{emp}}$ over a pertinent set of generalized functions, denoted $\mathcal{G}_k$. Another
+classical problem of data analysis is the sufficient dimension reduction problem. We show that
+it can be reduced to the following problem: given a function $f: {\mathbb R}^n\rightarrow {\mathbb
+R}$ and a probability density function $p({\mathbf x})$, find a function of the form $g({\mathbf
+w}^T_1{\mathbf x}, \cdots, {\mathbf w}^T_k{\mathbf x})$ that minimizes the loss ${\mathbb E}_{{\mathbf
+x}\sim p} |f({\mathbf x})-g({\mathbf w}^T_1{\mathbf x}, \cdots, {\mathbf w}^T_k{\mathbf x})|^2$.
+We first show that search spaces of the latter two problems are in one-to-one correspondence which
+is defined by the Fourier transform. We introduce a nonnegative penalty function $R(f)$ and a set
+of ordinary functions $\Omega_\epsilon = \{f| R(f)\leq \epsilon\}$ in such a way that $\Omega_\epsilon$
+`approximates' the space $\mathcal{G}_k$ when $\epsilon \rightarrow 0$. Then we present an algorithm
+for minimization of $I(f)+\lambda R(f)$, based on the idea of two-step iterative computation.

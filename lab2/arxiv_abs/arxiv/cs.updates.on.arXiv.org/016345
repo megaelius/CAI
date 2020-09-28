@@ -1,0 +1,19 @@
+The interpretation of medical images is a challenging task, often complicated by the presence of
+artifacts, occlusions, limited contrast and more. Most notable is the case of chest radiography,
+where there is a high inter-rater variability in the detection and classification of abnormalities.
+This is largely due to inconclusive evidence in the data or subjective definitions of disease appearance.
+An additional example is the classification of anatomical views based on 2D Ultrasound images.
+Often, the anatomical context captured in a frame is not sufficient to recognize the underlying
+anatomy. Current machine learning solutions for these problems are typically limited to providing
+probabilistic predictions, relying on the capacity of underlying models to adapt to limited information
+and the high degree of label noise. In practice, however, this leads to overconfident systems with
+poor generalization on unseen data. To account for this, we propose a system that learns not only
+the probabilistic estimate for classification, but also an explicit uncertainty measure which
+captures the confidence of the system in the predicted output. We argue that this approach is essential
+to account for the inherent ambiguity characteristic of medical images from different radiologic
+exams including computed radiography, ultrasonography and magnetic resonance imaging. In our
+experiments we demonstrate that sample rejection based on the predicted uncertainty can significantly
+improve the ROC-AUC for various tasks, e.g., by 8% to 0.91 with an expected rejection rate of under
+25% for the classification of different abnormalities in chest radiographs. In addition, we show
+that using uncertainty-driven bootstrapping to filter the training data, one can achieve a significant
+increase in robustness and accuracy. 

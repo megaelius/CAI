@@ -1,0 +1,17 @@
+Edge (or N\'ed\'elec) finite elements are theoretically sound and widely used by the computational
+electromagnetics community. However, its implementation, specially for high order methods,
+is not trivial, since it involves many technicalities that are not properly described in the literature.
+To fill this gap, we provide a comprehensive description of a general implementation of edge elements
+of first kind within the scientific software project FEMPAR. We cover into detail how to implement
+arbitrary order (i.e., $p$-adaptive) elements on hexahedral and tetrahedral meshes. First, we
+set the three classical ingredients of the finite element definition by Ciarlet, both in the reference
+and the physical space: cell topologies, polynomial spaces and moments. With these ingredients,
+shape functions are automatically implemented by defining a judiciously chosen polynomial pre-basis
+that spans the local finite element space combined with a change of basis to automatically obtain
+a canonical basis with respect to the moments at hand. Next, we discuss global finite element spaces
+putting emphasis on the construction of global shape functions through oriented meshes, appropriate
+geometrical mappings, and equivalence classes of moments, in order to preserve the inter-element
+continuity of tangential components of the magnetic field. Finally, we extend the proposed methodology
+to generate global curl-conforming spaces on non-conforming hierarchically refined (i.e., $h$-adaptive)
+meshes with arbitrary order finite elements. Numerical results include experimental convergence
+rates to test the proposed implementation. 

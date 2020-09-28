@@ -1,0 +1,18 @@
+Since very few contributions to the development of an unified memory orchestration framework for
+efficient management of both host and remote idle memory have been made, we present Valet, an efficient
+approach to orchestration of host and remote shared memory for improving performance of memory
+intensive workloads. The paper makes three original contributions. First, we redesign the data
+flow in the critical path by introducing a host-coordinated memory pool that works as a local cache
+to reduce the latency in the critical path of the host and remote memory orchestration. Second, Valet
+utilizes unused local memory across containers by managing local memory via Valet host-coordinated
+memory pool, which allows containers to dynamically expand and shrink their memory allocations
+according to the workload demands. Third, Valet provides an efficient remote memory reclaiming
+technique on remote peers, based on two optimizations: (1) an activity-based victim selection
+scheme to allow the least-active-chunk of data to be selected for serving the eviction requests
+and (2) a migration protocol to move the least-active-chunk of data to less-memory-pressured remote
+node. As a result, Valet can effectively reduce the performance impact and migration overhead on
+local nodes. Our extensive experiments on both NoSQL systems and Machine Learning (ML) workloads
+show that Valet outperforms existing representative remote paging systems with up to 226X throughput
+improvement and up to 98% latency decrease over conventional OS swap facility for big data and ML
+workloads, and by up to 5.5X throughput improvement and up to 78.4% latency decrease over the state-of-the-art
+remote paging systems. Valet is open sourced at https://github.com/git-disl/Valet. 

@@ -1,0 +1,19 @@
+Diagnosis and treatment guidance are aided by detecting relevant biomarkers in medical images.
+Although supervised deep learning can perform accurate segmentation of pathological areas, it
+is limited by requiring a-priori definitions of these regions, large-scale annotations, and a
+representative patient cohort in the training set. In contrast, anomaly detection is not limited
+to specific definitions of pathologies and allows for training on healthy samples without annotation.
+Anomalous regions can then serve as candidates for biomarker discovery. Knowledge about normal
+anatomical structure brings implicit information for detecting anomalies. We propose to take
+advantage of this property using bayesian deep learning, based on the assumption that epistemic
+uncertainties will correlate with anatomical deviations from a normal training set. A Bayesian
+U-Net is trained on a well-defined healthy environment using weak labels of healthy anatomy produced
+by existing methods. At test time, we capture epistemic uncertainty estimates of our model using
+Monte Carlo dropout. A novel post-processing technique is then applied to exploit these estimates
+and transfer their layered appearance to smooth blob-shaped segmentations of the anomalies. We
+experimentally validated this approach in retinal optical coherence tomography (OCT) images,
+using weak labels of retinal layers. Our method achieved a Dice index of 0.789 in an independent anomaly
+test set of age-related macular degeneration (AMD) cases. The resulting segmentations allowed
+very high accuracy for separating healthy and diseased cases with late wet AMD, dry geographic atrophy
+(GA), diabetic macular edema (DME) and retinal vein occlusion (RVO). Finally, we qualitatively
+observed that our approach can also detect other deviations in normal scans such as cut edge artifacts.

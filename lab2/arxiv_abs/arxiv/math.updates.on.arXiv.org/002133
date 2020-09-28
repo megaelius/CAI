@@ -1,0 +1,19 @@
+Some pitfalls of the false discovery rate (FDR) as an error criterion for multiple testing of $n$
+hypotheses include (a) committing to an error level $q$ in advance limits its use in exploratory
+data analysis, and (b) controlling the false discovery proportion (FDP) on average provides no
+guarantee on its variability. We take a step towards overcoming these barriers using a new perspective
+we call "simultaneous selective inference." Many FDR procedures (such as Benjamini-Hochberg)
+can be viewed as carving out a $\textit{path}$ of potential rejection sets $\varnothing = \mathcal
+R_0 \subseteq \mathcal R_1 \subseteq \cdots \subseteq \mathcal R_n \subseteq [n]$, assigning
+some algorithm-dependent estimate $\widehat{\text{FDP}}(\mathcal R_k)$ to each one. Then,
+they choose $k^* = \max\{k: \widehat{\text{FDP}}(\mathcal R_k) \leq q\}$. We prove that for all
+these algorithms, given independent null p-values and a confidence level $\alpha$, either the
+same $\widehat{FDP}$ or a minor variant thereof bounds the unknown FDP to within a small explicit
+(algorithm-dependent) constant factor $c_{\text{alg}}(\alpha)$, uniformly across the entire
+path, with probability $1-\alpha$. Our bounds open up a middle ground between fully simultaneous
+inference (guarantees for all $2^n$ possible rejection sets), and fully selective inference (guarantees
+only for $\mathcal R_{k^*}$). They allow the scientist to $\textit{spot}$ one or more suitable
+rejection sets (Select Post-hoc On the algorithm's Trajectory), by picking data-dependent sizes
+or error-levels, after examining the entire path of $\widehat{\text{FDP}}(\mathcal R_k)$ and
+the uniform upper band on $\text{FDP}$. The price for the additional flexibility of spotting is
+small, for example the multiplier for BH corresponding to 95% confidence is approximately 2. 

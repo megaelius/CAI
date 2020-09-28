@@ -1,0 +1,19 @@
+This paper explores the impact of simulator accuracy on architecture design decisions in the general-purpose
+graphics processing unit (GPGPU) space. We perform a detailed, quantitative analysis of the most
+popular publicly available GPU simulator, GPGPU-Sim, against our enhanced version of the simulator,
+updated to model the memory system of modern GPUs in more detail. Our enhanced GPU model is able to
+describe the NVIDIA Volta architecture in sufficient detail to reduce error in memory system even
+counters by as much as 66X. The reduced error in the memory system further reduces execution time
+error versus real hardware by 2.5X. To demonstrate the accuracy of our enhanced model against a real
+machine, we perform a counter-by-counter validation against an NVIDIA TITAN V Volta GPU, demonstrating
+the relative accuracy of the new simulator versus the publicly available model. We go on to demonstrate
+that the simpler model discounts the importance of advanced memory system designs such as out-of-order
+memory access scheduling, while overstating the impact of more heavily researched areas like L1
+cache bypassing. Our results demonstrate that it is important for the academic community to enhance
+the level of detail in architecture simulators as system complexity continues to grow. As part of
+this detailed correlation and modeling effort, we developed a new Correlator toolset that includes
+a consolidation of applications from a variety of popular GPGPU benchmark suites, designed to run
+in reasonable simulation times. The Correlator also includes a database of hardware profiling
+results for all these applications on NVIDIA cards ranging from Fermi to Volta and a toolchain that
+enables users to gather correlation statistics and create detailed counter-by-counter hardware
+correlation plots with minimal effort. 

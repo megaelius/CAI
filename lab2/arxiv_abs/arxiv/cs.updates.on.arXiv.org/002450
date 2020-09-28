@@ -1,0 +1,18 @@
+Knowledge graphs have become popular over the past decade and frequently rely on the Resource Description
+Framework (RDF) or Property Graph (PG) databases as data models. However, the query languages for
+these two data models -- SPARQL for RDF and the property graph traversal language Gremlin -- are lacking
+interoperability. We present Gremlinator, a novel SPARQL to Gremlin translator. Gremlinator
+translates SPARQL queries to Gremlin traversals for executing graph pattern matching queries
+over graph databases. This allows to access and query a wide variety of Graph Data Management Systems
+(DMSs) using the W3C standardized SPARQL and avoid the steep learning curve of a new Graph Query Language
+(GQL). Gremlin is a graph computing system agnostic traversal language (covering both OLTP graph
+database or OLAP graph processors), making it a desirable choice for supporting interoperability
+for querying Graph DMSs. We present an empirical evaluation for the validity of our approach by formalizing
+the graph pattern matching construct of Gremlin and illustrate its mapping to corresponding SPARQL
+queries. Moreover, we also present a proof-of-concept implementation of our approach, demonstrate
+its validity and applicability by executing SPARQL queries on top of leading Graph stores (Neo4J,
+Sparksee, and Apache TinkerGraph) and compare their performances with RDF stores (Openlink Virtuoso,
+4Store, and JenaTDB). The results indicate that, for complex queries (such as Star-shaped), Gremlin
+pattern matching traversals out-perform their corresponding SPARQL queries significantly,
+including their translation time. Gremlinator currently covers a subset of the SPARQL 1.0 specification,
+specifically the SELECT queries. 

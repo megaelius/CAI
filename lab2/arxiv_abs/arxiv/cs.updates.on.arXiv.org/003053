@@ -1,0 +1,20 @@
+Container technologies, like Docker, are becoming increasingly popular. Containers provide
+exceptional developer experience because containers offer lightweight isolation and ease of
+software distribution. Containers are also widely used in production environments, where a different
+set of challenges arise such as security, networking, service discovery and load balancing. Container
+cluster management tools, such as Kubernetes, attempt to solve these problems by introducing a
+new control layer with the container as the unit of deployment. However, adding a new control layer
+is an extra configuration step and an additional potential source of runtime errors. The virtual
+machine technology offered by cloud providers is more mature and proven in terms of security, networking,
+service discovery and load balancing. However, virtual machines are heavier than containers for
+local development, are less flexible for resource allocation, and suffer longer boot times. This
+paper presents an alternative to containers that enjoy the best features of both approaches: (1)
+the use of mature, proven cloud vendor technology; (2) no need for a new control layer; and (3) as lightweight
+as containers. Our solution is i2kit, a deployment tool based on the immutable infrastructure pattern,
+where the virtual machine is the unit of deployment. The i2kit tool accepts a simplified format of
+Kubernetes Deployment Manifests in order to reuse Kubernetes' most successful principles, but
+it creates a lightweight virtual machine for each Pod using Linuxkit. Linuxkit alleviates the drawback
+in size that using virtual machines would otherwise entail, because the footprint of Linuxkit is
+approximately 60MB. Finally, the attack surface of the system is reduced since Linuxkit only installs
+the minimum set of OS dependencies to run containers, and different Pods are isolated by hypervisor
+technology. 

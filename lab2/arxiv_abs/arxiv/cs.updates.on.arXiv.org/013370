@@ -1,0 +1,19 @@
+This paper describes efficient algorithms for computing rank-revealing factorizations of matrices
+that are too large to fit in RAM, and must instead be stored on slow external memory devices such as
+solid-state or spinning disk hard drives (out-of-core or out-of-memory). Traditional algorithms
+for computing rank revealing factorizations, such as the column pivoted QR factorization, or techniques
+for computing a full singular value decomposition of a matrix, are very communication intensive.
+They are naturally expressed as a sequence of matrix-vector operations, which become prohibitively
+expensive when data is not available in main memory. Randomization allows these methods to be reformulated
+so that large contiguous blocks of the matrix can be processed in bulk. The paper describes two distinct
+methods. The first is a blocked version of column pivoted Householder QR, organized as a ``left-looking''
+method to minimize the number of write operations (which are more expensive than read operations
+on a spinning disk drive). The second method results in a so called UTV factorization which expresses
+a matrix $A$ as $A = U T V^*$ where $U$ and $V$ are unitary, and $T$ is triangular. This method is organized
+as an algorithm-by-blocks, in which floating point operations overlap read and write operations.
+The second method incorporates power iterations, and is exceptionally good at revealing the numerical
+rank; it can often be used as a substitute for a full singular value decomposition. Numerical experiments
+demonstrate that the new algorithms are almost as fast when processing data stored on a hard drive
+as traditional algorithms are for data stored in main memory. To be precise, the computational time
+for fully factorizing an $n\times n$ matrix scales as $cn^{3}$, with a scaling constant $c$ that
+is only marginally larger when the matrix is stored out of core. 

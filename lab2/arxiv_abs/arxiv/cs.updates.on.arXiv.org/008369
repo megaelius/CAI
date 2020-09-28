@@ -1,0 +1,20 @@
+Modern machine learning is distributed and the work of several machines is typically aggregated
+by \emph{averaging} which is the optimal rule in terms of speed, offering a speedup of $n$ (with respect
+to using a single machine) when $n$ processes are learning together. Distributing data and models
+poses however fundamental vulnerabilities, be they to software bugs, asynchrony, or worse, to
+malicious attackers controlling some machines or injecting misleading data in the network. Such
+behavior is best modeled as Byzantine failures, and averaging does not tolerate a single one from
+a worker. Krum, the first provably Byzantine resilient aggregation rule for SGD only uses one worker
+per step, which hampers its speed of convergence, especially in best case conditions when none of
+the workers is actually Byzantine. An idea, coined multi-Krum, of using $m$ different workers per
+step was mentioned, without however any proof neither on its Byzantine resilience nor on its slowdown.
+More recently, it was shown that in high dimensional machine learning, guaranteeing convergence
+is not a sufficient condition for \emph{strong} Byzantine resilience. A improvement on Krum, coined
+Bulyan, was proposed and proved to guarantee stronger resilience. However, Bulyan suffers from
+the same weakness of Krum: using only one worker per step. This adds up to the aforementioned open
+problem and leaves the crucial need for both fast and strong Byzantine resilience unfulfilled.
+The present paper proposes using Bulyan over Multi-Krum (we call it Multi-Bulyan), a combination
+for which we provide proofs of strong Byzantine resilience, as well as an ${\frac{m}{n}}$ slowdown,
+compared to averaging, the fastest (but non Byzantine resilient) rule for distributed machine
+learning, finally we prove that Multi-Bulyan inherits the $O(d)$ merits of both multi-Krum and
+Bulyan. 

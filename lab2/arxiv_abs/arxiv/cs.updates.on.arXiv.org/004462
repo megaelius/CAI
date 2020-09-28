@@ -1,0 +1,17 @@
+The current paper is a study in Recurrent Neural Networks (RNN), motivated by the lack of examples
+simple enough so that they can be thoroughly understood theoretically, but complex enough to be
+realistic. We constructed an example of structured data, motivated by problems from image-to-text
+conversion (OCR), which requires long-term memory to decode. Our data is a simple writing system,
+encoding characters 'X' and 'O' as their upper halves, which is possible due to symmetry of the two
+characters. The characters can be connected, as in some languages using cursive, such as Arabic
+(abjad). The string 'XOOXXO' may be encoded as '${\vee}{\wedge}\kern-1.5pt{\wedge}{\vee}\kern-1.5pt{\vee}{\wedge}$'.
+It follows that we may need to know arbitrarily long past to decode a current character, thus requiring
+long-term memory. Subsequently we constructed an RNN capable of decoding sequences encoded in
+this manner. Rather than by training, we constructed our RNN "by inspection", i.e. we guessed its
+weights. This involved a sequence of steps. We wrote a conventional program which decodes the sequences
+as the example above. Subsequently, we interpreted the program as a neural network (the only example
+of this kind known to us). Finally, we generalized this neural network to discover a new RNN architecture
+whose instance is our handcrafted RNN. It turns out to be a 3 layer network, where the middle layer
+is capable of performing simple logical inferences; thus the name "deductron". It is demonstrated
+that it is possible to train our network by simulated annealing. Also, known variants of stochastic
+gradient descent (SGD) methods are shown to work. 

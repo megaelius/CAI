@@ -1,0 +1,18 @@
+Depth information available from an RGB-D camera can be useful in segmenting salient objects when
+figure/ground cues from RGB channels are weak. This has motivated the development of several RGB-D
+saliency datasets and algorithms that use all four channels of the RGB-D data for both training and
+inference. Unfortunately, existing RGB-D saliency datasets are small, leading to overfitting
+and poor generalization. Here we demonstrate a system for RGB-D saliency detection that makes effective
+joint use of large RGB saliency datasets with hand-labelled saliency ground truth together, and
+smaller RGB-D saliency datasets {\em without} saliency ground truth. This novel prediction-guided
+cross-refinement network is trained to jointly estimate both saliency and depth, allowing mutual
+refinement between feature representations tuned for the two respective tasks. An adversarial
+stage resolves domain shift between RGB and RGB-D saliency datasets, allowing representations
+for saliency and depth estimation to be aligned on either. Critically, our system does not require
+saliency ground-truth for the RGB-D datasets, making it easier to expand these datasets for training,
+and does not require the D channel for inference, allowing the method to be used for the much broader
+range of applications where only RGB data are available. Evaluation on seven RGBD datasets demonstrates
+that, without using hand-labelled saliency ground truth for RGB-D datasets and using only the RGB
+channels of these datasets at inference, our system achieves performance that is comparable to
+state-of-the-art methods that use hand-labelled saliency maps for RGB-D data at training and use
+the depth channels of these datasets at inference. 

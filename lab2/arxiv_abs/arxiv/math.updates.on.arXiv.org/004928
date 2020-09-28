@@ -1,0 +1,17 @@
+We study Monte Carlo estimation of the expected value of sample information (EVSI) which measures
+the expected benefit of gaining additional information for decision making under uncertainty.
+EVSI is defined as a nested expectation in which an outer expectation is taken with respect to one
+random variable $Y$ and an inner conditional expectation with respect to the other random variable
+$\theta$. Although the nested (Markov chain) Monte Carlo estimator has been often used in this context,
+a root-mean-square accuracy of $\varepsilon$ is achieved notoriously at a cost of $O(\varepsilon^{-2-1/\alpha})$,
+where $\alpha$ denotes the order of convergence of the bias and is typically between $1/2$ and $1$.
+In this article we propose a novel efficient Monte Carlo estimator of EVSI by applying a multilevel
+Monte Carlo (MLMC) method. Instead of fixing the number of inner samples for $\theta$ as done in the
+nested Monte Carlo estimator, we consider a geometric progression on the number of inner samples,
+which yields a hierarchy of estimators on the inner conditional expectation with increasing approximation
+levels. Based on an elementary telescoping sum, our MLMC estimator is given by a sum of the Monte Carlo
+estimates of the differences between successive approximation levels on the inner conditional
+expectation. We show, under a set of assumptions on decision and information models, that successive
+approximation levels are tightly coupled, which directly proves that our MLMC estimator improves
+the necessary computational cost to optimal $O(\varepsilon^{-2})$. Numerical experiments confirm
+the considerable computational savings as compared to the nested Monte Carlo estimator. 

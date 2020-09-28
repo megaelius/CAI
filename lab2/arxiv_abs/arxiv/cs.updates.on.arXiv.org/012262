@@ -1,0 +1,19 @@
+Enabling a neural network to sequentially learn multiple tasks is of great significance for expanding
+the applicability of neural networks in realistic human application scenarios. However, as the
+task sequence increases, the model quickly forgets previously learned skills; we refer to this
+loss of memory of long sequences as long-term catastrophic forgetting. There are two main reasons
+for the long-term forgetting: first, as the tasks increase, the intersection of the low-error parameter
+subspace satisfying these tasks will become smaller and smaller or even non-existent; The second
+is the cumulative error in the process of protecting the knowledge of previous tasks. This paper,
+we propose a confrontation mechanism in which neural pruning and synaptic consolidation are used
+to overcome long-term catastrophic forgetting. This mechanism distills task-related knowledge
+into a small number of parameters, and retains the old knowledge by consolidating a small number
+of parameters, while sparing most parameters to learn the follow-up tasks, which not only avoids
+forgetting but also can learn a large number of tasks. Specifically, the neural pruning iteratively
+relaxes the parameter conditions of the current task to expand the common parameter subspace of
+tasks; The modified synaptic consolidation strategy is comprised of two components, a novel network
+structure information considered measurement is proposed to calculate the parameter importance,
+and a element-wise parameter updating strategy that is designed to prevent significant parameters
+being overridden in subsequent learning. We verified the method on image classification, and the
+results showed that our proposed ANPSC approach outperforms the state-of-the-art methods. The
+hyperparametric sensitivity test further demonstrates the robustness of our proposed approach.

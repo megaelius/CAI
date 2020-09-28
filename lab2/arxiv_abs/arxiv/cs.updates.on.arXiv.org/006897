@@ -1,0 +1,17 @@
+Given two or more Deep Neural Networks (DNNs) with the same or similar architectures, and trained
+on the same dataset, but trained with different solvers, parameters, hyper-parameters, regularization,
+etc., can we predict which DNN will have the best test accuracy, and can we do so without peeking at
+the test data? In this paper, we show how to use a new Theory of Heavy-Tailed Self-Regularization
+(HT-SR) to answer this. HT-SR suggests, among other things, that modern DNNs exhibit what we call
+Heavy-Tailed Mechanistic Universality (HT-MU), meaning that the correlations in the layer weight
+matrices can be fit to a power law with exponents that lie in common Universality classes from Heavy-Tailed
+Random Matrix Theory (HT-RMT). From this, we develop a Universal capacity control metric that is
+a weighted average of these PL exponents. Rather than considering small toy NNs, we examine over
+50 different, large-scale pre-trained DNNs, ranging over 15 different architectures, trained
+on ImagetNet, each of which has been reported to have different test accuracies. We show that this
+new capacity metric correlates very well with the reported test accuracies of these DNNs, looking
+across each architecture (VGG16/.../VGG19, ResNet10/.../ResNet152, etc.). We also show how
+to approximate the metric by the more familiar Product Norm capacity measure, as the average of the
+log Frobenius norm of the layer weight matrices. Our approach requires no changes to the underlying
+DNN or its loss function, it does not require us to train a model (although it could be used to monitor
+training), and it does not even require access to the ImageNet data. 

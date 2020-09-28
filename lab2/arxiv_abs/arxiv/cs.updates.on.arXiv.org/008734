@@ -1,0 +1,17 @@
+The focus of this paper is on causal consistency in a {\em partially replicated} distributed shared
+memory (DSM) system that provides the abstraction of shared read/write registers. Maintaining
+causal consistency in distributed shared memory systems has received significant attention in
+the past, mostly on {\em full replication} wherein each replica stores a copy of all the registers
+in the shared memory. To ensure causal consistency, all causally preceding updates must be performed
+before an update is performed at any given replica. Therefore, some mechanism for tracking causal
+dependencies is required, such as vector timestamps with the number of vector elements being equal
+to the number of replicas in the context of full replication. In this paper, we investigate causal
+consistency in {\em partially replicated systems}, wherein each replica may store only a subset
+of the shared registers. Building on the past work, this paper makes three key contributions: 1.
+We present a necessary condition on the metadata (which we refer as a {\em timestamp}) that must be
+maintained by each replica to be able to track causality accurately. The necessary condition identifies
+a set of directed edges in a {\em share graph} that a replica's timestamp must keep track of. 2. We present
+an algorithm for achieving causal consistency using a timestamp that matches the above necessary
+condition, thus showing that the condition is necessary and sufficient. 3. We define a measurement
+of timestamp space size and present a lower bound (in bits) on the size of the timestamps. The lower
+bound matches our algorithm in several special cases. 

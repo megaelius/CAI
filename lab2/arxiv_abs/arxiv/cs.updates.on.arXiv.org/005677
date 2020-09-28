@@ -1,0 +1,20 @@
+Traditional exploration methods in RL require agents to perform random actions to find rewards.
+But these approaches struggle on sparse-reward domains like Montezuma's Revenge where the probability
+that any random action sequence leads to reward is extremely low. Recent algorithms have performed
+well on such tasks by encouraging agents to visit new states or perform new actions in relation to
+all prior training episodes (which we call across-training novelty). But such algorithms do not
+consider whether an agent exhibits intra-life novelty: doing something new within the current
+episode, regardless of whether those behaviors have been performed in previous episodes. We hypothesize
+that across-training novelty might discourage agents from revisiting initially non-rewarding
+states that could become important stepping stones later in training. We introduce Deep Curiosity
+Search (DeepCS), which encourages intra-life exploration by rewarding agents for visiting as
+many different states as possible within each episode, and show that DeepCS matches the performance
+of current state-of-the-art methods on Montezuma's Revenge. We further show that DeepCS improves
+exploration on Amidar, Freeway, Gravitar, and Tutankham (many of which are hard exploration games).
+Surprisingly, DeepCS doubles A2C performance on Seaquest, a game we would not have expected to benefit
+from intra-life exploration because the arena is small and already easily navigated by naive exploration
+techniques. In one run, DeepCS achieves a maximum training score of 80,000 points on Seaquest, higher
+than any methods other than Ape-X. The strong performance of DeepCS on these sparse- and dense-reward
+tasks suggests that encouraging intra-life novelty is an interesting, new approach for improving
+performance in Deep RL and motivates further research into hybridizing across-training and intra-life
+exploration methods. 

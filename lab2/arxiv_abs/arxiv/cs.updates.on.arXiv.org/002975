@@ -1,0 +1,19 @@
+As the industry deploys increasingly large and complex neural networks to mobile devices, more
+pressure is put on the memory and compute resources of those devices. Deep compression, or compression
+of deep neural network weight matrices, is a technique to stretch resources for such scenarios.
+Existing compression methods cannot effectively compress models smaller than 1-2% of their original
+size. We develop a new compression technique, DeepThin, building on existing research in the area
+of low rank factorization. We identify and break artificial constraints imposed by low rank approximations
+by combining rank factorization with a reshaping process that adds nonlinearity to the approximation
+function. We deploy DeepThin as a plug-gable library integrated with TensorFlow that enables users
+to seamlessly compress models at different granularities. We evaluate DeepThin on two state-of-the-art
+acoustic models, TFKaldi and DeepSpeech, comparing it to previous compression work (Pruning,
+HashNet, and Rank Factorization), empirical limit study approaches, and hand-tuned models. For
+TFKaldi, our DeepThin networks show better word error rates (WER) than competing methods at practically
+all tested compression rates, achieving an average of 60% relative improvement over rank factorization,
+57% over pruning, 23% over hand-tuned same-size networks, and 6% over the computationally expensive
+HashedNets. For DeepSpeech, DeepThin-compressed networks achieve better test loss than all other
+compression methods, reaching a 28% better result than rank factorization, 27% better than pruning,
+20% better than hand-tuned same-size networks, and 12% better than HashedNets. DeepThin also provide
+inference performance benefits ranging from 2X to 14X speedups, depending on the compression ratio
+and platform cache sizes. 

@@ -1,0 +1,20 @@
+Data ownership and data protection are increasingly important topics with ethical and legal implications,
+e.g., with the right to erasure established in the European General Data Protection Regulation
+(GDPR). In this light, we investigate network embeddings, i.e., the representation of network
+nodes as low-dimensional vectors. We consider a typical social network scenario with nodes representing
+users and edges relationships between them. We assume that a network embedding of the nodes has been
+trained. After that, a user demands the removal of his data, requiring the full deletion of the corresponding
+network information, in particular the corresponding node and incident edges. In that setting,
+we analyze whether after the removal of the node from the network and the deletion of the vector representation
+of the respective node in the embedding significant information about the link structure of the
+removed node is still encoded in the embedding vectors of the remaining nodes. This would require
+a (potentially computationally expensive) retraining of the embedding. For that purpose, we deploy
+an attack that leverages information from the remaining network and embedding to recover information
+about the neighbors of the removed node. The attack is based on (i) measuring distance changes in
+network embeddings and (ii) a machine learning classifier that is trained on networks that are constructed
+by removing additional nodes. Our experiments demonstrate that substantial information about
+the edges of a removed node/user can be retrieved across many different datasets. This implies that
+to fully protect the privacy of users, node deletion requires complete retraining - or at least a
+significant modification - of original network embeddings. Our results suggest that deleting
+the corresponding vector representation from network embeddings alone is not sufficient from
+a privacy perspective. 

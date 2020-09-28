@@ -1,0 +1,18 @@
+Smoothed particle hydrodynamics (SPH) has been extensively studied in computer graphics to animate
+fluids with versatile effects. However, SPH still suffers from two numerical difficulties: the
+particle deficiency problem, which will deteriorate the simulation accuracy, and the particle
+clumping problem, which usually leads to poor stability of particle simulations. We propose to
+solve these two problems by developing an approximate projection method for incompressible free-surface
+flows under a variational staggered particle framework. After particle discretization, we first
+categorize all fluid particles into four subsets. Then according to the classification, we propose
+to solve the particle deficiency problem by analytically imposing free surface boundary conditions
+on both the Laplacian operator and the source term. To address the particle clumping problem, we
+propose to extend the Taylor-series consistent pressure gradient model with kernel function correction
+and semi-analytical boundary conditions. Compared to previous approximate projection method
+[1], our incompressibility solver is stable under both compressive and tensile stress states,
+no pressure clumping or iterative density correction (e.g., a density constrained pressure approach)
+is necessary to stabilize the solver anymore. Motivated by the Helmholtz free energy functional,
+we additionally introduce an iterative particle shifting algorithm to improve the accuracy. It
+significantly reduces particle splashes near the free surface. Therefore, high-fidelity simulations
+of the formation and fragmentation of liquid jets and sheets are obtained for both the two-jets and
+milk-crown examples. 

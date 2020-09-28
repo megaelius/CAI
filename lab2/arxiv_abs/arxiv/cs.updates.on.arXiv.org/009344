@@ -1,0 +1,17 @@
+Point-to-Point Shortest Distance (PPSD) query is a crucial primitive in graph database applications.
+Hub labeling algorithms compute a labeling that converts a PPSD query into a list intersection problem
+(over a pre-computed indexing) enabling swift query response. However, constructing hub labeling
+is computationally challenging. Even state-of-the-art parallel algorithms based on Pruned Landmark
+Labeling (PLL) [3], are plagued by large label size, violation of given network hierarchy, poor
+scalability and inability to process large graphs. In this paper, we develop novel parallel shared-memory
+and distributed-memory algorithms for constructing the Canonical Hub Labeling (CHL) that is minimal
+in size for a given network hierarchy. To the best of our knowledge, none of the existing parallel
+algorithms guarantee canonical labeling. Our key contribution, the PLaNT algorithm, scales well
+beyond the limits of current practice by completely avoiding inter-node communication. PLaNT
+also enables the design of a collaborative label partitioning scheme across multiple nodes for
+completely in-memory processing of massive graphs whose labels cannot fit on a single machine.
+Compared to the sequential PLL, we empirically demonstrate upto 47.4x speedup on a 72 thread shared-memory
+platform. On a 64-node cluster, PLaNT achieves an average 42x speedup over single node execution.
+Finally, we show how our approach demonstrates superior scalability - we can process 14x larger
+graphs (in terms of label size) and construct hub labeling orders of magnitude faster compared to
+state-of-the-art distributed paraPLL algorithm. 

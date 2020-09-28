@@ -1,0 +1,20 @@
+We enhance constrained-based data quality with approximate band conditional order dependencies
+(abcODs). Band ODs model the semantics of attributes that are monotonically related with small
+variations without there being an intrinsic violation of semantics. The class of abcODs generalizes
+band ODs to make them more relevant to real-world applications by relaxing them to hold approximately
+(abODs) with some exceptions and conditionally (bcODs) on subsets of the data. We study the problem
+of automatic dependency discovery over a hierarchy of abcODs. First, we propose a more efficient
+algorithm to discover abODs than in recent prior work. The algorithm is based on a new optimization
+to compute a longest monotonic band (longest subsequence of tuples that satisfy a band OD) through
+dynamic programming by decreasing the runtime from O(n^2) to O(n \log n) time. We then illustrate
+that while the discovery of bcODs is relatively straightforward, there exist codependencies between
+approximation and conditioning that make the problem of abcOD discovery challenging. The naive
+solution is prohibitively expensive as it considers all possible segmentations of tuples resulting
+in exponential time complexity. To reduce the search space, we devise a dynamic programming algorithm
+for abcOD discovery that determines the optimal solution in O(n^3 \log n) complexity. To further
+optimize the performance, we adapt the algorithm to cheaply identify consecutive tuples that are
+guaranteed to belong to the same band--this improves the performance significantly in practice
+without losing optimality. While unidirectional abcODs are most common in practice, for generality
+we extend our algorithms with both ascending and descending orders to discover bidirectional abcODs.
+Finally, we perform a thorough experimental evaluation of our techniques over real-world and synthetic
+datasets. 

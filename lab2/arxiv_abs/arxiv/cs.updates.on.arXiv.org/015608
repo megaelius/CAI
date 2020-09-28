@@ -1,0 +1,18 @@
+In 2008, Maday and R{\o}nquist introduce{d} an interesting new approach for the direct parallel-in-time
+(PinT) solution of time-dependent PDEs. The idea is to diagonalize the time stepping matrix, keeping
+the matrices for the space discretization unchanged, and then to solve all time steps in parallel.
+Since then, several variants appeared, and we call these closely related algorithms {\em ParaDIAG}
+algorithms. ParaDIAG algorithms in the literature can be classified into two groups: \begin{itemize}
+\item ParaDIAG-I: direct standalone solvers, \item ParaDIAG-II: iterative solvers, \end{itemize}
+We will explain the basic features of each group in this note. To have concrete examples, we will introduce
+ParaDIAG-I and ParaDIAG-II for the advection-diffusion equation. We will also introduce ParaDIAG-II
+for the wave equation and an optimal control problem for the wave equation. We show the main known
+theoretical results in each case, and also provide Matlab codes for testing. The goal of the Matlab
+codes (this http URL) is to help the interested reader understand the key features of the ParaDIAG
+algorithms, without intention to be highly tuned for efficiency and/or low memory use. We also provide
+speedup measurements of ParaDIAG algorithms for a 2D linear advection-diffusion equation. These
+results are obtained on the Tianhe-1 supercomputer in China, which is a multi-array, configurable
+and cooperative parallel system, and we compare these results to the performance of parareal and
+MGRiT, two widely used PinT algorithms. In a forthcoming update of this note, we will provide more
+material on ParaDIAG algorithms, in particular further Matlab codes and parallel computing results,also
+for more realistic applications. 

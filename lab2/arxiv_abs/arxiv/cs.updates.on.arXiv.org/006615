@@ -1,0 +1,17 @@
+HTTP-based video streaming is a key application on the Internet today, comprising the majority
+of Internet traffic today. Yet customers remain dissatisfied with video quality, resulting in
+lost revenue for content providers. Recent studies have blamed this on the adaptive bitrate selection
+(ABR) algorithm used by client players, claiming it interacts poorly with TCP when the video buffer
+is full, which causes it to underestimate available network bandwidth. We show that the root cause
+of the problem lies in the data plane, and that even a perfect control plane (ABR) algorithm is not
+enough to guarantee video flows their fair share of network bandwidth. Namely, it is the sequential
+download of (small) video segments that is at fault, as they disrupt the normal interaction between
+TCP congestion control and router queue occupancy. We analytically derive the throughput of a video
+flow as a function of download size and network conditions, and use this to develop an adaptive algorithm
+for selecting the download size. Combined with pipelining, our approach achieves near-optimal
+throughput and fast bitrate adaptation, regardless of the control plane algorithm. We implement
+our approach as a DASH video player called Sprint, and evaluate it against state-of-the-art proposals
+from the literature as well as deployed players from Netflix, Youtube, Hulu, and Amazon. Sprint
+consistently achieves above 90% of its fair-share throughput, while the previous state-of-the-art
+exhibits high variability (e.g., from 31% to close to fair share depending on the network conditions).
+Industry players often achieve below 50% of their fair share. 

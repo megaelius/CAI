@@ -1,0 +1,17 @@
+In this paper, we study the problem of reducing the delay of downloading data from cloud storage systems
+by leveraging multiple parallel threads, assuming that the data has been encoded and stored in the
+clouds using fixed rate forward error correction (FEC) codes with parameters (n, k). That is, each
+file is divided into k equal-sized chunks, which are then expanded into n chunks such that any k chunks
+out of the n are sufficient to successfully restore the original file. The model can be depicted as
+a multiple-server queue with arrivals of data retrieving requests and a server corresponding to
+a thread. However, this is not a typical queueing model because a server can terminate its operation,
+depending on when other servers complete their service (due to the redundancy that is spread across
+the threads). Hence, to the best of our knowledge, the analysis of this queueing model remains quite
+uncharted. Recent traces from Amazon S3 show that the time to retrieve a fixed size chunk is random
+and can be approximated as a constant delay plus an i.i.d. exponentially distributed random variable.
+For the tractability of the theoretical analysis, we assume that the chunk downloading time is i.i.d.
+exponentially distributed. Under this assumption, we show that any work-conserving scheme is
+delay-optimal among all on-line scheduling schemes when k = 1. When k > 1, we find that a simple
+greedy scheme, which allocates all available threads to the head of line request, is delay optimal
+among all on-line scheduling schemes. We also provide some numerical results that point to the limitations
+of the exponential assumption, and suggest further research directions. 

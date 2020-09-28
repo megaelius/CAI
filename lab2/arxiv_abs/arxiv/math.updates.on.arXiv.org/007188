@@ -1,0 +1,19 @@
+Neural text decoding is important for generating high-quality texts using language models. To
+generate high-quality text, popular decoding algorithms like top-k, top-p (nucleus), and temperature-based
+sampling truncate or distort the unreliable low probability tail of the language model. Though
+these methods generate high-quality text after parameter tuning, they are ad hoc. Not much is known
+about the control they provide over the statistics of the output, which is important since recent
+reports show text quality is highest for a specific range of likelihoods. Here, first we provide
+a theoretical analysis of perplexity in top-k, top-p, and temperature sampling, finding that cross-entropy
+behaves approximately linearly as a function of p in top-p sampling whereas it is a nonlinear function
+of k in top-k sampling, under Zipfian statistics. We use this analysis to design a feedback-based
+adaptive top-k text decoding algorithm called mirostat that generates text (of any length) with
+a predetermined value of perplexity, and thereby high-quality text without any tuning. Experiments
+show that for low values of k and p in top-k and top-p sampling, perplexity drops significantly with
+generated text length, which is also correlated with excessive repetitions in the text (the boredom
+trap). On the other hand, for large values of k and p, we find that perplexity increases with generated
+text length, which is correlated with incoherence in the text (confusion trap). Mirostat avoids
+both traps: experiments show that cross-entropy has a near-linear relation with repetition in
+generated text. This relation is almost independent of the sampling method but slightly dependent
+on the model used. Hence, for a given language model, control over perplexity also gives control
+over repetitions. 

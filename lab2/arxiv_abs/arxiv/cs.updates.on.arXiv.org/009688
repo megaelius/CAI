@@ -1,0 +1,18 @@
+Real-time Deep Neural Network (DNN) inference with low-latency requirement has become increasingly
+important for numerous applications in both cloud computing (e.g., Apple's Siri) and edge computing
+(e.g., Google/Waymo's driverless car). FPGA-based DNN accelerators have demonstrated both superior
+flexibility and performance; in addition, for real-time inference with low batch size, FPGA is
+expected to achieve further performance improvement. However, the performance gain from the single-FPGA
+design is obstructed by the limited on-chip resource. In this paper, we employ multiple FPGAs to
+cooperatively run DNNs with the objective of achieving super-linear speed-up against single-FPGA
+design. In implementing such systems, we found two barriers that hinder us from achieving the design
+goal: (1) the lack of a clear partition scheme for each DNN layer to fully exploit parallelism, and
+(2) the insufficient bandwidth between the off-chip memory and the accelerator due to the growing
+size of DNNs. To tackle these issues, we propose a general framework, "Super-LIP", which can support
+different kinds of DNNs. In this paper, we take Convolutional Neural Network (CNN) as a vehicle to
+illustrate Super-LIP. We first formulate an accurate system-level model to support the exploration
+of best partition schemes. Then, we develop a novel design methodology to effectively alleviate
+the heavy loads on memory bandwidth by moving traffic from memory bus to inter-FPGA links. We implement
+Super-LIP based on ZCU102 FPGA boards. Results demonstrate that Super-LIP with 2 FPGAs can achieve
+3.48x speedup, compared to the state-of-the-art single-FPGA design. What is more, as the number
+of FPGAs scales up, the system latency can be further reduced while maintaining high energy efficiency.

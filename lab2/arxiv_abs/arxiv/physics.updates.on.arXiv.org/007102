@@ -1,0 +1,20 @@
+The task of dynamic flow estimation is to construct an approximation of an evolving flow---and particularly,
+its response to disturbances---using measurements from available sensors. Building from previous
+work by Darakananda et al.~(Phys Rev Fluids 2018), we further develop an ensemble Kalman filter
+(EnKF) framework for aerodynamic flows based on an ensemble of randomly-perturbed inviscid vortex
+models of flow about an infinitely-thin plate. In the forecast step, vortex elements in each ensemble
+member are advected by the flow and new elements are released from each edge of the plate; the elements
+are aggregated to maintain an efficient representation. The vortex elements and leading edge constraint
+are corrected in the analysis step by assimilating the surface pressure differences across the
+plate measured from the truth system. We show that the overall framework can be physically interpreted
+as a series of adjustments to the position and shape of an elliptical region of uncertainty associated
+with each vortex element. In this work, we compare the previously-used stochastic EnKF with the
+ensemble transform Kalman filter (ETKF), which uses a deterministic analysis step. We examine
+the response of the flat plate at $20^\circ$ in two perturbed flows, with truth data obtained from
+high-fidelity simulation at Reynolds number 500. In the first case, we apply a sequence of large-amplitude
+pulses near the leading edge of the plate to mimic flow actuation. In the second, we place the plate
+in a vortex street wake behind a cylinder. In both cases, we show that the vortex-based framework
+accurately estimates the pressure distribution and normal force, with no {\em a priori} knowledge
+of the perturbations. We show that the ETKF is consistently more robust than the stochastic EnKF.
+Finally, we examine the mapping from measurements to state update in the analysis step through SVD
+of the Kalman gain. 

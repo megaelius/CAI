@@ -1,0 +1,17 @@
+A sparse matrix is called double irregular sparse if it has at least one relatively dense column and
+row, and it is double regular sparse if all the columns and rows of it are sparse. The sparse approximate
+inverse preconditioning procedures SPAI, PSAI($tol$) and RSAI($tol$) are costly and even impractical
+to construct preconditioners for a large sparse nonsymmetric linear system with the coefficient
+matrix being double irregular sparse, but they are efficient for double regular sparse problems.
+Double irregular sparse linear systems have a wide range of applications, and 4.4\% of the nonsymmetric
+matrices in the Florida University collection are double irregular sparse. For this class of problems,
+we propose a transformation approach, which consists of four steps: (i) transform a given double
+irregular sparse problem into a small number of double regular sparse ones with the same coefficient
+matrix $\hat{A}$, (ii) use SPAI, PSAI($tol$) and RSAI($tol$) to construct sparse approximate
+inverses $M$ of $\hat{A}$, (iii) solve the preconditioned double regular sparse linear systems
+by Krylov solvers, and (iv) recover an approximate solution of the original problem with a prescribed
+accuracy from those of the double regular sparse ones. A number of theoretical and practical issues
+are considered on the transformation approach. Numerical experiments on a number of real-world
+problems confirm the very sharp superiority of the transformation approach to the standard approach
+that preconditions the original double irregular sparse problem by SPAI, PSAI($tol$) or RSAI($tol$)
+and solves the resulting preconditioned system by Krylov solvers. 

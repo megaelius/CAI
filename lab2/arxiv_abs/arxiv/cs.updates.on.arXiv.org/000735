@@ -1,0 +1,19 @@
+We consider distributed estimation of the inverse covariance matrix, also called the concentration
+or precision matrix, in Gaussian graphical models. Traditional centralized estimation often
+requires global inference of the covariance matrix, which can be computationally intensive in
+large dimensions. Approximate inference based on message-passing algorithms, on the other hand,
+can lead to unstable and biased estimation in loopy graphical models. In this paper, we propose a
+general framework for distributed estimation based on a maximum marginal likelihood (MML) approach.
+This approach computes local parameter estimates by maximizing marginal likelihoods defined
+with respect to data collected from local neighborhoods. Due to the non-convexity of the MML problem,
+we introduce and solve a convex relaxation. The local estimates are then combined into a global estimate
+without the need for iterative message-passing between neighborhoods. The proposed algorithm
+is naturally parallelizable and computationally efficient, thereby making it suitable for high-dimensional
+problems. In the classical regime where the number of variables $p$ is fixed and the number of samples
+$T$ increases to infinity, the proposed estimator is shown to be asymptotically consistent and
+to improve monotonically as the local neighborhood size increases. In the high-dimensional scaling
+regime where both $p$ and $T$ increase to infinity, the convergence rate to the true parameters is
+derived and is seen to be comparable to centralized maximum likelihood estimation. Extensive numerical
+experiments demonstrate the improved performance of the two-hop version of the proposed estimator,
+which suffices to almost close the gap to the centralized maximum likelihood estimator at a reduced
+computational cost. 

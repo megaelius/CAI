@@ -1,0 +1,18 @@
+Given a continuous-time signal that can be modeled as the superposition of localized, time-shifted
+events from multiple sources, the goal of Convolutional Dictionary Learning (CDL) is to identify
+the location of the events--by Convolutional Sparse Coding (CSC)--and learn the template for each
+source--by Convolutional Dictionary Update (CDU). In practice, because we observe samples of
+the continuous-time signal on a uniformly-sampled grid in discrete time, classical CSC methods
+can only produce estimates of the times when the events occur on this grid, which degrades the performance
+of the CDU. We introduce a CDL framework that significantly reduces the errors arising from performing
+the estimation in discrete time. Specifically, we construct an expanded dictionary that comprises,
+not only discrete-time shifts of the templates, but also interpolated variants, obtained by bandlimited
+interpolation, that account for continuous-time shifts. For CSC, we develop a novel computationally
+efficient CSC algorithm, termed Convolutional Orthogonal Matching Pursuit with interpolated
+dictionary (COMP-INTERP). We benchmarked COMP-INTERP to Contiunuous Basis Pursuit (CBP), the
+state-of-the-art CSC algorithm for estimating off-the-grid events, and demonstrate, on simulated
+data, that 1) COMP-INTERP achieves a similar level of accuracy, and 2) is two orders of magnitude
+faster. For CDU, we derive a novel procedure to update the templates given sparse codes that can occur
+both on and off the discrete-time grid. We also show that 3) dictionary update with the overcomplete
+dictionary yields more accurate templates. Finally, we apply the algorithms to the spike sorting
+problem on electrophysiology recording and show their competitive performance. 

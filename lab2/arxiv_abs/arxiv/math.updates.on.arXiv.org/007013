@@ -1,0 +1,20 @@
+Nonlinear parametric inverse problems appear in many applications. Here, we focus on diffuse optical
+tomography (DOT) in medical imaging to recover unknown images of interest, such as cancerous tissue
+in a given medium, using a mathematical (forward) model. The forward model in DOT is a diffusion-absorption
+model for the photon flux. The main bottleneck in these problems is the repeated evaluation of the
+large-scale forward model. For DOT, this corresponds to solving large linear systems for each source
+and frequency at each optimization step. Moreover, Newton-type methods, often the method of choice,
+require additional linear solves with the adjoint to compute derivative information. Emerging
+technology allows for large numbers of sources and detectors, making these problems prohibitively
+expensive. Reduced order models (ROM) have been used to drastically reduce the system size in each
+optimization step, while solving the inverse problem accurately. However, for large numbers of
+sources and detectors, just the construction of the candidate basis for the ROM projection space
+incurs a substantial cost, as matching the full parameter gradient matrix in interpolatory model
+reduction requires large linear solves for all sources and frequencies and all detectors and frequencies
+for each parameter interpolation point. As this candidate basis numerically has low rank, this
+construction is followed by a rank-revealing factorization that typically reduces the number
+of vectors in the candidate basis substantially. We propose to use randomization to approximate
+this basis with a drastically reduced number of large linear solves. We also provide a detailed analysis
+for the low-rank structure of the candidate basis for our problem of interest. Even though we focus
+on the DOT problem, the ideas presented are relevant to many other large scale inverse problems and
+optimization problems. 

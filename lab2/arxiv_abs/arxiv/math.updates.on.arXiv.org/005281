@@ -1,0 +1,18 @@
+Markov decision processes (MDPs) are widely used to model stochastic systems in many applications.
+Several efficient algorithms including value iteration (VI), policy iteration and LP-based algorithms
+have been studied in the literature to compute optimal policies for MDPs. However, these do not scale
+well especially when the discount factor for the infinite horizon reward, $\lambda$, gets close
+to one, which is the case in many applications. In particular, the running time scales as $1/(1-\lambda)$
+for these algorithms. In this paper, we present faster algorithms that empirically significantly
+outperform the current approaches. Our approach builds upon the connection between VI and \textit{gradient
+descent} and adapts the ideas of \textit{acceleration} in smooth convex optimization to design
+faster algorithms for MDPs. The improvement in running time is analogous to Nesterov's acceleration
+in smooth convex optimization, even though our function (Bellman operator) is neither smooth nor
+convex. We study the empirical performance of our algorithm and observe that in random and Garnet
+MDP instances, it provides significant speedup (up to one order of magnitude in many cases) compared
+to current approaches. We provide insights on our faster algorithm, showing that it is a composition
+of affine maps (possibly different in each iteration). We also provide theoretical guarantees
+of faster convergence of our algorithm, for the computation of the value vector of a given policy.
+Finally, we provide a lower-bound on the convergence properties of any first-order algorithm for
+solving MDP. In particular, we present a family of MDP instances for which no algorithm can converge
+faster than VI when the number of iterations is smaller than the number of states. 

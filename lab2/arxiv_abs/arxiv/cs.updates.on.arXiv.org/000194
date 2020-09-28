@@ -1,0 +1,18 @@
+For nonrigid image registration, matching the particular structures (or the outliers) that have
+missing correspondence and/or local large deformations, can be more difficult than matching the
+common structures with small deformations in the two images. Most existing works depend heavily
+on the outlier segmentation to remove the outlier effect in the registration. Moreover, these works
+do not handle simultaneously the missing correspondences and local large deformations. In this
+paper, we defined the nonrigid image registration as a local adaptive kernel regression which locally
+reconstruct the moving image's dense deformation vectors from the sparse deformation vectors
+in the multi-resolution block matching. The kernel function of the kernel regression adapts its
+shape and orientation to the reference image's structure to gather more deformation vector samples
+of the same structure for the iterative regression computation, whereby the moving image's local
+deformations could be compliant with the reference image's local structures. To estimate the local
+deformations around the outliers, we use joint saliency map that highlights the corresponding
+saliency structures (called Joint Saliency Structures, JSSs) in the two images to guide the dense
+deformation reconstruction by emphasizing those JSSs' sparse deformation vectors in the kernel
+regression. The experimental results demonstrate that by using local JSS adaptive kernel regression,
+the proposed method achieves almost the best performance in alignment of all challenging image
+pairs with outlier structures compared with other five state-of-the-art nonrigid registration
+algorithms. 

@@ -1,0 +1,3 @@
+Is the virtual mouse simulation in ol{v}wm 3.x available under X11R5?
+I've been told I'm setting the right resource, yet it continues not to
+work. I'm running olvwm3.3 (or olwm 3) on a Sun 3, X11R5 pl 22.

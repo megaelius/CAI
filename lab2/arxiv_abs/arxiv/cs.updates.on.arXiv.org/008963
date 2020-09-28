@@ -1,0 +1,19 @@
+This work considers the sample complexity of obtaining an $\epsilon$-optimal policy in a discounted
+Markov Decision Process (MDP), given only access to a generative model. In this model, the learner
+accesses the underlying transition model via a sampling oracle that provides a sample of the next
+state, when given any state-action pair as input. In this work, we study the effectiveness of the
+most natural plug-in approach to model-based planning: we build the maximum likelihood estimate
+of the transition model in the MDP from observations and then find an optimal policy in this empirical
+MDP. We ask arguably the most basic and unresolved question in model-based planning: is the na\"ive
+"plug-in" approach, non-asymptotically, minimax optimal in the quality of the policy it finds,
+given a fixed sample size? With access to a generative model, we resolve this question in the strongest
+possible sense: our main result shows that \emph{any} high accuracy solution in the plug-in model
+constructed with $N$ samples, provides an $\epsilon$-optimal policy in the true underlying MDP.
+In comparison, all prior (non-asymptotically) minimax optimal results use model-free approaches,
+such as the Variance Reduced Q-value iteration algorithm (Sidford et al 2018), while the best known
+model-based results (e.g. Azar et al 2013) require larger sample sample sizes in their dependence
+on the planning horizon or the state space. Notably, we show that the model-based approach allows
+the use of \emph{any} efficient planning algorithm in the empirical MDP, which simplifies the algorithm
+design as this approach does not tie the algorithm to the sampling procedure. The core of our analysis
+is a novel "absorbing MDP" construction to address the statistical dependency issues that arise
+in the analysis of model-based planning approaches, a construction which may be helpful more generally.

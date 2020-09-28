@@ -1,0 +1,20 @@
+Inexpensive surrogates are useful for reducing the cost of science and engineering studies involving
+large-scale, complex computational models with many input parameters. A ridge approximation
+is one class of surrogate that models a quantity of interest as a nonlinear function of a few linear
+combinations of the input parameters. When used in parameter studies (e.g., optimization or uncertainty
+quantification), ridge approximations allow the low dimensional structure to be exploited, reducing
+the effective dimension. We introduce a new, fast algorithm for constructing a ridge approximation
+where the nonlinear function is a polynomial. This polynomial ridge approximation is chosen to
+minimize least squared mismatch between the surrogate and the quantity of interest on a given set
+of inputs. Naively, this would require optimizing both the polynomial coefficients and the linear
+combination of weights; the latter of which define a low-dimensional subspace of the input space.
+However, given a fixed subspace the optimal polynomial can be found by solving a linear least-squares
+problem, and hence by using variable projection the polynomial can be implicitly found leaving
+an optimization problem over the subspace alone. We provide an algorithm that finds this polynomial
+ridge approximation by minimizing over the Grassmann manifold of low-dimensional subspaces using
+a Gauss-Newton method. We provide details of this optimization algorithm and demonstrate its performance
+on several numerical examples. Our Gauss-Newton method has superior theoretical guarantees and
+faster convergence than the alternating approach for polynomial ridge approximation earlier
+proposed by Constantine, Eftekhari, Hokanson, and Ward [https://doi.org/10.1016/j.cma.2017.07.038]
+that alternates between (i) optimizing the polynomial coefficients given the subspace and (ii)
+optimizing the subspace given the coefficients. 

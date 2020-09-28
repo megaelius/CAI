@@ -1,0 +1,20 @@
+We seek to align agent policy with human expert behavior in a reinforcement learning (RL) setting,
+without any prior knowledge about dynamics, reward function, and unsafe states. There is a human
+expert knowing the rewards and unsafe states based on his preference and objective, but querying
+that human expert is expensive. To address this challenge, we propose a new framework for imitation
+learning (IL) algorithm that actively and interactively learns a model of the user's reward function
+with efficient queries. We build an adversarial generative model of states and a successor feature
+(SR) model trained over transition experience collected by learning policy. Our method uses these
+models to select state-action pairs, asking the user to comment on the optimality or safety, and
+trains a adversarial neural network to predict the rewards. Different from previous papers, which
+are almost all based on uncertainty sampling, the key idea is to actively and efficiently select
+state-action pairs from both on-policy and off-policy experience, by discriminating the queried
+(expert) and unqueried (generated) data and maximizing the efficiency of value function learning.
+We call this method adversarial reward query with successor representation. We evaluate the proposed
+method with simulated human on a state-based 2D navigation task, robotic control tasks and the image-based
+video games, which have high-dimensional observation and complex state dynamics. The results
+show that the proposed method significantly outperforms uncertainty-based methods on learning
+reward models, achieving better query efficiency, where the adversarial discriminator can make
+the agent learn human behavior more efficiently and the SR can select states which have stronger
+impact on value function. Moreover, the proposed method can also learn to avoid unsafe states when
+training the reward model. 

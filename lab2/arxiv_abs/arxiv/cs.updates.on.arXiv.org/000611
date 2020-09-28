@@ -1,0 +1,19 @@
+Robust control and maintenance of the grid relies on accurate data. Both PMUs and state estimators
+are prone to false data injection attacks. Thus, it is crucial to have a mechanism for fast and accurate
+detection of an agent maliciously tampering with the data---for both preventing attacks that may
+lead to blackouts, and for routine monitoring and control tasks of current and future grids. We propose
+a decentralized false data injection detection scheme based on Markov graph of the bus phase angles.
+We utilize the Conditional Covariance Test (CCT) to learn the structure of the grid. Using the DC
+power flow model, we show that under normal circumstances, and because of walk-summability of the
+grid graph, the Markov graph of the voltage angles can be determined by the power grid graph. Therefore,
+a discrepancy between calculated Markov graph and learned structure should trigger the alarm.
+Local grid topology is available online from the protection system and we exploit it to check for
+mismatch. Should a mismatch be detected, we use correlation anomaly score to detect the set of attacked
+nodes. Our method can detect the most recent stealthy deception attack on the power grid that assumes
+knowledge of bus-branch model of the system and is capable of deceiving the state estimator, damaging
+power network observatory, control, monitoring, demand response and pricing schemes. Specifically,
+under the stealthy deception attack, the Markov graph of phase angles changes. In addition to detect
+a state of attack, our method can detect the set of attacked nodes. To the best of our knowledge, our
+remedy is the first to comprehensively detect this sophisticated attack and it does not need additional
+hardware. Moreover, our detection scheme is successful no matter the size of the attacked subset.
+Simulation of various power networks confirms our claims. 

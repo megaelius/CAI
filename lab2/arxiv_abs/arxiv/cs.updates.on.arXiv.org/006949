@@ -1,0 +1,19 @@
+The problem of completing high-dimensional matrices from a limited set of observations arises
+in many big data applications, especially, recommender systems. Existing matrix completion models
+generally follow either a memory- or a model-based approach, whereas, geometric matrix completion
+models combine the best from both approaches. Existing deep-learning-based geometric models
+yield good performance, but, in order to operate, they require a fixed structure graph capturing
+the relationships among the users and items. This graph is typically constructed by evaluating
+a pre-defined similarity metric on the available observations or by using side information, e.g.,
+user profiles. In contrast, Markov-random-fields-based models do not require a fixed structure
+graph but rely on handcrafted features to make predictions. When no side information is available
+and the number of available observations becomes very low, existing solutions are pushed to their
+limits. In this paper, we propose a geometric matrix completion approach that addresses these challenges.
+We consider matrix completion as a structured prediction problem in a conditional random field
+(CRF), which is characterized by a maximum a posterior (MAP) inference, and we propose a deep model
+that predicts the missing entries by solving the MAP inference problem. The proposed model simultaneously
+learns the similarities among matrix entries, computes the CRF potentials, and solves the inference
+problem. Its training is performed in an end-to-end manner, with a method to supervise the learning
+of entry similarities. Comprehensive experiments demonstrate the superior performance of the
+proposed model compared to various state-of-the-art models on popular benchmark datasets and
+underline its superior capacity to deal with highly incomplete matrices. 

@@ -1,0 +1,19 @@
+Given enough multi-view image corresponding points (also called tie points) and ground control
+points (GCP), bundle adjustment for high-resolution satellite images is used to refine the orientations
+or most often used geometric parameters Rational Polynomial Coefficients (RPC) of each satellite
+image in a unified geodetic framework, which is very critical in many photogrammetry and computer
+vision applications. However, the growing number of high resolution spaceborne optical sensors
+has brought two challenges to the bundle adjustment: 1) images come from different satellite cameras
+may have different imaging dates, viewing angles, resolutions, etc., thus resulting in geometric
+and radiometric distortions in the bundle adjustment; 2) The large-scale mapping area always corresponds
+to vast number of bundle adjustment corrections (including RPC bias and object space point coordinates).
+Due to the limitation of computer memory, it is hard to refine all corrections at the same time. Hence,
+how to efficiently realize the bundle adjustment in large-scale regions is very important. This
+paper particularly addresses the multi-view large-scale bundle adjustment problem by two steps:
+1) to get robust tie points among different satellite images, we design a multi-view, multi-source
+tie point matching algorithm based on plane rectification and epipolar constraints, which is able
+to compensate geometric and local nonlinear radiometric distortions among satellite datasets,
+and 2) to solve dozens of thousands or even millions of variables bundle adjustment corrections
+in the large scale bundle adjustment, we use an efficient solution with only a little computer memory.
+Experiments on in-track and off-track satellite datasets show that the proposed method is capable
+of computing sub-pixel accuracy bundle adjustment results. 

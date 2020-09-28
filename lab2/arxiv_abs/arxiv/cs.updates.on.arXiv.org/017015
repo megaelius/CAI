@@ -1,0 +1,18 @@
+There have been a fairly of research interests in exploring the disentanglement of appearance and
+shape from human images. Most existing endeavours pursuit this goal by either using training images
+with annotations or regulating the training process with external clues such as human skeleton,
+body segmentation or cloth patches etc. In this paper, we aim to address this challenge in a more unsupervised
+manner---we do not require any annotation nor any external task-specific clues. To this end, we
+formulate an encoder-decoder-like network to extract both the shape and appearance features from
+input images at the same time, and train the parameters by three losses: feature adversarial loss,
+color consistency loss and reconstruction loss. The feature adversarial loss mainly impose little
+to none mutual information between the extracted shape and appearance features, while the color
+consistency loss is to encourage the invariance of person appearance conditioned on different
+shapes. More importantly, our unsupervised (Unsupervised learning has many interpretations
+in different tasks. To be clear, in this paper, we refer unsupervised learning as learning without
+task-specific human annotations, pairs or any form of weak supervision.) framework utilizes learned
+shape features as masks which are applied to the input itself in order to obtain clean appearance
+features. Without using fixed input human skeleton, our network better preserves the conditional
+human posture while requiring less supervision. Experimental results on DeepFashion and Market1501
+demonstrate that the proposed method achieves clean disentanglement and is able to synthesis novel
+images of comparable quality with state-of-the-art weakly-supervised or even supervised methods.

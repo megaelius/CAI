@@ -1,0 +1,19 @@
+Many inverse problems arising in applications come from continuum models where the unknown parameter
+is a field. In practice the unknown field is discretized resulting in a problem in $\mathbb{R}^N$,
+with an understanding that refining the discretization, that is increasing $N$, will often be desirable.
+In the context of Bayesian inversion this situation suggests the importance of two issues: (i) defining
+hyper-parameters in such a way that they are interpretable in the continuum limit $N \to \infty$
+and so that their values may be compared between different discretization levels; (ii) understanding
+the efficiency of algorithms for probing the posterior distribution, as a function of large $N.$
+Here we address these two issues in the context of linear inverse problems subject to additive Gaussian
+noise within a hierarchical modelling framework based on a Gaussian prior for the unknown field
+and an inverse-gamma prior for a hyper-parameter, namely the amplitude of the prior variance. The
+structure of the model is such that the Gibbs sampler can be easily implemented for probing the posterior
+distribution. Subscribing to the dogma that one should think infinite-dimensionally before implementing
+in finite dimensions, we present function space intuition and provide rigorous theory showing
+that as $N$ increases, the component of the Gibbs sampler for sampling the amplitude of the prior
+variance becomes increasingly slower. We discuss a reparametrization of the prior variance that
+is robust with respect to the increase in dimension; we give numerical experiments which exhibit
+that our reparametrization prevents the slowing down. Our intuition on the behaviour of the prior
+hyper-parameter, with and without reparametrization, is sufficiently general to include a broad
+class of nonlinear inverse problems as well as other families of hyper-priors. 

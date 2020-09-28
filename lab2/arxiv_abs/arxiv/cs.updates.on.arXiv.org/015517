@@ -1,0 +1,18 @@
+Convex Shapes (CS) are common priors for optic disc and cup segmentation in eye fundus images. It
+is important to design proper techniques to represent convex shapes. So far, it is still a problem
+to guarantee that the output objects from a Deep Neural Convolution Networks (DCNN) are convex shapes.
+In this work, we propose a technique which can be easily integrated into the commonly used DCNNs for
+image segmentation and guarantee that outputs are convex shapes. This method is flexible and it
+can handle multiple objects and allow some of the objects to be convex. Our method is based on the dual
+representation of the sigmoid activation function in DCNNs. In the dual space, the convex shape
+prior can be guaranteed by a simple quadratic constraint on a binary representation of the shapes.
+Moreover, our method can also integrate spatial regularization and some other shape prior using
+a soft thresholding dynamics (STD) method. The regularization can make the boundary curves of the
+segmentation objects to be simultaneously smooth and convex. We design a very stable active set
+projection algorithm to numerically solve our model. This algorithm can form a new plug-and-play
+DCNN layer called CS-STD whose outputs must be a nearly binary segmentation of convex objects. In
+the CS-STD block, the convexity information can be propagated to guide the DCNN in both forward and
+backward propagation during training and prediction process. As an application example, we apply
+the convexity prior layer to the retinal fundus images segmentation by taking the popular DeepLabV3+
+as a backbone network. Experimental results on several public datasets show that our method is efficient
+and outperforms the classical DCNN segmentation methods. 

@@ -1,0 +1,19 @@
+Graph sparsification underlies a large number of algorithms, ranging from approximation algorithms
+for cut problems to solvers for linear systems in the graph Laplacian. In its strongest form, "spectral
+sparsification" reduces the number of edges to near-linear in the number of nodes, while approximately
+preserving the cut and spectral structure of the graph. The breakthrough work by Bencz\'ur and Karger
+(STOC'96) and Spielman and Teng (STOC'04) showed that sparsification can be done optimally in time
+near-linear in the number of edges of the original graph. In this work we show that quantum algorithms
+allow to speed up spectral sparsification, and thereby many of the derived algorithms. Given adjacency-list
+access to a weighted graph with $n$ nodes and $m$ edges, our algorithm outputs an $\epsilon$-spectral
+sparsifier in time $\widetilde{O}(\sqrt{mn}/\epsilon)$. We prove that this is tight up to polylog-factors.
+The algorithm builds on a string of existing results, most notably sparsification algorithms by
+Spielman and Srivastava (STOC'08) and Koutis and Xu (TOPC'16), a spanner construction by Thorup
+and Zwick (STOC'01), a single-source shortest-paths quantum algorithm by D\"urr et al. (ICALP'04)
+and an efficient $k$-wise independent hash construction by Christiani, Pagh and Thorup (STOC'15).
+Combining our sparsification algorithm with existing classical algorithms yields the first quantum
+speedup, roughly from $\widetilde{O}(m)$ to $\widetilde{O}(\sqrt{mn})$, for approximating
+the max cut, min cut, min $st$-cut, sparsest cut and balanced separator of a graph. Combining our
+algorithm with a classical Laplacian solver, we demonstrate a similar speedup for Laplacian solving,
+for approximating effective resistances, cover times and eigenvalues of the Laplacian, and for
+spectral clustering. 

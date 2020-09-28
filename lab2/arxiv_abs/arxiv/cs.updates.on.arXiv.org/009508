@@ -1,0 +1,18 @@
+In this paper we identify a new class of sparse near-quadratic random Boolean matrices that have
+full row rank over $\mathbb{F}_2=\{0,1\}$ with high probability and can be transformed into echelon
+form in almost linear time by a simple version of Gauss elimination. The random matrix with dimensions
+$n(1-\varepsilon) \times n$ is generated as follows: In each row, identify a block of length $L=O((\log
+n)/\varepsilon)$ at a random position. The entries outside the block are 0, the entries inside the
+block are given by fair coin tosses. Sorting the rows according to the positions of the blocks transforms
+the matrix into a kind of band matrix, on which, as it turns out, Gauss elimination works very efficiently
+with high probability. For the proof, the effects of Gauss elimination are interpreted as a ("coin-flipping")
+variant of Robin Hood hashing, whose behaviour can be captured in terms of a simple Markov model from
+queuing theory. Bounds for expected construction time and high success probability follow from
+results in this area. By employing hashing, this matrix family leads to a new implementation of a
+retrieval data structure, which represents an arbitrary function $f\colon S \to \{0,1\}$ for some
+set $S$ of $m=(1-\varepsilon)n$ keys. It requires $m/(1-\varepsilon)$ bits of space, construction
+takes $O(m/\varepsilon^2$) expected time on a word RAM, while queries take $O(1/\varepsilon)$
+time and access only one contiguous segment of $O((\log m)/\varepsilon)$ bits in the representation.
+The method is competitive with state-of-the-art methods. By well-established methods the retrieval
+data structure leads to efficient constructions of (static) perfect hash functions and (static)
+Bloom filters with almost optimal space and very local storage access patterns for queries. 

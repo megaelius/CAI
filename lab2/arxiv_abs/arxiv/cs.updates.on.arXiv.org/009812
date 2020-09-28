@@ -1,0 +1,18 @@
+Building a spanning tree, minimum spanning tree (MST), and BFS tree in a distributed network are
+fundamental problems which are still not fully understood in terms of time and communication cost.
+x The first work to succeed in computing a spanning tree with communication sublinear in the number
+of edges in an asynchronous CONGEST network appeared in DISC 2018. That algorithm which constructs
+an MST is sequential in the worst case; its running time is proportional to the total number of messages
+sent. Our paper matches its message complexity but brings the running time down to linear in $n$.
+Our techniques can also be used to provide an asynchronous algorithm with sublinear communication
+to construct a tree in which the distance from a source to each node is within an additive term of $\sqrt{n}$
+of its actual distance. We can convert any asynchronous MST algorithm with time $T(n, m)$ and message
+complexity of $M(n, m)$ to an algorithm with time $O(n^{1 - 2\epsilon} + T(n, n^{3/2 + \epsilon}))$
+and message complexity of $\tilde{O}(n^{3/2 + \epsilon} + M(n, n^{3/2+\epsilon}))$, for $\epsilon
+\in [0, 1/4]$. Picking $\epsilon = 0$ and using Awerbuch's algorithm \cite{awerbuch1987optimal},
+this results in an MST algorithm with time $O(n)$ and message complexity $\tilde{O}(n^{3/2})$.
+However, if there were an asynchronous MST algorithm that takes time sublinear in $n$ and requires
+messages linear in $m$, by picking $\epsilon > 0$ we could achieve sublinear time (in $n$) and sublinear
+communication (in $m$), simultaneously. To the best of our knowledge, there is no such algorithm.
+All the algorithms presented here are Monte Carlo and succeed with high probability, in the KT1 CONGEST
+asynchronous model. 

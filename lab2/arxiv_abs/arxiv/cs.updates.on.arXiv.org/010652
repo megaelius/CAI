@@ -1,0 +1,18 @@
+Hand-crafting effective and efficient structures for recurrent neural networks (RNNs) is a difficult,
+expensive, and time-consuming process. To address this challenge, we propose a novel neuro-evolution
+algorithm based on ant colony optimization (ACO), called ant swarm neuro-evolution (ASNE), for
+directly optimizing RNN topologies. The procedure selects from multiple modern recurrent cell
+types such as Delta-RNN, GRU, LSTM, MGU and UGRNN cells, as well as recurrent connections which may
+span multiple layers and/or steps of time. In order to introduce an inductive bias that encourages
+the formation of sparser synaptic connectivity patterns, we investigate several variations of
+the core algorithm. We do so primarily by formulating different functions that drive the underlying
+pheromone simulation process (which mimic L1 and L2 regularization in standard machine learning)
+as well as by introducing ant agents with specialized roles (inspired by how real ant colonies operate),
+i.e., explorer ants that construct the initial feed forward structure and social ants which select
+nodes from the feed forward connections to subsequently craft recurrent memory structures. We
+also incorporate a Lamarckian strategy for weight initialization which reduces the number of backpropagation
+epochs required to locally train candidate RNNs, speeding up the neuro-evolution process. Our
+results demonstrate that the sparser RNNs evolved by ASNE significantly outperform traditional
+one and two layer architectures consisting of modern memory cells, as well as the well-known NEAT
+algorithm. Furthermore, we improve upon prior state-of-the-art results on the time series dataset
+utilized in our experiments. 

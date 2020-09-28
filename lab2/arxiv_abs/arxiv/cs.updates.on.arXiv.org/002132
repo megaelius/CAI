@@ -1,0 +1,19 @@
+Multi-person pose estimation (MPPE) in natural images is key to the meaningful use of visual data
+in many fields including movement science, security, and rehabilitation. In this paper we tackle
+MPPE with a bottom-up approach, starting with candidate detections of body parts from a convolutional
+neural network (CNN) and grouping them into people. We formulate the grouping of body part detections
+into people as a minimum-weight set packing (MWSP) problem where the set of potential people is the
+power set of body part detections. We model the quality of a hypothesis of a person which is a set in
+the MWSP by an augmented tree-structured Markov random field where variables correspond to body-parts
+and their state-spaces correspond to the power set of the detections for that part. We describe a
+novel algorithm that combines efficiency with provable bounds on this MWSP problem. We employ an
+implicit column generation strategy where the pricing problem is formulated as a dynamic program.
+To efficiently solve this dynamic program we exploit the problem structure utilizing a nested Bender's
+decomposition (NBD) exact inference strategy which we speed up by recycling Bender's rows between
+calls to the pricing problem. We test our approach on the MPII-Multiperson dataset, showing that
+our approach obtains comparable results with the state-of-the-art algorithm for joint node labeling
+and grouping problems, and that NBD achieves considerable speed-ups relative to a naive dynamic
+programming approach. Typical algorithms that solve joint node labeling and grouping problems
+use heuristics and thus can not obtain proofs of optimality. Our approach, in contrast, proves that
+for over 99 percent of problem instances we find the globally optimal solution and otherwise provide
+upper/lower bounds. 

@@ -1,0 +1,17 @@
+This paper considers general rank-constrained optimization problems that minimize a general
+objective function $f(X)$ over the set of rectangular $n\times m$ matrices that have rank at most
+$r$. To tackle the rank constraint and also to reduce the computational burden, we factorize $X$
+into $UV^T$ where $U$ and $V$ are $n\times r$ and $m\times r$ matrices, respectively, and then optimize
+over the small matrices $U$ and $V$. We characterize the global optimization geometry of the nonconvex
+factored problem and show that the corresponding objective function satisfies the robust strict
+saddle property as long as the original objective function $f$ satisfies restricted strong convexity
+and smoothness properties, ensuring global convergence of many local search algorithms (such
+as noisy gradient descent) in polynomial time for solving the factored problem. We also provide
+a comprehensive analysis for the optimization geometry of a matrix factorization problem where
+we aim to find $n\times r$ and $m\times r$ matrices $U$ and $V$ such that $UV^T$ approximates a given
+matrix $X^\star$. Aside from the robust strict saddle property, we show that the objective function
+of the matrix factorization problem has no spurious local minima and obeys the strict saddle property
+not only for the exact-parameterization case where $rank(X^\star) = r$, but also for the over-parameterization
+case where $rank(X^\star) < r$ and the under-parameterization case where $rank(X^\star) > r$.
+These geometric properties imply that a number of iterative optimization algorithms (such as gradient
+descent) converge to a global solution with random initialization. 

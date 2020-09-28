@@ -1,0 +1,17 @@
+Capturing and processing video is increasingly common as cameras and networks improve and become
+cheaper. At the same time, algorithms for rich scene understanding and object detection have progressed
+greatly in the last decade. As a result, many organizations now have massive repositories of video
+data, with applications in mapping, navigation, autonomous driving, and other areas. Because
+state of the art vision algorithms to interpret scenes and recognize objects are slow and expensive,
+our ability to process even simple ad-hoc selection queries (`find 100 example traffic lights in
+dashboard camera video') over this accumulated data lags far behind our ability to collect it. Sampling
+image frames from the videos is a reasonable default strategy for these types of queries queries,
+however, the ideal sampling rate is both data and query dependent. We introduce ExSample a low cost
+framework for ad-hoc, unindexed video search which quickly processes selection queries by adapting
+the amount and location of sampled frames to the data and the query being processed. ExSample prioritizes
+which frames within a video repository are processed in order to quickly identify portions of the
+video that contain objects of interest. ExSample continually re-prioritizes which regions of
+video to sample from based on feedback from previous samples. On large, real-world video datasets
+ExSample reduces processing time by up to 4x over an efficient random sampling baseline and by several
+orders of magnitude versus state-of-the-art methods which train specialized models for each query.
+ExSample is a key component in building cost-efficient video data management systems. 

@@ -1,0 +1,17 @@
+Extreme multi-label text classification (XMC) concerns tagging input text with the most relevant
+labels from an extremely large set. Recently, pre-trained language representation models such
+as BERT (Bidirectional Encoder Representations from Transformers) have been shown to achieve
+outstanding performance on many NLP tasks including sentence classification with small label
+sets (typically fewer than thousands). However, there are several challenges in extending BERT
+to the XMC problem, such as (i) the difficulty of capturing dependencies or correlations among labels,
+whose features may come from heterogeneous sources, and (ii) the tractability to scale to the extreme
+label setting because of the Softmax bottleneck scaling linearly with the output space. To overcome
+these challenges, we propose X-BERT, the first scalable solution to finetune BERT models on the
+XMC problem. Specifically, X-BERT leverages both the label and input text to build label representations,
+which induces semantic label clusters to better model label dependencies. At the heart of X-BERT
+is a procedure to finetune BERT models to capture the contextual relations between input text and
+the induced label clusters. Finally, an ensemble of the different BERT models trained on heterogeneous
+label clusters leads to our best final model, which leads to a state-of-the-art XMC method. In particular,
+on a Wiki dataset with around 0.5 million labels, the precision@1 of X-BERT is 67:87%, a substantial
+improvement over the neural baseline fastText and a state-of-the-art XMC approach Parabel, which
+achieves 32:58% and 60:91% precision@1, respectively. 

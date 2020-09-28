@@ -1,0 +1,19 @@
+On-chip learning in a crossbar array based analog hardware Neural Network (NN) has been shown to
+have major advantages in terms of speed and energy compared to training NN on a traditional computer.
+However analog hardware NN proposals and implementations thus far have mostly involved Non Volatile
+Memory (NVM) devices like Resistive Random Access Memory (RRAM), Phase Change Memory (PCM), spintronic
+devices or floating gate transistors as synapses. Fabricating systems based on RRAM, PCM or spintronic
+devices need in-house laboratory facilities and cannot be done through merchant foundries, unlike
+conventional silicon based CMOS chips. Floating gate transistors need large voltage pulses for
+weight update, making on-chip learning in such systems energy inefficient. This paper proposes
+and implements through SPICE simulations on-chip learning in analog hardware NN using only conventional
+silicon based MOSFETs (without any floating gate) as synapses since they are easy to fabricate.
+We first model the synaptic characteristic of our single transistor synapse using SPICE circuit
+simulator and benchmark it against experimentally obtained current-voltage characteristics
+of a transistor. Next we design a Fully Connected Neural Network (FCNN) crossbar array using such
+transistor synapses. We also design analog peripheral circuits for neuron and synaptic weight
+update calculation, needed for on-chip learning, again using conventional transistors. Simulating
+the entire system on SPICE simulator, we obtain high training and test accuracy on the standard Fisher's
+Iris dataset, widely used in machine learning. We also compare the speed and energy performance
+of our transistor based implementation of analog hardware NN with some previous implementations
+of NN with NVM devices and show comparable performance with respect to on-chip learning. 

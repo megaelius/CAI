@@ -1,0 +1,20 @@
+[Abridged] We propose a solution to the problem of quickly and accurately predicting gravitational
+waveforms within any given physical model. The method is relevant for both real-time applications
+and in more traditional scenarios where the generation of waveforms using standard methods can
+be prohibitively expensive. Our approach is based on three offline steps resulting in an accurate
+reduced-order model that can be used as a surrogate for the true/fiducial waveform family. First,
+a set of m parameter values is determined using a greedy algorithm from which a reduced basis representation
+is constructed. Second, these m parameters induce the selection of m time values for interpolating
+a waveform time series using an empirical interpolant. Third, a fit in the parameter dimension is
+performed for the waveform's value at each of these m times. The cost of predicting L waveform time
+samples for a generic parameter choice is of order m L + m c_f online operations where c_f denotes the
+fitting function operation count and, typically, m << L. We generate accurate surrogate
+models for Effective One Body (EOB) waveforms of non-spinning binary black hole coalescences with
+durations as long as 10^5 M, mass ratios from 1 to 10, and for multiple harmonic modes. We find that
+these surrogates are three orders of magnitude faster to evaluate as compared to the cost of generating
+EOB waveforms in standard ways. Surrogate model building for other waveform models follow the same
+steps and have the same low online scaling cost. For expensive numerical simulations of binary black
+hole coalescences we thus anticipate large speedups in generating new waveforms with a surrogate.
+As waveform generation is one of the dominant costs in parameter estimation algorithms and parameter
+space exploration, surrogate models offer a new and practical way to dramatically accelerate such
+studies without impacting accuracy. 

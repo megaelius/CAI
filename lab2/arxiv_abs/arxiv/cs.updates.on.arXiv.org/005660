@@ -1,0 +1,19 @@
+Most tumor grading systems for human as for veterinary histopathology are based upon the absolute
+count of mitotic figures in a certain reference area of a histology slide. Since time for prognostication
+is limited in a diagnostic setting, the pathologist will often almost arbitrarily choose a certain
+field of interest assumed to have the highest mitotic activity. However, as mitotic figures are
+commonly very sparse on the slide and often have a patchy distribution, this poses a sampling problem
+which is known to be able to influence the tumor prognostication. On the other hand, automatic detection
+of mitotic figures can't yet be considered reliable enough for clinical application. In order to
+aid the work of the human expert and at the same time reduce variance in tumor grading, it is beneficial
+to assess the whole slide image (WSI) for the highest mitotic activity and use this as a reference
+region for human counting. For this task, we compare two methods for region of interest proposal,
+both based on convolutional neural networks (CNN). For both approaches, the CNN performs a segmentation
+of the WSI to assess mitotic activity. The first method performs a segmentation at the original image
+resolution, while the second approach performs a segmentation operation at a significantly reduced
+resolution, cutting down on processing complexity. We evaluate the approach using a dataset of
+32 completely annotated whole slide images of canine mast cell tumors, where 22 were used for training
+of the network and 10 for test. Our results indicate that, while the overall correlation to the ground
+truth mitotic activity is considerably higher (0.94 vs. 0.83) for the approach based upon the fine
+resolution network, the field of interest choices are only marginally better. Both approaches
+propose fields of interest that contain a mitotic count in the upper quartile of respective slides.

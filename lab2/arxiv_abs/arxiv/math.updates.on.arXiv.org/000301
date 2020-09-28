@@ -1,0 +1,18 @@
+In a number of problems in computational physics, a finite sum of kernel functions centered at $N$
+particle locations located in a box in three dimensions must be extended by imposing periodic boundary
+conditions on box boundaries. Even though the finite sum can be efficiently computed via fast summation
+algorithms, such as the fast multipole method (FMM), the periodized extension is usually treated
+via a different algorithm, Ewald summation, accelerated via the fast Fourier transform (FFT).
+A different approach to compute this periodized sum just using a blackbox finite fast summation
+algorithm is presented in this paper. The method splits the periodized sum in to two parts. The first,
+comprising the contribution of all points outside a large sphere enclosing the box, and some of its
+neighbors, is approximated inside the box by a collection of kernel functions ("sources") placed
+on the surface of the sphere or using an expansion in terms of spectrally convergent local basis functions.
+The second part, comprising the part inside the sphere, and including the box and its immediate neighborhood,
+is treated via available summation algorithms. The coefficients of the sources are determined
+by least squares collocation of the periodicity condition of the total potential, imposed on a circumspherical
+surface for the box. While the method is presented in general, details are worked out for the case
+of evaluating electrostatic potentials and forces. Results show that when used with the FMM, the
+periodized sum can be computed to any specified accuracy, at a cost that is twice that of the free-space
+FMM with the same accuracy. Several technical details and efficient algorithms for auxiliary computations
+are provided, as are numerical comparisons. 

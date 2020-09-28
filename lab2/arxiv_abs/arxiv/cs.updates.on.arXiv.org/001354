@@ -1,0 +1,19 @@
+MPI collective operations provide a standardized interface for performing data movements within
+a group of processes. The efficiency of collective communication operations depends on the actual
+algorithm, its implementation, and the specific communication problem (type of communication,
+message size, number of processes). Many MPI libraries provide numerous algorithms for specific
+collective operations. The strategy for selecting an efficient algorithm is often times predefined
+(hard-coded) in MPI libraries, but some of them, such as Open MPI, allow users to change the algorithm
+manually. Finding the best algorithm for each case is a hard problem, and several approaches to tune
+these algorithmic parameters have been proposed. We use an orthogonal approach to the parameter-tuning
+of MPI collectives, that is, instead of testing individual algorithmic choices provided by an MPI
+library, we compare the latency of a specific MPI collective operation to the latency of semantically
+equivalent functions, which we call the mock-up implementations. The structure of the mock-up
+implementations is defined by self-consistent performance guidelines. The advantage of this
+approach is that tuning using mock-up implementations is always possible, whether or not an MPI
+library allows users to select a specific algorithm at run-time. We implement this concept in a library
+called PGMPITuneLib, which is layered between the user code and the actual MPI implementation.
+This library selects the best-performing algorithmic pattern of an MPI collective by intercepting
+MPI calls and redirecting them to our mock-up implementations. Experimental results show that
+PGMPITuneLib can significantly reduce the latency of MPI collectives, and also equally important,
+that it can help identifying the tuning potential of MPI libraries. 

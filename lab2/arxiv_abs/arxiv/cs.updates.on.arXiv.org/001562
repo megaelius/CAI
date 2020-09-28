@@ -1,0 +1,20 @@
+In June 2016, Apple announced that it will deploy differential privacy for some user data collection
+in order to ensure privacy of user data, even from Apple. The details of Apple's approach remained
+sparse. Although several patents have since appeared hinting at the algorithms that may be used
+to achieve differential privacy, they did not include a precise explanation of the approach taken
+to privacy parameter choice. Such choice and the overall approach to privacy budget use and management
+are key questions for understanding the privacy protections provided by any deployment of differential
+privacy. In this work, through a combination of experiments, static and dynamic code analysis of
+macOS Sierra (Version 10.12) implementation, we shed light on the choices Apple made for privacy
+budget management. We discover and describe Apple's set-up for differentially private data processing,
+including the overall data pipeline, the parameters used for differentially private perturbation
+of each piece of data, and the frequency with which such data is sent to Apple's servers. We find that
+although Apple's deployment ensures that the (differential) privacy loss per each datum submitted
+to its servers is $1$ or $2$, the overall privacy loss permitted by the system is significantly higher,
+as high as $16$ per day for the four initially announced applications of Emojis, New words, Deeplinks
+and Lookup Hints. Furthermore, Apple renews the privacy budget available every day, which leads
+to a possible privacy loss of 16 times the number of days since user opt-in to differentially private
+data collection for those four applications. We advocate that in order to claim the full benefits
+of differentially private data collection, Apple must give full transparency of its implementation,
+enable user choice in areas related to privacy loss, and set meaningful defaults on the privacy loss
+permitted. 

@@ -1,0 +1,19 @@
+Oblivious low-distortion subspace embeddings are a crucial building block for numerical linear
+algebra problems. We show for any real $p, 1 \leq p < \infty$, given a matrix $M \in \mathbb{R}^{n
+\times d}$ with $n \gg d$, with constant probability we can choose a matrix $\Pi$ with $\max(1, n^{1-2/p})
+\poly(d)$ rows and $n$ columns so that simultaneously for all $x \in \mathbb{R}^d$, $\|Mx\|_p \leq
+\|\Pi Mx\|_{\infty} \leq \poly(d) \|Mx\|_p.$ Importantly, $\Pi M$ can be computed in the optimal
+$O(\nnz(M))$ time, where $\nnz(M)$ is the number of non-zero entries of $M$. This generalizes all
+previous oblivious subspace embeddings which required $p \in [1,2]$ due to their use of $p$-stable
+random variables. Using our matrices $\Pi$, we also improve the best known distortion of oblivious
+subspace embeddings of $\ell_1$ into $\ell_1$ with $\tilde{O}(d)$ target dimension in $O(\nnz(M))$
+time from $\tilde{O}(d^3)$ to $\tilde{O}(d^2)$, which can further be improved to $\tilde{O}(d^{3/2})
+\log^{1/2} n$ if $d = \Omega(\log n)$, answering a question of Meng and Mahoney (STOC, 2013). We apply
+our results to $\ell_p$-regression, obtaining a $(1+\eps)$-approximation in $O(\nnz(M)\log
+n) + \poly(d/\eps)$ time, improving the best known $\poly(d/\eps)$ factors for every $p \in [1,
+\infty) \setminus \{2\}$. If one is just interested in a $\poly(d)$ rather than a $(1+\eps)$-approximation
+to $\ell_p$-regression, a corollary of our results is that for all $p \in [1, \infty)$ we can solve
+the $\ell_p$-regression problem without using general convex programming, that is, since our
+subspace embeds into $\ell_{\infty}$ it suffices to solve a linear programming problem. Finally,
+we give the first protocols for the distributed $\ell_p$-regression problem for every $p \geq 1$
+which are nearly optimal in communication and computation. 

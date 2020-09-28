@@ -1,0 +1,17 @@
+Volumetric models have become a popular representation for 3D scenes in recent years. One breakthrough
+leading to their popularity was KinectFusion, which focuses on 3D reconstruction using RGB-D sensors.
+However, monocular SLAM has since also been tackled with very similar approaches. Representing
+the reconstruction volumetrically as a TSDF leads to most of the simplicity and efficiency that
+can be achieved with GPU implementations of these systems. However, this representation is memory-intensive
+and limits applicability to small-scale reconstructions. Several avenues have been explored
+to overcome this. With the aim of summarizing them and providing for a fast, flexible 3D reconstruction
+pipeline, we propose a new, unifying framework called InfiniTAM. The idea is that steps like camera
+tracking, scene representation and integration of new data can easily be replaced and adapted to
+the user's needs. This report describes the technical implementation details of InfiniTAM v3,
+the third version of our InfiniTAM system. We have added various new features, as well as making numerous
+enhancements to the low-level code that significantly improve our camera tracking performance.
+The new features that we expect to be of most interest are (i) a robust camera tracking module; (ii)
+an implementation of Glocker et al.'s keyframe-based random ferns camera relocaliser; (iii) a
+novel approach to globally-consistent TSDF-based reconstruction, based on dividing the scene
+into rigid submaps and optimising the relative poses between them; and (iv) an implementation of
+Keller et al.'s surfel-based reconstruction approach. 

@@ -1,0 +1,18 @@
+Model predictive control problems for constrained hybrid systems are usually cast as mixed-integer
+optimization problems (MIP). However, commercial MIP solvers are designed to run on desktop computing
+platforms and are not suited for embedded applications which are typically restricted by limited
+computational power and memory. To alleviate these restrictions, we develop a novel low-complexity,
+iterative method for a class of non-convex, non-smooth optimization problems. This class of problems
+encompasses hybrid model predictive control problems where the dynamics are piece-wise affine
+(PWA). We give conditions such that the proposed algorithm has fixed points and show that, under
+practical assumptions, our method is guaranteed to converge locally to local minima. This is in
+contrast to other low-complexity methods in the literature, such as the non-convex alternating
+directions method of multipliers (ADMM), for which no such guarantees are known for this class of
+problems. By interpreting the PWA dynamics as a union of polyhedra we can exploit the problem structure
+and develop an algorithm based on operator splitting procedures. Our algorithm departs from the
+traditional MIP formulation, and leads to a simple, embeddable method that only requires matrix-vector
+multiplications and small-scale projections onto polyhedra. We illustrate the efficacy of the
+method on two numerical examples, achieving good closed-loop performance with computational
+times several orders of magnitude smaller compared to state-of-the-art MIP solvers. Moreover,
+it is competitive with ADMM in terms of suboptimality and computation time, but additionally provides
+local optimality and local convergence guarantees. 

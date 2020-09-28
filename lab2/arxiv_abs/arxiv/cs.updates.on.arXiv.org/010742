@@ -1,0 +1,19 @@
+The failure of a complex and safety critical industrial asset can have extremely high consequences.
+Close monitoring for early detection of abnormal system conditions is therefore required. Data-driven
+solutions to this problem have been limited for two reasons: First, safety critical assets are designed
+and maintained to be highly reliable and faults are rare. Fault detection can thus not be solved with
+supervised learning. Second, complex industrial systems usually have long lifetime during which
+they face very different operating conditions. In the early life of the system, the collected data
+is probably not representative of future operating conditions, making it challenging to train
+a robust model. In this paper, we propose a methodology to monitor the systems in their early life.
+To do so, we enhance the training dataset with other units from a fleet, for which longer observations
+are available. Since each unit has its own specificity, we propose to extract features made independent
+of their origin by three unsupervised feature alignment techniques. First, using a variational
+encoder, we impose a shared probabilistic encoder/decoder for both units. Second, we introduce
+a new loss designed to conserve inter-point spacial relationships between the input and the learned
+features. Last, we propose to train in an adversarial manner a discriminator on the origin of the
+features. Once aligned, the features are fed to a one-class classifier to monitor the health of the
+system. By exploring the different combinations of the proposed alignment strategies, and by testing
+them on a real case study, a fleet composed of 112 power plants operated in different geographical
+locations and under very different operating regimes, we demonstrate that this alignment is necessary
+and beneficial. 

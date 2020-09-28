@@ -1,0 +1,19 @@
+While there has been great interest in generating imperceptible adversarial examples in continuous
+data domain (e.g. image and audio) to explore the model vulnerabilities, generating \emph{adversarial
+text} in the discrete domain is still challenging. The main contribution of this paper is to propose
+a general targeted attack framework AdvCodec for adversarial text generation which addresses
+the challenge of discrete input space and is easily adapted to general natural language processing
+(NLP) tasks. In particular, we propose a tree-based autoencoder to encode discrete text data into
+continuous vector space, upon which we optimize the adversarial perturbation. A tree-based decoder
+is then applied to ensure the grammar correctness of the generated text. It also enables the flexibility
+of making manipulations on different levels of text, such as sentence (AdvCodec(sent)) and word
+(AdvCodec(word)) levels. We consider multiple attacking scenarios, including appending an adversarial
+sentence or adding unnoticeable words to a given paragraph, to achieve the arbitrary targeted attack.
+To demonstrate the effectiveness of the proposed method, we consider two most representative NLP
+tasks: sentiment analysis and question answering (QA). Extensive experimental results and human
+studies show that AdvCodec generated adversarial text can successfully attack the neural models
+without misleading the human. In particular, our attack causes a BERT-based sentiment classifier
+accuracy to drop from 0.703$ to 0.006, and a BERT-based QA model's F1 score to drop from 88.62 to 33.21
+(with best targeted attack F1 score as 46.54). Furthermore, we show that the white-box generated
+adversarial texts can transfer across other black-box models, shedding light on an effective way
+to examine the robustness of existing NLP models. 

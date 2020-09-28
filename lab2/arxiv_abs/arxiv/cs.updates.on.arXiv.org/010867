@@ -1,0 +1,18 @@
+Context. White-box test generation is a technique used for automatically selecting test inputs
+using only the source or binary code. However, such techniques encounter challenges when applying
+them to complex programs. One of the main challenges is handling the dependencies of the unit under
+test. Objective. Without proper actions, generated tests cannot cover all parts of the source code,
+or calling the dependencies may cause unexpected side effects (e.g., file system or network access).
+These issues should be tackled while maintaining the advantages of white-box test generation.
+Method. In this paper, we present an automated source code transformation approach tackling the
+dependency issue for white-box test generation. This technique isolates the test execution by
+creating a parameterized sandbox wrapped around the transformed unit. We implemented the approach
+in a ready-to-use tool using Microsoft Pex as a test generator, and evaluated it on 10 open-source
+projects from GitHub having more than 38.000 lines of code in total. Results. The results from the
+evaluation indicate that if the lack of isolation hinders white-box test generation, then our approach
+is able to help: it increases the code coverage reached by the automatically generated test, while
+it reduces unwanted side effects. Also, our results act as a unique baseline for the test generation
+performance of Microsoft Pex on open-source projects. Conclusion. Based on the results, our source
+code transformations might serve well for alleviating the isolation problem in white-box test
+generation as it increases the coverage reached in such situations, while maintaining the practical
+applicability of the tests generated on the isolated code. 

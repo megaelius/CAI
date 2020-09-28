@@ -1,0 +1,20 @@
+Coherent Gradients (CGH) is a recently proposed hypothesis to explain why over-parameterized
+neural networks trained with gradient descent generalize well even though they have sufficient
+capacity to memorize the training set. The key insight of CGH is that, since the overall gradient
+for a single step of SGD is the sum of the per-example gradients, it is strongest in directions that
+reduce the loss on multiple examples if such directions exist. In this paper, we validate CGH on ResNet,
+Inception, and VGG models on ImageNet. Since the techniques presented in the original paper do not
+scale beyond toy models and datasets, we propose new methods. By posing the problem of suppressing
+weak gradient directions as a problem of robust mean estimation, we develop a coordinate-based
+median of means approach. We present two versions of this algorithm, M3, which partitions a mini-batch
+into 3 groups and computes the median, and a more efficient version RM3, which reuses gradients from
+previous two time steps to compute the median. Since they suppress weak gradient directions without
+requiring per-example gradients, they can be used to train models at scale. Experimentally, we
+find that they indeed greatly reduce overfitting (and memorization) and thus provide the first
+convincing evidence that CGH holds at scale. We also propose a new test of CGH that does not depend
+on adding noise to training labels or on suppressing weak gradient directions. Using the intuition
+behind CGH, we posit that the examples learned early in the training process (i.e., "easy" examples)
+are precisely those that have more in common with other training examples. Therefore, as per CGH,
+the easy examples should generalize better amongst themselves than the hard examples amongst themselves.
+We validate this hypothesis with detailed experiments, and believe that it provides further orthogonal
+evidence for CGH. 

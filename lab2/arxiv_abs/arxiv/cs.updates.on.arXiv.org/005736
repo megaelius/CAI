@@ -1,0 +1,17 @@
+Algorithms for scheduling structured parallel computations have been widely studied in the literature.
+For some time now, Work Stealing is one of the most popular for scheduling such computations, and
+its performance has been studied in both theory and practice. Although it delivers provably good
+performances, the effectiveness of its underlying load balancing strategy is known to be limited
+for certain classes of computations, particularly the ones exhibiting irregular parallelism
+(e.g. depth first searches). Many studies have addressed this limitation from a purely load balancing
+perspective, viewing computations as sets of independent tasks, and then analyzing the expected
+amount of work attached to each processor as the execution progresses. However, these studies make
+strong assumptions regarding work generation which, despite being standard from a queuing theory
+perspective --- where work generation can be assumed to follow some random distribution --- do not
+match the reality of structured parallel computations --- where the work generation is not random,
+only depending on the structure of a computation. In this paper, we introduce a formal framework
+for studying the performance of structured computation schedulers, define a criterion that is
+appropriate for measuring their performance, and present a methodology for analyzing the performance
+of randomized schedulers. We demonstrate the convenience of this methodology by using it to prove
+that the performance of Work Stealing is limited, and to analyze the performance of a Work Stealing
+and Spreading algorithm, which overcomes Work Stealing's limitation. 

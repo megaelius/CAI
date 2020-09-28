@@ -1,0 +1,17 @@
+Let $P \subset \mathbb{R}^2$ be a planar $n$-point set such that each point $p \in P$ has an associated
+radius $r_p > 0$. The transmission graph $G$ for $P$ is the directed graph with vertex set $P$ such
+that for any $p, q \in P$, there is an edge from $p$ to $q$ if and only if $d(p, q) \leq r_p$. Let $t > 1$ be
+a constant. A $t$-spanner for $G$ is a subgraph $H \subseteq G$ with vertex set $P$ so that for any two
+vertices $p,q \in P$, we have $d_H(p, q) \leq t d_G(p, q)$, where $d_H$ and $d_G$ denote the shortest
+path distance in $H$ and $G$, respectively (with Euclidean edge lengths). We show how to compute
+a $t$-spanner for $G$ with $O(n)$ edges in $O(n (\log n + \log \Psi))$ time, where $\Psi$ is the ratio
+of the largest and smallest radius of a point in $P$. Using more advanced data structures, we obtain
+a construction that runs in $O(n \log^5 n)$ time, independent of $\Psi$. We give two applications
+for our spanners. First, we show how to use our spanner to find a BFS tree in $G$ from any given start
+vertex in $O(n \log n)$ time (in addition to the time it takes to build the spanner). Second, we show
+how to use our spanner to extend a reachability oracle to answer geometric reachability queries.
+In a geometric reachability query we ask whether a vertex $p$ in $G$ can "reach" a target $q$ which
+is an arbitrary point in the plane (rather than restricted to be another vertex $q$ of $G$ in a standard
+reachability query). Our spanner allows the reachability oracle to answer geometric reachability
+queries with an additive overhead of $O(\log n\log \Psi)$ to the query time and $O(n \log \Psi)$ to
+the space. 

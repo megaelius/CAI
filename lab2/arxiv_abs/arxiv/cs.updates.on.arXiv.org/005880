@@ -1,0 +1,19 @@
+The solution of (generalized) eigenvalue problems for symmetric or Hermitian matrices is a common
+subtask of many numerical calculations in electronic structure theory or materials science. Solving
+the eigenvalue problem can easily amount to a sizeable fraction of the whole numerical calculation.
+For researchers in the field of computational materials science, an efficient and scalable solution
+of the eigenvalue problem is thus of major importance. The ELPA-library is a well-established dense
+direct eigenvalue solver library, which has proven to be very efficient and scalable up to very large
+core counts. In this paper, we describe the latest optimizations of the ELPA-library for new HPC
+architectures of the Intel Skylake processor family with an AVX-512 SIMD instruction set, or for
+HPC systems accelerated with recent GPUs. We also describe a complete redesign of the API in a modern
+modular way, which, apart from a much simpler and more flexible usability, leads to a new path to access
+system-specific performance optimizations. In order to ensure optimal performance for a particular
+scientific setting or a specific HPC system, the new API allows the user to influence in straightforward
+way the internal details of the algorithms and of performance-critical parameters used in the ELPA-library.
+On top of that, we introduced an autotuning functionality, which allows for finding the best settings
+in a self-contained automated way. In situations where many eigenvalue problems with similar settings
+have to be solved consecutively, the autotuning process of the ELPA-library can be done "on-the-fly".
+Practical applications from materials science which rely on so-called self-consistency iterations
+can profit from the autotuning. On some examples of scientific interest, simulated with the FHI-aims
+application, the advantages of the latest optimizations of the ELPA-library are demonstrated.

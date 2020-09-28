@@ -1,0 +1,18 @@
+The Selfdestruct function is provided by Ethereum smart contracts to destroy a contract on the blockchain
+system. However, it is a double-edged sword for developers. On the one hand, using Selfdestruct
+function enables developers to remove smart contracts (SC) from Ethereum and transfers Ethers
+when emergency situations happen, e.g. being attacked. On the other hand, this function can increase
+the complexity for the development and open an attack vector for attackers. To better understand
+the reasons why SC developers include or exclude the Selfdestruct function in their contracts,
+we conducted an online survey to collect feedback from them and summarize the key reasons. Their
+feedback shows that 66.67% of the developers will deploy an updated contract to the Ethereum after
+destructing the old contract. According to this information, we propose a method to find the self-destruct
+contracts (also called predecessor contracts) and their updated version (successor contracts)
+by computing the code similarity. By analyzing the difference between the predecessor contracts
+and their successor contracts, we found six reasons that led to the death of the contracts; three
+of them (i.e., Unmatched ERC20 Token, Confusing Contract and Limits of Permission) might affect
+the life span of contracts. We developed a tool named LifeScope to detect these problems. LifeScope
+reports 0 false positives or negatives in detecting Unmatched ERC20 Token and Confusing Contract.
+In terms of Limits of Permission, LifeScope achieves 85.67% of F-measure and 0.9014 of AUC. According
+to the feedback of developers who exclude Selfdestruct functions, we propose suggestions to help
+developers use Selfdestruct functions in Ethereum smart contracts better. 

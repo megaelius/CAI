@@ -1,0 +1,17 @@
+We investigate quantum backtracking algorithms of a type previously introduced by Montanaro (arXiv:1509.02374).
+These algorithms explore trees of unknown structure, and in certain cases exponentially outperform
+classical procedures (such as DPLL). Some of the previous work focused on obtaining a quantum advantage
+for trees in which a unique marked vertex is promised to exist. We remove this restriction and re-characterise
+the problem in terms of the effective resistance of the search space. To this end, we present a generalisation
+of one of Montanaro's algorithms to trees containing $k \geq 1$ marked vertices, where $k$ is not
+necessarily known \textit{a priori}. Our approach involves using amplitude estimation to determine
+a near-optimal weighting of a diffusion operator, which can then be applied to prepare a superposition
+state that has support only on marked vertices and ancestors thereof. By repeatedly sampling this
+state and updating the input vertex, a marked vertex is reached in a logarithmic number of steps.
+The algorithm thereby achieves the conjectured bound of $\widetilde{\mathcal{O}}(\sqrt{TR_{\mathrm{max}}})$
+for finding a single marked vertex and $\widetilde{\mathcal{O}}\left(k\sqrt{T R_{\mathrm{max}}}\right)$
+for finding all $k$ marked vertices, where $T$ is an upper bound on the tree size and $R_{\mathrm{max}}$
+is the maximum effective resistance encountered by the algorithm. This constitutes a speedup over
+Montanaro's original procedure in both the case of finding one and finding multiple marked vertices
+in an arbitrary tree. If there are no marked vertices, the effective resistance becomes infinite,
+and we recover the scaling of Montanaro's existence algorithm. 

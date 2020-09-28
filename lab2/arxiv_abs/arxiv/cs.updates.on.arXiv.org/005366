@@ -1,0 +1,20 @@
+This paper introduces a natural "reoptimization" meta-problem, which should be particularly
+relevant in faulty or dynamic networks. Fix any $\Delta > 0, \epsilon > 0$. Given two "approximate"
+solutions $M$ and $M'$ to some graph optimization problem, where $M'$ is "better" than $M$, the goal
+is to gradually transform $M$ into $M'$ throughout a sequence of "phases", each making at most $\Delta$
+changes to the current (gradually transformed) solution, so that the solution at the end of each
+phase is feasible and at least as good, up to some $\epsilon$ dependence, as the original solution
+$M$. We study (approximate) maximum cardinality matching, maximum weight matching, and minimum
+spanning forest, and design near-optimal transformations for these problems. We demonstrate
+the applicability of this meta-problem to dynamic graph matchings. The number of changes to the
+maintained matching per update step, known as the recourse bound, is an important measure of quality.
+Nevertheless, the worst-case recourse bounds of almost all known dynamic matching algorithms
+is significantly larger than the corresponding update times. We fill in this gap via a surprisingly
+simple black-box reduction: Any dynamic algorithm for maintaining a $\beta$-approximate maximum
+cardinality matching with update time $T$, for any $\beta \ge 1, T, \epsilon > 0$, can be transformed
+into an algorithm for maintaining a $(\beta(1 +\epsilon))$-approximate maximum cardinality
+matching with update time $T + O(1/\epsilon)$ and a worst-case recourse bound of $O(1/\epsilon)$.
+This result generalizes for approximate maximum weight matching. As a corollary of our reduction,
+several key dynamic approximate matching algorithms in this area, which achieve low update time
+bounds but poor worst-case recourse bounds, are strengthened to achieve near-optimal worst-case
+recourse bounds with essentially no loss in the update time. 

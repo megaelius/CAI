@@ -1,0 +1,18 @@
+Butterflies are the smallest non-trivial subgraph in bipartite graphs, and therefore having efficient
+computations for analyzing them is crucial to improving the quality of certain applications on
+bipartite graphs. In this paper, we design a framework called ParButterfly that produces new parallel
+algorithms for the following problems on processing butterflies: global counting, per-vertex
+counting, per-edge counting, tip decomposition (vertex peeling), and wing decomposition (edge
+peeling). The main component of these algorithms is combining wedges incident on subsets of vertices,
+and our framework allows us to use different methods for wedge aggregation, including combining
+via sorting, hashing, histogramming, and batching. Moreover, ranking the vertices can speed up
+butterfly counting, as we only need to consider wedges formed by a particular ordering of the vertices.
+ParButterfly supports different ways to rank the vertices, including side ordering, approximate
+and exact degree ordering, and approximate and exact complement coreness ordering. For counting,
+ParButterfly also supports both exact computation as well as approximate computation via graph
+sparsification. We prove strong theoretical guarantees on the work and give parallel running times
+of the algorithms as obtained in our framework. We perform a comprehensive evaluation of all of the
+algorithms obtained from ParButterfly on a collection of real-world bipartite graphs using a 48-core
+machine. Our algorithms obtain significant parallel speedup, outperforming the fastest sequential
+algorithms by up to 13.6x with a self-relative speedup of up to 38.5x. Compared to general subgraph
+counting solutions, we are orders of magnitude faster. 

@@ -1,0 +1,19 @@
+We consider the problem of designing and analyzing differentially private algorithms that can
+be implemented on discrete models of computation in strict polynomial time, motivated by known
+attacks on floating point implementations of real-arithmetic differentially private algorithms
+(Mironov, CCS 2012) and the potential for timing attacks on expected polynomial-time algorithms.
+We use a case study the basic problem of approximating the histogram of a categorical dataset over
+a possibly large data universe $\mathcal{X}$. The classic Laplace Mechanism (Dwork, McSherry,
+Nissim, Smith, TCC 2006 and J. Privacy & Confidentiality 2017) does not satisfy our requirements,
+as it is based on real arithmetic, and natural discrete analogues, such as the Geometric Mechanism
+(Ghosh, Roughgarden, Sundarajan, STOC 2009 and SICOMP 2012), take time at least linear in $|\mathcal{X}|$,
+which can be exponential in the bit length of the input. In this paper, we provide strict polynomial-time
+discrete algorithms for approximate histograms whose simultaneous accuracy (the maximum error
+over all bins) matches that of the Laplace Mechanism up to constant factors, while retaining the
+same (pure) differential privacy guarantee. One of our algorithms produces a sparse histogram
+as output. Its "per-bin accuracy" (the error on individual bins) is worse than that of the Laplace
+Mechanism by a factor of $\log |\mathcal{X}|$, but we prove a lower bound showing that this is necessary
+for any algorithm that produces a sparse histogram. A second algorithm avoids this lower bound,
+and matches the per-bin accuracy of the Laplace Mechanism, by producing a compact and efficiently
+computable representation of a dense histogram; it is based on an $(n+1)$-wise independent implementation
+of an appropriately clamped version of the Discrete Geometric Mechanism. 

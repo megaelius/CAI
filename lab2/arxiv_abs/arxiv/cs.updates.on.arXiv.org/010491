@@ -1,0 +1,18 @@
+We consider a set of transmitters broadcasting simultaneously on the same frequency under the SINR
+model. Transmission power may vary from one transmitter to another, and a transmitter's signal
+strength at a given point is modeled by the transmitter's power divided by some constant power $\alpha$
+of the distance it traveled. Roughly, a receiver at a given location can hear a specific transmitter
+only if the transmitter's signal is stronger by a specified ratio than the signals of all other transmitters
+combined. An SINR query is to determine whether a receiver at a given location can hear any transmitter,
+and if yes, which one. An approximate answer to an SINR query is such that one gets a definite YES or
+definite NO, when the ratio between the strongest signal and all other signals combined is well above
+or well below the reception threshold, while the answer in the intermediate range is allowed to be
+either YES or NO. We describe compact data structures that support approximate SINR queries in the
+plane in a dynamic context, i.e., where transmitters may be inserted and deleted over time. We distinguish
+between two main variants --- uniform power and non-uniform power. In both variants the preprocessing
+time is $O(n \mathop{\textrm{polylog}} n)$ and the amortized update time is $O(\mathop{\textrm{polylog}}
+n)$, while the query time is $O(\mathop{\textrm{polylog}} n)$ for uniform power, and randomized
+time $O(\sqrt{n} \mathop{\textrm{polylog}} n)$ with high probability for non-uniform power.
+Finally, we observe that in the static context the latter data structure can be implemented differently,
+so that the query time is also $O(\mathop{\textrm{polylog}} n)$, thus significantly improving
+all previous results for this problem. 

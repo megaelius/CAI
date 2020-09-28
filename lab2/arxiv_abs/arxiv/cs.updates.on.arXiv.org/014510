@@ -1,0 +1,19 @@
+We present a new concern when collecting data from individuals that arises from the attempt to mitigate
+privacy leakage in multiple reporting: tracking of users participating in the data collection
+via the mechanisms added to provide privacy. We present several definitions for untrackable mechanisms,
+inspired by the differential privacy framework. Specifically, we define the trackable parameter
+as the log of the maximum ratio between the probability that a set of reports originated from a single
+user and the probability that the same set of reports originated from two users (with the same private
+value). We explore the implications of this new definition. We show how differentially private
+and untrackable mechanisms can be combined to achieve a bound for the problem of detecting when a
+certain user changed their private value. Examining Google's deployed solution for everlasting
+privacy, we show that RAPPOR (Erlingsson et al. ACM CCS, 2014) is trackable in our framework for the
+parameters presented in their paper. We analyze a variant of randomized response for collecting
+statistics of single bits, Bitwise Everlasting Privacy, that achieves good accuracy and everlasting
+privacy, while only being reasonably untrackable, specifically grows linearly in the number of
+reports. For collecting statistics about data from larger domains (for histograms and heavy hitters)
+we present a mechanism that prevents tracking for a limited number of responses. We also present
+the concept of Mechanism Chaining, using the output of one mechanism as the input of another, in the
+scope of Differential Privacy, and show that the chaining of an $\varepsilon_1$-LDP mechanism
+with an $\varepsilon_2$-LDP mechanism is $\ln\frac{e^{\varepsilon_1+\varepsilon_2}+1}{e^{\varepsilon_1}+e^{\varepsilon_2}}$-LDP
+and that this bound is tight. 

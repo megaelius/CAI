@@ -1,0 +1,19 @@
+Machine learning over graphs have been emerging as powerful learning tools for graph data. However,
+it is challenging for industrial communities to leverage the techniques, such as graph neural networks
+(GNNs), and solve real-world problems at scale because of inherent data dependency in the graphs.
+As such, we cannot simply train a GNN with classic learning systems, for instance parameter server
+that assumes data parallel. Existing systems store the graph data in-memory for fast accesses either
+in a single machine or graph stores from remote. The major drawbacks are in three-fold. First, they
+cannot scale because of the limitations on the volume of the memory, or the bandwidth between graph
+stores and workers. Second, they require extra development of graph stores without well exploiting
+mature infrastructures such as MapReduce that guarantee good system properties. Third, they focus
+on training but ignore the optimization of inference over graphs, thus makes them an unintegrated
+system. In this paper, we design AGL, a scalable, fault-tolerance and integrated system, with fully-functional
+training and inference for GNNs. Our system design follows the message passing scheme underlying
+the computations of GNNs. We design to generate the $k$-hop neighborhood, an information-complete
+subgraph for each node, as well as do the inference simply by merging values from in-edge neighbors
+and propagating values to out-edge neighbors via MapReduce. In addition, the $k$-hop neighborhood
+contains information-complete subgraphs for each node, thus we simply do the training on parameter
+servers due to data independency. Our system AGL, implemented on mature infrastructures, can finish
+the training of a 2-layer graph attention network on a graph with billions of nodes and hundred billions
+of edges in 14 hours, and complete the inference in 1.2 hour. 

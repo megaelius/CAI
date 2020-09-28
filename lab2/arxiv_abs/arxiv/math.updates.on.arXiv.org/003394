@@ -1,0 +1,17 @@
+Rational approximation appears in many contexts throughout science and engineering, playing
+a central role in linear systems theory, special function approximation, and many others. There
+are many existing methods for solving the rational approximation problem, from fixed point methods
+like the Sanathanan-Koerner iteration and Vector Fitting, to partial interpolation methods like
+Adaptive Anderson Antoulas (AAA). While these methods can often find rational approximations
+with a small residual norm, they are unable to find optimizers with respect to a weighted l2 norm with
+a square dense weighting matrix. Here we develop a nonlinear least squares approach constructing
+rational approximations with respect to this norm. We explore this approach using two parameterizations
+of rational functions: a ratio of two polynomials and a partial fraction expansion. In both cases,
+we show how we can use Variable Projection (VARPRO) to reduce the dimension of the optimization problem.
+As many applications seek a real rational approximation that can be described as a ratio of two real
+polynomials, we show how this constraint can be enforced in both parameterizations. Although this
+nonlinear least squares approach often converge to suboptimal local minimizers, we find this can
+be largely mitigated by initializing the algorithm using the poles of the AAA algorithm applied
+to the same data. This combination of initialization and nonlinear least squares enables us to construct
+rational approximants using dense and potentially ill-conditioned weight matrices such as those
+that appear as a step in new H2 model reduction algorithm recently developed by the authors. 

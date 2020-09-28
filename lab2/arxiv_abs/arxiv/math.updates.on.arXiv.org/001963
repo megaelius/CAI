@@ -1,0 +1,17 @@
+Recent decades are put a lots of efforts to develop higher-order scheme for convective term approximation
+that is stable and reliable. On the other hand, diffusion terms are easily approximated with numerical
+schemes with at least second accuracy. The reason is that numerical schemes for diffusion term approximation
+as central difference correspond to process that is described by diffusion terms. Diffusion is
+exchange of a property in all directions and approximation schemes also include all surrounding
+nodes. The convection is transport a property along the streamline and information propagation
+is unidirectional, i.e. transported property depends on previous values along the streamline
+but does not depend on next values. Convective term approximation schemes that contain upwind nodes
+along the streamline correspond to convection while the others do not correspond to convection.
+Total Variation Diminishing (TVD) schemes use downstream information about transported property
+that corresponds to diffusion and is not included in convective terms. This is their problem and
+the reason for their limited application. In this paper is presented approximation approach for
+convective terms that use only upstream points, requires less iterations than TVD schemes, and
+its accuracy is second order. Here are considered standard test problems: advection of a step profile,
+advection of a double-step profile, advection of a sinusoidal profile, and Smith and Hutton problem.
+The proposed upwind multidimansional apprach requires from 2 to 4 iterations to obtain solution
+while tested TVD scheme with limiters Min-Mod, QUICK, and SUPERBEE need from 15 to 93.5 more iterations.

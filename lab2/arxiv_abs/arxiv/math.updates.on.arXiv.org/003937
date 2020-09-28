@@ -1,0 +1,20 @@
+Large numbers of flow simulations are typically required for determining optimal well settings.
+These simulations are often computationally demanding, which poses challenges for the optimizations.
+In this paper we present a new two-step surrogate treatment (ST) that reduces the computational
+expense associated with well control optimization. The method is applicable for oil production
+via waterflood, with well rates optimized at a single control period. The two-step ST entails two
+separate optimizations, which can both be performed very efficiently. In the first optimization,
+optimal well-rate ratios (i.e., the fraction of total injection or production associated with
+each well) are determined such that a measure of velocity variability over the field is minimized,
+leading to more uniform sweep. In the second step, overall injection and production rates are determined.
+The flow physics in the first step is highly simplified, while the actual physical system is simulated
+in the second step. Near-globally-optimal results can be determined in both cases, as the first
+optimization is posed as a QP problem, and the second step entails just a single optimization variable.
+Under full parallelization, the overall elapsed time for the ST corresponds to the runtime for 1-2
+full-order simulations. Results are presented for multiple well configurations, for 2D and 3D
+channelized models, and comparisons with formal optimization procedures (MADS and adjoint-gradient)
+are conducted. Three different fluid mobility ratios (M = 1, 3 and 5) are considered. Optimization
+results demonstrate that the two-step ST provides results in reasonable agreement with those from
+MADS and adjoint-gradient, with speedups of 5x or more. We also show that the ST is applicable in the
+inner-loop in field development optimization, where it will be especially useful since many different
+well configurations must be evaluated. 

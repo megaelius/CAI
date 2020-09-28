@@ -1,0 +1,19 @@
+Popular blockchain such as Ethereum and several others execute complex transactions in blocks
+through user defined scripts known as smart contracts. Normally, a block of the chain consists of
+multiple transactions of smart contracts which are added by a miner. To append a correct block into
+blockchain, miners execute these smart contract transactions (SCT) sequentially. Later the validators
+serially re-execute the SCT of the block. In the current era of multi-core processors, by employing
+serial execution of the transactions, the miners and validators fail to utilize the cores properly
+and as a result have poor throughput. By adding concurrency using object semantics to smart contracts
+execution, we can achieve the better efficiency and higher throughput. Some authors have used read-write
+STMs (RWSTMs) for the concurrent execution of SCT. Working with higher level operations provide
+greater concurrency, better throughput and reduces the number of aborts than RWSTMs. In this paper,
+we develop an efficient framework to execute the SCT concurrently by miner using optimistic Object-Based
+Software Transactional Memory systems (OSTMs) and Multi-Version OSTMs (MV-OSTM). A proposed
+block includes SCT, final states of the shared data-items, hash of the previous block and a block
+graph (BG). BG captures the conflicting relations among the transactions. Later, the validators
+re-execute the same SCT concurrently and deterministically with the help of BG given by miner to
+verify the final state. If the validation is successful then proposed block appended into the blockchain
+and miner gets incentive otherwise discard the proposed block. MV-OSTM and OSTM miner performs
+4.5x and 3.86x average speedups over serial miner. Along with, MV-OSTM and OSTM validator outperforms
+average 32.81x and 29.76x than serial validator. 

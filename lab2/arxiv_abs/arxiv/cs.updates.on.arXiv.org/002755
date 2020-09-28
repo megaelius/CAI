@@ -1,0 +1,17 @@
+A demand-driven approach to program analysis have been viewed as efficient algorithms to compute
+only the information required to serve a target demand. In contrast, an exhaustive approach computes
+all information in anticipation of it being used later. However, for a given set of demands, demand-driven
+methods are believed to compute the same information that would be computed by the corresponding
+exhaustive methods. We investigate the precision and bidirectional nature of demand-driven methods
+and show that: (a) demand-driven methods can be formalized inherently as bidirectional data flow
+analysis because the demands are propagated against the control flow and the information to satisfy
+the demands is propagated along the control flow. We extend the formalization of the Meet Over Paths
+solution to bidirectional flows. This formalization helps us to prove the soundness and precision
+of our analysis, and (b) since a demand-driven method computes only the required information to
+meet a demand, it should be able to reduce the imprecision caused by data abstractions and hence should
+be more precise than an exhaustive method. We show that while this is indeed the case with Java, for
+C/C++, the precision critically hinges on how indirect assignments are handled. We use this insight
+and propose a demand-driven alias analysis that is more precise than an exhaustive analysis for
+C/C++ too. We have chosen devirtualization as an application. Our measurements show that our method
+is not only more efficient but more precise than the existing demand-driven method, as well as the
+corresponding exhaustive method. 

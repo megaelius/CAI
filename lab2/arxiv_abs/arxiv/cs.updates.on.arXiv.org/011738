@@ -1,0 +1,18 @@
+We study the sample complexity of learning threshold functions under the constraint of differential
+privacy. It is assumed that each labeled example in the training data is the information of one individual
+and we would like to come up with a generalizing hypothesis $h$ while guaranteeing differential
+privacy for the individuals. Intuitively, this means that any single labeled example in the training
+data should not have a significant effect on the choice of the hypothesis. This problem has received
+much attention recently; unlike the non-private case, where the sample complexity is independent
+of the domain size and just depends on the desired accuracy and confidence, for private learning
+the sample complexity must depend on the domain size $X$ (even for approximate differential privacy).
+Alon et al. (STOC 2019) showed a lower bound of $\Omega(\log^*|X|)$ on the sample complexity and
+Bun et al. (FOCS 2015) presented an approximate-private learner with sample complexity $\tilde{O}\left(2^{\log^*|X|}\right)$.
+In this work we reduce this gap significantly, almost settling the sample complexity. We first present
+a new upper bound (algorithm) of $\tilde{O}\left(\left(\log^*|X|\right)^2\right)$ on the sample
+complexity and then present an improved version with sample complexity $\tilde{O}\left(\left(\log^*|X|\right)^{1.5}\right)$.
+Our algorithm is constructed for the related interior point problem, where the goal is to find a point
+between the largest and smallest input elements. It is based on selecting an input-dependent hash
+function and using it to embed the database into a domain whose size is reduced logarithmically;
+this results in a new database, an interior point of which can be used to generate an interior point
+in the original database in a differentially private manner. 

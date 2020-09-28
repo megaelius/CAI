@@ -1,0 +1,19 @@
+Purpose: To develop a framework to reconstruct large-scale volumetric dynamic MRI from rapid continuous
+and non-gated acquisitions, with applications to pulmonary and dynamic contrast enhanced (DCE)
+imaging. Theory and Methods: The problem considered here requires recovering hundred-gigabytes
+of dynamic volumetric image data from a few gigabytes of k-space data, acquired continuously over
+several minutes. This reconstruction is vastly under-determined, heavily stressing computing
+resources as well as memory management and storage. To overcome these challenges, we leverage intrinsic
+three dimensional (3D) trajectories, such as 3D radial and 3D cones, with ordering that incoherently
+cover time and k-space over the entire acquisition. We then propose two innovations: (1) A compressed
+representation using multi-scale low rank matrix factorization that constrains the reconstruction
+problem, and reduces its memory footprint. (2) Stochastic optimization to reduce computation,
+improve memory locality, and minimize communications between threads and processors. We demonstrate
+the feasibility of the proposed method on DCE imaging acquired with a golden-angle ordered 3D cones
+trajectory and pulmonary imaging acquired with a bit-reversed ordered 3D radial trajectory. We
+compare it with "soft-gated" dynamic reconstruction for DCE and respiratory resolved reconstruction
+for pulmonary imaging. Results: The proposed technique shows transient dynamics that are not seen
+in gating based methods. When applied to datasets with irregular, or non-repetitive motions, the
+proposed method displays sharper image features. Conclusion: We demonstrated a method that can
+reconstruct massive 3D dynamic image series in the extreme undersampling and extreme computation
+setting. 

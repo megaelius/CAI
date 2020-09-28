@@ -1,0 +1,18 @@
+Deep Learning (DL) training platforms are built by interconnecting multiple DL accelerators (e.g.,
+GPU/TPU) via fast, customized interconnects. As the size of DL models and the compute efficiency
+of the accelerators has continued to increase, there has also been a corresponding steady increase
+in the bandwidth of these interconnects.Systems today provide 100s of gigabytes (GBs) of inter-connect
+bandwidth via a mix of solutions such as Multi-Chip packaging modules (MCM) and proprietary interconnects(e.g.,
+NVlink) that together from the scale-up network of accelerators. However, as we identify in this
+work, a significant portion of this bandwidth goes under-utilized. This is because(i) using compute
+cores for executing collective operations such as all-reduce decreases overall compute efficiency,
+and(ii) there is memory bandwidth contention between the accesses for arithmetic operations vs
+those for collectives, and(iii) there are significant internal bus congestions that increase
+the latency of communication operations. To address this challenge, we propose a novel microarchitecture,
+calledAccelerator Collectives Engine(ACE), forDL collective communication offload. ACE is
+a smart net-work interface (NIC) tuned to cope with the high-bandwidth and low latency requirements
+of scale-up networks and is able to efficiently drive the various scale-up network systems(e.g.
+switch-based or point-to-point topologies). We evaluate the benefits of the ACE with micro-benchmarks
+(e.g. single collective performance) and popular DL models using an end-to-end DL training simulator.
+For modern DL workloads, ACE on average increases the net-work bandwidth utilization by 1.97X,
+resulting in 2.71X and 1.44X speedup in iteration time for ResNet-50 and GNMT, respectively. 

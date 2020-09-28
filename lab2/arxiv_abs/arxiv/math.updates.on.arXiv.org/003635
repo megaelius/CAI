@@ -1,0 +1,19 @@
+Dynamic affinity load balancing of multi-type tasks on multi-skilled servers, when the service
+rate of each task type on each of the servers is known and can possibly be different from each other,
+is an open problem for over three decades. The goal is to do task assignment on servers in a real time
+manner so that the system becomes stable, which means that the queue lengths do not diverge to infinity
+in steady state (throughput optimality), and the mean task completion time is minimized (delay
+optimality). The fluid model planning, Max-Weight, and c-$\mu$-rule algorithms have theoretical
+guarantees on optimality in some aspects for the affinity problem, but they consider a complicated
+queueing structure and either require the task arrival rates, the service rates of tasks on servers,
+or both. In many cases that are discussed in the introduction section, both task arrival rates and
+service rates of different task types on different servers are unknown. In this work, the Blind GB-PANDAS
+algorithm is proposed which is completely blind to task arrival rates and service rates. Blind GB-PANDAS
+uses an exploration-exploitation approach for load balancing. We prove that Blind GB-PANDAS is
+throughput optimal under arbitrary and unknown distributions for service times of different task
+types on different servers and unknown task arrival rates. Blind GB-PANDAS desires to route an incoming
+task to the server with the minimum weighted-workload, but since the service rates are unknown,
+such routing of incoming tasks is not guaranteed which makes the throughput optimality analysis
+more complicated than the case where service rates are known. Our extensive experimental results
+reveal that Blind GB-PANDAS significantly outperforms existing methods in terms of mean task completion
+time at high loads. 

@@ -1,0 +1,20 @@
+Classical simulation of quantum computation is necessary for studying the numerical behavior
+of quantum algorithms, as there does not yet exist a large viable quantum computer on which to perform
+numerical tests. Tensor network (TN) contraction is an algorithmic method that may be used for such
+simulations, often greatly reducing the computational cost over methods that simulate the full
+Hilbert space. In this study we implement a parallel tensor network contraction program for simulating
+quantum circuits, including the quantum approximate optimization algorithm (QAOA) applied to
+Max-Cut. We show simulation results for 3- through 7-regular Max-Cut/QAOA circuits, even successfully
+simulating up to 100 qubits. We test two different methods for generating the ordering of tensor
+index contractions: one is based on the tree decomposition of the line graph, while the other generates
+ordering using a straight-forward stochastic scheme. Through studying instances of QAOA circuits,
+we show the expected result that as the treewidth of the quantum circuit's line graph decreases,
+TN contraction becomes significantly more efficient than simulating the whole Hilbert space.
+This tradeoff occurs when the Max-Cut problem's graph regularity is five or six, suggesting that
+tensor contraction methods are superior for simulating Max-Cut/QAOA with graphs of regularities
+approximately five and below. The stochastic contraction method outperforms the line graph based
+method only when the time to calculate a reasonable tree decomposition is prohibitively expensive.
+Finally, we release our software package, qTorch (Quantum TensOR Contraction Handler), intended
+for general quantum circuit simulation. For a nontrivial subset of these quantum circuits, 50 to
+100 qubits can easily be simulated on a single compute node, an ability that is beyond of reach of other
+modern software packages. 

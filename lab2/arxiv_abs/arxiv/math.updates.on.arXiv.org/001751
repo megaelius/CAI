@@ -1,0 +1,17 @@
+This study proposes a deep generative adversarial architecture (GAA) for network-wide spatial-temporal
+traffic state estimation. The GAA is able to combine traffic flow theory with neural networks and
+thus improve the accuracy of traffic state estimation. It consists of two Long Short-Term Memory
+Neural Networks (LSTM NNs) which capture correlation in time and space among traffic flow and traffic
+density. One of the LSTM NNs, called a discriminative network, aims to maximize the probability
+of assigning correct labels to both true traffic state matrices (i.e., traffic flow and traffic
+density within a given spatial-temporal area) and the traffic state matrices generated from the
+other neural network. The other LSTM NN, called a generative network, aims to generate traffic state
+matrices which maximize the probability that the discriminative network assigns true labels to
+them. The two LSTM NNs are trained simultaneously such that the trained generative network can generate
+traffic matrices similar to those in the training data set. Given a traffic state matrix with missing
+values, we use back-propagation on three defined loss functions to map the corrupted matrix to a
+latent space. The mapping vector is then passed through the pre-trained generative network to estimate
+the missing values of the corrupted matrix. The proposed GAA is compared with the existing Bayesian
+network approach on loop detector data collected from Seattle, Washington and that collected from
+San Diego, California. Experimental results indicate that the GAA can achieve higher accuracy
+in traffic state estimation than the Bayesian network approach. 

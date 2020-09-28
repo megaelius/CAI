@@ -1,0 +1,18 @@
+Krylov subspace methods are among the most efficient present-day solvers for large scale linear
+algebra problems. Nevertheless, classic Krylov subspace method algorithms do not scale well on
+massively parallel hardware due to the synchronization bottlenecks induced by the computation
+of dot products throughout the algorithms. Communication-hiding pipelined Krylov subspace methods
+offer increased parallel scalability. One of the first published methods in this class is the pipelined
+Conjugate Gradient method (p-CG), which exhibits increased speedups on parallel machines. This
+is achieved by overlapping the time-consuming global communication phase with useful (independent)
+computations such as spmvs, hence reducing the impact of global communication as a synchronization
+bottleneck and avoiding excessive processor idling. However, on large numbers of processors the
+time spent in the global communication phase can be much higher than the time required for computing
+a single spmv. This work extends the pipelined CG method to deeper pipelines, which allows further
+scaling when the global communication phase is the dominant time-consuming factor. By overlapping
+the global all-to-all reduction phase in each CG iteration with the next l spmvs (pipelining), the
+method is able to hide communication latency behind computational work. The derivation of the p(l)-CG
+algorithm is based on the existing p(l)-GMRES method. Moreover, a number of theoretical and implementation
+properties of the p(l)-CG method are presented, including a preconditioned version of the algorithm.
+Experimental results are presented to demonstrate the possible performance gains of using deeper
+pipelines for solving large scale symmetric linear systems with the new CG method variant. 

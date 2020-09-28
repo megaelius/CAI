@@ -1,0 +1,20 @@
+In this paper we propose a new high order accurate space-time DG finite element scheme for the solution
+of the linear elastic wave equations in first order velocity-stress formulation in two and three-space
+dimensions on staggered unstructured triangular and tetrahedral meshes. The method reaches arbitrary
+high order of accuracy in both space and time via the use of space-time basis and test functions. Within
+the staggered mesh formulation, we define the discrete velocity field in the control volumes of
+a primary mesh, while the discrete stress tensor is defined on a face-based staggered dual mesh.
+The space-time DG formulation leads to an implicit scheme that requires the solution of a linear
+system for the unknown degrees of freedom at the new time level. The number of unknowns is reduced
+at the aid of the Schur complement, so that in the end only a linear system for the degrees of freedom
+of the velocity field needs to be solved. Thanks to the use of a spatially staggered mesh, the stencil
+of the final velocity system involves only the element and its direct neighbors. The resulting linear
+system can be efficiently solved via matrix-free iterative methods. The chosen discretization
+and the linear nature of the governing PDE system lead to an unconditionally stable scheme, which
+allows large time steps even for low quality meshes that contain sliver elements. The fully discrete
+staggered space-time DG method is proven to be energy stable for any order of accuracy, for any mesh
+and for any time step size. For the particular case of Crank-Nicolson time discretization and homogeneous
+material, the final velocity system can be proven to be symmetric and positive definite and in this
+case the scheme is also exactly energy preserving. The new scheme is applied to several test problems
+in two and three space dimensions, providing also a comparison with high order explicit ADER-DG
+schemes 

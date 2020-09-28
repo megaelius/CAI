@@ -1,0 +1,19 @@
+We develop a long-time moving window framework using Molecular Dynamics (MD) to model shock wave
+propagation through a one-dimensional chain of atoms. The domain is divided into a purely atomistic
+"window" region containing the shock wave flanked by boundary or "continuum" regions on either
+end. The dynamics of the window atoms are governed by classic MD equations of motion while continuum
+shock conditions are applied to the continuum atoms. Spurious wave reflections are removed by employing
+a damping band method using the Langevin thermostat applied locally to the continuum region. The
+moving window effect is achieved by adding/removing atoms to/from the window and boundary regions,
+and thus the shock wave front is focused at the center of the window region indefinitely. As a result,
+the required domain size is very small allowing us to model shock wave propagation for a long time.
+We simulate the shock through a one-dimensional chain of copper atoms using either the Lennard-Jones,
+modified Morse, or Embedded Atom Model (EAM) interatomic potential. We first perform verification
+studies to ensure proper implementation of the thermostat, potential functions, and damping band
+method, respectively. Next, we track the propagating shock and compare the actual shock velocity
+and average particle velocity to their corresponding analytical input values. From these comparisons,
+we optimize the linear shock Hugoniot relation for the given "lattice" orientation and compare
+these results to those in literature. When incorporated into the linear shock equation, these new
+Hugoniot parameters are shown to produce a stationary shock wave front. Finally, we perform one-dimensional
+moving window simulations of an unsteady, structured shock up to a few nanoseconds and characterize
+the increase in the shock front's width. 

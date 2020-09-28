@@ -1,0 +1,18 @@
+Feltor is both a numerical library and a scientific software package built on top of it. Its main target
+are two- and three- dimensional drift- and gyro-fluid simulations with discontinuous Galerkin
+methods as the main numerical discretization technique. Feltor allows developing platform independent
+code that runs on a variety of parallel computer architectures ranging from laptop CPUs to hybrid
+CPU+GPU distributed memory systems. First, we investigate reproducibility. We observe that numerical
+simulations of a recently developed gyro-fluid model produces non- deterministic results in parallel
+computations. We show how we can restore bitwise reproducibility algorithmically and programmatically.
+However, we argue that in ill-conditioned physical problems numerical perturbations always grow
+exponentially such that convergence, even in principle, can only be achieved for reduced physical
+quantities of interest and invariants of the system. Furthermore, we explore important performance
+tuning considerations and discuss latencies and bandwidths of elementary subroutines necessary
+to implement the aforementioned algorithms and equations. We propose a parallel performance model
+that predicts the execution time of algorithms implemented in Feltor and test our model on a selection
+of parallel hardware architectures. We are able to predict the execution time of more complex algorithms
+with a relative error of less than 25% for problem sizes between 0.1 and 1000 MB. Finally, we qualitatively
+compare the discontinuous Galerkin approach with the more traditional finite difference version
+of Arakawa's scheme for the Poisson bracket. We find similar results for both an external fourth
+order finite difference code and our own discontinuous Galerkin implementation. 

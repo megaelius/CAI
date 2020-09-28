@@ -1,0 +1,18 @@
+Conditional Random Fields (CRF) are frequently applied for labeling and segmenting sequence data.
+Morency et al. (2007) introduced hidden state variables in a labeled CRF structure in order to model
+the latent dynamics within class labels, thus improving the labeling performance. Such a model
+is known as Latent-Dynamic CRF (LDCRF). We present Factored LDCRF (FLDCRF), a structure that allows
+multiple latent dynamics of the class labels to interact with each other. Including such latent-dynamic
+interactions leads to improved labeling performance on single-label and multi-label sequence
+modeling tasks. We apply our FLDCRF models on two single-label (one nested cross-validation) and
+one multi-label sequence tagging (nested cross-validation) experiments across two different
+datasets - UCI gesture phase data and UCI opportunity data. FLDCRF outperforms all state-of-the-art
+sequence models, i.e., CRF, LDCRF, LSTM, LSTM-CRF, Factorial CRF, Coupled CRF and a multi-label
+LSTM model in all our experiments. In addition, LSTM based models display inconsistent performance
+across validation and test data, and pose diffculty to select models on validation data during our
+experiments. FLDCRF offers easier model selection, consistency across validation and test performance
+and lucid model intuition. FLDCRF is also much faster to train compared to LSTM, even without a GPU.
+FLDCRF outshines the best LSTM model by ~4% on a single-label task on UCI gesture phase data and outperforms
+LSTM performance by ~2% on average across nested cross-validation test sets on the multi-label
+sequence tagging experiment on UCI opportunity data. The idea of FLDCRF can be extended to joint
+(multi-agent interactions) and heterogeneous (discrete and continuous) state space models.

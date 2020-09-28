@@ -1,0 +1,20 @@
+The abortable mutual exclusion problem was introduced by Scott and Scherer to meet a need that arises
+in database and real time systems, where processes sometimes have to abandon their attempt to acquire
+a mutual exclusion lock to initiate recovery from a potential deadlock or to avoid overshooting
+a deadline. Algorithms of O(1) RMR complexity have been known for the standard mutual exclusion
+problem for both the Cache-Coherent (CC) and Distributed Shared Memory (DSM) models of multiprocessors,
+but whether O(1) RMR complexity is also achievable for abortable mutual exclusion has remained
+open for the 18 years that this problem has been investigated. Jayanti gives a Theta(log n) worst
+case RMR complexity solution for both models, where n is the maximum number of processes that execute
+the algorithm concurrently. Giakouppis and Woelfel's algorithm, presented at PODC last year,
+is an O(1) amortized complexity algorithm, but it works only for the CC model, uses randomization,
+does not satisfy Starvation Freedom, and the O(1) amortized bound holds only in expectation and
+is proven for the a weak (oblivious) adversary model. We design an algorithm that is free of these
+limitations: our algorithm is deterministic, supports fast aborts (a process completes an abort
+in O(1) steps), has a small space complexity of O(n), requires hardware support for only the Fetch&Store
+instruction, satisfies a novely defined First Come First Served for abortable locks, and most importantly,
+has O(1) amortized RMR complexity for both the CC and DSM models. Our algorithm is short and practical
+with fewer than a dozen lines of code, and is accompanied by a rigorous proof of mutual exclusion through
+invariants and of starvation-freedom and complexity analysis through distance and potential
+functions. Thus, modulo amortization, our result answers affirmatively the long standing open
+question described above. 

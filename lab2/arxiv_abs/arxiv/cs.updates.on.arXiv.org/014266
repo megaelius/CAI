@@ -1,0 +1,20 @@
+This paper introduces a sharp interface method to simulate fluid-structure interaction (FSI)
+involving arbitrary rigid bodies immersed in viscous incompressible fluids. This approach, which
+we refer to as an immersed Lagrangian-Eulerian (ILE) method, integrates aspects of partitioned
+and immersed FSI formulations by solving separate momentum equations for the fluid and solid domains,
+as in a partitioned formulation, while also using non-conforming discretizations of the moving
+fluid and structure, as in an immersed formulation. A Dirichlet-Neumann coupling scheme is used,
+in which the motion of the immersed solid is driven by fluid traction forces evaluated along the fluid-structure
+interface, and the motion of fluid along that interface is constrained to match the solid velocity,
+so as to enforce the no-slip condition. We introduce a penalty approach that weakly imposes the no-slip
+condition along the fluid-solid interface. In the coupling strategy, a separate discretization
+of the fluid-structure interface is tethered to the volumetric solid mesh via stiff spring-like
+penalty forces. Our fluid-structure interaction scheme relies on a recently developed immersed
+interface method for discrete geometries, which enables the accurate determination of both velocities
+and stresses along the fluid-structure interface. The effectiveness of this straightforward
+FSI methodology is extensively tested against benchmark computational and experimental studies
+in two and three spatial dimensions, including for geometries with non-smooth features. Unlike
+commonly used partitioned methods, which can suffer from so-called added mass effect instabilities,
+our methodology avoids subiterations between fluid and solid solvers or complex handling of the
+fluid pressure, and it retains stability for models involving extremely low, nearly equal, equal,
+and high solid-fluid density ratios. 

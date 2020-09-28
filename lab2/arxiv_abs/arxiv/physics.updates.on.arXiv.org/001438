@@ -1,0 +1,17 @@
+Quantum-based molecular dynamics (QMD) is a highly accurate and transferable method for material
+science simulations. However, the time scales and system sizes accessible to QMD are typically
+limited to picoseconds and a few hundred atoms. These constraints arise due to expensive self-consistent
+ground-state electronic structure calculations that can often scale cubically with the number
+of atoms. Linearly scaling methods depend on computing the density matrix P from the Hamiltonian
+matrix H by exploiting the sparsity in both matrices. The second-order spectral projection (SP2)
+algorithm is an O(N) algorithm that computes P with a sequence of 40-50 matrix-matrix multiplications.
+In this paper, we present task-based implementations of a recently developed data-parallel graph-based
+approach to the SP2 algorithm, G-SP2. We represent the density matrix P as an undirected graph and
+use graph partitioning techniques to divide the computation into smaller independent tasks. The
+partitions thus obtained are generally not of equal size and give rise to undesirable load imbalances
+in standard MPI-based implementations. This load-balancing challenge can be mitigated by dynamically
+scheduling parallel computations at runtime using task-based programming models. We develop
+task-based implementations of the data-parallel G-SP2 algorithm using both Intel's Concurrent
+Collections (CnC) as well as the Charm++ programming model and evaluate these implementations
+for future use. Scaling and performance results of our implementations are investigated for representative
+segments of QMD simulations for solvated protein systems containing more than 10,000 atoms. 

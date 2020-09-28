@@ -1,0 +1,20 @@
+In the Steiner Tree problem we are given an edge weighted undirected graph $G = (V,E)$ and a set of terminals
+$R \subseteq V$. The task is to find a connected subgraph of $G$ containing $R$ and minimizing the
+sum of weights of its edges. We observe that many approximation algorithms for Steiner Tree follow
+a similar scheme (meta-algorithm) and perform (exhaustively) a similar routine which we call star
+contraction. Here, by a star contraction, we mean finding a star-like subgraph in the input graph
+minimizing the ratio of its weight to the number of contained terminals minus one. It is not hard to
+see that the well-known MST-approximation seeks the best star to contract among those containing
+two terminals only. We perform an empirical study of star contractions with the relaxed condition
+on the number of terminals in each star contraction. Our experiments suggest the following: -- if
+the algorithm performs star contractions exhaustively, the quality of the solution is usually
+slightly better than Zelikovsky's 11/6-approximation algorithm, -- on average the quality of
+the solution returned by the MST-approximation algorithm improves with every star contraction,
+-- the same holds for iterated MST (MST+), which outperforms MST in every measurement while keeping
+very fast running time (on average $\sim 3\times$ slower than MST), -- on average the quality of the
+solution obtained by exhaustively performing star contraction is about 16\% better than the initial
+MST-approximation, and -- we propose a more precise way to find the so-called improved stars which
+yield a slightly better solution within a comparable running time (on average $\sim 3\times$ slower).
+Furthermore, we propose two improvements of Zelikovsky's 11/6-approximation algorithm and we
+empirically confirm that the quality of the solution returned by any of these is better than the one
+returned by the former algorithm. 

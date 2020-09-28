@@ -1,0 +1,20 @@
+To better address challenging issues of the irregularity and inhomogeneity inherently present
+in 3D point clouds, researchers have been shifting their focus from the design of hand-craft point
+feature towards the learning of 3D point signatures using deep neural networks for 3D point cloud
+classification. Recent proposed deep learning based point cloud classification methods either
+apply 2D CNN on projected feature images or apply 1D convolutional layers directly on raw point sets.
+These methods cannot adequately recognize fine-grained local structures caused by the uneven
+density distribution of the point cloud data. In this paper, to address this challenging issue,
+we introduced a density-aware convolution module which uses the point-wise density to re-weight
+the learnable weights of convolution kernels. The proposed convolution module is able to fully
+approximate the 3D continuous convolution on unevenly distributed 3D point sets. Based on this
+convolution module, we further developed a multi-scale fully convolutional neural network with
+downsampling and upsampling blocks to enable hierarchical point feature learning. In addition,
+to regularize the global semantic context, we implemented a context encoding module to predict
+a global context encoding and formulated a context encoding regularizer to enforce the predicted
+context encoding to be aligned with the ground truth one. The overall network can be trained in an
+end-to-end fashion with the raw 3D coordinates as well as the height above ground as inputs. Experiments
+on the International Society for Photogrammetry and Remote Sensing (ISPRS) 3D labeling benchmark
+demonstrated the superiority of the proposed method for point cloud classification. Our model
+achieved a new state-of-the-art performance with an average F1 score of 71.2% and improved the performance
+by a large margin on several categories. 

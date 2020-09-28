@@ -1,0 +1,20 @@
+Modern computer vision requires processing large amounts of data, both while training the model
+and/or during inference, once the model is deployed. Scenarios where images are captured and processed
+in physically separated locations are increasingly common (e.g. autonomous vehicles, cloud computing).
+In addition, many devices suffer from limited resources to store or transmit data (e.g. storage
+space, channel capacity). In these scenarios, lossy image compression plays a crucial role to effectively
+increase the number of images collected under such constraints. However, lossy compression entails
+some undesired degradation of the data that may harm the performance of the downstream analysis
+task at hand, since important semantic information may be lost in the process. Moreover, we may only
+have compressed images at training time but are able to use original images at inference time, or
+vice versa, and in such a case, the downstream model suffers from covariate shift. In this paper,
+we analyze this phenomenon, with a special focus on vision-based perception for autonomous driving
+as a paradigmatic scenario. We see that loss of semantic information and covariate shift do indeed
+exist, resulting in a drop in performance that depends on the compression rate. In order to address
+the problem, we propose dataset restoration, based on image restoration with generative adversarial
+networks (GANs). Our method is agnostic to both the particular image compression method and the
+downstream task; and has the advantage of not adding additional cost to the deployed models, which
+is particularly important in resource-limited devices. The presented experiments focus on semantic
+segmentation as a challenging use case, cover a broad range of compression rates and diverse datasets,
+and show how our method is able to significantly alleviate the negative effects of compression on
+the downstream visual task. 

@@ -1,0 +1,19 @@
+Non-convex optimization with global convergence guarantees is gaining significant interest
+in machine learning research in recent years. However, while most works consider either offline
+settings in which all data is given beforehand, or simple online stochastic i.i.d. settings, very
+little is known about non-convex optimization for adversarial online learning settings. In this
+paper we focus on the problem of Online Principal Component Analysis in the regret minimization
+framework. For this problem, all existing regret minimization algorithms are based on a positive
+semidefinite convex relaxation, and hence require quadratic memory and SVD computation (either
+thin of full) on each iteration, which amounts to at least quadratic runtime per iteration. This
+is in stark contrast to a corresponding stochastic i.i.d. variant of the problem which admits very
+efficient gradient ascent algorithms that work directly on the natural non-convex formulation
+of the problem, and hence require only linear memory and linear runtime per iteration. This raises
+the question: \textit{can non-convex online gradient ascent algorithms be shown to minimize regret
+in online adversarial settings?} In this paper we take a step forward towards answering this question.
+We introduce an \textit{adversarially-perturbed spiked-covariance model} in which, each data
+point is assumed to follow a fixed stochastic distribution, but is then perturbed by adversarial
+noise. We show that in a certain regime of parameters, when the non-convex online gradient ascent
+algorithm is initialized with a "warm-start" vector, it provably minimizes the regret with high
+probability. We further discuss the possibility of computing such a "warm-start" vector. Our theoretical
+findings are supported by empirical experiments on both synthetic and real-world data. 

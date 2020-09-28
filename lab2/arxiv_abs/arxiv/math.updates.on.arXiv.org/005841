@@ -1,0 +1,18 @@
+We consider linear scalar wave equations with a hereditary integral term of the kind used to model
+viscoelastic solids. The kernel in this Volterra integral is a sum of decaying exponentials (The
+so-called Maxwell, or Zener model) and this allows the introduction of one of two types of families
+of internal variables, each of which evolve according to an ordinary differential equation (ODE).
+There is one such ODE for each decaying exponential, and the introduction of these ODEs means that
+the Volterra integral can be removed from the governing equation. The two types of internal variable
+are distinguished by whether the unknown appears in the Volterra integral, or whether its time derivative
+appears; we call the resulting problems the displacement and velocity forms. We define fully discrete
+formulations for each of these forms by using continuous Galerkin finite element approximations
+in space and an implicit `Crank-Nicolson' type of finite difference method in time. We prove stability
+and a priori bounds, and (using the FEniCS environment, https://fenicsproject.org/) give some
+numerical results. These bounds do not require Gr\"onwall's inequality and so can be regarded to
+be of high quality, allowing confidence in long time integration without an a priori exponential
+build up of error. As far as we are aware this is the first time that these two formulations have been
+described together with accompanying proofs of such high quality stability and error bounds. The
+extension of the results to vector-valued viscoelasticity problems is straightforward and summarised
+at the end. The numerical results are reproducible by acquiring the python sources from https://github.com/Yongseok7717,
+or by running a custom built docker container (instructions are given). 

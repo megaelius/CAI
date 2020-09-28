@@ -1,0 +1,18 @@
+The recent development of the density matrix renormalization group (DMRG) method in multireference
+quantum chemistry makes it practical to evaluate static correlation in a large active space, while
+dynamic correlation provides a critical correction to the DMRG reference for strong-correlated
+systems and is usually obtained using multi-reference perturbation (MRPT) or configuration interaction
+(MRCI) methods with internal contraction (ic) approximation. These methods can use active space
+scalable to relatively larger size references than has previously been possible. However, they
+are still hardly applicable to systems with active space larger than 30 orbitals because of high
+computation and storage costs of high-order reduced density matrices (RDMs) and the number of virtual
+orbitals are normally limited to few hundreds. In this work, we propose a new effective implementation
+of DMRG-MRCI, in which we use re-constructed CASCI-type configurations from DMRG wave function
+via the entropy-driving genetic algorithm (EDGA), and integrate with MRCI by an external contraction
+(ec) scheme. This bypasses the bottleneck of computing high-order RDMs in traditional DMRG dynamic
+correlation methods with ic approximation and the number of MRCI configurations is not dependent
+on the number of virtual orbitals. Therefore, DMRG-ec-MRCI method is promising for dealing with
+larger active space than 30 orbitals and large basis sets. We demonstrate the capability of our DMRG-ec-MRCI
+method in several benchmark applications, including the evaluation of potential energy curve
+of Cr$_{2}$, single-triplet gaps of higher n-acene molecules and the energy of Eu-BTBP(NO$_3$)$_3$
+complex. 

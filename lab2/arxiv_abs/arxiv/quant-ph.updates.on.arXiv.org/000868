@@ -1,0 +1,17 @@
+We introduce a new tool for quantum algorithms called quantum fast-forwarding (QFF). The tool uses
+quantum walks as a means to quadratically fast-forward a reversible Markov chain. More specifically,
+with $P$ the Markov chain transition matrix and $D = \sqrt{P\circ P^T}$ its discriminant matrix
+($D=P$ if $P$ is symmetric), we construct a quantum walk algorithm that for any quantum state $|v\rangle$
+and integer $t$ returns a quantum state $\epsilon$-close to the state $D^t|v\rangle/\|D^t|v\rangle\|$.
+The algorithm uses $O\Big(\|D^t|v\rangle\|^{-1}\sqrt{t\log(\epsilon\|D^t|v\rangle\|)^{-1}}\Big)$
+expected quantum walk steps and $O(\|D^t|v\rangle\|^{-1})$ expected reflections around $|v\rangle$.
+This shows that quantum walks can accelerate the transient dynamics of Markov chains, complementing
+the line of results that proves the acceleration of their limit behavior. We show that this tool leads
+to speedups on random walk algorithms in a very natural way. Specifically we consider random walk
+algorithms for testing the graph expansion and clusterability, and show that we can quadratically
+improve the dependency of the classical property testers on the random walk runtime. Moreover,
+our quantum algorithm exponentially improves the space complexity of the classical tester to logarithmic.
+As a subroutine of independent interest, we use QFF for determining whether a given pair of nodes
+lies in the same cluster or in separate clusters. This solves a robust version of $s$-$t$ connectivity,
+relevant in a learning context for classifying objects among a set of examples. The different algorithms
+crucially rely on the quantum speedup of the transient behavior of random walks. 

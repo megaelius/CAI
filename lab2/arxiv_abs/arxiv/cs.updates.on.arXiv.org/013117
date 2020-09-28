@@ -1,0 +1,18 @@
+We present a novel algorithm named 3DPIFCM, for automatic segmentation of noisy MRI Brain images.
+The algorithm is an extension of a well-known IFCM (Improved Fuzzy Mean Clustering) algorithm.
+It performs fuzzy segmentation and introduces a fitness function that is affected by proximity
+of the voxels and by the color intensity in 3D images. The 3DPIFCM algorithm uses PSO (Particle Swarm
+Optimization) in order to optimize the fitness function. In addition, the 3DPIFCM uses 3D features
+of near voxels to better adjust the noisy artifacts. In our experiments, we evaluate 3DPIFCM on T1
+Brainweb dataset with noise levels ranging from 1% to 20% and on a synthetic dataset with ground truth
+both in 3D. The analysis of the segmentation results shows a significant improvement in the segmentation
+quality of up to 28% compared to two generic variants in noisy images and up to 60% when compared to
+the original FCM (Fuzzy Mean Clustering). We conducted experiments with the parallel version of
+the algorithm to itself in CPU version and also to IFCMPSO (Improved Fuzzy Mean Clustering using
+Particle Swarm Optimization), GAIFCM (Genetic Algorithm Fuzzy Mean Clustering) which are genetic
+algorithm counterparts of the 3DPIFCM algorithm. Our purpose was to test for raw execution speed
+in seconds of each algorithm given the same hyper parameters and same server. Our speedup results
+show that the parallel version of the algorithm performs up to 27x faster than the original sequential
+version and 68x faster than GAIFCM algorithm. We show that the speedup of the parallel version increases
+as we increase the size of the image due to better utilization of cores in the GPU. Also, we show a speedup
+of up to 5x in our Brainweb experiment compared to other generic variants such as IFCMPSO and GAIFCM.

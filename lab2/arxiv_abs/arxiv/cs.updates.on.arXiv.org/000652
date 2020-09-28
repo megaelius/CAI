@@ -1,0 +1,18 @@
+Efficient and accurate path-sensitive analyses pose the challenges of: (a) analyzing an exponentially-increasing
+number of paths in a control flow graph (CFG), and (b) checking feasibility of paths in a CFG. We address
+these challenges by introducing an equivalence relation on the CFG paths to partition them into
+equivalence classes. It is then sufficient to perform analysis on these equivalence classes rather
+than on the individual paths in a CFG. This technique has two major advantages: (a) although the number
+of paths in a CFG can be exponentially large, the essential information to be analyzed is captured
+by a small number of equivalence classes, and (b) checking path feasibility becomes simpler. The
+key challenge is how to efficiently compute equivalence classes of paths in a CFG without examining
+each path in the CFG? In this paper, we present a linear-time algorithm to form equivalence classes
+without the need for examination of each path in a CFG. The key to this algorithm is construction of
+an event-flow graph (EFG), a compact derivative of the CFG, in which each path represents an equivalence
+class of paths in the corresponding CFG. EFGs are defined with respect to the set of events that are
+in turn defined by the analyzed property. The equivalence classes are thus guaranteed to preserve
+all the event traces in the original CFG. We present an empirical evaluation of the Linux kernel (v3.12).
+The EFGs in our evaluation are defined with respect to events of the spin safe-synchronization property.
+Empirical evaluation results show that there are many fewer EFG-based equivalence classes compared
+to the corresponding number of paths in a CFG. This reduction is close to 99% for CFGs with a large number
+of paths. 

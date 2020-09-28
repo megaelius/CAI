@@ -1,0 +1,19 @@
+The Fourier Transform is one of the most important linear transformations used in science and engineering.
+Cooley and Tukey's Fast Fourier Transform (FFT) from 1964 is a method for computing this transformation
+in time $O(n\log n)$. From a lower bound perspective, Morgenstern's result from 1974 provides an
+$\Omega(n\log n)$ lower bound for the unnormalized Fourier Transform (of determinant $n^{n/2}$),
+assuming the linear computational model using numbers of at most constant modulus. Ailon shows
+in 2013 an $\Omega(n\log n)$ for computing the normalized Fourier Transform (of determinant $1$)
+assuming only unitary operations on two coordinates are allowed at each step, and no extra memory
+is allowed. In 2014, Ailon then improved the result to show that, essentially, if an algorithm speeds
+up the FFT by a factor of $b(n)\geq 1$, then it must rely on computing, as an intermediate "bottleneck"
+step, a linear mapping $M$ of the input with condition number $\Omega(b(n))$. We improve [Ailon
+2014] in two ways. First, we show that the "bottleneck" is more severe, in the sense that either (a)
+the condition number of the bottleneck $M$ is $2^{\Omega(b(n))}$, or (b) $M$ has $2^{\Omega(b(n))}$
+disjoint pairs of singular values with ratio bounded away from $1$ (or somewhere between (a) and
+(b)). This result is defined precisely by introducing a generalized condition number. Second,
+we show that many bottlenecks must exist in parallel, in the sense that there exist $\Omega(n)$ orthonormal
+vectors in input space that must go through a bottleneck, possibly at different times. These results
+impose previously unknown and more severe restrictions on an attempt to speed up general purpose
+FFT by a factor of $\omega(1)$. The analysis is done by deriving new bounds related to the matrix quasi-entropy
+function defined in [Ailon 14], which is interesting in its own right. 

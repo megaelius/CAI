@@ -1,0 +1,17 @@
+We give the first ANN-data structure for time series under the continuous Fr\'echet distance, where
+ANN stands for approximate near neighbor. Given a parameter $\epsilon \in (0,1]$, the data structure
+can be used to preprocess $n$ curves in Euclidean $\mathbb{R}$ (aka time series), each of complexity
+$m$, to answer queries with a curve of complexity $k$ by either returning a curve that lies within
+Fr\'echet distance $2+\epsilon$, or answering that there exists no curve in the input within distance
+$1$. In both cases, the answer is correct. Our data structure uses space in $n\cdot \mathcal{O}\left({\epsilon^{-1}}\right)^{k}
++ \mathcal{O}(nm)$ and query time in $\mathcal{O}\left(k\right)$. The data structure is therefore
+especially useful in the asymmetric setting, where $k \ll m$. This is well-motivated for the continuous
+Fr\'echet distance as the distance measure takes into account the interior points along the edges
+of the curve. We show that the approximation factor achieved by our data structure is optimal in the
+cell-probe model of computation. Concretely, we show that for any data structure which achieves
+an approximation factor less than $2$ and which supports curves of arclength at most $L$, uses a word
+size bounded by $O(L^{1-\epsilon})$ for some constant $\epsilon>0$, and answers the query using
+only a constant number of probes, the number of words used to store the data structure must be at least
+$L^{\Omega(k)}$. Our data structure uses only a constant number of probes per query and does not
+have any dependency on $L$. We apply similar techniques for proving cell-probe lower bounds for
+the discrete Fr\'echet distance matching known upper bounds. 

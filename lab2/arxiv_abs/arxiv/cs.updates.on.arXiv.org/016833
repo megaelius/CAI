@@ -1,0 +1,18 @@
+An efficient direct solver for solving the Lippmann-Schwinger integral equation modeling acoustic
+scattering in the plane is presented. For a problem with $N$ degrees of freedom, the solver constructs
+an approximate inverse in $\mathcal{O}(N^{3/2})$ operations and then, given an incident field,
+can compute the scattered field in $\mathcal{O}(N \log N)$ operations. The solver is based on a previously
+published direct solver for integral equations that relies on rank-deficiencies in the off-diagonal
+blocks; specifically, the so-called Hierarchically Block Separable format is used. The particular
+solver described here has been reformulated in a way that improves numerical stability and robustness,
+and exploits the particular structure of the kernel in the Lippmann-Schwinger equation to accelerate
+the computation of an approximate inverse. The solver is coupled with a Nystr\"om discretization
+on a regular square grid, using a quadrature method developed by Ran Duan and Vladimir Rokhlin that
+attains high-order accuracy despite the singularity in the kernel of the integral equation. A particularly
+efficient solver is obtained when the direct solver is run at four digits of accuracy, and is used
+as a preconditioner to GMRES, with each forwards application of the integral operators accelerated
+by the FFT. Extensive numerical experiments are presented that illustrate the high performance
+of the method in challenging environments. Using the $10^{\rm th}$-order accurate version of the
+Duan-Rokhlin quadrature rule, the scheme is capable of solving problems on domains that are over
+500 wavelengths wide to residual error below $10^{-10}$ in a couple of hours on a workstation, using
+26M degrees of freedom. 

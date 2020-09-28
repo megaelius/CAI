@@ -1,0 +1,18 @@
+We propose a robust dynamic walking controller consisting of a dynamic locomotion planner, a reinforcement
+learning process for robustness, and a novel whole-body locomotion controller (WBLC). Previous
+approaches specify either the position or the timing of steps, however, the proposed locomotion
+planner simultaneously computes both of these parameters as locomotion outputs. Our locomotion
+strategy relies on devising a reinforcement learning (RL) approach for robust walking. The learned
+policy generates multi step walking patterns, and the process is quick enough to be suitable for
+real-time controls. For learning, we devise an RL strategy that uses a phase space planner (PSP)
+and a linear inverted pendulum model to make the problem tractable and very fast. Then, the learned
+policy is used to provide goal-based commands to the WBLC, which calculates the torque commands
+to be executed in full-humanoid robots. The WBLC combines multiple prioritized tasks and calculates
+the associated reaction forces based on practical inequality constraints. The novel formulation
+includes efficient calculation of the time derivatives of various Jacobians. This provides high-fidelity
+dynamic control of fast motions. More specifically, we compute the time derivative of the Jacobian
+for various tasks and the Jacobian of the centroidal momentum task by utilizing Lie group operators
+and operational space dynamics respectively. The integration of RL-PSP and the WBLC provides highly
+robust, versatile, and practical locomotion including steering while walking and handling push
+disturbances of up to 520 N during an interval of 0.1 sec. Theoretical and numerical results are tested
+through a 3D physics-based simulation of the humanoid robot Valkyrie. 

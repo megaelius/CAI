@@ -1,0 +1,19 @@
+Cooling system plays a critical role in a modern data center (DC). Developing an optimal control
+policy for DC cooling system is a challenging task. The prevailing approaches often rely on approximating
+system models that are built upon the knowledge of mechanical cooling, electrical and thermal management,
+which is difficult to design and may lead to sub-optimal or unstable performances. In this paper,
+we propose utilizing the large amount of monitoring data in DC to optimize the control policy. To
+do so, we cast the cooling control policy design into an energy cost minimization problem with temperature
+constraints, and tap it into the emerging deep reinforcement learning (DRL) framework. Specifically,
+we propose an end-to-end cooling control algorithm (CCA) that is based on the actor-critic framework
+and an off-policy off-line version of the deep deterministic policy gradient (DDPG) algorithm.
+In the proposed CCA, an evaluation network is trained to predict an energy cost counter penalized
+by the cooling status of the DC room, and a policy network is trained to predict optimized control
+settings when gave the current load and weather information. The proposed algorithm is evaluated
+on the EnergyPlus simulation platform and on a real data trace collected from the National Super
+Computing Centre (NSCC) of Singapore. Our results show that the proposed CCA can achieve about 11%
+cooling cost saving on the simulation platform compared with a manually configured baseline control
+algorithm. In the trace-based study, we propose a de-underestimation validation mechanism as
+we cannot directly test the algorithm on a real DC. Even though with DUE the results are conservative,
+we can still achieve about 15% cooling energy saving on the NSCC data trace if we set the inlet temperature
+threshold at 26.6 degree Celsius. 

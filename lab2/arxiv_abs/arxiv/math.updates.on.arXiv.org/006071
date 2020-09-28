@@ -1,0 +1,19 @@
+Low-rank matrix approximation is extremely useful in the analysis of data that arises in scientific
+computing, engineering applications, and data science. However, as data sizes grow, traditional
+low-rank matrix approximation methods, such as SVD and CPQR, are either prohibitively expensive
+or cannot provide sufficiently accurate results. A solution is to use randomized low-rank matrix
+approximation methods such as randomized SVD , and randomized LU decomposition on extremely large
+data sets.In this paper, we focus on the randomized LU decomposition method. First, we employ a reorthogonalization
+procedure to perform the power iteration of the existing randomized LU algorithm to compensate
+for the rounding errors caused by the power method. Then we propose a novel randomized LU algorithm,
+called PowerLU, for the fixed low-rank approximation problem. PowerLU allows for an arbitrary
+number of passes of the input matrix, $v \geq 2$. Recall that the existing randomized LU decomposition
+only allows an even number of passes. We prove the theoretical relationship between PowerLU and
+the existing randomized LU. Numerical experiments show that our proposed PowerLU is generally
+faster than the existing randomized LU decomposition, while remaining accurate. We also propose
+a version of PowerLU, called PowerLU_FP, for the fixed precision low-rank matrix approximation
+problem. PowerLU_FP is based on an efficient blocked adaptive rank determination Algorithm 4.1
+proposed in this paper. We present numerical experiments that show that PowerLU_FP can achieve
+almost the same accuracy and is faster than the randomized blocked QB algorithm by Martinsson and
+Voronin. We finally propose a single-pass algorithm based on LU factorization. Tests show that
+the accuracy of our single-pass algorithm is comparable with the existing single-pass algorithms.

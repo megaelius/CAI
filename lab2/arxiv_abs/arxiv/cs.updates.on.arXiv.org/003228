@@ -1,0 +1,17 @@
+Recent advances in 3D fully convolutional networks (FCN) have made it feasible to produce dense
+voxel-wise predictions of volumetric images. In this work, we show that a multi-class 3D FCN trained
+on manually labeled CT scans of several anatomical structures (ranging from the large organs to
+thin vessels) can achieve competitive segmentation results, while avoiding the need for handcrafting
+features or training class-specific models. To this end, we propose a two-stage, coarse-to-fine
+approach that will first use a 3D FCN to roughly define a candidate region, which will then be used
+as input to a second 3D FCN. This reduces the number of voxels the second FCN has to classify to ~10%
+and allows it to focus on more detailed segmentation of the organs and vessels. We utilize training
+and validation sets consisting of 331 clinical CT images and test our models on a completely unseen
+data collection acquired at a different hospital that includes 150 CT scans, targeting three anatomical
+organs (liver, spleen, and pancreas). In challenging organs such as the pancreas, our cascaded
+approach improves the mean Dice score from 68.5 to 82.2%, achieving the highest reported average
+score on this dataset. We compare with a 2D FCN method on a separate dataset of 240 CT scans with 18 classes
+and achieve a significantly higher performance in small organs and vessels. Furthermore, we explore
+fine-tuning our models to different datasets. Our experiments illustrate the promise and robustness
+of current 3D FCN based semantic segmentation of medical images, achieving state-of-the-art results.
+Our code and trained models are available for download: https://github.com/holgerroth/3Dunet_abdomen_cascade.

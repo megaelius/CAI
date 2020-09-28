@@ -1,0 +1,17 @@
+Factors that limit the size of the input and output of a neural network include memory requirements
+for the network states/activations to compute gradients, as well as memory for the convolutional
+kernels or other weights. The memory restriction is especially limiting for applications where
+we want to learn how to map volumetric data to the desired output, such as video-to-video. Recently
+developed fully reversible neural networks enable gradient computations using storage of the
+network states for a couple of layers only. While this saves a tremendous amount of memory, it is the
+convolutional kernels that take up most memory if fully reversible networks contain multiple invertible
+pooling/coarsening layers. Invertible coarsening operators such as the orthogonal wavelet transform
+cause the number of channels to grow explosively. We address this issue by combining fully reversible
+networks with layers that contain the convolutional kernels in a compressed form directly. Specifically,
+we introduce a layer that has a symmetric block-low-rank structure. In spirit, this layer is similar
+to bottleneck and squeeze-and-expand structures. We contribute symmetry by construction, and
+a combination of notation and flattening of tensors allows us to interpret these network structures
+in linear algebraic fashion as a block-low-rank matrix in factorized form and observe various properties.
+A video segmentation example shows that we can train a network to segment the entire video in one go,
+which would not be possible, in terms of memory requirements, using non-reversible networks and
+previously proposed reversible networks. 

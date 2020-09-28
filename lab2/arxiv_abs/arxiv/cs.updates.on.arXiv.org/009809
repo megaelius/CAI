@@ -1,0 +1,18 @@
+Cross validation (CV) and the bootstrap are ubiquitous model-agnostic tools for assessing the
+error or variability of machine learning and statistical estimators. However, these methods require
+repeatedly re-fitting the model with different weighted versions of the original dataset, which
+can be prohibitively time-consuming. For sufficiently regular optimization problems the optimum
+depends smoothly on the data weights, and so the process of repeatedly re-fitting can be approximated
+with a Taylor series that can be often evaluated relatively quickly. The first-order approximation
+is known as the "infinitesimal jackknife" in the statistics literature and has been the subject
+of recent interest in machine learning for approximate CV. In this work, we consider high-order
+approximations, which we call the "higher-order infinitesimal jackknife" (HOIJ). Under mild
+regularity conditions, we provide a simple recursive procedure to compute approximations of all
+orders with finite-sample accuracy bounds. Additionally, we show that the HOIJ can be efficiently
+computed even in high dimensions using forward-mode automatic differentiation. We show that a
+linear approximation with bootstrap weights approximation is equivalent to those provided by
+asymptotic normal approximations. Consequently, the HOIJ opens up the possibility of enjoying
+higher-order accuracy properties of the bootstrap using local approximations. Consistency of
+the HOIJ for leave-one-out CV under different asymptotic regimes follows as corollaries from our
+finite-sample bounds under additional regularity assumptions. The generality of the computation
+and bounds motivate the name "higher-order Swiss Army infinitesimal jackknife." 

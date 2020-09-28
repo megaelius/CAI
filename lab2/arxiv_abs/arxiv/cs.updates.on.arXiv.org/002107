@@ -1,0 +1,20 @@
+Deep Neural Networks (DNNs) have emerged as the method of choice for solving a wide range of machine
+learning tasks. The enormous computational demands posed by DNNs have most commonly been addressed
+through the design of custom accelerators. However, these accelerators are prohibitive in many
+design scenarios (e.g., wearable devices and IoT sensors), due to stringent area/cost constraints.
+Accelerating DNNs on these low-power systems, comprising of mainly the general-purpose processor
+(GPP) cores, requires new approaches. We improve the performance of DNNs on GPPs by exploiting a
+key attribute of DNNs, i.e., sparsity. We propose Sparsity aware Core Extensions (SparCE)- a set
+of micro-architectural and ISA extensions that leverage sparsity and are minimally intrusive
+and low-overhead. We dynamically detect zero operands and skip a set of future instructions that
+use it. Our design ensures that the instructions to be skipped are prevented from even being fetched,
+as squashing instructions comes with a penalty. SparCE consists of 2 key micro-architectural enhancements-
+a Sparsity Register File (SpRF) that tracks zero registers and a Sparsity aware Skip Address (SASA)
+table that indicates instructions to be skipped. When an instruction is fetched, SparCE dynamically
+pre-identifies whether the following instruction(s) can be skipped and appropriately modifies
+the program counter, thereby skipping the redundant instructions and improving performance.
+We model SparCE using the gem5 architectural simulator, and evaluate our approach on 6 image-recognition
+DNNs in the context of both training and inference using the Caffe framework. On a scalar microprocessor,
+SparCE achieves 19%-31% reduction in application-level. We also evaluate SparCE on a 4-way SIMD
+ARMv8 processor using the OpenBLAS library, and demonstrate that SparCE achieves 8%-15% reduction
+in the application-level execution time. 

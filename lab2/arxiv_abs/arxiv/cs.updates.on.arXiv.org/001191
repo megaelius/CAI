@@ -1,0 +1,19 @@
+(Shortened abstract below, see paper for full abstract) Given an edge-weighted directed graph
+$G=(V,E)$ and a set of $k$ terminal pairs $\{(s_i, t_i)\}_{i=1}^{k}$, the objective of the \pname{Directed
+Steiner Network (DSN)} problem is to compute the cheapest subgraph $N$ of $G$ such that there is an
+$s_i\to t_i$ path in $N$ for each $i\in [k]$. This problem is notoriously hard: there is no polytime
+$O(2^{\log^{1-\eps}n})$-approximation~[Dodis \& Khanna, \emph{STOC}~'99], and it is W[1]-hard~[Guo~et~al.,
+\emph{SIDMA}~'11] for the well-studied parameter $k$. One option to circumvent these hardness
+results is to obtain a \emph{parameterized approximation}. Our first result is the following:
+- Under Gap-ETH there is no $k^{o(1)}$-approximation for \pname{DSN} in $f(k)\cdot n^{O(1)}$
+time for any function~$f$. Given our results above, the question we explore in this paper is: can
+we obtain faster algorithms or better approximation ratios for other special cases of \pname{DSN}
+when parameterizing by $k$? A well-studied special case of \pname{DSN} is the \pname{Strongly
+Connected Steiner Subgraph (SCSS)} problem, where the goal is to find the cheapest subgraph of $G$,
+which pairwise connects all $k$ given terminals. We show the following - Under Gap-ETH no $(2-\eps)$-approximation
+can be computed in $f(k)\cdot n^{O(1)}$ time, for any function~$f$. This shows that the $2$-approximation
+in $2^k\polyn$ time observed in~[Chitnis~et~al., \emph{IPEC}~2013] is optimal. Next we consider
+\dsn and \scss when the input graph is \emph{bidirected}, i.e., for every edge $uv$ the reverse edge
+exists and has the same weight. We call the respective problems \bidsn and \biscss and show: - \biscss
+is NP-hard, but there is a \smash{$2^{O(2^{k^2-k})}\polyn$} time algorithm. - In contrast, \bidsn
+is W[1]-hard parameterized by $k$. 

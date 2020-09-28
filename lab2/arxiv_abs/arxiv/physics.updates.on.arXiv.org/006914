@@ -1,0 +1,20 @@
+We present a multi-level delumping method suitable for thermal enhanced oil recovery processes,
+for which hydrocarbon components are vaporized under high temperatures, move downstream in the
+gas phase and condense back to the liquid phase. To reduce the computational cost, it is standard
+practice to reduce the number of (pseudo-)components used in thermal reservoir simulation. Depending
+on the number and type of hydrocarbon pseudo-components retained in the simulations, we may not
+be able to capture the correct displacement due to large errors in the lumped phase behavior (flash)
+computations. We address that problem through a multi-level method: we use data obtained from a
+short simulation using the most detailed fluid description available, and leverage that information
+to guide a delumping process. We use temperature as a proxy variable for composition, and select
+reference temperatures. We extract the corresponding reference compositions from the detailed
+run and use them to extend the lumped pseudo-components to an approximate detailed composition.
+We test our method using six heavy oil samples, and under two different recovery processes: hot nitrogen
+injection and in-situ combustion (air injection and exothermic oxidation reactions). The average
+error on the liquid mole fraction is reduced by 4-12 times (depending on the oil samples) compared
+to the flash using pseudo-components, and the maximum error by 6-48 times. We illustrate that the
+method is amenable to manually adding more information about the physics of some oil samples. We
+also discuss how to efficiently pick the reference temperatures. For uniformly sampled temperatures
+(between a minimum and maximum temperature), we conduct a sensitivity study which led us to use six
+temperatures. We ran both local (Pattern Search, PS) and global (Particle Swarm Optimization,
+PSO) gradient-free optimization methods. 

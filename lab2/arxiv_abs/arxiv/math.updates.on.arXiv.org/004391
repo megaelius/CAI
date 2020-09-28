@@ -1,0 +1,18 @@
+We consider the problem of minimizing the sum of three convex functions: i) a smooth function $f$
+in the form of an expectation or a finite average, ii) a non-smooth function $g$ in the form of a finite
+average of proximable functions $g_j$, and iii) a proximable regularizer $R$. We design a variance
+reduced method which is able progressively learn the proximal operator of $g$ via the computation
+of the proximal operator of a single randomly selected function $g_j$ in each iteration only. Our
+method can provably and efficiently accommodate many strategies for the estimation of the gradient
+of $f$, including via standard and variance-reduced stochastic estimation, effectively decoupling
+the smooth part of the problem from the non-smooth part. We prove a number of iteration complexity
+results, including a general ${\cal O}(1/t)$ rate, ${\cal O}(1/t^2)$ rate in the case of strongly
+convex $f$, and several linear rates in special cases, including accelerated linear rate. For example,
+our method achieves a linear rate for the problem of minimizing a strongly convex function $f$ under
+linear constraints under no assumption on the constraints beyond consistency. When combined with
+SGD or SAGA estimators for the gradient of $f$, this leads to a very efficient method for empirical
+risk minimization with large linear constraints. Our method generalizes several existing algorithms,
+including forward-backward splitting, Douglas-Rachford splitting, proximal SGD, proximal
+SAGA, SDCA, randomized Kaczmarz and Point-SAGA. However, our method leads to many new specific
+methods in special cases; for instance, we obtain the first randomized variant of the Dykstra's
+method for projection onto the intersection of closed convex sets. 

@@ -1,0 +1,19 @@
+The speed of deep neural networks training has become a big bottleneck of deep learning research
+and development. For example, training GoogleNet by ImageNet dataset on one Nvidia K20 GPU needs
+21 days. To speed up the training process, the current deep learning systems heavily rely on the hardware
+accelerators. However, these accelerators have limited on-chip memory compared with CPUs. To
+handle large datasets, they need to fetch data from either CPU memory or remote processors. We use
+both self-hosted Intel Knights Landing (KNL) clusters and multi-GPU clusters as our target platforms.
+From an algorithm aspect, current distributed machine learning systems are mainly designed for
+cloud systems. These methods are asynchronous because of the slow network and high fault-tolerance
+requirement on cloud systems. We focus on Elastic Averaging SGD (EASGD) to design algorithms for
+HPC clusters. Original EASGD used round-robin method for communication and updating. The communication
+is ordered by the machine rank ID, which is inefficient on HPC clusters. First, we redesign four efficient
+algorithms for HPC systems to improve EASGD's poor scaling on clusters. Async EASGD, Async MEASGD,
+and Hogwild EASGD are faster \textcolor{black}{than} their existing counterparts (Async SGD,
+Async MSGD, and Hogwild SGD, resp.) in all the comparisons. Finally, we design Sync EASGD, which
+ties for the best performance among all the methods while being deterministic. In addition to the
+algorithmic improvements, we use some system-algorithm codesign techniques to scale up the algorithms.
+By reducing the percentage of communication from 87% to 14%, our Sync EASGD achieves 5.3x speedup
+over original EASGD on the same platform. We get 91.5% weak scaling efficiency on 4253 KNL cores,
+which is higher than the state-of-the-art implementation. 

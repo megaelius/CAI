@@ -1,0 +1,17 @@
+As an integral component of blind image deblurring, non-blind deconvolution removes image blur
+with a given blur kernel, which is essential but difficult due to the ill-posed nature of the inverse
+problem. The predominant approach is based on optimization subject to regularization functions
+that are either manually designed, or learned from examples. Existing learning based methods have
+shown superior restoration quality but are not practical enough due to their restricted and static
+model design. They solely focus on learning a prior and require to know the noise level for deconvolution.
+We address the gap between the optimization-based and learning-based approaches by learning a
+universal gradient descent optimizer. We propose a Recurrent Gradient Descent Network (RGDN)
+by systematically incorporating deep neural networks into a fully parameterized gradient descent
+scheme. A hyper-parameter-free update unit shared across steps is used to generate updates from
+the current estimates, based on a convolutional neural network. By training on diverse examples,
+the Recurrent Gradient Descent Network learns an implicit image prior and a universal update rule
+through recursive supervision. The learned optimizer can be repeatedly used to improve the quality
+of diverse degenerated observations. The proposed method possesses strong interpretability
+and high generalization. Extensive experiments on synthetic benchmarks and challenging real-world
+images demonstrate that the proposed deep optimization method is effective and robust to produce
+favorable results as well as practical for real-world image deblurring applications. 

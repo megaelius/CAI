@@ -1,0 +1,18 @@
+In CDLE, a pure Curry-style type theory, it is possible to generically derive induction for {\lambda}-encoded
+data whose types are least fixed points of functors. From this comes fruitful research into the design-space
+for datatype systems: \cite{FDJS18_CoV-Ind} build upon this derivation to enhance datatypes
+with course-of-values (CoV) induction, and \cite{DFS18_GenZC-Reuse} show how to achieve program,
+proof, and data reuse generically and at zero run-time cost between non-indexed and indexed variants
+of datatypes. However, experience shows programmers and type theorists prefer the convenience
+of built-in support for declaring datatypes and defining functions over them by case analysis and
+fixpoint-style recursion. Use of the above generic framework still comes with some difficulties
+in this regard, in particular requiring manual derivation of case analysis for functors, using
+the less-familiar generic fixpoint induction, and working with {\lambda}-encodings directly.
+In this paper, we present a datatype subsystem for Cedille (an implementation of CDLE) that addresses
+the above concerns while preserving the desirable features derivable of {\lambda}-encoded datatypes
+within CDLE. In particular, we describe a \textit{semantic} termination checker based on \textit{CoV
+pattern matching} and an extension to definitional equality for constructors that supports zero-cost
+reuse for datatypes, giving detailed examples of both. Additionally, we demonstrate that this
+does not require extending Cedille's core theory by showing how datatypes and functions over them
+elaborate to CDLE and proving that this elaboration is sound. Both the datatype subsystem and its
+elaborator are implemented for Cedille, to be officially released in version 1.1.0 

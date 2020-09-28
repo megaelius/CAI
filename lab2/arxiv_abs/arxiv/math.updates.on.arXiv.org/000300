@@ -1,0 +1,20 @@
+The modification of the celebrated Yee scheme from Maxwell equations to magnetohydrodynamics
+is often referred to as the constrained transport approach. Constrained transport can be viewed
+as a sort of predictor-corrector method for updating the magnetic field, where a magnetic field
+value is first predicted by a method that does not preserve the divergence-free condition on the
+magnetic field, followed by a correction step that aims to control these divergence errors. This
+strategy has been successfully used in conjunction with a variety of shock-capturing methods including
+WENO, central, and wave propagation schemes. In this work we show how to extend the basic CT framework
+to the discontinuous Galerkin finite element method on both 2D and 3D Cartesian grids. We first review
+the entropy-stability theory for semi-discrete DG discretizations of ideal MHD, which rigorously
+establishes the need for a magnetic field that satisfies the following conditions: (1) the divergence
+of the magnetic field is zero on each element, and (2) the normal components of the magnetic field
+are continuous across element edges/faces. In order to achieve such a globally divergence-free
+magnetic field, we introduce a novel CT scheme that is based on two ingredients: (1) we introduce
+an element-centered magnetic vector potential that is updated via a discontinuous Galerkin scheme
+on the induction equation; and (2) we define a mapping that takes element-centered magnetic field
+values and element-centered magnetic vector potential values and creates on each edge /face a representation
+of the normal component of the magnetic field; this representation is then mapped back to the elements
+to create a globally divergence-free element-centered representation of the magnetic field.
+For problems with shock waves, we make use of so-called moment-based limiters to control oscillations
+in the conserved quantities. 

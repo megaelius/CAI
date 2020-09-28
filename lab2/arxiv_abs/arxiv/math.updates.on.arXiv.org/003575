@@ -1,0 +1,19 @@
+In this paper, a class of compact higher-order gas-kinetic schemes (GKS) with spectral resolution
+will be presented. Based on the high-order gas evolution model in GKS, both the interface flux function
+and conservative flow variables can be evaluated explicitly from the time-accurate gas distribution
+function. As a result, inside each control volume both the cell-averaged flow variables and their
+cell-averaged gradients can be updated within each time step. The flow variable update and slope
+update are coming from the same physical solution at the cell interface. Different from many other
+approaches, such as HWENO, there are no additional governing equations in GKS for the slopes or equivalent
+degrees of freedom independently inside each cell. For nonlinear gas dynamic evolution, the above
+compact linear reconstruction from the symmetric stencil can be divided into sub-stencils and
+apply a biased nonlinear WENO-Z reconstruction. In GKS, the time evolution solution of the gas distribution
+function at a cell interface covers a physical process from an initial non-equilibrium state to
+a final equilibrium one. The GKS evolution models unifies the nonlinear and linear reconstructions
+in gas evolution process for the determination of a time-dependent gas distribution function.
+This dynamically adaptive model helps to solve a long lasting problem in the development of high-order
+schemes about the choices of the linear and nonlinear reconstructions. Compared with discontinuous
+Galerkin (DG) scheme, the current compact GKS uses the same local and compact stencil, achieves
+the 6th-order and 8th-order accuracy, uses a much larger time step with CFL number $\geq 0.3$, and
+gets accurate solutions in both shock and smooth regions without introducing trouble cell and additional
+limiting process. At the same time, the current scheme solves the Navier-Stokes equations. 

@@ -1,0 +1,19 @@
+Modern astrophysical simulations aim to accurately model an ever-growing array of physical processes,
+including the interaction of fluids with magnetic fields, under increasingly stringent performance
+and scalability requirements driven by present-day trends in computing architectures. Discontinuous
+Galerkin methods have recently gained some traction in astrophysics, because of their arbitrarily
+high order and controllable numerical diffusion, combined with attractive characteristics for
+high performance computing. In this paper, we describe and test our implementation of a discontinuous
+Galerkin (DG) scheme for ideal magnetohydrodynamics in the AREPO-DG code. Our DG-MHD scheme relies
+on a modal expansion of the solution on Legendre polynomials inside the cells of an Eulerian octree-based
+AMR grid. The divergence-free constraint of the magnetic field is enforced using one out of two distinct
+cell-centred schemes: either a Powell-type scheme based on nonconservative source terms, or a
+hyperbolic divergence cleaning method. The Powell scheme relies on a basis of locally divergence-free
+vector polynomials inside each cell to represent the magnetic field. Limiting prescriptions are
+implemented to ensure non-oscillatory and positive solutions. We show that the resulting scheme
+is accurate and robust: it can achieve high-order and low numerical diffusion, as well as accurately
+capture strong MHD shocks. In addition, we show that our scheme exhibits a number of attractive properties
+for astrophysical simulations, such as lower advection errors and better Galilean invariance
+at reduced resolution, together with more accurate capturing of barely resolved flow features.
+We discuss the prospects of our implementation, and DG methods in general, for scalable astrophysical
+simulations. 

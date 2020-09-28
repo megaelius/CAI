@@ -1,0 +1,19 @@
+Key to any cosmic microwave background (CMB) analysis is the separation of the CMB from foreground
+contaminants. In this paper we present a novel implementation of Bayesian CMB component separation.
+We sample from the full posterior distribution using the No-U-Turn Sampler (NUTS), a gradient based
+sampling algorithm. Alongside this, we introduce new foreground modelling approaches. We use
+the mean-shift algorithm to define regions on the sky, clustering according to naively estimated
+foreground spectral parameters. Over these regions we adopt a complete pooling model, where we
+assume constant spectral parameters, and a hierarchical model, where we model individual spectral
+parameters as being drawn from underlying hyper-distributions. We validate the algorithm against
+simulations of the LiteBIRD and C-BASS experiments, with an input tensor-to-scalar ratio of $r=5\times
+10^{-3}$. Considering multipoles $32\leq\ell\leq 121$, we are able to recover estimates for $r$.
+With LiteBIRD only observations, and using the complete pooling model, we recover $r=(10\pm 0.6)\times
+10^{-3}$. For C-BASS and LiteBIRD observations we find $r=(7.0\pm 0.6)\times 10^{-3}$ using the
+complete pooling model, and $r=(5.0\pm 0.4)\times 10^{-3}$ using the hierarchical model. By adopting
+the hierarchical model we are able to eliminate biases in our cosmological parameter estimation,
+and obtain lower uncertainties due to the smaller Galactic emission mask that can be adopted for
+power spectrum estimation. Measured by the rate of effective sample generation, NUTS offers performance
+improvements of $\sim10^3$ over using Metropolis-Hastings to fit the complete pooling model.
+The efficiency of NUTS allows us to fit the more sophisticated hierarchical foreground model, that
+would likely be intractable with non-gradient based sampling algorithms. 

@@ -1,0 +1,18 @@
+Fitted interatomic potentials are widely used in atomistic simulations thanks to their ability
+to compute the energy and forces on atoms quickly. However, the simulation results crucially depend
+on the quality of the potential being used. Force matching is a method aimed at constructing reliable
+and transferable interatomic potentials by matching the forces computed by the potential as closely
+as possible, with those obtained from first principles calculations. The potfit program is an implementation
+of the force-matching method that optimizes the potential parameters using a global minimization
+algorithm followed by a local minimization polish. We extended potfit in two ways. First, we adapted
+the code to be compliant with the KIM Application Programming Interface (API) standard (part of
+the Knowledgebase of Interatomic Models Project). This makes it possible to use potfit to fit many
+KIM potential models, not just those prebuilt into the potfit code. Second, we incorporated the
+geodesic Levenberg--Marquardt (LM) minimization algorithm into potfit as a new local minimization
+algorithm. The extended potfit was tested by generating a training set using the KIM Environment-Dependent
+Interatomic Potential (EDIP) model for silicon and using potfit to recover the potential parameters
+from different initial guesses. The results show that EDIP is a "sloppy model" in the sense that its
+predictions are insensitive to some of its parameters, which makes fitting more difficult. We find
+that the geodesic LM algorithm is particularly efficient for this case. The extended potfit code
+is the first step in developing a KIM-based fitting framework for interatomic potentials for bulk
+and two dimensional materials. The code is available for download via https://www.potfit.net.

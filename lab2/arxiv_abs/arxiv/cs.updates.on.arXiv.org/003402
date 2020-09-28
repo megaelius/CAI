@@ -1,0 +1,17 @@
+Affine systems reachability is the basis of many verification methods. With further computation,
+methods exist to reason about richer models that have inputs, nonlinear differential equations,
+and hybrid dynamics. As such, the scalability of affine systems verification is a prerequisite
+to the scalability of analysis methods for more complex systems. In this paper, we investigate these
+scalability limits, improving by several orders of magnitude the size of systems that can be analyzed.
+One benefit of affine systems is that their reachable states can be written in terms of the matrix
+exponential, and safety checking can be performed at specific time steps with linear programming.
+Unfortunately, for large systems with many state variables, this direct approach requires an intractable
+amount of memory while using an intractable amount of computation time. We overcome these two problems
+by combining several methods that leverage common problem structure. Memory demands can be reduced
+by taking advantage of both initial states that are not full-dimensional, and safety properties
+(outputs) that only need a few linear projections of the state variables. Computation time is saved
+by using numerical simulations to compute only projections of the matrix exponential relevant
+for the verification problem. Since large systems often have sparse dynamics, we use fast Krylov-subspace
+simulation methods based on the Arnoldi or Lanczos iterations. Our implementation produces accurate
+counter-examples when properties are violated and, with sufficient problem structure, can scale
+to analyze systems with up to a billion real-valued state variables. 

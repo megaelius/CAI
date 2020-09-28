@@ -1,0 +1,18 @@
+Symplectic integrators are the preferred method of solving conservative $N$-body problems in
+cosmological, stellar cluster, and planetary system simulations because of their superior error
+properties and ability to compute orbital stability. Newtonian gravity is scale free, and there
+is no preferred time or length scale: this is at odds with construction of traditional symplectic
+integrators, in which there is an explicit timescale in the time-step. Additional timescales have
+been incorporated into symplectic integration using various techniques, such as hybrid methods
+and potential decompositions in planetary astrophysics, integrator sub-cycling in cosmology,
+and block time-stepping in stellar astrophysics, at the cost of breaking or potentially breaking
+symplecticity at a few points in phase space. The justification provided, if any, for this procedure
+is that these trouble points where the symplectic structure is broken should be rarely or never encountered
+in practice. We consider the case of hybrid integrators, which are used ubiquitously in astrophysics
+and other fields, to show that symplecticity breaks at a few points are sufficient to destroy beneficial
+properties of symplectic integrators, which is at odds with some statements in the literature.
+We show how to solve this problem in the case of hybrid integrators by requiring Lipschitz continuity
+of the equations of motion. For other techniques, like time step subdivision, {consequences to
+this this problem are not explored here}, and the fact that symplectic structure is broken should
+be taken into account by $N$-body simulators, who may find an alternative non-symplectic integrator
+performs similarly. 

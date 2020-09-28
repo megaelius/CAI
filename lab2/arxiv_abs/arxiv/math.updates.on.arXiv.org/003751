@@ -1,0 +1,19 @@
+We study collaborative machine learning (ML) at the wireless edge, where power and bandwidth-limited
+wireless devices with local datasets carry out distributed stochastic gradient descent (DSGD)
+with the help of a remote parameter server (PS). Standard approaches assume separate computation
+and communication, where local gradient estimates are compressed and communicated to the PS over
+orthogonal links. Following this digital approach, we introduce D-DSGD, in which the wireless
+terminals, referred to as the workers, employ gradient quantization and error accumulation, and
+transmit their gradient estimates to the PS over the underlying wireless multiple access channel
+(MAC). We then introduce an analog scheme, called A-DSGD, which exploits the additive nature of
+the wireless MAC for over-the-air gradient computation. In A-DSGD, the workers first sparsify
+their gradient estimates, and then project them to a lower dimensional space imposed by the available
+channel bandwidth. These projections are transmitted directly over the MAC without employing
+any digital code. Numerical results show that A-DSGD converges much faster than D-DSGD thanks to
+its more efficient use of the limited bandwidth and the natural alignment of the gradient estimates
+over the channel. The improvement is particularly compelling at low power and low bandwidth regimes.
+We also observe that the performance of A-DSGD improves with the number of workers (keeping the total
+size of the dataset constant), while D-DSGD deteriorates, limiting the ability of the latter in
+harnessing the computation power of edge devices. The lack of quantization and channel encoding/decoding
+in A-DSGD further speeds up communication, making it very attractive for low-latency ML applications
+at the wireless network edge. 

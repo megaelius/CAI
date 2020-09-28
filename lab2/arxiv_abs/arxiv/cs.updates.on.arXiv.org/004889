@@ -1,0 +1,17 @@
+Single image rain removal is a typical inverse problem in computer vision. The deep learning technique
+has been verified to be effective to this task and achieved state-of-the-art performance. However,
+the method needs to pre-collect a large set of image pairs with/without rains for training, which
+not only makes the method laborsome to be practically implemented, but also tends to make the trained
+network bias to the training samples while less generalized to test samples with unseen rain types
+in training. To this issue, this paper firstly proposes a semisupervised learning paradigm to this
+task. Different from traditional deep learning methods which use only supervised image pairs with/without
+rains, we put the real rainy images, without need of their clean ones, into the network training process
+as well. This is realized by elaborately formulating the residual between an input rainy image and
+its expected network output (clear image without rains) as a concise patch-wised Mixture of Gaussians
+distribution. The entire objective function for training network is thus the combination of the
+supervised data loss (least square loss between input clear image and the network output) and the
+unsupervised data loss. In this way, all such unsupervised rainy images, which is much easier to
+collect than supervised ones, can be rationally fed into the network training process, and thus
+both the short-of-training-sample and bias-to-supervised-sample issues can be evidently alleviated.
+Experiments implemented on synthetic and real data experiments verify the superiority of our model
+as compared to the state-of-the-arts. 

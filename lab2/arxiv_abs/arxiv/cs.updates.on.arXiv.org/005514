@@ -1,0 +1,18 @@
+Data de-duplication is the task of detecting multiple records that correspond to the same real-world
+entity in a database. In this work, we view de-duplication as a clustering problem where the goal
+is to put records corresponding to the same physical entity in the same cluster and putting records
+corresponding to different physical entities into different clusters. We introduce a framework
+which we call promise correlation clustering. Given a complete graph $G$ with the edges labelled
+$0$ and $1$, the goal is to find a clustering that minimizes the number of $0$ edges within a cluster
+plus the number of $1$ edges across different clusters (or correlation loss). The optimal clustering
+can also be viewed as a complete graph $G^*$ with edges corresponding to points in the same cluster
+being labelled $0$ and other edges being labelled $1$. Under the promise that the edge difference
+between $G$ and $G^*$ is "small", we prove that finding the optimal clustering (or $G^*$) is still
+NP-Hard. [Ashtiani et. al, 2016] introduced the framework of semi-supervised clustering, where
+the learning algorithm has access to an oracle, which answers whether two points belong to the same
+or different clusters. We further prove that even with access to a same-cluster oracle, the promise
+version is NP-Hard as long as the number queries to the oracle is not too large ($o(n)$ where $n$ is
+the number of vertices). Given these negative results, we consider a restricted version of correlation
+clustering. As before, the goal is to find a clustering that minimizes the correlation loss. However,
+we restrict ourselves to a given class $\mathcal F$ of clusterings. We offer a semi-supervised algorithmic
+approach to solve the restricted variant with success guarantees. 

@@ -1,0 +1,19 @@
+A brain-computer interface (BCI) based on the motor imagery (MI) paradigm translates one's motor
+intention into a control signal by classifying the Electroencephalogram (EEG) signal of different
+tasks. However, most existing systems either (i) use a high-quality algorithm to train the data
+off-line and run only classification in real-time, since the off-line algorithm is too slow, or
+(ii) use low-quality heuristics that are sufficiently fast for real-time training but introduces
+relatively large classification error. In this work, we propose a novel processing pipeline that
+allows real-time and parallel learning of EEG signals using high-quality but possibly inefficient
+algorithms. This is done by forging a link between BCI and core-sets, a technique that originated
+in computational geometry for handling streaming data via data summarization. We suggest an algorithm
+that maintains the representation such coreset tailored to handle the EEG signal which enables:
+(i) real time and continuous computation of the Common Spatial Pattern (CSP) feature extraction
+method on a coreset representation of the signal (instead on the signal itself) , (ii) improvement
+of the CSP algorithm efficiency with provable guarantees by applying CSP algorithm on the coreset,
+and (iii) real time addition of the data trials (EEG data windows) to the coreset. For simplicity,
+we focus on the CSP algorithm, which is a classic algorithm. Nevertheless, we expect that our coreset
+will be extended to other algorithms in future papers. In the experimental results we show that our
+system can indeed learn EEG signals in real-time for example a 64 channels setup with hundreds of
+time samples per second. Full open source is provided to reproduce the experiment and in the hope
+that it will be used and extended to more coresets and BCI applications in the future. 

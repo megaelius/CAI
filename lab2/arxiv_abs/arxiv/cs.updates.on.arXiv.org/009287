@@ -1,0 +1,17 @@
+Data augmentation is a critical component of training deep learning models. Although data augmentation
+has been shown to significantly improve image classification, its potential has not been thoroughly
+investigated for object detection. Given the additional cost for annotating images for object
+detection, data augmentation may be of even greater importance for this computer vision task. In
+this work, we study the impact of data augmentation on object detection. We first demonstrate that
+data augmentation operations borrowed from image classification may be helpful for training detection
+models, but the improvement is limited. Thus, we investigate how learned, specialized data augmentation
+policies improve generalization performance for detection models. Importantly, these augmentation
+policies only affect training and leave a trained model unchanged during evaluation. Experiments
+on the COCO dataset indicate that an optimized data augmentation policy improves detection accuracy
+by more than +2.3 mAP, and allow a single inference model to achieve a state-of-the-art accuracy
+of 50.7 mAP. Importantly, the best policy found on COCO may be transferred unchanged to other detection
+datasets and models to improve predictive accuracy. For example, the best augmentation policy
+identified with COCO improves a strong baseline on PASCAL-VOC by +2.7 mAP. Our results also reveal
+that a learned augmentation policy is superior to state-of-the-art architecture regularization
+methods for object detection, even when considering strong baselines. Code for training with the
+learned policy is available online at https://github.com/tensorflow/tpu/tree/master/models/official/detection

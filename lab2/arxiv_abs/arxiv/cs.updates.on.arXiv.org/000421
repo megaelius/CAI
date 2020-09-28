@@ -1,0 +1,17 @@
+We revisit the classic basic counting problem in the distributed streaming model that was studied
+by Gibbons and Tirthapura (GT). In the solution for maintaining an $(\epsilon,\delta)$-estimate,
+as what GT's method does, we make the following new contributions: (1) For a bit stream of size $n$,
+where each bit has a probability at least $\gamma$ to be 1, we exponentially reduced the average total
+processing time from GT's $\Theta(n \log(1/\delta))$ to $O((1/(\gamma\epsilon^2))(\log^2
+n) \log(1/\delta))$, thus providing the first sublinear-time streaming algorithm for this problem.
+(2) In addition to an overall much faster processing speed, our method provides a new tradeoff that
+a lower accuracy demand (a larger value for $\epsilon$) promises a faster processing speed, whereas
+GT's processing speed is $\Theta(n \log(1/\delta))$ in any case and for any $\epsilon$. (3) The
+worst-case total time cost of our method matches GT's $\Theta(n\log(1/\delta))$, which is necessary
+but rarely occurs in our method. (4) The space usage overhead in our method is a lower order term compared
+with GT's space usage and occurs only $O(\log n)$ times during the stream processing and is too negligible
+to be detected by the operating system in practice. We further validate these solid theoretical
+results with experiments on both real-world and synthetic data, showing that our method is faster
+than GT's by a factor of several to several thousands depending on the stream size and accuracy demands,
+without any detectable space usage overhead. Our method is based on a faster sampling technique
+that we design for boosting GT's method and we believe this technique can be of other interest. 

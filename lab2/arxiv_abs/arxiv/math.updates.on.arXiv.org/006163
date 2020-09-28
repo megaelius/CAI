@@ -1,0 +1,19 @@
+We study minimax methods for off-policy evaluation (OPE) using value-functions and marginalized
+importance weights. Despite that they hold promises of overcoming the exponential variance in
+traditional importance sampling, several key problems remain: (1) They require function approximation
+and are generally biased. For the sake of trustworthy OPE, is there anyway to quantify the biases?
+(2) They are split into two styles ("weight-learning" vs "value-learning"). Can we unify them?
+In this paper we answer both questions positively. By slightly altering the derivation of previous
+methods (one from each style; Uehara et al., 2019), we unify them into a single confidence interval
+(CI) that automatically comes with a special type of double robustness: when either the value-function
+or importance weight class is well-specified, the CI is valid and its length quantifies the misspecification
+of the other class. We can also tell which class is misspecified, which provides useful diagnostic
+information for the design of function approximation. Our CI also provides a unified view of and
+new insights to some recent methods: for example, one side of the CI recovers a version of AlgaeDICE
+(Nachum et al., 2019b), and we show that the two sides need to be used together and either alone may
+incur doubled approximation error as a point estimate. We further examine the potential of applying
+these bounds to two long-standing problems: off-policy policy optimization with poor data coverage
+(i.e., exploitation), and systematic exploration. With a well-specified value-function class,
+we show that optimizing the lower and the upper bounds lead to effective exploitation and exploration,
+respectively. Our results also suggests an interesting assymetry between exploration and exploitation,
+that the former might require substantially weaker realizability assumptions than the latter.

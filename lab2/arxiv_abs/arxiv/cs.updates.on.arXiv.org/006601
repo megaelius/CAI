@@ -1,0 +1,18 @@
+The acoustic-to-word model based on the Connectionist Temporal Classification (CTC) criterion
+is a natural end-to-end (E2E) system directly targeting word as output unit. Two issues exist in
+the system: first, the current output of the CTC model relies on the current input and does not account
+for context weighted inputs. This is the hard alignment issue. Second, the word-based CTC model
+suffers from the out-of-vocabulary (OOV) issue. This means it can model only the frequently occurring
+words while tagging the remaining words as OOV. Hence, such a model is limited in its capacity in recognizing
+only a fixed set of frequent words. In this study, we propose addressing these problems using a combination
+of attention mechanism and mixed-units. In particular, we introduce Attention CTC, Self-Attention
+CTC, Hybrid CTC, and Mixed-unit CTC. First, we blend attention modeling capabilities directly
+into the CTC network using Attention CTC and Self-Attention CTC. Second, to alleviate the OOV issue,
+we present Hybrid CTC which uses a word and letter CTC with shared hidden layers. The Hybrid CTC consults
+the letter CTC when the word CTC emits an OOV. Then, we propose a much better solution by training a
+Mixed-unit CTC which decomposes all the OOV words into sequences of frequent words and multi-letter
+units. Evaluated on a 3400 hours Microsoft Cortana voice assistant task, our final acoustic-to-word
+solution using attention and mixed-units achieves a relative reduction in word error rate (WER)
+over the vanilla word CTC by 12.09%. Such an E2E model without using any language model (LM) or complex
+decoder also outperforms a traditional context-dependent (CD) phoneme CTC with strong LM and decoder
+by 6.79% relative. 

@@ -1,0 +1,19 @@
+Accurate dose calculation is vitally important for proton therapy. Pencil beam (PB) model-based
+dose calculation is fast but inaccurate due to the approximation when dealing with inhomogeneities.
+Monte Carlo (MC) dose calculation is the most accurate method, but it is time consuming. We hypothesize
+that deep learning methods can boost the accuracy of PB dose calculation to the level of MC. In this
+work, we developed a deep learning model that converts PB to MC doses for different tumor sites. The
+proposed model is based on our newly developed hierarchically densely connected U-Net (HD U-Net)
+network, and it uses the PB dose and patient CT image as inputs to generate the MC dose. We used 290 patients
+(90 with head and neck, 93 with liver, 75 with prostate, and 32 with lung cancer) to train, validate,
+and test the model. For each tumor site, we performed four numerical experiments to explore various
+combinations of training datasets. Training the model on data from all tumor sites together and
+using the dose distribution of each individual beam as input yielded the best performance for all
+four tumor sites. The average gamma index (1mm/1% criteria) between the converted dose and the MC
+dose was 92.8%, 92.7%, 89.7% and 99.6% for head and neck, liver, lung, and prostate test patients,
+respectively. The average time for dose conversion for a single field was less than 4 seconds. In
+conclusion, our deep learning-based approach can quickly boost the accuracy of proton PB dose distributions
+to that of MC dose distributions. The trained model can be readily adapted to new datasets for different
+tumor sites and from different hospitals through transfer learning. This model can be added as a
+plug-in to the clinical workflow of proton therapy treatment planning to improve the accuracy of
+proton dose calculation. 

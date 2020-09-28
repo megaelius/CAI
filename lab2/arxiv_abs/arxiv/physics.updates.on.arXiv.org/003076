@@ -1,0 +1,20 @@
+A novel technique based on the Full Orthogonalization Arnoldi (FOA) is proposed to perform Dynamic
+Mode Decomposition (DMD) for a sequence of snapshots. A modification to FOA is presented for situations
+where the matrix $A$ is unknown, but the set of vectors $\{A^{i-1}v_1\}_{i=1}^{N-1}$ are known.
+The modified FOA is the kernel for the proposed projected DMD algorithm termed, FOA based DMD. The
+proposed algorithm to compute DMD modes and eigenvalues i) does not require Singular Value Decomposition
+(SVD) for snapshot matrices $X$ with $\kappa_2(X) \ll 1/\epsilon_m$, where $\kappa_2(X)$ is the
+2-norm condition number of the snapshot matrix and $\epsilon_m$ is the relative round-off error
+or machine epsilon, ii) has an optional rank truncation step motivated by round off error analysis
+for snapshot matrices $X$ with $\kappa_2(X) \approx 1/\epsilon_m$, iii) requires only one snapshot
+at a time, thus making it a 'streaming' method even with the optional rank truncation step, iv) consumes
+less memory and requires less floating point operations to obtain the projected matrix than existing
+projected DMD methods and v) lends itself to easy parallelism as the main computational kernel involves
+only vector additions, dot products and matrix vector products. The new technique is therefore
+well-suited for DMD of large datasets on parallel computing platforms. We show both theoretically
+and using numerical examples that for FOA based DMD without rank truncation, the finite precision
+error in the computed projection of the linear mapping is $O(\epsilon_m\kappa_2(X))$. The proposed
+method is also compared to existing projected DMD methods for computational cost, memory consumption
+and relative round off error. Error indicators are presented that are useful to decide when to stop
+acquiring new snapshots. The proposed method is applied to several examples of numerical simulations
+of fluid flow. 

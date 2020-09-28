@@ -1,0 +1,19 @@
+Classical pairwise image registration methods search for a spatial transformation that optimises
+a numerical measure that indicates how well a pair of moving and fixed images are aligned. Current
+learning-based registration methods have adopted the same paradigm and typically predict, for
+any new input image pair, dense correspondences in the form of a dense displacement field or parameters
+of a spatial transformation model. However, in many applications of registration, the spatial
+transformation itself is only required to propagate points or regions of interest (ROIs). In such
+cases, detailed pixel- or voxel-level correspondence within or outside of these ROIs often have
+little clinical value. In this paper, we propose an alternative paradigm in which the location of
+corresponding image-specific ROIs, defined in one image, within another image is learnt. This
+results in replacing image registration by a conditional segmentation algorithm, which can build
+on typical image segmentation networks and their widely-adopted training strategies. Using the
+registration of 3D MRI and ultrasound images of the prostate as an example to demonstrate this new
+approach, we report a median target registration error (TRE) of 2.1 mm between the ground-truth
+ROIs defined on intraoperative ultrasound images and those propagated from the preoperative MR
+images. Significantly lower (>34%) TREs were obtained using the proposed conditional segmentation
+compared with those obtained from a previously-proposed spatial-transformation-predicting
+registration network trained with the same multiple ROI labels for individual image pairs. We conclude
+this work by using a quantitative bias-variance analysis to provide one explanation of the observed
+improvement in registration accuracy. 

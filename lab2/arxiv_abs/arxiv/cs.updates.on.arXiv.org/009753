@@ -1,0 +1,17 @@
+In this work, a dense recurrent convolutional neural network (DRCNN) was constructed to detect
+sleep disorders including arousal, apnea and hypopnea using Polysomnography (PSG) measurement
+channels provided in the 2018 Physionet challenge database. Our model structure is composed of
+multiple dense convolutional units (DCU) followed by a bidirectional long-short term memory (LSTM)
+layer followed by a softmax output layer. The sleep events including sleep stages, arousal regions
+and multiple types of apnea and hypopnea are manually annotated by experts which enables us to train
+our proposed network using a multi-task learning mechanism. Three binary cross-entropy loss functions
+corresponding to sleep/wake, target arousal and apnea-hypopnea/normal detection tasks are summed
+up to generate our overall network loss function that is optimized using the Adam method. Our model
+performance was evaluated using two metrics: the area under the precision-recall curve (AUPRC)
+and the area under the receiver operating characteristic curve (AUROC). To measure our model generalization,
+4-fold cross-validation was also performed. For training, our model was applied to full night recording
+data. Finally, the average AUPRC and AUROC values associated with the arousal detection task were
+0.505 and 0.922, respectively on our testing dataset. An ensemble of four models trained on different
+data folds improved the AUPRC and AUROC to 0.543 and 0.931, respectively. Our proposed algorithm
+achieved the first place in the official stage of the 2018 Physionet challenge for detecting sleep
+arousals with AUPRC of 0.54 on the blind testing dataset. 

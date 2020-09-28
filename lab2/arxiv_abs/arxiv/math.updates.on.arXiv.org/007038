@@ -1,0 +1,19 @@
+Concurrent multiscale finite element analysis (FE2) is a powerful approach for high-fidelity
+modeling of materials for which a suitable macroscopic constitutive model is not available. However,
+the extreme computational effort associated with computing a nested micromodel at every macroscopic
+integration point makes FE2 prohibitive for most practical applications. Constructing surrogate
+models able to efficiently compute the microscopic constitutive response is therefore a promising
+approach in enabling concurrent multiscale modeling. This work presents a reduction framework
+for adaptively constructing surrogate models based on statistical learning. The nested micromodels
+are replaced by a machine learning surrogate model based on Gaussian Processes (GP). The need for
+offline data collection is bypassed by training the GP models online based on data coming from a small
+set of fully-solved anchor micromodels that undergo the same strain history as their associated
+macro integration points. The Bayesian formalism inherent to GP models provides a natural tool
+for uncertainty estimation through which new observations or inclusion of new anchors are triggered.
+The surrogate constitutive manifold is constructed with as few micromechanical evaluations as
+possible by enhancing the GP models with gradient information and the solution scheme is made robust
+through a greedy data selection approach embedded within the conventional finite element solution
+loop for nonlinear analysis. The sensitivity to model parameters is studied with a tapered bar example
+with plasticity, while the applicability of the model to more complex cases is demonstrated with
+the elastoplastic analysis of a plate with multiple cutouts and a crack growth example for mixed-mode
+bending. Significant efficiency gains are obtained without resorting to offline training. 

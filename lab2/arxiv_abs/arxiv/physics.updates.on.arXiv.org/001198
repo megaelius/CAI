@@ -1,0 +1,20 @@
+We present a coupled Eulerian-Lagrangian method to simulate cloud cavitation in a compressible
+liquid. The method is designed to capture the strong, volumetric oscillations of each bubble and
+the bubble-scattered acoustics. The dynamics of the bubbly mixture is formulated using volume-averaged
+equations of motion. The continuous phase is discretized on an Eulerian grid and integrated using
+a high-order, finite-volume weighted essentially non-oscillatory (WENO) scheme, while the gas
+phase is modeled as spherical, Lagrangian point-bubbles at the sub-grid scale, each of whose radial
+evolution is tracked by solving the Keller-Miksis equation. The volume of bubbles is mapped onto
+the Eulerian grid as the void fraction by using a regularization (smearing) kernel. In the most general
+case, where the bubble distribution is arbitrary, three-dimensional Cartesian grids are used
+for spatial discretization. In order to reduce the computational cost for problems possessing
+translational or rotational homogeneities, we spatially average the governing equations along
+the direction of symmetry and discretize the continuous phase on two-dimensional or axi-symmetric
+grids, respectively. We specify a regularization kernel that maps the three-dimensional distribution
+of bubbles onto the field of an averaged two-dimensional or axi-symmetric void fraction. A closure
+is developed to model the pressure fluctuations at the sub-grid scale as synthetic noise. For the
+examples considered here, modeling the sub-grid pressure fluctuations as white noise agrees a
+priori with computed distributions from three-dimensional simulations, and suffices, a posteriori,
+to accurately reproduce the statistics of the bubble dynamics. The numerical method and its verification
+are described by considering test cases of the dynamics of a single bubble and cloud cavitaiton induced
+by ultrasound fields. 

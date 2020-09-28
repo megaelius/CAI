@@ -1,0 +1,19 @@
+We construct a supervised classifier based on Gaussian Mixture Models to probabilistically classify
+objects in Gaia data release 2 (GDR2) using only photometric and astrometric data in that release.
+The model is trained empirically to classify objects into three classes -- star, quasar, galaxy
+-- for G<=14.5 mag down to the Gaia magnitude limit of G=21.0 mag. Galaxies and quasars are identified
+for the training set by a cross-match to objects with spectroscopic classifications from the Sloan
+Digital Sky Survey. Stars are defined directly from GDR2. When allowing for the expectation that
+quasars are 500 times rarer than stars, and galaxies 7500 times rarer than stars (the class imbalance
+problem), samples classified with a threshold probability of 0.5 are predicted to have purities
+of 0.43 for quasars and 0.28 for galaxies, and completenesses of 0.58 and 0.72 respectively. The
+purities can be increased up to 0.60 by adopting a higher threshold. Not accounting for this expected
+low frequency of extragalactic objects (the class prior) would give both erroneously optimistic
+performance predictions and severely impure samples. Applying our model to all 1.20 billion objects
+in GDR2 with the required features, we classify 2.3 million objects as quasars and 0.37 million objects
+as galaxies (with individual probabilities above 0.5). The small number of galaxies is due to the
+strong bias of the satellite detection algorithm and on-ground data selection against extended
+objects. We infer the true number of quasars and galaxies -- as these classes are defined by our training
+set -- to be 690,000 and 110,000 respectively (+/- 50%). The aim of this work is to see how well extragalactic
+objects can be classified using only GDR2 data. Better classifications should be possible with
+the low resolution spectroscopy (BP/RP) planned for GDR3. 

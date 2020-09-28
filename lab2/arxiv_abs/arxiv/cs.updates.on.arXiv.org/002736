@@ -1,0 +1,17 @@
+We consider a networked control system (NCS) consisting of two plants, a global plant and a local
+plant, and two controllers, a global controller and a local controller. The global (resp. local)
+plant follows discrete-time stochastically switched linear dynamics with a continuous global
+(resp. local) state and a discrete global (resp. local) mode. We assume that the state and mode of
+the global plant are observed by both controllers while the state and mode of the local plant are only
+observed by the local controller. The local controller can inform the global controller of the local
+plant's state and mode through an unreliable TCP-like communication channel where successful
+transmissions are acknowledged. The objective of the controllers is to cooperatively minimize
+a modes-dependent quadratic cost over a finite time horizon. Following the method developed in
+[1] and [2], we construct a dynamic program based on common information and a decomposition of strategies,
+and use it to obtain explicit optimal strategies for the controllers. In the optimal strategies,
+both controllers compute a common estimate of the local plant's state. The global controller's
+action is linear in the state of the global plant and the common estimated state, and the local controller's
+action is linear in the actual states of both plants and the common estimated state. Furthermore,
+the gain matrices for the global controller depend on the global mode and its observation about the
+local mode, while the gain matrices for the local controller depend on the actual modes of both plants
+and the global controller's observation about the local mode. 

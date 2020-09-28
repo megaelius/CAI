@@ -1,0 +1,19 @@
+In this paper, we demonstrate how GPU-accelerated BEM routines can be used in a simple black-box
+fashion to accelerate fast boundary element formulations based on Hierarchical Matrices (H-Matrices)
+with ACA (Adaptive Cross Approximation). In particular, we focus on the expensive evaluation of
+the discrete weak form of boundary operators associated with the Laplace and the Helmholtz equation
+in three space dimensions. The method is based on offloading the CPU assembly of elements during
+the ACA assembly onto a GPU device and to use threading strategies across ACA blocks to create sufficient
+workload for the GPU. The proposed GPU strategy is designed such that it can be implemented in existing
+code with minimal changes to the surrounding application structure. This is in particular interesting
+for existing legacy code that is not from the ground-up designed with GPU computing in mind. Our benchmark
+study gives realistic impressions of the benefits of GPU-accelerated BEM simulations by using
+state-of-the-art multi-threaded computations on modern high-performance CPUs as a reference,
+rather than drawing synthetic comparisons with single-threaded codes. Speed-up plots illustrate
+that performance gains up to a factor of 5.5 could be realized with GPU computing under these conditions.
+This refers to a boundary element model with about 4 million unknowns, whose H-Matrix weak form associated
+with a real-valued (Laplace) boundary operator is set up in only 100 minutes harnessing the two GPUs
+instead of 9 hours when using the 20 CPU cores at disposal only. The benchmark study is followed by
+a particularly demanding real-life application, where we compute the scattered high-frequency
+sound field of a submarine to demonstrate the increase in overall application performance from
+moving to a GPU-based ACA assembly. 

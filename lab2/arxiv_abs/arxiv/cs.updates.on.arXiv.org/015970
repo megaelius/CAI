@@ -1,0 +1,19 @@
+fMRI semantic category understanding using linguistic encoding models attempts to learn a forward
+mapping that relates stimuli to the corresponding brain activation. State-of-the-art encoding
+models use a single global model (linear or non-linear) to predict brain activation given the stimulus.
+However, the critical assumption in these methods is that a priori different brain regions respond
+the same way to all the stimuli, that is, there is no modularity or specialization assumed for any
+region. This goes against the modularity theory, supported by many cognitive neuroscience investigations
+suggesting that there are functionally specialized regions in the brain. In this paper, we achieve
+this by clustering similar regions together and for every cluster we learn a different linear regression
+model using a mixture of linear experts model. The key idea here is that each linear expert captures
+the behaviour of similar brain regions. Given a new stimulus, the utility of the proposed model is
+twofold (i) predicts the brain activation as a weighted linear combination of the activations of
+multiple linear experts and (ii) to learn multiple experts corresponding to different brain regions.
+We argue that each expert captures activity patterns related to a particular region of interest
+(ROI) in the human brain. This study helps in understanding the brain regions that are activated
+together given different kinds of stimuli. Importantly, we suggest that the mixture of regression
+experts (MoRE) framework successfully combines the two principles of organization of function
+in the brain, namely that of specialization and integration. Experiments on fMRI data from paradigm
+1 [1]where participants view linguistic stimuli show that the proposed MoRE model has better prediction
+accuracy compared to that of conventional models. 

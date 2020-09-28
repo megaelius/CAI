@@ -1,0 +1,19 @@
+Absorption line spectroscopy is a powerful way of measuring properties of stars and the interstellar
+medium. Absorption spectra are often analyzed manually, an approach that limits reproducibility
+and which cannot practically be applied to modern datasets consisting of thousands or even millions
+of spectra. Simultaneous probabilistic modeling of absorption features and continuum shape is
+a promising approach for automating this analysis. Existing implementations of this approach
+use numerical methods such as Markov chain Monte Carlo (MCMC) to marginalize over the continuum
+parameters. Numerical marginalization over large numbers of continuum parameters is too slow
+to be convenient for exploratory analysis, can increase the dimensionality of an inference problem
+beyond the capacity of simple MCMC samplers, and is in general impractical for the analysis of large
+datasets. When continua are parameterized as linear functions such as polynomials or splines,
+it is possible to reduce continuum parameter marginalization to an integral over a multivariate
+normal distribution, which has a known closed form. In addition to speeding up probabilistic modeling,
+analytic marginalization makes it trivial to marginalize over continuum parameterizations and
+to combine continuum description marginalization with optimization for absorption line parameters.
+These new possibilities allow automatic, probabilistically justified continuum placement in
+analyses of large spectroscopic datasets. We compare the accuracy to within which absorption line
+parameters can be recovered using different continuum placement methods and find that marginalization
+is in many cases an improvement over other methods. We implement analytic marginalization over
+linear continuum parameters in the open-source package amlc. 

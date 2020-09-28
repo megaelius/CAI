@@ -1,0 +1,18 @@
+We revisit Min-Mean-Cycle, the classical problem of finding a cycle in a weighted directed graph
+with minimum mean weight. Despite an extensive algorithmic literature, previous work falls short
+of a near-linear runtime in the number of edges $m$--in fact, there is a natural barrier which precludes
+such a runtime for solving Min-Mean-Cycle exactly. Here, we give a much faster approximation algorithm
+that, for graphs with polylogarithmic diameter, has near-linear runtime. In particular, this
+is the first algorithm whose runtime for the complete graph scales in the number of vertices $n$ as
+$\tilde{O}(n^2)$. Moreover--unconditionally on the diameter--the algorithm uses only $O(n)$
+memory beyond reading the input, making it "memory-optimal". The algorithm is also simple to implement
+and has remarkable practical performance. Our approach is based on solving a linear programming
+(LP) relaxation using entropic regularization, which effectively reduces the LP to a Matrix Balancing
+problem--a la the popular reduction of Optimal Transport to Matrix Scaling. We then round the fractional
+LP solution using a variant of the classical Cycle-Cancelling algorithm that is sped up to near-linear
+runtime at the expense of being approximate, and implemented in a memory-optimal manner. We also
+provide an alternative algorithm with slightly faster theoretical runtime, albeit worse memory
+usage and practicality. This algorithm uses the same rounding procedure, but solves the LP relaxation
+by leveraging recent developments in area-convexity regularization. Its runtime scales inversely
+in the approximation accuracy, which we show is optimal--barring a major breakthrough in algorithmic
+graph theory, namely faster Shortest Paths algorithms. 

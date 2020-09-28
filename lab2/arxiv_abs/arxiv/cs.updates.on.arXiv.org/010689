@@ -1,0 +1,19 @@
+An ordered binary decision diagram (OBDD) is a directed acyclic graph that represents a Boolean
+function. OBDDs are also known as special cases of oblivious read-once branching programs in the
+field of complexity theory. Since OBDDs have many nice properties as data structures, they have
+been extensively studied for decades in both theoretical and practical fields, such as VLSI design,
+formal verification, machine learning, and combinatorial problems. Arguably, the most crucial
+problem in using OBDDs is that they may vary exponentially in size depending on their variable ordering
+(i.e., the order in which the variable are to read) when they represent the same function. Indeed,
+it is NP hard to find an optimal variable ordering that minimizes an OBDD for a given function. Hence,
+numerous studies have sought heuristics to find an optimal variable ordering. From practical as
+well as theoretical points of view, it is also important to seek algorithms that output optimal solutions
+with lower (exponential) time complexity than trivial brute-force algorithms do. Friedman and
+Supowit provided a clever deterministic algorithm with time/space complexity $O^\ast(3^n)$,
+where $n$ is the number of variables of the function, which is much better than the trivial brute-force
+bound $O^\ast(n!2^n)$. This paper shows that a further speedup is possible with quantum computers
+by demonstrating the existence of a quantum algorithm that produces a minimum OBDD together with
+the corresponding variable ordering in $O^\ast(2.77286^n)$ time and space with an exponentially
+small error. Moreover, this algorithm can be adapted to constructing other minimum decision diagrams
+such as zero-suppressed BDDs, which provide compact representations of sparse sets and are often
+used in the field of discrete optimization and enumeration. 

@@ -1,0 +1,20 @@
+Minimax optimal convergence rates for classes of stochastic convex optimization problems are
+well characterized, where the majority of results utilize iterate averaged stochastic gradient
+descent (SGD) with polynomially decaying step sizes. In contrast, SGD's final iterate behavior
+has received much less attention despite their widespread use in practice. Motivated by this observation,
+this work provides a detailed study of the following question: what rate is achievable using the
+final iterate of SGD for the streaming least squares regression problem with and without strong
+convexity? First, this work shows that even if the time horizon T (i.e. the number of iterations SGD
+is run for) is known in advance, SGD's final iterate behavior with any polynomially decaying learning
+rate scheme is highly sub-optimal compared to the minimax rate (by a condition number factor in the
+strongly convex case and a factor of $\sqrt{T}$ in the non-strongly convex case). In contrast, this
+paper shows that Step Decay schedules, which cut the learning rate by a constant factor every constant
+number of epochs (i.e., the learning rate decays geometrically) offers significant improvements
+over any polynomially decaying step sizes. In particular, the final iterate behavior with a step
+decay schedule is off the minimax rate by only $log$ factors (in the condition number for strongly
+convex case, and in T for the non-strongly convex case). Finally, in stark contrast to the known horizon
+case, this paper shows that the anytime (i.e. the limiting) behavior of SGD's final iterate is poor
+(in that it queries iterates with highly sub-optimal function value infinitely often, i.e. in a
+limsup sense) irrespective of the stepsizes employed. These results demonstrate the subtlety
+in establishing optimal learning rate schemes (for the final iterate) for stochastic gradient
+procedures in fixed time horizon settings. 

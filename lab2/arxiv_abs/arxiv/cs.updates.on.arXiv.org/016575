@@ -1,0 +1,18 @@
+The prediction and selection of lesion features are two important tasks in voxel-based neuroimage
+analysis. Existing multivariate learning models take two tasks equivalently and optimize simultaneously.
+However, in addition to lesion features, we observe that there is another type of feature, which
+is commonly introduced during the procedure of preprocessing steps, which can improve the prediction
+result. We call such a type of feature as procedural bias. Therefore, in this paper, we propose that
+the features/voxels in neuroimage data are consist of three orthogonal parts: lesion features,
+procedural bias, and null features. To stably select lesion features and leverage procedural bias
+into prediction, we propose an iterative algorithm (termed GSplit LBI) as a discretization of differential
+inclusion of inverse scale space, which is the combination of Variable Splitting scheme and Linearized
+Bregman Iteration (LBI). Specifically, with a variable the splitting term, two estimators are
+introduced and split apart, i.e. one is for feature selection (the sparse estimator) and the other
+is for prediction (the dense estimator). Implemented with Linearized Bregman Iteration (LBI),
+the solution path of both estimators can be returned with different sparsity levels on the sparse
+estimator for the selection of lesion features. Besides, the dense the estimator can additionally
+leverage procedural bias to further improve prediction results. To test the efficacy of our method,
+we conduct experiments on the simulated study and Alzheimer's Disease Neuroimaging Initiative
+(ADNI) database. The validity and the benefit of our model can be shown by the improvement of prediction
+results and the interpretability of visualized procedural bias and lesion features. 

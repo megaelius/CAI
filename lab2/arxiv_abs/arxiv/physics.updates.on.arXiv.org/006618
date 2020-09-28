@@ -1,0 +1,19 @@
+A data-driven framework is proposed towards the end of predictive modeling of complex spatio-temporal
+dynamics, leveraging nested non-linear manifolds. Three levels of neural networks are used, with
+the goal of predicting the future state of a system of interest in a parametric setting. A convolutional
+autoencoder is used as the top level to encode the high dimensional input data along spatial dimensions
+into a sequence of latent variables. A temporal convolutional autoencoder (TCAE) serves as the
+second level, which further encodes the output sequence from the first level along the temporal
+dimension, and outputs a set of latent variables that encapsulate the spatio-temporal evolution
+of the dynamics. The use of dilated temporal convolutions grows the receptive field exponentially
+with network depth, allowing for efficient processing of long temporal sequences typical of scientific
+computations. A fully-connected network is used as the third level to learn the mapping between
+these latent variables and the global parameters from training data, and predict them for new parameters.
+For future state predictions, the second level uses a temporal convolutional network to predict
+subsequent steps of the output sequence from the top level. Latent variables at the bottom-most
+level are decoded to obtain the dynamics in physical space at new global parameters and/or at a future
+time. Predictive capabilities are evaluated on a range of problems involving discontinuities,
+wave propagation, strong transients, and coherent structures. The sensitivity of the results
+to different modeling choices is assessed. The results suggest that given adequate data and careful
+training, effective data-driven predictive models can be constructed. Perspectives are provided
+on the present approach and its place in the landscape of model reduction. 

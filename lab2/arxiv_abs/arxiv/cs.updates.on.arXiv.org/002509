@@ -1,0 +1,18 @@
+Emerging smart home platforms, which interface with a variety of physical devices and support third-party
+application development, currently use permission models inspired by smartphone operating systems-they
+group functionally similar device operations into separate units, and require users to grant apps
+access to devices at that granularity. Unfortunately, this leads to two issues: (1) apps that do
+not require access to all of the granted device operations have overprivileged access to them, (2)
+apps might pose a higher risk to users than needed because physical device operations are fundamentally
+risk- asymmetric-"door.unlock" provides access to burglars, and "door.lock" can potentially
+lead to getting locked out. Overprivileged apps with access to mixed-risk operations only increase
+the potential for damage. We present Tyche, a system that leverages the risk-asymmetry in physical
+device operations to limit the risk that apps pose to smart home users, without increasing the user's
+decision overhead. Tyche introduces the notion of risk-based permissions. When using risk-based
+permissions, device operations are grouped into units of similar risk, and users grant apps access
+to devices at that risk-based granularity. Starting from a set of permissions derived from the popular
+Samsung SmartThings platform, we conduct a user study involving domain-experts and Mechanical
+Turk users to compute a relative ranking of risks associated with device operations. We find that
+user assessment of risk closely matches that of domain experts. Using this ranking, we define risk-based
+groupings of device operations, and apply it to existing SmartThings apps, showing that risk-based
+permissions indeed limit risk if apps are malicious or exploitable. 

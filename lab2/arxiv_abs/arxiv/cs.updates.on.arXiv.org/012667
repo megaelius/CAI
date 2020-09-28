@@ -1,0 +1,18 @@
+Logic locking refers to a set of techniques that can protect integrated circuits (ICs) from counterfeiting,
+piracy and malicious functionality changes by an untrusted foundry. It achieves these goals by
+introducing new inputs, called key inputs, and additional logic to an IC such that the circuit produces
+the correct output only when the key inputs are set to specific values. The correct values of the key
+inputs are kept secret from the untrusted foundry and programmed after manufacturing and before
+distribution, rendering piracy, counterfeiting and malicious design changes infeasible. The
+security of logic locking relies on the assumption that the untrusted foundry cannot infer the correct
+values of the key inputs by analysis of the circuit. This paper proposes Functional Analysis attacks
+on Logic Locking algorithms (abbreviated as FALL attacks). FALL attacks have two stages. Their
+first stage is dependent on the locking algorithm and involves analyzing structural and functional
+properties of locked circuits to identify a list of potential locking keys. The second stage is algorithm
+agnostic and introduces a powerful addition to SAT-based attacks called key confirmation. Key
+confirmation can identify the correct key from a list of alternatives and works even on circuits
+that are resilient to the SAT attack. In comparison to past work, the FALL attack is more practical
+as it can often succeed (90% of successful attempts in our experiments) by only analyzing the locked
+netlist, without requiring oracle access to an unlocked circuit. Our experimental evaluation
+shows that FALL attacks are able to defeat 65 out of 80 (81%) circuits locked using Stripped-Functionality
+Logic Locking (SFLL-HD). 

@@ -1,0 +1,3 @@
+Hi,
+	Does anyone have any information on joining the X Consortium ? What
+are the costs, what are the benefits, who should I contact ? Thanks

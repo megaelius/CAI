@@ -1,0 +1,19 @@
+Purpose: To develop an improved self-supervised learning strategy that efficiently uses the acquired
+data for training a physics-guided reconstruction network without a database of fully-sampled
+data. Methods: Currently self-supervised learning for physics-guided reconstruction networks
+splits acquired undersampled data into two disjoint sets, where one is used for data consistency
+(DC) in the unrolled network and the other to define the training loss. The proposed multi-mask self-supervised
+learning via data undersampling (SSDU) splits acquired measurements into multiple pairs of disjoint
+sets for each training sample, while using one of these sets for DC units and the other for defining
+loss, thereby more efficiently using the undersampled data. Multi-mask SSDU is applied on fully-sampled
+3D knee and prospectively undersampled 3D brain MRI datasets, which are retrospectively subsampled
+to acceleration rate (R)=8, and compared to CG-SENSE and single-mask SSDU DL-MRI, as well as supervised
+DL-MRI when fully-sampled data is available. Results: Results on knee MRI show that the proposed
+multi-mask SSDU outperforms SSDU and performs closely with supervised DL-MRI, while significantly
+outperforming CG-SENSE. A clinical reader study further ranks the multi-mask SSDU higher than
+supervised DL-MRI in terms of SNR and aliasing artifacts. Results on brain MRI show that multi-mask
+SSDU achieves better reconstruction quality compared to SSDU and CG-SENSE. Reader study demonstrates
+that multi-mask SSDU at R=8 significantly improves reconstruction compared to single-mask SSDU
+at R=8, as well as CG-SENSE at R=2. Conclusion: The proposed multi-mask SSDU approach enables improved
+training of physics-guided neural networks without fully-sampled data, by enabling efficient
+use of the undersampled data with multiple masks. 

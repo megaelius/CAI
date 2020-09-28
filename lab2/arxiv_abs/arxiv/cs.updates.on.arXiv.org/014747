@@ -1,0 +1,18 @@
+Pulmonary lobe segmentation in computed tomography scans is essential for regional assessment
+of pulmonary diseases. Automated segmentation is still an open problem, especially for scans with
+substantial abnormalities, such as in COVID-19 infection. Recent works used Convolutional Neural
+Networks for automatic pulmonary lobe segmentation. Convolution kernels in these networks only
+respond to local information within the scope of their effective receptive field, and this may be
+insufficient to capture all necessary contextual information. We argue that contextual information
+is critically important for accurate delineation of pulmonary lobes, especially when the lungs
+are severely affected by diseases such as COVID-19 or COPD. In this paper, we propose a contextual
+two-stage U-net (CTSU-Net) that leverages global context by introducing a first stage in which
+the receptive field encompasses the entire scan and by using a novel non-local neural network module.
+The proposed module computes the filter response at one position as a weighted sum of feature responses
+at all positions, where geometric and visual correlations between features determine weights.
+With a limited amount of training data available from COVID-19 subjects, we initially train and
+validate CTSU-Net on a cohort of 5000 subjects from the COPDGene study (4000 for training and 1000
+for evaluation). Using models pretrained COPDGene, we apply transfer learning to retrain and evaluate
+CTSU-Net on 204 COVID-19 subjects (104 for retraining and 100 for evaluation). Experimental results
+show that CTSU-Net outperforms state-of-the-art baselines and performs robustly on cases with
+incomplete fissures and severe lung infection due to COVID-19. 

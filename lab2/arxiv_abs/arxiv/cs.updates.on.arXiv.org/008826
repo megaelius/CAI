@@ -1,0 +1,19 @@
+Conventional application of convolutional neural networks (CNNs) for image classification and
+recognition is based on the assumption that all target classes are equal(i.e., no hierarchy) and
+exclusive of one another (i.e., no overlap). CNN-based image classifiers built on this assumption,
+therefore, cannot take into account an innate hierarchy among target classes (e.g., cats and dogs
+in animal image classification) or additional information that can be easily derived from the data
+(e.g.,numbers larger than five in the recognition of handwritten digits), thereby resulting in
+scalability issues when the number of target classes is large. Combining two related but slightly
+different ideas of hierarchical classification and logical learning by auxiliary inputs, we propose
+a new learning framework called hierarchical auxiliary learning, which not only address the scalability
+issues with a large number of classes but also could further reduce the classification/recognition
+errors with a reasonable number of classes. In the hierarchical auxiliary learning, target classes
+are semantically or non-semantically grouped into superclasses, which turns the original problem
+of mapping between an image and its target class into a new problem of mapping between a pair of an image
+and its superclass and the target class. To take the advantage of superclasses, we introduce an auxiliary
+block into a neural network, which generates auxiliary scores used as additional information for
+final classification/recognition; in this paper, we add the auxiliary block between the last residual
+block and the fully-connected output layer of the ResNet. Experimental results demonstrate that
+the proposed hierarchical auxiliary learning can reduce classification errors up to 0.56, 1.6
+and 3.56 percent with MNIST, SVHN and CIFAR-10 datasets, respectively. 

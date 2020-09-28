@@ -1,0 +1,19 @@
+We present a new method to detect planetary transits from time-series photometry, the Transit Least
+Squares (TLS) algorithm. TLS searches for transit-like features while taking the stellar limb
+darkening and planetary ingress and egress into account. We have optimized TLS for both signal detection
+efficiency (SDE) of small planets and computational speed. TLS analyses the entire, unbinned phase-folded
+light curve. We compensate for the higher computational load by (i.) using algorithms like "Mergesort"
+(for the trial orbital phases) and by (ii.) restricting the trial transit durations to a smaller
+range that encompasses all known planets, and using stellar density priors where available. A typical
+K2 light curve, including 80d of observations at a cadence of 30min, can be searched with TLS in ~10s
+real time on a standard laptop computer, as fast as the widely used Box Least Squares (BLS) algorithm.
+We perform a transit injection-retrieval experiment of Earth-sized planets around sun-like stars
+using synthetic light curves with 110ppm white noise per 30min cadence, corresponding to a photometrically
+quiet KP=12 star observed with Kepler. We determine the SDE thresholds for both BLS and TLS to reach
+a false positive rate of 1% to be SDE~7 in both cases. The resulting true positive (or recovery) rates
+are ~93% for TLS and ~76% for BLS, implying more reliable detections with TLS. We also test TLS with
+the K2 light curve of the TRAPPIST-1 system and find six of seven Earth-sized planets using an iterative
+search for increasingly lower signal detection efficiency, the phase-folded transit of the seventh
+planet being affected by a stellar flare. TLS is more reliable than BLS in finding any kind of transiting
+planet but it is particularly suited for the detection of small planets in long time series from Kepler,
+TESS, and PLATO. We make our Python implementation of TLS publicly available. 

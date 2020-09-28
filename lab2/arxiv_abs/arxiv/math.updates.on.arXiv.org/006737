@@ -1,0 +1,17 @@
+Non-adversarial generative models such as variational auto-encoder (VAE), Wasserstein auto-encoders
+with maximum mean discrepancy (WAE-MMD), sliced-Wasserstein auto-encoder (SWAE) are relatively
+easy to train and have less mode collapse compared to Wasserstein auto-encoder with generative
+adversarial network (WAE-GAN). However, they are not very accurate in approximating the target
+distribution in the latent space because they don't have a discriminator to detect the minor difference
+between real and fake. To this end, we develop a novel non-adversarial framework called Tessellated
+Wasserstein Auto-encoders (TWAE) to tessellate the support of the target distribution into a given
+number of regions by the centroidal Voronoi tessellation (CVT) technique and design batches of
+data according to the tessellation instead of random shuffling for accurate computation of discrepancy.
+Theoretically, we demonstrate that the error of estimate to the discrepancy decreases when the
+numbers of samples $n$ and regions $m$ of the tessellation become larger with rates of $\mathcal{O}(\frac{1}{\sqrt{n}})$
+and $\mathcal{O}(\frac{1}{\sqrt{m}})$, respectively. Given fixed $n$ and $m$, a necessary condition
+for the upper bound of measurement error to be minimized is that the tessellation is the one determined
+by CVT. TWAE is very flexible to different non-adversarial metrics and can substantially enhance
+their generative performance in terms of Fr\'{e}chet inception distance (FID) compared to VAE,
+WAE-MMD, SWAE. Moreover, numerical results indeed demonstrate that TWAE is competitive to the
+adversarial model WAE-GAN, demonstrating its powerful generative ability. 

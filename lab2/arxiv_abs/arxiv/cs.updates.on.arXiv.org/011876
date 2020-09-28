@@ -1,0 +1,18 @@
+We present a tailored multigrid method for linear problems stemming from a Nitsche-based extended
+finite element method (XFEM). Our multigrid method is robust with respect to highly varying coefficients
+and the number of interfaces in a domain. It shows level independent convergence rates when applied
+to different variants of Nitsche's method. Generally, multigrid methods require a hierarchy of
+finite element (FE) spaces which can be created geometrically using a hierarchy of nested meshes.
+However, in the XFEM framework, standard multigrid methods might demonstrate poor convergence
+properties if the hierarchy of FE spaces employed is not nested. We design a prolongation operator
+for the multigrid method in such a way that it can accommodate the discontinuities across the interfaces
+in the XFEM framework and recursively induces a nested FE space hierarchy. The prolongation operator
+is constructed using so-called pseudo-$L^2$-projections; as common, the adjoint of the prolongation
+operator is employed as the restriction operator. The stabilization parameter in Nitsche's method
+plays an important role in imposing interface conditions and also affects the condition number
+of the linear systems. We discuss the requirements on the stabilization parameter to ensure coercivity
+and review selected strategies from the literature which are used to implicitly estimate the stabilization
+parameter. Eventually, we compare the impact of different variations of Nitsche's method on discretization
+errors and condition number of the linear systems. We demonstrate the robustness of our multigrid
+method with respect to varying coefficients and the number of interfaces and compare it with other
+preconditioners. 

@@ -1,0 +1,20 @@
+Patients with Type I Diabetes (T1D) must take insulin injections to prevent the serious long term
+effects of hyperglycemia - high blood glucose (BG). Patients must also be careful not to inject too
+much insulin because this could induce hypoglycemia (low BG), which can potentially be fatal. Patients
+therefore follow a "regimen" that determines how much insulin to inject at certain times. Current
+methods for managing this disease require adjusting the patient's regimen over time based on the
+disease's behavior (recorded in the patient's diabetes diary). If we can accurately predict a patient's
+future BG values from his/her current features (e.g., predicting today's lunch BG value given today's
+diabetes diary entry for breakfast, including insulin injections, and perhaps earlier entries),
+then it is relatively easy to produce an effective regimen. This study explores the challenges of
+BG modeling by applying several machine learning algorithms and various data preprocessing variations
+(corresponding to 312 [learner, preprocessed-dataset] combinations), to a new T1D dataset containing
+29 601 entries from 47 different patients. Our most accurate predictor is a weighted ensemble of
+two Gaussian Process Regression models, which achieved an errL1 loss of 2.70 mmol/L (48.65 mg/dl).
+This was an unexpectedly poor result given that one can obtain an errL1 of 2.91 mmol/L (52.43 mg/dl)
+using the naive approach of simply predicting the patient's average BG. For each of data-variant/model
+combination we report several evaluation metrics, including glucose-specific metrics, and find
+similarly disappointing results (the best model was only incrementally better than the simplest
+measure). These results suggest that the diabetes diary data that is typically collected may not
+be sufficient to produce accurate BG prediction models; additional data may be necessary to build
+accurate BG prediction models. 

@@ -1,0 +1,19 @@
+We improve both the open-set generalization and efficiency of link prediction on knowledge graphs
+by leveraging the contexts of entities and relations in a novel semantic triple encoder. Most previous
+methods, e.g., translation-based and GCN-based embedding approaches, were built upon graph embedding
+models. They simply treat the entities/relations as a closed set of graph nodes regardless of their
+context semantics, which however cannot provide critical information for the generalization
+to unseen entities/relations. In this paper, we partition each graph triple and develop a novel
+context-based encoder that separately maps each part and its context into a latent semantic space.
+We train this semantic triple encoder by optimizing two objectives specifically designed for link
+prediction. In particular, (1) We split each triple into two parts, i.e., i) head entity plus relation
+and ii) tail entity, process both contexts separately by a Transformer encoder, and combine the
+encoding outputs to derive the prediction. This Siamese-like architecture avoids the combinatorial
+explosion of candidate triples and significantly improves the efficiency, especially during
+inference; (2) We cover the contextualized semantics of the triples in the encoder so it can handle
+unseen entities during inference, which promisingly improves the generalization ability; (3)
+We train the model by optimizing two complementary objectives defined on the triple, i.e., classification
+and contrastive losses, for natural and reliable ranking scores during inference. In experiments,
+we achieve the state-of-the-art or competitive performance on three popular link prediction benchmarks.
+In addition, we empirically reduce the inference costs by one or two orders of magnitude compared
+to a recent context-based encoding approach and meanwhile keep a superior quality of prediction.

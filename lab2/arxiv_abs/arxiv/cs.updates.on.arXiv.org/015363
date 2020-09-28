@@ -1,0 +1,18 @@
+The big data industry is facing new challenges as concerns about privacy leakage soar. One of the
+remedies to privacy breach incidents is to encapsulate computations over sensitive data within
+hardware-assisted Trusted Execution Environments (TEE). Such TEE-powered software is called
+secure enclaves. Secure enclaves hold various advantages against competing for privacy-preserving
+computation solutions. However, enclaves are much more challenging to build compared with ordinary
+software. The reason is that the development of TEE software must follow a restrictive programming
+model to make effective use of strong memory encryption and segregation enforced by hardware. These
+constraints transitively apply to all third-party dependencies of the software. If these dependencies
+do not officially support TEE hardware, TEE developers have to spend additional engineering effort
+in porting them. High development and maintenance cost is one of the major obstacles against adopting
+TEE-based privacy protection solutions in production. In this paper, we present our experience
+and achievements with regard to constructing and continuously maintaining a third-party library
+supply chain for TEE developers. In particular, we port a large collection of Rust third-party libraries
+into Intel SGX, one of the most mature trusted computing platforms. Our supply chain accepts upstream
+patches in a timely manner with SGX-specific security auditing. We have been able to maintain the
+SGX ports of 159 open-source Rust libraries with reasonable operational costs. Our work can effectively
+reduce the engineering cost of developing SGX enclaves for privacy-preserving data processing
+and exchange. 

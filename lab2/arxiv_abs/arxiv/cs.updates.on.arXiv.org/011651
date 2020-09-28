@@ -1,0 +1,19 @@
+A quotient filter is a cache efficient AMQ data structure. Depending on the fill degree of the filter
+most insertions and queries only need to access one or two consecutive cache lines. This makes quotient
+filters fast compared to the more commonly used Bloom filters that incur multiple cache misses.
+However, concurrent Bloom filters are easy to implement and can be implemented lock-free while
+concurrent quotient filters are not as simple. Usually concurrent quotient filters work by using
+an external array of locks -- each protecting a region of the table. Accessing this array incurs one
+additional cache miss per operation. We propose a new locking scheme that has no memory overhead.
+Using this new locking scheme we achieve 1.8 times higher speedups than with the common external
+locking scheme. Another advantage of quotient filters over Bloom filters is that a quotient filter
+can change its size when it is becoming full. We implement this growing technique for our concurrent
+quotient filters and adapt it in a way that allows unbounded growing while keeping a bounded false
+positive rate. We call the resulting data structure a fully expandable quotient filter. Its design
+is similar to scalable Bloom filters, but we exploit some concepts inherent to quotient filters
+to improve the space efficiency and the query speed. We also propose quotient filter variants that
+are aimed to reduce the number of status bits (2-status-bit variant) or to simplify concurrent implementations
+(linear probing quotient filter). The linear probing quotient filter even leads to a lock-free
+concurrent filter implementation. This is especially interesting, since we show that any lock-free
+implementation of another common quotient filter variant would incur significant overheads in
+the form of additional data fields or multiple passes over the accessed data. 

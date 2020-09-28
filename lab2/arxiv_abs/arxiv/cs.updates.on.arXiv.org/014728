@@ -1,0 +1,18 @@
+Behavioral software models play a key role in many software engineering tasks; unfortunately,
+these models either are not available during software development or, if available, they quickly
+become outdated as the implementations evolve. Model inference techniques have been proposed
+as a viable solution to extract finite-state models from execution logs. However, existing techniques
+do not scale well when processing very large logs, such as system-level logs obtained by combining
+component-level logs. Furthermore, in the case of component-based systems, existing techniques
+assume to know the definitions of communication channels between components. However, this information
+is usually not available in the case of systems integrating 3rd-party components with limited documentation.
+In this paper, we address the scalability problem of inferring the model of a component-based system
+from the individual component-level logs, when the only available information about the system
+are high-level architecture dependencies among components and a (possibly incomplete) list of
+log message templates denoting communication events between components. Our model inference
+technique, called SCALER, follows a divide and conquer approach. The idea is to first infer a model
+of each system component from the corresponding logs; then, the individual component models are
+merged together taking into account the dependencies among components, as reflected in the logs.
+We evaluated SCALER in terms of scalability and accuracy, using a dataset of logs from an industrial
+system; the results show that SCALER can process much larger logs than a state-of-the-art tool,
+while yielding more accurate models. 

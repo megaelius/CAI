@@ -1,0 +1,20 @@
+Derivatives of computer graphics, image processing, and deep learning algorithms have tremendous
+use in guiding parameter space searches, or solving inverse problems. As the algorithms become
+more sophisticated, we no longer only need to differentiate simple mathematical functions, but
+have to deal with general programs which encode complex transformations of data. This dissertation
+introduces three tools for addressing the challenges that arise when obtaining and applying the
+derivatives for complex graphics algorithms. Traditionally, practitioners have been constrained
+to composing programs with a limited set of operators, or hand-deriving derivatives. We extend
+the image processing language Halide with reverse-mode automatic differentiation, and the ability
+to automatically optimize the gradient computations. This enables automatic generation of the
+gradients of arbitrary Halide programs, at high performance, with little programmer effort. In
+3D rendering, the gradient is required with respect to variables such as camera parameters, geometry,
+and appearance. However, computing the gradient is challenging because the rendering integral
+includes visibility terms that are not differentiable. We introduce, to our knowledge, the first
+general-purpose differentiable ray tracer that solves the full rendering equation, while correctly
+taking the geometric discontinuities into account. Finally, we demonstrate that the derivatives
+of light path throughput can also be useful for guiding sampling in forward rendering. Simulating
+light transport in the presence of multi-bounce glossy effects and motion in 3D rendering is challenging
+due to the hard-to-sample high-contribution areas. We present a Markov Chain Monte Carlo rendering
+algorithm that extends Metropolis Light Transport by automatically and explicitly adapting to
+the local integrand, thereby increasing sampling efficiency. 

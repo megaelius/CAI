@@ -1,0 +1,19 @@
+We develop a framework for graph sparsification and sketching, based on a new tool, short cycle decomposition
+-- a decomposition of an unweighted graph into an edge-disjoint collection of short cycles, plus
+few extra edges. A simple observation gives that every graph G on n vertices with m edges can be decomposed
+in $O(mn)$ time into cycles of length at most $2\log n$, and at most $2n$ extra edges. We give an $m^{1+o(1)}$
+time algorithm for constructing a short cycle decomposition, with cycles of length $n^{o(1)}$,
+and $n^{1+o(1)}$ extra edges. These decompositions enable us to make progress on several open questions:
+* We give an algorithm to find $(1\pm\epsilon)$-approximations to effective resistances of all
+edges in time $m^{1+o(1)}\epsilon^{-1.5}$, improving over the previous best of $\tilde{O}(\min\{m\epsilon^{-2},n^2
+\epsilon^{-1}\})$. This gives an algorithm to approximate the determinant of a Laplacian up to
+$(1\pm\epsilon)$ in $m^{1 + o(1)} + n^{15/8+o(1)}\epsilon^{-7/4}$ time. * We show existence and
+efficient algorithms for constructing graphical spectral sketches -- a distribution over sparse
+graphs H such that for a fixed vector $x$, we have w.h.p. $x'L_Hx=(1\pm\epsilon)x'L_Gx$ and $x'L_H^+x=(1\pm\epsilon)x'L_G^+x$.
+This implies the existence of resistance-sparsifiers with about $n\epsilon^{-1}$ edges that
+preserve the effective resistances between every pair of vertices up to $(1\pm\epsilon).$ * By
+combining short cycle decompositions with known tools in graph sparsification, we show the existence
+of nearly-linear sized degree-preserving spectral sparsifiers, as well as significantly sparser
+approximations of directed graphs. The latter is critical to recent breakthroughs on faster algorithms
+for solving linear systems in directed Laplacians. Improved algorithms for constructing short
+cycle decompositions will lead to improvements for each of the above results. 

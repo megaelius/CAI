@@ -1,0 +1,19 @@
+Tensor networks, originally designed to address computational problems in quantum many-body
+physics, have recently been applied to machine learning tasks. However, compared to quantum physics,
+where the reasons for the success of tensor network approaches over the last 30 years is well understood,
+very little is yet known about why these techniques work for machine learning. The goal of this paper
+is to investigate entanglement properties of tensor network models in a current machine learning
+application, in order to uncover general principles that may guide future developments. We revisit
+the use of tensor networks for supervised image classification using the MNIST data set of handwritten
+digits, as pioneered by Stoudenmire and Schwab [Adv. in Neur. Inform. Proc. Sys. 29, 4799 (2016)].
+Firstly we hypothesize about which state the tensor network might be learning during training.
+For that purpose, we propose a plausible candidate state $|\Sigma_{\ell}\rangle$ (built as a superposition
+of product states corresponding to images in the training set) and investigate its entanglement
+properties. We conclude that $|\Sigma_{\ell}\rangle$ is so robustly entangled that it cannot
+be approximated by the tensor network used in that work, which must therefore be representing a very
+different state. Secondly, we use tensor networks with a block product structure, in which entanglement
+is restricted within small blocks of $n \times n$ pixels/qubits. We find that these states are extremely
+expressive (e.g. training accuracy of $99.97 \%$ already for $n=2$), suggesting that long-range
+entanglement may not be essential for image classification. However, in our current implementation,
+optimization leads to over-fitting, resulting in test accuracies that are not competitive with
+other current approaches. 

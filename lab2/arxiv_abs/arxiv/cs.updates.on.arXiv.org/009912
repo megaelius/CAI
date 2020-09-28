@@ -1,0 +1,18 @@
+Generalizability is an important problem in deep neural networks, especially in the context of
+the variability of data acquisition in clinical magnetic resonance imaging (MRI). Recently, the
+Spatially Localized Atlas Network Tiles (SLANT) approach has been shown to effectively segment
+whole brain non-contrast T1w MRI with 132 volumetric labels. Enhancing generalizability of SLANT
+would enable broader application of volumetric assessment in multi-site studies. Transfer learning
+(TL) is commonly used to update the neural network weights for local factors; yet, it is commonly
+recognized to risk degradation of performance on the original validation/test cohorts. Here,
+we explore TL by data augmentation to address these concerns in the context of adapting SLANT to anatomical
+variation and scanning protocol. We consider two datasets: First, we optimize for age with 30 T1w
+MRI of young children with manually corrected volumetric labels, and accuracy of automated segmentation
+defined relative to the manually provided truth. Second, we optimize for acquisition with 36 paired
+datasets of pre- and post-contrast clinically acquired T1w MRI, and accuracy of the post-contrast
+segmentations assessed relative to the pre-contrast automated assessment. For both studies,
+we augment the original TL step of SLANT with either only the new data or with both original and new
+data. Over baseline SLANT, both approaches yielded significantly improved performance (signed
+rank tests; pediatric: 0.89 vs. 0.82 DSC, p<0.001; contrast: 0.80 vs 0.76, p<0.001). The performance
+on the original test set decreased with the new-data only transfer learning approach, so data augmentation
+was superior to strict transfer learning. 

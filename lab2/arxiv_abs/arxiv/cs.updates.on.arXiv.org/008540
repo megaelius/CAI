@@ -1,0 +1,20 @@
+Bioacoustic sensors, sometimes known as autonomous recording units (ARUs), can record sounds
+of wildlife over long periods of time in scalable and minimally invasive ways. Deriving per-species
+abundance estimates from these sensors requires detection, classification, and quantification
+of animal vocalizations as individual acoustic events. Yet, variability in ambient noise, both
+over time and across sensors, hinders the reliability of current automated systems for sound event
+detection (SED), such as convolutional neural networks (CNN) in the time-frequency domain. In
+this article, we develop, benchmark, and combine several machine listening techniques to improve
+the generalizability of SED models across heterogeneous acoustic environments. As a case study,
+we consider the problem of detecting avian flight calls from a ten-hour recording of nocturnal bird
+migration, recorded by a network of six ARUs in the presence of heterogeneous background noise.
+Starting from a CNN yielding state-of-the-art accuracy on this task, we introduce two noise adaptation
+techniques, respectively integrating short-term (60-millisecond) and long-term (30-minute)
+context. First, we apply per-channel energy normalization (PCEN) in the time-frequency domain,
+which applies short-term automatic gain control to every subband in the mel-frequency spectrogram.
+Secondly, we replace the last dense layer in the network by a context-adaptive neural network (CA-NN)
+layer, i.e. an affine layer whose weights are dynamically adapted at prediction time by an auxiliary
+network taking long-term summary statistics of spectrotemporal features as input. We show that
+both techniques are helpful and complementary. [...] We release a pre-trained version of our best
+performing system under the name of BirdVoxDetect, a ready-to-use detector of avian flight calls
+in field recordings. 

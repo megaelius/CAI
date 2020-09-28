@@ -1,0 +1,18 @@
+Let $P$ be a planar set of $n$ sites in general position. For $k\in \{1,\dots,n-1\}$, the Voronoi
+diagram of order $k$} for $P$ is obtained by subdividing the plane into cells such that points in the
+same cell have the same set of nearest $k$ neighbors in $P$. The nearest site Voronoi diagram (NVD)
+and the farthest site Voronoi diagram (FVD) are the particular cases of $k=1$ and $k=n-1$, respectively.
+For any given $K\in \{1,\dots,n-1\}$, the family of all higher-order Voronoi diagrams of order
+$k = 1, \dots, K$ for $P$ can be computed in total time $O(nK^2+ n\log n)$ using $O(K^2(n-K))$ space
+[Aggarwal et al., DCG'89; Lee, TC'82]. Moreover, NVD($P$) and FVD($P$) can be computed in $O(n\log
+n)$ time using $O(n)$ space [Preparata, Shamos, Springer'85]. For $s\in \{1,\dots,n\}$, an $s$-workspace
+algorithm has random access to a read-only array with the sites of $P$ in arbitrary order. Additionally,
+the algorithm may use $O(s)$ words, of $\Theta(\log n)$ bits each, for reading and writing intermediate
+data. The output can be written only once and cannot be accessed or modified afterwards. We describe
+a deterministic $s$-workspace algorithm for computing NVD($P$) and FVD($P$) that runs in $O((n^2/s)\log
+s)$ time. Moreover, we generalize our $s$-workspace algorithm so that for any given $K\in \{1,\dots,O(\sqrt{s})\}$,
+we can compute the family of all higher-order Voronoi diagrams of order $k = 1, \dots, K$ for $P$ in
+total time $O\bigl(\frac{n^2 K^5}{s}(\log s+K\log K)\bigr)$. Previously, for Voronoi diagrams,
+the only known $s$-workspace algorithm runs in expected time $O((n^2/s) \log s + n\log s \log^*s)$
+[Korman et al., WADS'15] and only works for NVD($P$) (i.e., $k=1$). Unlike the previous algorithm,
+our new method is very simple and does not rely on advanced data structures or random sampling techniques.

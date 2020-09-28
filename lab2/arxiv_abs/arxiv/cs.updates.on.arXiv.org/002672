@@ -1,0 +1,19 @@
+Machine learning is a popular approach to signatureless malware detection because it can generalize
+to never-before-seen malware families and polymorphic strains. This has resulted in its practical
+use for either primary detection engines or for supplementary heuristic detection by anti-malware
+vendors. Recent work in adversarial machine learning has shown that deep learning models are susceptible
+to gradient-based attacks, whereas non-differentiable models that report a score can be attacked
+by genetic algorithms that aim to systematically reduce the score. We propose a more general framework
+based on reinforcement learning (RL) for attacking static portable executable (PE) anti-malware
+engines. The general framework does not require a differentiable model nor does it require the engine
+to produce a score. Instead, an RL agent is equipped with a set of functionality-preserving operations
+that it may perform on the PE file. Through a series of games played against the anti-malware engine,
+it learns which sequences of operations are likely to result in evading the detector for any given
+malware sample. This enables completely black-box attacks against static PE anti-malware, and
+produces functional evasive malware samples as a direct result. We show in experiments that our
+method can attack a gradient-boosted machine learning model with evasion rates that are substantial
+and appear to be strongly dependent on the dataset. We demonstrate that attacks against this model
+appear to also evade components of publicly hosted antivirus engines. Adversarial training results
+are also presented: by retraining the model on evasive ransomware samples, a subsequent attack
+is 33% less effective. Importantly, we release an OpenAI gym to allow researchers to study evasion
+rates against their own machine learning models, malware samples, and their own RL agents. 

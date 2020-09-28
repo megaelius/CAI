@@ -1,0 +1,18 @@
+Machine Learning models require a vast amount of data for accurate training. In reality, most data
+is scattered across different organizations and cannot be easily integrated under many legal and
+practical constraints. Federated Transfer Learning (FTL) was introduced in [1] to improve statistical
+models under a data federation that allow knowledge to be shared without compromising user privacy,
+and enable complementary knowledge to be transferred in the network. As a result, a target-domain
+party can build more flexible and powerful models by leveraging rich labels from a source-domain
+party. However, the excessive computational overhead of the security protocol involved in this
+model rendered it impractical. In this work, we aim towards enhancing the efficiency and security
+of existing models for practical collaborative training under a data federation by incorporating
+Secret Sharing (SS). In literature, only the semi-honest model for Federated Transfer Learning
+has been considered. In this paper, we improve upon the previous solution, and also allow malicious
+players who can arbitrarily deviate from the protocol in our FTL model. This is much stronger than
+the semi-honest model where we assume that parties follow the protocol precisely. We do so using
+the one of the practical MPC protocol called SPDZ, thus our model can be efficiently extended to any
+number of parties even in the case of a dishonest majority. In addition, the models evaluated in our
+setting significantly outperform the previous work, in terms of both runtime and communication
+cost. A single iteration in our model executes in 0.8 seconds for the semi-honest case and 1.4 seconds
+for the malicious case for 500 samples, as compared to 35 seconds taken by the previous implementation.

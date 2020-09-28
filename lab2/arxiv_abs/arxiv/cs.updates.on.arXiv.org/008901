@@ -1,0 +1,18 @@
+OS-based page sharing is a commonly used optimization in modern systems to reduce memory footprint.
+Unfortunately, such sharing can cause Flush+Reload cache attacks, whereby a spy periodically
+flushes a cache line of shared data (using the clflush instruction) and reloads it to infer the access
+patterns of a victim application. Current proposals to mitigate Flush+Reload attacks are impractical
+as they either disable page sharing, or require application rewrite, or require OS support, or incur
+ISA changes. Ideally, we want to tolerate attacks without requiring any OS or ISA support and while
+incurring negligible performance and storage overheads. This paper makes the key observation
+that when a cache line is invalidated due to a Flush-Caused Invalidation (FCI), the tag and data of
+the invalidated line are still resident in the cache and can be used for detecting Flush-based attacks.
+We call lines invalidated due to FCI as Zombie lines. Our design explicitly marks such lines as Zombies,
+preserves the Zombie lines in the cache, and uses the hits and misses to Zombie lines to tolerate the
+attacks. We propose Zombie-Based Mitigation (ZBM), a simple hardware-based design that successfully
+guards against attacks by simply treating hits on Zombie-lines as misses to avoid any timing leaks
+to the attacker. We analyze the robustness of ZBM using three spy programs: attacking AES T-Tables,
+attacking RSA Square-and-Multiply, and Function Watcher (FW), and show that ZBM successfully
+defends against these attacks. Our solution requires negligible storage (4-bits per cache line),
+retains OS-based page sharing, requires no OS/ISA changes, and does not incur slowdown for benign
+applications. 

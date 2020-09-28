@@ -1,0 +1,20 @@
+Designing dynamic graph algorithms against an adaptive adversary is a major goal in the field of
+dynamic graph algorithms. While a few such algorithms are known for spanning trees, matchings,
+and single-source shortest paths, very little was known for an important primitive like graph sparsifiers.
+The challenge is how to approximately preserve so much information about the graph (e.g., all-pairs
+distances and all cuts) without revealing the algorithms' underlying randomness to the adaptive
+adversary. In this paper we present the first non-trivial efficient adaptive algorithms for maintaining
+spanners and cut sparisifers. These algorithms in turn imply improvements over existing algorithms
+for other problems. Our first algorithm maintains a polylog$(n)$-spanner of size $\tilde O(n)$
+in polylog$(n)$ amortized update time. The second algorithm maintains an $O(k)$-approximate
+cut sparsifier of size $\tilde O(n)$ in $\tilde O(n^{1/k})$ amortized update time, for any $k\ge1$,
+which is polylog$(n)$ time when $k=\log(n)$. The third algorithm maintains a polylog$(n)$-approximate
+spectral sparsifier in polylog$(n)$ amortized update time. The amortized update time of both algorithms
+can be made worst-case by paying some sub-polynomial factors. Prior to our result, there were near-optimal
+algorithms against oblivious adversaries (e.g. Baswana et al. [TALG'12] and Abraham et al. [FOCS'16]),
+but the only non-trivial adaptive dynamic algorithm requires $O(n)$ amortized update time to maintain
+$3$- and $5$-spanner of size $O(n^{1+1/2})$ and $O(n^{1+1/3})$, respectively [Ausiello et al.
+ESA'05]. Our results are based on two novel techniques. The first technique, is a generic black-box
+reduction that allows us to assume that the graph undergoes only edge deletions and, more importantly,
+remains an expander with almost-uniform degree. The second technique we call proactive resampling.
+[...] 

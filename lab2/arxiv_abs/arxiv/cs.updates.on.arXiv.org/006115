@@ -1,0 +1,19 @@
+Domain generation algorithms (DGAs) are frequently employed by malware to generate domains used
+for connecting to command-and-control (C2) servers. Recent work in DGA detection leveraged deep
+learning architectures like convolutional neural networks (CNNs) and character-level long short-term
+memory networks (LSTMs) to classify domains. However, these classifiers perform poorly with wordlist-based
+DGA families, which generate domains by pseudorandomly concatenating dictionary words. We propose
+a novel approach that combines context-sensitive word embeddings with a simple fully-connected
+classifier to perform classification of domains based on word-level information. The word embeddings
+were pre-trained on a large unrelated corpus and left frozen during the training on domain data.
+The resulting small number of trainable parameters enabled extremely short training durations,
+while the transfer of language knowledge stored in the representations allowed for high-performing
+models with small training datasets. We show that this architecture reliably outperformed existing
+techniques on wordlist-based DGA families with just 30 DGA training examples and achieved state-of-the-art
+performance with around 100 DGA training examples, all while requiring an order of magnitude less
+time to train compared to current techniques. Of special note is the technique's performance on
+the matsnu DGA: the classifier attained a 89.5% detection rate with a 1:1,000 false positive rate
+(FPR) after training on only 30 examples of the DGA domains, and a 91.2% detection rate with a 1:10,000
+FPR after 90 examples. Considering that some of these DGAs have wordlists of several hundred words,
+our results demonstrate that this technique does not rely on the classifier learning the DGA wordlists.
+Instead, the classifier is able to learn the semantic signatures of the wordlist-based DGA families.

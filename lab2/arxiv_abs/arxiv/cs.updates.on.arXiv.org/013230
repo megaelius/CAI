@@ -1,0 +1,19 @@
+We study the problem of efficiently estimating the effect of an intervention on a single variable
+using observational samples in a causal Bayesian network. Our goal is to give algorithms that are
+efficient in both time and sample complexity in a non-parametric setting. Tian and Pearl (AAAI `02)
+have exactly characterized the class of causal graphs for which causal effects of atomic interventions
+can be identified from observational data. We make their result quantitative. Suppose P is a causal
+model on a set V of n observable variables with respect to a given causal graph G with observable distribution
+$P$. Let $P_x$ denote the interventional distribution over the observables with respect to an intervention
+of a designated variable X with x. We show that assuming that G has bounded in-degree, bounded c-components,
+and that the observational distribution is identifiable and satisfies certain strong positivity
+condition: 1. [Evaluation] There is an algorithm that outputs with probability $2/3$ an evaluator
+for a distribution $P'$ that satisfies $d_{tv}(P_x, P') \leq \epsilon$ using $m=\tilde{O}(n\epsilon^{-2})$
+samples from $P$ and $O(mn)$ time. The evaluator can return in $O(n)$ time the probability $P'(v)$
+for any assignment $v$ to $V$. 2. [Generation] There is an algorithm that outputs with probability
+$2/3$ a sampler for a distribution $\hat{P}$ that satisfies $d_{tv}(P_x, \hat{P}) \leq \epsilon$
+using $m=\tilde{O}(n\epsilon^{-2})$ samples from $P$ and $O(mn)$ time. The sampler returns an
+iid sample from $\hat{P}$ with probability $1-\delta$ in $O(n\epsilon^{-1} \log\delta^{-1})$
+time. We extend our techniques to estimate marginals $P_x|_Y$ over a given $Y \subset V$ of interest.
+We also show lower bounds for the sample complexity showing that our sample complexity has optimal
+dependence on the parameters n and $\epsilon$ as well as the strong positivity parameter. 

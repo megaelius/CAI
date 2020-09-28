@@ -1,0 +1,18 @@
+This paper presents a batch-parallel 2-3 tree T in an asynchronous dynamic multithreading model
+that supports searches, insertions and deletions in sorted batches and has essentially optimal
+parallelism, even under the restrictive QRMW (queued read-modify-write) memory contention model
+where concurrent accesses to the same memory location are queued and serviced one by one. Specifically,
+if T has n items, then performing an item-sorted batch (given as a leaf-based balanced binary tree)
+of b operations on T takes O( b * log(n/b+1) + b ) work and O( log b + log n ) span (in the worst case as b,n
+-> inf). This is information-theoretically work-optimal for b <= n, and also span-optimal for pointer-based
+structures. Moreover, it is easy to support optimal intersection, union and difference of instances
+of T with sizes m <= n, namely within O( m * log(n/m+1) ) work and O( log m + log n ) span. Furthermore, T
+supports other batch operations that make it a very useful building block for parallel data structures.
+To the author's knowledge, T is the first parallel sorted-set data structure that can be used in an
+asynchronous multi-processor machine under a memory model with queued contention and yet have
+asymptotically optimal work and span. In fact, T is designed to have bounded contention and satisfy
+the claimed work and span bounds regardless of the execution schedule. Since all data structures
+and algorithms in this paper fit into the dynamic multithreading paradigm, all their performance
+bounds are directly composable with those of other data structures and algorithms in the same model.
+Finally, the pipelining techniques in this paper are also likely to be very useful in asynchronous
+parallelization of other recursive data structures. 

@@ -1,0 +1,17 @@
+Consider collections $\mathcal{A}$ and $\mathcal{B}$ of red and blue sets, respectively. Bichromatic
+Closest Pair is the problem of finding a pair from $\mathcal{A}\times \mathcal{B}$ that has similarity
+higher than a given threshold according to some similarity measure. Our focus here is the classic
+Jaccard similarity $|\textbf{a}\cap \textbf{b}|/|\textbf{a}\cup \textbf{b}|$ for $(\textbf{a},\textbf{b})\in
+\mathcal{A}\times \mathcal{B}$. We consider the approximate version of the problem where we are
+given thresholds $j_1>j_2$ and wish to return a pair from $\mathcal{A}\times \mathcal{B}$ that
+has Jaccard similarity higher than $j_2$ if there exists a pair in $\mathcal{A}\times \mathcal{B}$
+with Jaccard similarity at least $j_1$. The classic locality sensitive hashing (LSH) algorithm
+of Indyk and Motwani (STOC '98), instantiated with the MinHash LSH function of Broder et al., solves
+this problem in $\tilde O(n^{2-\delta})$ time if $j_1\ge j_2^{1-\delta}$. In particular, for
+$\delta=\Omega(1)$, the approximation ratio $j_1/j_2=1/j_2^{\delta}$ increases polynomially
+in $1/j_2$. In this paper we give a corresponding hardness result. Assuming the Orthogonal Vectors
+Conjecture (OVC), we show that there cannot be a general solution that solves the Bichromatic Closest
+Pair problem in $O(n^{2-\Omega(1)})$ time for $j_1/j_2=1/j_2^{o(1)}$. Specifically, assuming
+OVC, we prove that for any $\delta>0$ there exists an $\varepsilon>0$ such that Bichromatic Closest
+Pair with Jaccard similarity requires time $\Omega(n^{2-\delta})$ for any choice of thresholds
+$j_2<j_1<1-\delta$, that satisfy $j_1\le j_2^{1-\varepsilon}$. 

@@ -1,0 +1,17 @@
+Community detection now is an important operation in numerous graph based applications. It is used
+to reveal groups that exist within real world networks without imposing prior size or cardinality
+constraints on the set of communities. Despite its potential, the support for parallel computers
+is rather limited. The cause is largely the irregularity of the algorithm and the underlying heuristics
+imply a sequential nature. In this paper a GPU based parallelized version of the Louvain method is
+presented. The Louvain method is a multi-phase, iterative heuristic for modularity optimization.
+It was originally developed by Blondel et al. (2008), the method has become increasingly popular
+owing to its ability to detect high modularity community partitions in a fast and memory-efficient
+manner. The parallel heuristics used, were first introduced by Hao Lu et al. (2015). As the Louvain
+method is inherently sequential, it limits the possibility of scalable usage. Thanks to the proposed
+parallel heuristics, I observe how this method can behave on GPUs. For evaluation I implemented
+the heuristics using CUDA on a GeForce GTX 980 GPU and for testing Ive used organization landscapes
+from the CERN developed Collaboration Spotting project that involves patents and publications
+to visualize the connections in technologies among its collaborators. Compared to the parallel
+Louvain implementation running on 8 threads on the same machine that has the used GPU, the CUDA implementation
+is able to produce community outputs comparable to the CPU generated results, while providing absolute
+speedups of up to 30 using the GeForce GTX 980 consumer grade GPU. 

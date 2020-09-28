@@ -1,0 +1,20 @@
+The rise of deep learning in recent years has brought with it increasingly clever optimization methods
+to deal with complex, non-linear loss functions. These methods are often designed with convex optimization
+in mind, but have been shown to work well in practice even for the highly non-convex optimization
+associated with neural networks. However, one significant drawback of these methods when they
+are applied to deep learning is that the magnitude of the update step is sometimes disproportionate
+to the magnitude of the weights (much smaller or larger), leading to training instabilities such
+as vanishing and exploding gradients. An idea to combat this issue is gradient descent with proportional
+updates. Gradient descent with proportional updates was introduced in 2017. It was independently
+developed by You et al (Layer-wise Adaptive Rate Scaling (LARS) algorithm) and by Abu-El-Haija
+(PercentDelta algorithm). The basic idea of both of these algorithms is to make each step of the gradient
+descent proportional to the current weight norm and independent of the gradient magnitude. It is
+common in the context of new optimization methods to prove convergence or derive regret bounds under
+the assumption of Lipschitz continuity and convexity. However, even though LARS and PercentDelta
+were shown to work well in practice, there is no theoretical analysis of the convergence properties
+of these algorithms. Thus it is not clear if the idea of gradient descent with proportional updates
+is used in the optimal way, or if it could be improved by using a different norm or specific learning
+rate schedule, for example. Moreover, it is not clear if these algorithms can be extended to other
+problems, besides neural networks. We attempt to answer these questions by establishing the theoretical
+analysis of gradient descent with proportional updates, and verifying this analysis with empirical
+examples. 

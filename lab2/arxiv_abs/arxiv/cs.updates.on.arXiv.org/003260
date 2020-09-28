@@ -1,0 +1,17 @@
+Message Passing Interface (MPI) is the standard paradigm of programming in high performance computing.
+MPI programming takes significant effort, and is error-prone. Thus, effective tools for analyzing
+MPI programs are much needed. On the other hand, analyzing MPI programs itself is challenging because
+of non-determinism caused by program inputs and non-deterministic operations. Existing approaches
+for analyzing MPI programs either do not handle inputs or fail to support programs with mixed blocking
+and non-blocking operations. This paper presents MPI symbolic verifier (MPI-SV), the first symbolic
+execution based tool for verifying MPI programs having both blocking and non-blocking operations.
+To ensure soundness, we propose a blockingdriven matching algorithm to safely handle non-deterministic
+operations, and a method to soundly and completely model the equivalent behavior of a program execution
+path. The models of MPI program paths are generated on-the-fly during symbolic execution, and verified
+w.r.t. the expected properties by model checking. To improve scalability, MPI-SV uses the results
+of model checking to prune redundant paths. We have implemented MPI-SV and evaluated it on the verification
+of deadlock freedom for 108 real-world MPI tasks. The pure symbolic execution based technique can
+successfully verify 61 out of the 108 tasks (56%) within one hour, while in comparison, MPI-SV can
+verify 94 tasks (87%), a 31% improvement. On average, MPI-SV also achieves 7.25X speedup on verifying
+deadlock freedom and 2.64X speedup on finding deadlocks. These experimental results are promising,
+and demonstrate MPI-SV's effectiveness and efficiency. 

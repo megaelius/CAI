@@ -1,0 +1,19 @@
+A promising avenue for improving the effectiveness of behavioral-based malware detectors would
+be to combine fast traditional machine learning detectors with high-accuracy, but time-consuming
+deep learning models. The main idea would be to place software receiving borderline classifications
+by traditional machine learning methods in an environment where uncertainty is added, while software
+is analyzed by more time-consuming deep learning models. The goal of uncertainty would be to rate-limit
+actions of potential malware during the time consuming deep analysis. In this paper, we present
+a detailed description of the analysis and implementation of CHAMELEON, a framework for realizing
+this uncertain environment for Linux. CHAMELEON offers two environments for software: (i) standard
+- for any software identified as benign by conventional machine learning methods and (ii) uncertain
+- for software receiving borderline classifications when analyzed by these conventional machine
+learning methods. The uncertain environment adds obstacles to software execution through random
+perturbations applied probabilistically on selected system calls. We evaluated CHAMELEON with
+113 applications and 100 malware samples for Linux. Our results showed that at threshold 10%, intrusive
+and non-intrusive strategies caused approximately 65% of malware to fail accomplishing their
+tasks, while approximately 30% of the analyzed benign software to meet with various levels of disruption.
+With a dynamic, per-system call threshold, CHAMELEON caused 92% of the malware to fail, and only
+10% of the benign software to be disrupted. We also found that I/O-bound software was three times
+more affected by uncertainty than CPU-bound software. Further, we analyzed the logs of software
+crashed with non-intrusive strategies, and found that some crashes are due to the software bugs.

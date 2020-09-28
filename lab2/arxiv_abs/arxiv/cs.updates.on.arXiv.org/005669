@@ -1,0 +1,20 @@
+Synchronous Mirroring (SM) is a standard approach to building highly-available and fault-tolerant
+enterprise storage systems. SM ensures strong data consistency by maintaining multiple exact
+data replicas and synchronously propagating every update to all of them. Such strong consistency
+provides fault tolerance guarantees and a simple programming model coveted by enterprise system
+designers. For current storage devices, SM comes at modest performance overheads. This is because
+performing both local and remote updates simultaneously is only marginally slower than performing
+just local updates, due to the relatively slow performance of accesses to storage in today's systems.
+However, emerging persistent memory and ultra-low-latency network technologies necessitate
+a careful re-evaluation of the existing SM techniques, as these technologies present fundamentally
+different latency characteristics compared than their traditional counterparts. In addition
+to that, existing low-latency network technologies, such as Remote Direct Memory Access (RDMA),
+provide limited ordering guarantees and do not provide durability guarantees necessary for SM.
+To evaluate the performance implications of RDMA-based SM, we develop a rigorous testing framework
+that is based on emulated persistent memory. Our testing framework makes use of two different tools:
+(i) a configurable microbenchmark and (ii) a modified version of the WHISPER benchmark suite, which
+comprises a set of common cloud applications. Using this framework, we find that recently proposed
+RDMA primitives, such as remote commit, provide correctness guarantees, but do not take full advantage
+of the asynchronous nature of RDMA hardware. To this end, we propose new primitives enabling efficient
+and correct SM over RDMA, and use these primitives to develop two new techniques delivering high-performance
+SM of persistent memories. 

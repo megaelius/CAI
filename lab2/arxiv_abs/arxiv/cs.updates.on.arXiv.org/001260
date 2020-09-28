@@ -1,0 +1,18 @@
+Recently, a method called deep CORAL was proposed for deep domain adaptation problem. It represents
+each domain by its second order statistic information (i.e. the covariance matrix), and minimizes
+the Euclidean distance between the covariance matrices of the source domain (training domain)
+and the target domain (test domain). However, Euclidean distance may not be a proper choice for measuring
+the difference between covariance matrices, since the convaraice matrix is a PSD matrix that represents
+the second-order statistical information. In this work, we propose a new method for deep unsupervised
+domain adaptation. By observing the covariance matrix lies on a Riemannian manifold, we propose
+to minimize the geodesic distance between the source and target covariance matrices. We build up
+our method on the deep CORAL approach, and use the Log-Euclidean distance to replace the naive Euclidean
+distance. In particular, we use the pre-trained Alexnet model as the base model, and add a new LogEig
+layer after fc8 layer, which calculate Riemannain distance of two covariance matrices from source
+and target domains. We simultaneously optimize the classification loss on the source domain labeled
+samples and the Log-Euclidean distance between two domains. We conduct experiments on the benchmark
+Office dataset. The results show that Deep LogCORAL gives higher accuracy in four out of the six domains
+and raise 0.7% of the average accuracy. Also, the experiment gives another interesting observation
+that Euclidean distance and Riemannain distance have only weak correlation, which shows a potential
+direction in domain adaptation to optimize Euclidean distance and Riemannian distance at the same
+time. 

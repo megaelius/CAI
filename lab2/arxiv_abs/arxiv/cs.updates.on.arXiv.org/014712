@@ -1,0 +1,20 @@
+The population recovery problem asks one to recover an unknown distribution over $n$-bit strings
+given query access to independent noisy samples of strings drawn from the distribution. Recently,
+Ban et. al. [BCF+19] studied the problem where the unknown distribution over $n$-bit strings is
+known to be $\ell$-sparse for some fixed $\ell$, and the noise is induced through the deletion channel.
+The deletion channel is a noise model where each bit of the string is independently deleted with some
+fixed probability, and the retained bits are concatenated. We note that if $\ell = 1,$ i.e., we are
+trying to learn a single string, learning the distribution is equivalent to the famous trace reconstruction
+problem. The best known algorithms for trace reconstruction require $\exp\left(O(n^{1/3})\right)$
+samples. For population recovery under the deletion channel, Ban et. al. provided an algorithm
+that could learn $\ell$-sparse distributions over strings using $\exp\left(n^{1/2} \cdot (\log
+n)^{O(\ell)}\right)$ samples. In this work, we provide an algorithm that learns the distribution
+using only $\exp\big(\tilde{O}(n^{1/3}) \cdot \ell^2\big)$ samples, by developing a higher-moment
+analog of the algorithms of [DOS17, NP17]. We also give the first algorithm with a runtime subexponential
+in $n$, which solves population recovery in $\exp\big(\tilde{O}(n^{1/3}) \cdot \ell^3\big)$
+samples and time. Notably, our dependence on $n$ nearly matches the known upper bound when $\ell
+= 1$, and we reduce the dependence on $\ell$ from doubly to nearly singly exponential. Therefore,
+we are able to learn the mixture even for much larger values of $\ell$. For instance, Ban et. al.'s
+algorithm can only learn a mixture of $O(\log n/\log \log n)$ strings with a subexponential number
+of queries, whereas we are able to learn a mixture of up to $n^{o(1)}$ strings in subexponential queries
+and time. 

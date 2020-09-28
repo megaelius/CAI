@@ -1,0 +1,18 @@
+Modern deep learning applications urge to push the model inference taking place at the edge devices
+for multiple reasons such as achieving shorter latency, relieving the burden of the network connecting
+to the cloud, and protecting user privacy. The Convolutional Neural Network (\emph{CNN}) is one
+of the most widely used model family in the applications. Given the high computational complexity
+of the CNN models, it is favorable to execute them on the integrated GPUs at the edge devices, which
+are ubiquitous and have more power and better energy efficiency than the accompanying CPUs. However,
+programming on integrated GPUs efficiently is challenging due to the variety of their architectures
+and programming interfaces. This paper proposes an end-to-end solution to execute CNN model inference
+on the integrated GPUs at the edge, which uses a unified IR to represent and optimize vision-specific
+operators on integrated GPUs from multiple vendors, as well as leverages machine learning-based
+scheduling search schemes to optimize computationally-intensive operators like convolution.
+Our solution even provides a fallback mechanism for operators not suitable or convenient to run
+on GPUs. The evaluation results suggest that compared to state-of-the-art solutions backed up
+by the vendor-provided high-performance libraries on Intel Graphics, ARM Mali GPU, and Nvidia
+integrated Maxwell GPU, our solution achieves similar, or even better (up to 1.62$\times$), performance
+on a number of popular image classification and object detection models. In addition, our solution
+has a wider model coverage and is more flexible to embrace new models. Our solution has been adopted
+in production services in AWS and is open-sourced. 

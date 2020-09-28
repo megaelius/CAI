@@ -1,0 +1,19 @@
+While reduction in feature size makes computation cheaper in terms of latency, area, and power consumption,
+performance of emerging data-intensive applications is determined by data movement. These trends
+have introduced the concept of scalability as reaching a desirable performance per unit cost by
+using as few number of units as possible. Many proposals have moved compute closer to the memory.
+However, these efforts ignored maintaining a balance between bandwidth and compute rate of an architecture,
+with those of applications, which is a key principle in designing scalable large systems. This paper
+proposes the use of memory slices, a modular building block for scalable memory systems integrated
+with compute, in which performance scales with memory size (and volume of data). The slice architecture
+utilizes a programmable memory interface feeding a systolic compute engine with high reuse rate.
+The modularity feature of slice-based systems is exploited with a partitioning and data mapping
+strategy across allocated memory slices where training performance scales with the data size.
+These features enable shifting the most pressure to cheap compute units rather than expensive memory
+accesses or transfers via interconnection network. An application of the memory slices to a scale-out
+memory system is accelerating the training of recurrent, convolutional, and hybrid neural networks
+(RNNs and RNNs+CNN) that are forming cloud workloads. The results of our cycle-level simulations
+show that memory slices exhibits a superlinear speedup when the number of slices increases. Furthermore,
+memory slices improve power efficiency to 747 GFLOPs/J for training LSTMs. While our current evaluation
+uses memory slices with 3D packaging, a major value is that slices can also be constructed with a variety
+of packaging options, for example with DDR-based memory units. 

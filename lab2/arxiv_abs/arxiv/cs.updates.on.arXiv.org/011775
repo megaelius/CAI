@@ -1,0 +1,18 @@
+In this paper we address the problem of multichannel speech enhancement in the short-time Fourier
+transform (STFT) domain and in the framework of sequence-to-sequence deep learning. A long short-time
+memory (LSTM) network takes as input a sequence of STFT coefficients associated with a frequency
+bin of multichannel noisy-speech signals. The network's output is a sequence of single-channel
+cleaned speech at the same frequency bin. We propose several clean-speech network targets, namely,
+the magnitude ratio mask, the complex ideal ratio mask, the STFT coefficients and spatial filtering.
+A prominent feature of the proposed model is that the same LSTM architecture, with identical parameters,
+is trained across frequency bins. The proposed method is referred to as narrow-band deep filtering.
+This choice stays in contrast with traditional wide-band speech enhancement methods. The proposed
+deep filter is able to discriminate between speech and noise by exploiting their different temporal
+and spatial characteristics: speech is non-stationary and spatially coherent while noise is relatively
+stationary and weakly correlated across channels. This is similar in spirit with unsupervised
+techniques, such as spectral subtraction and beamforming. We describe extensive experiments
+with both mixed signals (noise is added to clean speech) and real signals (live recordings). We empirically
+evaluate the proposed architecture variants using speech enhancement and speech recognition
+metrics, and we compare our results with the results obtained with several state of the art methods.
+In the light of these experiments we conclude that narrow-band deep filtering has very good performance,
+and excellent generalization capabilities in terms of speaker variability and noise type. 

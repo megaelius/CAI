@@ -1,0 +1,20 @@
+Good programming languages provide helpful abstractions for writing more secure code, but the
+security properties from the source language are generally not preserved when compiling a program
+and linking it with adversarial low-level code. Linked low-level code that is malicious or compromised
+can for instance read and write the compiled program's data and code, jump to arbitrary instructions,
+or smash the stack, blatantly violating any source-level abstraction. By contrast, a secure compilation
+chain protects source-level abstractions all the way down, ensuring that even an adversarial target-level
+context cannot break the security properties of a compiled program any more than some source-level
+context could. However, the precise class of security properties one chooses to preserve crucially
+impacts not only the supported security goals and the strength of the attacker model, but also the
+kind of protections the compilation chain has to introduce and the kind of proof techniques one can
+use. Since efficiently achieving and proving secure compilation at scale are challenging open
+problems, designers of secure compilation chains have to strike a pragmatic balance between security
+and efficiency that matches their application domain. To inform this difficult design decision,
+we thoroughly explore a large space of secure compilation criteria based on the preservation of
+properties that are robustly satisfied against arbitrary adversarial contexts. We study robustly
+preserving classes of trace properties such as safety, of hyperproperties such as noninterference,
+and of relational hyperproperties such as trace equivalence. For each of the studied classes we
+propose an equivalent "property-free" characterization that is generally better tailored for
+proofs. We, moreover, order the secure compilation criteria by their relative strength and prove
+several separation results. ((((cropped)))) 

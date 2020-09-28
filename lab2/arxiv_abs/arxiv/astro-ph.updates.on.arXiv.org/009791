@@ -1,0 +1,17 @@
+Metropolis nested sampling evolves a Markov chain from a current livepoint and accepts new points
+along the chain according to a version of the Metropolis acceptance ratio modified to satisfy the
+likelihood constraint, characteristic of nested sampling algorithms. The geometric nested sampling
+algorithm we present here is a based on the Metropolis method, but treats parameters as though they
+represent points on certain geometric objects, namely circles, tori and spheres. For parameters
+which represent points on a circle or torus, the trial distribution is `wrapped' around the domain
+of the posterior distribution such that samples cannot be rejected automatically when evaluating
+the Metropolis ratio due to being outside the sampling domain. Furthermore, this enhances the mobility
+of the sampler. For parameters which represent coordinates on the surface of a sphere, the algorithm
+transforms the parameters into a Cartesian coordinate system before sampling which again makes
+sure no samples are automatically rejected, and provides a physically intutive way of the sampling
+the parameter space. \\ We apply the geometric nested sampler to two types of toy model which include
+circular, toroidal and spherical parameters. We find that the geometric nested sampler generally
+outperforms \textsc{MultiNest} in both cases. \\ %We also apply the algorithm to a gravitational
+wave detection model which includes circular and spherical parameters, and find that the geometric
+nested sampler and \textsc{MultiNest} appear to perform equally well as one another. Our implementation
+of the algorithm can be found at \url{https://github.com/SuperKam91/nested_sampling}. 

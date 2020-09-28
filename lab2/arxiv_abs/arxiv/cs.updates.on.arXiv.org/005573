@@ -1,0 +1,17 @@
+Adversarial discriminative domain adaptation (ADDA) is an efficient framework for unsupervised
+domain adaptation, where the source and target domains are assumed to have the same classes, but
+no labels are available for the target domain. While ADDA has already achieved better training efficiency
+and competitive accuracy in comparison to other adversarial based methods, we investigate whether
+we can improve performance by incorporating task knowledge into the adversarial loss functions.
+We achieve this by extending the discriminator output over the source classes and leverage on the
+distribution over the source encoder posteriors, which is fixed during adversarial training,
+in order to align a shared encoder distribution to the source domain. The shared encoder can receive
+a proportion of examples from both the source and target datasets, in order to smooth the learned
+distribution and improve its convergence properties during adversarial training. We additionally
+consider how the extended discriminator can be regularized in order to further improve performance,
+by treating the discriminator as a denoising autoencoder and corrupting its input. Our final design
+employs maximum mean discrepancy and reconstruction-based loss functions for adversarial training.
+We validate our framework on standard datasets like MNIST, USPS, SVHN, MNIST-M and Office-31. Our
+results on all datasets show that our proposal is both simple and efficient, as it competes or outperforms
+the state-of-the-art in unsupervised domain adaptation, whilst offering lower complexity than
+other recent adversarial methods such as DIFA and CoGAN. 

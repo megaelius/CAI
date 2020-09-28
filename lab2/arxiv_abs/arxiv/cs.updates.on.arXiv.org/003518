@@ -1,0 +1,18 @@
+Meeting desired application deadlines in cloud processing systems such as MapReduce is crucial
+as the nature of cloud applications is becoming increasingly mission-critical and deadline-sensitive.
+It has been shown that the execution times of MapReduce jobs are often adversely impacted by a few
+slow tasks, known as stragglers, which result in high latency and deadline violations. While a number
+of strategies have been developed in existing work to mitigate stragglers by launching speculative
+or clone task attempts, none of them provides a quantitative framework that optimizes the speculative
+execution for offering guaranteed Service Level Agreements (SLAs) to meet application deadlines.
+In this paper, we bring several speculative scheduling strategies together under a unifying optimization
+framework, called Chronos, which defines a new metric, Probability of Completion before Deadlines
+(PoCD), to measure the probability that MapReduce jobs meet their desired deadlines. We systematically
+analyze PoCD for popular strategies including Clone, Speculative-Restart, and Speculative-Resume,
+and quantify their PoCD in closed-form. The result illuminates an important tradeoff between PoCD
+and the cost of speculative execution, measured by the total (virtual) machine time required under
+different strategies. We propose an optimization problem to jointly optimize PoCD and execution
+cost in different strategies, and develop an algorithmic solution that is guaranteed to be optimal.
+Chronos is prototyped on Hadoop MapReduce and evaluated against three baseline strategies using
+both experiments and trace-driven simulations, achieving 50% net utility increase with up to 80%
+PoCD and 88% cost improvements. 

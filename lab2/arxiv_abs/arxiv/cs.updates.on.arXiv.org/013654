@@ -1,0 +1,18 @@
+We consider reinforcement learning (RL) in Markov Decision Processes (MDPs) in which at each time
+step the agent, in addition to earning a reward, also incurs an $M$ dimensional vector of costs. The
+objective is to design a learning rule that maximizes the cumulative reward earned over a finite
+time horizon of $T$ steps, while simultaneously ensuring that the cumulative cost expenditures
+are bounded appropriately. The considerations on the cumulative cost expenditures is in departure
+from the existing RL literature, in that the agent now additionally needs to balance the cost expenses
+in an \emph{online manner}, while simultaneously performing optimally the exploration-exploitation
+trade-off typically encountered in RL tasks. This is challenging since either of the duo objectives
+of exploration and exploitation necessarily require the agent to expend resources. When the constraints
+are placed on the average costs, we present a version of UCB algorithm and prove that its reward as
+well as cost regrets are upper-bounded as $O\left(T_{M}S\sqrt{AT\log(T)}\right)$, where $T_{M}$
+is the mixing time of the MDP, $S$ is the number of states, $A$ is the number of actions, and $T$ is the
+time horizon. We further show how to modify the algorithm in order to reduce regrets of a desired subset
+of the $M$ costs, at the expense of increasing the regrets of rewards and the remaining costs. We then
+consider RL under the constraint that the vector comprising of the cumulative cost expenditures
+until each time $t\le T$ must be less than $\mathbf{c}^{ub}t$. We propose a "finite ($B$)-state"
+algorithm and show that its average reward is within $O\left(e^{-B}\right)$ of $r^{\star}$, the
+latter being the optimal average reward under average cost constraints. 

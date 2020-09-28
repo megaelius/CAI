@@ -1,0 +1,19 @@
+We introduce SneakySnake, a highly parallel and highly accurate pre-alignment filter that remarkably
+reduces the need for the computationally costly sequence alignment step. The key idea of SneakySnake
+is to provide fast and highly accurate filtering by reducing the ASM problem to the single net routing
+(SNR) problem in VLSI chip layout. In the SNR problem, we are interested in only finding the path that
+connects two terminals with the least routing cost on a special grid layout that contains obstacles.
+The SneakySnake algorithm quickly and optimally solves the SNR problem and uses the found optimal
+path to decide whether performing sequence alignment is necessary. We also build two new hardware
+accelerator designs, Snake-on-Chip and Snake-on-GPU, that adopts modern FPGA and GPU architectures,
+respectively, to further boost the performance of our algorithm. SneakySnake significantly improves
+the accuracy of pre-alignment filtering by up to four orders of magnitude compared to the state-of-the-art
+pre-alignment filters, Shouji, GateKeeper, and SHD. SneakySnake accelerates the state-of-the-art
+CPU-based sequence aligners, Edlib and Parasail, by up to 37.6x and 43.9x, respectively, without
+requiring hardware acceleration. The addition of Snake-on-Chip and Snake-on-GPU as a pre-alignment
+filter reduces the execution time of four state-of-the-art sequence aligners, designed for different
+computing platforms, by up to 689x (101x on average). To our knowledge, SneakySnake is the only pre-alignment
+filtering mechanism that works on all modern high-performance computing architectures. Unlike
+most existing works that aim to accelerate sequence alignment, SneakySnake does not sacrifice
+any of the aligner capabilities (i.e., scoring and backtracking), as it does not modify or replace
+the aligner. SneakySnake is freely available online at https://github.com/CMU-SAFARI/SneakySnake/

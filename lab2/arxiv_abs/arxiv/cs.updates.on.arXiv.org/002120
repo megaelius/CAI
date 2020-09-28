@@ -1,0 +1,19 @@
+We show a method resulting in the improvement of several polynomial-space, exponential-time algorithms.
+An instance of the problem Max (r,2)-CSP, or simply Max 2-CSP, is parametrized by the domain size
+r (often 2), the number of variables n (vertices in the constraint graph G), and the number of constraints
+m (edges in G). When G is cubic, and omitting sub-exponential terms here for clarity, we give an algorithm
+running in time r^((1/5)n) = r^((2/15)m); the previous best was r^((1/4)n) = r^((1/6)m). By known
+results, this improvement for the cubic case results in an algorithm running in time r^((9/50)m)
+for general instances; the previous best was r^((19/100)m). We show that the analysis of the earlier
+algorithm was tight: our improvement is in the algorithm, not just the analysis. The new algorithm,
+like the old, extends to Polynomial and Ring CSP. We also give faster algorithms for #Dominating
+Set, counting the dominating sets of every cardinality 0,...,n for a graph G of order n. For cubic
+graphs, our algorithm runs in time 3^((1/6)n); the previous best was 2^((1/2)n). For general graphs,
+we give an unrelated algorithm running in time 1.5183^n; the previous best was 1.5673^n. The previous
+best algorithms for these problems all used local transformations and were analyzed by the "Measure
+and Conquer" method. Our new algorithms capitalize on the existence of small balanced separators
+for cubic graphs - a non-local property - and the ability to tailor the local algorithms always to
+"pivot" on a vertex in the separator. The new algorithms perform much as the old ones until the separator
+is empty, at which point they gain because the remaining vertices are split into two independent
+problem instances that can be solved recursively. It is likely that such algorithms can be effective
+for other problems too, and we present their design and analysis in a general framework. 

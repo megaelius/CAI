@@ -1,0 +1,20 @@
+Large scale clusters leveraging distributed computing frameworks such as MapReduce routinely
+process data that are on the orders of petabytes or more. The sheer size of the data precludes the processing
+of the data on a single computer. The philosophy in these methods is to partition the overall job into
+smaller tasks that are executed on different servers; this is called the map phase. This is followed
+by a data shuffling phase where appropriate data is exchanged between the servers. The final so-called
+reduce phase, completes the computation. One potential approach, explored in prior work for reducing
+the overall execution time is to operate on a natural tradeoff between computation and communication.
+Specifically, the idea is to run redundant copies of map tasks that are placed on judiciously chosen
+servers. The shuffle phase exploits the location of the nodes and utilizes coded transmission.
+The main drawback of this approach is that it requires the original job to be split into a number of
+map tasks that grows exponentially in the system parameters. This is problematic, as we demonstrate
+that splitting jobs too finely can in fact adversely affect the overall execution time. In this work
+we show that one can simultaneously obtain low communication loads while ensuring that jobs do not
+need to be split too finely. Our approach uncovers a deep relationship between this problem and a
+class of combinatorial structures called resolvable designs. Appropriate interpretation of
+resolvable designs can allow for the development of coded distributed computing schemes where
+the splitting levels are exponentially lower than prior work. We present experimental results
+obtained on Amazon EC2 clusters for a widely known distributed algorithm, namely TeraSort. We obtain
+over 4.69$\times$ improvement in speedup over the baseline approach and more than 2.6$\times$
+over current state of the art. 

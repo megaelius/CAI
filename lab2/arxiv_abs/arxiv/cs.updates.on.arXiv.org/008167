@@ -1,0 +1,19 @@
+In machine learning, classifiers are used to predict a class of a given query based on an existing
+(classified) database. Given a database S of n d-dimensional points and a d-dimensional query q,
+the k-nearest neighbors (kNN) classifier assigns q with the majority class of its k nearest neighbors
+in S. In the secure version of kNN, S and q are owned by two different parties that do not want to share
+their data. Unfortunately, all known solutions for secure kNN either require a large communication
+complexity between the parties, or are very inefficient to run. In this work we present a classifier
+based on kNN, that can be implemented efficiently with homomorphic encryption (HE). The efficiency
+of our classifier comes from a relaxation we make on kNN, where we allow it to consider kappa nearest
+neighbors for kappa ~ k with some probability. We therefore call our classifier k-ish Nearest Neighbors
+(k-ish NN). The success probability of our solution depends on the distribution of the distances
+from q to S and increase as its statistical distance to Gaussian decrease. To implement our classifier
+we introduce the concept of double-blinded coin-toss. In a doubly-blinded coin-toss the success
+probability as well as the output of the toss are encrypted. We use this coin-toss to efficiently
+approximate the average and variance of the distances from q to S. We believe these two techniques
+may be of independent interest. When implemented with HE, the k-ish NN has a circuit depth that is
+independent of n, therefore making it scalable. We also implemented our classifier in an open source
+library based on HELib and tested it on a breast tumor database. The accuracy of our classifier (F_1
+score) were 98\% and classification took less than 3 hours compared to (estimated) weeks in current
+HE implementations. 

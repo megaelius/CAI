@@ -1,0 +1,17 @@
+Multibody monocular SLAM in dynamic environments remains a long-standing challenge in terms of
+perception and state estimation. Although theoretical solutions exist, practice lags behind,
+predominantly due to the lack of robust perceptual and predictive models of dynamic participants.
+The quintessential challenge in Multi-body monocular SLAM in dynamic scenes stems from the problem
+of unobservability as it is not possible to triangulate a moving object from a moving monocular camera.
+Under restrictions of object motion the problem can be solved, however even here one is entailed
+to solve for the single family solution to the relative scale problem. The relative scale problem
+exists since the dynamic objects that get reconstructed with the monocular camera have a different
+scale vis a vis the scale space in which the stationary scene is reconstructed. We solve this rather
+intractable problem by reconstructing dynamic vehicles/participants in single view in metric
+scale through an object SLAM pipeline. Further, we lift the ego vehicle trajectory obtained from
+Monocular ORB-SLAM also into metric scales making use of ground plane features thereby resolving
+the relative scale problem. We present a multi pose-graph optimization formulation to estimate
+the pose and track dynamic objects in the environment. This optimization helps us reduce the average
+error in trajectories of multiple bodies in KITTI Tracking sequences. To the best of our knowledge,
+our method is the first practical monocular multi-body SLAM system to perform dynamic multi-object
+and ego localization in a unified framework in metric scale. 

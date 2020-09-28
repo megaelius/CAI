@@ -1,0 +1,20 @@
+In this paper, we consider a mobile-edge computing system, where an access point assists a mobile
+device (MD) to execute an application consisting of multiple tasks following a general task call
+graph. The objective is to jointly determine the offloading decision of each task and the resource
+allocation under time-varying wireless fading channels and stochastic edge computing capability,
+so that the energy-time cost (ETC) of the MD is minimized. Solving the problem is particularly hard
+due to the combinatorial offloading decisions and the strong coupling among task executions under
+the general dependency model. Conventional numerical optimization methods are inefficient to
+solve such a problem, especially when the problem size is large. To address the issue, we propose
+a deep reinforcement learning (DRL) framework based on the actor-critic learning structure. In
+particular, the actor network utilizes a DNN to learn the optimal mapping from the input states to
+the binary offloading decision of each task. Meanwhile, by analyzing the structure of the optimal
+solution, we derive a low-complexity algorithm for the critic network to quickly evaluate the ETC
+performance of the offloading decisions output by the actor network. With the low-complexity critic
+network, we can quickly select the best offloading action and subsequently store the state-action
+pair in an experience replay memory as the training dataset to continuously improve the action generation
+DNN. To further reduce the complexity, we show that the optimal offloading decision exhibits an
+one-climb structure, which can be utilized to significantly reduce the search space of action generation.
+Numerical results show that for various types of task graphs, the proposed algorithm achieves up
+to $99.1\%$ of the optimal performance while significantly reducing the computational complexity
+compared to the existing optimization methods. 

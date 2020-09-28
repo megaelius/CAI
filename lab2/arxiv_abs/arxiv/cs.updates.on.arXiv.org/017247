@@ -1,0 +1,17 @@
+Android filesystem access control provides a foundation for Android system integrity. Android
+utilizes a combination of mandatory (e.g., SEAndroid) and discretionary (e.g., UNIX permissions)
+access control, both to protect the Android platform from Android/OEM services and to protect Android/OEM
+services from third-party apps. However, OEMs often create vulnerabilities when they introduce
+market-differentiating features because they err when re-configuring this complex combination
+of Android policies. In this paper, we propose the PolyScope tool to triage the combination of Android
+filesystem access control policies to vet releases for vulnerabilities. The PolyScope approach
+leverages two main insights: (1) adversaries may exploit the coarse granularity of mandatory policies
+and the flexibility of discretionary policies to increase the permissions available to launch
+attacks, which we call permission expansion, and (2) system configurations may limit the ways adversaries
+may use their permissions to launch attacks, motivating computation of attack operations. We apply
+PolyScope to three Google and five OEM Android releases to compute the attack operations accurately
+to vet these releases for vulnerabilities, finding that permission expansion increases the permissions
+available to launch attacks, sometimes by more than 10X, but a significant fraction of these permissions
+(about 15-20%) are not convertible into attack operations. Using PolyScope, we find two previously
+unknown vulnerabilities, showing how PolyScope helps OEMs triage the complex combination of access
+control policies down to attack operations worthy of testing. 

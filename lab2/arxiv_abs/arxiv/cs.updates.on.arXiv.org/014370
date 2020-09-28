@@ -1,0 +1,19 @@
+A labeled tree (or a trie) is a natural generalization of a string, which can also be seen as a compact
+representation of a set of strings. This paper considers the labeled tree indexing problem, and
+provides a number of new results on space bound analysis, and on algorithms for efficient construction
+and pattern matching queries. Kosaraju [FOCS 1989] was the first to consider the labeled tree indexing
+problem, and he proposed the suffix tree for a backward trie, where the strings in the trie are read
+in the leaf-to-root direction. In contrast to a backward trie, we call a usual trie as a forward trie.
+Despite a few follow-up works after Kosaraju's paper, indexing forward/backward tries is not well
+understood yet. In this paper, we show a full perspective on the sizes of indexing structures such
+as suffix trees, DAWGs, CDAWGs, suffix arrays, affix trees, affix arrays for forward and backward
+tries. Some of them take $O(n)$ space in the size $n$ of the input trie, while the others can occupy
+$O(n^2)$ space in the worst case. In particular, we show that the size of the DAWG for a forward trie
+with $n$ nodes is $\Omega(\sigma n)$, where $\sigma$ is the number of distinct characters in the
+trie. This becomes $\Omega(n^2)$ for an alphabet of size $\sigma = \Theta(n)$. Still, we show that
+there is a compact $O(n)$-space implicit representation of the DAWG for a forward trie, whose space
+requirement is independent of the alphabet size. This compact representation allows for simulating
+each DAWG edge traversal in $O(\log \sigma)$ time, and can be constructed in $O(n)$ time and space
+over any integer alphabet of size $O(n)$. In addition, this readily extends to the first indexing
+structure that permits bidirectional pattern searches over a trie within linear space in the input
+trie size. 

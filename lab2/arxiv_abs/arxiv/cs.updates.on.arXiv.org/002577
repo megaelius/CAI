@@ -1,0 +1,18 @@
+Distributed network optimization algorithms, such as minimum spanning tree, minimum cut, and
+shortest path, are an active research area in distributed computing. This paper presents a fast
+distributed algorithm for such problems in the CONGEST model, on networks that exclude a fixed minor.
+On general graphs, many optimization problems, including the ones mentioned above, require $\tilde\Omega(\sqrt
+n)$ rounds of communication in the CONGEST model, even if the network graph has a much smaller diameter.
+Naturally, the next step in algorithm design is to design efficient algorithms which bypass this
+lower bound on a restricted class of graphs. Currently, the only known method of doing so uses the
+low-congestion shortcut framework of Ghaffari and Haeupler [SODA'16]. Building off of their work,
+this paper proves that excluded minor graphs admit high-quality shortcuts, leading to an $\tilde
+O(D^2)$ round algorithm for the aforementioned problems, where $D$ is the diameter of the network
+graph. To work with excluded minor graph families, we utilize the Graph Structure Theorem of Robertson
+and Seymour. To the best of our knowledge, this is the first time the Graph Structure Theorem has been
+used for an algorithmic result in the distributed setting. Even though the proof is involved, merely
+showing the existence of good shortcuts is sufficient to obtain simple, efficient distributed
+algorithms. In particular, the shortcut framework can efficiently construct near-optimal shortcuts
+and then use them to solve the optimization problems. This, combined with the very general family
+of excluded minor graphs, which includes most other important graph classes, makes this result
+of significant interest. 

@@ -1,0 +1,20 @@
+We propose a fast beam orientation selection method, based on deep neural networks (DNN), capable
+of developing a plan comparable to those by the state-of-the-art column generation method. The
+novelty of Our model lies in its supervised learning structure, the DNN architecture, and ability
+to learn from anatomical features to predict dosimetrically suitable beam orientations without
+using the dosimetric information from the candidate beams, a time consuming and computationally
+expensive process. This may save hours of computation. A supervised DNN is trained to mimic the column
+generation algorithm, which iteratively chooses beam orientations by calculating beam fitness
+values based on the KKT optimality conditions. The dataset contains 70 prostate cancer patients.
+The DNN trained over 400 epochs, each with 2500 steps, using the Adam optimizer and a 6-fold cross-validation
+technique. The average and standard deviation of training, validation, and testing loss functions
+among the 6-folds were at most 1.44%. The differences in the dose coverage of PTV between plans generated
+by column generation and by DNN were 0.2%. The average dose differences received by organs at risk
+were between 1 and 6 percent: bladder had the smallest average difference, then rectum, left and
+right femoral heads. The dose received by body had an average difference of 0.1%. In the training
+phase of the proposed method, the model learns the suitable beam orientations based on the anatomical
+features of patients and omits time intensive calculations of dose influence matrices for all possible
+candidate beams. Solving the Fluence Map Optimization to get the final treatment plan requires
+calculating dose influence matrices only for the selected beams. The proposed DNN is a fast beam
+orientation selection method based that selects beam orientations in seconds and is therefore
+suitable for clinical routines. 

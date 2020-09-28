@@ -1,0 +1,17 @@
+Missing numerical values are prevalent, e.g., owing to unreliable sensor reading, collection
+and transmission among heterogeneous sources. Unlike categorized data imputation over a limited
+domain, the numerical values suffer from two issues: (1) sparsity problem, the incomplete tuple
+may not have sufficient complete neighbors sharing the same/similar values for imputation, owing
+to the (almost) infinite domain; (2) heterogeneity problem, different tuples may not fit the same
+(regression) model. In this study, enlightened by the conditional dependencies that hold conditionally
+over certain tuples rather than the whole relation, we propose to learn a regression model individually
+for each complete tuple together with its neighbors. Our IIM, Imputation via Individual Models,
+thus no longer relies on sharing similar values among the k complete neighbors for imputation, but
+utilizes their regression results by the aforesaid learned individual (not necessary the same)
+models. Remarkably, we show that some existing methods are indeed special cases of our IIM, under
+the extreme settings of the number l of learning neighbors considered in individual learning. In
+this sense, a proper number l of neighbors is essential to learn the individual models (avoid over-fitting
+or under-fitting). We propose to adaptively learn individual models over various number l of neighbors
+for different complete tuples. By devising efficient incremental computation, the time complexity
+of learning a model reduces from linear to constant. Experiments on real data demonstrate that our
+IIM with adaptive learning achieves higher imputation accuracy than the existing approaches.

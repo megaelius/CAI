@@ -1,0 +1,19 @@
+This paper is concerned with the development of a hybrid data-driven technique for unsteady fluid-structure
+interaction systems. The proposed data-driven technique combines the deep learning framework
+with a projection-based low-order modeling. While the deep learning provides low-dimensional
+approximations from datasets arising from black-box solvers, the projection-based model constructs
+the low-dimensional approximations by projecting the original high-dimensional model onto a
+low-dimensional subspace. Of particular interest of this paper is to predict the long time series
+of unsteady flow fields of a freely vibrating bluff-body subjected to wake-body synchronization.
+We consider convolutional neural networks (CNN) for the learning dynamics of wake-body interaction,
+which assemble layers of linear convolutions with nonlinear activations to automatically extract
+the low-dimensional flow features. Using the high-fidelity time series data from the stabilized
+finite element Navier-Stokes solver, we first project the dataset to a low-dimensional subspace
+by proper orthogonal decomposition (POD) technique. The time-dependent coefficients of the POD
+subspace are mapped to the flow field via a CNN with nonlinear rectification, and the CNN is iteratively
+trained using the stochastic gradient descent method to predict the POD time coefficient when a
+new flow field is fed to it. The time-averaged flow field, the POD basis vectors, and the trained CNN
+are used to predict the long time series of the flow fields and the flow predictions are quantitatively
+assessed with the full-order (high-dimensional) simulation data. The proposed POD-CNN model
+based on the data-driven approximation has a remarkable accuracy in the entire fluid domain including
+the highly nonlinear near wake region behind a freely vibrating bluff body. 

@@ -1,0 +1,20 @@
+Understanding the underlying mechanisms that enable the empirical successes of deep neural networks
+is essential for further improving their performance and explaining such networks. Towards this
+goal, a specific question is how to explain the "surprising" behavior of the same over-parametrized
+deep neural networks that can generalize well on real datasets and at the same time "memorize" training
+samples when the labels are randomized. In this paper, we demonstrate that deep ReLU networks generalize
+from training samples to new points via piece-wise linear interpolation. We provide a quantified
+analysis on the generalization ability of a deep ReLU network: Given a fixed point $\mathbf{x}$
+and a fixed direction in the input space $\mathcal{S}$, there is always a segment such that any point
+on the segment will be classified the same as the fixed point $\mathbf{x}$. We call this segment the
+$generalization \ interval$. We show that the generalization intervals of a ReLU network behave
+similarly along pairwise directions between samples of the same label in both real and random cases
+on the MNIST and CIFAR-10 datasets. This result suggests that the same interpolation mechanism
+is used in both cases. Additionally, for datasets using real labels, such networks provide a good
+approximation of the underlying manifold in the data, where the changes are much smaller along tangent
+directions than along normal directions. On the other hand, however, for datasets with random labels,
+generalization intervals along mid-lines of triangles with the same label are much smaller than
+those on the datasets with real labels, suggesting different behaviors along other directions.
+Our systematic experiments demonstrate for the first time that such deep neural networks generalize
+through the same interpolation and explain the differences between their performance on datasets
+with real and random labels. 

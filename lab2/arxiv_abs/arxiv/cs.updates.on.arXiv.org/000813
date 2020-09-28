@@ -1,0 +1,18 @@
+The expected improvement algorithm (or efficient global optimization) aims for global continuous
+optimization with a limited budget of black-box function evaluations. It is based on a statistical
+model of the function learned from previous evaluations and an infill criterion - the expected improvement
+- used to find a promising point for a new evaluation. The `expected improvement' infill criterion
+takes into account the mean and variance of a predictive multivariate Gaussian distribution. The
+expected improvement algorithm has recently been generalized to multiobjective optimization.
+In order to measure the improvement of a Pareto front quantitatively the gain in dominated (hyper-)volume
+is used. The computation of the expected hypervolume improvement (EHVI) is a multidimensional
+integration of a step-wise defined non-linear function related to the Gaussian probability density
+function over an intersection of boxes. This paper provides a new algorithm for the exact computation
+of the expected improvement to more than two objective functions. For the bicriteria case it has
+a time complexity in $O(n^2)$ with $n$ denoting the number of points in the current best Pareto front
+approximation. It improves previously known algorithms with time complexity $O(n^3 \log n)$.
+For tricriteria optimization we devise an algorithm with time complexity of $O(n^3)$. Besides
+discussing the new time complexity bounds the speed of the new algorithm is also tested empirically
+on test data. It is shown that further improvements in speed can be achieved by reusing data structures
+built up in previous iterations. The resulting numerical algorithms can be readily used in existing
+implementations of hypervolume-based expected improvement algorithms. 

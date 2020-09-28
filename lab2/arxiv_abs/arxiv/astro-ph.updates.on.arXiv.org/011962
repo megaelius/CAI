@@ -1,0 +1,19 @@
+A common problem in cosmology is to integrate the product of two or more spherical Bessel functions
+(sBFs) with different configuration-space arguments against the power spectrum or its square,
+weighted by powers of wavenumber. Naively computing them scales as $N_{\rm g}^{p+1}$ with $p$ the
+number of configuration space arguments and $N_{\rm g}$ the grid size, and they cannot be done with
+Fast Fourier Transforms (FFTs). Here we show that by rewriting the sBFs as sums of products of sine
+and cosine and then using the product to sum identities, these integrals can then be performed using
+1-D FFTs with $N_{\rm g} \log N_{\rm g}$ scaling. This "rotation" method has the potential to accelerate
+significantly a number of calculations in cosmology, such as perturbation theory predictions
+of loop integrals, higher order correlation functions, and analytic templates for correlation
+function covariance matrices. We implement this approach numerically both in a free-standing,
+publicly-available \textsc{Python} code and within the larger, publicly-available package
+\texttt{mcfit}. The rotation method evaluated with direct integrations already offers a factor
+of 6-10$\times$ speed-up over the naive approach in our test cases. Using FFTs, which the rotation
+method enables, then further improves this to a speed-up of $\sim$$1000-3000\times$ over the naive
+approach. The rotation method should be useful in light of upcoming large datasets such as DESI or
+LSST. In analysing these datasets recomputation of these integrals a substantial number of times,
+for instance to update perturbation theory predictions or covariance matrices as the input linear
+power spectrum is changed, will be one piece in a Monte Carlo Markov Chain cosmological parameter
+search: thus the overall savings from our method should be significant. 

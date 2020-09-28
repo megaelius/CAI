@@ -1,0 +1,18 @@
+The dynamic time warping (DTW) is a widely-used method that allows us to efficiently compare two
+time series that can vary in speed. Given two strings $A$ and $B$ of respective lengths $m$ and $n$,
+there is a fundamental dynamic programming algorithm that computes the DTW distance for $A$ and
+$B$ together with an optimal alignment in $\Theta(mn)$ time and space. In this paper, we tackle the
+problem of interactive computation of the DTW distance for dynamic strings, denoted $\mathrm{D^2TW}$,
+where character-wise edit operation (insertion, deletion, substitution) can be performed at
+an arbitrary position of the strings. Let $M$ and $N$ be the sizes of the run-length encoding (RLE)
+of $A$ and $B$, respectively. We present an algorithm for $\mathrm{D^2TW}$ that occupies $\Theta(mN+nM)$
+space and uses $O(m+n+\#_{\mathrm{chg}}) \subseteq O(mN + nM)$ time to update a compact differential
+representation $\mathit{DS}$ of the DP table per edit operation, where $\#_{\mathrm{chg}}$ denotes
+the number of cells in $\mathit{DS}$ whose values change after the edit operation. Our method is
+at least as efficient as the algorithm recently proposed by Froese et al. running in $\Theta(mN +
+nM)$ time, and is faster when $\#_{\mathrm{chg}}$ is smaller than $O(mN + nM)$ which, as our preliminary
+experiments suggest, is likely to be the case in the majority of instances. In addition, our result
+leads to interactive LCS/weighted edit distance computation running in $O(m+n+\#_{\mathrm{chg}})
+\subseteq O(mN + nM)$ time per update using $\Theta(mN + nM)$ space. This improves on Hyyr\"o et al.'s
+interactive algorithm that occupies $\Theta(mn)$ space and uses $O(mn)$ time per update in the
+worst case. 

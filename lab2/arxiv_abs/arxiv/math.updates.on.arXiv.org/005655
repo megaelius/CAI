@@ -1,0 +1,19 @@
+Availability codes have recently been proposed to facilitate efficient storage, management,
+and retrieval of frequently accessed data in distributed storage systems. Such codes provide multiple
+disjoint recovery groups for each data object, which makes it possible for multiple users to access
+the same object in a non-overlapping way. However in the presence of server-side performance variability,
+downloading an object using a recovery group takes longer than using a single server hosting the
+object. Therefore it is not immediately clear whether availability codes reduce latency to access
+hot data. Accordingly, the goal of this paper is to analyze, using a queuing theoretical approach,
+the download time in storage systems that employ availability codes. For data access, we consider
+the widely adopted Fork-Join model with redundancy. In this model, each request arrival splits
+into multiple copies and completes as soon as any one of the copies finishes service. We first carry
+out the analysis under the low-traffic regime in which case the system consists of at most one download
+request at any time. In this setting, we compare the download time in systems with availability,
+maximum distance separable (MDS), and replication codes. Our results indicate that availability
+codes can reduce download time in some settings, but are not always optimal. When the low-traffic
+assumption does not hold, system consists of multiple inter-dependent Fork-Join queues operating
+in parallel, which makes the exact analysis intractable. For this case we present upper and lower
+bounds on the download time. These bounds yield insight on system performance with respect to varying
+popularities over the stored objects. We also derive an M/G/1 queue approximation for the system,
+and show with simulations that it performs well in estimating the actual system performance. 

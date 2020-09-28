@@ -1,0 +1,19 @@
+There is a significant conceptual gap between legal and mathematical thinking around data privacy.
+The effect is uncertainty as to which technical offerings adequately match expectations expressed
+in legal standards. The uncertainty is exacerbated by a litany of successful privacy attacks, demonstrating
+that traditional statistical disclosure limitation techniques often fall short of the sort of
+privacy envisioned by legal standards. We define predicate singling out, a new type of privacy attack
+intended to capture the concept of singling out appearing in the General Data Protection Regulation
+(GDPR). Informally, an adversary predicate singles out a dataset $X$ using the output of a data release
+mechanism $M(X)$ if it manages to find a predicate $p$ matching exactly one row $x \in X$ with probability
+much better than a statistical baseline. A data release mechanism that precludes such attacks is
+secure against predicate singling out (PSO secure). We argue that PSO security is a mathematical
+concept with legal consequences. Any data release mechanism that purports to "render anonymous"
+personal data under the GDPR must be secure against singling out, and hence must be PSO secure. We
+then analyze PSO security, showing that it fails to self-compose. Namely, a combination of $\omega(\log
+n)$ exact counts, each individually PSO secure, enables an attacker to predicate single out. In
+fact, the composition of just two PSO-secure mechanisms can fail to provide PSO security. Finally,
+we ask whether differential privacy and $k$-anonymity are PSO secure. Leveraging a connection
+to statistical generalization, we show that differential privacy implies PSO security. However,
+$k$-anonymity does not: there exists a simple and general predicate singling out attack under mild
+assumptions on the $k$-anonymizer and the data distribution. 

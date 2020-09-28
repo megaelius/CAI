@@ -1,0 +1,18 @@
+We study the policy evaluation problem in multi-agent reinforcement learning, modeled by a Markov
+decision process. In this problem, the agents operate in a common environment under a fixed control
+policy, working together to discover the value (global discounted accumulative reward) associated
+with each environmental state. Over a series of time steps, the agents act, get rewarded, update
+their local estimate of the value function, then communicate with their neighbors. The local update
+at each agent can be interpreted as a distributed variant of the popular temporal difference learning
+methods {\sf TD}$ (\lambda)$. Our main contribution is to provide a finite-analysis on the performance
+of this distributed {\sf TD}$(\lambda)$ algorithm for both constant and time-varying step sizes.
+The key idea in our analysis is to use the geometric mixing time $\tau$ of the underlying Markov chain,
+that is, although the "noise" in our algorithm is Markovian, its dependence is very weak at samples
+spaced out at every $\tau$. We provide an explicit upper bound on the convergence rate of the proposed
+method as a function of the network topology, the discount factor, the constant $\lambda$, and the
+mixing time $\tau$. Our results also provide a mathematical explanation for observations that
+have appeared previously in the literature about the choice of $\lambda$. Our upper bound illustrates
+the trade-off between approximation accuracy and convergence speed implicit in the choice of $\lambda$.
+When $\lambda=1$, the solution will correspond to the best possible approximation of the value
+function, while choosing $\lambda = 0$ leads to faster convergence when the noise in the algorithm
+has large variance. 

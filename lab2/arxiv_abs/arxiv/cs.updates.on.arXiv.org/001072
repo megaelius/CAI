@@ -1,0 +1,19 @@
+Ashtiani et al. proposed a Semi-Supervised Active Clustering framework (SSAC), where the learner
+is allowed to make adaptive queries to a domain expert. The queries are of the kind "do two given points
+belong to the same optimal cluster?" There are many clustering contexts where such same-cluster
+queries are feasible. Ashtiani et al. exhibited the power of such queries by showing that any instance
+of the $k$-means clustering problem, with additional margin assumption, can be solved efficiently
+if one is allowed $O(k^2 \log{k} + k \log{n})$ same-cluster queries. This is interesting since the
+$k$-means problem, even with the margin assumption, is $\mathsf{NP}$-hard. In this paper, we extend
+the work of Ashtiani et al. to the approximation setting showing that a few of such same-cluster queries
+enables one to get a polynomial-time $(1 + \varepsilon)$-approximation algorithm for the $k$-means
+problem without any margin assumption on the input dataset. Again, this is interesting since the
+$k$-means problem is $\mathsf{NP}$-hard to approximate within a factor $(1 + c)$ for a fixed constant
+$0 < c < 1$. The number of same-cluster queries used is $\textrm{poly}(k/\varepsilon)$ which is
+independent of the size $n$ of the dataset. Our algorithm is based on the $D^2$-sampling technique,
+also known as the $k$-means++ seeding algorithm. We also give a conditional lower bound on the number
+of same-cluster queries showing that if the Exponential Time Hypothesis (ETH) holds, then any such
+efficient query algorithm needs to make $\Omega \left(\frac{k}{poly \log k} \right)$ same-cluster
+queries. Another result we show with respect to the $k$-means++ seeding algorithm is that a small
+modification to the $k$-means++ seeding algorithm within the SSAC framework converts it to a constant
+factor approximation algorithm instead of the well known $O(\log{k})$-approximation algorithm.

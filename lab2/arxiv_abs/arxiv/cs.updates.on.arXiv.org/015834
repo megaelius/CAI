@@ -1,0 +1,17 @@
+Over the last two decades, we have seen a dramatic improvement in the efficiency of conflict-driven
+clause-learning Boolean satisfiability (CDCL SAT) solvers on industrial problems from a variety
+of domains. The availability of such powerful general-purpose search tools as SAT solvers has led
+many researchers to propose SAT-based methods for cryptanalysis, including techniques for finding
+collisions in hash functions and breaking symmetric encryption schemes. Most of the previously
+proposed SAT-based cryptanalysis approaches are blackbox techniques, in the sense that the cryptanalysis
+problem is encoded as a SAT instance and then a CDCL SAT solver is invoked to solve the said instance.
+A weakness of this approach is that the encoding thus generated may be too large for any modern solver
+to solve efficiently. Perhaps a more important weakness of this approach is that the solver is in
+no way specialized or tuned to solve the given instance. To address these issues, we propose an approach
+called CDCL(Crypto) (inspired by the CDCL(T) paradigm in Satisfiability Modulo Theory solvers)
+to tailor the internal subroutines of the CDCL SAT solver with domain-specific knowledge about
+cryptographic primitives. Specifically, we extend the propagation and conflict analysis subroutines
+of CDCL solvers with specialized codes that have knowledge about the cryptographic primitive being
+analyzed by the solver. We demonstrate the power of this approach in the differential path and algebraic
+fault analysis of hash functions. Our initial results are very encouraging and reinforce the notion
+that this approach is a significant improvement over blackbox SAT-based cryptanalysis. 

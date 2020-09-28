@@ -1,0 +1,19 @@
+We improve the fundamental security threshold of eventual consensus Proof-of-Stake (PoS) blockchain
+protocols under the longest-chain rule by showing, for the first time, the positive effect of rounds
+with concurrent honest leaders. Current security analyses reduce consistency to the dynamics
+of an abstract, round-based block creation process that is determined by three events associated
+with a round: (i) event $A$: at least one adversarial leader, (ii) event $S$: a single honest leader,
+and (iii) event $M$: multiple, but honest, leaders. We present an asymptotically optimal consistency
+analysis assuming that an honest round is more likely than an adversarial round (i.e., $\Pr[S] +
+\Pr[M] > \Pr[A]$); this threshold is optimal. This is a first in the literature and can be applied
+to both the simple synchronous communication as well as communication with bounded delays. In all
+existing consistency analyses, event $M$ is either penalized or treated neutrally. Specifically,
+the consistency analyses in Ouroboros Praos (Eurocrypt 2018) and Genesis (CCS 2018) assume that
+$\Pr[S] - \Pr[M] > \Pr[A]$; the analyses in Sleepy Consensus (Asiacrypt 2017) and Snow White (Fin.
+Crypto 2019) assume that $\Pr[S] > \Pr[A]$. Moreover, all existing analyses completely break down
+when $\Pr[S] < \Pr[A]$. These thresholds determine the critical trade-off between the honest majority,
+network delays, and consistency error. Our new results can be directly applied to improve the security
+guarantees of the existing protocols. We also provide an efficient algorithm to explicitly calculate
+these error probabilities in the synchronous setting. Furthermore, we complement these results
+by analyzing the setting where $S$ is rare, even allowing $\Pr[S] = 0$, under the added assumption
+that honest players adopt a consistent chain selection rule. 

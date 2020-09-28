@@ -1,0 +1,20 @@
+Modeling the Point Spread Function (PSF) of wide-field surveys is vital for many astrophysical
+applications and cosmological probes including weak gravitational lensing. The PSF smears the
+image of any recorded object and therefore needs to be taken into account when inferring properties
+of galaxies from astronomical images. In the case of cosmic shear, the PSF is one of the dominant sources
+of systematic errors and must be treated carefully to avoid biases in cosmological parameters.
+Recently, forward modeling approaches to calibrate shear measurements within the Monte-Carlo
+Control Loops ($MCCL$) framework have been developed. These methods typically require simulating
+a large amount of wide-field images, thus, the simulations need to be very fast yet have realistic
+properties in key features such as the PSF pattern. Hence, such forward modeling approaches require
+a very flexible PSF model, which is quick to evaluate and whose parameters can be estimated reliably
+from survey data. We present a PSF model that meets these requirements based on a fast deep-learning
+method to estimate its free parameters. We demonstrate our approach on publicly available SDSS
+data. We extract the most important features of the SDSS sample via principal component analysis.
+Next, we construct our model based on perturbations of a fixed base profile, ensuring that it captures
+these features. We then train a Convolutional Neural Network to estimate the free parameters of
+the model from noisy images of the PSF. This allows us to render a model image of each star, which we
+compare to the SDSS stars to evaluate the performance of our method. We find that our approach is able
+to accurately reproduce the SDSS PSF at the pixel level, which, due to the speed of both the model evaluation
+and the parameter estimation, offers good prospects for incorporating our method into the $MCCL$
+framework. 

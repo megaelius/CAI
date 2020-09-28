@@ -1,0 +1,18 @@
+High-energy physics detectors, images, and point clouds share many similarities as far as object
+detection is concerned. However, while detecting an unknown number of objects in an image is well
+established in computer vision, even machine learning assisted object reconstruction algorithms
+in particle physics almost exclusively predict properties on an object-by-object basis. One of
+the reasons is that traditional approaches to deep-neural network based multi-object detection
+usually employ anchor boxes, imposing implicit constraints on object sizes and density, which
+are not well suited for highly sparse detector data with differences in densities spanning multiple
+orders of magnitude. Other approaches rely heavily on objects being dense and solid, with well defined
+edges and a central point that is used as a keypoint to attach properties. This approach is also not
+directly applicable to generic detector signals. The object condensation method proposed here
+is independent of assumptions on object size, sorting or object density, and further generalises
+to non-image like data structures, such as graphs and point clouds, which are more suitable to represent
+detector signals. The pixels or vertices themselves serve as representations of the entire object
+and a combination of learnable local clustering in a latent space and confidence assignment allows
+one to collect condensates of the predicted object properties with a simple algorithm. As proof
+of concept, the object condensation method is applied to a simple object classification problem
+in images and used to reconstruct multiple particles from detector signals. The latter results
+are also compared to a classic particle flow approach. 

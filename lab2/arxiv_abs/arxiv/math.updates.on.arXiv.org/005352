@@ -1,0 +1,20 @@
+In this paper, we consider the problem of automatically designing a Rectified Linear Unit (ReLU)
+Neural Network (NN) architecture that is sufficient to implement the optimal Model Predictive
+Control (MPC) strategy for an LTI system with quadratic cost. Specifically, we propose AReN, an
+algorithm to generate Assured ReLU Architectures. AReN takes as input an LTI system with quadratic
+cost specification, and outputs a ReLU NN architecture with the assurance that there exist network
+weights that exactly implement the associated MPC controller. AReN thus offers new insight into
+the design of ReLU NN architectures for the control of LTI systems: instead of training a heuristically
+chosen NN architecture on data -- or iterating over many architectures until a suitable one is found
+-- AReN can suggest an adequate NN architecture before training begins. While several previous
+works were inspired by the fact that both ReLU NN controllers and optimal MPC controller are both
+Continuous, Piecewise-Linear (CPWL) functions, exploiting this similarity to design NN architectures
+with correctness guarantees has remained elusive. AReN achieves this using two novel features.
+First, we reinterpret a recent result about the implementation of CPWL functions via ReLU NNs to
+show that a CPWL function may be implemented by a ReLU architecture that is determined by the number
+of distinct affine regions in the function. Second, we show that we can efficiently over-approximate
+the number of affine regions in the optimal MPC controller without solving the MPC problem exactly.
+Together, these results connect the MPC problem to a ReLU NN implementation without explicitly
+solving the MPC and directly translates this feature to a ReLU NN architecture that comes with the
+assurance that it can implement the MPC controller. We show through numerical results the effectiveness
+of AReN in designing an NN architecture. 

@@ -1,0 +1,18 @@
+Accelerated gradient (AG) methods are breakthroughs in convex optimization, improving the convergence
+rate of the gradient descent method for optimization with smooth functions. However, the analysis
+of AG methods for non-convex optimization is still limited. It remains an open question whether
+AG methods from convex optimization can accelerate the convergence of the gradient descent method
+for finding local minimum of non-convex optimization problems. This paper provides an affirmative
+answer to this question. In particular, we analyze two renowned variants of AG methods (namely Polyak's
+Heavy Ball method and Nesterov's Accelerated Gradient method) for extracting the negative curvature
+from random noise, which is central to escaping from saddle points. By leveraging the proposed AG
+methods for extracting the negative curvature, we present a new AG algorithm with double loops for
+non-convex optimization~\footnote{this is in contrast to a single-loop AG algorithm proposed
+in a recent manuscript~\citep{AGNON}, which directly analyzed the Nesterov's AG method for non-convex
+optimization and appeared online on November 29, 2017. However, we emphasize that our work is an
+independent work, which is inspired by our earlier work~\citep{NEON17} and is based on a different
+novel analysis.}, which converges to second-order stationary point $\x$ such that $\|\nabla f(\x)\|\leq
+\epsilon$ and $\nabla^2 f(\x)\geq -\sqrt{\epsilon} I$ with $\widetilde O(1/\epsilon^{1.75})$
+iteration complexity, improving that of gradient descent method by a factor of $\epsilon^{-0.25}$
+and matching the best iteration complexity of second-order Hessian-free methods for non-convex
+optimization. 

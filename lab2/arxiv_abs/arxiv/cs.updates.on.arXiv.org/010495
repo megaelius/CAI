@@ -1,0 +1,17 @@
+Non-intrusive load monitoring (NILM) is a technique to recover source appliances from only the
+recorded mains in a household. NILM is unidentifiable and thus a challenge problem because the inferred
+power value of an appliance given only the mains could not be unique. To mitigate the unidentifiable
+problem, various methods incorporating domain knowledge into NILM have been proposed and shown
+effective experimentally. Recently, among these methods, deep neural networks are shown performing
+best. Arguably, the recently proposed sequence-to-point (seq2point) learning is promising for
+NILM. However, the results were only carried out on the same data domain. It is not clear if the method
+could be generalised or transferred to different domains, e.g., the test data were drawn from a different
+country comparing to the training data. We address this issue in the paper, and two transfer learning
+schemes are proposed, i.e., appliance transfer learning (ATL) and cross-domain transfer learning
+(CTL). For ATL, our results show that the latent features learnt by a `complex' appliance, e.g.,
+washing machine, can be transferred to a `simple' appliance, e.g., kettle. For CTL, our conclusion
+is that the seq2point learning is transferable. Precisely, when the training and test data are in
+a similar domain, seq2point learning can be directly applied to the test data without fine tuning;
+when the training and test data are in different domains, seq2point learning needs fine tuning before
+applying to the test data. Interestingly, we show that only the fully connected layers need fine
+tuning for transfer learning. Source code can be found at https://github.com/MingjunZhong/transferNILM.

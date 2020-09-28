@@ -1,0 +1,17 @@
+The NP-hard problem of task scheduling with communication delays (P|prec,c_{ij}|C_{\mathrm{max}})
+is often tackled using approximate methods, but guarantees on the quality of these heuristic solutions
+are hard to come by. Optimal schedules are therefore invaluable for properly evaluating these heuristics,
+as well as being very useful for applications in time critical systems. Optimal solving using branch-and-bound
+algorithms like A* has been shown to be promising in the past, with a state-space model we refer to
+as exhaustive list scheduling (ELS). The obvious weakness of this model is that it leads to the production
+of large numbers of duplicate states during a search, requiring special techniques to mitigate
+this which cost additional time and memory. In this paper we define a new state-space model (AO) in
+which we divide the problem into two distinct sub-problems: first we decide the allocations of all
+tasks to processors, and then we order the tasks on their allocated processors in order to produce
+a complete schedule. This two-phase state-space model offers no potential for the production of
+duplicates. We also describe how the pruning techniques and optimisations developed for the ELS
+model were adapted or made obsolete by the AO model. An experimental evaluation shows that the use
+of this new state-space model leads to a significant increase in the number of task graphs able to
+be scheduled within a feasible time-frame, particularly for task graphs with a high communication-to-computation
+ratio. Finally, some advanced lower bound heuristics are proposed for the AO model, and evaluation
+demonstrates that significant gains can be achieved from the consideration of necessary idle time.

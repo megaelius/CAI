@@ -1,0 +1,18 @@
+Generating adversarial examples is an intriguing problem and an important way of understanding
+the working mechanism of deep neural networks. Recently, it has attracted a lot of attention in the
+computer vision community. Most existing approaches generated perturbations in image space,
+i.e., each pixel can be modified independently. However, it remains unclear whether these adversarial
+examples are authentic, in the sense that they correspond to actual changes in physical properties.
+This paper aims at exploring this topic in the contexts of object classification and visual question
+answering. The baselines are set to be several state-of-the-art deep neural networks which receive
+2D input images. We augment these networks with a differentiable 3D rendering layer in front, so
+that a 3D scene (in physical space) is rendered into a 2D image (in image space), and then mapped to
+a prediction (in output space). There are two (direct or indirect) ways of attacking the physical
+parameters. The former back-propagates the gradients of error signals from output space to physical
+space directly, while the latter first constructs an adversary in image space, and then attempts
+to find the best solution in physical space that is rendered into this image. An important finding
+is that attacking physical space is much more difficult, as the direct method, compared with that
+used in image space, produces a much lower success rate and requires heavier perturbations to be
+added. On the other hand, the indirect method does not work out, suggesting that adversaries generated
+in image space are inauthentic. By interpreting them in physical space, most of these adversaries
+can be filtered out, showing promise in defending adversaries. 

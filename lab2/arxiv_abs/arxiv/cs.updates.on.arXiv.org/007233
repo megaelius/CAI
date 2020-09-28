@@ -1,0 +1,19 @@
+A novel machine learning optimization process coined Restrictive Federated Model Selection (RFMS)
+is proposed under the scenario, for example, when data from healthcare units can not leave the site
+it is situated on and it is forbidden to carry out training algorithms on remote data sites due to either
+technical or privacy and trust concerns. To carry out a clinical research under this scenario, an
+analyst could train a machine learning model only on local data site, but it is still possible to execute
+a statistical query at a certain cost in the form of sending a machine learning model to some of the
+remote data sites and get the performance measures as feedback, maybe due to prediction being usually
+much cheaper. Compared to federated learning, which is optimizing the model parameters directly
+by carrying out training across all data sites, RFMS trains model parameters only on one local data
+site but optimizes hyper-parameters across other data sites jointly since hyper-parameters play
+an important role in machine learning performance. The aim is to get a Pareto optimal model with respective
+to both local and remote unseen prediction losses, which could generalize well across data sites.
+In this work, we specifically consider high dimensional data with shifted distributions over data
+sites. As an initial investigation, Bayesian Optimization especially multi-objective Bayesian
+Optimization is used to guide an adaptive hyper-parameter optimization process to select models
+under the RFMS scenario. Empirical results show that solely using the local data site to tune hyper-parameters
+generalizes poorly across data sites, compared to methods that utilize the local and remote performances.
+Furthermore, in terms of dominated hypervolumes, multi-objective Bayesian Optimization algorithms
+show increased performance across multiple data sites among other candidates. 

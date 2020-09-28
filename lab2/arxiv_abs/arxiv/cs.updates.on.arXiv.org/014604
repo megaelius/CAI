@@ -1,0 +1,18 @@
+Due to domain bias, directly deploying a deep person re-identification (re-ID) model trained on
+one dataset often achieves considerably poor accuracy on another dataset. In this paper, we propose
+an Adaptive Exploration (AE) method to address the domain-shift problem for re-ID in an unsupervised
+manner. Specifically, in the target domain, the re-ID model is inducted to 1) maximize distances
+between all person images and 2) minimize distances between similar person images. In the first
+case, by treating each person image as an individual class, a non-parametric classifier with a feature
+memory is exploited to encourage person images to move far away from each other. In the second case,
+according to a similarity threshold, our method adaptively selects neighborhoods for each person
+image in the feature space. By treating these similar person images as the same class, the non-parametric
+classifier forces them to stay closer. However, a problem of the adaptive selection is that, when
+an image has too many neighborhoods, it is more likely to attract other images as its neighborhoods.
+As a result, a minority of images may select a large number of neighborhoods while a majority of images
+have only a few neighborhoods. To address this issue, we additionally integrate a balance strategy
+into the adaptive selection. We evaluate our methods with two protocols. The first one is called
+"target-only re-ID", in which only the unlabeled target data is used for training. The second one
+is called "domain adaptive re-ID", in which both the source data and the target data are used during
+training. Experimental results on large-scale re-ID datasets demonstrate the effectiveness
+of our method. Our code has been released at https://github.com/dyh127/Adaptive-Exploration-for-Unsupervised-Person-Re-Identification.

@@ -1,0 +1,19 @@
+Concurrent data structures or CDS such as concurrent stacks, queues, sets etc. have become very
+popular in the past few years partly due to the rise of multi-core systems. But one of the greatest
+challenges with CDSs has been developing correct structures and then proving the correctness of
+these structures. We believe that techniques that help prove the correctness of these CDSs can also
+guide in developing new CDSs. An intuitive technique to prove the correctness of CDSs is using Linearization
+Points or LPs. An LP is an atomic event in the execution interval of each method such that the execution
+of the entire method seems to have taken place in the instant of that event. One of the main challenges
+with the LP based approach is to identify the correct LPs of a CDS. Identifying the correct LPs can
+be deceptively wrong in many cases. In fact, in many cases, the LP identified or even worse the CDS
+itself could be wrong. To address these issues, several automatic tools for verifying linearizability
+have been developed. But we believe that these tools don't provide insight to a programmer to develop
+the correct concurrent programs or identify the LPs. Considering the complexity of developing
+a CDS and verifying its correctness, we address the most basic problem of this domain in this paper:
+given the set of LPs of a CDS, how to show its correctness? We assume that we are given a CDS and its LPs.
+We have developed a hand-crafted technique of proving the correctness of the CDS by validating its
+LPs. As observed earlier, identifying the correct LPs is very tricky and erroneous. But since our
+technique is hand-crafted, we believe that the process of proving correctness might provide insight
+to identify the correct LPs, if the currently chosen LP is incorrect. We also believe that this technique
+might also offer the programmer some insight to develop more efficient variants of the CDS. 

@@ -1,0 +1,17 @@
+A second order explicit one-step numerical method for the initial value problem of the general ordinary
+differential equation is proposed. It is obtained by natural modifications of the well-known leapfrog
+method, which is a second order, two-step, explicit method. According to the latter method, the
+input data for an integration step are two system states, which refer to different times. The usage
+of two states instead of a single one can be seen as the reason for the robustness of the method. Since
+the time step size thus is part of the step input data, it is complicated to change this size during
+the computation of a discrete trajectory. This is a serious drawback when one needs to implement
+automatic time step control. The proposed modification transforms one of the two input states into
+a velocity and thus gets rid of the time step dependency in the step input data. For these new step input
+data, the leapfrog method gives a unique prescription how to evolve them stepwise. The stability
+properties of this modified method are the same as for the original one: the set of absolute stability
+is the interval [-i,+i] on the imaginary axis. This implies exponential growth of trajectories
+in situations where the exact trajectory has an asymptote. By considering new evolution steps that
+are composed of two consecutive old evolution steps we can average over the velocities of the sub-steps
+and get an integrator with a much larger set of absolute stability, which is immune to the asymptote
+problem. The method is exemplified with the equation of motion of a one-dimensional non-linear
+oscillator describing the radial motion in the Kepler problem. 

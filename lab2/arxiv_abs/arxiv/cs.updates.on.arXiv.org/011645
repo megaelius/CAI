@@ -1,0 +1,19 @@
+Dialogue response generation (DRG) is a critical component of task-oriented dialogue systems
+(TDSs). Its purpose is to generate proper natural language responses given some context, e.g.,
+historical utterances, system states, etc. State-of-the-art work focuses on how to better tackle
+DRG in an end-to-end way. Typically, such studies assume that each token is drawn from a single distribution
+over the output vocabulary, which may not always be optimal. Responses vary greatly with different
+intents, e.g., domains, system actions. We propose a novel mixture-of-generators network (MoGNet)
+for DRG, where we assume that each token of a response is drawn from a mixture of distributions. MoGNet
+consists of a chair generator and several expert generators. Each expert is specialized for DRG
+w.r.t. a particular intent. The chair coordinates multiple experts and combines the output they
+have generated to produce more appropriate responses. We propose two strategies to help the chair
+make better decisions, namely, a retrospective mixture-of-generators (RMoG) and prospective
+mixture-of-generators (PMoG). The former only considers the historical expert-generated responses
+until the current time step while the latter also considers possible expert-generated responses
+in the future by encouraging exploration. In order to differentiate experts, we also devise a global-and-local
+(GL) learning scheme that forces each expert to be specialized towards a particular intent using
+a local loss and trains the chair and all experts to coordinate using a global loss. We carry out extensive
+experiments on the MultiWOZ benchmark dataset. MoGNet significantly outperforms state-of-the-art
+methods in terms of both automatic and human evaluations, demonstrating its effectiveness for
+DRG. 

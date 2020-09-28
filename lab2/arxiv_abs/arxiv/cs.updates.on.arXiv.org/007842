@@ -1,0 +1,19 @@
+The single- and multi- processor cup games can be used to model natural problems in areas such as processor
+scheduling, deamortization, and buffer management. At the beginning of the single-processor
+cup game, $n$ cups are initially empty. In each step of the game, a filler distributes $1$ unit of water
+among the cups, and then an emptier selects a cup and removes $1 + \epsilon$ units from that cup. The
+goal of the emptier is to minimize the amount of water in the fullest cup, also known as the backlog.
+It is known that the greedy algorithm (i.e., empty the fullest cup) achieves backlog $O(\log n)$,
+and that no deterministic algorithm can do better. We show that the performance of the greedy algorithm
+can be greatly improved with a small amount of randomization: After any step $i$, and for any $k \ge
+\Omega(\log \epsilon^{-1})$, the emptier achieves backlog at most $O(k)$ with probability at
+least $1 -O(2^{-2^k})$. Whereas bounds for the single-processor cup game have been known for more
+than fifteen years, proving nontrivial bounds on backlog for the multi-processor extension has
+remained open. We present a simple analysis of the greedy algorithm for the multi-processor cup
+game, establishing a backlog of $O(\epsilon^{-1} \log n)$, as long as $\delta$, the game's other
+speed-augmentation constant, is at least $1/poly(n)$. Turning to randomized algorithms, we encounter
+an unexpected phenomenon: When the number of processors $p$ is large, the backlog after each step
+drops to \emph{constant} with large probability. Specifically, we show that if $\delta$ and $\epsilon$
+satisfy reasonable constraints, then there exists an algorithm that bounds the backlog after a
+given step by three or less with probability at least $1 - O(\exp(-\Omega(\epsilon^2 p))$. We further
+extend the guarantees of our randomized algorithm to consider larger backlogs. 

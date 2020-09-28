@@ -1,0 +1,18 @@
+We consider a variation of the problem of corruption detection on networks posed by Alon, Mossel,
+and Pemantle '15. In this model, each vertex of a graph can be either truthful or corrupt. Each vertex
+reports about the types (truthful or corrupt) of all its neighbors to a central agency, where truthful
+nodes report the true types they see and corrupt nodes report adversarially. The central agency
+aggregates these reports and attempts to find a single truthful node. Inspired by real auditing
+networks, we pose our problem for arbitrary graphs and consider corruption through a computational
+lens. We identify a key combinatorial parameter of the graph $m(G)$, which is the minimal number
+of corrupted agents needed to prevent the central agency from identifying a single corrupt node.
+We give an efficient (in fact, linear time) algorithm for the central agency to identify a truthful
+node that is successful whenever the number of corrupt nodes is less than $m(G)/2$. On the other hand,
+we prove that for any constant $\alpha > 1$, it is NP-hard to find a subset of nodes $S$ in $G$ such that
+corrupting $S$ prevents the central agency from finding one truthful node and $|S| \leq \alpha m(G)$,
+assuming the Small Set Expansion Hypothesis (Raghavendra and Steurer, STOC '10). We conclude that
+being corrupt requires being clever, while detecting corruption does not. Our main technical insight
+is a relation between the minimum number of corrupt nodes required to hide all truthful nodes and
+a certain notion of vertex separability for the underlying graph. Additionally, this insight lets
+us design an efficient algorithm for a corrupt party to decide which graphs require the fewest corrupted
+nodes, up to a multiplicative factor of $O(\log n)$. 

@@ -1,0 +1,18 @@
+Incremental 4D-Var is a data assimilation algorithm used routinely at operational numerical weather
+predictions centers worldwide.This paper implements a new method for parallelizing incremental
+4D-Var, the Randomized Incremental Optimal Technique (RIOT), which replaces the traditional
+sequential conjugate gradient (CG) iterations in the inner-loop of the minimization with fully
+parallel randomized singular value decomposition (RSVD) of the preconditioned Hessian of the
+cost function. RIOT is tested using the standard Lorenz-96 model (L-96) as well as two realistic
+high-dimensional atmospheric source inversion problems based on aircraft observations of black
+carbon concentrations. A new outer-loop preconditioning technique tailored to RSVD was introduced
+to improve convergence stability and performance. Results obtained with the L-96 system show that
+the performance improvement from RIOT compared to standard CG algorithms increases significantly
+with non-linearities. Overall, in the realistic black carbon source inversion experiments, RIOT
+reduces the wall-time of the 4D-Var minimization by a factor 2-3, at the cost of a factor 4-10 increase
+in energy cost due to the large number of parallel cores used. Furthermore, RIOT enables reduction
+of the wall-time computation of the analysis error covariance matrix by a factor 40 compared to a
+standard iterative Lanczos approach. Finally, as evidenced in this study, implementation of RIOT
+in an operational numerical weather prediction system will require a better understanding of its
+convergence properties as a function of the Hessian characteristics and, in particular, the degree
+of freedom for signal (DOFs) of the inverse problem. 

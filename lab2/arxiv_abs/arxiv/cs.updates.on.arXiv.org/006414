@@ -1,0 +1,17 @@
+The current deployed multipath congestion control algorithms couple all the subflows together
+to avoid bandwidth occupation aggressiveness if the subflows of multipath transmission protocol
+share common bottleneck with single path TCP. The coupled congestion control algorithms can guarantee
+well fairness property in common bottleneck but result in rate increase conservativeness in none-sharing
+bottleneck situation. Thus, the throughput of multipath session can be further improved when combing
+with effective shared bottleneck detection mechanism. This paper proposes a delay trend line regression
+method to detect if flows share common bottleneck. Deduced from TCP fluid model, the packet round
+trip delay signal shows linear increase property during the queue building up process of the narrowest
+link and the delay trend line slopes of two flows are in close proximity if they traverse the same bottleneck
+link. The proposed method is implemented on multipath QUIC golang codebase and extensive simulations
+are performed to validate its effectiveness in detecting out flows traversing common bottleneck.
+If the subflows are detected out via a common bottleneck, the sender would perform coupled congestion
+control algorithm and perform congestion control seperately on flow level in none sharing bottleneck
+case. Results show a multipath session with two subflows can obtain 74\% gain on average in throughput
+compared with single path connection when Linked Increases Algorithm (LIA) is in combination with
+trend line regession shared bottlenck detection algorithm in none shared bottleneck, and show
+well fairness property in common bottleneck scenarios. 

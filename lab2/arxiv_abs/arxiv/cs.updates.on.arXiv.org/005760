@@ -1,0 +1,20 @@
+Markov Random Fields (MRFs) are a popular model for several pattern recognition and reconstruction
+problems in robotics and computer vision. Inference in MRFs is intractable in general and related
+work resorts to approximation algorithms. Among those techniques, semidefinite programming
+(SDP) relaxations have been shown to provide accurate estimates while scaling poorly with the problem
+size and being typically slow for practical applications. Our first contribution is to design a
+dual ascent method to solve standard SDP relaxations that takes advantage of the geometric structure
+of the problem to speed up computation. This technique, named Dual Ascent Riemannian Staircase
+(DARS), is able to solve large problem instances in seconds. Since our goal is to enable real-time
+inference on robotics platforms, we develop a second and faster approach. The backbone of this second
+approach is a novel SDP relaxation combined with a fast and scalable solver based on smooth Riemannian
+optimization. We show that this approach, named Fast Unconstrained SEmidefinite Solver (FUSES),
+can solve large problems in milliseconds. Contrarily to local MRF solvers, e.g., loopy belief propagation,
+our approaches do not require an initial guess. Moreover, we leverage recent results from optimization
+theory to provide per-instance sub-optimality guarantees. We demonstrate the proposed approaches
+in multi-class image segmentation problems. Extensive experimental evidence shows that (i) FUSES
+and DARS produce near-optimal solutions, attaining an objective within 0.2% of the optimum, (ii)
+FUSES and DARS are remarkably faster than general-purpose SDP solvers, and FUSES is more than two
+orders of magnitude faster than DARS while attaining similar solution quality, (iii) FUSES is faster
+than local search methods while being a global solver, and is a good candidate for real-time robotics
+applications. 

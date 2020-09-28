@@ -1,0 +1,17 @@
+By the CAP Theorem, a distributed data storage system can ensure either Consistency under Partition
+(CP) or Availability under Partition (AP), but not both. This has led to a split between CP databases,
+in which updates are synchronous, and AP databases, where they are asynchronous. However, there
+is no inherent reason to treat all updates identically: simply, the system should be as available
+as possible, and synchronised just enough for the application to be correct. We offer a principled
+Just-Right Consistency approach to designing such applications, reconciling correctness with
+availability and performance, based on the following insights:(i) The Conflict-Free Replicated
+Data Type (CRDTs) data model supports asynchronous updates in an intuitive and principled way.(ii)
+Invariants involving joint or mutually-ordered updates are compatible with AP and can be guaranteed
+by Transactional Causal Consistency, the strongest consistency model that does not compromise
+availability. Regarding the remaining, "CAP-sensitive" invariants:(iii) For the common pattern
+of Bounded Counters, we provide encapsulated data type that is proven correct and is efficient;
+(iv) in the general case, static analysis can identify when synchronisation is not necessary for
+correctness.Our Antidote cloud database system supports CRDTs, Transactional Causal Consistency
+and the Bounded Counter data type. Support tools help design applications by static analysis and
+proof of CAP-sensitive invariants. This system supports industrial-grade applications and has
+been tested experimentally with hundreds of servers across several geo-distributed data centres.

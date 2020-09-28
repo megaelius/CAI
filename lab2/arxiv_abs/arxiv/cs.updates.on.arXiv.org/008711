@@ -1,0 +1,19 @@
+It has been observed that linearizability, the prevalent consistency condition for implementing
+concurrent objects, does not preserve some probability distributions. A stronger condition,
+called strong linearizability has been proposed, but its study has been somewhat ad-hoc. This paper
+investigates strong linearizability by casting it in the context of observational refinement
+of objects. We present a strengthening of observational refinement, which generalizes strong
+linearizability, obtaining several important implications. When a concrete concurrent object
+refining another, more abstract object - often sequential - the correctness of a program employing
+the concrete object can be verified by considering its behaviors when using the more abstract object.
+This means that trace properties of a program using the concrete object can be proved by considering
+the program with the abstract object. This, however, does not hold for hyperproperties, including
+many security properties and probability distributions of events. We define strong observational
+refinement, a strengthening of refinement that preserves hyperproperties, and prove that it is
+equivalent to the existence of forward simulations. We show that strong observational refinement
+generalizes strong linearizability. This implies that strong linearizability is also equivalent
+to forward simulation, and shows that strongly linearizable implementations can be composed both
+horizontally (i.e., locality) and vertically (i.e., with instantiation). For situations where
+strongly linearizable implementations do not exist (or are less efficient), we argue that reasoning
+about hyperproperties of programs can be simplified by strong observational refinement of abstract
+objects that are not necessarily sequential. 

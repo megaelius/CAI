@@ -1,0 +1,19 @@
+Set similarity join, as well as the corresponding indexing problem set similarity search, are fundamental
+primitives for managing noisy or uncertain data. For example, these primitives can be used in data
+cleaning to identify different representations of the same object. In many cases one can represent
+an object as a sparse 0-1 vector, or equivalently as the set of nonzero entries in such a vector. A set
+similarity join can then be used to identify those pairs that have an exceptionally large dot product
+(or intersection, when viewed as sets). We choose to focus on identifying vectors with large Pearson
+correlation, but results extend to other similarity measures. In particular, we consider the indexing
+problem of identifying correlated vectors in a set S of vectors sampled from {0,1}^d. Given a query
+vector y and a parameter alpha in (0,1), we need to search for an alpha-correlated vector x in a data
+structure representing the vectors of S. This kind of similarity search has been intensely studied
+in worst-case (non-random data) settings. Existing theoretically well-founded methods for set
+similarity search are often inferior to heuristics that take advantage of skew in the data distribution,
+i.e., widely differing frequencies of 1s across the d dimensions. The main contribution of this
+paper is to analyze the set similarity problem under a random data model that reflects the kind of
+skewed data distributions seen in practice, allowing theoretical results much stronger than what
+is possible in worst-case settings. Our indexing data structure is a recursive, data-dependent
+partitioning of vectors inspired by recent advances in set similarity search. Previous data-dependent
+methods do not seem to allow us to exploit skew in item frequencies, so we believe that our work sheds
+further light on the power of data dependence. 

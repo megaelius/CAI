@@ -1,0 +1,20 @@
+Numerous engineering problems of interest to the industry are often characterized by expensive
+black-box objective experiments or computer simulations. Obtaining insight into the problem
+or performing subsequent optimizations requires hundreds of thousands of evaluations of the objective
+function which is most often a practically unachievable task. Gaussian Process (GP) surrogate
+modeling replaces the expensive function with a cheap-to-evaluate data-driven probabilistic
+model. While the GP does not assume a functional form of the problem, it is defined by a set of parameters,
+called hyperparameters. The hyperparameters define the characteristics of the objective function,
+such as smoothness, magnitude, periodicity, etc. Accurately estimating these hyperparameters
+is a key ingredient in developing a reliable and generalizable surrogate model. Markov chain Monte
+Carlo (MCMC) is a ubiquitously used Bayesian method to estimate these hyperparameters. At the GE
+Global Research Center, a customized industry-strength Bayesian hybrid modeling framework utilizing
+the GP, called GEBHM, has been employed and validated over many years. GEBHM is very effective on
+problems of small and medium size, typically less than 1000 training points. However, the GP does
+not scale well in time with a growing dataset and problem dimensionality which can be a major impediment
+in such problems. In this work, we extend and implement in GEBHM an Adaptive Sequential Monte Carlo
+(ASMC) methodology for training the GP enabling the modeling of large-scale industry problems.
+This implementation saves computational time (especially for large-scale problems) while not
+sacrificing predictability over the current MCMC implementation. We demonstrate the effectiveness
+and accuracy of GEBHM with ASMC on four mathematical problems and on two challenging industry applications
+of varying complexity. 

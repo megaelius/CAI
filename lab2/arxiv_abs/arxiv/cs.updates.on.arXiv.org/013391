@@ -1,0 +1,18 @@
+In this work, we establish lower-bounds against memory bounded algorithms for distinguishing
+between natural pairs of related distributions from samples that arrive in a streaming setting.
+In our first result, we show that any algorithm that distinguishes between uniform distribution
+on $\{0,1\}^n$ and uniform distribution on an $n/2$-dimensional linear subspace of $\{0,1\}^n$
+with non-negligible advantage needs $2^{\Omega(n)}$ samples or $\Omega(n^2)$ memory. Our second
+result applies to distinguishing outputs of Goldreich's local pseudorandom generator from the
+uniform distribution on the output domain. Specifically, Goldreich's pseudorandom generator
+$G$ fixes a predicate $P:\{0,1\}^k \rightarrow \{0,1\}$ and a collection of subsets $S_1, S_2,
+\ldots, S_m \subseteq [n]$ of size $k$. For any seed $x \in \{0,1\}^n$, it outputs $P(x_{S_1}), P(x_{S_2}),
+\ldots, P(x_{S_m})$ where $x_{S_i}$ is the projection of $x$ to the coordinates in $S_i$. We prove
+that whenever $P$ is $t$-resilient (all non-zero Fourier coefficients of $(-1)^P$ are of degree
+$t$ or higher), then no algorithm, with $<n^\epsilon$ memory, can distinguish the output of $G$
+from the uniform distribution on $\{0,1\}^m$ with a large inverse polynomial advantage, for stretch
+$m \le \left(\frac{n}{t}\right)^{\frac{(1-\epsilon)}{36}\cdot t}$ (barring some restrictions
+on $k$). The lower bound holds in the streaming model where at each time step $i$, $S_i\subseteq [n]$
+is a randomly chosen (ordered) subset of size $k$ and the distinguisher sees either $P(x_{S_i})$
+or a uniformly random bit along with $S_i$. Our proof builds on the recently developed machinery
+for proving time-space trade-offs (Raz 2016 and follow-ups) for search/learning problems. 

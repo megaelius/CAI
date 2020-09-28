@@ -1,0 +1,5 @@
+ hi, is there anybody has some example programs about using
+ the internationalization features in X11R5 ? Such as a small
+ X program just to show Chinese texts in wondows, menu bar or
+ icons... Thanks in advance.
+ Michael C. Hung

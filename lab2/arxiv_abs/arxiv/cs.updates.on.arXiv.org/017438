@@ -1,0 +1,18 @@
+Reactive synthesis is the problem of automatically constructing a reactive system from a formal
+specification, with the guarantee that the executions of the system align with the specification.
+The specification is often described in temporal logic. Some types of specifications can be converted
+into deterministic finite automata (DFA) as an intermediate step in synthesis, thus benefiting
+from the fact that DFAs can be fully minimized in polynomial time. In this work we investigate DFA-minimization
+algorithms in the context of temporal synthesis. In particular, we compare between the Hopcroft
+and Brzozowski minimization algorithms, adapting them to start from temporal-logic formulas
+and integrating them into an existing temporal synthesis framework. While earlier studies comparing
+the two algorithms for randomly-generated automata concluded that neither algorithm dominates,
+our results suggest that in the context of temporal-synthesis, Hopcroft's algorithm is the best
+choice. Analyzing the results, we observe that the reason for the poor performance of Brzozowski's
+algorithm is a discrepancy between theory and practice. This algorithm first constructs a DFA for
+the reverse language of the specification and then performs a series of operations to transform
+it into a minimal DFA for the specification itself. In theory, the DFA for the reverse language can
+be exponentially smaller, which would potentially make this algorithm more efficient than directly
+constructing the DFA for the original specification. In practice, however, we find that the reverse
+DFA is often of comparable size or even larger, which cancels the advantage that this approach could
+have. 

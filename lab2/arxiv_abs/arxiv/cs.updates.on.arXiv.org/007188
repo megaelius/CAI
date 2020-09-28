@@ -1,0 +1,19 @@
+Synchronizing clocks in distributed systems is well-understood, both in terms of fault-tolerance
+in fully connected systems and the dependence of local and global worst-case skews (i.e., maximum
+clock difference between neighbors and arbitrary pairs of nodes, respectively) on the diameter
+of fault-free systems. However, so far nothing non-trivial is known about the local skew that can
+be achieved in topologies that are not fully connected even under a single Byzantine fault. Put simply,
+in this work we show that the most powerful known techniques for fault-tolerant and gradient clock
+synchronization are compatible, in the sense that the best of both worlds can be achieved simultaneously.
+Concretely, we combine the Lynch-Welch algorithm [Welch1988] for synchronizing a clique of $n$
+nodes despite up to $f<n/3$ Byzantine faults with the gradient clock synchronization (GCS) algorithm
+by Lenzen et al. [Lenzen2010] in order to render the latter resilient to faults. As this is not possible
+on general graphs, we augment an input graph $\mathcal{G}$ by replacing each node by $3f+1$ fully
+connected copies, which execute an instance of the Lynch-Welch algorithm. We then interpret these
+clusters as supernodes executing the GCS algorithm, where for each cluster its correct nodes' Lynch-Welch
+clocks provide estimates of the logical clock of the supernode in the GCS algorithm. By connecting
+clusters corresponding to neighbors in $\mathcal{G}$ in a fully bipartite manner, supernodes
+can inform each other about (estimates of) their logical clock values. This way, we achieve asymptotically
+optimal local skew, granted that no cluster contains more than $f$ faulty nodes, at factor $O(f)$
+and $O(f^2)$ overheads in terms of nodes and edges, respectively. Note that tolerating $f$ faulty
+neighbors trivially requires degree larger than $f$, so this is asymptotically optimal as well.

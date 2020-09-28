@@ -1,0 +1,18 @@
+Achieving high performance in many distributed systems, such as a web hosting center or the cloud
+requires finding a good assignment of worker threads to servers and also effectively allocating
+each server's resources to its assigned threads. The assignment and allocation components of this
+problem have been studied extensively but largely separately in the literature. In this paper,
+we introduce the \emph{assign and allocate (AA)} problem, which seeks to simultaneously find an
+assignment and allocation that maximizes the total utility of the threads. Assigning and allocating
+the threads together can result in substantially better overall utility than performing the steps
+separately, as is traditionally done. We model each thread by a utility function giving its utility
+as a function of its assigned resources. We first prove that the AA problem is NP-hard. We then present
+a $2 (\sqrt{2}-1) > 0.828$ factor approximation algorithm for concave utility functions, which
+runs in $O(mn^2 + n (\log mC)^2)$ time for $n$ threads and $m$ servers with $C$ amount of resource each.
+We further present a faster algorithm with the same approximation ratio and lower time complexity
+of $O(n (\log mC)^2)$. We then extend our algorithms to solve AA problem with nonconcave utility
+functions and achieve an approximation ratio $\frac{1}{2}$. We conduct extensive experiments
+to test the performance of our algorithms on threads with both synthetic and realistic utility functions,
+and find that it achieves over 92\% of the optimal utility on average. We also compare our algorithm
+against several other assignment and allocation algorithms, and find that it achieves up to 9 times
+better total utility. 

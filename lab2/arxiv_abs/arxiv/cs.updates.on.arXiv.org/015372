@@ -1,0 +1,17 @@
+The entropy of the codes usually serves as the rate loss in the recent learned lossy image compression
+methods. Precise estimation of the probabilistic distribution of the codes plays a vital role in
+the performance. However, existing deep learning based entropy modeling methods generally assume
+the latent codes are statistically independent or depend on some side information or local context,
+which fails to take the global similarity within the context into account and thus hinder the accurate
+entropy estimation. To address this issue, we propose a non-local operation for context modeling
+by employing the global similarity within the context. Specifically, we first introduce the proxy
+similarity functions and spatial masks to handle the missing reference problem in context modeling.
+Then, we combine the local and the global context via a non-local attention block and employ it in
+masked convolutional networks for entropy modeling. The entropy model is further adopted as the
+rate loss in a joint rate-distortion optimization to guide the training of the analysis transform
+and the synthesis transform network in transforming coding framework. Considering that the width
+of the transforms is essential in training low distortion models, we finally produce a U-Net block
+in the transforms to increase the width with manageable memory consumption and time complexity.
+Experiments on Kodak and Tecnick datasets demonstrate the superiority of the proposed context-based
+non-local attention block in entropy modeling and the U-Net block in low distortion compression
+against the existing image compression standards and recent deep image compression models. 

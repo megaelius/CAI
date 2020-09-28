@@ -1,0 +1,20 @@
+Models are often given in terms of differential equations to represent physical systems. In the
+presence of uncertainty, accurate prediction of the behavior of these systems using the models
+requires understanding the effect of uncertainty in the response. In uncertainty quantification,
+statistics such as mean and variance of the response of these physical systems are sought. To estimate
+these statistics sampling-based methods like Monte Carlo often require many evaluations of the
+models' governing equations for multiple realizations of the uncertainty. However, for large
+complex engineering systems, these methods become computationally burdensome. In structural
+engineering, often an otherwise linear structure contains spatially local nonlinearities with
+uncertainty present in them. A standard nonlinear solver for them with sampling-based methods
+for uncertainty quantification incurs significant computational cost for estimating the statistics
+of the response. To ease this computational burden of uncertainty quantification of large-scale
+locally nonlinear dynamical systems, a method is proposed herein, which decomposes the response
+into two parts -- response of a nominal linear system and a corrective term. This corrective term
+is the response from a pseudoforce that contains the nonlinearity and uncertainty information.
+In this paper, neural network, a recently popular tool for universal function approximation in
+the scientific machine learning community due to the advancement of computational capability
+as well as the availability of open-sourced packages like PyTorch and TensorFlow is used to estimate
+the pseudoforce. Since only the nonlinear and uncertain pseudoforce is modeled using the neural
+networks the same network can be used to predict a different response of the system and hence no new
+network is required to train if the statistic of a different response is sought. 

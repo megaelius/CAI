@@ -1,0 +1,19 @@
+Calculating the similarities between a pair of genomic sequences is one of the most fundamental
+computational steps in genomic analysis. This step -- called sequence alignment -- is the computational
+bottleneck because: (1) it is implemented using quadratic-time dynamic programming algorithms
+and (2) the majority of candidate locations in the reference genome do not align with a given read
+due to high dissimilarity. Calculating the alignment of such incorrect candidate locations consumes
+an overwhelming majority of a modern read mapper's execution time. In this thesis, we introduce
+four new algorithms (GateKeeper, Shouji, MAGNET, and SneakySnake) that function as a pre-alignment
+step and aim to filter out most incorrect candidate locations. The first key idea of our pre-alignment
+filters is to provide high filtering accuracy by correctly detecting all similar segments shared
+between two sequences. The second key idea is to exploit the massively parallel architecture of
+modern FPGAs for accelerating our filtering algorithms. We also develop an efficient CPU implementation
+of the SneakySnake algorithm for commodity desktops and servers. We evaluate the benefits and downsides
+of our pre-alignment filtering approach in detail using 12 real datasets. In our evaluation, we
+demonstrate that our hardware pre-alignment filters show two to three orders of magnitude speedup
+over their equivalent CPU implementations. We also demonstrate that integrating our hardware
+pre-alignment filters with the state-of-the-art read aligners reduces the aligner's execution
+time by up to 21.5x. Finally, we show that efficient CPU implementation of pre-alignment filtering
+still provides significant benefits. We show that SneakySnake on average reduces the execution
+time of the best performing CPU-based read aligners Edlib and Parasail, by up to 43x and 57.9x, respectively.

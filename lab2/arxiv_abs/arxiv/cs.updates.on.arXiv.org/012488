@@ -1,0 +1,20 @@
+We revisit a fundamental problem in string matching: given a pattern of length m and a text of length
+n, both over an alphabet of size $\sigma$, compute the Hamming distance between the pattern and the
+text at every location. Several $(1+\epsilon)$-approximation algorithms have been proposed
+in the literature, with running time of the form $O(\epsilon^{-O(1)}n\log n\log m)$, all using
+fast Fourier transform (FFT). We describe a simple $(1+\epsilon)$-approximation algorithm that
+is faster and does not need FFT. Combining our approach with additional ideas leads to numerous new
+results: - We obtain the first linear-time approximation algorithm; the running time is $O(\epsilon^{-2}n)$.
+- We obtain a faster exact algorithm computing all Hamming distances up to a given threshold k; its
+running time improves previous results by logarithmic factors and is linear if $k\le\sqrt m$. -
+We obtain approximation algorithms with better $\epsilon$-dependence using rectangular matrix
+multiplication. The time-bound is $\~O(n)$ when the pattern is sufficiently long: $m\ge \epsilon^{-28}$.
+Previous algorithms require $\~O(\epsilon^{-1}n)$ time. - When k is not too small, we obtain a truly
+sublinear-time algorithm to find all locations with Hamming distance approximately (up to a constant
+factor) less than k, in $O((n/k^{\Omega(1)}+occ)n^{o(1)})$ time, where occ is the output size.
+The algorithm leads to a property tester, returning true if an exact match exists and false if the
+Hamming distance is more than $\delta m$ at every location, running in $\~O(\delta^{-1/3}n^{2/3}+\delta^{-1}n/m)$
+time. - We obtain a streaming algorithm to report all locations with Hamming distance approximately
+less than k, using $\~O(\epsilon^{-2}\sqrt k)$ space. Previously, streaming algorithms were
+known for the exact problem with \~O(k) space or for the approximate problem with $\~O(\epsilon^{-O(1)}\sqrt
+m)$ space. 

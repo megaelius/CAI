@@ -1,0 +1,18 @@
+In semantic segmentation knowing about all existing classes is essential to yield effective results
+with the majority of existing approaches. However, these methods trained in a Closed Set of classes
+fail when new classes are found in the test phase. It means that they are not suitable for Open Set scenarios,
+which are very common in real-world computer vision and remote sensing applications. In this paper,
+we discuss the limitations of Closed Set segmentation and propose two fully convolutional approaches
+to effectively address Open Set semantic segmentation: OpenFCN and OpenPCS. OpenFCN is based on
+the well-known OpenMax algorithm, configuring a new application of this approach in segmentation
+settings. OpenPCS is a fully novel approach based on feature-space from DNN activations that serve
+as features for computing PCA and multi-variate gaussian likelihood in a lower dimensional space.
+Experiments were conducted on the well-known Vaihingen and Potsdam segmentation datasets. OpenFCN
+showed little-to-no improvement when compared to the simpler and much more time efficient SoftMax
+thresholding, while being between some orders of magnitude slower. OpenPCS achieved promising
+results in almost all experiments by overcoming both OpenFCN and SoftMax thresholding. OpenPCS
+is also a reasonable compromise between the runtime performances of the extremely fast SoftMax
+thresholding and the extremely slow OpenFCN, being close able to run close to real-time. Experiments
+also indicate that OpenPCS is effective, robust and suitable for Open Set segmentation, being able
+to improve the recognition of unknown class pixels without reducing the accuracy on the known class
+pixels. 

@@ -1,0 +1,18 @@
+Approximate linear programs (ALPs) are well-known models based on value function approximations
+(VFAs) to obtain heuristic policies and lower bounds on the optimal policy cost of Markov decision
+processes (MDPs). The ALP VFA is a linear combination of predefined basis functions that are chosen
+using domain knowledge and updated heuristically if the ALP optimality gap is large. We side-step
+the need for such basis function engineering in ALP -- an implementation bottleneck -- by proposing
+a sequence of ALPs that embed increasing numbers of random basis functions obtained via inexpensive
+sampling. We provide a sampling guarantee and show that the VFAs from this sequence of models converge
+to the exact value function. Nevertheless, the performance of the ALP policy can fluctuate significantly
+as more basis functions are sampled. To mitigate these fluctuations, we "self-guide" our convergent
+sequence of ALPs using past VFA information such that a worst-case measure of policy performance
+is improved. We perform numerical experiments on perishable inventory control and generalized
+joint replenishment applications, which, respectively, give rise to challenging discounted-cost
+MDPs and average-cost semi-MDPs. We find that self-guided ALPs (i) significantly reduce policy
+cost fluctuations and improve the optimality gaps from an ALP approach that employs basis functions
+tailored to the former application, and (ii) deliver optimality gaps that are comparable to a known
+adaptive basis function generation approach targeting the latter application. More broadly,
+our methodology provides application-agnostic policies and lower bounds to benchmark approaches
+that exploit application structure. 

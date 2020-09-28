@@ -1,0 +1,18 @@
+Indexing highly repetitive texts - such as genomic databases, software repositories and versioned
+text collections - has become an important problem since the turn of the millennium. A relevant compressibility
+measure for repetitive texts is r, the number of runs in their Burrows-Wheeler Transforms (BWTs).
+One of the earliest indexes for repetitive collections, the Run-Length FM-index, used O(r) space
+and was able to efficiently count the number of occurrences of a pattern of length m in the text (in
+loglogarithmic time per pattern symbol, with current techniques). However, it was unable to locate
+the positions of those occurrences efficiently within a space bounded in terms of r. In this paper
+we close this long-standing problem, showing how to extend the Run-Length FM-index so that it can
+locate the occ occurrences efficiently within O(r) space (in loglogarithmic time each), and reaching
+optimal time, O(m + occ), within O(r log log w ({\sigma} + n/r)) space, for a text of length n over an
+alphabet of size {\sigma} on a RAM machine with words of w = {\Omega}(log n) bits. Within that space,
+our index can also count in optimal time, O(m). Multiplying the space by O(w/ log {\sigma}), we support
+count and locate in O(dm log({\sigma})/we) and O(dm log({\sigma})/we + occ) time, which is optimal
+in the packed setting and had not been obtained before in compressed space. We also describe a structure
+using O(r log(n/r)) space that replaces the text and extracts any text substring of length ` in almost-optimal
+time O(log(n/r) + ` log({\sigma})/w). Within that space, we similarly provide direct access to
+suffix array, inverse suffix array, and longest common prefix array cells, and extend these capabilities
+to full suffix tree functionality, typically in O(log(n/r)) time per operation. 

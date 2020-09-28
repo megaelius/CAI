@@ -1,0 +1,17 @@
+Deep neural networks (DNNs) have achieved state-of-the-art performance across a variety of traditional
+machine learning tasks, e.g., speech recognition, image classification, and segmentation. The
+ability of DNNs to efficiently approximate high-dimensional functions has also motivated their
+use in scientific applications, e.g., to solve partial differential equations (PDE) and to generate
+surrogate models. In this paper, we consider the supervised training of DNNs, which arises in many
+of the above applications. We focus on the central problem of optimizing the weights of the given
+DNN such that it accurately approximates the relation between observed input and target data. Devising
+effective solvers for this optimization problem is notoriously challenging due to the large number
+of weights, non-convexity, data-sparsity, and non-trivial choice of hyperparameters. To solve
+the optimization problem more efficiently, we propose the use of variable projection (VarPro),
+a method originally designed for separable nonlinear least-squares problems. Our main contribution
+is the Gauss-Newton VarPro method (GNvpro) that extends the reach of the VarPro idea to non-quadratic
+objective functions, most notably, cross-entropy loss functions arising in classification.
+These extensions make GNvpro applicable to all training problems that involve a DNN whose last layer
+is an affine mapping, which is common in many state-of-the-art architectures. In numerical experiments
+from classification and surrogate modeling, GNvpro not only solves the optimization problem more
+efficiently but also yields DNNs that generalize better than commonly-used optimization schemes.

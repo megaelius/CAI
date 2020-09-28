@@ -1,0 +1,18 @@
+In this paper, we study distributed methods for solving a Sylvester equation in the form of AX+XB=C
+for matrices A, B, C$\in R^{n\times n}$ with X being the unknown variable. The entries of A, B and C
+(called data) are partitioned into a number of pieces (or sometimes we permit these pieces to overlap).
+Then a network with a given structure is assigned, whose number of nodes is consistent with the partition.
+Each node has access to the corresponding set of data and holds a dynamic state. Nodes share their
+states among their neighbors defined from the network structure, and we aim to design flows that
+can asymptotically converge to a solution of this equation. The decentralized data partitions
+may be resulted directly from networks consisting of physically isolated subsystems, or indirectly
+from artificial and strategic design for processing large data sets. Natural partial row/column
+partitions, full row/column partitions and clustering block partitions of the data A, B and C are
+assisted by the use of the vectorized matrix equation. We show that the existing "consensus + projection"
+flow and the "local conservation + global consensus" flow for distributed linear algebraic equations
+can be used to drive distributed flows that solve this kind of equations. A "consensus + projection
++ symmetrization" flow is also developed for equations with symmetry constraints on the solution
+matrices. We reveal some fundamental convergence rate limitations for such flows regardless of
+the choices of node interaction strengths and network structures. For a special case with B=A$^T$,
+where the equation mentioned is reduced to a classical Lyapunov equation, we demonstrate that by
+exploiting the symmetry of data, we can obtain flows with lower complexity for certain partitions.

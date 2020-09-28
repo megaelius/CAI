@@ -1,0 +1,18 @@
+Integral reinforcement learning (IRL) was proposed in literature to obviate the requirement of
+drift dynamics in adaptive dynamic programming (ADP) framework. Most of the online and On-policy
+IRL schemes that have been presented in literature require two sets of neural network (NNs), known
+as actor-critic NN and an initial stabilizing controller. Additionally, these schemes require
+the information of control coupling dynamics. Quite recently, a novel update law with stabilizing
+term was proposed to update the critic NN weights in ADP framework thereby obviating the requirement
+of initial stabilizing controller. To the best of the authors' knowledge, there has been no study
+on leveraging such stabilizing term in IRL algorithm framework to solve optimal trajectory tracking
+problems for continuous time nonlinear systems with actuator constraints. To this end an "identifier-critic"
+approximation framework along with a novel update law leveraging the stabilizing term with variable
+gain gradient descent in IRL algorithm coupled with simultaneous identifier is presented in this
+paper. Experience replay (ER) technique is utilized in both identifier and critic NNs to efficiently
+learn the NN weights. The most salient feature of the presented update law is its variable learning
+rate, which scales the pace of learning based on instantaneous Hamilton-Jacobi-Bellman (HJB)
+error and rate of variation of Lyapunov function along the system trajectories. Variable learning
+rate helps in achieving tighter residual set for augmented states and error in NN weights as shown
+in uniform ultimate boundedness (UUB) stability proof. The numerical studies validate the presented
+"identifier-critic" framework on nonlinear systems. 

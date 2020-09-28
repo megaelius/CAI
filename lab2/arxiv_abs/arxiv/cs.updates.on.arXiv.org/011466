@@ -1,0 +1,19 @@
+We describe and evaluate an attack that reconstructs the histogram of any target attribute of a sensitive
+dataset which can only be queried through a specific class of real-world privacy-preserving algorithms
+which we call bounded perturbation algorithms. A defining property of such an algorithm is that
+it perturbs answers to the queries by adding zero-mean noise distributed within a bounded (possibly
+undisclosed) range. Other key properties of the algorithm include only allowing restricted queries
+(enforced via an online interface), suppressing answers to queries which are only satisfied by
+a small group of individuals (e.g., by returning a zero as an answer), and adding the same perturbation
+to two queries which are satisfied by the same set of individuals (to thwart differencing or averaging
+attacks). A real-world example of such an algorithm is the one deployed by the Australian Bureau
+of Statistics' (ABS) online tool called TableBuilder, which allows users to create tables, graphs
+and maps of Australian census data [30]. We assume an attacker (say, a curious analyst) who is given
+oracle access to the algorithm via an interface. We describe two attacks on the algorithm. Both attacks
+are based on carefully constructing (different) queries that evaluate to the same answer. The first
+attack finds the hidden perturbation parameter $r$ (if it is assumed not to be public knowledge).
+The second attack removes the noise to obtain the original answer of some (counting) query of choice.
+We also show how to use this attack to find the number of individuals in the dataset with a target attribute
+value $a$ of any attribute $A$, and then for all attribute values $a_i \in A$. Our attacks are a practical
+illustration of the (informal) fundamental law of information recovery which states that ``overly
+accurate estimates of too many statistics completely destroys privacy'' [9, 15]. 

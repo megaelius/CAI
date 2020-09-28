@@ -1,0 +1,18 @@
+In recent years, Convolutional Neural Network (CNN) based methods have achieved great success
+in a large number of applications and have been among the most powerful and widely used techniques
+in computer vision. However, CNN-based methods are computational-intensive and resource-consuming,
+and thus are hard to be integrated into embedded systems such as smart phones, smart glasses, and
+robots. FPGA is one of the most promising platforms for accelerating CNN, but the limited on-chip
+memory size limit the performance of FPGA accelerator for CNN. In this paper, we propose a framework
+for designing CNN accelerator on embedded FPGA for image classification. The proposed framework
+provides a tool for FPGA resource-aware design space exploration of CNNs and automatically generates
+the hardware description of the CNN to be programmed on a target FPGA. The framework consists of three
+main backends; software, hardware generation, and simulation/precision adjustment. The software
+backend serves as an API to the designer to design the CNN and train it according to the hardware resources
+that are available. Using the CNN model, hardware backend generates the necessary hardware components
+and integrates them to generate the hardware description of the CNN. Finaly, Simulation/precision
+adjustment backend adjusts the inter-layer precision units to minimize the classification error.
+We used 16-bit fixed-point data in a CNN accelerator (FPGA) and compared it to the exactly similar
+software version running on an ARM processor (32-bit floating point data). We encounter about 3%
+accuracy loss in classification of the accelerated (FPGA) version. In return, we got up to 15.75x
+speedup by classifying with the accelerated version on the FPGA. 

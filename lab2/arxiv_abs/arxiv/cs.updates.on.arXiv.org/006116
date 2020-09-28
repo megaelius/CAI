@@ -1,0 +1,19 @@
+Despite the importance of sparse matrices in numerous fields of science, software implementations
+remain difficult to use for non-expert users, generally requiring the understanding of underlying
+details of the chosen sparse matrix storage format. In addition, to achieve good performance, several
+formats may need to be used in one program, requiring explicit selection and conversion between
+the formats. This can be both tedious and error-prone, especially for non-expert users. Motivated
+by these issues, we present a user-friendly sparse matrix class for the C++ language, with a high-level
+application programming interface deliberately similar to the widely used MATLAB language. The
+class internally uses two main approaches to achieve efficient execution: (i) a hybrid storage
+framework, which automatically and seamlessly switches between three underlying storage formats
+(compressed sparse column, Red-Black tree, coordinate list) depending on which format is best
+suited and/or available for specific operations, and (ii) template-based meta-programming to
+automatically detect and optimise execution of common expression patterns. To facilitate relatively
+quick conversion of research code into production environments, the class and its associated functions
+provide a suite of essential sparse linear algebra functionality (eg., arithmetic operations,
+submatrix manipulation) as well as high-level functions for sparse eigendecompositions and linear
+equation solvers. The latter are achieved by providing easy-to-use abstractions of the low-level
+ARPACK and SuperLU libraries. The source code is open and provided under the permissive Apache 2.0
+license, allowing unencumbered use in both open-source projects and closed-source commercial
+products. 

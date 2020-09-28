@@ -1,0 +1,19 @@
+When an online learning algorithm is used to estimate the unknown parameters of a model, the signals
+interacting with the parameter estimates should not decay too quickly for the optimal values to
+be discovered correctly. This requirement is referred to as persistency of excitation, and it arises
+in various contexts, such as optimization with stochastic gradient methods, exploration for multi-armed
+bandits, and adaptive control of dynamical systems. While training a neural network, the iterative
+optimization algorithm involved also creates an online learning problem, and consequently, correct
+estimation of the optimal parameters requires persistent excitation of the network weights. In
+this work, we analyze the dynamics of the gradient descent algorithm while training a two-layer
+neural network with two different loss functions, the squared-error loss and the cross-entropy
+loss; and we obtain conditions to guarantee persistent excitation of the network weights. We then
+show that these conditions are difficult to satisfy when a multi-layer network is trained for a classification
+task, for the signals in the intermediate layers of the network become low-dimensional during training
+and fail to remain persistently exciting. To provide a remedy, we delve into the classical regularization
+terms used for linear models, reinterpret them as a means to ensure persistent excitation of the
+model parameters, and propose an algorithm for neural networks by building an analogy. The results
+in this work shed some light on why adversarial examples have become a challenging problem for neural
+networks, why merely augmenting training data sets will not be an effective approach to address
+them, and why there may not exist a data-independent regularization term for neural networks, which
+involve only the model parameters but not the training data. 

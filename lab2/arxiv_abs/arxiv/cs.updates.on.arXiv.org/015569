@@ -1,0 +1,18 @@
+As one of the representative blockchain platforms, Ethereum has attracted lots of attacks. Due
+to the potential financial loss, there is a pressing need to detect malicious smart contracts and
+understand their behaviors. Though there exist multiple systems for smart contract analysis,
+they cannot efficiently analyze a large number of transactions and re-execute smart contracts
+to introspect malicious behaviors. In this paper, we urge for a transaction-centric security analytics
+framework for Ethereum, which provides an efficient way to quickly locate suspicious ones from
+a large number of transactions and extensible way to detect malicious smart contracts with analyst-provided
+scripts. We present the system design in the paper, which solves three technical challenges, i.e.,
+incomplete states, scalability and extensibility. We have implemented a prototype system named
+EthScope to solve these challenges. In particular, the first component Data Aggregator collects
+and recovers critical blockchain states. The second component Replay Engine is able to {replay}
+arbitrary and a large number of transactions. The third component Instrumentation Framework exposes
+interfaces for an analyst to dynamically instrument smart contracts and introspect the execution
+of suspicious transactions. The comprehensive evaluation with six types of attacks demonstrated
+the effectiveness of our system. The performance evaluation shows that our system can perform a
+large-scale analysis on suspicious transactions (more than 8 million ones) and has a speed up of
+around 2,300x compared with the JSTracer provided by Go-Ethereum. To engage the community, we will
+release our system and a dataset of detected attacks on https://github.com/zjuicsr/ethscope.

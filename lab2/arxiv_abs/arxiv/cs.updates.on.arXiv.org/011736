@@ -1,0 +1,20 @@
+Risk-limiting audits (RLAs) for many social choice functions can be reduced to testing sets of null
+hypotheses of the form "the average of this list is not greater than 1/2" for a collection of finite
+lists of nonnegative numbers. Such social choice functions include majority, super-majority,
+plurality, multi-winner plurality, Instant Runoff Voting (IRV), Borda count, approval voting,
+and STAR-Voting, among others. The audit stops without a full hand count iff all the null hypotheses
+are rejected. The nulls can be tested in many ways. Ballot-polling is particularly simple; two new
+ballot-polling risk-measuring functions for sampling without replacement are given. Ballot-level
+comparison audits transform each null into an equivalent assertion that the mean of re-scaled tabulation
+errors is not greater than 1/2. In turn, that null can then be tested using the same statistical methods
+used for ballot polling---but applied to different finite lists of nonnegative numbers. SHANGRLA
+comparison audits are more efficient than previous comparison audits for two reasons: (i) for most
+social choice functions, the conditions tested are both necessary and sufficient for the reported
+outcome to be correct, while previous methods tested conditions that were sufficient but not necessary,
+and (ii) the tests avoid a conservative approximation. The SHANGRLA abstraction simplifies stratified
+audits, including audits that combine ballot polling with ballot-level comparisons, producing
+sharper audits than the "SUITE" approach. SHANGRLA works with the "phantoms to evil zombies" strategy
+to treat missing ballot cards and missing or redacted cast vote records. That also facilitates sampling
+from "ballot-style manifests," which can dramatically improve efficiency when the audited contests
+do not appear on every ballot card. Open-source software implementing SHANGRLA ballot-level comparison
+audits is available. 

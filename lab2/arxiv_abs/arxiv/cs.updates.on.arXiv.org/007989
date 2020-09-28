@@ -1,0 +1,18 @@
+Speech sounds are produced as the coordinated movement of the speaking organs. There are several
+available methods to model the relation of articulatory movements and the resulting speech signal.
+The reverse problem is often called as acoustic-to-articulatory inversion (AAI). In this paper
+we have implemented several different Deep Neural Networks (DNNs) to estimate the articulatory
+information from the acoustic signal. There are several previous works related to performing this
+task, but most of them are using ElectroMagnetic Articulography (EMA) for tracking the articulatory
+movement. Compared to EMA, Ultrasound Tongue Imaging (UTI) is a technique of higher cost-benefit
+if we take into account equipment cost, portability, safety and visualized structures. Seeing
+that, our goal is to train a DNN to obtain UT images, when using speech as input. We also test two approaches
+to represent the articulatory information: 1) the EigenTongue space and 2) the raw ultrasound image.
+As an objective quality measure for the reconstructed UT images, we use MSE, Structural Similarity
+Index (SSIM) and Complex-Wavelet SSIM (CW-SSIM). Our experimental results show that CW-SSIM is
+the most useful error measure in the UTI context. We tested three different system configurations:
+a) simple DNN composed of 2 hidden layers with 64x64 pixels of an UTI file as target; b) the same simple
+DNN but with ultrasound images projected to the EigenTongue space as the target; c) and a more complex
+DNN composed of 5 hidden layers with UTI files projected to the EigenTongue space. In a subjective
+experiment the subjects found that the neural networks with two hidden layers were more suitable
+for this inversion task. 

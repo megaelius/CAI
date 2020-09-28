@@ -1,0 +1,17 @@
+Accurate segmentation of the prostate is a key step in external beam radiation therapy treatments.
+In this paper, we tackle the challenging task of prostate segmentation in CT images by a two-stage
+network with 1) the first stage to fast localize, and 2) the second stage to accurately segment the
+prostate. To precisely segment the prostate in the second stage, we formulate prostate segmentation
+into a multi-task learning framework, which includes a main task to segment the prostate, and an
+auxiliary task to delineate the prostate boundary. Here, the second task is applied to provide additional
+guidance of unclear prostate boundary in CT images. Besides, the conventional multi-task deep
+networks typically share most of the parameters (i.e., feature representations) across all tasks,
+which may limit their data fitting ability, as the specificities of different tasks are inevitably
+ignored. By contrast, we solve them by a hierarchically-fused U-Net structure, namely HF-UNet.
+The HF-UNet has two complementary branches for two tasks, with the novel proposed attention-based
+task consistency learning block to communicate at each level between the two decoding branches.
+Therefore, HF-UNet endows the ability to learn hierarchically the shared representations for
+different tasks, and preserve the specificities of learned representations for different tasks
+simultaneously. We did extensive evaluations of the proposed method on a large planning CT image
+dataset, including images acquired from 339 patients. The experimental results show HF-UNet outperforms
+the conventional multi-task network architectures and the state-of-the-art methods. 

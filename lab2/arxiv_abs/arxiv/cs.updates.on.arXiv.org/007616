@@ -1,0 +1,20 @@
+We multiply two $n \times n$ matrices $S,T$ over semirings in the Congested Clique model, where $n$
+fully connected nodes communicate synchronously using $O(\log n)$-bit messages, within $O(nz(S)^{1/3}
+nz(T)^{1/3}/n + 1)$ rounds of communication, where $nz(A)$ denotes the number of non-zero elements
+in a matrix $A$. By leveraging the sparsity of the input matrices, our algorithm greatly reduces
+communication compared with general algorithms [Censor-Hillel et al., PODC 2015], improving
+upon the state-of-the-art for matrices with $o(n^2)$ non-zero elements. Our algorithm exhibits
+the additional strength of surpassing previous solutions also when only one matrix is sparse. This
+allows efficiently raising a sparse matrix to a power greater than 2. As applications, we speed up
+4-cycle counting and APSP in sparse graphs. Our algorithmic contribution is a new \emph{deterministic}
+method of restructuring the input matrices in a sparsity-aware manner, which assigns each node
+with element-wise multiplication tasks that are not necessarily consecutive but are balanced,
+yielding communication-efficient multiplication. Moreover, this new deterministic method
+for restructuring matrices may be used to restructure the adjacency matrix of input graphs, enabling
+faster solutions for graph related problems. As an example, we present a new deterministic algorithm
+which solves the triangle listing problem in $O(m/n^{5/3} + 1)$ rounds, a complexity that was previously
+obtained by a \emph{randomized} algorithm [Pandurangan et al., SPAA 2018] and matches the lower
+bound of $\tilde{\Omega}(n^{1/3})$ when $m=n^2$ of [Izumi and Le Gall, PODC 2017, Pandurangan
+et al., SPAA 2018]. Our triangle listing algorithm implies triangle counting with the same complexity
+of $O(m/n^{5/3} + 1)$ rounds, which is a \emph{cubic} improvement over the previous $O(m^2/n^3)$-round
+algorithm [Dolev et al., DISC 2012]. 

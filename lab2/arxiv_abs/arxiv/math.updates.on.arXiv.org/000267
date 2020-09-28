@@ -1,0 +1,19 @@
+Let G=(V,E) be an undirected graph, and let \rho(k)=\min_{disjoint A_1,..., A_k} \max_{1\leq
+i\leq k} \phi(A_i) be the order k conductance constant of G, in words, \rho(k) is the smallest value
+of the maximum conductance of any k disjoint subsets of V. We show that if \rho(k)<(1+\eps)\rho(k+1),
+then V can be partitioned into k sets P_1,...,P_k such that each P_i is a low-conductance set in G and
+induces a high conductance induced subgraph. In particular, for each 1 <= i <= k, \phi(G[P_i])=O(\eps\cdot
+\rho(k+1)/k) and \phi(P_i)>=\Omega(k \rho(k)). This significantly improves a recent result
+of Tanaka [Tan12] who assumed an exponential (in k) gap between \rho(k) and \rho(k+1). Let \lambda_k
+be the k-th smallest eigenvalue of the normalized laplacian matrix of G. There is a basic fact in algebraic
+graph theory that \lambda_k > 0 if and only if G has at most k-1 connected components. We use the
+above result to provide a robust version of this fact. If \lambda_k>0, then for some 1\leq j\leq
+k-1, V can be partitioned into j sets P_1,...,P_j such that for each 1\leq i\leq j, \phi(G[P_i])>=
+\Omega(\lambda_k/k^2). Additionally, building on the recent result of Lee et al. [LOT12], our
+main result implies that if \lambda_{k+1}>c\cdot k^2\sqrt{\lambda_k} for a universal constant
+c>0, then V can be partitioned into P_1,...,P_k such that \phi(G[P_i])>=\Omega(\lambda_{k+1}/k),
+and \phi(P_i)=O(k^3\sqrt{\lambda_k}). We make our results algorithmic by designing a simple
+polynomial time spectral algorithm to find such partitionings of G with some loss in the inside conductance
+of P_i's. Our algorithm is a simple local search that only uses the Spectral Partitioning algorithm
+as a subroutine. Our algorithm can be used as a pruning step at the end of any graph partitioning algorithm.
+We expect to see further applications of this simple algorithm in clustering applications. 

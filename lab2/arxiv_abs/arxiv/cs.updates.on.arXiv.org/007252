@@ -1,0 +1,18 @@
+We study scheduling of computation tasks across $n$ workers in a large scale distributed learning
+problem with the help of a master node. Computation and communication delays are assumed to be random,
+and redundant computations are assigned to workers in order to tolerate straggling workers. We
+consider sequential computation of tasks assigned to a worker, while the result of each computation
+task is sent to the master right after its completion. Each computation round, which can model a single
+iteration of the stochastic gradient descent (SGD) algorithm, is completed once the master receives
+$k$ distinct computations from the workers, which is referred to as the computation target. Our
+goal is to characterize the average completion time as a function of the computation load, which
+denotes the portion of the dataset available at each worker, and the computation target. We propose
+two computation scheduling schemes that specify the computation tasks assigned to each worker,
+as well as their computation schedule, i.e., the order of execution. Assuming a general statistical
+model for computation and communication delays, we derive the average completion time of the proposed
+schemes as a function of the statistical model. We also establish a lower bound on the minimum average
+completion time by assuming prior knowledge of the random computation and communication delays.
+Experimental results carried out on Amazon EC2 cluster show a significant reduction in the average
+completion time over existing coded and uncoded computing schemes. Furthermore, it is shown numerically
+that the gap between the proposed scheme and the lower bound is relatively small, which confirms
+the efficiency of the proposed computation scheduling design. 

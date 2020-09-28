@@ -1,0 +1,18 @@
+The nonlinear and ill-posed nature of full waveform inversion (FWI) requires us to use sophisticated
+regularization techniques to solve it. In most applications, the model parameters may be described
+by physical properties (e.g., wave speeds, density, attenuation, anisotropic parameters) which
+are piecewise functions of space. Compound regularizations are thus necessary to reconstruct
+properly such parameters by FWI. We consider different implementations of compound regularizations
+in the wavefield reconstruction inversion (WRI) method, a formulation of FWI that extends its search
+space and prevent the so-called cycle skipping pathology. Our hybrid regularizations rely on Tikhonov
+and total variation (TV) functionals, from which we build two classes of hybrid regularizers: the
+first class is simply obtained by a convex combination (CC) of the two functionals, while the second
+relies on their infimal convolution (IC). In the former class, the model of parameters is required
+to simultaneously satisfy different priors, while in the latter the model is broken into its basic
+components, each satisfying a distinct prior (e.g. smooth, piecewise constant, piecewise linear).
+We implement these types of compound regularizations in the WRI optimization problem using the
+alternating direction method of multipliers (ADMM). Then, we assess our regularized WRI in the
+framework of seismic imaging applications. Using a wide range of subsurface models, we conclude
+that compound regularizer based on IC leads to the lowest error in the parameter reconstruction
+compared to that obtained with the CC counterpart and the Tikhonov and TV regularizers when used
+independently. 

@@ -1,0 +1,4 @@
+Hi Folks,
+Does anybody know where I can find the "Color" bitmap editor
+around the public sites? Any information I do appreciate that.
+C.Chang

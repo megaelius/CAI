@@ -1,0 +1,18 @@
+In this paper, a Convolutional Neural Network (CNN) system is proposed for brain tumor segmentation.
+The system consists of three parts, a pre-processing block to reduce the data volume, an application-specific
+CNN(ASCNN) to segment tumor areas precisely, and a refinement block to detect/remove false positive
+pixels. The CNN, designed specifically for the task, has 7 convolution layers, 16 channels per layer,
+requiring only 11716 parameters. The convolutions combined with max-pooling in the first half
+of the CNN are performed to localize tumor areas. Two convolution modes, namely depthwise convolution
+and standard convolution, are performed in parallel in the first 2 layers to extract elementary
+features efficiently. For a fine classification of pixel-wise precision in the second half of the
+CNN, the feature maps are modulated by adding the individually weighted local feature maps generated
+in the first half of the CNN. The performance of the proposed system has been evaluated by an online
+platform with dataset of Multimodal Brain Tumor Image Segmentation Benchmark (BRATS) 2018. Requiring
+a very low computation volume, the proposed system delivers a high segmentation quality indicated
+by its average Dice scores of 0.75, 0.88 and 0.76 for enhancing tumor, whole tumor and tumor core,
+respectively, and also by the median Dice scores of 0.85, 0.92, and 0.86. The consistency in system
+performance has also been measured, demonstrating that the system is able to reproduce almost the
+same output to the same input after retraining. The simple structure of the proposed system facilitates
+its implementation in computation restricted environment, and a wide range of applications can
+thus be expected. 

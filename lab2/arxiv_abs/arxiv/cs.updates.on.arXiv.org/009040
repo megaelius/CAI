@@ -1,0 +1,18 @@
+To solve tasks with sparse rewards, reinforcement learning algorithms must be equipped with suitable
+exploration techniques. However, it is unclear what underlying objective is being optimized by
+existing exploration algorithms, or how they can be altered to incorporate prior knowledge about
+the task. Most importantly, it is difficult to use exploration experience from one task to acquire
+exploration strategies for another task. We address these shortcomings by learning a single exploration
+policy that can quickly solve a suite of downstream tasks in a multi-task setting, amortizing the
+cost of learning to explore. We recast exploration as a problem of State Marginal Matching (SMM):
+we learn a mixture of policies for which the state marginal distribution matches a given target state
+distribution, which can incorporate prior knowledge about the task. Without any prior knowledge,
+the SMM objective reduces to maximizing the marginal state entropy. We optimize the objective by
+reducing it to a two-player, zero-sum game, where we iteratively fit a state density model and then
+update the policy to visit states with low density under this model. While many previous algorithms
+for exploration employ a similar procedure, they omit a crucial historical averaging step, without
+which the iterative procedure does not converge to a Nash equilibria. To parallelize exploration,
+we extend our algorithm to use mixtures of policies, wherein we discover connections between SMM
+and previously-proposed skill learning methods based on mutual information. On complex navigation
+and manipulation tasks, we demonstrate that our algorithm explores faster and adapts more quickly
+to new tasks. 

@@ -1,0 +1,19 @@
+Due to the wide separation of time scales in geophysical fluid dynamics, semi-implicit time integrators
+are commonly used in operational atmospheric forecast models. They guarantee the stable treatment
+of fast (acoustic and gravity) waves, while not suffering from severe restrictions on the timestep
+size. To propagate the state of the atmosphere forward in time, a non-linear equation for the prognostic
+variables has to be solved at every timestep. Since the nonlinearity is typically weak, this is done
+with a small number of Newton- or Picard- iterations, which in turn require the efficient solution
+of a large system on linear equations with $\mathcal{O}(10^6-10^9)$ unknowns. This linear solve
+is often the computationally most costly part of the model. While the solution of the linear system
+is relatively straightforward for simple finite-difference- and finite-volume- discretisations,
+it is much more challenging for advanced finite element discretisations, which have recently been
+explored in atmospheric modelling. In this paper an efficient linear solver for the LFRic next-generation
+model, currently developed by the Met Office, is described. The model uses an advanced mimetic finite
+element discretisation which makes the construction of efficient solvers challenging. The linear
+solver hinges on a bespoke multigrid preconditioner of the Schur-complement system for the pressure
+correction. By comparing to Krylov-subspace methods, the superior performance and robustness
+of the multigrid algorithm is demonstrated for standard test cases and realistic model setups.
+In production mode, the model will have to run in parallel on 100,000s of processing elements. As
+confirmed by numerical experiments, one particular advantage of the multigrid solver is its excellent
+parallel scalability due to avoiding expensive global reduction operations. 

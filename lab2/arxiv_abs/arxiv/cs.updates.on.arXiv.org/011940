@@ -1,0 +1,18 @@
+The latest methods based on deep learning have achieved amazing results regarding the complex work
+of inpainting large missing areas in an image. This type of method generally attempts to generate
+one single "optimal" inpainting result, ignoring many other plausible results. However, considering
+the uncertainty of the inpainting task, one sole result can hardly be regarded as a desired regeneration
+of the missing area. In view of this weakness, which is related to the design of the previous algorithms,
+we propose a novel deep generative model equipped with a brand new style extractor which can extract
+the style noise (a latent vector) from the ground truth image. Once obtained, the extracted style
+noise and the ground truth image are both input into the generator. We also craft a consistency loss
+that guides the generated image to approximate the ground truth. Meanwhile, the same extractor
+captures the style noise from the generated image, which is forced to approach the input noise according
+to the consistency loss. After iterations, our generator is able to learn the styles corresponding
+to multiple sets of noise. The proposed model can generate a (sufficiently large) number of inpainting
+results consistent with the context semantics of the image. Moreover, we check the effectiveness
+of our model on three databases, i.e., CelebA, Agricultural Disease, and MauFlex. Compared to state-of-the-art
+inpainting methods, this model is able to offer desirable inpainting results with both a better
+quality and higher diversity, for example, on the human face, we can even output the different gaze
+angles of the eyes and whether they have glasses, etc. The code and model will be made available on
+https://github.com/vivitsai/SEGAN. 

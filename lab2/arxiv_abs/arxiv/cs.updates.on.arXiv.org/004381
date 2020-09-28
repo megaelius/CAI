@@ -1,0 +1,20 @@
+Recently, correlation filter based trackers (CF trackers) have attracted much attention in vision
+community because of their top performance in both location and speed. However, the boundary effect
+imposed by the periodic assumption for the efficient optimization seriously limits their location
+accuracy. Although there existed many modern works to relax the boundary effect of CF trackers,
+they all are not able to eliminate the boundary effect thoroughly as well as exploit the kernel trick
+to improve their location accuracy, and their speeds are reduced greatly. Either relaxing the boundary
+effect or being able to exploit kernel trick to improve the accuracy, and either relaxing the boundary
+effect or keeping CF trackers running at high speed have been two dilemmas in the society of visual
+tracking. To solve these problems, in this paper, we propose a high speed kernel correlation filter
+without the boundary effect (nBEKCF). Unlike all current CF trackers which exploited real and virtual
+image patches to train their regression functions, we construct a set of non-orthogonal bases with
+a group of circulant basic samples and utilize a function defined in Hilbert space and a set of densely
+sampled, totally real patches to regress a Gaussian goal. This way, the boundary effect is eliminated
+thoroughly in theory and the kernel trick can be employed naturally. To ensure nBEKCF runs at high
+speed, we present two efficient algorithms, ACSII and CCIM, to significantly accelerate the evaluation
+of kernel matrix without employing FFT. By exploiting the circulant structure of basic samples,
+the efficiency of CCIM in evaluating correlation exceeds that of FFT remarkably. Preliminary experimental
+results on two public datasets, OTB2013 and OTB2015, show that, without bells and whistles, nBEKCF
+outperforms representative trackers with hand-crafted features, in the meanwhile, runs at 70
+fps on average. 

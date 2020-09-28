@@ -1,0 +1,19 @@
+Despite the improved accuracy of deep neural networks, the discovery of adversarial examples has
+raised serious safety concerns. Most existing approaches for crafting adversarial examples necessitate
+some knowledge (architecture, parameters, etc.) of the network at hand. In this paper, we focus
+on image classifiers and propose a feature-guided black-box approach to test the safety of deep
+neural networks that requires no such knowledge. Our algorithm employs object detection techniques
+such as SIFT (Scale Invariant Feature Transform) to extract features from an image. These features
+are converted into a mutable saliency distribution, where high probability is assigned to pixels
+that affect the composition of the image with respect to the human visual system. We formulate the
+crafting of adversarial examples as a two-player turn-based stochastic game, where the first player's
+objective is to minimise the distance to an adversarial example by manipulating the features, and
+the second player can be cooperative, adversarial, or random. We show that, theoretically, the
+two-player game can con- verge to the optimal strategy, and that the optimal strategy represents
+a globally minimal adversarial image. For Lipschitz networks, we also identify conditions that
+provide safety guarantees that no adversarial examples exist. Using Monte Carlo tree search we
+gradually explore the game state space to search for adversarial examples. Our experiments show
+that, despite the black-box setting, manipulations guided by a perception-based saliency distribution
+are competitive with state-of-the-art methods that rely on white-box saliency matrices or sophisticated
+optimization procedures. Finally, we show how our method can be used to evaluate robustness of neural
+networks in safety-critical applications such as traffic sign recognition in self-driving cars.

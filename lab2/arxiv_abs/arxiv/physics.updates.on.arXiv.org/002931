@@ -1,0 +1,18 @@
+Understanding how stochastic gene expression is regulated in biological systems using snapshots
+of single-cell transcripts requires state-of-the-art methods of computational analysis and
+statistical inference. A Bayesian approach to statistical inference is the most complete method
+for model selection and uncertainty quantification of kinetic parameters from single-cell data.
+This approach is impractical because current numerical algorithms are too slow to handle typical
+models of gene expression. To solve this problem, we first show that time-dependent mRNA distributions
+of discrete-state models of gene expression are dynamic Poisson mixtures, whose mixing kernels
+are characterized by a piece-wise deterministic Markov process. We combined this analytical result
+with a kinetic Monte Carlo algorithm to create a hybrid numerical method that accelerates the calculation
+of time-dependent mRNA distributions by 1000-fold compared to current methods. We then integrated
+the hybrid algorithm into an existing Monte Carlo sampler to estimate the Bayesian posterior distribution
+of many different, competing models in a reasonable amount of time. We validated our method of accelerated
+Bayesian inference on several synthetic data sets. Our results show that kinetic parameters can
+be reasonably constrained for modestly sampled data sets, if the model is known \textit{a priori}.
+If the model is unknown,the Bayesian evidence can be used to rigorously quantify the likelihood
+of a model relative to other models from the data. We demonstrate that Bayesian evidence selects
+the true model and outperforms approximate metrics, e.g., Bayesian Information Criterion (BIC)
+or Akaike Information Criterion (AIC), often used for model selection. 
