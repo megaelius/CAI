@@ -1,0 +1,8 @@
+Subject says it all...
+Anyone know where I can find one.  Binaries are nice, but source would
+do to.  
+Thanks in advance,
+Rob Banz (banz@umbc.edu)
+	"If we give people an alternative to Microsoft...it will have been
+	 a greater good."	         -Steve Jobs (UnixWorld, April 1993)
+	"Yes, Bill, we are your father!" -IBM OS/2 Presentation, FOSE'93

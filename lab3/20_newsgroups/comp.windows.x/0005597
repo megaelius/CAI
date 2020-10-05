@@ -1,0 +1,9 @@
+Hi out there!
+I'm looking for (mechanic-construction)CAD-software either PD-sources
+or Sun 3-binaries (respective the licence.. :-).
+Who knows _ANY_ package (and a source/site to get it..) ?
+Thx, Fabian
+Fabian Hoppe				Phone  : ++49 2332 12580
+Elsternstr. 57				Fax    : ++49 2332 83741
+W-5820 Gevelsberg			EMail  : fabian@vivian.w.open.de
+Germany

@@ -1,0 +1,9 @@
+Hi Netters,
+	Having inherited a Solbourne (S-4000 : Sun 4 Compatible), I was wondering
+if somebody has ported X11R5 to this beast. Since Solbournce Computer Inc. folded
+up I don't know where I can get the kernel to move from R4. Since they never
+joined the MIT Consortium, the regular distribution doesn't work. Any pointers
+will be highly appreciated.
+Julian
+  __/_    // o __  __ 
+ (_/ (_(_(/_(_(_<_/ <         			Julian.Anigbogu@loria.loria.fr

@@ -1,0 +1,4 @@
+Does anyone know of any free X-servers for PCs, preferably that run under
+MS Windows? THANKS.
+Peter Buttuls, University of Alberta, Edmonton, Canada 
+e-mail:(userpib@mts.ucs.ualberta.ca) 

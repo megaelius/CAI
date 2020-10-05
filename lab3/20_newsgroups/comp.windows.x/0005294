@@ -1,0 +1,11 @@
+Hi
+Can someone please give me some pointers to setting up imake in a SUN OPENWINDOWS
+enviornment ? I've checked through all the documentation but can not find any clues.
+Please respons via e-mail.....
+Thanks
+Paul
+Paul Byrne				British Aerospace Defence Ltd
+					Dynamics Division
+email Paul.Byrne@def.bae.co.uk		FPC 450
+					P.O.Box 5, Filton
+Phone 0272 316086			Bristol, BS12 7QW

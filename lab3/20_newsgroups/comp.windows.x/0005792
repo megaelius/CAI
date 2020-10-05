@@ -1,0 +1,8 @@
+Hi, friends,
+Our SPARC workstation is now equippied with a GT-accelerator. we want to use
+it to display stereo images. The accelerator has double buffers. How can we
+access the buffers and switch between them ? With which functions can we do 
+that ? with functions from XGL, Phigs, Xlib or Xlib-extension ?
+Your help will be highly appreciated.
+Yonglong Xu
+Uni. of Hannover

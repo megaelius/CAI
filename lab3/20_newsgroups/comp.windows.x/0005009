@@ -1,0 +1,6 @@
+I'm considering writing my own widgets, but I like to have some sample
+widget source code to look over first.  Where could I find something
+like this?  Are there any archives accessible by anonymous ftp that contain 
+such information?
+							Thanks,
+							Edward

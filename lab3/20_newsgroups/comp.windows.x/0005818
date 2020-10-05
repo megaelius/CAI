@@ -1,0 +1,4 @@
+Anyone able to get xwd to dump anything that is not black & white?
+My text is not black....all I get is window borders.  I tried the -xy
+option only because I didn't know what it did.....still no effect.
+Any help on this matter would be greatly appreciated.

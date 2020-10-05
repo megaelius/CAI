@@ -1,0 +1,7 @@
+John Chambers (jc@minya.UUCP) wrote:
+: It seems silly, but while I've located things like tgif that can  edit
+: gif  files, and various tools to convert to/from gif format, I haven't
+: been able to locate a program that just opens a window and displays  a
+: gif file in it.  I've looked thru various faq files, also to no avail.
+: Is there one lurking about in some  archive?   Nothing  sophisticated;
+: just "show the pretty picture"?

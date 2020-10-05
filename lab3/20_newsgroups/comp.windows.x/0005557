@@ -1,0 +1,9 @@
+I am on the list under two addresses, I think:
+	tom@capmgtsci.com
+and
+	zuma!tom@netcomsv.netcom.com
+Please delete the second one, 
+	zuma!tom@netcomsv.netcom.com
+Thanks. Sorry for the screw up.
+Tom Tulinsky		Capital Management Sciences	    West Los Angeles
+tom@CapMgtSci.com	        310 479 9715

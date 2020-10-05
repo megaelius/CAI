@@ -1,0 +1,8 @@
+I need help positioning the slider of a List widget's horizontal scrollbar.  I am displaying the full
+path of a selected file in a list widget.  The horizontal's slider defaults to the left side of the
+list widget; however, I need the slider on the right side.  This is so the user can SEE the file name
+they selected.  I know it's possible, because when files are displayed in a file selection dialog box,
+the slider is on the right side.
+Thanking any and all who can help in advance,
+Rodney F. Clay
+clay@cs.scarolina.edu

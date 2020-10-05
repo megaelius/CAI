@@ -1,0 +1,8 @@
+Where can I get documentation about the X-Server-Internals?
+BTW, I'm also interested in documentation about TIGA.
+Any hints welcome.
+Thanks, rainer.
+Rainer Hochreiter                | Telephone: +43 (1) 89100 / 3961
+ELIN-Energieanwendung GesmbH     | Telefax  : +43 (1) 89100 / 3387
+Penzingerstr. 76                 |
+A-1141 Wien, Austria/Europe      | E-mail   : rainer@elin.co.at

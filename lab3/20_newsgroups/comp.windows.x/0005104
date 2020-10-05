@@ -1,0 +1,6 @@
+Hi,
+I wonder if it is possible for a parent window to paint over the area of
+its childs. If it is not, then how could it be possible to implement a 
+rubberband across multiple xwindows to select the objects that are
+displayed one in each window?
+Hauke

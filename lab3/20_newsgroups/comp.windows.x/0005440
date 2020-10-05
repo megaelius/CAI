@@ -1,0 +1,6 @@
+I recently read here that Sun has a patch for xdm on
+Solaris2.1.  I was wondering if anyone could give me the 
+patch number. 
+Thanks in advance,
+Tracy Tolley
+University of Central Florida - Technical Support

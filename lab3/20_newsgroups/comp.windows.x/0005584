@@ -1,0 +1,12 @@
+>	I am looking for information on any work that deals with real-time
+>	support in X-windows????!!
+>	Would be happy if you could provide any pointers or information
+Concurrent has a product called RealTimeX (tm) that is a set of real-time
+extensions to the X Window System.  RealTimeX is currently supported on
+the Concurrent Series 7000 and Series 8000 with the GA5000 graphics
+accelerator.  If you need/want more info, let me know.
+		- sam black
+Once you remove the absurdity from human existence, there isn't much left.
+		   /__/______/  /	black@westford.ccur.com
+	  Concurrent /_________/
+	Computer Corporation

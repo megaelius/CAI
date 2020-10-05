@@ -1,0 +1,10 @@
+Another company, Congruent Corporation of New York City, has also ported Xlib
+Xt and Motif 1.1 over to MS Windows NT, which provides full client development
+for X applications in an NT environment.
+If you are porting InterViews over to MS Windows, I thought InterViews was
+a C++ toolkit with C++ classes. If that is so, how can it be built on Xlib,
+unless the classes are calling Xlib functions?
+Steve
+      Steven Mikes - Editor - The X Journal
+        1097 Eastbrook Rd., Martinsville, NJ 08836
+          "Serving The X Window System Community"

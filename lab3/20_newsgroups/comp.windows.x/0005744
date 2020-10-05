@@ -1,0 +1,6 @@
+Is it possible to get an xterm scrollbar to come out on the right
+side instead of the left?
+Ron Shenk
+Georgia Institute of Technology, Atlanta Georgia, 30332
+uucp: ...!{allegra,amd,hplabs,seismo,ut-ngp}!gatech!prism!ma201rs
+ARPA: ma201rs@prism.gatech.edu

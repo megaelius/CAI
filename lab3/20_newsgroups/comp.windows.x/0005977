@@ -1,0 +1,9 @@
+Hi,
+   Could someone explain to me what exactly the Xlib functions 
+XCreateRegion, XPolygonRegion, XPointInRegion do, or to 
+suggest a ftp site where I can find programs using these functions.
+PS: The man pages does not explain much ......
+Thank you,
+Leo.
+Leonidas Nikidis : ln@doc.ic.ac.uk	Imperial College, London,UK
+					Dept. of Computing

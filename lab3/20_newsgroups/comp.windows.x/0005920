@@ -1,0 +1,7 @@
+I am tunning into this newgroup after a long time. Could somebody tell me 
+what the slave mode in the xterm is? and what can it be used for? Any info
+where I can get more info or examples. I want to use a bunch of xterms and 
+send the input from one application to these xterms and get the output on the
+xterms. Please email me any info. 
+Thanks,
+Lourdu

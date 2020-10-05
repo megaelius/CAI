@@ -1,0 +1,6 @@
+Yesterday I changed the US-Keyboard of my Sparc10 with a german keyboard.
+And now I cannot get any "Alt Graph" characters ('tilde' usw.).
+When I exit from X I can get the characters, but not under X.
+Can anybody give me some hints, where to check for the correct installation
+of the keyboard.
+Martin Kreutzer

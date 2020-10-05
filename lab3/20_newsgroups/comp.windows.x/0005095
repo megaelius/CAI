@@ -1,0 +1,29 @@
+A new version of TkMan, a hypertext manual page browser,
+is now available for anonymous ftp at harbor.ecn.purdue.edu.
+If you can't wait until it's moved into a permanent place,
+you may obtain it now by
+cd /incoming
+binary
+get tkman-1.3.1.tar.Z
+In a few days it will be moved to /pub/tcl/code.
+It requires Tcl 6.7 and Tk 3.2, which are also available on harbor.
+Among the new features are:
+* tables and equations (tbl and eqn) supported
+* selectively search directories
+* searches may be case insensitive
+* Ultrix man pages supported (if yours--for whatever machine--
+  doesn't format properly now, please send me uuencoded version
+  of both the man/man/ and man/cat/ versions)
+For those over 21 and with a strong stomach, the following is a line taken
+from an Ultrix man page ("<TAB>" means the tab character):
+     -t<TAB>  Sorts<TAB>by time<TAB>modified (most recently<TAB>modified first)<TAB>instead<TAB>of by
+SGI users should still use Paul Raines patched v1.3.
+You can get the modified distribution by anonymous ftp from
+bohr.physics.upenn.edu (130.91.48.159) in ftp:/pub/tkman_SGI.tar.Z
+Everyone else should be able to use TkMan 1.3.1 successfully on their
+machines without modifying anything outside of the Makefile.
+WARNING:  If you are upgrading from a pre-1.3 to 1.3 or later and you
+have a ~/.tkman file, you should delete the "set man(print)..."
+line before running TkMan 1.3.
+-Tom
+phelps@cs.Berkeley.EDU

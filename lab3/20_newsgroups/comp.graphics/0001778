@@ -1,0 +1,12 @@
+Usually, you apply
+after unlevelshifting U and V (subtracting 128 from them).
+This matrix multiplication may give results out of RGB space, so you
+have to clamp the resulting bytes to [0..255].
+The conversion should be done with arbitrary big integers, not floats :)
+This applies to YUV data whereas NTSC may have YIQ where a 33 degree
+rotation to U/V is buid in.
++-o-+--------------------------------------------------------------+-o-+
+| o |                \\\-  Brain Inside -///                       | o |
+| o |                    ^^^^^^^^^^^^^^^                           | o |
+| o | Andre' Beck (ABPSoft) mehl: Andre_Beck@IRS.Inf.TU-Dresden.de | o |
++-o-+--------------------------------------------------------------+-o-+

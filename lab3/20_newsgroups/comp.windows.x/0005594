@@ -1,0 +1,10 @@
+Hey GUI folks,
+Does anyone out there have experience with the HP Interface Architect
+(GUI dev tool)?  If so, can I call you and ask a couple of quick
+questions?  I promise I'll be brief, the questions are simple, and of
+course I'll call on my nickel.
+Jeff Copeland
+jeffcop@i88.isc.com
+INTERACTIVE Systems Corp. (now a Systemhouse co.)
+Jeff Copeland
+jeffcop@i88.isc.com          708-505-9100   x330

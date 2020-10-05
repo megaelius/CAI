@@ -1,0 +1,4 @@
+I remember seeing something in the X distribution mentioning support
+for a Tektronix terminal in an X server.  Is this accurate? 
+mike@hopper.acs.virginia.edu 
+"I will NOT raise taxes on the middle class." -Unknown

@@ -1,0 +1,6 @@
+Is there a portable and convenient way to use color picture files in
+the .xpm format to define an X pixmap in a Motif application? Any
+functions, pointers, tips etc. would be most welcome.
+Saad Mufti
+Personal Library Software
+e-mail: mufti@pls.com

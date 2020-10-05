@@ -1,0 +1,7 @@
+Does anyone have any experience using XRunner, CAPBAK/X, or PreVueX
+as an automated test tool for X?  Please email me directly with
+opinions (both positive and negative).
+Ann Freeman
+Siemens Industrial Automation, Inc.
+Johnson City, TN
+aff209%tijc02@uunet.uu.net

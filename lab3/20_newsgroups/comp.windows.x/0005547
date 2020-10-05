@@ -1,0 +1,5 @@
+This may be an FAQ, but I dont know where to get the FAQ list!
+My OpenLook application has a few buttons. The first button turns
+red(gets highlighted?) as soon as the sprite(mouse) is moved into the
+application window. How do I suppress this?
+Vidyaranya

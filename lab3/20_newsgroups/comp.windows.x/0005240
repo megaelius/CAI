@@ -1,0 +1,7 @@
+Is there an Xt call to give me my application context?
+I am fixing up an X/Motif program, and am trying to use XtAppAddTimeOut,
+whose first argument is the app_context.  What call can I use
+to give me this value?
+Thanks,
+    Todd Greene
+    masc0442@ucssun1.sdsu.edu

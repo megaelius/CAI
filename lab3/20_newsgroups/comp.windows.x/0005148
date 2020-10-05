@@ -1,0 +1,5 @@
+Hi folks,
+Does anybody know for a good 32-bit C++/C compiler for OS/2 that supports
+OS/2 API and Microsoft windows (maybe Windows NT)?
+thanx
+N. Marovac, SDSU

@@ -1,0 +1,7 @@
+I have two Motif Widgets. I would like to control one of them via the
+keyboard and the other with the mouse. I set the keyboard focus on the first
+widget, but as soon as I click the mouse on the second one, I lose the
+keyboard focus on the first one. 
+Could some kind soul show me how to do this?
+Thanks
+dev@hollywood.acsc.com

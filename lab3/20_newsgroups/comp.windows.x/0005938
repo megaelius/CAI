@@ -1,0 +1,8 @@
+Hi there,
+I'm looking for tools that can make X programming easy. 
+I would like to have a tool that will enable to create X motif
+GUI Interactivly. Currently I'm Working on a SGI with forms.
+A package that enables to create GUI with no coding at all 
+(but the callbacks). 
+Any help will be appreciated.
+Thanks Gabi.

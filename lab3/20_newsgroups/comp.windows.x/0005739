@@ -1,0 +1,48 @@
+In article <1993Apr30.132044.15762@vpbuild.vp.com> jessea@u013.me.vp.com (Jesse W. Asher) writes:
+>I'm trying to get MH compiled (and then xmh) and I'm having some problems.
+>I've got mh-6.8, using gcc on SCO 3.2.4.  My MH file is listed below.  Does
+>anyone have any suggestions on what I can add to get it to compile??
+Here's the one that I used:
+# @(#)$Id: MH,v 1.7 90/04/06 09:44:31 sources Exp $
+bin	/usr/local/bin
+bboards	on
+etc	/usr/local/lib/mh
+mail	/usr/spool/mail
+mailgroup	mail
+ldoptlibs	-lsocket -lcrypt_i
+mandir	/usr/man
+ccoptions	-traditional
+manuals	none
+chown	/bin/chown
+mts	sendmail/smtp
+pop	on
+debug	off
+sharedlib	off
+signal	void
+sprintf int
+options	ATTVIBUG BIND DPOP DUMB RENAME SOCKETS SYS5 SYS5DIR VSPRINTF FCNTL MHE MHRC MIME MORE='"/usr/bin/more"' POPSERVICE='"pop3"' RPATHS FOLDPROT='"700"' MSGPROT='"600"' SBACKUP='"\\043"' SHADOW
+curses	-lcurses -ltermcap
+ranlib	off
+You may want to use a different locking style; my mailbox is mounted over NFS
+so I use fcntl-style locking.
+I also applied the following tweak to sbr/makedir.c:
+*** /src/public/mh-6.8/sbr/makedir.c    Tue Dec 15 10:55:22 1992
+--- sbr/makedir.c       Tue Apr 13 14:02:04 1993
+  #include <sys/types.h>
+  #include <sys/stat.h>
+  #endif        /* SYS5DIR */
+! #if defined(SVR4) || defined(ncr)
+  #include <unistd.h>
+  #endif
+  #include <sys/types.h>
+  #include <sys/stat.h>
+  #endif        /* SYS5DIR */
+! #if defined(SVR4) || defined(ncr) || defined(SYS5)
+! #define MAXPATHLEN 1024
+  #include <unistd.h>
+  #endif
+That took care of everything but the man pages, which I installed by hand.
+Good luck,
+-- Steve
+Steve Alexander, Lachman Technology, Inc. | stevea@lachman.com
+(708) 505-9555 x256 FAX: (708) 505-9574	  | ...!{sun,ico}!laidbak!stevea

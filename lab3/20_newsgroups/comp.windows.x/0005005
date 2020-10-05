@@ -1,0 +1,11 @@
+On a related note, how can I use xv to display colored GIFs on my
+root display with HP Vue?
+All I can do with Vue is display xbm's through their
+Backdrop Style Manager.
+xv does not seem to be able to override whatever Vue
+puts there.
+Thanks, Jan
+Jan Vandenbrande
+jan@ug.eds.com			(New address)
+jan@lipari.usc.edu		(school address, forwards)
+UUCP: {uunet, uupsi}!ug!jan

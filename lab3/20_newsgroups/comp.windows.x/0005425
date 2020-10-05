@@ -1,0 +1,2 @@
+Hello, recently I have been printing out a lot of files on school's laser printer and feeling guilty about it.  Please help me by showing me where to get a post script viewer for X-windows.  Thank you for your help.
+A student trying to enhence his cybernatic ability.

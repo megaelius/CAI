@@ -1,0 +1,10 @@
+Greetings,
+My question is whether the upcoming release of X11R6 will provide
+(strong) authentication between the X clients and server(s). If so,
+will this feature be based on the Kerberos authentication mechanism
+(and, if so, will Kerberos Version 5 be used)? Please reply via email.
+Thanks,
+--Andre
+Andre S. Cosma         | RRC 1N-215          |  Bellcore - Security and
+andre@bae.bellcore.com | 444 Hoes Lane       |       Data Services
+(908) 699-8441         | Piscataway, NJ 08854|
