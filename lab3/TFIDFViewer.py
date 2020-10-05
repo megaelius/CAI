@@ -11,7 +11,7 @@ TFIDFViewer
 :Authors:
     bejar
 
-:Version: 
+:Version:
 
 :Date:  05/07/2017
 """
@@ -27,7 +27,7 @@ import argparse
 
 import numpy as np
 
-__author__ = 'bejar'
+__author__ = 'Elias Abad Rocamora and Victor Novelle Moriano'
 
 def search_file_by_path(client, index, path):
     """
@@ -88,23 +88,24 @@ def toTFIDF(client, index, file_id):
     dcount = doc_count(client, index)
 
     tfidfw = []
+    #Computation of the tf-idf weights for each term in the document
+    #
     for (t, w),(_, df) in zip(file_tv, file_df):
-        #
-        # Something happens here
-        #
-        pass
+        tf = w/max_freq
+        idf = np.log2(dcount/df)
+        weight = tf*idf
+        tfidfw.append((t,weight))
 
     return normalize(tfidfw)
 
 def print_term_weigth_vector(twv):
     """
-    Prints the term vector and the correspondig weights
+    Prints the term vector and the corresponding weights
     :param twv:
     :return:
     """
-    #
-    # Program something here
-    #
+    for(t,w) in twv:
+        print(t,":",w)
     pass
 
 
@@ -115,10 +116,15 @@ def normalize(tw):
     :param tw:
     :return:
     """
-    #
-    # Program something here
-    #
-    return None
+    # Separated paired elements in tuple to separate tuples.
+    unzipped_object = zip(*tw)
+    unzipped_list = list(unzipped_object)
+    # Selection of the weight elements from the list (discard the terms).
+    weight_vector = unzipped_list[1]
+    norm = np.linalg.norm(weight_vector)
+    # Normalitzation of the weight for each term in the document.
+    tw_norm = [(t,w/norm) for (t,w) in tw]
+    return tw_norm
 
 
 def cosine_similarity(tw1, tw2):
@@ -128,10 +134,18 @@ def cosine_similarity(tw1, tw2):
     :param tw2:
     :return:
     """
-    #
-    # Program something here
-    #
-    return 0
+    i = j = 0
+    sim = 0
+    while i < len(tw1) and j < len(tw2):
+        if tw1[i][0] < tw2[j][0]:
+            i+=1
+        elif tw1[i][0] > tw2[j][0]:
+            j+=1
+        else:
+            sim += tw1[i][1]*tw2[j][1]
+            i+=1
+            j+=1
+    return sim
 
 def doc_count(client, index):
     """
@@ -182,4 +196,3 @@ if __name__ == '__main__':
 
     except NotFoundError:
         print(f'Index {index} does not exists')
-
