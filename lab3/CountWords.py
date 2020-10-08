@@ -9,11 +9,11 @@ CountWords
     Generates a list with the counts and the words in the 'text' field of the documents in an index
 
 :Authors: bejar
-    
 
-:Version: 
 
-:Created on: 04/07/2017 11:58 
+:Version:
+
+:Created on: 04/07/2017 11:58
 
 """
 
@@ -54,10 +54,12 @@ if __name__ == '__main__':
         for v in voc:
             lpal.append((v.encode("utf-8", "ignore"), voc[v]))
 
-
+        total = 0
         for pal, cnt in sorted(lpal, key=lambda x: x[0 if args.alpha else 1]):
+            total += cnt
             print(f'{cnt}, {pal.decode("utf-8")}')
         print('--------------------')
         print(f'{len(lpal)} Words')
+        print('Total number of words:',total)
     except NotFoundError:
         print(f'Index {index} does not exists')
