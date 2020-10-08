@@ -59,7 +59,7 @@ if __name__ == '__main__':
         #Si tenemos flag alfa, se ordena la lista alfabéticamente, si no, por orden de menor a mayor ocurrencia de la palabra.
         for pal, cnt in sorted(lpal, key=lambda x: x[0 if args.alpha else 1]):
             print(f'{cnt}, {pal.decode("utf-8")}')
-        print('--------------------')
-        print(f'{len(lpal)} Words')
+        #print('--------------------')
+        #print(f'{len(lpal)} Words')
     except NotFoundError:
         print(f'Index {index} does not exists')
