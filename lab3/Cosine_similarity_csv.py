@@ -78,7 +78,7 @@ def cosine_similarity_csv(folder1,folder2,index,filename):
                 file.write(row)
                 j+=1
             i+=1
-        #similarity between all the files in folder 2.
+        #similarity between all the files in folder 1 and 2.
         i = 0
         while i < len(folder1):
             j = 0
