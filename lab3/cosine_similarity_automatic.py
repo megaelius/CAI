@@ -1,7 +1,10 @@
 import os
 import argparse
+#Importation of the modified TF-IDF calculator.
 import TFIDFMod as TFIDF
 
+
+#Obtains the paths of all the files located inside the selected folders.
 def generate_files_list(path):
     """
     Generates a list of all the files inside a path
@@ -19,12 +22,17 @@ def generate_files_list(path):
                 lfiles.append(lf[0] + '/' + f)
     return lfiles
 
+#Computes the  average cosine similarity between a file and all the files from
+# a selected folder.
+
 def mean_file_group(file,group,index):
     aux_mean = 0
     for f in group:
         aux_mean += TFIDF.obtain_value(index,file,f)
     return aux_mean/len(group)
 
+#Computes the  average cosine similarity between the files from
+# a selected folder.
 
 def mean_inner_group_similarity(lfiles,index):
     mean = 0
@@ -35,6 +43,11 @@ def mean_inner_group_similarity(lfiles,index):
         print(i)
     return mean/((len(lfiles)*(len(lfiles) - 1))/2)
 
+"""
+Computes the average cosine similarity between the files from one folder and
+the files from antoher folder. The comparision is performed selecting a file
+ orm one folder and comparing its average similarity to the other folder.
+"""
 def mean_between_groups(folder1,folder2,index):
     mean = 0
     for f in folder1:

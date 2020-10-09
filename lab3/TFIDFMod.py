@@ -4,16 +4,17 @@
 TFIDFViewer
 ******
 
-:Description: TFIDFViewer
+:Description: TFIDMod
 
-    Receives two paths of files to compare (the paths have to be the ones used when indexing the files)
+    Modified version of the original code provided in order to allow the
+    importation of the code from another file. (cosine_similarity_automatic.py)
 
 :Authors:
-    bejar
+    Elias Abad Rocamora and Victor Novelle Moriano
 
 :Version:
 
-:Date:  05/07/2017
+:Date:  08/10/2020
 """
 
 from __future__ import print_function, division
