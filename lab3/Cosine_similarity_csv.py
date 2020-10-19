@@ -54,6 +54,42 @@ def mean_between_groups(folder1,folder2,index):
         mean += mean_file_group(f,folder2,index)
     return mean/len(folder1)
 
+def cosine_similarity_csv(folder1,folder2,index,filename):
+    with open(filename, 'w', newline='') as file:
+        header = "FileA;FileB;FolderA;FolderB;CosSim\n"
+        file.write(header)
+        #similarity between all the files in folder 1.
+        i = 0
+        while i < len(folder1) - 1:
+            j = i+1
+            while j < len(folder1):
+                sim = TFIDF.obtain_value(index,folder1[i],folder1[j])
+                row = folder1[i] + ";"+ folder1[j] + ";" + "1;1;"+ str(sim) + "\n"
+                file.write(row)
+                j+=1
+            i+=1
+        #similarity between all the files in folder 2.
+        i = 0
+        while i < len(folder2) - 1:
+            j = i+1
+            while j < len(folder2):
+                sim = TFIDF.obtain_value(index,folder2[i],folder2[j])
+                row = folder2[i] + ";"+ folder2[j] + ";" + "2;2;"+ str(sim) + "\n"
+                file.write(row)
+                j+=1
+            i+=1
+        #similarity between all the files in folder 1 and 2.
+        i = 0
+        while i < len(folder1):
+            j = 0
+            while j < len(folder2):
+                sim = TFIDF.obtain_value(index,folder1[i],folder2[j])
+                row = folder1[i] + ";"+ folder2[j] + ";" + "1;2;"+ str(sim) + "\n"
+                file.write(row)
+                j+=1
+            i+=1
+        file.close()
+
 def main():
 
     parser = argparse.ArgumentParser()
@@ -73,11 +109,14 @@ def main():
     lf1 = generate_files_list(folder1)
     lf2 = generate_files_list(folder2)
 
+    cosine_similarity_csv(lf1[:n],lf2[:n],index,"similarities.csv")
+    '''
     m1 = mean_inner_group_similarity(lf1[:n],index)
     print(m1)
     m2 = mean_inner_group_similarity(lf2[:n],index)
     print(m2)
     m1_2 = mean_between_groups(lf1[:n],lf2[:n],index)
     print(m1_2)
+    '''
 
 main()
