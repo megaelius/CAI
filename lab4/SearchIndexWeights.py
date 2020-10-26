@@ -12,11 +12,11 @@ SearchIndex
     --nhits changes the number of documents to retrieve
 
 :Authors: bejar
-    
 
-:Version: 
 
-:Created on: 04/07/2017 10:56 
+:Version:
+
+:Created on: 04/07/2017 10:56
 
 """
 from __future__ import print_function
@@ -68,4 +68,3 @@ if __name__ == '__main__':
 
     except NotFoundError:
         print(f'Index {index} does not exists')
-
