@@ -54,6 +54,16 @@ def mean_between_groups(folder1,folder2,index):
         mean += mean_file_group(f,folder2,index)
     return mean/len(folder1)
 
+
+'''
+Computes the cosinus similarity for every pair of documents in both folders
+(folder1 and folder2) over the given index and stores it in a csv file with
+the given filename.
+The format of every row is in the form:
+    FileA;FileB;FolderA;FolderB;CosSim
+where FileX will be the relative path from this code's directory and FolderX
+is 1 or 2 depending on the folder the document belongs to.
+'''
 def cosine_similarity_csv(folder1,folder2,index,filename):
     with open(filename, 'w', newline='') as file:
         header = "FileA;FileB;FolderA;FolderB;CosSim\n"
