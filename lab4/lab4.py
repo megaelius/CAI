@@ -57,7 +57,7 @@ def select_top_R(query_dict,R):
 def parse_and_select():
     parser = argparse.ArgumentParser()
     parser.add_argument('--index', default=None, help='Index to search')
-    parser.add_argument('--nrounds', default=5, help='Number of iterations')
+    parser.add_argument('--nrounds', default=5, type = int, help='Number of iterations')
     parser.add_argument('--R', default=None, type = int, help='Maximum number of new terms')
     parser.add_argument('--k', default=5, type=int, help='Number of docs')
     parser.add_argument('--alpha', default=1,type = float, help='Weight original query')
