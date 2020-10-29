@@ -70,7 +70,7 @@ def document_term_vector(client, index, id):
         for t in termvector['term_vectors']['text']['terms']:
             file_td[t] = termvector['term_vectors']['text']['terms'][t]['term_freq']
             file_df[t] = termvector['term_vectors']['text']['terms'][t]['doc_freq']
-    return sorted(file_td.items()), sorted(file_df.items())
+    return file_td.items(), file_df.items()
 
 
 def toTFIDF(client, index, file_id):
@@ -173,7 +173,7 @@ def obtain_value(index,file1,file2):
         file1_tw = toTFIDF(client, index, file1_id)
         file2_tw = toTFIDF(client, index, file2_id)
 
-        return(cosine_similarity(file1_tw, file2_tw))
+        return(cosine_similarity(sorted(file1_tw), sorted(file2_tw)))
 
     except NotFoundError:
         print(f'Index {index} does not exists')
