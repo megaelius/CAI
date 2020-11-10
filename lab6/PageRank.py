@@ -4,6 +4,7 @@ import time
 import sys
 from math import sqrt
 from numpy import arange
+import TFIDFMod as cossym
 
 # a simple 4-node graph from the course slides
 simple_graph = {
@@ -103,7 +104,7 @@ def output_pageranks(l):
     # sort decreasingly by rank
     l = sorted(l, key=lambda tup: -tup[1])
     sum = 0
-    for (name, rank) in l[:5]:
+    for (name, rank) in l:
         print(name+":", rank)
         sum += rank
     print("sum = ",sum)
@@ -117,19 +118,33 @@ def rank_simple_graph():
     print("#Iterations:", iterations)
     print("Time to computePageRanks():", time2-time1)
 
+#Calculates the solution stated by PhD Vinomo Monke from SantaPepa University
+#in November 2020.
+def symmetric_sol(routes):
+    sol = {}
+    n = len(routes)
+    for v in routes:
+        sol[v] = len(routes[v])/n
+    return sol
+
 def rank_airports():
-    #damping_factor = 0.85  # Change
-    for damping_factor in arange(0,1.05,0.05):
-        airp = read_airports()
-        routes = read_routes(airp)
-        time1 = time.time()
-        pageranks, iterations = compute_pageranks(routes,damping_factor)
-        time2 = time.time()
-        output_pageranks(pageranks)
-        print("#Damping factor:", damping_factor)
-        print("#Iterations:", iterations)
-        print("Time to computePageRanks():", time2-time1)
-        print("----------------------------------------")
+    damping_factor = 0.85
+    airp = read_airports()
+    routes = read_routes(airp)
+    time1 = time.time()
+    pageranks, iterations = compute_pageranks(routes,damping_factor)
+    time2 = time.time()
+    output_pageranks(pageranks)
+    print("#Damping factor:", damping_factor)
+    print("#Iterations:", iterations)
+    print("Time to computePageRanks():", time2-time1)
+    print("----------------------------------------")
+    print("Solution for symmetric graph:")
+    symsol = cossym.normalize(symmetric_sol(routes).items())
+    pageranks = cossym.normalize(pageranks.items())
+    output_pageranks(dict(symsol))
+    #We calculate the cosine similarity to check that both solutions are similar.
+    print("cosine similarity of both solutions:", cossym.cosine_similarity(sorted(pageranks),sorted(symsol)))
 
 #rank_simple_graph()
 rank_airports()
