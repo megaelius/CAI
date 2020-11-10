@@ -3,6 +3,7 @@
 import time
 import sys
 from math import sqrt
+from numpy import arange
 
 # a simple 4-node graph from the course slides
 simple_graph = {
@@ -11,6 +12,8 @@ simple_graph = {
   "3": ["2","4"],
   "4": ["2"]
 }
+
+epsilon = 10e-12
 
 def read_airports():
 # sample line:
@@ -70,16 +73,37 @@ def read_routes(airp):
 
     return route_dict
 
+#Computes the Euclidean distance between two dictionaries.
+def dict_dist(P,Pnew):
+    sum_squares = 0
+    for v in P:
+        sum_squares += (P[v]-Pnew[v])**2
+    return sqrt(sum_squares)
+
 def compute_pageranks(g,d):
-    # write your code
-    pass
+    n = len(g)
+    P = dict([(v,1/n) for v in g])
+    Pnew = dict([(v,(1-d)/n) for v in g])
+    it = 0
+    dist = 1 #default, only to enter the loop the first time
+    while not dist <= epsilon and it < 1000:
+        Pnew = dict([(v,(1-d)/n) for v in g])
+        for v in g :
+            L = g[v] # forward adjacency list for node v
+            for j in L:
+                Pnew[j] += d * P[v]/len(L)
+        dist = dict_dist(P,Pnew)
+        P = Pnew
+        it  += 1
+    return P,it
+
 
 def output_pageranks(l):
     l = [(key,val) for key,val in l.items()]
     # sort decreasingly by rank
     l = sorted(l, key=lambda tup: -tup[1])
     sum = 0
-    for (name, rank) in l:
+    for (name, rank) in l[:5]:
         print(name+":", rank)
         sum += rank
     print("sum = ",sum)
@@ -94,15 +118,18 @@ def rank_simple_graph():
     print("Time to computePageRanks():", time2-time1)
 
 def rank_airports():
-    damping_factor = 0.85  # Change
-    airp = read_airports()
-    routes = read_routes(airp)
-    time1 = time.time()
-    pageranks, iterations = compute_pageranks(routes,damping_factor)
-    time2 = time.time()
-    output_pageranks(pageranks)
-    print("#Iterations:", iterations)
-    print("Time to computePageRanks():", time2-time1)
+    #damping_factor = 0.85  # Change
+    for damping_factor in arange(0,1.05,0.05):
+        airp = read_airports()
+        routes = read_routes(airp)
+        time1 = time.time()
+        pageranks, iterations = compute_pageranks(routes,damping_factor)
+        time2 = time.time()
+        output_pageranks(pageranks)
+        print("#Damping factor:", damping_factor)
+        print("#Iterations:", iterations)
+        print("Time to computePageRanks():", time2-time1)
+        print("----------------------------------------")
 
-rank_simple_graph()
-#rank_airports()
+#rank_simple_graph()
+rank_airports()
