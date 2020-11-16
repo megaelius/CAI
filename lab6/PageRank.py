@@ -118,8 +118,7 @@ def rank_simple_graph():
     print("#Iterations:", iterations)
     print("Time to computePageRanks():", time2-time1)
 
-#Calculates the solution stated by PhD Vinomo Monke from SantaPepa University
-#in November 2020.
+#Calculates the direct solution p(i) = out(i)/n
 def symmetric_sol(routes):
     sol = {}
     n = len(routes)
