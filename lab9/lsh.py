@@ -8,6 +8,7 @@ import numpy
 import sys
 import argparse
 import time
+import matplotlib.pyplot as plt
 
 __version__ = '0.2.1'
 __author__ = 'marias@cs.upc.edu'
@@ -101,7 +102,6 @@ class lsh(object):
         return res
 
 
-@timeit
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('-k', default=20, type=int)
@@ -119,7 +119,6 @@ def main(argv=None):
         print("there are %4d candidates for image %4d" % (len(cands), r))
 
     return
-
 
 if __name__ == "__main__":
     sys.exit(main())
