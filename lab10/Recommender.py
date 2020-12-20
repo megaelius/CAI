@@ -99,8 +99,7 @@ class Recommender(object):
                 average_b = sum([rating for (id,rating) in self.get_user_ratings(item)])/len(self.get_user_ratings(item))
                 num += similar_ratings[item] *(film_ratings[item] - average_b)
                 den += similar_ratings[item]
-        if num == 0: return 0
-        else: return num/den
+        return num/den
 
     """input: similar_ratings -> dict of pairs (rating_list,similarity with user_ratings)
               user_ratings -> ratings of the user we want to recommend a film to
@@ -109,7 +108,8 @@ class Recommender(object):
         predictions = []
         average_user =  sum([rating for (id,rating) in user_ratings])/len(user_ratings)
         user_ratings_dict = dict(user_ratings)
-        for film in self._movie_ratings:
+        prueba = set([item[0] for user in similar_ratings for item in self._user_ratings[user]])
+        for film in prueba:
             if film not in user_ratings_dict: predictions.append((film,average_user+self.pred(similar_ratings,film)))
         return predictions
 
