@@ -6,7 +6,6 @@ import math
    a listing of userid+movieid+rating"""
 
 class Recommender(object):
-
     #"""initializes a recommender from a movie file and a ratings file"""
     def __init__(self,movie_filename,rating_filename):
 
@@ -90,14 +89,28 @@ class Recommender(object):
         if dot_a_b == 0: return 0
         else: return dot_a_b/(math.sqrt(dot_a_a)*math.sqrt(dot_b_b))
 
-    def pred(self,similar_ratings,film):
-        film_ratings = dict(self.get_movie_ratings(film))
+    '''
+    input:
+        similar_ratings: dict user_name -> similarity with our user
+        film:
+    '''
+    def pred(self,similar_ratings,film,ratings_dict,*args):
+        '''
+        with this if we check in which case we are:
+            no extra arg -> user to user recommendation
+            extra arg -> item to item recommendation
+        '''
+        if not len(args):
+            ratings = dict(self.get_movie_ratings(film))
+        else:
+            ratings = args[0]
         num  = 0
         den = 0
+        #print(len(similar_ratings),self.movie_name(film),len(self.get_movie_ratings(film))) #be careful with this
         for item in similar_ratings:
-            if item in film_ratings:
-                average_b = sum([rating for (id,rating) in self.get_user_ratings(item)])/len(self.get_user_ratings(item))
-                num += similar_ratings[item] *(film_ratings[item] - average_b)
+            if item in ratings:
+                average_b = sum([rating for (id,rating) in ratings_dict(item)])/len(ratings_dict(item))
+                num += similar_ratings[item] *(ratings[item] - average_b)
                 den += similar_ratings[item]
         return num/den
 
@@ -108,27 +121,61 @@ class Recommender(object):
         predictions = []
         average_user =  sum([rating for (id,rating) in user_ratings])/len(user_ratings)
         user_ratings_dict = dict(user_ratings)
+        # Mirar solo las peliculas de usuarios con similaridad alta.
         prueba = set([item[0] for user in similar_ratings for item in self._user_ratings[user]])
         for film in prueba:
-            if film not in user_ratings_dict: predictions.append((film,average_user+self.pred(similar_ratings,film)))
+            if film not in user_ratings_dict: predictions.append((film,average_user+self.pred(similar_ratings,film,self.get_user_ratings)))
         return predictions
 
     """returns a list of at most k pairs (movieid,predicted_rating)
        adequate for a user whose rating list is rating_list"""
     def recommend_user_to_user(self,rating_list,k,threshold):
         #Get only the lists of ratings that are similar to the ones
+        '''
+        key = user similar to ours -> sim_user
+        value = sim(rating_list, sim_user)
+        '''
         similar_ratings = {} # OPTIMIZAR LO DE HACER LA COPIA
-        for item in self._user_ratings:
-            similarity = self.sim(self._user_ratings[item],rating_list)
+        for user in self._user_ratings:
+            similarity = self.sim(self._user_ratings[user],rating_list)
             if similarity > threshold:
-                similar_ratings[item] = similarity
+                similar_ratings[user] = similarity
         total_predictions = self.pred_list(similar_ratings,rating_list)
         return sorted(total_predictions,key = lambda t: -t[1])[:k]
 
     """returns a list of at most k pairs (movieid,predicted_rating)
        adequate for a user whose rating list is rating_list"""
-    def recommend_item_to_item(self,rating_list,k):
-        pass
+    def recommend_item_to_item(self,rating_list,k,threshold):
+        #print(len(self._user_ratings),len(self._movie_ratings),len(rating_list))
+        '''
+        User/Peli 1 2 3
+                A 5 N 2
+                B 4 1 4
+                C 5 0 2
+
+        Explotar correlación de las columnas
+        '''
+        rating_dict = dict(rating_list)
+        average_user =  sum([rating for (id,rating) in rating_list])/len(rating_list)
+        total_predictions = []
+        for movie in self._movie_ratings:
+            if movie not in rating_dict:
+                '''
+                key = similar movie to "movie" -> seen_movie_i
+                value = sim(movie,seen_movie_i)
+                '''
+                #Get only the lists of ratings that are similar to the ones
+                similar_ratings = {}
+                for seen_movie in rating_dict:
+                    similarity = self.sim(self._movie_ratings[movie],self._movie_ratings[seen_movie])
+                    if similarity > threshold:
+                        similar_ratings[seen_movie] = similarity
+                #Hacer predicción para la película movie en el usuario en base a las películas similares con movie
+                if(len(similar_ratings) > 0):
+                    prediccion_movie = average_user + self.pred(similar_ratings,movie,self.get_movie_ratings,rating_dict)
+                    total_predictions.append((movie,prediccion_movie))
+        return sorted(total_predictions,key = lambda t: -t[1])[:k]
+
 
 def main():
     r = Recommender("./ml-latest-small/movies.csv","./ml-latest-small/ratings.csv")
@@ -141,10 +188,20 @@ def main():
     #print(r.movie_name("1"),r.movie_name("1"))
     #print(r.get_movie_ratings("1"),r.get_movie_ratings("2"))
     a = r.get_user_ratings("1")
+    print("Previously seen films:")
+    for (film,rate) in a:
+        print(r.movie_name(film),rate)
     #b = r.get_movie_ratings("1")
     #print(a)
     #print(r.sim(a,b))
+    print("\n")
+#--------------------------------------------------------
+    print("Recommended films with user-to-user")
     for (film,rate) in r.recommend_user_to_user(a,5,0.3):
         print(r.movie_name(film),rate)
-
+    print("\n")
+#--------------------------------------------------------
+    print("Recommended films with item-to-item")
+    for (film,rate) in r.recommend_item_to_item(a,20,0.3):
+        print(r.movie_name(film),rate)
 main()
