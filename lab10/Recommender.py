@@ -149,7 +149,7 @@ class Recommender(object):
     def get_similar_ratings(self,target_list,ratings_dict,possible_similar,threshold):
         similar_ratings = {}
         for key in possible_similar:
-            similarity = self.sim(ratings_dict[key],target_list)
+            similarity = self.sim(target_list,ratings_dict[key])
             if similarity > threshold:
                 similar_ratings[key] = similarity
         return similar_ratings
@@ -175,7 +175,7 @@ class Recommender(object):
         for movie in self._movie_ratings:
             if movie not in rating_dict:
                 average_item =  sum([rating for (id,rating) in self.get_movie_ratings(movie)])/len(self.get_movie_ratings(movie))
-                #Get only the lists of ratings that are similar to movie
+                #Get only the lists of ratings that are similar to the ones
                 similar_ratings = self.get_similar_ratings(self.get_movie_ratings(movie),self._movie_ratings,rating_dict,threshold)
                 #Hacer predicción para la película movie en el usuario en base a las películas similares con movie
                 if(len(similar_ratings) > 0):
