@@ -97,19 +97,11 @@ class Recommender(object):
 
     '''
     input:
-        similar_ratings: dict user_name -> similarity with our user
-        film:
+        similar_ratings: dict key = user_name -> value = similarity with our user
+        ratings_dict: function to extract rating lists from
+        ratings: previous ratings to compare with
     '''
-    def pred(self,similar_ratings,film,ratings_dict,*args):
-        '''
-        with this if we check in which case we are:
-            no extra arg -> user to user recommendation
-            extra arg -> item to item recommendation
-        '''
-        if not len(args):
-            ratings = dict(self.get_movie_ratings(film))
-        else:
-            ratings = args[0]
+    def pred(self,similar_ratings,ratings_dict,ratings):
         num  = 0
         den = 0
         #print(len(similar_ratings),self.movie_name(film),len(self.get_movie_ratings(film))) #be careful with this
@@ -132,7 +124,7 @@ class Recommender(object):
         prueba = set([item[0] for user in similar_ratings for item in self._user_ratings[user]])
         for film in prueba:
             if film not in user_ratings_dict:
-                predictions.append((film,average_user+self.pred(similar_ratings,film,self.get_user_ratings)))
+                predictions.append((film,average_user+self.pred(similar_ratings,self.get_user_ratings,dict(self.get_movie_ratings(film)))))
         return predictions
 
     """input:
@@ -179,7 +171,7 @@ class Recommender(object):
                 similar_ratings = self.get_similar_ratings(self.get_movie_ratings(movie),self._movie_ratings,rating_dict,threshold)
                 #Hacer predicción para la película movie en el usuario en base a las películas similares con movie
                 if(len(similar_ratings) > 0):
-                    prediccion_movie = average_item + self.pred(similar_ratings,movie,self.get_movie_ratings,rating_dict)
+                    prediccion_movie = average_item + self.pred(similar_ratings,self.get_movie_ratings,rating_dict)
                     total_predictions.append((movie,prediccion_movie))
         return sorted(total_predictions,key = lambda t: -t[1])[:k]
 
@@ -187,6 +179,15 @@ class Recommender(object):
 def main():
 
     r = Recommender("./ml-latest-small/movies.csv","./ml-latest-small/ratings.csv")
+
+    U = len(r._user_ratings)
+    M = len(r._movie_ratings)
+    LR = sum(len(rating_list) for user,rating_list in r._user_ratings.items())/U
+    LC = sum(len(rating_list) for movie,rating_list in r._movie_ratings.items())/M
+    print("U = ",U)
+    print("M = ",M)
+    print("LR = ", LR)
+    print("LC = ", LC)
 
     a = r.get_user_ratings("1")
 #--------------------------------------------------------

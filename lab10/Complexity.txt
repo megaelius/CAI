@@ -1,0 +1,83 @@
+Main parameters:
+    U = Number of users
+    M = Number of movies
+    LR = average length of a user rating list
+    LC = average length of a movie rating lists
+
+    L = length of the rating list of the user to recomend films to
+
+In our case, with the small dataset:
+    U =  610
+    M =  9724
+    LR =  165.30491803278687
+    LC =  10.369806663924312
+    L = LR
+
+TIME COMPLEXITY:
+
+    similar_ratings:
+        We compare with every other (user or movie)'s rating list and compute
+        the similarity. As the complexity of the similarity is O(LR or LC),
+        the total complexity of this function is O((U or M)*(LR or CL)).
+
+    pred:
+        We iterate over every element rated by a similar user or movie and if it is
+        in the elements of the list to compare, we compute the average ratings of the
+        user or movie and iteratively compute the prediction, so it takes:
+            O(LR*LC) in the user-to-user case
+            O(LC*LR) in the item-to-item case
+        which is the same, so O(LR*LC)
+
+    sort results:
+        There are asymptotically O(M-LR) movies that
+        can potentially be recommended, so to sort this takes: O((M-LR)*log(M-LR))
+
+    1)User-To-User:
+
+        similar_ratings + pred_list + sort
+
+        similar_ratings:
+            O(U*LR)
+
+        pred_list:
+            We compute the average rating of the user: O(LR).
+
+            Then we create a set containing all the films that could be potentially
+            recommended, that is, the films that the users similar to ours have seen.
+            This set is created by taking all the films from the similar users, so
+            it takes O(|similar_users_size|) = as similar_users is contained in
+            the set of all users =  O(U) to create this set.
+
+            After this, we iterate over all the films in the set and check that our user hasn't
+            rated them, so that is O(M) iterations, and for each one of those films
+            we compute the prediction. This loop takes O(M*LR*LC)
+
+            In total: O(LR) + O(U) + O(M*LR*LC) = O(M*LR*LC)
+
+        sort results:
+            O((M-LR)*log(M-LR))
+
+        In total: O(U*LR) + O(M*LR*LC) + O((M-LR)*log(M-LR)) (SE PUEDE COMPACTAR?)
+
+    2)Item-To-Item:
+
+        for new movies: (O(M-LR))
+            similar_ratings + average_item + pred
+        +sort
+
+        We iterate over the complete list of movies in order to find new movies and
+        compute the average ratings for that new movie in O(LC).
+
+        Inside the same loop, we compute the similar movies to that one:
+        O(M*LC)
+
+        Then we compute the prediction for the new movie and append it: O(LR*LC)
+
+        Finally we sort the results, which is O((M-LR)*log(M-LR))
+
+        in total: O((M-LR)*O(LC + M*LC + LR*LC)) + O((M-LR)*log(M-LR)) =
+                  = O((M-LR))*O(LC*(1+M+LR)) + O((M-LR)*log(M-LR))) =
+                  = O((M-LR)*O(LC*(M+LR)) + O((M-LR)*log(M-LR))) ~ (CHECKEA SI ESTO ES LEGAL JAJAJA)
+                  ~ O(M*M*LC) + O((M-LR)*log(M-LR))) = O(M^2*LC)
+
+SPACE COMPLEXITY:
