@@ -8,7 +8,6 @@ import math
 class Recommender(object):
     #"""initializes a recommender from a movie file and a ratings file"""
     def __init__(self,movie_filename,rating_filename):
-
         # read movie file and create dictionary _movie_names
         self._movie_names = {}
         f = open(movie_filename,"r",encoding="utf8")
@@ -121,8 +120,8 @@ class Recommender(object):
         average_user =  sum([rating for (id,rating) in user_ratings])/len(user_ratings)
         user_ratings_dict = dict(user_ratings)
         # Mirar solo las peliculas de usuarios con similaridad alta.
-        prueba = set([item[0] for user in similar_ratings for item in self._user_ratings[user]])
-        for film in prueba:
+        similar_user_movies = set([item[0] for user in similar_ratings for item in self._user_ratings[user]])
+        for film in similar_user_movies:
             if film not in user_ratings_dict:
                 predictions.append((film,average_user+self.pred(similar_ratings,self.get_user_ratings,dict(self.get_movie_ratings(film)))))
         return predictions
@@ -141,9 +140,10 @@ class Recommender(object):
     def get_similar_ratings(self,target_list,ratings_dict,possible_similar,threshold):
         similar_ratings = {}
         for key in possible_similar:
-            similarity = self.sim(target_list,ratings_dict[key])
-            if similarity > threshold:
-                similar_ratings[key] = similarity
+            if key in ratings_dict:
+                similarity = self.sim(target_list,ratings_dict[key])
+                if similarity > threshold:
+                    similar_ratings[key] = similarity
         return similar_ratings
 
 

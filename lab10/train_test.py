@@ -3,6 +3,7 @@ import math
 import Recommender as recom
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 '''
 Reads a csv with the following header: userId,movieId,rating,timestamp
@@ -54,21 +55,57 @@ def read_test_data(test_path):
 def evaluate_test(recommender,type,test_path,threshold):
     movie_ratings_test, user_ratings_test = read_test_data(test_path)
     error = 0
-    for user in user_ratings_test:
+    count = 0
+    residuals = []
+    predicted = []
+    for k,user in enumerate(user_ratings_test):
+        if type == "user-to-user":
+            similar_ratings = recommender.get_similar_ratings(user_ratings_test[user],recommender._user_ratings,recommender._user_ratings,threshold)
+            similar_user_movies = set([item[0] for user in similar_ratings for item in recommender._user_ratings[user]])
         for i,(movie,rate) in enumerate(user_ratings_test[user]):
-            #predicción
-            aux = user_ratings_test[user]
-            aux.pop(i)
-            avg_aux = sum([r for (_,r) in aux])/len(aux)
-            pred = avg_aux
-            similar_ratings = recommender.get_similar_ratings(aux,recommender._user_ratings,recommender._user_ratings,threshold)
-            if len(similar_ratings) > 0:
-                pred += recommender.pred(similar_ratings,recommender.get_user_ratings,dict(recommender.get_movie_ratings(movie)))
+            aux_user = user_ratings_test[user]
+            aux_user.pop(i)
+            if type == "item-to-item":
+                aux_movie = recommender.get_movie_ratings(movie)
+                if aux_movie is None: continue
+                for j, user_aux in enumerate(aux_movie):
+                    if user_aux == user: aux_movie.pop(j)
+
+            if type == "user-to-user":
+                avg_aux = sum([r for (_,r) in aux_user])/len(aux_user)
+                pred = avg_aux
+                if len(similar_ratings) > 0 and movie in similar_user_movies:
+                    pred += recommender.pred(similar_ratings,recommender.get_user_ratings,dict(recommender.get_movie_ratings(movie)))
+                else: continue
+
+            elif type == "item-to-item":
+                similar_ratings = recommender.get_similar_ratings(aux_movie,recommender._movie_ratings,dict(aux_user),threshold)
+                avg_aux = sum([r for (_,r) in aux_movie])/len(aux_movie)
+                pred = avg_aux
+                if(len(similar_ratings) > 0):
+                    pred += recommender.pred(similar_ratings,recommender.get_movie_ratings,dict(aux_user))
+                else: continue
             error += abs(rate-pred)
-    return error
+            residuals.append(rate-pred)
+            predicted.append(pred)
+            count +=1
+        #print(k)
+    return error/count, residuals, predicted
 
 def main():
-    partition_by_user("./ml-latest-small/ratings.csv",0.7)
+
+    partition_by_user("./ml-latest-small/ratings.csv",0.9)
     r = recom.Recommender("./ml-latest-small/movies.csv","./ml-latest-small/ratings_train.csv")
-    print(evaluate_test(r,"user-to-user","./ml-latest-small/ratings.csv",0.3))
+    error_user, res_user, pred_user = evaluate_test(r,"user-to-user","./ml-latest-small/ratings_test.csv",0.5)
+    print(error_user)
+    error_item, res_item, pred_item = evaluate_test(r,"item-to-item","./ml-latest-small/ratings_test.csv",0.5)
+    print(error_item)
+    print(np.mean(res_user),np.var(res_user))
+    print(np.mean(res_item),np.var(res_item))
+    '''
+    plt.plot(pred_user, res_user, 'o', color='black')
+    plt.figure()
+    plt.plot(pred_item, res_item, 'o', color='black')
+    plt.show()
+    '''
 main()
