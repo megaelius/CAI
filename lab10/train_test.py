@@ -11,22 +11,18 @@ for training and the rest for test
 '''
 def partition_by_user(path,percentage):
     df = pd.read_csv(path,sep=',')
-    print(df.columns)
     users = df['userId'].unique()
     '''
     Fractions the data set in two groups, assigning
     'percentage' of users to training and the rest to test.
     '''
     msk = np.random.rand(len(users)) < percentage
-    print(users[msk],len(users),len(users[msk]))
 
     train = df[df['userId'].isin(users[msk])]
 
     test = df[~df['userId'].isin(users[msk])]
 
-    print(len(train),len(test))
-
-    train.to_csv("./ml-latest-small/ratings_train",index = False)
+    train.to_csv("./ml-latest-small/ratings_train.csv",index = False)
 
     test.to_csv("./ml-latest-small/ratings_test.csv",index = False)
 
@@ -59,13 +55,14 @@ def evaluate_test(recommender,type,test_path,threshold):
     movie_ratings_test, user_ratings_test = read_test_data(test_path)
     error = 0
     for user in user_ratings_test:
-        for i,movie,rate in enumerate(user_ratings_test[user]):
+        for i,(movie,rate) in enumerate(user_ratings_test[user]):
             #predicción
-            aux = user_ratings_test[user][0:i]
-            avg_aux = sum([r for _,r in aux])/len(aux)
+            aux = user_ratings_test[user]
+            aux.pop(i)
+            avg_aux = sum([r for (_,r) in aux])/len(aux)
             pred = avg_aux
             similar_ratings = recommender.get_similar_ratings(aux,recommender._user_ratings,recommender._user_ratings,threshold)
-            if len(similar_ratings > 0):
+            if len(similar_ratings) > 0:
                 pred += recommender.pred(similar_ratings,recommender.get_user_ratings,dict(recommender.get_movie_ratings(movie)))
             error += abs(rate-pred)
     return error
