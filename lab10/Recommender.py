@@ -42,7 +42,7 @@ class Recommender(object):
                 self._movie_ratings[movieid].append((userid,float(rating)))
             else:
                 self._movie_ratings[movieid] = [(userid,float(rating))]
-        f.close
+        f.close()
 
     """returns a list of pairs (userid,rating) of users that
        have rated movie movieid"""
@@ -199,4 +199,4 @@ def main():
     print("Recommended films with item-to-item")
     for i,(film,rate) in enumerate(r.recommend_item_to_item(a,10,0.3)):
         print(i+1,". ",r.movie_name(film), " [",rate,"]",sep ='')
-main()
+#main()
