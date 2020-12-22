@@ -189,14 +189,16 @@ def main():
     print("LR = ", LR)
     print("LC = ", LC)
 
-    a = r.get_user_ratings("1")
+
+
+    a = [('109487',5),('65685',4),('72998',4.5),('40851',4),('39446',3.5),('79132',4),('73017',4),('60069',5),('103253',4.5)]
 #--------------------------------------------------------
     print("Recommended films with user-to-user")
-    for i,(film,rate) in enumerate(r.recommend_user_to_user(a,10,0.3)):
-        print(i+1,". ",r.movie_name(film), " [",rate,"]",sep ='')
+    for i,(film,rate) in enumerate(r.recommend_user_to_user(a,10,0.9)):
+        print(i+1,". ",r.movie_name(film),sep ='')
     print("----------------------------------------------")
 #--------------------------------------------------------
     print("Recommended films with item-to-item")
-    for i,(film,rate) in enumerate(r.recommend_item_to_item(a,10,0.3)):
-        print(i+1,". ",r.movie_name(film), " [",rate,"]",sep ='')
-#main()
+    for i,(film,rate) in enumerate(r.recommend_item_to_item(a,10,0.9)):
+        print(i+1,". ",r.movie_name(film),sep ='')
+main()

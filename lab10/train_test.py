@@ -90,22 +90,16 @@ def evaluate_test(recommender,type,test_path,threshold):
             predicted.append(pred)
             count +=1
         #print(k)
-    return error/count, residuals, predicted
+    return error/count, count, residuals, predicted
 
 def main():
-
+    np.random.seed(1234)
     partition_by_user("./ml-latest-small/ratings.csv",0.9)
     r = recom.Recommender("./ml-latest-small/movies.csv","./ml-latest-small/ratings_train.csv")
-    error_user, res_user, pred_user = evaluate_test(r,"user-to-user","./ml-latest-small/ratings_test.csv",0.5)
-    print(error_user)
-    error_item, res_item, pred_item = evaluate_test(r,"item-to-item","./ml-latest-small/ratings_test.csv",0.5)
-    print(error_item)
+    error_user, num_pred_films_user,res_user, pred_user = evaluate_test(r,"user-to-user","./ml-latest-small/ratings_test.csv",0.9)
+    print(error_user,num_pred_films_user)
+    error_item, num_pred_films_item,res_item, pred_item = evaluate_test(r,"item-to-item","./ml-latest-small/ratings_test.csv",0.9)
+    print(error_item, num_pred_films_item)
     print(np.mean(res_user),np.var(res_user))
     print(np.mean(res_item),np.var(res_item))
-    '''
-    plt.plot(pred_user, res_user, 'o', color='black')
-    plt.figure()
-    plt.plot(pred_item, res_item, 'o', color='black')
-    plt.show()
-    '''
 main()
