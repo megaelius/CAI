@@ -2,66 +2,84 @@
 title: "R Notebook"
 output: html_notebook
 ---
-
+The first step in this laboratory consisted in loading the igraph library, necessary for executing the graphs analysis.
 ```{r}
 library(igraph)
-er_graph <- erdos.renyi.game(100, 2/100)
-ws_graph <- watts.strogatz.game(2, 20, 4, 0.05)
-ba_graph <- barabasi.game(100)
-plot(er_graph)
 ```
 
+Next we load the *ggplot2* library, in order to perform plots.
 ```{r}
-plot(ws_graph)
+library(ggplot2)
 ```
 
+# Tasks
+### 1. Plot the clustering coefficient and the average shortest-path as a function of the parameter p of the WS model.
 ```{r}
-plot(ba_graph)
-```
-
-```{r}
-average.path.length(er_graph)
-average.path.length(ws_graph)
-average.path.length(ba_graph)
-```
-
-```{r}
-transitivity(er_graph,type = "local")
-transitivity(ws_graph,type = "local")
-transitivity(ba_graph,type = "local")
-```
-
-1. Plot the clustering coefficient and the average shortest-path as a function of the parameter p of the WS model.
-
-```{r}
+# Creation of the WS graph.
 ws_graph <- watts.strogatz.game(1, 1000, 4, 0)
-al0 = average.path.length(ws_graph)
-t0 = transitivity(ws_graph,type = "global")
-mean_t0 = mean(t0)
-al = c(al0/al0)
+al0 = average.path.length(ws_graph) # Computing its avg path length using p = 0.
+t0 = transitivity(ws_graph,type = "global") # Computing its transitivity using p = 0.
+al = c(al0/al0) #Initializing the arrays.
 t = c(mean_t0/mean_t0)
 for(i in seq(0.001,1,0.001)){
-    print(i)
     ws_graph <- watts.strogatz.game(1, 1000, 4, i)
-    ali = average.path.length(ws_graph)
+    ali = average.path.length(ws_graph) #Computation of the new metrics.
     ti = transitivity(ws_graph,type = "global")
-    al = append(al,ali/al0)
-    t = append(t,mean(ti)/mean_t0)
+    al = append(al,ali/al0) # Storing the new normalized values.
+    t = append(t,ti/t0)
 }
 ```
 
+Once the values are calculated, we proceed to plot them.
 ```{r}
-plot(log(seq(0,1,0.001)),log(al),col = 'blue',main = "average shortest path and clustering coefficient of a WS graph model",xlab = "p")
-points(log(seq(0,1,0.001)),log(t),col = 'red')
-legend("topright", legend=c("Average shortest path", "Clustering coefficient"),
-       col=c("blue","red"), pch = 1, cex=1)
-```
+plt1 = ggplot(as.data.frame(t),aes(seq(0,1,0.001))) +
+geom_point(aes(y = t, colour = "Clustering Coefficient"))+
+geom_point(aes(y = al, colour = "Average shortest path"))+
+labs(x = "Probability", y = "") + scale_x_log10()+
+ggtitle("Average shortest path and transitivity of a WS model")+  theme(plot.title = element_text(hjust = 0.5))
 
-3. Plot a histogram of the degree distribution of a BA network. What distribution does this follow? Can you
-describe it?
+suppressWarnings(print(plt1))
+```
+### 3. Plot a histogram of the degree distribution of a BA network. What distribution does this follow? Can you describe it?
+
+The first step for resolving this task consists in creating the graph.
+
 ```{r}
 ba_graph <- barabasi.game(20000,m = 1)
-hist(degree(ba_graph))
-plot(degree.distribution(ba_graph))
 ```
+
+Now we proceed to compute the histogram and the degree distribution using points.
+
+```{r}
+ggplot(as.data.frame(degree(ba_graph)), aes(x=`degree(ba_graph)`)) + geom_histogram(boundary = -0.5) +
+labs(x = "Degree", y = "Frequency") +
+ggtitle("Histogram of a BA model")+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+degree_plot = ggplot(as.data.frame(degree.distribution(ba_graph)),aes(seq(0,310,1))) +
+geom_point(aes(y = `degree.distribution(ba_graph)`)) + 
+labs(x = "Degree", y = "Relative frequency")+
+ggtitle("Degree distribution of a BA model")+  theme(plot.title = element_text(hjust = 0.5))
+degree_plot
+```
+To analyze if the BA degree distribution follows a powerlaw, we will perform a log-log plot of the axis.
+
+To avoid numerical errors for performing the logarithm for values equal to 0, the addition of an epsilon has been performed.
+
+```{r}
+aux2 = as.data.frame(degree.distribution(ba_graph))
+aux2$`degree.distribution(ba_graph)` = aux2$`degree.distribution(ba_graph)` + 10e-6
+aux2
+```
+
+
+```{r}
+ggplot(aux2,aes(seq(1,311,1))) +
+geom_point(aes(y = `degree.distribution(ba_graph)`)) + 
+labs(x = "Log Degree", y = "Log Relative frequency")+
+ggtitle("Log Degree distribution of a BA model")+  theme(plot.title = element_text(hjust = 0.5)) +
+scale_x_log10() + scale_y_log10()
+```
+
 
