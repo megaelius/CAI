@@ -6,7 +6,7 @@ output: html_notebook
 ```{r}
 library(igraph)
 er_graph <- erdos.renyi.game(100, 2/100)
-ws_graph <- watts.strogatz.game(1, 100, 4, 0.05)
+ws_graph <- watts.strogatz.game(2, 20, 4, 0.05)
 ba_graph <- barabasi.game(100)
 plot(er_graph)
 ```
@@ -17,5 +17,51 @@ plot(ws_graph)
 
 ```{r}
 plot(ba_graph)
+```
+
+```{r}
+average.path.length(er_graph)
+average.path.length(ws_graph)
+average.path.length(ba_graph)
+```
+
+```{r}
+transitivity(er_graph,type = "local")
+transitivity(ws_graph,type = "local")
+transitivity(ba_graph,type = "local")
+```
+
+1. Plot the clustering coefficient and the average shortest-path as a function of the parameter p of the WS model.
+
+```{r}
+ws_graph <- watts.strogatz.game(1, 1000, 4, 0)
+al0 = average.path.length(ws_graph)
+t0 = transitivity(ws_graph,type = "global")
+mean_t0 = mean(t0)
+al = c(al0/al0)
+t = c(mean_t0/mean_t0)
+for(i in seq(0.001,1,0.001)){
+    print(i)
+    ws_graph <- watts.strogatz.game(1, 1000, 4, i)
+    ali = average.path.length(ws_graph)
+    ti = transitivity(ws_graph,type = "global")
+    al = append(al,ali/al0)
+    t = append(t,mean(ti)/mean_t0)
+}
+```
+
+```{r}
+plot(log(seq(0,1,0.001)),log(al),col = 'blue',main = "average shortest path and clustering coefficient of a WS graph model",xlab = "p")
+points(log(seq(0,1,0.001)),log(t),col = 'red')
+legend("topright", legend=c("Average shortest path", "Clustering coefficient"),
+       col=c("blue","red"), pch = 1, cex=1)
+```
+
+3. Plot a histogram of the degree distribution of a BA network. What distribution does this follow? Can you
+describe it?
+```{r}
+ba_graph <- barabasi.game(20000,m = 1)
+hist(degree(ba_graph))
+plot(degree.distribution(ba_graph))
 ```
 
